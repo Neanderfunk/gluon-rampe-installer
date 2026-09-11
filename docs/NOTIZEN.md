@@ -56,6 +56,10 @@ Entstanden am 11.09.2026 in der Neanderfunk-Firmware-Session. Idee: adorfer
   (keepcfg-Feld fehlt, Credit da) → Upload des sysupgrade einer
   Neanderfunk-2023.2-Firmware (24_dusukw) → „Upgrade completed“ → Start von
   der Platte in deren Wizard. Grün.
+- Beide Bauten über `contrib/docker/run.sh` (Bild frisch aus dem
+  Dockerfile): x86-64 in 22 min mit vorhandenem Baum, samt `make update`;
+  M30 danach in 6 min. Das x86-64-Image aus dem Container hat den QEMU-Test
+  bestanden.
 - D-Link M30: Image gebaut (52 MB, Header `DLK6E6110001` wie bei OpenWrt),
   cpio-Inhalt geprüft (preinit-Hook, Controller, View, CREDITS).
   **Auf Hardware nicht getestet.**
@@ -94,6 +98,12 @@ Entstanden am 11.09.2026 in der Neanderfunk-Firmware-Session. Idee: adorfer
   der Regel schon bei `sysupgrade -T` durch, die Seite zeigt dann den Fehler.
 
 ## Herkunft
+
+- Repo: github.com/Neanderfunk/gluon-ramboot-installer (public). Den Namen
+  hat adorfer gewählt. Im Image heißt das Projekt weiter „Freifunk-Installer“.
+- Die Dateinamen sind uneinheitlich: Gluon nennt die Images
+  `gluon-installer-<datum>-…` (nach `site_code`), die rohen initramfs-Kernel heißen
+  `freifunk-installer-…`. Das ließe sich bei Bedarf angleichen.
 
 - Prototyp in `~/projekte/freifunk/installer` (Neanderfunk-Arbeitsplatz),
   zuvor ein Wegwerf-Baum ohne git. Gebaute Artefakte des Prototyps:

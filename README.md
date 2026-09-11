@@ -1,4 +1,7 @@
-# Freifunk-Installer
+# gluon-ramboot-installer
+
+Der **Freifunk-Installer**: ein Gluon, das aus dem RAM läuft und genau eine
+Seite hat – Community-Firmware hochladen.
 
 **Nach einer Idee von oszilloskop:
 [UBNT_ERX_Gluon_Factory-Image](https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image).**
