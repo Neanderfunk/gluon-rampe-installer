@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# Freifunk-Installer, nach einer Idee von oszilloskop:
+#   https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image
+# (dort build/openwrt/files/lib/preinit/90_setup_mode, MIT-Lizenz,
+# Copyright (c) 2018 Oszilloskop): den Config-Mode im initramfs erzwingen.
+#
+# Warum das noetig ist: Gluons 90_setup_mode haengt setup_mode_enable an
+# preinit_main. In einem initramfs kommt preinit_main dort nie an -
+# 70_initramfs_test fuehrt die Hooks "initramfs" aus und bricht preinit_main
+# dann mit "break" ab, alles ab 70 laeuft nicht. Ein Gluon als initramfs
+# startet deshalb im Normalbetrieb statt im Config-Mode.
+#
+# oszilloskop hat das umgangen, indem seine Datei schon beim Einlesen die
+# rc.d-Verzeichnisse umkopiert. Hier dieselbe Absicht ueber den Hook, der im
+# initramfs noch laeuft: setup_mode_enable (aus 90_setup_mode) zusaetzlich an
+# "initramfs" haengen. Die Funktion schreibt /tmp/rc_d_path, procd startet
+# dann die Dienste des Config-Mode.
+
+boot_hook_add initramfs setup_mode_enable

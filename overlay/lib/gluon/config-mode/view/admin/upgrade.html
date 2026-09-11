@@ -1,0 +1,54 @@
+<%#
+Copyright 2008 Steven Barth <steven@midlink.org>
+Copyright 2008-2009 Jo-Philipp Wich <xm@subsignal.org>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+Freifunk-Installer, nach einer Idee von oszilloskop:
+  https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image
+(MIT-Lizenz, Copyright (c) 2018 Oszilloskop). Wie dort ist "Einstellungen
+behalten" weg - ohne keepcfg flasht upgrade.lua mit "sysupgrade -n" - dazu
+ein Hinweistext.
+-%>
+<h2><%:Upgrade firmware%></h2>
+
+<form method="post" enctype="multipart/form-data" action="<%|url(request)%>">
+	<p>
+		Dieser Router läuft mit dem <strong>Freifunk-Installer</strong>. Er kann nur
+		eines: die Freifunk-Firmware deiner Community aufspielen. Wähle dazu das
+		<strong>sysupgrade</strong>-Image für dieses Gerät und lade es hoch.
+		Danach startet der Router mit der Freifunk-Firmware neu und ist unter
+		<strong>192.168.1.1</strong> zur Einrichtung erreichbar.
+	</p>
+	<p>
+		This router runs the <strong>Freifunk installer</strong>. Upload your
+		community's <strong>sysupgrade</strong> image for this device; the router
+		then reboots into Freifunk and can be set up at 192.168.1.1.
+	</p>
+	<p style="font-size: 0.85em; opacity: 0.8;">
+		Nach einer Idee von <strong>oszilloskop</strong> &ndash;
+		<a href="https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image">github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image</a>
+	</p>
+	<% if bad_image then %>
+	<p class="error"><%:The provided firmware image is not valid for this device.%></p>
+	<% end %>
+	<div class="gluon-section-node">
+		<div class="gluon-value gluon-value-last">
+			<label class="gluon-value-title">
+				<%:Firmware image%>
+			</label>
+			<div class="gluon-value-field">
+				<input type="file" name="image">
+			</div>
+		</div>
+	</div>
+
+	<div class="gluon-page-actions">
+		<input type="hidden" name="step" value="2">
+		<input class="gluon-button gluon-button-submit" type="submit" value="<%:Upload image%>">
+	</div>
+</form>
