@@ -32,8 +32,14 @@ zu prüfen. Reihenfolge nach Nutzen.
 | TP-Link-Geräte mit `-tftp-recovery` | ramips-mt76x8 | TFTP | Installer statt OpenWrt-initramfs: bringt nur die Gluon-Seite, spart kein TFTP |
 | Ubiquiti UniFi 6 Lite/Plus/LR | div. | SSH + initramfs | kein Weg über eine Web-UI, Nutzen gering |
 
-Nicht Kandidat: Cudy (eigene Zwischenfirmware), GL.iNet (U-Boot-Web),
-Xiaomi (Exploit-Weg, kein Hersteller-Upload), AVM (EVA-FTP, eigenes Werkzeug).
+Nicht Kandidat, soweit bekannt:
+- Cudy: Die Web-UI nimmt nur von Cudy signierte Images an. Cudys eigene
+  OpenWrt-Zwischenfirmware ist schon der Zwischenschritt.
+- GL.iNet: Die U-Boot-Web-UI nimmt das sysupgrade direkt.
+- Xiaomi: Der Weg führt über einen Exploit, einen Hersteller-Upload gibt es nicht.
+- AVM: EVA per FTP mit eigenem Werkzeug.
+- Linksys E8450 (UBI): Der OpenWrt-Installer muss das Flash auf UBI umbauen,
+  und genau das kann dieser Installer nicht.
 
 ## Ein Gerät ergänzen
 
