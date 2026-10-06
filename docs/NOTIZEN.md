@@ -111,3 +111,20 @@ Entstanden am 11.09.2026 in der Neanderfunk-Firmware-Session. Idee: adorfer
 - Neanderfunk-Firmware (github.com/Adorfer/firmware) hat mit dem Installer
   nichts zu tun, außer dass die dort gebauten sysupgrade-Images hochgeladen
   werden.
+
+## Stand 01.10.2026: das Projekt ruht
+
+adorfer am 01.10.2026: Das Projekt liegt vorerst still, das Ziel bleibt aber
+bestehen. Wir wollen eigene Liveboot-Images (ramboot) anbieten, die man in die
+Recovery des Herstellers lädt - bei D-Link und anderen -, um danach das
+eigentliche Gluon bequem über die Weboberfläche einzuspielen.
+
+Eine Falle für alle, die hier weitermachen: In den Anleitungen zur
+D-Link-Recovery ist immer das **OpenWrt-initramfs** gemeint, auch wenn die
+Benennung etwas anderes nahelegt. Die Namen sind sowohl in fremden Anleitungen
+als auch im OpenWrt-Wiki uneinheitlich, und der Linktext stimmt dort regelmäßig
+nicht mit dem Dateinamen überein. Wer sich auf den Linktext verlässt, lädt das
+falsche Abbild.
+
+Wie die D-Link-Geräte geflasht werden, steht in der Router-Werkstatt unter
+`docs/dlink-flashen.md`.
