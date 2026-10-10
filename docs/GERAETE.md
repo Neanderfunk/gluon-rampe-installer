@@ -29,6 +29,8 @@ Vollständiges Inventar aller Gluon-2025.1-Geräte mit Weg ab Werk,
 |---|---|---|---|
 | D-Link AQUILA PRO AI M30 A1 | mediatek-filogic | D-Link-Recovery 192.168.200.1, `-recovery.bin` | gebaut, Inhalt geprüft, **Hardware-Test offen** |
 | x86-64 | x86-64 | QEMU `-kernel` | Testgerät, Ende-zu-Ende grün |
+| Mercusys MR90X v1 | mediatek-filogic | SSH/Telnet in der Stock-Firmware, initramfs per `ubiupdatevol` ins Volume `kernel` | Rezept da (`devices/mercusys-mr90x-v1.sh`), **noch nicht gebaut** |
+| Mercusys MR80X v3 | mediatek-filogic | laut OpenWrt nur UART + TFTP; ob der MR90X-Weg geht, ist offen | Rezept da, trägt das Gerät in Gluon ein (`ensure_device`), **noch nicht gebaut**; sinnvoll erst mit Community-sysupgrade für den MR80X |
 
 ## Kandidaten (alle ungeprüft)
 

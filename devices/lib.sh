@@ -55,3 +55,16 @@ open(path, 'w').write(s)
 print("  %s: extra_images %s ergaenzt" % (dev, entry))
 PY
 }
+
+# ensure_device <target> <gluon-geraet> <openwrt-profil>
+#   haengt device('<gluon-geraet>', '<openwrt-profil>', {factory = false}) an
+#   targets/<target>, falls Gluon das Geraet nicht kennt. Fuer Geraete, die
+#   OpenWrt schon hat, Gluon aber (noch) nicht.
+ensure_device () {
+	local f="$GLUON_DIR/targets/$1"
+	[ -f "$f" ] || { echo "Target $1 gibt es in diesem Gluon nicht." >&2; return 1; }
+	if ! grep -q "device('$2'," "$f"; then
+		printf "\ndevice('%s', '%s', {\n\tfactory = false,\n})\n" "$2" "$3" >> "$f"
+		echo "  $1: device('$2', '$3') ergaenzt"
+	fi
+}
