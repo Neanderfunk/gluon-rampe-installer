@@ -36,6 +36,21 @@ legt das Image des Hauptnamens unter beiden Namen ab.
 
 | Gerät | Gluon-Name | Target | Kat. | Rezept und Stand |
 |---|---|---|---|---|
+| D-Link DIR-505 | `d-link-dir-505` | ath79-generic | K4 | devices/d-link-dir-505.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; UART, IPs und Ladeadresse nicht belegt; 64 MB RAM |
+| Enterasys WS-AP3705i | `enterasys-ws-ap3705i` | ath79-generic | K4 | devices/enterasys-ws-ap3705i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `1401A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell |
+| Extreme Networks WS-AP3805i | `extreme-networks-ws-ap3805i` | ath79-generic | K4 | devices/extreme-networks-ws-ap3805i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `1D01A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell |
+| Ocedo Koala | `ocedo-koala` | ath79-generic | K1 | devices/ocedo-koala.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `koala-uImage-initramfs-lzma.bin` per TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`fw_setenv bootcmd run bootcmd_1`) |
+| Ocedo Raccoon | `ocedo-raccoon` | ath79-generic | K1 | devices/ocedo-raccoon.sh (Rezept-Entwurf, nicht gebaut): wie Koala, als `raccoon-uImage-initramfs-lzma.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`fw_setenv`) |
+| Siemens WS-AP3610 | `siemens-ws-ap3610` | ath79-generic | K4 | devices/siemens-ws-ap3610.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma statt unkomprimiert wie bei OpenWrt) als `1401A8C0.img` per U-Boot-TFTP |
+| Sophos AP15 (broken) | `sophos-ap15` | ath79-generic | K4 | devices/sophos-ap15.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-"broken"-Gerät gezielt; `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; RAM nicht belegt |
+| TP-Link Archer D50 v1 (broken) | `tp-link-archer-d50-v1` | ath79-generic | K4 | devices/tp-link-archer-d50-v1.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-"broken"-Gerät gezielt; `initramfs-kernel.bin` (lzma, TP-Link-Header) per U-Boot-TFTP; 64 MB RAM knapp |
+| MikroTik RouterBOARD 951Ui-2nD (hAP) | `mikrotik-routerboard-951ui-2nd-hap` | ath79-mikrotik | K1 | devices/mikrotik-routerboard-951ui-2nd-hap.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp |
+| MikroTik RouterBOARD mAPL-2nD (mAP lite) | `mikrotik-routerboard-mapl-2nd` | ath79-mikrotik | K1 | devices/mikrotik-routerboard-mapl-2nd.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp |
+| MikroTik RouterBOARD wAP G-5HacT2HnD (wAP AC) | `mikrotik-routerboard-wap-g-5hact2hnd` | ath79-mikrotik | K1 | devices/mikrotik-routerboard-wap-g-5hact2hnd.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM mit ath10k am knappsten |
+| MikroTik RouterBOARD wAPR-2nD (wAP R) | `mikrotik-routerboard-wapr-2nd` | ath79-mikrotik | K1 | devices/mikrotik-routerboard-wapr-2nd.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp |
+| Aerohive HiveAP 121 | `aerohive-hiveap-121` | ath79-nand | K4 | devices/aerohive-hiveap-121.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; Gluon-factory per `nand write` ist der einfachere Weg |
+| ZTE MF281 (broken) | `zte-mf281` | ath79-nand | K4 | devices/zte-mf281.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-"broken"-Gerät gezielt; `initramfs-kernel.bin` als `speedbox-2.bin` per U-Boot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubiformat`, nicht durch den Commit gedeckt) |
+| ZTE MF286R (broken) | `zte-mf286r` | ath79-nand | K1 | devices/zte-mf286r.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` per `nandwrite` nach dem Exploit (Weg nur für die MF286A belegt) |
 | Aruba AP-303 | `aruba-ap-303` | ipq40xx-generic | K4 | devices/aruba-ap-303.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `ipq40xx.ari` per APBoot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`) |
 | Aruba AP-303H | `aruba-ap-303h` | ipq40xx-generic | K4 | devices/aruba-ap-303h.sh (Rezept-Entwurf, nicht gebaut): wie AP-303; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`) |
 | Aruba AP-365 | `aruba-ap-365` | ipq40xx-generic | K4 | devices/aruba-ap-365.sh (Rezept-Entwurf, nicht gebaut): wie AP-303; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`) |
@@ -49,8 +64,16 @@ legt das Image des Hauptnamens unter beiden Namen ab.
 | AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) | `avm-fritz-repeater-3000` | ipq40xx-generic | K2 | devices/avm-fritz-repeater-3000.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `FRITZ3000.bin` + `uboot-fritz3000.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (U-Boot schreiben, `ubirmvol`) |
 | Extreme Networks WS-AP3915i | `extreme-networks-ws-ap3915i` | ipq40xx-generic | K4 | devices/extreme-networks-ws-ap3915i.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `openwrt-3915.bin` per U-Boot-TFTP |
 | ZTE MF289F | `zte-mf289f` | ipq40xx-generic | K4 | devices/zte-mf289f.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-"broken"-Gerät gezielt; `-initramfs-zImage.itb` per U-Boot-TFTP; Vorbereitung (`ubirmvol`) muss schon vor der Imageprüfung laufen, fehlt der RAMpe-Seite noch |
+| MikroTik DISC Lite5 ac (Alias von mikrotik-sxtsq-5-ac-rbsxtsqg-5acd) | `mikrotik-discg-5acd` | ipq40xx-mikrotik | K1 | Alias: Image aus devices/mikrotik-sxtsq-5-ac-rbsxtsqg-5acd.sh; RAM des DISC nicht belegt |
+| MikroTik hAP ac2 (RBD52G-5HacD2HnD) | `mikrotik-hap-ac2` | ipq40xx-mikrotik | K1 | devices/mikrotik-hap-ac2.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); schaltet Gluons "factory" (= Community-initramfs ohne Config-Mode) ab |
+| MikroTik SXTsq 5 ac (RBSXTsqG-5acD) | `mikrotik-sxtsq-5-ac-rbsxtsqg-5acd` | ipq40xx-mikrotik | K1 | devices/mikrotik-sxtsq-5-ac-rbsxtsqg-5acd.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP) |
+| MikroTik wAP ac (RBwAPG-5HacD2HnD, ipq40xx) | `mikrotik-wap-ac` | ipq40xx-mikrotik | K1 | devices/mikrotik-wap-ac.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP) |
 | Aruba AP-324/AP-325, Siemens Scalance W1750D | `aruba-ap-32x` | ipq806x-generic | K5 | devices/aruba-ap-32x.sh (Rezept-Entwurf, nicht gebaut): Backport aus gluon-patches-hardware (`RAMPE_HW_PATCHES`); `-initramfs.ari` per APBoot-TFTP; APBoot-Tausch und NAND-Umbau bleiben seriell |
 | Extreme Networks AP3935i/e | `extreme-networks-ap3935` | ipq806x-generic | K4 | devices/extreme-networks-ap3935.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage` (ohne Endung) per U-Boot-TFTP |
+| AVM FRITZ!Box 3390 | `avm-fritz-box-3390` | lantiq-xrx200 | K1 | devices/avm-fritz-box-3390.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` (lzma) für `eva_ramboot.py` |
+| AVM FRITZ!Box 7362 SL | `avm-fritz-box-7362-sl` | lantiq-xrx200 | K1 | devices/avm-fritz-box-7362-sl.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py` |
+| AVM FRITZ!Box 7412 | `avm-fritz-box-7412` | lantiq-xrx200 | K1 | devices/avm-fritz-box-7412.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch |
+| AVM FRITZ!Box 7430 | `avm-fritz-box-7430` | lantiq-xrx200 | K1 | devices/avm-fritz-box-7430.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch |
 | ASUS RT-AX52 | `asus-rt-ax52` | mediatek-filogic | K1 | devices/asus-rt-ax52.sh (Rezept-Entwurf, nicht gebaut): `-initramfs.trx` (OpenWrt-ARTIFACT) für die ASUS-Web-UI |
 | ASUS RT-AX59U | `asus-rt-ax59u` | mediatek-filogic | K2 | devices/asus-rt-ax59u.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; nur `initramfs-kernel.bin` für den UART-Weg, für die Web-UI fehlt ein eigenes TRX |
 | ASUS TUF-AX4200 | `asus-tuf-ax4200` | mediatek-filogic | K2 | devices/asus-tuf-ax4200.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` mit eingebettetem initramfs (`TARGET_ROOTFS_INITRAMFS_SEPARATE` aus) für SSH `mtd-write` oder UART + TFTP; eigener Bau-Lauf |
@@ -61,11 +84,18 @@ legt das Image des Hauptnamens unter beiden Namen ab.
 | Mercusys MR80X v3 | `mercusys-mr80x-v3` | mediatek-filogic | K4 | devices/mercusys-mr80x-v3.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein (`ensure_device`); `initramfs-kernel.bin` per UART + TFTP |
 | Mercusys MR90X v1 | `mercusys-mr90x-v1` | mediatek-filogic | K2 | devices/mercusys-mr90x-v1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell |
 | Xiaomi Mi Router AX3000T | `xiaomi-mi-router-ax3000t` | mediatek-filogic | K2 | devices/xiaomi-mi-router-ax3000t.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt |
+| Enterasys WS-AP3715i | `enterasys-ws-ap3715i` | mpc85xx-p1010 | K4 | devices/enterasys-ws-ap3715i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `ap3715.bin` per U-Boot-TFTP; entpackt über 11 MB droht Überlappung |
+| Sophos RED 15w Rev. 1 | `sophos-red-15w-rev.1` | mpc85xx-p1010 | K4 | devices/sophos-red-15w-rev.1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (FIT) als `kernel.bin` per U-Boot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubiformat`) |
+| Aerohive HiveAP 330 | `aerohive-hiveap-330` | mpc85xx-p1020 | K4 | devices/aerohive-hiveap-330.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per U-Boot-TFTP; der U-Boot-Patch bleibt Handarbeit (Entwurf in docs/ENTWURF-VORBEREITUNG.md) |
+| Enterasys WS-AP3710i | `enterasys-ws-ap3710i` | mpc85xx-p1020 | K4 | devices/enterasys-ws-ap3710i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` als `01C8A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell |
+| Extreme Networks WS-AP3825i | `extreme-networks-ws-ap3825i` | mpc85xx-p1020 | K4 | devices/extreme-networks-ws-ap3825i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (FIT) per U-Boot-TFTP; `bootcmd` bleibt seriell |
+| OCEDO Panda | `ocedo-panda` | mpc85xx-p1020 | K1 | devices/ocedo-panda.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` als `panda-uimage-factory` + DTB als `panda.fdt`; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubirmvol`, `fw_setenv`) |
 | NETGEAR WAX218 | `netgear-wax218` | qualcommax-ipq807x | K1 | devices/netgear-wax218.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `-web-ui-factory.fit` (OpenWrt-ARTIFACT) für die Web-UI |
 | TP-Link EAP620 HD v1 | `tp-link-eap620-hd-v1` | qualcommax-ipq807x | K4 | devices/tp-link-eap620-hd-v1.sh (Rezept-Entwurf, nicht gebaut): Backport aus gluon-patches-hardware (`RAMPE_HW_PATCHES`); `-initramfs-uImage.itb` per U-Boot-TFTP |
 | Xiaomi AX3600 | `xiaomi-ax3600` | qualcommax-ipq807x | K2 | devices/xiaomi-ax3600.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt |
 | ASUS RT-AX53U (RT-AX1800U) | `asus-rt-ax53u` | ramips-mt7621 | K1 | devices/asus-rt-ax53u.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per ASUS-Rescue (TFTP put) |
 | Genexis/Inteno Pulse EX400 | `genexis-pulse-ex400` | ramips-mt7621 | K1 | devices/genexis-pulse-ex400.sh (Rezept-Entwurf, nicht gebaut): `-factory.bin` (initramfs in UBIFS-bootfs, Inteno-Kopf); bootfs höchstens etwa 11.6 MiB |
+| MikroTik hEX RB750Gr3 (Alias mikrotik-routerboard-hex-v3) | `mikrotik-routerboard-750gr3` | ramips-mt7621 | K1 | devices/mikrotik-routerboard-750gr3.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` (ELF); Netboot (BOOTP/DHCP + TFTP) |
 | ZyXEL WSM20 (Multy M1) | `zyxel-wsm20` | ramips-mt7621 | K1 | devices/zyxel-wsm20.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (znet-Header schon drin) für die versteckte Upgrade-Seite |
 | x86 (x86-64) | `x86-64` | x86-64 | K0 | devices/x86-64.sh: Testgerät, in QEMU Ende-zu-Ende geprüft |
 
@@ -86,7 +116,19 @@ contrib/docker/run.sh ./build.sh ramips-mt7621 asus-rt-ax53u genexis-pulse-ex400
 contrib/docker/run.sh ./build.sh ipq40xx-generic aruba-ap-303 aruba-ap-303h aruba-ap-365 asus-lyra-map-ac2200 zte-mf289f extreme-networks-ws-ap3915i avm-fritz-box-7530 avm-fritz-repeater-1200 avm-fritz-repeater-3000
 RAMPE_HW_PATCHES=<pfad>/gluon-patches-hardware contrib/docker/run.sh ./build.sh qualcommax-ipq807x netgear-wax218 xiaomi-ax3600 tp-link-eap620-hd-v1
 RAMPE_HW_PATCHES=<pfad>/gluon-patches-hardware contrib/docker/run.sh ./build.sh ipq806x-generic extreme-networks-ap3935 aruba-ap-32x
+contrib/docker/run.sh ./build.sh ipq40xx-mikrotik mikrotik-hap-ac2 mikrotik-wap-ac mikrotik-sxtsq-5-ac-rbsxtsqg-5acd
+contrib/docker/run.sh ./build.sh ath79-mikrotik mikrotik-routerboard-951ui-2nd-hap mikrotik-routerboard-mapl-2nd mikrotik-routerboard-wapr-2nd mikrotik-routerboard-wap-g-5hact2hnd
+contrib/docker/run.sh ./build.sh ramips-mt7621 mikrotik-routerboard-750gr3
+contrib/docker/run.sh ./build.sh lantiq-xrx200 avm-fritz-box-3390 avm-fritz-box-7362-sl avm-fritz-box-7412 avm-fritz-box-7430
+contrib/docker/run.sh ./build.sh ath79-generic ocedo-koala ocedo-raccoon enterasys-ws-ap3705i extreme-networks-ws-ap3805i siemens-ws-ap3610 sophos-ap15 tp-link-archer-d50-v1 d-link-dir-505
+contrib/docker/run.sh ./build.sh ath79-nand zte-mf286r zte-mf281 aerohive-hiveap-121
+contrib/docker/run.sh ./build.sh mpc85xx-p1020 ocedo-panda enterasys-ws-ap3710i extreme-networks-ws-ap3825i aerohive-hiveap-330
+contrib/docker/run.sh ./build.sh mpc85xx-p1010 enterasys-ws-ap3715i sophos-red-15w-rev.1
 ```
+
+`ramips-mt7621` lässt sich auch in einem Lauf mit RT-AX53U, EX400 und WSM20
+bauen. Alias-Namen (DISC Lite5 ac zu SXTsq 5 ac) nicht als Gerät angeben,
+Gluon bricht sonst mit "unknown devices" ab.
 
 ### Offen bei den Rezepten
 
@@ -97,10 +139,21 @@ RAMPE_HW_PATCHES=<pfad>/gluon-patches-hardware contrib/docker/run.sh ./build.sh 
   [ENTWURF-VORBEREITUNG.md](ENTWURF-VORBEREITUNG.md) (Skripte je
   `board_name`, synchron vor `sysupgrade`), noch nicht übernommen. 7520 und 7530 teilen `board_name` und Image, brauchen aber
   verschiedene U-Boots: ohne sichere Erkennung kein automatisches Schreiben.
+- **Vorbereitung, Gruppe B:** OCEDO Koala/Raccoon (`fw_setenv`), OCEDO Panda
+  (`ubirmvol`, `fw_setenv`), Sophos RED 15w und ZTE MF281 (`ubiformat`),
+  AVM 7412/7430 (`linux_fs_start` prüfen). Zweiter Entwurf über
+  `platform_pre_upgrade`, ebenfalls in ENTWURF-VORBEREITUNG.md.
+- **ath79 mit lzma:** Die ath79-Rezepte packen das initramfs mit lzma statt
+  unkomprimiert wie OpenWrt, weil entpackt rund 23.7 MB über die Ladeadresse
+  hinausragen könnten [abgeleitet]. Der erste Hardware-Test entscheidet.
+- **64 MB RAM:** die vier ath79-MikroTik, Archer D50, DIR-505; knapp, aber
+  voraussichtlich ausreichend [abgeleitet]. Beim ersten Test `free` nach dem
+  Upload notieren.
 - **ARTIFACTS:** `extra_images` sammelt OpenWrt-ARTIFACTS laut Code ein
   (`copy_output.lua` baut den Quellnamen aus Suffix und Endung), im Bau bestätigt
   ist das noch nicht (RT-AX52 `.trx`, AX3000T/AX3600 `.ubi`, WAX218 `.fit`).
-- **Größengrenzen:** EX400 (bootfs höchstens etwa 11.6 MiB), WSM20 (liest der
+- **Größengrenzen:** RouterBOOT-Netboot, Ladeadressen bei OCEDO, Siemens,
+  DIR-505 und WS-AP3715i (entpackt über 11 MB), EX400 (bootfs höchstens etwa 11.6 MiB), WSM20 (liest der
   Stock-U-Boot mehr als 8 MiB?), TUF/Lyra (Volume `linux`), WAX218
   (mtd12/mtd14), AP3935 (Ladeadresse bei größerem initramfs).
 - **RT-AX59U:** über die Web-UI nur mit einem fremden "transit TRX"; ein eigenes

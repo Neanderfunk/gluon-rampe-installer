@@ -193,7 +193,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [d-link-dap-2660-a1](#d-link-dap-2660-a1) | D-Link DAP-2660 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [d-link-dap-2680-a1](#d-link-dap-2680-a1) | D-Link DAP-2680 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5b58710fad2137eedad874f0fe8fe22082d1edc6 |
 | [d-link-dap-2695-a1](#d-link-dap-2695-a1) | D-Link DAP-2695 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [d-link-dir-505](#d-link-dir-505) | D-Link DIR-505 | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ? | teilweise |  |  |
+| [d-link-dir-505](#d-link-dir-505) | D-Link DIR-505 | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ? | teilweise | ja |  |
 | [d-link-dir825b1](#d-link-dir825b1) | D-Link DIR-825 B1 | ath79-generic | offen | [`sonderweg-d-link-dir825b1`](#familie-sonderweg-d-link-dir825b1) | ? | ? | ? | offen |  |  |
 | [devolo-dlan-pro-1200+-wifi-ac](#devolo-dlan-pro-1200+-wifi-ac) | devolo dLAN pro 1200+ WiFi ac (broken) | ath79-generic | K1d | [`sonderweg-devolo-dlan-pro-1200+-wifi-ac`](#familie-sonderweg-devolo-dlan-pro-1200+-wifi-ac) | tftp-client-am-geraet | nein | nein | nein |  |  |
 | [devolo-wifi-pro-1200e](#devolo-wifi-pro-1200e) | devolo WiFi pro 1200e | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1724d4e9ed7716a5444eca42adf045c2f3afc554 |
@@ -202,8 +202,8 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [devolo-wifi-pro-1750e](#devolo-wifi-pro-1750e) | devolo WiFi pro 1750e | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1c2f7b511514d43d8a826b26e09817b2750a2bf4 |
 | [devolo-wifi-pro-1750i](#devolo-wifi-pro-1750i) | devolo WiFi pro 1750i | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=8d68be8057d6c689025cc236d20b96b77a6ccf30 |
 | [devolo-wifi-pro-1750x](#devolo-wifi-pro-1750x) | devolo WiFi pro 1750x | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=cb3cd526948af3f69da1af18e035177a0a8f58e3 |
-| [enterasys-ws-ap3705i](#enterasys-ws-ap3705i) | Enterasys WS-AP3705i | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=ebddc5f984a240980303aed68524eb615484eef8 |
-| [extreme-networks-ws-ap3805i](#extreme-networks-ws-ap3805i) | Extreme Networks WS-AP3805i | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f8c87aa2d27ab405f284dd4357377ab5c893a345 |
+| [enterasys-ws-ap3705i](#enterasys-ws-ap3705i) | Enterasys WS-AP3705i | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=ebddc5f984a240980303aed68524eb615484eef8 |
+| [extreme-networks-ws-ap3805i](#extreme-networks-ws-ap3805i) | Extreme Networks WS-AP3805i | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f8c87aa2d27ab405f284dd4357377ab5c893a345 |
 | [gl.inet-6416](#gl.inet-6416) | GL.iNet 6416 | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
 | [gl.inet-gl-ar150](#gl.inet-gl-ar150) | GL.iNet GL-AR150 | ath79-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
 | [gl.inet-gl-ar300m-lite](#gl.inet-gl-ar300m-lite) | GL.iNet GL-AR300M Lite | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
@@ -219,8 +219,8 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [netgear-wndrmac-v2](#netgear-wndrmac-v2) | NETGEAR WNDRMAC v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [netgear-wnr2200-16m](#netgear-wnr2200-16m) | NETGEAR WNR2200 16M | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [netgear-wnr2200-8m](#netgear-wnr2200-8m) | NETGEAR WNR2200 8M | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [ocedo-koala](#ocedo-koala) | Ocedo Koala | ath79-generic | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | ja |  |  |
-| [ocedo-raccoon](#ocedo-raccoon) | Ocedo Raccoon | ath79-generic | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | ja |  |  |
+| [ocedo-koala](#ocedo-koala) | Ocedo Koala | ath79-generic | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | ja | ja |  |
+| [ocedo-raccoon](#ocedo-raccoon) | Ocedo Raccoon | ath79-generic | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | ja | ja |  |
 | [onion-omega](#onion-omega) | Onion Omega | ath79-generic | K0 | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
 | [openmesh-a40](#openmesh-a40) | OpenMesh A40 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
 | [openmesh-a60](#openmesh-a60) | OpenMesh A60 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
@@ -244,10 +244,10 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [openmesh-om5p-an](#openmesh-om5p-an) | OpenMesh OM5P-AN | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
 | [plasma-cloud-pa300](#plasma-cloud-pa300) | Plasma Cloud PA300 | ath79-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
 | [plasma-cloud-pa300e](#plasma-cloud-pa300e) | Plasma Cloud PA300E | ath79-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [siemens-ws-ap3610](#siemens-ws-ap3610) | Siemens WS-AP3610 | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise |  | https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Siemens-AP3610 |
+| [siemens-ws-ap3610](#siemens-ws-ap3610) | Siemens WS-AP3610 | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Siemens-AP3610 |
 | [sophos-ap100](#sophos-ap100) | Sophos AP100 | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
 | [sophos-ap100c](#sophos-ap100c) | Sophos AP100C | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
-| [sophos-ap15](#sophos-ap15) | Sophos AP15 (broken) | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0dc58214896aacf67a3759495d70e2b4e9c160d8 |
+| [sophos-ap15](#sophos-ap15) | Sophos AP15 (broken) | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0dc58214896aacf67a3759495d70e2b4e9c160d8 |
 | [sophos-ap15c](#sophos-ap15c) | Sophos AP15C | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  |  |
 | [sophos-ap55](#sophos-ap55) | Sophos AP55 | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
 | [sophos-ap55c](#sophos-ap55c) | Sophos AP55C | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
@@ -263,7 +263,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [tp-link-archer-c7-v2](#tp-link-archer-c7-v2) | TP-Link Archer C7 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [tp-link-archer-c7-v4](#tp-link-archer-c7-v4) | TP-Link Archer C7 v4 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [tp-link-archer-c7-v5](#tp-link-archer-c7-v5) | TP-Link Archer C7 v5 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-archer-d50-v1](#tp-link-archer-d50-v1) | TP-Link Archer D50 v1 (broken) | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise |  |  |
+| [tp-link-archer-d50-v1](#tp-link-archer-d50-v1) | TP-Link Archer D50 v1 (broken) | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja |  |
 | [tp-link-cpe210-v1](#tp-link-cpe210-v1) | TP-Link CPE210 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [tp-link-cpe210-v2](#tp-link-cpe210-v2) | TP-Link CPE210 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [tp-link-cpe210-v3](#tp-link-cpe210-v3) | TP-Link CPE210 v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
@@ -304,19 +304,19 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [ubiquiti-unifi-ap-pro](#ubiquiti-unifi-ap-pro) | Ubiquiti UniFi AP Pro | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  |  |
 | [ubiquiti-unifi-swiss-army-knife-ultra](#ubiquiti-unifi-swiss-army-knife-ultra) | Ubiquiti UniFi Swiss Army Knife Ultra | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5ad05681f2de00c8c6d6449df2b958b0838dbc1a |
 | [zyxel-nbg6616](#zyxel-nbg6616) | Zyxel NBG6616 | ath79-generic | K5 | [`sonderweg-zyxel-nbg6616`](#familie-sonderweg-zyxel-nbg6616) | tftp-client-am-geraet | ja | ? | nein |  |  |
-| [mikrotik-routerboard-951ui-2nd-hap](#mikrotik-routerboard-951ui-2nd-hap) | MikroTik RouterBOARD 951Ui-2nD (hAP) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja |  |  |
-| [mikrotik-routerboard-mapl-2nd](#mikrotik-routerboard-mapl-2nd) | MikroTik RouterBOARD mAPL-2nD (mAP lite) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja |  |  |
-| [mikrotik-routerboard-wap-g-5hact2hnd](#mikrotik-routerboard-wap-g-5hact2hnd) | MikroTik RouterBOARD wAP G-5HacT2HnD (wAP AC) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja |  |  |
-| [mikrotik-routerboard-wapr-2nd](#mikrotik-routerboard-wapr-2nd) | MikroTik RouterBOARD wAPR-2nD (wAP R) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja |  |  |
-| [aerohive-hiveap-121](#aerohive-hiveap-121) | Aerohive HiveAP 121 | ath79-nand | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ? | teilweise |  |  |
+| [mikrotik-routerboard-951ui-2nd-hap](#mikrotik-routerboard-951ui-2nd-hap) | MikroTik RouterBOARD 951Ui-2nD (hAP) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja |  |
+| [mikrotik-routerboard-mapl-2nd](#mikrotik-routerboard-mapl-2nd) | MikroTik RouterBOARD mAPL-2nD (mAP lite) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja |  |
+| [mikrotik-routerboard-wap-g-5hact2hnd](#mikrotik-routerboard-wap-g-5hact2hnd) | MikroTik RouterBOARD wAP G-5HacT2HnD (wAP AC) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja |  |
+| [mikrotik-routerboard-wapr-2nd](#mikrotik-routerboard-wapr-2nd) | MikroTik RouterBOARD wAPR-2nD (wAP R) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja |  |
+| [aerohive-hiveap-121](#aerohive-hiveap-121) | Aerohive HiveAP 121 | ath79-nand | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ? | teilweise | ja |  |
 | [gl.inet-gl-ar300m-nor](#gl.inet-gl-ar300m-nor) | GL.iNet GL-AR300M NOR | ath79-nand | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
 | [gl.inet-gl-ar750s-nor](#gl.inet-gl-ar750s-nor) | GL.iNet GL-AR750S NOR | ath79-nand | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
 | [gl.inet-gl-e750](#gl.inet-gl-e750) | GL.iNet GL-E750 (broken) | ath79-nand | K2 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
 | [gl.inet-gl-xe300](#gl.inet-gl-xe300) | GL.iNet GL-XE300 | ath79-nand | K2 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
 | [netgear-wndr3700-v4](#netgear-wndr3700-v4) | NETGEAR WNDR3700 v4 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [netgear-wndr4300](#netgear-wndr4300) | NETGEAR WNDR4300 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [zte-mf281](#zte-mf281) | ZTE MF281 (broken) | ath79-nand | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1e1695f959e678868bb7911d059b847f38fc9cf4 |
-| [zte-mf286r](#zte-mf286r) | ZTE MF286R (broken) | ath79-nand | K1 | [`sonderweg-zte-mf286r`](#familie-sonderweg-zte-mf286r) | Exploit | nein | nein | ja |  |  |
+| [zte-mf281](#zte-mf281) | ZTE MF281 (broken) | ath79-nand | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1e1695f959e678868bb7911d059b847f38fc9cf4 |
+| [zte-mf286r](#zte-mf286r) | ZTE MF286R (broken) | ath79-nand | K1 | [`sonderweg-zte-mf286r`](#familie-sonderweg-zte-mf286r) | Exploit | nein | nein | ja | ja |  |
 | [zyxel-nbg6716](#zyxel-nbg6716) | Zyxel NBG6716 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [raspberrypi-model-b](#raspberrypi-model-b) | Raspberry Pi 1 Model B/B+ | bcm27xx-bcm2708 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
 | [raspberrypi-2-model-b](#raspberrypi-2-model-b) | Raspberry Pi 2 Model B | bcm27xx-bcm2709 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
@@ -359,10 +359,10 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [plasma-cloud-pa2200](#plasma-cloud-pa2200) | Plasma Cloud PA2200 | ipq40xx-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  | - |
 | [zte-mf289f](#zte-mf289f) | ZTE MF289F | ipq40xx-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0de6a3339f1aadc1de2c9371435e3de239a00645 |
 | [zyxel-nbg6617](#zyxel-nbg6617) | Zyxel NBG6617 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
-| [mikrotik-discg-5acd](#mikrotik-discg-5acd) | MikroTik DISC Lite5 ac (Alias von mikrotik-sxtsq-5-ac-rbsxtsqg-5acd) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja |  | - |
-| [mikrotik-hap-ac2](#mikrotik-hap-ac2) | MikroTik hAP ac2 (RBD52G-5HacD2HnD) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja |  | - |
-| [mikrotik-sxtsq-5-ac-rbsxtsqg-5acd](#mikrotik-sxtsq-5-ac-rbsxtsqg-5acd) | MikroTik SXTsq 5 ac (RBSXTsqG-5acD) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja |  | - |
-| [mikrotik-wap-ac](#mikrotik-wap-ac) | MikroTik wAP ac (RBwAPG-5HacD2HnD, ipq40xx) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja |  | - |
+| [mikrotik-discg-5acd](#mikrotik-discg-5acd) | MikroTik DISC Lite5 ac (Alias von mikrotik-sxtsq-5-ac-rbsxtsqg-5acd) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | Alias | - |
+| [mikrotik-hap-ac2](#mikrotik-hap-ac2) | MikroTik hAP ac2 (RBD52G-5HacD2HnD) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | ja | - |
+| [mikrotik-sxtsq-5-ac-rbsxtsqg-5acd](#mikrotik-sxtsq-5-ac-rbsxtsqg-5acd) | MikroTik SXTsq 5 ac (RBSXTsqG-5acD) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | ja | - |
+| [mikrotik-wap-ac](#mikrotik-wap-ac) | MikroTik wAP ac (RBwAPG-5HacD2HnD, ipq40xx) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | ja | - |
 | [aruba-ap-32x](#aruba-ap-32x) | Aruba AP-324/AP-325, Siemens Scalance W1750D | ipq806x-generic | K5 | [`sonderweg-aruba-ap-32x`](#familie-sonderweg-aruba-ap-32x) | tftp-client | ja | nein | teilweise | ja | https://github.com/lukasstockner/ap325-apboot-openwrt |
 | [extreme-networks-ap3935](#extreme-networks-ap3935) | Extreme Networks AP3935i/e | ipq806x-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | - |
 | [netgear-nighthawk-x4s-r7800](#netgear-nighthawk-x4s-r7800) | NETGEAR Nighthawk X4S R7800 | ipq806x-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
@@ -371,12 +371,12 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [arcadyan-vgv7510kw22](#arcadyan-vgv7510kw22) | Arcadyan VGV7510KW22 / o2 Box 6431 (NOR-Image) | lantiq-xrx200 | K5 | [`sonderweg-arcadyan-vgv7510kw22`](#familie-sonderweg-arcadyan-vgv7510kw22) | recovery-web | teilweise | nein | nein |  | https://forum.openwrt.org/t/installing-lede-u-boot-via-brnboot-web-interface-without-rs232/9857/6 |
 | [avm-fritz-box-3370-rev-2-hynix-nand](#avm-fritz-box-3370-rev-2-hynix-nand) | AVM FRITZ!Box 3370 Rev. 2, Hynix-NAND (Gluon: broken) | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation |
 | [avm-fritz-box-3370-rev-2-micron-nand](#avm-fritz-box-3370-rev-2-micron-nand) | AVM FRITZ!Box 3370 Rev. 2, Micron-NAND (Gluon: broken) | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation |
-| [avm-fritz-box-3390](#avm-fritz-box-3390) | AVM FRITZ!Box 3390 | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja |  |  |
+| [avm-fritz-box-3390](#avm-fritz-box-3390) | AVM FRITZ!Box 3390 | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja | ja |  |
 | [avm-fritz-box-7360-sl](#avm-fritz-box-7360-sl) | AVM FRITZ!Box 7360 SL (Alias 7360 v1) | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | https://fritz-tools.readthedocs.io/ |
 | [avm-fritz-box-7360-v2](#avm-fritz-box-7360-v2) | AVM FRITZ!Box 7360 v2 | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  |  |
-| [avm-fritz-box-7362-sl](#avm-fritz-box-7362-sl) | AVM FRITZ!Box 7362 SL | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja |  | https://openwrt.org/toh/avm/avm_7362_sl#installation |
-| [avm-fritz-box-7412](#avm-fritz-box-7412) | AVM FRITZ!Box 7412 | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja |  | https://openwrt.org/toh/avm/avm_fritz_box_7412#installation |
-| [avm-fritz-box-7430](#avm-fritz-box-7430) | AVM FRITZ!Box 7430 | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja |  | https://openwrt.org/toh/avm/avm_fritz_box_7430#installation |
+| [avm-fritz-box-7362-sl](#avm-fritz-box-7362-sl) | AVM FRITZ!Box 7362 SL | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja | ja | https://openwrt.org/toh/avm/avm_7362_sl#installation |
+| [avm-fritz-box-7412](#avm-fritz-box-7412) | AVM FRITZ!Box 7412 | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja | ja | https://openwrt.org/toh/avm/avm_fritz_box_7412#installation |
+| [avm-fritz-box-7430](#avm-fritz-box-7430) | AVM FRITZ!Box 7430 | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja | ja | https://openwrt.org/toh/avm/avm_fritz_box_7430#installation |
 | [tp-link-td-w8970](#tp-link-td-w8970) | TP-Link TD-W8970 v1 | lantiq-xrx200_legacy | K2 | [`sonderweg-tp-link-td-w8970`](#familie-sonderweg-tp-link-td-w8970) | ssh | nein | nein | nein |  |  |
 | [tp-link-td-w8980](#tp-link-td-w8980) | TP-Link TD-W8980 (Alias TD-W9980; Gluon: broken, 5 GHz) | lantiq-xrx200_legacy | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein |  |  |
 | [avm-fritz-box-7312](#avm-fritz-box-7312) | AVM FRITZ!Box 7312 | lantiq-xway | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | https://fritz-tools.readthedocs.io/ |
@@ -420,14 +420,14 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [ubiquiti-unifi-6-lr-v2](#ubiquiti-unifi-6-lr-v2) | Ubiquiti UniFi 6 LR v2 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
 | [ubiquiti-unifi-6-lr-v3](#ubiquiti-unifi-6-lr-v3) | Ubiquiti UniFi 6 LR v3 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
 | [xiaomi-redmi-router-ax6s](#xiaomi-redmi-router-ax6s) | Xiaomi Redmi Router AX6S / AX3200 | mediatek-mt7622 | K0+ | [`sonderweg-xiaomi-redmi-router-ax6s`](#familie-sonderweg-xiaomi-redmi-router-ax6s) | webui-upload | nein | nein | nein |  | - |
-| [enterasys-ws-ap3715i](#enterasys-ws-ap3715i) | Enterasys WS-AP3715i | mpc85xx-p1010 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b |
-| [sophos-red-15w-rev.1](#sophos-red-15w-rev.1) | Sophos RED 15w Rev. 1 | mpc85xx-p1010 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise |  |  |
+| [enterasys-ws-ap3715i](#enterasys-ws-ap3715i) | Enterasys WS-AP3715i | mpc85xx-p1010 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b |
+| [sophos-red-15w-rev.1](#sophos-red-15w-rev.1) | Sophos RED 15w Rev. 1 | mpc85xx-p1010 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja |  |
 | [tp-link-tl-wdr4900-v1](#tp-link-tl-wdr4900-v1) | TP-Link TL-WDR4900 v1 | mpc85xx-p1010 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [aerohive-hiveap-330](#aerohive-hiveap-330) | Aerohive HiveAP 330 | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise |  |  |
-| [enterasys-ws-ap3710i](#enterasys-ws-ap3710i) | Enterasys WS-AP3710i | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=16b01fb1b9c99513c318109bef96a1a3545c57a0 |
-| [extreme-networks-ws-ap3825i](#extreme-networks-ws-ap3825i) | Extreme Networks WS-AP3825i | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise |  | https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923 |
+| [aerohive-hiveap-330](#aerohive-hiveap-330) | Aerohive HiveAP 330 | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja |  |
+| [enterasys-ws-ap3710i](#enterasys-ws-ap3710i) | Enterasys WS-AP3710i | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=16b01fb1b9c99513c318109bef96a1a3545c57a0 |
+| [extreme-networks-ws-ap3825i](#extreme-networks-ws-ap3825i) | Extreme Networks WS-AP3825i | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923 |
 | [hewlett-packard-msm460](#hewlett-packard-msm460) | HPE MSM460 | mpc85xx-p1020 | K5 | [`sonderweg-hewlett-packard-msm460`](#familie-sonderweg-hewlett-packard-msm460) | tftp-server-am-geraet | nein | nein | nein |  | https://github.com/blocktrron/msm460-flashing?tab=readme-ov-file |
-| [ocedo-panda](#ocedo-panda) | OCEDO Panda | mpc85xx-p1020 | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | teilweise |  |  |
+| [ocedo-panda](#ocedo-panda) | OCEDO Panda | mpc85xx-p1020 | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | teilweise | ja |  |
 | [linksys-mx5300](#linksys-mx5300) | Linksys MX5300 | qualcommax-ipq807x | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
 | [netgear-wax218](#netgear-wax218) | NETGEAR WAX218 | qualcommax-ipq807x | K1 | [`sonderweg-netgear-wax218`](#familie-sonderweg-netgear-wax218) | webui-upload | nein | nein | ja | ja | - |
 | [tp-link-eap620-hd-v1](#tp-link-eap620-hd-v1) | TP-Link EAP620 HD v1 | qualcommax-ipq807x | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | - |
@@ -461,7 +461,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [genexis-pulse-ex400](#genexis-pulse-ex400) | Genexis/Inteno Pulse EX400 | ramips-mt7621 | K1 | [`sonderweg-genexis-pulse-ex400`](#familie-sonderweg-genexis-pulse-ex400) | webui-upload | nein | nein | ja | ja | https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400 |
 | [gl.inet-gl-mt1300](#gl.inet-gl-mt1300) | GL.iNet GL-MT1300 (Beryl) | ramips-mt7621 | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
 | [mercusys-mr70x-v1](#mercusys-mr70x-v1) | Mercusys MR70X v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [mikrotik-routerboard-750gr3](#mikrotik-routerboard-750gr3) | MikroTik hEX RB750Gr3 (Alias mikrotik-routerboard-hex-v3) | ramips-mt7621 | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja |  | https://openwrt.org/toh/mikrotik/common |
+| [mikrotik-routerboard-750gr3](#mikrotik-routerboard-750gr3) | MikroTik hEX RB750Gr3 (Alias mikrotik-routerboard-hex-v3) | ramips-mt7621 | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja | https://openwrt.org/toh/mikrotik/common |
 | [netgear-eax12](#netgear-eax12) | NETGEAR EAX12 (Aliase EAX11 v2, EAX15 v2) | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  |  |
 | [netgear-ex6150](#netgear-ex6150) | NETGEAR EX6150 (v1) | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-wi-fi-range-extender-ex6150-v2/ |
 | [netgear-r6220](#netgear-r6220) | NETGEAR R6220 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-r6220/ |
@@ -1340,6 +1340,7 @@ AVM FRITZ!Box 3390 · lantiq-xrx200 · K1
 - **Stock-Teile:** -
 - **RAM:** 128 MB
 - **Gluon-RAMpe passt:** ja: eva_ramboot.py bootet ein beliebiges initramfs [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-3390.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`
 - **Quelle (OpenWrt-Commit):** 73ec21cde2cde1fc27f66b08e8762cdc3c78b61a
 
 #### avm-fritz-box-7362-sl
@@ -1356,6 +1357,7 @@ AVM FRITZ!Box 7362 SL · lantiq-xrx200 · K1
 - **Stock-Teile:** -
 - **RAM:** 128 MB
 - **Gluon-RAMpe passt:** ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7362-sl.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`
 - **Quelle (OpenWrt-Commit):** eae6cac6a30b95bef04d033ed8a303b7e35a078b
 - **Detail-Anleitung:** https://openwrt.org/toh/avm/avm_7362_sl#installation
 
@@ -1373,6 +1375,7 @@ AVM FRITZ!Box 7412 · lantiq-xrx200 · K1
 - **Stock-Teile:** -
 - **RAM:** 128 MB
 - **Gluon-RAMpe passt:** ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7412.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch
 - **Quelle (OpenWrt-Commit):** 20f48c8ae334f8502e756282995cc84d89fa81c1
 - **Detail-Anleitung:** https://openwrt.org/toh/avm/avm_fritz_box_7412#installation
 
@@ -1390,6 +1393,7 @@ AVM FRITZ!Box 7430 · lantiq-xrx200 · K1
 - **Stock-Teile:** -
 - **RAM:** 128 MB
 - **Gluon-RAMpe passt:** ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7430.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch
 - **Quelle (OpenWrt-Commit):** 6c85a449a988876fdfd4ce84d6aa5ffe4a2820c1
 - **Detail-Anleitung:** https://openwrt.org/toh/avm/avm_fritz_box_7430#installation
 
@@ -4031,6 +4035,7 @@ MikroTik RouterBOARD 951Ui-2nD (hAP) · ath79-mikrotik · K1
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
 - **Gluon-RAMpe passt:** ja: Gluon liefert hier selbst das initramfs als factory (mikrotik.inc); Gluon-RAMpe wäre die Variante mit Upload-Seite. Prüfen: startet Gluons initramfs-factory überhaupt im Config-Mode (Befund 70_initramfs_test aus NOTIZEN.md)? [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/mikrotik-routerboard-951ui-2nd-hap.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp
 - **Quelle (OpenWrt-Commit):** 5ce64e0646fcd5c4f374b4de898b591560c32e18 [geprüft]
 
 #### mikrotik-routerboard-mapl-2nd
@@ -4047,6 +4052,7 @@ MikroTik RouterBOARD mAPL-2nD (mAP lite) · ath79-mikrotik · K1
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
 - **Gluon-RAMpe passt:** ja: Netboot nimmt ein initramfs. Neanderfunk-Patch setzt factory = false (ohne dokumentierten Grund), obwohl mikrotik.inc sonst das initramfs als factory ausliefert
+- **Gluon-RAMpe-Rezept:** devices/mikrotik-routerboard-mapl-2nd.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp
 - **Quelle (OpenWrt-Commit):** eb38af788180d624e5b37aa5db1fe3766b138dc8 [geprüft]
 
 #### mikrotik-routerboard-wap-g-5hact2hnd
@@ -4063,6 +4069,7 @@ MikroTik RouterBOARD wAP G-5HacT2HnD (wAP AC) · ath79-mikrotik · K1
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
 - **Gluon-RAMpe passt:** ja: Netboot nimmt ein initramfs. Neanderfunk-Patch setzt factory = false (ohne dokumentierten Grund), obwohl mikrotik.inc sonst das initramfs als factory ausliefert
+- **Gluon-RAMpe-Rezept:** devices/mikrotik-routerboard-wap-g-5hact2hnd.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM mit ath10k am knappsten
 - **Quelle (OpenWrt-Commit):** 6aaa5ce2c5138877e0f0504c3bd536b40e9af928 [geprüft]
 
 #### mikrotik-routerboard-wapr-2nd
@@ -4079,6 +4086,7 @@ MikroTik RouterBOARD wAPR-2nD (wAP R) · ath79-mikrotik · K1
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
 - **Gluon-RAMpe passt:** ja: Gluon liefert hier selbst das initramfs als factory (mikrotik.inc); Gluon-RAMpe wäre die Variante mit Upload-Seite. Prüfen: startet Gluons initramfs-factory überhaupt im Config-Mode (Befund 70_initramfs_test aus NOTIZEN.md)? [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/mikrotik-routerboard-wapr-2nd.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp
 - **Quelle (OpenWrt-Commit):** 817bf0204569ca28121576c13f48186ed7b7c2ae [geprüft]
 
 #### mikrotik-discg-5acd
@@ -4095,6 +4103,7 @@ MikroTik DISC Lite5 ac (Alias von mikrotik-sxtsq-5-ac-rbsxtsqg-5acd) · ipq40xx-
 - **Stock-Teile:** -
 - **RAM:** ?
 - **Gluon-RAMpe passt:** ja: wie SXTsq
+- **Gluon-RAMpe-Rezept:** Alias: Image aus devices/mikrotik-sxtsq-5-ac-rbsxtsqg-5acd.sh; RAM des DISC nicht belegt
 - **Quelle (OpenWrt-Commit):** OpenWrt d1f1e5269ed992e6fc30d575b43b0913c9e58ca2 (Gluon-Alias)
 - **Detail-Anleitung:** -
 
@@ -4112,6 +4121,7 @@ MikroTik hAP ac2 (RBD52G-5HacD2HnD) · ipq40xx-mikrotik · K1
 - **Stock-Teile:** -
 - **RAM:** 128 MB
 - **Gluon-RAMpe passt:** ja: Netboot nimmt ein initramfs; laut RAMpe-NOTIZEN startet ein Gluon-initramfs nicht im Config-Mode, die Gluon-RAMpe wäre der passende Ersatz für Gluons eigenes initramfs-"factory" [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/mikrotik-hap-ac2.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); schaltet Gluons "factory" (= Community-initramfs ohne Config-Mode) ab
 - **Quelle (OpenWrt-Commit):** OpenWrt faea7becafc634dc882f0ad8f9388862ccd5bd0d
 - **Detail-Anleitung:** -
 
@@ -4129,6 +4139,7 @@ MikroTik SXTsq 5 ac (RBSXTsqG-5acD) · ipq40xx-mikrotik · K1
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** ja: wie hAP ac2; heute nur mit OpenWrt-initramfs als Zwischenschritt
+- **Gluon-RAMpe-Rezept:** devices/mikrotik-sxtsq-5-ac-rbsxtsqg-5acd.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP)
 - **Quelle (OpenWrt-Commit):** OpenWrt d1f1e5269ed992e6fc30d575b43b0913c9e58ca2
 - **Detail-Anleitung:** -
 
@@ -4146,6 +4157,7 @@ MikroTik wAP ac (RBwAPG-5HacD2HnD, ipq40xx) · ipq40xx-mikrotik · K1
 - **Stock-Teile:** -
 - **RAM:** 128 MB
 - **Gluon-RAMpe passt:** ja: wie hAP ac2
+- **Gluon-RAMpe-Rezept:** devices/mikrotik-wap-ac.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP)
 - **Quelle (OpenWrt-Commit):** OpenWrt 7f54bf6fe2ac331d018cd273bb1abe04493b5457
 - **Detail-Anleitung:** -
 
@@ -4163,6 +4175,7 @@ MikroTik hEX RB750Gr3 (Alias mikrotik-routerboard-hex-v3) · ramips-mt7621 · K1
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** ja: Netboot lädt ein beliebiges initramfs (ELF); Gluon-RAMpe statt OpenWrt-initramfs [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/mikrotik-routerboard-750gr3.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` (ELF); Netboot (BOOTP/DHCP + TFTP)
 - **Quelle (OpenWrt-Commit):** 52f2d7d2a9dc3e142bb957462a30806eb5cebaf4 (+ faf94d926e2810f895f2a98d4a49ee2fe8f673e8: Erstunterstützung mit Bootloader-Tausch, überholt)
 - **Detail-Anleitung:** https://openwrt.org/toh/mikrotik/common
 
@@ -4438,6 +4451,7 @@ Ocedo Koala · ath79-generic · K1
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
 - **Gluon-RAMpe passt:** ja: RAMpe-initramfs unter diesem Namen bereitstellen; die Gluon-RAMpe muss zusätzlich `fw_setenv bootcmd run bootcmd_1` setzen (OpenWrt-platform.sh tut es nicht) [geprüft im Baum]
+- **Gluon-RAMpe-Rezept:** devices/ocedo-koala.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `koala-uImage-initramfs-lzma.bin` per TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`fw_setenv bootcmd run bootcmd_1`)
 - **Quelle (OpenWrt-Commit):** c4931713df8ffb3c4e5c1be7d0b6d4aa96a7dd4c [geprüft]
 
 #### ocedo-raccoon
@@ -4454,6 +4468,7 @@ Ocedo Raccoon · ath79-generic · K1
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
 - **Gluon-RAMpe passt:** ja: RAMpe-initramfs unter diesem Namen bereitstellen; die Gluon-RAMpe muss zusätzlich `fw_setenv bootcmd run bootcmd_1` setzen (OpenWrt-platform.sh tut es nicht) [geprüft im Baum]
+- **Gluon-RAMpe-Rezept:** devices/ocedo-raccoon.sh (Rezept-Entwurf, nicht gebaut): wie Koala, als `raccoon-uImage-initramfs-lzma.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`fw_setenv`)
 - **Quelle (OpenWrt-Commit):** 647614803473757e3b2d93d46938afccd61a5a5d [geprüft]
 
 #### ocedo-panda
@@ -4470,6 +4485,7 @@ OCEDO Panda · mpc85xx-p1020 · K1
 - **Stock-Teile:** -
 - **RAM:** 1 GB
 - **Gluon-RAMpe passt:** teilweise: Ramboot passt; ubirmvol und fw_setenv vor dem sysupgrade macht die Gluon-RAMpe nicht
+- **Gluon-RAMpe-Rezept:** devices/ocedo-panda.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` als `panda-uimage-factory` + DTB als `panda.fdt`; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubirmvol`, `fw_setenv`)
 - **Quelle (OpenWrt-Commit):** b368373fab45f31963cd2bc1c6ab90e0a577e611
 
 ### Familie `recovery-web`
@@ -4625,6 +4641,7 @@ D-Link DIR-505 · ath79-generic · K4
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
 - **Gluon-RAMpe passt:** teilweise: RAMpe-initramfs per tftpboot statt OpenWrt-initramfs; seriell bleibt [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/d-link-dir-505.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; UART, IPs und Ladeadresse nicht belegt; 64 MB RAM
 - **Quelle (OpenWrt-Commit):** c9ac7b17296ff29d9df39db8a68c449ef1514bbd [geprüft]
 
 #### enterasys-ws-ap3705i
@@ -4641,6 +4658,7 @@ Enterasys WS-AP3705i · ath79-generic · K4
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als 1401A8C0.img statt OpenWrt-initramfs, Upload-Seite statt scp; seriell bleibt
+- **Gluon-RAMpe-Rezept:** devices/enterasys-ws-ap3705i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `1401A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell
 - **Quelle (OpenWrt-Commit):** ebddc5f984a240980303aed68524eb615484eef8 [geprüft]
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=ebddc5f984a240980303aed68524eb615484eef8
 
@@ -4658,6 +4676,7 @@ Extreme Networks WS-AP3805i · ath79-generic · K4
 - **Stock-Teile:** keine
 - **RAM:** 256 MB [Commit]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als 1D01A8C0.img statt OpenWrt-initramfs; seriell bleibt
+- **Gluon-RAMpe-Rezept:** devices/extreme-networks-ws-ap3805i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `1D01A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell
 - **Quelle (OpenWrt-Commit):** f8c87aa2d27ab405f284dd4357377ab5c893a345 [geprüft]
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f8c87aa2d27ab405f284dd4357377ab5c893a345
 
@@ -4675,6 +4694,7 @@ Siemens WS-AP3610 · ath79-generic · K4
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit: 2x 64M DDR1]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als 1401A8C0.img; Achtung, das initramfs ist hier unkomprimiert (KERNEL_INITRAMFS ... uImage none, OpenWrt 23.7 MB); seriell bleibt
+- **Gluon-RAMpe-Rezept:** devices/siemens-ws-ap3610.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma statt unkomprimiert wie bei OpenWrt) als `1401A8C0.img` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** d2b8ccb1c04def81224da6f42f644c7d239b9986 [geprüft]
 - **Detail-Anleitung:** https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Siemens-AP3610
 
@@ -4692,6 +4712,7 @@ Sophos AP15 (broken) · ath79-generic · K4
 - **Stock-Teile:** keine
 - **RAM:** ?
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt OpenWrt-initramfs; seriell bleibt
+- **Gluon-RAMpe-Rezept:** devices/sophos-ap15.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-"broken"-Gerät gezielt; `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; RAM nicht belegt
 - **Quelle (OpenWrt-Commit):** 0dc58214896aacf67a3759495d70e2b4e9c160d8 (Einführung, Anleitung); fc31261c3307458e38c9a676211a25c99c044ece (DTS-Umbenennung) [geprüft]
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0dc58214896aacf67a3759495d70e2b4e9c160d8
 
@@ -4709,6 +4730,7 @@ TP-Link Archer D50 v1 (broken) · ath79-generic · K4
 - **Stock-Teile:** für die Installation keine; Rückweg: OEM-Datei per `dd skip=257 bs=512 count=15616` zuschneiden (Hersteller-Download TP-Link)
 - **RAM:** 64 MB [Commit]
 - **Gluon-RAMpe passt:** teilweise: RAMpe-initramfs per tftpboot; seriell bleibt
+- **Gluon-RAMpe-Rezept:** devices/tp-link-archer-d50-v1.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-"broken"-Gerät gezielt; `initramfs-kernel.bin` (lzma, TP-Link-Header) per U-Boot-TFTP; 64 MB RAM knapp
 - **Quelle (OpenWrt-Commit):** f5d2c91415a68f554815860d574145644fc31c16 [geprüft]
 
 #### aerohive-hiveap-121
@@ -4725,6 +4747,7 @@ Aerohive HiveAP 121 · ath79-nand · K4
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
 - **Gluon-RAMpe passt:** teilweise: statt factory per nand write könnte man die Gluon-RAMpe per tftpboot starten; seriell bleibt [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/aerohive-hiveap-121.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; Gluon-factory per `nand write` ist der einfachere Weg
 - **Quelle (OpenWrt-Commit):** 62db255543c8fb5d1787caf36c6c7c9c51db71cd [geprüft]
 
 #### zte-mf281
@@ -4741,6 +4764,7 @@ ZTE MF281 (broken) · ath79-nand · K4
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt OpenWrt-initramfs; die Gluon-RAMpe müsste aber das factory (nicht sysupgrade) per mtd schreiben [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/zte-mf281.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-"broken"-Gerät gezielt; `initramfs-kernel.bin` als `speedbox-2.bin` per U-Boot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubiformat`, nicht durch den Commit gedeckt)
 - **Quelle (OpenWrt-Commit):** 1e1695f959e678868bb7911d059b847f38fc9cf4 [geprüft]
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1e1695f959e678868bb7911d059b847f38fc9cf4
 
@@ -4863,6 +4887,7 @@ Enterasys WS-AP3715i · mpc85xx-p1010 · K4
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** teilweise: nach dem seriellen TFTP-Boot macht die Gluon-RAMpe den sysupgrade-Schritt statt scp; bootcmd/saveenv bleibt seriell
+- **Gluon-RAMpe-Rezept:** devices/enterasys-ws-ap3715i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `ap3715.bin` per U-Boot-TFTP; entpackt über 11 MB droht Überlappung
 - **Quelle (OpenWrt-Commit):** 765f66810a3324cc35fa6471ee8eeee335ba8c2b
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b
 
@@ -4880,6 +4905,7 @@ Sophos RED 15w Rev. 1 · mpc85xx-p1010 · K4
 - **Stock-Teile:** -
 - **RAM:** 128 MB
 - **Gluon-RAMpe passt:** teilweise: ubiformat vor dem sysupgrade macht die Gluon-RAMpe nicht
+- **Gluon-RAMpe-Rezept:** devices/sophos-red-15w-rev.1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (FIT) als `kernel.bin` per U-Boot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubiformat`)
 - **Quelle (OpenWrt-Commit):** 97e4311fca73d064d17065e7844699aa777cb157
 
 #### aerohive-hiveap-330
@@ -4896,6 +4922,7 @@ Aerohive HiveAP 330 · mpc85xx-p1020 · K4
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt scp+sysupgrade; der serielle Teil bleibt
+- **Gluon-RAMpe-Rezept:** devices/aerohive-hiveap-330.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per U-Boot-TFTP; der U-Boot-Patch bleibt Handarbeit (Entwurf in docs/ENTWURF-VORBEREITUNG.md)
 - **Quelle (OpenWrt-Commit):** f2b7d9dc1ca3d33f14961cf2885639f4f9e8965e
 
 #### enterasys-ws-ap3710i
@@ -4912,6 +4939,7 @@ Enterasys WS-AP3710i · mpc85xx-p1020 · K4
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** teilweise: wie WS-AP3715i
+- **Gluon-RAMpe-Rezept:** devices/enterasys-ws-ap3710i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` als `01C8A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell
 - **Quelle (OpenWrt-Commit):** 16b01fb1b9c99513c318109bef96a1a3545c57a0
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=16b01fb1b9c99513c318109bef96a1a3545c57a0
 
@@ -4929,6 +4957,7 @@ Extreme Networks WS-AP3825i · mpc85xx-p1020 · K4
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** teilweise: wie WS-AP3715i
+- **Gluon-RAMpe-Rezept:** devices/extreme-networks-ws-ap3825i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (FIT) per U-Boot-TFTP; `bootcmd` bleibt seriell
 - **Quelle (OpenWrt-Commit):** 7e614820a89208c4e91a3a5f9de07a5402accdaa
 - **Detail-Anleitung:** https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923
 
@@ -5589,6 +5618,7 @@ ZTE MF286R (broken) · ath79-nand · K1
 - **Stock-Teile:** für die Installation keine; Rückweg nur mit eigenem Backup (Stock-Firmware nicht öffentlich, providerspezifisch); TFTP-Notweg braucht 8 MB Nullen vor dem initramfs (`root_uImage`, Server 192.0.0.1/8)
 - **RAM:** 128 MB [Commit]
 - **Gluon-RAMpe passt:** ja (Exploit-Weg): genau der Fall "initramfs aus der Stock-Shell schreiben", Gluon-RAMpe statt OpenWrt-initramfs [abgeleitet]; Gluon markiert das Gerät broken mit "case must be opened" - laut Commit nicht zwingend
+- **Gluon-RAMpe-Rezept:** devices/zte-mf286r.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` per `nandwrite` nach dem Exploit (Weg nur für die MF286A belegt)
 - **Quelle (OpenWrt-Commit):** 7ac8da00609f42b8aba74b7efc6b0d055b7cef3e [geprüft]
 
 ### Familie `sonderweg-zyxel-nbg6616`

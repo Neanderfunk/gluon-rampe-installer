@@ -2,9 +2,12 @@
 
 Stand 10.10.2026, aus der Rezept-Recherche. Nicht gebaut, nicht getestet.
 Für die "teilweise"-Geräte, bei denen der Upload allein nicht reicht: Aruba
-AP-303/303H/365, AVM FRITZ!Box 7530/Repeater 1200/3000, ZTE MF289F.
+AP-303/303H/365, AVM FRITZ!Box 7530/Repeater 1200/3000, ZTE MF289F (Variante A);
+OCEDO Koala/Raccoon/Panda, Sophos RED 15w, ZTE MF281, AVM 7412/7430 (Variante B).
 
-## Aufbau und Skripte
+## Variante A: Haken im Controller der Upload-Seite
+
+### Aufbau und Skripte
 
 Machbar für Aruba AP-303/303H/365, AVM 7530/Repeater 1200/3000 und ZTE
 MF289F [abgeleitet]. Die Befehle stammen wörtlich aus den Commits; ergänzt
@@ -217,6 +220,245 @@ Das wäre ein Eingriff in den OpenWrt-Baum nach `make update` (dort setzt
 `make update` ihn wieder zurück). Ob die Stock-UI der RT-AX59U ein solches
 TRX annimmt, ist nicht belegt; der Commit nennt nur ein fremdes "transit TRX".
 Deshalb nicht im Rezept.
+
+## Variante B: Haken in `platform_pre_upgrade`
+
+Zweiter Entwurf aus der Rezept-Recherche (Gruppe B), ebenfalls nicht übernommen.
+Statt den Controller zu ändern, hängt sich die RAMpe in OpenWrts sysupgrade:
+stage2 ruft `platform_pre_upgrade` auf, nachdem die Dienste beendet sind. Das
+greift nur auf Targets ohne eigenes `platform_pre_upgrade` (in 24.10 haben
+filogic, qualcommax und imx eins), und Fehler sieht man nur auf der seriellen
+Konsole, weil die Seite dann schon "wird aktualisiert" zeigt. Variante A
+(Controller) meldet Fehler auf der Seite und deckt auch die ipq40xx-Geräte
+ab; vor der Übernahme beide abwägen.
+
+`overlay/lib/gluon-rampe/prepare.d/avm,fritz7412`:
+
+```sh
+#!/bin/sh
+# AVM FRITZ!Box 7412 / 7430 (lantiq-xrx200): Steht linux_fs_start auf 1,
+# waehlt der Bootloader den falschen Partitionssatz.
+# Quelle: OpenWrt 20f48c8ae334f8502e756282995cc84d89fa81c1 (7412) und
+# 6c85a449a988876fdfd4ce84d6aa5ffe4a2820c1 (7430):
+#   fritz_tffs_nand -d /dev/mtd1 -n linux_fs_start
+# mtd1 ist laut DTS "nand-tffs"; hier ueber den Namen gesucht.
+# Bei 1 nicht flashen, sondern neu starten: die Box startet dann FRITZ!OS
+# (die RAMpe lag nur im RAM). Abhilfe laut Commit: FRITZ!OS-Update oder
+# Recovery, beim 7430 auch per FTP auf 0 setzen.
+# Ungetestet. Die Meldung erscheint nur auf der Konsole.
+. /lib/functions.sh
+idx="$(find_mtd_index nand-tffs)"
+[ -n "$idx" ] || exit 0
+val="$(fritz_tffs_nand -d "/dev/mtd$idx" -n linux_fs_start 2>/dev/null | tr -d '\000\n ')"
+if [ "$val" = 1 ]; then
+	echo "linux_fs_start=1: Abbruch ohne Flashen, Neustart in FRITZ!OS"
+	sync
+	reboot -f
+fi
+exit 0
+```
+
+`overlay/lib/gluon-rampe/prepare.d/avm,fritz7430`:
+
+```sh
+#!/bin/sh
+# AVM FRITZ!Box 7412 / 7430 (lantiq-xrx200): Steht linux_fs_start auf 1,
+# waehlt der Bootloader den falschen Partitionssatz.
+# Quelle: OpenWrt 20f48c8ae334f8502e756282995cc84d89fa81c1 (7412) und
+# 6c85a449a988876fdfd4ce84d6aa5ffe4a2820c1 (7430):
+#   fritz_tffs_nand -d /dev/mtd1 -n linux_fs_start
+# mtd1 ist laut DTS "nand-tffs"; hier ueber den Namen gesucht.
+# Bei 1 nicht flashen, sondern neu starten: die Box startet dann FRITZ!OS
+# (die RAMpe lag nur im RAM). Abhilfe laut Commit: FRITZ!OS-Update oder
+# Recovery, beim 7430 auch per FTP auf 0 setzen.
+# Ungetestet. Die Meldung erscheint nur auf der Konsole.
+. /lib/functions.sh
+idx="$(find_mtd_index nand-tffs)"
+[ -n "$idx" ] || exit 0
+val="$(fritz_tffs_nand -d "/dev/mtd$idx" -n linux_fs_start 2>/dev/null | tr -d '\000\n ')"
+if [ "$val" = 1 ]; then
+	echo "linux_fs_start=1: Abbruch ohne Flashen, Neustart in FRITZ!OS"
+	sync
+	reboot -f
+fi
+exit 0
+```
+
+`overlay/lib/gluon-rampe/prepare.d/ocedo,koala`:
+
+```sh
+#!/bin/sh
+# OCEDO Koala und Raccoon (ath79-generic): Flip-Flop-Bootloader auf den Teil
+# stellen, in den sysupgrade schreibt. OpenWrts sysupgrade tut das nicht.
+# Quelle: OpenWrt c4931713df8ffb3c4e5c1be7d0b6d4aa96a7dd4c (Koala) und
+# 647614803473757e3b2d93d46938afccd61a5a5d (Raccoon), Abschnitt Installation:
+#   fw_setenv bootcmd run bootcmd_1
+# fw_env.config: package/boot/uboot-envtools/files/ath79 (ocedo,koala|raccoon).
+# Ungetestet.
+fw_setenv bootcmd run bootcmd_1
+```
+
+`overlay/lib/gluon-rampe/prepare.d/ocedo,panda`:
+
+```sh
+#!/bin/sh
+# OCEDO Panda (mpc85xx-p1020): UBI-Volumes der Hersteller-Firmware (erster
+# Satz) entfernen, damit sysupgrade Platz findet, und U-Boot auf das
+# OpenWrt-Kernel-Volume umstellen.
+# Quelle: OpenWrt b368373fab45f31963cd2bc1c6ab90e0a577e611, Schritte 6 und 7
+# (Befehle unveraendert; bootcmd_owrt steht dort auf zwei Zeilen umbrochen).
+# /dev/ubi0 haengt dank bootargs-override "ubi.mtd=3,2048" (panda.dts) schon.
+# kernel2/rootfs2/devicetree2/storage bleiben, wie im Commit vorgeschlagen,
+# fuer den Rueckweg stehen.
+# Ungetestet.
+for vol in kernel1 rootfs1 devicetree1; do
+	ubirmvol /dev/ubi0 --name="$vol" || echo "Volume $vol nicht entfernt (schon weg?)"
+done
+fw_setenv bootcmd_owrt "ubi part ubi && ubi read 0x1000000 kernel && bootm 0x1000000"
+fw_setenv bootargs_owrt "setenv bootargs console=ttyS0,115200 ubi.mtd=3,2048"
+fw_setenv bootcmd "run bootargs_owrt; run bootcmd_owrt"
+```
+
+`overlay/lib/gluon-rampe/prepare.d/ocedo,raccoon`:
+
+```sh
+#!/bin/sh
+# OCEDO Koala und Raccoon (ath79-generic): Flip-Flop-Bootloader auf den Teil
+# stellen, in den sysupgrade schreibt. OpenWrts sysupgrade tut das nicht.
+# Quelle: OpenWrt c4931713df8ffb3c4e5c1be7d0b6d4aa96a7dd4c (Koala) und
+# 647614803473757e3b2d93d46938afccd61a5a5d (Raccoon), Abschnitt Installation:
+#   fw_setenv bootcmd run bootcmd_1
+# fw_env.config: package/boot/uboot-envtools/files/ath79 (ocedo,koala|raccoon).
+# Ungetestet.
+fw_setenv bootcmd run bootcmd_1
+```
+
+`overlay/lib/gluon-rampe/prepare.d/sophos,red-15w-rev1`:
+
+```sh
+#!/bin/sh
+# Sophos RED 15w Rev. 1 (mpc85xx-p1010): frisches UBI anlegen.
+# Quelle: OpenWrt 97e4311fca73d064d17065e7844699aa777cb157, Schritt 7:
+#   ubiformat /dev/mtd4 -y
+# mtd4 ist laut red-15w-rev1.dts die Partition "ubi" (u-boot, u-boot-env,
+# provisioning, kernel, ubi); hier ueber den Namen gesucht.
+# bootcmd/bootargs_owrt + saveenv bleiben seriell (Commit Schritt 3), die
+# RAMpe kommt ohnehin nur per TFTP von der Konsole aus hoch.
+# Ungetestet.
+. /lib/functions.sh
+idx="$(find_mtd_index ubi)"
+[ -n "$idx" ] || { echo "keine mtd-Partition ubi"; exit 1; }
+ubidetach -p "/dev/mtd$idx" 2>/dev/null
+ubiformat "/dev/mtd$idx" -y
+```
+
+`overlay/lib/gluon-rampe/prepare.d/zte,mf281`:
+
+```sh
+#!/bin/sh
+# ZTE MF281 (ath79-nand): Der Commit schreibt statt sysupgrade das
+# factory-Image (Kernel + frisches UBI) mit "mtd write factory.bin firmware".
+# Die RAMpe nimmt nur sysupgrade-Images. Gleichwertig [abgeleitet]: das UBI
+# im Bereich "ubi" (Teil von "firmware", mtd-Layout qca9563_zte_mf281.dts)
+# neu formatieren; nand_do_upgrade schreibt danach den Kernel nach "kernel"
+# und legt die Volumes im leeren UBI an.
+# Quelle des Original-Wegs: OpenWrt 1e1695f959e678868bb7911d059b847f38fc9cf4.
+# Ungetestet, nicht durch den Commit gedeckt.
+. /lib/functions.sh
+idx="$(find_mtd_index ubi)"
+[ -n "$idx" ] || { echo "keine mtd-Partition ubi"; exit 1; }
+ubidetach -p "/dev/mtd$idx" 2>/dev/null
+ubiformat "/dev/mtd$idx" -y
+```
+
+`overlay/lib/upgrade/zz-gluon-rampe.sh`:
+
+```sh
+# Gluon-RAMpe: geraeteabhaengige Vorbereitung vor dem Flashen.
+#
+# Manche Geraete brauchen vor dem sysupgrade einen Schritt, den OpenWrts
+# Anleitung von Hand per SSH vorsieht (UBI-Volumes der Hersteller-Firmware
+# entfernen, U-Boot-Umgebung umstellen, ubiformat). Die Gluon-RAMpe hat keine
+# Shell fuer die Nutzer, also erledigt sie das selbst:
+# /lib/gluon-rampe/prepare.d/<board_name>, falls vorhanden.
+#
+# Einhaengepunkt: OpenWrts stage2 (package/base-files/files/lib/upgrade/stage2)
+# ruft platform_pre_upgrade auf, nachdem die Dienste beendet sind und bevor
+# es in die ramfs wechselt; das Rootfs der RAMpe (fw_setenv, ubi-utils) ist
+# dann noch da. Diese Datei wird per "include /lib/upgrade" nach platform.sh
+# eingelesen ("zz-" sortiert hinter "platform.sh"). Bringt das Target selbst
+# ein platform_pre_upgrade mit (in OpenWrt 24.10: mediatek/filogic,
+# qualcommax/ipq807x, imx), bleibt dessen Fassung stehen und die
+# RAMpe-Vorbereitung entfaellt dort.
+
+if ! type platform_pre_upgrade >/dev/null 2>&1; then
+platform_pre_upgrade() {
+	local prep="/lib/gluon-rampe/prepare.d/$(board_name)"
+
+	[ -x "$prep" ] || return 0
+	v "Gluon-RAMpe: Vorbereitung $prep"
+	"$prep" "$1" 2>&1 | while read -r line; do v "  $line"; done
+}
+fi
+```
+
+### Aerohive HiveAP 330: U-Boot-Patch (nur Entwurf)
+
+Schreibt den Bootloader und braucht `kmod-mtd-rw`; absichtlich in keinem Patch.
+
+```sh
+#!/bin/sh
+# ENTWURF, NICHT AKTIV - schreibt den Bootloader des Aerohive HiveAP 330.
+# Gedacht als overlay/lib/gluon-rampe/prepare.d/aerohive,hiveap-330, nur nach
+# Freigabe durch adorfer und erst nach einem Test mit serieller Konsole und
+# Rueckweg (U-Boot-Sicherung).
+#
+# Quelle: OpenWrt cfe79f2eb8b3c874f3d1a4441b8a60af32169974 (Schritt 3) und
+# DEVICE_COMPAT_MESSAGE in target/linux/mpc85xx/image/p1020.mk am Pin
+# a1ea57bd050c172fdc2b851824ebd9782aafb055. Befehle von dort, ergaenzt um eine
+# Pruefsummen-Sperre: nur das im Commit genannte U-Boot (U-Boot 2009.11,
+# Jan 12 2017, Build jenkins-HiveOS-Honolulu_AP350_Rel-245) wird gepatcht.
+# owrt_boot setzt der Commit schon im U-Boot (Schritt 2, seriell); hier nur
+# zur Sicherheit, falls es fehlt.
+# Voraussetzungen: kmod-mtd-rw im Image (site/image-customization.lua),
+# uboot-envtools + fw_env.config fuer aerohive,hiveap-330 (u-boot-env, 0x0,
+# 0x20000, 0x10000) [geprueft], busybox strings/md5sum/dd (Default y)
+# [geprueft: package/utils/busybox/Config-defaults.in].
+. /lib/functions.sh
+
+# Ohne gepatchtes U-Boot startet die Community-Firmware nach dem Flashen
+# nicht. Darum bei jedem Fehler abbrechen, BEVOR geflasht wird: Neustart,
+# die RAMpe lag nur im RAM, im Flash ist noch die Hersteller-Firmware.
+abbruch() { echo "$1 - Abbruch ohne Flashen, Neustart"; sync; reboot -f; exit 1; }
+
+UBOOT_ORIG=d84b45a2e8aca60d630fbd422efc6b39
+UBOOT_PATCHED=6dc420f24c2028b9cf7f0c62c0c7f692
+
+fw_printenv -n owrt_boot >/dev/null 2>&1 || \
+	fw_setenv owrt_boot 'setenv bootargs console=ttyS0,9600;bootm 0xEC040000 - 0xEC000000'
+
+idx="$(find_mtd_index u-boot)"
+[ -n "$idx" ] || abbruch "keine mtd-Partition u-boot"
+cp "/dev/mtd$idx" /tmp/uboot
+case "$(md5sum < /tmp/uboot | cut -d' ' -f1)" in
+	"$UBOOT_PATCHED") echo "U-Boot schon gepatcht"; exit 0 ;;
+	"$UBOOT_ORIG") ;;
+	*) abbruch "unbekanntes U-Boot, seriell nach OpenWrt-Wiki vorgehen" ;;
+esac
+
+insmod mtd-rw i_want_a_brick=y || abbruch "mtd-rw fehlt"
+cp /tmp/uboot /tmp/uboot_patched
+strings -td < /tmp/uboot | grep '^ *[0-9]* *\(run owrt_boot\|setenv bootargs\).*cp\.l' | \
+	awk '{print $1}' | \
+	while read offset; do
+		echo -n "run owrt_boot;            " | dd of=/tmp/uboot_patched bs=1 seek=${offset} conv=notrunc
+	done
+[ "$(md5sum < /tmp/uboot_patched | cut -d' ' -f1)" = "$UBOOT_PATCHED" ] || \
+	abbruch "Patch-Ergebnis weicht ab, nichts geschrieben"
+# Scheitert erst das Schreiben, ist ein Neustart das Schlimmste, was man tun
+# kann (halbes U-Boot). Dann nur melden; offen, wie die RAMpe das sichtbar macht.
+mtd write /tmp/uboot_patched u-boot || echo "mtd write u-boot fehlgeschlagen - NICHT ausschalten, seriell pruefen"
+```
 
 Lizenz dieser Datei: CC BY-SA 4.0; die Codeausschnitte aus Gluons
 `upgrade.lua` stehen unter Apache-2.0.

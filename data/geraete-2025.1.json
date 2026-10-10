@@ -445,7 +445,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: RAMpe-initramfs per tftpboot statt OpenWrt-initramfs; seriell bleibt [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/d-link-dir-505.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; UART, IPs und Ladeadresse nicht belegt; 64 MB RAM",
    "quelle": "c9ac7b17296ff29d9df39db8a68c449ef1514bbd [geprüft]",
    "anleitung": ""
   },
@@ -697,7 +697,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: Gluon-RAMpe als 1401A8C0.img statt OpenWrt-initramfs, Upload-Seite statt scp; seriell bleibt",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/enterasys-ws-ap3705i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `1401A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell",
    "quelle": "ebddc5f984a240980303aed68524eb615484eef8 [geprüft]",
    "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=ebddc5f984a240980303aed68524eb615484eef8"
   },
@@ -725,7 +725,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: Gluon-RAMpe als 1D01A8C0.img statt OpenWrt-initramfs; seriell bleibt",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/extreme-networks-ws-ap3805i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `1D01A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell",
    "quelle": "f8c87aa2d27ab405f284dd4357377ab5c893a345 [geprüft]",
    "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f8c87aa2d27ab405f284dd4357377ab5c893a345"
   },
@@ -1173,7 +1173,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: RAMpe-initramfs unter diesem Namen bereitstellen; die Gluon-RAMpe muss zusätzlich `fw_setenv bootcmd run bootcmd_1` setzen (OpenWrt-platform.sh tut es nicht) [geprüft im Baum]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/ocedo-koala.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `koala-uImage-initramfs-lzma.bin` per TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`fw_setenv bootcmd run bootcmd_1`)",
    "quelle": "c4931713df8ffb3c4e5c1be7d0b6d4aa96a7dd4c [geprüft]",
    "anleitung": ""
   },
@@ -1201,7 +1201,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: RAMpe-initramfs unter diesem Namen bereitstellen; die Gluon-RAMpe muss zusätzlich `fw_setenv bootcmd run bootcmd_1` setzen (OpenWrt-platform.sh tut es nicht) [geprüft im Baum]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/ocedo-raccoon.sh (Rezept-Entwurf, nicht gebaut): wie Koala, als `raccoon-uImage-initramfs-lzma.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`fw_setenv`)",
    "quelle": "647614803473757e3b2d93d46938afccd61a5a5d [geprüft]",
    "anleitung": ""
   },
@@ -1873,7 +1873,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: Gluon-RAMpe als 1401A8C0.img; Achtung, das initramfs ist hier unkomprimiert (KERNEL_INITRAMFS ... uImage none, OpenWrt 23.7 MB); seriell bleibt",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/siemens-ws-ap3610.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma statt unkomprimiert wie bei OpenWrt) als `1401A8C0.img` per U-Boot-TFTP",
    "quelle": "d2b8ccb1c04def81224da6f42f644c7d239b9986 [geprüft]",
    "anleitung": "https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Siemens-AP3610"
   },
@@ -1957,7 +1957,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: Gluon-RAMpe statt OpenWrt-initramfs; seriell bleibt",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/sophos-ap15.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-\"broken\"-Gerät gezielt; `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; RAM nicht belegt",
    "quelle": "0dc58214896aacf67a3759495d70e2b4e9c160d8 (Einführung, Anleitung); fc31261c3307458e38c9a676211a25c99c044ece (DTS-Umbenennung) [geprüft]",
    "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0dc58214896aacf67a3759495d70e2b4e9c160d8"
   },
@@ -2405,7 +2405,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: RAMpe-initramfs per tftpboot; seriell bleibt",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/tp-link-archer-d50-v1.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-\"broken\"-Gerät gezielt; `initramfs-kernel.bin` (lzma, TP-Link-Header) per U-Boot-TFTP; 64 MB RAM knapp",
    "quelle": "f5d2c91415a68f554815860d574145644fc31c16 [geprüft]",
    "anleitung": ""
   },
@@ -3553,7 +3553,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: Gluon liefert hier selbst das initramfs als factory (mikrotik.inc); Gluon-RAMpe wäre die Variante mit Upload-Seite. Prüfen: startet Gluons initramfs-factory überhaupt im Config-Mode (Befund 70_initramfs_test aus NOTIZEN.md)? [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/mikrotik-routerboard-951ui-2nd-hap.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp",
    "quelle": "5ce64e0646fcd5c4f374b4de898b591560c32e18 [geprüft]",
    "anleitung": ""
   },
@@ -3581,7 +3581,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: Netboot nimmt ein initramfs. Neanderfunk-Patch setzt factory = false (ohne dokumentierten Grund), obwohl mikrotik.inc sonst das initramfs als factory ausliefert",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/mikrotik-routerboard-mapl-2nd.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp",
    "quelle": "eb38af788180d624e5b37aa5db1fe3766b138dc8 [geprüft]",
    "anleitung": ""
   },
@@ -3609,7 +3609,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: Netboot nimmt ein initramfs. Neanderfunk-Patch setzt factory = false (ohne dokumentierten Grund), obwohl mikrotik.inc sonst das initramfs als factory ausliefert",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/mikrotik-routerboard-wap-g-5hact2hnd.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM mit ath10k am knappsten",
    "quelle": "6aaa5ce2c5138877e0f0504c3bd536b40e9af928 [geprüft]",
    "anleitung": ""
   },
@@ -3637,7 +3637,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: Gluon liefert hier selbst das initramfs als factory (mikrotik.inc); Gluon-RAMpe wäre die Variante mit Upload-Seite. Prüfen: startet Gluons initramfs-factory überhaupt im Config-Mode (Befund 70_initramfs_test aus NOTIZEN.md)? [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/mikrotik-routerboard-wapr-2nd.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp",
    "quelle": "817bf0204569ca28121576c13f48186ed7b7c2ae [geprüft]",
    "anleitung": ""
   },
@@ -3665,7 +3665,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: statt factory per nand write könnte man die Gluon-RAMpe per tftpboot starten; seriell bleibt [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/aerohive-hiveap-121.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; Gluon-factory per `nand write` ist der einfachere Weg",
    "quelle": "62db255543c8fb5d1787caf36c6c7c9c51db71cd [geprüft]",
    "anleitung": ""
   },
@@ -3861,7 +3861,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: Gluon-RAMpe statt OpenWrt-initramfs; die Gluon-RAMpe müsste aber das factory (nicht sysupgrade) per mtd schreiben [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/zte-mf281.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-\"broken\"-Gerät gezielt; `initramfs-kernel.bin` als `speedbox-2.bin` per U-Boot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubiformat`, nicht durch den Commit gedeckt)",
    "quelle": "1e1695f959e678868bb7911d059b847f38fc9cf4 [geprüft]",
    "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1e1695f959e678868bb7911d059b847f38fc9cf4"
   },
@@ -3889,7 +3889,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja (Exploit-Weg): genau der Fall \"initramfs aus der Stock-Shell schreiben\", Gluon-RAMpe statt OpenWrt-initramfs [abgeleitet]; Gluon markiert das Gerät broken mit \"case must be opened\" - laut Commit nicht zwingend",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/zte-mf286r.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` per `nandwrite` nach dem Exploit (Weg nur für die MF286A belegt)",
    "quelle": "7ac8da00609f42b8aba74b7efc6b0d055b7cef3e [geprüft]",
    "anleitung": ""
   },
@@ -5093,7 +5093,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: wie SXTsq",
-   "rampe_rezept": "",
+   "rampe_rezept": "Alias: Image aus devices/mikrotik-sxtsq-5-ac-rbsxtsqg-5acd.sh; RAM des DISC nicht belegt",
    "quelle": "OpenWrt d1f1e5269ed992e6fc30d575b43b0913c9e58ca2 (Gluon-Alias)",
    "anleitung": "-"
   },
@@ -5121,7 +5121,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: Netboot nimmt ein initramfs; laut RAMpe-NOTIZEN startet ein Gluon-initramfs nicht im Config-Mode, die Gluon-RAMpe wäre der passende Ersatz für Gluons eigenes initramfs-\"factory\" [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/mikrotik-hap-ac2.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); schaltet Gluons \"factory\" (= Community-initramfs ohne Config-Mode) ab",
    "quelle": "OpenWrt faea7becafc634dc882f0ad8f9388862ccd5bd0d",
    "anleitung": "-"
   },
@@ -5149,7 +5149,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: wie hAP ac2; heute nur mit OpenWrt-initramfs als Zwischenschritt",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/mikrotik-sxtsq-5-ac-rbsxtsqg-5acd.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP)",
    "quelle": "OpenWrt d1f1e5269ed992e6fc30d575b43b0913c9e58ca2",
    "anleitung": "-"
   },
@@ -5177,7 +5177,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: wie hAP ac2",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/mikrotik-wap-ac.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP)",
    "quelle": "OpenWrt 7f54bf6fe2ac331d018cd273bb1abe04493b5457",
    "anleitung": "-"
   },
@@ -5429,7 +5429,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: eva_ramboot.py bootet ein beliebiges initramfs [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/avm-fritz-box-3390.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`",
    "quelle": "73ec21cde2cde1fc27f66b08e8762cdc3c78b61a",
    "anleitung": ""
   },
@@ -5513,7 +5513,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/avm-fritz-box-7362-sl.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`",
    "quelle": "eae6cac6a30b95bef04d033ed8a303b7e35a078b",
    "anleitung": "https://openwrt.org/toh/avm/avm_7362_sl#installation"
   },
@@ -5541,7 +5541,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/avm-fritz-box-7412.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch",
    "quelle": "20f48c8ae334f8502e756282995cc84d89fa81c1",
    "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7412#installation"
   },
@@ -5569,7 +5569,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/avm-fritz-box-7430.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch",
    "quelle": "6c85a449a988876fdfd4ce84d6aa5ffe4a2820c1",
    "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7430#installation"
   },
@@ -6801,7 +6801,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: nach dem seriellen TFTP-Boot macht die Gluon-RAMpe den sysupgrade-Schritt statt scp; bootcmd/saveenv bleibt seriell",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/enterasys-ws-ap3715i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `ap3715.bin` per U-Boot-TFTP; entpackt über 11 MB droht Überlappung",
    "quelle": "765f66810a3324cc35fa6471ee8eeee335ba8c2b",
    "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b"
   },
@@ -6829,7 +6829,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: ubiformat vor dem sysupgrade macht die Gluon-RAMpe nicht",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/sophos-red-15w-rev.1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (FIT) als `kernel.bin` per U-Boot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubiformat`)",
    "quelle": "97e4311fca73d064d17065e7844699aa777cb157",
    "anleitung": ""
   },
@@ -6885,7 +6885,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: Gluon-RAMpe statt scp+sysupgrade; der serielle Teil bleibt",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/aerohive-hiveap-330.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per U-Boot-TFTP; der U-Boot-Patch bleibt Handarbeit (Entwurf in docs/ENTWURF-VORBEREITUNG.md)",
    "quelle": "f2b7d9dc1ca3d33f14961cf2885639f4f9e8965e",
    "anleitung": ""
   },
@@ -6913,7 +6913,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: wie WS-AP3715i",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/enterasys-ws-ap3710i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` als `01C8A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell",
    "quelle": "16b01fb1b9c99513c318109bef96a1a3545c57a0",
    "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=16b01fb1b9c99513c318109bef96a1a3545c57a0"
   },
@@ -6941,7 +6941,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: wie WS-AP3715i",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/extreme-networks-ws-ap3825i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (FIT) per U-Boot-TFTP; `bootcmd` bleibt seriell",
    "quelle": "7e614820a89208c4e91a3a5f9de07a5402accdaa",
    "anleitung": "https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923"
   },
@@ -6997,7 +6997,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: Ramboot passt; ubirmvol und fw_setenv vor dem sysupgrade macht die Gluon-RAMpe nicht",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/ocedo-panda.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` als `panda-uimage-factory` + DTB als `panda.fdt`; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubirmvol`, `fw_setenv`)",
    "quelle": "b368373fab45f31963cd2bc1c6ab90e0a577e611",
    "anleitung": ""
   },
@@ -7949,7 +7949,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: Netboot lädt ein beliebiges initramfs (ELF); Gluon-RAMpe statt OpenWrt-initramfs [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/mikrotik-routerboard-750gr3.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` (ELF); Netboot (BOOTP/DHCP + TFTP)",
    "quelle": "52f2d7d2a9dc3e142bb957462a30806eb5cebaf4 (+ faf94d926e2810f895f2a98d4a49ee2fe8f673e8: Erstunterstützung mit Bootloader-Tausch, überholt)",
    "anleitung": "https://openwrt.org/toh/mikrotik/common"
   },
