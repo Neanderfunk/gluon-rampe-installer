@@ -1,6 +1,6 @@
-# Gluon-RAMpe
+# Gluon-RAMpe (gluon-rampe-installer)
 
-Repo `gluon-ramboot-installer`. Die **Gluon-RAMpe**: ein Gluon, das aus dem RAM läuft und genau eine
+Die **Gluon-RAMpe**: ein Gluon, das aus dem RAM läuft und genau eine
 Seite hat – Community-Firmware hochladen.
 
 **Nach einer Idee von oszilloskop:
