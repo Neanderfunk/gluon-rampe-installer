@@ -4113,7 +4113,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: RAMpe-initramfs als ipq40xx.ari geht, aber vor dem sysupgrade muss `ubiformat` laufen (fehlt der Gluon-RAMpe) und Gluon baut für ipq40xx-generic kein initramfs; seriell bleibt [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/aruba-ap-303.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `ipq40xx.ari` per APBoot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)",
    "quelle": "OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75",
    "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=102c8c55f217606cdbdc9a449667e034676b3e75"
   },
@@ -4141,7 +4141,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: wie AP-303",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/aruba-ap-303h.sh (Rezept-Entwurf, nicht gebaut): wie AP-303; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)",
    "quelle": "OpenWrt c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0",
    "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0"
   },
@@ -4169,7 +4169,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: wie AP-303",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/aruba-ap-365.sh (Rezept-Entwurf, nicht gebaut): wie AP-303; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)",
    "quelle": "OpenWrt 300b7fe85a743ab0e039457a5a551819b49450da",
    "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=300b7fe85a743ab0e039457a5a551819b49450da"
   },
@@ -4197,7 +4197,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: wie AP-303; der Bootloader-Schritt bleibt seriell",
-   "rampe_rezept": "",
+   "rampe_rezept": "Alias: Image aus devices/aruba-ap-303.sh; apboot gesperrt (K5)",
    "quelle": "Notiz ap11.md (2024); OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75",
    "anleitung": "-"
   },
@@ -4225,7 +4225,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: wie AP-303",
-   "rampe_rezept": "",
+   "rampe_rezept": "Alias: Image aus devices/aruba-ap-303h.sh; ob apboot gesperrt ist wie beim AP11: offen",
    "quelle": "OpenWrt c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0",
    "anleitung": "-"
   },
@@ -4253,7 +4253,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: wie AP-303",
-   "rampe_rezept": "",
+   "rampe_rezept": "Alias: Image aus devices/aruba-ap-365.sh; ob apboot gesperrt ist wie beim AP11: offen",
    "quelle": "OpenWrt 300b7fe85a743ab0e039457a5a551819b49450da",
    "anleitung": "-"
   },
@@ -4281,7 +4281,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: statt des OpenWrt-initramfs das RAMpe-initramfs per mtd-write schreiben; SSH-Schritt bleibt; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/asus-lyra-map-ac2200.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` per SSH `mtd-write -d linux`",
    "quelle": "OpenWrt 9ad3967f140bd6d08796f1ec151b753186b3eb44",
    "anleitung": "https://openwrt.org/toh/asus/lyra_map-ac2200#oem_easy_installation"
   },
@@ -4337,7 +4337,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: wie 7530",
-   "rampe_rezept": "",
+   "rampe_rezept": "Alias: Image aus devices/avm-fritz-box-7530.sh (dort auch `uboot-fritz7520.bin`); TFTP-Dateiname für die 7520: offen",
    "quelle": "OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b",
    "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7530#installation"
   },
@@ -4365,7 +4365,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: das RAMpe-initramfs passt als FRITZ7530.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/avm-fritz-box-7530.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `FRITZ7530.bin`, dazu `uboot-fritz7530.bin` für `eva_ramboot.py`; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (U-Boot schreiben, `ubirmvol`); 7520/7530 im System nicht unterscheidbar",
    "quelle": "OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b",
    "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7530#installation"
   },
@@ -4393,7 +4393,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: das RAMpe-initramfs passt als FRITZ1200.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/avm-fritz-repeater-1200.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `FRITZ1200.bin` + `uboot-fritz1200.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (U-Boot schreiben, `ubirmvol`)",
    "quelle": "OpenWrt 7f187229a8e9b7966248b1e024217e07a9fc3e50",
    "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7f187229a8e9b7966248b1e024217e07a9fc3e50"
   },
@@ -4421,7 +4421,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: das RAMpe-initramfs passt als FRITZ3000.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/avm-fritz-repeater-3000.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `FRITZ3000.bin` + `uboot-fritz3000.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (U-Boot schreiben, `ubirmvol`)",
    "quelle": "OpenWrt 148d29d47b1d555d0058dcc5dda450b74c4628ec",
    "anleitung": "-"
   },
@@ -4449,7 +4449,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: Gluon-RAMpe als openwrt-3915.bin, seriell bleibt; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/extreme-networks-ws-ap3915i.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `openwrt-3915.bin` per U-Boot-TFTP",
    "quelle": "OpenWrt e16a0e7e8876df0a92ec4779fe766de1a943307a",
    "anleitung": "-"
   },
@@ -5037,7 +5037,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: Gluon-RAMpe als TFTP-initramfs möglich, aber der `ubirmvol`-Schritt fehlt ihm; seriell bleibt [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/zte-mf289f.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-\"broken\"-Gerät gezielt; `-initramfs-zImage.itb` per U-Boot-TFTP; Vorbereitung (`ubirmvol`) muss schon vor der Imageprüfung laufen, fehlt der RAMpe-Seite noch",
    "quelle": "OpenWrt 0de6a3339f1aadc1de2c9371435e3de239a00645 (Gluon: broken)",
    "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0de6a3339f1aadc1de2c9371435e3de239a00645"
   },
@@ -5205,7 +5205,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: Gluon-RAMpe müsste das Aruba-`.ari`-Format (Vendor-Header) bekommen, Gluon baut für ipq806x kein initramfs; Bootloader-Tausch und UBI-Umbau bleiben seriell. OpenWrt-Artefakte nur als Snapshot (in keinem Release bis 25.12.5) [geprüft]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/aruba-ap-32x.sh (Rezept-Entwurf, nicht gebaut): Backport aus gluon-patches-hardware (`RAMPE_HW_PATCHES`); `-initramfs.ari` per APBoot-TFTP; APBoot-Tausch und NAND-Umbau bleiben seriell",
    "quelle": "OpenWrt d2a75029a5f8e54e1fd2f252f73b9a430a030116 (25.12: 65f01eb3576f69233e8b6c67d85ffd38fde47a1a); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]",
    "anleitung": "https://github.com/lukasstockner/ap325-apboot-openwrt"
   },
@@ -5233,7 +5233,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: Gluon-RAMpe als TFTP-initramfs, seriell bleibt; Gluon baut für ipq806x kein initramfs; QCA9990 ohne 802.11s [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/extreme-networks-ap3935.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage` (ohne Endung) per U-Boot-TFTP",
    "quelle": "OpenWrt 3aef61060e3f51aa43fe494d5ff173e81dd43003",
    "anleitung": "-"
   },
@@ -5709,7 +5709,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: Hersteller-UI nimmt ein initramfs im ASUS-TRX; RAMpe-Rezept muss das ARTIFACT `initramfs.trx` einsammeln [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/asus-rt-ax52.sh (Rezept-Entwurf, nicht gebaut): `-initramfs.trx` (OpenWrt-ARTIFACT) für die ASUS-Web-UI",
    "quelle": "OpenWrt 99708cc16dbd7c93db80698fbe5c69f07995a3e6",
    "anleitung": "https://openwrt.org/toh/asus/rt-ax52#installation"
   },
@@ -5737,7 +5737,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: OpenWrt baut für die RT-AX59U kein `initramfs.trx` (24.10.8 und 25.12.5 nur initramfs-kernel.bin) [geprüft]; eine Gluon-RAMpe-TRX wie bei der RT-AX52 wäre zu bauen, ob die Stock-UI es nimmt: offen",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/asus-rt-ax59u.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; nur `initramfs-kernel.bin` für den UART-Weg, für die Web-UI fehlt ein eigenes TRX",
    "quelle": "OpenWrt 782eb050082acac93c2f9b3eb22348234bc93e99; gluon-patches-hardware 8dbae18666543aa9b8b5e7faa1d267024d62071e (Gluon-Zeile)",
    "anleitung": "-"
   },
@@ -5765,7 +5765,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: der SSH-Weg schreibt ein initramfs ins Flash; ob ein Gluon-/RAMpe-initramfs statt des herbetom-Sonderbaus bootet, ist nicht geprüft",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/asus-tuf-ax4200.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` mit eingebettetem initramfs (`TARGET_ROOTFS_INITRAMFS_SEPARATE` aus) für SSH `mtd-write` oder UART + TFTP; eigener Bau-Lauf",
    "quelle": "OpenWrt e7c399bee677e9bac66e1bea697aefb8d828edfe",
    "anleitung": "https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-ASUS-TUF-AX4200"
   },
@@ -5793,7 +5793,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: wie TUF-AX4200; über die Gehäuselöcher ist auch der TFTP-Weg ohne Öffnen möglich, dort passt die Gluon-RAMpe als initramfs [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/asus-tuf-ax6000.sh (Rezept-Entwurf, nicht gebaut): wie TUF-AX4200; eigener Bau-Lauf",
    "quelle": "OpenWrt d522ccecb28f941aadcaf7a50cd6daa861f468a7",
    "anleitung": "https://github.com/herbetom/openwrt-asus-filogic-factory/releases/latest"
   },
@@ -6017,7 +6017,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: Gluon-RAMpe ersetzt das OpenWrt-initramfs im TFTP-Schritt, der serielle Teil bleibt",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/cudy-tr3000-v1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per U-Boot-TFTP",
    "quelle": "OpenWrt 63b8d98dd0d2f7797ea5b5f25978590982bbbb5d",
    "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010"
   },
@@ -6213,7 +6213,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: RAMpe-Image gebaut, Header wie OpenWrt, Hardware-Test offen [geprüft: gluon-rampe-installer docs/NOTIZEN.md]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/d-link-aquila-pro-ai-m30-a1.sh: `-recovery.bin` (D-Link-Header) für die D-Link-Recovery; gebaut, Inhalt geprüft, Hardware-Test offen",
    "quelle": "OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f",
    "anleitung": "https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/"
   },
@@ -6241,7 +6241,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: Gluon baut selbst ein `-recovery.bin`; laut RAMpe-NOTIZEN startet ein Gluon-initramfs aber nicht im Config-Mode, vermutlich derselbe Fehler wie beim M30 [abgeleitet]; das RAMpe-Image wäre der Ersatz",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/d-link-aquila-pro-ai-m60-a1.sh (Rezept-Entwurf, nicht gebaut): `-recovery.bin` (D-Link-Header) für die D-Link-Recovery",
    "quelle": "OpenWrt 7271ee587cd104d30d6d46dd3c623c9d4602bd0c",
    "anleitung": "-"
   },
@@ -6353,7 +6353,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: Gluon-RAMpe statt OpenWrt-initramfs im TFTP-Schritt, seriell bleibt; Rezept `devices/mercusys-mr80x-v3.sh`. In Neanderfunk-2025.1 seit gluon-patches-hardware ab19bf1b46d34315a92f61974dd37f8a9ede9604 (10.10.2026), in Gluon v2025.1.3 nicht",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/mercusys-mr80x-v3.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein (`ensure_device`); `initramfs-kernel.bin` per UART + TFTP",
    "quelle": "OpenWrt 0ecf136f4d3126d92edc13087ce03db83b7e8223",
    "anleitung": ""
   },
@@ -6381,7 +6381,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: das RAMpe-initramfs könnte das OpenWrt-initramfs im kernel-Volume ersetzen; Exploit und fw_setenv bleiben Handarbeit [abgeleitet]. Hinweis: erstinstallation-ohne-factory.md beschreibt \"tp_boot_idx 0, dann U-Boot-Web-Recovery nimmt initramfs\" - weder im Commit noch im Wiki-Abschnitt \"Stock bootloader\" so belegt",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/mercusys-mr90x-v1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell",
    "quelle": "OpenWrt e4fe3097ef6a961874b66932a0ac4be18070630a",
    "anleitung": "https://openwrt.org/toh/mercusys/mr90x_v1#installation_stock_bootloader"
   },
@@ -6521,7 +6521,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: Gluon-RAMpe als `initramfs-factory.ubi` (ubinize-kernel) bauen, ersetzt den OpenWrt-Zwischenschritt; der Exploit bleibt [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/xiaomi-mi-router-ax3000t.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt",
    "quelle": "OpenWrt 7dbcc1215a56cc1da68c81bf92d7efa174c5e051",
    "anleitung": "-"
   },
@@ -7053,7 +7053,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: RAMpe-initramfs in dasselbe Format packen (ARTIFACT web-ui-factory.fit); Gluon baut für qualcommax kein initramfs, Rezept braucht TARGET_ROOTFS_INITRAMFS [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/netgear-wax218.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `-web-ui-factory.fit` (OpenWrt-ARTIFACT) für die Web-UI",
    "quelle": "OpenWrt 7801161c4bb2413817b3dfd01695050e2da27bf3",
    "anleitung": "-"
   },
@@ -7081,7 +7081,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: web-ui-factory ist ein squashfs-Flash-Image (tplink-image-2022, in 24.10 nicht vorhanden), kein initramfs; Gluon-RAMpe bräuchte dieses Format [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/tp-link-eap620-hd-v1.sh (Rezept-Entwurf, nicht gebaut): Backport aus gluon-patches-hardware (`RAMPE_HW_PATCHES`); `-initramfs-uImage.itb` per U-Boot-TFTP",
    "quelle": "OpenWrt 4b6e7da0f7499acb69feaacca79e0ee826c0b8db; gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]",
    "anleitung": "-"
   },
@@ -7109,7 +7109,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "teilweise: Gluon-RAMpe als `initramfs-factory.ubi` bauen, ersetzt den OpenWrt-Zwischenschritt; Exploit bleibt; Gluon baut für qualcommax kein initramfs [abgeleitet]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/xiaomi-ax3600.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt",
    "quelle": "OpenWrt 8364f0816417bfe404f7bded4eaa4f4a60c6d006",
    "anleitung": "-"
   },
@@ -7501,7 +7501,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: genau der Fall \"erst initramfs, dann sysupgrade\"",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/asus-rt-ax53u.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per ASUS-Rescue (TFTP put)",
    "quelle": "8c00fd9b4519bf0ef8fb3470a6df421b9f38c03c",
    "anleitung": "https://openwrt.org/toh/asus/rt-ax53u#installation_with_mtd-write"
   },
@@ -7865,7 +7865,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: factory.bin = Kette `append-image-stage initramfs-kernel.bin`, `inteno-bootfs`, `inteno-y3-header EX400` (mt7621.mk); Gluon baut es nur nicht, weil das Rezept CONFIG_TARGET_ROOTFS_INITRAMFS braucht. Eine Gluon-RAMpe-Bau ergibt direkt eine Gluon-RAMpe-factory [abgeleitet aus mk]",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/genexis-pulse-ex400.sh (Rezept-Entwurf, nicht gebaut): `-factory.bin` (initramfs in UBIFS-bootfs, Inteno-Kopf); bootfs höchstens etwa 11.6 MiB",
    "quelle": "dd0c2839a81bb3c5067be99b02ec5c0adff93ac6",
    "anleitung": "https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400"
   },
@@ -8789,7 +8789,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "ja: der Hersteller-Weg nimmt ein initramfs (KERNEL_INITRAMFS mit znet-Header, mt7621.mk); Cloud-Registrierung bleibt",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/zyxel-wsm20.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (znet-Header schon drin) für die versteckte Upgrade-Seite",
    "quelle": "28df7f7ff251d8684caa60f07ed0ba0c4a8e71f4",
    "anleitung": "https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/"
   },
@@ -9741,7 +9741,7 @@
    "rueckweg": "",
    "hw_test": "",
    "rampe": "nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)",
-   "rampe_rezept": "",
+   "rampe_rezept": "devices/x86-64.sh: Testgerät, in QEMU Ende-zu-Ende geprüft",
    "quelle": "Gluon targets/x86-64",
    "anleitung": "-"
   },

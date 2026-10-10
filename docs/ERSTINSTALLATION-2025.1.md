@@ -176,359 +176,359 @@ Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-95
 
 Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten des Geräts.
 
-| Gluon-Name | Modell | Target | Kat. | Anleitungsfamilie | Übertragung | seriell nötig | Gehäuse öffnen | Gluon-RAMpe | Detail-Anleitung |
-|---|---|---|---|---|---|---|---|---|---|
-| [alfa-network-ap121f](#alfa-network-ap121f) | ALFA Network AP121F | ath79-generic | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |
-| [avm-fritz-box-4020](#avm-fritz-box-4020) | AVM FRITZ!Box 4020 | ath79-generic | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein | https://fritz-tools.readthedocs.io/ |
-| [avm-fritz-wlan-repeater-1750e](#avm-fritz-wlan-repeater-1750e) | AVM FRITZ!WLAN Repeater 1750E (broken) | ath79-generic | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  |
-| [avm-fritz-wlan-repeater-300e](#avm-fritz-wlan-repeater-300e) | AVM FRITZ!WLAN Repeater 300E | ath79-generic | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein | https://fritz-tools.readthedocs.io/ |
-| [avm-fritz-wlan-repeater-450e](#avm-fritz-wlan-repeater-450e) | AVM FRITZ!WLAN Repeater 450E | ath79-generic | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein | https://fritz-tools.readthedocs.io/ |
-| [buffalo-wzr-600dhp](#buffalo-wzr-600dhp) | Buffalo WZR-600DHP | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [buffalo-wzr-hp-ag300h](#buffalo-wzr-hp-ag300h) | Buffalo WZR-HP-AG300H | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [buffalo-wzr-hp-g300nh-rtl8366s](#buffalo-wzr-hp-g300nh-rtl8366s) | Buffalo WZR-HP-G300NH (RTL8366S switch) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [buffalo-wzr-hp-g450h-wzr-450hp](#buffalo-wzr-hp-g450h-wzr-450hp) | Buffalo WZR-HP-G450H/WZR-450HP | ath79-generic | K0+ | [`sonderweg-buffalo-wzr-hp-g450h-wzr-450hp`](#familie-sonderweg-buffalo-wzr-hp-g450h-wzr-450hp) | webui-upload | nein | nein | nein |  |
-| [comfast-cf-ew71-v2](#comfast-cf-ew71-v2) | COMFAST CF-EW71 v2 | ath79-generic | K1d | [`sonderweg-comfast-cf-ew71-v2`](#familie-sonderweg-comfast-cf-ew71-v2) | webui-upload | nein | nein | nein |  |
-| [d-link-dap-1330-a1](#d-link-dap-1330-a1) | D-Link DAP-1330 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [d-link-dap-1365-a1](#d-link-dap-1365-a1) | D-Link DAP-1365 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [d-link-dap-2660-a1](#d-link-dap-2660-a1) | D-Link DAP-2660 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [d-link-dap-2680-a1](#d-link-dap-2680-a1) | D-Link DAP-2680 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5b58710fad2137eedad874f0fe8fe22082d1edc6 |
-| [d-link-dap-2695-a1](#d-link-dap-2695-a1) | D-Link DAP-2695 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [d-link-dir-505](#d-link-dir-505) | D-Link DIR-505 | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ? | teilweise |  |
-| [d-link-dir825b1](#d-link-dir825b1) | D-Link DIR-825 B1 | ath79-generic | offen | [`sonderweg-d-link-dir825b1`](#familie-sonderweg-d-link-dir825b1) | ? | ? | ? | offen |  |
-| [devolo-dlan-pro-1200+-wifi-ac](#devolo-dlan-pro-1200+-wifi-ac) | devolo dLAN pro 1200+ WiFi ac (broken) | ath79-generic | K1d | [`sonderweg-devolo-dlan-pro-1200+-wifi-ac`](#familie-sonderweg-devolo-dlan-pro-1200+-wifi-ac) | tftp-client-am-geraet | nein | nein | nein |  |
-| [devolo-wifi-pro-1200e](#devolo-wifi-pro-1200e) | devolo WiFi pro 1200e | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1724d4e9ed7716a5444eca42adf045c2f3afc554 |
-| [devolo-wifi-pro-1200i](#devolo-wifi-pro-1200i) | devolo WiFi pro 1200i | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c8115167f946be85f812f3c94d6294b67ac8944c |
-| [devolo-wifi-pro-1750c](#devolo-wifi-pro-1750c) | devolo WiFi pro 1750c | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e67da3443168fa6b6727cd81a35d559be77d6b4c |
-| [devolo-wifi-pro-1750e](#devolo-wifi-pro-1750e) | devolo WiFi pro 1750e | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1c2f7b511514d43d8a826b26e09817b2750a2bf4 |
-| [devolo-wifi-pro-1750i](#devolo-wifi-pro-1750i) | devolo WiFi pro 1750i | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=8d68be8057d6c689025cc236d20b96b77a6ccf30 |
-| [devolo-wifi-pro-1750x](#devolo-wifi-pro-1750x) | devolo WiFi pro 1750x | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=cb3cd526948af3f69da1af18e035177a0a8f58e3 |
-| [enterasys-ws-ap3705i](#enterasys-ws-ap3705i) | Enterasys WS-AP3705i | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=ebddc5f984a240980303aed68524eb615484eef8 |
-| [extreme-networks-ws-ap3805i](#extreme-networks-ws-ap3805i) | Extreme Networks WS-AP3805i | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f8c87aa2d27ab405f284dd4357377ab5c893a345 |
-| [gl.inet-6416](#gl.inet-6416) | GL.iNet 6416 | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |
-| [gl.inet-gl-ar150](#gl.inet-gl-ar150) | GL.iNet GL-AR150 | ath79-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |
-| [gl.inet-gl-ar300m-lite](#gl.inet-gl-ar300m-lite) | GL.iNet GL-AR300M Lite | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |
-| [gl.inet-gl-ar300m16](#gl.inet-gl-ar300m16) | GL.iNet GL-AR300M16 | ath79-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |
-| [gl.inet-gl-ar750](#gl.inet-gl-ar750) | GL.iNet GL-AR750 | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |
-| [gl.inet-gl-usb150](#gl.inet-gl-usb150) | GL.iNET GL-USB150 | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |
-| [joy-it-jt-or750i](#joy-it-jt-or750i) | Joy-IT JT-OR750i | ath79-generic | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein | https://wiki.freifunk-stuttgart.net/technik:hardware:joy-it_jt-or750i |
-| [librerouter-v1](#librerouter-v1) | Librerouter LibreRouter v1 | ath79-generic | K1d | [`sonderweg-librerouter-v1`](#familie-sonderweg-librerouter-v1) | webui-upload | nein | nein | nein |  |
-| [netgear-wndr3700](#netgear-wndr3700) | NETGEAR WNDR3700 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [netgear-wndr3700-v2](#netgear-wndr3700-v2) | NETGEAR WNDR3700 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [netgear-wndr3800](#netgear-wndr3800) | NETGEAR WNDR3800 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [netgear-wndr3800ch](#netgear-wndr3800ch) | NETGEAR WNDR3800CH | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [netgear-wndrmac-v2](#netgear-wndrmac-v2) | NETGEAR WNDRMAC v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [netgear-wnr2200-16m](#netgear-wnr2200-16m) | NETGEAR WNR2200 16M | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [netgear-wnr2200-8m](#netgear-wnr2200-8m) | NETGEAR WNR2200 8M | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [ocedo-koala](#ocedo-koala) | Ocedo Koala | ath79-generic | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | ja |  |
-| [ocedo-raccoon](#ocedo-raccoon) | Ocedo Raccoon | ath79-generic | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | ja |  |
-| [onion-omega](#onion-omega) | Onion Omega | ath79-generic | K0 | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |
-| [openmesh-a40](#openmesh-a40) | OpenMesh A40 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [openmesh-a60](#openmesh-a60) | OpenMesh A60 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [openmesh-mr1750-v1](#openmesh-mr1750-v1) | OpenMesh MR1750 v1 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [openmesh-mr1750-v2](#openmesh-mr1750-v2) | OpenMesh MR1750 v2 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [openmesh-mr600-v1](#openmesh-mr600-v1) | OpenMesh MR600 v1 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [openmesh-mr600-v2](#openmesh-mr600-v2) | OpenMesh MR600 v2 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [openmesh-mr900-v1](#openmesh-mr900-v1) | OpenMesh MR900 v1 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [openmesh-mr900-v2](#openmesh-mr900-v2) | OpenMesh MR900 v2 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [openmesh-om2p-hs-v1](#openmesh-om2p-hs-v1) | OpenMesh OM2P-HS v1 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [openmesh-om2p-hs-v2](#openmesh-om2p-hs-v2) | OpenMesh OM2P-HS v2 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [openmesh-om2p-hs-v3](#openmesh-om2p-hs-v3) | OpenMesh OM2P-HS v3 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [openmesh-om2p-hs-v4](#openmesh-om2p-hs-v4) | OpenMesh OM2P-HS v4 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [openmesh-om2p-lc](#openmesh-om2p-lc) | OpenMesh OM2P-LC | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [openmesh-om2p-v1](#openmesh-om2p-v1) | OpenMesh OM2P v1 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [openmesh-om2p-v2](#openmesh-om2p-v2) | OpenMesh OM2P v2 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [openmesh-om2p-v4](#openmesh-om2p-v4) | OpenMesh OM2P v4 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [openmesh-om5p](#openmesh-om5p) | OpenMesh OM5P | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [openmesh-om5p-ac-v1](#openmesh-om5p-ac-v1) | OpenMesh OM5P-AC v1 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [openmesh-om5p-ac-v2](#openmesh-om5p-ac-v2) | OpenMesh OM5P-AC v2 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [openmesh-om5p-an](#openmesh-om5p-an) | OpenMesh OM5P-AN | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [plasma-cloud-pa300](#plasma-cloud-pa300) | Plasma Cloud PA300 | ath79-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [plasma-cloud-pa300e](#plasma-cloud-pa300e) | Plasma Cloud PA300E | ath79-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |
-| [siemens-ws-ap3610](#siemens-ws-ap3610) | Siemens WS-AP3610 | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Siemens-AP3610 |
-| [sophos-ap100](#sophos-ap100) | Sophos AP100 | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
-| [sophos-ap100c](#sophos-ap100c) | Sophos AP100C | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
-| [sophos-ap15](#sophos-ap15) | Sophos AP15 (broken) | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0dc58214896aacf67a3759495d70e2b4e9c160d8 |
-| [sophos-ap15c](#sophos-ap15c) | Sophos AP15C | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  |
-| [sophos-ap55](#sophos-ap55) | Sophos AP55 | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
-| [sophos-ap55c](#sophos-ap55c) | Sophos AP55C | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
-| [teltonika-rut230-v1](#teltonika-rut230-v1) | Teltonika RUT230 v1 | ath79-generic | K0+ | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |
-| [tp-link-archer-a7-v5](#tp-link-archer-a7-v5) | TP-Link Archer A7 v5 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-archer-c2-v3](#tp-link-archer-c2-v3) | TP-Link Archer C2 v3 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-archer-c25-v1](#tp-link-archer-c25-v1) | TP-Link Archer C25 v1 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-archer-c5-v1](#tp-link-archer-c5-v1) | TP-Link Archer C5 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-archer-c58-v1](#tp-link-archer-c58-v1) | TP-Link Archer C58 v1 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-archer-c59-v1](#tp-link-archer-c59-v1) | TP-Link Archer C59 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-archer-c6-v2-eu-ru-jp](#tp-link-archer-c6-v2-eu-ru-jp) | TP-Link Archer C6 v2 (EU/RU/JP) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-archer-c60-v1](#tp-link-archer-c60-v1) | TP-Link Archer C60 v1 | ath79-generic | K2 | [`sonderweg-tp-link-archer-c60-v1`](#familie-sonderweg-tp-link-archer-c60-v1) | webui-upload | nein | nein | nein |  |
-| [tp-link-archer-c7-v2](#tp-link-archer-c7-v2) | TP-Link Archer C7 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-archer-c7-v4](#tp-link-archer-c7-v4) | TP-Link Archer C7 v4 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-archer-c7-v5](#tp-link-archer-c7-v5) | TP-Link Archer C7 v5 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-archer-d50-v1](#tp-link-archer-d50-v1) | TP-Link Archer D50 v1 (broken) | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise |  |
-| [tp-link-cpe210-v1](#tp-link-cpe210-v1) | TP-Link CPE210 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-cpe210-v2](#tp-link-cpe210-v2) | TP-Link CPE210 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-cpe210-v3](#tp-link-cpe210-v3) | TP-Link CPE210 v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-cpe220-v3](#tp-link-cpe220-v3) | TP-Link CPE220 v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-cpe510-v1](#tp-link-cpe510-v1) | TP-Link CPE510 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-cpe510-v2](#tp-link-cpe510-v2) | TP-Link CPE510 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-cpe510-v3](#tp-link-cpe510-v3) | TP-Link CPE510 v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-cpe710-v1](#tp-link-cpe710-v1) | TP-Link CPE710 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-cpe710-v2](#tp-link-cpe710-v2) | TP-Link CPE710 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-eap225-outdoor-v1](#tp-link-eap225-outdoor-v1) | TP-Link EAP225-Outdoor v1 | ath79-generic | K0+ | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=4f86edf477edbc0f20b5a49a69f658fa82158284 |
-| [tp-link-eap225-outdoor-v3](#tp-link-eap225-outdoor-v3) | TP-Link EAP225-Outdoor v3 | ath79-generic | K0+ | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7e4de89e631aaf56be5375662b7d5ed0f27e26f6 |
-| [tp-link-eap225-wall-v2](#tp-link-eap225-wall-v2) | TP-Link EAP225-Wall v2 | ath79-generic | K0+ | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  |
-| [tp-link-tl-wdr3500-v1](#tp-link-tl-wdr3500-v1) | TP-Link TL-WDR3500 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-tl-wdr3600-v1](#tp-link-tl-wdr3600-v1) | TP-Link TL-WDR3600 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-tl-wdr4300-v1](#tp-link-tl-wdr4300-v1) | TP-Link TL-WDR4300 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-tl-wr1043n-v5](#tp-link-tl-wr1043n-v5) | TP-Link TL-WR1043N v5 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-tl-wr1043nd-v2](#tp-link-tl-wr1043nd-v2) | TP-Link TL-WR1043N/ND v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-tl-wr1043nd-v3](#tp-link-tl-wr1043nd-v3) | TP-Link TL-WR1043N/ND v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-tl-wr1043nd-v4](#tp-link-tl-wr1043nd-v4) | TP-Link TL-WR1043N/ND v4 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-tl-wr2543n-nd](#tp-link-tl-wr2543n-nd) | TP-Link TL-WR2543N/ND v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-tl-wr810n-v1](#tp-link-tl-wr810n-v1) | TP-Link TL-WR810N v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-tl-wr842n-v3](#tp-link-tl-wr842n-v3) | TP-Link TL-WR842N v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-tl-wr902ac-v1](#tp-link-tl-wr902ac-v1) | TP-Link TL-WR902AC v1 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-wbs210-v1](#tp-link-wbs210-v1) | TP-Link WBS210 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-wbs210-v2](#tp-link-wbs210-v2) | TP-Link WBS210 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-wbs510-v1](#tp-link-wbs510-v1) | TP-Link WBS510 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [ubiquiti-nanobeam-ac-gen1-xc](#ubiquiti-nanobeam-ac-gen1-xc) | Ubiquiti NanoBeam AC Gen1 (XC) | ath79-generic | K0+ | [`sonderweg-ubiquiti-nanobeam-ac-gen1-xc`](#familie-sonderweg-ubiquiti-nanobeam-ac-gen1-xc) | laut | nein | nein | nein |  |
-| [ubiquiti-nanostation-loco-m-xw](#ubiquiti-nanostation-loco-m-xw) | Ubiquiti Nanostation Loco M XW | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  |
-| [ubiquiti-nanostation-m-xw](#ubiquiti-nanostation-m-xw) | Ubiquiti Nanostation M XW | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  |
-| [ubiquiti-rocket-m-xm](#ubiquiti-rocket-m-xm) | Ubiquiti Rocket M XM | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  |
-| [ubiquiti-unifi-ac-lite](#ubiquiti-unifi-ac-lite) | Ubiquiti UniFi AC Lite | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
-| [ubiquiti-unifi-ac-lr](#ubiquiti-unifi-ac-lr) | Ubiquiti UniFi AC LR | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
-| [ubiquiti-unifi-ac-mesh](#ubiquiti-unifi-ac-mesh) | Ubiquiti UniFi AC Mesh | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
-| [ubiquiti-unifi-ac-mesh-pro](#ubiquiti-unifi-ac-mesh-pro) | Ubiquiti UniFi AC Mesh Pro | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
-| [ubiquiti-unifi-ac-pro](#ubiquiti-unifi-ac-pro) | Ubiquiti UniFi AC Pro | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
-| [ubiquiti-unifi-ap](#ubiquiti-unifi-ap) | Ubiquiti UniFi AP | ath79-generic | K0+ | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  |
-| [ubiquiti-unifi-ap-outdoor+](#ubiquiti-unifi-ap-outdoor+) | Ubiquiti UniFi AP Outdoor+ | ath79-generic | K0+ | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  |
-| [ubiquiti-unifi-ap-pro](#ubiquiti-unifi-ap-pro) | Ubiquiti UniFi AP Pro | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  |
-| [ubiquiti-unifi-swiss-army-knife-ultra](#ubiquiti-unifi-swiss-army-knife-ultra) | Ubiquiti UniFi Swiss Army Knife Ultra | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5ad05681f2de00c8c6d6449df2b958b0838dbc1a |
-| [zyxel-nbg6616](#zyxel-nbg6616) | Zyxel NBG6616 | ath79-generic | K5 | [`sonderweg-zyxel-nbg6616`](#familie-sonderweg-zyxel-nbg6616) | tftp-client-am-geraet | ja | ? | nein |  |
-| [mikrotik-routerboard-951ui-2nd-hap](#mikrotik-routerboard-951ui-2nd-hap) | MikroTik RouterBOARD 951Ui-2nD (hAP) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja |  |
-| [mikrotik-routerboard-mapl-2nd](#mikrotik-routerboard-mapl-2nd) | MikroTik RouterBOARD mAPL-2nD (mAP lite) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja |  |
-| [mikrotik-routerboard-wap-g-5hact2hnd](#mikrotik-routerboard-wap-g-5hact2hnd) | MikroTik RouterBOARD wAP G-5HacT2HnD (wAP AC) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja |  |
-| [mikrotik-routerboard-wapr-2nd](#mikrotik-routerboard-wapr-2nd) | MikroTik RouterBOARD wAPR-2nD (wAP R) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja |  |
-| [aerohive-hiveap-121](#aerohive-hiveap-121) | Aerohive HiveAP 121 | ath79-nand | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ? | teilweise |  |
-| [gl.inet-gl-ar300m-nor](#gl.inet-gl-ar300m-nor) | GL.iNet GL-AR300M NOR | ath79-nand | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |
-| [gl.inet-gl-ar750s-nor](#gl.inet-gl-ar750s-nor) | GL.iNet GL-AR750S NOR | ath79-nand | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |
-| [gl.inet-gl-e750](#gl.inet-gl-e750) | GL.iNet GL-E750 (broken) | ath79-nand | K2 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |
-| [gl.inet-gl-xe300](#gl.inet-gl-xe300) | GL.iNet GL-XE300 | ath79-nand | K2 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |
-| [netgear-wndr3700-v4](#netgear-wndr3700-v4) | NETGEAR WNDR3700 v4 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [netgear-wndr4300](#netgear-wndr4300) | NETGEAR WNDR4300 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [zte-mf281](#zte-mf281) | ZTE MF281 (broken) | ath79-nand | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1e1695f959e678868bb7911d059b847f38fc9cf4 |
-| [zte-mf286r](#zte-mf286r) | ZTE MF286R (broken) | ath79-nand | K1 | [`sonderweg-zte-mf286r`](#familie-sonderweg-zte-mf286r) | Exploit | nein | nein | ja |  |
-| [zyxel-nbg6716](#zyxel-nbg6716) | Zyxel NBG6716 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [raspberrypi-model-b](#raspberrypi-model-b) | Raspberry Pi 1 Model B/B+ | bcm27xx-bcm2708 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein | - |
-| [raspberrypi-2-model-b](#raspberrypi-2-model-b) | Raspberry Pi 2 Model B | bcm27xx-bcm2709 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein | - |
-| [raspberrypi-3-model-b](#raspberrypi-3-model-b) | Raspberry Pi 3 Model B/B+ | bcm27xx-bcm2710 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein | - |
-| [raspberrypi-4-model-b](#raspberrypi-4-model-b) | Raspberry Pi 4 Model B | bcm27xx-bcm2711 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein | - |
-| [google-wifi-gale](#google-wifi-gale) | Google WiFi (Gale) | ipq40xx-chromium | K5 | [`sonderweg-google-wifi-gale`](#familie-sonderweg-google-wifi-gale) | usb | nein | ja | nein | https://openwrt.org/inbox/toh/google/google_wifi |
-| [8devices-jalapeno](#8devices-jalapeno) | 8devices Jalapeno | ipq40xx-generic | K0 | [`ssh-stock`](#familie-ssh-stock) | ssh | nein | nein | nein | - |
-| [aruba-ap-303](#aruba-ap-303) | Aruba AP-303 | ipq40xx-generic | K4 | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | nein | teilweise | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=102c8c55f217606cdbdc9a449667e034676b3e75 |
-| [aruba-ap-303h](#aruba-ap-303h) | Aruba AP-303H | ipq40xx-generic | K4 | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | nein | teilweise | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0 |
-| [aruba-ap-365](#aruba-ap-365) | Aruba AP-365 | ipq40xx-generic | K4 | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | nein | teilweise | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=300b7fe85a743ab0e039457a5a551819b49450da |
-| [aruba-instant-on-ap11](#aruba-instant-on-ap11) | Aruba Instant On AP11 (Alias von aruba-ap-303) | ipq40xx-generic | K5 | [`sonderweg-aruba-instant-on-ap11`](#familie-sonderweg-aruba-instant-on-ap11) | tftp-client | ja | nein | teilweise | - |
-| [aruba-instant-on-ap11d](#aruba-instant-on-ap11d) | Aruba Instant On AP11D (Alias von aruba-ap-303h) | ipq40xx-generic | K4 | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | nein | teilweise | - |
-| [aruba-instant-on-ap17](#aruba-instant-on-ap17) | Aruba Instant On AP17 (Alias von aruba-ap-365) | ipq40xx-generic | K4 | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | USB | teilweise | - |
-| [asus-lyra-map-ac2200](#asus-lyra-map-ac2200) | ASUS Lyra MAP-AC2200 | ipq40xx-generic | K1 | [`sonderweg-asus-lyra-map-ac2200`](#familie-sonderweg-asus-lyra-map-ac2200) | ssh | nein | nein | ja | https://openwrt.org/toh/asus/lyra_map-ac2200#oem_easy_installation |
-| [avm-fritz-box-4040](#avm-fritz-box-4040) | AVM FRITZ!Box 4040 | ipq40xx-generic | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein | https://fritz-tools.readthedocs.io/ |
-| [avm-fritz-box-7520](#avm-fritz-box-7520) | AVM FRITZ!Box 7520 (Alias von avm-fritz-box-7530) | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | teilweise | https://openwrt.org/toh/avm/avm_fritz_box_7530#installation |
-| [avm-fritz-box-7530](#avm-fritz-box-7530) | AVM FRITZ!Box 7530 | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | teilweise | https://openwrt.org/toh/avm/avm_fritz_box_7530#installation |
-| [avm-fritz-repeater-1200](#avm-fritz-repeater-1200) | AVM FRITZ!Repeater 1200 | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | teilweise | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7f187229a8e9b7966248b1e024217e07a9fc3e50 |
-| [avm-fritz-repeater-3000](#avm-fritz-repeater-3000) | AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | teilweise | - |
-| [extreme-networks-ws-ap3915i](#extreme-networks-ws-ap3915i) | Extreme Networks WS-AP3915i | ipq40xx-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | - |
-| [gl.inet-gl-ap1300](#gl.inet-gl-ap1300) | GL.iNet GL-AP1300 | ipq40xx-generic | K0 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein | - |
-| [gl.inet-gl-b1300](#gl.inet-gl-b1300) | GL.iNet GL-B1300 | ipq40xx-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein | - |
-| [linksys-ea6350v3](#linksys-ea6350v3) | Linksys EA6350 v3 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | - |
-| [linksys-ea8300-dallas](#linksys-ea8300-dallas) | Linksys EA8300 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | - |
-| [linksys-mr8300-dallas](#linksys-mr8300-dallas) | Linksys MR8300 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | teilweise | - |
-| [linksys-vlp01](#linksys-vlp01) | Linksys VLP01 (Alias von linksys-whw01) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | https://openwrt.org/toh/linksys/whw01_v1#installation |
-| [linksys-whw01](#linksys-whw01) | Linksys WHW01 v1 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | https://openwrt.org/toh/linksys/whw01_v1#installation |
-| [linksys-whw03-v2-velop](#linksys-whw03-v2-velop) | Linksys WHW03 v2 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | https://openwrt.org/toh/linksys/whw03_v2#oem_easy_installation |
-| [linksys-whw03-velop](#linksys-whw03-velop) | Linksys WHW03 v1 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | https://openwrt.org/toh/linksys/whw03_v1#oem_easy_installation |
-| [meraki-mr33-access-point](#meraki-mr33-access-point) | Cisco Meraki MR33 | ipq40xx-generic | K5 | [`sonderweg-meraki-mr33-access-point`](#familie-sonderweg-meraki-mr33-access-point) | tftp-server-am-geraet | ja | ja | nein | https://openwrt.org/toh/meraki/mr33 |
-| [netgear-ex6100v2](#netgear-ex6100v2) | NETGEAR EX6100 v2 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | - |
-| [netgear-ex6150v2](#netgear-ex6150v2) | NETGEAR EX6150 v2 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-fuer-netgear-wi-fi-range-extender-ex6150-v2/ |
-| [netgear-rbr50](#netgear-rbr50) | NETGEAR Orbi RBR50 v1 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
-| [netgear-rbs50](#netgear-rbs50) | NETGEAR Orbi RBS50 v1 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
-| [netgear-srr60](#netgear-srr60) | NETGEAR Orbi Pro SRR60 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
-| [netgear-srs60](#netgear-srs60) | NETGEAR Orbi Pro SRS60 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
-| [openmesh-a42](#openmesh-a42) | OpenMesh A42 | ipq40xx-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein | - |
-| [openmesh-a62](#openmesh-a62) | OpenMesh A62 | ipq40xx-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein | - |
-| [plasma-cloud-pa1200](#plasma-cloud-pa1200) | Plasma Cloud PA1200 | ipq40xx-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein | - |
-| [plasma-cloud-pa2200](#plasma-cloud-pa2200) | Plasma Cloud PA2200 | ipq40xx-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein | - |
-| [zte-mf289f](#zte-mf289f) | ZTE MF289F | ipq40xx-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0de6a3339f1aadc1de2c9371435e3de239a00645 |
-| [zyxel-nbg6617](#zyxel-nbg6617) | Zyxel NBG6617 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | - |
-| [mikrotik-discg-5acd](#mikrotik-discg-5acd) | MikroTik DISC Lite5 ac (Alias von mikrotik-sxtsq-5-ac-rbsxtsqg-5acd) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | - |
-| [mikrotik-hap-ac2](#mikrotik-hap-ac2) | MikroTik hAP ac2 (RBD52G-5HacD2HnD) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | - |
-| [mikrotik-sxtsq-5-ac-rbsxtsqg-5acd](#mikrotik-sxtsq-5-ac-rbsxtsqg-5acd) | MikroTik SXTsq 5 ac (RBSXTsqG-5acD) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | - |
-| [mikrotik-wap-ac](#mikrotik-wap-ac) | MikroTik wAP ac (RBwAPG-5HacD2HnD, ipq40xx) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | - |
-| [aruba-ap-32x](#aruba-ap-32x) | Aruba AP-324/AP-325, Siemens Scalance W1750D | ipq806x-generic | K5 | [`sonderweg-aruba-ap-32x`](#familie-sonderweg-aruba-ap-32x) | tftp-client | ja | nein | teilweise | https://github.com/lukasstockner/ap325-apboot-openwrt |
-| [extreme-networks-ap3935](#extreme-networks-ap3935) | Extreme Networks AP3935i/e | ipq806x-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | - |
-| [netgear-nighthawk-x4s-r7800](#netgear-nighthawk-x4s-r7800) | NETGEAR Nighthawk X4S R7800 | ipq806x-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | - |
-| [tp-link-archer-c2600](#tp-link-archer-c2600) | TP-Link Archer C2600 v1 | ipq806x-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | - |
-| [ubiquiti-unifi-ac-hd](#ubiquiti-unifi-ac-hd) | Ubiquiti UniFi AC HD | ipq806x-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein | - |
-| [arcadyan-vgv7510kw22](#arcadyan-vgv7510kw22) | Arcadyan VGV7510KW22 / o2 Box 6431 (NOR-Image) | lantiq-xrx200 | K5 | [`sonderweg-arcadyan-vgv7510kw22`](#familie-sonderweg-arcadyan-vgv7510kw22) | recovery-web | teilweise | nein | nein | https://forum.openwrt.org/t/installing-lede-u-boot-via-brnboot-web-interface-without-rs232/9857/6 |
-| [avm-fritz-box-3370-rev-2-hynix-nand](#avm-fritz-box-3370-rev-2-hynix-nand) | AVM FRITZ!Box 3370 Rev. 2, Hynix-NAND (Gluon: broken) | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein | https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation |
-| [avm-fritz-box-3370-rev-2-micron-nand](#avm-fritz-box-3370-rev-2-micron-nand) | AVM FRITZ!Box 3370 Rev. 2, Micron-NAND (Gluon: broken) | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein | https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation |
-| [avm-fritz-box-3390](#avm-fritz-box-3390) | AVM FRITZ!Box 3390 | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja |  |
-| [avm-fritz-box-7360-sl](#avm-fritz-box-7360-sl) | AVM FRITZ!Box 7360 SL (Alias 7360 v1) | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein | https://fritz-tools.readthedocs.io/ |
-| [avm-fritz-box-7360-v2](#avm-fritz-box-7360-v2) | AVM FRITZ!Box 7360 v2 | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  |
-| [avm-fritz-box-7362-sl](#avm-fritz-box-7362-sl) | AVM FRITZ!Box 7362 SL | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja | https://openwrt.org/toh/avm/avm_7362_sl#installation |
-| [avm-fritz-box-7412](#avm-fritz-box-7412) | AVM FRITZ!Box 7412 | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja | https://openwrt.org/toh/avm/avm_fritz_box_7412#installation |
-| [avm-fritz-box-7430](#avm-fritz-box-7430) | AVM FRITZ!Box 7430 | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja | https://openwrt.org/toh/avm/avm_fritz_box_7430#installation |
-| [tp-link-td-w8970](#tp-link-td-w8970) | TP-Link TD-W8970 v1 | lantiq-xrx200_legacy | K2 | [`sonderweg-tp-link-td-w8970`](#familie-sonderweg-tp-link-td-w8970) | ssh | nein | nein | nein |  |
-| [tp-link-td-w8980](#tp-link-td-w8980) | TP-Link TD-W8980 (Alias TD-W9980; Gluon: broken, 5 GHz) | lantiq-xrx200_legacy | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein |  |
-| [avm-fritz-box-7312](#avm-fritz-box-7312) | AVM FRITZ!Box 7312 | lantiq-xway | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein | https://fritz-tools.readthedocs.io/ |
-| [netgear-dgn3500b](#netgear-dgn3500b) | NETGEAR DGN3500B | lantiq-xway | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [asus-rt-ax52](#asus-rt-ax52) | ASUS RT-AX52 | mediatek-filogic | K1 | [`sonderweg-asus-rt-ax52`](#familie-sonderweg-asus-rt-ax52) | webui-upload | nein | nein | ja | https://openwrt.org/toh/asus/rt-ax52#installation |
-| [asus-rt-ax59u](#asus-rt-ax59u) | ASUS RT-AX59U | mediatek-filogic | K2 | [`sonderweg-asus-rt-ax59u`](#familie-sonderweg-asus-rt-ax59u) | webui-upload | nein | nein | teilweise | - |
-| [asus-tuf-ax4200](#asus-tuf-ax4200) | ASUS TUF-AX4200 | mediatek-filogic | K2 | [`asus-tuf-herbetom`](#familie-asus-tuf-herbetom) | ssh | nein | nein | teilweise | https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-ASUS-TUF-AX4200 |
-| [asus-tuf-ax6000](#asus-tuf-ax6000) | ASUS TUF-AX6000 | mediatek-filogic | K2 | [`asus-tuf-herbetom`](#familie-asus-tuf-herbetom) | ssh | nein | nein | teilweise | https://github.com/herbetom/openwrt-asus-filogic-factory/releases/latest |
-| [cudy-ap3000-outdoor-v1](#cudy-ap3000-outdoor-v1) | Cudy AP3000 Outdoor v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-ap3000-v1](#cudy-ap3000-v1) | Cudy AP3000 v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | - |
-| [cudy-ap3000-wall-v1](#cudy-ap3000-wall-v1) | Cudy AP3000 Wall v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | - |
-| [cudy-m3000-v1](#cudy-m3000-v1) | Cudy M3000 v1 (RTL8221B) | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-m3000-v2-with-motorcomm-yt8821](#cudy-m3000-v2-with-motorcomm-yt8821) | Cudy M3000 v2 mit Motorcomm YT8821 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | - |
-| [cudy-re3000-v1](#cudy-re3000-v1) | Cudy RE3000 v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-tr3000-256mb-v1](#cudy-tr3000-256mb-v1) | Cudy TR3000 256 MB v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-tr3000-v1](#cudy-tr3000-v1) | Cudy TR3000 v1 (128 MB Flash) | mediatek-filogic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-wr3000-v1](#cudy-wr3000-v1) | Cudy WR3000 v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-wr3000e-v1](#cudy-wr3000e-v1) | Cudy WR3000E v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-wr3000h-v1](#cudy-wr3000h-v1) | Cudy WR3000H v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-wr3000p-v1](#cudy-wr3000p-v1) | Cudy WR3000P v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | - |
-| [cudy-wr3000s-v1](#cudy-wr3000s-v1) | Cudy WR3000S v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-wr3000u-v1](#cudy-wr3000u-v1) | Cudy WR3000U v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | - |
-| [d-link-aquila-pro-ai-m30-a1](#d-link-aquila-pro-ai-m30-a1) | D-Link AQUILA PRO AI M30 A1 | mediatek-filogic | K1 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | ja | https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/ |
-| [d-link-aquila-pro-ai-m60-a1](#d-link-aquila-pro-ai-m60-a1) | D-Link AQUILA PRO AI M60 A1 | mediatek-filogic | K1 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | ja | - |
-| [gl.inet-gl-mt2500](#gl.inet-gl-mt2500) | GL.iNet GL-MT2500 (MaxLinear-PHY) | mediatek-filogic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein | - |
-| [gl.inet-gl-mt3000](#gl.inet-gl-mt3000) | GL.iNet GL-MT3000 | mediatek-filogic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein | - |
-| [gl.inet-gl-mt6000](#gl.inet-gl-mt6000) | GL.iNet GL-MT6000 | mediatek-filogic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein | - |
-| [mercusys-mr80x-v3](#mercusys-mr80x-v3) | Mercusys MR80X v3 | mediatek-filogic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise |  |
-| [mercusys-mr90x-v1](#mercusys-mr90x-v1) | Mercusys MR90X v1 | mediatek-filogic | K2 | [`sonderweg-mercusys-mr90x-v1`](#familie-sonderweg-mercusys-mr90x-v1) | ssh | nein | nein | teilweise | https://openwrt.org/toh/mercusys/mr90x_v1#installation_stock_bootloader |
-| [netgear-wax220](#netgear-wax220) | NETGEAR WAX220 | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | https://openwrt.org/toh/netgear/wax220#oem_easy_installation |
-| [openwrt-one](#openwrt-one) | OpenWrt One | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | - |
-| [ubiquiti-unifi-6-plus](#ubiquiti-unifi-6-plus) | Ubiquiti UniFi 6+ (U6+) | mediatek-filogic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=75ee5546e9b7cfa5bbfd6f844ab8c5fffd5bb594 |
-| [wavlink-wl-wn573hx3](#wavlink-wl-wn573hx3) | WAVLINK WL-WN573HX3 / 7Links WLR-1300 | mediatek-filogic | K1d | [`sonderweg-wavlink-wl-wn573hx3`](#familie-sonderweg-wavlink-wl-wn573hx3) | webui-upload | nein | nein | nein | - |
-| [xiaomi-mi-router-ax3000t](#xiaomi-mi-router-ax3000t) | Xiaomi Mi Router AX3000T | mediatek-filogic | K2 | [`sonderweg-xiaomi-mi-router-ax3000t`](#familie-sonderweg-xiaomi-mi-router-ax3000t) | ssh | nein | nein | teilweise | - |
-| [xiaomi-mi-router-ax3000t-openwrt-u-boot-layout](#xiaomi-mi-router-ax3000t-openwrt-u-boot-layout) | Xiaomi Mi Router AX3000T (OpenWrt-U-Boot-Layout) | mediatek-filogic | K3 | [`sonderweg-xiaomi-mi-router-ax3000t-openwrt-u-boot-layout`](#familie-sonderweg-xiaomi-mi-router-ax3000t-openwrt-u-boot-layout) | ssh | nein | nein | nein | - |
-| [zyxel-nwa50ax-pro](#zyxel-nwa50ax-pro) | Zyxel NWA50AX Pro | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f0445746f6fd96fc7c5394b238153bd2ff22bc5b |
-| [zyxel-nwa90ax-pro](#zyxel-nwa90ax-pro) | Zyxel NWA90AX Pro (Alias von zyxel-nwa50ax-pro) | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | - |
-| [linksys-e8450-ubi](#linksys-e8450-ubi) | Linksys E8450 / Belkin RT3200 (UBI-Layout) | mediatek-mt7622 | K3 | [`sonderweg-linksys-e8450-ubi`](#familie-sonderweg-linksys-e8450-ubi) | webui-upload | nein | nein | nein | https://openwrt.org/toh/linksys/e8450#installation |
-| [netgear-wax206](#netgear-wax206) | NETGEAR WAX206 | mediatek-mt7622 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein | https://openwrt.org/toh/netgear/wax206#oem_easy_installation |
-| [ubiquiti-unifi-6-lr-v1](#ubiquiti-unifi-6-lr-v1) | Ubiquiti UniFi 6 LR v1 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein | https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
-| [ubiquiti-unifi-6-lr-v2](#ubiquiti-unifi-6-lr-v2) | Ubiquiti UniFi 6 LR v2 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein | https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
-| [ubiquiti-unifi-6-lr-v3](#ubiquiti-unifi-6-lr-v3) | Ubiquiti UniFi 6 LR v3 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein | https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
-| [xiaomi-redmi-router-ax6s](#xiaomi-redmi-router-ax6s) | Xiaomi Redmi Router AX6S / AX3200 | mediatek-mt7622 | K0+ | [`sonderweg-xiaomi-redmi-router-ax6s`](#familie-sonderweg-xiaomi-redmi-router-ax6s) | webui-upload | nein | nein | nein | - |
-| [enterasys-ws-ap3715i](#enterasys-ws-ap3715i) | Enterasys WS-AP3715i | mpc85xx-p1010 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b |
-| [sophos-red-15w-rev.1](#sophos-red-15w-rev.1) | Sophos RED 15w Rev. 1 | mpc85xx-p1010 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise |  |
-| [tp-link-tl-wdr4900-v1](#tp-link-tl-wdr4900-v1) | TP-Link TL-WDR4900 v1 | mpc85xx-p1010 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [aerohive-hiveap-330](#aerohive-hiveap-330) | Aerohive HiveAP 330 | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise |  |
-| [enterasys-ws-ap3710i](#enterasys-ws-ap3710i) | Enterasys WS-AP3710i | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=16b01fb1b9c99513c318109bef96a1a3545c57a0 |
-| [extreme-networks-ws-ap3825i](#extreme-networks-ws-ap3825i) | Extreme Networks WS-AP3825i | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923 |
-| [hewlett-packard-msm460](#hewlett-packard-msm460) | HPE MSM460 | mpc85xx-p1020 | K5 | [`sonderweg-hewlett-packard-msm460`](#familie-sonderweg-hewlett-packard-msm460) | tftp-server-am-geraet | nein | nein | nein | https://github.com/blocktrron/msm460-flashing?tab=readme-ov-file |
-| [ocedo-panda](#ocedo-panda) | OCEDO Panda | mpc85xx-p1020 | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | teilweise |  |
-| [linksys-mx5300](#linksys-mx5300) | Linksys MX5300 | qualcommax-ipq807x | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | - |
-| [netgear-wax218](#netgear-wax218) | NETGEAR WAX218 | qualcommax-ipq807x | K1 | [`sonderweg-netgear-wax218`](#familie-sonderweg-netgear-wax218) | webui-upload | nein | nein | ja | - |
-| [tp-link-eap620-hd-v1](#tp-link-eap620-hd-v1) | TP-Link EAP620 HD v1 | qualcommax-ipq807x | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | - |
-| [xiaomi-ax3600](#xiaomi-ax3600) | Xiaomi AX3600 | qualcommax-ipq807x | K2 | [`sonderweg-xiaomi-ax3600`](#familie-sonderweg-xiaomi-ax3600) | ssh | nein | nein | teilweise | - |
-| [asus-rt-ac51u](#asus-rt-ac51u) | ASUS RT-AC51U | ramips-mt7620 | K1d | [`asus-firmware-restoration`](#familie-asus-firmware-restoration) | tftp-server-am-geraet | nein | nein | nein | https://openwrt.org/toh/asus/rt-ac51u#installation |
-| [gl-mt300a](#gl-mt300a) | GL.iNet GL-MT300A | ramips-mt7620 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |
-| [gl-mt300n](#gl-mt300n) | GL.iNet GL-MT300N (v1) | ramips-mt7620 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |
-| [gl-mt750](#gl-mt750) | GL.iNet GL-MT750 | ramips-mt7620 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |
-| [netgear-ex3700](#netgear-ex3700) | NETGEAR EX3700/EX3800 (Alias netgear-ex3800) | ramips-mt7620 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein | https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-wi-fi-range-extender-ex3700/ |
-| [netgear-ex6130](#netgear-ex6130) | NETGEAR EX6130 | ramips-mt7620 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  |
-| [nexx-wt3020-8m](#nexx-wt3020-8m) | Nexx WT3020 8M (Aliase WT3020AD/F/H) | ramips-mt7620 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-archer-c2-v1](#tp-link-archer-c2-v1) | TP-Link Archer C2 v1 | ramips-mt7620 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | tftp-client-am-geraet | nein | nein | nein |  |
-| [tp-link-archer-c20-v1](#tp-link-archer-c20-v1) | TP-Link Archer C20 v1 | ramips-mt7620 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | tftp-client-am-geraet | nein | nein | nein |  |
-| [tp-link-archer-c20i](#tp-link-archer-c20i) | TP-Link Archer C20i | ramips-mt7620 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-archer-c50-v1](#tp-link-archer-c50-v1) | TP-Link Archer C50 v1 | ramips-mt7620 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [xiaomi-miwifi-mini](#xiaomi-miwifi-mini) | Xiaomi MiWiFi Mini | ramips-mt7620 | K1d | [`ssh-stock`](#familie-ssh-stock) | ssh | nein | nein | nein |  |
-| [asus-rt-ac57u-v1](#asus-rt-ac57u-v1) | ASUS RT-AC57U v1 | ramips-mt7621 | K1d | [`asus-firmware-restoration`](#familie-asus-firmware-restoration) | tftp-server-am-geraet | nein | nein | nein |  |
-| [asus-rt-ax53u](#asus-rt-ax53u) | ASUS RT-AX53U (RT-AX1800U) | ramips-mt7621 | K1 | [`asus-firmware-restoration`](#familie-asus-firmware-restoration) | tftp-server-am-geraet | nein | nein | ja | https://openwrt.org/toh/asus/rt-ax53u#installation_with_mtd-write |
-| [cudy-ap1300-outdoor-v1](#cudy-ap1300-outdoor-v1) | Cudy AP1300 Outdoor v1 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-m1800](#cudy-m1800) | Cudy M1800 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  |
-| [cudy-wr1300-v1](#cudy-wr1300-v1) | Cudy WR1300 v1 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-wr2100](#cudy-wr2100) | Cudy WR2100 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-x6-v1](#cudy-x6-v1) | Cudy X6 v1 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-x6-v2](#cudy-x6-v2) | Cudy X6 v2 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [d-link-covr-x1860-a1](#d-link-covr-x1860-a1) | D-Link COVR-X1860 A1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | https://freifunk-aachen.de/2023/08/03/installationsanleitung-d-link-covr-x1860/ |
-| [d-link-dap-1620-b1](#d-link-dap-1620-b1) | D-Link DAP-1620 B1 (Gluon: broken) | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e4c7703d2a62b8914e4723adae3f67c68a57532c |
-| [d-link-dap-x1860-a1](#d-link-dap-x1860-a1) | D-Link DAP-X1860 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/installation-d-link-dap-x1860/987 |
-| [d-link-dir-860l-b1](#d-link-dir-860l-b1) | D-Link DIR-860L B1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [d-link-dir-878-a1](#d-link-dir-878-a1) | D-Link DIR-878 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein | https://openwrt.org/toh/d-link/dir-878_a1#installation |
-| [d-link-dir-882-a1](#d-link-dir-882-a1) | D-Link DIR-882 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein | https://openwrt.org/toh/d-link/dir-882_a1#installation |
-| [genexis-pulse-ex400](#genexis-pulse-ex400) | Genexis/Inteno Pulse EX400 | ramips-mt7621 | K1 | [`sonderweg-genexis-pulse-ex400`](#familie-sonderweg-genexis-pulse-ex400) | webui-upload | nein | nein | ja | https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400 |
-| [gl.inet-gl-mt1300](#gl.inet-gl-mt1300) | GL.iNet GL-MT1300 (Beryl) | ramips-mt7621 | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |
-| [mercusys-mr70x-v1](#mercusys-mr70x-v1) | Mercusys MR70X v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [mikrotik-routerboard-750gr3](#mikrotik-routerboard-750gr3) | MikroTik hEX RB750Gr3 (Alias mikrotik-routerboard-hex-v3) | ramips-mt7621 | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | https://openwrt.org/toh/mikrotik/common |
-| [netgear-eax12](#netgear-eax12) | NETGEAR EAX12 (Aliase EAX11 v2, EAX15 v2) | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  |
-| [netgear-ex6150](#netgear-ex6150) | NETGEAR EX6150 (v1) | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein | https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-wi-fi-range-extender-ex6150-v2/ |
-| [netgear-r6220](#netgear-r6220) | NETGEAR R6220 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein | https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-r6220/ |
-| [netgear-r6260](#netgear-r6260) | NETGEAR R6260 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  |
-| [netgear-wac104](#netgear-wac104) | NETGEAR WAC104 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [netgear-wax202](#netgear-wax202) | NETGEAR WAX202 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein | https://openwrt.org/toh/netgear/wax202#oem_easy_installation |
-| [netgear-wndr3700-v5](#netgear-wndr3700-v5) | NETGEAR WNDR3700 v5 (Gluon: broken, "untested") | ramips-mt7621 | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  |
-| [totolink-x5000r](#totolink-x5000r) | TOTOLINK X5000R | ramips-mt7621 | K1d | [`sonderweg-totolink-x5000r`](#familie-sonderweg-totolink-x5000r) | webui-upload | nein | nein | nein |  |
-| [tp-link-archer-ax23-v1](#tp-link-archer-ax23-v1) | TP-Link Archer AX23 v1 (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-archer-c6-v3](#tp-link-archer-c6-v3) | TP-Link Archer C6 v3 (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-eap613-v1](#tp-link-eap613-v1) | TP-Link EAP613 v1 | ramips-mt7621 | K0 | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  |
-| [tp-link-eap615-wall-v1](#tp-link-eap615-wall-v1) | TP-Link EAP615-Wall v1 | ramips-mt7621 | K0 | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  |
-| [tp-link-re500-v1](#tp-link-re500-v1) | TP-Link RE500 v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-re650-v1](#tp-link-re650-v1) | TP-Link RE650 v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [ubiquiti-edgerouter-x](#ubiquiti-edgerouter-x) | Ubiquiti EdgeRouter X | ramips-mt7621 | K3 | [`ubiquiti-edgerouter`](#familie-ubiquiti-edgerouter) | webui-upload | nein | nein | nein | https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp |
-| [ubiquiti-edgerouter-x-sfp](#ubiquiti-edgerouter-x-sfp) | Ubiquiti EdgeRouter X-SFP | ramips-mt7621 | K3 | [`ubiquiti-edgerouter`](#familie-ubiquiti-edgerouter) | webui-upload | nein | nein | nein | https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp |
-| [ubiquiti-unifi-6-lite](#ubiquiti-unifi-6-lite) | Ubiquiti UniFi 6 Lite | ramips-mt7621 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein | https://openwrt.org/toh/ubiquiti/unifi6lite#installation |
-| [ubiquiti-unifi-nanohd](#ubiquiti-unifi-nanohd) | Ubiquiti UniFi nanoHD | ramips-mt7621 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  |
-| [wavlink-ws-wn572hp3-4g](#wavlink-ws-wn572hp3-4g) | Wavlink WS-WN572HP3 4G | ramips-mt7621 | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6cd1035d8dc001561331ca9e613d7dfc7d0fd7a6 |
-| [xiaomi-mi-router-3g](#xiaomi-mi-router-3g) | Xiaomi Mi Router 3G | ramips-mt7621 | K2 | [`sonderweg-xiaomi-mi-router-3g`](#familie-sonderweg-xiaomi-mi-router-3g) | ssh | nein | nein | nein |  |
-| [xiaomi-mi-router-3g-v2](#xiaomi-mi-router-3g-v2) | Xiaomi Mi Router 3G v2 | ramips-mt7621 | K2 | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  |
-| [xiaomi-mi-router-4a-gigabit-edition](#xiaomi-mi-router-4a-gigabit-edition) | Xiaomi Mi Router 4A Gigabit | ramips-mt7621 | K1d | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein | https://github.com/acecilia/OpenWRTInvasion/blob/master/README.md |
-| [xiaomi-mi-router-4a-gigabit-edition-v2](#xiaomi-mi-router-4a-gigabit-edition-v2) | Xiaomi Mi Router 4A Gigabit v2 | ramips-mt7621 | K1d | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  |
-| [xiaomi-mi-router-ac2100](#xiaomi-mi-router-ac2100) | Xiaomi Mi Router AC2100 (R2100) | ramips-mt7621 | K2 | [`xiaomi-ac2100-pppoe`](#familie-xiaomi-ac2100-pppoe) | ssh | nein | nein | nein |  |
-| [xiaomi-redmi-router-ac2100](#xiaomi-redmi-router-ac2100) | Xiaomi Redmi Router AC2100 (RM2100) | ramips-mt7621 | K2 | [`xiaomi-ac2100-pppoe`](#familie-xiaomi-ac2100-pppoe) | ssh | nein | nein | nein | https://openwrt.org/toh/xiaomi/xiaomi_redmi_router_ac2100 |
-| [zbtlink-zbt-wg3526-16m](#zbtlink-zbt-wg3526-16m) | ZBT WG3526 16M | ramips-mt7621 | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |
-| [zbtlink-zbt-wg3526-32m](#zbtlink-zbt-wg3526-32m) | ZBT WG3526 32M | ramips-mt7621 | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |
-| [zyxel-nwa50ax](#zyxel-nwa50ax) | ZyXEL NWA50AX (Alias NWA90AX) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964 |
-| [zyxel-nwa55axe](#zyxel-nwa55axe) | ZyXEL NWA55AXE (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964 |
-| [zyxel-wsm20](#zyxel-wsm20) | ZyXEL WSM20 (Multy M1) | ramips-mt7621 | K1 | [`sonderweg-zyxel-wsm20`](#familie-sonderweg-zyxel-wsm20) | webui-upload | nein | nein | ja | https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/ |
-| [cudy-tr1200-v1](#cudy-tr1200-v1) | Cudy TR1200 v1 | ramips-mt76x8 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-wr1000](#cudy-wr1000) | Cudy WR1000 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [gl-mt300n-v2](#gl-mt300n-v2) | GL.iNet GL-MT300N v2 | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |
-| [gl.inet-microuter-n300](#gl.inet-microuter-n300) | GL.iNet microuter-N300 | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |
-| [gl.inet-vixmini](#gl.inet-vixmini) | GL.iNet VIXMINI | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |
-| [netgear-r6020](#netgear-r6020) | NETGEAR R6020 | ramips-mt76x8 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  |
-| [netgear-r6120](#netgear-r6120) | NETGEAR R6120 | ramips-mt76x8 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein | https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-r6120/ |
-| [ravpower-rp-wd009](#ravpower-rp-wd009) | RAVPower RP-WD009 | ramips-mt76x8 | K0 | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein | https://openwrt.org/toh/ravpower/rp-wd009#oem_installation_using_the_tftp_method |
-| [tp-link-archer-c20-v4](#tp-link-archer-c20-v4) | TP-Link Archer C20 v4 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |
-| [tp-link-archer-c20-v5](#tp-link-archer-c20-v5) | TP-Link Archer C20 v5 | ramips-mt76x8 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |
-| [tp-link-archer-c50-v3](#tp-link-archer-c50-v3) | TP-Link Archer C50 v3 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |
-| [tp-link-archer-c50-v4](#tp-link-archer-c50-v4) | TP-Link Archer C50 v4 | ramips-mt76x8 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |
-| [tp-link-archer-c50-v6-ca-eu-ru](#tp-link-archer-c50-v6-ca-eu-ru) | TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54) | ramips-mt76x8 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |
-| [tp-link-re200-v2](#tp-link-re200-v2) | TP-Link RE200 v2 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-re200-v3](#tp-link-re200-v3) | TP-Link RE200 v3 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-re200-v4](#tp-link-re200-v4) | TP-Link RE200 v4 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-tl-mr3020-v3](#tp-link-tl-mr3020-v3) | TP-Link TL-MR3020 v3 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |
-| [tp-link-tl-mr3420-v5](#tp-link-tl-mr3420-v5) | TP-Link TL-MR3420 v5 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |
-| [tp-link-tl-mr6400-v5](#tp-link-tl-mr6400-v5) | TP-Link TL-MR6400 v5 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |
-| [tp-link-tl-wa801nd-v5](#tp-link-tl-wa801nd-v5) | TP-Link TL-WA801ND v5 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |
-| [tp-link-tl-wr841n-v13](#tp-link-tl-wr841n-v13) | TP-Link TL-WR841N v13 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein | https://openwrt.org/toh/tp-link/tl-wr841nd#tftp_recovery_via_bootloader_for_v8_v9_v10_v11_v12_v13 |
-| [tp-link-tl-wr902ac-v3](#tp-link-tl-wr902ac-v3) | TP-Link TL-WR902AC v3 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein | https://openwrt.org/toh/tp-link/tl-wr902ac_v3#installation |
-| [tp-link-tl-wr902ac-v4](#tp-link-tl-wr902ac-v4) | TP-Link TL-WR902AC v4 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |
-| [vocore2](#vocore2) | VoCore2 | ramips-mt76x8 | K1d | [`ssh-stock`](#familie-ssh-stock) | ssh | nein | nein | nein |  |
-| [xiaomi-mi-ra75](#xiaomi-mi-ra75) | Xiaomi Mi WiFi Range Extender AC1200 RA75 (Gluon: broken, "Only serial flash possible") | ramips-mt76x8 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein |  |
-| [xiaomi-mi-router-4a-100m-edition](#xiaomi-mi-router-4a-100m-edition) | Xiaomi Mi Router 4A 100M | ramips-mt76x8 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein | https://openwrt.org/toh/xiaomi/mi_router_4a_mir4a_100m#installation |
-| [xiaomi-mi-router-4a-100m-international-edition](#xiaomi-mi-router-4a-100m-international-edition) | Xiaomi Mi Router 4A 100M International (R4AC) | ramips-mt76x8 | K1d | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein | https://forum.ffrn.de/t/howto-installation-xiaomi-mi-router-4a-r4ac-100m-international-edition/3536 |
-| [xiaomi-mi-router-4a-100m-international-edition-v2](#xiaomi-mi-router-4a-100m-international-edition-v2) | Xiaomi Mi Router 4A 100M International v2 | ramips-mt76x8 | K2 | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  |
-| [xiaomi-mi-router-4c](#xiaomi-mi-router-4c) | Xiaomi Mi Router 4C | ramips-mt76x8 | K2 | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein | https://github.com/acecilia/OpenWRTInvasion/blob/master/README.md |
-| [friendlyelec-nanopi-r2c](#friendlyelec-nanopi-r2c) | FriendlyElec NanoPi R2C | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein | - |
-| [friendlyelec-nanopi-r2s](#friendlyelec-nanopi-r2s) | FriendlyElec NanoPi R2S | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein | - |
-| [friendlyelec-nanopi-r3s](#friendlyelec-nanopi-r3s) | FriendlyElec NanoPi R3S | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein | - |
-| [friendlyelec-nanopi-r4s](#friendlyelec-nanopi-r4s) | FriendlyElec NanoPi R4S (4 GB) | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein | - |
-| [x86-64](#x86-64) | x86 (x86-64) | x86-64 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein | - |
-| [x86-generic](#x86-generic) | x86 (x86-generic) | x86-generic | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein | - |
-| [x86-geode](#x86-geode) | x86 (x86-geode) | x86-geode | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein | - |
-| [x86-legacy](#x86-legacy) | x86 (x86-legacy) | x86-legacy | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein | - |
+| Gluon-Name | Modell | Target | Kat. | Anleitungsfamilie | Übertragung | seriell nötig | Gehäuse öffnen | Gluon-RAMpe | RAMpe-Rezept | Detail-Anleitung |
+|---|---|---|---|---|---|---|---|---|---|---|
+| [alfa-network-ap121f](#alfa-network-ap121f) | ALFA Network AP121F | ath79-generic | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
+| [avm-fritz-box-4020](#avm-fritz-box-4020) | AVM FRITZ!Box 4020 | ath79-generic | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | https://fritz-tools.readthedocs.io/ |
+| [avm-fritz-wlan-repeater-1750e](#avm-fritz-wlan-repeater-1750e) | AVM FRITZ!WLAN Repeater 1750E (broken) | ath79-generic | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  |  |
+| [avm-fritz-wlan-repeater-300e](#avm-fritz-wlan-repeater-300e) | AVM FRITZ!WLAN Repeater 300E | ath79-generic | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | https://fritz-tools.readthedocs.io/ |
+| [avm-fritz-wlan-repeater-450e](#avm-fritz-wlan-repeater-450e) | AVM FRITZ!WLAN Repeater 450E | ath79-generic | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | https://fritz-tools.readthedocs.io/ |
+| [buffalo-wzr-600dhp](#buffalo-wzr-600dhp) | Buffalo WZR-600DHP | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [buffalo-wzr-hp-ag300h](#buffalo-wzr-hp-ag300h) | Buffalo WZR-HP-AG300H | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [buffalo-wzr-hp-g300nh-rtl8366s](#buffalo-wzr-hp-g300nh-rtl8366s) | Buffalo WZR-HP-G300NH (RTL8366S switch) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [buffalo-wzr-hp-g450h-wzr-450hp](#buffalo-wzr-hp-g450h-wzr-450hp) | Buffalo WZR-HP-G450H/WZR-450HP | ath79-generic | K0+ | [`sonderweg-buffalo-wzr-hp-g450h-wzr-450hp`](#familie-sonderweg-buffalo-wzr-hp-g450h-wzr-450hp) | webui-upload | nein | nein | nein |  |  |
+| [comfast-cf-ew71-v2](#comfast-cf-ew71-v2) | COMFAST CF-EW71 v2 | ath79-generic | K1d | [`sonderweg-comfast-cf-ew71-v2`](#familie-sonderweg-comfast-cf-ew71-v2) | webui-upload | nein | nein | nein |  |  |
+| [d-link-dap-1330-a1](#d-link-dap-1330-a1) | D-Link DAP-1330 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [d-link-dap-1365-a1](#d-link-dap-1365-a1) | D-Link DAP-1365 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [d-link-dap-2660-a1](#d-link-dap-2660-a1) | D-Link DAP-2660 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [d-link-dap-2680-a1](#d-link-dap-2680-a1) | D-Link DAP-2680 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5b58710fad2137eedad874f0fe8fe22082d1edc6 |
+| [d-link-dap-2695-a1](#d-link-dap-2695-a1) | D-Link DAP-2695 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [d-link-dir-505](#d-link-dir-505) | D-Link DIR-505 | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ? | teilweise |  |  |
+| [d-link-dir825b1](#d-link-dir825b1) | D-Link DIR-825 B1 | ath79-generic | offen | [`sonderweg-d-link-dir825b1`](#familie-sonderweg-d-link-dir825b1) | ? | ? | ? | offen |  |  |
+| [devolo-dlan-pro-1200+-wifi-ac](#devolo-dlan-pro-1200+-wifi-ac) | devolo dLAN pro 1200+ WiFi ac (broken) | ath79-generic | K1d | [`sonderweg-devolo-dlan-pro-1200+-wifi-ac`](#familie-sonderweg-devolo-dlan-pro-1200+-wifi-ac) | tftp-client-am-geraet | nein | nein | nein |  |  |
+| [devolo-wifi-pro-1200e](#devolo-wifi-pro-1200e) | devolo WiFi pro 1200e | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1724d4e9ed7716a5444eca42adf045c2f3afc554 |
+| [devolo-wifi-pro-1200i](#devolo-wifi-pro-1200i) | devolo WiFi pro 1200i | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c8115167f946be85f812f3c94d6294b67ac8944c |
+| [devolo-wifi-pro-1750c](#devolo-wifi-pro-1750c) | devolo WiFi pro 1750c | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e67da3443168fa6b6727cd81a35d559be77d6b4c |
+| [devolo-wifi-pro-1750e](#devolo-wifi-pro-1750e) | devolo WiFi pro 1750e | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1c2f7b511514d43d8a826b26e09817b2750a2bf4 |
+| [devolo-wifi-pro-1750i](#devolo-wifi-pro-1750i) | devolo WiFi pro 1750i | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=8d68be8057d6c689025cc236d20b96b77a6ccf30 |
+| [devolo-wifi-pro-1750x](#devolo-wifi-pro-1750x) | devolo WiFi pro 1750x | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=cb3cd526948af3f69da1af18e035177a0a8f58e3 |
+| [enterasys-ws-ap3705i](#enterasys-ws-ap3705i) | Enterasys WS-AP3705i | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=ebddc5f984a240980303aed68524eb615484eef8 |
+| [extreme-networks-ws-ap3805i](#extreme-networks-ws-ap3805i) | Extreme Networks WS-AP3805i | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f8c87aa2d27ab405f284dd4357377ab5c893a345 |
+| [gl.inet-6416](#gl.inet-6416) | GL.iNet 6416 | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
+| [gl.inet-gl-ar150](#gl.inet-gl-ar150) | GL.iNet GL-AR150 | ath79-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
+| [gl.inet-gl-ar300m-lite](#gl.inet-gl-ar300m-lite) | GL.iNet GL-AR300M Lite | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
+| [gl.inet-gl-ar300m16](#gl.inet-gl-ar300m16) | GL.iNet GL-AR300M16 | ath79-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
+| [gl.inet-gl-ar750](#gl.inet-gl-ar750) | GL.iNet GL-AR750 | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
+| [gl.inet-gl-usb150](#gl.inet-gl-usb150) | GL.iNET GL-USB150 | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
+| [joy-it-jt-or750i](#joy-it-jt-or750i) | Joy-IT JT-OR750i | ath79-generic | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  | https://wiki.freifunk-stuttgart.net/technik:hardware:joy-it_jt-or750i |
+| [librerouter-v1](#librerouter-v1) | Librerouter LibreRouter v1 | ath79-generic | K1d | [`sonderweg-librerouter-v1`](#familie-sonderweg-librerouter-v1) | webui-upload | nein | nein | nein |  |  |
+| [netgear-wndr3700](#netgear-wndr3700) | NETGEAR WNDR3700 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [netgear-wndr3700-v2](#netgear-wndr3700-v2) | NETGEAR WNDR3700 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [netgear-wndr3800](#netgear-wndr3800) | NETGEAR WNDR3800 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [netgear-wndr3800ch](#netgear-wndr3800ch) | NETGEAR WNDR3800CH | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [netgear-wndrmac-v2](#netgear-wndrmac-v2) | NETGEAR WNDRMAC v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [netgear-wnr2200-16m](#netgear-wnr2200-16m) | NETGEAR WNR2200 16M | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [netgear-wnr2200-8m](#netgear-wnr2200-8m) | NETGEAR WNR2200 8M | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [ocedo-koala](#ocedo-koala) | Ocedo Koala | ath79-generic | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | ja |  |  |
+| [ocedo-raccoon](#ocedo-raccoon) | Ocedo Raccoon | ath79-generic | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | ja |  |  |
+| [onion-omega](#onion-omega) | Onion Omega | ath79-generic | K0 | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
+| [openmesh-a40](#openmesh-a40) | OpenMesh A40 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-a60](#openmesh-a60) | OpenMesh A60 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-mr1750-v1](#openmesh-mr1750-v1) | OpenMesh MR1750 v1 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-mr1750-v2](#openmesh-mr1750-v2) | OpenMesh MR1750 v2 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-mr600-v1](#openmesh-mr600-v1) | OpenMesh MR600 v1 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-mr600-v2](#openmesh-mr600-v2) | OpenMesh MR600 v2 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-mr900-v1](#openmesh-mr900-v1) | OpenMesh MR900 v1 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-mr900-v2](#openmesh-mr900-v2) | OpenMesh MR900 v2 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om2p-hs-v1](#openmesh-om2p-hs-v1) | OpenMesh OM2P-HS v1 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om2p-hs-v2](#openmesh-om2p-hs-v2) | OpenMesh OM2P-HS v2 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om2p-hs-v3](#openmesh-om2p-hs-v3) | OpenMesh OM2P-HS v3 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om2p-hs-v4](#openmesh-om2p-hs-v4) | OpenMesh OM2P-HS v4 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om2p-lc](#openmesh-om2p-lc) | OpenMesh OM2P-LC | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om2p-v1](#openmesh-om2p-v1) | OpenMesh OM2P v1 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om2p-v2](#openmesh-om2p-v2) | OpenMesh OM2P v2 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om2p-v4](#openmesh-om2p-v4) | OpenMesh OM2P v4 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om5p](#openmesh-om5p) | OpenMesh OM5P | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om5p-ac-v1](#openmesh-om5p-ac-v1) | OpenMesh OM5P-AC v1 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om5p-ac-v2](#openmesh-om5p-ac-v2) | OpenMesh OM5P-AC v2 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om5p-an](#openmesh-om5p-an) | OpenMesh OM5P-AN | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [plasma-cloud-pa300](#plasma-cloud-pa300) | Plasma Cloud PA300 | ath79-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [plasma-cloud-pa300e](#plasma-cloud-pa300e) | Plasma Cloud PA300E | ath79-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [siemens-ws-ap3610](#siemens-ws-ap3610) | Siemens WS-AP3610 | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise |  | https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Siemens-AP3610 |
+| [sophos-ap100](#sophos-ap100) | Sophos AP100 | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
+| [sophos-ap100c](#sophos-ap100c) | Sophos AP100C | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
+| [sophos-ap15](#sophos-ap15) | Sophos AP15 (broken) | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0dc58214896aacf67a3759495d70e2b4e9c160d8 |
+| [sophos-ap15c](#sophos-ap15c) | Sophos AP15C | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  |  |
+| [sophos-ap55](#sophos-ap55) | Sophos AP55 | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
+| [sophos-ap55c](#sophos-ap55c) | Sophos AP55C | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
+| [teltonika-rut230-v1](#teltonika-rut230-v1) | Teltonika RUT230 v1 | ath79-generic | K0+ | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
+| [tp-link-archer-a7-v5](#tp-link-archer-a7-v5) | TP-Link Archer A7 v5 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c2-v3](#tp-link-archer-c2-v3) | TP-Link Archer C2 v3 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c25-v1](#tp-link-archer-c25-v1) | TP-Link Archer C25 v1 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c5-v1](#tp-link-archer-c5-v1) | TP-Link Archer C5 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c58-v1](#tp-link-archer-c58-v1) | TP-Link Archer C58 v1 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c59-v1](#tp-link-archer-c59-v1) | TP-Link Archer C59 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c6-v2-eu-ru-jp](#tp-link-archer-c6-v2-eu-ru-jp) | TP-Link Archer C6 v2 (EU/RU/JP) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c60-v1](#tp-link-archer-c60-v1) | TP-Link Archer C60 v1 | ath79-generic | K2 | [`sonderweg-tp-link-archer-c60-v1`](#familie-sonderweg-tp-link-archer-c60-v1) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c7-v2](#tp-link-archer-c7-v2) | TP-Link Archer C7 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c7-v4](#tp-link-archer-c7-v4) | TP-Link Archer C7 v4 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c7-v5](#tp-link-archer-c7-v5) | TP-Link Archer C7 v5 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-d50-v1](#tp-link-archer-d50-v1) | TP-Link Archer D50 v1 (broken) | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise |  |  |
+| [tp-link-cpe210-v1](#tp-link-cpe210-v1) | TP-Link CPE210 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-cpe210-v2](#tp-link-cpe210-v2) | TP-Link CPE210 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-cpe210-v3](#tp-link-cpe210-v3) | TP-Link CPE210 v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-cpe220-v3](#tp-link-cpe220-v3) | TP-Link CPE220 v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-cpe510-v1](#tp-link-cpe510-v1) | TP-Link CPE510 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-cpe510-v2](#tp-link-cpe510-v2) | TP-Link CPE510 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-cpe510-v3](#tp-link-cpe510-v3) | TP-Link CPE510 v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-cpe710-v1](#tp-link-cpe710-v1) | TP-Link CPE710 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-cpe710-v2](#tp-link-cpe710-v2) | TP-Link CPE710 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-eap225-outdoor-v1](#tp-link-eap225-outdoor-v1) | TP-Link EAP225-Outdoor v1 | ath79-generic | K0+ | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=4f86edf477edbc0f20b5a49a69f658fa82158284 |
+| [tp-link-eap225-outdoor-v3](#tp-link-eap225-outdoor-v3) | TP-Link EAP225-Outdoor v3 | ath79-generic | K0+ | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7e4de89e631aaf56be5375662b7d5ed0f27e26f6 |
+| [tp-link-eap225-wall-v2](#tp-link-eap225-wall-v2) | TP-Link EAP225-Wall v2 | ath79-generic | K0+ | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  |  |
+| [tp-link-tl-wdr3500-v1](#tp-link-tl-wdr3500-v1) | TP-Link TL-WDR3500 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-tl-wdr3600-v1](#tp-link-tl-wdr3600-v1) | TP-Link TL-WDR3600 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-tl-wdr4300-v1](#tp-link-tl-wdr4300-v1) | TP-Link TL-WDR4300 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-tl-wr1043n-v5](#tp-link-tl-wr1043n-v5) | TP-Link TL-WR1043N v5 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-tl-wr1043nd-v2](#tp-link-tl-wr1043nd-v2) | TP-Link TL-WR1043N/ND v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-tl-wr1043nd-v3](#tp-link-tl-wr1043nd-v3) | TP-Link TL-WR1043N/ND v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-tl-wr1043nd-v4](#tp-link-tl-wr1043nd-v4) | TP-Link TL-WR1043N/ND v4 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-tl-wr2543n-nd](#tp-link-tl-wr2543n-nd) | TP-Link TL-WR2543N/ND v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-tl-wr810n-v1](#tp-link-tl-wr810n-v1) | TP-Link TL-WR810N v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-tl-wr842n-v3](#tp-link-tl-wr842n-v3) | TP-Link TL-WR842N v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-tl-wr902ac-v1](#tp-link-tl-wr902ac-v1) | TP-Link TL-WR902AC v1 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-wbs210-v1](#tp-link-wbs210-v1) | TP-Link WBS210 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-wbs210-v2](#tp-link-wbs210-v2) | TP-Link WBS210 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-wbs510-v1](#tp-link-wbs510-v1) | TP-Link WBS510 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [ubiquiti-nanobeam-ac-gen1-xc](#ubiquiti-nanobeam-ac-gen1-xc) | Ubiquiti NanoBeam AC Gen1 (XC) | ath79-generic | K0+ | [`sonderweg-ubiquiti-nanobeam-ac-gen1-xc`](#familie-sonderweg-ubiquiti-nanobeam-ac-gen1-xc) | laut | nein | nein | nein |  |  |
+| [ubiquiti-nanostation-loco-m-xw](#ubiquiti-nanostation-loco-m-xw) | Ubiquiti Nanostation Loco M XW | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  |  |
+| [ubiquiti-nanostation-m-xw](#ubiquiti-nanostation-m-xw) | Ubiquiti Nanostation M XW | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  |  |
+| [ubiquiti-rocket-m-xm](#ubiquiti-rocket-m-xm) | Ubiquiti Rocket M XM | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  |  |
+| [ubiquiti-unifi-ac-lite](#ubiquiti-unifi-ac-lite) | Ubiquiti UniFi AC Lite | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
+| [ubiquiti-unifi-ac-lr](#ubiquiti-unifi-ac-lr) | Ubiquiti UniFi AC LR | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
+| [ubiquiti-unifi-ac-mesh](#ubiquiti-unifi-ac-mesh) | Ubiquiti UniFi AC Mesh | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
+| [ubiquiti-unifi-ac-mesh-pro](#ubiquiti-unifi-ac-mesh-pro) | Ubiquiti UniFi AC Mesh Pro | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
+| [ubiquiti-unifi-ac-pro](#ubiquiti-unifi-ac-pro) | Ubiquiti UniFi AC Pro | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
+| [ubiquiti-unifi-ap](#ubiquiti-unifi-ap) | Ubiquiti UniFi AP | ath79-generic | K0+ | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  |  |
+| [ubiquiti-unifi-ap-outdoor+](#ubiquiti-unifi-ap-outdoor+) | Ubiquiti UniFi AP Outdoor+ | ath79-generic | K0+ | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  |  |
+| [ubiquiti-unifi-ap-pro](#ubiquiti-unifi-ap-pro) | Ubiquiti UniFi AP Pro | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  |  |
+| [ubiquiti-unifi-swiss-army-knife-ultra](#ubiquiti-unifi-swiss-army-knife-ultra) | Ubiquiti UniFi Swiss Army Knife Ultra | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5ad05681f2de00c8c6d6449df2b958b0838dbc1a |
+| [zyxel-nbg6616](#zyxel-nbg6616) | Zyxel NBG6616 | ath79-generic | K5 | [`sonderweg-zyxel-nbg6616`](#familie-sonderweg-zyxel-nbg6616) | tftp-client-am-geraet | ja | ? | nein |  |  |
+| [mikrotik-routerboard-951ui-2nd-hap](#mikrotik-routerboard-951ui-2nd-hap) | MikroTik RouterBOARD 951Ui-2nD (hAP) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja |  |  |
+| [mikrotik-routerboard-mapl-2nd](#mikrotik-routerboard-mapl-2nd) | MikroTik RouterBOARD mAPL-2nD (mAP lite) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja |  |  |
+| [mikrotik-routerboard-wap-g-5hact2hnd](#mikrotik-routerboard-wap-g-5hact2hnd) | MikroTik RouterBOARD wAP G-5HacT2HnD (wAP AC) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja |  |  |
+| [mikrotik-routerboard-wapr-2nd](#mikrotik-routerboard-wapr-2nd) | MikroTik RouterBOARD wAPR-2nD (wAP R) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja |  |  |
+| [aerohive-hiveap-121](#aerohive-hiveap-121) | Aerohive HiveAP 121 | ath79-nand | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ? | teilweise |  |  |
+| [gl.inet-gl-ar300m-nor](#gl.inet-gl-ar300m-nor) | GL.iNet GL-AR300M NOR | ath79-nand | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
+| [gl.inet-gl-ar750s-nor](#gl.inet-gl-ar750s-nor) | GL.iNet GL-AR750S NOR | ath79-nand | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
+| [gl.inet-gl-e750](#gl.inet-gl-e750) | GL.iNet GL-E750 (broken) | ath79-nand | K2 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
+| [gl.inet-gl-xe300](#gl.inet-gl-xe300) | GL.iNet GL-XE300 | ath79-nand | K2 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
+| [netgear-wndr3700-v4](#netgear-wndr3700-v4) | NETGEAR WNDR3700 v4 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [netgear-wndr4300](#netgear-wndr4300) | NETGEAR WNDR4300 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [zte-mf281](#zte-mf281) | ZTE MF281 (broken) | ath79-nand | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1e1695f959e678868bb7911d059b847f38fc9cf4 |
+| [zte-mf286r](#zte-mf286r) | ZTE MF286R (broken) | ath79-nand | K1 | [`sonderweg-zte-mf286r`](#familie-sonderweg-zte-mf286r) | Exploit | nein | nein | ja |  |  |
+| [zyxel-nbg6716](#zyxel-nbg6716) | Zyxel NBG6716 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [raspberrypi-model-b](#raspberrypi-model-b) | Raspberry Pi 1 Model B/B+ | bcm27xx-bcm2708 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
+| [raspberrypi-2-model-b](#raspberrypi-2-model-b) | Raspberry Pi 2 Model B | bcm27xx-bcm2709 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
+| [raspberrypi-3-model-b](#raspberrypi-3-model-b) | Raspberry Pi 3 Model B/B+ | bcm27xx-bcm2710 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
+| [raspberrypi-4-model-b](#raspberrypi-4-model-b) | Raspberry Pi 4 Model B | bcm27xx-bcm2711 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
+| [google-wifi-gale](#google-wifi-gale) | Google WiFi (Gale) | ipq40xx-chromium | K5 | [`sonderweg-google-wifi-gale`](#familie-sonderweg-google-wifi-gale) | usb | nein | ja | nein |  | https://openwrt.org/inbox/toh/google/google_wifi |
+| [8devices-jalapeno](#8devices-jalapeno) | 8devices Jalapeno | ipq40xx-generic | K0 | [`ssh-stock`](#familie-ssh-stock) | ssh | nein | nein | nein |  | - |
+| [aruba-ap-303](#aruba-ap-303) | Aruba AP-303 | ipq40xx-generic | K4 | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | nein | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=102c8c55f217606cdbdc9a449667e034676b3e75 |
+| [aruba-ap-303h](#aruba-ap-303h) | Aruba AP-303H | ipq40xx-generic | K4 | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | nein | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0 |
+| [aruba-ap-365](#aruba-ap-365) | Aruba AP-365 | ipq40xx-generic | K4 | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | nein | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=300b7fe85a743ab0e039457a5a551819b49450da |
+| [aruba-instant-on-ap11](#aruba-instant-on-ap11) | Aruba Instant On AP11 (Alias von aruba-ap-303) | ipq40xx-generic | K5 | [`sonderweg-aruba-instant-on-ap11`](#familie-sonderweg-aruba-instant-on-ap11) | tftp-client | ja | nein | teilweise | Alias | - |
+| [aruba-instant-on-ap11d](#aruba-instant-on-ap11d) | Aruba Instant On AP11D (Alias von aruba-ap-303h) | ipq40xx-generic | K4 | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | nein | teilweise | Alias | - |
+| [aruba-instant-on-ap17](#aruba-instant-on-ap17) | Aruba Instant On AP17 (Alias von aruba-ap-365) | ipq40xx-generic | K4 | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | USB | teilweise | Alias | - |
+| [asus-lyra-map-ac2200](#asus-lyra-map-ac2200) | ASUS Lyra MAP-AC2200 | ipq40xx-generic | K1 | [`sonderweg-asus-lyra-map-ac2200`](#familie-sonderweg-asus-lyra-map-ac2200) | ssh | nein | nein | ja | ja | https://openwrt.org/toh/asus/lyra_map-ac2200#oem_easy_installation |
+| [avm-fritz-box-4040](#avm-fritz-box-4040) | AVM FRITZ!Box 4040 | ipq40xx-generic | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | https://fritz-tools.readthedocs.io/ |
+| [avm-fritz-box-7520](#avm-fritz-box-7520) | AVM FRITZ!Box 7520 (Alias von avm-fritz-box-7530) | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | teilweise | Alias | https://openwrt.org/toh/avm/avm_fritz_box_7530#installation |
+| [avm-fritz-box-7530](#avm-fritz-box-7530) | AVM FRITZ!Box 7530 | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | teilweise | ja | https://openwrt.org/toh/avm/avm_fritz_box_7530#installation |
+| [avm-fritz-repeater-1200](#avm-fritz-repeater-1200) | AVM FRITZ!Repeater 1200 | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7f187229a8e9b7966248b1e024217e07a9fc3e50 |
+| [avm-fritz-repeater-3000](#avm-fritz-repeater-3000) | AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | teilweise | ja | - |
+| [extreme-networks-ws-ap3915i](#extreme-networks-ws-ap3915i) | Extreme Networks WS-AP3915i | ipq40xx-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | - |
+| [gl.inet-gl-ap1300](#gl.inet-gl-ap1300) | GL.iNet GL-AP1300 | ipq40xx-generic | K0 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | - |
+| [gl.inet-gl-b1300](#gl.inet-gl-b1300) | GL.iNet GL-B1300 | ipq40xx-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | - |
+| [linksys-ea6350v3](#linksys-ea6350v3) | Linksys EA6350 v3 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
+| [linksys-ea8300-dallas](#linksys-ea8300-dallas) | Linksys EA8300 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
+| [linksys-mr8300-dallas](#linksys-mr8300-dallas) | Linksys MR8300 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | teilweise |  | - |
+| [linksys-vlp01](#linksys-vlp01) | Linksys VLP01 (Alias von linksys-whw01) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/whw01_v1#installation |
+| [linksys-whw01](#linksys-whw01) | Linksys WHW01 v1 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/whw01_v1#installation |
+| [linksys-whw03-v2-velop](#linksys-whw03-v2-velop) | Linksys WHW03 v2 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/whw03_v2#oem_easy_installation |
+| [linksys-whw03-velop](#linksys-whw03-velop) | Linksys WHW03 v1 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/whw03_v1#oem_easy_installation |
+| [meraki-mr33-access-point](#meraki-mr33-access-point) | Cisco Meraki MR33 | ipq40xx-generic | K5 | [`sonderweg-meraki-mr33-access-point`](#familie-sonderweg-meraki-mr33-access-point) | tftp-server-am-geraet | ja | ja | nein |  | https://openwrt.org/toh/meraki/mr33 |
+| [netgear-ex6100v2](#netgear-ex6100v2) | NETGEAR EX6100 v2 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
+| [netgear-ex6150v2](#netgear-ex6150v2) | NETGEAR EX6150 v2 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-fuer-netgear-wi-fi-range-extender-ex6150-v2/ |
+| [netgear-rbr50](#netgear-rbr50) | NETGEAR Orbi RBR50 v1 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
+| [netgear-rbs50](#netgear-rbs50) | NETGEAR Orbi RBS50 v1 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
+| [netgear-srr60](#netgear-srr60) | NETGEAR Orbi Pro SRR60 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
+| [netgear-srs60](#netgear-srs60) | NETGEAR Orbi Pro SRS60 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
+| [openmesh-a42](#openmesh-a42) | OpenMesh A42 | ipq40xx-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  | - |
+| [openmesh-a62](#openmesh-a62) | OpenMesh A62 | ipq40xx-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  | - |
+| [plasma-cloud-pa1200](#plasma-cloud-pa1200) | Plasma Cloud PA1200 | ipq40xx-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  | - |
+| [plasma-cloud-pa2200](#plasma-cloud-pa2200) | Plasma Cloud PA2200 | ipq40xx-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  | - |
+| [zte-mf289f](#zte-mf289f) | ZTE MF289F | ipq40xx-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0de6a3339f1aadc1de2c9371435e3de239a00645 |
+| [zyxel-nbg6617](#zyxel-nbg6617) | Zyxel NBG6617 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
+| [mikrotik-discg-5acd](#mikrotik-discg-5acd) | MikroTik DISC Lite5 ac (Alias von mikrotik-sxtsq-5-ac-rbsxtsqg-5acd) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja |  | - |
+| [mikrotik-hap-ac2](#mikrotik-hap-ac2) | MikroTik hAP ac2 (RBD52G-5HacD2HnD) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja |  | - |
+| [mikrotik-sxtsq-5-ac-rbsxtsqg-5acd](#mikrotik-sxtsq-5-ac-rbsxtsqg-5acd) | MikroTik SXTsq 5 ac (RBSXTsqG-5acD) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja |  | - |
+| [mikrotik-wap-ac](#mikrotik-wap-ac) | MikroTik wAP ac (RBwAPG-5HacD2HnD, ipq40xx) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja |  | - |
+| [aruba-ap-32x](#aruba-ap-32x) | Aruba AP-324/AP-325, Siemens Scalance W1750D | ipq806x-generic | K5 | [`sonderweg-aruba-ap-32x`](#familie-sonderweg-aruba-ap-32x) | tftp-client | ja | nein | teilweise | ja | https://github.com/lukasstockner/ap325-apboot-openwrt |
+| [extreme-networks-ap3935](#extreme-networks-ap3935) | Extreme Networks AP3935i/e | ipq806x-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | - |
+| [netgear-nighthawk-x4s-r7800](#netgear-nighthawk-x4s-r7800) | NETGEAR Nighthawk X4S R7800 | ipq806x-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
+| [tp-link-archer-c2600](#tp-link-archer-c2600) | TP-Link Archer C2600 v1 | ipq806x-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
+| [ubiquiti-unifi-ac-hd](#ubiquiti-unifi-ac-hd) | Ubiquiti UniFi AC HD | ipq806x-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | - |
+| [arcadyan-vgv7510kw22](#arcadyan-vgv7510kw22) | Arcadyan VGV7510KW22 / o2 Box 6431 (NOR-Image) | lantiq-xrx200 | K5 | [`sonderweg-arcadyan-vgv7510kw22`](#familie-sonderweg-arcadyan-vgv7510kw22) | recovery-web | teilweise | nein | nein |  | https://forum.openwrt.org/t/installing-lede-u-boot-via-brnboot-web-interface-without-rs232/9857/6 |
+| [avm-fritz-box-3370-rev-2-hynix-nand](#avm-fritz-box-3370-rev-2-hynix-nand) | AVM FRITZ!Box 3370 Rev. 2, Hynix-NAND (Gluon: broken) | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation |
+| [avm-fritz-box-3370-rev-2-micron-nand](#avm-fritz-box-3370-rev-2-micron-nand) | AVM FRITZ!Box 3370 Rev. 2, Micron-NAND (Gluon: broken) | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation |
+| [avm-fritz-box-3390](#avm-fritz-box-3390) | AVM FRITZ!Box 3390 | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja |  |  |
+| [avm-fritz-box-7360-sl](#avm-fritz-box-7360-sl) | AVM FRITZ!Box 7360 SL (Alias 7360 v1) | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | https://fritz-tools.readthedocs.io/ |
+| [avm-fritz-box-7360-v2](#avm-fritz-box-7360-v2) | AVM FRITZ!Box 7360 v2 | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  |  |
+| [avm-fritz-box-7362-sl](#avm-fritz-box-7362-sl) | AVM FRITZ!Box 7362 SL | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja |  | https://openwrt.org/toh/avm/avm_7362_sl#installation |
+| [avm-fritz-box-7412](#avm-fritz-box-7412) | AVM FRITZ!Box 7412 | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja |  | https://openwrt.org/toh/avm/avm_fritz_box_7412#installation |
+| [avm-fritz-box-7430](#avm-fritz-box-7430) | AVM FRITZ!Box 7430 | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja |  | https://openwrt.org/toh/avm/avm_fritz_box_7430#installation |
+| [tp-link-td-w8970](#tp-link-td-w8970) | TP-Link TD-W8970 v1 | lantiq-xrx200_legacy | K2 | [`sonderweg-tp-link-td-w8970`](#familie-sonderweg-tp-link-td-w8970) | ssh | nein | nein | nein |  |  |
+| [tp-link-td-w8980](#tp-link-td-w8980) | TP-Link TD-W8980 (Alias TD-W9980; Gluon: broken, 5 GHz) | lantiq-xrx200_legacy | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein |  |  |
+| [avm-fritz-box-7312](#avm-fritz-box-7312) | AVM FRITZ!Box 7312 | lantiq-xway | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | https://fritz-tools.readthedocs.io/ |
+| [netgear-dgn3500b](#netgear-dgn3500b) | NETGEAR DGN3500B | lantiq-xway | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [asus-rt-ax52](#asus-rt-ax52) | ASUS RT-AX52 | mediatek-filogic | K1 | [`sonderweg-asus-rt-ax52`](#familie-sonderweg-asus-rt-ax52) | webui-upload | nein | nein | ja | ja | https://openwrt.org/toh/asus/rt-ax52#installation |
+| [asus-rt-ax59u](#asus-rt-ax59u) | ASUS RT-AX59U | mediatek-filogic | K2 | [`sonderweg-asus-rt-ax59u`](#familie-sonderweg-asus-rt-ax59u) | webui-upload | nein | nein | teilweise | ja | - |
+| [asus-tuf-ax4200](#asus-tuf-ax4200) | ASUS TUF-AX4200 | mediatek-filogic | K2 | [`asus-tuf-herbetom`](#familie-asus-tuf-herbetom) | ssh | nein | nein | teilweise | ja | https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-ASUS-TUF-AX4200 |
+| [asus-tuf-ax6000](#asus-tuf-ax6000) | ASUS TUF-AX6000 | mediatek-filogic | K2 | [`asus-tuf-herbetom`](#familie-asus-tuf-herbetom) | ssh | nein | nein | teilweise | ja | https://github.com/herbetom/openwrt-asus-filogic-factory/releases/latest |
+| [cudy-ap3000-outdoor-v1](#cudy-ap3000-outdoor-v1) | Cudy AP3000 Outdoor v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-ap3000-v1](#cudy-ap3000-v1) | Cudy AP3000 v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | - |
+| [cudy-ap3000-wall-v1](#cudy-ap3000-wall-v1) | Cudy AP3000 Wall v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | - |
+| [cudy-m3000-v1](#cudy-m3000-v1) | Cudy M3000 v1 (RTL8221B) | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-m3000-v2-with-motorcomm-yt8821](#cudy-m3000-v2-with-motorcomm-yt8821) | Cudy M3000 v2 mit Motorcomm YT8821 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | - |
+| [cudy-re3000-v1](#cudy-re3000-v1) | Cudy RE3000 v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-tr3000-256mb-v1](#cudy-tr3000-256mb-v1) | Cudy TR3000 256 MB v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-tr3000-v1](#cudy-tr3000-v1) | Cudy TR3000 v1 (128 MB Flash) | mediatek-filogic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-wr3000-v1](#cudy-wr3000-v1) | Cudy WR3000 v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-wr3000e-v1](#cudy-wr3000e-v1) | Cudy WR3000E v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-wr3000h-v1](#cudy-wr3000h-v1) | Cudy WR3000H v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-wr3000p-v1](#cudy-wr3000p-v1) | Cudy WR3000P v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | - |
+| [cudy-wr3000s-v1](#cudy-wr3000s-v1) | Cudy WR3000S v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-wr3000u-v1](#cudy-wr3000u-v1) | Cudy WR3000U v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | - |
+| [d-link-aquila-pro-ai-m30-a1](#d-link-aquila-pro-ai-m30-a1) | D-Link AQUILA PRO AI M30 A1 | mediatek-filogic | K1 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | ja | ja | https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/ |
+| [d-link-aquila-pro-ai-m60-a1](#d-link-aquila-pro-ai-m60-a1) | D-Link AQUILA PRO AI M60 A1 | mediatek-filogic | K1 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | ja | ja | - |
+| [gl.inet-gl-mt2500](#gl.inet-gl-mt2500) | GL.iNet GL-MT2500 (MaxLinear-PHY) | mediatek-filogic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | - |
+| [gl.inet-gl-mt3000](#gl.inet-gl-mt3000) | GL.iNet GL-MT3000 | mediatek-filogic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | - |
+| [gl.inet-gl-mt6000](#gl.inet-gl-mt6000) | GL.iNet GL-MT6000 | mediatek-filogic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | - |
+| [mercusys-mr80x-v3](#mercusys-mr80x-v3) | Mercusys MR80X v3 | mediatek-filogic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise | ja |  |
+| [mercusys-mr90x-v1](#mercusys-mr90x-v1) | Mercusys MR90X v1 | mediatek-filogic | K2 | [`sonderweg-mercusys-mr90x-v1`](#familie-sonderweg-mercusys-mr90x-v1) | ssh | nein | nein | teilweise | ja | https://openwrt.org/toh/mercusys/mr90x_v1#installation_stock_bootloader |
+| [netgear-wax220](#netgear-wax220) | NETGEAR WAX220 | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/netgear/wax220#oem_easy_installation |
+| [openwrt-one](#openwrt-one) | OpenWrt One | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
+| [ubiquiti-unifi-6-plus](#ubiquiti-unifi-6-plus) | Ubiquiti UniFi 6+ (U6+) | mediatek-filogic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=75ee5546e9b7cfa5bbfd6f844ab8c5fffd5bb594 |
+| [wavlink-wl-wn573hx3](#wavlink-wl-wn573hx3) | WAVLINK WL-WN573HX3 / 7Links WLR-1300 | mediatek-filogic | K1d | [`sonderweg-wavlink-wl-wn573hx3`](#familie-sonderweg-wavlink-wl-wn573hx3) | webui-upload | nein | nein | nein |  | - |
+| [xiaomi-mi-router-ax3000t](#xiaomi-mi-router-ax3000t) | Xiaomi Mi Router AX3000T | mediatek-filogic | K2 | [`sonderweg-xiaomi-mi-router-ax3000t`](#familie-sonderweg-xiaomi-mi-router-ax3000t) | ssh | nein | nein | teilweise | ja | - |
+| [xiaomi-mi-router-ax3000t-openwrt-u-boot-layout](#xiaomi-mi-router-ax3000t-openwrt-u-boot-layout) | Xiaomi Mi Router AX3000T (OpenWrt-U-Boot-Layout) | mediatek-filogic | K3 | [`sonderweg-xiaomi-mi-router-ax3000t-openwrt-u-boot-layout`](#familie-sonderweg-xiaomi-mi-router-ax3000t-openwrt-u-boot-layout) | ssh | nein | nein | nein |  | - |
+| [zyxel-nwa50ax-pro](#zyxel-nwa50ax-pro) | Zyxel NWA50AX Pro | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f0445746f6fd96fc7c5394b238153bd2ff22bc5b |
+| [zyxel-nwa90ax-pro](#zyxel-nwa90ax-pro) | Zyxel NWA90AX Pro (Alias von zyxel-nwa50ax-pro) | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
+| [linksys-e8450-ubi](#linksys-e8450-ubi) | Linksys E8450 / Belkin RT3200 (UBI-Layout) | mediatek-mt7622 | K3 | [`sonderweg-linksys-e8450-ubi`](#familie-sonderweg-linksys-e8450-ubi) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/e8450#installation |
+| [netgear-wax206](#netgear-wax206) | NETGEAR WAX206 | mediatek-mt7622 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/netgear/wax206#oem_easy_installation |
+| [ubiquiti-unifi-6-lr-v1](#ubiquiti-unifi-6-lr-v1) | Ubiquiti UniFi 6 LR v1 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
+| [ubiquiti-unifi-6-lr-v2](#ubiquiti-unifi-6-lr-v2) | Ubiquiti UniFi 6 LR v2 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
+| [ubiquiti-unifi-6-lr-v3](#ubiquiti-unifi-6-lr-v3) | Ubiquiti UniFi 6 LR v3 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
+| [xiaomi-redmi-router-ax6s](#xiaomi-redmi-router-ax6s) | Xiaomi Redmi Router AX6S / AX3200 | mediatek-mt7622 | K0+ | [`sonderweg-xiaomi-redmi-router-ax6s`](#familie-sonderweg-xiaomi-redmi-router-ax6s) | webui-upload | nein | nein | nein |  | - |
+| [enterasys-ws-ap3715i](#enterasys-ws-ap3715i) | Enterasys WS-AP3715i | mpc85xx-p1010 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b |
+| [sophos-red-15w-rev.1](#sophos-red-15w-rev.1) | Sophos RED 15w Rev. 1 | mpc85xx-p1010 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise |  |  |
+| [tp-link-tl-wdr4900-v1](#tp-link-tl-wdr4900-v1) | TP-Link TL-WDR4900 v1 | mpc85xx-p1010 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [aerohive-hiveap-330](#aerohive-hiveap-330) | Aerohive HiveAP 330 | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise |  |  |
+| [enterasys-ws-ap3710i](#enterasys-ws-ap3710i) | Enterasys WS-AP3710i | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=16b01fb1b9c99513c318109bef96a1a3545c57a0 |
+| [extreme-networks-ws-ap3825i](#extreme-networks-ws-ap3825i) | Extreme Networks WS-AP3825i | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise |  | https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923 |
+| [hewlett-packard-msm460](#hewlett-packard-msm460) | HPE MSM460 | mpc85xx-p1020 | K5 | [`sonderweg-hewlett-packard-msm460`](#familie-sonderweg-hewlett-packard-msm460) | tftp-server-am-geraet | nein | nein | nein |  | https://github.com/blocktrron/msm460-flashing?tab=readme-ov-file |
+| [ocedo-panda](#ocedo-panda) | OCEDO Panda | mpc85xx-p1020 | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | teilweise |  |  |
+| [linksys-mx5300](#linksys-mx5300) | Linksys MX5300 | qualcommax-ipq807x | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
+| [netgear-wax218](#netgear-wax218) | NETGEAR WAX218 | qualcommax-ipq807x | K1 | [`sonderweg-netgear-wax218`](#familie-sonderweg-netgear-wax218) | webui-upload | nein | nein | ja | ja | - |
+| [tp-link-eap620-hd-v1](#tp-link-eap620-hd-v1) | TP-Link EAP620 HD v1 | qualcommax-ipq807x | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | - |
+| [xiaomi-ax3600](#xiaomi-ax3600) | Xiaomi AX3600 | qualcommax-ipq807x | K2 | [`sonderweg-xiaomi-ax3600`](#familie-sonderweg-xiaomi-ax3600) | ssh | nein | nein | teilweise | ja | - |
+| [asus-rt-ac51u](#asus-rt-ac51u) | ASUS RT-AC51U | ramips-mt7620 | K1d | [`asus-firmware-restoration`](#familie-asus-firmware-restoration) | tftp-server-am-geraet | nein | nein | nein |  | https://openwrt.org/toh/asus/rt-ac51u#installation |
+| [gl-mt300a](#gl-mt300a) | GL.iNet GL-MT300A | ramips-mt7620 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
+| [gl-mt300n](#gl-mt300n) | GL.iNet GL-MT300N (v1) | ramips-mt7620 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
+| [gl-mt750](#gl-mt750) | GL.iNet GL-MT750 | ramips-mt7620 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
+| [netgear-ex3700](#netgear-ex3700) | NETGEAR EX3700/EX3800 (Alias netgear-ex3800) | ramips-mt7620 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-wi-fi-range-extender-ex3700/ |
+| [netgear-ex6130](#netgear-ex6130) | NETGEAR EX6130 | ramips-mt7620 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  |  |
+| [nexx-wt3020-8m](#nexx-wt3020-8m) | Nexx WT3020 8M (Aliase WT3020AD/F/H) | ramips-mt7620 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c2-v1](#tp-link-archer-c2-v1) | TP-Link Archer C2 v1 | ramips-mt7620 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | tftp-client-am-geraet | nein | nein | nein |  |  |
+| [tp-link-archer-c20-v1](#tp-link-archer-c20-v1) | TP-Link Archer C20 v1 | ramips-mt7620 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | tftp-client-am-geraet | nein | nein | nein |  |  |
+| [tp-link-archer-c20i](#tp-link-archer-c20i) | TP-Link Archer C20i | ramips-mt7620 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c50-v1](#tp-link-archer-c50-v1) | TP-Link Archer C50 v1 | ramips-mt7620 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [xiaomi-miwifi-mini](#xiaomi-miwifi-mini) | Xiaomi MiWiFi Mini | ramips-mt7620 | K1d | [`ssh-stock`](#familie-ssh-stock) | ssh | nein | nein | nein |  |  |
+| [asus-rt-ac57u-v1](#asus-rt-ac57u-v1) | ASUS RT-AC57U v1 | ramips-mt7621 | K1d | [`asus-firmware-restoration`](#familie-asus-firmware-restoration) | tftp-server-am-geraet | nein | nein | nein |  |  |
+| [asus-rt-ax53u](#asus-rt-ax53u) | ASUS RT-AX53U (RT-AX1800U) | ramips-mt7621 | K1 | [`asus-firmware-restoration`](#familie-asus-firmware-restoration) | tftp-server-am-geraet | nein | nein | ja | ja | https://openwrt.org/toh/asus/rt-ax53u#installation_with_mtd-write |
+| [cudy-ap1300-outdoor-v1](#cudy-ap1300-outdoor-v1) | Cudy AP1300 Outdoor v1 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-m1800](#cudy-m1800) | Cudy M1800 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  |  |
+| [cudy-wr1300-v1](#cudy-wr1300-v1) | Cudy WR1300 v1 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-wr2100](#cudy-wr2100) | Cudy WR2100 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-x6-v1](#cudy-x6-v1) | Cudy X6 v1 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-x6-v2](#cudy-x6-v2) | Cudy X6 v2 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [d-link-covr-x1860-a1](#d-link-covr-x1860-a1) | D-Link COVR-X1860 A1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://freifunk-aachen.de/2023/08/03/installationsanleitung-d-link-covr-x1860/ |
+| [d-link-dap-1620-b1](#d-link-dap-1620-b1) | D-Link DAP-1620 B1 (Gluon: broken) | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e4c7703d2a62b8914e4723adae3f67c68a57532c |
+| [d-link-dap-x1860-a1](#d-link-dap-x1860-a1) | D-Link DAP-X1860 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-d-link-dap-x1860/987 |
+| [d-link-dir-860l-b1](#d-link-dir-860l-b1) | D-Link DIR-860L B1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [d-link-dir-878-a1](#d-link-dir-878-a1) | D-Link DIR-878 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | https://openwrt.org/toh/d-link/dir-878_a1#installation |
+| [d-link-dir-882-a1](#d-link-dir-882-a1) | D-Link DIR-882 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | https://openwrt.org/toh/d-link/dir-882_a1#installation |
+| [genexis-pulse-ex400](#genexis-pulse-ex400) | Genexis/Inteno Pulse EX400 | ramips-mt7621 | K1 | [`sonderweg-genexis-pulse-ex400`](#familie-sonderweg-genexis-pulse-ex400) | webui-upload | nein | nein | ja | ja | https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400 |
+| [gl.inet-gl-mt1300](#gl.inet-gl-mt1300) | GL.iNet GL-MT1300 (Beryl) | ramips-mt7621 | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
+| [mercusys-mr70x-v1](#mercusys-mr70x-v1) | Mercusys MR70X v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [mikrotik-routerboard-750gr3](#mikrotik-routerboard-750gr3) | MikroTik hEX RB750Gr3 (Alias mikrotik-routerboard-hex-v3) | ramips-mt7621 | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja |  | https://openwrt.org/toh/mikrotik/common |
+| [netgear-eax12](#netgear-eax12) | NETGEAR EAX12 (Aliase EAX11 v2, EAX15 v2) | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  |  |
+| [netgear-ex6150](#netgear-ex6150) | NETGEAR EX6150 (v1) | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-wi-fi-range-extender-ex6150-v2/ |
+| [netgear-r6220](#netgear-r6220) | NETGEAR R6220 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-r6220/ |
+| [netgear-r6260](#netgear-r6260) | NETGEAR R6260 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  |  |
+| [netgear-wac104](#netgear-wac104) | NETGEAR WAC104 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [netgear-wax202](#netgear-wax202) | NETGEAR WAX202 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/netgear/wax202#oem_easy_installation |
+| [netgear-wndr3700-v5](#netgear-wndr3700-v5) | NETGEAR WNDR3700 v5 (Gluon: broken, "untested") | ramips-mt7621 | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  |  |
+| [totolink-x5000r](#totolink-x5000r) | TOTOLINK X5000R | ramips-mt7621 | K1d | [`sonderweg-totolink-x5000r`](#familie-sonderweg-totolink-x5000r) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-ax23-v1](#tp-link-archer-ax23-v1) | TP-Link Archer AX23 v1 (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c6-v3](#tp-link-archer-c6-v3) | TP-Link Archer C6 v3 (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-eap613-v1](#tp-link-eap613-v1) | TP-Link EAP613 v1 | ramips-mt7621 | K0 | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  |  |
+| [tp-link-eap615-wall-v1](#tp-link-eap615-wall-v1) | TP-Link EAP615-Wall v1 | ramips-mt7621 | K0 | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  |  |
+| [tp-link-re500-v1](#tp-link-re500-v1) | TP-Link RE500 v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-re650-v1](#tp-link-re650-v1) | TP-Link RE650 v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [ubiquiti-edgerouter-x](#ubiquiti-edgerouter-x) | Ubiquiti EdgeRouter X | ramips-mt7621 | K3 | [`ubiquiti-edgerouter`](#familie-ubiquiti-edgerouter) | webui-upload | nein | nein | nein |  | https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp |
+| [ubiquiti-edgerouter-x-sfp](#ubiquiti-edgerouter-x-sfp) | Ubiquiti EdgeRouter X-SFP | ramips-mt7621 | K3 | [`ubiquiti-edgerouter`](#familie-ubiquiti-edgerouter) | webui-upload | nein | nein | nein |  | https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp |
+| [ubiquiti-unifi-6-lite](#ubiquiti-unifi-6-lite) | Ubiquiti UniFi 6 Lite | ramips-mt7621 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://openwrt.org/toh/ubiquiti/unifi6lite#installation |
+| [ubiquiti-unifi-nanohd](#ubiquiti-unifi-nanohd) | Ubiquiti UniFi nanoHD | ramips-mt7621 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  |  |
+| [wavlink-ws-wn572hp3-4g](#wavlink-ws-wn572hp3-4g) | Wavlink WS-WN572HP3 4G | ramips-mt7621 | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6cd1035d8dc001561331ca9e613d7dfc7d0fd7a6 |
+| [xiaomi-mi-router-3g](#xiaomi-mi-router-3g) | Xiaomi Mi Router 3G | ramips-mt7621 | K2 | [`sonderweg-xiaomi-mi-router-3g`](#familie-sonderweg-xiaomi-mi-router-3g) | ssh | nein | nein | nein |  |  |
+| [xiaomi-mi-router-3g-v2](#xiaomi-mi-router-3g-v2) | Xiaomi Mi Router 3G v2 | ramips-mt7621 | K2 | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  |  |
+| [xiaomi-mi-router-4a-gigabit-edition](#xiaomi-mi-router-4a-gigabit-edition) | Xiaomi Mi Router 4A Gigabit | ramips-mt7621 | K1d | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  | https://github.com/acecilia/OpenWRTInvasion/blob/master/README.md |
+| [xiaomi-mi-router-4a-gigabit-edition-v2](#xiaomi-mi-router-4a-gigabit-edition-v2) | Xiaomi Mi Router 4A Gigabit v2 | ramips-mt7621 | K1d | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  |  |
+| [xiaomi-mi-router-ac2100](#xiaomi-mi-router-ac2100) | Xiaomi Mi Router AC2100 (R2100) | ramips-mt7621 | K2 | [`xiaomi-ac2100-pppoe`](#familie-xiaomi-ac2100-pppoe) | ssh | nein | nein | nein |  |  |
+| [xiaomi-redmi-router-ac2100](#xiaomi-redmi-router-ac2100) | Xiaomi Redmi Router AC2100 (RM2100) | ramips-mt7621 | K2 | [`xiaomi-ac2100-pppoe`](#familie-xiaomi-ac2100-pppoe) | ssh | nein | nein | nein |  | https://openwrt.org/toh/xiaomi/xiaomi_redmi_router_ac2100 |
+| [zbtlink-zbt-wg3526-16m](#zbtlink-zbt-wg3526-16m) | ZBT WG3526 16M | ramips-mt7621 | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
+| [zbtlink-zbt-wg3526-32m](#zbtlink-zbt-wg3526-32m) | ZBT WG3526 32M | ramips-mt7621 | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
+| [zyxel-nwa50ax](#zyxel-nwa50ax) | ZyXEL NWA50AX (Alias NWA90AX) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964 |
+| [zyxel-nwa55axe](#zyxel-nwa55axe) | ZyXEL NWA55AXE (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964 |
+| [zyxel-wsm20](#zyxel-wsm20) | ZyXEL WSM20 (Multy M1) | ramips-mt7621 | K1 | [`sonderweg-zyxel-wsm20`](#familie-sonderweg-zyxel-wsm20) | webui-upload | nein | nein | ja | ja | https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/ |
+| [cudy-tr1200-v1](#cudy-tr1200-v1) | Cudy TR1200 v1 | ramips-mt76x8 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-wr1000](#cudy-wr1000) | Cudy WR1000 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [gl-mt300n-v2](#gl-mt300n-v2) | GL.iNet GL-MT300N v2 | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
+| [gl.inet-microuter-n300](#gl.inet-microuter-n300) | GL.iNet microuter-N300 | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
+| [gl.inet-vixmini](#gl.inet-vixmini) | GL.iNet VIXMINI | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
+| [netgear-r6020](#netgear-r6020) | NETGEAR R6020 | ramips-mt76x8 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  |  |
+| [netgear-r6120](#netgear-r6120) | NETGEAR R6120 | ramips-mt76x8 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-r6120/ |
+| [ravpower-rp-wd009](#ravpower-rp-wd009) | RAVPower RP-WD009 | ramips-mt76x8 | K0 | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  | https://openwrt.org/toh/ravpower/rp-wd009#oem_installation_using_the_tftp_method |
+| [tp-link-archer-c20-v4](#tp-link-archer-c20-v4) | TP-Link Archer C20 v4 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |  |
+| [tp-link-archer-c20-v5](#tp-link-archer-c20-v5) | TP-Link Archer C20 v5 | ramips-mt76x8 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c50-v3](#tp-link-archer-c50-v3) | TP-Link Archer C50 v3 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |  |
+| [tp-link-archer-c50-v4](#tp-link-archer-c50-v4) | TP-Link Archer C50 v4 | ramips-mt76x8 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c50-v6-ca-eu-ru](#tp-link-archer-c50-v6-ca-eu-ru) | TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54) | ramips-mt76x8 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-re200-v2](#tp-link-re200-v2) | TP-Link RE200 v2 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-re200-v3](#tp-link-re200-v3) | TP-Link RE200 v3 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-re200-v4](#tp-link-re200-v4) | TP-Link RE200 v4 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-tl-mr3020-v3](#tp-link-tl-mr3020-v3) | TP-Link TL-MR3020 v3 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |  |
+| [tp-link-tl-mr3420-v5](#tp-link-tl-mr3420-v5) | TP-Link TL-MR3420 v5 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |  |
+| [tp-link-tl-mr6400-v5](#tp-link-tl-mr6400-v5) | TP-Link TL-MR6400 v5 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |  |
+| [tp-link-tl-wa801nd-v5](#tp-link-tl-wa801nd-v5) | TP-Link TL-WA801ND v5 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |  |
+| [tp-link-tl-wr841n-v13](#tp-link-tl-wr841n-v13) | TP-Link TL-WR841N v13 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | https://openwrt.org/toh/tp-link/tl-wr841nd#tftp_recovery_via_bootloader_for_v8_v9_v10_v11_v12_v13 |
+| [tp-link-tl-wr902ac-v3](#tp-link-tl-wr902ac-v3) | TP-Link TL-WR902AC v3 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | https://openwrt.org/toh/tp-link/tl-wr902ac_v3#installation |
+| [tp-link-tl-wr902ac-v4](#tp-link-tl-wr902ac-v4) | TP-Link TL-WR902AC v4 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |  |
+| [vocore2](#vocore2) | VoCore2 | ramips-mt76x8 | K1d | [`ssh-stock`](#familie-ssh-stock) | ssh | nein | nein | nein |  |  |
+| [xiaomi-mi-ra75](#xiaomi-mi-ra75) | Xiaomi Mi WiFi Range Extender AC1200 RA75 (Gluon: broken, "Only serial flash possible") | ramips-mt76x8 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein |  |  |
+| [xiaomi-mi-router-4a-100m-edition](#xiaomi-mi-router-4a-100m-edition) | Xiaomi Mi Router 4A 100M | ramips-mt76x8 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein |  | https://openwrt.org/toh/xiaomi/mi_router_4a_mir4a_100m#installation |
+| [xiaomi-mi-router-4a-100m-international-edition](#xiaomi-mi-router-4a-100m-international-edition) | Xiaomi Mi Router 4A 100M International (R4AC) | ramips-mt76x8 | K1d | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  | https://forum.ffrn.de/t/howto-installation-xiaomi-mi-router-4a-r4ac-100m-international-edition/3536 |
+| [xiaomi-mi-router-4a-100m-international-edition-v2](#xiaomi-mi-router-4a-100m-international-edition-v2) | Xiaomi Mi Router 4A 100M International v2 | ramips-mt76x8 | K2 | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  |  |
+| [xiaomi-mi-router-4c](#xiaomi-mi-router-4c) | Xiaomi Mi Router 4C | ramips-mt76x8 | K2 | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  | https://github.com/acecilia/OpenWRTInvasion/blob/master/README.md |
+| [friendlyelec-nanopi-r2c](#friendlyelec-nanopi-r2c) | FriendlyElec NanoPi R2C | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
+| [friendlyelec-nanopi-r2s](#friendlyelec-nanopi-r2s) | FriendlyElec NanoPi R2S | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
+| [friendlyelec-nanopi-r3s](#friendlyelec-nanopi-r3s) | FriendlyElec NanoPi R3S | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
+| [friendlyelec-nanopi-r4s](#friendlyelec-nanopi-r4s) | FriendlyElec NanoPi R4S (4 GB) | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
+| [x86-64](#x86-64) | x86 (x86-64) | x86-64 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein | ja | - |
+| [x86-generic](#x86-generic) | x86 (x86-generic) | x86-generic | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein |  | - |
+| [x86-geode](#x86-geode) | x86 (x86-geode) | x86-geode | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein |  | - |
+| [x86-legacy](#x86-legacy) | x86 (x86-legacy) | x86-legacy | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein |  | - |
 
 <!-- END erzeugt:uebersicht -->
 
@@ -979,6 +979,7 @@ Aruba AP-303 · ipq40xx-generic · K4
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** teilweise: RAMpe-initramfs als ipq40xx.ari geht, aber vor dem sysupgrade muss `ubiformat` laufen (fehlt der Gluon-RAMpe) und Gluon baut für ipq40xx-generic kein initramfs; seriell bleibt [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/aruba-ap-303.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `ipq40xx.ari` per APBoot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)
 - **Quelle (OpenWrt-Commit):** OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=102c8c55f217606cdbdc9a449667e034676b3e75
 
@@ -996,6 +997,7 @@ Aruba AP-303H · ipq40xx-generic · K4
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** teilweise: wie AP-303
+- **Gluon-RAMpe-Rezept:** devices/aruba-ap-303h.sh (Rezept-Entwurf, nicht gebaut): wie AP-303; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)
 - **Quelle (OpenWrt-Commit):** OpenWrt c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0
 
@@ -1013,6 +1015,7 @@ Aruba AP-365 · ipq40xx-generic · K4
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** teilweise: wie AP-303
+- **Gluon-RAMpe-Rezept:** devices/aruba-ap-365.sh (Rezept-Entwurf, nicht gebaut): wie AP-303; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)
 - **Quelle (OpenWrt-Commit):** OpenWrt 300b7fe85a743ab0e039457a5a551819b49450da
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=300b7fe85a743ab0e039457a5a551819b49450da
 
@@ -1030,6 +1033,7 @@ Aruba Instant On AP11D (Alias von aruba-ap-303h) · ipq40xx-generic · K4
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** teilweise: wie AP-303
+- **Gluon-RAMpe-Rezept:** Alias: Image aus devices/aruba-ap-303h.sh; ob apboot gesperrt ist wie beim AP11: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0
 - **Detail-Anleitung:** -
 
@@ -1047,6 +1051,7 @@ Aruba Instant On AP17 (Alias von aruba-ap-365) · ipq40xx-generic · K4
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** teilweise: wie AP-303
+- **Gluon-RAMpe-Rezept:** Alias: Image aus devices/aruba-ap-365.sh; ob apboot gesperrt ist wie beim AP11: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 300b7fe85a743ab0e039457a5a551819b49450da
 - **Detail-Anleitung:** -
 
@@ -1101,6 +1106,7 @@ ASUS RT-AX53U (RT-AX1800U) · ramips-mt7621 · K1
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** ja: genau der Fall "erst initramfs, dann sysupgrade"
+- **Gluon-RAMpe-Rezept:** devices/asus-rt-ax53u.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per ASUS-Rescue (TFTP put)
 - **Quelle (OpenWrt-Commit):** 8c00fd9b4519bf0ef8fb3470a6df421b9f38c03c
 - **Detail-Anleitung:** https://openwrt.org/toh/asus/rt-ax53u#installation_with_mtd-write
 
@@ -1122,6 +1128,7 @@ ASUS TUF-AX4200 · mediatek-filogic · K2
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** teilweise: der SSH-Weg schreibt ein initramfs ins Flash; ob ein Gluon-/RAMpe-initramfs statt des herbetom-Sonderbaus bootet, ist nicht geprüft
+- **Gluon-RAMpe-Rezept:** devices/asus-tuf-ax4200.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` mit eingebettetem initramfs (`TARGET_ROOTFS_INITRAMFS_SEPARATE` aus) für SSH `mtd-write` oder UART + TFTP; eigener Bau-Lauf
 - **Quelle (OpenWrt-Commit):** OpenWrt e7c399bee677e9bac66e1bea697aefb8d828edfe
 - **Detail-Anleitung:** https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-ASUS-TUF-AX4200
 
@@ -1139,6 +1146,7 @@ ASUS TUF-AX6000 · mediatek-filogic · K2
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** teilweise: wie TUF-AX4200; über die Gehäuselöcher ist auch der TFTP-Weg ohne Öffnen möglich, dort passt die Gluon-RAMpe als initramfs [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/asus-tuf-ax6000.sh (Rezept-Entwurf, nicht gebaut): wie TUF-AX4200; eigener Bau-Lauf
 - **Quelle (OpenWrt-Commit):** OpenWrt d522ccecb28f941aadcaf7a50cd6daa861f468a7
 - **Detail-Anleitung:** https://github.com/herbetom/openwrt-asus-filogic-factory/releases/latest
 
@@ -1403,6 +1411,7 @@ AVM FRITZ!Box 7520 (Alias von avm-fritz-box-7530) · ipq40xx-generic · K2
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** teilweise: wie 7530
+- **Gluon-RAMpe-Rezept:** Alias: Image aus devices/avm-fritz-box-7530.sh (dort auch `uboot-fritz7520.bin`); TFTP-Dateiname für die 7520: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b
 - **Detail-Anleitung:** https://openwrt.org/toh/avm/avm_fritz_box_7530#installation
 
@@ -1420,6 +1429,7 @@ AVM FRITZ!Box 7530 · ipq40xx-generic · K2
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** teilweise: das RAMpe-initramfs passt als FRITZ7530.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7530.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `FRITZ7530.bin`, dazu `uboot-fritz7530.bin` für `eva_ramboot.py`; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (U-Boot schreiben, `ubirmvol`); 7520/7530 im System nicht unterscheidbar
 - **Quelle (OpenWrt-Commit):** OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b
 - **Detail-Anleitung:** https://openwrt.org/toh/avm/avm_fritz_box_7530#installation
 
@@ -1437,6 +1447,7 @@ AVM FRITZ!Repeater 1200 · ipq40xx-generic · K2
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** teilweise: das RAMpe-initramfs passt als FRITZ1200.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/avm-fritz-repeater-1200.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `FRITZ1200.bin` + `uboot-fritz1200.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (U-Boot schreiben, `ubirmvol`)
 - **Quelle (OpenWrt-Commit):** OpenWrt 7f187229a8e9b7966248b1e024217e07a9fc3e50
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7f187229a8e9b7966248b1e024217e07a9fc3e50
 
@@ -1454,6 +1465,7 @@ AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) · ipq40xx-gen
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** teilweise: das RAMpe-initramfs passt als FRITZ3000.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/avm-fritz-repeater-3000.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `FRITZ3000.bin` + `uboot-fritz3000.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (U-Boot schreiben, `ubirmvol`)
 - **Quelle (OpenWrt-Commit):** OpenWrt 148d29d47b1d555d0058dcc5dda450b74c4628ec
 - **Detail-Anleitung:** -
 
@@ -1924,6 +1936,7 @@ D-Link AQUILA PRO AI M30 A1 · mediatek-filogic · K1
 - **Stock-Teile:** nur wenn die zweite Partition aktiv ist: OEM-Image von D-Link verschlüsselt und entschlüsselt (m32-firmware-util von RolandoMagico) [geprüft]
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** ja: RAMpe-Image gebaut, Header wie OpenWrt, Hardware-Test offen [geprüft: gluon-rampe-installer docs/NOTIZEN.md]
+- **Gluon-RAMpe-Rezept:** devices/d-link-aquila-pro-ai-m30-a1.sh: `-recovery.bin` (D-Link-Header) für die D-Link-Recovery; gebaut, Inhalt geprüft, Hardware-Test offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f
 - **Detail-Anleitung:** https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/
 
@@ -1941,6 +1954,7 @@ D-Link AQUILA PRO AI M60 A1 · mediatek-filogic · K1
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** ja: Gluon baut selbst ein `-recovery.bin`; laut RAMpe-NOTIZEN startet ein Gluon-initramfs aber nicht im Config-Mode, vermutlich derselbe Fehler wie beim M30 [abgeleitet]; das RAMpe-Image wäre der Ersatz
+- **Gluon-RAMpe-Rezept:** devices/d-link-aquila-pro-ai-m60-a1.sh (Rezept-Entwurf, nicht gebaut): `-recovery.bin` (D-Link-Header) für die D-Link-Recovery
 - **Quelle (OpenWrt-Commit):** OpenWrt 7271ee587cd104d30d6d46dd3c623c9d4602bd0c
 - **Detail-Anleitung:** -
 
@@ -2527,6 +2541,7 @@ x86 (x86-64) · x86-64 · K0
 - **Stock-Teile:** -
 - **RAM:** -
 - **Gluon-RAMpe passt:** nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)
+- **Gluon-RAMpe-Rezept:** devices/x86-64.sh: Testgerät, in QEMU Ende-zu-Ende geprüft
 - **Quelle (OpenWrt-Commit):** Gluon targets/x86-64
 - **Detail-Anleitung:** -
 
@@ -4743,6 +4758,7 @@ Extreme Networks WS-AP3915i · ipq40xx-generic · K4
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als openwrt-3915.bin, seriell bleibt; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/extreme-networks-ws-ap3915i.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `openwrt-3915.bin` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt e16a0e7e8876df0a92ec4779fe766de1a943307a
 - **Detail-Anleitung:** -
 
@@ -4760,6 +4776,7 @@ ZTE MF289F · ipq40xx-generic · K4
 - **Stock-Teile:** - (Backup mtd16 web, mtd17 rootfs für den Rückweg)
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als TFTP-initramfs möglich, aber der `ubirmvol`-Schritt fehlt ihm; seriell bleibt [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/zte-mf289f.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-"broken"-Gerät gezielt; `-initramfs-zImage.itb` per U-Boot-TFTP; Vorbereitung (`ubirmvol`) muss schon vor der Imageprüfung laufen, fehlt der RAMpe-Seite noch
 - **Quelle (OpenWrt-Commit):** OpenWrt 0de6a3339f1aadc1de2c9371435e3de239a00645 (Gluon: broken)
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0de6a3339f1aadc1de2c9371435e3de239a00645
 
@@ -4777,6 +4794,7 @@ Extreme Networks AP3935i/e · ipq806x-generic · K4
 - **Stock-Teile:** -
 - **RAM:** ?
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als TFTP-initramfs, seriell bleibt; Gluon baut für ipq806x kein initramfs; QCA9990 ohne 802.11s [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/extreme-networks-ap3935.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage` (ohne Endung) per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 3aef61060e3f51aa43fe494d5ff173e81dd43003
 - **Detail-Anleitung:** -
 
@@ -4810,6 +4828,7 @@ Cudy TR3000 v1 (128 MB Flash) · mediatek-filogic · K4
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe ersetzt das OpenWrt-initramfs im TFTP-Schritt, der serielle Teil bleibt
+- **Gluon-RAMpe-Rezept:** devices/cudy-tr3000-v1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 63b8d98dd0d2f7797ea5b5f25978590982bbbb5d
 - **Detail-Anleitung:** https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
 
@@ -4827,6 +4846,7 @@ Mercusys MR80X v3 · mediatek-filogic · K4
 - **Stock-Teile:** - (U-Boot-Recovery mit Reset, http://192.168.1.1, nimmt laut Commit nur OEM-Firmware)
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt OpenWrt-initramfs im TFTP-Schritt, seriell bleibt; Rezept `devices/mercusys-mr80x-v3.sh`. In Neanderfunk-2025.1 seit gluon-patches-hardware ab19bf1b46d34315a92f61974dd37f8a9ede9604 (10.10.2026), in Gluon v2025.1.3 nicht
+- **Gluon-RAMpe-Rezept:** devices/mercusys-mr80x-v3.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein (`ensure_device`); `initramfs-kernel.bin` per UART + TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 0ecf136f4d3126d92edc13087ce03db83b7e8223
 
 #### enterasys-ws-ap3715i
@@ -4926,6 +4946,7 @@ TP-Link EAP620 HD v1 · qualcommax-ipq807x · K4
 - **Stock-Teile:** -
 - **RAM:** 1 GB
 - **Gluon-RAMpe passt:** teilweise: web-ui-factory ist ein squashfs-Flash-Image (tplink-image-2022, in 24.10 nicht vorhanden), kein initramfs; Gluon-RAMpe bräuchte dieses Format [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/tp-link-eap620-hd-v1.sh (Rezept-Entwurf, nicht gebaut): Backport aus gluon-patches-hardware (`RAMPE_HW_PATCHES`); `-initramfs-uImage.itb` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 4b6e7da0f7499acb69feaacca79e0ee826c0b8db; gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
 - **Detail-Anleitung:** -
 
@@ -5001,6 +5022,7 @@ Aruba AP-324/AP-325, Siemens Scalance W1750D · ipq806x-generic · K5
 - **Stock-Teile:** - (Bootloader aus OpenWrt-Paket; Backup aos0/aos1 für den Rückweg)
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe müsste das Aruba-`.ari`-Format (Vendor-Header) bekommen, Gluon baut für ipq806x kein initramfs; Bootloader-Tausch und UBI-Umbau bleiben seriell. OpenWrt-Artefakte nur als Snapshot (in keinem Release bis 25.12.5) [geprüft]
+- **Gluon-RAMpe-Rezept:** devices/aruba-ap-32x.sh (Rezept-Entwurf, nicht gebaut): Backport aus gluon-patches-hardware (`RAMPE_HW_PATCHES`); `-initramfs.ari` per APBoot-TFTP; APBoot-Tausch und NAND-Umbau bleiben seriell
 - **Quelle (OpenWrt-Commit):** OpenWrt d2a75029a5f8e54e1fd2f252f73b9a430a030116 (25.12: 65f01eb3576f69233e8b6c67d85ffd38fde47a1a); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
 - **Detail-Anleitung:** https://github.com/lukasstockner/ap325-apboot-openwrt
 
@@ -5022,6 +5044,7 @@ Aruba Instant On AP11 (Alias von aruba-ap-303) · ipq40xx-generic · K5
 - **Stock-Teile:** apboot-Teil aus einem fremden, gepatchten Aruba-SPI-Dump (kein Hersteller-Download)
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** teilweise: wie AP-303; der Bootloader-Schritt bleibt seriell
+- **Gluon-RAMpe-Rezept:** Alias: Image aus devices/aruba-ap-303.sh; apboot gesperrt (K5)
 - **Quelle (OpenWrt-Commit):** Notiz ap11.md (2024); OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75
 - **Detail-Anleitung:** -
 
@@ -5043,6 +5066,7 @@ ASUS Lyra MAP-AC2200 · ipq40xx-generic · K1
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** ja: statt des OpenWrt-initramfs das RAMpe-initramfs per mtd-write schreiben; SSH-Schritt bleibt; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/asus-lyra-map-ac2200.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` per SSH `mtd-write -d linux`
 - **Quelle (OpenWrt-Commit):** OpenWrt 9ad3967f140bd6d08796f1ec151b753186b3eb44
 - **Detail-Anleitung:** https://openwrt.org/toh/asus/lyra_map-ac2200#oem_easy_installation
 
@@ -5064,6 +5088,7 @@ ASUS RT-AX52 · mediatek-filogic · K1
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** ja: Hersteller-UI nimmt ein initramfs im ASUS-TRX; RAMpe-Rezept muss das ARTIFACT `initramfs.trx` einsammeln [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/asus-rt-ax52.sh (Rezept-Entwurf, nicht gebaut): `-initramfs.trx` (OpenWrt-ARTIFACT) für die ASUS-Web-UI
 - **Quelle (OpenWrt-Commit):** OpenWrt 99708cc16dbd7c93db80698fbe5c69f07995a3e6
 - **Detail-Anleitung:** https://openwrt.org/toh/asus/rt-ax52#installation
 
@@ -5085,6 +5110,7 @@ ASUS RT-AX59U · mediatek-filogic · K2
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** teilweise: OpenWrt baut für die RT-AX59U kein `initramfs.trx` (24.10.8 und 25.12.5 nur initramfs-kernel.bin) [geprüft]; eine Gluon-RAMpe-TRX wie bei der RT-AX52 wäre zu bauen, ob die Stock-UI es nimmt: offen
+- **Gluon-RAMpe-Rezept:** devices/asus-rt-ax59u.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; nur `initramfs-kernel.bin` für den UART-Weg, für die Web-UI fehlt ein eigenes TRX
 - **Quelle (OpenWrt-Commit):** OpenWrt 782eb050082acac93c2f9b3eb22348234bc93e99; gluon-patches-hardware 8dbae18666543aa9b8b5e7faa1d267024d62071e (Gluon-Zeile)
 - **Detail-Anleitung:** -
 
@@ -5186,6 +5212,7 @@ Genexis/Inteno Pulse EX400 · ramips-mt7621 · K1
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** ja: factory.bin = Kette `append-image-stage initramfs-kernel.bin`, `inteno-bootfs`, `inteno-y3-header EX400` (mt7621.mk); Gluon baut es nur nicht, weil das Rezept CONFIG_TARGET_ROOTFS_INITRAMFS braucht. Eine Gluon-RAMpe-Bau ergibt direkt eine Gluon-RAMpe-factory [abgeleitet aus mk]
+- **Gluon-RAMpe-Rezept:** devices/genexis-pulse-ex400.sh (Rezept-Entwurf, nicht gebaut): `-factory.bin` (initramfs in UBIFS-bootfs, Inteno-Kopf); bootfs höchstens etwa 11.6 MiB
 - **Quelle (OpenWrt-Commit):** dd0c2839a81bb3c5067be99b02ec5c0adff93ac6
 - **Detail-Anleitung:** https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400
 
@@ -5311,6 +5338,7 @@ Mercusys MR90X v1 · mediatek-filogic · K2
 - **Stock-Teile:** - (Wiki: Backup tp_data/boot für den Rückweg)
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** teilweise: das RAMpe-initramfs könnte das OpenWrt-initramfs im kernel-Volume ersetzen; Exploit und fw_setenv bleiben Handarbeit [abgeleitet]. Hinweis: erstinstallation-ohne-factory.md beschreibt "tp_boot_idx 0, dann U-Boot-Web-Recovery nimmt initramfs" - weder im Commit noch im Wiki-Abschnitt "Stock bootloader" so belegt
+- **Gluon-RAMpe-Rezept:** devices/mercusys-mr90x-v1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell
 - **Quelle (OpenWrt-Commit):** OpenWrt e4fe3097ef6a961874b66932a0ac4be18070630a
 - **Detail-Anleitung:** https://openwrt.org/toh/mercusys/mr90x_v1#installation_stock_bootloader
 
@@ -5332,6 +5360,7 @@ NETGEAR WAX218 · qualcommax-ipq807x · K1
 - **Stock-Teile:** -
 - **RAM:** 366 MB nutzbar (laut Commit)
 - **Gluon-RAMpe passt:** ja: RAMpe-initramfs in dasselbe Format packen (ARTIFACT web-ui-factory.fit); Gluon baut für qualcommax kein initramfs, Rezept braucht TARGET_ROOTFS_INITRAMFS [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/netgear-wax218.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `-web-ui-factory.fit` (OpenWrt-ARTIFACT) für die Web-UI
 - **Quelle (OpenWrt-Commit):** OpenWrt 7801161c4bb2413817b3dfd01695050e2da27bf3
 - **Detail-Anleitung:** -
 
@@ -5454,6 +5483,7 @@ Xiaomi AX3600 · qualcommax-ipq807x · K2
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als `initramfs-factory.ubi` bauen, ersetzt den OpenWrt-Zwischenschritt; Exploit bleibt; Gluon baut für qualcommax kein initramfs [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/xiaomi-ax3600.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt
 - **Quelle (OpenWrt-Commit):** OpenWrt 8364f0816417bfe404f7bded4eaa4f4a60c6d006
 - **Detail-Anleitung:** -
 
@@ -5495,6 +5525,7 @@ Xiaomi Mi Router AX3000T · mediatek-filogic · K2
 - **Stock-Teile:** - (Backup BL2, Nvram, Bdata, Factory, FIP, ubi, KF für den Rückweg)
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als `initramfs-factory.ubi` (ubinize-kernel) bauen, ersetzt den OpenWrt-Zwischenschritt; der Exploit bleibt [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/xiaomi-mi-router-ax3000t.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt
 - **Quelle (OpenWrt-Commit):** OpenWrt 7dbcc1215a56cc1da68c81bf92d7efa174c5e051
 - **Detail-Anleitung:** -
 
@@ -5598,6 +5629,7 @@ ZyXEL WSM20 (Multy M1) · ramips-mt7621 · K1
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** ja: der Hersteller-Weg nimmt ein initramfs (KERNEL_INITRAMFS mit znet-Header, mt7621.mk); Cloud-Registrierung bleibt
+- **Gluon-RAMpe-Rezept:** devices/zyxel-wsm20.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (znet-Header schon drin) für die versteckte Upgrade-Seite
 - **Quelle (OpenWrt-Commit):** 28df7f7ff251d8684caa60f07ed0ba0c4a8e71f4
 - **Detail-Anleitung:** https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/
 

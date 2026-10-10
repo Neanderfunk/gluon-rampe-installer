@@ -23,14 +23,88 @@ Vollständiges Inventar aller Gluon-2025.1-Geräte mit Weg ab Werk,
 Übertragung, Konsole, Links und Installer-Eignung:
 [ERSTINSTALLATION-2025.1.md](ERSTINSTALLATION-2025.1.md).
 
-## Stand
+## Stand: Geräte mit Rezept
 
-| Gerät | Target | Weg | Stand |
-|---|---|---|---|
-| D-Link AQUILA PRO AI M30 A1 | mediatek-filogic | D-Link-Recovery 192.168.200.1, `-recovery.bin` | gebaut, Inhalt geprüft, **Hardware-Test offen** |
-| x86-64 | x86-64 | QEMU `-kernel` | Testgerät, Ende-zu-Ende grün |
-| Mercusys MR90X v1 | mediatek-filogic | SSH/Telnet in der Stock-Firmware, initramfs per `ubiupdatevol` ins Volume `kernel` | Rezept da (`devices/mercusys-mr90x-v1.sh`), **noch nicht gebaut** |
-| Mercusys MR80X v3 | mediatek-filogic | laut OpenWrt nur UART + TFTP; ob der MR90X-Weg geht, ist offen | Rezept da, trägt das Gerät in Gluon ein (`ensure_device`), **noch nicht gebaut**; Community-sysupgrade ab Neanderfunk-2025.1 (gluon-patches-hardware ab19bf1b) |
+Rezepte unter `devices/<gluon-name>.sh`. "Entwurf, nicht gebaut" heißt: per
+Trockenlauf gegen `targets/` von Gluon v2025.1.3 geprüft (Rezept läuft,
+Targetdatei bleibt gültiges Lua), aber noch kein Bau und kein Hardware-Test.
+Alias-Namen (z. B. Instant On AP11 zu AP-303) haben kein eigenes Rezept: Gluon
+legt das Image des Hauptnamens unter beiden Namen ab.
+
+<!-- BEGIN erzeugt:rezepte -->
+<!-- erzeugt von scripts/erstinstallation.py aus data/geraete-2025.1.json, nicht von Hand ändern -->
+
+| Gerät | Gluon-Name | Target | Kat. | Rezept und Stand |
+|---|---|---|---|---|
+| Aruba AP-303 | `aruba-ap-303` | ipq40xx-generic | K4 | devices/aruba-ap-303.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `ipq40xx.ari` per APBoot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`) |
+| Aruba AP-303H | `aruba-ap-303h` | ipq40xx-generic | K4 | devices/aruba-ap-303h.sh (Rezept-Entwurf, nicht gebaut): wie AP-303; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`) |
+| Aruba AP-365 | `aruba-ap-365` | ipq40xx-generic | K4 | devices/aruba-ap-365.sh (Rezept-Entwurf, nicht gebaut): wie AP-303; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`) |
+| Aruba Instant On AP11 (Alias von aruba-ap-303) | `aruba-instant-on-ap11` | ipq40xx-generic | K5 | Alias: Image aus devices/aruba-ap-303.sh; apboot gesperrt (K5) |
+| Aruba Instant On AP11D (Alias von aruba-ap-303h) | `aruba-instant-on-ap11d` | ipq40xx-generic | K4 | Alias: Image aus devices/aruba-ap-303h.sh; ob apboot gesperrt ist wie beim AP11: offen |
+| Aruba Instant On AP17 (Alias von aruba-ap-365) | `aruba-instant-on-ap17` | ipq40xx-generic | K4 | Alias: Image aus devices/aruba-ap-365.sh; ob apboot gesperrt ist wie beim AP11: offen |
+| ASUS Lyra MAP-AC2200 | `asus-lyra-map-ac2200` | ipq40xx-generic | K1 | devices/asus-lyra-map-ac2200.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` per SSH `mtd-write -d linux` |
+| AVM FRITZ!Box 7520 (Alias von avm-fritz-box-7530) | `avm-fritz-box-7520` | ipq40xx-generic | K2 | Alias: Image aus devices/avm-fritz-box-7530.sh (dort auch `uboot-fritz7520.bin`); TFTP-Dateiname für die 7520: offen |
+| AVM FRITZ!Box 7530 | `avm-fritz-box-7530` | ipq40xx-generic | K2 | devices/avm-fritz-box-7530.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `FRITZ7530.bin`, dazu `uboot-fritz7530.bin` für `eva_ramboot.py`; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (U-Boot schreiben, `ubirmvol`); 7520/7530 im System nicht unterscheidbar |
+| AVM FRITZ!Repeater 1200 | `avm-fritz-repeater-1200` | ipq40xx-generic | K2 | devices/avm-fritz-repeater-1200.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `FRITZ1200.bin` + `uboot-fritz1200.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (U-Boot schreiben, `ubirmvol`) |
+| AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) | `avm-fritz-repeater-3000` | ipq40xx-generic | K2 | devices/avm-fritz-repeater-3000.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `FRITZ3000.bin` + `uboot-fritz3000.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (U-Boot schreiben, `ubirmvol`) |
+| Extreme Networks WS-AP3915i | `extreme-networks-ws-ap3915i` | ipq40xx-generic | K4 | devices/extreme-networks-ws-ap3915i.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `openwrt-3915.bin` per U-Boot-TFTP |
+| ZTE MF289F | `zte-mf289f` | ipq40xx-generic | K4 | devices/zte-mf289f.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-"broken"-Gerät gezielt; `-initramfs-zImage.itb` per U-Boot-TFTP; Vorbereitung (`ubirmvol`) muss schon vor der Imageprüfung laufen, fehlt der RAMpe-Seite noch |
+| Aruba AP-324/AP-325, Siemens Scalance W1750D | `aruba-ap-32x` | ipq806x-generic | K5 | devices/aruba-ap-32x.sh (Rezept-Entwurf, nicht gebaut): Backport aus gluon-patches-hardware (`RAMPE_HW_PATCHES`); `-initramfs.ari` per APBoot-TFTP; APBoot-Tausch und NAND-Umbau bleiben seriell |
+| Extreme Networks AP3935i/e | `extreme-networks-ap3935` | ipq806x-generic | K4 | devices/extreme-networks-ap3935.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage` (ohne Endung) per U-Boot-TFTP |
+| ASUS RT-AX52 | `asus-rt-ax52` | mediatek-filogic | K1 | devices/asus-rt-ax52.sh (Rezept-Entwurf, nicht gebaut): `-initramfs.trx` (OpenWrt-ARTIFACT) für die ASUS-Web-UI |
+| ASUS RT-AX59U | `asus-rt-ax59u` | mediatek-filogic | K2 | devices/asus-rt-ax59u.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; nur `initramfs-kernel.bin` für den UART-Weg, für die Web-UI fehlt ein eigenes TRX |
+| ASUS TUF-AX4200 | `asus-tuf-ax4200` | mediatek-filogic | K2 | devices/asus-tuf-ax4200.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` mit eingebettetem initramfs (`TARGET_ROOTFS_INITRAMFS_SEPARATE` aus) für SSH `mtd-write` oder UART + TFTP; eigener Bau-Lauf |
+| ASUS TUF-AX6000 | `asus-tuf-ax6000` | mediatek-filogic | K2 | devices/asus-tuf-ax6000.sh (Rezept-Entwurf, nicht gebaut): wie TUF-AX4200; eigener Bau-Lauf |
+| Cudy TR3000 v1 (128 MB Flash) | `cudy-tr3000-v1` | mediatek-filogic | K4 | devices/cudy-tr3000-v1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per U-Boot-TFTP |
+| D-Link AQUILA PRO AI M30 A1 | `d-link-aquila-pro-ai-m30-a1` | mediatek-filogic | K1 | devices/d-link-aquila-pro-ai-m30-a1.sh: `-recovery.bin` (D-Link-Header) für die D-Link-Recovery; gebaut, Inhalt geprüft, Hardware-Test offen |
+| D-Link AQUILA PRO AI M60 A1 | `d-link-aquila-pro-ai-m60-a1` | mediatek-filogic | K1 | devices/d-link-aquila-pro-ai-m60-a1.sh (Rezept-Entwurf, nicht gebaut): `-recovery.bin` (D-Link-Header) für die D-Link-Recovery |
+| Mercusys MR80X v3 | `mercusys-mr80x-v3` | mediatek-filogic | K4 | devices/mercusys-mr80x-v3.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein (`ensure_device`); `initramfs-kernel.bin` per UART + TFTP |
+| Mercusys MR90X v1 | `mercusys-mr90x-v1` | mediatek-filogic | K2 | devices/mercusys-mr90x-v1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell |
+| Xiaomi Mi Router AX3000T | `xiaomi-mi-router-ax3000t` | mediatek-filogic | K2 | devices/xiaomi-mi-router-ax3000t.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt |
+| NETGEAR WAX218 | `netgear-wax218` | qualcommax-ipq807x | K1 | devices/netgear-wax218.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `-web-ui-factory.fit` (OpenWrt-ARTIFACT) für die Web-UI |
+| TP-Link EAP620 HD v1 | `tp-link-eap620-hd-v1` | qualcommax-ipq807x | K4 | devices/tp-link-eap620-hd-v1.sh (Rezept-Entwurf, nicht gebaut): Backport aus gluon-patches-hardware (`RAMPE_HW_PATCHES`); `-initramfs-uImage.itb` per U-Boot-TFTP |
+| Xiaomi AX3600 | `xiaomi-ax3600` | qualcommax-ipq807x | K2 | devices/xiaomi-ax3600.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt |
+| ASUS RT-AX53U (RT-AX1800U) | `asus-rt-ax53u` | ramips-mt7621 | K1 | devices/asus-rt-ax53u.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per ASUS-Rescue (TFTP put) |
+| Genexis/Inteno Pulse EX400 | `genexis-pulse-ex400` | ramips-mt7621 | K1 | devices/genexis-pulse-ex400.sh (Rezept-Entwurf, nicht gebaut): `-factory.bin` (initramfs in UBIFS-bootfs, Inteno-Kopf); bootfs höchstens etwa 11.6 MiB |
+| ZyXEL WSM20 (Multy M1) | `zyxel-wsm20` | ramips-mt7621 | K1 | devices/zyxel-wsm20.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (znet-Header schon drin) für die versteckte Upgrade-Seite |
+| x86 (x86-64) | `x86-64` | x86-64 | K0 | devices/x86-64.sh: Testgerät, in QEMU Ende-zu-Ende geprüft |
+
+<!-- END erzeugt:rezepte -->
+
+### Bau-Läufe
+
+Ein `build.sh`-Lauf je Target. Die TUF-Geräte brauchen einen eigenen Lauf, weil
+ihr Schalter `TARGET_ROOTFS_INITRAMFS_SEPARATE` das ganze Target betrifft (das
+Rezept bricht sonst ab). AP-32x und EAP620 HD brauchen die OpenWrt-Backports
+aus [gluon-patches-hardware](https://github.com/Neanderfunk/gluon-patches-hardware)
+(Branch v2025.1.x) über `RAMPE_HW_PATCHES`.
+
+```sh
+contrib/docker/run.sh ./build.sh mediatek-filogic d-link-aquila-pro-ai-m30-a1 d-link-aquila-pro-ai-m60-a1 mercusys-mr90x-v1 mercusys-mr80x-v3 asus-rt-ax52 asus-rt-ax59u xiaomi-mi-router-ax3000t cudy-tr3000-v1
+contrib/docker/run.sh ./build.sh mediatek-filogic asus-tuf-ax4200 asus-tuf-ax6000
+contrib/docker/run.sh ./build.sh ramips-mt7621 asus-rt-ax53u genexis-pulse-ex400 zyxel-wsm20
+contrib/docker/run.sh ./build.sh ipq40xx-generic aruba-ap-303 aruba-ap-303h aruba-ap-365 asus-lyra-map-ac2200 zte-mf289f extreme-networks-ws-ap3915i avm-fritz-box-7530 avm-fritz-repeater-1200 avm-fritz-repeater-3000
+RAMPE_HW_PATCHES=<pfad>/gluon-patches-hardware contrib/docker/run.sh ./build.sh qualcommax-ipq807x netgear-wax218 xiaomi-ax3600 tp-link-eap620-hd-v1
+RAMPE_HW_PATCHES=<pfad>/gluon-patches-hardware contrib/docker/run.sh ./build.sh ipq806x-generic extreme-networks-ap3935 aruba-ap-32x
+```
+
+### Offen bei den Rezepten
+
+- **Vorbereitung vor dem sysupgrade:** Aruba AP-303/303H/365 (`ubiformat`),
+  AVM 7530/Repeater 1200/3000 (OpenWrt-U-Boot schreiben, `ubirmvol`) und ZTE
+  MF289F (`ubirmvol`, schon vor der Imageprüfung) bauen, aber die RAMpe-Seite
+  führt den Schritt noch nicht aus. Entwurf für einen Hook im Controller:
+  [ENTWURF-VORBEREITUNG.md](ENTWURF-VORBEREITUNG.md) (Skripte je
+  `board_name`, synchron vor `sysupgrade`), noch nicht übernommen. 7520 und 7530 teilen `board_name` und Image, brauchen aber
+  verschiedene U-Boots: ohne sichere Erkennung kein automatisches Schreiben.
+- **ARTIFACTS:** `extra_images` sammelt OpenWrt-ARTIFACTS laut Code ein
+  (`copy_output.lua` baut den Quellnamen aus Suffix und Endung), im Bau bestätigt
+  ist das noch nicht (RT-AX52 `.trx`, AX3000T/AX3600 `.ubi`, WAX218 `.fit`).
+- **Größengrenzen:** EX400 (bootfs höchstens etwa 11.6 MiB), WSM20 (liest der
+  Stock-U-Boot mehr als 8 MiB?), TUF/Lyra (Volume `linux`), WAX218
+  (mtd12/mtd14), AP3935 (Ladeadresse bei größerem initramfs).
+- **RT-AX59U:** über die Web-UI nur mit einem fremden "transit TRX"; ein eigenes
+  TRX bräuchte einen Eingriff in OpenWrt, ob die Stock-UI es nimmt, ist offen.
 
 ## Kandidaten (alle ungeprüft)
 
@@ -106,8 +180,11 @@ ipq40xx-mikrotik ein; ipq40xx-generic, ipq806x, qualcommax und mt7622 brauchen
 `ensure_target_config`. Viele Hersteller-Wege wollen ein verpacktes initramfs
 (ASUS-TRX, D-Link-Header, Netgear `web-ui-factory.fit`, Xiaomi
 `initramfs-factory.ubi`, Aruba `.ari`, Inteno-Header), das OpenWrt als
-IMAGES/ARTIFACTS baut. Ob Gluons `extra_images` die ARTIFACTS einsammelt, ist
-offen.
+IMAGES/ARTIFACTS baut. Gluons `extra_images` sammelt beides ein (laut Code,
+für ARTIFACTS im Bau noch nicht bestätigt). Weitere Fallstricke: `packages` im
+`device()` ersetzt die Standardliste (zusätzliche Pakete per
+`ensure_site_packages`), Gluon-"broken"-Geräte brauchen `ensure_site_unbroken`,
+und `copy_output.lua` entfernt eingesammelte Images aus `openwrt/bin/targets`.
 
 ## Ein Gerät ergänzen
 

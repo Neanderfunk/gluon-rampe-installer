@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
 # erstinstallation.py - erzeugt die Datenteile von docs/ERSTINSTALLATION-2025.1.md
-# aus data/geraete-2025.1.json.
+# und die Rezept-Tabelle in docs/GERAETE.md aus data/geraete-2025.1.json.
 #
 #   scripts/erstinstallation.py          Markdown neu schreiben
 #   scripts/erstinstallation.py --check  nur pruefen, ob es aktuell ist (Exit 1, wenn nicht)
@@ -22,6 +22,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATEN = ROOT / "data" / "geraete-2025.1.json"
 DOKU = ROOT / "docs" / "ERSTINSTALLATION-2025.1.md"
+GERAETE = ROOT / "docs" / "GERAETE.md"
 
 # Feld -> Beschriftung, in der Reihenfolge der Einzelheiten
 FELDER = OrderedDict([
@@ -72,19 +73,27 @@ def rampe_wort(g):
     return {"nicht": "nein"}.get(w, w)
 
 
+def rezept_wort(g):
+    r = g["rampe_rezept"]
+    if r.startswith("devices/"):
+        return "ja"
+    return "Alias" if r.startswith("Alias") else ""
+
+
 def uebersicht(geraete):
     z = ["Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den "
          "Einzelheiten des Geräts.", "",
          "| Gluon-Name | Modell | Target | Kat. | Anleitungsfamilie | Übertragung "
-         "| seriell nötig | Gehäuse öffnen | Gluon-RAMpe | Detail-Anleitung |",
-         "|---|---|---|---|---|---|---|---|---|---|"]
+         "| seriell nötig | Gehäuse öffnen | Gluon-RAMpe | RAMpe-Rezept | Detail-Anleitung |",
+         "|---|---|---|---|---|---|---|---|---|---|---|"]
     for g in geraete:
         fam = f"[`{g['familie']}`](#familie-{g['familie']})" if g["familie"] else ""
         z.append("| " + " | ".join([
             f"[{g['gluon_name']}](#{g['gluon_name']})",
             zelle(g["modell"]), g["target"], g["kat"], fam,
             zelle(kurz(g["uebertragung"])), zelle(kurz(g["seriell"])),
-            zelle(kurz(g["gehaeuse"])), rampe_wort(g), zelle(g["anleitung"]),
+            zelle(kurz(g["gehaeuse"])), rampe_wort(g), rezept_wort(g),
+            zelle(g["anleitung"]),
         ]) + " |")
     return z
 
@@ -124,11 +133,20 @@ def zahlen(geraete):
     return z
 
 
-def ersetze(text, name, zeilen):
+def rezepte(geraete):
+    z = ["| Gerät | Gluon-Name | Target | Kat. | Rezept und Stand |", "|---|---|---|---|---|"]
+    for g in geraete:
+        if g["rampe_rezept"]:
+            z.append(f"| {zelle(g['modell'])} | `{g['gluon_name']}` | {g['target']} | {g['kat']} "
+                     f"| {zelle(g['rampe_rezept'])} |")
+    return z
+
+
+def ersetze(text, name, zeilen, doku=DOKU):
     a, e = f"<!-- BEGIN erzeugt:{name} -->", f"<!-- END erzeugt:{name} -->"
     muster = re.compile(re.escape(a) + r".*?" + re.escape(e), re.S)
     if not muster.search(text):
-        sys.exit(f"Markierung {a} fehlt in {DOKU}")
+        sys.exit(f"Markierung {a} fehlt in {doku}")
     hinweis = ("<!-- erzeugt von scripts/erstinstallation.py aus "
                "data/geraete-2025.1.json, nicht von Hand ändern -->")
     return muster.sub(lambda _: "\n".join([a, hinweis, ""] + zeilen + ["", e]), text)
@@ -151,11 +169,14 @@ def main():
     neu = ersetze(alt, "zahlen", zahlen(geraete))
     neu = ersetze(neu, "uebersicht", uebersicht(geraete))
     neu = ersetze(neu, "einzelheiten", einzelheiten(geraete))
-    if "--check" in sys.argv[1:]:
-        if neu != alt:
-            sys.exit(f"{DOKU.name} ist nicht aktuell: scripts/erstinstallation.py laufen lassen")
-        return
-    DOKU.write_text(neu, encoding="utf-8")
+    galt = GERAETE.read_text(encoding="utf-8")
+    gneu = ersetze(galt, "rezepte", rezepte(geraete), GERAETE)
+    for pfad, a, n in ((DOKU, alt, neu), (GERAETE, galt, gneu)):
+        if "--check" in sys.argv[1:]:
+            if n != a:
+                sys.exit(f"{pfad.name} ist nicht aktuell: scripts/erstinstallation.py laufen lassen")
+        else:
+            pfad.write_text(n, encoding="utf-8")
 
 
 if __name__ == "__main__":
