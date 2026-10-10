@@ -69,6 +69,8 @@ nicht recherchiert und erscheinen in den Einzelheiten nicht.
   `sonderweg-<gluon-name>` ist ein Einzelfall mit eigener Seite. Erstzuordnung
   per Regel aus Hersteller, Kategorie, Übertragung und Werkzeug, danach von
   Hand durchgesehen.
+  Gemeinsamer Ablauf, Quellen und Fallen je Familie:
+  [ANLEITUNGSFAMILIEN.md](ANLEITUNGSFAMILIEN.md).
 - **Übertragung:** wie das Image auf das Gerät kommt. `webui-upload` (Stock-Weboberfläche),
   `recovery-web` (Recovery-Seite des Bootloaders), `tftp-server-am-geraet` (Gerät nimmt per
   `tftp put` an), `tftp-client-am-geraet` (Gerät holt per TFTP; man braucht einen TFTP-Server
@@ -120,11 +122,11 @@ wo es eine Quelle gibt:
 
 | Kat. | Geräte |
 |---|---:|
-| K0 | 119 |
+| K0 | 118 |
 | K0+ | 24 |
 | K1 | 25 |
 | K1d | 99 |
-| K2 | 40 |
+| K2 | 41 |
 | K3 | 9 |
 | K4 | 27 |
 | K5 | 7 |
@@ -341,7 +343,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [gl.inet-gl-b1300](#gl.inet-gl-b1300) | GL.iNet GL-B1300 | ipq40xx-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | - |
 | [linksys-ea6350v3](#linksys-ea6350v3) | Linksys EA6350 v3 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
 | [linksys-ea8300-dallas](#linksys-ea8300-dallas) | Linksys EA8300 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
-| [linksys-mr8300-dallas](#linksys-mr8300-dallas) | Linksys MR8300 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | teilweise |  | - |
+| [linksys-mr8300-dallas](#linksys-mr8300-dallas) | Linksys MR8300 | ipq40xx-generic | K2 | [`sonderweg-linksys-mr8300-dallas`](#familie-sonderweg-linksys-mr8300-dallas) | webui-upload | nein | nein | teilweise |  | - |
 | [linksys-vlp01](#linksys-vlp01) | Linksys VLP01 (Alias von linksys-whw01) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/whw01_v1#installation |
 | [linksys-whw01](#linksys-whw01) | Linksys WHW01 v1 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/whw01_v1#installation |
 | [linksys-whw03-v2-velop](#linksys-whw03-v2-velop) | Linksys WHW03 v2 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/whw03_v2#oem_easy_installation |
@@ -2401,13 +2403,16 @@ Raspberry Pi 1 Model B/B+ · bcm27xx-bcm2708 · K0
 
 - **Weg ab Werk:** Gluon-factory (`.img.gz`) auf die SD-Karte schreiben [geprüft: targets/bcm27xx.inc]
 - **Übertragung:** sd-karte (Kartenleser)
+- **Rechner braucht:** Kartenleser für microSD [abgeleitet]; Schreibprogramm: Raspberry Pi Imager oder balenaEtcher lesen .img.gz direkt [geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts]; dd oder Win32DiskImager brauchen vorher entpackte .img (gzip -d) [geprüft: OpenWrt-Wiki raspberry_pi/nanopi_r2s, FriendlyElec-Wiki]; Linux: `dd if=<image>.img of=/dev/sdX bs=2M conv=fsync` auf das ganze Gerät, nicht auf eine Partition [geprüft: OpenWrt-Wiki raspberry_pi]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Image für Pi 1 Model B, B+ (auch Rev2); das OpenWrt-Image startet zwar auch A/A+/CM/Zero/Zero W, Gluon führt diese aber nicht, der Autoupdater findet für sie vermutlich kein Image [geprüft: Gluon targets/bcm27xx-bcm2708, OpenWrt bcm27xx/image/Makefile; Autoupdater-Folge abgeleitet]
 - **initramfs-Link:** -
 - **Factory-/Stock-Image-Link:** Gluon-factory .img.gz
 - **Stock-Teile:** -
 - **RAM:** je Modell
+- **Dauer:** Image nur ca. 170 MB, Schreiben Sekunden bis etwa eine Minute; keine Quelle nennt Zeiten [abgeleitet: Imagegröße aus Config-images.in]. Der Rest der Karte bleibt ungenutzt (squashfs), jede Karte ab ca. 256 MB reicht technisch [abgeleitet]
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/bcm27xx-bcm2708
 - **Detail-Anleitung:** -
@@ -2418,13 +2423,16 @@ Raspberry Pi 2 Model B · bcm27xx-bcm2709 · K0
 
 - **Weg ab Werk:** Gluon-factory (`.img.gz`) auf die SD-Karte schreiben [geprüft: targets/bcm27xx.inc]
 - **Übertragung:** sd-karte (Kartenleser)
+- **Rechner braucht:** Kartenleser für microSD [abgeleitet]; Schreibprogramm: Raspberry Pi Imager oder balenaEtcher lesen .img.gz direkt [geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts]; dd oder Win32DiskImager brauchen vorher entpackte .img (gzip -d) [geprüft: OpenWrt-Wiki raspberry_pi/nanopi_r2s, FriendlyElec-Wiki]; Linux: `dd if=<image>.img of=/dev/sdX bs=2M conv=fsync` auf das ganze Gerät, nicht auf eine Partition [geprüft: OpenWrt-Wiki raspberry_pi]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Pi 2 Model B (auch v1.2 mit BCM2837); Pi 3/4 starten zwar auch mit diesem 32-Bit-Image, sollen aber ihr eigenes Image bekommen [geprüft: OpenWrt bcm27xx/image/Makefile; Empfehlung abgeleitet]
 - **initramfs-Link:** -
 - **Factory-/Stock-Image-Link:** Gluon-factory .img.gz
 - **Stock-Teile:** -
 - **RAM:** je Modell
+- **Dauer:** Image nur ca. 170 MB, Schreiben Sekunden bis etwa eine Minute; keine Quelle nennt Zeiten [abgeleitet: Imagegröße aus Config-images.in]. Der Rest der Karte bleibt ungenutzt (squashfs), jede Karte ab ca. 256 MB reicht technisch [abgeleitet]
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/bcm27xx-bcm2709
 - **Detail-Anleitung:** -
@@ -2435,13 +2443,16 @@ Raspberry Pi 3 Model B/B+ · bcm27xx-bcm2710 · K0
 
 - **Weg ab Werk:** Gluon-factory (`.img.gz`) auf die SD-Karte schreiben [geprüft: targets/bcm27xx.inc]
 - **Übertragung:** sd-karte (Kartenleser)
+- **Rechner braucht:** Kartenleser für microSD [abgeleitet]; Schreibprogramm: Raspberry Pi Imager oder balenaEtcher lesen .img.gz direkt [geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts]; dd oder Win32DiskImager brauchen vorher entpackte .img (gzip -d) [geprüft: OpenWrt-Wiki raspberry_pi/nanopi_r2s, FriendlyElec-Wiki]; Linux: `dd if=<image>.img of=/dev/sdX bs=2M conv=fsync` auf das ganze Gerät, nicht auf eine Partition [geprüft: OpenWrt-Wiki raspberry_pi]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Pi 3 Model B und B+ (Alias 3-model-b-plus); 3A+, Zero 2 W und CM3 starten laut OpenWrt auch, Gluon führt sie aber nicht (Autoupdater findet vermutlich kein Image) [geprüft: Gluon targets/bcm27xx-bcm2710, OpenWrt Makefile; Autoupdater-Folge abgeleitet]
 - **initramfs-Link:** -
 - **Factory-/Stock-Image-Link:** Gluon-factory .img.gz
 - **Stock-Teile:** -
 - **RAM:** je Modell
+- **Dauer:** Image nur ca. 170 MB, Schreiben Sekunden bis etwa eine Minute; keine Quelle nennt Zeiten [abgeleitet: Imagegröße aus Config-images.in]. Der Rest der Karte bleibt ungenutzt (squashfs), jede Karte ab ca. 256 MB reicht technisch [abgeleitet]
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/bcm27xx-bcm2710
 - **Detail-Anleitung:** -
@@ -2452,13 +2463,16 @@ Raspberry Pi 4 Model B · bcm27xx-bcm2711 · K0
 
 - **Weg ab Werk:** Gluon-factory (`.img.gz`) auf die SD-Karte schreiben [geprüft: targets/bcm27xx.inc]
 - **Übertragung:** sd-karte (Kartenleser)
+- **Rechner braucht:** Kartenleser für microSD [abgeleitet]; Schreibprogramm: Raspberry Pi Imager oder balenaEtcher lesen .img.gz direkt [geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts]; dd oder Win32DiskImager brauchen vorher entpackte .img (gzip -d) [geprüft: OpenWrt-Wiki raspberry_pi/nanopi_r2s, FriendlyElec-Wiki]; Linux: `dd if=<image>.img of=/dev/sdX bs=2M conv=fsync` auf das ganze Gerät, nicht auf eine Partition [geprüft: OpenWrt-Wiki raspberry_pi]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** nur Pi 4 Model B; Pi 400 und CM4 starten laut OpenWrt auch, Gluon führt sie aber nicht; Raspberry Pi 5 (bcm2712) wird nicht unterstützt [geprüft: Gluon targets/bcm27xx-bcm2711, OpenWrt Makefile, kein bcm2712-Target in Gluon]
 - **initramfs-Link:** -
 - **Factory-/Stock-Image-Link:** Gluon-factory .img.gz
 - **Stock-Teile:** -
 - **RAM:** je Modell
+- **Dauer:** Image nur ca. 170 MB, Schreiben Sekunden bis etwa eine Minute; keine Quelle nennt Zeiten [abgeleitet: Imagegröße aus Config-images.in]. Der Rest der Karte bleibt ungenutzt (squashfs), jede Karte ab ca. 256 MB reicht technisch [abgeleitet]
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/bcm27xx-bcm2711
 - **Detail-Anleitung:** -
@@ -2468,14 +2482,18 @@ Raspberry Pi 4 Model B · bcm27xx-bcm2711 · K0
 FriendlyElec NanoPi R2C · rockchip-armv8 · K0
 
 - **Weg ab Werk:** Gluon-sysupgrade (`.img.gz`, Gluon hat `factory = false`) auf die SD-Karte schreiben [abgeleitet: targets/rockchip-armv8]
+- **Sichtbare Zeichen:** SYS-LED (rot) blinkt beim Start schnell (OpenWrt-Startphase); beim ersten Start nach der Installation ist Gluon im Konfigurationsmodus, dann blinkt die SYS-LED langsam (ca. 1 s an, 0,3 s aus) [geprüft: OpenWrt-Patch led-boot/running = sys_led, diag.sh, Gluon gluon-setup-mode S96led]; im Normalbetrieb leuchtet sie dauerhaft [abgeleitet: OpenWrt diag.sh]
 - **Übertragung:** sd-karte (Kartenleser)
+- **Rechner braucht:** Kartenleser für microSD [abgeleitet]; Schreibprogramm: Raspberry Pi Imager oder balenaEtcher lesen .img.gz direkt [geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts]; dd oder Win32DiskImager brauchen vorher entpackte .img (gzip -d) [geprüft: OpenWrt-Wiki raspberry_pi/nanopi_r2s, FriendlyElec-Wiki]; Linux: `dd if=<image>.img of=/dev/sdX bs=2M conv=fsync` auf das ganze Gerät, nicht auf eine Partition [geprüft: OpenWrt-Wiki raspberry_pi]; Achtung beim Entpacken: das sysupgrade-.img.gz hat hinter dem gzip-Strom Metadaten; gzip meldet dann vermutlich "trailing garbage ignored", die Datei ist trotzdem in Ordnung [geprüft: OpenWrt rockchip/image/Makefile append-metadata; gzip-Verhalten abgeleitet]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** R2C ist ein R2S mit anderem Ethernet-PHY (yt8521s statt rtl8211e): R2S-Image auf R2C (und umgekehrt) nicht verwenden; R2C Plus (mit 8 GB eMMC) ist ein eigenes OpenWrt-Gerät, das Gluon nicht baut [geprüft: OpenWrt-Commits 8f578c15/78226647; Gluon targets/rockchip-armv8]
 - **initramfs-Link:** -
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade .img.gz
 - **Stock-Teile:** -
 - **RAM:** je Modell
+- **Dauer:** Image nur ca. 170 MB, Schreiben Sekunden bis etwa eine Minute; keine Quelle nennt Zeiten [abgeleitet: Imagegröße aus Config-images.in]. Der Rest der Karte bleibt ungenutzt (squashfs), jede Karte ab ca. 256 MB reicht technisch [abgeleitet]
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/rockchip-armv8; R2C: gluon-patches-hardware devices/add-nanopi-r2c
 - **Detail-Anleitung:** -
@@ -2485,14 +2503,18 @@ FriendlyElec NanoPi R2C · rockchip-armv8 · K0
 FriendlyElec NanoPi R2S · rockchip-armv8 · K0
 
 - **Weg ab Werk:** Gluon-sysupgrade (`.img.gz`, Gluon hat `factory = false`) auf die SD-Karte schreiben [abgeleitet: targets/rockchip-armv8]
+- **Sichtbare Zeichen:** SYS-LED (rot) blinkt beim Start schnell (OpenWrt-Startphase); beim ersten Start nach der Installation ist Gluon im Konfigurationsmodus, dann blinkt die SYS-LED langsam (ca. 1 s an, 0,3 s aus) [geprüft: OpenWrt-Patch led-boot/running = sys_led, diag.sh, Gluon gluon-setup-mode S96led]; im Normalbetrieb leuchtet sie dauerhaft [abgeleitet: OpenWrt diag.sh]
 - **Übertragung:** sd-karte (Kartenleser)
+- **Rechner braucht:** Kartenleser für microSD [abgeleitet]; Schreibprogramm: Raspberry Pi Imager oder balenaEtcher lesen .img.gz direkt [geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts]; dd oder Win32DiskImager brauchen vorher entpackte .img (gzip -d) [geprüft: OpenWrt-Wiki raspberry_pi/nanopi_r2s, FriendlyElec-Wiki]; Linux: `dd if=<image>.img of=/dev/sdX bs=2M conv=fsync` auf das ganze Gerät, nicht auf eine Partition [geprüft: OpenWrt-Wiki raspberry_pi]; Achtung beim Entpacken: das sysupgrade-.img.gz hat hinter dem gzip-Strom Metadaten; gzip meldet dann vermutlich "trailing garbage ignored", die Datei ist trotzdem in Ordnung [geprüft: OpenWrt rockchip/image/Makefile append-metadata; gzip-Verhalten abgeleitet]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** R2C sieht gleich aus, hat aber einen anderen Ethernet-PHY und ein eigenes Image; für R2S Plus gibt es weder OpenWrt- noch Gluon-Image [geprüft: OpenWrt-Commit 8f578c15, armv8.mk]
 - **initramfs-Link:** -
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade .img.gz
 - **Stock-Teile:** -
 - **RAM:** je Modell
+- **Dauer:** Image nur ca. 170 MB, Schreiben Sekunden bis etwa eine Minute; keine Quelle nennt Zeiten [abgeleitet: Imagegröße aus Config-images.in]. Der Rest der Karte bleibt ungenutzt (squashfs), jede Karte ab ca. 256 MB reicht technisch [abgeleitet]
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/rockchip-armv8
 - **Detail-Anleitung:** -
@@ -2502,14 +2524,20 @@ FriendlyElec NanoPi R2S · rockchip-armv8 · K0
 FriendlyElec NanoPi R3S · rockchip-armv8 · K0
 
 - **Weg ab Werk:** Gluon-sysupgrade (`.img.gz`, Gluon hat `factory = false`) auf die SD-Karte schreiben [abgeleitet: targets/rockchip-armv8]
+- **Taste und Zeitpunkt:** nicht nötig; die MASK-Taste ist nur für den USB-Maskrom-Modus (Flashen per USB), nicht für die Wahl SD statt eMMC [geprüft: FriendlyElec-Wiki NanoPi_R3S]
+- **Sichtbare Zeichen:** SYS-LED (rot) blinkt beim Start schnell (OpenWrt-Startphase); beim ersten Start nach der Installation ist Gluon im Konfigurationsmodus, dann blinkt die SYS-LED langsam (ca. 1 s an, 0,3 s aus) [geprüft: OpenWrt-Patch led-boot/running = sys_led, diag.sh, Gluon gluon-setup-mode S96led]; im Normalbetrieb leuchtet sie dauerhaft [abgeleitet: OpenWrt diag.sh]
 - **Übertragung:** sd-karte (Kartenleser)
+- **Rechner braucht:** Kartenleser für microSD [abgeleitet]; Schreibprogramm: Raspberry Pi Imager oder balenaEtcher lesen .img.gz direkt [geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts]; dd oder Win32DiskImager brauchen vorher entpackte .img (gzip -d) [geprüft: OpenWrt-Wiki raspberry_pi/nanopi_r2s, FriendlyElec-Wiki]; Linux: `dd if=<image>.img of=/dev/sdX bs=2M conv=fsync` auf das ganze Gerät, nicht auf eine Partition [geprüft: OpenWrt-Wiki raspberry_pi]; Achtung beim Entpacken: das sysupgrade-.img.gz hat hinter dem gzip-Strom Metadaten; gzip meldet dann vermutlich "trailing garbage ignored", die Datei ist trotzdem in Ordnung [geprüft: OpenWrt rockchip/image/Makefile append-metadata; gzip-Verhalten abgeleitet]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** R3S mit 1 GB oder 2 GB RAM und optionalem 32-GB-eMMC; Gluon unterscheidet nicht [geprüft: FriendlyElec-Wiki NanoPi_R3S, OpenWrt-Commit 2902b0a6]
+- **Bedingung an die Herstellerfirmware:** Bei vorhandenem eMMC mit Hersteller-System: dass die SD-Karte zuerst startet, ist nicht belegt [abgeleitet: Commit 2902b0a6 lässt von SD starten, FriendlyElec beschreibt Start von SD]. Ins eMMC: von SD starten, `dd if=<image>.img of=/dev/mmcblk0`, sync, SD-Karte ziehen, neu starten [geprüft: OpenWrt-Commit 2902b0a6]
 - **initramfs-Link:** -
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade .img.gz
 - **Stock-Teile:** -
 - **RAM:** je Modell
+- **Dauer:** Image nur ca. 170 MB, Schreiben Sekunden bis etwa eine Minute; keine Quelle nennt Zeiten [abgeleitet: Imagegröße aus Config-images.in]. Der Rest der Karte bleibt ungenutzt (squashfs), jede Karte ab ca. 256 MB reicht technisch [abgeleitet]
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/rockchip-armv8
 - **Detail-Anleitung:** -
@@ -2519,14 +2547,18 @@ FriendlyElec NanoPi R3S · rockchip-armv8 · K0
 FriendlyElec NanoPi R4S (4 GB) · rockchip-armv8 · K0
 
 - **Weg ab Werk:** Gluon-sysupgrade (`.img.gz`, Gluon hat `factory = false`) auf die SD-Karte schreiben [abgeleitet: targets/rockchip-armv8]
+- **Sichtbare Zeichen:** SYS-LED (rot) blinkt beim Start schnell (OpenWrt-Startphase); beim ersten Start nach der Installation ist Gluon im Konfigurationsmodus, dann blinkt die SYS-LED langsam (ca. 1 s an, 0,3 s aus) [geprüft: OpenWrt-Patch led-boot/running = sys_led, diag.sh, Gluon gluon-setup-mode S96led]; im Normalbetrieb leuchtet sie dauerhaft [abgeleitet: OpenWrt diag.sh]
 - **Übertragung:** sd-karte (Kartenleser)
+- **Rechner braucht:** Kartenleser für microSD [abgeleitet]; Schreibprogramm: Raspberry Pi Imager oder balenaEtcher lesen .img.gz direkt [geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts]; dd oder Win32DiskImager brauchen vorher entpackte .img (gzip -d) [geprüft: OpenWrt-Wiki raspberry_pi/nanopi_r2s, FriendlyElec-Wiki]; Linux: `dd if=<image>.img of=/dev/sdX bs=2M conv=fsync` auf das ganze Gerät, nicht auf eine Partition [geprüft: OpenWrt-Wiki raspberry_pi]; Achtung beim Entpacken: das sysupgrade-.img.gz hat hinter dem gzip-Strom Metadaten; gzip meldet dann vermutlich "trailing garbage ignored", die Datei ist trotzdem in Ordnung [geprüft: OpenWrt rockchip/image/Makefile append-metadata; gzip-Verhalten abgeleitet]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** nur die 4-GB-Variante (LPDDR4); die 1-GB-Variante war laut OpenWrt nicht unterstützt (Stand 2020); die Enterprise Edition (R4S mit EEPROM für feste MAC) ist ein eigenes OpenWrt-Gerät, das Gluon nicht baut; ein äußeres Unterscheidungsmerkmal 1 GB/4 GB nennt keine Quelle [geprüft: armv8.mk, OpenWrt-Commits b7215798/afca1236, FriendlyElec-Wiki NanoPi_R4S]
 - **initramfs-Link:** -
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade .img.gz
 - **Stock-Teile:** -
 - **RAM:** je Modell
+- **Dauer:** Image nur ca. 170 MB, Schreiben Sekunden bis etwa eine Minute; keine Quelle nennt Zeiten [abgeleitet: Imagegröße aus Config-images.in]. Der Rest der Karte bleibt ungenutzt (squashfs), jede Karte ab ca. 256 MB reicht technisch [abgeleitet]
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/rockchip-armv8
 - **Detail-Anleitung:** -
@@ -2537,13 +2569,16 @@ x86 (x86-64) · x86-64 · K0
 
 - **Weg ab Werk:** Gluon-factory (`squashfs-combined-efi`, .img.gz/.vmdk/.vdi) auf Platte/USB schreiben [geprüft: targets/x86*]
 - **Übertragung:** Datenträger direkt beschreiben
+- **Rechner braucht:** Image auf das ganze Blockgerät schreiben (Linux: gzip -d, dann dd auf /dev/sdX, nicht auf eine Partition); Windows/macOS: Rufus oder balenaEtcher, vorher mit 7zip bzw. Keka entpacken [geprüft: OpenWrt-Wiki openwrt_x86]; soll die interne Platte beschrieben werden, den Rechner dafür von einem Live-USB starten [abgeleitet]; gzip meldet wegen angehängter Metadaten vermutlich "trailing garbage ignored", die Datei ist trotzdem in Ordnung [geprüft: OpenWrt x86/image/Makefile append-metadata; gzip-Verhalten abgeleitet]; für VirtualBox/VMware gibt es fertige .vdi/.vmdk [geprüft: Gluon docs/user/x86.rst, targets/x86.inc]; Gluon liefert nur combined-efi; laut Image-Rezept enthält es zusätzlich GRUB für BIOS-Start, sollte also mit UEFI und BIOS starten [geprüft: Gluon targets/x86.inc, OpenWrt x86/image/Makefile; BIOS-Start abgeleitet, nicht getestet]; zu Secure Boot sagen die Quellen nichts [abgeleitet: Wiki openwrt_x86 ohne Angabe]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** für die meisten x86-Rechner mit 64-Bit-CPU (ab ca. Anfang der 2000er); 32-Bit-Rechner: x86-generic; AMD Geode (ALIX, net5501): x86-geode; sehr alte i586/Pentium MMX: x86-legacy [geprüft: Gluon docs/user/x86.rst, OpenWrt x86/*/target.mk, Wiki openwrt_x86]
 - **initramfs-Link:** -
 - **Factory-/Stock-Image-Link:** Gluon-factory
 - **Stock-Teile:** -
 - **RAM:** -
+- **Dauer:** Image nur ca. 120 MB, Schreiben Sekunden bis etwa eine Minute [abgeleitet: Imagegröße]
 - **Gluon-RAMpe passt:** nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)
 - **Gluon-RAMpe-Rezept:** devices/x86-64.sh: Testgerät, in QEMU Ende-zu-Ende geprüft
 - **Quelle (OpenWrt-Commit):** Gluon targets/x86-64
@@ -2555,13 +2590,16 @@ x86 (x86-generic) · x86-generic · K0
 
 - **Weg ab Werk:** wie x86-64 [geprüft: targets/x86*]
 - **Übertragung:** Datenträger direkt beschreiben
+- **Rechner braucht:** Image auf das ganze Blockgerät schreiben (Linux: gzip -d, dann dd auf /dev/sdX, nicht auf eine Partition); Windows/macOS: Rufus oder balenaEtcher, vorher mit 7zip bzw. Keka entpacken [geprüft: OpenWrt-Wiki openwrt_x86]; soll die interne Platte beschrieben werden, den Rechner dafür von einem Live-USB starten [abgeleitet]; gzip meldet wegen angehängter Metadaten vermutlich "trailing garbage ignored", die Datei ist trotzdem in Ordnung [geprüft: OpenWrt x86/image/Makefile append-metadata; gzip-Verhalten abgeleitet]; für VirtualBox/VMware gibt es fertige .vdi/.vmdk [geprüft: Gluon docs/user/x86.rst, targets/x86.inc]; Gluon liefert nur combined-efi; laut Image-Rezept enthält es zusätzlich GRUB für BIOS-Start, sollte also mit UEFI und BIOS starten [geprüft: Gluon targets/x86.inc, OpenWrt x86/image/Makefile; BIOS-Start abgeleitet, nicht getestet]; zu Secure Boot sagen die Quellen nichts [abgeleitet: Wiki openwrt_x86 ohne Angabe]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** 32-Bit-Rechner ohne 64-Bit-Unterstützung, mindestens Pentium 4 (MMX/SSE/SSE2), auch einige ältere Atom [geprüft: OpenWrt x86/generic/target.mk, Gluon docs/user/x86.rst, Wiki openwrt_x86]
 - **initramfs-Link:** -
 - **Factory-/Stock-Image-Link:** Gluon-factory
 - **Stock-Teile:** -
 - **RAM:** -
+- **Dauer:** Image nur ca. 120 MB, Schreiben Sekunden bis etwa eine Minute [abgeleitet: Imagegröße]
 - **Gluon-RAMpe passt:** nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)
 - **Quelle (OpenWrt-Commit):** Gluon targets/x86-generic
 - **Detail-Anleitung:** -
@@ -2572,13 +2610,16 @@ x86 (x86-geode) · x86-geode · K0
 
 - **Weg ab Werk:** Gluon `squashfs-combined` (.img.gz) [geprüft: targets/x86*]
 - **Übertragung:** Datenträger direkt beschreiben
+- **Rechner braucht:** Image auf das ganze Blockgerät schreiben (Linux: gzip -d, dann dd auf /dev/sdX, nicht auf eine Partition); Windows/macOS: Rufus oder balenaEtcher, vorher mit 7zip bzw. Keka entpacken [geprüft: OpenWrt-Wiki openwrt_x86]; soll die interne Platte beschrieben werden, den Rechner dafür von einem Live-USB starten [abgeleitet]; gzip meldet wegen angehängter Metadaten vermutlich "trailing garbage ignored", die Datei ist trotzdem in Ordnung [geprüft: OpenWrt x86/image/Makefile append-metadata; gzip-Verhalten abgeleitet]; für VirtualBox/VMware gibt es fertige .vdi/.vmdk [geprüft: Gluon docs/user/x86.rst, targets/x86.inc]; Image nur für BIOS-Start (combined ohne EFI) [geprüft: Gluon targets/x86-geode, OpenWrt image/geode.mk]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** nur AMD-Geode-GX/LX-Boards (z. B. PC Engines ALIX, Soekris net5501, geos) [geprüft: OpenWrt x86/geode/target.mk]
 - **initramfs-Link:** -
 - **Factory-/Stock-Image-Link:** Gluon-factory
 - **Stock-Teile:** -
 - **RAM:** -
+- **Dauer:** Image nur ca. 120 MB, Schreiben Sekunden bis etwa eine Minute [abgeleitet: Imagegröße]
 - **Gluon-RAMpe passt:** nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)
 - **Quelle (OpenWrt-Commit):** Gluon targets/x86-geode
 - **Detail-Anleitung:** -
@@ -2589,20 +2630,23 @@ x86 (x86-legacy) · x86-legacy · K0
 
 - **Weg ab Werk:** wie x86-64 [geprüft: targets/x86*]
 - **Übertragung:** Datenträger direkt beschreiben
+- **Rechner braucht:** Image auf das ganze Blockgerät schreiben (Linux: gzip -d, dann dd auf /dev/sdX, nicht auf eine Partition); Windows/macOS: Rufus oder balenaEtcher, vorher mit 7zip bzw. Keka entpacken [geprüft: OpenWrt-Wiki openwrt_x86]; soll die interne Platte beschrieben werden, den Rechner dafür von einem Live-USB starten [abgeleitet]; gzip meldet wegen angehängter Metadaten vermutlich "trailing garbage ignored", die Datei ist trotzdem in Ordnung [geprüft: OpenWrt x86/image/Makefile append-metadata; gzip-Verhalten abgeleitet]; für VirtualBox/VMware gibt es fertige .vdi/.vmdk [geprüft: Gluon docs/user/x86.rst, targets/x86.inc]; Gluon liefert nur combined-efi; laut Image-Rezept enthält es zusätzlich GRUB für BIOS-Start, sollte also mit UEFI und BIOS starten [geprüft: Gluon targets/x86.inc, OpenWrt x86/image/Makefile; BIOS-Start abgeleitet, nicht getestet]; zu Secure Boot sagen die Quellen nichts [abgeleitet: Wiki openwrt_x86 ohne Angabe]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** sehr alte PC-Hardware (i586/Pentium MMX, z. B. Soekris-Boards) [geprüft: Gluon docs/user/x86.rst, OpenWrt x86/legacy/target.mk]
 - **initramfs-Link:** -
 - **Factory-/Stock-Image-Link:** Gluon-factory
 - **Stock-Teile:** -
 - **RAM:** -
+- **Dauer:** Image nur ca. 120 MB, Schreiben Sekunden bis etwa eine Minute [abgeleitet: Imagegröße]
 - **Gluon-RAMpe passt:** nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)
 - **Quelle (OpenWrt-Commit):** Gluon targets/x86-legacy
 - **Detail-Anleitung:** -
 
 ### Familie `k0-webui`
 
-87 Gerät(e).
+86 Gerät(e).
 
 #### buffalo-wzr-600dhp
 
@@ -2610,9 +2654,11 @@ Buffalo WZR-600DHP · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI (Administration, Firmware Upgrade) [geprüft]
 - **Übertragung:** webui-upload: http://192.168.11.1
+- **Rechner braucht:** Browser; Buffalo-Oberfläche http://192.168.11.1, Menü "Administration" > "Firmware Upgrade" [geprüft: Commit 25f2f66e/480bf282]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Hardware laut Commit identisch mit WZR-HP-AG300H, aber eigenes Image: Modellname auf dem Typenschild entscheidet [geprüft: Commit 25f2f66e]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-buffalo_wzr-600dhp-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-buffalo_wzr-600dhp-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -2626,9 +2672,11 @@ Buffalo WZR-HP-AG300H · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI (Administration, Firmware Upgrade) [geprüft]
 - **Übertragung:** webui-upload: http://192.168.11.1
+- **Rechner braucht:** Browser; Buffalo-Oberfläche http://192.168.11.1, Menü "Administration" > "Firmware Upgrade" [geprüft: Commit 25f2f66e/480bf282]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Bedingung an die Herstellerfirmware:** keine Einschränkung bekannt; factory-Installation getestet auf Buffalo-Firmware v1.77 (28.05.2012) und Pro-Firmware v24SP2 r30356 (26.03.2018) [geprüft: Commit 480bf282]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-buffalo_wzr-hp-ag300h-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-buffalo_wzr-hp-ag300h-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -2641,10 +2689,13 @@ Buffalo WZR-HP-AG300H · ath79-generic · K0
 Buffalo WZR-HP-G300NH (RTL8366S switch) · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI; alternativ U-Boot-TFTP mit tftp-Image [geprüft]
+- **Sichtbare Zeichen:** nur TFTP-Alternative: Diag-LED blinkt eine Weile, solange das Image geschrieben wird [geprüft: Commit bc356de2]
 - **Übertragung:** webui-upload; alternativ tftp-server-am-geraet: 192.168.11.1 (arp -s auf 02:AA:BB:CC:DD:1A), PC 192.168.11.2
+- **Rechner braucht:** Browser; Buffalo-Oberfläche http://192.168.11.1 [geprüft: Feld uebertragung]. Nur TFTP-Alternative: feste IP 192.168.11.2, `arp -s 192.168.11.1 02:AA:BB:CC:DD:1A`, `curl -T <tftp-Image> tftp://192.168.11.1` vor dem Einschalten starten, Anschluss über Switch am LAN-Port neben WAN [geprüft: Commit bc356de2]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** zwei Hardware-Varianten mit verschiedenem Switch-Chip (RTL8366S / RTL8366RB), je eigenes Image; Gluon baut nur die S-Variante. Variante steht nicht auf dem Typenschild, erkennbar im Kernel-Log (dmesg) [geprüft: Commit bc356de2; Gluon targets/ath79-generic]; Modellcode (4-5 Zeichen) oben rechts auf dem Aufkleber mit der SSID; laut Wiki-Tabelle RTL8366S: A0A0, A0A1, A0A3, A0D0, A2F0B, B0B0, B0B0G, B0C0; RTL8366RB: A0F0B, A1A3, A2A0; falsches Image führt zu Failsafe ohne Netz [geprüft: Wiki toh/buffalo/wzr-hp-g300h]; ein Forenbeitrag ordnet A0D0 und B0C0 der RB-Variante zu (widersprüchlich) [abgeleitet: Suchergebnis]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-buffalo_wzr-hp-g300nh-s-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-buffalo_wzr-hp-g300nh-s-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -2657,10 +2708,14 @@ Buffalo WZR-HP-G300NH (RTL8366S switch) · ath79-generic · K0
 D-Link DAP-1330 A1 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI (ohne Passwort); Recovery-Web bei Reset beim Einschalten, notfalls per curl [geprüft]
+- **Taste und Zeitpunkt:** nur Recovery-Alternative: Reset beim Einstecken des Stroms gedrückt halten, bis die LED rot blinkt [geprüft: Commit 361c670a]
+- **Sichtbare Zeichen:** Recovery erreicht: LED blinkt rot [geprüft: Commit 361c670a]
 - **Übertragung:** webui-upload bzw. recovery-web: Gerät 192.168.0.50 (oder per DHCP), `curl -F files=@<factory> http://192.168.0.50/cgi/index`
+- **Rechner braucht:** Browser; Oberfläche http://192.168.0.50 (oder per DHCP bezogene Adresse), ab Werk kein Passwort. Macht der Browser beim Hochladen Probleme: Recovery und `curl -F files=@<factory.bin> http://192.168.0.50/cgi/index` [geprüft: Commit 361c670a]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** DAP-1330 (Steckergehäuse) und DAP-1365 (europäischer Zwischenstecker mit Steckdose) haben dieselbe Herstellerfirmware, die factory-Images unterscheiden sich nur in der Modellkennung: Image zum aufgedruckten Modell nehmen; Hardware-Revision A1 [geprüft: Commit 361c670a; Revision abgeleitet: Gluon-Name]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-dlink_dap-1330-a1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-dlink_dap-1330-a1-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -2673,10 +2728,14 @@ D-Link DAP-1330 A1 · ath79-generic · K0
 D-Link DAP-1365 A1 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI (ohne Passwort); Recovery-Web bei Reset beim Einschalten, notfalls per curl [geprüft]
+- **Taste und Zeitpunkt:** nur Recovery-Alternative: Reset beim Einstecken des Stroms gedrückt halten, bis die LED rot blinkt [geprüft: Commit 361c670a]
+- **Sichtbare Zeichen:** Recovery erreicht: LED blinkt rot [geprüft: Commit 361c670a]
 - **Übertragung:** webui-upload bzw. recovery-web: Gerät 192.168.0.50 (oder per DHCP), `curl -F files=@<factory> http://192.168.0.50/cgi/index`
+- **Rechner braucht:** Browser; Oberfläche http://192.168.0.50 (oder per DHCP bezogene Adresse), ab Werk kein Passwort. Macht der Browser beim Hochladen Probleme: Recovery und `curl -F files=@<factory.bin> http://192.168.0.50/cgi/index` [geprüft: Commit 361c670a]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** DAP-1330 (Steckergehäuse) und DAP-1365 (europäischer Zwischenstecker mit Steckdose) haben dieselbe Herstellerfirmware, die factory-Images unterscheiden sich nur in der Modellkennung: Image zum aufgedruckten Modell nehmen; Hardware-Revision A1 [geprüft: Commit 361c670a; Revision abgeleitet: Gluon-Name]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-dlink_dap-1365-a1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-dlink_dap-1365-a1-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -2689,7 +2748,9 @@ D-Link DAP-1365 A1 · ath79-generic · K0
 D-Link DAP-2660 A1 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI (admin, leeres Passwort); Recovery-Web bei Reset beim Einschalten [geprüft]
+- **Taste und Zeitpunkt:** nur Recovery-Alternative: Netzwerkkabel stecken, Reset beim Einschalten gedrückt halten, bis der Upload begonnen hat; Recovery-Seite ebenfalls http://192.168.0.50 [geprüft: Commit 8ec997d0/5b58710f]
 - **Übertragung:** webui-upload bzw. recovery-web: Gerät 192.168.0.50
+- **Rechner braucht:** Browser; Oberfläche http://192.168.0.50, Login "admin" mit leerem Passwort, factory.bin hochladen [geprüft: Commit 8ec997d0/5b58710f]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -2705,7 +2766,9 @@ D-Link DAP-2660 A1 · ath79-generic · K0
 D-Link DAP-2680 A1 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI (admin, leeres Passwort); Recovery-Web bei Reset beim Einschalten [geprüft]
+- **Taste und Zeitpunkt:** nur Recovery-Alternative: Netzwerkkabel stecken, Reset beim Einschalten gedrückt halten, bis der Upload begonnen hat; Recovery-Seite ebenfalls http://192.168.0.50 [geprüft: Commit 8ec997d0/5b58710f]
 - **Übertragung:** webui-upload bzw. recovery-web: Gerät 192.168.0.50
+- **Rechner braucht:** Browser; Oberfläche http://192.168.0.50, Login "admin" mit leerem Passwort, factory.bin hochladen [geprüft: Commit 8ec997d0/5b58710f]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -2722,7 +2785,9 @@ D-Link DAP-2680 A1 · ath79-generic · K0
 D-Link DAP-2695 A1 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI; alternativ Emergency-Web-Server des Bootloaders über die Konsole (q drücken) [geprüft]
+- **Sichtbare Zeichen:** nur Notweg: Konsole meldet "write image into flash...OK,dest addr=0x9f070000", danach Strom aus und wieder an; Meldungen "checksum bad" ignorieren [geprüft: Commit cd09f266]
 - **Übertragung:** webui-upload; alternativ recovery-web: Gerät 192.168.0.50, PC 192.168.0.90 (nur nach Abbruch an der RJ45-Konsole)
+- **Rechner braucht:** Browser; Herstelleroberfläche, Adresse im Commit nicht genannt. Nur Notweg Emergency Web Server: Rechner 192.168.0.90 an LAN1 (PoE), serielle Konsole am RJ45-Console-Port (115200 8N1, RS-232), innerhalb 2 s "q" drücken, dann http://192.168.0.50 [geprüft: Commit cd09f266]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (auch für den seriellen Notweg: RJ45-RS-232-Konsole außen, 115200 8N1)
 - **Werkzeug/Spezial:** -
@@ -2742,6 +2807,8 @@ NETGEAR WNDR3700 v1 · ath79-generic · K0
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** WNDR3700 v1, WNDR3700 v2, WNDR3800, WNDR3800CH und WNDRMAC v2 sind dieselbe Gerätefamilie (AR7161), aber je eigenes Image (Board-ID im Image); WNDR3700 v1 = 8 MB Flash, v2 = 16 MB; WNDR3700 v4 ist ein anderes Gerät (NAND, eigenes Image) [geprüft: OpenWrt generic.mk/nand.mk]; v1 und v2 sind am Typenschild oft nicht zu unterscheiden (gleiche EAN); Hinweise: Karton "(WNDR3700v2)" unter "Package Contents", Hardware-Version in der Netgear-Oberfläche (Maintenance/Router Status), Herstellerfirmware v1 = 1.0.4.x und höher, v2 = 1.0.1.x oder niedriger; v3 ist Broadcom (nicht unterstützt), v4 eigenes Image [geprüft: Wiki toh/netgear/wndr3700]
+- **Bedingung an die Herstellerfirmware:** OpenWrt baut für dieses Gerät zusätzlich ein factory-NA.img für nordamerikanische Herstellerfirmware; Gluon baut nur das normale factory.img. Geräte mit NA-Firmware nehmen das Gluon-factory womöglich nicht [geprüft: OpenWrt generic.mk IMAGE/factory-NA.img, Gluon targets/ath79-generic; Folge abgeleitet]; Außerhalb Nordamerikas warnt die Netgear-Oberfläche, das Image gebe sich als NA aus: laut Wiki ignorieren [geprüft: Wiki toh/netgear/wndr3700]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wndr3700-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory-NA.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wndr3700-squashfs-factory-NA.img), [squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wndr3700-squashfs-factory.img)
 - **Stock-Teile:** keine
@@ -2758,6 +2825,8 @@ NETGEAR WNDR3700 v2 · ath79-generic · K0
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** WNDR3700 v1, WNDR3700 v2, WNDR3800, WNDR3800CH und WNDRMAC v2 sind dieselbe Gerätefamilie (AR7161), aber je eigenes Image (Board-ID im Image); WNDR3700 v1 = 8 MB Flash, v2 = 16 MB; WNDR3700 v4 ist ein anderes Gerät (NAND, eigenes Image) [geprüft: OpenWrt generic.mk/nand.mk]; v1 und v2 sind am Typenschild oft nicht zu unterscheiden (gleiche EAN); Hinweise: Karton "(WNDR3700v2)" unter "Package Contents", Hardware-Version in der Netgear-Oberfläche (Maintenance/Router Status), Herstellerfirmware v1 = 1.0.4.x und höher, v2 = 1.0.1.x oder niedriger; v3 ist Broadcom (nicht unterstützt), v4 eigenes Image [geprüft: Wiki toh/netgear/wndr3700]
+- **Bedingung an die Herstellerfirmware:** Außerhalb Nordamerikas warnt die Netgear-Oberfläche, das Image gebe sich als NA aus: laut Wiki ignorieren [geprüft: Wiki toh/netgear/wndr3700]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wndr3700-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wndr3700-v2-squashfs-factory.img)
 - **Stock-Teile:** keine
@@ -2771,13 +2840,16 @@ NETGEAR WNDR3800 · ath79-generic · K0
 
 - **Weg ab Werk:** factory (.img) im Stock-Web-UI [abgeleitet: Commit ohne Anleitung]
 - **Übertragung:** webui-upload [abgeleitet]
+- **Rechner braucht:** Rechner fest im Bereich 192.168.1.2-254, Browser http://192.168.1.1, Administration-Seite, Firmware-Upgrade [geprüft: Wiki toh/netgear/wndr3800]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** WNDR3700 v1, WNDR3700 v2, WNDR3800, WNDR3800CH und WNDRMAC v2 sind dieselbe Gerätefamilie (AR7161), aber je eigenes Image (Board-ID im Image); WNDR3700 v1 = 8 MB Flash, v2 = 16 MB; WNDR3700 v4 ist ein anderes Gerät (NAND, eigenes Image) [geprüft: OpenWrt generic.mk/nand.mk]; Variante WNDR3800-1CHNAS reagiert nicht auf normale WNDR3800-Images [geprüft: Wiki toh/netgear/wndr3800]; ob das die WNDR3800CH ist, offen
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wndr3800-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wndr3800-squashfs-factory.img)
 - **Stock-Teile:** keine
 - **RAM:** ?
+- **Dauer:** bis zu 10 Minuten; fertig, wenn http://192.168.1.1/index.htm nicht mehr lädt [geprüft: Wiki toh/netgear/wndr3800]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target, ohne Anleitung) [abgeleitet]
 
@@ -2787,13 +2859,16 @@ NETGEAR WNDR3800CH · ath79-generic · K0
 
 - **Weg ab Werk:** factory (.img) im Stock-Web-UI [abgeleitet: Commit ohne Anleitung]
 - **Übertragung:** webui-upload [abgeleitet]
+- **Rechner braucht:** Rechner fest im Bereich 192.168.1.2-254, Browser http://192.168.1.1, Administration-Seite, Firmware-Upgrade [geprüft: Wiki toh/netgear/wndr3800]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** WNDR3700 v1, WNDR3700 v2, WNDR3800, WNDR3800CH und WNDRMAC v2 sind dieselbe Gerätefamilie (AR7161), aber je eigenes Image (Board-ID im Image); WNDR3700 v1 = 8 MB Flash, v2 = 16 MB; WNDR3700 v4 ist ein anderes Gerät (NAND, eigenes Image) [geprüft: OpenWrt generic.mk/nand.mk]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wndr3800ch-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wndr3800ch-squashfs-factory.img)
 - **Stock-Teile:** keine
 - **RAM:** ?
+- **Dauer:** bis zu 10 Minuten; fertig, wenn http://192.168.1.1/index.htm nicht mehr lädt [geprüft: Wiki toh/netgear/wndr3800]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 00ed75f47f4726dff17c6d63d6847bc4f7a74970 [abgeleitet]
 
@@ -2806,10 +2881,12 @@ NETGEAR WNDRMAC v2 · ath79-generic · K0
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** WNDR3700 v1, WNDR3700 v2, WNDR3800, WNDR3800CH und WNDRMAC v2 sind dieselbe Gerätefamilie (AR7161), aber je eigenes Image (Board-ID im Image); WNDR3700 v1 = 8 MB Flash, v2 = 16 MB; WNDR3700 v4 ist ein anderes Gerät (NAND, eigenes Image) [geprüft: OpenWrt generic.mk/nand.mk]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wndrmac-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wndrmac-v2-squashfs-factory.img)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Rückweg zur Herstellerfirmware:** TFTP-Recovery wie WNDR3800, siehe https://openwrt.org/toh/netgear/wndr3800#recovery_flash_in_failsafe_mode [geprüft: Commit 7f297e74]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 7f297e740bc288d29fab1f7490ed0e2e49e9e6f9 [geprüft]
 
@@ -2819,9 +2896,11 @@ NETGEAR WNR2200 16M · ath79-generic · K0
 
 - **Weg ab Werk:** factory (.img) im Stock-Web-UI; auch TFTP-Recovery [geprüft]
 - **Übertragung:** webui-upload
+- **Rechner braucht:** Netgear-Oberfläche: "Advanced" > "Firmware upgrade" > "Manual" [geprüft: Wiki toh/netgear/wnr2200]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** zwei Flash-Varianten mit eigenem Image: 8 MB (u. a. EU/US) und 16 MB (Russland/China), sonst gleiche Hardware [geprüft: Commit f85d56bb]; Flash-Größe steht nicht auf dem Typenschild [abgeleitet: Commit nennt kein Merkmal]; Typenschild-Hinweis laut Wiki (nur an wenigen Geräten geprüft): 16-MB-Variante (z. B. WNR2200-100RUS) hat drei Felder (SECURITY PIN, SERIAL, MAC), 8-MB-Variante vier (WiFi Network Name, Network Key, SERIAL, MAC); "If you are unsure of which version to flash, do not flash." [geprüft: Wiki toh/netgear/wnr2200]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wnr2200-16m-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wnr2200-16m-squashfs-factory.img)
 - **Stock-Teile:** keine
@@ -2835,9 +2914,12 @@ NETGEAR WNR2200 8M · ath79-generic · K0
 
 - **Weg ab Werk:** factory (.img) im Stock-Web-UI; auch TFTP-Recovery [geprüft]
 - **Übertragung:** webui-upload
+- **Rechner braucht:** Netgear-Oberfläche: "Advanced" > "Firmware upgrade" > "Manual" [geprüft: Wiki toh/netgear/wnr2200]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** zwei Flash-Varianten mit eigenem Image: 8 MB (u. a. EU/US) und 16 MB (Russland/China), sonst gleiche Hardware [geprüft: Commit f85d56bb]; Flash-Größe steht nicht auf dem Typenschild [abgeleitet: Commit nennt kein Merkmal]; Typenschild-Hinweis laut Wiki (nur an wenigen Geräten geprüft): 16-MB-Variante (z. B. WNR2200-100RUS) hat drei Felder (SECURITY PIN, SERIAL, MAC), 8-MB-Variante vier (WiFi Network Name, Network Key, SERIAL, MAC); "If you are unsure of which version to flash, do not flash." [geprüft: Wiki toh/netgear/wnr2200]
+- **Bedingung an die Herstellerfirmware:** OpenWrt baut für dieses Gerät zusätzlich ein factory-NA.img für nordamerikanische Herstellerfirmware; Gluon baut nur das normale factory.img. Geräte mit NA-Firmware nehmen das Gluon-factory womöglich nicht [geprüft: OpenWrt generic.mk IMAGE/factory-NA.img, Gluon targets/ath79-generic; Folge abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wnr2200-8m-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory-NA.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wnr2200-8m-squashfs-factory-NA.img), [squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wnr2200-8m-squashfs-factory.img)
 - **Stock-Teile:** keine
@@ -2850,14 +2932,19 @@ NETGEAR WNR2200 8M · ath79-generic · K0
 TP-Link Archer A7 v5 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [geprüft]
+- **Sichtbare Zeichen:** nach dem Upload erscheint im Browser "page not found": laut Wiki normal; Vorgang nicht unterbrechen [geprüft: Wiki toh/tp-link/archer_a7_v5]
 - **Übertragung:** webui-upload (Stock-Web-UI); alternativ tftp-client-am-geraet: Server 192.168.0.66, Datei ArcherC7v5_tp_recovery.bin
+- **Rechner braucht:** Browser http://192.168.0.1, "Advanced" > "System Tools" > "Firmware Upgrade", "Manual Upgrade" > "Browse"; Umbenennen nicht nötig [geprüft: Wiki toh/tp-link/archer_a7_v5]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Archer A7 v5 und Archer C7 v5 sind fast gleich, aber verschiedenes Flash-Layout und eigenes Image; Image passt laut Supportliste zu "Archer A7" Hardware 5.0 der Regionen CA, EU, JP, RU, TW, US [geprüft: Commit 8471944b; tplink-safeloader ARCHER-A7-V5]
+- **Bedingung an die Herstellerfirmware:** erfolgreich berichtet mit Herstellerfirmware 1.0.4 Build 20180424 bis 1.2.1 Build 20220714; ein Einzelbericht "Invalid File type" mit 1.1.2 Build 20210125 [geprüft: Wiki toh/tp-link/archer_a7_v5]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-a7-v5-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-a7-v5-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** nur TFTP-Alternative: Reset beim Einschalten ca. 5 s, dann ca. 150 s bis fertig [geprüft: Commit 1e4ee63c]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 1e4ee63cc8d1889a78b539a5ed7be8d56e9b976f [geprüft]
 
@@ -2870,6 +2957,8 @@ TP-Link Archer C2 v3 (broken) · ath79-generic · K0
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Archer C2 v3 (AC900, QCA9563) ist ein anderes Gerät als Archer C2 v1 (MediaTek); Supportliste ArcherC2 3.0.0 ohne Region, EU, US [geprüft: Commit 9c01273e; tplink-safeloader ARCHER-C2-V3; Gluon targets/ramips-mt7620]
+- **Bedingung an die Herstellerfirmware:** Die Herstelleroberfläche ist mit modernen Browsern kaputt und lässt keinen Login zu; Wiki empfiehlt einen alten Browser wie SeaMonkey [geprüft: Wiki toh/tp-link/archer_c2_v3]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c2-v3-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c2-v3-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -2886,6 +2975,7 @@ TP-Link Archer C25 v1 (broken) · ath79-generic · K0
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Supportliste ArcherC25 1.0.0 ohne Region, EU, US [geprüft: tplink-safeloader ARCHER-C25-V1]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c25-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c25-v1-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -2899,13 +2989,16 @@ TP-Link Archer C5 v1 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [abgeleitet: Commit ohne Anleitung]
 - **Übertragung:** webui-upload (Stock-Web-UI)
+- **Rechner braucht:** Browser http://192.168.0.1, admin/admin, "System Tools" > "Firmware Upgrade"; Dateiname vorher kurz umbenennen, z. B. factory.bin (lange Namen lehnt die Oberfläche ab) [geprüft: Wiki toh/tp-link/archer-c5-c7-wdr7500]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Archer C5 v1.x: 3 interne (2.4 GHz) und 3 externe (5 GHz) Antennen; spätere C5-Versionen sind andere Geräte [geprüft: Wiki toh/tp-link/archer-c5-c7-wdr7500; Rest abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c5-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c5-v1-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** während des Schreibens nicht ausschalten: der Bootloader löscht vor dem Schreiben den ganzen Flash [geprüft: Wiki toh/tp-link/archer-c5-c7-wdr7500]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 438605454980ee815a506a9a2a4a3532ab378922 (ohne Anleitung, Wiki-Verweis) [abgeleitet]
 
@@ -2915,9 +3008,12 @@ TP-Link Archer C58 v1 (broken) · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [geprüft]
 - **Übertragung:** webui-upload (Stock-Web-UI); alternativ tftp-client-am-geraet: Server 192.168.0.66, Datei tp_recovery.bin
+- **Rechner braucht:** nur TFTP-Alternative: TFTP-Server mit 192.168.0.66, Datei tp_recovery.bin, ggf. Switch zwischen Router und Rechner, weil der Link sonst zu langsam hochkommt [geprüft: Commit 946ffe47]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Archer C58 v1 (64 MB RAM, 8 MB Flash) und C59 v1 (128 MB, 16 MB, USB) sehen ähnlich aus, je eigenes Image [geprüft: Commit 946ffe47]
+- **Bedingung an die Herstellerfirmware:** Supportliste: "Archer C58" 1.0.0, Regionen ohne Kennung, EU, US [geprüft: tplink-safeloader ARCHER-C58-V1]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c58-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c58-v1-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -2931,9 +3027,12 @@ TP-Link Archer C59 v1 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [geprüft]
 - **Übertragung:** webui-upload (Stock-Web-UI); alternativ tftp-client-am-geraet: Server 192.168.0.66, Datei tp_recovery.bin
+- **Rechner braucht:** nur TFTP-Alternative: TFTP-Server mit 192.168.0.66, Datei tp_recovery.bin, ggf. Switch zwischen Router und Rechner, weil der Link sonst zu langsam hochkommt [geprüft: Commit 946ffe47]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Archer C58 v1 (64 MB RAM, 8 MB Flash) und C59 v1 (128 MB, 16 MB, USB) sehen ähnlich aus, je eigenes Image [geprüft: Commit 946ffe47]
+- **Bedingung an die Herstellerfirmware:** Supportliste: "Archer C59" 1.0.0, Regionen ohne Kennung, CA, EU, RU, US [geprüft: tplink-safeloader ARCHER-C59-V1]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c59-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c59-v1-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -2946,14 +3045,18 @@ TP-Link Archer C59 v1 · ath79-generic · K0
 TP-Link Archer C6 v2 (EU/RU/JP) · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [geprüft]
+- **Taste und Zeitpunkt:** nur TFTP-Alternative: Reset beim Einschalten halten, bis die WPS-LED leuchtet [geprüft: Commit d03aae1a]
 - **Übertragung:** webui-upload (Stock-Web-UI); alternativ tftp-client-am-geraet: Server 192.168.0.66, Datei ArcherC6v2_tp_recovery.bin
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** nur Archer C6 v2 (und Archer A6 v2) der Regionen EU, RU, JP; die US-/TW-Variante hat andere GPIOs/Flash-Layout und ein eigenes Image (ARCHER-C6-V2-US), das Gluon nicht baut: Region auf dem Typenschild prüfen [geprüft: tplink-safeloader ARCHER-C6-V2 / -US, Commit d03aae1a; Gluon targets/ath79-generic]
+- **Bedingung an die Herstellerfirmware:** Ob das factory angenommen wird, hängt von der Herstellerfirmware ab (Wiki-Tabelle): 1.2.0 und 1.2.1 lehnen mit "invalid type" ab; 1.3.3 nimmt 24.10.0-rc6, 1.3.7 nimmt 24.10.4; ältere Stände nahmen nur ältere OpenWrt-Versionen [geprüft: Wiki toh/tp-link/archer_c6_v2]; für Gluon auf 24.10 also Stand 1.3.3 oder 1.3.7 am ehesten passend [abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c6-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c6-v2-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** nur TFTP-Alternative: ca. 150 s [geprüft: Commit d03aae1a]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** d03aae1a09fce5a5d5747855bc07ee1f54388e03 [geprüft]
 
@@ -2963,9 +3066,12 @@ TP-Link Archer C7 v2 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [abgeleitet: Commit ohne Anleitung]; Gluon baut das factory mit Regionssuffix (GLUON_REGION, OpenWrt: factory-eu/-us) [Makefile geprüft]
 - **Übertragung:** webui-upload (Stock-Web-UI)
+- **Rechner braucht:** Browser http://192.168.0.1 oder http://192.168.1.1 (je nach Herstellerfirmware), "System Tools" > "Firmware Upgrade"; lange Dateinamen werden abgelehnt, vorher z. B. in firmware.bin umbenennen [geprüft: Wiki toh/tp-link/archer_c7]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Archer C7 v2, v4, v5 haben je eigenes Image; Hardware-Version steht auf dem Typenschild ("Ver: x.y") [abgeleitet: getrennte Gluon-Geräte]; Der niederländische "Ziggo Wifibooster C7" ist ein umgelabelter Archer C7 v2; v1-v3: 3 externe (5 GHz) + 3 interne Antennen, v4/v5: 3 externe Dual-Band-Antennen [geprüft: Wiki toh/tp-link/archer_c7]
+- **Bedingung an die Herstellerfirmware:** Gluon baut das factory mit Regionssuffix; Neanderfunk setzt GLUON_REGION=eu, es gibt also nur factory-eu. Für US-Geräte wäre factory-us nötig [geprüft: templates/common/site.mk, Gluon targets/ath79-generic; Folge abgeleitet]; Herstellerfirmware ab ca. Oktober 2015 (3.14.3) lehnt fremde Firmware ab: "Error code: 18005 ... version of the upgraded file was incorrect"; auch 3.15.3 Build 180114 scheitert; 3.13.34 nimmt an. Die Oberfläche lehnt zudem ein Image der falschen Region (EU/US) ab [geprüft: Wiki toh/tp-link/archer-c5-c7-wdr7500 und archer_c7]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c7-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory-eu.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c7-v2-squashfs-factory-eu.bin), [squashfs-factory-us.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c7-v2-squashfs-factory-us.bin), [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c7-v2-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -2979,13 +3085,16 @@ TP-Link Archer C7 v4 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [geprüft]
 - **Übertragung:** webui-upload (Stock-Web-UI); alternativ tftp-client-am-geraet: Server 192.168.0.66, Datei ArcherC7v4_tp_recovery.bin
+- **Rechner braucht:** Browser http://192.168.0.1 oder http://192.168.1.1 (je nach Herstellerfirmware), "System Tools" > "Firmware Upgrade"; lange Dateinamen werden abgelehnt, vorher z. B. in firmware.bin umbenennen [geprüft: Wiki toh/tp-link/archer_c7]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Supportliste: "Archer C7" 4.0.0, viele Regionen (u. a. EU, US, JP, RU, AU, BR, CA, KR, TW) [geprüft: tplink-safeloader ARCHER-C7-V4]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c7-v4-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c7-v4-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** nur TFTP-Alternative: Reset beim Einschalten ca. 15 s, danach ca. 30 s [geprüft: Commit 12310f05]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 12310f05b7b080b016ec515796be437f4cd30b62 [geprüft]
 
@@ -2995,13 +3104,17 @@ TP-Link Archer C7 v5 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [geprüft]
 - **Übertragung:** webui-upload (Stock-Web-UI); alternativ tftp-client-am-geraet: Server 192.168.0.66, Datei ArcherC7v5_tp_recovery.bin
+- **Rechner braucht:** Browser http://192.168.0.1 oder http://192.168.1.1 (je nach Herstellerfirmware), "System Tools" > "Firmware Upgrade"; lange Dateinamen werden abgelehnt, vorher z. B. in firmware.bin umbenennen [geprüft: Wiki toh/tp-link/archer_c7]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Archer C7 v5 ist fast gleich wie Archer A7 v5, aber anderes Flash-Layout, eigenes Image [geprüft: Commit 8471944b]
+- **Bedingung an die Herstellerfirmware:** mit älterer Herstellerfirmware laut Wiki nur per TFTP installierbar [geprüft: Wiki toh/tp-link/archer_c7]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c7-v5-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c7-v5-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** nur TFTP-Alternative: Reset beim Einschalten ca. 15 s, dann ca. 150 s [geprüft: Commit 8471944b]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 8471944325db80ca37f7c756130070d0add58ff6 [geprüft]
 
@@ -3010,14 +3123,18 @@ TP-Link Archer C7 v5 · ath79-generic · K0
 TP-Link CPE210 v1 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
+- **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Image passt laut Supportliste zu CPE210 Hardware 1.0 und 1.1 (EU/US/UN) und auch zu CPE220 1.1; CPE210 v2 und v3 brauchen eigene Images: "Ver" auf dem Typenschild prüfen [geprüft: tplink-safeloader CPE210]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe210-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe210-v1-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 08857e69becc214336ba073bca6f626bfaa67781 [geprüft]
 
@@ -3026,14 +3143,18 @@ TP-Link CPE210 v1 · ath79-generic · K0
 TP-Link CPE210 v2 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
+- **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Supportliste CPE210 2.0 (EU/US/UN); v1, v3 eigene Images [geprüft: tplink-safeloader CPE210V2]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe210-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe210-v2-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 141698ce8fbc52d253c9207ef46b3630a0870567 [geprüft]
 
@@ -3042,14 +3163,18 @@ TP-Link CPE210 v2 · ath79-generic · K0
 TP-Link CPE210 v3 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
+- **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Supportliste CPE210 3.0, 3.1 und 3.20 (EU/US/UN): Typenschild "3.20" nimmt das v3-Image [geprüft: tplink-safeloader CPE210V3]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe210-v3-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe210-v3-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 5ec205d7ac00de89510a6e71055d45aa57b705e1 [geprüft]
 
@@ -3058,14 +3183,18 @@ TP-Link CPE210 v3 · ath79-generic · K0
 TP-Link CPE220 v3 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
+- **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Supportliste CPE220 3.0 (EU/US/UN); ein CPE220 mit Hardware 1.1 läuft dagegen mit dem CPE210-v1-Image [geprüft: tplink-safeloader CPE220V3/CPE210]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe220-v3-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe220-v3-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** bae0d47f2e36376d2876bc4d5557e3e11f80f2fb [geprüft]
 
@@ -3074,14 +3203,18 @@ TP-Link CPE220 v3 · ath79-generic · K0
 TP-Link CPE510 v1 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
+- **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Image passt laut Supportliste zu CPE510 Hardware 1.0 und 1.1 (UN/US/CA/EU) und auch zu CPE520 1.1; v2 und v3 eigene Images [geprüft: tplink-safeloader CPE510]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe510-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe510-v1-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 0104eed1e5ca93a1c912e2d9b70e800b8d3099ad [geprüft]
 
@@ -3090,14 +3223,18 @@ TP-Link CPE510 v1 · ath79-generic · K0
 TP-Link CPE510 v2 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
+- **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Supportliste CPE510 2.0 (EU/US/UN); v1 hat zwei Ethernet-Ports, v2/v3 nur einen [geprüft: tplink-safeloader CPE510V2; Commit cad4132e]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe510-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe510-v2-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [abgeleitet: laut Commit Hardware wie CPE510]
+- **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** cad4132e003cecc386d791d552ddba42c182c216 [geprüft]
 
@@ -3106,14 +3243,18 @@ TP-Link CPE510 v2 · ath79-generic · K0
 TP-Link CPE510 v3 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
+- **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Supportliste CPE510 3.0 und 3.20 (EU/US/UN) [geprüft: tplink-safeloader CPE510V3]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe510-v3-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe510-v3-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [abgeleitet: laut Commit Hardware wie CPE510]
+- **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** cad4132e003cecc386d791d552ddba42c182c216 [geprüft]
 
@@ -3122,14 +3263,19 @@ TP-Link CPE510 v3 · ath79-generic · K0
 TP-Link CPE710 v1 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 30-40 s halten, dann loslassen [geprüft: Commit ac03e246/0b4d8318]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt (Reset 30-40 s) alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
+- **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Supportliste CPE710 1.0 (EU/US/UN); v2 unterscheidet sich nur in der PHY-Adresse, braucht aber ein eigenes Image [geprüft: tplink-safeloader CPE710V1; Commit 0b4d8318]
+- **Bedingung an die Herstellerfirmware:** WICHTIG: Herstellerfirmware ab 1.1.2 (Build 20251113) prüft eine RSA-Signatur und verhindert OpenWrt, auch per TFTP oder seriell; Gerät nicht auf 1.1.2 oder neuer aktualisieren [geprüft: Wiki toh/tp-link/cpe710_v1; für v2 abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe710-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe710-v1-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** ac03e246351fbfa98e98f0319cce3a8663f836d3 [geprüft]
 
@@ -3138,14 +3284,19 @@ TP-Link CPE710 v1 · ath79-generic · K0
 TP-Link CPE710 v2 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 30-40 s halten, dann loslassen [geprüft: Commit ac03e246/0b4d8318]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt (Reset 30-40 s) alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
+- **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Supportliste CPE710 2.0 (EU/US/UN); v1 eigenes Image [geprüft: tplink-safeloader CPE710V2; Commit 0b4d8318]
+- **Bedingung an die Herstellerfirmware:** WICHTIG: Herstellerfirmware ab 1.1.2 (Build 20251113) prüft eine RSA-Signatur und verhindert OpenWrt, auch per TFTP oder seriell; Gerät nicht auf 1.1.2 oder neuer aktualisieren [geprüft: Wiki toh/tp-link/cpe710_v1; für v2 abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe710-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe710-v2-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 0b4d831886689b55e149e276dbca5b780fb6a00e [geprüft]
 
@@ -3158,10 +3309,12 @@ TP-Link TL-WDR3500 v1 · ath79-generic · K0
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Bedingung an die Herstellerfirmware:** gleiche Baureihe wie TL-WDR3600/4300, dort sperren neuere Herstellerfirmware-Stände (Build 151104) fremde Firmware [abgeleitet: Wiki toh/tp-link/tl-wdr3600_v1, für WDR3500 nicht geprüft]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wdr3500-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wdr3500-v1-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** nur TFTP-Alternative: Reset beim Einschalten ca. 15 s, danach ca. 30 s [geprüft: Commit fbbb4eb8]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** fbbb4eb8b41d59b38f41fe382c6e4108a36aa909 [geprüft]
 
@@ -3171,13 +3324,17 @@ TP-Link TL-WDR3600 v1 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [abgeleitet: Commit ohne Anleitung]
 - **Übertragung:** webui-upload (Stock-Web-UI)
+- **Rechner braucht:** Browser http://192.168.0.1, admin/admin, "System Tools" > "Firmware Upgrade" [geprüft: Wiki toh/tp-link/tl-wdr4300_v1; WDR3600-Seite verweist darauf]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** TL-WDR3600 und TL-WDR4300 sehen ähnlich aus und haben je eigenes Image (Hardware-ID 0x36000001 bzw. 0x43000001) [geprüft: OpenWrt generic-tp-link.mk]; Unterversionen v1.1 bis v1.5 [geprüft: Wiki toh/tp-link/tl-wdr3600_v1]
+- **Bedingung an die Herstellerfirmware:** Herstellerfirmware 3.14.3 Build 151104 (mind. US) sperrt fremde Firmware; Wiki empfiehlt vorher Herstellerfirmware 3.13.33 (130617). Dateiname: Wiki nennt einen Namen, den die Oberfläche annimmt: wdr4300v1_en_3_14_3_up_boot(150518).bin (die Fehlermeldung "firmware path too long" kommt bei zu langen und zu kurzen Namen) [geprüft: Wiki toh/tp-link/tl-wdr4300_v1 und tl-wdr3600_v1]; ob genau dieser Name zwingend ist [abgeleitet: offen]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wdr3600-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wdr3600-v1-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** ?
+- **Dauer:** ca. 20 s Übertragung, 90 s Schreiben, 30 s Neustart; nicht ausschalten [geprüft: Wiki toh/tp-link/tl-wdr4300_v1]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** a7e1e919afa9659f66dada5e69d1b162f447ced7 (ohne Anleitung) [abgeleitet]
 
@@ -3187,13 +3344,17 @@ TP-Link TL-WDR4300 v1 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [abgeleitet: Commit ohne Anleitung]
 - **Übertragung:** webui-upload (Stock-Web-UI)
+- **Rechner braucht:** Browser http://192.168.0.1, admin/admin, "System Tools" > "Firmware Upgrade" [geprüft: Wiki toh/tp-link/tl-wdr4300_v1; WDR3600-Seite verweist darauf]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Es gibt eine Israel-Variante TL-WDR4300 v1 IL mit eigener Hardware-ID (0x43008001) und eigenem OpenWrt-Image, das Gluon nicht baut [geprüft: OpenWrt generic-tp-link.mk; Gluon targets/ath79-generic]; TL-WDR3600 und TL-WDR4300 sehen ähnlich aus und haben je eigenes Image (Hardware-ID 0x36000001 bzw. 0x43000001) [geprüft: OpenWrt generic-tp-link.mk]; Unterversionen v1.0 bis v1.7 laufen mit dem v1-Image; TL-WDR4310 ist ein ähnliches Gerät [geprüft: Wiki toh/tp-link/tl-wdr4300_v1]
+- **Bedingung an die Herstellerfirmware:** Herstellerfirmware 3.14.3 Build 151104 (mind. US) sperrt fremde Firmware; Wiki empfiehlt vorher Herstellerfirmware 3.13.33 (130617). Dateiname: Wiki nennt einen Namen, den die Oberfläche annimmt: wdr4300v1_en_3_14_3_up_boot(150518).bin (die Fehlermeldung "firmware path too long" kommt bei zu langen und zu kurzen Namen) [geprüft: Wiki toh/tp-link/tl-wdr4300_v1 und tl-wdr3600_v1]; ob genau dieser Name zwingend ist [abgeleitet: offen]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wdr4300-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wdr4300-v1-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** ?
+- **Dauer:** ca. 20 s Übertragung, 90 s Schreiben, 30 s Neustart; nicht ausschalten [geprüft: Wiki toh/tp-link/tl-wdr4300_v1]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** a7e1e919afa9659f66dada5e69d1b162f447ced7 (ohne Anleitung) [abgeleitet]
 
@@ -3203,9 +3364,11 @@ TP-Link TL-WR1043N v5 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [geprüft]
 - **Übertragung:** webui-upload (Stock-Web-UI); alternativ tftp-client-am-geraet: Server 192.168.0.66, Datei WR1043v5_tp_recovery.bin (Gerät 192.168.0.86)
+- **Rechner braucht:** Browser, Herstelleroberfläche (v2/v3 mit neuerer Firmware: http://192.168.1.1); kommt immer wieder "Please choose a file to upgrade", ist der Dateiname zu lang: z. B. in firmware.bin umbenennen [geprüft: Wiki toh/tp-link/tl-wr1043nd]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** TL-WR1043N v5 ähnelt TL-WR1043ND v4, aber ohne USB, feste Antennen und anderes Partitionsschema: eigenes Image; Supportliste nur EU und US [geprüft: Commit d4b89b71; tplink-safeloader TLWR1043NV5]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr1043n-v5-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr1043n-v5-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -3219,9 +3382,11 @@ TP-Link TL-WR1043N/ND v2 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [abgeleitet: Commit ohne Anleitung]
 - **Übertragung:** webui-upload (Stock-Web-UI)
+- **Rechner braucht:** Browser, Herstelleroberfläche (v2/v3 mit neuerer Firmware: http://192.168.1.1); kommt immer wieder "Please choose a file to upgrade", ist der Dateiname zu lang: z. B. in firmware.bin umbenennen [geprüft: Wiki toh/tp-link/tl-wr1043nd]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** TL-WR1043N/ND v2, v3, v4 (und N v5) haben je eigenes Image; Hardware-Version auf dem Typenschild [geprüft: OpenWrt generic-tp-link.mk, Hardware-ID 0x10430002/0x10430003]; v2.x und v3.x haben gleiche Hardware (QCA9558), Gluon hat trotzdem getrennte Images; v4 ist neue Hardware (QCA9563); v5 heißt "TL-WR1043N" ohne D [geprüft: Wiki toh/tp-link/tl-wr1043nd]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr1043nd-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr1043nd-v2-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -3235,9 +3400,11 @@ TP-Link TL-WR1043N/ND v3 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [abgeleitet: Commit ohne Anleitung]
 - **Übertragung:** webui-upload (Stock-Web-UI)
+- **Rechner braucht:** Browser, Herstelleroberfläche (v2/v3 mit neuerer Firmware: http://192.168.1.1); kommt immer wieder "Please choose a file to upgrade", ist der Dateiname zu lang: z. B. in firmware.bin umbenennen [geprüft: Wiki toh/tp-link/tl-wr1043nd]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** TL-WR1043N/ND v2, v3, v4 (und N v5) haben je eigenes Image; Hardware-Version auf dem Typenschild [geprüft: OpenWrt generic-tp-link.mk, Hardware-ID 0x10430002/0x10430003]; v2.x und v3.x haben gleiche Hardware (QCA9558), Gluon hat trotzdem getrennte Images; v4 ist neue Hardware (QCA9563); v5 heißt "TL-WR1043N" ohne D [geprüft: Wiki toh/tp-link/tl-wr1043nd]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr1043nd-v3-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr1043nd-v3-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -3251,9 +3418,12 @@ TP-Link TL-WR1043N/ND v4 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [abgeleitet: Commit ohne Anleitung]
 - **Übertragung:** webui-upload (Stock-Web-UI)
+- **Rechner braucht:** Browser, Herstelleroberfläche (v2/v3 mit neuerer Firmware: http://192.168.1.1); kommt immer wieder "Please choose a file to upgrade", ist der Dateiname zu lang: z. B. in firmware.bin umbenennen [geprüft: Wiki toh/tp-link/tl-wr1043nd]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** TL-WR1043N/ND v2, v3, v4 (und N v5) haben je eigenes Image; Hardware-Version auf dem Typenschild [geprüft: OpenWrt generic-tp-link.mk, Hardware-ID 0x10430002/0x10430003]
+- **Bedingung an die Herstellerfirmware:** Supportliste des factory-Images enthält nur TL-WR1043ND 4.0.0 mit Regionskennung EU (45550000); Geräte anderer Regionen lehnen das Image vermutlich ab [geprüft: tplink-safeloader TLWR1043NDV4; Folge abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr1043nd-v4-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr1043nd-v4-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -3267,6 +3437,7 @@ TP-Link TL-WR2543N/ND v1 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [abgeleitet: Commit ohne Anleitung]
 - **Übertragung:** webui-upload (Stock-Web-UI)
+- **Rechner braucht:** Browser http://192.168.0.1, admin/admin, "System" > "Firmware Upgrade", factory-Image [geprüft: Wiki toh/tp-link/tl-wr2543nd]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -3274,6 +3445,7 @@ TP-Link TL-WR2543N/ND v1 · ath79-generic · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr2543-v1-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** ?
+- **Dauer:** ca. zwei Minuten [geprüft: Wiki toh/tp-link/tl-wr2543nd]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 2a7e03af37d1112c2c2f6b6c80283d4d49407889 (ohne Anleitung) [abgeleitet]
 
@@ -3283,9 +3455,12 @@ TP-Link TL-WR810N v1 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI (192.168.0.254, admin/admin) [geprüft über Verweis auf ar71xx-Commit b23b0fb2]
 - **Übertragung:** webui-upload (Stock-Web-UI); alternativ tftp-client-am-geraet: Server 192.168.0.66, Datei wr810nv1_tp_recovery.bin
+- **Rechner braucht:** Browser; Oberfläche 192.168.0.254, admin/admin (Angabe stammt aus dem ar71xx-Commit zur v2) [geprüft: Commit b23b0fb2]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** TL-WR810N v1 (QCA9531, Hardware-ID 0x8100001) und v2 (QCA9533, 0x8100002) haben verschiedene Images; Gluon baut nur v1 [geprüft: OpenWrt generic-tp-link.mk, Gluon targets/ath79-generic]
+- **Bedingung an die Herstellerfirmware:** Wiki warnt, das ath79-Image für TL-WR810N v1.1 (EU) habe Geräte soft-gebrickt; Fixes ab ath79-Snapshots 27.02.2021 und 21.02-rc2 erwähnt; Stand für 24.10 nicht bestätigt [geprüft: Wiki toh/tp-link/tl-wr810n; Stand 24.10 abgeleitet: offen]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr810n-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr810n-v1-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -3299,9 +3474,11 @@ TP-Link TL-WR842N v3 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [geprüft]; Dateiname darf eine gewisse Länge nicht überschreiten
 - **Übertragung:** webui-upload (Stock-Web-UI)
+- **Rechner braucht:** Browser http://192.168.0.1, admin/admin, "System Tools" > "Firmware Upgrade"; factory z. B. in firmware.bin umbenennen [geprüft: Wiki toh/tp-link/tl-wr842nd]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Bedingung an die Herstellerfirmware:** Die Herstelleroberfläche nimmt nur Dateinamen bis zu einer gewissen Länge [geprüft: Commit e0d98e12]; daher vor dem Hochladen kurz umbenennen, z. B. factory.bin [abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr842n-v3-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr842n-v3-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -3314,14 +3491,18 @@ TP-Link TL-WR842N v3 · ath79-generic · K0
 TP-Link TL-WR902AC v1 (broken) · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [geprüft]
+- **Taste und Zeitpunkt:** nur TFTP-Alternative: Reset beim Einschalten halten, bis die WPS-LED leuchtet [geprüft: Commit 60de1fdb]
 - **Übertragung:** webui-upload (Stock-Web-UI); alternativ tftp-client-am-geraet: Server 192.168.0.66, Datei wr902acv1_un_tp_recovery.bin
+- **Rechner braucht:** factory vor dem Hochladen in update.bin umbenennen [geprüft: Wiki toh/tp-link/tl-wr902ac_v1]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Gehäuse fast gleich wie TL-MR3020, anderes Gerät [geprüft: Commit 60de1fdb]; Supportliste nur EU und US [geprüft: tplink-safeloader TL-WR902AC-V1]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr902ac-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr902ac-v1-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Rückweg zur Herstellerfirmware:** TFTP-Recovery nimmt laut Commit auch Herstellerfirmware: Rechner 192.168.0.66/24, Datei wr902acv1_un_tp_recovery.bin [geprüft: Commit 60de1fdb]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 60de1fdbb4492b5270edf49d634979c0cfd1e743 [geprüft]
 
@@ -3330,14 +3511,18 @@ TP-Link TL-WR902AC v1 (broken) · ath79-generic · K0
 TP-Link WBS210 v1 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
+- **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Supportliste WBS210 1.20 (EU/US/UN); v2 eigenes Image [geprüft: tplink-safeloader WBS210]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_wbs210-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_wbs210-v1-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 866ad466626e6a83831f79e9dd072c31a2b71d66 [geprüft]
 
@@ -3346,14 +3531,18 @@ TP-Link WBS210 v1 · ath79-generic · K0
 TP-Link WBS210 v2 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
+- **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Supportliste WBS210 2.0 (EU/US/UN); Hardware wie CPE220 v2, aber mit Antennenbuchsen [geprüft: tplink-safeloader WBS210V2; Commit 3930aab2]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_wbs210-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_wbs210-v2-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 3930aab2cb067d04f5c9ebbf1af57744e19355eb [geprüft]
 
@@ -3362,14 +3551,18 @@ TP-Link WBS210 v2 · ath79-generic · K0
 TP-Link WBS510 v1 · ath79-generic · K0
 
 - **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
+- **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Supportliste WBS510 1.20 (EU/US/UN/CA) [geprüft: tplink-safeloader WBS510]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_wbs510-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_wbs510-v1-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 20fdfe37d21f19901eec86ace8da0c083faa7ebc [geprüft]
 
@@ -3379,13 +3572,16 @@ NETGEAR WNDR3700 v4 · ath79-nand · K0
 
 - **Weg ab Werk:** factory (.img) im Stock-Web-UI; auch TFTP-Recovery und U-Boot-TFTP [geprüft]
 - **Übertragung:** webui-upload; alternativ TFTP-Recovery (Details im Commit nicht genannt)
+- **Rechner braucht:** Browser http://192.168.1.1, admin/password, "Advanced" > "Administration" > "Firmware Upgrade" [geprüft: Wiki toh/netgear/wndr4300; für WNDR3700 v4 abgeleitet: gleiche Plattform]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** WNDR3700 v4 und WNDR4300 haben gleiche Plattform (AR9344, 128 MB NAND), aber je eigenes Image; WNDR3700 v4 nicht mit WNDR3700 v1/v2 (eigene Images) verwechseln [geprüft: Commit 7e623c31/9b6f89c3; OpenWrt nand.mk]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-netgear_wndr3700-v4-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-netgear_wndr3700-v4-squashfs-factory.img)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** einige Minuten [geprüft: Wiki toh/netgear/wndr4300]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 7e623c312832386d5eb5aa970738288cf96d96c3 [geprüft]
 
@@ -3395,13 +3591,16 @@ NETGEAR WNDR4300 · ath79-nand · K0
 
 - **Weg ab Werk:** factory (.img) im Stock-Web-UI; auch TFTP-Recovery und U-Boot-TFTP [geprüft]
 - **Übertragung:** webui-upload; alternativ TFTP-Recovery (Details im Commit nicht genannt)
+- **Rechner braucht:** Browser http://192.168.1.1, admin/password, "Advanced" > "Administration" > "Firmware Upgrade" [geprüft: Wiki toh/netgear/wndr4300; für WNDR3700 v4 abgeleitet: gleiche Plattform]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** WNDR3700 v4 und WNDR4300 haben gleiche Plattform (AR9344, 128 MB NAND), aber je eigenes Image; WNDR3700 v4 nicht mit WNDR3700 v1/v2 (eigene Images) verwechseln [geprüft: Commit 7e623c31/9b6f89c3; OpenWrt nand.mk]; WNDR4300 v2 (Typenschild "WNDR4300v2") ist ein anderes Gerät; Variante "SW" (SureWest) hat gleiche Hardware wie v1 [geprüft: Wiki toh/netgear/wndr4300]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-netgear_wndr4300-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-netgear_wndr4300-squashfs-factory.img)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** einige Minuten [geprüft: Wiki toh/netgear/wndr4300]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 9b6f89c37fc9c2e23cc123bd7b5cf9a1f8dc301a [geprüft]
 
@@ -3414,10 +3613,12 @@ Zyxel NBG6716 · ath79-nand · K0
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Gerät gibt es mit 128 MB und 256 MB NAND; OpenWrt nutzt nur 128 MB [geprüft: Commit 99835e09]; Flash-Varianten laut Wiki: 16 MB + 256 MB, 8 MB + 128 MB, 16 MB + 128 MB, 4 MB + 128 MB; von außen nicht unterscheidbar; EMG2926 (Videotron) lehnt NBG6716-Images ab [geprüft: Wiki toh/zyxel/nbg6716]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-zyxel_nbg6716-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-zyxel_nbg6716-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** ?
+- **Rückweg zur Herstellerfirmware:** TFTP-Recovery: Server 192.168.1.33, Datei ras.bin, WPS beim Einschalten halten; Schreiben ca. 10 s, danach blinken Power- und Key-LED schnell [geprüft: Wiki toh/zyxel/nbg6716]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 99835e09992bb411519fda1f8d16a6d07df7f598 [abgeleitet]
 
@@ -3426,14 +3627,18 @@ Zyxel NBG6716 · ath79-nand · K0
 Linksys EA6350 v3 · ipq40xx-generic · K0
 
 - **Weg ab Werk:** Gluon-factory über die Linksys-Smart-WiFi-UI (Connectivity > Manual update) [geprüft]
+- **Sichtbare Zeichen:** nach dem Upload blinkt die LED; mit OpenWrt ist das Gerät fertig, wenn sie wieder dauerhaft leuchtet [geprüft: Commit a873b292]; Gluon startet beim ersten Mal im Konfigurationsmodus, dann blinkt die Status-LED langsam weiter [abgeleitet: gluon-setup-mode S96led]
 - **Übertragung:** webui-upload: Gerät 192.168.1.1
+- **Rechner braucht:** Browser; Linksys-Smart-WiFi-Seite (192.168.1.1), einloggen, links "Connectivity", rechts "Manual update", factory.bin wählen, "Update", Warnung bestätigen [geprüft: Commit a873b292]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** nur Hardware-Version 3; EA6350 v4 hat einen anderen Chip und ist hier nicht enthalten [abgeleitet: Gluon kennt nur v3; Wiki-Seite nennt v4 nicht]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_ea6350v3-initramfs-zImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_ea6350v3-squashfs-factory.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Rückweg zur Herstellerfirmware:** Dual-Partition: Gerät einschalten, 15 s warten, ausschalten, 10 s warten; dreimal wiederholen, dann startet die vorherige Firmware [geprüft: Commit a873b292]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt a873b292840848b67addb5be0c762d292bde33a1
 - **Detail-Anleitung:** -
@@ -3444,32 +3649,19 @@ Linksys EA8300 · ipq40xx-generic · K0
 
 - **Weg ab Werk:** Gluon-factory über die Linksys-UI [geprüft]
 - **Übertragung:** webui-upload: Gerät 192.168.1.1
+- **Rechner braucht:** Browser http://192.168.1.1, Passwort "admin" (Firmware Anfang 2019), "Manual configuration" > "Internet connection is down" > "Login" > "Smart Wi-Fi Tools" > "Connectivity" > "Manual" [geprüft: Wiki toh/linksys/ea8300]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** EA8300 (256 MB RAM) und MR8300 (512 MB RAM, geänderte LED-Leiste oben) sind fast gleich, aber je eigenes Image [geprüft: Commit a9071d02]
+- **Bedingung an die Herstellerfirmware:** WICHTIG: Laut Wiki führt ein factory-Image ab OpenWrt 23.05 über die Linksys-Oberfläche zum Soft-Brick; nur das factory.bin von OpenWrt 22.03.5/22.03.6 verwenden. Gluon 2025.1 basiert auf OpenWrt 24.10, also vermutlich erst OpenWrt 22.03.5-factory, dann Gluon-sysupgrade [geprüft: Wiki toh/linksys/ea8300; Folge abgeleitet]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_ea8300-initramfs-zImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_ea8300-squashfs-factory.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Rückweg zur Herstellerfirmware:** Dual-Partition: einschalten, 10 s warten, ausschalten, 5 s warten, dreimal: startet die andere Partition; wer zurück will, nicht zweimal flashen [geprüft: Wiki toh/linksys/ea8300]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 819e7946b0964725dab50c92797f49cf4053d955
-- **Detail-Anleitung:** -
-
-#### linksys-mr8300-dallas
-
-Linksys MR8300 · ipq40xx-generic · K0
-
-- **Weg ab Werk:** Linksys-UI (https://192.168.1.1/fwupdate.html) nimmt ein factory-Image [geprüft]; Gluon setzt aber `factory = false` (ohne Begründung im Gluon-Commit d04ea647), also heute OpenWrt-factory als Zwischenschritt, dann Gluon-sysupgrade
-- **Übertragung:** webui-upload: https://192.168.1.1/fwupdate.html
-- **seriell nötig:** nein
-- **Gehäuse öffnen:** nein
-- **Werkzeug/Spezial:** OpenWrt-24.10-factory als Zwischenschritt
-- **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_mr8300-initramfs-zImage.itb)
-- **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_mr8300-squashfs-factory.bin)
-- **Stock-Teile:** -
-- **RAM:** 512 MB
-- **Gluon-RAMpe passt:** teilweise: eine Gluon-RAMpe bräuchte das Linksys-factory-Format (Kernel + UBI, linksys-image), kein initramfs; einfacher wäre `factory` in Gluon einzuschalten [abgeleitet]
-- **Quelle (OpenWrt-Commit):** OpenWrt a9071d02b5ab11fbd73ea42076a09f2fd8136517
 - **Detail-Anleitung:** -
 
 #### linksys-vlp01
@@ -3481,6 +3673,7 @@ Linksys VLP01 (Alias von linksys-whw01) · ipq40xx-generic · K0
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Bedingung an die Herstellerfirmware:** Dual-Partition: laut Commit müssen beide Partitionen geflasht werden, sonst kehrt das Gerät nach 3 Fehlstarts zur Herstellerfirmware zurück [geprüft: Commit b4184c66]
 - **initramfs-Link:** -
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
@@ -3498,6 +3691,7 @@ Linksys WHW01 v1 (Velop) · ipq40xx-generic · K0
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Bedingung an die Herstellerfirmware:** Dual-Partition: laut Commit müssen beide Partitionen geflasht werden, sonst kehrt das Gerät nach 3 Fehlstarts zur Herstellerfirmware zurück [geprüft: Commit b4184c66]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_whw01-initramfs-zImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_whw01-squashfs-factory.bin)
 - **Stock-Teile:** -
@@ -3512,13 +3706,16 @@ Linksys WHW03 v2 (Velop) · ipq40xx-generic · K0
 
 - **Weg ab Werk:** Gluon-factory über http://192.168.1.1/ca (Support-Modus), Connectivity [geprüft]
 - **Übertragung:** webui-upload: Gerät 192.168.1.1
+- **Rechner braucht:** Browser; http://192.168.1.1/ca öffnen, mit Admin-Passwort einloggen, unten Link "CA" (Support-Modus), "Connectivity", factory wählen ("Choose file"), "Start", alle Rückfragen mit "yes" [geprüft: Commit 9e4ede83]; alternativ https://192.168.1.1/fwupdate.html oder http://10.65.1.1/ca; nicht eingerichtete Geräte: Passwort "admin" [geprüft: Wiki toh/linksys/whw03_v2]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** WHW03 v2 (NAND) und WHW03 v1 (eMMC) haben je eigenes Image [geprüft: Commit 9e4ede83/c9048755]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_whw03v2-initramfs-zImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_whw03v2-squashfs-factory.bin)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Rückweg zur Herstellerfirmware:** Dual-Partition: dreimal hintereinander einschalten und nach ca. 2 s wieder ausschalten, dann startet die vorherige Firmware [geprüft: Commit 9e4ede83]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 9e4ede8344d60d4837e047e9275c21fd2a8f130b
 - **Detail-Anleitung:** https://openwrt.org/toh/linksys/whw03_v2#oem_easy_installation
@@ -3529,13 +3726,16 @@ Linksys WHW03 v1 (Velop) · ipq40xx-generic · K0
 
 - **Weg ab Werk:** Gluon-factory über die Linksys-UI im Support-Modus (Link "CA" unten), Connectivity > Choose file [geprüft]
 - **Übertragung:** webui-upload: Gerät 192.168.1.1
+- **Rechner braucht:** Browser; Linksys-Oberfläche, Login mit dem Admin-Passwort vom Typenschild, unten Link "CA" (Support-Modus), "Connectivity" > "Choose file" > "Start", Warnungen bestätigen [geprüft: Commit c9048755]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** WHW03 v1 (4 GB eMMC) und WHW03 v2 (NAND) haben je eigenes Image [geprüft: Commit c9048755/9e4ede83]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_whw03-initramfs-zImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_whw03-squashfs-factory.bin)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Rückweg zur Herstellerfirmware:** Dual-Firmware: Gerät dreimal hintereinander für ein paar Sekunden einschalten und wieder ausschalten, dann startet die andere Kopie [geprüft: Commit c9048755]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt c90487556229ae264dec33305e5c71c4ef7dd1c5
 - **Detail-Anleitung:** https://openwrt.org/toh/linksys/whw03_v1#oem_easy_installation
@@ -3545,10 +3745,13 @@ Linksys WHW03 v1 (Velop) · ipq40xx-generic · K0
 NETGEAR EX6100 v2 · ipq40xx-generic · K0
 
 - **Weg ab Werk:** Gluon-factory (`.img`) über die Netgear-Web-UI (ggf. zweite Bestätigung wegen "älterer" Version) [geprüft]
+- **Sichtbare Zeichen:** Gerät startet nach dem Schreiben von selbst neu [geprüft: Commit 970f1914]
 - **Übertragung:** webui-upload; alternativ seriell `fw_recovery` (Gerät ist TFTP-Server 192.168.1.1)
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** EX6100 v2 und EX6150 v2 teilen Herstellerfirmware, aber je eigenes Image (EX6100 v2 im Commit ungetestet); EX6150 ohne "v2" ist ein anderes Gerät (MT7621, .chk-Image) [geprüft: Commit 970f1914; Gluon targets/ramips-mt7621]
+- **Bedingung an die Herstellerfirmware:** Die Netgear-Oberfläche hält OpenWrt für eine ältere Version und fragt evtl. ein zweites Mal nach: bestätigen [geprüft: Commit 970f1914]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-netgear_ex6100v2-initramfs-zImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-netgear_ex6100v2-squashfs-factory.img)
 - **Stock-Teile:** -
@@ -3562,10 +3765,13 @@ NETGEAR EX6100 v2 · ipq40xx-generic · K0
 NETGEAR EX6150 v2 · ipq40xx-generic · K0
 
 - **Weg ab Werk:** Gluon-factory (`.img`) über die Netgear-Web-UI (ggf. zweite Bestätigung wegen "älterer" Version) [geprüft]
+- **Sichtbare Zeichen:** Gerät startet nach dem Schreiben von selbst neu [geprüft: Commit 970f1914]
 - **Übertragung:** webui-upload; alternativ seriell `fw_recovery` (Gerät ist TFTP-Server 192.168.1.1)
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** EX6100 v2 und EX6150 v2 teilen Herstellerfirmware, aber je eigenes Image (EX6100 v2 im Commit ungetestet); EX6150 ohne "v2" ist ein anderes Gerät (MT7621, .chk-Image) [geprüft: Commit 970f1914; Gluon targets/ramips-mt7621]
+- **Bedingung an die Herstellerfirmware:** Die Netgear-Oberfläche hält OpenWrt für eine ältere Version und fragt evtl. ein zweites Mal nach: bestätigen [geprüft: Commit 970f1914]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-netgear_ex6150v2-initramfs-zImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-netgear_ex6150v2-squashfs-factory.img)
 - **Stock-Teile:** -
@@ -3579,7 +3785,9 @@ NETGEAR EX6150 v2 · ipq40xx-generic · K0
 Zyxel NBG6617 · ipq40xx-generic · K0
 
 - **Weg ab Werk:** Gluon-factory über die Zyxel-Web-UI (Expert Mode > Maintenance > Firmware-Upgrade, Passwort 1234) [geprüft]
+- **Sichtbare Zeichen:** startet nach dem Schreiben ohne weiteres Zutun neu [geprüft: Commit 82618062]
 - **Übertragung:** webui-upload: Gerät 192.168.1.1 (DHCP); Notweg tftp-client: Server 192.168.1.99, Datei ras.bin, WPS-Taste beim Einschalten
+- **Rechner braucht:** PC bekommt Adresse per DHCP; Browser http://192.168.1.1, Passwort 1234, "Expert Mode" > "Maintenance" > "Firmware-Upgrade" [geprüft: Commit 82618062]; Wiki bestätigt: http://192.168.1.1, "Expert Mode" > "Maintenance" > "Firmware Upgrade" [geprüft: Wiki toh/zyxel/nbg6617]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -3587,6 +3795,7 @@ Zyxel NBG6617 · ipq40xx-generic · K0
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-zyxel_nbg6617-squashfs-factory.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Rückweg zur Herstellerfirmware:** TFTP: Rechner 192.168.1.99/24 an LAN, Herstellerfirmware V1.00(ABCT.X).bin als ras.bin, WPS-Taste beim Einschalten 30 s halten, lange warten; fertig, wenn Power-LED langsam und USB- und WPS-LED schnell blinken, dann neu starten [geprüft: Commit 82618062]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 82618062cf7ed6b40d2c52c6f6b96364888ffda6
 - **Detail-Anleitung:** -
@@ -3596,10 +3805,13 @@ Zyxel NBG6617 · ipq40xx-generic · K0
 NETGEAR Nighthawk X4S R7800 · ipq806x-generic · K0
 
 - **Weg ab Werk:** Gluon-factory (`.img`) über die Netgear-Web-UI [abgeleitet: Image-Rezept DniImage, Commit ohne Text]
+- **Sichtbare Zeichen:** mit OpenWrt fertig, wenn die Power-LED dauerhaft weiß leuchtet [geprüft: Wiki toh/netgear/r7800]; Gluon startet beim ersten Mal im Konfigurationsmodus, dann blinkt die Status-LED langsam [abgeleitet: gluon-setup-mode S96led]
 - **Übertragung:** webui-upload
+- **Rechner braucht:** Browser http://192.168.1.1, "Advanced" > "Administration" > "Firmware Update", factory.img hochladen, mit "Yes" bestätigen [geprüft: Wiki toh/netgear/r7800]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Bedingung an die Herstellerfirmware:** getestet mit Herstellerfirmware V1.0.2.92; abgelehnte Versionen nicht bekannt [geprüft: Wiki toh/netgear/r7800]
 - **initramfs-Link:** [24.10.8: initramfs-uImage](https://downloads.openwrt.org/releases/24.10.8/targets/ipq806x/generic/openwrt-24.10.8-ipq806x-generic-netgear_r7800-initramfs-uImage)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ipq806x/generic/openwrt-24.10.8-ipq806x-generic-netgear_r7800-squashfs-factory.img)
 - **Stock-Teile:** -
@@ -3617,6 +3829,8 @@ TP-Link Archer C2600 v1 · ipq806x-generic · K0
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Supportliste nur "Archer C2600" 1.0.0 ohne Regionskennung [geprüft: tplink-safeloader C2600]
+- **Bedingung an die Herstellerfirmware:** Hardware v1.0: Login admin/admin geht, Upload über die normale Firmware-Upgrade-Seite; v1.1: Werks-Zugangsdaten funktionieren laut Wiki nicht, dann nur TFTP (manche v1.1-Geräte melden sich aber als v1.0, dann geht der Web-Upload); belegt ab Herstellerfirmware Build 20150610 Rel. 32140 [geprüft: Wiki toh/tp-link/archer_c2600_v1]
 - **initramfs-Link:** [24.10.8: initramfs-uImage](https://downloads.openwrt.org/releases/24.10.8/targets/ipq806x/generic/openwrt-24.10.8-ipq806x-generic-tplink_c2600-initramfs-uImage)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq806x/generic/openwrt-24.10.8-ipq806x-generic-tplink_c2600-squashfs-factory.bin)
 - **Stock-Teile:** -
@@ -3630,14 +3844,18 @@ TP-Link Archer C2600 v1 · ipq806x-generic · K0
 NETGEAR DGN3500B · lantiq-xway · K0
 
 - **Weg ab Werk:** factory.img im Stock-Web-UI oder im Sercomm-Bootmodus mit Windows-Werkzeug (Upgrade_207_XP) [geprüft]
+- **Taste und Zeitpunkt:** nur Alternative Sercomm-Bootmodus: Reset beim Einschalten halten, loslassen, wenn die Power-LED rot und grün blinkt [geprüft: Commit 575127fe]
 - **Übertragung:** webui-upload; herstellertool
+- **Rechner braucht:** nur Alternative Sercomm-Bootmodus: Windows-Programm Upgrade_207_XP (NSLU2-Upgrade-Werkzeug); meldet immer "fehlgeschlagen", obwohl es geklappt hat: dann Strom aus und an [geprüft: Commit 575127fe]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** DGN3500B ist die Annex-B-Variante (DE); das Image trägt die Kennung "DE". DGN3500 ohne B (Annex A, WW/NA) hat eigene Images, die Gluon nicht baut [geprüft: OpenWrt lantiq/image/ar9.mk; Commit 575127fe]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/lantiq/xway/openwrt-24.10.8-lantiq-xway-netgear_dgn3500b-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 64 MB
+- **Rückweg zur Herstellerfirmware:** Sercomm-Bootmodus mit Upgrade_207_XP und passender Netgear-Firmware [geprüft: Commit 575127fe]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 575127fe1c82e814da155a15be0a02b4153e1d00
 
@@ -3646,7 +3864,9 @@ NETGEAR DGN3500B · lantiq-xway · K0
 NETGEAR WAX220 · mediatek-filogic · K0
 
 - **Weg ab Werk:** Gluon-factory (`.img`, verschlüsselt) über die Stock-Web-UI [abgeleitet: Image-Rezept "Padding … required by OEM web interface"; Commit nennt nur UART]
+- **Sichtbare Zeichen:** blinkt danach die Power-LED, ist die LAN-LED aus und antwortet nichts: Strom aus und wieder an [geprüft: Wiki toh/netgear/wax220]
 - **Übertragung:** webui-upload
+- **Rechner braucht:** Herstelleroberfläche: "Management" > "System Manager" > "Firmware", factory hochladen; das factory ist auf genau 10 MB aufgefüllt, wegen einer Mindestgrößenprüfung der Oberfläche [geprüft: Wiki toh/netgear/wax220]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -3654,6 +3874,7 @@ NETGEAR WAX220 · mediatek-filogic · K0
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-netgear_wax220-squashfs-factory.img)
 - **Stock-Teile:** -
 - **RAM:** 1 GB
+- **Dauer:** Schreiben ca. 20 s [geprüft: Wiki toh/netgear/wax220]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 984786a2f7ec622c99e8c9cdada65d0ea0cf4e0b
 - **Detail-Anleitung:** https://openwrt.org/toh/netgear/wax220#oem_easy_installation
@@ -3663,14 +3884,17 @@ NETGEAR WAX220 · mediatek-filogic · K0
 OpenWrt One · mediatek-filogic · K0
 
 - **Weg ab Werk:** ab Werk OpenWrt: Gluon-sysupgrade (`.itb`) über LuCI/sysupgrade; Gluon-factory `.ubi` für die Neuinstallation über den NOR-U-Boot (Bootschalter) [abgeleitet: Image-Rezept, Commit ohne Installationsabschnitt]
+- **Taste und Zeitpunkt:** Schiebeschalter hinten: oben = NAND (Normalbetrieb), unten = NOR (Recovery); für den normalen Weg muss er auf NAND stehen [geprüft: Wiki toh/openwrt/one]
 - **Übertragung:** webui-upload (LuCI)
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Bedingung an die Herstellerfirmware:** kommt ab Werk mit OpenWrt und LuCI; keine Herstellerfirmware [geprüft: Wiki toh/openwrt/one]
 - **initramfs-Link:** [24.10.8: initramfs.itb](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-openwrt_one-initramfs.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: factory.ubi](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-openwrt_one-factory.ubi)
 - **Stock-Teile:** -
 - **RAM:** 1 GB
+- **Rückweg zur Herstellerfirmware:** USB-Recovery: FAT32-Stick, Reset hinten beim Einschalten halten; NOR-Recovery: Schalter auf NOR, vorderen Taster beim Einschalten halten [geprüft: Wiki toh/openwrt/one]
 - **Gluon-RAMpe passt:** nein, nicht nötig
 - **Quelle (OpenWrt-Commit):** OpenWrt 797904b3cb4a5c575641c19e7f3989926e4c7902
 - **Detail-Anleitung:** -
@@ -3681,9 +3905,12 @@ Zyxel NWA50AX Pro · mediatek-filogic · K0
 
 - **Weg ab Werk:** Gluon-factory über die Zyxel-Web-UI; vorher muss Slot B aktiv sein, sonst bootet OpenWrt nur einmal (dann erst ein Zyxel-Update einspielen) [geprüft]
 - **Übertragung:** webui-upload
+- **Rechner braucht:** Adresse per DHCP, sonst 192.168.1.2; Login admin, Passwort hinten auf dem Gerät oder 1234; "Maintenance" > "File Manager" > "Firmware Package"; bei Upload-Fehler Dateinamen kürzen; aktiven Slot prüfen über "Maintenance" > "Diagnostics" > "Collect Now" > "Download", dort muss "Current Image num" 1 sein [geprüft: Wiki toh/zyxel/nwa50ax_pro]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** NWA50AX Pro (MT7981) nicht mit NWA50AX (MT7621) verwechseln; NWA90AX Pro nutzt dasselbe Gluon-Gerät als Alias [geprüft: Commit f0445746; Feld modell]
+- **Bedingung an die Herstellerfirmware:** Dual-Image: OpenWrt geht nur in Slot A, vor dem Hochladen muss also Slot B aktiv sein. Sonst startet OpenWrt nur einmal und danach wieder die Zyxel-Firmware; dann zuerst ein beliebiges Zyxel-Update einspielen und erneut flashen [geprüft: Commit a0b7fef0/f0445746]; laut Wiki scheitert die Installation, wenn die Herstellerfirmware vorher eine ungerade Zahl von Malen aktualisiert wurde; dann einmal Zyxel-Firmware einspielen [geprüft: Wiki toh/zyxel/nwa50ax_pro]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-zyxel_nwa50ax-pro-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-zyxel_nwa50ax-pro-squashfs-factory.bin)
 - **Stock-Teile:** -
@@ -3698,9 +3925,11 @@ Zyxel NWA90AX Pro (Alias von zyxel-nwa50ax-pro) · mediatek-filogic · K0
 
 - **Weg ab Werk:** wie NWA50AX Pro; Factory braucht compat-model 81e1, im Backport enthalten [geprüft: Patch 0003]
 - **Übertragung:** webui-upload
+- **Rechner braucht:** wie NWA50AX Pro: Wiki sagt, die Anleitung gilt unverändert [geprüft: Wiki toh/zyxel/nwa50ax_pro]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Bedingung an die Herstellerfirmware:** Dual-Image wie NWA50AX Pro: vorher muss Slot B aktiv sein ("Current Image num" 1), sonst erst einmal Zyxel-Firmware einspielen [geprüft: Wiki toh/zyxel/nwa50ax_pro]
 - **initramfs-Link:** -
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
@@ -3718,6 +3947,7 @@ TP-Link TL-WDR4900 v1 · mpc85xx-p1010 · K0
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** v1.x: PowerPC (P1014), 3 interne + 3 externe Antennen, weltweit verkauft; v2.x ist völlig andere Hardware (6 externe Antennen, nur China) [geprüft: Wiki toh/tp-link/tl-wdr4900]
 - **initramfs-Link:** kein initramfs in 24.10.8
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
@@ -3731,13 +3961,17 @@ Linksys MX5300 · qualcommax-ipq807x · K0
 
 - **Weg ab Werk:** Gluon-factory über die Linksys-UI (manuelles Update); danach laut Commit dasselbe factory per `mtd write` auch in die zweite Partition [geprüft]
 - **Übertragung:** webui-upload; alternativ usb (initramfs von FAT32-Stick, seriell)
+- **Rechner braucht:** Browser; Linksys-Oberfläche, manuelles Firmware-Update, siehe https://www.linksys.com/hk/support-article?articleNum=274497 [geprüft: Commit 70fd815e]; alternativ http://192.168.1.1/fwupdate.html mit admin/admin, factory wählen, Update; Erfolg: Antwort {"result": "OK"} [geprüft: Wiki toh/linksys/mx5300]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** MX10600 = 2er-Pack, MX15900 = 3er-Pack MX5300; das schwächere MX55EC wird teils auch als "AX5300" verkauft [geprüft: Wiki toh/linksys/mx5300]
+- **Bedingung an die Herstellerfirmware:** Dual-Partition: nach dem ersten Start aus OpenWrt heraus dasselbe factory-Image per `mtd write` in die zweite Partition schreiben (kernel bzw. alt_kernel, je nach `fw_printenv -n boot_part`) [geprüft: Commit 70fd815e]; zuletzt geprüft mit Herstellerfirmware 1.1.12.210066 (14.04.2022); spätere Updates könnten den Weg brechen [geprüft: Wiki toh/linksys/mx5300]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/qualcommax/ipq807x/openwrt-24.10.8-qualcommax-ipq807x-linksys_mx5300-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/qualcommax/ipq807x/openwrt-24.10.8-qualcommax-ipq807x-linksys_mx5300-squashfs-factory.bin)
 - **Stock-Teile:** -
 - **RAM:** 1 GB
+- **Rückweg zur Herstellerfirmware:** Herstellerfirmware per `mtd -e kernel -n write FW_MX5300_….img kernel` und dasselbe für alt_kernel [geprüft: Commit 70fd815e]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 70fd815e57dc98cef88828faa5ce71717540e99e
 - **Detail-Anleitung:** -
@@ -3748,9 +3982,12 @@ Nexx WT3020 8M (Aliase WT3020AD/F/H) · ramips-mt7620 · K0
 
 - **Weg ab Werk:** factory (Poray-Header) im Stock-Web-UI [abgeleitet: mk + ToH "GUI OEM"; Wiki beschreibt zusätzlich Breed-U-Boot]
 - **Übertragung:** webui-upload
+- **Rechner braucht:** Herstelleroberfläche http://192.168.8.1, admin/admin, "System Setting" > "Upgrade Firmware", factory.bin [geprüft: Wiki toh/nexx/wt3020]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** WT3020A: ohne USB, 4 MB Flash (nicht dieses Image); WT3020H/F/AD: mit USB, 8 MB; WT3020H an der MAC 20:28:18:... erkennbar [geprüft: Wiki toh/nexx/wt3020]
+- **Bedingung an die Herstellerfirmware:** einige U-Boot-Versionen gelten als problematisch (Wiki nennt Bootloader BREED als Alternative) [geprüft: Wiki toh/nexx/wt3020]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7620/openwrt-24.10.8-ramips-mt7620-nexx_wt3020-8m-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
@@ -3767,6 +4004,8 @@ TP-Link Archer C20i · ramips-mt7620 · K0
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Archer C20i nicht mit Archer C20 v1 (eigenes Gluon-Gerät ohne factory) oder Archer C2 (AC750, Gigabit-Switch) verwechseln [geprüft: Wiki toh/tp-link/archer_c20i; Gluon targets/ramips-mt7620]
+- **Bedingung an die Herstellerfirmware:** WICHTIG: Flashen aus der neuesten TP-Link-Firmware (Build 151014) über die Weboberfläche scheint das Gerät unbrauchbar zu machen; vorher ältere Firmware Build 140709 einspielen [geprüft: Wiki toh/tp-link/archer_c20i]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7620/openwrt-24.10.8-ramips-mt7620-tplink_archer-c20i-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
@@ -3780,9 +4019,12 @@ TP-Link Archer C50 v1 · ramips-mt7620 · K0
 
 - **Weg ab Werk:** factory-eu/-us (Gluon: Regionssuffix) im Stock-Web-UI [abgeleitet: Gluon baut factory; Wiki nennt TFTP-Recovery wie TL-WDR4300]
 - **Übertragung:** webui-upload
+- **Rechner braucht:** Browser http://192.168.0.1 [geprüft: Wiki toh/tp-link/archer-c50]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Archer C50 v1 (MT7620) ist ein anderes Gerät als C50 v3/v4/v6 (MT76x8, eigene Images) [geprüft: Gluon targets/ramips-mt7620, ramips-mt76x8]
+- **Bedingung an die Herstellerfirmware:** Gluon baut das factory mit Regionssuffix; Neanderfunk setzt GLUON_REGION=eu, es gibt also nur factory-eu. Für US-Geräte wäre factory-us nötig [geprüft: templates/common/site.mk, Gluon targets/ramips-mt7620; Folge abgeleitet]; WICHTIG: Mit Herstellerfirmware 160411 (EU V1) zuerst downgraden, sonst wird der Router unbrauchbar [geprüft: Wiki toh/tp-link/archer-c50]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7620/openwrt-24.10.8-ramips-mt7620-tplink_archer-c50-v1-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
@@ -3795,14 +4037,19 @@ TP-Link Archer C50 v1 · ramips-mt7620 · K0
 D-Link COVR-X1860 A1 · ramips-mt7621 · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI (`/UpdateFirmware_Simple.html`) oder Gluon-recovery.bin (squashfs) in der Web-Recovery [geprüft; Neanderfunk-Notiz dlink-flashen.md]
+- **Taste und Zeitpunkt:** nur Recovery-Alternative: Reset (Unterseite) beim Einschalten gedrückt halten, bis die Status-LED rot blinkt [geprüft: Commit 0a18259e]
+- **Sichtbare Zeichen:** Recovery erreicht: Status-LED oben blinkt rot [geprüft: Commit 0a18259e]
 - **Übertragung:** webui-upload (192.168.0.1); recovery-web: Gerät 192.168.0.1, Rechner 192.168.0.10/24, rechter LAN-Port, kein Ping
+- **Rechner braucht:** Browser; Einrichtungsassistent überspringen, direkt http://192.168.0.1/UpdateFirmware_Simple.html. Recovery-Alternative: Rechner fest 192.168.0.10/255.255.255.0, Chromium-basierter Browser, http://192.168.0.1, recovery.bin [geprüft: Commit 0a18259e]; Recovery antwortet nicht auf ping, nur HTTP [geprüft: Neanderfunk-Notiz dlink-recovery]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** COVR-X1860 (zwei Ethernet-Ports, Steckernetzteil) ist ähnlich DAP-X1860 (Steckdosengerät), eigenes Image; Sets COVR-X1862/X1863 enthalten zwei bzw. drei COVR-X1860 [geprüft: Commit 0a18259e]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-dlink_covr-x1860-a1-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community); Gluon-recovery.bin
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Rückweg zur Herstellerfirmware:** Recovery mit entschlüsselter D-Link-Firmware (`dlink-sge-image COVR-X1860 <orig> <out> -d`) [geprüft: Commit 0a18259e]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon hat factory und recovery); steht in GERAETE.md noch als Kandidat
 - **Quelle (OpenWrt-Commit):** 0a18259e4aa361cd9e5848c038be4b9f4e3bfcc6
 - **Detail-Anleitung:** https://freifunk-aachen.de/2023/08/03/installationsanleitung-d-link-covr-x1860/
@@ -3812,10 +4059,13 @@ D-Link COVR-X1860 A1 · ramips-mt7621 · K0
 D-Link DIR-860L B1 · ramips-mt7621 · K0
 
 - **Weg ab Werk:** factory (SEAMA) über das Stock-Web-UI oder die D-Link-Recovery [abgeleitet: ToH "D-Link Recovery GUI"; Commit ohne Text]
+- **Taste und Zeitpunkt:** nur Recovery-Alternative: Reset gedrückt halten und Strom einstecken, halten, bis die Power-LED blinkt (ca. 10 s) [geprüft: Wiki toh/d-link/dir-860l_b1]
 - **Übertragung:** webui-upload; recovery-web
+- **Rechner braucht:** nur Recovery-Alternative: Rechner fest 192.168.0.2/24, Browser http://192.168.0.1 [geprüft: Wiki toh/d-link/dir-860l_b1]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** nur Hardware-Revision B1 (MediaTek MT7621); A1 ist Broadcom und nicht unterstützt: "H/W Ver." auf dem Typenschild prüfen [geprüft: Wiki toh/d-link/dir-860l_b1]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-dlink_dir-860l-b1-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
@@ -3832,10 +4082,12 @@ Mercusys MR70X v1 · ramips-mt7621 · K0
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Supportliste: "MR70X" und "MR1800X", Hardware 1.0.0, u. a. EU, US, JP, BR [geprüft: tplink-safeloader MR70X]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-mercusys_mr70x-v1-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 128 MB
+- **Rückweg zur Herstellerfirmware:** Web-Recovery: Strom ab, beim Einstecken Reset 5-10 s halten, Rechner fest 192.168.1.x/255.255.255.0, Browser http://192.168.1.1, Herstellerfirmware hochladen [geprüft: Commit 47de2c68]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 47de2c686291e69afc9f443e27e1dfd11ed5fbe7
 
@@ -3852,6 +4104,7 @@ NETGEAR WAC104 · ramips-mt7621 · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 128 MB
+- **Rückweg zur Herstellerfirmware:** nmrpflash mit Herstellerimage [geprüft: Commit 221d8a1c]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 221d8a1c6086ffd8bc53f81d5074a177d8dd8480
 
@@ -3860,10 +4113,14 @@ NETGEAR WAC104 · ramips-mt7621 · K0
 TP-Link Archer AX23 v1 (Gluon: broken) · ramips-mt7621 · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI; Web-Recovery 192.168.0.1 (Reset beim Einschalten) nimmt factory [geprüft]
+- **Taste und Zeitpunkt:** nur Recovery-Alternative: Reset beim Einschalten gedrückt halten; Web-Recovery unter 192.168.0.1 [geprüft: Commit 7dceef5e]
+- **Sichtbare Zeichen:** nur Recovery-Alternative: Reset beim Einschalten halten, bis die orange WAN-LED leuchtet [geprüft: Wiki toh/tp-link/archer_ax23_v1]
 - **Übertragung:** webui-upload; recovery-web 192.168.0.1
+- **Rechner braucht:** Browser http://192.168.0.1, "System" > "Firmware Update", factory.bin; Recovery-Upload alternativ per `curl -F firmware=@<factory.bin> http://192.168.0.1/f2.htm` [geprüft: Wiki toh/tp-link/archer_ax23_v1]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Supportliste: "Archer AX23" und "Archer AX1800", Hardware 1.0/1.20, viele Regionen (u. a. EU, US, JP, RU, KR) [geprüft: tplink-safeloader ARCHER-AX23-V1]; Hardware v1.0, v1.2 und v1.20 sind gleich; auch "AX1800 RU HWVER 1.20" läuft; Archer AX23 v2 hat einen ganz anderen Chip und wird nicht unterstützt [geprüft: Wiki toh/tp-link/archer_ax23_v1]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-tplink_archer-ax23-v1-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
@@ -3877,9 +4134,11 @@ TP-Link Archer C6 v3 (Gluon: broken) · ramips-mt7621 · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI [geprüft]
 - **Übertragung:** webui-upload
+- **Rechner braucht:** Browser; Menü "Advanced" > "System Tools" > "Firmware Update", "Browse", factory.bin wählen, "Upgrade", Rückfrage mit "Yes" [geprüft: Commit d22fb7f4]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Archer C6 v3 ist baugleich mit Archer A6 v3; Supportliste "Archer C6" 3.0 und 3.20, u. a. EU, US, JP, RU, BR, KR; Archer C6 v2 ist ein anderes Gerät (ath79) [geprüft: Commit d22fb7f4; tplink-safeloader ARCHER-C6-V3]; Der Nachfolger Archer C6 v4 sieht außen gleich aus, wird aber nie unterstützt (andere CPU, zu wenig Flash): Typenschild prüfen [geprüft: Wiki toh/tp-link/archer_c6_v3]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-tplink_archer-c6-v3-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
@@ -3896,10 +4155,12 @@ TP-Link RE500 v1 · ramips-mt7621 · K0
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** RE500 v1 und RE650 v1 haben gleiche Hardware, aber je eigenes Image [geprüft: Commit ba0f4f0c/8c51ddef]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-tplink_re500-v1-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 128 MB
+- **Rückweg zur Herstellerfirmware:** kein einfacher Rückweg: TFTP nur über serielle Konsole (Gehäuse öffnen), veröffentlichte Herstellerfirmware wird dort nicht angenommen [geprüft: Commit ba0f4f0c/8c51ddef]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** ba0f4f0cfddc6f1152273565ec35f2a0bda1e95d
 
@@ -3909,13 +4170,17 @@ TP-Link RE650 v1 · ramips-mt7621 · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI [geprüft]
 - **Übertragung:** webui-upload
+- **Rechner braucht:** Rechner fest 192.168.0.x, Browser http://192.168.0.254, "Settings" > "System Tools" > "Firmware Upgrade"; vorher prüfen, dass die Oberfläche Hardware-Version 1.0 zeigt [geprüft: Wiki toh/tp-link/re650_v1]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** RE500 v1 und RE650 v1 haben gleiche Hardware, aber je eigenes Image [geprüft: Commit ba0f4f0c/8c51ddef]; RE650 v2 hat nur 8 MB Flash (nicht unterstützt); Etikett zeigt "1.0" bzw. "2.0" plus Regionscode [geprüft: Wiki toh/tp-link/re650_v1]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-tplink_re650-v1-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 128 MB
+- **Dauer:** Schreiben ca. 90 s, erster Start ca. 1 min [geprüft: Wiki toh/tp-link/re650_v1]
+- **Rückweg zur Herstellerfirmware:** kein einfacher Rückweg: TFTP nur über serielle Konsole (Gehäuse öffnen), veröffentlichte Herstellerfirmware wird dort nicht angenommen [geprüft: Commit ba0f4f0c/8c51ddef]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 8c51ddeff0876b439ac35a3f492ab719085bfb9c
 
@@ -3924,10 +4189,14 @@ TP-Link RE650 v1 · ramips-mt7621 · K0
 ZyXEL NWA50AX (Alias NWA90AX) · ramips-mt7621 · K0
 
 - **Weg ab Werk:** factory im Stock-Web-UI; nur wenn das aktive Image auf Slot B liegt, sonst erst ein ZyXEL-Update einspielen [geprüft]
+- **Sichtbare Zeichen:** Erfolg: Gerät blinkt beim Start grün [geprüft: Wiki toh/zyxel/nwa50ax]
 - **Übertragung:** webui-upload
+- **Rechner braucht:** Login admin/1234, Wartung (Schraubenschlüssel) > "File Manager" > "Firmware Package"; Meldung "ULCGI unable to parse CGI query" = Dateiname zu lang, kürzen [geprüft: Wiki toh/zyxel/nwa50ax]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** NWA50AX (MT7621) ist ein anderes Gerät als NWA50AX Pro (MT7981, eigenes Image) [geprüft: Commit a0b7fef0/f0445746]
+- **Bedingung an die Herstellerfirmware:** Dual-Image: OpenWrt geht nur in Slot A, vor dem Hochladen muss also Slot B aktiv sein. Sonst startet OpenWrt nur einmal und danach wieder die Zyxel-Firmware; dann zuerst ein beliebiges Zyxel-Update einspielen und erneut flashen [geprüft: Commit a0b7fef0/f0445746]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_nwa50ax-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
@@ -3942,9 +4211,12 @@ ZyXEL NWA55AXE (Gluon: broken) · ramips-mt7621 · K0
 
 - **Weg ab Werk:** wie NWA50AX; ohne Reset-Taste, bei unbekanntem Passwort nur seriell (atns-Trick, TFTP owrt.bin, ramboot-factory) [geprüft]
 - **Übertragung:** webui-upload
+- **Rechner braucht:** Oberfläche 192.168.1.2, Login admin mit Passwort vom Aufkleber, "maintenance" > "firmware-package" [geprüft: Wiki toh/zyxel/nwa55axe]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** NWA55AXE hat keine Reset-Taste und keine LED wie das NWA50AX; bei unbekanntem Passwort nur seriell (Gehäuse öffnen) [geprüft: Commit a0b7fef0]
+- **Bedingung an die Herstellerfirmware:** Dual-Image: OpenWrt geht nur in Slot A, vor dem Hochladen muss also Slot B aktiv sein. Sonst startet OpenWrt nur einmal und danach wieder die Zyxel-Firmware; dann zuerst ein beliebiges Zyxel-Update einspielen und erneut flashen [geprüft: Commit a0b7fef0/f0445746]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_nwa55axe-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
@@ -3966,6 +4238,7 @@ Cudy WR1000 · ramips-mt76x8 · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 64 MB
+- **Rückweg zur Herstellerfirmware:** aufwendig: Herstellerfirmware entschlüsseln (XOR je Region EU/US) und per `sysupgrade -F -n` einspielen, nur für bestimmte Firmware-Stände [geprüft: Commit 7c91144a]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 7c91144ae6a45dc8d7ca6b68b3403e166185a498
 
@@ -3978,10 +4251,13 @@ TP-Link RE200 v2 · ramips-mt76x8 · K0
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** RE200 v2, v3, v4 haben je eigenes Image; Hardware-Version auf dem Typenschild [abgeleitet: getrennte Gluon-Geräte; OpenWrt-Commits]; RE200 v5 wird nicht unterstützt (4 MB Flash, VxWorks) [geprüft: Wiki toh/tp-link/re200]
+- **Bedingung an die Herstellerfirmware:** kein Recovery- oder TFTP-Weg: schlägt der Web-Upload fehl, hilft nur die serielle Konsole (Gehäuse verschweißt) [geprüft: Commit 6d6f36ae/009e62c9/33b76d66]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-tplink_re200-v2-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 64 MB
+- **Dauer:** laut Wiki bis zu 20 Minuten, bis das Gerät wieder erreichbar ist (v4 ca. 10 min); währenddessen nicht ausstecken [geprüft: Wiki toh/tp-link/re200; nicht ausstecken abgeleitet]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 6d6f36ae787c3b339b16c1d345a90faa1d9f4011
 
@@ -3994,10 +4270,13 @@ TP-Link RE200 v3 · ramips-mt76x8 · K0
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** RE200 v2, v3, v4 haben je eigenes Image; Hardware-Version auf dem Typenschild [abgeleitet: getrennte Gluon-Geräte; OpenWrt-Commits]; RE200 v5 wird nicht unterstützt (4 MB Flash, VxWorks) [geprüft: Wiki toh/tp-link/re200]
+- **Bedingung an die Herstellerfirmware:** kein Recovery- oder TFTP-Weg: schlägt der Web-Upload fehl, hilft nur die serielle Konsole (Gehäuse verschweißt) [geprüft: Commit 6d6f36ae/009e62c9/33b76d66]; Herstellerfirmware neuer als 1.1.0 lehnt OpenWrt ab: zuerst auf 1.1.0 downgraden (EU-Seite von TP-Link hat sie, US-Seite nicht) [geprüft: Wiki toh/tp-link/re200]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-tplink_re200-v3-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 64 MB
+- **Dauer:** laut Wiki bis zu 20 Minuten, bis das Gerät wieder erreichbar ist (v4 ca. 10 min); währenddessen nicht ausstecken [geprüft: Wiki toh/tp-link/re200; nicht ausstecken abgeleitet]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 009e62c92c35142c5be3b375d6c393e63d2d27eb
 
@@ -4010,10 +4289,13 @@ TP-Link RE200 v4 · ramips-mt76x8 · K0
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** RE200 v2, v3, v4 haben je eigenes Image; Hardware-Version auf dem Typenschild [abgeleitet: getrennte Gluon-Geräte; OpenWrt-Commits]; RE200 v5 wird nicht unterstützt (4 MB Flash, VxWorks) [geprüft: Wiki toh/tp-link/re200]
+- **Bedingung an die Herstellerfirmware:** kein Recovery- oder TFTP-Weg: schlägt der Web-Upload fehl, hilft nur die serielle Konsole (Gehäuse verschweißt) [geprüft: Commit 6d6f36ae/009e62c9/33b76d66]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-tplink_re200-v4-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 64 MB
+- **Dauer:** laut Wiki bis zu 20 Minuten, bis das Gerät wieder erreichbar ist (v4 ca. 10 min); währenddessen nicht ausstecken [geprüft: Wiki toh/tp-link/re200; nicht ausstecken abgeleitet]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 33b76d66d1afa9d888f32587b18d78a930593ca5
 
@@ -5327,6 +5609,30 @@ Linksys E8450 / Belkin RT3200 (UBI-Layout) · mediatek-mt7622 · K3
 - **Gluon-RAMpe passt:** nein: der Bootloader muss getauscht werden; die Web-UI nimmt zwar ein initramfs, aber ohne UBI-Umbau scheitert das Gluon-sysupgrade an DEVICE_COMPAT_VERSION 2.0 [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt 02351861824a13ed158db1ef59aede2db6ba7568
 - **Detail-Anleitung:** https://openwrt.org/toh/linksys/e8450#installation
+
+### Familie `sonderweg-linksys-mr8300-dallas`
+
+1 Gerät(e).
+
+#### linksys-mr8300-dallas
+
+Linksys MR8300 · ipq40xx-generic · K2
+
+- **Weg ab Werk:** Linksys-UI (https://192.168.1.1/fwupdate.html) nimmt ein factory-Image [geprüft]; Gluon setzt aber `factory = false` (ohne Begründung im Gluon-Commit d04ea647), also heute OpenWrt-factory als Zwischenschritt, dann Gluon-sysupgrade
+- **Übertragung:** webui-upload: https://192.168.1.1/fwupdate.html
+- **Rechner braucht:** Browser; https://192.168.1.1/fwupdate.html [geprüft: Commit a9071d02]
+- **seriell nötig:** nein
+- **Gehäuse öffnen:** nein
+- **Werkzeug/Spezial:** OpenWrt-24.10-factory als Zwischenschritt
+- **Typenschild/Verwechslung:** EA8300 (256 MB RAM) und MR8300 (512 MB RAM, geänderte LED-Leiste oben) sind fast gleich, aber je eigenes Image [geprüft: Commit a9071d02]
+- **Bedingung an die Herstellerfirmware:** gleiche Plattform wie EA8300; dort warnt das Wiki, dass factory-Images ab OpenWrt 23.05 über die Linksys-Oberfläche zum Soft-Brick führen (nur 22.03.5/22.03.6) [abgeleitet: Wiki toh/linksys/ea8300, für MR8300 nicht geprüft]
+- **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_mr8300-initramfs-zImage.itb)
+- **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_mr8300-squashfs-factory.bin)
+- **Stock-Teile:** -
+- **RAM:** 512 MB
+- **Gluon-RAMpe passt:** teilweise: eine Gluon-RAMpe bräuchte das Linksys-factory-Format (Kernel + UBI, linksys-image), kein initramfs; einfacher wäre `factory` in Gluon einzuschalten [abgeleitet]
+- **Quelle (OpenWrt-Commit):** OpenWrt a9071d02b5ab11fbd73ea42076a09f2fd8136517
+- **Detail-Anleitung:** -
 
 ### Familie `sonderweg-meraki-mr33-access-point`
 
