@@ -72,10 +72,11 @@ Entstanden am 11.09.2026 in der Neanderfunk-Firmware-Session. Idee: adorfer
 2. M60: Gluons recovery-Image in v2025.1.x prüfen. Ist es derselbe Fehler, gibt es zwei Wege:
    Neanderfunk-2025.1 wirft es raus (wie bei der M30), oder das
    Installer-Image ersetzt es.
-3. Weitere Geräte aus `docs/GERAETE.md`, zuerst COVR-X1860 und ASUS.
-4. ERX: oszilloskops Original-Anwendungsfall. Das EdgeOS-Upgrade will ein
-   tar mit Kernel und Rootfs. Prüfen, ob das OpenWrt-initramfs-factory dafür
-   reicht.
+3. Weitere Geräte aus `docs/GERAETE.md` ("Passt"), zuerst Genexis Pulse
+   EX400, ASUS RT-AX52/RT-AX53U, MikroTik. (COVR-X1860 ist laut Inventar
+   10.10.2026 kein Kandidat.)
+4. ERX: erledigt, kein Kandidat unter 2025.1 (6.6-Kernel größer als der
+   3-MB-Slot, kein factory.tar in OpenWrt 24.10.8); dafür die ERX-Migration.
 5. Release-Weg: fertige Images als GitHub-Release anhängen (SHA256SUMS
    liegt schon bei). Evtl. per CI; Gluon rechnet mit 5 GB plus 10 GB je
    Target und mehr als einer Stunde Bauzeit. Für GitHub-Runner ist das grenzwertig.
