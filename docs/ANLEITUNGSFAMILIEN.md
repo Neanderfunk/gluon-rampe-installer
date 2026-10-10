@@ -243,4 +243,154 @@ Kartenzugriff. [abgeleitet: kein led-boot/running-Alias im bcm27xx-DTS]
   selbst gelesen, daher nicht in A.json:
   https://forum.openwrt.org/t/openwrt-installation-on-tp-link-archer-c59-v1/82181
 
+## Teil C: Cudy, AVM EVA, MikroTik-Netboot, TP-Link-Recovery und -dd
+
+Stand 10.10.2026. Gerätewerte in C.json; hier gemeinsamer Ablauf je Familie, Quellen, Abweichungen.
+
+### cudy-zwischenfirmware (20 Geräte)
+
+Gemeinsamer Ablauf:
+- Stock-Firmware nimmt nur von Cudy signierte Images; daher erst Cudys signiertes OpenWrt ("Zwischenfirmware", "intermediate firmware"), dann Gluon-**sysupgrade** ohne "Einstellungen behalten" [geprüft: Commits, router-werkstatt docs/cudy-installation.md]
+- Cudy-Oberfläche http://192.168.10.1, Passwort admin (AP1300 Outdoor: 192.168.10.254) [geprüft: cudy-installation.md, Commit c6e59d06]; Menü Erweiterte Einstellungen > System > Firmware; MD5 nach dem Hochladen mit der Tabelle vergleichen [geprüft: cudy-installation.md]
+- danach LuCI http://192.168.1.1, Passwort leer, System > Backup / Firmware Update, Haken "Einstellungen beibehalten" weg [geprüft: cudy-installation.md, Commit M3000 v2]
+- nur solange die Cudy-Originaloberfläche läuft [geprüft: Cudy-FAQ]
+- Seriennummer ab 2543 (Woche 43/2025, neuer Flash F50L1G41LC): betroffen AP3000 Outdoor 1.0, AP3000 Wall 1.0, M3000 1.0/2.0, TR3000 1.0, WR3000E/H/S/P 1.0; nur Zwischenfirmware vom 19.11.2025 oder neuer, sonst startet das Gerät nicht mehr; OpenWrt braucht >= 24.10.5, am Gluon-2025.1-Pin ist der Treiber-Backport (422-...F50L1G41LC) drin [geprüft: Cudy-FAQ, OpenWrt-Pin a1ea57bd]
+- Rückweg für alle: Cudy-Firmware als recovery.bin, Rechner 192.168.1.88, Reset halten beim Einschalten, LEDs schnell blinkend = Übertragung, langsam = fertig; TR1200 über WAN statt LAN [geprüft: Cudy-FAQ Recovery]; Cudy beschreibt das nur für Windows mit tftp32 und abgeschalteter Firewall [geprüft: dieselbe Seite]
+
+Quellen:
+- router-werkstatt/docs/cudy-installation.md (Neanderfunk-Laienfassung mit Spiegel-Tabelle und MD5)
+- https://www.cudy.com/blogs/faq/openwrt-software-download (Flash-Hinweis, Bedingung Cudy-Oberfläche)
+- https://www.cudy.com/en-us/blogs/faq/how-to-recovery-the-cudy-router-from-openwrt-firmware-to-cudy-official-firmware (Rückweg, LEDs)
+- Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/
+
+Abweichungen:
+- M3000: zwei Images nach WAN-PHY (rtl8221b / yt8821), Unterscheidung im Cudy-Systemprotokoll [geprüft: Commit 45b51eba]
+- WR3000U: nicht im Spiegel, Zwischenfirmware nur im Cudy-Google-Drive [geprüft: Commit]
+- AP1300 Outdoor, AP3000 Outdoor/Wall: nur PoE-Versorgung
+- WR1300 v1, X6 v1: in LuCI ggf. "Force upgrade" nötig [geprüft: Commit]
+- WR3000 v1: Spiegel-Ordner "without_recovery_TFTP"
+- TR1200 v1, AP1300 Outdoor: nicht in cudy-installation.md; Zwischenfirmware liegt im Spiegel (TR1200_V1/TR1200-OpenWRT-Flash.bin, AP1300_Outdoor_V1.0/...flash.bin)
+
+### avm-eva-ftp (10 Geräte)
+
+Gemeinsamer Ablauf:
+- keine Taste: Zeitfenster ist der Start des Bootloaders (EVA/ADAM2), nur wenige Sekunden nach Strom an (fritzflash: 10 s, Wiki 4020/7360 v2: 5 s) [geprüft: Commits, fritzflash.py]
+- Rechner fest 192.168.178.2/24, Gateway 192.168.178.1; WLAN aus, nur ein Kabel, gelbe LAN-Buchse; ungemanagter Switch dazwischen hilft [geprüft: fritzflash.py, fritz-tools-Doku]
+- fritzflash.py (Python 3, Windows/macOS/Linux) sucht die Box, wählt das Image nach HWRevision und schreibt das sysupgrade nach mtd1 [geprüft: fritzflash.py]; von Hand: adam2/adam2, binary, passive, `quote MEDIA FLSH`, `put <sysupgrade> mtd1` [geprüft: Commits]; Windows-ftp.exe kann kein passive [abgeleitet: Wiki 4020/3370]
+- beim Schreiben leuchtet die rote Info-LED, "nicht ausschalten"; danach Neustart, Konfigurationsmodus nach 2-5 Minuten auf 192.168.1.1 [geprüft: fritzflash.py]
+- Schreiben bis 2 Minuten (Repeater, 4020), 4040 "2 minutes+" [geprüft: Commits, upload-to-f4040.sh]
+- Rückweg: AVM-Recovery-Tool (Windows) oder FRITZ!OS-kernel.image per EVA-FTP [abgeleitet: Wiki]
+
+Quellen:
+- https://fritz-tools.readthedocs.io/de/latest/ und https://github.com/freifunk-darmstadt/fritz-tools/blob/master/fritzflash.py (IP, LED-Text, Fenster, Dauer)
+- OpenWrt-Commits je Gerät; OpenWrt-Wiki toh:avm:* (4020, 4040, 3370, 7360, 7360 v2, 1750E)
+
+Abweichungen:
+- 4040: Gluon -bootloader.bin (U-Boot + Gluon), nicht sysupgrade; FRITZ!OS muss vorher einmal eingerichtet sein [abgeleitet: Wiki 4040]
+- 3370 Rev. 2: zwei Dateien (eva-kernel nach mtd1, eva-filesystem nach mtd0) und `SETENV linux_fs_start 0`, nicht mit fritzflash; NAND Hynix/Micron nur nach Öffnen erkennbar, falsches Image = Bootschleife, dann das andere; EVA 2186: 30-s-Neustart [geprüft: Commit 0b62fe5e; abgeleitet: Wiki]
+- 7360 SL/v1/v2: HWRevision 181/183 vs. 196 entscheidet das Image [abgeleitet: Wiki]
+- 4020 hört evtl. auf 169.254.157.1, 1750E im Recovery-Modus auf 169.254.78.1 [geprüft: Commit 4020; abgeleitet: Wiki 1750E]
+
+### avm-eva-ramboot (4 Geräte: 3390, 7362 SL, 7412, 7430)
+
+Gemeinsamer Ablauf:
+- Rechner fest 192.168.178.x/24; wenige Sekunden nach dem Einschalten `eva_ramboot.py 192.168.178.1 <OpenWrt-initramfs>` (Python 3) [geprüft: Commits, Skript am Pin]
+- initramfs muss lzma-komprimiert sein, bei lantiq Standard [geprüft: Commit, Config-images.in am Pin]
+- OpenWrt im RAM unter 192.168.1.1 (ssh root ohne Passwort), Gluon-sysupgrade per scp nach /tmp, sysupgrade [geprüft: Commits]
+- linux_fs_start=1 ist die häufigste Falle (FRITZ!OS bootet wieder oder doppelter Neustart); per EVA-FTP `quote SETENV linux_fs_start 0` [geprüft: Commits 7412/7430/7362 SL; abgeleitet: Wiki 7412]
+- Ersatzadresse 169.254.120.1 nach Firmware-Update/Recovery [geprüft: Commit 7412/7430]
+- Rückweg: AVM-Recovery (Windows, laut Wiki 7362 SL auch Wine) [abgeleitet: Wiki]
+
+Quellen: OpenWrt-Commits; scripts/flashing/eva_ramboot.py am Pin; Wiki toh:avm:avm_7362_sl, fritzbox_3390, avm_fritz_box_7412, avm_fritz_box_7430.
+
+Abweichungen: 7362 SL: rot blinkende Power-LED = initramfs läuft [abgeleitet: Wiki]; fritzflash.py unterstützt die 7362 SL ausdrücklich nicht [geprüft: fritz-tools-Doku].
+
+### avm-eva-uboot (4 Geräte: 7520, 7530, Repeater 1200, Repeater 3000)
+
+Gemeinsamer Ablauf:
+- Rechner 192.168.178.10/24, sobald Link: `eva_ramboot.py --offset 0x85000000 192.168.178.1 uboot-fritzXXXX.bin` [geprüft: Commits]
+- Rechner auf 192.168.1.70/24, TFTP-Server mit OpenWrt-initramfs als FRITZXXXX.bin; U-Boot fragt alle 5 s [geprüft: Commit; U-Boot-Quelltext chunkeey/FritzBox-4040-UBOOT include/configs/fritz*.h: serverip 192.168.1.70, bootfile CONFIG_MODEL ".bin"]
+- RAM-Boot bis 2 Minuten; dann U-Boot nach uboot0/uboot1, `ubirmvol` avm_filesys_0/1, `sysupgrade -n` [geprüft: Commits]
+- manche Boxen nehmen beim Start 192.168.1.1; im Notfall FRITZ!OS 7.21 per Recovery [abgeleitet: Wiki 7530]
+- AX-Modelle (7530 AX, Repeater 1200 AX/3000 AX) gehen nicht [abgeleitet: Wiki 7530; kein Device am Pin]
+
+Quellen: Commits 95b0c07a, 7f187229, 148d29d4; Wiki toh:avm:avm_fritz_box_7530, avm_fritz_repeater_1200, fritz_repeater_3000; package/boot/uboot-fritz4040/Makefile am Pin.
+
+Abweichungen: 7520 = Gluon-Alias der 7530, aber U-Boot uboot-fritz7520.bin und TFTP-Name FRITZ7520.bin [geprüft: U-Boot-Quelltext].
+
+### mikrotik-netboot (9 Geräte)
+
+Gemeinsamer Ablauf:
+- vorher in RouterOS prüfen: RouterBOOT "current firmware" < 7, sonst RouterOS v6 + Bootloader zurückstufen [abgeleitet: Wiki toh:mikrotik:common; geprüft: OpenWrt-Commit 36834ea3 "RouterBOOT v7 on NOR devices no longer accepts the YAFFS kernel ELF"]
+- Rechner fest 192.168.1.10/24, BOOTP-fähiger DHCP+TFTP-Server (dnsmasq --bootp-dynamic --dhcp-boot=<initramfs> --enable-tftp; Windows: Tiny PXE mit rfc951=1), Kabel an ether1 [abgeleitet: Wiki]
+- Strom ab, Reset halten, Strom an, halten bis LED blinkt -> fest -> aus (je etwa 5 s, insgesamt etwa 15 s), loslassen: Gerät sucht Netboot-Server [geprüft: MikroTik-Doku Reset Button]; viele Modelle piepen, wenn das Laden beginnt [abgeleitet: Wiki]
+- initramfs läuft im RAM unter 192.168.1.1 an einem LAN-Port, dann sysupgrade (LuCI oder scp + `sysupgrade -n`) [geprüft: Commits; abgeleitet: Wiki]
+- Gluon-factory = initramfs nur bei hAP (951Ui), wAP R, hAP ac2; sonst OpenWrt-initramfs nehmen (factory=false) [geprüft: Gluon targets/*mikrotik*, ramips-mt7621]
+- Rückweg: MikroTik Netinstall [abgeleitet: Wiki]
+
+Quellen:
+- https://openwrt.org/toh/mikrotik/common
+- https://help.mikrotik.com/docs/spaces/ROS/pages/24805498/Reset+Button
+- Commits je Gerät (alle verweisen nur auf toh/mikrotik/common)
+
+Abweichungen:
+- wAP ac zweimal: RBwAPG-5HacT2HnD (ath79) vs. RBwAPG-5HacD2HnD (ipq40xx) [geprüft: Commit 7f54bf6f]
+- hEX RB750Gr3: Geräte mit früher getauschtem Bootloader passen nicht [geprüft: Commit 52f2d7d2]
+- RouterBOOT-TFTP-Grenze etwa 7 MiB für das initramfs [abgeleitet: Wiki]
+
+### tplink-tftp-recovery (9 Geräte)
+
+Gemeinsamer Ablauf:
+- Rechner fest 192.168.0.66/24 (MR3020 v3, MR3420 v5, MR6400 v5: 192.168.0.225/24), TFTP-Server, Kabel an LAN [geprüft: Commits]
+- Gluon other/...-bootloader.bin (= OpenWrt -squashfs-tftp-recovery.bin, pad-extra 128k + factory) als tp_recovery.bin ablegen [geprüft: Gluon targets/ramips-mt76x8, mt76x8.mk am Pin, Commits]; Name so streng wie in der Quelle, ob zwingend: [abgeleitet]
+- Reset drücken, Strom an, etwa 6-7 s halten bis der Download beginnt (MR6400 v5: mindestens 8 s; WA801ND v5: WPS+Reset 10 s bzw. bis Schloss-LED; WR902AC v4: bis LED blinkt) [geprüft: Commits]
+- Router schreibt selbst und startet neu, typisch 1-3 Minuten; nicht vorher Strom ziehen [geprüft: Commits; abgeleitet: Wiki]
+- nie über die TP-Link-Weboberfläche (factory zerschossen bzw. sysupgrade bricked) [geprüft: Commit WR841N v13; abgeleitet: Wiki C50/WA801ND]
+- Rückweg: TP-Link-Firmware per derselben TFTP-Recovery, je nach Modell ersten 512 Byte abgeschnitten [abgeleitet: Wiki]
+
+Quellen: Commits je Gerät; Wiki toh:tp-link:archer_c20_v4 (LED-Ablauf), archer-c50, tl-mr6400_v5, tl-wa801nd, tl-wr841nd, tl-mr3020_v3.
+
+Abweichungen:
+- WR902AC v4: Commit nennt "tp_recover.bin" (ohne y), alle anderen "tp_recovery.bin"; Vorschlag: Datei unter beiden Namen bereitstellen
+- C50 v3: laut Wiki nach jedem Versuch 3 Minuten warten, sonst Brick-Gefahr
+
+### tplink-ubootteil-dd (5 Geräte)
+
+Gemeinsamer Ablauf:
+- Image muss man selbst bauen: U-Boot-Teil aus der TP-Link-Firmware (passende Version/Region) + Gluon-sysupgrade, mit dd/cat [geprüft: Commits]
+- Archer C2 v1 / C20 v1 (MT7620): ArcherC2V1_tp_recovery.bin bzw. ArcherC20V1_tp_recovery.bin, TFTP 192.168.0.66, Recovery schreibt ab Adresse 0 inklusive Bootloader, 20-25 Minuten [geprüft: Commits; abgeleitet: Wiki]
+- C20 v5 / C50 v4 / C50 v6 (MT7628, Split-U-Boot): boot.bin über TP-Link-Weboberfläche oder Web-Recovery 192.168.0.1 (Update starten, nach etwa 3 s bei 0 % Strom ziehen; nur WPS-LED an), oder tp_recovery.bin (196608 Nullbytes + U-Boot-Teil ohne 512-Byte-Kopf + sysupgrade) per TFTP, etwa 1 Minute [geprüft: Commits]
+- Rückweg Split-U-Boot: TP-Link-Firmware über die Web-Recovery [geprüft: Commit]
+
+Quellen: Commits 8375623a, 161a3be5, 86e7353b, 01dcd574, e9ac1b19; Wiki toh:tp-link:archer_c2_ac750, archer_c20_v1, archer_c20_v5, archer-c50.
+
+Abweichungen: C50 v6 nur CA/EU/RU, ES = Archer C54 [geprüft: Commit]; C2 v1: falsches Image = nur SPI-Programmer [abgeleitet: Wiki].
+
+### Widersprüche zu vorhandenen Feldern
+
+| Gerät | Feld | alt | neu | Quelle |
+| --- | --- | --- | --- | --- |
+| avm-fritz-box-7520 | weg / uebertragung | "TFTP-Dateiname: ? [abgeleitet]" | FRITZ7520.bin (U-Boot uboot-fritz7520: CONFIG_MODEL "FRITZ7520", CONFIG_BOOTFILE CONFIG_MODEL ".bin", serverip 192.168.1.70) | [geprüft: chunkeey/FritzBox-4040-UBOOT @9d89013f include/configs/fritz7520.h], Wiki 7520/7530 |
+| avm-fritz-box-4020 | uebertragung | "Gerät 169.254.157.1 (laut Commit evtl. 192.168.178.1)" | Commit nennt 169.254.157.1 zuerst, "might also be 192.168.178.1"; Wiki 4020 nennt nur 192.168.178.1; fritzflash.py setzt per Discover-Paket 192.168.178.1. Vorschlag: 192.168.178.1, Ersatz 169.254.157.1 | Commit 3f8c5d54, Wiki toh:avm:fritz.box.4020, fritzflash.py |
+| tp-link-tl-mr6400-v5 | weg | "Web-UI geht laut Commit nicht beim Einschalten" | Commit b641eb6e sagt dazu nichts, nur "You can flash via tftp recovery ... wait at least 8 seconds" | Commit b641eb6e |
+| tp-link-tl-wr902ac-v4 | uebertragung | "Datei tp_recover.bin (so im Commit; vermutlich tp_recovery.bin, ungeprüft)" | Commit wörtlich "tp_recover.bin"; Wiki-Seite für v4 fehlt; Vorschlag: beide Namen bereitstellen | Commit ffa40fcc |
+
+### Offen
+
+- AVM 7530/7520: ob neuere FRITZ!OS-Versionen das Laden des U-Boot per EVA wirklich verhindern (Wiki rät nur im Fehlerfall zu 7.21).
+- AVM EVA-FTP: Zeitfenster widersprüchlich (fritzflash 10 s, Wiki 5 s, 7362 SL etwa 4 s); in der Anleitung besser "sofort" schreiben.
+- AVM 7362 SL: LED-Verhalten im initramfs (rot blinkende Power-LED) nur im Wiki; gilt vermutlich für alle lantiq-Ramboot-Geräte, nicht belegt.
+- Cudy WR3000 v1: Bedeutung des Spiegel-Ordnernamens "without_recovery_TFTP" (geht die Cudy-TFTP-Recovery nach der Zwischenfirmware nicht mehr?).
+- Cudy M3000 YT8821: ob die Zwischenfirmware M3000_1.0_2.0 zur YT8821-Variante passt (schon in cudy-installation.md offen).
+- Cudy WR3000H: Nutzerberichte über neue Geräte mit YT8821-WAN-PHY, bei denen die Zwischenfirmware 20251119 "File is invalid" meldet; ob unser Gluon-Image cudy-wr3000h-v1 (RTL8221B) auf solchen Geräten überhaupt passt, ist ungeklärt (Kommentar Cudy-FAQ 09.10.2026).
+- Cudy TR3000 256MB: Nutzerbericht (SN-Woche 2626, Stock 2.5.21) "startet nach Zwischenfirmware Mai 2025 nicht mehr"; unbestätigt, aber vor Anleitung beachten.
+- Cudy AP1300 Outdoor: ob die Cudy-Firmware DHCP macht (sonst feste Rechner-IP 192.168.10.x nötig).
+- Cudy M1800: ob die Zwischenfirmware "M1800+V2" zum Gluon-Image cudy-m1800 passt (schon im Feld weg offen).
+- MikroTik: Größe der Gluon-initramfs (hAP, wAP R, hAP ac2) gegen die laut Wiki etwa 7-MiB-Grenze von RouterBOOT prüfen.
+- MikroTik: ob OpenWrt 24.10 (Gluon 2025.1) mit RouterBOOT v7 bootet; Commit 36834ea3 sagt nein für NOR (bisheriger Weg), Wiki verlangt Downgrade auf v6. Gilt das auch für den hEX (ramips)?
+- MikroTik: LED-Stufen beim Reset-Halten sind aus der allgemeinen MikroTik-Doku; Geräte ohne passende LED (z. B. SXTsq) nicht einzeln belegt.
+- TP-Link WR902AC v4: echter Recovery-Dateiname (tp_recover.bin oder tp_recovery.bin).
+- TP-Link Archer C20 v5: Wiki-Abschnitt "Installation" nennt ein fertiges ...squashfs-tftp-recovery.bin, OpenWrt baut für v5 aber nur sysupgrade (mt76x8.mk am Pin); vermutlich vom v4 kopiert.
+- TP-Link Archer C20 v1: welches Image hinter den U-Boot-Teil gehört (Commit: factory, das es nicht mehr gibt; Wiki: 19.07.6-factory); bleibt wie im Feld weg [abgeleitet].
+
 Lizenz dieser Datei: CC BY-SA 4.0.
