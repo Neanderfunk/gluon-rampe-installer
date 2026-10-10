@@ -3541,7 +3541,7 @@ D-Link AQUILA PRO AI M30 A1 · mediatek-filogic · K1
 - **Rückweg zur Herstellerfirmware:** Recovery wie oben (Rechner 192.168.200.2) mit einem entschlüsselten D-Link-Image (m32-firmware-util von RolandoMagico) [geprüft: Commit 29cca6c]
 - **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen; RAMpe-Image gebaut und Inhalt geprüft, Hardware-Test der RAMpe offen
 - **Gluon-RAMpe passt:** ja: RAMpe-Image gebaut, Header wie OpenWrt, Hardware-Test offen [geprüft: gluon-rampe-installer docs/NOTIZEN.md]
-- **Gluon-RAMpe-Rezept:** devices/d-link-aquila-pro-ai-m30-a1.sh: `-recovery.bin` (D-Link-Header) für die D-Link-Recovery; gebaut, Inhalt geprüft, Hardware-Test offen
+- **Gluon-RAMpe-Rezept:** devices/d-link-aquila-pro-ai-m30-a1.sh: `-recovery.bin` (D-Link-Header DLK6E6110001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, Hardware-Test offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f
 - **Detail-Anleitung:** https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/
 
@@ -3578,7 +3578,7 @@ D-Link AQUILA PRO AI M60 A1 · mediatek-filogic · K1
 - **Fehlerbild:** hängt OpenWrt beim Start, war die zweite Partition aktiv (dann UBI-Switch-Image, siehe stock_bedingung) [geprüft: Commit]
 - **Rückweg zur Herstellerfirmware:** initramfs seriell booten und vorher gesicherte ubi-Partition zurückschreiben (Gehäuse öffnen) [geprüft: Commit 7271ee5]
 - **Gluon-RAMpe passt:** ja: Gluon baut selbst ein `-recovery.bin`; laut RAMpe-NOTIZEN startet ein Gluon-initramfs aber nicht im Config-Mode, vermutlich derselbe Fehler wie beim M30 [abgeleitet]; das RAMpe-Image wäre der Ersatz
-- **Gluon-RAMpe-Rezept:** devices/d-link-aquila-pro-ai-m60-a1.sh (Rezept-Entwurf, nicht gebaut): `-recovery.bin` (D-Link-Header) für die D-Link-Recovery
+- **Gluon-RAMpe-Rezept:** devices/d-link-aquila-pro-ai-m60-a1.sh: `-recovery.bin` (D-Link-Header DLK6E8202001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, Hardware-Test offen. Gluons eigenes recovery.bin (z. B. Neanderfunk 26100702bro) startet vermutlich wie bei der M30 nicht im Config-Mode [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt 7271ee587cd104d30d6d46dd3c623c9d4602bd0c
 - **Detail-Anleitung:** -
 
