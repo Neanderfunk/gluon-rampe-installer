@@ -84,12 +84,12 @@ ist); "K0 (besonders)" heißt jetzt K0+.
 | K1d | 99 |
 | K2 | 40 |
 | K3 | 9 |
-| K4 | 26 |
+| K4 | 27 |
 | K5 | 7 |
 | offen | 1 |
-| **gesamt** | **350** |
+| **gesamt** | **351** |
 
-Installer passt: **ja 24**, teilweise 37, nein/unnötig 289.
+Installer passt: **ja 24**, teilweise 38, nein/unnötig 289.
 
 Installer passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-951ui-2nd-hap`, `mikrotik-routerboard-mapl-2nd`, `mikrotik-routerboard-wap-g-5hact2hnd`, `mikrotik-routerboard-wapr-2nd`, `zte-mf286r`, `asus-lyra-map-ac2200`, `mikrotik-discg-5acd`, `mikrotik-hap-ac2`, `mikrotik-sxtsq-5-ac-rbsxtsqg-5acd`, `mikrotik-wap-ac`, `avm-fritz-box-3390`, `avm-fritz-box-7362-sl`, `avm-fritz-box-7412`, `avm-fritz-box-7430`, `asus-rt-ax52`, `d-link-aquila-pro-ai-m30-a1`, `d-link-aquila-pro-ai-m60-a1`, `netgear-wax218`, `asus-rt-ax53u`, `genexis-pulse-ex400`, `mikrotik-routerboard-750gr3`, `zyxel-wsm20`.
 
