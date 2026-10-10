@@ -867,4 +867,13 @@ Je Gerät ein Abschnitt: Kern-Ablauf, beste Quelle(n), Besonderheit. Details in 
 
 Commit-Texte je Gerät: D-commits/<gluon_name>.txt; Wiki-Rohtexte: D-wiki/*.txt (Abruf 10.10.2026).
 
+## Kandidaten für Hardwaretests
+
+Wo der einfachere Weg nur schlecht belegt ist, würde ein Test am Gerät die
+Anleitung deutlich vereinfachen (Hinweis Content, 10.10.2026): Netgear WAX206,
+EX3700, EX6130, EAX12, EX6150, WAX202, R6220, R6260 (Web-UI statt nmrpflash),
+GL.iNet 6416 und GL-MT300N v2 (Herstelleroberfläche statt U-Boot-Web),
+Genexis Pulse EX400 (Web-UI statt U-Boot-Recovery), TP-Link EAP620 HD (ohne
+UART). In den Daten tragen diese Geräte im Notweg `[einfacher, schlechter belegt]`.
+
 Lizenz dieser Datei: CC BY-SA 4.0.
