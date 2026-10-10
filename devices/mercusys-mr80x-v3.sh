@@ -7,8 +7,8 @@
 # SSH-/Telnet-Weg des MR90X auch hier geht, ist offen (nicht belegt).
 # Die U-Boot-Recovery (Reset beim Einschalten, http://192.168.1.1) nimmt laut
 # Commit nur OEM-Firmware.
-# Sinnvoll erst, wenn die Community-Firmware ein sysupgrade fuer den MR80X v3
-# anbietet; Gluon und die Neanderfunk-Firmware 2025.1 haben ihn noch nicht.
+# Ein Community-sysupgrade gibt es ab der Neanderfunk-Firmware 2025.1 (Backport
+# gluon-patches-hardware ab19bf1b, 10.10.2026); Gluon selbst fuehrt ihn nicht.
 # Ungetestet.
 ensure_device mediatek-filogic mercusys-mr80x-v3 mercusys_mr80x-v3
 ensure_target_config mediatek-filogic TARGET_ROOTFS_INITRAMFS
