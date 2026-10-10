@@ -8967,7 +8967,7 @@ Mercusys MR80X v3 · mediatek-filogic · K4
 - **RAM:** 512 MB
 - **Rückweg zur Herstellerfirmware:** Reset drücken und einschalten startet die U-Boot-Web-Recovery (nimmt nur OEM-Firmware): http://192.168.1.1/ öffnen, OEM-Firmware hochladen [geprüft: Commit]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt OpenWrt-initramfs im TFTP-Schritt, seriell bleibt; Rezept `devices/mercusys-mr80x-v3.sh`. In Neanderfunk-2025.1 seit gluon-patches-hardware ab19bf1b46d34315a92f61974dd37f8a9ede9604 (10.10.2026), in Gluon v2025.1.3 nicht
-- **Gluon-RAMpe-Rezept:** devices/mercusys-mr80x-v3.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein (`ensure_device`); `initramfs-kernel.bin` per UART + TFTP
+- **Gluon-RAMpe-Rezept:** devices/mercusys-mr80x-v3.sh (gebaut 10.10.2026 lokal, initramfs etwa 8.1 MB, `91_installer_initramfs` geprüft, Hardware-Test offen): trägt das Gerät in Gluon ein (`ensure_device`); `initramfs-kernel.bin` per UART + TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 0ecf136f4d3126d92edc13087ce03db83b7e8223
 
 #### enterasys-ws-ap3715i
@@ -9814,7 +9814,7 @@ Mercusys MR90X v1 · mediatek-filogic · K2
 - **Rückweg zur Herstellerfirmware:** Backups von boot und tp_data nötig; Reset beim Einschalten startet die U-Boot-Web-Recovery auf http://192.168.1.1 für die OEM-Firmware [geprüft: Commit; Wiki-Zusammenfassung: OpenWrt-Wiki]
 - **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** teilweise: das RAMpe-initramfs könnte das OpenWrt-initramfs im kernel-Volume ersetzen; Exploit und fw_setenv bleiben Handarbeit [abgeleitet]. Hinweis: eine ältere Neanderfunk-Notiz beschreibt "tp_boot_idx 0, dann U-Boot-Web-Recovery nimmt initramfs" - weder im Commit noch im Wiki-Abschnitt "Stock bootloader" so belegt
-- **Gluon-RAMpe-Rezept:** devices/mercusys-mr90x-v1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell
+- **Gluon-RAMpe-Rezept:** devices/mercusys-mr90x-v1.sh (gebaut 10.10.2026 lokal, initramfs etwa 8.1 MB, `91_installer_initramfs` geprüft, Hardware-Test offen): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell
 - **Quelle (OpenWrt-Commit):** OpenWrt e4fe3097ef6a961874b66932a0ac4be18070630a
 - **Detail-Anleitung:** https://openwrt.org/toh/mercusys/mr90x_v1#installation_stock_bootloader
 
