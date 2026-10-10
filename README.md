@@ -1,6 +1,6 @@
-# gluon-ramboot-installer
+# Gluon-RAMpe
 
-Der **Freifunk-Installer**: ein Gluon, das aus dem RAM läuft und genau eine
+Repo `gluon-ramboot-installer`. Die **Gluon-RAMpe**: ein Gluon, das aus dem RAM läuft und genau eine
 Seite hat – Community-Firmware hochladen.
 
 **Nach einer Idee von oszilloskop:
@@ -16,7 +16,7 @@ Zwischenimage über die Hersteller-Firmware oder -Recovery, dann das eigentliche
 Gluon. Üblich ist als Zwischenschritt ein OpenWrt mit LuCI – samt Navigation
 durch ein fremdes Menü und der Aufforderung, ein Passwort zu setzen.
 
-Der Freifunk-Installer ersetzt diesen Zwischenschritt: ein abgespecktes Gluon
+Die Gluon-RAMpe ersetzt diesen Zwischenschritt: ein abgespecktes Gluon
 in Gluon-Optik, das genau eine Seite hat – **sysupgrade-Image hochladen**. Er
 ist community-unabhängig: hochgeladen wird das Image der eigenen Community,
 geflasht wird ohne Einstellungen (`sysupgrade -n`), danach startet die
@@ -51,9 +51,9 @@ Wie es funktioniert: `docs/FUNKTIONSWEISE.md`.
 
 1. Router mit gedrückter Reset-Taste einschalten, Rechner auf
    192.168.200.10/24, http://192.168.200.1 öffnen, das Installer-Image
-   `gluon-installer-…-d-link-aquila-pro-ai-m30-a1-recovery.bin` hochladen.
+   `gluon-rampe-…-d-link-aquila-pro-ai-m30-a1-recovery.bin` hochladen.
 2. Nach dem Neustart Rechner auf DHCP (oder 192.168.1.10/24),
-   http://192.168.1.1 öffnen – die Installer-Seite erscheint.
+   http://192.168.1.1 öffnen – die Seite der Gluon-RAMpe erscheint.
 3. Das **sysupgrade**-Image der eigenen Community für die M30 hochladen und
    bestätigen. Der Router startet mit der Freifunk-Firmware im Config-Mode neu.
 
@@ -65,4 +65,4 @@ Wie es funktioniert: `docs/FUNKTIONSWEISE.md`.
   (`LICENSE.oszilloskop`)
 - `overlay/lib/gluon/config-mode/view/admin/upgrade.html`: abgeleitet von
   Gluons gleichnamiger Datei, Apache-2.0 (Kopfzeilen dort)
-- das Image selbst enthält `/usr/share/doc/freifunk-installer/CREDITS`
+- das Image selbst enthält `/usr/share/doc/gluon-rampe/CREDITS`

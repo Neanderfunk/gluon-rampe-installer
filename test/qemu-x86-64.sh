@@ -57,6 +57,6 @@ warte 240 || { echo "FEHLER: hochgeladene Firmware antwortet nicht"; ende; tail 
 sleep 5
 curl -s -L "$URL/cgi-bin/config" -o seite4.html -w '   Config-Mode: %{url_effective}\n'
 grep -o '<title>[^<]*' seite4.html | sed 's/<title>/   Titel: /'
-grep -q 'Freifunk-Installer' seite4.html && { echo "FEHLER: immer noch der Installer"; ende; exit 1; }
+grep -q 'Gluon-RAMpe' seite4.html && { echo "FEHLER: immer noch der Installer"; ende; exit 1; }
 ende
 echo "== bestanden"

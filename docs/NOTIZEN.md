@@ -100,10 +100,11 @@ Entstanden am 11.09.2026 in der Neanderfunk-Firmware-Session. Idee: adorfer
 ## Herkunft
 
 - Repo: github.com/Neanderfunk/gluon-ramboot-installer (public). Den Namen
-  hat adorfer gewählt. Im Image heißt das Projekt weiter „Freifunk-Installer“.
-- Die Dateinamen sind uneinheitlich: Gluon nennt die Images
-  `gluon-installer-<datum>-…` (nach `site_code`), die rohen initramfs-Kernel heißen
-  `freifunk-installer-…`. Das ließe sich bei Bedarf angleichen.
+  hat adorfer gewählt. Projektname seit 10.10.2026 **Gluon-RAMpe** (adorfer;
+  „RAM“ für Ramboot, auch wenn nicht jedes Gerät aus dem RAM bootet), vorher
+  „Freifunk-Installer“. Das Repo behält seinen Namen.
+- Dateinamen seit 10.10.2026 einheitlich: `gluon-rampe-<datum>-…` (nach
+  `site_code`), die rohen initramfs-Kernel `gluon-rampe-<gerät>-initramfs-kernel.bin`.
 
 - Prototyp in `~/projekte/freifunk/installer` (Neanderfunk-Arbeitsplatz),
   zuvor ein Wegwerf-Baum ohne git. Gebaute Artefakte des Prototyps:

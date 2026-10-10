@@ -1,4 +1,4 @@
--- Freifunk-Installer, nach einer Idee von oszilloskop:
+-- Gluon-RAMpe, nach einer Idee von oszilloskop:
 --   https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image
 -- Uebernommen aus build/openwrt/files/lib/gluon/config-mode/controller/ dort
 -- (MIT-Lizenz, Copyright (c) 2018 Oszilloskop, siehe LICENSE.oszilloskop),

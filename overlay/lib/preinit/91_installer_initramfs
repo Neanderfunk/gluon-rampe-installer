@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Freifunk-Installer, nach einer Idee von oszilloskop:
+# Gluon-RAMpe, nach einer Idee von oszilloskop:
 #   https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image
 # (dort build/openwrt/files/lib/preinit/90_setup_mode, MIT-Lizenz,
 # Copyright (c) 2018 Oszilloskop): den Config-Mode im initramfs erzwingen.

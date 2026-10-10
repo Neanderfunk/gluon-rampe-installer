@@ -10,7 +10,7 @@
 
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-IMAGE="${IMAGE:-freifunk-installer-build}"
+IMAGE="${IMAGE:-gluon-rampe-build}"
 
 if ! docker image inspect "$IMAGE" >/dev/null 2>&1; then
 	docker build -t "$IMAGE" "$ROOT/contrib/docker"

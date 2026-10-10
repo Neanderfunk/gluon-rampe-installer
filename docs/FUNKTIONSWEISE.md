@@ -31,7 +31,7 @@ ins RAM entpackt. Das Image selbst liegt im Flash (Hersteller-Recovery,
    „Einstellungen behalten“: fehlt `keepcfg`, ruft Gluons `upgrade.lua`
    `sysupgrade -n --ignore-minor-compat-version` auf.
 
-Dazu `usr/share/doc/freifunk-installer/CREDITS` (Credit + MIT-Text).
+Dazu `usr/share/doc/gluon-rampe/CREDITS` (Credit + MIT-Text).
 
 ## Ablauf auf dem Gerät
 

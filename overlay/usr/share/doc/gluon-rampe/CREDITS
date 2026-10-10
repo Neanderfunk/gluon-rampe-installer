@@ -1,4 +1,4 @@
-Freifunk-Installer - nach einer Idee von oszilloskop:
+Gluon-RAMpe - nach einer Idee von oszilloskop:
 https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image
 
 Die Controller unter /lib/gluon/config-mode/controller/{admin,gluon-config-mode}/index.lua

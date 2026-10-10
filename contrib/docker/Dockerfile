@@ -1,11 +1,11 @@
-# Bauumgebung fuer den Freifunk-Installer: Debian Bookworm mit den
+# Bauumgebung fuer die Gluon-RAMpe: Debian Bookworm mit den
 # Abhaengigkeiten aus Gluons docs/user/getting_started.rst (Gluon 2025.1,
 # OpenWrt 24.10 - samt clang/llvm fuer die BPF-Pakete).
 #
 # Bookworm (GCC 12) statt eines aktuellen Hosts: OpenWrt baut dort zuverlaessig,
 # neuere GCC brechen in einigen Host-Werkzeugen ab.
 #
-#   docker build -t freifunk-installer-build contrib/docker
+#   docker build -t gluon-rampe-build contrib/docker
 #   contrib/docker/run.sh ./build.sh <target> <geraet>
 
 FROM debian:bookworm-slim

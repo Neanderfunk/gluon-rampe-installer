@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# build.sh - baut Freifunk-Installer-Images.
+# build.sh - baut Gluon-RAMpe-Images.
 #
 #   ./build.sh <GLUON_TARGET> <geraet> [<geraet> ...]
 #
@@ -87,12 +87,12 @@ fi
 echo "== Einsammeln nach $OUT"
 for d in "${DEVICES[@]}"; do
 	# Hersteller-Images (recovery, factory ...), die Gluon unter other/ ablegt
-	find "$GLUON_DIR/output/images/other" -name "gluon-installer-*-$d-*" \
+	find "$GLUON_DIR/output/images/other" -name "gluon-rampe-*-$d-*" \
 		! -name '*-kernel.bin' ! -name '*-rootfs.img.gz' -exec cp -v {} "$OUT/" \;
 	# Der rohe initramfs-Kernel: fuer TFTP-/RAM-Boot und QEMU
 	profile=$(grep -o "device('$d',[[:space:]]*'[^']*'" "$GLUON_DIR/targets/$TARGET" | sed "s/.*'\([^']*\)'$/\1/")
 	for k in "$GLUON_DIR"/openwrt/bin/targets/*/*/openwrt-*-"$profile"-initramfs-kernel.bin; do
-		[ -f "$k" ] && cp -v "$k" "$OUT/freifunk-installer-$d-initramfs-kernel.bin"
+		[ -f "$k" ] && cp -v "$k" "$OUT/gluon-rampe-$d-initramfs-kernel.bin"
 	done
 done
 ( cd "$OUT" && sha256sum -- *.bin > SHA256SUMS 2>/dev/null || true )
