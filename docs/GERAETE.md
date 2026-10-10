@@ -160,6 +160,18 @@ Gluon bricht sonst mit "unknown devices" ab.
   DIR-505 und WS-AP3715i (entpackt über 11 MB), EX400 (bootfs höchstens etwa 11.6 MiB), WSM20 (liest der
   Stock-U-Boot mehr als 8 MiB?), TUF/Lyra (Volume `linux`), WAX218
   (mtd12/mtd14), AP3935 (Ladeadresse bei größerem initramfs).
+- **MR80X v3 ohne UART (spekulativ, Stand 10.10.2026):** Speicherlayout,
+  UBI-Doppelslot mit `seconduboot` und `tp_boot_idx` sind laut den
+  OpenWrt-Commits (0ecf136f MR80X, e4fe3097 MR90X) identisch, ebenso der
+  NAND-Baustein. Der MR90X-Weg ohne Öffnen hängt aber an der Stock-Firmware:
+  SSH auf Port 20001 (Web-Passwort), beschreibbares
+  `/etc/hotplug.d/iface/65-iptv`, Schalter IPTV/VLAN in der Weboberfläche.
+  Für den MR80X v3 ist davon nichts belegt. Im OpenWrt-Forum (Thread 160414,
+  #70, 09.08.2025) hat jemand am MR80X v4 (BR) vergeblich versucht, aus der
+  Stock-Firmware SSH/Telnet zu bekommen. Ob Port 20001 dabei geprüft wurde,
+  steht dort nicht. Erster Test am Gerät: Port 20001 offen? IPTV/VLAN-Menü
+  vorhanden? Die `fw_setenv`-Werte des MR90X (bootargs, fdtcontroladdr)
+  passen wegen MT7981 statt MT7986 nicht 1:1 [abgeleitet].
 - **RT-AX59U:** über die Web-UI nur mit einem fremden "transit TRX"; ein eigenes
   TRX bräuchte einen Eingriff in OpenWrt, ob die Stock-UI es nimmt, ist offen.
 
