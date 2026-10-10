@@ -131,3 +131,36 @@ falsche Abbild.
 
 Wie die D-Link-Geräte geflasht werden, steht in der Router-Werkstatt unter
 `docs/dlink-flashen.md`.
+
+## Stand 10.10.2026: wieder aufgenommen
+
+- **Name:** Projekt heißt **Gluon-RAMpe**, Repo `Neanderfunk/gluon-rampe-installer`
+  (vorher Freifunk-Installer bzw. `gluon-ramboot-installer`). Dateien
+  `gluon-rampe-*`, `site_code = 'rampe'`, Docker-Image `gluon-rampe-build`.
+  Der preinit-Hook heißt weiter `91_installer_initramfs`.
+- **Inventar:** `docs/ERSTINSTALLATION-2025.1.md`, alle 351 Geräte der
+  Neanderfunk-Firmware 2025.1 mit Weg ab Werk, Übertragung (TFTP-Server/-Client,
+  FTP, Web, SSH …), serieller Konsole/Gehäuse, Links, Stock-Teilen, RAM und
+  Eignung für die RAMpe. Erstellt aus OpenWrt-Commits und Image-Makefiles,
+  nichts auf Hardware getestet. Ergebnis: passt bei 24 Geräten, teilweise bei 38.
+  Kandidatenliste daraus in `docs/GERAETE.md`.
+- **Regeln (adorfer):** Im Zweifel das RAMpe-Image mitbauen, auch wenn Gluon
+  schon ein "factory" hat, das vielleicht nicht taugt (MikroTik). TFTP- und
+  Recovery-Dateinamen in Anleitungen immer in der strengsten Fassung.
+- **Rezepte heute:** M30 (gebaut), x86-64 (getestet), dazu neu, noch nie gebaut:
+  `mercusys-mr90x-v1.sh`, `mercusys-mr80x-v3.sh`. Der MR80X ist in Gluon
+  v2025.1.3 nicht enthalten; das Rezept trägt ihn über `ensure_device` (neu in
+  `devices/lib.sh`) ein. Für die Community-Firmware gibt es ihn seit dem
+  Backport gluon-patches-hardware `ab19bf1` (Neanderfunk 2025.1, 10.10.2026).
+- **In Arbeit:** Rezeptentwürfe für alle Geräte, bei denen die RAMpe passt
+  oder teilweise passt (rund 50 Geräte, zwei Gruppen: A filogic/ramips/ipq/
+  qualcommax, B MikroTik/AVM-EVA/OCEDO/ZTE/serielle Unternehmens-APs). Offene
+  Fragen dabei: Sammelt Gluons `extra_images` OpenWrt-ARTIFACTS ein
+  (`initramfs.trx`, `web-ui-factory.fit`, `initramfs-factory.ubi`, `.ari`)?
+  Welche Target-Schalter (initramfs, Kompression) braucht jedes Gerät? Passt
+  ein Gluon-initramfs bei 64 MB RAM? Wo fehlt ein Vorbereitungsschritt vor dem
+  sysupgrade (Aruba `ubiformat`, AVM U-Boot/`ubirmvol`, OCEDO, Sophos RED),
+  und kann die RAMpe ihn geräteabhängig übernehmen?
+- **Nächster Bau:** filogic in einem Lauf:
+  `contrib/docker/run.sh ./build.sh mediatek-filogic d-link-aquila-pro-ai-m30-a1 mercusys-mr90x-v1 mercusys-mr80x-v3`
+  (dabei prüfen: Dateinamen `gluon-rampe-…`, Seite zeigt "Gluon-RAMpe").
