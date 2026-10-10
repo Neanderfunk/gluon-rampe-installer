@@ -13,7 +13,7 @@ DTS, Skript am Pin, Herstellerdoku, Projekt-README). **[Wiki-Zusammenfassung: �
 heißt: Das OpenWrt-Wiki (bzw. ein anderes Wiki) ließ sich nur über eine
 Zusammenfassung lesen, nicht im Rohtext; das ist schwächer als "geprüft" und
 vor einer Anleitung am Original nachzulesen (Wunsch Content, 10.10.2026).
-**[abgeleitet: …]** ist eigener Schluss oder Analogie. "Widersprüche zu vorhandenen Feldern" sind nicht eingearbeitet, sondern
+**[abgeleitet: …]** ist eigener Schluss oder Analogie. **[Forum-Zusammenfassung: …]** wie Wiki-Zusammenfassung, Quelle ein Forum. "Widersprüche zu vorhandenen Feldern" sind nicht eingearbeitet, sondern
 zur Klärung gesammelt.
 
 ## Teil A: k0-webui und image-auf-datentraeger
