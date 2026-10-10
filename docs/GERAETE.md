@@ -152,7 +152,11 @@ Gluon bricht sonst mit "unknown devices" ab.
 - **ARTIFACTS:** `extra_images` sammelt OpenWrt-ARTIFACTS laut Code ein
   (`copy_output.lua` baut den Quellnamen aus Suffix und Endung), im Bau bestätigt
   ist das noch nicht (RT-AX52 `.trx`, AX3000T/AX3600 `.ubi`, WAX218 `.fit`).
-- **Größengrenzen:** RouterBOOT-Netboot, Ladeadressen bei OCEDO, Siemens,
+- **MikroTik:** RouterBOOT-Netboot lädt laut Wiki nur etwa 7 MiB
+  [abgeleitet: Wiki]; das RAMpe-initramfs dagegen prüfen. OpenWrt 24.10 bootet
+  laut Commit 36834ea3 nicht mit RouterBOOT v7 (NOR), das Wiki verlangt ein
+  Downgrade auf v6.
+- **Größengrenzen:** Ladeadressen bei OCEDO, Siemens,
   DIR-505 und WS-AP3715i (entpackt über 11 MB), EX400 (bootfs höchstens etwa 11.6 MiB), WSM20 (liest der
   Stock-U-Boot mehr als 8 MiB?), TUF/Lyra (Volume `linux`), WAX218
   (mtd12/mtd14), AP3935 (Ladeadresse bei größerem initramfs).
