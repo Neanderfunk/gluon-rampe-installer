@@ -35,7 +35,7 @@ mit Gluons Bauabhängigkeiten (siehe `contrib/docker/Dockerfile`).
 
 Optionen per Umgebung: `GLUON_REF` (Default `v2025.1.3`), `JOBS`,
 `GLUON_DIR`, `GLUON_REPO`. Kein Parallelbetrieb, keine Domain-Schleifen –
-ein Installer-Image je Gerät reicht für alle Communities.
+ein RAMpe-Image je Gerät reicht für alle Communities.
 
 ## Geräte
 
@@ -48,12 +48,14 @@ Weitere Kandidaten und wie man ein Gerät ergänzt: `docs/GERAETE.md`.
 Wie jedes Gerät mit Gluon 2025.1 ab Werk installiert wird (Übertragungsweg,
 serielle Konsole, Links, Eignung für die Gluon-RAMpe):
 [`docs/ERSTINSTALLATION-2025.1.md`](docs/ERSTINSTALLATION-2025.1.md).
+Dieselben Daten maschinenlesbar: [`data/geraete-2025.1.json`](data/geraete-2025.1.json)
+(die gepflegte Quelle; das Markdown erzeugt `scripts/erstinstallation.py`).
 Wie es funktioniert: `docs/FUNKTIONSWEISE.md`.
 
 ## Benutzen (Beispiel M30)
 
 1. Router mit gedrückter Reset-Taste einschalten, Rechner auf
-   192.168.200.10/24, http://192.168.200.1 öffnen, das Installer-Image
+   192.168.200.10/24, http://192.168.200.1 öffnen, das RAMpe-Image
    `gluon-rampe-…-d-link-aquila-pro-ai-m30-a1-recovery.bin` hochladen.
 2. Nach dem Neustart Rechner auf DHCP (oder 192.168.1.10/24),
    http://192.168.1.1 öffnen – die Seite der Gluon-RAMpe erscheint.
