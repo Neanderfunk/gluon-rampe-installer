@@ -11,6 +11,18 @@ Nicht nötig, wenn schon der Bootloader oder die Hersteller-Firmware das
 Gluon-sysupgrade direkt nimmt (z.B. GL.iNet-U-Boot-Web, Cudys eigene
 OpenWrt-Zwischenfirmware).
 
+## Im Zweifel mitbauen
+
+Ist unklar, ob Gluons eigenes factory-Image auf einem Gerät überhaupt
+brauchbar ist (Beispiel MikroTik hAP ac2: Gluons "factory" ist dort selbst ein
+initramfs, und ein Gluon-initramfs startet ohne `91_installer_initramfs` nie
+im Config-Mode), wird das Installer-Image für dieses Gerät mitgebaut
+(adorfer 10.10.2026). Ein Installer-Image zu viel kostet nur Bauzeit.
+
+Vollständiges Inventar aller Gluon-2025.1-Geräte mit Weg ab Werk,
+Übertragung, Konsole, Links und Installer-Eignung: router-werkstatt
+`docs/erstinstallation-2025.1.md`.
+
 ## Stand
 
 | Gerät | Target | Weg | Stand |
