@@ -95,19 +95,30 @@ fi
 
 echo "== Einsammeln nach $OUT"
 for d in "${DEVICES[@]}"; do
+	found=0
 	# Hersteller-Images (recovery, factory ...), die Gluon unter other/ ablegt
-	find "$GLUON_DIR/output/images/other" -name "gluon-rampe-*-$d-*" \
-		! -name '*-kernel.bin' ! -name '*-rootfs.img.gz' -exec cp -v {} "$OUT/" \;
+	while IFS= read -r -d '' f; do
+		cp -v "$f" "$OUT/" && found=1
+	done < <(find "$GLUON_DIR/output/images/other" -name "gluon-rampe-*-$d-*" \
+		! -name '*-kernel.bin' ! -name '*-rootfs.img.gz' -print0)
 	# Der rohe initramfs-Kernel: fuer TFTP-/RAM-Boot und QEMU. Der Name haengt
 	# am KERNEL_INITRAMFS_SUFFIX des Geraets (-initramfs-kernel.bin,
 	# -initramfs-uImage.itb, -initramfs-zImage.itb, -initramfs.ari ...). Was
 	# Gluon per extra_images schon nach other/ kopiert hat, hat copy_output.lua
-	# hier geloescht, es kommt also nicht doppelt.
+	# hier geloescht, es kommt also nicht doppelt. Achtung: Sammelt Gluon ihn
+	# selbst als factory ein (mikrotik.inc: factory = '-initramfs-kernel'),
+	# fehlt er hier; das Rezept muss das abschalten
+	# (ensure_device_option <target> <geraet> factory false).
 	profile=$(grep -o "device('$d',[[:space:]]*'[^']*'" "$GLUON_DIR/targets/$TARGET" | sed "s/.*'\([^']*\)'$/\1/")
 	for k in "$GLUON_DIR"/openwrt/bin/targets/*/*/openwrt-*-"$profile"-initramfs*; do
 		[ -f "$k" ] || continue
-		cp -v "$k" "$OUT/gluon-rampe-$d-${k##*-"$profile"-}"
+		cp -v "$k" "$OUT/gluon-rampe-$d-${k##*-"$profile"-}" && found=1
+		# TFTP mit 512-Byte-Bloecken und 16-Bit-Blockzaehler endet bei 32 MiB,
+		# eva_ramboot.py bricht ab 0x2000000 Byte ab.
+		size=$(stat -c %s "$k")
+		(( size < 0x2000000 )) || echo "WARNUNG: $d: initramfs $size Byte >= 32 MiB (TFTP/EVA-Grenze)" >&2
 	done
+	(( found )) || echo "WARNUNG: fuer $d wurde nichts eingesammelt - Rezept pruefen (factory/extra_images, TARGET_ROOTFS_INITRAMFS)." >&2
 done
 # OpenWrt-U-Boot der AVM-ipq40xx-Geraete fuer eva_ramboot.py (Paket
 # uboot-fritz4040 legt sie nach STAGING_DIR_IMAGE), nur wenn gebaut

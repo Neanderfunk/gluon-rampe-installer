@@ -145,3 +145,47 @@ ensure_openwrt_backport () {
 	[ "$n" -gt 0 ] || { echo "Keine Patches in $src." >&2; return 1; }
 	echo "  patches/openwrt: $n Patch(es) aus $1 ($2-*)"
 }
+
+# ensure_device_option <target> <gluon-geraet> <schluessel> <lua-wert>
+#   setzt eine einfache Option im device(...)-Block von targets/<target>.
+#   Steht der Schluessel schon da, wird sein Wert ersetzt (ein zweiter
+#   gleichnamiger Schluessel im Lua-Tabellenkonstruktor waere undefiniert).
+#   Nur fuer einfache Werte (true/false/'text'), keine Tabellen.
+#   Beispiele:
+#     ensure_device_option ipq40xx-mikrotik mikrotik-hap-ac2 factory false
+#       (Gluons mikrotik.inc liefert das initramfs sonst als "factory" aus,
+#        copy_output.lua loescht dabei den rohen initramfs-Kernel)
+#     ensure_device_option ath79-generic sophos-ap15 broken false
+#       (sonst kennt Gluon das Geraet ohne BROKEN=1 nicht)
+ensure_device_option () {
+	python3 - "$GLUON_DIR/targets/$1" "$2" "$3" "$4" <<'PY'
+import re, sys
+path, dev, key, val = sys.argv[1:5]
+s = open(path).read()
+m = re.search(r"device\('%s',\s*'[^']+'" % re.escape(dev), s)
+if not m:
+    sys.exit("Geraet %s steht nicht in %s" % (dev, path))
+i, depth = m.start() + len('device'), 0
+for j in range(i, len(s)):
+    if s[j] == '(':
+        depth += 1
+    elif s[j] == ')':
+        depth -= 1
+        if depth == 0:
+            end = j
+            break
+block = s[m.start():end + 1]
+kre = re.compile(r"(\b%s\s*=\s*)([^,\n}]+)" % re.escape(key))
+if kre.search(block):
+    new = kre.sub(lambda mm: mm.group(1) + val, block, count=1)
+elif block.rstrip().endswith('})'):
+    new = block[:block.rstrip().rfind('})')].rstrip() + "\n\t%s = %s,\n})" % (key, val)
+else:
+    new = block[:-1] + ", {\n\t%s = %s,\n})" % (key, val)
+if new == block:
+    sys.exit(0)
+s = s[:m.start()] + new + s[end + 1:]
+open(path, 'w').write(s)
+print("  %s: %s = %s gesetzt" % (dev, key, val))
+PY
+}
