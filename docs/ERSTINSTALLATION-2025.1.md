@@ -83,10 +83,29 @@ nicht recherchiert und erscheinen in den Einzelheiten nicht.
   Pins am RJ45). Bei USB-Buchsen: **USB-Konsole echt** (USB-Seriell-Chip dahinter, normales
   Kabel) oder **USB-Buchse als UART-Stecker** (nur 3,3-V-TTL, eigener Adapter, **nie** an einen
   USB-Port des Rechners).
-- **initramfs-Link:** das OpenWrt-initramfs, auch wo der Weg es nicht braucht; für den
-  Installer ist es die Vorlage (Dateiname, Format).
+- **seriell nötig / Gehäuse öffnen:** Das erste Wort gilt für den Normalweg
+  (so auch in der Übersicht), Klammer danach für Alternativen und den seriellen
+  Notweg, einheitlich im Muster `nein (nur für den seriellen Notweg: ja, …)`.
+- **initramfs-Link:** das OpenWrt-initramfs, auch wo der Weg es nicht braucht; für die
+  Gluon-RAMpe ist es die Vorlage (Dateiname, Format).
 - **RAM:** ein Gluon-initramfs braucht Platz; bei 64 MB knapp.
-- **Installer passt:** ja / teilweise / nein, mit Grund.
+- **Gluon-RAMpe passt:** ja / teilweise / nein, mit Grund.
+- **Gluon-RAMpe-Rezept:** ob es `devices/<gluon-name>.sh` gibt und was es tut.
+
+Noch leer, für die Anleitungen (Vorschlag Content, 10.10.2026), zu füllen,
+wo es eine Quelle gibt:
+
+- **Taste und Zeitpunkt:** welche Taste, wann (beim Einschalten), wie lange.
+- **Sichtbare Zeichen:** LED/Verhalten, woran man "Recovery erreicht" und
+  "fertig, Strom lassen" erkennt.
+- **Rechner braucht:** feste IP (welche), Programm (nmrpflash, `eva_ramboot.py`,
+  TFTP-Server, ap51-flash), Betriebssystem, falls nur eines geht.
+- **Typenschild/Verwechslung:** Revision, Region, "v2 sieht aus wie v1".
+- **Bedingung an die Herstellerfirmware:** geht nur bis/ab Version X, Downgrade nötig.
+- **Dauer:** ungefähr, und "währenddessen nicht Strom ziehen".
+- **Rückweg zur Herstellerfirmware:** nice to have, nur eintragen, wenn es
+  ohne Aufwand in der Quelle steht.
+- **Hardware-Test:** Datum, und ob bei Neanderfunk ein Testgerät liegt.
 
 ## Zahlen
 
@@ -234,7 +253,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [tp-link-archer-c58-v1](#tp-link-archer-c58-v1) | TP-Link Archer C58 v1 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
 | [tp-link-archer-c59-v1](#tp-link-archer-c59-v1) | TP-Link Archer C59 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
 | [tp-link-archer-c6-v2-eu-ru-jp](#tp-link-archer-c6-v2-eu-ru-jp) | TP-Link Archer C6 v2 (EU/RU/JP) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
-| [tp-link-archer-c60-v1](#tp-link-archer-c60-v1) | TP-Link Archer C60 v1 | ath79-generic | K2 | [`sonderweg-tp-link-archer-c60-v1`](#familie-sonderweg-tp-link-archer-c60-v1) | webui-upload | nur | nein | nein |  |
+| [tp-link-archer-c60-v1](#tp-link-archer-c60-v1) | TP-Link Archer C60 v1 | ath79-generic | K2 | [`sonderweg-tp-link-archer-c60-v1`](#familie-sonderweg-tp-link-archer-c60-v1) | webui-upload | nein | nein | nein |  |
 | [tp-link-archer-c7-v2](#tp-link-archer-c7-v2) | TP-Link Archer C7 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
 | [tp-link-archer-c7-v4](#tp-link-archer-c7-v4) | TP-Link Archer C7 v4 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
 | [tp-link-archer-c7-v5](#tp-link-archer-c7-v5) | TP-Link Archer C7 v5 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
@@ -358,7 +377,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [netgear-dgn3500b](#netgear-dgn3500b) | NETGEAR DGN3500B | lantiq-xway | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |
 | [asus-rt-ax52](#asus-rt-ax52) | ASUS RT-AX52 | mediatek-filogic | K1 | [`sonderweg-asus-rt-ax52`](#familie-sonderweg-asus-rt-ax52) | webui-upload | nein | nein | ja | https://openwrt.org/toh/asus/rt-ax52#installation |
 | [asus-rt-ax59u](#asus-rt-ax59u) | ASUS RT-AX59U | mediatek-filogic | K2 | [`sonderweg-asus-rt-ax59u`](#familie-sonderweg-asus-rt-ax59u) | webui-upload | nein | nein | teilweise | - |
-| [asus-tuf-ax4200](#asus-tuf-ax4200) | ASUS TUF-AX4200 | mediatek-filogic | K2 | [`asus-tuf-herbetom`](#familie-asus-tuf-herbetom) | ssh | nein | ? | teilweise | https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-ASUS-TUF-AX4200 |
+| [asus-tuf-ax4200](#asus-tuf-ax4200) | ASUS TUF-AX4200 | mediatek-filogic | K2 | [`asus-tuf-herbetom`](#familie-asus-tuf-herbetom) | ssh | nein | nein | teilweise | https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-ASUS-TUF-AX4200 |
 | [asus-tuf-ax6000](#asus-tuf-ax6000) | ASUS TUF-AX6000 | mediatek-filogic | K2 | [`asus-tuf-herbetom`](#familie-asus-tuf-herbetom) | ssh | nein | nein | teilweise | https://github.com/herbetom/openwrt-asus-filogic-factory/releases/latest |
 | [cudy-ap3000-outdoor-v1](#cudy-ap3000-outdoor-v1) | Cudy AP3000 Outdoor v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
 | [cudy-ap3000-v1](#cudy-ap3000-v1) | Cudy AP3000 v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein | - |
@@ -522,8 +541,8 @@ OpenMesh A40 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_a40-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -538,8 +557,8 @@ OpenMesh A60 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_a60-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -554,8 +573,8 @@ OpenMesh MR1750 v1 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_mr1750-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -570,8 +589,8 @@ OpenMesh MR1750 v2 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_mr1750-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -586,8 +605,8 @@ OpenMesh MR600 v1 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_mr600-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -602,8 +621,8 @@ OpenMesh MR600 v2 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_mr600-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -618,8 +637,8 @@ OpenMesh MR900 v1 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_mr900-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -634,8 +653,8 @@ OpenMesh MR900 v2 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_mr900-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -650,8 +669,8 @@ OpenMesh OM2P-HS v1 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-hs-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -666,8 +685,8 @@ OpenMesh OM2P-HS v2 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-hs-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -682,8 +701,8 @@ OpenMesh OM2P-HS v3 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-hs-v3-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -698,8 +717,8 @@ OpenMesh OM2P-HS v4 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-hs-v4-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -714,8 +733,8 @@ OpenMesh OM2P-LC · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-lc-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -730,8 +749,8 @@ OpenMesh OM2P v1 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -746,8 +765,8 @@ OpenMesh OM2P v2 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -762,8 +781,8 @@ OpenMesh OM2P v4 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-v4-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -778,8 +797,8 @@ OpenMesh OM5P · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om5p-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -794,8 +813,8 @@ OpenMesh OM5P-AC v1 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om5p-ac-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -810,8 +829,8 @@ OpenMesh OM5P-AC v2 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om5p-ac-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -826,8 +845,8 @@ OpenMesh OM5P-AN · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
-- **seriell nötig:** nein (ap51-flash) / ja (TFTP-Weg)
-- **Gehäuse öffnen:** nein (ap51-flash); ja für UART-Weg, TTL-Pins auf der Platine
+- **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om5p-an-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -1089,8 +1108,8 @@ ASUS TUF-AX4200 · mediatek-filogic · K2
 
 - **Weg ab Werk:** OpenWrt-Commit nennt nur UART + TFTP-initramfs [geprüft]; ohne UART: SSH in die Stock-Firmware, Sonderbau "factory-initramfs" (herbetom) per wget holen und mit `mtd-write -d linux` schreiben, dann sysupgrade [geprüft: Release-Text herbetom filogic-v2]
 - **Übertragung:** ssh + http-server-noetig: SSH admin@192.168.50.1, Rechner-HTTP-Server Port 8080 (Name openwrtimage.lan per /etc/hosts), Datei openwrt.bin; seriell: tftp-client Server 192.168.1.66, Gerät 192.168.1.1, Datei tufax4200.bin
-- **seriell nötig:** nein (SSH-Weg) / ja
-- **Gehäuse öffnen:** ? (SSH-Weg: nein)
+- **seriell nötig:** nein (nur für den seriellen Notweg: ja)
+- **Gehäuse öffnen:** nein (Lage der Konsole für den seriellen Notweg nicht belegt: ?)
 - **Werkzeug/Spezial:** Sonderbau herbetom (Dez. 2023)
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** [herbetom filogic-v2](https://github.com/herbetom/openwrt-asus-filogic-factory/releases/download/filogic-v2/openwrt-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin)
@@ -1106,7 +1125,7 @@ ASUS TUF-AX6000 · mediatek-filogic · K2
 
 - **Weg ab Werk:** wie TUF-AX4200: SSH + mtd-write des herbetom-Sonderbaus [geprüft: Release-Text], oder UART + TFTP-initramfs [geprüft]
 - **Übertragung:** ssh + http-server-noetig wie TUF-AX4200; seriell: tftp-client Server 192.168.1.70, Gerät 192.168.1.1, Datei TUF-AX6000.bin (U-Boot-Menü 1 oder 4)
-- **seriell nötig:** nein (SSH-Weg) / ja
+- **seriell nötig:** nein (nur für den seriellen Notweg: ja)
 - **Gehäuse öffnen:** nein, Konsole außen: drei Löcher im Gehäuse (von unten RX, TX, GND), Stiftleisten-Drähte, 115200 8N1 [geprüft]
 - **Werkzeug/Spezial:** Sonderbau herbetom (Dez. 2023)
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-asus_tuf-ax6000-initramfs-kernel.bin)
@@ -1511,7 +1530,7 @@ Cudy M3000 v2 mit Motorcomm YT8821 · mediatek-filogic · K2
 - **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz cudy-installation.md]; vorher im Cudy-Systemlog nach "yt8821" bzw. "rtl8221b" suchen, um v1/v2 zu unterscheiden [geprüft]
 - **Übertragung:** webui-upload: Stock-UI 192.168.10.1 (Passwort admin), danach LuCI 192.168.1.1 (am "1Gbps LAN"-Port)
 - **seriell nötig:** nein
-- **Gehäuse öffnen:** nein (UART-Notweg: ja, Platine ausbauen)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, Platine ausbauen)
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **initramfs-Link:** [25.12.5: initramfs-kernel.bin](https://downloads.openwrt.org/releases/25.12.5/targets/mediatek/filogic/openwrt-25.12.5-mediatek-filogic-cudy_m3000-v2-yt8821-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** [Spiegel M3000_1.0_2.0 (ob für YT8821 passend: abgeleitet)](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M3000_1.0_2.0/)<br>[Cudy-Drive](https://drive.google.com/drive/folders/1BKVarlwlNxf7uJUtRhuMGUqeCa5KpMnj)
@@ -1647,7 +1666,7 @@ Cudy WR3000U v1 · mediatek-filogic · K2
 - **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz cudy-installation.md]; alternativ UART + TFTP (192.168.1.88) [geprüft]
 - **Übertragung:** webui-upload: Stock-UI 192.168.10.1 (Passwort admin), danach LuCI 192.168.1.1
 - **seriell nötig:** nein
-- **Gehäuse öffnen:** nein ("Serial console: no need to solder", ob ohne Öffnen: ?)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ?, laut Commit "Serial console: no need to solder")
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware (nicht im Spiegel, nur Cudy-Drive)
 - **initramfs-Link:** [snapshot: initramfs-kernel.bin](https://downloads.openwrt.org/snapshots/targets/mediatek/filogic/openwrt-mediatek-filogic-cudy_wr3000u-v1-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** [Cudy-Drive](https://drive.google.com/drive/folders/1BKVarlwlNxf7uJUtRhuMGUqeCa5KpMnj)
@@ -1764,8 +1783,8 @@ Cudy TR1200 v1 · ramips-mt76x8 · K2
 
 - **Weg ab Werk:** Commit (05/2024): nur seriell (Cudy-Beta-Firmware, UART, TFTP recovery.bin von 192.168.1.88). Inzwischen liegt eine Cudy-Zwischenfirmware TR1200_V1 im Spiegel, damit wie die anderen Cudy [abgeleitet]
 - **Übertragung:** webui-upload (Zwischenfirmware)
-- **seriell nötig:** nein mit Zwischenfirmware; laut Commit ja
-- **Gehäuse öffnen:** nein mit Zwischenfirmware; laut Commit ja (UART unbestückt)
+- **seriell nötig:** nein (mit Zwischenfirmware; nur für den seriellen Weg laut Commit: ja)
+- **Gehäuse öffnen:** nein (mit Zwischenfirmware; nur für den seriellen Weg laut Commit: ja, UART unbestückt)
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-cudy_tr1200-v1-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** [Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/TR1200_V1) / [Cudy](https://www.cudy.com/blogs/faq/openwrt-software-download)
@@ -2680,7 +2699,7 @@ D-Link DAP-2695 A1 · ath79-generic · K0
 - **Weg ab Werk:** factory im Stock-Web-UI; alternativ Emergency-Web-Server des Bootloaders über die Konsole (q drücken) [geprüft]
 - **Übertragung:** webui-upload; alternativ recovery-web: Gerät 192.168.0.50, PC 192.168.0.90 (nur nach Abbruch an der RJ45-Konsole)
 - **seriell nötig:** nein
-- **Gehäuse öffnen:** nein (Notweg: RJ45-RS-232-Konsole aussen, 115200 8N1)
+- **Gehäuse öffnen:** nein (auch für den seriellen Notweg: RJ45-RS-232-Konsole außen, 115200 8N1)
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-dlink_dap-2695-a1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-dlink_dap-2695-a1-squashfs-factory.img)
@@ -3451,8 +3470,8 @@ Linksys WHW01 v1 (Velop) · ipq40xx-generic · K0
 
 - **Weg ab Werk:** Gluon-factory über die Linksys-UI im Support-Modus ("CA"-Link) [geprüft: OpenWrt-Wiki, Abruf 10.10.2026]; der OpenWrt-Commit kennt nur UART + TFTP (Server 192.168.1.236, Datei nodes-jr.img, `run flashimg`/`flashimg2`) [geprüft]
 - **Übertragung:** webui-upload; seriell: tftp-client Server 192.168.1.236, Datei nodes-jr.img
-- **seriell nötig:** nein (Web-UI)
-- **Gehäuse öffnen:** nein (Web-UI)
+- **seriell nötig:** nein
+- **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_whw01-initramfs-zImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_whw01-squashfs-factory.bin)
@@ -3899,7 +3918,7 @@ ZyXEL NWA55AXE (Gluon: broken) · ramips-mt7621 · K0
 - **Weg ab Werk:** wie NWA50AX; ohne Reset-Taste, bei unbekanntem Passwort nur seriell (atns-Trick, TFTP owrt.bin, ramboot-factory) [geprüft]
 - **Übertragung:** webui-upload
 - **seriell nötig:** nein
-- **Gehäuse öffnen:** nein (seriell nur Notweg)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_nwa55axe-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
@@ -4594,7 +4613,7 @@ Enterasys WS-AP3705i · ath79-generic · K4
 - **Weg ab Werk:** Serielle Konsole, U-Boot (Passwort admin/new2day) umstellen und OpenWrt-initramfs per TFTP laden, dann sysupgrade [geprüft]
 - **Übertragung:** tftp-client am U-Boot: Server 192.168.1.66/24, Datei 1401A8C0.img
 - **seriell nötig:** ja
-- **Gehäuse öffnen:** nein, Konsole aussen: Cisco-RJ45 auf der Rückseite, 115200 8N1
+- **Gehäuse öffnen:** nein, Konsole außen: Cisco-RJ45 auf der Rückseite, 115200 8N1
 - **Werkzeug/Spezial:** serielle Konsole (Cisco-Konsolenkabel)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-enterasys_ws-ap3705i-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -4628,7 +4647,7 @@ Siemens WS-AP3610 · ath79-generic · K4
 - **Weg ab Werk:** Serielle Konsole (RJ45), U-Boot-Umgebung setzen, OpenWrt-initramfs per TFTP laden, dann sysupgrade [geprüft]
 - **Übertragung:** tftp-client am U-Boot: Server 192.168.1.66/24, Datei 1401A8C0.img
 - **seriell nötig:** ja
-- **Gehäuse öffnen:** nein, Konsole aussen: Cisco-RJ45, 115200 8N1
+- **Gehäuse öffnen:** nein, Konsole außen: Cisco-RJ45, 115200 8N1
 - **Werkzeug/Spezial:** serielle Konsole (Cisco-Konsolenkabel)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-siemens_ws-ap3610-initramfs-kernel.bin) (HEAD 200)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -4893,8 +4912,8 @@ TP-Link EAP620 HD v1 · qualcommax-ipq807x · K4
 
 - **Weg ab Werk:** UART (JP1 bestücken, R58 und R62 brücken), U-Boot mit Ctrl+B anhalten, initramfs per TFTP nach 0x44000000, bootm, `sysupgrade -n` [geprüft]; ohne UART: SSH in Stock, `cliclientd stopcs`, OpenWrt-25.12-`web-ui-factory.bin` in der Stock-UI, danach Gluon-sysupgrade [abgeleitet: OpenWrt 8a15a75e9414bbb839ac457701b041454e89bbc4]
 - **Übertragung:** tftp-client: serverip/ipaddr frei, Datei openwrt-qualcommax-ipq807x-tplink_eap620hd-v1-initramfs-uImage.itb; ohne UART: ssh + webui-upload (Dateiname unter 63 Zeichen)
-- **seriell nötig:** ja (24.10-Weg) / nein (25.12-Weg)
-- **Gehäuse öffnen:** ja (JP1 löten, R58/R62 brücken) / nein
+- **seriell nötig:** ja (Weg mit OpenWrt 24.10; mit OpenWrt 25.12 als Zwischenschritt: nein)
+- **Gehäuse öffnen:** ja (JP1 löten, R58/R62 brücken; mit OpenWrt 25.12 als Zwischenschritt: nein)
 - **Werkzeug/Spezial:** OpenWrt 25.12 als Zwischenschritt
 - **initramfs-Link:** [25.12.5: initramfs-uImage.itb](https://downloads.openwrt.org/releases/25.12.5/targets/qualcommax/ipq807x/openwrt-25.12.5-qualcommax-ipq807x-tplink_eap620hd-v1-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** [25.12.5: squashfs-web-ui-factory.bin](https://downloads.openwrt.org/releases/25.12.5/targets/qualcommax/ipq807x/openwrt-25.12.5-qualcommax-ipq807x-tplink_eap620hd-v1-squashfs-web-ui-factory.bin)
@@ -5052,8 +5071,8 @@ ASUS RT-AX59U · mediatek-filogic · K2
 
 - **Weg ab Werk:** Stock-Web-UI (192.168.50.1) mit einem Fremd-"transit TRX" von Google Drive oder UART + TFTP-initramfs [geprüft]
 - **Übertragung:** webui-upload (Transit-TRX); sonst tftp-client: Server 192.168.1.70, Gerät 192.168.1.1, Datei rtax59u.bin
-- **seriell nötig:** nein (Web-UI) / ja (TFTP)
-- **Gehäuse öffnen:** nein (Web-UI) / ja (UART, Pinout auf der Platine) [abgeleitet]
+- **seriell nötig:** nein (nur für den seriellen TFTP-Weg: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen TFTP-Weg: ja, Pinout auf der Platine) [abgeleitet]
 - **Werkzeug/Spezial:** Transit-TRX eines Dritten (Google-Drive-Ordner im Commit, Herkunft unklar)
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-asus_rt-ax59u-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** -
@@ -5196,7 +5215,7 @@ HPE MSM460 · mpc85xx-p1020 · K5
 - **Weg ab Werk:** Bootloader netzseitig ersetzen, ohne Öffnen: Reset beim Verbinden ~15 s halten, `tftp put commands.tftp nflashd.cccc9999` an 192.168.1.1; der Stock-Bootloader führt die Befehlsdatei aus, holt msm460-uboot.bin vom Rechner und schreibt sie in den NAND; danach factory [geprüft]
 - **Übertragung:** tftp-server-am-geraet: put an 192.168.1.1 (Datei nflashd.cccc9999) + tftp-client-am-geraet: Server 192.168.1.66, Dateien msm460-uboot.bin, msm460-factory.bin
 - **seriell nötig:** nein
-- **Gehäuse öffnen:** nein (RJ45-Konsole vorhanden, nicht nötig)
+- **Gehäuse öffnen:** nein (RJ45-Konsole außen vorhanden, nicht nötig)
 - **Werkzeug/Spezial:** blocktrron/msm460-flashing, blocktrron/u-boot-msm
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1020/openwrt-24.10.8-mpc85xx-p1020-hpe_msm460-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community); OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1020/openwrt-24.10.8-mpc85xx-p1020-hpe_msm460-squashfs-factory.bin) (200)
@@ -5217,7 +5236,7 @@ Librerouter LibreRouter v1 · ath79-generic · K1d
 - **Weg ab Werk:** OpenWrt/LibreRouterOS ab Werk: sysupgrade über die Weboberfläche oder `sysupgrade -n`; seriell nur als Notweg [geprüft]
 - **Übertragung:** webui-upload (Stock) oder ssh; Notweg tftp am U-Boot, PC 192.168.1.10/24
 - **seriell nötig:** nein
-- **Gehäuse öffnen:** nein (Notweg: UART-Header auf der Platine)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, UART-Header auf der Platine)
 - **Werkzeug/Spezial:** Stock ist OpenWrt-basiert
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-librerouter_librerouter-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -5279,7 +5298,7 @@ Mercusys MR90X v1 · mediatek-filogic · K2
 - **Weg ab Werk:** SSH in die Stock-Firmware (Port 20001, Web-Passwort), telnet-Hintertür über /etc/hotplug.d/iface/65-iptv + IPTV-Schalter, fremdes busybox-arm64 für `ubiupdatevol`, initramfs ins UBI-Volume `kernel`, `fw_setenv` (u. a. tp_boot_idx 0), Neustart, `sysupgrade -n` [geprüft: Commit und Wiki]
 - **Übertragung:** ssh/scp: Router-IP Port 20001 (SSH), telnet Port 23; Datei initramfs-kernel.bin nach /tmp
 - **seriell nötig:** nein
-- **Gehäuse öffnen:** nein (UART nur nach Bestücken von R3/R6)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, R3/R6 bestücken)
 - **Werkzeug/Spezial:** busybox-arm64 eines Dritten (github xerta555)
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin)<br>[24.10.8: ubi-initramfs-recovery.itb](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-ubi-initramfs-recovery.itb)
 - **Factory-/Stock-Image-Link:** -
@@ -5300,7 +5319,7 @@ NETGEAR WAX218 · qualcommax-ipq807x · K1
 - **Weg ab Werk:** Stock-Web-UI (System Manager > Firmware > Local Firmware Upgrade) nimmt `web-ui-factory.fit` (ubinisiertes initramfs mit QSDK-Kopf), danach sysupgrade [geprüft]
 - **Übertragung:** webui-upload
 - **seriell nötig:** nein
-- **Gehäuse öffnen:** nein (UART nur mit Pogo-Pins/Löten an J2)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, Pogo-Pins oder Löten an J2)
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [24.10.8: web-ui-factory.fit](https://downloads.openwrt.org/releases/24.10.8/targets/qualcommax/ipq807x/openwrt-24.10.8-qualcommax-ipq807x-netgear_wax218-web-ui-factory.fit)<br>[24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/qualcommax/ipq807x/openwrt-24.10.8-qualcommax-ipq807x-netgear_wax218-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** -
@@ -5340,8 +5359,8 @@ TP-Link Archer C60 v1 · ath79-generic · K2
 
 - **Weg ab Werk:** OpenWrt-Commit: factory über Stock-Web-UI oder TFTP-Recovery; OpenWrt 24.10.8 liefert aber kein factory (nur initramfs/sysupgrade), Gluon setzt factory = false [geprüft]; bleibt UART + U-Boot (sysupgrade nach 0x9f020000 schreiben) [geprüft] oder ein älteres OpenWrt-factory als Zwischenschritt [abgeleitet]
 - **Übertragung:** webui-upload bzw. tftp-client-am-geraet: Server 192.168.0.66, Datei tp_recovery.bin (nur mit factory); sonst tftp am U-Boot (seriell)
-- **seriell nötig:** nur ohne factory-Image
-- **Gehäuse öffnen:** nein (Web/TFTP); ja für UART-Weg (Header auf der Platine)
+- **seriell nötig:** nein (nur für den seriellen Weg ohne factory-Image: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Weg: ja, Header auf der Platine)
 - **Werkzeug/Spezial:** OpenWrt-factory älterer Version als Zwischenfirmware [abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c60-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -5360,8 +5379,8 @@ TP-Link TD-W8970 v1 · lantiq-xrx200_legacy · K2
 
 - **Weg ab Werk:** Ohne Öffnen: Shell per Injection (SSID `telnetd -p 1023 -l login` oder manipulierte Konfig "StatPost"), Image aus der Shell schreiben; Wiki: dafür OpenWrt 15.05 als Zwischenstufe. Mit Öffnen: seriell `t`, TFTP, `sf erase/write` sysupgrade [abgeleitet: Wiki]
 - **Übertragung:** ssh/scp (telnet Port 1023) bzw. tftp-client-am-geraet: Server 192.168.1.2
-- **seriell nötig:** nein (Injection) / ja (TFTP)
-- **Gehäuse öffnen:** nein / ja
+- **seriell nötig:** nein (nur für den seriellen TFTP-Weg: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen TFTP-Weg: ja)
 - **Werkzeug/Spezial:** tpconf_bin_xml.py oder StatPOSTer, telnet
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/lantiq/xrx200_legacy/openwrt-24.10.8-lantiq-xrx200_legacy-tplink_tdw8970-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
@@ -5525,8 +5544,8 @@ ZTE MF286R (broken) · ath79-nand · K1
 
 - **Weg ab Werk:** Root-Shell über Web-UI-Lücke (URL-Filter `&&telnetd&&`, telnet 4719 admin/admin), Backup, OpenWrt-initramfs mit nandwrite in "firmware" schreiben, reboot, sysupgrade; alternativ UART + TFTP [geprüft für MF286A/R, Dateinamen im Commit für MF286A]
 - **Übertragung:** Exploit per Web-UI, dann telnet; Images per USB-Stick oder tftp (Busybox) auf das Gerät; UART-Weg: tftp-client am U-Boot, Server 192.168.0.22, Gerät 192.168.0.1
-- **seriell nötig:** nein (Exploit-Weg) / ja (Methode 3)
-- **Gehäuse öffnen:** nein (Exploit); ja für UART (Stecker X2 innen)
+- **seriell nötig:** nein (nur für den seriellen Weg, Methode 3 im Commit: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen Weg: ja, Stecker X2 innen)
 - **Werkzeug/Spezial:** Web-UI-Exploit; Busybox mit telnetd falls Stock ohne
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-zte_mf286r-initramfs-kernel.bin) (HEAD 200)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -5586,8 +5605,8 @@ Sophos AP100 · ath79-generic · K1d
 
 - **Weg ab Werk:** Über eine Sophos-XG-Appliance (awetool) Root-Shell auf dem AP, sysupgrade per `mtd -r write ... astaro_image`; alternativ UART + U-Boot (`tftpboot`, `cp.b` nach 0x9f070000) [geprüft]
 - **Übertragung:** ssh/scp über Sophos-XG (awetool); alternativ tftp-client am U-Boot: Server 192.168.99.8/24, Datei uImage_AP100 [Commit nennt uImage_AP100C als Beispiel]
-- **seriell nötig:** nein (XG-Weg) / ja (U-Boot-Weg)
-- **Gehäuse öffnen:** nein (XG-Weg); U-Boot-Weg: UART nach Abnehmen des Deckels; RJ45-Konsole aussen ist laut Commit in der OEM-Firmware abgeschaltet
+- **seriell nötig:** nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen U-Boot-Weg: ja, UART nach Abnehmen des Deckels; die RJ45-Konsole außen ist laut Commit in der Herstellerfirmware abgeschaltet)
 - **Werkzeug/Spezial:** Sophos-XG-Appliance (Home-Use-Lizenz, VM) mit `sudo awetool`
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-sophos_ap100-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -5603,8 +5622,8 @@ Sophos AP100C · ath79-generic · K1d
 
 - **Weg ab Werk:** Über eine Sophos-XG-Appliance (awetool) Root-Shell auf dem AP, sysupgrade per `mtd -r write ... astaro_image`; alternativ UART + U-Boot (`tftpboot`, `cp.b` nach 0x9f070000) [geprüft]
 - **Übertragung:** ssh/scp über Sophos-XG (awetool); alternativ tftp-client am U-Boot: Server 192.168.99.8/24, Datei uImage_AP100C [Commit nennt uImage_AP100C als Beispiel]
-- **seriell nötig:** nein (XG-Weg) / ja (U-Boot-Weg)
-- **Gehäuse öffnen:** nein (XG-Weg); U-Boot-Weg: Platine ausbauen (drei Schrauben), 4-Pin-UART
+- **seriell nötig:** nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen U-Boot-Weg: ja, Platine ausbauen, drei Schrauben, 4-Pin-UART)
 - **Werkzeug/Spezial:** Sophos-XG-Appliance (Home-Use-Lizenz, VM) mit `sudo awetool`
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-sophos_ap100c-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -5620,8 +5639,8 @@ Sophos AP15C · ath79-generic · K1d
 
 - **Weg ab Werk:** Über eine Sophos-XG-Appliance (awetool) Root-Shell auf dem AP, sysupgrade per `mtd -r write ... astaro_image`; alternativ UART + U-Boot (`tftpboot`, `cp.b` nach 0x9f070000) [geprüft]
 - **Übertragung:** ssh/scp über Sophos-XG (awetool); alternativ tftp-client am U-Boot: Server 192.168.99.8/24, Datei uImage_AP15C
-- **seriell nötig:** nein (XG-Weg) / ja (U-Boot-Weg)
-- **Gehäuse öffnen:** nein (XG-Weg); für U-Boot laut Commit innen (4-Pin-UART); aussen RJ45-Konsole vorhanden, im U-Boot nutzbar? ?
+- **seriell nötig:** nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen U-Boot-Weg: ja, laut Commit 4-Pin-UART innen; RJ45-Konsole außen vorhanden, ob im U-Boot nutzbar: ?)
 - **Werkzeug/Spezial:** Sophos-XG-Appliance (Home-Use-Lizenz, VM) mit `sudo awetool`
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-sophos_ap15c-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -5636,8 +5655,8 @@ Sophos AP55 · ath79-generic · K1d
 
 - **Weg ab Werk:** Über eine Sophos-XG-Appliance (awetool) Root-Shell auf dem AP, sysupgrade per `mtd -r write ... astaro_image`; alternativ UART + U-Boot (`tftpboot`, `cp.b` nach 0x9f070000) [geprüft]
 - **Übertragung:** ssh/scp über Sophos-XG (awetool); alternativ tftp-client am U-Boot: Server 192.168.99.8/24, Datei uImage_AP55 [Commit nennt uImage_AP100C als Beispiel]
-- **seriell nötig:** nein (XG-Weg) / ja (U-Boot-Weg)
-- **Gehäuse öffnen:** nein (XG-Weg); U-Boot-Weg: UART nach Abnehmen des Deckels; RJ45-Konsole aussen ist laut Commit in der OEM-Firmware abgeschaltet
+- **seriell nötig:** nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen U-Boot-Weg: ja, UART nach Abnehmen des Deckels; die RJ45-Konsole außen ist laut Commit in der Herstellerfirmware abgeschaltet)
 - **Werkzeug/Spezial:** Sophos-XG-Appliance (Home-Use-Lizenz, VM) mit `sudo awetool`
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-sophos_ap55-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -5653,8 +5672,8 @@ Sophos AP55C · ath79-generic · K1d
 
 - **Weg ab Werk:** Über eine Sophos-XG-Appliance (awetool) Root-Shell auf dem AP, sysupgrade per `mtd -r write ... astaro_image`; alternativ UART + U-Boot (`tftpboot`, `cp.b` nach 0x9f070000) [geprüft]
 - **Übertragung:** ssh/scp über Sophos-XG (awetool); alternativ tftp-client am U-Boot: Server 192.168.99.8/24, Datei uImage_AP55C [Commit nennt uImage_AP100C als Beispiel]
-- **seriell nötig:** nein (XG-Weg) / ja (U-Boot-Weg)
-- **Gehäuse öffnen:** nein (XG-Weg); U-Boot-Weg: Platine ausbauen (drei Schrauben), 4-Pin-UART
+- **seriell nötig:** nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)
+- **Gehäuse öffnen:** nein (nur für den seriellen U-Boot-Weg: ja, Platine ausbauen, drei Schrauben, 4-Pin-UART)
 - **Werkzeug/Spezial:** Sophos-XG-Appliance (Home-Use-Lizenz, VM) mit `sudo awetool`
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-sophos_ap55c-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -5979,7 +5998,7 @@ TP-Link Archer C20 v1 · ramips-mt7620 · K3
 
 - **Weg ab Werk:** TFTP-Recovery (Reset beim Einschalten 6-7 s) mit U-Boot aus der TP-Link-Firmware vor dem OpenWrt-Image; alternativ seriell (Taste 4, tftp, erase/cp.b). Der Commit nennt das factory, das OpenWrt für dieses Gerät nicht mehr baut; heute analog Archer C2 v1 mit sysupgrade [geprüft für den Weg, abgeleitet für die Image-Wahl]
 - **Übertragung:** tftp-client-am-geraet: Server 192.168.0.66, Datei ArcherC20V1_tp_recovery.bin
-- **seriell nötig:** nein (seriell nur Alternative)
+- **seriell nötig:** nein (nur für den seriellen Notweg: ja)
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** dd, cat, TFTP-Server
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7620/openwrt-24.10.8-ramips-mt7620-tplink_archer-c20-v1-initramfs-kernel.bin) (200)
@@ -6047,7 +6066,7 @@ Ubiquiti EdgeRouter X · ramips-mt7621 · K3
 
 - **Weg ab Werk:** EdgeOS nimmt (Web-UI "System" oder `add system image`) ein initramfs-factory.tar, das OpenWrt heute nicht mehr baut (nur alte Releases/Fremdquellen); danach Umstieg auf das 24.10-Layout (Kernel 6 MB, compat_version 2.0). Seriell alternativ TFTP im Ralink-Menü [geprüft: Commit, mk, Wiki]
 - **Übertragung:** webui-upload oder ssh/scp ubnt@192.168.1.1 (EdgeOS, eth0)
-- **seriell nötig:** nein (TFTP-Weg seriell, 57600)
+- **seriell nötig:** nein (nur für den seriellen TFTP-Weg: ja, 57600 Baud)
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Fremd-factory.tar (github stman/..., cyounkins/edgerouter-factory), darkxst/erx-migration, Neanderfunk-Notiz erx-migration-howto.md
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-initramfs-kernel.bin) (200)
@@ -6064,7 +6083,7 @@ Ubiquiti EdgeRouter X-SFP · ramips-mt7621 · K3
 
 - **Weg ab Werk:** EdgeOS nimmt (Web-UI "System" oder `add system image`) ein initramfs-factory.tar, das OpenWrt heute nicht mehr baut (nur alte Releases/Fremdquellen); danach Umstieg auf das 24.10-Layout (Kernel 6 MB, compat_version 2.0). Seriell alternativ TFTP im Ralink-Menü [geprüft: Commit, mk, Wiki]
 - **Übertragung:** webui-upload oder ssh/scp ubnt@192.168.1.1 (EdgeOS, eth0)
-- **seriell nötig:** nein (TFTP-Weg seriell, 57600)
+- **seriell nötig:** nein (nur für den seriellen TFTP-Weg: ja, 57600 Baud)
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Fremd-factory.tar (github stman/..., cyounkins/edgerouter-factory), darkxst/erx-migration, Neanderfunk-Notiz erx-migration-howto.md
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-sfp-initramfs-kernel.bin) (200)
@@ -6322,7 +6341,7 @@ Ubiquiti UniFi 6 LR v1 · mediatek-mt7622 · K1d
 - **Weg ab Werk:** SSH (ubnt/ubnt), bootselect in `bs` nullen, sysupgrade per dd nach kernel0 und kernel1, Neustart [geprüft: 634c13c1]
 - **Übertragung:** ssh/scp: Gerät 192.168.1.20, Login ubnt/ubnt
 - **seriell nötig:** nein
-- **Gehäuse öffnen:** nein (UART nur nach Öffnen des verklebten Gehäuses)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, Gehäuse verklebt)
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-ubnt_unifi-6-lr-v1-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** [24.10.8: ubootmod-initramfs-recovery.itb](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-ubnt_unifi-6-lr-v1-ubootmod-initramfs-recovery.itb)
@@ -6339,7 +6358,7 @@ Ubiquiti UniFi 6 LR v2 · mediatek-mt7622 · K1d
 - **Weg ab Werk:** SSH (ubnt/ubnt), bootselect in `bs` nullen, sysupgrade per dd nach kernel0 und kernel1, Neustart [geprüft: 634c13c1] [für v2 abgeleitet, eigener Commit ohne Installationsabschnitt]
 - **Übertragung:** ssh/scp: Gerät 192.168.1.20, Login ubnt/ubnt
 - **seriell nötig:** nein
-- **Gehäuse öffnen:** nein (UART nur nach Öffnen des verklebten Gehäuses)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, Gehäuse verklebt)
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-ubnt_unifi-6-lr-v2-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** [24.10.8: ubootmod-initramfs-recovery.itb](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-ubnt_unifi-6-lr-v2-ubootmod-initramfs-recovery.itb)
@@ -6356,7 +6375,7 @@ Ubiquiti UniFi 6 LR v3 · mediatek-mt7622 · K1d
 - **Weg ab Werk:** SSH (ubnt/ubnt), bootselect in `bs` nullen, sysupgrade per dd nach kernel0 und kernel1, Neustart [geprüft: 634c13c1] [für v3 abgeleitet, eigener Commit ohne Installationsabschnitt]
 - **Übertragung:** ssh/scp: Gerät 192.168.1.20, Login ubnt/ubnt
 - **seriell nötig:** nein
-- **Gehäuse öffnen:** nein (UART nur nach Öffnen des verklebten Gehäuses)
+- **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, Gehäuse verklebt)
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-ubnt_unifi-6-lr-v3-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** [24.10.8: ubootmod-initramfs-recovery.itb](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-ubnt_unifi-6-lr-v3-ubootmod-initramfs-recovery.itb)
