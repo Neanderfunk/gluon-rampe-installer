@@ -250,15 +250,15 @@ Stand 10.10.2026. Gerätewerte in C.json; hier gemeinsamer Ablauf je Familie, Qu
 ### cudy-zwischenfirmware (20 Geräte)
 
 Gemeinsamer Ablauf:
-- Stock-Firmware nimmt nur von Cudy signierte Images; daher erst Cudys signiertes OpenWrt ("Zwischenfirmware", "intermediate firmware"), dann Gluon-**sysupgrade** ohne "Einstellungen behalten" [geprüft: Commits, router-werkstatt docs/cudy-installation.md]
-- Cudy-Oberfläche http://192.168.10.1, Passwort admin (AP1300 Outdoor: 192.168.10.254) [geprüft: cudy-installation.md, Commit c6e59d06]; Menü Erweiterte Einstellungen > System > Firmware; MD5 nach dem Hochladen mit der Tabelle vergleichen [geprüft: cudy-installation.md]
-- danach LuCI http://192.168.1.1, Passwort leer, System > Backup / Firmware Update, Haken "Einstellungen beibehalten" weg [geprüft: cudy-installation.md, Commit M3000 v2]
+- Stock-Firmware nimmt nur von Cudy signierte Images; daher erst Cudys signiertes OpenWrt ("Zwischenfirmware", "intermediate firmware"), dann Gluon-**sysupgrade** ohne "Einstellungen behalten" [geprüft: Commits, Neanderfunk-Notizen]
+- Cudy-Oberfläche http://192.168.10.1, Passwort admin (AP1300 Outdoor: 192.168.10.254) [geprüft: Neanderfunk-Notiz, Commit c6e59d06]; Menü Erweiterte Einstellungen > System > Firmware; MD5 nach dem Hochladen mit der Tabelle vergleichen [geprüft: Neanderfunk-Notiz]
+- danach LuCI http://192.168.1.1, Passwort leer, System > Backup / Firmware Update, Haken "Einstellungen beibehalten" weg [geprüft: Neanderfunk-Notiz, Commit M3000 v2]
 - nur solange die Cudy-Originaloberfläche läuft [geprüft: Cudy-FAQ]
 - Seriennummer ab 2543 (Woche 43/2025, neuer Flash F50L1G41LC): betroffen AP3000 Outdoor 1.0, AP3000 Wall 1.0, M3000 1.0/2.0, TR3000 1.0, WR3000E/H/S/P 1.0; nur Zwischenfirmware vom 19.11.2025 oder neuer, sonst startet das Gerät nicht mehr; OpenWrt braucht >= 24.10.5, am Gluon-2025.1-Pin ist der Treiber-Backport (422-...F50L1G41LC) drin [geprüft: Cudy-FAQ, OpenWrt-Pin a1ea57bd]
 - Rückweg für alle: Cudy-Firmware als recovery.bin, Rechner 192.168.1.88, Reset halten beim Einschalten, LEDs schnell blinkend = Übertragung, langsam = fertig; TR1200 über WAN statt LAN [geprüft: Cudy-FAQ Recovery]; Cudy beschreibt das nur für Windows mit tftp32 und abgeschalteter Firewall [geprüft: dieselbe Seite]
 
 Quellen:
-- router-werkstatt/docs/cudy-installation.md (Neanderfunk-Laienfassung mit Spiegel-Tabelle und MD5)
+- Neanderfunk-Notizen
 - https://www.cudy.com/blogs/faq/openwrt-software-download (Flash-Hinweis, Bedingung Cudy-Oberfläche)
 - https://www.cudy.com/en-us/blogs/faq/how-to-recovery-the-cudy-router-from-openwrt-firmware-to-cudy-official-firmware (Rückweg, LEDs)
 - Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/
@@ -269,7 +269,7 @@ Abweichungen:
 - AP1300 Outdoor, AP3000 Outdoor/Wall: nur PoE-Versorgung
 - WR1300 v1, X6 v1: in LuCI ggf. "Force upgrade" nötig [geprüft: Commit]
 - WR3000 v1: Spiegel-Ordner "without_recovery_TFTP"
-- TR1200 v1, AP1300 Outdoor: nicht in cudy-installation.md; Zwischenfirmware liegt im Spiegel (TR1200_V1/TR1200-OpenWRT-Flash.bin, AP1300_Outdoor_V1.0/...flash.bin)
+- TR1200 v1, AP1300 Outdoor: nicht in Neanderfunk-Notiz; Zwischenfirmware liegt im Spiegel (TR1200_V1/TR1200-OpenWRT-Flash.bin, AP1300_Outdoor_V1.0/...flash.bin)
 
 ### avm-eva-ftp (10 Geräte)
 
@@ -381,7 +381,7 @@ Abweichungen: C50 v6 nur CA/EU/RU, ES = Archer C54 [geprüft: Commit]; C2 v1: fa
 - AVM EVA-FTP: Zeitfenster widersprüchlich (fritzflash 10 s, Wiki 5 s, 7362 SL etwa 4 s); in der Anleitung besser "sofort" schreiben.
 - AVM 7362 SL: LED-Verhalten im initramfs (rot blinkende Power-LED) nur im Wiki; gilt vermutlich für alle lantiq-Ramboot-Geräte, nicht belegt.
 - Cudy WR3000 v1: Bedeutung des Spiegel-Ordnernamens "without_recovery_TFTP" (geht die Cudy-TFTP-Recovery nach der Zwischenfirmware nicht mehr?).
-- Cudy M3000 YT8821: ob die Zwischenfirmware M3000_1.0_2.0 zur YT8821-Variante passt (schon in cudy-installation.md offen).
+- Cudy M3000 YT8821: ob die Zwischenfirmware M3000_1.0_2.0 zur YT8821-Variante passt (schon in Neanderfunk-Notiz offen).
 - Cudy WR3000H: Nutzerberichte über neue Geräte mit YT8821-WAN-PHY, bei denen die Zwischenfirmware 20251119 "File is invalid" meldet; ob unser Gluon-Image cudy-wr3000h-v1 (RTL8221B) auf solchen Geräten überhaupt passt, ist ungeklärt (Kommentar Cudy-FAQ 09.10.2026).
 - Cudy TR3000 256MB: Nutzerbericht (SN-Woche 2626, Stock 2.5.21) "startet nach Zwischenfirmware Mai 2025 nicht mehr"; unbestätigt, aber vor Anleitung beachten.
 - Cudy AP1300 Outdoor: ob die Cudy-Firmware DHCP macht (sonst feste Rechner-IP 192.168.10.x nötig).
@@ -392,5 +392,472 @@ Abweichungen: C50 v6 nur CA/EU/RU, ES = Archer C54 [geprüft: Commit]; C2 v1: fa
 - TP-Link WR902AC v4: echter Recovery-Dateiname (tp_recover.bin oder tp_recovery.bin).
 - TP-Link Archer C20 v5: Wiki-Abschnitt "Installation" nennt ein fertiges ...squashfs-tftp-recovery.bin, OpenWrt baut für v5 aber nur sysupgrade (mt76x8.mk am Pin); vermutlich vom v4 kopiert.
 - TP-Link Archer C20 v1: welches Image hinter den U-Boot-Teil gehört (Commit: factory, das es nicht mehr gibt; Wiki: 19.07.6-factory); bleibt wie im Feld weg [abgeleitet].
+
+## Teil B: ap51-flash, GL.iNet, Netgear NMRP, Ubiquiti, devolo, TP-Link EAP, SSH, Recovery-Web, D-Link
+
+Stand 10.10.2026. Felder je Gerät in B.json. Belegmarken: [geprüft: ...] = in
+Commit/DTS/Image-Rezept/Herstellerdoku gelesen, [abgeleitet: ...] = Wiki,
+Analogie, eigener Schluss.
+
+### ap51-flash (26 Geräte: OpenMesh A40/A42/A60/A62, MR600/MR900/MR1750, OM2P*, OM5P*, Plasma Cloud PA300/PA300E/PA1200/PA2200)
+
+Gemeinsamer Ablauf:
+- Rechner per LAN-Kabel direkt (oder über einen einfachen unmanaged Switch) mit dem Gerät verbinden, Gerät bleibt aus [geprüft: ap51-flash-Doku getting-started].
+- ap51-flash mit root-/Administratorrechten starten: `sudo ./ap51-flash <interface> <gluon-factory>.bin`; keine feste IP nötig, aber keine aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server [geprüft: ap51-flash-Doku].
+- Erst danach Gerät einschalten; keine Taste: Open Mesh/Plasma Cloud fragen bei jedem Start nach ap51-flash [geprüft: ap51-flash-Doku].
+- Fortschritt nur am Rechner sichtbar: "device type ... detected", "image successfully transmitted - writing image to flash", "flash complete. Device ready to unplug." [geprüft: ap51-flash-Doku].
+- Zwischen "image successfully transmitted" und "flash complete" nicht Strom ziehen [geprüft: ap51-flash-Doku]. Dauer laut Schätzformel 10 s + 1 s je 64 KiB, ath79 (7 MB Partition) höchstens etwa 2-3 min, ipq40xx (15 MB) höchstens etwa 4-5 min [abgeleitet].
+- Datei: das Gluon-factory (Open-Mesh-"CE"-Container), nicht das sysupgrade [geprüft: ap51-flash-Doku "Which image file to use"; OpenWrt generic.mk `openmesh-image ce_type=...`].
+- Notweg (nicht für Laien): serielle Konsole, U-Boot, initramfs per TFTP (Server z. B. 192.168.1.21, Gerät 192.168.1.1), dann sysupgrade [geprüft: Commits der ath79-Geräte].
+
+Beste Quellen:
+- https://ap51-flash.readthedocs.io/en/latest/getting-started/ (Repo docs/getting-started/index.rst, Stand 3c80049, 03.10.2026)
+- https://ap51-flash.readthedocs.io/en/latest/how-it-works/ (Dauer-Schätzformel, Adressen)
+- OpenWrt-Commits der Geräte (Feld quelle), target/linux/{ath79,ipq40xx}/image/generic.mk am Pin (CE-Typen)
+
+Abweichungen:
+- CE-Typ entscheidet, welches Image der Bootloader annimmt; mehrere Modelle teilen sich einen Typ: OM2P = OM2P v1/v2/v4 + OM2P-HS v1-v4 + OM2P-LC; A60 = A40 + A60; MR600/MR900/MR1750 je v1+v2; OM5P = OM5P + OM5P-AN; OM5PAC = OM5P-AC v1+v2; PA300 = PA300 + PA300E [geprüft: generic.mk]. Ein Image der falschen Revision wird also nicht abgewiesen: Typenschild genau lesen [abgeleitet]. Eigene Typen: A42, A62, PA1200, PA2200.
+- A42, A62: nur PoE-Versorgung (Ethernet 1: 802.3af bzw. bei A62 802.3at; Ethernet 2: passiv 18-24 V) [geprüft: Commit].
+- OM2P v2: zum Flashen die Ethernet-Buchse nahe der Stromversorgung [abgeleitet: Wiki toh/openmesh/om2p].
+- PA300E steht nicht in der ap51-flash-Testliste, nutzt aber ce_type=PA300 [geprüft: generic.mk].
+- Rückweg (OM2P-Familie): Herstellerfirmware wieder per ap51-flash/Open-Mesh-Tool [abgeleitet: Wiki].
+
+### glinet (22 Geräte)
+
+Gemeinsamer Ablauf (U-Boot-Weboberfläche, bei allen GL.iNet als Weg oder Notweg):
+- Gerät aus, Rechner per Kabel an einen LAN-Port, alle anderen Ports frei [geprüft: GL-Doku debrick].
+- Rechner feste IP 192.168.1.2, Netzmaske 255.255.255.0 [geprüft: GL-Doku].
+- Reset-Taste fest drücken und gleichzeitig Strom einstecken; halten, bis das LED-Muster wechselt (je Modell 3x, 4x, 5x oder 6x Blinken), dann loslassen [geprüft: GL-Doku, Tabelle je Modell].
+- Browser auf http://192.168.1.1, Datei wählen, "Update firmware"; VPN/Proxy am Rechner aus [geprüft: GL-Doku].
+- Etwa 3 Minuten warten, nicht Strom ziehen [geprüft: GL-Doku].
+- Datei: meist das Gluon-sysupgrade (GL-U-Boot nimmt NOR-sysupgrade), AP1300 das factory (.ubi), XE300/E750 brauchen ein factory.img [geprüft: Commits].
+- Alternative bei vielen: Stock-Firmware ist ein GL.iNet-OpenWrt (Oberfläche 192.168.8.1), dort Gluon-sysupgrade hochladen, Einstellungen NICHT behalten [geprüft: Commits AR300M-Lite, AR750, USB150, MT2500, microuter/VIXMINI, MT300N-V2].
+
+Beste Quellen:
+- https://docs.gl-inet.com/router/en/4/faq/debrick/ (LED-Tabelle je Modell, Stand 12.08.2026)
+- OpenWrt-Commits (Feld quelle), Wiki toh/gl.inet/{6416,gl-ar150,gl-ar300m,gl-mt3000,gl-mt6000,gl-usb150}
+
+Abweichungen:
+- LED beim U-Boot: MT300A/MT300N 3x; B1300 4x (alte B1300 5x), Commit sagt "bis drei LEDs dauerhaft leuchten"; AR150/AR300M/AR750/AR750S/USB150/microuter/MT300N-V2 5x; AP1300 5x langsam, dann dauernd schnell; MT1300 blau, dann weiß; MT2500 5x blau, dann weiß; MT3000/MT6000 6x blau, dann weiß; XE300 LAN-LED 5x (Reset UND Power-Taste); E750 Display "Please Open Web 192.168.1.1" [geprüft: GL-Doku].
+- 6416: grün-rot-grün, beim roten Blinken loslassen [abgeleitet: Wiki]. MT750: in keiner Quelle, vermutlich wie MT300A [abgeleitet].
+- MT6000: U-Boot-Weg nicht über LAN 1 [geprüft: GL-Doku]; nur sysupgrade, nie factory [abgeleitet: Wiki].
+- B1300: sysupgrade laut Commit (2017) in `lede-gl-b1300.bin` umbenennen, TFTP-Server 192.168.1.2 wird automatisch abgefragt [geprüft: Commit 04d3308].
+- microuter-N300/VIXMINI: Stock-Oberfläche nur per WLAN, Ethernet-Port ist WAN [geprüft: Commits].
+- E750: GL-Firmware 3.100 nur per U-Boot [geprüft: Commit 68ac3f2].
+- AR300M-Familie: Ende 2024 noch Geräte mit altem U-Boot, das neue Images ablehnen kann [abgeleitet: Wiki].
+- Rückweg: XE300 Stock per U-Boot [geprüft: Commit]; MT6000 GL-sysupgrade [abgeleitet: Wiki]; generell GL-U-Boot nimmt die "U-Boot compatible firmware" von GL.iNet [abgeleitet: GL-Doku].
+
+### netgear-nmrp (15 Geräte)
+
+Gemeinsamer Ablauf:
+- nmrpflash besorgen (Linux, macOS, Windows mit Npcap "WinPcap Compatibility") [geprüft: nmrpflash-README].
+- Rechner per LAN-Kabel direkt an den LAN-Port des Geräts (oft blau; bei mehreren den mit "1"); Firewall aus [geprüft: README].
+- Gerät AUS, `nmrpflash -i <interface> -f <gluon-factory>` starten; bei "Waiting for Ethernet connection" Gerät einschalten (manche Geräte brauchen dabei die Reset-Taste) [geprüft: README].
+- IPs vergibt nmrpflash selbst (10.164.183.252/253); bei Problemen Rechner fest 10.164.183.253 [geprüft: README, Orbi-Commit].
+- Nach "Uploading ... OK" schreibt das Gerät ("Waiting for remote to respond", Keep-alive); nicht Strom ziehen bis "Reboot your device now." [geprüft: README]; Dauer meist Minuten, bis 15 min und mehr berichtet [geprüft: README].
+- Viele Modelle nehmen das Gluon-factory auch in der Netgear-Weboberfläche (EX*, EAX12, WAX202, WAX206, R6220, R6260) [geprüft: Commits; R6220/R6260 Wiki].
+
+Beste Quellen:
+- https://github.com/jclehner/nmrpflash (README)
+- OpenWrt-Commits (Feld quelle), ramips-Image-Rezepte am Pin; Wiki toh/netgear/r6220, r6260
+
+Abweichungen:
+- R6020, R6120: nur nmrpflash; R6020 an LAN-Port 1, nach Ende einmal aus/an [geprüft: Commits].
+- Orbi RBR50/RBS50/SRR60/SRS60: Gluon nur auf Boot-Partition 1; Netgear-Oberfläche schreibt in die andere -> nmrpflash, Kabel am Port nahe der Ein/Aus-Taste; oder Telnet-Umweg `artmtd -w boot_part 02` [geprüft: Commit 2cb24b3].
+- EX6150: Netgear-Oberfläche unter 192.168.1.250 [geprüft: Commit].
+- WAX202/EAX12: Stock nimmt nur verschlüsselte Images, Gluon-factory ist verschlüsselt (NETGEAR_ENC_REGION US) [geprüft: Commit, mt7621.mk].
+- R6260: LAN 1 nächst WAN; Downgrade-Rückfrage in der Oberfläche bestätigen [abgeleitet: Wiki].
+- Verwechslung: EX3700=EX3800 (ein Image), EX6130 gleiche Platine aber eigenes Image; EAX12=EAX11 v2=EAX15 v2; R6020 vs R6080; R6260/R6350/R6850 gleiche Platine; RBR50 v1 vs v2; EX6150 v1 vs v2; WNDR3700 v5 vs v1-v4.
+- Rückweg: Netgear-Image per nmrpflash (Orbi, R6220 geprüft; EAX12/WAX202/WAX206 "TFTP/NMRP" geprüft; R6260 Wiki).
+
+### ubiquiti-unifi-ssh (15 Geräte)
+
+Gemeinsamer Ablauf:
+- Gerät im Werkszustand per PoE (Injektor oder PoE-Switch) versorgen, Rechner per Kabel daran [geprüft: Commit U6+; übrige abgeleitet].
+- Rechner feste IP aus 192.168.1.0/24, nicht .20 (Commit U6+: 192.168.1.2) [geprüft: Commit 75ee554].
+- `ssh ubnt@192.168.1.20`, Passwort ubnt; Gluon-sysupgrade per `scp -O` nach /tmp [geprüft: Commits bf94e0a, 4c8446b, 4e46beb, 634c13c].
+- je nach Modell Schreibschutz aufheben (`echo 5edfacbf > /proc/ubnthal/.uf`), bootselect-Flag nullen, Image per `dd` in kernel0 (und kernel1) schreiben; Partitionsnummern vorher in /proc/mtd prüfen [geprüft: Commits].
+- Neustart; erster Start dauert einige Minuten (AC-Reihe etwa 2 min, U6 LR etwa 4 min) [abgeleitet: Wiki].
+- Rückweg: Ubiquiti-TFTP-Recovery (Reset beim Einschalten etwa 15 s, LED weiß/blau/aus, `tftp put` an 192.168.1.20) [abgeleitet: Wiki unifiac; AC HD geprüft: Commit].
+
+Beste Quellen:
+- OpenWrt-Commits (Feld quelle), v. a. bf94e0a (UK Ultra), 634c13c (U6 LR), fb4d7a9 (U6 Lite), 75ee554 (U6+), 4c8446b (nanoHD), 4e46beb (AC HD)
+- https://openwrt.org/toh/ubiquiti/unifiac (AC-Reihe: Stock-Versionen, LED)
+- https://openwrt.org/toh/ubiquiti/unifi_6_lr (v1/v2/v3, Stock 6.2+)
+- https://openwrt.org/toh/ubiquiti/unifi_6_lite, unifi_6_plus
+
+Abweichungen / Stock-Versionen:
+- nanoHD: Anleitung für Stock v3.9.27, sonst downgraden [geprüft: Commit].
+- AC-Reihe: 3.7.58 bevorzugt (mtd vorhanden), ab 6.5.28 nur dd; .uf-Entsperren scheitert bei manchen Versionen still [abgeleitet: Wiki].
+- U6 Lite: ab Stock 6.5 auf 6.0.14 downgraden [abgeleitet: Wiki]; zusätzlich `fw_setenv devmode TRUE` usw. [geprüft: Commit].
+- U6 LR: ab Stock 6.2 .uf-Entsperren nötig, steht nicht im Commit [abgeleitet: Wiki].
+- U6+: eMMC, kernel/root aus dem sysupgrade-tar per dd, getestet bis Stock 6.6.55 [geprüft: Commit; Version abgeleitet: Wiki].
+- AP Outdoor+: `fwupdate.real -m <datei> -d` statt dd [geprüft: Commit].
+- Verwechslung: U6 LR v1 (RGB-LED-Leiste) / v2 (zwei LEDs) / v3 (RTL8211FS-PHY, ab etwa KW 34/2022); AC Lite = AC LR = AC Mesh (Hardware, eigene Images); AC Pro = AC Mesh Pro (bis auf USB); U6 Lite vs. U6 IW/Mesh/Extender/LR-EA (alle MT7621).
+- Werkszustand nötig: adoptierte Geräte haben Controller-Zugangsdaten [abgeleitet].
+
+### ubiquiti-tftp (4 Geräte: NanoStation M XW, NanoStation Loco M XW, Rocket M XM, UniFi AP Pro)
+
+Gemeinsamer Ablauf:
+- Rechner feste IP aus 192.168.1.0/24, nicht .20 (Commits: .21/.25) [geprüft: Commits 633c430, 40530c8].
+- Reset (am Gerät oder am PoE-Netzteil) gedrückt halten, Strom per PoE anstecken, halten bis die Signal-LEDs abwechselnd blinken (LED1+3 / LED2+4; bis zu 25 s), loslassen [geprüft: Commits].
+- Gerät ist jetzt TFTP-Server auf 192.168.1.20: `tftp 192.168.1.20`, `binary`, `put <gluon-factory>.bin` [geprüft: Commits].
+- Gerät schreibt und startet neu; nicht Strom ziehen, solange die LEDs laufen [abgeleitet: Wiki ubiquiti_tftp]; UniFi AP Pro etwa 2 min [geprüft: Commit b7da0d2].
+- Dateiname: keine Quelle verlangt einen bestimmten; kurzer Name mit .bin [abgeleitet].
+- Rückweg: gleicher Weg mit AirOS-Image [abgeleitet: Wiki ubiquiti_tftp].
+
+Beste Quellen:
+- OpenWrt-Commits 633c430 (Loco M XW), 40530c8 (NanoStation M XW), b7da0d2 (UniFi AP Pro)
+- https://openwrt.org/docs/guide-user/installation/recovery_methods/ubiquiti_tftp
+- https://openwrt.org/toh/ubiquiti/common (XM/XW, AirOS-Versionsgrenzen)
+
+Abweichungen:
+- XW: OpenWrt-Installation laut Wiki nur bis AirOS 6.0.4; neuere XW-Revisionen nur über XW.v6.1.7.32555 + fwupdate.real [abgeleitet: Wiki common]; ob das auch den TFTP-Weg betrifft: offen.
+- XM (Rocket M XM): mit AirOS 5.6+ erst auf 5.5 zurück, sonst nicht flashen [abgeleitet: Wiki common].
+- UniFi AP Pro: Reset 10 s beim Einstecken [geprüft: Commit].
+
+### ubiquiti-edgerouter (2 Geräte: ER-X, ER-X-SFP)
+
+Gemeinsamer Ablauf:
+- Rechner an eth0, feste IP 192.168.1.x; EdgeOS unter 192.168.1.1, Login ubnt/ubnt [abgeleitet: Wiki; Bestand uebertragung].
+- OpenWrt-initramfs-factory.tar (Fremdquelle, OpenWrt baut es nicht mehr) über Web-UI "System" oder `add system image` einspielen, neu starten [abgeleitet: Wiki; Bestand weg geprüft].
+- Danach OpenWrt auf eth1, root@192.168.1.1 [abgeleitet: Wiki].
+- OpenWrt-sysupgrade (alt), dann Migration auf das 24.10-Layout (darkxst/erx-migration), dann Gluon [abgeleitet: Wiki; Neanderfunk-Notiz laut Bestand].
+- Notweg seriell: U-Boot-Menü "1", TFTP nur an eth0, 57600 Baud [abgeleitet: Wiki; Bestand seriell].
+
+Beste Quellen:
+- https://openwrt.org/toh/ubiquiti/edgerouter_x_er-x_ka
+- Commits 4e31b2e, 9715beb
+
+Abweichungen:
+- ER-X-SFP: ER-X-factory geht, danach sysupgrade mit `--force`; Einzelbericht: EdgeOS 2.0.9 -> 2.0.3 -> OpenWrt 18.06-factory [abgeleitet: Wiki].
+- Wiki empfiehlt vorher neueste EdgeOS v2 + Bootloader-Update (TFTP-Recovery per Reset) [abgeleitet].
+
+### devolo-ssh (6 Geräte: WiFi pro 1200e/1200i/1750c/1750e/1750i/1750x)
+
+Gemeinsamer Ablauf:
+- Stock-Weboberfläche öffnen (laut Wiki 192.168.1.1) und beim ersten Einrichten das root-Passwort setzen [geprüft: Commits; Adresse abgeleitet: Wiki].
+- Gluon-sysupgrade per scp nach /tmp, Benutzer root mit diesem Passwort [geprüft: Commits].
+- `sysupgrade -n -F /tmp/<datei>` [geprüft: Commits].
+- Danach: blaue Status-LED = läuft, rote = Upgrade/Failsafe; 1750x nur rot [geprüft: DTS].
+
+Beste Quellen: OpenWrt-Commits (Feld quelle, alle mit gleichem Installationstext); Wiki toh/devolo/wifi_pro_1750e.
+
+Abweichungen: 1750e danach an LAN 2 (PoE) [abgeleitet: Wiki]. Keine Taste, keine Stock-Versionsgrenze in den Quellen.
+
+### tplink-eap-ssh (5 Geräte: EAP225-Outdoor v1/v3, EAP225-Wall v2, EAP613 v1, EAP615-Wall v1)
+
+Gemeinsamer Ablauf:
+- Gerät per PoE versorgen, Stock-Weboberfläche öffnen, SSH einschalten [geprüft: Commits EAP613/EAP615].
+- `ssh admin@<geräte-ip>` (ohne DHCP 192.168.0.254; alte SSH-Algorithmen freischalten) [abgeleitet: Forum/Suchergebnis].
+- `cliclientd stopcs` ausführen (schaltet die Signaturprüfung ab, Antwort "Success.") [geprüft: Commits; Wirkung abgeleitet].
+- Gluon-factory in der Weboberfläche als Firmware-Update hochladen, ggf. Dateinamen kürzen (z. B. `factory.bin`) [geprüft: Commits; Kürzen Commit EAP613].
+- Debrick/Rückweg nur seriell mit Gehäuseöffnen und Löten [geprüft: Commits].
+
+Beste Quellen: OpenWrt-Commits 4f86edf, 7e4de89, c9f51a9, 11588c5, a1b8a4d.
+
+Abweichungen: EAP225-Outdoor braucht Stock ab v1.6.0, EAP225-Wall v2 "aktuelle" (getestet 1.20.0) [geprüft: Commits]; EAP225-Outdoor v1 vs v3 (AR8033 vs RTL8211FS).
+
+### ssh-stock (3 Geräte: 8devices Jalapeno, VoCore2, Xiaomi MiWiFi Mini)
+
+Kein gemeinsamer Ablauf außer "Stock-Firmware ist (fast) OpenWrt, per SSH/Telnet sysupgrade":
+- Jalapeno: altes LEDE ab Werk, `sysupgrade -n -F`; alte U-Boots: "FIT configuration not found" -> U-Boot-Umgebung anpassen [geprüft: Commit 1e341bb].
+- VoCore2: Ethernet oder WLAN "VoCore2", `ssh root@192.168.1.1` (vocore), `sysupgrade -n`; danach WLAN aus [geprüft: Commit 3f31029].
+- MiWiFi Mini: telnetd per Code-Injection in der Stock-Oberfläche (dokumentiert für Stock v2.6.17, v2.7.11, v2.8.91, v2.2.105), Rückweg/Downgrade per USB-Stick `miwifi.bin`, orange LED -> blau [abgeleitet: Wiki toh/xiaomi/miwifi_mini].
+
+### recovery-web (8 Geräte: ALFA AP121F, Joy-IT JT-OR750i, Onion Omega, RAVPower RP-WD009, Teltonika RUT230 v1, Wavlink WS-WN572HP3 4G, ZBT WG3526 16M/32M)
+
+Gemeinsamer Ablauf (Bootloader-Webseite, Adressen je Gerät verschieden):
+- Rechner per Kabel, feste IP im Netz der Recovery (Ausnahme Joy-IT: DHCP) [geprüft: Commits].
+- Reset beim Einstecken des Stroms halten, bis ein Gerätezeichen kommt (Blinkmuster/LED), loslassen [geprüft: Commits AP121F, RP-WD009, RUT230, Wavlink].
+- Recovery-Seite im Browser öffnen, Image hochladen; je nach Gerät sysupgrade (AP121F, Joy-IT, Wavlink) oder factory (RP-WD009, RUT230, Onion) [geprüft: Commits].
+- Gerät schreibt und startet selbst neu (RP-WD009 etwa 1 min, Wavlink etwa 2 min) [geprüft: Commits].
+
+Adressen und Zeichen je Gerät:
+| Gerät | Recovery | Rechner | Taste/Zeichen | Beleg |
+| --- | --- | --- | --- | --- |
+| AP121F | 192.168.1.1 | 192.168.1.2/24 | erstes Blinken aller LEDs, dann 3 weitere | ar71xx-Commit 0c6165d |
+| JT-OR750i | 10.123.123.1 | DHCP | ab Werk nur Bootloader, keine Taste; TFTP-Notweg: Server 192.168.0.66, Datei `jt-or750i_firmware.bin`, Reset 4 s/6 s | Commit 55b4b36 |
+| Onion Omega | 192.168.1.1 | 192.168.1.2/24 | Taste nicht genannt; Normalweg SSH root/onioneer | Commit d98738b |
+| RP-WD009 | 10.10.10.128 | 10.10.10.1/24 | Reset +10 s bis Globus-LED leuchtet | Commit e959048 |
+| RUT230 v1 | 192.168.1.1 | 192.168.1.10/24 | Signal-LEDs 3x | Commit 6cf1dfd |
+| WS-WN572HP3 4G | 192.168.10.1 | 192.168.10.x [abgeleitet] | Reset 10 s | Commit dce6689 |
+| ZBT WG3526 | 192.168.1.1 | [nicht belegt] | Reset ~10 s, chinesische Recovery-Seite | Wiki wg2626 [abgeleitet] |
+
+Browser: Wavlink nur Chromium (Firefox 106 nicht), Joy-IT umgekehrt "Firefox nehmen, wenn es nicht geht" [geprüft: Commits].
+
+### dlink-recovery-web (6 Geräte: AQUILA PRO AI M30/M60, DAP-1620 B1, DAP-X1860, DIR-878, DIR-882)
+
+Gemeinsamer Ablauf:
+- Rechner feste IP im Recovery-Netz, kein DHCP: M30/M60 192.168.200.x (Recovery .1), DAP 192.168.0.65 (Recovery .50), DIR 192.168.0.2 (Recovery .1) [geprüft: Commits; Neanderfunk-Notizen].
+- Reset mit Büroklammer halten, Strom einstecken, halten bis die LED blinkt (AQUILA: rot; DIR: Power-LED orange, etwa 10 s) [geprüft: Commits].
+- Erreichbarkeit per HTTP prüfen, nie per Ping (Recovery antwortet nicht auf ICMP) [geprüft: Neanderfunk-Notiz].
+- Hochladen per curl: `curl -H "Expect:" -F "firmware=@<image>;type=application/octet-stream" http://<recovery-ip>/upload.cgi` (DIR-Commits: `curl -v -i -F "firmware=@<datei>" 192.168.0.1`); Browser nur Chromium-basiert [geprüft: Commits, Neanderfunk-Notiz].
+- Erfolgsmeldung/Fortschritt der Seite ist ein JavaScript-Timer (80 s), fertig erst, wenn die neue Firmware bootet; kann über 10 min dauern, nicht abbrechen [geprüft: Neanderfunk-Notiz, M60 gemessen].
+- AQUILA/DAP-X1860: OpenWrt-Image als Zwischenschritt, dann Gluon-sysupgrade über 192.168.1.1 [geprüft: Neanderfunk-Notiz].
+
+Beste Quellen:
+- OpenWrt-Commits 29cca6c (M30), 7271ee5 (M60), e4c7703 (DAP-1620 B1), 3c31f6b (DAP-X1860), d7233b0 (DIR-878), 73e8f23 (DIR-882)
+- Neanderfunk-Notizen (Neanderfunk, erste Hand am M60)
+
+Abweichungen:
+- AQUILA M30/M60: zwei UBI-Partitionen, Recovery schreibt in die aktive, OpenWrt bootet nur aus der ersten; M60: UBI-Switch-Image, M30: OEM-Umweg [geprüft: Commits]. Mehrfach-Pack-Geräte (M60-2, M30/CP): MAC-Lage anders, eigener Odm-Parser [geprüft: Notiz].
+- DIR-878/882: laut Commits Web-Recovery auf 192.168.0.1 mit curl-Alternative; Neanderfunk-Notiz sagt "DIR-Reihe über TFTP im U-Boot" (Widerspruch, siehe unten).
+- DAP-X1860: Commit sagt factory.bin in die Recovery, Neanderfunk-Notiz OpenWrt-initramfs (Widerspruch, steht schon im Bestand).
+- Rückweg: entschlüsselte D-Link-Firmware per Recovery (M30, DAP-1620, DAP-X1860; Befehle im Commit) [geprüft: Commits].
+
+### Widersprüche zu vorhandenen Feldern
+
+Nicht korrigiert, nur gelistet.
+
+| Gerät | Feld | alt | neu | Quelle |
+| --- | --- | --- | --- | --- |
+| gl.inet-gl-mt2500 | weg/uebertragung | weg: "U-Boot-Recovery nimmt laut Commit keine Images"; uebertragung nennt recovery-web [abgeleitet] | GL-Doku debrick führt MT2500/MT2500A mit LED-Muster (5x blau, dann weiß) für die U-Boot-Recovery; ob sie OpenWrt/Gluon annimmt, bleibt offen | GL-Doku debrick vs. Commit 1239668 |
+| gl.inet-gl-b1300 | weg | "bis drei LEDs leuchten" [geprüft: Commit] | stimmt mit Commit; GL-Doku heute: WLAN-LED 4x, dann Mesh-LED an (alte B1300: 5x) | GL-Doku debrick |
+| gl-mt300a, gl-mt300n, gl-mt750 | weg | "Reset beim Einstecken mind. 3 s halten" [abgeleitet: Wiki] | GL-Doku: halten bis die LED 3x geblinkt hat (MT300A/MT300N; MT750 nicht genannt) | GL-Doku debrick |
+| gl.inet-gl-ap1300 | weg | "Reset 10 s, bis die Power-LED schneller blinkt" | ergänzt: GL-Doku "5x langsam, kurz an, dann dauernd schnell"; kein Widerspruch, nur genauer | GL-Doku debrick |
+| gl.inet-gl-mt6000 | uebertragung | "recovery-web (GL.iNet-U-Boot, Reset beim Einschalten) [abgeleitet]" | U-Boot-Weg bestätigt, aber nicht über LAN 1 (GL-Doku); Wiki: dort das sysupgrade | GL-Doku, Wiki toh/gl.inet/gl-mt6000 |
+| netgear-r6120 | weg | "Web-UI laut Commit nicht [geprüft]" | Commit 5543d63 sagt nur "To flash use nmrpflash with the provided factory.img", nichts über die Web-UI (anders als R6020: "requires nmrpflash") | Commit 5543d63 |
+| ubiquiti-unifi-6-lr-v1/v2/v3 | weg | "SSH (ubnt/ubnt), bootselect nullen, dd nach kernel0/kernel1" ohne Entsperren | Wiki: ab Stock 6.2 vorher `echo 5edfacbf > /proc/ubnthal/.uf`; ältere Stock-Firmware evtl. unter 192.168.1.34 | Wiki toh/ubiquiti/unifi_6_lr |
+| ubiquiti-unifi-6-lite | weg | kein Hinweis auf Stock-Version | Wiki: ab Stock 6.5 Downgrade auf 6.0.14 nötig | Wiki toh/ubiquiti/unifi_6_lite |
+| ubiquiti-unifi-ac-lite/lr/mesh/mesh-pro/pro | weg | "sysupgrade nach kernel0/kernel1 schreiben" [abgeleitet aus UK Ultra] | Wiki-Weg: `mtd write ... kernel0`, `mtd erase kernel1`, bs nullen; kein echter Widerspruch, nur zweite Variante; Stock 3.7.58 empfohlen | Wiki toh/ubiquiti/unifiac |
+| ubiquiti-rocket-m-xm | weg | "Ubiquiti-TFTP-Recovery wie bei den XW-Geräten [abgeleitet]" | Wiki: XM mit AirOS 5.6+ NICHT direkt flashen (Partitionslayout geändert), erst auf AirOS 5.5 zurück | Wiki toh/ubiquiti/common |
+| d-link-dir-878-a1, d-link-dir-882-a1 | weg | Bestand nennt schon den Widerspruch Commit (Web-Recovery 192.168.0.1) vs. Neanderfunk-Notiz ("DIR-Reihe über TFTP", ToH: Bootloader TFTP-Server 192.168.0.1, Rechner .101) | Commits d7233b0/73e8f23 beschreiben eindeutig die Web-Recovery mit curl `-F firmware=@...` auf 192.168.0.1; Felder hier nach Commit gefüllt | Commits d7233b0, 73e8f23 |
+| d-link-dir-878-a1 | uebertragung | "Rechner 192.168.0.2/24" | bestätigt (Commit); zusätzlich "Kabel an LAN1, etwa 30 s warten bis die Recovery-Seite bereit ist" | Commit d7233b0 |
+| d-link-dap-x1860-a1 | weg | factory.bin (Commit) vs. OpenWrt-initramfs (Notiz) | unverändert offen; Gluon baut für den DAP-X1860 kein Recovery-Image (Notiz) | Commit 3c31f6b, Neanderfunk-Notiz |
+| d-link-aquila-pro-ai-m30-a1 | uebertragung | "Rechner 192.168.200.10/24" | für den Rückweg nennt der Commit 192.168.200.2; beides im selben Netz, kein echter Widerspruch | Commit 29cca6c |
+| joy-it-jt-or750i | uebertragung | "Server 192.168.0.66, Datei jt-or750i_firmware.bin" | bestätigt; Commit: Web-Weg "Use Firefox if flashing does not work" (anders als bei Wavlink/D-Link) | Commit 55b4b36 |
+| zbtlink-zbt-wg3526-* | uebertragung | "recovery-web (Adresse ?)" | Wiki wg2626: Recovery-Seite unter 192.168.1.1 (chinesisch), Reset ~10 s beim Einstecken | Wiki toh/zbtlink/wg2626 [abgeleitet] |
+
+### Offen
+
+- ap51-flash: Welche Ethernet-Buchse der Bootloader beim Flashen nutzt, steht nur für OM2P v2 (Wiki); bei Geräten mit Ethernet 1/2 offen
+- gl.inet-gl-ar300m-nor: Bootet der OEM-U-Boot das NOR-Gluon, wenn im NAND noch eine Stock-Firmware liegt? Commit 55e6c90: Fallback nur NAND->NOR nach 3 Fehlstarts, Seitenschalter wählt nicht NOR/NAND
+- gl.inet-gl-mt2500: Woran man die Airoha-PHY-Revision außen erkennt (Typenschild?), in keiner gelesenen Quelle
+- gl.inet-gl-mt3000: Ob der GL-U-Boot das Gluon-sysupgrade annimmt (GL-Doku spricht von "U-Boot compatible firmware")
+- gl.inet-gl-usb150: U-Boot-Weg am USB-Stick (Taste beim Einstecken) nicht belegt
+- netgear-nmrp: nmrpflash-README widerspricht sich bei den Default-IPs: Usage "-a target [10.164.183.253], -A interface [10.164.183.252]", Fließtext umgekehrt; Orbi-Commit rät Rechner 10.164.183.253. Für die Anleitung nur "vergibt nmrpflash selbst" schreiben
+- netgear-eax12, netgear-wax202: Gluon-factory ist mit NETGEAR_ENC_REGION US verschlüsselt; ob eine EU-Stock-Oberfläche es annimmt, nicht belegt (nmrpflash/Bootloader nimmt beides)
+- netgear-nmrp: Bei welchen Modellen die Reset-Taste beim Einschalten nötig ist, nennt nmrpflash nicht je Modell
+- ubiquiti-unifi-6-lr-v2/v3: Außen sichtbarer Unterschied v2/v3 nur über Produktionsdatum (Wiki); Folge eines falschen Images (vermutlich kein Ethernet) nicht belegt
+- ubiquiti-unifi-ap-outdoor+: Welches Image `fwupdate.real` nimmt (factory/sysupgrade), Commit sagt nur "Firmware update"
+- ubiquiti-unifi-ap: keine Quelle für den Installationsweg (Commit und Wiki-Seite fehlen)
+- ubiquiti-nanostation-*-xw: Gilt die AirOS-Grenze 6.0.4 / Signaturpflicht (6.1.7, neue HW-Revision) auch für den TFTP-Recovery-Weg? Freifunk-Forum-Thread "Ubnt XW/AirOS 6.1.7 nicht auf OpenWRT umflashbar" deutet darauf hin, nicht gelesen
+- ubiquiti-edgerouter-x*: Dauer und LED-Zeichen in keiner Quelle; der ganze Weg hängt an Fremd-factory.tar
+- tp-link-eap225-outdoor-v3: Forum-Thread "EAP225-outdoor v3 firmware is incompatible" (AddiHardwareVer) nicht gelesen; mögliche Stock-Versions-/Revisionsfalle
+- 8devices-jalapeno: IP und Zugangsdaten des Werks-LEDE in keiner Quelle
+- tplink-eap-ssh: Stock-Adresse 192.168.0.254 / Login admin nur aus Suchergebnis (Forum), nicht aus Commit oder TP-Link-Doku gelesen
+- dlink-recovery-web: DAP-1620 B1: Rechner-IP nicht belegt (192.168.0.65 nur vom DAP-X1860 übertragen)
+- zbtlink-zbt-wg3526-*: Rechner-IP für die Recovery und Unterscheidung 16 MB/32 MB von außen nicht belegt
+- onion-omega: Taste für die U-Boot-Weboberfläche nicht genannt
+
+## Teil D: seriell + TFTP, Aruba APBoot, Einzelfälle
+
+Stand 10.10.2026. Felder in D.json; hier gemeinsamer Ablauf, Quellen, Abweichungen.
+
+### Familie aruba-apboot (AP-303, AP-303H, AP-365, Instant On AP11D, AP17)
+
+Gemeinsamer Ablauf:
+- Konsole: 9600 8N1, 3,3 V. AP-303/303H: Micro-USB-Buchse "Console" ist nur UART-Stecker, eigenes Kabel aus altem Micro-USB-Kabel + USB-TTL-Adapter; nie normales USB-Kabel an den Rechner [geprüft: Commits 102c8c5, c6e972c]. AP-365: echte USB-Konsole (CP2101), normales Kabel [geprüft: Commit 300b7fe].
+- Boot unterbrechen: Enter bei "Hit <Enter> to stop autoboot" (Countdown ca. 2 s) [geprüft: Commits; Countdown Wiki-Bootlog].
+- Rechner: feste IP 192.168.1.75/24, TFTP-Server, OpenWrt- bzw. RAMpe-initramfs als `ipq40xx.ari` [geprüft: Commits]. AP-303H: TFTP nur über Port E0 [geprüft].
+- apboot-Variablen setzen, saveenv, `run ramboot_openwrt`; die Meldung "Invalid image format version" nach dem Laden ist normal [geprüft: Wiki toh/aruba/ap-303].
+- Im initramfs: sysupgrade per scp nach /tmp, `ubidetach`/`ubiformat` der UBI-Partition, `sysupgrade -n` [geprüft: Commits].
+- Rückweg: `setenv bootcmd "boot"; saveenv` [geprüft: Commits].
+
+Beste Quellen:
+- Commits: https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=102c8c55f217606cdbdc9a449667e034676b3e75 (AP-303), c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0 (AP-303H), 300b7fe85a743ab0e039457a5a551819b49450da (AP-365)
+- https://openwrt.org/toh/aruba/ap-303 (Hinweis "Invalid image format version", billige USB-UART-Adapter versagten, DHCP-Variante), https://openwrt.org/toh/aruba/ap-303h (Rückweg mit `upgrade os`), https://openwrt.org/toh/aruba/ap-365
+
+Abweichungen:
+- AP-303H/AP11D: TFTP an E0, scp danach an E1-E3; ubiformat /dev/mtd16.
+- AP-365/AP17: echte USB-Konsole; Partition mit Label "ubi" nehmen.
+- AP11D/AP17: ob das Instant-On-apboot wie beim AP11 gesperrt ist (bootet nur signierte Images), ist nicht belegt.
+
+### Familie seriell-tftp (22 Geräte)
+
+Gemeinsamer Ablauf:
+- Konsole anschließen: entweder Cisco-Konsolenkabel am RJ45 "Console" (RS232-Pegel; Enterasys/Extreme/Siemens/Aerohive) oder USB-TTL 3,3 V an Pins/Testpunkten in geöffnetem Gehäuse (Cudy, ZTE, Xiaomi, TP-Link, Sophos AP15, AP3805i). USB-TTL an RS232-Port geht nicht und kann Schaden nehmen [geprüft: Wiki toh/aerohive/ap121]. 3V3/VCC-Pin nie anschließen [geprüft: Commits MF281, Wiki 4A].
+- Terminal 115200 8N1, Ausnahme Aerohive 9600 [geprüft: Commits].
+- Boot unterbrechen: gerätespezifische Taste im Terminal (Enter, Leertaste, `s`, `t`, ESC, Ctrl-C, Ctrl+B, beliebig), oft nur 1-2 s Zeitfenster; U-Boot-Login bei Enterasys/Extreme admin/new2day, Aerohive `AhNf?d@ta06`/`administrator` [geprüft: Commits].
+- Rechner: TFTP-Server mit fester IP laut Gerät (192.168.1.66 bei David-Bauer-Ports, sonst verschieden), Datei mit vorgegebenem Namen; wo `tftpboot` ohne Dateinamen läuft (AP3705i, Siemens), ist der Name (Geräte-IP in Hex, z. B. 1401A8C0.img = 192.168.1.20) zwingend [abgeleitet: U-Boot-Standard].
+- Meist: bootcmd auf OpenWrt umstellen + saveenv, initramfs booten, sysupgrade per scp, `sysupgrade -n` [geprüft: Commits]. Xiaomi RA75/4A und TD-W8980/D50 flashen das sysupgrade direkt aus U-Boot.
+- Rückweg oft: Stock-bootcmd in Variable boot_flash bzw. eigenes Backup [geprüft: Commits AP3710i/3825i].
+
+Beste Quellen:
+- OpenWrt-Commits (Feld quelle), dazu Wiki: https://openwrt.org/toh/aerohive/ap121, https://openwrt.org/toh/aerohive/hiveap-330, https://openwrt.org/toh/extreme_networks/ws-ap3935i, https://openwrt.org/toh/extreme_networks/ws-ap3825i, https://openwrt.org/toh/sophos_red_15w_rev_1, https://openwrt.org/toh/tp-link/td-w8980_v1, https://openwrt.org/toh/zte/mf289f, https://openwrt.org/toh/cudy/tr3000, https://openwrt.org/toh/d-link/dir-505
+- Deutschsprachig: Freifunk Aachen zur MF289F: https://freifunk-aachen.de/2025/04/09/installationsanleitung-zte-mf289f/
+- Werkzeug für WS-AP3710i: https://github.com/grische/extremeflash (automatisiert Konsole + TFTP)
+- EAP620 HD v1: Commits nur auf GitHub (lokal fehlend): https://github.com/openwrt/openwrt/commit/4b6e7da0f7499acb69feaacca79e0ee826c0b8db, https://github.com/openwrt/openwrt/commit/8a15a75e9414bbb839ac457701b041454e89bbc4
+
+Abweichungen (Kurzliste):
+- Aerohive: 9600 Baud, Leertaste, Bootloader-Versionsprüfung mit `version`.
+- AP3935: beliebige Taste außer `d`; Watchdog/SecImg-Falle.
+- AP3915i: Taste `s`. TD-W8980: Taste `t`. MF289F: ESC. MR80X: Ctrl-C. EAP620: Ctrl+B.
+- Cudy TR3000: Reset beim Einschalten 5 s, U-Boot-Shell kommt nach gescheiterter OEM-Recovery von selbst.
+- Xiaomi RA75/4A: U-Boot-Menü Option 2, schreibt das sysupgrade direkt.
+- DIR-505: zusätzlich D-Link-Recovery (Reset, rote LED blinkt) mit altem ar71xx-factory als Weg ohne Seriell.
+
+### Einzelfälle (sonderweg-*, 31 Geräte)
+
+Je Gerät ein Abschnitt: Kern-Ablauf, beste Quelle(n), Besonderheit. Details in D.json.
+
+#### sonderweg-arcadyan-vgv7510kw22
+- Ablauf: OpenWrt-U-Boot (nor) über brnboot in den RAM (seriell: 3x Leertaste, `!`, `sx`) oder per Recovery-Web/16-MB-Vollimage, dann U-Boot in NOR, dann sysupgrade per TFTP [geprüft: Wiki].
+- Quelle: https://openwrt.org/toh/arcadyan/vgv7510kw22, Forum-Thread im Feld anleitung.
+- Besonderheit: brn- und nor-Images nicht mischbar.
+
+#### sonderweg-aruba-ap-32x
+- Ablauf: Stock-APBoot (9600) -> `diag`, gepatchtes APBoot per netget + `sf write`; danach 115200; NAND löschen, UBI ubifs(1 LEB)+rootfs_data; `.ari` per tftpboot; sysupgrade [geprüft: Commit d2a7502].
+- Quellen: https://github.com/openwrt/openwrt/commit/d2a75029a5f8e54e1fd2f252f73b9a430a030116, https://openwrt.org/toh/aruba/ap-325, https://github.com/maurerle/ap325-flashtool (automatisiert alles), https://github.com/lukasstockner/ap325-apboot-openwrt
+- Besonderheit: AP-324/AP-325/Scalance W1750D gleiches Image.
+
+#### sonderweg-aruba-instant-on-ap11
+- Ablauf: wie AP-303, vorher entsperrtes apboot aus gepatchtem SPI-Dump per netget + `sf protect off; sf erase/write 0xf0000 0xf0000` [geprüft: Neanderfunk-Notiz].
+- Quellen: Neanderfunk-Notiz, https://github.com/Sc4ndium90/aruba-ap11-openwrt, https://openwrt.org/toh/aruba/ap-303 (AP11-Bootlog).
+
+#### sonderweg-asus-lyra-map-ac2200
+- Ablauf: SSH in Stock, initramfs nach /tmp, `mtd-unlock -d linux`, `mtd-write -d linux -i ...`, `reboot -f`, sysupgrade [geprüft: Commit 9ad3967, Wiki].
+- Quelle: https://openwrt.org/toh/asus/lyra_map-ac2200 (LED-Ablauf blau).
+
+#### sonderweg-asus-rt-ax52
+- Ablauf: Stock-Web-UI nimmt `initramfs.trx`, danach sysupgrade; bei Ablehnung Downgrade per ASUS Firmware Restoration [geprüft: Commit, Wiki].
+- Quelle: https://openwrt.org/toh/asus/rt-ax52
+
+#### sonderweg-asus-rt-ax59u
+- Ablauf: Transit-TRX eines Dritten über Stock-Web-UI oder seriell '4' + TFTP `rtax59u.bin` von 192.168.1.70 [geprüft: Commit 782eb05].
+- Quelle: https://openwrt.org/toh/asus/rt-ax59u
+
+#### sonderweg-buffalo-wzr-hp-g450h-wzr-450hp
+- Ablauf: versteckte Firmware-Seite (bufpy/otdpopy), factory, ca. 200 s [geprüft: Commit 1df1ea4].
+
+#### sonderweg-comfast-cf-ew71-v2
+- Ablauf: Stock (OpenWrt-basiert) nimmt sysupgrade; alternativ Recovery-Web (Reset ca. 5 s beim Einstecken, LEDs blinken schnell, 192.168.1.1) [geprüft: Commit ee3a6ad].
+
+#### sonderweg-d-link-dir825b1
+- Ablauf laut Wiki: D-Link-Recovery (Reset bis Power-LED orange blinkt, 192.168.0.100 -> 192.168.0.1, alter Browser) mit OpenWrt-23.05.5-factory, dann sysupgrade [geprüft: Wiki].
+- Quelle: https://openwrt.org/toh/d-link/dir-825
+
+#### sonderweg-devolo-dlan-pro-1200+-wifi-ac
+- Ablauf: Bootloader-TFTP: Reset beim Einschalten ca. 15 s, Gerät holt `uploadfile` von 192.168.0.100 [geprüft: Commit 624b85e, Wiki].
+- Quelle: https://openwrt.org/toh/devolo/dlan_pro_1200_wifi_ac
+
+#### sonderweg-genexis-pulse-ex400
+- Ablauf: Stock-Web-UI oder U-Boot-Recovery (Reset beim Einschalten, http://192.168.1.1) nimmt factory, dann sysupgrade [geprüft: Commit dd0c283, Darmstadt-Wiki].
+- Quelle: https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400 (deutsch, Gluon-bezogen)
+
+#### sonderweg-google-wifi-gale
+- Ablauf: Google-Recovery auf Werkszustand, Gehäuse öffnen, Developer-Mode über Reset + SW7, OpenWrt-factory vom USB-Stick booten, per ssh/dd auf die eMMC [geprüft: Wiki].
+- Quelle: https://openwrt.org/toh/google/wifi (genaue LED-Folge, getestete USB-C-Hubs)
+
+#### sonderweg-hewlett-packard-msm460
+- Ablauf: Reset beim Verbinden, Befehlsdatei per `tftp put ... nflashd.cccc9999`, Stock-Bootloader holt Fremd-U-Boot und schreibt ihn, danach factory [geprüft: Commit af329ec].
+- Quelle: https://github.com/blocktrron/msm460-flashing
+
+#### sonderweg-librerouter-v1
+- Ablauf: OpenWrt/LibreRouterOS ab Werk, sysupgrade über Web oder `sysupgrade -n` [geprüft: Commit 24463d0].
+
+#### sonderweg-linksys-e8450-ubi
+- Ablauf heute: owrt-ubi-installer-Image über die Stock-Weboberfläche, Bootchain-Backup sichern, sysupgrade [geprüft: README dangowrt/owrt-ubi-installer, Wiki]; Commit-Weg veraltet (siehe Widersprüche).
+- Quellen: https://github.com/dangowrt/owrt-ubi-installer, https://openwrt.org/toh/linksys/e8450
+
+#### sonderweg-meraki-mr33-access-point
+- Ablauf: Bootloader-Version prüfen, ubootwrite lädt mr33-uboot.bin (250-300 s), initramfs per `tftp put`, UBI umbauen, sysupgrade [geprüft: Wiki, Commit 4943afd].
+- Quelle: https://openwrt.org/toh/meraki/mr33
+
+#### sonderweg-mercusys-mr90x-v1
+- Ablauf: SSH Port 20001, telnet-Hintertür über 65-iptv + IPTV-Schalter, busybox-arm64, initramfs ins UBI-Volume kernel, fw_setenv, sysupgrade [geprüft: Commit e4fe309, Wiki].
+- Quelle: https://openwrt.org/toh/mercusys/mr90x_v1
+
+#### sonderweg-netgear-wax218
+- Ablauf: Stock-UI System Manager > Firmware > Local Firmware Upgrade nimmt `web-ui-factory.fit`, danach sysupgrade [geprüft: Commit 7801161].
+
+#### sonderweg-totolink-x5000r
+- Ablauf: Stock-UI nimmt OpenWrt-sysupgrade [geprüft: Commit 23be410].
+
+#### sonderweg-tp-link-archer-c60-v1
+- Ablauf: Web-UI/TFTP-Recovery nur mit factory (fehlt in 24.10), sonst UART [geprüft: Commit 6d313da].
+- Quelle: https://openwrt.org/toh/tp-link/archer_c60_v2
+
+#### sonderweg-tp-link-td-w8970
+- Ablauf: ohne Öffnen Shell per SSID-Injection oder StatPost (telnet 1023), mit Öffnen seriell `t` + TFTP [geprüft: Wiki].
+- Quelle: https://openwrt.org/toh/tp-link/td-w8970_v1
+
+#### sonderweg-ubiquiti-nanobeam-ac-gen1-xc
+- Ablauf: airOS XC v8.7.0/8.7.4, per SSH gepatchtes `fwupdate.real -m <factory>` [geprüft: Wiki].
+- Quelle: https://openwrt.org/toh/ubiquiti/common
+
+#### sonderweg-wavlink-wl-wn573hx3
+- Ablauf: versteckte Seite meshUpgrade.html nimmt das sysupgrade, danach Werkseinstellungen [geprüft: Commit ca38f13].
+
+#### sonderweg-xiaomi-ax3600
+- Ablauf: SSH per stok-Exploit (Stock CN 1.0.17) oder bdata-Patch, `initramfs-factory.ubi` per ubiformat in die inaktive rootfs-mtd + nvram, sysupgrade [geprüft: Commit 8364f08, Wiki].
+- Quelle: https://openwrt.org/toh/xiaomi/ax3600
+
+#### sonderweg-xiaomi-mi-router-3g
+- Ablauf: SSH (Entwickler-Firmware + miwifi_ssh.bin vom USB-Stick) oder OpenWRTInvasion, kernel1/rootfs0 per mtd [geprüft: Commit 6e283cd, Wiki].
+- Quelle: https://openwrt.org/toh/xiaomi/mir3g
+
+#### sonderweg-xiaomi-mi-router-ax3000t / -openwrt-u-boot-layout
+- Ablauf: SSH per API-Lücke (Stock-abhängig), Backup, initramfs-factory.ubi per ubiformat + nvram, sysupgrade; ubootmod zusätzlich UBI-Neuaufbau + OpenWrt-Bootloader [geprüft: Commit 7dbcc12].
+- Quelle: https://openwrt.org/toh/xiaomi/ax3000t (Tabelle Stock-Version -> Exploit, Hardware-Varianten)
+
+#### sonderweg-xiaomi-redmi-router-ax6s
+- Ablauf: Telnet (ab Werk oder Closed-Beta 1.2.7 beim RB03), Passwort aus Seriennummer, nvram, factory per wget + mtd [geprüft: Commit 9f9477b, Wiki].
+- Quelle: https://openwrt.org/toh/xiaomi/ax3200; Neanderfunk-Notiz
+
+#### sonderweg-zte-mf286r
+- Ablauf: Root-Shell per URL-Filter-Exploit (telnet 4719) oder busybox-Nachladen, Backup, initramfs per nandwrite in "firmware", reboot, sysupgrade [geprüft: Commit 7ac8da0].
+- Quelle: Commit; https://openwrt.org/toh/zte/mf286r (empfiehlt seriell als einfachsten Weg)
+
+#### sonderweg-zyxel-nbg6616
+- Ablauf: zloader per ATSE/ATEN-Challenge entsperren, bootcmd auf boot_openwrt, saveenv, factory als `ras.bin` per WPS-TFTP-Recovery [geprüft: Commit 459c8c9]; laut Wiki auch ohne Seriell über 19.07.10-ar71xx (siehe Widersprüche).
+- Quelle: https://openwrt.org/toh/zyxel/nbg6616
+
+#### sonderweg-zyxel-wsm20
+- Ablauf: versteckte Seite /gui/#/main/debug/firmwareupgrade nimmt initramfs-kernel.bin, danach sysupgrade [geprüft: Commit 28df7f7, Wiki].
+- Quellen: https://openwrt.org/toh/zyxel/wsm20 (LED-Folge), https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/
+
+### Widersprüche zu vorhandenen Feldern
+
+| Gerät | Feld | alt | neu | Quelle |
+|---|---|---|---|---|
+| aerohive-hiveap-330 | weg/uebertragung | initramfs (+ .fdt) per TFTP, sysupgrade per scp | Seit der Neupartitionierung (DEVICE_COMPAT_VERSION 2.0, OpenWrt > 21.02) zusätzlich U-Boot patchen (owrt_boot setzen, im initramfs opkg kmod-mtd-rw, u-boot-Partition patchen und schreiben), sonst bootet der Stock-U-Boot den installierten Kernel nicht; kein .fdt mehr nötig, Datei per tftpboot 1000000 192.168.1.101:<name> | Wiki toh/aerohive/hiveap-330, Pin p1020.mk DEVICE_COMPAT_MESSAGE |
+| aerohive-hiveap-121 | weg | nand erase 0x800000 0x800000 (Commit) | Wiki: nand erase 0x800000 0x7400000 (beide Stock-Kernel und rootfs), nand write 0x${filesize} | Wiki toh/aerohive/ap121 |
+| cudy-tr3000-v1 | weg | Cudy-Zwischenfirmware fehlt im Spiegel und bei Cudy (Stand 08.10.2026) | Wiki nennt Cudy-Intermediate-Firmware "TR3000 V1.zip" bzw. "TR3000 V1_20251118.zip" (cudy_tr3000-v1-sysupgrade.bin) unter cudy.com/blogs/faq/openwrt-software-download und Google Drive; nicht nachgeprüft, ob dort noch abrufbar | Wiki toh/cudy/tr3000 |
+| extreme-networks-ap3935 | weg | bootcmd 'ping 192.168.1.1; run boot_flash' (Commit) | Wiki: vorher `nand erase.part PriImg` und `SecImg`, `env default -f; saveenv`, bootcmd mit MOSTRECENTKERNEL 0, WATCHDOG_COUNT 0, WATCHDOG_LIMIT 0, ping 255.255.255.255; sonst kopiert sich das Stock-SecImg nach Watchdog-Neustarts über OpenWrt | Wiki toh/extreme_networks/ws-ap3935i |
+| sophos-red-15w-rev.1 | weg | bootargs_owrt/bootcmd laut Commit (nand read 0x1000000 ... bootm 0x1000000) | Wiki: ab OpenWrt 24.10 bootcmd `setenv bootargs console=ttyS0,115200\; nand read 0x1800000 0x300000 0x800000\; bootm 0x1800000`, initramfs nach 0x2000000; bei bootdelay 0 erst per Stock-Failsafe fw_setenv bootdelay=3 | Wiki toh/sophos_red_15w_rev_1 |
+| d-link-dir-505 | weg/seriell | nur U-Boot-TFTP seriell | Wiki: ohne Seriell über Stock-Web-UI oder D-Link-Recovery (Reset beim Einstecken, 192.168.0.1) mit altem ar71xx-factory, danach sysupgrade auf ath79; ToH: Installationsmethoden "GUI OEM, D-Link Recovery GUI" | Wiki toh/d-link/dir-505, ToH |
+| xiaomi-mi-router-4a-100m-edition | seriell | ja | Wiki nennt Weg ohne UART: Xiaomi-TFTP-Recovery (Reset beim Einstecken bis gelbe LED blinkt, DHCP+TFTP, test.bin = Stock 2.18.28; fertig, wenn LED blau blinkt), dann OpenWRTInvasion, mtd write OS1; passt eher zur Familie xiaomi-openwrtinvasion | Wiki toh/xiaomi/mi_router_4a_mir4a_100m |
+| extreme-networks-ws-ap3825i | zeichen (Commit) | LEDs unter OpenWrt ohne Funktion | Wiki: Power-LED blinkt nach sysupgrade bis Speicherprüfung fertig, dann dauerhaft (vermutlich bootloadergesteuert) | Commit 7e61482 vs Wiki |
+| linksys-e8450-ubi | weg/werkzeug | Commit-Weg (initramfs-recovery.itb über Stock-UI, preloader/fip per mtd write); UBI-Installer nur "alternativ" | Wiki: Erstinstallation nur noch mit dangowrt/owrt-ubi-installer (`...-ubi-initramfs-recovery-installer.itb`, ab Stock 1.2.00.273012 die _signed-Variante); "Simply flashing an linksys_e8450-ubi-initramfs-recovery.itb image alone is not enough and will brick the device"; seit 2024-02 liegen FIP und Factory im UBI (24.10-Layout) | Wiki toh/linksys/e8450, README owrt-ubi-installer |
+| meraki-mr33-access-point | weg/uebertragung | modifizierter U-Boot per ubootwrite, dann sysupgrade per `tftp put` | Wiki: initramfs per tftp put an 192.168.1.1, im initramfs alle UBI-Volumes außer ART löschen, initramfs als statisches Volume part.old anlegen, dann sysupgrade; vorher Bootloader-Version prüfen (nur U-Boot 2012.07-g97ab7f1, sonst Brick); ubootwrite aus github sebastiaanv3/ubootwrite | Wiki toh/meraki/mr33 |
+| zyxel-nbg6616 | seriell/kat | ja (K5) | Wiki: ohne Seriell möglich: OpenWrt 19.07.10 ar71xx-factory über die Stock-Weboberfläche, per SSH `fw_setenv boot_openwrt bootm 0x9F120000; fw_setenv bootcmd run boot_openwrt`, dann `sysupgrade -F -n` auf ath79 | Wiki toh/zyxel/nbg6616 |
+| zyxel-wsm20 | werkzeug | Zyxel-Cloud-Konto | Wiki: versteckte Upgrade-Seite geht auch ohne Registrierung, nur falls nicht, registrieren; Wiki-URL mit http statt https | Wiki toh/zyxel/wsm20 |
+| xiaomi-mi-router-ax3000t | weg/werkzeug | Stock 1.0.47 (arn_switch) | Wiki: fast alle Stock-Versionen (CN bis 1.0.98, INT bis 1.0.104) über xqsystem/start_binding bzw. get_icon angreifbar; nur CN 1.0.106 braucht Downgrade; außerdem RD03v2 (Qualcomm) nicht unterstützt | Wiki toh/xiaomi/ax3000t |
+| xiaomi-mi-router-3g | weg | Shell-Zugang offen; kernel0 löschen | Wiki: SSH über Entwickler-Firmware + Xiaomi-Konto + miwifi_ssh.bin vom USB-Stick (Reset halten bis gelbe LED blinkt) oder OpenWRTInvasion; Wiki setzt statt `mtd erase kernel0` `nvram set flag_try_sys1_failed=1; nvram commit` | Wiki toh/xiaomi/mir3g |
+| d-link-dir825b1 | weg/uebertragung/seriell | ? (Weg ab Werk nicht beschrieben) | Wiki: D-Link-Recovery (Reset beim Einschalten bis Power-LED orange blinkt, PC 192.168.0.100/24, http://192.168.0.1, nur mit alten Browsern) mit OpenWrt-23.05.5-factory, danach sysupgrade; ohne Seriell | Wiki toh/d-link/dir-825 |
+
+### Offen
+
+- siemens-ws-ap3610: Commit setzt boot_openwrt, aber kein `setenv bootcmd 'run boot_openwrt'` (anders als AP3705i); ob Stock-bootcmd OpenWrt trotzdem bootet, ist offen
+- aruba-instant-on-ap11: Baudrate: Commit/Wiki AP-303 9600, github Sc4ndium90/aruba-ap11-openwrt nennt 115200 für den AP11
+- enterasys-ws-ap3705i: ToH nennt 3.3 V Pegel für die Cisco-RJ45-Konsole; sonst RS232 üblich. Pegel offen
+- aruba-instant-on-ap11d, aruba-instant-on-ap17: apboot-Sperre (nur signierte Images) wie AP11? nicht belegt
+- extreme-networks-ws-ap3825i: Gehäuse identisch mit Enterasys WS-AP3725i / Adtran BSAP-2030; Image-Kompatibilität offen
+- tp-link-eap620-hd-v1: OpenWrt-Commits 4b6e7da und 8a15a75 fehlen im lokalen OpenWrt-Baum (nur GitHub gelesen)
+- xiaomi-mi-router-ax3000t-openwrt-u-boot-layout: Wiki: Geräte mit AN8855-Switch und/oder Foresee-NAND sind erst ab OpenWrt 25.12.0 voll mit dem OpenWrt-U-Boot verträglich; Gluon 2025.1 baut auf 24.10. Prüfen, ob der ubootmod-Weg für diese Varianten gesperrt werden muss
+- xiaomi-mi-router-ax3000t: Foresee-NAND braucht OpenWrt ab 24.10.3 (Bugfix), AN8855 ab 24.10.0-rc7: gegen den OpenWrt-Stand der Gluon-2025.1-Basis prüfen
+- ubiquiti-nanobeam-ac-gen1-xc: Wiki: OpenWrt-24.10-Releases vor 24.10.3 mit Read-only-Flash-Fehler auf vielen Ubiquiti-Geräten; Stand der Gluon-Basis prüfen. Außerdem: Wiki-XC-Verfahren (fwupdate.real patchen) laut Wiki mit neueren Snapshots zeitweise nicht mehr funktionierend
+- google-wifi-gale: Wiki: OpenWrt-factory per dd auf den Stick klappt oft nicht, nur mit OnHub Recovery Utility (Chrome, nicht Linux)
+- hewlett-packard-msm460: Erfolgs-LED-Muster nur als GIF im blocktrron-Repo, nicht in Worten
+- aruba-ap-32x: Wie das Stock-APBoot unterbrochen wird, steht weder im Commit noch im README; Enter wie bei AP-303 nur abgeleitet
+- asus-rt-ax52: RT-AX52 Pro: gleiches Image? nicht belegt
+- Allgemein: Feld `dauer` ist bei fast allen seriell-tftp-Geräten leer, weil keine Quelle Zeiten nennt.
+- Allgemein: die ToH nennt bei manchen Geräten mit Cisco-RJ45-Konsole 3.3 V (z. B. Enterasys WS-AP3705i), Wiki/Aerohive sagen RS232; Pegel vor dem Schreiben der Anleitung am Gerät prüfen.
+
+### Lokale Quelltexte
+
+Commit-Texte je Gerät: D-commits/<gluon_name>.txt; Wiki-Rohtexte: D-wiki/*.txt (Abruf 10.10.2026).
 
 Lizenz dieser Datei: CC BY-SA 4.0.

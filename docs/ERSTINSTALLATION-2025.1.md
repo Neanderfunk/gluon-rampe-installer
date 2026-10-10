@@ -548,14 +548,19 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 OpenMesh A40 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ A60 an (A40 und A60); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_a40-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 9a172797e593c061f6759a37eaeba2956ad8d72f [geprüft]
 
@@ -564,14 +569,19 @@ OpenMesh A40 · ath79-generic · K1d
 OpenMesh A60 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ A60 an (A40 und A60); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_a60-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** eaf2e32c12655d7fb58e158086a784393dc6f69a [geprüft]
 
@@ -580,14 +590,19 @@ OpenMesh A60 · ath79-generic · K1d
 OpenMesh MR1750 v1 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ MR1750 an (MR1750 v1 und v2); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_mr1750-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** ae7680dc4bf914d640dba32c8f1c36631768a56a [geprüft]
 
@@ -596,14 +611,19 @@ OpenMesh MR1750 v1 · ath79-generic · K1d
 OpenMesh MR1750 v2 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ MR1750 an (MR1750 v1 und v2); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_mr1750-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 0988e03f0e676286f3377d1530ebfb0d819ee629 [geprüft]
 
@@ -612,14 +632,19 @@ OpenMesh MR1750 v2 · ath79-generic · K1d
 OpenMesh MR600 v1 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ MR600 an (MR600 v1 und v2); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_mr600-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 4b35999588ee6dbe1fd818760b358b1191ddd0be [geprüft]
 
@@ -628,14 +653,19 @@ OpenMesh MR600 v1 · ath79-generic · K1d
 OpenMesh MR600 v2 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ MR600 an (MR600 v1 und v2); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_mr600-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** d9a3af46d8a1001223c2a327f449b7048d0fd5f6 [geprüft]
 
@@ -644,14 +674,19 @@ OpenMesh MR600 v2 · ath79-generic · K1d
 OpenMesh MR900 v1 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ MR900 an (MR900 v1 und v2); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_mr900-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** e06c9eec5dc8a3721df768ab952712cf015d4e6f [geprüft]
 
@@ -660,14 +695,19 @@ OpenMesh MR900 v1 · ath79-generic · K1d
 OpenMesh MR900 v2 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ MR900 an (MR900 v1 und v2); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_mr900-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 31172e53f9d0971204e6fa7e3541c0695d99618a [geprüft]
 
@@ -676,14 +716,20 @@ OpenMesh MR900 v2 · ath79-generic · K1d
 OpenMesh OM2P-HS v1 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM2P an (OM2P v1/v2/v4, OM2P-HS v1-v4, OM2P-LC); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-hs-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
+- **Rückweg zur Herstellerfirmware:** Herstellerfirmware lässt sich wieder mit ap51-flash bzw. dem Open-Mesh-Flash-Tool aufspielen [abgeleitet: Wiki toh/openmesh/om2p]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** a462412977cc25b79a7a3479527e754d85c23fd7 [geprüft]
 
@@ -692,14 +738,20 @@ OpenMesh OM2P-HS v1 · ath79-generic · K1d
 OpenMesh OM2P-HS v2 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM2P an (OM2P v1/v2/v4, OM2P-HS v1-v4, OM2P-LC); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-hs-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
+- **Rückweg zur Herstellerfirmware:** Herstellerfirmware lässt sich wieder mit ap51-flash bzw. dem Open-Mesh-Flash-Tool aufspielen [abgeleitet: Wiki toh/openmesh/om2p]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** f096accce26bc46831e859ccd40b3f88e404cc7e [geprüft]
 
@@ -708,14 +760,20 @@ OpenMesh OM2P-HS v2 · ath79-generic · K1d
 OpenMesh OM2P-HS v3 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM2P an (OM2P v1/v2/v4, OM2P-HS v1-v4, OM2P-LC); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-hs-v3-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
+- **Rückweg zur Herstellerfirmware:** Herstellerfirmware lässt sich wieder mit ap51-flash bzw. dem Open-Mesh-Flash-Tool aufspielen [abgeleitet: Wiki toh/openmesh/om2p]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 75900a25ed2acd4201bcd9a5516bdf7cdb9a8e73 [geprüft]
 
@@ -724,14 +782,20 @@ OpenMesh OM2P-HS v3 · ath79-generic · K1d
 OpenMesh OM2P-HS v4 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM2P an (OM2P v1/v2/v4, OM2P-HS v1-v4, OM2P-LC); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-hs-v4-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
+- **Rückweg zur Herstellerfirmware:** Herstellerfirmware lässt sich wieder mit ap51-flash bzw. dem Open-Mesh-Flash-Tool aufspielen [abgeleitet: Wiki toh/openmesh/om2p]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 5b37b52e69884c6c843738cc45ed8a1deba0eba3 [geprüft]
 
@@ -740,14 +804,20 @@ OpenMesh OM2P-HS v4 · ath79-generic · K1d
 OpenMesh OM2P-LC · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM2P an (OM2P v1/v2/v4, OM2P-HS v1-v4, OM2P-LC); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-lc-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
+- **Rückweg zur Herstellerfirmware:** Herstellerfirmware lässt sich wieder mit ap51-flash bzw. dem Open-Mesh-Flash-Tool aufspielen [abgeleitet: Wiki toh/openmesh/om2p]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** eb3a5ddba0d4d0c4ab1f21ccbfbcf9aa0254bce9 [geprüft]
 
@@ -756,14 +826,20 @@ OpenMesh OM2P-LC · ath79-generic · K1d
 OpenMesh OM2P v1 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM2P an (OM2P v1/v2/v4, OM2P-HS v1-v4, OM2P-LC); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 32 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
+- **Rückweg zur Herstellerfirmware:** Herstellerfirmware lässt sich wieder mit ap51-flash bzw. dem Open-Mesh-Flash-Tool aufspielen [abgeleitet: Wiki toh/openmesh/om2p]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 8143709c90c3aa0a84e14cf4a9dfbcb365b0d966 [geprüft]
 
@@ -772,14 +848,20 @@ OpenMesh OM2P v1 · ath79-generic · K1d
 OpenMesh OM2P v2 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']; OM2P v2: zum Flashen die Ethernet-Buchse nahe der Stromversorgung nehmen [abgeleitet: Wiki toh/openmesh/om2p]
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM2P an (OM2P v1/v2/v4, OM2P-HS v1-v4, OM2P-LC); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
+- **Rückweg zur Herstellerfirmware:** Herstellerfirmware lässt sich wieder mit ap51-flash bzw. dem Open-Mesh-Flash-Tool aufspielen [abgeleitet: Wiki toh/openmesh/om2p]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** ff9e48e75c191e0d7e08a14791853559d509ca2e [geprüft]
 
@@ -788,14 +870,20 @@ OpenMesh OM2P v2 · ath79-generic · K1d
 OpenMesh OM2P v4 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM2P an (OM2P v1/v2/v4, OM2P-HS v1-v4, OM2P-LC); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-v4-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
+- **Rückweg zur Herstellerfirmware:** Herstellerfirmware lässt sich wieder mit ap51-flash bzw. dem Open-Mesh-Flash-Tool aufspielen [abgeleitet: Wiki toh/openmesh/om2p]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** dd1d95cb0357278900d09fae3ad20e9e0b2d569a [geprüft]
 
@@ -804,14 +892,19 @@ OpenMesh OM2P v4 · ath79-generic · K1d
 OpenMesh OM5P · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM5P an (OM5P und OM5P-AN); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om5p-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 80713657b20d58c2fb7fa503e24cbf7db379550f [geprüft]
 
@@ -820,14 +913,19 @@ OpenMesh OM5P · ath79-generic · K1d
 OpenMesh OM5P-AC v1 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM5PAC an (OM5P-AC v1 und v2); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om5p-ac-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 97f561725962ddb8823b2e01563a0f37f7930477 [geprüft]
 
@@ -836,14 +934,19 @@ OpenMesh OM5P-AC v1 · ath79-generic · K1d
 OpenMesh OM5P-AC v2 · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM5PAC an (OM5P-AC v1 und v2); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om5p-ac-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 1699c1dc7f26b332f868d338457abfbe716d6ba0 (Einführung, Anleitung) [geprüft]
 
@@ -852,14 +955,19 @@ OpenMesh OM5P-AC v2 · ath79-generic · K1d
 OpenMesh OM5P-AN · ath79-generic · K1d
 
 - **Weg ab Werk:** Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner am LAN, Gerät einschalten); alternativ tftp-client: U-Boot-Shell, serverip frei (Beispiel 192.168.1.21), Gerät 192.168.1.1
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM5P an (OM5P und OM5P-AN); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om5p-an-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 72ef5945508193228544bcd7fcfe81b32e8dc042 [geprüft]
 
@@ -868,14 +976,19 @@ OpenMesh OM5P-AN · ath79-generic · K1d
 Plasma Cloud PA300 · ath79-generic · K0+
 
 - **Weg ab Werk:** factory per ap51-flash an den U-Boot beim Einschalten übertragen [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** ap51-flash
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ PA300 an (PA300 und PA300E); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-plasmacloud_pa300-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-plasmacloud_pa300-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-factory direkt
 - **Quelle (OpenWrt-Commit):** 5fc28ef47959c1256f2553d507224bb481b08494 [geprüft]
 
@@ -884,14 +997,19 @@ Plasma Cloud PA300 · ath79-generic · K0+
 Plasma Cloud PA300E · ath79-generic · K0+
 
 - **Weg ab Werk:** factory per ap51-flash an den U-Boot beim Einschalten übertragen [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** ap51-flash
+- **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ PA300 an (PA300 und PA300E); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]; ap51-flash führt den PA300E nicht eigens in der Testliste, erkennt ihn über den gemeinsamen Typ PA300 [abgeleitet: supported-devices, ce_type=PA300]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-plasmacloud_pa300e-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-plasmacloud_pa300e-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 7 MB Image-Partition also höchstens etwa 3 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
 - **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-factory direkt
 - **Quelle (OpenWrt-Commit):** 17e592049005f3f7e65429966b21b2d834f9c2f0 [geprüft]
 
@@ -900,14 +1018,19 @@ Plasma Cloud PA300E · ath79-generic · K0+
 OpenMesh A42 · ipq40xx-generic · K0+
 
 - **Weg ab Werk:** ap51-flash schiebt das Gluon-factory beim Einschalten in den U-Boot [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner direkt am Gerät)
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']; Gerät hat keine DC-Buchse, Strom nur per PoE: 802.3af an Ethernet 1 oder passiv 18-24 V an Ethernet 2, also PoE-Injektor nötig [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** ap51-flash
+- **Typenschild/Verwechslung:** eigener CE-Typ A42 [geprüft: ipq40xx generic.mk]; ein Image für ein anderes Modell erkennt ap51-flash und meldet 'no image for' [abgeleitet: ap51-flash-Doku Troubleshooting]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-openmesh_a42-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-openmesh_a42-squashfs-factory.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 15 MB Image-Partition also höchstens etwa 5 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory über ap51-flash)
 - **Quelle (OpenWrt-Commit):** OpenWrt 86e18f6706e1f2c881fb6a2b9facf108573416e6
 - **Detail-Anleitung:** -
@@ -917,14 +1040,19 @@ OpenMesh A42 · ipq40xx-generic · K0+
 OpenMesh A62 · ipq40xx-generic · K0+
 
 - **Weg ab Werk:** ap51-flash schiebt das Gluon-factory beim Einschalten in den U-Boot [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner direkt am Gerät)
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']; Gerät hat keine DC-Buchse, Strom nur per PoE: 802.3at (PoE+) an Ethernet 1 oder passiv 18-24 V an Ethernet 2, also PoE-Injektor nötig [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** ap51-flash
+- **Typenschild/Verwechslung:** eigener CE-Typ A62 [geprüft: ipq40xx generic.mk]; ein Image für ein anderes Modell erkennt ap51-flash und meldet 'no image for' [abgeleitet: ap51-flash-Doku Troubleshooting]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-openmesh_a62-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-openmesh_a62-squashfs-factory.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 15 MB Image-Partition also höchstens etwa 5 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory über ap51-flash)
 - **Quelle (OpenWrt-Commit):** OpenWrt 0b204902075157dbb002ea04f41a5b1a4fbe848c
 - **Detail-Anleitung:** -
@@ -934,14 +1062,19 @@ OpenMesh A62 · ipq40xx-generic · K0+
 Plasma Cloud PA1200 · ipq40xx-generic · K0+
 
 - **Weg ab Werk:** ap51-flash schiebt das Gluon-factory beim Einschalten in den U-Boot [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner direkt am Gerät)
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** ap51-flash
+- **Typenschild/Verwechslung:** eigener CE-Typ PA1200 [geprüft: ipq40xx generic.mk]; ein Image für ein anderes Modell erkennt ap51-flash und meldet 'no image for' [abgeleitet: ap51-flash-Doku Troubleshooting]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-plasmacloud_pa1200-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-plasmacloud_pa1200-squashfs-factory.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 15 MB Image-Partition also höchstens etwa 5 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory über ap51-flash)
 - **Quelle (OpenWrt-Commit):** OpenWrt ea5bb6bbfee06f44f714aff40c8929505face221
 - **Detail-Anleitung:** -
@@ -951,14 +1084,19 @@ Plasma Cloud PA1200 · ipq40xx-generic · K0+
 Plasma Cloud PA2200 · ipq40xx-generic · K0+
 
 - **Weg ab Werk:** ap51-flash schiebt das Gluon-factory beim Einschalten in den U-Boot [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; ap51-flash zuerst starten, dann Gerät einschalten (Strom/PoE anstecken), der Bootloader fragt bei jedem Start kurz nach ap51-flash [geprüft: ap51-flash-Doku getting-started]
+- **Sichtbare Zeichen:** am Rechner, nicht am Gerät: ap51-flash meldet 'device type ... detected', dann 'image successfully transmitted - writing image to flash' (ab hier nicht Strom ziehen), fertig bei 'flash complete. Device ready to unplug.' [geprüft: ap51-flash-Doku getting-started]; LED-Muster während des Flashens in keiner Quelle
 - **Übertragung:** herstellertool: ap51-flash (Rechner direkt am Gerät)
+- **Rechner braucht:** ap51-flash (fertige Binaries für Linux, Windows mit Npcap; macOS selbst bauen), root-/Administratorrechte; LAN-Kabel direkt zum Gerät (oder einfacher unmanaged Switch, kein Router); keine feste IP nötig, aber keine IP aus 192.168.1.0/24, 192.168.99.0/24, 192.168.100.0/24; kein anderer TFTP-Server aktiv [geprüft: ap51-flash-Doku getting-started]; Datei: Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** ap51-flash
+- **Typenschild/Verwechslung:** eigener CE-Typ PA2200 [geprüft: ipq40xx generic.mk]; ein Image für ein anderes Modell erkennt ap51-flash und meldet 'no image for' [abgeleitet: ap51-flash-Doku Troubleshooting]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-plasmacloud_pa2200-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-plasmacloud_pa2200-squashfs-factory.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Dauer:** ap51-flash schätzt das Schreiben auf 10 s + 1 s je 64 KiB; bei höchstens 15 MB Image-Partition also höchstens etwa 5 Minuten [abgeleitet: Formel ap51-flash-Doku how-it-works, Partitionsgröße aus Commit]; zwischen 'image successfully transmitted' und 'flash complete' nicht Strom ziehen [geprüft: ap51-flash-Doku getting-started]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory über ap51-flash)
 - **Quelle (OpenWrt-Commit):** OpenWrt 4871fd2616acb03fefe69b068955dba36eb00770
 - **Detail-Anleitung:** -
@@ -972,14 +1110,19 @@ Plasma Cloud PA2200 · ipq40xx-generic · K0+
 Aruba AP-303 · ipq40xx-generic · K4
 
 - **Weg ab Werk:** serielle apboot-Konsole: bootargs/nandboot/ramboot setzen, initramfs als `ipq40xx.ari` per netget booten, `ubidetach/ubiformat /dev/mtd1`, `sysupgrade -n` [geprüft]; bei gesperrtem apboot siehe Instant On AP11
+- **Taste und Zeitpunkt:** Keine Gerätetaste. Im seriellen Terminal Enter drücken, sobald 'Hit <Enter> to stop autoboot' erscheint (Countdown nur ca. 2 s) [geprüft: Commit 102c8c5; Countdown: Wiki-Bootlog toh/aruba/ap-303]
+- **Sichtbare Zeichen:** Bootloader erreicht: Prompt im Terminal statt weiterem Bootlog; nach dem TFTP-Laden (run ramboot_openwrt) erscheint 'Invalid image format version', das ist normal und kann ignoriert werden [geprüft: Wiki toh/aruba/ap-303]
 - **Übertragung:** tftp-client (apboot `netget`): Server 192.168.1.75, Gerät 192.168.1.105, Datei ipq40xx.ari
+- **Rechner braucht:** USB-TTL-Adapter 3,3 V an selbstgebautem Micro-USB-Kabel (Pinbelegung siehe gehaeuse); die Console-Buchse nie mit einem normalen USB-Kabel an den Rechner [geprüft: Commit]; billige USB-UART-Adapter haben laut Wiki versagt [geprüft: Wiki]. Terminal 9600 8N1. TFTP-Server mit fester IP 192.168.1.75/24 am Ethernet-Port, Datei genau `ipq40xx.ari` (netget ohne Dateiangabe, Name daher vermutlich zwingend [abgeleitet]). Danach scp für das sysupgrade nach /tmp [geprüft: Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: Micro-USB-Buchse "Console" als UART-Stecker (kein USB!): D+ = TX, D- = RX, GND = GND, VCC nicht belegt (so im Commit, aus wessen Sicht TX gemeint ist, steht dort nicht); 3,3 V, 9600 8N1, eigener USB-TTL-Adapter [geprüft]
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Aruba Instant On AP11 nutzt dasselbe Image, hat aber ein gesperrtes apboot (eigene Familie sonderweg-aruba-instant-on-ap11) [geprüft: Wiki; Sperre: Neanderfunk-Notiz]. AP-303H (Hospitality, mehrere Ports, Wandmontage) ist ein anderes Gerät mit eigenem Image [geprüft: Commit c6e972c]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Rückweg zur Herstellerfirmware:** Im apboot `setenv bootcmd "boot"; saveenv` (Stock bleibt in aos0) [geprüft: Commit; aos0: abgeleitet aus nandboot_openwrt = aos1]
 - **Gluon-RAMpe passt:** teilweise: RAMpe-initramfs als ipq40xx.ari geht, aber vor dem sysupgrade muss `ubiformat` laufen (fehlt der Gluon-RAMpe) und Gluon baut für ipq40xx-generic kein initramfs; seriell bleibt [abgeleitet]
 - **Gluon-RAMpe-Rezept:** devices/aruba-ap-303.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `ipq40xx.ari` per APBoot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)
 - **Quelle (OpenWrt-Commit):** OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75
@@ -990,14 +1133,19 @@ Aruba AP-303 · ipq40xx-generic · K4
 Aruba AP-303H · ipq40xx-generic · K4
 
 - **Weg ab Werk:** wie AP-303, TFTP nur über Port E0 (WAN), danach `ubiformat /dev/mtd16`, `sysupgrade -n` [geprüft]
+- **Taste und Zeitpunkt:** Keine Gerätetaste. Im seriellen Terminal Enter drücken, sobald 'Hit <Enter> to stop autoboot' erscheint [geprüft: Commit c6e972c]
+- **Sichtbare Zeichen:** Wie AP-303: nach dem TFTP-Laden 'Invalid image format version' ist normal [abgeleitet: Wiki toh/aruba/ap-303, gleiches apboot]
 - **Übertragung:** tftp-client (apboot `netget`): Server 192.168.1.75, Gerät 192.168.1.105, Datei ipq40xx.ari (Rechner an E0)
+- **Rechner braucht:** USB-TTL-Adapter 3,3 V an selbstgebautem Micro-USB-Kabel (siehe gehaeuse), nie normales USB-Kabel an den Rechner [geprüft: Commit]. Terminal 9600 8N1. TFTP-Server fest 192.168.1.75/24, Rechner für TFTP an Port E0 (WAN, holt nur dort), Datei genau `ipq40xx.ari` [geprüft: Commit; Name zwingend: abgeleitet]. Für scp/sysupgrade danach Kabel an E1-E3 umstecken [geprüft: Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: Micro-USB als UART-Stecker wie AP-303 (D+ = TX, D- = RX laut Commit), 9600 8N1 [geprüft]
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Instant On AP11D ist die günstige Variante auf derselben Plattform, gleiches Image [geprüft: Wiki toh/aruba/ap-303h]. AP-303 (ohne H, ein Port) ist ein anderes Gerät [geprüft: Commit]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Rückweg zur Herstellerfirmware:** Im apboot `setenv bootcmd "boot"; saveenv; boot` [geprüft: Commit]; bei UBIFS-Fehler Stock per `upgrade os 1 192.168.1.75:ArubaInstant_Ursa_8.7.1.6_81786` aus TFTP, danach `factory_reset`; Werkszugang admin/Seriennummer [geprüft: Wiki toh/aruba/ap-303h]
 - **Gluon-RAMpe passt:** teilweise: wie AP-303
 - **Gluon-RAMpe-Rezept:** devices/aruba-ap-303h.sh (Rezept-Entwurf, nicht gebaut): wie AP-303; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)
 - **Quelle (OpenWrt-Commit):** OpenWrt c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0
@@ -1008,14 +1156,19 @@ Aruba AP-303H · ipq40xx-generic · K4
 Aruba AP-365 · ipq40xx-generic · K4
 
 - **Weg ab Werk:** wie AP-303 (apboot, ipq40xx.ari per netget, `ubiformat` der Partition "ubi", `sysupgrade -n`) [geprüft]
+- **Taste und Zeitpunkt:** Keine Gerätetaste. Im seriellen Terminal Enter drücken, sobald 'Hit <Enter> to stop autoboot' erscheint [geprüft: Commit 300b7fe]
+- **Sichtbare Zeichen:** Wie AP-303: nach dem TFTP-Laden 'Invalid image format version' ist normal [abgeleitet: Wiki toh/aruba/ap-303, gleiches apboot]
 - **Übertragung:** tftp-client (apboot `netget`): Server 192.168.1.75, Gerät 192.168.1.105, Datei ipq40xx.ari
+- **Rechner braucht:** Normales USB-Kabel genügt: die USB-Buchse ist echte USB-Konsole (CP2101 auf der Platine), am Rechner CP210x-Treiber (Linux eingebaut [abgeleitet]). Terminal 9600 8N1 [geprüft: Commit]. TFTP-Server fest 192.168.1.75/24 am Ethernet-Port, Datei genau `ipq40xx.ari` [geprüft: Commit; Name zwingend: abgeleitet]. Beim ubiformat die mtd-Partition mit Label "ubi" nehmen [geprüft: Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: USB-Konsole echt (CP2101 auf der Platine), 9600 8N1 [geprüft]
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Instant On AP17 ist die günstige Variante auf derselben Plattform, gleiches Image [geprüft: Wiki toh/aruba/ap-365]. Anders als AP-303/303H ist die USB-Buchse hier echtes USB [geprüft: Commit]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Rückweg zur Herstellerfirmware:** Im apboot `setenv bootcmd "boot"; saveenv` [geprüft: Commit]
 - **Gluon-RAMpe passt:** teilweise: wie AP-303
 - **Gluon-RAMpe-Rezept:** devices/aruba-ap-365.sh (Rezept-Entwurf, nicht gebaut): wie AP-303; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)
 - **Quelle (OpenWrt-Commit):** OpenWrt 300b7fe85a743ab0e039457a5a551819b49450da
@@ -1026,10 +1179,14 @@ Aruba AP-365 · ipq40xx-generic · K4
 Aruba Instant On AP11D (Alias von aruba-ap-303h) · ipq40xx-generic · K4
 
 - **Weg ab Werk:** wie AP-303H; ob das apboot gesperrt ist wie beim AP11: ? [abgeleitet]
+- **Taste und Zeitpunkt:** Wie AP-303H: Enter bei 'Hit <Enter> to stop autoboot' [abgeleitet: gleiche Plattform]
 - **Übertragung:** tftp-client (apboot `netget`): Server 192.168.1.75, Gerät 192.168.1.105, Datei ipq40xx.ari
+- **Rechner braucht:** Wie AP-303H: USB-TTL 3,3 V an Micro-USB-Selbstbaukabel, 9600 8N1, TFTP 192.168.1.75/24 an E0, Datei `ipq40xx.ari` [abgeleitet: Wiki toh/aruba/ap-303h 'same platform']
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: Micro-USB als UART-Stecker [abgeleitet]
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Instant-On-Variante des AP-303H, Image aruba_ap-303h [geprüft: Wiki toh/aruba/ap-303h; Gluon-Alias]. Nicht mit AP11 (ohne D, Variante des AP-303) verwechseln [abgeleitet]
+- **Bedingung an die Herstellerfirmware:** Offen: das Instant-On-apboot des AP11 bootet nur signierte Images ('Image is signed; verifying checksum', APBoot 2.5.0.2) und musste per SPI-Schreiben entsperrt werden; ob AP11D ebenso gesperrt ist, ist nicht belegt [abgeleitet: Wiki-Bootlog AP11, Neanderfunk-Notiz]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
@@ -1044,10 +1201,14 @@ Aruba Instant On AP11D (Alias von aruba-ap-303h) · ipq40xx-generic · K4
 Aruba Instant On AP17 (Alias von aruba-ap-365) · ipq40xx-generic · K4
 
 - **Weg ab Werk:** wie AP-365; apboot-Sperre wie beim AP11: ? [abgeleitet]
+- **Taste und Zeitpunkt:** Wie AP-365: Enter bei 'Hit <Enter> to stop autoboot' [abgeleitet: gleiche Plattform]
 - **Übertragung:** tftp-client (apboot `netget`): Server 192.168.1.75, Gerät 192.168.1.105, Datei ipq40xx.ari
+- **Rechner braucht:** Wie AP-365: echte USB-Konsole (CP2101) vermutet, 9600 8N1, TFTP 192.168.1.75/24, Datei `ipq40xx.ari` [abgeleitet: Wiki toh/aruba/ap-365 'same platform'; ob die USB-Buchse beim AP17 auch echtes USB ist, ist nicht belegt]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** USB, Art ? (AP-365: echt, CP2101) [abgeleitet]
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Instant-On-Variante des AP-365 (Outdoor), Image aruba_ap-365 [geprüft: Wiki toh/aruba/ap-365; Gluon-Alias]
+- **Bedingung an die Herstellerfirmware:** Offen: ob das Instant-On-apboot wie beim AP11 nur signierte Images bootet, ist nicht belegt [abgeleitet: Analogie AP11]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
@@ -1597,11 +1758,11 @@ AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) · ipq40xx-gen
 
 Cudy AP3000 Outdoor v1 · mediatek-filogic · K2
 
-- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz cudy-installation.md]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** webui-upload: Stock-UI 192.168.10.1 (Passwort admin), danach LuCI 192.168.1.1
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner AP3000_Outdoor_1.0 [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]; Gerät hat nur PoE-Versorgung: PoE-Injektor/-Switch nötig [geprüft: Commit "PoE powered (standalone)"]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner AP3000_Outdoor_1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]; Gerät hat nur PoE-Versorgung: PoE-Injektor/-Switch nötig [geprüft: Commit "PoE powered (standalone)"]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
@@ -1611,7 +1772,7 @@ Cudy AP3000 Outdoor v1 · mediatek-filogic · K2
 - **Factory-/Stock-Image-Link:** [Spiegel AP3000_Outdoor_1.0](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_Outdoor_1.0/)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ "How to recovery ... to Cudy official firmware"]
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 19d770d7b91aaca1de18281dea0da8616df34c6c
@@ -1621,11 +1782,11 @@ Cudy AP3000 Outdoor v1 · mediatek-filogic · K2
 
 Cudy AP3000 v1 · mediatek-filogic · K2
 
-- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz cudy-installation.md]; Zwischenfirmware laut Commit nur per Mail an support@cudy.com, im Spiegel die vom Support erhaltene Datei; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; Zwischenfirmware laut Commit nur per Mail an support@cudy.com, im Spiegel die vom Support erhaltene Datei; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** webui-upload: Stock-UI 192.168.10.1 (Passwort admin), danach LuCI 192.168.1.1
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner AP3000_V1.0 (Datei kam vom Cudy-Support) [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner AP3000_V1.0 (Datei kam vom Cudy-Support) [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
@@ -1635,7 +1796,7 @@ Cudy AP3000 v1 · mediatek-filogic · K2
 - **Factory-/Stock-Image-Link:** [Spiegel AP3000_V1.0](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_V1.0/)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ "How to recovery ... to Cudy official firmware"]
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 6dacba30a75b0ac8a65115f78808a97abbb34939
@@ -1645,21 +1806,21 @@ Cudy AP3000 v1 · mediatek-filogic · K2
 
 Cudy AP3000 Wall v1 · mediatek-filogic · K2
 
-- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz cudy-installation.md]
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** webui-upload: Stock-UI 192.168.10.1 (Passwort admin), danach LuCI 192.168.1.1
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner AP3000_Wall_1.0 [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]; Gerät hat nur PoE-Versorgung: PoE-Injektor/-Switch nötig [geprüft: Commit "PoE powered (standalone)"]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner AP3000_Wall_1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]; Gerät hat nur PoE-Versorgung: PoE-Injektor/-Switch nötig [geprüft: Commit "PoE powered (standalone)"]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
-- **Typenschild/Verwechslung:** AP3000 Wall ist ein anderes Gerät als AP3000 v1/Outdoor [geprüft: Spiegel-Ordner]; erst ab Gluon 2025.1 [geprüft: cudy-installation.md (router-werkstatt)]
+- **Typenschild/Verwechslung:** AP3000 Wall ist ein anderes Gerät als AP3000 v1/Outdoor [geprüft: Spiegel-Ordner]; erst ab Gluon 2025.1 [geprüft: Neanderfunk-Notiz]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]; Seriennummer ab 2543 (neuer Flash F50L1G41LC, ab Nov. 2025): nur die Zwischenfirmware vom 19.11.2025 oder neuer, ältere startet nicht mehr [geprüft: Cudy-FAQ, Hinweis 24.11.2025]; Gluon 2025.1 kennt den Chip (OpenWrt-Backport 422 F50L1G41LC am Pin) [geprüft: OpenWrt-Pin]
 - **initramfs-Link:** [25.12.5: initramfs-kernel.bin](https://downloads.openwrt.org/releases/25.12.5/targets/mediatek/filogic/openwrt-25.12.5-mediatek-filogic-cudy_ap3000wall-v1-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** [Spiegel AP3000_Wall_1.0](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_Wall_1.0/)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ "How to recovery ... to Cudy official firmware"]; Wall: Reset halten, bis der TFTP-Server recovery.bin ausgeliefert hat, Neustart dauert ein paar Minuten [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt afad4c71f8d558ca86b997781ca0236f321cf1e9 (25.12: 45788a48c7); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
@@ -1669,11 +1830,11 @@ Cudy AP3000 Wall v1 · mediatek-filogic · K2
 
 Cudy M3000 v1 (RTL8221B) · mediatek-filogic · K2
 
-- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz cudy-installation.md]; Commit (2024) nennt nur UART, die Zwischenfirmware kam später; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; Commit (2024) nennt nur UART, die Zwischenfirmware kam später; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** webui-upload: Stock-UI 192.168.10.1 (Passwort admin), danach LuCI 192.168.1.1
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner M3000_1.0_2.0 [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]; nach Schritt 1 LuCI am schwarzen 1-Gbps-Port [abgeleitet: Commit nennt für M3000 den "1Gbps port (black)"]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner M3000_1.0_2.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]; nach Schritt 1 LuCI am schwarzen 1-Gbps-Port [abgeleitet: Commit nennt für M3000 den "1Gbps port (black)"]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
@@ -1683,7 +1844,7 @@ Cudy M3000 v1 (RTL8221B) · mediatek-filogic · K2
 - **Factory-/Stock-Image-Link:** [Spiegel M3000_1.0_2.0](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M3000_1.0_2.0/)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ "How to recovery ... to Cudy official firmware"]
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 20e4a18feb3f766b0f6ebec1afc154b345398a7a
@@ -1693,11 +1854,11 @@ Cudy M3000 v1 (RTL8221B) · mediatek-filogic · K2
 
 Cudy M3000 v2 mit Motorcomm YT8821 · mediatek-filogic · K2
 
-- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz cudy-installation.md]; vorher im Cudy-Systemlog nach "yt8821" bzw. "rtl8221b" suchen, um v1/v2 zu unterscheiden [geprüft]
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; vorher im Cudy-Systemlog nach "yt8821" bzw. "rtl8221b" suchen, um v1/v2 zu unterscheiden [geprüft]
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** webui-upload: Stock-UI 192.168.10.1 (Passwort admin), danach LuCI 192.168.1.1 (am "1Gbps LAN"-Port)
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner M3000_1.0_2.0 (ob sie zur YT8821-Variante passt, ungeklärt) [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]; nach Schritt 1 Rechner an den Port "1Gbps LAN", http://192.168.1.1 [geprüft: Commit 45b51eba]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner M3000_1.0_2.0 (ob sie zur YT8821-Variante passt, ungeklärt) [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]; nach Schritt 1 Rechner an den Port "1Gbps LAN", http://192.168.1.1 [geprüft: Commit 45b51eba]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, Platine ausbauen)
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
@@ -1707,7 +1868,7 @@ Cudy M3000 v2 mit Motorcomm YT8821 · mediatek-filogic · K2
 - **Factory-/Stock-Image-Link:** [Spiegel M3000_1.0_2.0 (ob für YT8821 passend: abgeleitet)](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M3000_1.0_2.0/)<br>[Cudy-Drive](https://drive.google.com/drive/folders/1BKVarlwlNxf7uJUtRhuMGUqeCa5KpMnj)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ "How to recovery ... to Cudy official firmware"]
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 45b51ebaff51d2a49d149e9011717abb1b032683 (25.12: ca825537fb); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
@@ -1717,11 +1878,11 @@ Cudy M3000 v2 mit Motorcomm YT8821 · mediatek-filogic · K2
 
 Cudy RE3000 v1 · mediatek-filogic · K2
 
-- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz cudy-installation.md]; Commit nennt nur UART (Stecker unter dem Kühlkörper); alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; Commit nennt nur UART (Stecker unter dem Kühlkörper); alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** webui-upload: Stock-UI 192.168.10.1 (Passwort admin), danach LuCI 192.168.1.1
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner RE3000_V1 [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner RE3000_V1 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
@@ -1730,7 +1891,7 @@ Cudy RE3000 v1 · mediatek-filogic · K2
 - **Factory-/Stock-Image-Link:** [Spiegel RE3000_V1](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/RE3000_V1/)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ "How to recovery ... to Cudy official firmware"]
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt e8f75973172749874afa13e4f746acd8cb515de2
@@ -1740,11 +1901,11 @@ Cudy RE3000 v1 · mediatek-filogic · K2
 
 Cudy TR3000 256 MB v1 · mediatek-filogic · K2
 
-- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz cudy-installation.md]; Zwischenfirmware laut Commit von Cudy CN; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; Zwischenfirmware laut Commit von Cudy CN; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** webui-upload: Stock-UI 192.168.10.1 (Passwort admin), danach LuCI 192.168.1.1
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner TR3000_256MB_Flash_V1_not_for_TR3000_V1_ [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner TR3000_256MB_Flash_V1_not_for_TR3000_V1_ [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
@@ -1754,7 +1915,7 @@ Cudy TR3000 256 MB v1 · mediatek-filogic · K2
 - **Factory-/Stock-Image-Link:** [Spiegel TR3000_256MB_Flash_V1_not_for_TR3000_V1_](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/TR3000_256MB_Flash_V1_not_for_TR3000_V1_/)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** Cudy-Firmware beim Cudy-CN-Support anfragen, Reset beim Einschalten mindestens 5 s halten, Rechner 192.168.1.88/24, TFTP-Server mit recovery.bin [geprüft: Commit]; allgemein: Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ "How to recovery ... to Cudy official firmware"]
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 0ec28e59a815bb43c359328c8fd644f399d344da
@@ -1764,21 +1925,21 @@ Cudy TR3000 256 MB v1 · mediatek-filogic · K2
 
 Cudy WR3000 v1 · mediatek-filogic · K2
 
-- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz cudy-installation.md]; Commit (2023) nennt nur UART, TFTP-Server 192.168.1.2, Datei cudy3000.bin; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; Commit (2023) nennt nur UART, TFTP-Server 192.168.1.2, Datei cudy3000.bin; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** webui-upload: Stock-UI 192.168.10.1 (Passwort admin), danach LuCI 192.168.1.1
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000+V1_without_recovery_TFTP [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000+V1_without_recovery_TFTP [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
-- **Typenschild/Verwechslung:** WR3000 v2 geht nicht (anderer Chip, kein OpenWrt); im Angebot erkennbar: v1 "1,3 GHz", v2 "1,2 GHz" [geprüft: cudy-installation.md (router-werkstatt)]
+- **Typenschild/Verwechslung:** WR3000 v2 geht nicht (anderer Chip, kein OpenWrt); im Angebot erkennbar: v1 "1,3 GHz", v2 "1,2 GHz" [geprüft: Neanderfunk-Notiz]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-cudy_wr3000-v1-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** [Spiegel WR3000%2BV1_without_recovery_TFTP](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000%2BV1_without_recovery_TFTP/)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** Spiegel-Ordner heißt "without_recovery_TFTP": ob danach die Cudy-TFTP-Recovery noch geht, ungeklärt [abgeleitet: Ordnername]; allgemein: Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ "How to recovery ... to Cudy official firmware"]
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt c9cb6411c1a70516d5922e88c45b338de041baba
@@ -1788,21 +1949,21 @@ Cudy WR3000 v1 · mediatek-filogic · K2
 
 Cudy WR3000E v1 · mediatek-filogic · K2
 
-- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz cudy-installation.md]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** webui-upload: Stock-UI 192.168.10.1 (Passwort admin), danach LuCI 192.168.1.1
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000E_1.0 [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000E_1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
-- **Typenschild/Verwechslung:** WR3000E v2 geht nicht (anderer Chip) [geprüft: cudy-installation.md (router-werkstatt)]; WR3000E und WR3000S haben dieselbe Platine, aber anderen Flash und andere LED-Farben (rot/blau statt weiß) [geprüft: Commit]
+- **Typenschild/Verwechslung:** WR3000E v2 geht nicht (anderer Chip) [geprüft: Neanderfunk-Notiz]; WR3000E und WR3000S haben dieselbe Platine, aber anderen Flash und andere LED-Farben (rot/blau statt weiß) [geprüft: Commit]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]; Seriennummer ab 2543 (neuer Flash F50L1G41LC, ab Nov. 2025): nur die Zwischenfirmware vom 19.11.2025 oder neuer, ältere startet nicht mehr [geprüft: Cudy-FAQ, Hinweis 24.11.2025]; Gluon 2025.1 kennt den Chip (OpenWrt-Backport 422 F50L1G41LC am Pin) [geprüft: OpenWrt-Pin]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-cudy_wr3000e-v1-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** [Spiegel WR3000E_1.0](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000E_1.0/)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ "How to recovery ... to Cudy official firmware"]; danach Cudy-Oberfläche wieder unter 192.168.10.1 [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt f50551dd18318f2255da3ecd5de5cc1078201651
@@ -1812,11 +1973,11 @@ Cudy WR3000E v1 · mediatek-filogic · K2
 
 Cudy WR3000H v1 · mediatek-filogic · K2
 
-- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz cudy-installation.md]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** webui-upload: Stock-UI 192.168.10.1 (Passwort admin), danach LuCI 192.168.1.1
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000H_1.0 [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000H_1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
@@ -1826,7 +1987,7 @@ Cudy WR3000H v1 · mediatek-filogic · K2
 - **Factory-/Stock-Image-Link:** [Spiegel WR3000H_1.0](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000H_1.0/)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ "How to recovery ... to Cudy official firmware"]
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt fdbbb8415fd19ae0748a2bbe41b15257054e4077
@@ -1836,21 +1997,21 @@ Cudy WR3000H v1 · mediatek-filogic · K2
 
 Cudy WR3000P v1 · mediatek-filogic · K2
 
-- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz cudy-installation.md]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** webui-upload: Stock-UI 192.168.10.1 (Passwort admin), danach LuCI 192.168.1.1
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000P_1.0 [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000P_1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
-- **Typenschild/Verwechslung:** erst ab Gluon 2025.1 [geprüft: cudy-installation.md (router-werkstatt)]; WR3000P hat PoE am WAN-Port und USB, sonst wie WR3000H [geprüft: Commit]
+- **Typenschild/Verwechslung:** erst ab Gluon 2025.1 [geprüft: Neanderfunk-Notiz]; WR3000P hat PoE am WAN-Port und USB, sonst wie WR3000H [geprüft: Commit]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]; Seriennummer ab 2543 (neuer Flash F50L1G41LC, ab Nov. 2025): nur die Zwischenfirmware vom 19.11.2025 oder neuer, ältere startet nicht mehr [geprüft: Cudy-FAQ, Hinweis 24.11.2025]; Gluon 2025.1 kennt den Chip (OpenWrt-Backport 422 F50L1G41LC am Pin) [geprüft: OpenWrt-Pin]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-cudy_wr3000p-v1-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** [Spiegel WR3000P_1.0](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000P_1.0/)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ "How to recovery ... to Cudy official firmware"]
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 51108508f10eb25f99395ec9334f996813bc5a22; gluon-patches-hardware 8dbae18666543aa9b8b5e7faa1d267024d62071e (Gluon-Zeile)
@@ -1860,11 +2021,11 @@ Cudy WR3000P v1 · mediatek-filogic · K2
 
 Cudy WR3000S v1 · mediatek-filogic · K2
 
-- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz cudy-installation.md]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** webui-upload: Stock-UI 192.168.10.1 (Passwort admin), danach LuCI 192.168.1.1
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000S_1.0 [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000S_1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
@@ -1874,7 +2035,7 @@ Cudy WR3000S v1 · mediatek-filogic · K2
 - **Factory-/Stock-Image-Link:** [Spiegel WR3000S_1.0](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000S_1.0/)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ "How to recovery ... to Cudy official firmware"]
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 4779e954fa847c4b376623bc3bdf9651007e8a89
@@ -1884,11 +2045,11 @@ Cudy WR3000S v1 · mediatek-filogic · K2
 
 Cudy WR3000U v1 · mediatek-filogic · K2
 
-- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz cudy-installation.md]; alternativ UART + TFTP (192.168.1.88) [geprüft]
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; alternativ UART + TFTP (192.168.1.88) [geprüft]
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** webui-upload: Stock-UI 192.168.10.1 (Passwort admin), danach LuCI 192.168.1.1
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner keiner; Zwischenfirmware nur im Cudy-Google-Drive "Cudy Intermediary OpenWrt Firmware" [geprüft: Commit] [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner keiner; Zwischenfirmware nur im Cudy-Google-Drive "Cudy Intermediary OpenWrt Firmware" [geprüft: Commit] [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ?, laut Commit "Serial console: no need to solder")
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware (nicht im Spiegel, nur Cudy-Drive)
@@ -1898,7 +2059,7 @@ Cudy WR3000U v1 · mediatek-filogic · K2
 - **Factory-/Stock-Image-Link:** [Cudy-Drive](https://drive.google.com/drive/folders/1BKVarlwlNxf7uJUtRhuMGUqeCa5KpMnj)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** Cudy-Firmware von https://www.cudy.com/pages/download-center/wr3000u-256mb-1-0 als recovery.bin, Rechner 192.168.1.88/24, Reset beim Einschalten mindestens 5 s halten, nach 1-2 Minuten Cudy-Oberfläche unter 192.168.10.1 [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen; OpenWrt-Images nur als Snapshot (nicht in 25.12.5) [geprüft]
 - **Quelle (OpenWrt-Commit):** OpenWrt b9d7b448c256bb3860c7965ccf599c29c4847cb4 (25.12: 95dec97d08); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
@@ -1909,10 +2070,10 @@ Cudy WR3000U v1 · mediatek-filogic · K2
 Cudy AP1300 Outdoor v1 · ramips-mt7621 · K2
 
 - **Weg ab Werk:** Cudys signierte OpenWrt-Zwischenfirmware im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne "Einstellungen behalten" [geprüft]; Stock 192.168.10.254, Passwort admin [geprüft]
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig (Cudy-Oberfläche vorher unter 192.168.10.254, Passwort admin [geprüft: Commit]), wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig (Cudy-Oberfläche vorher unter 192.168.10.254, Passwort admin [geprüft: Commit]), wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** webui-upload (Zwischenfirmware), danach LuCI-Upload; TFTP-Recovery (Server 192.168.1.88, recovery.bin) nimmt nur Cudy-signierte Images
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner AP1300_Outdoor_V1.0 [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]; ob der AP in der Cudy-Firmware DHCP macht, ist unbelegt: im Zweifel Rechner fest auf 192.168.10.x/24 (AP hat 192.168.10.254) [abgeleitet: Commit nennt nur die AP-Adresse]; nur PoE-Versorgung 802.3af (37-57 V): PoE-Injektor/-Switch nötig [geprüft: Commit]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner AP1300_Outdoor_V1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]; ob der AP in der Cudy-Firmware DHCP macht, ist unbelegt: im Zweifel Rechner fest auf 192.168.10.x/24 (AP hat 192.168.10.254) [abgeleitet: Commit nennt nur die AP-Adresse]; nur PoE-Versorgung 802.3af (37-57 V): PoE-Injektor/-Switch nötig [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
@@ -1921,7 +2082,7 @@ Cudy AP1300 Outdoor v1 · ramips-mt7621 · K2
 - **Factory-/Stock-Image-Link:** [Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP1300_Outdoor_V1.0) / [Cudy](https://www.cudy.com/blogs/faq/openwrt-software-download)
 - **Stock-Teile:** -
 - **RAM:** 128 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** wie alle Cudy [abgeleitet: Cudy-FAQ gilt allgemein, Commit nennt keinen Rückweg]: Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ "How to recovery ... to Cudy official firmware"]
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** c6e59d06afca02ccb2541631cacc769ae4d6569f
@@ -1932,10 +2093,10 @@ Cudy AP1300 Outdoor v1 · ramips-mt7621 · K2
 Cudy M1800 · ramips-mt7621 · K2
 
 - **Weg ab Werk:** Cudys signierte OpenWrt-Zwischenfirmware im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne "Einstellungen behalten" [geprüft]; Spiegel hat nur "M1800+V2"; ob das zu cudy_m1800 passt, ist ungeprüft
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** webui-upload (Zwischenfirmware), danach LuCI-Upload; TFTP-Recovery (Server 192.168.1.88, recovery.bin) nimmt nur Cudy-signierte Images
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner M1800+V2 (ob sie zum Gluon-Image cudy-m1800 passt, ungeprüft) [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner M1800+V2 (ob sie zum Gluon-Image cudy-m1800 passt, ungeprüft) [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
@@ -1945,7 +2106,7 @@ Cudy M1800 · ramips-mt7621 · K2
 - **Factory-/Stock-Image-Link:** [Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M1800%2BV2) / [Cudy](https://www.cudy.com/blogs/faq/openwrt-software-download)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** Reset beim Einschalten halten, Router holt recovery.bin von TFTP-Server 192.168.1.88, nimmt nur von Cudy signierte Images [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** f6d394e9f2fd41547236c092ac914322220eb77c
@@ -1955,10 +2116,10 @@ Cudy M1800 · ramips-mt7621 · K2
 Cudy WR1300 v1 · ramips-mt7621 · K2
 
 - **Weg ab Werk:** Cudys signierte OpenWrt-Zwischenfirmware im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne "Einstellungen behalten" [geprüft]
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]; lehnt LuCI das Gluon-Image wegen anderem Gerätenamen ab, "Force upgrade"/Erzwingen setzen [geprüft: Commit]
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]; lehnt LuCI das Gluon-Image wegen anderem Gerätenamen ab, "Force upgrade"/Erzwingen setzen [geprüft: Commit]
 - **Übertragung:** webui-upload (Zwischenfirmware), danach LuCI-Upload; TFTP-Recovery (Server 192.168.1.88, recovery.bin) nimmt nur Cudy-signierte Images
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR1300+V1 [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR1300+V1 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
@@ -1968,7 +2129,7 @@ Cudy WR1300 v1 · ramips-mt7621 · K2
 - **Factory-/Stock-Image-Link:** [Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR1300%2BV1) / [Cudy](https://www.cudy.com/blogs/faq/openwrt-software-download)
 - **Stock-Teile:** -
 - **RAM:** 128 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ "How to recovery ... to Cudy official firmware"]; Reset mindestens 8 s halten [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** cd2b661453a8a2b8260dfb9b9c0dc5297b981331
@@ -1979,10 +2140,10 @@ Cudy WR1300 v1 · ramips-mt7621 · K2
 Cudy WR2100 · ramips-mt7621 · K2
 
 - **Weg ab Werk:** Cudys signierte OpenWrt-Zwischenfirmware im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne "Einstellungen behalten" [geprüft]
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** webui-upload (Zwischenfirmware), danach LuCI-Upload; TFTP-Recovery (Server 192.168.1.88, recovery.bin) nimmt nur Cudy-signierte Images
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR2100+V1 [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR2100+V1 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
@@ -1991,7 +2152,7 @@ Cudy WR2100 · ramips-mt7621 · K2
 - **Factory-/Stock-Image-Link:** [Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR2100%2BV1) / [Cudy](https://www.cudy.com/blogs/faq/openwrt-software-download)
 - **Stock-Teile:** -
 - **RAM:** 128 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** Reset beim Einschalten halten, Router holt recovery.bin von TFTP-Server 192.168.1.88, nimmt nur von Cudy signierte Images [geprüft: Commit]; Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ "How to recovery ... to Cudy official firmware"]
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** 3501db9b9b4a71ae52c539b46af817783c327866
@@ -2002,20 +2163,20 @@ Cudy WR2100 · ramips-mt7621 · K2
 Cudy X6 v1 · ramips-mt7621 · K2
 
 - **Weg ab Werk:** Cudys signierte OpenWrt-Zwischenfirmware im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne "Einstellungen behalten" [geprüft]
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]; lehnt LuCI das Gluon-Image wegen anderem Gerätenamen ab, "Force upgrade"/Erzwingen setzen [geprüft: Commit]
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]; lehnt LuCI das Gluon-Image wegen anderem Gerätenamen ab, "Force upgrade"/Erzwingen setzen [geprüft: Commit]
 - **Übertragung:** webui-upload (Zwischenfirmware), danach LuCI-Upload; TFTP-Recovery (Server 192.168.1.88, recovery.bin) nimmt nur Cudy-signierte Images
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner X6+V1 [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner X6+V1 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
-- **Typenschild/Verwechslung:** X6 v1 hat 32 MB Flash, X6 v2 16 MB; je eigenes Image und eigene Zwischenfirmware [geprüft: Commit X6 v2, Spiegel]; Version steht auf dem Typenschild [geprüft: cudy-installation.md (router-werkstatt)]
+- **Typenschild/Verwechslung:** X6 v1 hat 32 MB Flash, X6 v2 16 MB; je eigenes Image und eigene Zwischenfirmware [geprüft: Commit X6 v2, Spiegel]; Version steht auf dem Typenschild [geprüft: Neanderfunk-Notiz]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-cudy_x6-v1-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** [Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/X6%2BV1) / [Cudy](https://www.cudy.com/blogs/faq/openwrt-software-download)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ "How to recovery ... to Cudy official firmware"]; Reset mindestens 8 s halten [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** 4a8eaa5c7c9235212c4af022c18b2dfbadfe557f
@@ -2026,20 +2187,20 @@ Cudy X6 v1 · ramips-mt7621 · K2
 Cudy X6 v2 · ramips-mt7621 · K2
 
 - **Weg ab Werk:** Cudys signierte OpenWrt-Zwischenfirmware im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne "Einstellungen behalten" [geprüft]
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** webui-upload (Zwischenfirmware), danach LuCI-Upload; TFTP-Recovery (Server 192.168.1.88, recovery.bin) nimmt nur Cudy-signierte Images
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner X6+V2 [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner X6+V2 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
-- **Typenschild/Verwechslung:** X6 v2 hat 16 MB Flash, X6 v1 32 MB; je eigenes Image und eigene Zwischenfirmware [geprüft: Commit, Spiegel]; Version steht auf dem Typenschild [geprüft: cudy-installation.md (router-werkstatt)]
+- **Typenschild/Verwechslung:** X6 v2 hat 16 MB Flash, X6 v1 32 MB; je eigenes Image und eigene Zwischenfirmware [geprüft: Commit, Spiegel]; Version steht auf dem Typenschild [geprüft: Neanderfunk-Notiz]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-cudy_x6-v2-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** [Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/X6%2BV2) / [Cudy](https://www.cudy.com/blogs/faq/openwrt-software-download)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ "How to recovery ... to Cudy official firmware"]; Reset mindestens 8 s halten [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** e38de40f8dd350344407fe5a91e81191f6960804
@@ -2050,10 +2211,10 @@ Cudy X6 v2 · ramips-mt7621 · K2
 Cudy TR1200 v1 · ramips-mt76x8 · K2
 
 - **Weg ab Werk:** Commit (05/2024): nur seriell (Cudy-Beta-Firmware, UART, TFTP recovery.bin von 192.168.1.88). Inzwischen liegt eine Cudy-Zwischenfirmware TR1200_V1 im Spiegel, damit wie die anderen Cudy [abgeleitet]
-- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: cudy-installation.md (router-werkstatt)]
-- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: cudy-installation.md (router-werkstatt)]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: cudy-installation.md (router-werkstatt), Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt, Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; antwortet nichts, Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** webui-upload (Zwischenfirmware)
-- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner TR1200_V1 (Datei TR1200-OpenWRT-Flash.bin; Gerät nicht in cudy-installation.md (router-werkstatt), Weg wie die anderen Cudy [abgeleitet]) [geprüft: cudy-installation.md (router-werkstatt)] und Gluon-sysupgrade (nicht factory) [geprüft: cudy-installation.md (router-werkstatt)]
+- **Rechner braucht:** Rechner mit Netzwerkbuchse und Kabel an eine LAN-Buchse, Browser; IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner TR1200_V1 (Datei TR1200-OpenWRT-Flash.bin; Gerät nicht in Neanderfunk-Notiz, Weg wie die anderen Cudy [abgeleitet]) [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein (mit Zwischenfirmware; nur für den seriellen Weg laut Commit: ja)
 - **Gehäuse öffnen:** nein (mit Zwischenfirmware; nur für den seriellen Weg laut Commit: ja, UART unbestückt)
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
@@ -2062,7 +2223,7 @@ Cudy TR1200 v1 · ramips-mt76x8 · K2
 - **Factory-/Stock-Image-Link:** [Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/TR1200_V1) / [Cudy](https://www.cudy.com/blogs/faq/openwrt-software-download)
 - **Stock-Teile:** -
 - **RAM:** 128 MB
-- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: cudy-installation.md (router-werkstatt)]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** wie alle Cudy (recovery.bin, Rechner 192.168.1.88, Reset beim Einschalten), aber beim TR1200 Kabel an die WAN-Buchse statt LAN [geprüft: Cudy-FAQ Recovery]
 - **Gluon-RAMpe passt:** nein: Signaturprüfung wie bei allen Cudy
 - **Quelle (OpenWrt-Commit):** f1091ef7ac3596f1e401b918a36273672acbe389
@@ -2077,10 +2238,14 @@ Cudy TR1200 v1 · ramips-mt76x8 · K2
 devolo WiFi pro 1200e · ath79-generic · K1d
 
 - **Weg ab Werk:** Stock ist OpenWrt-basiert: im Web-UI root-Passwort setzen, sysupgrade per scp nach /tmp, `sysupgrade -n -F` [geprüft]
+- **Taste und Zeitpunkt:** keine Taste [geprüft: Commits, Weg über die laufende Stock-Firmware]
+- **Sichtbare Zeichen:** nach dem Neustart: blaue Status-LED = Gluon/OpenWrt läuft, rote = Upgrade/Failsafe [geprüft: DTS qca9558_devolo_*.dts, led-running/led-upgrade]
 - **Übertragung:** ssh/scp: root mit dem im Web-UI gesetzten Passwort, Ziel /tmp
+- **Rechner braucht:** Rechner per Kabel; Stock-Weboberfläche (laut Wiki 192.168.1.1) öffnen und beim ersten Einrichten das root-Passwort setzen; dann Gluon-sysupgrade per scp nach /tmp (Benutzer root, Passwort aus der Weboberfläche) und `sysupgrade -n -F /tmp/<datei>` [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** SSH auf der Stock-Firmware
+- **Bedingung an die Herstellerfirmware:** root-Passwort muss beim ersten Einrichten der Stock-Firmware gesetzt werden, sonst kein SSH-Login [geprüft: Commits 'Make sure you set a password for the root user as prompted on first setup']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-devolo_dvl1200e-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
@@ -2094,10 +2259,14 @@ devolo WiFi pro 1200e · ath79-generic · K1d
 devolo WiFi pro 1200i · ath79-generic · K1d
 
 - **Weg ab Werk:** Stock ist OpenWrt-basiert: im Web-UI root-Passwort setzen, sysupgrade per scp nach /tmp, `sysupgrade -n -F` [geprüft]
+- **Taste und Zeitpunkt:** keine Taste [geprüft: Commits, Weg über die laufende Stock-Firmware]
+- **Sichtbare Zeichen:** nach dem Neustart: blaue Status-LED = Gluon/OpenWrt läuft, rote = Upgrade/Failsafe [geprüft: DTS qca9558_devolo_*.dts, led-running/led-upgrade]
 - **Übertragung:** ssh/scp: root mit dem im Web-UI gesetzten Passwort, Ziel /tmp
+- **Rechner braucht:** Rechner per Kabel; Stock-Weboberfläche (laut Wiki 192.168.1.1) öffnen und beim ersten Einrichten das root-Passwort setzen; dann Gluon-sysupgrade per scp nach /tmp (Benutzer root, Passwort aus der Weboberfläche) und `sysupgrade -n -F /tmp/<datei>` [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** SSH auf der Stock-Firmware
+- **Bedingung an die Herstellerfirmware:** root-Passwort muss beim ersten Einrichten der Stock-Firmware gesetzt werden, sonst kein SSH-Login [geprüft: Commits 'Make sure you set a password for the root user as prompted on first setup']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-devolo_dvl1200i-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
@@ -2111,10 +2280,14 @@ devolo WiFi pro 1200i · ath79-generic · K1d
 devolo WiFi pro 1750c · ath79-generic · K1d
 
 - **Weg ab Werk:** Stock ist OpenWrt-basiert: im Web-UI root-Passwort setzen, sysupgrade per scp nach /tmp, `sysupgrade -n -F` [geprüft]
+- **Taste und Zeitpunkt:** keine Taste [geprüft: Commits, Weg über die laufende Stock-Firmware]
+- **Sichtbare Zeichen:** nach dem Neustart: blaue Status-LED = Gluon/OpenWrt läuft, rote = Upgrade/Failsafe [geprüft: DTS qca9558_devolo_*.dts, led-running/led-upgrade]
 - **Übertragung:** ssh/scp: root mit dem im Web-UI gesetzten Passwort, Ziel /tmp
+- **Rechner braucht:** Rechner per Kabel; Stock-Weboberfläche (laut Wiki 192.168.1.1) öffnen und beim ersten Einrichten das root-Passwort setzen; dann Gluon-sysupgrade per scp nach /tmp (Benutzer root, Passwort aus der Weboberfläche) und `sysupgrade -n -F /tmp/<datei>` [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** SSH auf der Stock-Firmware
+- **Bedingung an die Herstellerfirmware:** root-Passwort muss beim ersten Einrichten der Stock-Firmware gesetzt werden, sonst kein SSH-Login [geprüft: Commits 'Make sure you set a password for the root user as prompted on first setup']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-devolo_dvl1750c-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
@@ -2128,10 +2301,14 @@ devolo WiFi pro 1750c · ath79-generic · K1d
 devolo WiFi pro 1750e · ath79-generic · K1d
 
 - **Weg ab Werk:** Stock ist OpenWrt-basiert: im Web-UI root-Passwort setzen, sysupgrade per scp nach /tmp, `sysupgrade -n -F` [geprüft]
+- **Taste und Zeitpunkt:** keine Taste [geprüft: Commits, Weg über die laufende Stock-Firmware]
+- **Sichtbare Zeichen:** nach dem Neustart: blaue Status-LED = Gluon/OpenWrt läuft, rote = Upgrade/Failsafe [geprüft: DTS qca9558_devolo_*.dts, led-running/led-upgrade]
 - **Übertragung:** ssh/scp: root mit dem im Web-UI gesetzten Passwort, Ziel /tmp
+- **Rechner braucht:** Rechner per Kabel; Stock-Weboberfläche (laut Wiki 192.168.1.1) öffnen und beim ersten Einrichten das root-Passwort setzen; dann Gluon-sysupgrade per scp nach /tmp (Benutzer root, Passwort aus der Weboberfläche) und `sysupgrade -n -F /tmp/<datei>` [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]; nach der Installation an LAN 2 (PoE) anschließen [abgeleitet: Wiki toh/devolo/wifi_pro_1750e]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** SSH auf der Stock-Firmware
+- **Bedingung an die Herstellerfirmware:** root-Passwort muss beim ersten Einrichten der Stock-Firmware gesetzt werden, sonst kein SSH-Login [geprüft: Commits 'Make sure you set a password for the root user as prompted on first setup']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-devolo_dvl1750e-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
@@ -2145,10 +2322,14 @@ devolo WiFi pro 1750e · ath79-generic · K1d
 devolo WiFi pro 1750i · ath79-generic · K1d
 
 - **Weg ab Werk:** Stock ist OpenWrt-basiert: im Web-UI root-Passwort setzen, sysupgrade per scp nach /tmp, `sysupgrade -n -F` [geprüft]
+- **Taste und Zeitpunkt:** keine Taste [geprüft: Commits, Weg über die laufende Stock-Firmware]
+- **Sichtbare Zeichen:** nach dem Neustart: blaue Status-LED = Gluon/OpenWrt läuft, rote = Upgrade/Failsafe [geprüft: DTS qca9558_devolo_*.dts, led-running/led-upgrade]
 - **Übertragung:** ssh/scp: root mit dem im Web-UI gesetzten Passwort, Ziel /tmp
+- **Rechner braucht:** Rechner per Kabel; Stock-Weboberfläche (laut Wiki 192.168.1.1) öffnen und beim ersten Einrichten das root-Passwort setzen; dann Gluon-sysupgrade per scp nach /tmp (Benutzer root, Passwort aus der Weboberfläche) und `sysupgrade -n -F /tmp/<datei>` [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** SSH auf der Stock-Firmware
+- **Bedingung an die Herstellerfirmware:** root-Passwort muss beim ersten Einrichten der Stock-Firmware gesetzt werden, sonst kein SSH-Login [geprüft: Commits 'Make sure you set a password for the root user as prompted on first setup']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-devolo_dvl1750i-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
@@ -2162,10 +2343,14 @@ devolo WiFi pro 1750i · ath79-generic · K1d
 devolo WiFi pro 1750x · ath79-generic · K1d
 
 - **Weg ab Werk:** Stock ist OpenWrt-basiert: im Web-UI root-Passwort setzen, sysupgrade per scp nach /tmp, `sysupgrade -n -F` [geprüft]
+- **Taste und Zeitpunkt:** keine Taste [geprüft: Commits, Weg über die laufende Stock-Firmware]
+- **Sichtbare Zeichen:** die neue Firmware nutzt nur die rote Status-LED (Start, Betrieb, Upgrade) [geprüft: DTS qca9558_devolo_dvl1750x.dts]
 - **Übertragung:** ssh/scp: root mit dem im Web-UI gesetzten Passwort, Ziel /tmp
+- **Rechner braucht:** Rechner per Kabel; Stock-Weboberfläche (laut Wiki 192.168.1.1) öffnen und beim ersten Einrichten das root-Passwort setzen; dann Gluon-sysupgrade per scp nach /tmp (Benutzer root, Passwort aus der Weboberfläche) und `sysupgrade -n -F /tmp/<datei>` [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** SSH auf der Stock-Firmware
+- **Bedingung an die Herstellerfirmware:** root-Passwort muss beim ersten Einrichten der Stock-Firmware gesetzt werden, sonst kein SSH-Login [geprüft: Commits 'Make sure you set a password for the root user as prompted on first setup']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-devolo_dvl1750x-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
@@ -2183,14 +2368,21 @@ devolo WiFi pro 1750x · ath79-generic · K1d
 D-Link AQUILA PRO AI M30 A1 · mediatek-filogic · K1
 
 - **Weg ab Werk:** D-Link-Web-Recovery (Reset beim Einschalten halten, bis die LED rot blinkt) nimmt `squashfs-recovery.bin` (initramfs mit D-Link-Header DLK6E6110001); schreibt in die aktive Partition, OpenWrt bootet nur aus der ersten [geprüft]
+- **Taste und Zeitpunkt:** Reset-Taste mit Büroklammer gedrückt halten, Strom einstecken, halten bis die LED rot blinkt [geprüft: Commits 29cca6c, 7271ee5; Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** LED blinkt rot = Recovery erreicht; nach dem Flash: Status-LED blinkt weiß und bleibt weiß = OpenWrt läuft (erste Partition); bleibt die LED dauerhaft rot, liegt OpenWrt in der zweiten Partition und bootet nicht [geprüft: Commit 29cca6c]; die Recovery-Seite meldet immer Erfolg, auch wenn es scheitert, und leitet auf 192.168.0.1 um [geprüft: Commit]; Erfolgsmeldung und Fortschrittsbalken der Recovery-Seite sind ein JavaScript-Timer (80 s) und sagen nichts; fertig ist es erst, wenn die neue Firmware bootet [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** recovery-web: Gerät 192.168.200.1, Rechner 192.168.200.10/24, POST /upload.cgi (curl oder Chromium), kein Ping
+- **Rechner braucht:** Rechner fest 192.168.200.10, Netzmaske 255.255.255.0; Recovery http://192.168.200.1 [geprüft: Commit 29cca6c]; Image: OpenWrt-squashfs-recovery.bin (Gluon baut für den M30 bewusst kein Recovery-Image), danach Gluon-sysupgrade über 192.168.1.1 [geprüft: Neanderfunk-Notiz]; Hochladen am besten per curl: `curl -H "Expect:" -F "firmware=@<image>;type=application/octet-stream" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt]; im Browser nur Chromium-basiert, Firefox geht nicht [geprüft: Commits 'Chromium based'; Firefox abgeleitet: Forum Darmstadt laut Notiz]; Erreichbarkeit per HTTP prüfen, nie per Ping (Recovery antwortet nicht auf ICMP) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Geräte aus Mehrfach-Packs (Typenschild 'M60-2' bzw. 'M30/CP') haben die MAC an anderer Stelle in den Werksdaten; erst Gluon-Bauten mit dem Neanderfunk-Odm-Parser lesen sie richtig (M30 laut Notiz seit gluon-patches-hardware 9901905) [geprüft: Neanderfunk-Notiz, am Gerät bestätigt]
+- **Bedingung an die Herstellerfirmware:** Recovery schreibt immer in die gerade aktive Partition, OpenWrt bootet nur aus der ersten; liegt die zweite vorn: entschlüsseltes OEM-Image per Recovery, dann verschlüsseltes OEM-Image über die OEM-Oberfläche, dann erneut OpenWrt per Recovery [geprüft: Commit 29cca6c]
 - **initramfs-Link:** [24.10.8: squashfs-recovery.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-dlink_aquila-pro-ai-m30-a1-squashfs-recovery.bin)<br>[24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-dlink_aquila-pro-ai-m30-a1-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** nur wenn die zweite Partition aktiv ist: OEM-Image von D-Link verschlüsselt und entschlüsselt (m32-firmware-util von RolandoMagico) [geprüft]
 - **RAM:** 512 MB
+- **Dauer:** kann über 10 Minuten dauern, auch mit langer Stille nach der Übertragung, während das Gerät schreibt; nicht abbrechen, nicht Strom ziehen [geprüft: Neanderfunk-Notiz, M60: 10-11 min gemessen]
+- **Rückweg zur Herstellerfirmware:** Recovery wie oben (Rechner 192.168.200.2) mit einem entschlüsselten D-Link-Image (m32-firmware-util von RolandoMagico) [geprüft: Commit 29cca6c]
 - **Gluon-RAMpe passt:** ja: RAMpe-Image gebaut, Header wie OpenWrt, Hardware-Test offen [geprüft: gluon-rampe-installer docs/NOTIZEN.md]
 - **Gluon-RAMpe-Rezept:** devices/d-link-aquila-pro-ai-m30-a1.sh: `-recovery.bin` (D-Link-Header) für die D-Link-Recovery; gebaut, Inhalt geprüft, Hardware-Test offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f
@@ -2200,15 +2392,22 @@ D-Link AQUILA PRO AI M30 A1 · mediatek-filogic · K1
 
 D-Link AQUILA PRO AI M60 A1 · mediatek-filogic · K1
 
-- **Weg ab Werk:** D-Link-Web-Recovery nimmt `squashfs-recovery.bin` (initramfs mit Header DLK6E8202001) [geprüft, am Testplatz 29./30.09.2026 erprobt]; bei aktiver zweiter Partition vorher das UBI-Switch-Image
+- **Weg ab Werk:** D-Link-Web-Recovery nimmt `squashfs-recovery.bin` (initramfs mit Header DLK6E8202001) [geprüft, am Gerät 29./30.09.2026 erprobt]; bei aktiver zweiter Partition vorher das UBI-Switch-Image
+- **Taste und Zeitpunkt:** Reset-Taste mit Büroklammer gedrückt halten, Strom einstecken, halten bis die LED rot blinkt [geprüft: Commits 29cca6c, 7271ee5; Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** LED blinkt rot = Recovery erreicht, blinkt auch während des Schreibens weiter rot [geprüft: Commit 7271ee5]; danach OpenWrt unter 192.168.1.1; hängt OpenWrt beim Start, war die zweite Partition aktiv [geprüft: Commit]; Erfolgsmeldung und Fortschrittsbalken der Recovery-Seite sind ein JavaScript-Timer (80 s) und sagen nichts; fertig ist es erst, wenn die neue Firmware bootet [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** recovery-web: Gerät 192.168.200.1, Rechner z. B. 192.168.200.66/24, POST /upload.cgi, 10-11 min
+- **Rechner braucht:** Rechner fest im Netz 192.168.200.0/24 (bewährt: 192.168.200.66/24), Recovery http://192.168.200.1 [geprüft: Commit 7271ee5, am Gerät]; Image: OpenWrt-squashfs-recovery.bin (initramfs mit D-Link-Header, 50 MB), danach Gluon-sysupgrade per ssh root@192.168.1.1 und `sysupgrade -n` [geprüft: Neanderfunk-Notiz]; Hochladen am besten per curl: `curl -H "Expect:" -F "firmware=@<image>;type=application/octet-stream" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt]; im Browser nur Chromium-basiert, Firefox geht nicht [geprüft: Commits 'Chromium based'; Firefox abgeleitet: Forum Darmstadt laut Notiz]; Erreichbarkeit per HTTP prüfen, nie per Ping (Recovery antwortet nicht auf ICMP) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** bei falscher Partition: UBI-Switch-Image (github RolandoMagico, M60-Recovery-UBI-Switch)
+- **Typenschild/Verwechslung:** Geräte aus Mehrfach-Packs (Typenschild 'M60-2' bzw. 'M30/CP') haben die MAC an anderer Stelle in den Werksdaten; erst Gluon-Bauten mit dem Neanderfunk-Odm-Parser lesen sie richtig (M60 ab 26093000bro) [geprüft: Neanderfunk-Notiz, am Gerät bestätigt]
+- **Bedingung an die Herstellerfirmware:** Recovery schreibt in die aktive Partition, OpenWrt bootet nur aus der ersten; sonst vorher das UBI-Switch-Image (github RolandoMagico, M60-Recovery-UBI-Switch) per Recovery und darunter ein sysupgrade [geprüft: Commit 7271ee5]; am Gerät nicht nötig, kein Downgrade nötig [geprüft: Neanderfunk-Notiz]; Flashen über die OEM-Oberfläche geht nicht [geprüft: Commit]
 - **initramfs-Link:** [24.10.8: squashfs-recovery.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-dlink_aquila-pro-ai-m60-a1-squashfs-recovery.bin)<br>[24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-dlink_aquila-pro-ai-m60-a1-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Dauer:** Upload + Schreiben 10-11 Minuten (zwei Geräte gemessen), danach wenige Minuten bis Gluon online ist; nicht abbrechen [geprüft: Neanderfunk-Notiz]
+- **Rückweg zur Herstellerfirmware:** initramfs seriell booten und vorher gesicherte ubi-Partition zurückschreiben (Gehäuse öffnen) [geprüft: Commit 7271ee5]
 - **Gluon-RAMpe passt:** ja: Gluon baut selbst ein `-recovery.bin`; laut RAMpe-NOTIZEN startet ein Gluon-initramfs aber nicht im Config-Mode, vermutlich derselbe Fehler wie beim M30 [abgeleitet]; das RAMpe-Image wäre der Ersatz
 - **Gluon-RAMpe-Rezept:** devices/d-link-aquila-pro-ai-m60-a1.sh (Rezept-Entwurf, nicht gebaut): `-recovery.bin` (D-Link-Header) für die D-Link-Recovery
 - **Quelle (OpenWrt-Commit):** OpenWrt 7271ee587cd104d30d6d46dd3c623c9d4602bd0c
@@ -2219,7 +2418,10 @@ D-Link AQUILA PRO AI M60 A1 · mediatek-filogic · K1
 D-Link DAP-1620 B1 (Gluon: broken) · ramips-mt7621 · K0
 
 - **Weg ab Werk:** Reset beim Einstecken halten, Web-Recovery 192.168.0.50, factory.bin hochladen (Chromium) [geprüft]
+- **Taste und Zeitpunkt:** Reset-Taste gedrückt halten und Gerät in die Steckdose stecken [geprüft: Commit e4c7703]
+- **Sichtbare Zeichen:** Erfolgsmeldung und Fortschrittsbalken der Recovery-Seite sind ein JavaScript-Timer (80 s) und sagen nichts; fertig ist es erst, wenn die neue Firmware bootet [geprüft: Neanderfunk-Notiz] [für dieses Gerät abgeleitet: gleiche D-Link-Recovery]
 - **Übertragung:** recovery-web: Gerät 192.168.0.50
+- **Rechner braucht:** Recovery http://192.168.0.50 (D-Link Web Recovery Updater); Rechner fest im Netz 192.168.0.0/24, z. B. 192.168.0.65/24 wie beim DAP-X1860 [Adresse geprüft: Commit e4c7703; Rechner-IP abgeleitet: Schwestergerät]; factory.bin hochladen, bestätigen, am besten mit Chromium [geprüft: Commit]; Hochladen am besten per curl: `curl -H "Expect:" -F "firmware=@<image>;type=application/octet-stream" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt]; im Browser nur Chromium-basiert, Firefox geht nicht [geprüft: Commits 'Chromium based'; Firefox abgeleitet: Forum Darmstadt laut Notiz]; Erreichbarkeit per HTTP prüfen, nie per Ping (Recovery antwortet nicht auf ICMP) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -2227,6 +2429,7 @@ D-Link DAP-1620 B1 (Gluon: broken) · ramips-mt7621 · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Rückweg zur Herstellerfirmware:** D-Link-Firmware entschlüsseln (tail/openssl, Befehl im Commit) und per Web-Recovery aufspielen [geprüft: Commit e4c7703]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** e4c7703d2a62b8914e4723adae3f67c68a57532c
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e4c7703d2a62b8914e4723adae3f67c68a57532c
@@ -2235,8 +2438,11 @@ D-Link DAP-1620 B1 (Gluon: broken) · ramips-mt7621 · K0
 
 D-Link DAP-X1860 A1 · ramips-mt7621 · K0
 
-- **Weg ab Werk:** Reset beim Einstecken, Web-Recovery 192.168.0.50; laut Commit factory.bin hochladen [geprüft]. Neanderfunk-Notiz dlink-flashen.md (01.10.2026) nennt dagegen OpenWrt-initramfs + sysupgrade: Widerspruch, offen
+- **Weg ab Werk:** Reset beim Einstecken, Web-Recovery 192.168.0.50; laut Commit factory.bin hochladen [geprüft]. Neanderfunk-Notiz (01.10.2026) nennt dagegen OpenWrt-initramfs + sysupgrade: Widerspruch, offen
+- **Taste und Zeitpunkt:** Reset-Taste gedrückt halten und Gerät in die Steckdose stecken; LED muss rot blinken [geprüft: Commit 3c31f6b; 'rot blinken' laut Forum Darmstadt in Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** LED blinkt rot = Recovery erreicht [abgeleitet: Forum Darmstadt laut Notiz]; Status- und RSSI-LEDs sind ab Werk rot/orange statt rot/grün bestückt [geprüft: Commit 3c31f6b]; md5-Warnung der Recovery-Seite ist harmlos [abgeleitet: Forum Darmstadt laut Notiz]; Erfolgsmeldung und Fortschrittsbalken der Recovery-Seite sind ein JavaScript-Timer (80 s) und sagen nichts; fertig ist es erst, wenn die neue Firmware bootet [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** recovery-web: Gerät 192.168.0.50, Rechner 192.168.0.65/24
+- **Rechner braucht:** Recovery http://192.168.0.50 (nicht .1), Rechner 192.168.0.65/24 [geprüft: Commit 3c31f6b (Adresse), Neanderfunk-Notiz (Rechner-IP aus Forum Darmstadt)]; Image laut Commit factory.bin, laut Neanderfunk-Notiz OpenWrt-initramfs und danach Gluon-sysupgrade (Widerspruch offen); Hochladen am besten per curl: `curl -H "Expect:" -F "firmware=@<image>;type=application/octet-stream" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt]; im Browser nur Chromium-basiert, Firefox geht nicht [geprüft: Commits 'Chromium based'; Firefox abgeleitet: Forum Darmstadt laut Notiz]; Erreichbarkeit per HTTP prüfen, nie per Ping (Recovery antwortet nicht auf ICMP) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -2244,6 +2450,7 @@ D-Link DAP-X1860 A1 · ramips-mt7621 · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Rückweg zur Herstellerfirmware:** D-Link-Firmware entpacken/entschlüsseln (tar, openssl, Befehl im Commit), kernel_DAP-X1860.bin per Recovery aufspielen [geprüft: Commit 3c31f6b]
 - **Gluon-RAMpe passt:** nicht nötig, falls factory klappt; sonst ja (Recovery nimmt laut Neanderfunk-Notiz ein initramfs)
 - **Quelle (OpenWrt-Commit):** 3c31f6b521bb5fc49e222a8f2bcd454b73452a0e
 - **Detail-Anleitung:** https://forum.darmstadt.freifunk.net/t/installation-d-link-dap-x1860/987
@@ -2252,11 +2459,15 @@ D-Link DAP-X1860 A1 · ramips-mt7621 · K0
 
 D-Link DIR-878 A1 · ramips-mt7621 · K0
 
-- **Weg ab Werk:** Reset beim Einstecken halten bis die Power-LED orange blinkt, Web-Recovery 192.168.0.1, factory hochladen (oder `curl -F firmware=@...`) [geprüft]. Neanderfunk-Notiz recovery-wege.md Abschnitt 6 sagt dagegen "DIR-Reihe über TFTP": Widerspruch, offen
+- **Weg ab Werk:** Reset beim Einstecken halten bis die Power-LED orange blinkt, Web-Recovery 192.168.0.1, factory hochladen (oder `curl -F firmware=@...`) [geprüft]. Neanderfunk-Notiz sagt dagegen "DIR-Reihe über TFTP": Widerspruch, offen
+- **Taste und Zeitpunkt:** Reset (Rückseite) beim Einstecken des Stroms halten, bis die Power-LED blinkt (etwa 10 s) [geprüft: Commit d7233b0]
+- **Sichtbare Zeichen:** Power-LED blinkt (laut Schwestergerät DIR-882 orange) = Recovery; etwa 30 s warten, bis die Recovery-Seite bereit ist; im Browser muss die Prozentanzeige binnen Sekunden laufen, sonst neu anfangen [geprüft: Commit d7233b0; 'orange' aus Commit 73e8f23]
 - **Übertragung:** recovery-web: Gerät 192.168.0.1, Rechner 192.168.0.2/24
+- **Rechner braucht:** Kabel an LAN1, Rechner fest 192.168.0.2/255.255.255.0, Recovery http://192.168.0.1 [geprüft: Commit d7233b0]; manche Browser/OS-Kombinationen scheitern, dann `curl -v -i -F "firmware=@<gluon-factory>.bin" 192.168.0.1` [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** curl (optional)
+- **Typenschild/Verwechslung:** DIR-878 und DIR-882 (mit USB) sind eng verwandt, DIR-867 ebenso; jeweils eigenes Image [abgeleitet: Commit 73e8f23 nennt DIR-867/882-Unterschiede]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-dlink_dir-878-a1-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community); OpenWrt baut zusätzlich [squashfs-recovery.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-dlink_dir-878-a1-squashfs-recovery.bin) (200)
 - **Stock-Teile:** -
@@ -2269,11 +2480,15 @@ D-Link DIR-878 A1 · ramips-mt7621 · K0
 
 D-Link DIR-882 A1 · ramips-mt7621 · K0
 
-- **Weg ab Werk:** Reset beim Einstecken halten bis die Power-LED orange blinkt, Web-Recovery 192.168.0.1, factory hochladen (oder `curl -F firmware=@...`) [geprüft]. Neanderfunk-Notiz recovery-wege.md Abschnitt 6 sagt dagegen "DIR-Reihe über TFTP": Widerspruch, offen
+- **Weg ab Werk:** Reset beim Einstecken halten bis die Power-LED orange blinkt, Web-Recovery 192.168.0.1, factory hochladen (oder `curl -F firmware=@...`) [geprüft]. Neanderfunk-Notiz sagt dagegen "DIR-Reihe über TFTP": Widerspruch, offen
+- **Taste und Zeitpunkt:** Strom ab, Reset halten, Strom wieder an, halten bis die Power-LED orange blinkt [geprüft: Commit 73e8f23]
+- **Sichtbare Zeichen:** Power-LED blinkt orange = Recovery erreicht [geprüft: Commit 73e8f23]
 - **Übertragung:** recovery-web: Gerät 192.168.0.1, Rechner 192.168.0.2/24
+- **Rechner braucht:** Rechner fest im Netz 192.168.0.0/24 (z. B. 192.168.0.2), Recovery http://192.168.0.1 [geprüft: Commit 73e8f23]; macht der Browser Probleme: `curl -v -i -F "firmware=@<gluon-factory>.bin" 192.168.0.1` [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** curl (optional)
+- **Typenschild/Verwechslung:** DIR-882 (USB 2.0 + 3.0) vs. DIR-867 (ohne USB, nur 3x3-WLAN) und DIR-878: gleiche Plattform, eigene Images [geprüft: Commit 73e8f23]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-dlink_dir-882-a1-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community); OpenWrt baut zusätzlich [squashfs-recovery.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-dlink_dir-882-a1-squashfs-recovery.bin) (200)
 - **Stock-Teile:** -
@@ -2291,10 +2506,14 @@ D-Link DIR-882 A1 · ramips-mt7621 · K0
 GL.iNet 6416 · ath79-generic · K1d
 
 - **Weg ab Werk:** sysupgrade über die Stock-GUI oder die U-Boot-Weboberfläche [geprüft]
+- **Taste und Zeitpunkt:** Strom ab, Reset halten, Strom wieder an; LED blinkt einige Male grün, dann ganz kurz rot, dann wieder grün: beim roten Blinken Reset loslassen [abgeleitet: Wiki toh/gl.inet/6416]
+- **Sichtbare Zeichen:** grün-rot-grün-Blinken beim Einschalten mit gedrückter Taste [abgeleitet: Wiki]; Fertig-Zeichen in keiner Quelle
 - **Übertragung:** webui-upload (Stock) oder recovery-web: Gerät 192.168.1.1
+- **Rechner braucht:** U-Boot-Weg: Rechner an den LAN-Port, feste IP 192.168.1.2/255.255.255.0, Browser http://192.168.1.1 [abgeleitet: Wiki; Geräteadresse 192.168.1.1 geprüft: Commit b4d3110]; Datei: Gluon-sysupgrade (Stock-GUI oder U-Boot) [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** GL.iNet-U-Boot-Web nimmt sysupgrade
+- **Typenschild/Verwechslung:** 6408 (8 MB Flash) und 6416 (16 MB) sehen gleich aus, nur Flash-Größe verschieden: richtiges Image wählen; es gibt auch 1-Port-Ausführungen von Drittanbietern [geprüft: Commit b4d3110]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-glinet_6416-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
@@ -2307,7 +2526,10 @@ GL.iNet 6416 · ath79-generic · K1d
 GL.iNet GL-AR150 · ath79-generic · K1d
 
 - **Weg ab Werk:** GL.iNet-U-Boot-Weboberfläche bzw. Stock-GUI mit sysupgrade [abgeleitet: Commit 53c474a ohne Anleitung, Verfahren wie bei den anderen GL.iNet]
+- **Taste und Zeitpunkt:** Reset-Taste fest drücken und gleichzeitig Strom einstecken, gedrückt halten bis das LED-Muster wechselt, dann loslassen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; rote LED blinkt 5x, beim 6. Blinken loslassen [geprüft: GL-Doku 5x; '6. Blinken' abgeleitet: Wiki toh/gl.inet/gl-ar150]
+- **Sichtbare Zeichen:** nur die linke grüne LED leuchtet = U-Boot-Modus; alle LEDs gehen aus = Schreiben fertig [abgeleitet: Wiki toh/gl.inet/gl-ar150]
 - **Übertragung:** recovery-web: Gerät 192.168.1.1 [abgeleitet]
+- **Rechner braucht:** U-Boot-Weg: Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; Normalweg auch Stock-GUI mit sysupgrade [abgeleitet: Wiki, Stock ist GL.iNet-OpenWrt]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** GL.iNet-U-Boot-Web
@@ -2315,6 +2537,7 @@ GL.iNet GL-AR150 · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** ?
+- **Dauer:** Wiki: 10-30 Sekunden [abgeleitet: Wiki]; GL-Doku allgemein: etwa 3 Minuten warten, nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade geht direkt [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target, ohne Anleitung) [abgeleitet]
 
@@ -2323,14 +2546,20 @@ GL.iNet GL-AR150 · ath79-generic · K1d
 GL.iNet GL-AR300M Lite · ath79-generic · K1d
 
 - **Weg ab Werk:** sysupgrade über die OEM-GUI (LuCI, "Advanced"), Einstellungen nicht behalten [geprüft]
+- **Taste und Zeitpunkt:** Stock-Weg (Normalweg): keine Taste [geprüft: Commit fefa34d]; U-Boot-Notweg: Reset-Taste fest drücken und gleichzeitig Strom einstecken, gedrückt halten bis das LED-Muster wechselt, dann loslassen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; LED blinkt 5x [abgeleitet: GL-Doku-Eintrag 'GL-AR300M (Shadow)']
+- **Sichtbare Zeichen:** U-Boot-Weg: LED blinkt 5x [abgeleitet: GL-Doku AR300M]
 - **Übertragung:** webui-upload (Stock-LuCI)
+- **Rechner braucht:** Stock-LuCI ('Advanced'), Gluon-sysupgrade, Einstellungen nicht behalten [geprüft: Commit fefa34d]; U-Boot-Weg: Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Stock ist OpenWrt-basiert
+- **Typenschild/Verwechslung:** AR300M-Lite = nur ein Ethernet-Port, nur NOR-Flash; GL-AR300M16 = nur NOR; GL-AR300M ohne Zusatz hat zusätzlich 128 MB NAND [geprüft: Commits fefa34d, b591cab, 55e6c90]
+- **Bedingung an die Herstellerfirmware:** Noch Ende 2024 verkaufte AR300M hatten einen alten U-Boot, der neue Images ablehnen kann (U-Boot-Update über http://192.168.1.1/uboot.html) [abgeleitet: Wiki toh/gl.inet/gl-ar300m]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-glinet_gl-ar300m-lite-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** ?
+- **Dauer:** U-Boot-Weg: etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade geht direkt
 - **Quelle (OpenWrt-Commit):** fefa34def84561688e6af2feeec2dbb390ba4486 [geprüft]
 
@@ -2339,14 +2568,20 @@ GL.iNet GL-AR300M Lite · ath79-generic · K1d
 GL.iNet GL-AR300M16 · ath79-generic · K1d
 
 - **Weg ab Werk:** OEM-U-Boot (HTTP) oder `sysupgrade --force` aus der NOR-Stock-Firmware [geprüft]
+- **Taste und Zeitpunkt:** Reset-Taste fest drücken und gleichzeitig Strom einstecken, gedrückt halten bis das LED-Muster wechselt, dann loslassen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; LED blinkt 5x [abgeleitet: GL-Doku-Eintrag 'GL-AR300M (Shadow)']
+- **Sichtbare Zeichen:** LED blinkt 5x = U-Boot-Weboberfläche erreicht [abgeleitet: GL-Doku AR300M]
 - **Übertragung:** recovery-web: Gerät 192.168.1.1 [abgeleitet]; oder ssh
+- **Rechner braucht:** U-Boot-Weg: Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; alternativ aus der NOR-Stock-Firmware `sysupgrade --force` [geprüft: Commit b591cab]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** GL.iNet-U-Boot-Web
+- **Typenschild/Verwechslung:** AR300M16 = nur 16 MB NOR, kein NAND; nicht mit GL-AR300M (mit NAND) oder AR300M-Lite (1 Port) verwechseln [geprüft: Commit b591cab]
+- **Bedingung an die Herstellerfirmware:** Noch Ende 2024 verkaufte AR300M hatten einen alten U-Boot, der neue Images ablehnen kann [abgeleitet: Wiki toh/gl.inet/gl-ar300m]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-glinet_gl-ar300m16-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** ?
+- **Dauer:** U-Boot-Weg: etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade geht direkt
 - **Quelle (OpenWrt-Commit):** b591cabd3989b44cfaf15248af9e55a0300a9c0a [geprüft]
 
@@ -2355,14 +2590,19 @@ GL.iNet GL-AR300M16 · ath79-generic · K1d
 GL.iNet GL-AR750 · ath79-generic · K1d
 
 - **Weg ab Werk:** Stock nimmt sysupgrade per Kommandozeile oder LuCI [geprüft]
+- **Taste und Zeitpunkt:** Stock-Weg (Normalweg): keine Taste [geprüft: Commit 921675a]; U-Boot-Notweg: Reset-Taste fest drücken und gleichzeitig Strom einstecken, gedrückt halten bis das LED-Muster wechselt, dann loslassen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; LED blinkt 5x [geprüft: GL-Doku 'GL-AR750 (Creta)']
+- **Sichtbare Zeichen:** U-Boot-Weg: LED blinkt 5x [geprüft: GL-Doku]
 - **Übertragung:** webui-upload (Stock-LuCI) oder ssh
+- **Rechner braucht:** Stock-LuCI oder `sysupgrade` auf der Kommandozeile [geprüft: Commit 921675a]; U-Boot-Weg: Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Stock ist OpenWrt-basiert
+- **Typenschild/Verwechslung:** GL-AR750 'Creta' (3 weiße LEDs) nicht mit GL-AR750S 'Slate' verwechseln [abgeleitet: Modellnamen, LED-Angabe aus Commit 921675a]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-glinet_gl-ar750-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** U-Boot-Weg: etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade geht direkt
 - **Quelle (OpenWrt-Commit):** 921675a2d148330a7ec44f10ea4d583b8d7b5a44 [geprüft]
 
@@ -2371,7 +2611,9 @@ GL.iNet GL-AR750 · ath79-generic · K1d
 GL.iNET GL-USB150 · ath79-generic · K1d
 
 - **Weg ab Werk:** Stock (OpenWrt-basiert) nimmt das sysupgrade in der GUI oder per sysupgrade, Einstellungen nicht behalten [geprüft]
+- **Taste und Zeitpunkt:** Normalweg: keine Taste [geprüft: Commit a1b5a43]; U-Boot: Reset halten beim Einstecken, LED blinkt 5x [abgeleitet: GL-Doku 'GL-USB150 (Microuter): The LED flashes 5 times', Handhabung beim USB-Stick abgeleitet]
 - **Übertragung:** webui-upload (Stock-GUI) oder ssh
+- **Rechner braucht:** Gerät steckt im USB-Port und meldet sich als USB-Netzwerkkarte (Realtek RTL8152B) [abgeleitet: Wiki toh/gl.inet/gl-usb150]; Gluon-sysupgrade in der Stock-GUI oder per `sysupgrade`, Einstellungen nicht behalten [geprüft: Commit a1b5a43]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Stock ist OpenWrt-basiert
@@ -2387,14 +2629,20 @@ GL.iNET GL-USB150 · ath79-generic · K1d
 GL.iNet GL-AR300M NOR · ath79-nand · K1d
 
 - **Weg ab Werk:** OEM-U-Boot-Weboberfläche nimmt NOR-Firmware (sysupgrade) oder NAND-factory.img; ohne serielle Konsole [geprüft]
+- **Taste und Zeitpunkt:** Reset-Taste fest drücken und gleichzeitig Strom einstecken, gedrückt halten bis das LED-Muster wechselt, dann loslassen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; LED blinkt 5x [geprüft: GL-Doku 'GL-AR300M (Shadow): The LED flashes 5 times']
+- **Sichtbare Zeichen:** LED blinkt 5x = U-Boot-Weboberfläche erreicht [geprüft: GL-Doku]
 - **Übertragung:** recovery-web: Gerät 192.168.1.1 [abgeleitet, Adresse im Commit nicht genannt]
+- **Rechner braucht:** U-Boot-Weg: Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; im U-Boot das Gluon-sysupgrade in den NOR-Bereich laden (U-Boot nimmt NOR-sysupgrade oder NAND-factory.img) [geprüft: Commit 55e6c90]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** GL.iNet-U-Boot-Web
+- **Typenschild/Verwechslung:** GL-AR300M (mit NAND) / GL-AR300M16 (nur NOR) / GL-AR300M-Lite (nur NOR, 1 Port) haben eigene Gluon-Images [geprüft: Commits 55e6c90, b591cab, fefa34d]; der OEM-U-Boot fällt nach drei misslungenen NAND-Starts auf NOR zurück [geprüft: Commit 55e6c90]
+- **Bedingung an die Herstellerfirmware:** Noch Ende 2024 verkaufte AR300M hatten einen alten U-Boot, der neue Images ablehnen kann (U-Boot-Update über http://192.168.1.1/uboot.html) [abgeleitet: Wiki toh/gl.inet/gl-ar300m]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-ar300m-nor-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** ?
+- **Dauer:** U-Boot-Weg: etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade (NOR) geht direkt
 - **Quelle (OpenWrt-Commit):** 55e6c903ae20bd8e694f4626166766e59602f87c (NOR/NAND-Aufteilung, Anleitung); 6e78d546d1197d7a3ec4cbc7aab22286ad49fb0f (Umbenennung) [geprüft]
 
@@ -2403,14 +2651,19 @@ GL.iNet GL-AR300M NOR · ath79-nand · K1d
 GL.iNet GL-AR750S NOR · ath79-nand · K1d
 
 - **Weg ab Werk:** U-Boot-Recovery: Reset beim Einstecken halten bis 5x Blinken, http://192.168.1.1, sysupgrade im NOR-Bereich hochladen [geprüft]
+- **Taste und Zeitpunkt:** Strom ab, Reset halten, Strom wieder an, rechte LED blinkt 5x, dann loslassen [geprüft: Commit af28d8a, GL-Doku 'GL-AR750S-EXT (Slate): 5 times']
+- **Sichtbare Zeichen:** rechte LED blinkt 5x = U-Boot-Weboberfläche erreicht [geprüft: Commit af28d8a]; Commit rät: nach erfolgreicher Übertragung Netzwerkkabel ziehen, bevor das Gerät neu startet [geprüft: Commit af28d8a]
 - **Übertragung:** recovery-web: Gerät 192.168.1.1, PC 192.168.1.2
+- **Rechner braucht:** feste IP 192.168.1.2, Browser http://192.168.1.1, Gluon-sysupgrade im Abschnitt 'NOR flash' wählen, 'update nor firmware' [geprüft: Commit af28d8a]; U-Boot-Weg: Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** GL.iNet-U-Boot-Web
+- **Typenschild/Verwechslung:** GL-AR750S 'Slate' (auch -EXT) nicht mit GL-AR750 'Creta' verwechseln; Gluon nutzt das NOR-Profil [abgeleitet: Modellnamen; Profil geprüft: Commit b496a22]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-ar750s-nor-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit af28d8a]
+- **Dauer:** U-Boot-Weg: etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade (NOR) geht direkt
 - **Quelle (OpenWrt-Commit):** af28d8a539fe64bfc893f798fdbbc49b4e78352a (Einführung, Anleitung); b496a2294c6e663a2dcbf08d714443e758d1269d (NOR/NAND) [geprüft]
 
@@ -2419,14 +2672,19 @@ GL.iNet GL-AR750S NOR · ath79-nand · K1d
 GL.iNet GL-E750 (broken) · ath79-nand · K2
 
 - **Weg ab Werk:** Mit GL-Firmware 3.100 nur über den U-Boot (GL.iNet-Debrick-Anleitung), weil deren sysupgrade den größeren Kernel zerstört [geprüft]; Gluon baut kein factory.img, OpenWrt schon
+- **Taste und Zeitpunkt:** Reset halten und einschalten [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
+- **Sichtbare Zeichen:** Display zeigt 'Booting', dann 'Reset Counting 1 to 4', dann 'Please Open Web 192.168.1.1' = U-Boot-Weboberfläche erreicht [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Übertragung:** recovery-web (GL.iNet-U-Boot) [Adresse im Commit nicht genannt]
+- **Rechner braucht:** U-Boot-Weg: Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** GL.iNet-U-Boot-Web, OpenWrt-factory.img als Zwischenschritt [abgeleitet]
+- **Bedingung an die Herstellerfirmware:** Mit GL-Firmware 3.100 nicht per sysupgrade aus der Stock-Firmware (zerstört den größeren Kernel), nur über den U-Boot [geprüft: Commit 68ac3f2]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-e750-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein Gluon-factory; OpenWrt: [squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** U-Boot-Weg: etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein: U-Boot-Web nimmt NAND-factory.img (Kernel+UBI), kein initramfs [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 68ac3f2cddab8422d7de0ce1a78d23edf29012e7 [geprüft]
 
@@ -2435,7 +2693,10 @@ GL.iNet GL-E750 (broken) · ath79-nand · K2
 GL.iNet GL-XE300 · ath79-nand · K2
 
 - **Weg ab Werk:** U-Boot-Rescue: Reset und Power gleichzeitig halten bis LAN-LED 5x blinkt, http://192.168.1.1, factory-Image hochladen [geprüft]; Gluon baut kein factory.img -> OpenWrt-factory.img als Zwischenschritt [abgeleitet]
+- **Taste und Zeitpunkt:** Reset- und Power-Taste gleichzeitig drücken und halten, bis die LAN-LED 5x blinkt, dann beide loslassen [geprüft: Commit af8a059]
+- **Sichtbare Zeichen:** LAN-LED blinkt 5x, dann bleibt die WLAN-LED an = U-Boot-Rescue erreicht [geprüft: Commit af8a059, GL-Doku]; nach dem Schreiben startet das Gerät neu [geprüft: Commit]
 - **Übertragung:** recovery-web: Gerät 192.168.1.1
+- **Rechner braucht:** Browser http://192.168.1.1 (Rescue-Seite), factory-Image [geprüft: Commit]; U-Boot-Weg: Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** GL.iNet-U-Boot-Web, OpenWrt-factory.img als Zwischenschritt [abgeleitet]
@@ -2443,6 +2704,8 @@ GL.iNet GL-XE300 · ath79-nand · K2
 - **Factory-/Stock-Image-Link:** kein Gluon-factory; OpenWrt: [squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img) (HEAD 200)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** U-Boot-Weg: etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
+- **Rückweg zur Herstellerfirmware:** Stock-Firmware von GL.iNet laden und auf demselben U-Boot-Weg aufspielen [geprüft: Commit af8a059]
 - **Gluon-RAMpe passt:** nein: U-Boot-Rescue nimmt NAND-factory.img (Kernel+UBI), kein initramfs; eine Gluon-RAMpe in diesem Format wäre ein eigenes Projekt [abgeleitet]
 - **Quelle (OpenWrt-Commit):** af8a059bb41dd7afee49ce9a5d52e9a8e010bbd8 [geprüft]
 
@@ -2451,7 +2714,10 @@ GL.iNet GL-XE300 · ath79-nand · K2
 GL.iNet GL-AP1300 · ipq40xx-generic · K0
 
 - **Weg ab Werk:** Gluon-factory (`.ubi`) über die U-Boot-Web-Failsafe (Reset 10 s, bis die Power-LED schneller blinkt) oder U-Boot-TFTP `run lf` [geprüft]
+- **Taste und Zeitpunkt:** Reset beim Einschalten etwa 10 Sekunden halten, bis die Power-LED schneller blinkt [geprüft: Commit b938918]
+- **Sichtbare Zeichen:** Power-LED blinkt langsam 5x, leuchtet kurz, blinkt dann dauernd schnell = U-Boot-Weboberfläche erreicht [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Übertragung:** recovery-web: Gerät 192.168.1.1
+- **Rechner braucht:** U-Boot-Weg: Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; Datei: Gluon-factory (.ubi) [geprüft: Commit, nand-factory.ubi]; TFTP-Weg nur mit serieller Konsole (`run lf`) [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -2459,6 +2725,7 @@ GL.iNet GL-AP1300 · ipq40xx-generic · K0
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.ubi](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-glinet_gl-ap1300-squashfs-factory.ubi)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Dauer:** U-Boot-Weg: etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt b9389186b012e5bd99ea6523b8220aaee6ca0085
 - **Detail-Anleitung:** -
@@ -2468,7 +2735,10 @@ GL.iNet GL-AP1300 · ipq40xx-generic · K0
 GL.iNet GL-B1300 · ipq40xx-generic · K1d
 
 - **Weg ab Werk:** GL.iNet-U-Boot-Web (Reset beim Einschalten, bis drei LEDs leuchten) nimmt das sysupgrade, umbenannt in lede-gl-b1300.bin; liegt die Datei auf einem TFTP-Server 192.168.1.2, holt der U-Boot sie selbst [geprüft: Commit von 2017, ob neuere U-Boots denselben Namen erwarten: offen]
+- **Taste und Zeitpunkt:** Reset drücken und einschalten, halten bis die LEDs dauerhaft leuchten [geprüft: Commit 04d3308 'three leds constantly on']; GL-Doku: Power-LED bleibt an, rechte WLAN-LED blinkt 4x, dann leuchtet die mittlere (Mesh-)LED; bei alten B1300 blinken mittlere und rechte LED 5x und bleiben an [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
+- **Sichtbare Zeichen:** beim Schreiben blinkt die WLAN-LED [geprüft: Commit 04d3308]
 - **Übertragung:** recovery-web: Gerät 192.168.1.1; oder tftp-client: Server 192.168.1.2, Datei lede-gl-b1300.bin
+- **Rechner braucht:** U-Boot-Weg: Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; Datei: Gluon-sysupgrade, laut Commit (2017) für U-Boot-Web und TFTP umbenannt in genau `lede-gl-b1300.bin`; ob heutige U-Boots den Namen verlangen [abgeleitet: offen]; liegt die Datei auf einem TFTP-Server 192.168.1.2, holt der U-Boot sie selbst [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -2476,6 +2746,7 @@ GL.iNet GL-B1300 · ipq40xx-generic · K1d
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Dauer:** U-Boot-Weg: etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein, nicht nötig: der Bootloader nimmt das Gluon-sysupgrade
 - **Quelle (OpenWrt-Commit):** OpenWrt 04d3308b6248ef21a6f0bc3378b342906c2d2865
 - **Detail-Anleitung:** -
@@ -2485,10 +2756,14 @@ GL.iNet GL-B1300 · ipq40xx-generic · K1d
 GL.iNet GL-MT2500 (MaxLinear-PHY) · mediatek-filogic · K1d
 
 - **Weg ab Werk:** GL.iNet-Stock-UI nimmt das OpenWrt-/Gluon-sysupgrade direkt (ohne Einstellungen) [geprüft]; die U-Boot-Recovery nimmt laut Commit keine Images. Neue HW-Revision mit Airoha-PHY hat in OpenWrt ein eigenes Profil `glinet_gl-mt2500-airoha`, das Gluon nicht führt [geprüft: 24.10.8-Liste]
+- **Taste und Zeitpunkt:** Normalweg Stock-UI: keine Taste [geprüft: Commit 1239668]; U-Boot: Reset-Taste fest drücken und gleichzeitig Strom einstecken, gedrückt halten bis das LED-Muster wechselt, dann loslassen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; Power-LED blinkt 5x blau, dann dauerhaft weiß [geprüft: GL-Doku 'GL-MT2500/GL-MT2500A']; laut Commit nimmt der Hersteller-U-Boot aber keine Images an [geprüft: Commit 1239668]
+- **Sichtbare Zeichen:** U-Boot-Weg: Power-LED 5x blau, dann weiß [geprüft: GL-Doku]
 - **Übertragung:** webui-upload (GL.iNet-UI); bzw. recovery-web (GL.iNet-U-Boot, Reset beim Einschalten) [abgeleitet]
+- **Rechner braucht:** GL.iNet-Web-UI (192.168.8.1), Gluon-sysupgrade hochladen, Einstellungen NICHT behalten [geprüft: Commit 1239668; Adresse aus GL-Doku]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Neuere Hardware-Revision mit Airoha-PHY statt MaxLinear braucht in OpenWrt ein eigenes Profil (glinet_gl-mt2500-airoha), das Gluon nicht führt [geprüft: vorhandenes Feld weg, OpenWrt-24.10.8-Liste]; GL-Doku nennt GL-MT2500 und GL-MT2500A gemeinsam [geprüft: GL-Doku]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-glinet_gl-mt2500-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
@@ -2502,7 +2777,10 @@ GL.iNet GL-MT2500 (MaxLinear-PHY) · mediatek-filogic · K1d
 GL.iNet GL-MT3000 · mediatek-filogic · K1d
 
 - **Weg ab Werk:** GL.iNet-Stock-UI bzw. U-Boot-Web-Failsafe nimmt das sysupgrade direkt [abgeleitet: Commit ohne Installationsabschnitt, gluon-rampe-installer docs/GERAETE.md]
+- **Taste und Zeitpunkt:** Normalweg Stock-UI: keine Taste [abgeleitet: Wiki]; U-Boot: Reset-Taste fest drücken und gleichzeitig Strom einstecken, gedrückt halten bis das LED-Muster wechselt, dann loslassen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; blaue LED blinkt 6x, dann dauerhaft weiß [geprüft: GL-Doku 'GL-MT3000 (Beryl AX)']
+- **Sichtbare Zeichen:** U-Boot-Weg: blaue LED 6x, dann weiß [geprüft: GL-Doku]
 - **Übertragung:** webui-upload (GL.iNet-UI); bzw. recovery-web (GL.iNet-U-Boot, Reset beim Einschalten) [abgeleitet]
+- **Rechner braucht:** GL.iNet-Web-UI http://192.168.8.1 (Upgrade), Gluon-sysupgrade, Konfiguration NICHT behalten [abgeleitet: Wiki toh/gl.inet/gl-mt3000]; U-Boot-Weg: Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -2510,6 +2788,7 @@ GL.iNet GL-MT3000 · mediatek-filogic · K1d
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Dauer:** U-Boot-Weg: etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein, nicht nötig: Hersteller-UI nimmt das Gluon-sysupgrade
 - **Quelle (OpenWrt-Commit):** OpenWrt 7cbe34170e3d8471c1ebacde33a2372c92433be4
 - **Detail-Anleitung:** -
@@ -2519,7 +2798,10 @@ GL.iNet GL-MT3000 · mediatek-filogic · K1d
 GL.iNet GL-MT6000 · mediatek-filogic · K1d
 
 - **Weg ab Werk:** GL.iNet-Stock-UI nimmt das sysupgrade direkt [abgeleitet: Commit-Text Patch-Repo 8dbae18]; OpenWrts `squashfs-factory.bin` ist nur für den OpenWrt-U-Boot [geprüft]
+- **Taste und Zeitpunkt:** Normalweg Stock-UI: keine Taste [abgeleitet: Wiki]; U-Boot: Reset halten, Strom einstecken, etwa 10 Sekunden halten bis die LED ruhig wird [abgeleitet: Wiki toh/gl.inet/gl-mt6000]; GL-Doku: blaue LED blinkt 6x, dann dauerhaft weiß [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
+- **Sichtbare Zeichen:** U-Boot-Weg: blaue LED 6x, dann weiß [geprüft: GL-Doku]
 - **Übertragung:** webui-upload (GL.iNet-UI); bzw. recovery-web (GL.iNet-U-Boot, Reset beim Einschalten) [abgeleitet]
+- **Rechner braucht:** GL.iNet-Web-UI 192.168.8.1, Upgrade-Seite, Gluon-sysupgrade, 'Do not keep configuration' [abgeleitet: Wiki]; immer das sysupgrade-Image nehmen, ein factory-Image kann das Gerät unbrauchbar machen [abgeleitet: Wiki; OpenWrt-factory nur für OpenWrt-U-Boot geprüft: Commit fe10f97]; U-Boot-Weg: Kabel an LAN 2, 3 oder 4, nicht LAN 1 [geprüft: GL-Doku]; U-Boot-Weg: Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -2527,6 +2809,8 @@ GL.iNet GL-MT6000 · mediatek-filogic · K1d
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 1 GB
+- **Dauer:** U-Boot-Weg: etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
+- **Rückweg zur Herstellerfirmware:** GL.iNet-sysupgrade ohne Einstellungen aufspielen (OEM-Firmware ist ein OpenWrt-Fork) [abgeleitet: Wiki toh/gl.inet/gl-mt6000]
 - **Gluon-RAMpe passt:** nein, nicht nötig: Hersteller-UI nimmt das Gluon-sysupgrade
 - **Quelle (OpenWrt-Commit):** OpenWrt fe10f9743935d6986e80e7cb082469e6bc5a03f0; gluon-patches-hardware 8dbae18666543aa9b8b5e7faa1d267024d62071e (Gluon-Zeile)
 - **Detail-Anleitung:** -
@@ -2536,7 +2820,10 @@ GL.iNet GL-MT6000 · mediatek-filogic · K1d
 GL.iNet GL-MT300A · ramips-mt7620 · K1d
 
 - **Weg ab Werk:** Stock ist ein GL.iNet-OpenWrt und nimmt das sysupgrade im Web-UI; Notweg U-Boot-Web: Reset beim Einstecken mind. 3 s halten [abgeleitet: Wiki, Commit ohne Installationstext]
+- **Taste und Zeitpunkt:** Reset-Taste fest drücken und gleichzeitig Strom einstecken, gedrückt halten bis das LED-Muster wechselt, dann loslassen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; loslassen nach 3x Blinken [geprüft: GL-Doku 'GL-MT300N and GL-MT300A: The LED flashes 3 times']
+- **Sichtbare Zeichen:** LED blinkt 3x = U-Boot-Weboberfläche erreicht [geprüft: GL-Doku]; Fertig-Zeichen in keiner Quelle
 - **Übertragung:** webui-upload; recovery-web: Gerät 192.168.1.1, Rechner 192.168.1.2/24
+- **Rechner braucht:** U-Boot-Weg: Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; Normalweg Stock-Web-UI ohne Taste [abgeleitet: Wiki, Commit ohne Installationstext]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -2544,6 +2831,7 @@ GL.iNet GL-MT300A · ramips-mt7620 · K1d
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
 - **Stock-Teile:** -
 - **RAM:** 128 MB
+- **Dauer:** U-Boot-Weg: etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein, unnötig: sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** 96ee39b184a3863bba1cc42efc5bbd34495d20ff (ohne Installationstext) + Wiki toh:gl.inet
 
@@ -2552,14 +2840,19 @@ GL.iNet GL-MT300A · ramips-mt7620 · K1d
 GL.iNet GL-MT300N (v1) · ramips-mt7620 · K1d
 
 - **Weg ab Werk:** Stock ist ein GL.iNet-OpenWrt und nimmt das sysupgrade im Web-UI; Notweg U-Boot-Web: Reset beim Einstecken mind. 3 s halten [abgeleitet: Wiki, Commit ohne Installationstext]
+- **Taste und Zeitpunkt:** Reset-Taste fest drücken und gleichzeitig Strom einstecken, gedrückt halten bis das LED-Muster wechselt, dann loslassen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; loslassen nach 3x Blinken [geprüft: GL-Doku 'GL-MT300N and GL-MT300A: The LED flashes 3 times']
+- **Sichtbare Zeichen:** LED blinkt 3x = U-Boot-Weboberfläche erreicht [geprüft: GL-Doku]; Fertig-Zeichen in keiner Quelle
 - **Übertragung:** webui-upload; recovery-web: Gerät 192.168.1.1, Rechner 192.168.1.2/24
+- **Rechner braucht:** U-Boot-Weg: Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; Normalweg Stock-Web-UI ohne Taste [abgeleitet: Wiki, Commit ohne Installationstext]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** GL-MT300N (v1, MT7620N, 64 MB RAM, dieses Profil) nicht mit GL-MT300N-V2 'Mango' (MT7628AN, 128 MB) verwechseln; auf dem Typenschild auf '-V2' achten [geprüft: Commits be53e5a, abbfcc8; Typenschild-Aufdruck abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7620/openwrt-24.10.8-ramips-mt7620-glinet_gl-mt300n-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
 - **Stock-Teile:** -
 - **RAM:** 64 MB
+- **Dauer:** U-Boot-Weg: etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein, unnötig: sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** be53e5a154931109dd76a8015583123201c4b602 (ohne Installationstext) + Wiki toh:gl.inet
 
@@ -2568,7 +2861,9 @@ GL.iNet GL-MT300N (v1) · ramips-mt7620 · K1d
 GL.iNet GL-MT750 · ramips-mt7620 · K1d
 
 - **Weg ab Werk:** Stock ist ein GL.iNet-OpenWrt und nimmt das sysupgrade im Web-UI; Notweg U-Boot-Web: Reset beim Einstecken mind. 3 s halten [abgeleitet: Wiki, Commit ohne Installationstext]
+- **Taste und Zeitpunkt:** Reset-Taste beim Einstecken des Stroms halten, bis die LED blinkt (vermutlich 3x wie GL-MT300A/MT300N, selbe Baureihe) [abgeleitet: GL-Doku nennt das MT750 nicht, Wiki ohne Anleitung]
 - **Übertragung:** webui-upload; recovery-web: Gerät 192.168.1.1, Rechner 192.168.1.2/24
+- **Rechner braucht:** U-Boot-Weg: Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; Wiki-Tipp gegen Browser-Cache: http://192.168.1.1/index.html?index [abgeleitet: Wiki toh/gl.inet/gl-mt750]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -2576,6 +2871,7 @@ GL.iNet GL-MT750 · ramips-mt7620 · K1d
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
 - **Stock-Teile:** -
 - **RAM:** 128 MB (ToH)
+- **Dauer:** U-Boot-Weg: etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein, unnötig: sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** be7962925927ab5cdc7a13fdb24d1b08792f8f23 (ohne Installationstext) + Wiki toh:gl.inet
 
@@ -2584,7 +2880,10 @@ GL.iNet GL-MT750 · ramips-mt7620 · K1d
 GL.iNet GL-MT1300 (Beryl) · ramips-mt7621 · K1d
 
 - **Weg ab Werk:** U-Boot-Web: Reset beim Einschalten, nach 5x blauem Blinken loslassen, http://192.168.1.1, sysupgrade hochladen [geprüft]
+- **Taste und Zeitpunkt:** Reset drücken und Strom einstecken (Taste halten); blaue LED blinkt 5x, dann geht die weiße LED an: loslassen [geprüft: Commit d89a7f0]; GL-Doku: blau 2x langsam, dann 5x schnell, dann dauerhaft weiß [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
+- **Sichtbare Zeichen:** weiße LED an = U-Boot-Weboberfläche erreicht; während des Schreibens blinkt die blaue LED; hört sie auf zu blinken, ist das Schreiben fertig und das Gerät startet [geprüft: Commit d89a7f0]
 - **Übertragung:** recovery-web: Gerät 192.168.1.1, Rechner 192.168.1.2
+- **Rechner braucht:** Kabel an einen LAN-Port, feste IP 192.168.1.2, Browser http://192.168.1.1, Gluon-sysupgrade hochladen [geprüft: Commit d89a7f0]; U-Boot-Weg: Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -2592,6 +2891,7 @@ GL.iNet GL-MT1300 (Beryl) · ramips-mt7621 · K1d
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Dauer:** U-Boot-Weg: etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; währenddessen blinkt die blaue LED [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein, unnötig: sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** d89a7f0120db42d4fae1656e1860ef49523acabb
 
@@ -2600,14 +2900,19 @@ GL.iNet GL-MT1300 (Beryl) · ramips-mt7621 · K1d
 GL.iNet GL-MT300N v2 · ramips-mt76x8 · K1d
 
 - **Weg ab Werk:** Stock (GL.iNet-LEDE) nimmt das sysupgrade in LuCI; U-Boot-Web: Reset beim Einstecken bis die rote LED blinkt, 192.168.1.1 [geprüft]
+- **Taste und Zeitpunkt:** Reset-Taste halten und Strom einstecken, halten bis die rote LED nach dem Blinken dauerhaft hell leuchtet [geprüft: Commit abbfcc8]; GL-Doku: 'The LED flashes 5 times' [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
+- **Sichtbare Zeichen:** LED blinkt 5x, dann leuchtet die rote LED hell = U-Boot-Weboberfläche erreicht [geprüft: Commit, GL-Doku]; Fertig-Zeichen in keiner Quelle
 - **Übertragung:** webui-upload; recovery-web: Gerät 192.168.1.1
+- **Rechner braucht:** U-Boot-Weg: Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; Datei: Gluon-sysupgrade [geprüft: Commit 'Install sysupgrade image using web interface on 192.168.1.1']; Stock (GL.iNet-LEDE) nimmt das sysupgrade auch in LuCI, Einstellungen nicht behalten [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** GL-MT300N-V2 'Mango' (MT7628AN, 128 MB) nicht mit GL-MT300N v1 (MT7620N, 64 MB) verwechseln [geprüft: Commits abbfcc8, be53e5a]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-glinet_gl-mt300n-v2-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
 - **Stock-Teile:** -
 - **RAM:** 128 MB
+- **Dauer:** U-Boot-Weg: etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein, unnötig
 - **Quelle (OpenWrt-Commit):** abbfcc85259a4f6658c61e99dd3d2d3567e3eb3a
 
@@ -2616,14 +2921,19 @@ GL.iNet GL-MT300N v2 · ramips-mt76x8 · K1d
 GL.iNet microuter-N300 · ramips-mt76x8 · K1d
 
 - **Weg ab Werk:** Stock-Web-UI 192.168.8.1 (per WLAN, der Ethernet-Port ist WAN), "Local Update" mit sysupgrade ohne Einstellungen; oder U-Boot-Web: Reset beim Einschalten, 5x Blinken, 192.168.1.1 [geprüft]
+- **Taste und Zeitpunkt:** Stock-Weg: keine Taste; U-Boot-Weg: Reset halten und einschalten, LED blinkt 5x [geprüft: Commit b30f228, GL-Doku 'microuter-N300: 5 times']
+- **Sichtbare Zeichen:** U-Boot-Weg: LED blinkt 5x [geprüft: Commit, GL-Doku]
 - **Übertragung:** webui-upload (192.168.8.1); recovery-web: Gerät 192.168.1.1, Rechner statisch 192.168.1.x
+- **Rechner braucht:** Stock-Weg: per WLAN verbinden (der Ethernet-Port ist ab Werk WAN), http://192.168.8.1, Update > Local Update, Gluon-sysupgrade, Einstellungen nicht behalten [geprüft: Commit b30f228]; U-Boot-Weg: feste IPv4 aus 192.168.1.0/24, sysupgrade an http://192.168.1.1 [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** microuter-N300 (intern MT300N-v4, 128 MB RAM, 16 MB Flash) sieht aus wie der VIXMINI (MT300N-v3, 64 MB, 8 MB) [geprüft: Commit b30f228]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-glinet_microuter-n300-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
 - **Stock-Teile:** -
 - **RAM:** 128 MB
+- **Dauer:** U-Boot-Weg: etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein, unnötig
 - **Quelle (OpenWrt-Commit):** b30f2281cce6649567e0194d203f06517d173115
 
@@ -2632,14 +2942,19 @@ GL.iNet microuter-N300 · ramips-mt76x8 · K1d
 GL.iNet VIXMINI · ramips-mt76x8 · K1d
 
 - **Weg ab Werk:** Stock-Web-UI 192.168.8.1 (per WLAN, der Ethernet-Port ist WAN), "Local Update" mit sysupgrade ohne Einstellungen; oder U-Boot-Web: Reset beim Einschalten, 5x Blinken, 192.168.1.1 [geprüft]
+- **Taste und Zeitpunkt:** Stock-Weg: keine Taste; U-Boot-Weg: Reset halten und einschalten, LED blinkt 5x [geprüft: Commit 43e8c37]
+- **Sichtbare Zeichen:** U-Boot-Weg: LED blinkt 5x [geprüft: Commit 43e8c37]
 - **Übertragung:** webui-upload (192.168.8.1); recovery-web: Gerät 192.168.1.1, Rechner statisch 192.168.1.x
+- **Rechner braucht:** Stock-Weg: per WLAN verbinden (der Ethernet-Port ist ab Werk WAN), http://192.168.8.1, Update > Local Update, Gluon-sysupgrade, Einstellungen nicht behalten [geprüft: Commit 43e8c37]; U-Boot-Weg: feste IPv4 aus 192.168.1.0/24, sysupgrade an http://192.168.1.1 [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** VIXMINI (intern MT300N-v3, 64 MB RAM, 8 MB Flash) sieht aus wie der microuter-N300 (MT300N-v4, 128 MB, 16 MB) [geprüft: Commit b30f228]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-glinet_vixmini-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
 - **Stock-Teile:** -
 - **RAM:** 64 MB
+- **Dauer:** U-Boot-Weg: etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein, unnötig
 - **Quelle (OpenWrt-Commit):** 43e8c37cb4da64a12a3cb88a84b19db7f2fc640c
 
@@ -3372,7 +3687,7 @@ TP-Link Archer C7 v5 · ath79-generic · K0
 
 TP-Link CPE210 v1 · ath79-generic · K0
 
-- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit
 - **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
 - **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
@@ -3392,7 +3707,7 @@ TP-Link CPE210 v1 · ath79-generic · K0
 
 TP-Link CPE210 v2 · ath79-generic · K0
 
-- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit
 - **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
 - **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
@@ -3412,7 +3727,7 @@ TP-Link CPE210 v2 · ath79-generic · K0
 
 TP-Link CPE210 v3 · ath79-generic · K0
 
-- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit
 - **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
 - **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
@@ -3432,7 +3747,7 @@ TP-Link CPE210 v3 · ath79-generic · K0
 
 TP-Link CPE220 v3 · ath79-generic · K0
 
-- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit
 - **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
 - **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
@@ -3452,7 +3767,7 @@ TP-Link CPE220 v3 · ath79-generic · K0
 
 TP-Link CPE510 v1 · ath79-generic · K0
 
-- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit
 - **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
 - **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
@@ -3472,7 +3787,7 @@ TP-Link CPE510 v1 · ath79-generic · K0
 
 TP-Link CPE510 v2 · ath79-generic · K0
 
-- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit
 - **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
 - **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
@@ -3492,7 +3807,7 @@ TP-Link CPE510 v2 · ath79-generic · K0
 
 TP-Link CPE510 v3 · ath79-generic · K0
 
-- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit
 - **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
 - **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
@@ -3512,7 +3827,7 @@ TP-Link CPE510 v3 · ath79-generic · K0
 
 TP-Link CPE710 v1 · ath79-generic · K0
 
-- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit
 - **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 30-40 s halten, dann loslassen [geprüft: Commit ac03e246/0b4d8318]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt (Reset 30-40 s) alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
 - **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
@@ -3533,7 +3848,7 @@ TP-Link CPE710 v1 · ath79-generic · K0
 
 TP-Link CPE710 v2 · ath79-generic · K0
 
-- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit
 - **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 30-40 s halten, dann loslassen [geprüft: Commit ac03e246/0b4d8318]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt (Reset 30-40 s) alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
 - **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
@@ -3760,7 +4075,7 @@ TP-Link TL-WR902AC v1 (broken) · ath79-generic · K0
 
 TP-Link WBS210 v1 · ath79-generic · K0
 
-- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit
 - **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
 - **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
@@ -3780,7 +4095,7 @@ TP-Link WBS210 v1 · ath79-generic · K0
 
 TP-Link WBS210 v2 · ath79-generic · K0
 
-- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit
 - **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
 - **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
@@ -3800,7 +4115,7 @@ TP-Link WBS210 v2 · ath79-generic · K0
 
 TP-Link WBS510 v1 · ath79-generic · K0
 
-- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz tplink-pharos-flashen.md), entgegen dem Commit
+- **Weg ab Werk:** factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit
 - **Taste und Zeitpunkt:** nur für den Rückweg (TFTP-Rescue): Reset beim Einschalten ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Übertragung:** webui-upload: https://192.168.0.254 (TLS 1.0); Commit nennt alternativ tftp-client: Server 192.168.0.100, Datei recovery.bin, Gerät 192.168.0.254
 - **Rechner braucht:** Rechner fest 192.168.0.10/24 (o. ä.), Browser https://192.168.0.254, Zertifikatswarnung akzeptieren, admin/admin, Reiter "System" > "Firmware Update"; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: Wiki toh/tp-link/cpe210 und cpe510]
@@ -4286,7 +4601,7 @@ TP-Link Archer C50 v1 · ramips-mt7620 · K0
 
 D-Link COVR-X1860 A1 · ramips-mt7621 · K0
 
-- **Weg ab Werk:** factory im Stock-Web-UI (`/UpdateFirmware_Simple.html`) oder Gluon-recovery.bin (squashfs) in der Web-Recovery [geprüft; Neanderfunk-Notiz dlink-flashen.md]
+- **Weg ab Werk:** factory im Stock-Web-UI (`/UpdateFirmware_Simple.html`) oder Gluon-recovery.bin (squashfs) in der Web-Recovery [geprüft; Neanderfunk-Notiz]
 - **Taste und Zeitpunkt:** nur Recovery-Alternative: Reset (Unterseite) beim Einschalten gedrückt halten, bis die Status-LED rot blinkt [geprüft: Commit 0a18259e]
 - **Sichtbare Zeichen:** Recovery erreicht: Status-LED oben blinkt rot [geprüft: Commit 0a18259e]
 - **Übertragung:** webui-upload (192.168.0.1); recovery-web: Gerät 192.168.0.1, Rechner 192.168.0.10/24, rechter LAN-Port, kein Ping
@@ -4783,14 +5098,21 @@ MikroTik hEX RB750Gr3 (Alias mikrotik-routerboard-hex-v3) · ramips-mt7621 · K1
 NETGEAR Orbi RBR50 v1 · ipq40xx-generic · K0+
 
 - **Weg ab Werk:** Gluon-factory (`.img`) läuft nur auf Boot-Partition 1, die Netgear-UI schreibt immer in die andere: entweder nmrpflash beim Einschalten, oder Telnet über debug.htm einschalten, `artmtd -w boot_part 02`, Neustart, dann Web-UI [geprüft]
+- **Taste und Zeitpunkt:** nmrpflash-Weg: keine Taste; Gerät aus, nmrpflash starten, bei 'Waiting for Ethernet connection' Gerät einschalten (manche Netgear-Geräte brauchen dabei zusätzlich die Reset-Taste) [geprüft: nmrpflash-README]
+- **Sichtbare Zeichen:** am Rechner: nmrpflash meldet 'Received upload request', 'Uploading ... OK', dann 'Waiting for remote to respond' (Gerät schreibt, evtl. mit blinkenden LEDs, jetzt nicht Strom ziehen), fertig erst bei 'Remote finished' / 'Reboot your device now.' [geprüft: nmrpflash-README]; nach etwa einer Minute startet das Gerät direkt in die neue Firmware, sonst einmal neu starten [geprüft: Commit 2cb24b3]
 - **Übertragung:** herstellertool (NMRP mit nmrpflash, Rechner notfalls 10.164.183.253); oder telnet 192.168.1.250 + webui-upload
+- **Rechner braucht:** nmrpflash (Linux, macOS, Windows mit Npcap im 'WinPcap Compatibility'-Modus), Rechte zum Rohzugriff aufs Netz; LAN-Kabel direkt vom Rechner an den LAN-Port (oft blau, bei mehreren den mit '1'); nmrpflash vergibt die IPs selbst (10.164.183.252/253); Firewall am Rechner aus bzw. TFTP vom Gerät erlauben [geprüft: nmrpflash-README]; Datei: Gluon-factory (.img/.chk); Kabel an den Port nahe der Ein/Aus-Taste [geprüft: Commit 2cb24b3]; bei Problemen Rechner fest auf 10.164.183.253 [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** nmrpflash
+- **Typenschild/Verwechslung:** RBR50 (Router) und RBS50 (Satellit, Set RBK50) haben eigene Images; nur v1: nmrpflash führt einen RBR50v2 getrennt [geprüft: Commit 2cb24b3; v2-Hinweis abgeleitet: nmrpflash-README, Gluon-Name 'v1']
+- **Bedingung an die Herstellerfirmware:** Gluon läuft nur auf Boot-Partition 1; die Netgear-Oberfläche schreibt immer in die gerade nicht aktive Partition. Ohne nmrpflash vorher per Telnet (http://192.168.1.250/debug.htm, admin/password) `artmtd -w boot_part 02` setzen, neu starten, dann Web-Upload [geprüft: Commit 2cb24b3]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-netgear_rbr50-initramfs-zImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-netgear_rbr50-squashfs-factory.img)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Dauer:** nach dem Upload schreibt das Gerät; meist wenige Minuten, Berichte bis 15 Minuten und mehr; erst nach 'Reboot your device now.' Strom ziehen [geprüft: nmrpflash-README]; Commit: nach etwa einer Minute bootet OpenWrt [geprüft: Commit 2cb24b3]
+- **Rückweg zur Herstellerfirmware:** nmrpflash mit der Netgear-Firmware (z. B. SRS60-V2.2.1.210.img) [geprüft: Commit 2cb24b3]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
@@ -4800,14 +5122,21 @@ NETGEAR Orbi RBR50 v1 · ipq40xx-generic · K0+
 NETGEAR Orbi RBS50 v1 · ipq40xx-generic · K0+
 
 - **Weg ab Werk:** Gluon-factory (`.img`) läuft nur auf Boot-Partition 1, die Netgear-UI schreibt immer in die andere: entweder nmrpflash beim Einschalten, oder Telnet über debug.htm einschalten, `artmtd -w boot_part 02`, Neustart, dann Web-UI [geprüft]
+- **Taste und Zeitpunkt:** nmrpflash-Weg: keine Taste; Gerät aus, nmrpflash starten, bei 'Waiting for Ethernet connection' Gerät einschalten (manche Netgear-Geräte brauchen dabei zusätzlich die Reset-Taste) [geprüft: nmrpflash-README]
+- **Sichtbare Zeichen:** am Rechner: nmrpflash meldet 'Received upload request', 'Uploading ... OK', dann 'Waiting for remote to respond' (Gerät schreibt, evtl. mit blinkenden LEDs, jetzt nicht Strom ziehen), fertig erst bei 'Remote finished' / 'Reboot your device now.' [geprüft: nmrpflash-README]; nach etwa einer Minute startet das Gerät direkt in die neue Firmware, sonst einmal neu starten [geprüft: Commit 2cb24b3]
 - **Übertragung:** herstellertool (NMRP mit nmrpflash, Rechner notfalls 10.164.183.253); oder telnet 192.168.1.250 + webui-upload
+- **Rechner braucht:** nmrpflash (Linux, macOS, Windows mit Npcap im 'WinPcap Compatibility'-Modus), Rechte zum Rohzugriff aufs Netz; LAN-Kabel direkt vom Rechner an den LAN-Port (oft blau, bei mehreren den mit '1'); nmrpflash vergibt die IPs selbst (10.164.183.252/253); Firewall am Rechner aus bzw. TFTP vom Gerät erlauben [geprüft: nmrpflash-README]; Datei: Gluon-factory (.img/.chk); Kabel an den Port nahe der Ein/Aus-Taste [geprüft: Commit 2cb24b3]; bei Problemen Rechner fest auf 10.164.183.253 [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** nmrpflash
+- **Typenschild/Verwechslung:** RBS50 (Satellit) und RBR50 (Router, Set RBK50) haben eigene Images; Commit nur an RBR50/SRS60 getestet [geprüft: Commit 2cb24b3]
+- **Bedingung an die Herstellerfirmware:** Gluon läuft nur auf Boot-Partition 1; die Netgear-Oberfläche schreibt immer in die gerade nicht aktive Partition. Ohne nmrpflash vorher per Telnet (http://192.168.1.250/debug.htm, admin/password) `artmtd -w boot_part 02` setzen, neu starten, dann Web-Upload [geprüft: Commit 2cb24b3]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-netgear_rbs50-initramfs-zImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-netgear_rbs50-squashfs-factory.img)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Dauer:** nach dem Upload schreibt das Gerät; meist wenige Minuten, Berichte bis 15 Minuten und mehr; erst nach 'Reboot your device now.' Strom ziehen [geprüft: nmrpflash-README]; Commit: nach etwa einer Minute bootet OpenWrt [geprüft: Commit 2cb24b3]
+- **Rückweg zur Herstellerfirmware:** nmrpflash mit der Netgear-Firmware (z. B. SRS60-V2.2.1.210.img) [geprüft: Commit 2cb24b3]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
@@ -4817,14 +5146,21 @@ NETGEAR Orbi RBS50 v1 · ipq40xx-generic · K0+
 NETGEAR Orbi Pro SRR60 · ipq40xx-generic · K0+
 
 - **Weg ab Werk:** Gluon-factory (`.img`) läuft nur auf Boot-Partition 1, die Netgear-UI schreibt immer in die andere: entweder nmrpflash beim Einschalten, oder Telnet über debug.htm einschalten, `artmtd -w boot_part 02`, Neustart, dann Web-UI [geprüft]
+- **Taste und Zeitpunkt:** nmrpflash-Weg: keine Taste; Gerät aus, nmrpflash starten, bei 'Waiting for Ethernet connection' Gerät einschalten (manche Netgear-Geräte brauchen dabei zusätzlich die Reset-Taste) [geprüft: nmrpflash-README]
+- **Sichtbare Zeichen:** am Rechner: nmrpflash meldet 'Received upload request', 'Uploading ... OK', dann 'Waiting for remote to respond' (Gerät schreibt, evtl. mit blinkenden LEDs, jetzt nicht Strom ziehen), fertig erst bei 'Remote finished' / 'Reboot your device now.' [geprüft: nmrpflash-README]; nach etwa einer Minute startet das Gerät direkt in die neue Firmware, sonst einmal neu starten [geprüft: Commit 2cb24b3]
 - **Übertragung:** herstellertool (NMRP mit nmrpflash, Rechner notfalls 10.164.183.253); oder telnet 192.168.1.250 + webui-upload
+- **Rechner braucht:** nmrpflash (Linux, macOS, Windows mit Npcap im 'WinPcap Compatibility'-Modus), Rechte zum Rohzugriff aufs Netz; LAN-Kabel direkt vom Rechner an den LAN-Port (oft blau, bei mehreren den mit '1'); nmrpflash vergibt die IPs selbst (10.164.183.252/253); Firewall am Rechner aus bzw. TFTP vom Gerät erlauben [geprüft: nmrpflash-README]; Datei: Gluon-factory (.img/.chk); Kabel an den Port nahe der Ein/Aus-Taste [geprüft: Commit 2cb24b3]; bei Problemen Rechner fest auf 10.164.183.253 [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** nmrpflash
+- **Typenschild/Verwechslung:** SRR60 und SRS60 (Set SRK60) sind fast gleich; der SRR60 hat einen mit 'wan' beschrifteten Port, der SRS60 nicht; jeweils eigenes Image [geprüft: Commit 2cb24b3]
+- **Bedingung an die Herstellerfirmware:** Gluon läuft nur auf Boot-Partition 1; die Netgear-Oberfläche schreibt immer in die gerade nicht aktive Partition. Ohne nmrpflash vorher per Telnet (http://192.168.1.250/debug.htm, admin/password) `artmtd -w boot_part 02` setzen, neu starten, dann Web-Upload [geprüft: Commit 2cb24b3]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-netgear_srr60-initramfs-zImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-netgear_srr60-squashfs-factory.img)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Dauer:** nach dem Upload schreibt das Gerät; meist wenige Minuten, Berichte bis 15 Minuten und mehr; erst nach 'Reboot your device now.' Strom ziehen [geprüft: nmrpflash-README]; Commit: nach etwa einer Minute bootet OpenWrt [geprüft: Commit 2cb24b3]
+- **Rückweg zur Herstellerfirmware:** nmrpflash mit der Netgear-Firmware (z. B. SRS60-V2.2.1.210.img) [geprüft: Commit 2cb24b3]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
@@ -4834,14 +5170,21 @@ NETGEAR Orbi Pro SRR60 · ipq40xx-generic · K0+
 NETGEAR Orbi Pro SRS60 · ipq40xx-generic · K0+
 
 - **Weg ab Werk:** Gluon-factory (`.img`) läuft nur auf Boot-Partition 1, die Netgear-UI schreibt immer in die andere: entweder nmrpflash beim Einschalten, oder Telnet über debug.htm einschalten, `artmtd -w boot_part 02`, Neustart, dann Web-UI [geprüft]
+- **Taste und Zeitpunkt:** nmrpflash-Weg: keine Taste; Gerät aus, nmrpflash starten, bei 'Waiting for Ethernet connection' Gerät einschalten (manche Netgear-Geräte brauchen dabei zusätzlich die Reset-Taste) [geprüft: nmrpflash-README]
+- **Sichtbare Zeichen:** am Rechner: nmrpflash meldet 'Received upload request', 'Uploading ... OK', dann 'Waiting for remote to respond' (Gerät schreibt, evtl. mit blinkenden LEDs, jetzt nicht Strom ziehen), fertig erst bei 'Remote finished' / 'Reboot your device now.' [geprüft: nmrpflash-README]; nach etwa einer Minute startet das Gerät direkt in die neue Firmware, sonst einmal neu starten [geprüft: Commit 2cb24b3]
 - **Übertragung:** herstellertool (NMRP mit nmrpflash, Rechner notfalls 10.164.183.253); oder telnet 192.168.1.250 + webui-upload
+- **Rechner braucht:** nmrpflash (Linux, macOS, Windows mit Npcap im 'WinPcap Compatibility'-Modus), Rechte zum Rohzugriff aufs Netz; LAN-Kabel direkt vom Rechner an den LAN-Port (oft blau, bei mehreren den mit '1'); nmrpflash vergibt die IPs selbst (10.164.183.252/253); Firewall am Rechner aus bzw. TFTP vom Gerät erlauben [geprüft: nmrpflash-README]; Datei: Gluon-factory (.img/.chk); Kabel an den Port nahe der Ein/Aus-Taste [geprüft: Commit 2cb24b3]; bei Problemen Rechner fest auf 10.164.183.253 [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** nmrpflash
+- **Typenschild/Verwechslung:** SRS60 und SRR60 (Set SRK60) sind fast gleich; der SRR60 hat einen mit 'wan' beschrifteten Port, der SRS60 nicht; jeweils eigenes Image [geprüft: Commit 2cb24b3]
+- **Bedingung an die Herstellerfirmware:** Gluon läuft nur auf Boot-Partition 1; die Netgear-Oberfläche schreibt immer in die gerade nicht aktive Partition. Ohne nmrpflash vorher per Telnet (http://192.168.1.250/debug.htm, admin/password) `artmtd -w boot_part 02` setzen, neu starten, dann Web-Upload [geprüft: Commit 2cb24b3]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-netgear_srs60-initramfs-zImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-netgear_srs60-squashfs-factory.img)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Dauer:** nach dem Upload schreibt das Gerät; meist wenige Minuten, Berichte bis 15 Minuten und mehr; erst nach 'Reboot your device now.' Strom ziehen [geprüft: nmrpflash-README]; Commit: nach etwa einer Minute bootet OpenWrt [geprüft: Commit 2cb24b3]
+- **Rückweg zur Herstellerfirmware:** nmrpflash mit der Netgear-Firmware (z. B. SRS60-V2.2.1.210.img) [geprüft: Commit 2cb24b3]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
@@ -4851,7 +5194,10 @@ NETGEAR Orbi Pro SRS60 · ipq40xx-generic · K0+
 NETGEAR WAX206 · mediatek-mt7622 · K0
 
 - **Weg ab Werk:** Gluon-factory (`.img`) über die Stock-Web-UI, oder per NMRP/TFTP an den Bootloader ohne Öffnen [geprüft]
+- **Taste und Zeitpunkt:** nmrpflash-Weg: keine Taste; Gerät aus, nmrpflash starten, bei 'Waiting for Ethernet connection' Gerät einschalten (manche Netgear-Geräte brauchen dabei zusätzlich die Reset-Taste) [geprüft: nmrpflash-README]
+- **Sichtbare Zeichen:** am Rechner: nmrpflash meldet 'Received upload request', 'Uploading ... OK', dann 'Waiting for remote to respond' (Gerät schreibt, evtl. mit blinkenden LEDs, jetzt nicht Strom ziehen), fertig erst bei 'Remote finished' / 'Reboot your device now.' [geprüft: nmrpflash-README]
 - **Übertragung:** webui-upload; alternativ herstellertool (NMRP, z. B. nmrpflash)
+- **Rechner braucht:** nmrpflash (Linux, macOS, Windows mit Npcap im 'WinPcap Compatibility'-Modus), Rechte zum Rohzugriff aufs Netz; LAN-Kabel direkt vom Rechner an den LAN-Port (oft blau, bei mehreren den mit '1'); nmrpflash vergibt die IPs selbst (10.164.183.252/253); Firewall am Rechner aus bzw. TFTP vom Gerät erlauben [geprüft: nmrpflash-README]; Datei: Gluon-factory (.img/.chk); alternativ Netgear-Weboberfläche: Firmware-Update mit dem Gluon-factory [geprüft: Commit f6d2a23]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -4859,6 +5205,8 @@ NETGEAR WAX206 · mediatek-mt7622 · K0
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-netgear_wax206-squashfs-factory.img)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Dauer:** nach dem Upload schreibt das Gerät; meist wenige Minuten, Berichte bis 15 Minuten und mehr; erst nach 'Reboot your device now.' Strom ziehen [geprüft: nmrpflash-README]
+- **Rückweg zur Herstellerfirmware:** Stock-Firmware per TFTP/NMRP an den Bootloader [geprüft: Commit f6d2a23]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt f6d2a23cbca61611663efb531c97efeded26e0cd
 - **Detail-Anleitung:** https://openwrt.org/toh/netgear/wax206#oem_easy_installation
@@ -4868,14 +5216,19 @@ NETGEAR WAX206 · mediatek-mt7622 · K0
 NETGEAR EX3700/EX3800 (Alias netgear-ex3800) · ramips-mt7620 · K0
 
 - **Weg ab Werk:** factory.chk im Stock-Web-UI oder per nmrpflash [geprüft]
+- **Taste und Zeitpunkt:** nmrpflash-Weg: keine Taste; Gerät aus, nmrpflash starten, bei 'Waiting for Ethernet connection' Gerät einschalten (manche Netgear-Geräte brauchen dabei zusätzlich die Reset-Taste) [geprüft: nmrpflash-README]
+- **Sichtbare Zeichen:** am Rechner: nmrpflash meldet 'Received upload request', 'Uploading ... OK', dann 'Waiting for remote to respond' (Gerät schreibt, evtl. mit blinkenden LEDs, jetzt nicht Strom ziehen), fertig erst bei 'Remote finished' / 'Reboot your device now.' [geprüft: nmrpflash-README]
 - **Übertragung:** webui-upload; alternativ herstellertool nmrpflash
+- **Rechner braucht:** nmrpflash (Linux, macOS, Windows mit Npcap im 'WinPcap Compatibility'-Modus), Rechte zum Rohzugriff aufs Netz; LAN-Kabel direkt vom Rechner an den LAN-Port (oft blau, bei mehreren den mit '1'); nmrpflash vergibt die IPs selbst (10.164.183.252/253); Firewall am Rechner aus bzw. TFTP vom Gerät erlauben [geprüft: nmrpflash-README]; Datei: Gluon-factory (.img/.chk); alternativ Netgear-Weboberfläche: Firmware-Update mit dem Gluon-factory (.chk) [geprüft: Commit de33a4c]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** EX3700 und EX3800 nehmen dasselbe Image [geprüft: mt7620.mk 'EX3700/EX3800']; EX6130 hat dieselbe Platine, aber ein eigenes Image [geprüft: Commit 0cbd2c7]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7620/openwrt-24.10.8-ramips-mt7620-netgear_ex3700-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 64 MB
+- **Dauer:** nach dem Upload schreibt das Gerät; meist wenige Minuten, Berichte bis 15 Minuten und mehr; erst nach 'Reboot your device now.' Strom ziehen [geprüft: nmrpflash-README]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** de33a4cef0411f13df397ada2dc3634c5748a457
 - **Detail-Anleitung:** https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-wi-fi-range-extender-ex3700/
@@ -4885,14 +5238,19 @@ NETGEAR EX3700/EX3800 (Alias netgear-ex3800) · ramips-mt7620 · K0
 NETGEAR EX6130 · ramips-mt7620 · K0
 
 - **Weg ab Werk:** factory.chk im Stock-Web-UI oder per nmrpflash [geprüft]
+- **Taste und Zeitpunkt:** nmrpflash-Weg: keine Taste; Gerät aus, nmrpflash starten, bei 'Waiting for Ethernet connection' Gerät einschalten (manche Netgear-Geräte brauchen dabei zusätzlich die Reset-Taste) [geprüft: nmrpflash-README]
+- **Sichtbare Zeichen:** am Rechner: nmrpflash meldet 'Received upload request', 'Uploading ... OK', dann 'Waiting for remote to respond' (Gerät schreibt, evtl. mit blinkenden LEDs, jetzt nicht Strom ziehen), fertig erst bei 'Remote finished' / 'Reboot your device now.' [geprüft: nmrpflash-README]
 - **Übertragung:** webui-upload; alternativ herstellertool nmrpflash
+- **Rechner braucht:** nmrpflash (Linux, macOS, Windows mit Npcap im 'WinPcap Compatibility'-Modus), Rechte zum Rohzugriff aufs Netz; LAN-Kabel direkt vom Rechner an den LAN-Port (oft blau, bei mehreren den mit '1'); nmrpflash vergibt die IPs selbst (10.164.183.252/253); Firewall am Rechner aus bzw. TFTP vom Gerät erlauben [geprüft: nmrpflash-README]; Datei: Gluon-factory (.img/.chk); alternativ Netgear-Weboberfläche: Firmware-Update mit dem Gluon-factory (.chk) [geprüft: Commit 0cbd2c7]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** gleiche Basisplatine wie EX3700/EX3800, aber eigenes Image (eigene Board-ID) [geprüft: Commit 0cbd2c7, mt7620.mk]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7620/openwrt-24.10.8-ramips-mt7620-netgear_ex6130-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 64 MB
+- **Dauer:** nach dem Upload schreibt das Gerät; meist wenige Minuten, Berichte bis 15 Minuten und mehr; erst nach 'Reboot your device now.' Strom ziehen [geprüft: nmrpflash-README]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 0cbd2c74d0c9f41d07757907226e5cfeaf16e06a
 
@@ -4901,14 +5259,20 @@ NETGEAR EX6130 · ramips-mt7620 · K0
 NETGEAR EAX12 (Aliase EAX11 v2, EAX15 v2) · ramips-mt7621 · K0
 
 - **Weg ab Werk:** factory.img im Stock-Web-UI oder per TFTP/NMRP an den Bootloader [geprüft]
+- **Taste und Zeitpunkt:** nmrpflash-Weg: keine Taste; Gerät aus, nmrpflash starten, bei 'Waiting for Ethernet connection' Gerät einschalten (manche Netgear-Geräte brauchen dabei zusätzlich die Reset-Taste) [geprüft: nmrpflash-README]
+- **Sichtbare Zeichen:** am Rechner: nmrpflash meldet 'Received upload request', 'Uploading ... OK', dann 'Waiting for remote to respond' (Gerät schreibt, evtl. mit blinkenden LEDs, jetzt nicht Strom ziehen), fertig erst bei 'Remote finished' / 'Reboot your device now.' [geprüft: nmrpflash-README]
 - **Übertragung:** webui-upload; herstellertool nmrpflash
+- **Rechner braucht:** nmrpflash (Linux, macOS, Windows mit Npcap im 'WinPcap Compatibility'-Modus), Rechte zum Rohzugriff aufs Netz; LAN-Kabel direkt vom Rechner an den LAN-Port (oft blau, bei mehreren den mit '1'); nmrpflash vergibt die IPs selbst (10.164.183.252/253); Firewall am Rechner aus bzw. TFTP vom Gerät erlauben [geprüft: nmrpflash-README]; Datei: Gluon-factory (.img/.chk); alternativ Netgear-Weboberfläche: Firmware-Update mit dem Gluon-factory [geprüft: Commit 32ea8a9]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Dasselbe Image passt für EAX12, EAX11 v2 und EAX15 v2 [geprüft: ramips mt7621.mk, NETGEAR_ENC_MODEL_LIST]; EAX11/EAX15 ohne 'v2' sind nicht genannt, also nicht flashen [abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_eax12-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Dauer:** nach dem Upload schreibt das Gerät; meist wenige Minuten, Berichte bis 15 Minuten und mehr; erst nach 'Reboot your device now.' Strom ziehen [geprüft: nmrpflash-README]
+- **Rückweg zur Herstellerfirmware:** Stock-Firmware per TFTP/NMRP an den Bootloader [geprüft: Commit 32ea8a9]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 32ea8a9a7e4b1319607ae398e9bf7d8e3c4cd756
 
@@ -4917,14 +5281,19 @@ NETGEAR EAX12 (Aliase EAX11 v2, EAX15 v2) · ramips-mt7621 · K0
 NETGEAR EX6150 (v1) · ramips-mt7621 · K0
 
 - **Weg ab Werk:** factory.chk im Stock-Web-UI (192.168.1.250) oder per nmrpflash [geprüft]
+- **Taste und Zeitpunkt:** nmrpflash-Weg: keine Taste; Gerät aus, nmrpflash starten, bei 'Waiting for Ethernet connection' Gerät einschalten (manche Netgear-Geräte brauchen dabei zusätzlich die Reset-Taste) [geprüft: nmrpflash-README]
+- **Sichtbare Zeichen:** am Rechner: nmrpflash meldet 'Received upload request', 'Uploading ... OK', dann 'Waiting for remote to respond' (Gerät schreibt, evtl. mit blinkenden LEDs, jetzt nicht Strom ziehen), fertig erst bei 'Remote finished' / 'Reboot your device now.' [geprüft: nmrpflash-README]
 - **Übertragung:** webui-upload; herstellertool nmrpflash
+- **Rechner braucht:** nmrpflash (Linux, macOS, Windows mit Npcap im 'WinPcap Compatibility'-Modus), Rechte zum Rohzugriff aufs Netz; LAN-Kabel direkt vom Rechner an den LAN-Port (oft blau, bei mehreren den mit '1'); nmrpflash vergibt die IPs selbst (10.164.183.252/253); Firewall am Rechner aus bzw. TFTP vom Gerät erlauben [geprüft: nmrpflash-README]; Datei: Gluon-factory (.img/.chk); alternativ Netgear-Weboberfläche unter 192.168.1.250 mit dem Gluon-factory (.chk) [geprüft: Commit 3f019bf]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** nur EX6150 v1 (MT7621); nmrpflash führt einen EX6150v2 getrennt, das ist andere Hardware, Typenschild auf 'v2' prüfen [abgeleitet: Gluon-Name '(v1)', nmrpflash-README]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_ex6150-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 64 MB
+- **Dauer:** nach dem Upload schreibt das Gerät; meist wenige Minuten, Berichte bis 15 Minuten und mehr; erst nach 'Reboot your device now.' Strom ziehen [geprüft: nmrpflash-README]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 3f019bf96cdf52668750f67cb139fa1b5c538f0b
 - **Detail-Anleitung:** https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-wi-fi-range-extender-ex6150-v2/
@@ -4934,7 +5303,10 @@ NETGEAR EX6150 (v1) · ramips-mt7621 · K0
 NETGEAR R6220 · ramips-mt7621 · K0
 
 - **Weg ab Werk:** factory.img im Stock-Web-UI [abgeleitet: ToH "GUI OEM"; Commit beschreibt Telnet-Debug + USB + mtd_write, damals ohne factory]
+- **Taste und Zeitpunkt:** nmrpflash-Weg: keine Taste; Gerät aus, nmrpflash starten, bei 'Waiting for Ethernet connection' Gerät einschalten (manche Netgear-Geräte brauchen dabei zusätzlich die Reset-Taste) [geprüft: nmrpflash-README]
+- **Sichtbare Zeichen:** am Rechner: nmrpflash meldet 'Received upload request', 'Uploading ... OK', dann 'Waiting for remote to respond' (Gerät schreibt, evtl. mit blinkenden LEDs, jetzt nicht Strom ziehen), fertig erst bei 'Remote finished' / 'Reboot your device now.' [geprüft: nmrpflash-README]
 - **Übertragung:** webui-upload; herstellertool nmrpflash
+- **Rechner braucht:** nmrpflash (Linux, macOS, Windows mit Npcap im 'WinPcap Compatibility'-Modus), Rechte zum Rohzugriff aufs Netz; LAN-Kabel direkt vom Rechner an den LAN-Port (oft blau, bei mehreren den mit '1'); nmrpflash vergibt die IPs selbst (10.164.183.252/253); Firewall am Rechner aus bzw. TFTP vom Gerät erlauben [geprüft: nmrpflash-README]; Datei: Gluon-factory (.img/.chk); alternativ Netgear-Oberfläche ADVANCED > Administration > Firmware Update mit dem factory [abgeleitet: Wiki toh/netgear/r6220]; unter Windows die Firewall während des Flashens aus [abgeleitet: Wiki]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -4942,6 +5314,8 @@ NETGEAR R6220 · ramips-mt7621 · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 128 MB
+- **Dauer:** nach dem Upload schreibt das Gerät; meist wenige Minuten, Berichte bis 15 Minuten und mehr; erst nach 'Reboot your device now.' Strom ziehen [geprüft: nmrpflash-README]; Wiki: Keep-alive-Phase bis etwa 4 Minuten [abgeleitet: Wiki toh/netgear/r6220]
+- **Rückweg zur Herstellerfirmware:** nmrpflash mit der Netgear-Firmware (.img) [geprüft: Commit 38bee61]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 38bee61dab029a7608088f64da71c19cfc8cf267
 - **Detail-Anleitung:** https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-r6220/
@@ -4951,14 +5325,20 @@ NETGEAR R6220 · ramips-mt7621 · K0
 NETGEAR R6260 · ramips-mt7621 · K0
 
 - **Weg ab Werk:** factory.img im Stock-Web-UI [abgeleitet: ToH "GUI OEM"; Commit ohne Text]
+- **Taste und Zeitpunkt:** nmrpflash-Weg: keine Taste; Gerät aus, nmrpflash starten, bei 'Waiting for Ethernet connection' Gerät einschalten (manche Netgear-Geräte brauchen dabei zusätzlich die Reset-Taste) [geprüft: nmrpflash-README]
+- **Sichtbare Zeichen:** am Rechner: nmrpflash meldet 'Received upload request', 'Uploading ... OK', dann 'Waiting for remote to respond' (Gerät schreibt, evtl. mit blinkenden LEDs, jetzt nicht Strom ziehen), fertig erst bei 'Remote finished' / 'Reboot your device now.' [geprüft: nmrpflash-README]
 - **Übertragung:** webui-upload; herstellertool nmrpflash
+- **Rechner braucht:** nmrpflash (Linux, macOS, Windows mit Npcap im 'WinPcap Compatibility'-Modus), Rechte zum Rohzugriff aufs Netz; LAN-Kabel direkt vom Rechner an den LAN-Port (oft blau, bei mehreren den mit '1'); nmrpflash vergibt die IPs selbst (10.164.183.252/253); Firewall am Rechner aus bzw. TFTP vom Gerät erlauben [geprüft: nmrpflash-README]; Datei: Gluon-factory (.img/.chk); Kabel an LAN 1 (nächst WAN), nicht an WAN [abgeleitet: Wiki toh/netgear/r6260]; alternativ factory über die Netgear-Oberfläche, Downgrade-Rückfrage bestätigen; startet danach kein OpenWrt, noch einmal flashen [abgeleitet: Wiki]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** R6260, R6350 und R6850 haben dieselbe Platine (Unterschied v. a. Antennen), aber eigene Images: Typenschild prüfen [abgeleitet: Wiki toh/netgear/r6260, Commit 6cea968 'same image for R6260, R6350 & R6850']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_r6260-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 128 MB
+- **Dauer:** nach dem Upload schreibt das Gerät; meist wenige Minuten, Berichte bis 15 Minuten und mehr; erst nach 'Reboot your device now.' Strom ziehen [geprüft: nmrpflash-README]
+- **Rückweg zur Herstellerfirmware:** nmrpflash mit dem Netgear-Image [abgeleitet: Wiki toh/netgear/r6260]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 6cea9688af4a05f407266ed1de5a739e5c984b8c (ohne Installationstext)
 
@@ -4967,7 +5347,10 @@ NETGEAR R6260 · ramips-mt7621 · K0
 NETGEAR WAX202 · ramips-mt7621 · K0
 
 - **Weg ab Werk:** factory.img (verschlüsselt) im Stock-Web-UI oder per TFTP/NMRP [geprüft]
+- **Taste und Zeitpunkt:** nmrpflash-Weg: keine Taste; Gerät aus, nmrpflash starten, bei 'Waiting for Ethernet connection' Gerät einschalten (manche Netgear-Geräte brauchen dabei zusätzlich die Reset-Taste) [geprüft: nmrpflash-README]
+- **Sichtbare Zeichen:** am Rechner: nmrpflash meldet 'Received upload request', 'Uploading ... OK', dann 'Waiting for remote to respond' (Gerät schreibt, evtl. mit blinkenden LEDs, jetzt nicht Strom ziehen), fertig erst bei 'Remote finished' / 'Reboot your device now.' [geprüft: nmrpflash-README]
 - **Übertragung:** webui-upload; herstellertool nmrpflash
+- **Rechner braucht:** nmrpflash (Linux, macOS, Windows mit Npcap im 'WinPcap Compatibility'-Modus), Rechte zum Rohzugriff aufs Netz; LAN-Kabel direkt vom Rechner an den LAN-Port (oft blau, bei mehreren den mit '1'); nmrpflash vergibt die IPs selbst (10.164.183.252/253); Firewall am Rechner aus bzw. TFTP vom Gerät erlauben [geprüft: nmrpflash-README]; Datei: Gluon-factory (.img/.chk); alternativ Netgear-Weboberfläche: Firmware-Update mit dem Gluon-factory; die Stock-Oberfläche nimmt nur verschlüsselte Images (das Gluon-factory ist verschlüsselt), der Bootloader beides [geprüft: Commit 0f068e7, mt7621.mk netgear-encrypted-factory]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -4975,6 +5358,8 @@ NETGEAR WAX202 · ramips-mt7621 · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Dauer:** nach dem Upload schreibt das Gerät; meist wenige Minuten, Berichte bis 15 Minuten und mehr; erst nach 'Reboot your device now.' Strom ziehen [geprüft: nmrpflash-README]
+- **Rückweg zur Herstellerfirmware:** Stock-Firmware per TFTP/NMRP an den Bootloader [geprüft: Commit 0f068e7]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 0f068e7c4a83bcbf20c4e52a5f8a3f1fe2af2246
 - **Detail-Anleitung:** https://openwrt.org/toh/netgear/wax202#oem_easy_installation
@@ -4984,14 +5369,19 @@ NETGEAR WAX202 · ramips-mt7621 · K0
 NETGEAR WNDR3700 v5 (Gluon: broken, "untested") · ramips-mt7621 · K0+
 
 - **Weg ab Werk:** OpenWrt-factory.img per nmrpflash, danach Gluon-sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** nmrpflash-Weg: keine Taste; Gerät aus, nmrpflash starten, bei 'Waiting for Ethernet connection' Gerät einschalten (manche Netgear-Geräte brauchen dabei zusätzlich die Reset-Taste) [geprüft: nmrpflash-README]
+- **Sichtbare Zeichen:** am Rechner: nmrpflash meldet 'Received upload request', 'Uploading ... OK', dann 'Waiting for remote to respond' (Gerät schreibt, evtl. mit blinkenden LEDs, jetzt nicht Strom ziehen), fertig erst bei 'Remote finished' / 'Reboot your device now.' [geprüft: nmrpflash-README]
 - **Übertragung:** herstellertool: nmrpflash (NETGEAR-NMRP, TFTP)
+- **Rechner braucht:** nmrpflash (Linux, macOS, Windows mit Npcap im 'WinPcap Compatibility'-Modus), Rechte zum Rohzugriff aufs Netz; LAN-Kabel direkt vom Rechner an den LAN-Port (oft blau, bei mehreren den mit '1'); nmrpflash vergibt die IPs selbst (10.164.183.252/253); Firewall am Rechner aus bzw. TFTP vom Gerät erlauben [geprüft: nmrpflash-README]; Datei: Gluon-factory (.img/.chk); Datei laut Bestand: OpenWrt-factory.img, danach Gluon-sysupgrade [geprüft: Commit 2fdd02c 'factory image ... can be flashed using nmrpflash']
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** nmrpflash
+- **Typenschild/Verwechslung:** Nur WNDR3700 v5 (MT7621); WNDR3700 v1 bis v4 sind ganz andere Geräte (anderer Chip) mit eigenen Images: Typenschild auf 'v5' prüfen [abgeleitet: Commit cb049e7 nennt MT7621S für v5]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** [squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img) (200)
 - **Stock-Teile:** -
 - **RAM:** 128 MB
+- **Dauer:** nach dem Upload schreibt das Gerät; meist wenige Minuten, Berichte bis 15 Minuten und mehr; erst nach 'Reboot your device now.' Strom ziehen [geprüft: nmrpflash-README]
 - **Gluon-RAMpe passt:** nein, unnötig: OpenWrt baut ein factory.img (Sercomm), Gluon setzt trotzdem `factory = false`; mit factory wäre es K0
 - **Quelle (OpenWrt-Commit):** cb049e71cdc08e17f664403a0ef970c480ae5c4a + 2fdd02cc7c3516c2cce2ace2c7b539e0821ecbe8 (factory-Image)
 
@@ -5000,14 +5390,19 @@ NETGEAR WNDR3700 v5 (Gluon: broken, "untested") · ramips-mt7621 · K0+
 NETGEAR R6020 · ramips-mt76x8 · K0
 
 - **Weg ab Werk:** factory.img nur per nmrpflash (LAN1, Gerät aus, nmrpflash starten, einschalten); Web-UI nicht [geprüft]
+- **Taste und Zeitpunkt:** keine Taste: Gerät aus, nmrpflash starten, dann einschalten [geprüft: Commit edbc8e5]
+- **Sichtbare Zeichen:** am Rechner: nmrpflash meldet 'Received upload request', 'Uploading ... OK', dann 'Waiting for remote to respond' (Gerät schreibt, evtl. mit blinkenden LEDs, jetzt nicht Strom ziehen), fertig erst bei 'Remote finished' / 'Reboot your device now.' [geprüft: nmrpflash-README]; danach Gerät einmal aus- und einschalten, dann startet es mit der neuen Firmware [geprüft: Commit edbc8e5]
 - **Übertragung:** herstellertool: nmrpflash (NETGEAR-NMRP, TFTP)
+- **Rechner braucht:** nmrpflash (Linux, macOS, Windows mit Npcap im 'WinPcap Compatibility'-Modus), Rechte zum Rohzugriff aufs Netz; LAN-Kabel direkt vom Rechner an den LAN-Port (oft blau, bei mehreren den mit '1'); nmrpflash vergibt die IPs selbst (10.164.183.252/253); Firewall am Rechner aus bzw. TFTP vom Gerät erlauben [geprüft: nmrpflash-README]; Datei: Gluon-factory (.img/.chk); Kabel an LAN-Port 1 [geprüft: Commit edbc8e5]; die Stock-Weboberfläche nimmt das Image nicht, nmrpflash ist nötig [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** nmrpflash
+- **Typenschild/Verwechslung:** R6020 (AC750) hat dieselbe Hardware wie R6080 (AC1000), aber anderes Flash-Layout: Images nicht tauschen [geprüft: Commit edbc8e5]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-netgear_r6020-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 64 MB
+- **Dauer:** nach dem Upload schreibt das Gerät; meist wenige Minuten, Berichte bis 15 Minuten und mehr; erst nach 'Reboot your device now.' Strom ziehen [geprüft: nmrpflash-README]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** edbc8e5512dccc2e0b6925258e34b3f21d66679c
 
@@ -5016,7 +5411,10 @@ NETGEAR R6020 · ramips-mt76x8 · K0
 NETGEAR R6120 · ramips-mt76x8 · K0
 
 - **Weg ab Werk:** factory.img per nmrpflash; Web-UI laut Commit nicht [geprüft]
+- **Taste und Zeitpunkt:** keine Taste: Gerät aus, nmrpflash starten, dann einschalten [geprüft: nmrpflash-README; Commit 5543d63 nennt nur nmrpflash]
+- **Sichtbare Zeichen:** am Rechner: nmrpflash meldet 'Received upload request', 'Uploading ... OK', dann 'Waiting for remote to respond' (Gerät schreibt, evtl. mit blinkenden LEDs, jetzt nicht Strom ziehen), fertig erst bei 'Remote finished' / 'Reboot your device now.' [geprüft: nmrpflash-README]
 - **Übertragung:** herstellertool: nmrpflash
+- **Rechner braucht:** nmrpflash (Linux, macOS, Windows mit Npcap im 'WinPcap Compatibility'-Modus), Rechte zum Rohzugriff aufs Netz; LAN-Kabel direkt vom Rechner an den LAN-Port (oft blau, bei mehreren den mit '1'); nmrpflash vergibt die IPs selbst (10.164.183.252/253); Firewall am Rechner aus bzw. TFTP vom Gerät erlauben [geprüft: nmrpflash-README]; Datei: Gluon-factory (.img/.chk) [Commit 5543d63: 'To flash use nmrpflash with the provided factory.img', geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** nmrpflash
@@ -5024,6 +5422,7 @@ NETGEAR R6120 · ramips-mt76x8 · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 64 MB
+- **Dauer:** nach dem Upload schreibt das Gerät; meist wenige Minuten, Berichte bis 15 Minuten und mehr; erst nach 'Reboot your device now.' Strom ziehen [geprüft: nmrpflash-README]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 5543d63fc84e64be83afaa4241369a07797f041b
 - **Detail-Anleitung:** https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-r6120/
@@ -5092,7 +5491,10 @@ OCEDO Panda · mpc85xx-p1020 · K1
 ALFA Network AP121F · ath79-generic · K1d
 
 - **Weg ab Werk:** U-Boot-Web-Recovery: Reset beim Einschalten halten, nach dem ersten Blinken weitere drei Blinks, dann sysupgrade unter http://192.168.1.1 hochladen [geprüft, ar71xx-Commit]
+- **Taste und Zeitpunkt:** Reset drücken, Strom einstecken, beim ersten Blinken aller LEDs (Netzwerk wird eingerichtet) weiter halten, nach drei weiteren Blinkern loslassen [geprüft: ar71xx-Commit 0c6165d]
+- **Sichtbare Zeichen:** erstes Blinken aller LEDs, dann drei weitere = U-Boot-Web-Recovery [geprüft: Commit 0c6165d]
 - **Übertragung:** recovery-web: Gerät 192.168.1.1, PC 192.168.1.2/24, Datei = sysupgrade
+- **Rechner braucht:** Rechner fest 192.168.1.2/24 am RJ45-Port, Browser http://192.168.1.1, Gluon-sysupgrade hochladen [geprüft: Commit 0c6165d]; alternativ ap51-flash ('just power on') [abgeleitet: ap51-flash-Doku]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** U-Boot-Web nimmt sysupgrade direkt
@@ -5108,7 +5510,9 @@ ALFA Network AP121F · ath79-generic · K1d
 Joy-IT JT-OR750i · ath79-generic · K1d
 
 - **Weg ab Werk:** Ab Werk nur Bootloader: dessen Weboberfläche (DHCP) nimmt das sysupgrade; alternativ TFTP-Recovery [geprüft]
+- **Taste und Zeitpunkt:** Web-Weg ab Werk: keine Taste (nur Bootloader installiert) [geprüft: Commit 55b4b36]; TFTP-Recovery: Reset nach dem Einstecken 4 s halten (feste IP) bzw. 6 s (DHCP) [geprüft: Commit]
 - **Übertragung:** recovery-web: Gerät 10.123.123.1 (DHCP); alternativ tftp-client-am-geraet: Server 192.168.0.66, Datei jt-or750i_firmware.bin, Reset 4 s
+- **Rechner braucht:** Web-Weg: Rechner per DHCP, Bootloader-Seite http://10.123.123.1, Vereinbarung bestätigen, Gluon-sysupgrade hochladen; geht es nicht, Firefox nehmen [geprüft: Commit 55b4b36]; TFTP-Weg: TFTP-Server auf 192.168.0.66, Datei genau `jt-or750i_firmware.bin` (umbenanntes sysupgrade) [geprüft: Commit; ob der Name zwingend ist: abgeleitet, Name trotzdem genau so verwenden]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Bootloader-Web nimmt sysupgrade
@@ -5126,9 +5530,11 @@ Onion Omega · ath79-generic · K0
 
 - **Weg ab Werk:** Stock (OpenWrt) per sysupgrade oder factory über die U-Boot-Weboberfläche [geprüft]
 - **Übertragung:** recovery-web: Gerät 192.168.1.1, PC 192.168.1.2/24; oder ssh (root/onioneer)
+- **Rechner braucht:** Normalweg: Stock ist OpenWrt, per SSH root/onioneer an 192.168.1.1, sysupgrade; ältere SSH-Kex freischalten (`KexAlgorithms +diffie-hellman-group1-sha1`) [geprüft: Commit d98738b]; U-Boot-Web: Rechner fest 192.168.1.2/24, http://192.168.1.1, factory hochladen [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (Gluon-Kommentar: Einrichtung auch über "integrated (USB-)tty"; USB, Art ?)
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** LAN nur zusammen mit dem optionalen Erweiterungs-Dock [geprüft: Commit d98738b]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-onion_omega-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-onion_omega-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -5141,7 +5547,10 @@ Onion Omega · ath79-generic · K0
 Teltonika RUT230 v1 · ath79-generic · K0+
 
 - **Weg ab Werk:** Bootloader-Recovery-Web: Reset beim Einstecken halten bis die Signal-LEDs 3x blinken, factory unter http://192.168.1.1 hochladen [geprüft]
+- **Taste und Zeitpunkt:** Reset beim Einstecken des Stroms halten, loslassen, nachdem die Signal-LEDs 3x geblinkt haben [geprüft: Commit 6cf1dfd]
+- **Sichtbare Zeichen:** Signal-LEDs blinken 3x = Recovery; nach dem Upload installiert das Gerät und startet selbst neu [geprüft: Commit 6cf1dfd]
 - **Übertragung:** recovery-web: Gerät 192.168.1.1, PC 192.168.1.10/24
+- **Rechner braucht:** Rechner am LAN-Port fest 192.168.1.10/24, Browser http://192.168.1.1, Gluon-factory hochladen [geprüft: Commit 6cf1dfd]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -5149,6 +5558,7 @@ Teltonika RUT230 v1 · ath79-generic · K0+
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-teltonika_rut230-v1-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Rückweg zur Herstellerfirmware:** gleicher Weg mit der Stock-Firmware [geprüft: Commit 6cf1dfd]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 6cf1dfd7e1d6b5c6a94b87eb065408bb489574c0 [geprüft]
 
@@ -5157,7 +5567,9 @@ Teltonika RUT230 v1 · ath79-generic · K0+
 Wavlink WS-WN572HP3 4G · ramips-mt7621 · K1d
 
 - **Weg ab Werk:** Reset beim Einschalten 10 s halten, Recovery-Webseite nimmt das sysupgrade (Chromium; Firefox 106 nicht) [geprüft]
+- **Taste und Zeitpunkt:** Reset beim Einschalten gedrückt halten, 10 Sekunden lang [geprüft: Commit dce6689]
 - **Übertragung:** recovery-web: Gerät 192.168.10.1
+- **Rechner braucht:** Recovery-Seite http://192.168.10.1, Rechner fest im Netz 192.168.10.0/24 [Adresse geprüft: Commit dce6689; Rechner-IP abgeleitet]; Browser Chromium/Chrome, Firefox 106.0.3 geht nicht [geprüft: Commit]; Gluon-sysupgrade hochladen, Prüfsumme bestätigen [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -5165,6 +5577,8 @@ Wavlink WS-WN572HP3 4G · ramips-mt7621 · K1d
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
 - **Stock-Teile:** -
 - **RAM:** 128 MB
+- **Dauer:** etwa 2 Minuten bis zum Neustart [geprüft: Commit dce6689]
+- **Rückweg zur Herstellerfirmware:** gleicher Weg mit dem Recovery-Image für WL-WN572HP3 [geprüft: Commit dce6689]
 - **Gluon-RAMpe passt:** nein, unnötig: sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** dce66899bf243d78689afcc693340b891bbf4c2d
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6cd1035d8dc001561331ca9e613d7dfc7d0fd7a6
@@ -5174,14 +5588,19 @@ Wavlink WS-WN572HP3 4G · ramips-mt7621 · K1d
 ZBT WG3526 16M · ramips-mt7621 · K1d
 
 - **Weg ab Werk:** Stock ist ein angepasstes OpenWrt; Recovery-Modus des Bootloaders mit (chinesischer) Upload-Seite nimmt das Image, wie beim WG2626 [abgeleitet: Wiki toh:zbtlink:zbt_wg3526]
+- **Taste und Zeitpunkt:** Reset halten und Strom einstecken, etwa 10 s halten [abgeleitet: Wiki toh/zbtlink/wg2626, laut Wiki toh/zbtlink/zbt_wg3526 gleiches Verfahren]
+- **Sichtbare Zeichen:** statt der normalen Oberfläche zeigt http://192.168.1.1 eine chinesische Seite '固件恢复模式' (Firmware-Recovery); Knopf '恢复' = Recovery, '完成' = fertig [abgeleitet: Wiki toh/zbtlink/wg2626]
 - **Übertragung:** recovery-web (Adresse ?)
+- **Rechner braucht:** Kabel (nicht WLAN), Browser http://192.168.1.1 [abgeleitet: Wiki wg2626]; über die Stock-Oberfläche kommt 'incorrect model' [abgeleitet: Wiki zbt_wg3526]; Wiki-Nutzer benannte das Image in `eeprom.bin` um, 'evtl. unnötig' [abgeleitet: Wiki wg2626]
 - **seriell nötig:** nein [abgeleitet]
 - **Gehäuse öffnen:** nein [abgeleitet]
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** WG3526 gibt es mit 16 MB und 32 MB Flash, eigene Images; Kernel meldet 'ZBT-WG3526 (16M)' [abgeleitet: Commit 619d68b, Wiki-Bootlog]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zbtlink_zbt-wg3526-16m-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt [abgeleitet]
 - **Stock-Teile:** -
 - **RAM:** 512 MB (ToH)
+- **Dauer:** dauert eine Weile, jede Unterbrechung kann das Gerät unbrauchbar machen [abgeleitet: Wiki wg2626]
 - **Gluon-RAMpe passt:** nein, unnötig [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 30fbc1a4d146ae0060d02946709fd6d8cc2a2b56 (ohne Installationstext)
 
@@ -5190,14 +5609,19 @@ ZBT WG3526 16M · ramips-mt7621 · K1d
 ZBT WG3526 32M · ramips-mt7621 · K1d
 
 - **Weg ab Werk:** Stock ist ein angepasstes OpenWrt; Recovery-Modus des Bootloaders mit (chinesischer) Upload-Seite nimmt das Image, wie beim WG2626 [abgeleitet: Wiki toh:zbtlink:zbt_wg3526]
+- **Taste und Zeitpunkt:** Reset halten und Strom einstecken, etwa 10 s halten [abgeleitet: Wiki toh/zbtlink/wg2626, laut Wiki toh/zbtlink/zbt_wg3526 gleiches Verfahren]
+- **Sichtbare Zeichen:** statt der normalen Oberfläche zeigt http://192.168.1.1 eine chinesische Seite '固件恢复模式' (Firmware-Recovery); Knopf '恢复' = Recovery, '完成' = fertig [abgeleitet: Wiki toh/zbtlink/wg2626]
 - **Übertragung:** recovery-web (Adresse ?)
+- **Rechner braucht:** Kabel (nicht WLAN), Browser http://192.168.1.1 [abgeleitet: Wiki wg2626]; über die Stock-Oberfläche kommt 'incorrect model' [abgeleitet: Wiki zbt_wg3526]; Wiki-Nutzer benannte das Image in `eeprom.bin` um, 'evtl. unnötig' [abgeleitet: Wiki wg2626]
 - **seriell nötig:** nein [abgeleitet]
 - **Gehäuse öffnen:** nein [abgeleitet]
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** WG3526 gibt es mit 16 MB und 32 MB Flash, eigene Images; Commit 619d68b benennt deshalb die 16-MB-Variante eigens [abgeleitet: Commit 619d68b]; woran man sie außen erkennt, nicht belegt
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zbtlink_zbt-wg3526-32m-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt [abgeleitet]
 - **Stock-Teile:** -
 - **RAM:** 512 MB (ToH)
+- **Dauer:** dauert eine Weile, jede Unterbrechung kann das Gerät unbrauchbar machen [abgeleitet: Wiki wg2626]
 - **Gluon-RAMpe passt:** nein, unnötig [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 619d68bfc90e548e3398b26a2a0ca3fccd7d3f38 (ohne Installationstext)
 
@@ -5206,7 +5630,10 @@ ZBT WG3526 32M · ramips-mt7621 · K1d
 RAVPower RP-WD009 · ramips-mt76x8 · K0
 
 - **Weg ab Werk:** Reset beim Einschalten 10 s bis die Globus-LED leuchtet, Recovery-Seite 10.10.10.128, factory hochladen [geprüft]
+- **Taste und Zeitpunkt:** Reset gedrückt halten, Strom an, noch 10 s weiter halten, bis die Globus-LED leuchtet [geprüft: Commit e959048]
+- **Sichtbare Zeichen:** Globus-LED leuchtet = Recovery erreicht; nach etwa 1 Minute startet das Gerät selbst neu [geprüft: Commit e959048]
 - **Übertragung:** recovery-web: Gerät 10.10.10.128, Rechner 10.10.10.1/24
+- **Rechner braucht:** Rechner fest 10.10.10.1/24 am Ethernet-Port, Recovery-Seite http://10.10.10.128, Gluon-factory hochladen [geprüft: Commit e959048]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -5214,6 +5641,7 @@ RAVPower RP-WD009 · ramips-mt76x8 · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 64 MB
+- **Dauer:** etwa 1 Minute, danach automatischer Neustart [geprüft: Commit e959048]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** e959048c128e4350b78df653be7cd7277787518e
 - **Detail-Anleitung:** https://openwrt.org/toh/ravpower/rp-wd009#oem_installation_using_the_tftp_method
@@ -5227,14 +5655,21 @@ RAVPower RP-WD009 · ramips-mt76x8 · K0
 D-Link DIR-505 · ath79-generic · K4
 
 - **Weg ab Werk:** laut Commit nur per U-Boot-TFTP, modifiziertem U-Boot oder sysupgrade aus älterem OpenWrt; ath79 baut kein factory (ar71xx hatte eins mit HORNET-Kennung) [geprüft]
+- **Taste und Zeitpunkt:** Seriell: Unterbrechungstaste im Commit nicht genannt. Alternativweg D-Link-Recovery: Reset 3-5 s halten, Strom einstecken, Reset weiter halten bis die rote Power-LED blinkt [geprüft: Wiki toh/d-link/dir-505]
+- **Sichtbare Zeichen:** Recovery erreicht: rote LED blinkt; nach Upload rot dauerhaft, nach ca. 90 s LED aus und Neustart; die 'Success'-Seite kommt immer, auch bei Fehlschlag [geprüft: Wiki]
 - **Übertragung:** tftp-client am U-Boot (seriell); IPs/Dateiname im Commit nicht genannt
+- **Rechner braucht:** Seriell: USB-TTL 3,3 V, 115200 8N1 [geprüft: Wiki]. Recovery-Weg: feste IP 192.168.0.5 (nicht .1), http://192.168.0.1; der alte uIP-Stack geht mit modernen Systemen oft nicht: Windows 10 + Firefox oder curl ging, Debian 10/11 nicht [geprüft: Wiki]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ? (UART-Lage im Commit nicht genannt)
 - **Werkzeug/Spezial:** serielle Konsole
+- **Typenschild/Verwechslung:** Hardware A1 und A2 [geprüft: ToH]. Moduswahlschalter oben: im Repeater-Modus ist Ethernet nach dem Upgrade nicht erreichbar, Router/AP-Stellung nehmen [geprüft: Wiki]
+- **Bedingung an die Herstellerfirmware:** Kein ath79-factory; Wiki-Weg: altes ar71xx-factory (OpenWrt 14.07 bis 19.07) über Stock-Web-UI oder D-Link-Recovery, danach sysupgrade auf ath79 (Konfiguration geht verloren) [geprüft: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-dlink_dir-505-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Dauer:** D-Link-Recovery: Upload, dann ca. 2 min Countdown, Neustart nach ca. 90 s [geprüft: Wiki]
+- **Rückweg zur Herstellerfirmware:** 84-Byte-Header von der D-Link-Firmware abschneiden (`dd bs=84 skip=1`), `mtd write ... firmware`; Erfolgsberichte gemischt [geprüft: Wiki]
 - **Gluon-RAMpe passt:** teilweise: RAMpe-initramfs per tftpboot statt OpenWrt-initramfs; seriell bleibt [abgeleitet]
 - **Gluon-RAMpe-Rezept:** devices/d-link-dir-505.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; UART, IPs und Ladeadresse nicht belegt; 64 MB RAM
 - **Quelle (OpenWrt-Commit):** c9ac7b17296ff29d9df39db8a68c449ef1514bbd [geprüft]
@@ -5244,7 +5679,9 @@ D-Link DIR-505 · ath79-generic · K4
 Enterasys WS-AP3705i · ath79-generic · K4
 
 - **Weg ab Werk:** Serielle Konsole, U-Boot (Passwort admin/new2day) umstellen und OpenWrt-initramfs per TFTP laden, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** Keine Gerätetaste. Strom anlegen und sofort im Terminal eine Taste drücken, wenn zur Unterbrechung aufgefordert wird (bootdelay nur 1 s); Login admin/new2day [geprüft: Commit ebddc5f]
 - **Übertragung:** tftp-client am U-Boot: Server 192.168.1.66/24, Datei 1401A8C0.img
+- **Rechner braucht:** Cisco-Konsolenkabel am RJ45 auf der Rückseite, 115200 8N1 [geprüft: Commit]. TFTP-Server mit fester IP 192.168.1.66/24, Datei genau `1401A8C0.img`: ramboot_openwrt ruft `tftpboot` ohne Dateinamen auf, U-Boot holt dann den Standardnamen aus der Geräte-IP in Hex (1401A8C0 = 192.168.1.20), der Name ist also zwingend [geprüft: Commit; Hex-Deutung abgeleitet]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: Cisco-RJ45 auf der Rückseite, 115200 8N1
 - **Werkzeug/Spezial:** serielle Konsole (Cisco-Konsolenkabel)
@@ -5262,7 +5699,9 @@ Enterasys WS-AP3705i · ath79-generic · K4
 Extreme Networks WS-AP3805i · ath79-generic · K4
 
 - **Weg ab Werk:** UART (J10), U-Boot (admin/new2day) umstellen, OpenWrt-initramfs per TFTP laden, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** Keine Gerätetaste. Strom anlegen und bei Aufforderung den Boot unterbrechen; Login admin/new2day [geprüft: Commit f8c87aa]
 - **Übertragung:** tftp-client am U-Boot: Server 192.168.1.66/24, Datei 1D01A8C0.img
+- **Rechner braucht:** Gehäuse öffnen, USB-TTL 3,3 V an UART-Pins J10: 3.3V - GND - TX - RX, das Pfeil-Pad ist 3,3 V (nicht anschließen [abgeleitet]); 115200 8N1 [geprüft: Commit]. TFTP-Server mit fester IP 192.168.1.66/24, Datei `1D01A8C0.img` (steht im Befehl; Name so übernehmen) [geprüft: Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (UART-Pins J10 auf der Platine, 3.3 V, 115200 8N1)
 - **Werkzeug/Spezial:** serielle Konsole
@@ -5280,10 +5719,13 @@ Extreme Networks WS-AP3805i · ath79-generic · K4
 Siemens WS-AP3610 · ath79-generic · K4
 
 - **Weg ab Werk:** Serielle Konsole (RJ45), U-Boot-Umgebung setzen, OpenWrt-initramfs per TFTP laden, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** Keine Gerätetaste. Strom anlegen und sofort bei Aufforderung unterbrechen (bootdelay 1 s) [geprüft: Commit d2b8ccb]
 - **Übertragung:** tftp-client am U-Boot: Server 192.168.1.66/24, Datei 1401A8C0.img
+- **Rechner braucht:** Cisco-Konsolenkabel (RJ45), 115200 8N1 [geprüft: Commit]. TFTP-Server mit fester IP 192.168.1.66/24, Datei genau `1401A8C0.img`: `tftpboot` ohne Dateinamen holt den Standardnamen aus der Geräte-IP (1401A8C0 = 192.168.1.20), Name also zwingend [geprüft: Commit; Hex-Deutung abgeleitet]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: Cisco-RJ45, 115200 8N1
 - **Werkzeug/Spezial:** serielle Konsole (Cisco-Konsolenkabel)
+- **Typenschild/Verwechslung:** WS-AP3620 steht auf derselben Wiki-Seite, Gluon baut nur siemens-ws-ap3610 [geprüft: Wiki-Titel, Gluon-Target ath79-generic]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-siemens_ws-ap3610-initramfs-kernel.bin) (HEAD 200)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
@@ -5298,10 +5740,13 @@ Siemens WS-AP3610 · ath79-generic · K4
 Sophos AP15 (broken) · ath79-generic · K4
 
 - **Weg ab Werk:** Gehäuse öffnen, UART, im U-Boot OpenWrt-initramfs per TFTP booten, dann sysupgrade im Web-UI [geprüft]; XG-Weg der AP55/AP100 "sollte auch gehen" [ungeprüft im Commit]
+- **Taste und Zeitpunkt:** Keine Gerätetaste (AP15 hat keine Knöpfe). Beim Einschalten den Autoboot bei Aufforderung abbrechen, Prompt `ath> ` [geprüft: Commit 0dc5821]
 - **Übertragung:** tftp-client am U-Boot: Server 192.168.99.8/24, Datei frei (Beispiel boot.bin)
+- **Rechner braucht:** Gehäuse öffnen, USB-TTL-Adapter (3,3 V laut ToH) an den UART-Header, 115200 8N1 [geprüft: Commit; Pegel: ToH]. TFTP-Server mit fester IP 192.168.99.8/24, Datei z. B. `boot.bin` (steht im Befehl) [geprüft: Commit]. Danach OpenWrt auf 192.168.1.1/24, sysupgrade über die Weboberfläche [geprüft: Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (UART-Header auf der Platine, 115200 8N1)
 - **Werkzeug/Spezial:** serielle Konsole
+- **Typenschild/Verwechslung:** AP15C ist ein anderes Gerät mit eigenem Image (sophos-ap15c) [geprüft: Gluon-Target ath79-generic]. AP55-Images booten laut Commit auch, dann ohne LEDs [geprüft: Commit]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-sophos_ap15-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
@@ -5316,14 +5761,18 @@ Sophos AP15 (broken) · ath79-generic · K4
 TP-Link Archer D50 v1 (broken) · ath79-generic · K4
 
 - **Weg ab Werk:** UART (J2), im U-Boot das sysupgrade per TFTP laden und nach 0x9f020000 schreiben; oder initramfs booten [geprüft]
+- **Taste und Zeitpunkt:** Keine Gerätetaste. Beim Einschalten beliebige Taste im Terminal drücken [geprüft: Commit f5d2c91]
 - **Übertragung:** tftp-client am U-Boot: IPs selbst setzen (im Commit nicht vorgegeben)
+- **Rechner braucht:** Gehäuse öffnen, USB-TTL am Header J2 (Qualcomm-CPU): TX, RX, GND, VCC (eckiges Pad) nicht anschließen [geprüft: Commit; VCC frei: abgeleitet]. TFTP-Server, IPs für Gerät und Server selbst per setenv setzen, Dateiname steht im Befehl [geprüft: Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (UART-Header J2 der Qualcomm-CPU)
 - **Werkzeug/Spezial:** serielle Konsole
+- **Typenschild/Verwechslung:** Zwei UART-Header: J2 gehört zur Qualcomm-CPU (richtig), J16 zur Broadcom-DSL-CPU (falsch) [geprüft: Commit]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-d50-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** für die Installation keine; Rückweg: OEM-Datei per `dd skip=257 bs=512 count=15616` zuschneiden (Hersteller-Download TP-Link)
 - **RAM:** 64 MB [Commit]
+- **Rückweg zur Herstellerfirmware:** TP-Link-Firmware herunterladen, mit `dd skip=257 bs=512 count=15616` zuschneiden (muss 7995392 Bytes ergeben), über OpenWrt-Web ohne Einstellungen flashen oder per U-Boot an 0x9f020000 [geprüft: Commit]
 - **Gluon-RAMpe passt:** teilweise: RAMpe-initramfs per tftpboot; seriell bleibt
 - **Gluon-RAMpe-Rezept:** devices/tp-link-archer-d50-v1.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-"broken"-Gerät gezielt; `initramfs-kernel.bin` (lzma, TP-Link-Header) per U-Boot-TFTP; 64 MB RAM knapp
 - **Quelle (OpenWrt-Commit):** f5d2c91415a68f554815860d574145644fc31c16 [geprüft]
@@ -5333,14 +5782,20 @@ TP-Link Archer D50 v1 (broken) · ath79-generic · K4
 Aerohive HiveAP 121 · ath79-nand · K4
 
 - **Weg ab Werk:** UART (9600 Baud), U-Boot ggf. mit Passwort (administrator oder AhNf?d@ta06), factory per TFTP laden und mit `nand write` schreiben [geprüft]
+- **Taste und Zeitpunkt:** Keine Gerätetaste. Im seriellen Terminal Leertaste drücken bei 'Hit the space bar to stop the autoboot process', dann U-Boot-Passwort `AhNf?d@ta06` oder `administrator` [geprüft: Wiki toh/aerohive/ap121; Passwörter auch Commit 62db255]
+- **Sichtbare Zeichen:** Mit `version` die Bootloader-Version prüfen, unter v1.0.0.33 abbrechen [geprüft: Wiki]. Nach `reset` kann 'Bad Magic Number' (offset 0xd00000) mit Neustart kommen: nicht eingreifen, nach drei Fehlversuchen bootet er dauerhaft vom ersten Kernel [geprüft: Wiki]
 - **Übertragung:** tftp-client am U-Boot: Adresse per `dhcp`, serverip selbst setzen
+- **Rechner braucht:** Cisco-Konsolenkabel (RJ45 auf RS232 bzw. USB) am Port 'console'; USB-TTL-Adapter 3,3/5 V funktioniert nicht und kann durch RS232-Pegel Schaden nehmen [geprüft: Wiki]. Terminal 9600 8N1. Rechner an 'eth0', feste IP 192.168.1.10, TFTP-Server [geprüft: Wiki]; Commit nutzt stattdessen `dhcp` + `setenv serverip` (dann DHCP-Server nötig) [geprüft: Commit]. Dateiname steht im tftpboot-Befehl, also frei; kurz halten [abgeleitet]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ? (Anschluss im Commit nicht genannt)
 - **Werkzeug/Spezial:** serielle Konsole, 9600 Baud
+- **Typenschild/Verwechslung:** HiveAP 141 (andere externe Antennen) nimmt laut Wiki dasselbe Image [geprüft: Wiki, Forumsbeleg dort]
+- **Bedingung an die Herstellerfirmware:** Bootloader ab v1.0.0.33 (bestätigt 33, 43, 4f, 50, 52); v1.0.0.25 bootet OpenWrt nicht. Bootloader-Update nur über ein HiveOS-Update, Images nur auf Anfrage beim Hersteller [geprüft: Wiki toh/aerohive/ap121]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-aerohive_hiveap-121-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-aerohive_hiveap-121-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** Erster OpenWrt-Start ca. 90 s [geprüft: Wiki]
 - **Gluon-RAMpe passt:** teilweise: statt factory per nand write könnte man die Gluon-RAMpe per tftpboot starten; seriell bleibt [abgeleitet]
 - **Gluon-RAMpe-Rezept:** devices/aerohive-hiveap-121.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; Gluon-factory per `nand write` ist der einfachere Weg
 - **Quelle (OpenWrt-Commit):** 62db255543c8fb5d1787caf36c6c7c9c51db71cd [geprüft]
@@ -5350,7 +5805,10 @@ Aerohive HiveAP 121 · ath79-nand · K4
 ZTE MF281 (broken) · ath79-nand · K4
 
 - **Weg ab Werk:** UART, U-Boot unterbrechen, OpenWrt-initramfs per TFTP booten, dann factory per `mtd write ... firmware` [geprüft]
+- **Taste und Zeitpunkt:** Keine Gerätetaste. Einschalten und Autoboot bei Aufforderung im Terminal unterbrechen [geprüft: Commit 1e1695f]
+- **Sichtbare Zeichen:** Die Front-LEDs hängen am Modem-Prozessor und sind unter OpenWrt nicht steuerbar, taugen also nicht als Fortschrittsanzeige [geprüft: Commit]
 - **Übertragung:** tftp-client am U-Boot: Server 192.168.1.66, Gerät 192.168.1.154, Datei speedbox-2.bin
+- **Rechner braucht:** Gehäuse öffnen, USB-TTL (3,3 V laut ToH) an den unbestückten Stecker neben dem SIM-Slot: (SIM) GND - RX - TX - 3V3, 3V3 nicht anschließen; 115200 8N1 [geprüft: Commit]. TFTP-Server mit fester IP 192.168.1.66, Gerät 192.168.1.154, Datei `speedbox-2.bin` [geprüft: Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (unbestückter Stecker neben dem SIM-Slot; 3V3 nicht anschließen)
 - **Werkzeug/Spezial:** serielle Konsole
@@ -5368,7 +5826,9 @@ ZTE MF281 (broken) · ath79-nand · K4
 Extreme Networks WS-AP3915i · ipq40xx-generic · K4
 
 - **Weg ab Werk:** Konsole, Autoboot mit "s" abbrechen, Login admin/new2day, ramboot/boot_openwrt/bootcmd setzen, initramfs per TFTP, `sysupgrade -n` [geprüft]
+- **Taste und Zeitpunkt:** Keine Gerätetaste. Beim Einschalten im Terminal die Taste `s` drücken; Login admin/new2day [geprüft: Commit e16a0e7]
 - **Übertragung:** tftp-client: Server 192.168.1.66, Gerät 192.168.1.1, Datei openwrt-3915.bin
+- **Rechner braucht:** Cisco-Konsolenkabel am RJ45 'Console', 115200 8N1 [geprüft: Commit]. TFTP-Server mit fester IP 192.168.1.66 (im Commit Tippfehler '192.1681.66'), Gerät 192.168.1.1, Datei `openwrt-3915.bin` (steht im Befehl) [geprüft: Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: RJ45 (Cisco-Konsolenkabel), 115200 8N1 [geprüft]
 - **Werkzeug/Spezial:** -
@@ -5386,14 +5846,18 @@ Extreme Networks WS-AP3915i · ipq40xx-generic · K4
 ZTE MF289F · ipq40xx-generic · K4
 
 - **Weg ab Werk:** Gehäuse öffnen, UART, U-Boot (ESC), initramfs per TFTP, Backup mtd16/mtd17, `ubirmvol` ubi_rootfs(_data), `sysupgrade -n` [geprüft]
+- **Taste und Zeitpunkt:** Keine Gerätetaste. Im Terminal ESC drücken, um U-Boot anzuhalten [geprüft: Commit 0de6a33]
 - **Übertragung:** tftp-client: Server 192.168.0.2, Gerät 192.168.0.1, Datei openwrt-ipq40xx-generic-zte_mf289f-initramfs-fit-zImage.itb (24.10: …-initramfs-zImage.itb)
+- **Rechner braucht:** Gehäuse öffnen, Stiftleiste in die 3 Löcher löten (GND direkt neben dem Aufdruck 'MF289F MIMO-V1.0'), USB-TTL 3,3 V, RX/TX gekreuzt; erst seriell verbinden, dann Strom; 115200 8N1 [geprüft: Commit, Wiki toh/zte/mf289f]. TFTP-Server mit fester IP 192.168.0.2, Gerät 192.168.0.1, Rechner an WAN/LAN1 (Wiki: jeder Port), Datei steht im Befehl [geprüft: Commit]. Danach ist OpenWrt laut Wiki unter 192.168.1.1 (Commit: 192.168.0.1), ggf. Port wechseln, weil WAN/LAN1 WAN wird [geprüft: Wiki]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (Pins neben "MF289F MIMO-V1.0", 115200 8N1)
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Zwei Hardware-Revisionen: AT1 (5 GHz über QCA9984) und AT2 (5 GHz im IPQ4019); vertrieben als Vodafone FWA (IT), GigaCube (Vodafone DE, T-Mobile PL) [geprüft: Commit]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-zte_mf289f-initramfs-zImage.itb)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** - (Backup mtd16 web, mtd17 rootfs für den Rückweg)
 - **RAM:** 256 MB
+- **Rückweg zur Herstellerfirmware:** Nur mit eigenem Backup von mtd16 (web) und mtd17 (rootfs) aus dem initramfs; Rückspielen per U-Boot-TFTP, danach Reset 5 s [geprüft: Commit]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als TFTP-initramfs möglich, aber der `ubirmvol`-Schritt fehlt ihm; seriell bleibt [abgeleitet]
 - **Gluon-RAMpe-Rezept:** devices/zte-mf289f.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-"broken"-Gerät gezielt; `-initramfs-zImage.itb` per U-Boot-TFTP; Vorbereitung (`ubirmvol`) muss schon vor der Imageprüfung laufen, fehlt der RAMpe-Seite noch
 - **Quelle (OpenWrt-Commit):** OpenWrt 0de6a3339f1aadc1de2c9371435e3de239a00645 (Gluon: broken)
@@ -5404,10 +5868,14 @@ ZTE MF289F · ipq40xx-generic · K4
 Extreme Networks AP3935i/e · ipq806x-generic · K4
 
 - **Weg ab Werk:** Konsole, Autoboot abbrechen, Login admin/new2day, serverip/ipaddr setzen, bootcmd "ping …; run boot_flash", initramfs per TFTP nach 0x42000000, bootm, sysupgrade nand-sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** Keine Gerätetaste. Bei 'Hit 'd' for diagnostics, or any other key to stop autoboot' eine beliebige Taste außer `d` drücken; Login admin/new2day (2-3 Versuche), sonst Reset 10-20 s halten und nach dem Booten erneut [geprüft: Wiki toh/extreme_networks/ws-ap3935i; Commit 3aef610]
+- **Sichtbare Zeichen:** Wird der AP mehrmals neu gestartet, lädt der Watchdog das zweite Stock-Image (SecImg), das sich über PriImg kopiert und OpenWrt zerstört; Wiki löscht deshalb PriImg und SecImg vorher [geprüft: Wiki]
 - **Übertragung:** tftp-client: Server 192.168.1.2, Gerät 192.168.1.101, Datei openwrt-ipq806x-generic-extreme_ap3935-initramfs-uImage (Port LAN1)
+- **Rechner braucht:** Cisco-Konsolenkabel (DB9 oder USB) am Port CONSOLE oder USB-TTL 3,3 V an der internen 4-Pin-Leiste (3.3 | GND | RX | TX), 115200 8N1 [geprüft: Commit, Wiki]. TFTP-Server, Port 69 in der Firewall freigeben [geprüft: Wiki]; Server 192.168.1.2, Gerät 192.168.1.101 (Commit) bzw. 192.168.1.1 + netmask 255.255.255.0 (Wiki). Dateiname steht im tftpboot-Befehl; Wiki nennt kurz `initramfs.bin` [geprüft: Wiki]. Kabel an LAN1 (OpenWrt 24.x), bei OpenWrt 25.x an LAN2 [geprüft: Wiki]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: RJ45 (Cisco-Kabel) oder interne 4-Pin-Leiste, 115200 8N1 [geprüft]
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** AP3935i und AP3935e nutzen dasselbe Image [geprüft: ToH, Commit]
 - **initramfs-Link:** [24.10.8: initramfs-uImage](https://downloads.openwrt.org/releases/24.10.8/targets/ipq806x/generic/openwrt-24.10.8-ipq806x-generic-extreme_ap3935-initramfs-uImage)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-nand-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq806x/generic/openwrt-24.10.8-ipq806x-generic-extreme_ap3935-squashfs-nand-factory.bin)
 - **Stock-Teile:** -
@@ -5422,10 +5890,14 @@ Extreme Networks AP3935i/e · ipq806x-generic · K4
 TP-Link TD-W8980 (Alias TD-W9980; Gluon: broken, 5 GHz) · lantiq-xrx200_legacy · K4
 
 - **Weg ab Werk:** Seriell: `t` beim Booten, TFTP, `sf erase 0x20000 0x7a0000`, sysupgrade schreiben; Web-UI nur bei Stock vor 12.10.2013; Shell-Injection wie TD-W9980 [abgeleitet: Wiki]
+- **Taste und Zeitpunkt:** Beim Kaltstart im Terminal wiederholt `t` drücken, bis der Bootloader-Prompt (VR9) kommt; erscheint wieder eine Login-Abfrage, war es zu spät: neu starten [geprüft: Wiki toh/tp-link/td-w8980_v1]
 - **Übertragung:** tftp-client-am-geraet (IPs per setenv frei)
+- **Rechner braucht:** Gehäuse öffnen (4 Schrauben unten, 6 Rastnasen, Antennenmuttern lösen); USB-UART-Adapter (z. B. CP210x, 3,3 V) an die 4 Löcher in der Platinenmitte, 115200 8N1 [geprüft: Wiki]. TFTP-Server, IPs per setenv frei (Wiki-Beispiel Gerät 192.168.11.13, Server 192.168.11.220), Datei kurz umbenennen, Wiki: `openwrt.bin` [geprüft: Wiki]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (UART auf der Platine)
 - **Werkzeug/Spezial:** USB-TTL-Adapter, TFTP-Server
+- **Typenschild/Verwechslung:** TD-W9980 ist baugleich (Alias); TD-W8970 ähnlich, aber anderes Image [geprüft: Commit 161179f]
+- **Bedingung an die Herstellerfirmware:** Weboberflächen-Weg nur mit Stock-Firmware älter als 12.10.2013, danach nur RSA-signierte Images; der serielle Weg geht unabhängig davon (U-Boot prüft die Signatur nicht) [geprüft: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/lantiq/xrx200_legacy/openwrt-24.10.8-lantiq-xrx200_legacy-tplink_tdw8980-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
 - **Stock-Teile:** -
@@ -5437,15 +5909,19 @@ TP-Link TD-W8980 (Alias TD-W9980; Gluon: broken, 5 GHz) · lantiq-xrx200_legacy 
 
 Cudy TR3000 v1 (128 MB Flash) · mediatek-filogic · K4
 
-- **Weg ab Werk:** UART + TFTP-initramfs (Reset beim Einschalten 5 s halten, U-Boot-Shell), dann sysupgrade [geprüft]; eine Cudy-Zwischenfirmware fehlt im Spiegel und bei Cudy (Stand cudy-installation.md 08.10.2026), sonst wäre es K2
+- **Weg ab Werk:** UART + TFTP-initramfs (Reset beim Einschalten 5 s halten, U-Boot-Shell), dann sysupgrade [geprüft]; eine Cudy-Zwischenfirmware fehlt im Spiegel und bei Cudy (Stand Neanderfunk-Notiz 08.10.2026), sonst wäre es K2
+- **Taste und Zeitpunkt:** Reset gedrückt halten, Strom einschalten, Reset mindestens 5 s weiter halten; die OEM-TFTP-Recovery startet und soll nach ca. 5 s scheitern, danach öffnet sich die U-Boot-Shell von selbst [geprüft: Commit 63b8d98; Wiki toh/cudy/tr3000]
 - **Übertragung:** tftp-client: Server 192.168.1.88/24, Gerät 192.168.1.1, Datei per `setenv bootfile`
+- **Rechner braucht:** Gehäuse öffnen, USB-TTL 3,3 V an zwei Testpunkte unten auf der Platine (Ports links, LEDs rechts: links RX, rechts TX) plus GND; Wiki empfiehlt eine spezielle Klemme dafür [geprüft: Wiki]. Terminal 115200 8N1. Rechner an LAN, feste IP 192.168.1.88/24, TFTP-Server [geprüft: Commit]. Dateiname per `setenv bootfile` frei, Wiki: Name muss 'initramfs' enthalten; strengster Name `initramfs-kernel.bin` [geprüft: Wiki/Commit; Zwang: abgeleitet]. TFTP-Fenster laut Wiki 10 s
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (interne Testpunkte)
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** 128-MB- und 256-MB-Flash-Version: Angabe auf Karton/Typenschild; die 256-MB-Version hat ein eigenes Image [geprüft: Wiki, ToH]. Nicht mit dem 'ubootmod'-Image (OpenWrt-U-Boot-Layout) mischen [abgeleitet: Wiki]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-cudy_tr3000-v1-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Rückweg zur Herstellerfirmware:** Reset beim Einschalten startet die Cudy-TFTP-Recovery, die nur signierte Cudy-Firmware annimmt [geprüft: Wiki]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe ersetzt das OpenWrt-initramfs im TFTP-Schritt, der serielle Teil bleibt
 - **Gluon-RAMpe-Rezept:** devices/cudy-tr3000-v1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 63b8d98dd0d2f7797ea5b5f25978590982bbbb5d
@@ -5456,14 +5932,18 @@ Cudy TR3000 v1 (128 MB Flash) · mediatek-filogic · K4
 Mercusys MR80X v3 · mediatek-filogic · K4
 
 - **Weg ab Werk:** UART: Boot mit Ctrl-C abbrechen, `setenv tp_boot_idx 0; setenv bootcmd bootm 0x46000000; saveenv` (bootarg ggf. von ubi1 auf ubi0), initramfs per TFTP laden und booten, dann `sysupgrade -n` [geprüft: Commit]; ob der SSH-/Telnet-Weg des MR90X auch hier geht, ist nicht belegt
+- **Taste und Zeitpunkt:** Seriell: beim Einschalten Ctrl-C im Terminal drücken [geprüft: Commit 0ecf136]. Reset beim Einschalten startet dagegen die U-Boot-Web-Recovery (nur OEM-Firmware) [geprüft: Commit]
 - **Übertragung:** tftp-client-am-geraet: Server 192.168.1.2, Gerät 192.168.1.1, Datei initramfs-kernel.bin (Name im Commit)
+- **Rechner braucht:** USB-TTL-Adapter an der UART der Platine (Pegel im Commit nicht genannt; 3,3 V [abgeleitet: MT7981]). TFTP-Server mit fester IP 192.168.1.2, Gerät 192.168.1.1, Datei `initramfs-kernel.bin` (steht im Befehl) [geprüft: Commit]. Danach SSH auf 192.168.1.1 [geprüft: Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (UART auf der Platine) [abgeleitet]
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Commit nennt MR80X(EU) v3; andere Hardware-Versionen nicht abgedeckt [geprüft: Commit]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-mercusys_mr80x-v3-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** - (U-Boot-Recovery mit Reset, http://192.168.1.1, nimmt laut Commit nur OEM-Firmware)
 - **RAM:** 512 MB
+- **Rückweg zur Herstellerfirmware:** Reset drücken und einschalten, http://192.168.1.1/ (U-Boot-Recovery), OEM-Firmware hochladen [geprüft: Commit]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt OpenWrt-initramfs im TFTP-Schritt, seriell bleibt; Rezept `devices/mercusys-mr80x-v3.sh`. In Neanderfunk-2025.1 seit gluon-patches-hardware ab19bf1b46d34315a92f61974dd37f8a9ede9604 (10.10.2026), in Gluon v2025.1.3 nicht
 - **Gluon-RAMpe-Rezept:** devices/mercusys-mr80x-v3.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein (`ensure_device`); `initramfs-kernel.bin` per UART + TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 0ecf136f4d3126d92edc13087ce03db83b7e8223
@@ -5473,7 +5953,9 @@ Mercusys MR80X v3 · mediatek-filogic · K4
 Enterasys WS-AP3715i · mpc85xx-p1010 · K4
 
 - **Weg ab Werk:** Seriell, U-Boot anhalten (admin/new2day), ramboot_openwrt/boot_openwrt/bootcmd setzen + saveenv, initramfs per TFTP booten, dann sysupgrade -n per scp [geprüft]
+- **Taste und Zeitpunkt:** Keine Gerätetaste. Enter drücken, wenn zur Unterbrechung aufgefordert; Login admin/new2day [geprüft: Commit 765f668]
 - **Übertragung:** tftp-client-am-geraet: Server 192.168.1.66, Gerät 192.168.1.1, Datei ap3715.bin
+- **Rechner braucht:** Cisco-Konsolenkabel (RJ45), 115200 8N1 [geprüft: Commit]. TFTP-Server mit fester IP 192.168.1.66/24, Gerät 192.168.1.1, Datei `ap3715.bin` (steht im Befehl) [geprüft: Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: RJ45, Cisco-Konsolenkabel, 115200 8N1
 - **Werkzeug/Spezial:** Konsolenkabel, TFTP-Server
@@ -5481,6 +5963,7 @@ Enterasys WS-AP3715i · mpc85xx-p1010 · K4
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Rückweg zur Herstellerfirmware:** Hersteller bietet kein flashbares Image; nur über ein eigenes Voll-Backup aller mtd-Partitionen [geprüft: Wiki toh/enterasys/ws-ap3715i]
 - **Gluon-RAMpe passt:** teilweise: nach dem seriellen TFTP-Boot macht die Gluon-RAMpe den sysupgrade-Schritt statt scp; bootcmd/saveenv bleibt seriell
 - **Gluon-RAMpe-Rezept:** devices/enterasys-ws-ap3715i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `ap3715.bin` per U-Boot-TFTP; entpackt über 11 MB droht Überlappung
 - **Quelle (OpenWrt-Commit):** 765f66810a3324cc35fa6471ee8eeee335ba8c2b
@@ -5491,7 +5974,10 @@ Enterasys WS-AP3715i · mpc85xx-p1010 · K4
 Sophos RED 15w Rev. 1 · mpc85xx-p1010 · K4
 
 - **Weg ab Werk:** Am "Console port" U-Boot anhalten, bootargs_owrt/bootcmd setzen + saveenv, initramfs per TFTP booten, `ubiformat /dev/mtd4 -y`, sysupgrade -n per scp [geprüft]
+- **Taste und Zeitpunkt:** Keine Gerätetaste (keine Knöpfe). Am Console-Port einschalten und Enter drücken, wenn zur Unterbrechung aufgefordert [geprüft: Commit 97e4311]. Ist bootdelay 0, laut Wiki zuerst im Stock-Failsafe ('Press the [f] key and hit [enter]') `fw_setenv bootdelay=3` setzen [geprüft: Wiki toh/sophos_red_15w_rev_1]
+- **Sichtbare Zeichen:** Bootloop oder Absturz des initramfs: laut Wiki älteres initramfs (OpenWrt 23.05.2) nehmen [geprüft: Wiki]
 - **Übertragung:** tftp-client-am-geraet: Server 192.168.1.2, Datei kernel.bin
+- **Rechner braucht:** Konsolenkabel am 'Console port' (Bauform nicht belegt), 115200 8N1 [geprüft: Wiki-printenv baudrate]. TFTP-Server mit fester IP 192.168.1.2/24, Rechner an einen LAN-Port, Datei `kernel.bin` (steht im Befehl) [geprüft: Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen ("Console port", Bauform im Commit nicht genannt: ?)
 - **Werkzeug/Spezial:** Konsolenkabel, TFTP-Server
@@ -5499,6 +5985,7 @@ Sophos RED 15w Rev. 1 · mpc85xx-p1010 · K4
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 128 MB
+- **Rückweg zur Herstellerfirmware:** Stock-bootcmd steht im Commit; dazu vorher sophos-os1, sophos-os2, sophos-data sichern und nach dem Zurückstellen per mtd zurückschreiben [geprüft: Commit]
 - **Gluon-RAMpe passt:** teilweise: ubiformat vor dem sysupgrade macht die Gluon-RAMpe nicht
 - **Gluon-RAMpe-Rezept:** devices/sophos-red-15w-rev.1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (FIT) als `kernel.bin` per U-Boot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubiformat`)
 - **Quelle (OpenWrt-Commit):** 97e4311fca73d064d17065e7844699aa777cb157
@@ -5508,10 +5995,15 @@ Sophos RED 15w Rev. 1 · mpc85xx-p1010 · K4
 Aerohive HiveAP 330 · mpc85xx-p1020 · K4
 
 - **Weg ab Werk:** Seriell (9600 8N1), U-Boot-Passwort `AhNf?d@ta06` oder `administrator`, `dhcp`, initramfs (Commit 2017: dazu .fdt) per TFTP laden und booten, dann sysupgrade per scp [geprüft: Commit; Konsole: Wiki]
+- **Taste und Zeitpunkt:** Keine Gerätetaste. Leertaste bei 'Hit the space bar to stop the autoboot process', Passwort `AhNf?d@ta06` oder `administrator`; geht keins, im laufenden Stock den Reset-Knopf (Nadel) gedrückt halten = Werksreset [geprüft: Wiki toh/aerohive/hiveap-330]
+- **Sichtbare Zeichen:** Mit `version` prüfen; bestätigt ist 'Aerohive Boot Loader v1.0.3.4d' (Build 12.01.2017) [geprüft: Wiki]
 - **Übertragung:** tftp-client-am-geraet: Server 192.168.1.101 (Commit), Dateiname frei
+- **Rechner braucht:** Cisco-Konsolenkabel mit RS232-Pegel am RJ45 'console'; USB-TTL-Adapter geht nicht und kann Schaden nehmen [geprüft: Wiki]. Terminal 9600 8N1. TFTP-Server mit fester IP 192.168.1.101 (steht im tftpboot-Befehl), DHCP-Server von Vorteil, sonst `setenv ipaddr 192.168.1.1` [geprüft: Wiki]. Für den U-Boot-Patch braucht das gebootete initramfs Internet (opkg kmod-mtd-rw) [geprüft: Wiki]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: RJ45 "console", Cisco-Konsolenkabel, RS232-Pegel (kein TTL-Adapter!), 9600 8N1
 - **Werkzeug/Spezial:** RS232-Konsolenkabel, TFTP/DHCP-Server
+- **Typenschild/Verwechslung:** HiveAP 350 ist dieselbe Hardware mit externen Antennen und nimmt dasselbe Image [geprüft: Pin p1020.mk DEVICE_ALT0, Wiki]
+- **Bedingung an die Herstellerfirmware:** Bestätigte Bootloader-Version v1.0.3.4d (md5 d84b45a2e8aca60d630fbd422efc6b39) [geprüft: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1020/openwrt-24.10.8-mpc85xx-p1020-aerohive_hiveap-330-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
@@ -5525,7 +6017,9 @@ Aerohive HiveAP 330 · mpc85xx-p1020 · K4
 Enterasys WS-AP3710i · mpc85xx-p1020 · K4
 
 - **Weg ab Werk:** Seriell, U-Boot anhalten (admin/new2day), boot_openwrt/bootcmd setzen + saveenv, initramfs per TFTP booten, dann sysupgrade -n per scp [geprüft]
+- **Taste und Zeitpunkt:** Keine Gerätetaste. Enter drücken, wenn zur Unterbrechung aufgefordert; Login admin/new2day [geprüft: Commit 16b01fb]. Gehen die Zugangsdaten nicht: Reset im Betrieb über 10 s halten, setzt auch die U-Boot-Zugangsdaten zurück [geprüft: Wiki toh/enterasys/ws-ap3710i]
 - **Übertragung:** tftp-client-am-geraet: Server 192.168.200.200, Datei 01C8A8C0.img
+- **Rechner braucht:** Cisco-Konsolenkabel am RJ45 neben dem Ethernet-Port, 115200 8N1 [geprüft: Commit]. TFTP-Server mit fester IP 192.168.200.200/24, Datei `01C8A8C0.img` (steht im tftpboot-Befehl; Name so übernehmen) [geprüft: Commit]. Alternative: Werkzeug extremeflash (Python, pipx; USB-Seriell-Adapter, Rechner-IP z. B. 192.168.1.70/24) erledigt Konsole und TFTP automatisch [geprüft: Wiki, github grische/extremeflash]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: RJ45, Cisco-Konsolenkabel, 115200 8N1
 - **Werkzeug/Spezial:** Konsolenkabel, TFTP-Server
@@ -5533,6 +6027,7 @@ Enterasys WS-AP3710i · mpc85xx-p1020 · K4
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Rückweg zur Herstellerfirmware:** Stock-bootcmd steht in der Variable boot_flash; vorher Backup der Partition "firmware" ziehen [geprüft: Commit]
 - **Gluon-RAMpe passt:** teilweise: wie WS-AP3715i
 - **Gluon-RAMpe-Rezept:** devices/enterasys-ws-ap3710i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` als `01C8A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell
 - **Quelle (OpenWrt-Commit):** 16b01fb1b9c99513c318109bef96a1a3545c57a0
@@ -5542,15 +6037,21 @@ Enterasys WS-AP3710i · mpc85xx-p1020 · K4
 
 Extreme Networks WS-AP3825i · mpc85xx-p1020 · K4
 
-- **Weg ab Werk:** Seriell, Autoboot anhalten (admin/new2day), boot_openwrt/bootcmd setzen + saveenv, ipaddr/serverip setzen, initramfs per tftpboot laden und `bootm` von Hand in Einzelschritten (fdt-Relocation umgehen), dann sysupgrade per scp. Nach dem Flashen bis 600 s ohne Ping (Neanderfunk-Notiz recovery-wege.md) [geprüft]
+- **Weg ab Werk:** Seriell, Autoboot anhalten (admin/new2day), boot_openwrt/bootcmd setzen + saveenv, ipaddr/serverip setzen, initramfs per tftpboot laden und `bootm` von Hand in Einzelschritten (fdt-Relocation umgehen), dann sysupgrade per scp. Nach dem Flashen bis 600 s ohne Ping (Neanderfunk-Notiz) [geprüft]
+- **Taste und Zeitpunkt:** Keine Gerätetaste. Enter drücken, sobald 'Scanning JFFS2 FS:' beginnt, bis der Prompt kommt; Login admin/new2day [geprüft: Commit 7e61482]. Gehen die Zugangsdaten nicht: normal booten lassen, dann Reset 5 s für Werkseinstellungen [geprüft: Wiki toh/extreme_networks/ws-ap3825i]
+- **Sichtbare Zeichen:** Nach dem sysupgrade blinkt die Power-LED bis zum Ende der ersten Einrichtung, dann Dauerlicht [geprüft: Wiki; laut Commit sind die LEDs unter OpenWrt sonst ohne Funktion]. Fehlerbild: Log endet mit 'ft_fixup_l2cache: FDT_ERR_NOTFOUND' = OpenWrt-Bug #17152, dann älteres initramfs (22.03.0) zum Booten nehmen [geprüft: Wiki]
 - **Übertragung:** tftp-client-am-geraet: Server frei (setenv serverip) oder DHCP+TFTP (dnsmasq)
+- **Rechner braucht:** Cisco-kompatibles RJ45-Konsolenkabel (RS232) neben der 12-V-Buchse, 115200 8N1 [geprüft: Commit]. DHCP+TFTP-Server (z. B. dnsmasq, unter Windows tftpd64) oder IPs per setenv frei [geprüft: Commit, Wiki]. Dateiname steht im Befehl; Wiki nennt `initramfs.bin` [geprüft: Wiki]. Für TFTP an LAN2, für das sysupgrade an LAN1 [geprüft: Wiki]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: RJ45 Cisco-kompatibel, RS232 (Wiki: "RJ45-RS232"), 115200 8N1
 - **Werkzeug/Spezial:** Konsolenkabel, TFTP-Server
+- **Typenschild/Verwechslung:** Gehäuse identisch mit Enterasys WS-AP3725i und Adtran BSAP-2030; ob die dasselbe Image nehmen, ist offen [geprüft: Commit]. Wiki-Seite gilt auch für WS-AP3825E [geprüft: Wiki-Titel]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1020/openwrt-24.10.8-mpc85xx-p1020-extreme-networks_ws-ap3825i-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Dauer:** Erster Start nach dem sysupgrade bis ca. 360 s (Wiki-Log), nicht Strom ziehen solange die Power-LED blinkt [geprüft: Wiki]
+- **Rückweg zur Herstellerfirmware:** Stock-bootcmd in Variable boot_flash; vorher Backup der Partition "firmware" [geprüft: Commit]
 - **Gluon-RAMpe passt:** teilweise: wie WS-AP3715i
 - **Gluon-RAMpe-Rezept:** devices/extreme-networks-ws-ap3825i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (FIT) per U-Boot-TFTP; `bootcmd` bleibt seriell
 - **Quelle (OpenWrt-Commit):** 7e614820a89208c4e91a3a5f9de07a5402accdaa
@@ -5561,10 +6062,14 @@ Extreme Networks WS-AP3825i · mpc85xx-p1020 · K4
 TP-Link EAP620 HD v1 · qualcommax-ipq807x · K4
 
 - **Weg ab Werk:** UART (JP1 bestücken, R58 und R62 brücken), U-Boot mit Ctrl+B anhalten, initramfs per TFTP nach 0x44000000, bootm, `sysupgrade -n` [geprüft]; ohne UART: SSH in Stock, `cliclientd stopcs`, OpenWrt-25.12-`web-ui-factory.bin` in der Stock-UI, danach Gluon-sysupgrade [abgeleitet: OpenWrt 8a15a75e9414bbb839ac457701b041454e89bbc4]
+- **Taste und Zeitpunkt:** Beim Einschalten Ctrl+B im Terminal gedrückt halten, bis der Autoboot stoppt; vor den Befehlen ggf. Ctrl+C und Enter gegen unsichtbare Zeichen im Puffer [geprüft: OpenWrt-Commit 4b6e7da (GitHub)]
 - **Übertragung:** tftp-client: serverip/ipaddr frei, Datei openwrt-qualcommax-ipq807x-tplink_eap620hd-v1-initramfs-uImage.itb; ohne UART: ssh + webui-upload (Dateiname unter 63 Zeichen)
+- **Rechner braucht:** UART-Weg: 4-Pin-Header an JP1 einlöten, Pads R58 und R62 brücken, USB-TTL 3,3 V an Pin 1 TX, 2 RX, 3 GND (TX/RX kreuzen), 115200 8N1; TFTP-Server im selben Subnetz, IPs per setenv frei, Datei steht im Befehl; sysupgrade per `scp -O` [geprüft: Commit 4b6e7da]. Weg ohne UART: SSH-Client mit `-o hostkeyalgorithms=ssh-rsa`, web-ui-factory-Datei auf unter 63 Zeichen mit Endung .bin umbenennen [geprüft: Commit 8a15a75 (GitHub)]
 - **seriell nötig:** ja (Weg mit OpenWrt 24.10; mit OpenWrt 25.12 als Zwischenschritt: nein)
 - **Gehäuse öffnen:** ja (JP1 löten, R58/R62 brücken; mit OpenWrt 25.12 als Zwischenschritt: nein)
 - **Werkzeug/Spezial:** OpenWrt 25.12 als Zwischenschritt
+- **Typenschild/Verwechslung:** EAP620 HD v3 ist ein anderes Gerät [geprüft: ToH]
+- **Bedingung an die Herstellerfirmware:** Weg ohne UART: Gerät erst in der Hersteller-Weboberfläche einrichten und unter Management > SSH 'SSH Login' aktivieren, per SSH `cliclientd stopcs` ausführen, dann System > Firmware Update [geprüft: Commit 8a15a75]
 - **initramfs-Link:** [25.12.5: initramfs-uImage.itb](https://downloads.openwrt.org/releases/25.12.5/targets/qualcommax/ipq807x/openwrt-25.12.5-qualcommax-ipq807x-tplink_eap620hd-v1-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** [25.12.5: squashfs-web-ui-factory.bin](https://downloads.openwrt.org/releases/25.12.5/targets/qualcommax/ipq807x/openwrt-25.12.5-qualcommax-ipq807x-tplink_eap620hd-v1-squashfs-web-ui-factory.bin)
 - **Stock-Teile:** -
@@ -5579,14 +6084,18 @@ TP-Link EAP620 HD v1 · qualcommax-ipq807x · K4
 Xiaomi Mi WiFi Range Extender AC1200 RA75 (Gluon: broken, "Only serial flash possible") · ramips-mt76x8 · K4
 
 - **Weg ab Werk:** Kein Web-UI; seriell im U-Boot-Menü Option 2, sysupgrade per TFTP [geprüft]
+- **Taste und Zeitpunkt:** Keine Gerätetaste. Nach dem Einschalten im U-Boot-Menü Option 2 ('Load system code then write to Flash via TFTP') wählen [geprüft: Commit f204c81; Menütext Wiki]
 - **Übertragung:** tftp-client-am-geraet (IPs im Menü)
+- **Rechner braucht:** Gehäuse öffnen (eine Schraube unter dem Barcode-Aufkleber, rechts), UART-Header einlöten (Platine beschriftet), USB-TTL 3,3 V, 115200 8N1 [geprüft: Wiki, Commit]. TFTP-Server, IPs im Menü eingeben [geprüft: Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (UART-Header unbestückt, beschriftet)
 - **Werkzeug/Spezial:** USB-TTL-Adapter, TFTP-Server
+- **Typenschild/Verwechslung:** Variante RC04 hat keine UART-Beschriftung [geprüft: Wiki]. Die Firmware der Mi Router 4A 100M (nicht -intl) bootet auch, dann gibt es nur WAN [geprüft: Wiki, ToH]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-xiaomi_mi-ra75-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
 - **Stock-Teile:** -
 - **RAM:** 64 MB
+- **Rückweg zur Herstellerfirmware:** Keiner: Stock-Firmware nicht öffentlich verfügbar [geprüft: Commit, Wiki]
 - **Gluon-RAMpe passt:** nein
 - **Quelle (OpenWrt-Commit):** f204c812e996d51f36972d5f4414ada3d4588c93
 
@@ -5595,10 +6104,14 @@ Xiaomi Mi WiFi Range Extender AC1200 RA75 (Gluon: broken, "Only serial flash pos
 Xiaomi Mi Router 4A 100M · ramips-mt76x8 · K4
 
 - **Weg ab Werk:** Seriell: im U-Boot-Menü Option 2 ("write to Flash via TFTP"), Gerät 192.168.1.1, Server 192.168.1.2, Datei test.bin = sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** Keine Gerätetaste. Nach dem Einschalten im Menü Option 2 wählen. Kommt kein Menü: Strom ziehen, sobald 'Erasing SPI Flash...' / 'raspi_erase: offs:20000 len:10000' erscheint, wieder einstecken [geprüft: Commit 5ff5c9b]
 - **Übertragung:** tftp-client-am-geraet: Server 192.168.1.2, Datei test.bin, LAN1
+- **Rechner braucht:** USB-TTL 3,3 V an die beschrifteten UART-Pads: Platinen-TX an Adapter-RX, RX an TX, GND; 3,3 V nicht verbinden [geprüft: Wiki]; 115200 8N1. Rechner an LAN1, feste IP 192.168.1.2/24, TFTP-Server; im Menü Gerät 192.168.1.1, Server 192.168.1.2, Datei `test.bin` (= sysupgrade) [geprüft: Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (UART auf der Platine, beschriftet, 115200)
 - **Werkzeug/Spezial:** USB-TTL-Adapter, TFTP-Server
+- **Typenschild/Verwechslung:** Nur chinesische Version: englisches Typenschild + englische Firmware deutet auf die 'International' R4AC mit anderem Flash-Layout und eigenem Image hin; die 4A Gigabit Edition ist ein anderes Gerät [geprüft: Wiki, ToH]
+- **Bedingung an die Herstellerfirmware:** Für den seriellen Weg keine. Der Wiki-Weg ohne UART (Xiaomi-TFTP-Recovery mit Stock 2.18.28, dann OpenWRTInvasion) ist nötig, weil Stock 3.xx ein anderes Layout hat [geprüft: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-xiaomi_mi-router-4a-100m-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
 - **Stock-Teile:** -
@@ -5616,14 +6129,19 @@ Xiaomi Mi Router 4A 100M · ramips-mt76x8 · K4
 Arcadyan VGV7510KW22 / o2 Box 6431 (NOR-Image) · lantiq-xrx200 · K5
 
 - **Weg ab Werk:** Bootloader ersetzen: brnboot-Recovery-Web (Reset beim Einschalten ~5 s, http://192.168.1.1) oder seriell U-Boot in den RAM, dann OpenWrt-U-Boot (u-boot-vgv7510kw22_nor/u-boot.bin) per TFTP in den NOR, dann sysupgrade per TFTP; das nor-Image setzt OpenWrt-U-Boot voraus [abgeleitet: Wiki; Commit ohne Text]
+- **Taste und Zeitpunkt:** Recovery-Web (brnboot): Gerät aus, Reset halten, einschalten, Reset ca. 5 s halten bis die Power-LED rot wird [geprüft: Wiki toh/arcadyan/vgv7510kw22]. Seriell (brnboot): sofort nach dem Einschalten dreimal Leertaste, dann `!` für das Administrator-Menü [geprüft: Wiki]
+- **Sichtbare Zeichen:** Power-LED rot = brnboot-Recovery-Web erreichbar [geprüft: Wiki]. Beim Schreiben des OpenWrt-U-Boot muss 'Copy to Flash... 10....9....1....done' erscheinen, sonst von Hand schreiben [geprüft: Wiki]
 - **Übertragung:** recovery-web (brnboot, 192.168.1.1) + tftp-client-am-geraet
+- **Rechner braucht:** USB-TTL 3,3 V an die Konsolen-Pins hinter dem zweiten Lüftungsschlitz unter der rechten unteren Ecke des Aufklebers: Pin 1 rechts (Pfeil) = VCC nicht anschließen, 2 TX, 3 RX, 4 GND; 115200 8N1 [geprüft: Wiki]. Für U-Boot ins RAM über brnboot: `sx` aus lrzsz [geprüft: Wiki]. TFTP-Server für u-boot.bin und sysupgrade; Recovery-Web unter http://192.168.1.1 [geprüft: Wiki]
 - **seriell nötig:** teilweise: kurzer Weg seriell, langer Weg ohne (brnboot-Web + 16-MB-Vollimage)
 - **Gehäuse öffnen:** nein: Konsolen-Pins durch einen Lüftungsschlitz erreichbar (Wiki), 115200 8N1
 - **Werkzeug/Spezial:** OpenWrt-U-Boot, TFTP-Server
+- **Typenschild/Verwechslung:** o2 Box 6431 = Arcadyan VGV7510KW22 [geprüft: Commit-Titel]. Ein mit dem brn-Image installiertes Gerät nimmt kein nor-sysupgrade; Gluon braucht das nor-Layout mit OpenWrt-U-Boot [geprüft: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/lantiq/xrx200/openwrt-24.10.8-lantiq-xrx200-arcadyan_vgv7510kw22-nor-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** [u-boot.bin](https://downloads.openwrt.org/releases/24.10.8/targets/lantiq/xrx200/u-boot-vgv7510kw22_nor/u-boot.bin) (Verzeichnis 200)
 - **Stock-Teile:** board_config des Geräts ins 16-MB-Vollimage (Wiki-Weg ohne seriell)
 - **RAM:** 64 MB
+- **Rückweg zur Herstellerfirmware:** Vorher Backup aller Flash-Bereiche (U-Boot `tftpput` oder aus einem temporären OpenWrt), Rückspielen per U-Boot laut Wiki [geprüft: Wiki]
 - **Gluon-RAMpe passt:** nein: Bootloader-Tausch nötig
 - **Quelle (OpenWrt-Commit):** ca1db6b5ce5675d88b45b23f576e8c59f7f4fc48 (ohne Installationstext) + Wiki toh:arcadyan:vgv7510kw22
 - **Detail-Anleitung:** https://forum.openwrt.org/t/installing-lede-u-boot-via-brnboot-web-interface-without-rs232/9857/6
@@ -5637,14 +6155,20 @@ Arcadyan VGV7510KW22 / o2 Box 6431 (NOR-Image) · lantiq-xrx200 · K5
 Aruba AP-324/AP-325, Siemens Scalance W1750D · ipq806x-generic · K5
 
 - **Weg ab Werk:** Stock-APBoot signiert-prüfend: gepatchtes APBoot (`apboot.mbn`) per `netget` laden, `sf erase/write 0x220000 0x100000`; NAND löschen, UBI `ubifs` (1 LEB) + `rootfs_data` anlegen; initramfs `.ari` per tftpboot; sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** Kein Knopf nötig. Stock-APBoot im Terminal anhalten (Enter bei 'Hit <Enter> to stop autoboot' [abgeleitet: Aruba-APBoot wie AP-303]); `sf` erst nach dem Befehl `diag` sichtbar [geprüft: Commit d2a7502 (GitHub)]
+- **Sichtbare Zeichen:** Den `sf write` des Bootloaders nie unterbrechen (Flashtool meldet 'DO NOT interrupt') [geprüft: README maurerle/ap325-flashtool]. Nach dem Bootloader-Tausch spricht die Konsole 115200 statt 9600 [geprüft: Commit]
 - **Übertragung:** tftp-client (APBoot netget/tftpboot): Server per `setenv serverip` frei, Dateien openwrt-ipq806x-generic-aruba_ap-32x-apboot.mbn und …-initramfs.ari
+- **Rechner braucht:** Cisco-Konsolenkabel (RJ45, Cisco-Pinout) am USB-Seriell-Adapter; Stock-APBoot 9600, gepatchtes APBoot 115200 [geprüft: Commit]. TFTP-Server, serverip frei per setenv, Dateien `openwrt-ipq806x-generic-aruba_ap-32x-apboot.mbn` und `...-initramfs.ari` (Namen stehen im Befehl) [geprüft: Commit]. Alternative: ap325-flashtool (Python 3.11+, pyserial, root bzw. CAP_NET_ADMIN, eingebauter TFTP-Server, erkennt Baudrate und unterbricht selbst; Beispiel Host-IP 192.168.1.1/24) [geprüft: github maurerle/ap325-flashtool]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: RJ45 Cisco-Pinout, 9600 (Stock-APBoot) bzw. 115200 (gepatcht) [geprüft]
 - **Werkzeug/Spezial:** gepatchtes APBoot (github lukasstockner/ap325-apboot-openwrt; OpenWrt-Paket apboot-aruba-ipq806x, bei uns nicht gebaut)
+- **Typenschild/Verwechslung:** AP-324 (externe Antennen), AP-325 (interne Antennen) und Siemens Scalance W1750D haben dieselbe Platine und dasselbe Image [geprüft: Commit]
+- **Bedingung an die Herstellerfirmware:** Stock-APBoot prüft Signaturen, darum Bootloader-Tausch Pflicht; gepatchtes APBoot getestet auf 'APBoot 1.5.5.9 (build 58433)' [geprüft: Commit; README lukasstockner/ap325-apboot-openwrt]
 - **initramfs-Link:** [snapshot: initramfs.ari](https://downloads.openwrt.org/snapshots/targets/ipq806x/generic/openwrt-ipq806x-generic-aruba_ap-32x-initramfs.ari)
 - **Factory-/Stock-Image-Link:** [snapshot: apboot.mbn](https://downloads.openwrt.org/snapshots/targets/ipq806x/generic/openwrt-ipq806x-generic-aruba_ap-32x-apboot.mbn)
 - **Stock-Teile:** - (Bootloader aus OpenWrt-Paket; Backup aos0/aos1 für den Rückweg)
 - **RAM:** 512 MB
+- **Rückweg zur Herstellerfirmware:** Gepatchtes APBoot bleibt stock-kompatibel: NAND löschen, APBoot legt die Partitionen neu an, Backup von aos0/aos1 zurückspielen [geprüft: Commit]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe müsste das Aruba-`.ari`-Format (Vendor-Header) bekommen, Gluon baut für ipq806x kein initramfs; Bootloader-Tausch und UBI-Umbau bleiben seriell. OpenWrt-Artefakte nur als Snapshot (in keinem Release bis 25.12.5) [geprüft]
 - **Gluon-RAMpe-Rezept:** devices/aruba-ap-32x.sh (Rezept-Entwurf, nicht gebaut): Backport aus gluon-patches-hardware (`RAMPE_HW_PATCHES`); `-initramfs.ari` per APBoot-TFTP; APBoot-Tausch und NAND-Umbau bleiben seriell
 - **Quelle (OpenWrt-Commit):** OpenWrt d2a75029a5f8e54e1fd2f252f73b9a430a030116 (25.12: 65f01eb3576f69233e8b6c67d85ffd38fde47a1a); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
@@ -5659,10 +6183,15 @@ Aruba AP-324/AP-325, Siemens Scalance W1750D · ipq806x-generic · K5
 Aruba Instant On AP11 (Alias von aruba-ap-303) · ipq40xx-generic · K5
 
 - **Weg ab Werk:** apboot-Environment gesperrt: entsperrtes apboot aus einem gepatchten SPI-Dump per dd schneiden (bs=983040 skip=1 count=1), per `netget` laden, `sf protect off; sf erase/write 0xf0000 0xf0000`, reset; danach wie AP-303 [geprüft: Neanderfunk-Notiz zum AP11, 2024]
+- **Taste und Zeitpunkt:** Keine Gerätetaste. Enter bei 'Hit <Enter> to stop autoboot' (Countdown ca. 2 s) [geprüft: Wiki-Bootlog AP11, github Sc4ndium90/aruba-ap11-openwrt]
+- **Sichtbare Zeichen:** Gesperrtes apboot erkennbar am Bootlog: 'APBoot 2.5.0.2', 'Image is signed; verifying checksum' [geprüft: Wiki toh/aruba/ap-303]. Nach dem Laden des `.ari` ist 'Invalid image format version' normal [geprüft: Wiki]
 - **Übertragung:** tftp-client (netget): Server 192.168.1.66, Gerät 192.168.1.6, Dateien apboot-unlocked.bin und ipq40xx.ari
+- **Rechner braucht:** USB-TTL-Adapter 3,3 V an Micro-USB-Selbstbaukabel, nur GND, RX, TX, nie VCC [geprüft: Sc4ndium90-README]. Baudrate: 9600 laut AP-303-Commit, 115200 laut Sc4ndium90-README (offen). TFTP-Server mit fester IP 192.168.1.66, Gerät 192.168.1.6; Dateien `apboot-unlocked.bin` (sha256 69e45b04...) und `ipq40xx.ari`; danach sysupgrade per scp als `gup.bin` [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: Micro-USB als UART-Stecker wie AP-303 [abgeleitet: Alias, gleiche Platine]
 - **Werkzeug/Spezial:** gepatchter SPI-Dump eines Dritten (AP11-2023-spi-f061c0c4c850.patched-alex.bin, sha256 4ca6d503…)
+- **Typenschild/Verwechslung:** Instant-On-Variante des AP-303, Image aruba_ap-303 [geprüft: Wiki, Gluon-Alias]. Nicht mit AP11D (Variante des AP-303H) verwechseln [abgeleitet]
+- **Bedingung an die Herstellerfirmware:** Instant-On-apboot bootet nur signierte Images; vor der Installation muss ein entsperrtes apboot per `sf protect off; sf erase/write 0xf0000 0xf0000` geschrieben werden [geprüft: Neanderfunk-Notiz; Sc4ndium90-README]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** apboot-Teil aus einem fremden, gepatchten Aruba-SPI-Dump (kein Hersteller-Download)
@@ -5681,10 +6210,14 @@ Aruba Instant On AP11 (Alias von aruba-ap-303) · ipq40xx-generic · K5
 ASUS Lyra MAP-AC2200 · ipq40xx-generic · K1
 
 - **Weg ab Werk:** SSH in die Stock-Firmware (Zugang wie Web-UI), OpenWrt-initramfs nach /tmp, `mtd-write -d linux -i …`, Neustart, dann sysupgrade [geprüft]
+- **Sichtbare Zeichen:** Nach dem Neustart in OpenWrt: LED 'atmet' in mehreren Farben, blinkt blau, leuchtet dauerhaft blau, wenn bereit [geprüft: Wiki toh/asus/lyra_map-ac2200]
 - **Übertragung:** ssh/scp
+- **Rechner braucht:** SSH-Client und scp; SSH vorher in der Hersteller-Oberfläche einschalten (Port 22), Zugangsdaten wie Weboberfläche [geprüft: Commit 9ad3967, Wiki]. Vor `mtd-write` noch `mtd-unlock -d linux` [geprüft: Wiki]. Danach Kabel an den Port neben der Strombuchse (LAN), OpenWrt unter 192.168.1.1 [geprüft: Wiki, Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Beide Ports gleich beschriftet: LAN ist der neben der Strombuchse [geprüft: Commit]. Lyra Mini (MAP-AC1300) ist ein anderes Gerät [geprüft: ToH]
+- **Bedingung an die Herstellerfirmware:** Vorher auf Werkseinstellungen zurücksetzen, falls schon eingerichtet [geprüft: Wiki]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-asus_map-ac2200-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
@@ -5703,14 +6236,20 @@ ASUS Lyra MAP-AC2200 · ipq40xx-generic · K1
 ASUS RT-AX52 · mediatek-filogic · K1
 
 - **Weg ab Werk:** Stock-Web-UI (Administration > Firmware Upgrade) nimmt das OpenWrt-`initramfs.trx`, danach `sysupgrade -n` [geprüft]
+- **Taste und Zeitpunkt:** Weboberflächen-Weg: keine Taste. ASUS Firmware Restoration (für Downgrade): Reset beim Einschalten halten, bis die LED langsam blinkt [geprüft: Wiki toh/asus/rt-ax52]. Seriell: '4' drücken, wenn zur Unterbrechung aufgefordert [geprüft: Commit 99708cc]
+- **Sichtbare Zeichen:** Nimmt die Stock-Firmware das TRX nicht, startet das Gerät wieder in die Hersteller-Firmware [geprüft: Wiki]
 - **Übertragung:** webui-upload: Gerät 192.168.50.1 (DHCP), Datei `…-initramfs.trx`; Rückweg/Notfall tftp-client: Server 192.168.1.70, Datei rtax52.bin (seriell)
+- **Rechner braucht:** Rechner per DHCP an einen gelben LAN-Port, Browser auf http://192.168.50.1 oder www.asusrouter.com [geprüft: Commit, Wiki]. Für ein Downgrade das ASUS-Restoration-Tool (Windows) oder unter Linux Nachbau per socat/atftp (Rechner 192.168.1.10, Ziel 192.168.1.49, Name ASUSSPACELINK) [geprüft: Wiki]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** RT-AX52 Pro steht auf derselben Wiki-Seite; ob es dasselbe Image nimmt, ist nicht belegt [geprüft: ToH]
+- **Bedingung an die Herstellerfirmware:** Nur auf unbenutztem oder zurückgesetztem Gerät; wird das initramfs.trx abgelehnt, per ASUS Firmware Restoration auf die älteste Hersteller-Firmware zurückgehen und erneut versuchen [geprüft: Wiki]
 - **initramfs-Link:** [24.10.8: initramfs.trx](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-asus_rt-ax52-initramfs.trx)<br>[24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-asus_rt-ax52-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Rückweg zur Herstellerfirmware:** Paket facinstall unter OpenWrt und ASUS-TRX flashen, oder seriell per TFTP (RT-AX52.trx, Menüpunkt 2) [geprüft: Wiki, Commit]
 - **Gluon-RAMpe passt:** ja: Hersteller-UI nimmt ein initramfs im ASUS-TRX; RAMpe-Rezept muss das ARTIFACT `initramfs.trx` einsammeln [abgeleitet]
 - **Gluon-RAMpe-Rezept:** devices/asus-rt-ax52.sh (Rezept-Entwurf, nicht gebaut): `-initramfs.trx` (OpenWrt-ARTIFACT) für die ASUS-Web-UI
 - **Quelle (OpenWrt-Commit):** OpenWrt 99708cc16dbd7c93db80698fbe5c69f07995a3e6
@@ -5725,10 +6264,13 @@ ASUS RT-AX52 · mediatek-filogic · K1
 ASUS RT-AX59U · mediatek-filogic · K2
 
 - **Weg ab Werk:** Stock-Web-UI (192.168.50.1) mit einem Fremd-"transit TRX" von Google Drive oder UART + TFTP-initramfs [geprüft]
+- **Taste und Zeitpunkt:** Weboberflächen-Weg: keine Taste. Seriell: '4' drücken, wenn zur Unterbrechung aufgefordert [geprüft: Commit 782eb05]
 - **Übertragung:** webui-upload (Transit-TRX); sonst tftp-client: Server 192.168.1.70, Gerät 192.168.1.1, Datei rtax59u.bin
+- **Rechner braucht:** Weboberflächen-Weg: Browser, http://www.asusrouter.com/Advanced_FirmwareUpgrade_Content.asp (192.168.50.1) [geprüft: Wiki toh/asus/rt-ax59u]. Seriell-Weg: USB-TTL 3,3 V (VCC nicht anschließen), 115200 8N1, Rechner fest 192.168.1.70/24, TFTP-Datei `rtax59u.bin` [geprüft: Commit]
 - **seriell nötig:** nein (nur für den seriellen TFTP-Weg: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen TFTP-Weg: ja, Pinout auf der Platine) [abgeleitet]
 - **Werkzeug/Spezial:** Transit-TRX eines Dritten (Google-Drive-Ordner im Commit, Herkunft unklar)
+- **Bedingung an die Herstellerfirmware:** Vorher auf Werkseinstellungen zurücksetzen [geprüft: Wiki]. Das Transit-TRX ist laut Wiki 'unofficial image, use with caution' [geprüft: Wiki]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-asus_rt-ax59u-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
@@ -5748,13 +6290,16 @@ Buffalo WZR-HP-G450H/WZR-450HP · ath79-generic · K0+
 
 - **Weg ab Werk:** factory über die versteckte Seite http://192.168.11.1/cgi-bin/cgi?req=frm&frm=py-db/firmup.html (bufpy/otdpopy) [geprüft]
 - **Übertragung:** webui-upload (versteckte Firmware-Seite)
+- **Rechner braucht:** Browser, Rechner an einen LAN-Port, Stock-IP 192.168.11.1 [geprüft: Commit 1df1ea4]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** WZR-450HP ist dieselbe Hardware wie WZR-HP-G450H [geprüft: Commit]. WZR-450HP2 ist ein anderes Gerät mit eigener Wiki-Seite [geprüft: ToH]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-buffalo_wzr-hp-g450h-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-buffalo_wzr-hp-g450h-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit 1df1ea4]
+- **Dauer:** Ca. 200 s für das Flashen, so lange nicht Strom ziehen [geprüft: Commit; 'nicht Strom ziehen' abgeleitet]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 1df1ea4d7e8b6ae3351780ed58800ccd9edd4c27 (Anleitung); 53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target) [geprüft]
 
@@ -5767,7 +6312,10 @@ Buffalo WZR-HP-G450H/WZR-450HP · ath79-generic · K0+
 COMFAST CF-EW71 v2 · ath79-generic · K1d
 
 - **Weg ab Werk:** Stock-Firmware ist OpenWrt-basiert und nimmt das sysupgrade; alternativ U-Boot-Recovery-Web (Reset ~5 s beim Einstecken) [geprüft]
+- **Taste und Zeitpunkt:** Recovery-Web: Reset ca. 5 s gedrückt halten, während man den Strom einsteckt [geprüft: Commit ee3a6ad]
+- **Sichtbare Zeichen:** Recovery erreicht: die LEDs blinken schnell, Gerät unter 192.168.1.1 [geprüft: Commit]
 - **Übertragung:** webui-upload (Stock) oder recovery-web: Gerät 192.168.1.1
+- **Rechner braucht:** Browser; Rechner mit fester IP im Netz 192.168.1.0/24 [abgeleitet: Recovery auf 192.168.1.1]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Stock/U-Boot-Web nimmt sysupgrade direkt
@@ -5787,10 +6335,15 @@ COMFAST CF-EW71 v2 · ath79-generic · K1d
 D-Link DIR-825 B1 · ath79-generic · offen
 
 - **Weg ab Werk:** Weg ab Werk im ath79-Commit nicht beschrieben; factory-Rezept seit 4309be6bcb3d3cbf8fa5ae7eddb1520737542c6c abgeschaltet ("max image sizes too small", FACTORY_SIZE 6144k) [geprüft]; zu prüfen, ob die D-Link-Recovery ein initramfs annimmt (OpenWrt-initramfs 24.10.8: 6145 KB, also knapp über 6144k)
+- **Taste und Zeitpunkt:** D-Link-Recovery: beim Einschalten Reset gedrückt halten, bis die Power-LED orange blinkt (laut Wiki 'usually takes around 45 seconds') [geprüft: Wiki toh/d-link/dir-825]
+- **Sichtbare Zeichen:** Recovery: Seite zeigt 'Device is Upgrading the Firmware' in Blau mit Prozent in Rot (mit ungeeignetem Browser nicht); Power-LED blinkt orange beim Booten, danach erreichbar [geprüft: Wiki]
 - **Übertragung:** ?
+- **Rechner braucht:** Feste IP 192.168.0.100/24, http://192.168.0.1; die Recovery geht nur mit alten Browsern: echter Windows-Rechner mit IE7, IE10 im IE8-Modus, Firefox 13 portable (Windows 11) oder IE7 unter Wine mit auf 100 Mbit/s gesetzter Netzwerkkarte [geprüft: Wiki]. Danach IP auf DHCP zurückstellen, OpenWrt vergibt 192.168.1.x [geprüft: Wiki]
 - **seriell nötig:** ?
 - **Gehäuse öffnen:** ?
 - **Werkzeug/Spezial:** ?
+- **Typenschild/Verwechslung:** B2 unterscheidet sich nur in der Beschriftung von B1 (Firmware meldet B1) [geprüft: Wiki]. C1 ist ein anderes Image, D1/E1 laut Wiki nicht unterstützt [geprüft: Wiki]
+- **Bedingung an die Herstellerfirmware:** Ab Stock 2.05WW Build 05Beta01 nimmt die normale Update-Seite kein OpenWrt mehr, dann nur Recovery. Mit 2.05EU schwierig, Downgrade auf 2.04EU half. B1 mit 201EUB15 braucht eine angepasste Firmware-Kennung im Image. Kein funktionierendes 24.10-factory: Wiki nimmt OpenWrt-23.05.5-factory und dann sysupgrade [geprüft: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-dlink_dir-825-b1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
@@ -5807,14 +6360,20 @@ D-Link DIR-825 B1 · ath79-generic · offen
 devolo dLAN pro 1200+ WiFi ac (broken) · ath79-generic · K1d
 
 - **Weg ab Werk:** TFTP-Recovery des Bootloaders: Reset beim Einschalten ~15 s halten, das Gerät holt sich das umbenannte sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** Gerät aus, Reset gedrückt halten, einschalten, Reset ca. 15 s weiter halten [geprüft: Commit 624b85e]; Wiki: loslassen, wenn die Home/WiFi-LEDs einige Male rot/weiß geblinkt haben und dann an bleiben [geprüft: Wiki toh/devolo/dlan_pro_1200_wifi_ac]
+- **Sichtbare Zeichen:** Recovery erreicht: Home/WiFi-LEDs blinken rot/weiß und bleiben an; Übertragung läuft, bis das rot/weiße Blinken aufhört, dann bootet das Gerät [geprüft: Wiki]
 - **Übertragung:** tftp-client-am-geraet: Server 192.168.0.100, Datei `uploadfile` (= sysupgrade umbenannt)
+- **Rechner braucht:** Rechner an einen LAN-Port, feste IP 192.168.0.100/24, TFTP-Server mit dem umbenannten sysupgrade als Datei genau `uploadfile` (ohne Endung) [geprüft: Commit, Wiki]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Hersteller-TFTP-Recovery nimmt sysupgrade
+- **Typenschild/Verwechslung:** devolo Magic 2 WiFi hat dieselbe Platine ohne den PLC-Teil, eigenes Image [geprüft: Commit]
+- **Bedingung an die Herstellerfirmware:** Für den TFTP-Weg keine. Alternativ: Stock 'dLAN pro 1200+ WiFi ac 1.1.1' nimmt OpenWrt über die Weboberfläche; mit 'delos' ab 3.0.0 per SSH `sysupgrade -F -n` [geprüft: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-devolo_dlan-pro-1200plus-ac-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** Erster Start 1-2 min [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein: Recovery nimmt das sysupgrade direkt (für das Gluon-sysupgrade [abgeleitet])
 - **Quelle (OpenWrt-Commit):** 624b85e646328c5f4ff271e6cf0edc5923d40c67 [geprüft]
 
@@ -5827,14 +6386,20 @@ devolo dLAN pro 1200+ WiFi ac (broken) · ath79-generic · K1d
 Genexis/Inteno Pulse EX400 · ramips-mt7621 · K1
 
 - **Weg ab Werk:** Stock-Web-UI oder U-Boot-Recovery (Reset beim Einschalten, Update-LED grün, Webserver 192.168.1.1) nimmt das OpenWrt-factory.bin; das enthält ein initramfs; danach sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** U-Boot-Recovery: Reset beim Einschalten gedrückt halten [geprüft: Commit dd0c283]; warten, bis Status-LED orange und WPS-LED grün sind [geprüft: Freifunk-Darmstadt-Wiki Genexis-EX400]
+- **Sichtbare Zeichen:** Recovery bereit: laut Commit 'Update'-LED dauerhaft grün (DNA-Variante), bei Genexis/Inteno Status orange + WPS grün [geprüft: Commit, Darmstadt-Wiki]. Nach dem Upload erscheint eine Bestätigungsseite [geprüft: Darmstadt-Wiki]. Meldung 'Command failed: ubus call system sysupgrade ... Connection failed' beim sysupgrade kann ignoriert werden [geprüft: Darmstadt-Wiki]
 - **Übertragung:** webui-upload; recovery-web: Gerät 192.168.1.1
+- **Rechner braucht:** Feste IP im Netz 192.168.1.0/24 (nicht .1), Rechner an LAN, Browser auf http://192.168.1.1 [geprüft: Darmstadt-Wiki]. Für SSH im Stock muss SSH evtl. erst für LAN freigeschaltet werden (ab Werk nur WAN) [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Inteno Pulse EX400 und Genexis Pulse EX400 sind gleich (Umfirmierung); die DNA-Variante (DNA Valokuitu Plus EX400, LED 'software-update' statt WPS) hat ein eigenes Image [geprüft: Commit]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-genexis_pulse-ex400-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** [factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-genexis_pulse-ex400-factory.bin) (200)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Dauer:** OpenWrt-Start nach dem factory ca. 2 min [geprüft: Darmstadt-Wiki]
+- **Rückweg zur Herstellerfirmware:** Im OpenWrt-initramfs UBI-Volumes zurückbauen (rootfs_0/rootfs_1 neu anlegen), dann Hersteller-Firmware über die U-Boot-Recovery [geprüft: Commit]
 - **Gluon-RAMpe passt:** ja: factory.bin = Kette `append-image-stage initramfs-kernel.bin`, `inteno-bootfs`, `inteno-y3-header EX400` (mt7621.mk); Gluon baut es nur nicht, weil das Rezept CONFIG_TARGET_ROOTFS_INITRAMFS braucht. Eine Gluon-RAMpe-Bau ergibt direkt eine Gluon-RAMpe-factory [abgeleitet aus mk]
 - **Gluon-RAMpe-Rezept:** devices/genexis-pulse-ex400.sh (Rezept-Entwurf, nicht gebaut): `-factory.bin` (initramfs in UBIFS-bootfs, Inteno-Kopf); bootfs höchstens etwa 11.6 MiB
 - **Quelle (OpenWrt-Commit):** dd0c2839a81bb3c5067be99b02ec5c0adff93ac6
@@ -5849,14 +6414,20 @@ Genexis/Inteno Pulse EX400 · ramips-mt7621 · K1
 Google WiFi (Gale) · ipq40xx-chromium · K5
 
 - **Weg ab Werk:** Chrome-OS-Developer-Mode (laut Gluon nur mit geöffnetem Gehäuse), Boot von USB-Stick, Gluon-factory (GPT-Abbild) auf die eMMC [geprüft: Commit "requires booting from USB storage", Gluon-Kommentar]
+- **Taste und Zeitpunkt:** Reset (vorne) halten, Strom über den USB-C-Hub anschließen; nach ca. 16 s blinkt die LED orange: loslassen; nach ca. 3 s pulsiert sie orange/amber: internen Taster SW7 drücken; Gerät blinkt lila und startet neu; wenn es wieder lila blinkt, SW7 erneut drücken = Start vom USB-Stick [geprüft: Wiki toh/google/wifi]
+- **Sichtbare Zeichen:** OpenWrt vom Stick: LED blau schnell, dann langsam, dann dauerhaft blau. Lila blinkt weiter nach SW7 = Stick nicht erkannt; LED aus und bleibt aus = Stick falsch beschrieben (dd statt Recovery Utility); blau schnell/langsam und dann zurück zu lila = Google-Firmware passt nicht, erst Google-Recovery [geprüft: Wiki]
 - **Übertragung:** usb
+- **Rechner braucht:** USB-C-Hub mit Power Delivery (getestet: Orico PW11-6PR, UGREEN CM478; Apple A2119 geht nicht), USB-Stick (eher USB 2.0), OnHub Recovery Utility in Chrome unter Windows/macOS/ChromeOS (nicht Linux) oder dd, Linux-Umgebung (z. B. WSL) für ssh/scp/dd; PH0-Schraubendreher und Hebelwerkzeug zum Öffnen [geprüft: Wiki]
 - **seriell nötig:** nein (Konsole erst nach Dev-Mode über USB-C mit SuzyQable/CCD)
 - **Gehäuse öffnen:** ja (Developer-Mode) [geprüft: Gluon-Kommentar]
 - **Werkzeug/Spezial:** Developer-Mode, USB-Stick, ggf. SuzyQable
+- **Typenschild/Verwechslung:** Nicht die Google Nest WiFi (2019) [geprüft: Commit]. Modell GJ2CQ hat keinen USB-C-Port: USB an TP1004-TP1007 anlöten, SW7 fehlt, mittlere Pads brücken [geprüft: Wiki]
+- **Bedingung an die Herstellerfirmware:** Vorher die Google-Werkssoftware per Google-Recovery-Modus (Recovery-Stick aus der OnHub Recovery Utility) wiederherstellen; Gerät dabei vom Internet trennen, damit es sich nicht selbst aktualisiert [geprüft: Wiki]
 - **initramfs-Link:** [24.10.8: initramfs-fit-zImage.itb.vboot](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/chromium/openwrt-24.10.8-ipq40xx-chromium-google_wifi-initramfs-fit-zImage.itb.vboot)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/chromium/openwrt-24.10.8-ipq40xx-chromium-google_wifi-squashfs-factory.bin)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Dauer:** Google-Recovery ca. 5-6 min (danach pulsiert blau); Start von USB ca. 30 s ohne Fertig-Anzeige, mit Ping auf 192.168.1.1 prüfen [geprüft: Wiki]
 - **Gluon-RAMpe passt:** nein
 - **Quelle (OpenWrt-Commit):** OpenWrt f1c041e34f9742fcdd0c8c65f69888d3ec580541 (Gluon: broken, unser targets-ipq40xx-chromium.patch)
 - **Detail-Anleitung:** https://openwrt.org/inbox/toh/google/google_wifi
@@ -5870,7 +6441,10 @@ Google WiFi (Gale) · ipq40xx-chromium · K5
 HPE MSM460 · mpc85xx-p1020 · K5
 
 - **Weg ab Werk:** Bootloader netzseitig ersetzen, ohne Öffnen: Reset beim Verbinden ~15 s halten, `tftp put commands.tftp nflashd.cccc9999` an 192.168.1.1; der Stock-Bootloader führt die Befehlsdatei aus, holt msm460-uboot.bin vom Rechner und schreibt sie in den NAND; danach factory [geprüft]
+- **Taste und Zeitpunkt:** Reset gedrückt halten, während man das Netzwerkkabel zum Rechner einsteckt (Strom per PoE); die LEDs beginnen zu blinken und blinken nach ca. 15 s schneller: dann loslassen [geprüft: Commit af329ec, README blocktrron/msm460-flashing]
+- **Sichtbare Zeichen:** Nach `tftp put` kommt 'Transfer timed out', das ist normal; Erfolg erkennt man am LED-Blinkmuster (als GIF im Repo, nicht beschrieben) [geprüft: Commit, README]
 - **Übertragung:** tftp-server-am-geraet: put an 192.168.1.1 (Datei nflashd.cccc9999) + tftp-client-am-geraet: Server 192.168.1.66, Dateien msm460-uboot.bin, msm460-factory.bin
+- **Rechner braucht:** Feste IP 192.168.1.66/24, TFTP-Server (z. B. dnsmasq) mit `msm460-uboot.bin`, `msm460-factory.bin` (= Gluon-factory) und `commands.tftp` (auf 131072 Byte aufgefüllt); TFTP-Client für `tftp 192.168.1.1 -m binary -c put commands.tftp nflashd.cccc9999` [geprüft: Commit, README]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (RJ45-Konsole außen vorhanden, nicht nötig)
 - **Werkzeug/Spezial:** blocktrron/msm460-flashing, blocktrron/u-boot-msm
@@ -5891,7 +6465,9 @@ HPE MSM460 · mpc85xx-p1020 · K5
 Librerouter LibreRouter v1 · ath79-generic · K1d
 
 - **Weg ab Werk:** OpenWrt/LibreRouterOS ab Werk: sysupgrade über die Weboberfläche oder `sysupgrade -n`; seriell nur als Notweg [geprüft]
+- **Taste und Zeitpunkt:** Nur für den seriellen Notweg: beim Einschalten beliebige Taste im Terminal [geprüft: Commit 24463d0]
 - **Übertragung:** webui-upload (Stock) oder ssh; Notweg tftp am U-Boot, PC 192.168.1.10/24
+- **Rechner braucht:** Normalweg: Browser oder SSH auf das vorinstallierte OpenWrt. Notweg: USB-TTL 3,3 V am UART-Header, 115200 8N1, Rechner 192.168.1.10/24, TFTP-Server [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, UART-Header auf der Platine)
 - **Werkzeug/Spezial:** Stock ist OpenWrt-basiert
@@ -5912,13 +6488,18 @@ Linksys E8450 / Belkin RT3200 (UBI-Layout) · mediatek-mt7622 · K3
 
 - **Weg ab Werk:** Stock-Web-UI (Configuration > Administration > Firmware Upgrade) nimmt `initramfs-recovery.itb`; daraus Flash-Backup und neuen Bootloader (preloader.bin, bl31-uboot.fip) per `mtd write`; der neue U-Boot baut UBI auf und holt das recovery-initramfs per TFTP [geprüft]
 - **Übertragung:** webui-upload (Stock 192.168.1.1), dann tftp-client: Server 192.168.1.254, Gerät 192.168.1.1, Datei openwrt-mediatek-mt7622-linksys_e8450-ubi-initramfs-recovery.itb
+- **Rechner braucht:** Rechner mit fester IP 192.168.1.254/24 und TFTP-Server, der genau `openwrt-mediatek-mt7622-linksys_e8450-ubi-initramfs-recovery.itb` bereitstellt (der neue U-Boot holt diesen Namen) [geprüft: Commit 0235186]. Browser auf http://192.168.1.1 (Stock), SSH/scp für Backup und Bootloader [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** alternativ der OpenWrt-UBI-Installer (Drittprojekt, laut DEVICE_COMPAT_MESSAGE "UBI installer version 1.1.0+")
+- **Typenschild/Verwechslung:** Belkin RT3200 ist dieselbe Hardware [geprüft: Wiki toh/linksys/e8450]. Nicht das alte non-UBI-Image (`*.bin`) nehmen [geprüft: Wiki]
+- **Bedingung an die Herstellerfirmware:** Laut owrt-ubi-installer: Stock 1.0.x direkt; unter 1.2.00.273012 das unsignierte, ab 1.2.00.273012 das signierte Installer-Image; wird es abgelehnt, auf 1.0.x downgraden. Nur auf neuem oder frisch zurückgesetztem Gerät, Installer nur einmal ausführen [geprüft: README dangowrt/owrt-ubi-installer]
 - **initramfs-Link:** [24.10.8: initramfs-recovery.itb](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-linksys_e8450-ubi-initramfs-recovery.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: preloader.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-linksys_e8450-ubi-preloader.bin)<br>[24.10.8: bl31-uboot.fip](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-linksys_e8450-ubi-bl31-uboot.fip)
 - **Stock-Teile:** - (Backup aller mtdblock für den Rückweg)
 - **RAM:** 512 MB
+- **Dauer:** Nach dem Upload ca. 1 min bis das Recovery-Image läuft [geprüft: README owrt-ubi-installer]
+- **Rückweg zur Herstellerfirmware:** Nur mit dem gesicherten Vendor-Bootchain (Backup aller mtdblock bzw. UBI-Volume boot_backup) [geprüft: Commit, README]
 - **Gluon-RAMpe passt:** nein: der Bootloader muss getauscht werden; die Web-UI nimmt zwar ein initramfs, aber ohne UBI-Umbau scheitert das Gluon-sysupgrade an DEVICE_COMPAT_VERSION 2.0 [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt 02351861824a13ed158db1ef59aede2db6ba7568
 - **Detail-Anleitung:** https://openwrt.org/toh/linksys/e8450#installation
@@ -5956,14 +6537,18 @@ Linksys MR8300 · ipq40xx-generic · K2
 Cisco Meraki MR33 · ipq40xx-generic · K5
 
 - **Weg ab Werk:** Gehäuse öffnen, UART; `ubootwrite.py` (gepatcht) lädt einen modifizierten U-Boot (mr33-uboot.bin, 250-300 s), dann das sysupgrade per `tftp put` an den U-Boot [geprüft]; laut Gluon-Kommentar bricken neuere Bootloader-Versionen den SoC irreversibel
+- **Sichtbare Zeichen:** Die Bootloader-Version steht sofort beim Einschalten in der Konsole; nur 'U-Boot 2012.07-g97ab7f1 (Oct 06 2016)' erlaubt den Weg. Erscheint 'Secure boot NOT enabled! Blowing fuses... Resetting now', ist das Gerät unbrauchbar [geprüft: Wiki toh/meraki/mr33]
 - **Übertragung:** tftp-server-am-geraet: Gerät 192.168.1.1, `tftp` binary, put sysupgrade.bin
+- **Rechner braucht:** Gehäuse mit Torx T5 öffnen (4 Schrauben unter Gummifüßen); USB-TTL 3,3 V an die niedrige 1x4-Stiftleiste (VCC am Pfeil nicht anschließen), 115200 8N1 [geprüft: Commit, Wiki]. Python 3 mit ubootwrite (Little-Endian-Variante, github sebastiaanv3/ubootwrite) und mr33-uboot.bin (Google Drive laut Wiki); Rechner fest 192.168.1.2, TFTP-Client im Binärmodus; privates LAN ohne Internet [geprüft: Wiki, Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (1x4-Stiftleiste, niedrige Pins; 115200 8N1)
 - **Werkzeug/Spezial:** ubootwrite.py mit Little-Endian-Patch, mr33-uboot.bin (beides über das OpenWrt-Wiki)
+- **Bedingung an die Herstellerfirmware:** Nur Bootloader U-Boot 2012.07-g97ab7f1; bei 2017.07-RELEASE nur JTAG oder NAND auslöten. Die Geräte aktualisieren sich über die Meraki-Cloud selbst, also ohne Internet betreiben [geprüft: Wiki]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-meraki_mr33-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** - (modifizierter Meraki-U-Boot aus Merakis GPL-Quellen, nicht aus der Stock-Firmware)
 - **RAM:** 256 MB
+- **Dauer:** Hochladen des U-Boot per ubootwrite 250-300 s [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein: der Weg schreibt das Gluon-sysupgrade direkt; das Risiko liegt im Bootloader
 - **Quelle (OpenWrt-Commit):** OpenWrt 4943afd7818f56053231a5a7ae90e55da44f1f08 (Gluon: broken)
 - **Detail-Anleitung:** https://openwrt.org/toh/meraki/mr33
@@ -5978,14 +6563,18 @@ Mercusys MR90X v1 · mediatek-filogic · K2
 
 - **Weg ab Werk:** SSH in die Stock-Firmware (Port 20001, Web-Passwort), telnet-Hintertür über /etc/hotplug.d/iface/65-iptv + IPTV-Schalter, fremdes busybox-arm64 für `ubiupdatevol`, initramfs ins UBI-Volume `kernel`, `fw_setenv` (u. a. tp_boot_idx 0), Neustart, `sysupgrade -n` [geprüft: Commit und Wiki]
 - **Übertragung:** ssh/scp: Router-IP Port 20001 (SSH), telnet Port 23; Datei initramfs-kernel.bin nach /tmp
+- **Rechner braucht:** SSH-Client (Port 20001, Web-Passwort), Telnet-Client, scp/WinSCP; busybox-arm64 eines Dritten für ubiupdatevol [geprüft: Commit e4fe309]. Kabel an LAN1 [geprüft: Wiki toh/mercusys/mr90x_v1]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, R3/R6 bestücken)
 - **Werkzeug/Spezial:** busybox-arm64 eines Dritten (github xerta555)
+- **Typenschild/Verwechslung:** Hardware v1.0 und v1.2 (Wandmontage möglich) werden beide unterstützt [geprüft: Wiki]
+- **Bedingung an die Herstellerfirmware:** Vorher `fw_printenv | grep tp_boot_idx` prüfen: steht dort 1, erst die Mercusys-Firmware über die Weboberfläche neu einspielen und von vorn beginnen [geprüft: Wiki]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin)<br>[24.10.8: ubi-initramfs-recovery.itb](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-ubi-initramfs-recovery.itb)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** - (Wiki: Backup tp_data/boot für den Rückweg)
 - **RAM:** 512 MB
-- **Gluon-RAMpe passt:** teilweise: das RAMpe-initramfs könnte das OpenWrt-initramfs im kernel-Volume ersetzen; Exploit und fw_setenv bleiben Handarbeit [abgeleitet]. Hinweis: erstinstallation-ohne-factory.md beschreibt "tp_boot_idx 0, dann U-Boot-Web-Recovery nimmt initramfs" - weder im Commit noch im Wiki-Abschnitt "Stock bootloader" so belegt
+- **Rückweg zur Herstellerfirmware:** Backups von boot und tp_data nötig; Reset beim Einschalten startet die U-Boot-Web-Recovery auf http://192.168.1.1 für die OEM-Firmware [geprüft: Commit, Wiki]
+- **Gluon-RAMpe passt:** teilweise: das RAMpe-initramfs könnte das OpenWrt-initramfs im kernel-Volume ersetzen; Exploit und fw_setenv bleiben Handarbeit [abgeleitet]. Hinweis: eine ältere Neanderfunk-Notiz beschreibt "tp_boot_idx 0, dann U-Boot-Web-Recovery nimmt initramfs" - weder im Commit noch im Wiki-Abschnitt "Stock bootloader" so belegt
 - **Gluon-RAMpe-Rezept:** devices/mercusys-mr90x-v1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell
 - **Quelle (OpenWrt-Commit):** OpenWrt e4fe3097ef6a961874b66932a0ac4be18070630a
 - **Detail-Anleitung:** https://openwrt.org/toh/mercusys/mr90x_v1#installation_stock_bootloader
@@ -5999,7 +6588,9 @@ Mercusys MR90X v1 · mediatek-filogic · K2
 NETGEAR WAX218 · qualcommax-ipq807x · K1
 
 - **Weg ab Werk:** Stock-Web-UI (System Manager > Firmware > Local Firmware Upgrade) nimmt `web-ui-factory.fit` (ubinisiertes initramfs mit QSDK-Kopf), danach sysupgrade [geprüft]
+- **Sichtbare Zeichen:** Nach 'Proceed' startet das Gerät selbst in OpenWrt neu [geprüft: Commit]
 - **Übertragung:** webui-upload
+- **Rechner braucht:** Browser: System Manager > Firmware > Local Firmware Upgrade, `web-ui-factory.fit` auswählen, Upload, dann Proceed [geprüft: Commit 7801161]. SSH-Alternative braucht ältere Algorithmen (`-o kexalgorithms=diffie-hellman-group14-sha1 -o hostkeyalgorithms=ssh-rsa`) [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, Pogo-Pins oder Löten an J2)
 - **Werkzeug/Spezial:** -
@@ -6022,6 +6613,7 @@ TOTOLINK X5000R · ramips-mt7621 · K1d
 
 - **Weg ab Werk:** Stock-Web-UI nimmt das OpenWrt-sysupgrade [geprüft]
 - **Übertragung:** webui-upload
+- **Rechner braucht:** Browser, Firmware-Upgrade-Seite der Hersteller-Oberfläche [geprüft: Commit 23be410]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -6041,14 +6633,19 @@ TOTOLINK X5000R · ramips-mt7621 · K1d
 TP-Link Archer C60 v1 · ath79-generic · K2
 
 - **Weg ab Werk:** OpenWrt-Commit: factory über Stock-Web-UI oder TFTP-Recovery; OpenWrt 24.10.8 liefert aber kein factory (nur initramfs/sysupgrade), Gluon setzt factory = false [geprüft]; bleibt UART + U-Boot (sysupgrade nach 0x9f020000 schreiben) [geprüft] oder ein älteres OpenWrt-factory als Zwischenschritt [abgeleitet]
+- **Taste und Zeitpunkt:** Nur mit factory-Image: TFTP-Recovery, Gerät aus, Reset halten, einschalten, ca. 15 s halten, loslassen [geprüft: Commit 6d313da]
 - **Übertragung:** webui-upload bzw. tftp-client-am-geraet: Server 192.168.0.66, Datei tp_recovery.bin (nur mit factory); sonst tftp am U-Boot (seriell)
+- **Rechner braucht:** TFTP-Recovery: feste IP 192.168.0.66, Datei genau `tp_recovery.bin` (= factory) [geprüft: Commit]. Weboberfläche: lange Dateinamen werden abgelehnt, kurz umbenennen [geprüft: Wiki toh/tp-link/archer_c60_v2]
 - **seriell nötig:** nein (nur für den seriellen Weg ohne factory-Image: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Weg: ja, Header auf der Platine)
 - **Werkzeug/Spezial:** OpenWrt-factory älterer Version als Zwischenfirmware [abgeleitet]
+- **Typenschild/Verwechslung:** v2 und v3 haben eigene Images [geprüft: Pin generic-tp-link.mk]
+- **Bedingung an die Herstellerfirmware:** v1 hat seit 2016 kein Hersteller-Update; die Weboberfläche nahm OpenWrt-factory laut Wiki noch 2022 [geprüft: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c60-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Dauer:** TFTP-Recovery ca. 30 s [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein: TP-Link-Web/-TFTP nehmen nur safeloader-factory, kein initramfs; im UART-Weg teilweise
 - **Quelle (OpenWrt-Commit):** 6d313da6dc5f655d92aa86e2ec42ecfcf763df3d [geprüft]; Gluon c2fc4e5a (factory = false ohne Begründung, PR #3034 hakt "flashable from vendor firmware" an)
 
@@ -6061,10 +6658,14 @@ TP-Link Archer C60 v1 · ath79-generic · K2
 TP-Link TD-W8970 v1 · lantiq-xrx200_legacy · K2
 
 - **Weg ab Werk:** Ohne Öffnen: Shell per Injection (SSID `telnetd -p 1023 -l login` oder manipulierte Konfig "StatPost"), Image aus der Shell schreiben; Wiki: dafür OpenWrt 15.05 als Zwischenstufe. Mit Öffnen: seriell `t`, TFTP, `sf erase/write` sysupgrade [abgeleitet: Wiki]
+- **Taste und Zeitpunkt:** Seriell-Weg: beim Einschalten im Terminal `t` drücken, bis der Prompt kommt [geprüft: Wiki toh/tp-link/td-w8970_v1]
 - **Übertragung:** ssh/scp (telnet Port 1023) bzw. tftp-client-am-geraet: Server 192.168.1.2
+- **Rechner braucht:** Ohne Öffnen: Browser auf 192.168.1.1, Telnet-Client (Port 1023, admin/1234); für StatPost Java-Tool StatPOSTer oder Python tpconf_bin_xml [geprüft: Wiki]. Mit Öffnen: USB-TTL 3,3 V, 115200 8N1, TFTP-Server (Gerät 192.168.1.1, Server 192.168.1.2 per setenv) [geprüft: Wiki, ToH]
 - **seriell nötig:** nein (nur für den seriellen TFTP-Weg: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen TFTP-Weg: ja)
 - **Werkzeug/Spezial:** tpconf_bin_xml.py oder StatPOSTer, telnet
+- **Typenschild/Verwechslung:** TD-W8970B V1: SSID-Injection geht nicht (Builds 141008, 150526, 160808), nur StatPost; TD-W8970 v3 ist ein anderes Gerät [geprüft: Wiki, ToH]
+- **Bedingung an die Herstellerfirmware:** Weboberflächen-Upload nur mit Stock vor 12.10.2013. SSID-Injection auf neueren Builds; StatPost belegt für TD-W8970 V1 140613 und TD-W8970B V1 141008/160808; dafür laut Wiki OpenWrt 15.05 als Zwischenstufe [geprüft: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/lantiq/xrx200_legacy/openwrt-24.10.8-lantiq-xrx200_legacy-tplink_tdw8970-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
 - **Stock-Teile:** -
@@ -6082,9 +6683,12 @@ Ubiquiti NanoBeam AC Gen1 (XC) · ath79-generic · K0+
 
 - **Weg ab Werk:** airOS-XC-Verfahren laut OpenWrt-Wiki (openwrt.org/toh/ubiquiti/common), im Commit nur verlinkt [geprüft: Verweis]
 - **Übertragung:** laut Wiki [nicht geprüft]
+- **Rechner braucht:** SSH/scp auf airOS (ubnt@192.168.1.20 [geprüft: Wiki toh/ubiquiti/common, Beispiel]); im airOS `fwupdate.real` per hexdump/sed patchen und damit das factory schreiben [geprüft: Wiki]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** NanoBeam AC Gen1 XC = NBE-5AC-19 [geprüft: Commit 73ea763]. Board-Typ steht in airOS unter Settings > System (Firmware 'XC.v8...' = XC, 'WA.v8...' = WA); Gen2 ist ein anderes Gerät [geprüft: Wiki, ToH]
+- **Bedingung an die Herstellerfirmware:** Getestet mit airOS XC v8.7.0 und v8.7.4 [geprüft: Wiki]. OpenWrt-24.10-Releases vor 24.10.3 hatten auf vielen Ubiquiti-Geräten einen Read-only-Flash-Fehler [geprüft: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_nanobeam-ac-xc-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_nanobeam-ac-xc-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -6102,9 +6706,11 @@ WAVLINK WL-WN573HX3 / 7Links WLR-1300 · mediatek-filogic · K1d
 
 - **Weg ab Werk:** versteckte Seite der Stock-UI (meshUpgrade.html, Einrichtungsassistent überspringen) nimmt das `WN573HX3-sysupgrade.bin`, danach Werkseinstellungen [geprüft]
 - **Übertragung:** webui-upload: Stock-UI 192.168.30.1 -> http://netlogin.link/html/meshUpgrade.html, Passwort admin
+- **Rechner braucht:** Browser: Stock-UI 192.168.30.1 leitet auf http://netlogin.link (Captive Portal), Passwort `admin`; Einrichtungsassistent überspringen und direkt http://netlogin.link/html/meshUpgrade.html öffnen; danach Werkseinstellungen [geprüft: Commit ca38f13]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** In Europa auch als 7Links WLR-1300 (ZX-5612) verkauft, dasselbe Gerät [geprüft: Commit]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-wavlink_wl-wn573hx3-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
@@ -6123,9 +6729,12 @@ Xiaomi AX3600 · qualcommax-ipq807x · K2
 
 - **Weg ab Werk:** SSH-Zugang per Exploit (Wiki), `initramfs-factory.ubi` per `ubiformat` in die inaktive rootfs-mtd + nvram-Flags, Neustart, `sysupgrade -n` [geprüft]
 - **Übertragung:** ssh/scp
+- **Rechner braucht:** Browser (stok aus der URL nach Login), SSH/scp; Rechner per Kabel an LAN [geprüft: Wiki toh/xiaomi/ax3600]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** SSH-Exploit (openwrt.org/inbox/toh/xiaomi/xiaomi_ax3600)
+- **Typenschild/Verwechslung:** Chinesisches und internationales Modell: der Weg gilt für beide [geprüft: Wiki]
+- **Bedingung an die Herstellerfirmware:** Für die stok-Exploits (manuell, Bash, JavaScript) auf beiden Modellen auf die chinesische Stock-Firmware 1.0.17 zurückgehen; der 'Patch bdata'-Weg braucht keinen Downgrade [geprüft: Wiki]
 - **initramfs-Link:** [24.10.8: initramfs-factory.ubi](https://downloads.openwrt.org/releases/24.10.8/targets/qualcommax/ipq807x/openwrt-24.10.8-qualcommax-ipq807x-xiaomi_ax3600-initramfs-factory.ubi)<br>[24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/qualcommax/ipq807x/openwrt-24.10.8-qualcommax-ipq807x-xiaomi_ax3600-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
@@ -6144,10 +6753,14 @@ Xiaomi AX3600 · qualcommax-ipq807x · K2
 Xiaomi Mi Router 3G · ramips-mt7621 · K2
 
 - **Weg ab Werk:** Shell auf Stock per Telnet/SSH (wie man sie bekommt, sagt der Commit nicht), OpenWrt-kernel1.bin und rootfs0.bin per mtd schreiben, kernel0 löschen, danach Gluon-sysupgrade [geprüft; Shell-Zugang offen]
+- **Taste und Zeitpunkt:** SSH-Freischaltung: USB-Stick mit `miwifi_ssh.bin` einstecken, Reset halten und Strom einstecken, halten bis die gelbe LED blinkt (ca. 15 s) [geprüft: Wiki toh/xiaomi/mir3g]
 - **Übertragung:** ssh/scp (oder USB-Stick)
+- **Rechner braucht:** FAT32-USB-Stick, Mi-WiFi-App mit Xiaomi-Konto, Browser für https://d.miwifi.com/rom/ssh (liefert miwifi_ssh.bin und Root-Passwort), SSH-Client [geprüft: Wiki]. Alternativ OpenWRTInvasion-Exploit [geprüft: Wiki]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** mtd auf Stock
+- **Typenschild/Verwechslung:** Gilt nur für R3G (v1); R3G v2 und 4A Gigabit sind andere Geräte mit gesperrtem Bootloader [geprüft: Wiki]
+- **Bedingung an die Herstellerfirmware:** Für den SSH-Weg zuerst Entwickler-Firmware einspielen (Wiki-Beispiel 2.25.124) und Gerät in der App an ein Xiaomi-Konto binden [geprüft: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_mi-router-3g-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** [squashfs-kernel1.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_mi-router-3g-squashfs-kernel1.bin) (200), [squashfs-rootfs0.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_mi-router-3g-squashfs-rootfs0.bin) (200)
 - **Stock-Teile:** -
@@ -6165,13 +6778,17 @@ Xiaomi Mi Router AX3000T · mediatek-filogic · K2
 
 - **Weg ab Werk:** Stock 1.0.47: SSH per Befehlseinschleusung in die API `misystem/arn_switch` (curl mit stok), Backup per nanddump, `initramfs-factory.ubi` per `ubiformat` in die inaktive ubi-Partition + nvram-Flags, Neustart, `sysupgrade -n` [geprüft]
 - **Übertragung:** ssh/scp (Exploit über HTTP-API 192.168.31.1)
+- **Rechner braucht:** Browser und curl (stok aus der URL), SSH/scp auf 192.168.31.1 [geprüft: Commit 7dbcc12]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Exploit; Stock-Version 1.0.47
+- **Typenschild/Verwechslung:** RD03 (China) und RD23 (international) sind gleiche Hardware. RD03v2 (Qualcomm; Barcode endet auf 706330, SKU DVB4510CN) wird nicht unterstützt. Innere Varianten: NAND ESMT/Winbond/Foresee, Switch MT7531AE oder Airoha AN8855; Foresee braucht OpenWrt ab 24.10.3, AN8855 ab 24.10.0-rc7 [geprüft: Wiki toh/xiaomi/ax3000t]
+- **Bedingung an die Herstellerfirmware:** Commit: Stock 1.0.47 (API misystem/arn_switch). Laut Wiki gehen auch neuere Versionen über andere API-Lücken (xqsystem/start_binding, xqsystem/get_icon); CN 1.0.106 braucht einen Downgrade (Xiaomi-TFTP-Recovery oder MiWiFi Repair Tool) [geprüft: Commit, Wiki]
 - **initramfs-Link:** [24.10.8: initramfs-factory.ubi](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-xiaomi_mi-router-ax3000t-initramfs-factory.ubi)<br>[24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-xiaomi_mi-router-ax3000t-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** - (Backup BL2, Nvram, Bdata, Factory, FIP, ubi, KF für den Rückweg)
 - **RAM:** 256 MB
+- **Rückweg zur Herstellerfirmware:** Backups (BL2, Nvram, Bdata, Factory, FIP, ubi, KF) aufheben; Stock per Xiaomi-TFTP-Recovery (Datei = IP in Hex, z. B. C0A81F02.img) [geprüft: Commit, Wiki]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als `initramfs-factory.ubi` (ubinize-kernel) bauen, ersetzt den OpenWrt-Zwischenschritt; der Exploit bleibt [abgeleitet]
 - **Gluon-RAMpe-Rezept:** devices/xiaomi-mi-router-ax3000t.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt
 - **Quelle (OpenWrt-Commit):** OpenWrt 7dbcc1215a56cc1da68c81bf92d7efa174c5e051
@@ -6187,9 +6804,12 @@ Xiaomi Mi Router AX3000T (OpenWrt-U-Boot-Layout) · mediatek-filogic · K3
 
 - **Weg ab Werk:** wie AX3000T bis zum initramfs, dann kmod-mtd-rw, UBI neu anlegen (ubootenv, ubootenv2, optional recovery) und OpenWrt-Bootloader (preloader.bin, bl31-uboot.fip) per `mtd write` nach BL2/FIP [geprüft]
 - **Übertragung:** ssh/scp
+- **Rechner braucht:** Wie AX3000T (Browser, curl, SSH/scp); für kmod-mtd-rw braucht das gebootete OpenWrt Internetzugang (opkg) [geprüft: Commit 7dbcc12; Internet: abgeleitet]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Exploit; kmod-mtd-rw
+- **Typenschild/Verwechslung:** Wie AX3000T; zusätzlich: Geräte mit Airoha-AN8855-Switch und/oder Foresee-NAND sind erst ab OpenWrt 25.12.0 voll mit dem OpenWrt-U-Boot verträglich [geprüft: Wiki toh/xiaomi/ax3000t]
+- **Bedingung an die Herstellerfirmware:** Wie AX3000T (Exploit je nach Stock-Version) [geprüft: Commit, Wiki]
 - **initramfs-Link:** [24.10.8: initramfs-recovery.itb](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-xiaomi_mi-router-ax3000t-ubootmod-initramfs-recovery.itb)<br>[24.10.8: initramfs-factory.ubi](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-xiaomi_mi-router-ax3000t-ubootmod-initramfs-factory.ubi)
 - **Factory-/Stock-Image-Link:** [24.10.8: preloader.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-xiaomi_mi-router-ax3000t-ubootmod-preloader.bin)<br>[24.10.8: bl31-uboot.fip](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-xiaomi_mi-router-ax3000t-ubootmod-bl31-uboot.fip)
 - **Stock-Teile:** - (Bootloader aus OpenWrt; Backup für den Rückweg)
@@ -6206,15 +6826,21 @@ Xiaomi Mi Router AX3000T (OpenWrt-U-Boot-Layout) · mediatek-filogic · K3
 
 Xiaomi Redmi Router AX6S / AX3200 · mediatek-mt7622 · K0+
 
-- **Weg ab Werk:** Xiaomi-"closed beta"-Firmware 1.2.7 einspielen, telnet-Passwort aus der Seriennummer berechnen, nvram-Flags setzen, Gluon-`factory.bin` per wget holen und `mtd -r write … firmware` [geprüft]; Bootflags-Patch beachten (Neanderfunk-Notiz xiaomi-ax6s-bootflags.md)
+- **Weg ab Werk:** Xiaomi-"closed beta"-Firmware 1.2.7 einspielen, telnet-Passwort aus der Seriennummer berechnen, nvram-Flags setzen, Gluon-`factory.bin` per wget holen und `mtd -r write … firmware` [geprüft]; Bootflags-Patch beachten (Neanderfunk-Notiz)
+- **Taste und Zeitpunkt:** Stock-Recovery (Rückweg): Reset beim Einschalten halten; nach ca. 10 s blinkt die orange LED kurz schnell, dann Dauerlicht [geprüft: Commit 9f9477b, Wiki toh/xiaomi/ax3200]
+- **Sichtbare Zeichen:** Nur noch orange LED nach mehreren Neustarts = Softbrick durch die Bootflags (betrifft viele neuere internationale Geräte nach 6 Neustarts); Abhilfe flag_try_sys1/2_failed auf 8 [geprüft: Wiki; Neanderfunk-Notiz laut weg]
 - **Übertragung:** webui-upload (Beta-Firmware), telnet, http-server-noetig (wget vom Rechner, z. B. python -m http.server 8000)
+- **Rechner braucht:** Browser, Python 3 für den Passwortrechner (unlock_pwd.py mit der Seriennummer) und `python -m http.server` (Port 8000), Telnet-Client auf 192.168.31.1 [geprüft: Commit, Wiki]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Closed-Beta miwifi_rb03_firmware_stable_1.2.7_closedbeta.bin (MD5 5eedf1632ac97bb5a6bb072c08603ed7), telnet-Passwortrechner
+- **Typenschild/Verwechslung:** Redmi AX6S (RB03, China) und Xiaomi AX3200 (RB01, international) sind gleiche Hardware, nur andere Stock-Firmware. AX3200 mit Produktionsdatum nach 12/2023 und gesperrtem Telnet brickt laut Wiki mit dem normalen Image [geprüft: Wiki]
+- **Bedingung an die Herstellerfirmware:** Telnet muss an sein: ab Werk (prüfen über http://192.168.31.1/cgi-bin/luci/api/xqsystem/fac_info) oder beim RB03 durch die Closed-Beta 1.2.7; beim RB01 ohne Telnet nur Umwege (netmode-4-Mesh-Trick, XMiR-Patcher) [geprüft: Wiki]
 - **initramfs-Link:** [24.10.8: initramfs-recovery.itb](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-xiaomi_redmi-router-ax6s-initramfs-recovery.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-xiaomi_redmi-router-ax6s-factory.bin)
 - **Stock-Teile:** Xiaomi-Beta-Firmware (Herstellerdatei, offizieller Download-Link nicht belegt)
 - **RAM:** 256 MB
+- **Rückweg zur Herstellerfirmware:** Xiaomi-TFTP-Recovery: Rechner 192.168.31.100, Datei = Server-IP in Hex (C0A81F64.img), Reset beim Einschalten [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein, nicht nötig: Gluon baut factory.bin
 - **Quelle (OpenWrt-Commit):** OpenWrt 9f9477b2751231d57cdd8c227149b88c93491d93
 - **Detail-Anleitung:** -
@@ -6228,14 +6854,19 @@ Xiaomi Redmi Router AX6S / AX3200 · mediatek-mt7622 · K0+
 ZTE MF286R (broken) · ath79-nand · K1
 
 - **Weg ab Werk:** Root-Shell über Web-UI-Lücke (URL-Filter `&&telnetd&&`, telnet 4719 admin/admin), Backup, OpenWrt-initramfs mit nandwrite in "firmware" schreiben, reboot, sysupgrade; alternativ UART + TFTP [geprüft für MF286A/R, Dateinamen im Commit für MF286A]
+- **Sichtbare Zeichen:** Nur TFTP-Notweg: nach dem Flashen durch U-Boot leuchten alle Switch-Port-LEDs, dann Strom aus/an [geprüft: Commit 7ac8da0]
 - **Übertragung:** Exploit per Web-UI, dann telnet; Images per USB-Stick oder tftp (Busybox) auf das Gerät; UART-Weg: tftp-client am U-Boot, Server 192.168.0.22, Gerät 192.168.0.1
+- **Rechner braucht:** Browser für den URL-Filter-Exploit (Erweitert > Firewall > URL-Filter, Eintrag mit `&&telnetd&&`), Telnet-Client auf Port 4719 (admin/admin) [geprüft: Commit]. Fehlt telnetd im Stock: TFTP-Server auf 192.168.0.22 mit busybox-mips als `telnetd`, Login dann Port 23 [geprüft: Commit]. USB-Stick (FAT/ext4) für Backup und Image; zur Installation Rechner 192.168.1.22/24 und scp [geprüft: Commit]
 - **seriell nötig:** nein (nur für den seriellen Weg, Methode 3 im Commit: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Weg: ja, Stecker X2 innen)
 - **Werkzeug/Spezial:** Web-UI-Exploit; Busybox mit telnetd falls Stock ohne
+- **Typenschild/Verwechslung:** MF286, MF286A, MF286D und MF286R sind verschiedene Geräte; MF286R hat ein Marvell-PXA1826-Modem; weicht `cat /proc/mtd` ab, ist es evtl. eine andere Variante [geprüft: Commit]
+- **Bedingung an die Herstellerfirmware:** Vorher die Stock-Firmware auf den neuesten Stand bringen (Modem-Firmware ist danach nicht mehr aktualisierbar). Exploit-Methode 1 nur, wenn Busybox telnetd enthält (fehlt z. B. bei DNA.fi) [geprüft: Commit]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-zte_mf286r-initramfs-kernel.bin) (HEAD 200)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** für die Installation keine; Rückweg nur mit eigenem Backup (Stock-Firmware nicht öffentlich, providerspezifisch); TFTP-Notweg braucht 8 MB Nullen vor dem initramfs (`root_uImage`, Server 192.0.0.1/8)
 - **RAM:** 128 MB [Commit]
+- **Rückweg zur Herstellerfirmware:** Nur mit eigenem Backup aller mtd-Partitionen (Stock-Firmware providerspezifisch und nicht öffentlich) [geprüft: Commit]
 - **Gluon-RAMpe passt:** ja (Exploit-Weg): genau der Fall "initramfs aus der Stock-Shell schreiben", Gluon-RAMpe statt OpenWrt-initramfs [abgeleitet]; Gluon markiert das Gerät broken mit "case must be opened" - laut Commit nicht zwingend
 - **Gluon-RAMpe-Rezept:** devices/zte-mf286r.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` per `nandwrite` nach dem Exploit (Weg nur für die MF286A belegt)
 - **Quelle (OpenWrt-Commit):** 7ac8da00609f42b8aba74b7efc6b0d055b7cef3e [geprüft]
@@ -6249,7 +6880,10 @@ ZTE MF286R (broken) · ath79-nand · K1
 Zyxel NBG6616 · ath79-generic · K5
 
 - **Weg ab Werk:** Serielle Konsole, ZyXEL-zloader per Passwort-Challenge (ATSE/ATEN) entsperren, U-Boot-bootcmd auf das kombinierte Image umstellen (saveenv), dann factory per TFTP-Recovery mit WPS-Taste [geprüft]
+- **Taste und Zeitpunkt:** Seriell: bei 'Hit any key to stop autoboot: 3' innerhalb von 3 s eine Taste; im gesperrten zloader `ATSE NBG6616`, aus dem Seed per Skript den `ATEN 1,<code>` berechnen und eingeben, dann `ATGU` für die U-Boot-Shell [geprüft: Commit 459c8c9]. Danach WPS beim Einschalten gedrückt halten, bis die Firmware geladen wird [geprüft: Commit, Wiki toh/zyxel/nbg6616]
+- **Sichtbare Zeichen:** TFTP-Recovery: Strom aus/an, wenn Power- und USB2-LED blinken [geprüft: Wiki]
 - **Übertragung:** tftp-client-am-geraet: Server 192.168.1.33, Datei ras.bin (WPS beim Booten halten)
+- **Rechner braucht:** USB-TTL 3,3 V (kein RS232, sonst Schaden), 115200 8N1 [geprüft: Wiki]; bash für das Passwort-Skript [geprüft: Commit]. TFTP-Server fest 192.168.1.33/24 an einem LAN-Port, Datei `ras.bin` [geprüft: Commit, Wiki]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ? (Lage der Konsole im Commit nicht genannt)
 - **Werkzeug/Spezial:** serielle Konsole + zloader-Passwortrechner (Skript im Commit)
@@ -6257,6 +6891,8 @@ Zyxel NBG6616 · ath79-generic · K5
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-zyxel_nbg6616-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** TFTP-Recovery dauert über 5 min [geprüft: Wiki]
+- **Rückweg zur Herstellerfirmware:** `setenv bootcmd run boot_flash; saveenv`, dann Zyxel-Image per TFTP-Recovery als ras.bin [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein: die Bootloader-Umstellung bleibt; danach nimmt die TFTP-Recovery das Gluon-factory direkt
 - **Quelle (OpenWrt-Commit):** 459c8c9ef816156107e297964d088ddee2b4eef5 [geprüft]
 
@@ -6269,10 +6905,14 @@ Zyxel NBG6616 · ath79-generic · K5
 ZyXEL WSM20 (Multy M1) · ramips-mt7621 · K1
 
 - **Weg ab Werk:** Gerät in der Zyxel-Cloud registrieren, im Stock-Web-UI die versteckte Seite /gui/#/main/debug/firmwareupgrade öffnen, initramfs-kernel.bin hochladen, dann sysupgrade [geprüft]
+- **Taste und Zeitpunkt:** Leuchtet beim Start die rote LED, war das Gerät schon eingerichtet: nach dem Start Reset einige Sekunden halten, bis die Front-LEDs blinken (Werksreset) [geprüft: Wiki toh/zyxel/wsm20]
+- **Sichtbare Zeichen:** Upgrade-Seite lädt ca. 1 min, dann wird der Upload-Knopf aktiv. Beim Flashen blinkt die LED ca. 10 s rot (etwa 1/s), dann grün dauerhaft, dann weiß schnell, weiß langsam; fertig bei weißem Dauerlicht [geprüft: Wiki]
 - **Übertragung:** webui-upload: https://192.168.212.1/gui/#/main/debug/firmwareupgrade
+- **Rechner braucht:** Browser auf die versteckte Seite http(s)://192.168.212.1/gui/#/main/debug/firmwareupgrade; danach OpenWrt auf 192.168.1.1, ggf. Netzwerkkabel kurz ziehen, damit der Rechner eine neue Adresse holt [geprüft: Commit 28df7f7, Wiki]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Zyxel-Cloud-Konto
+- **Bedingung an die Herstellerfirmware:** Commit: Gerät muss in der Zyxel-Cloud registriert sein; Wiki: die Seite geht auch ohne Registrierung, sonst registrieren [geprüft: Commit, Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
@@ -6379,10 +7019,13 @@ Sophos AP55C · ath79-generic · K1d
 8devices Jalapeno · ipq40xx-generic · K0
 
 - **Weg ab Werk:** ab Werk ein altes LEDE: `sysupgrade -n -F` mit dem sysupgrade-Image; Gluon-factory `.ubi` für den U-Boot [geprüft]; alte U-Boots brauchen `bootm …#config@1`
+- **Taste und Zeitpunkt:** keine Taste [geprüft: Commit 1e341bb]
 - **Übertragung:** ssh/scp (LEDE ab Werk)
+- **Rechner braucht:** SSH/scp auf das ab Werk installierte alte LEDE; Gluon-sysupgrade nach /tmp, `sysupgrade -n -F <datei>` (Erzwingen nötig) [geprüft: Commit 1e341bb]; Adresse/Zugang des Werks-LEDE nicht belegt
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Es gab intern v1- und v2-Platinen, verkauft wurden nur v2; Platinen mit altem U-Boot melden beim Start 'FIT configuration not found', Abhilfe nur über die U-Boot-Umgebung (`setenv boot5 'bootm 0x84000000#config@1'`, seriell) [geprüft: Commit 1e341bb]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-8dev_jalapeno-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.ubi](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-8dev_jalapeno-squashfs-factory.ubi)
 - **Stock-Teile:** -
@@ -6396,14 +7039,20 @@ Sophos AP55C · ath79-generic · K1d
 Xiaomi MiWiFi Mini · ramips-mt7620 · K1d
 
 - **Weg ab Werk:** Exploit: telnetd per Code-Injection in der Stock-Weboberfläche (`set_wifi_ap`), Root-Passwort setzen, dann `mtd -r write <sysupgrade> OS1`; alternativ Xiaomi-Entwickler-Firmware per USB-Stick + SSH-Patch (Xiaomi-Konto) [abgeleitet: Wiki]
+- **Taste und Zeitpunkt:** Exploit-Weg: keine Taste [abgeleitet: Wiki]; USB-Recovery (Rückweg/Downgrade): Reset halten, Strom einstecken, loslassen, wenn die orange LED blinkt [abgeleitet: Wiki toh/xiaomi/miwifi_mini]
+- **Sichtbare Zeichen:** USB-Recovery: orange LED blinkt = Recovery läuft, blaue LED nach etwa 1 Minute = fertig [abgeleitet: Wiki]
 - **Übertragung:** ssh/scp (hier telnet + wget/scp)
+- **Rechner braucht:** Gerät mit Internet verbunden starten, Stock-Weboberfläche anmelden, telnetd per Code-Injection über den stok-Parameter starten, Root-Passwort setzen, Image laden und schreiben (siehe Bestand weg); kein Xiaomi-Konto nötig [abgeleitet: Wiki toh/xiaomi/miwifi_mini]; für USB-Recovery: USB-Stick FAT32 mit Datei genau `miwifi.bin` [abgeleitet: Wiki]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** Browser/curl, telnet
+- **Bedingung an die Herstellerfirmware:** Exploit dokumentiert für Stock v2.6.17, v2.7.11, v2.8.91, v2.2.105 (und regionale Varianten); sonst per USB-Recovery downgraden [abgeleitet: Wiki]; Alternative mit Entwickler-Firmware + SSH-Patch braucht ein Konto bei miwifi.com [abgeleitet: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7620/openwrt-24.10.8-ramips-mt7620-xiaomi_miwifi-mini-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
 - **Stock-Teile:** -
 - **RAM:** 128 MB
+- **Dauer:** USB-Recovery etwa 1 Minute [abgeleitet: Wiki]
+- **Rückweg zur Herstellerfirmware:** Xiaomi-Entwickler-Firmware als `miwifi.bin` auf FAT32-USB-Stick, USB-Recovery wie oben [abgeleitet: Wiki toh/xiaomi/miwifi_mini]
 - **Gluon-RAMpe passt:** nein: Exploit schreibt das sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** 70db4e46398c8c82774e6af7f7158f3df22d6afe (ohne Installationstext) + Wiki toh:xiaomi:miwifi_mini
 
@@ -6412,7 +7061,10 @@ Xiaomi MiWiFi Mini · ramips-mt7620 · K1d
 VoCore2 · ramips-mt76x8 · K1d
 
 - **Weg ab Werk:** Stock ist ein OpenWrt-CC-Fork: per Ethernet oder WLAN "VoCore2" verbinden, `ssh root@192.168.1.1` (Passwort vocore), sysupgrade hochladen, `sysupgrade -n` [geprüft]
+- **Taste und Zeitpunkt:** keine Taste [geprüft: Commit 3f31029]
+- **Sichtbare Zeichen:** nach dem sysupgrade ist WLAN aus; weiter per Ethernet am Dock oder Micro-USB-Konsole [geprüft: Commit 3f31029, für OpenWrt; ob Gluon das ebenso macht: abgeleitet]
 - **Übertragung:** ssh/scp: Gerät 192.168.1.1
+- **Rechner braucht:** per Ethernet (am Dock) oder WLAN 'VoCore2' verbinden, `ssh root@192.168.1.1` (Passwort vocore), Gluon-sysupgrade per scp, `sysupgrade -n <datei>` (Einstellungen nicht behalten) [geprüft: Commit 3f31029]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (Konsole am Dock über Micro-USB, UART2: USB, Art ?, Quelle Commit)
 - **Werkzeug/Spezial:** ssh
@@ -6432,14 +7084,19 @@ VoCore2 · ramips-mt76x8 · K1d
 TP-Link EAP225-Outdoor v1 · ath79-generic · K0+
 
 - **Weg ab Werk:** per SSH auf die Stock-Firmware `cliclientd stopcs` ausführen, dann factory im Web-UI hochladen [geprüft]
+- **Taste und Zeitpunkt:** keine Taste [geprüft: Commits]
 - **Übertragung:** ssh (Kommando) + webui-upload
+- **Rechner braucht:** Rechner per Kabel (Gerät über PoE versorgen); Stock-Weboberfläche, dort SSH einschalten; `ssh admin@<geräte-ip>`, `cliclientd stopcs`, danach Gluon-factory in der Weboberfläche als Firmware-Update hochladen [geprüft: Commits]; Stock-Adresse ohne DHCP 192.168.0.254, Login admin; alte SSH-Algorithmen evtl. freischalten (`-oHostKeyAlgorithms=ssh-rsa -oKexAlgorithms=+diffie-hellman-group1-sha1`) [abgeleitet: Forum/Suchergebnis, nicht in Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** SSH-Zugang zur Stock-Firmware
+- **Typenschild/Verwechslung:** v1 (Ethernet-PHY AR8033) und v3 (RTL8211FS) sehen gleich aus, eigene Images: Hardware-Version auf dem Typenschild lesen [geprüft: Commits 4f86edf, 7e4de89; Typenschild abgeleitet]
+- **Bedingung an die Herstellerfirmware:** Stock-Firmware ab v1.6.0 nötig (getestet mit v1.7.0) [geprüft: Commit 4f86edf]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_eap225-outdoor-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_eap225-outdoor-v1-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Rückweg zur Herstellerfirmware:** Rückweg/Debrick nur seriell (Gehäuse öffnen, Lötpunkte) [geprüft: Commits]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 4f86edf477edbc0f20b5a49a69f658fa82158284 [geprüft]
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=4f86edf477edbc0f20b5a49a69f658fa82158284
@@ -6449,14 +7106,19 @@ TP-Link EAP225-Outdoor v1 · ath79-generic · K0+
 TP-Link EAP225-Outdoor v3 · ath79-generic · K0+
 
 - **Weg ab Werk:** per SSH auf die Stock-Firmware `cliclientd stopcs` ausführen, dann factory im Web-UI hochladen [geprüft]
+- **Taste und Zeitpunkt:** keine Taste [geprüft: Commits]
 - **Übertragung:** ssh (Kommando) + webui-upload
+- **Rechner braucht:** Rechner per Kabel (Gerät über PoE versorgen); Stock-Weboberfläche, dort SSH einschalten; `ssh admin@<geräte-ip>`, `cliclientd stopcs`, danach Gluon-factory in der Weboberfläche als Firmware-Update hochladen [geprüft: Commits]; Stock-Adresse ohne DHCP 192.168.0.254, Login admin; alte SSH-Algorithmen evtl. freischalten (`-oHostKeyAlgorithms=ssh-rsa -oKexAlgorithms=+diffie-hellman-group1-sha1`) [abgeleitet: Forum/Suchergebnis, nicht in Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** SSH-Zugang zur Stock-Firmware
+- **Typenschild/Verwechslung:** v3 (RTL8211FS) und v1 (AR8033) sehen gleich aus, eigene Images: Hardware-Version auf dem Typenschild lesen [geprüft: Commits; Typenschild abgeleitet]
+- **Bedingung an die Herstellerfirmware:** Stock-Firmware ab v1.6.0 nötig [geprüft: Commit 7e4de89]; Forenberichte über 'firmware is incompatible' beim Upload auf v3 [abgeleitet: Forum openwrt 'EAP225-outdoor v3 firmware is incompatible', nicht gelesen]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_eap225-outdoor-v3-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_eap225-outdoor-v3-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Rückweg zur Herstellerfirmware:** Rückweg/Debrick nur seriell (Gehäuse öffnen, Lötpunkte) [geprüft: Commits]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 7e4de89e631aaf56be5375662b7d5ed0f27e26f6 [geprüft]
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7e4de89e631aaf56be5375662b7d5ed0f27e26f6
@@ -6466,14 +7128,18 @@ TP-Link EAP225-Outdoor v3 · ath79-generic · K0+
 TP-Link EAP225-Wall v2 · ath79-generic · K0+
 
 - **Weg ab Werk:** per SSH auf die Stock-Firmware `cliclientd stopcs` ausführen, dann factory im Web-UI hochladen [geprüft]
+- **Taste und Zeitpunkt:** keine Taste [geprüft: Commits]
 - **Übertragung:** ssh (Kommando) + webui-upload
+- **Rechner braucht:** Rechner per Kabel (Gerät über PoE versorgen); Stock-Weboberfläche, dort SSH einschalten; `ssh admin@<geräte-ip>`, `cliclientd stopcs`, danach Gluon-factory in der Weboberfläche als Firmware-Update hochladen [geprüft: Commits]; Stock-Adresse ohne DHCP 192.168.0.254, Login admin; alte SSH-Algorithmen evtl. freischalten (`-oHostKeyAlgorithms=ssh-rsa -oKexAlgorithms=+diffie-hellman-group1-sha1`) [abgeleitet: Forum/Suchergebnis, nicht in Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** SSH-Zugang zur Stock-Firmware
+- **Bedingung an die Herstellerfirmware:** aktuelle Stock-Firmware nötig (getestet mit 1.20.0) [geprüft: Commit c9f51a9]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_eap225-wall-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_eap225-wall-v2-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Rückweg zur Herstellerfirmware:** Rückweg/Debrick nur seriell (Gehäuse öffnen, Lötpunkte) [geprüft: Commits]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** c9f51a9ad6e8f99ed7adb78d208740b7d351985b [geprüft]
 
@@ -6482,7 +7148,9 @@ TP-Link EAP225-Wall v2 · ath79-generic · K0+
 TP-Link EAP613 v1 · ramips-mt7621 · K0
 
 - **Weg ab Werk:** SSH im Stock-Web-UI einschalten, per SSH `cliclientd stopcs`, dann factory im Web-UI hochladen (ggf. Dateinamen kürzen) [geprüft]
+- **Taste und Zeitpunkt:** keine Taste [geprüft: Commits]
 - **Übertragung:** ssh (ein Befehl) + webui-upload
+- **Rechner braucht:** Rechner per Kabel (Gerät über PoE versorgen); Stock-Weboberfläche, dort SSH einschalten; `ssh admin@<geräte-ip>`, `cliclientd stopcs`, danach Gluon-factory in der Weboberfläche als Firmware-Update hochladen [geprüft: Commits]; Stock-Adresse ohne DHCP 192.168.0.254, Login admin; alte SSH-Algorithmen evtl. freischalten (`-oHostKeyAlgorithms=ssh-rsa -oKexAlgorithms=+diffie-hellman-group1-sha1`) [abgeleitet: Forum/Suchergebnis, nicht in Commit]; Dateinamen evtl. kürzen, z. B. auf `factory.bin` [geprüft: Commit 11588c5]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** ssh-Client
@@ -6490,6 +7158,7 @@ TP-Link EAP613 v1 · ramips-mt7621 · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Rückweg zur Herstellerfirmware:** Debrick nur seriell (vier Schrauben hinten, Platine heraus, UART-Lötpunkte) [geprüft: Commit 11588c5]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 11588c52b47c2c3b2cdc7849ce9e4804bfdb8bb5
 
@@ -6498,7 +7167,9 @@ TP-Link EAP613 v1 · ramips-mt7621 · K0
 TP-Link EAP615-Wall v1 · ramips-mt7621 · K0
 
 - **Weg ab Werk:** SSH im Stock-Web-UI einschalten, per SSH `cliclientd stopcs`, dann factory im Web-UI hochladen (ggf. Dateinamen kürzen) [geprüft]
+- **Taste und Zeitpunkt:** keine Taste [geprüft: Commits]
 - **Übertragung:** ssh (ein Befehl) + webui-upload
+- **Rechner braucht:** Rechner per Kabel (Gerät über PoE versorgen); Stock-Weboberfläche, dort SSH einschalten; `ssh admin@<geräte-ip>`, `cliclientd stopcs`, danach Gluon-factory in der Weboberfläche als Firmware-Update hochladen [geprüft: Commits]; Stock-Adresse ohne DHCP 192.168.0.254, Login admin; alte SSH-Algorithmen evtl. freischalten (`-oHostKeyAlgorithms=ssh-rsa -oKexAlgorithms=+diffie-hellman-group1-sha1`) [abgeleitet: Forum/Suchergebnis, nicht in Commit]; Dateinamen evtl. kürzen [abgeleitet: Schwestergerät EAP613, gleiche Stock-Plattform]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** ssh-Client
@@ -6506,6 +7177,7 @@ TP-Link EAP615-Wall v1 · ramips-mt7621 · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 128 MB
+- **Rückweg zur Herstellerfirmware:** Debrick nur seriell (TTL-Header einlöten) [geprüft: Commit a1b8a4d]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** a1b8a4d7b3ff3fa671623e2bccafd43a3c141e07
 
@@ -6843,15 +7515,20 @@ TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54) · ramips-mt76x8 · K3
 Ubiquiti EdgeRouter X · ramips-mt7621 · K3
 
 - **Weg ab Werk:** EdgeOS nimmt (Web-UI "System" oder `add system image`) ein initramfs-factory.tar, das OpenWrt heute nicht mehr baut (nur alte Releases/Fremdquellen); danach Umstieg auf das 24.10-Layout (Kernel 6 MB, compat_version 2.0). Seriell alternativ TFTP im Ralink-Menü [geprüft: Commit, mk, Wiki]
+- **Taste und Zeitpunkt:** keine Taste; Installation aus dem laufenden EdgeOS [abgeleitet: Wiki toh/ubiquiti/edgerouter_x_er-x_ka]
 - **Übertragung:** webui-upload oder ssh/scp ubnt@192.168.1.1 (EdgeOS, eth0)
+- **Rechner braucht:** Rechner an eth0 des EdgeRouters, feste IP aus 192.168.1.0/24 (nicht .1); EdgeOS-Weboberfläche (Tab 'System') oder `scp`/`ssh ubnt@192.168.1.1` und `add system image <datei>` [abgeleitet: Wiki toh/ubiquiti/edgerouter_x_er-x_ka]; Dateien: OpenWrt-initramfs-factory.tar aus Fremdquelle (github stman/..., cyounkins/edgerouter-factory), danach OpenWrt-sysupgrade, dann Umstieg auf das 24.10-Layout (github darkxst/erx-migration), erst dann Gluon [abgeleitet: Wiki; vgl. Bestand werkzeug]; nach dem factory-Schritt ist OpenWrt auf eth1 unter root@192.168.1.1 erreichbar, nicht mehr auf eth0 [abgeleitet: Wiki]
 - **seriell nötig:** nein (nur für den seriellen TFTP-Weg: ja, 57600 Baud)
 - **Gehäuse öffnen:** nein
-- **Werkzeug/Spezial:** Fremd-factory.tar (github stman/..., cyounkins/edgerouter-factory), darkxst/erx-migration, Neanderfunk-Notiz erx-migration-howto.md
+- **Werkzeug/Spezial:** Fremd-factory.tar (github stman/..., cyounkins/edgerouter-factory), darkxst/erx-migration, Neanderfunk-Notiz
+- **Typenschild/Verwechslung:** ER-X (PoE-Durchleitung an eth4, Steckernetzteil oder passives PoE) und ER-X-SFP (SFP-Port, 5x PoE-out, 24-V-Netzteil) brauchen eigene Images [geprüft: Commit 9715beb]
+- **Bedingung an die Herstellerfirmware:** Wiki empfiehlt vor OpenWrt die neueste EdgeOS-v2-Firmware und das Bootloader-Update (sicherer Bootloader mit TFTP-Recovery über die Reset-Taste) [abgeleitet: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** kein factory.tar in 24.10.8
 - **Stock-Teile:** Umbau des Kernel-Layouts (Boot-Index in factory, Offset 160)
 - **RAM:** 256 MB
-- **Gluon-RAMpe passt:** nein für 2025.1: EdgeOS schreibt in einen 3-MB-Kernel-Slot; Kernel 6.6 allein hat 3 173 556 Byte (Neanderfunk-Notiz erx-migration-howto.md), ein Gluon-initramfs mit Rootfs passt erst recht nicht [abgeleitet]
+- **Rückweg zur Herstellerfirmware:** EdgeOS nach Ubiquiti-Anleitung help.ui.com/hc/en-us/articles/360019289113 wieder aufspielen [abgeleitet: Wiki]
+- **Gluon-RAMpe passt:** nein für 2025.1: EdgeOS schreibt in einen 3-MB-Kernel-Slot; Kernel 6.6 allein hat 3 173 556 Byte (Neanderfunk-Notiz), ein Gluon-initramfs mit Rootfs passt erst recht nicht [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 4e31b2e8697c21f9bd6493bb3d78a4a41c6a9a52
 - **Detail-Anleitung:** https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp
 
@@ -6860,15 +7537,20 @@ Ubiquiti EdgeRouter X · ramips-mt7621 · K3
 Ubiquiti EdgeRouter X-SFP · ramips-mt7621 · K3
 
 - **Weg ab Werk:** EdgeOS nimmt (Web-UI "System" oder `add system image`) ein initramfs-factory.tar, das OpenWrt heute nicht mehr baut (nur alte Releases/Fremdquellen); danach Umstieg auf das 24.10-Layout (Kernel 6 MB, compat_version 2.0). Seriell alternativ TFTP im Ralink-Menü [geprüft: Commit, mk, Wiki]
+- **Taste und Zeitpunkt:** keine Taste; Installation aus dem laufenden EdgeOS [abgeleitet: Wiki toh/ubiquiti/edgerouter_x_er-x_ka]
 - **Übertragung:** webui-upload oder ssh/scp ubnt@192.168.1.1 (EdgeOS, eth0)
+- **Rechner braucht:** Rechner an eth0 des EdgeRouters, feste IP aus 192.168.1.0/24 (nicht .1); EdgeOS-Weboberfläche (Tab 'System') oder `scp`/`ssh ubnt@192.168.1.1` und `add system image <datei>` [abgeleitet: Wiki toh/ubiquiti/edgerouter_x_er-x_ka]; Dateien: OpenWrt-initramfs-factory.tar aus Fremdquelle (github stman/..., cyounkins/edgerouter-factory), danach OpenWrt-sysupgrade, dann Umstieg auf das 24.10-Layout (github darkxst/erx-migration), erst dann Gluon [abgeleitet: Wiki; vgl. Bestand werkzeug]; nach dem factory-Schritt ist OpenWrt auf eth1 unter root@192.168.1.1 erreichbar, nicht mehr auf eth0 [abgeleitet: Wiki]; ein ER-X-factory läuft auch auf dem ER-X-SFP, dann das SFP-sysupgrade mit `--force` [abgeleitet: Wiki]
 - **seriell nötig:** nein (nur für den seriellen TFTP-Weg: ja, 57600 Baud)
 - **Gehäuse öffnen:** nein
-- **Werkzeug/Spezial:** Fremd-factory.tar (github stman/..., cyounkins/edgerouter-factory), darkxst/erx-migration, Neanderfunk-Notiz erx-migration-howto.md
+- **Werkzeug/Spezial:** Fremd-factory.tar (github stman/..., cyounkins/edgerouter-factory), darkxst/erx-migration, Neanderfunk-Notiz
+- **Typenschild/Verwechslung:** ER-X-SFP (SFP-Port, 5x PoE-out 24 V passiv) nicht mit ER-X verwechseln; eigene Images [geprüft: Commit 9715beb]
+- **Bedingung an die Herstellerfirmware:** Wiki empfiehlt vor OpenWrt die neueste EdgeOS-v2-Firmware und das Bootloader-Update (sicherer Bootloader mit TFTP-Recovery über die Reset-Taste) [abgeleitet: Wiki]; bei 'invalid firmware' half laut Wiki: EdgeOS 2.0.9 einspielen, auf 2.0.3 zurück, dann ein altes OpenWrt-18.06-factory [abgeleitet: Wiki, Einzelbericht]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-sfp-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** kein factory.tar in 24.10.8
 - **Stock-Teile:** Umbau des Kernel-Layouts (Boot-Index in factory, Offset 160)
 - **RAM:** 256 MB
-- **Gluon-RAMpe passt:** nein für 2025.1: EdgeOS schreibt in einen 3-MB-Kernel-Slot; Kernel 6.6 allein hat 3 173 556 Byte (Neanderfunk-Notiz erx-migration-howto.md), ein Gluon-initramfs mit Rootfs passt erst recht nicht [abgeleitet]
+- **Rückweg zur Herstellerfirmware:** EdgeOS nach Ubiquiti-Anleitung help.ui.com/hc/en-us/articles/360019289113 wieder aufspielen [abgeleitet: Wiki]
+- **Gluon-RAMpe passt:** nein für 2025.1: EdgeOS schreibt in einen 3-MB-Kernel-Slot; Kernel 6.6 allein hat 3 173 556 Byte (Neanderfunk-Notiz), ein Gluon-initramfs mit Rootfs passt erst recht nicht [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 9715beb04c74a918697945b3e2d23a139bd04b70
 - **Detail-Anleitung:** https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp
 
@@ -6881,14 +7563,21 @@ Ubiquiti EdgeRouter X-SFP · ramips-mt7621 · K3
 Ubiquiti Nanostation Loco M XW · ath79-generic · K0+
 
 - **Weg ab Werk:** Ubiquiti-TFTP-Recovery: Reset beim Einstecken halten bis die LEDs wechselweise blinken, factory per TFTP an das Gerät [geprüft]
+- **Taste und Zeitpunkt:** Reset-Taste am Gerät oder am PoE-Netzteil gedrückt halten, Gerät per PoE einschalten, weiter halten bis die LEDs abwechselnd blinken, dann loslassen [geprüft: Commit 633c430]
+- **Sichtbare Zeichen:** Signal-LEDs blinken abwechselnd (LED1+LED3, dann LED2+LED4) = TFTP-Modus erreicht [geprüft: Commits 633c430, 40530c8]; während des Schreibens laufen die Signal-LEDs der Reihe nach durch, dann Neustart [abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp]
 - **Übertragung:** tftp-server-am-geraet: Gerät 192.168.1.20, PC z. B. 192.168.1.21/24, `tftp put` factory (binary)
+- **Rechner braucht:** TFTP-Client (z. B. `tftp` unter Linux, unter Windows TFTP-Client nachinstallieren); Rechner feste IP aus 192.168.1.0/24, nicht .20 (Commits nennen .21 bzw. .25, Wiki .254), Netzmaske 255.255.255.0; Kabel vom LAN-Ausgang des PoE-Injektors direkt zum Rechner; `tftp 192.168.1.20`, `binary`, `put <gluon-factory>.bin` [geprüft: Commits 633c430, 40530c8]; einen bestimmten Dateinamen verlangt keine Quelle, kurzer Name mit Endung .bin [abgeleitet: better safe than sorry]; alternativ ap51-flash, das den Ubiquiti-TFTP-Modus beherrscht [abgeleitet: ap51-flash-Doku]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Loco M XW: ein Ethernet-Port, eingebaute 13-dBi-Antenne; nicht mit der NanoStation M XW (zwei Ports, PoE-Durchleitung) verwechseln [geprüft: Commits 633c430, 40530c8]; Board-Typ steht in der AirOS-Versionsangabe (Settings > System, z. B. 'XW.v6...'); XM-Geräte brauchen ein anderes Image [abgeleitet: Wiki toh/ubiquiti/common]
+- **Bedingung an die Herstellerfirmware:** Wiki: XW-Geräte brauchen für die OpenWrt-Installation AirOS 6.0.4 oder älter (ab 6.0.6 nur signierte Firmware; Downgrade über 6.0.6-beta auf 6.0.4); neuere XW-Hardware-Revisionen nur über XW.v6.1.7.32555 + fwupdate.real (github true-systems/ubnt-openwrt-flashing) [abgeleitet: Wiki toh/ubiquiti/common]; ob die Grenze auch für den TFTP-Recovery-Weg gilt, ist offen
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_nanostation-loco-m-xw-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_nanostation-loco-m-xw-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Dauer:** Upload Sekunden, danach schreibt das Gerät einige Minuten; nicht Strom ziehen, solange die LEDs laufen [abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp]
+- **Rückweg zur Herstellerfirmware:** gleicher TFTP-Weg mit dem AirOS-Image, möglichst genau der vorher installierten Version [abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 633c4304ad42d18d180ba65a264ba668de445d91 [geprüft]
 
@@ -6897,14 +7586,21 @@ Ubiquiti Nanostation Loco M XW · ath79-generic · K0+
 Ubiquiti Nanostation M XW · ath79-generic · K0+
 
 - **Weg ab Werk:** Ubiquiti-TFTP-Recovery: Reset beim Einstecken halten bis die LEDs wechselweise blinken, factory per TFTP an das Gerät [geprüft]
+- **Taste und Zeitpunkt:** Ethernet-Kabel am Gerät abziehen, Reset mit Büroklammer gedrückt halten, Kabel (PoE) wieder einstecken, Taste halten bis die LEDs im Upgrade-Muster blinken (bis zu 25 s), dann loslassen [geprüft: Commit 40530c8]
+- **Sichtbare Zeichen:** Signal-LEDs blinken abwechselnd (LED1+LED3, dann LED2+LED4) = TFTP-Modus erreicht [geprüft: Commits 633c430, 40530c8]; während des Schreibens laufen die Signal-LEDs der Reihe nach durch, dann Neustart [abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp]
 - **Übertragung:** tftp-server-am-geraet: Gerät 192.168.1.20, PC 192.168.1.25/24, `tftp put` factory (binary)
+- **Rechner braucht:** TFTP-Client (z. B. `tftp` unter Linux, unter Windows TFTP-Client nachinstallieren); Rechner feste IP aus 192.168.1.0/24, nicht .20 (Commits nennen .21 bzw. .25, Wiki .254), Netzmaske 255.255.255.0; Kabel vom LAN-Ausgang des PoE-Injektors direkt zum Rechner; `tftp 192.168.1.20`, `binary`, `put <gluon-factory>.bin` [geprüft: Commits 633c430, 40530c8]; einen bestimmten Dateinamen verlangt keine Quelle, kurzer Name mit Endung .bin [abgeleitet: better safe than sorry]; alternativ ap51-flash, das den Ubiquiti-TFTP-Modus beherrscht [abgeleitet: ap51-flash-Doku]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** NanoStation M XW: zwei Ethernet-Ports (PoE-in, PoE-out); nicht mit der NanoStation Loco M XW (ein Port) verwechseln [geprüft: Commits 40530c8, 633c430]; Board-Typ steht in der AirOS-Versionsangabe (Settings > System, z. B. 'XW.v6...'); XM-Geräte brauchen ein anderes Image [abgeleitet: Wiki toh/ubiquiti/common]
+- **Bedingung an die Herstellerfirmware:** Wiki: XW-Geräte brauchen für die OpenWrt-Installation AirOS 6.0.4 oder älter (ab 6.0.6 nur signierte Firmware; Downgrade über 6.0.6-beta auf 6.0.4); neuere XW-Hardware-Revisionen nur über XW.v6.1.7.32555 + fwupdate.real (github true-systems/ubnt-openwrt-flashing) [abgeleitet: Wiki toh/ubiquiti/common]; ob die Grenze auch für den TFTP-Recovery-Weg gilt, ist offen
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_nanostation-m-xw-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_nanostation-m-xw-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Dauer:** Upload Sekunden, danach schreibt das Gerät einige Minuten; nicht Strom ziehen, solange die LEDs laufen [abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp]
+- **Rückweg zur Herstellerfirmware:** gleicher TFTP-Weg mit dem AirOS-Image, möglichst genau der vorher installierten Version [abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 40530c8eb42aa4b98de10621b6c1c89030f00d0a [geprüft]
 
@@ -6913,14 +7609,21 @@ Ubiquiti Nanostation M XW · ath79-generic · K0+
 Ubiquiti Rocket M XM · ath79-generic · K0+
 
 - **Weg ab Werk:** Commit ohne Anleitung; Ubiquiti-TFTP-Recovery wie bei den XW-Geräten [abgeleitet]
+- **Taste und Zeitpunkt:** Reset beim Einschalten etwa 8 s halten, bis die Signal-LEDs abwechselnd blinken [abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp, ap51-flash-Doku; Commit ohne Anleitung]
+- **Sichtbare Zeichen:** Signal-LEDs blinken abwechselnd = TFTP-Modus [abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp]
 - **Übertragung:** tftp-server-am-geraet: 192.168.1.20 [abgeleitet]
+- **Rechner braucht:** TFTP-Client (z. B. `tftp` unter Linux, unter Windows TFTP-Client nachinstallieren); Rechner feste IP aus 192.168.1.0/24, nicht .20 (Commits nennen .21 bzw. .25, Wiki .254), Netzmaske 255.255.255.0; Kabel vom LAN-Ausgang des PoE-Injektors direkt zum Rechner; `tftp 192.168.1.20`, `binary`, `put <gluon-factory>.bin` [abgeleitet: XW-Commits, Commit des Geräts ohne Anleitung]; einen bestimmten Dateinamen verlangt keine Quelle, kurzer Name mit Endung .bin [abgeleitet: better safe than sorry]; alternativ ap51-flash, das den Ubiquiti-TFTP-Modus beherrscht [abgeleitet: ap51-flash-Doku]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Rocket M gibt es als XM und XW (und TI); Gluon-Image nur für XM; Board-Typ steht in der AirOS-Version (z. B. 'XM.v5.5...') [abgeleitet: Wiki toh/ubiquiti/common]
+- **Bedingung an die Herstellerfirmware:** XM-Geräte mit AirOS 5.6 oder neuer: NICHT direkt OpenWrt aufspielen, erst auf AirOS 5.5 (z. B. 5.5.11) zurück: Werksreset, 5.6.15-signed, 5.6.15-unsigned per TFTP, dann 5.5.x; das schreibt auch den U-Boot zurück [abgeleitet: Wiki toh/ubiquiti/common]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_rocket-m-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_rocket-m-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** ?
+- **Dauer:** Upload Sekunden, danach schreibt das Gerät einige Minuten; nicht Strom ziehen, solange die LEDs laufen [abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp]
+- **Rückweg zur Herstellerfirmware:** gleicher TFTP-Weg mit dem AirOS-Image, möglichst genau der vorher installierten Version [abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target, ohne Anleitung) [abgeleitet]
 
@@ -6929,7 +7632,10 @@ Ubiquiti Rocket M XM · ath79-generic · K0+
 Ubiquiti UniFi AP Pro · ath79-generic · K0+
 
 - **Weg ab Werk:** Ubiquiti-TFTP-Recovery: Reset 10 s beim Einstecken, factory per TFTP an das Gerät [geprüft]
+- **Taste und Zeitpunkt:** Reset gedrückt halten und Strom (PoE) einstecken, 10 Sekunden halten [geprüft: Commit b7da0d2]
+- **Sichtbare Zeichen:** nach dem Upload startet das Gerät nach etwa 2 Minuten selbst neu [geprüft: Commit b7da0d2]
 - **Übertragung:** tftp-server-am-geraet: Gerät 192.168.1.20, `tftp put` factory
+- **Rechner braucht:** TFTP-Client (z. B. `tftp` unter Linux, unter Windows TFTP-Client nachinstallieren); Rechner feste IP aus 192.168.1.0/24, nicht .20 (Commits nennen .21 bzw. .25, Wiki .254), Netzmaske 255.255.255.0; Kabel vom LAN-Ausgang des PoE-Injektors direkt zum Rechner; `tftp 192.168.1.20`, `binary`, `put <gluon-factory>.bin` [geprüft: Commit b7da0d2 für 'factory per TFTP an 192.168.1.20'; Einzelheiten aus XW-Commits abgeleitet]; einen bestimmten Dateinamen verlangt keine Quelle, kurzer Name mit Endung .bin [abgeleitet: better safe than sorry]; alternativ ap51-flash, das den Ubiquiti-TFTP-Modus beherrscht [abgeleitet: ap51-flash-Doku]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
@@ -6937,6 +7643,7 @@ Ubiquiti UniFi AP Pro · ath79-generic · K0+
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_unifi-ap-pro-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** etwa 2 Minuten Schreiben, Gerät startet selbst neu; bis dahin nicht Strom ziehen [geprüft: Commit b7da0d2]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** b7da0d294465d5ab8d923f3b8265ece0a5847ac3 [geprüft]
 
@@ -6949,14 +7656,21 @@ Ubiquiti UniFi AP Pro · ath79-generic · K0+
 Ubiquiti UniFi AC Lite · ath79-generic · K1d
 
 - **Weg ab Werk:** SSH auf die Stock-Firmware (ubnt/ubnt, 192.168.1.20), Schreibschutz per /proc/ubnthal/.uf aus, sysupgrade nach kernel0/kernel1 schreiben, bootselect setzen [abgeleitet: Ablauf aus UK-Ultra-Commit bf94e0a, gleiche ubnt_unifiac-Basis; Commit des Geräts ohne Anleitung]
+- **Taste und Zeitpunkt:** keine Taste; Gerät im Werkszustand normal starten (Strom per PoE), dann per SSH anmelden [geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24']
+- **Sichtbare Zeichen:** nach dem Neustart leuchtet die LED nach etwa 2 Minuten dauerhaft weiß (Wiki, für OpenWrt) [abgeleitet: Wiki toh/ubiquiti/unifiac]
 - **Übertragung:** ssh/scp: Gerät 192.168.1.20, ubnt/ubnt, Datei nach /tmp
+- **Rechner braucht:** SSH-/scp-Client; LAN-Kabel vom Rechner zum Gerät über PoE-Injektor oder PoE-Switch; Rechner feste IP aus 192.168.1.0/24, nicht .20 (z. B. 192.168.1.2 oder .10); Gerät 192.168.1.20, Login ubnt/ubnt [geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac]; neuere OpenSSH-Clients brauchen `scp -O` [geprüft: Commit bf94e0a]; Datei: Gluon-sysupgrade [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** SSH + dd auf der Stock-Firmware
+- **Typenschild/Verwechslung:** AC Lite, AC LR und AC Mesh haben dieselbe Hardware, nur andere Antennen (AC LR mit dickerem Gehäuse); jedes hat ein eigenes Gluon-Image (Antennengewinn), Typenschild genau lesen [geprüft: Commits 07c1ddf, 4456dd4]
+- **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; Stock 3.7.58 ist bevorzugt (hat noch `mtd`), ab 6.5.28 geht es nur mit `dd`; Schreibschutz mit `echo 5edfacbf > /proc/ubnthal/.uf` aufheben (scheitert bei manchen Versionen still) [abgeleitet: Wiki toh/ubiquiti/unifiac]; Downgrade in der Stock-Firmware mit `fwupdate.real -m <datei>` oder per TFTP-Recovery [abgeleitet: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_unifiac-lite-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [abgeleitet: ar71xx-Commit 43a7a1a nennt AC Mesh = Hardwarekopie AC Lite, 128 MiB]
+- **Dauer:** Schreiben per dd wenige Sekunden bis Minuten, erster Start etwa 2 Minuten [abgeleitet: Wiki]; während dd läuft nicht Strom ziehen [abgeleitet]
+- **Rückweg zur Herstellerfirmware:** Ubiquiti-TFTP-Recovery: Reset beim Einschalten etwa 15 s halten, bis der LED-Ring weiß/blau/aus wechselt, dann Stock-Firmware per `tftp put` an 192.168.1.20 [abgeleitet: Wiki toh/ubiquiti/unifiac]
 - **Gluon-RAMpe passt:** nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben
 - **Quelle (OpenWrt-Commit):** cad843e1f57790a08dd4804011b6cd3a4796786b (ohne Anleitung); 56fddc2577baf194d1e9a7b37d454d12ff9fb469 (Umbenennung) [abgeleitet]
 - **Detail-Anleitung:** https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790
@@ -6966,14 +7680,21 @@ Ubiquiti UniFi AC Lite · ath79-generic · K1d
 Ubiquiti UniFi AC LR · ath79-generic · K1d
 
 - **Weg ab Werk:** SSH auf die Stock-Firmware (ubnt/ubnt, 192.168.1.20), Schreibschutz per /proc/ubnthal/.uf aus, sysupgrade nach kernel0/kernel1 schreiben, bootselect setzen [abgeleitet: Ablauf aus UK-Ultra-Commit bf94e0a, gleiche ubnt_unifiac-Basis; Commit des Geräts ohne Anleitung]
+- **Taste und Zeitpunkt:** keine Taste; Gerät im Werkszustand normal starten (Strom per PoE), dann per SSH anmelden [geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24']
+- **Sichtbare Zeichen:** nach dem Neustart leuchtet die LED nach etwa 2 Minuten dauerhaft weiß (Wiki, für OpenWrt) [abgeleitet: Wiki toh/ubiquiti/unifiac]
 - **Übertragung:** ssh/scp: Gerät 192.168.1.20, ubnt/ubnt, Datei nach /tmp
+- **Rechner braucht:** SSH-/scp-Client; LAN-Kabel vom Rechner zum Gerät über PoE-Injektor oder PoE-Switch; Rechner feste IP aus 192.168.1.0/24, nicht .20 (z. B. 192.168.1.2 oder .10); Gerät 192.168.1.20, Login ubnt/ubnt [geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac]; neuere OpenSSH-Clients brauchen `scp -O` [geprüft: Commit bf94e0a]; Datei: Gluon-sysupgrade [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** SSH + dd auf der Stock-Firmware
+- **Typenschild/Verwechslung:** AC Lite, AC LR und AC Mesh haben dieselbe Hardware, nur andere Antennen (AC LR mit dickerem Gehäuse); jedes hat ein eigenes Gluon-Image (Antennengewinn), Typenschild genau lesen [geprüft: Commits 07c1ddf, 4456dd4]
+- **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; Stock 3.7.58 ist bevorzugt (hat noch `mtd`), ab 6.5.28 geht es nur mit `dd`; Schreibschutz mit `echo 5edfacbf > /proc/ubnthal/.uf` aufheben (scheitert bei manchen Versionen still) [abgeleitet: Wiki toh/ubiquiti/unifiac]; Downgrade in der Stock-Firmware mit `fwupdate.real -m <datei>` oder per TFTP-Recovery [abgeleitet: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_unifiac-lr-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [abgeleitet: laut Commit Hardware wie AC Lite]
+- **Dauer:** Schreiben per dd wenige Sekunden bis Minuten, erster Start etwa 2 Minuten [abgeleitet: Wiki]; während dd läuft nicht Strom ziehen [abgeleitet]
+- **Rückweg zur Herstellerfirmware:** Ubiquiti-TFTP-Recovery: Reset beim Einschalten etwa 15 s halten, bis der LED-Ring weiß/blau/aus wechselt, dann Stock-Firmware per `tftp put` an 192.168.1.20 [abgeleitet: Wiki toh/ubiquiti/unifiac]
 - **Gluon-RAMpe passt:** nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben
 - **Quelle (OpenWrt-Commit):** 07c1ddf522dbe6085af664cf03a41f636a70b99c [abgeleitet]
 - **Detail-Anleitung:** https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790
@@ -6983,14 +7704,21 @@ Ubiquiti UniFi AC LR · ath79-generic · K1d
 Ubiquiti UniFi AC Mesh · ath79-generic · K1d
 
 - **Weg ab Werk:** SSH auf die Stock-Firmware (ubnt/ubnt, 192.168.1.20), Schreibschutz per /proc/ubnthal/.uf aus, sysupgrade nach kernel0/kernel1 schreiben, bootselect setzen [abgeleitet: Ablauf aus UK-Ultra-Commit bf94e0a, gleiche ubnt_unifiac-Basis; Commit des Geräts ohne Anleitung]
+- **Taste und Zeitpunkt:** keine Taste; Gerät im Werkszustand normal starten (Strom per PoE), dann per SSH anmelden [geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24']
+- **Sichtbare Zeichen:** nach dem Neustart leuchtet die LED nach etwa 2 Minuten dauerhaft weiß (Wiki, für OpenWrt) [abgeleitet: Wiki toh/ubiquiti/unifiac]
 - **Übertragung:** ssh/scp: Gerät 192.168.1.20, ubnt/ubnt, Datei nach /tmp
+- **Rechner braucht:** SSH-/scp-Client; LAN-Kabel vom Rechner zum Gerät über PoE-Injektor oder PoE-Switch; Rechner feste IP aus 192.168.1.0/24, nicht .20 (z. B. 192.168.1.2 oder .10); Gerät 192.168.1.20, Login ubnt/ubnt [geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac]; neuere OpenSSH-Clients brauchen `scp -O` [geprüft: Commit bf94e0a]; Datei: Gluon-sysupgrade [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** SSH + dd auf der Stock-Firmware
+- **Typenschild/Verwechslung:** AC Lite, AC LR und AC Mesh haben dieselbe Hardware, nur andere Antennen (AC LR mit dickerem Gehäuse); jedes hat ein eigenes Gluon-Image (Antennengewinn), Typenschild genau lesen [geprüft: Commits 07c1ddf, 4456dd4]
+- **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; Stock 3.7.58 ist bevorzugt (hat noch `mtd`), ab 6.5.28 geht es nur mit `dd`; Schreibschutz mit `echo 5edfacbf > /proc/ubnthal/.uf` aufheben (scheitert bei manchen Versionen still) [abgeleitet: Wiki toh/ubiquiti/unifiac]; Downgrade in der Stock-Firmware mit `fwupdate.real -m <datei>` oder per TFTP-Recovery [abgeleitet: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_unifiac-mesh-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [ar71xx-Commit 43a7a1a05e0906f8adacd9c09b5c0be79fc94de1]
+- **Dauer:** Schreiben per dd wenige Sekunden bis Minuten, erster Start etwa 2 Minuten [abgeleitet: Wiki]; während dd läuft nicht Strom ziehen [abgeleitet]
+- **Rückweg zur Herstellerfirmware:** Ubiquiti-TFTP-Recovery: Reset beim Einschalten etwa 15 s halten, bis der LED-Ring weiß/blau/aus wechselt, dann Stock-Firmware per `tftp put` an 192.168.1.20 [abgeleitet: Wiki toh/ubiquiti/unifiac]
 - **Gluon-RAMpe passt:** nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben
 - **Quelle (OpenWrt-Commit):** 4456dd4660b4fa4e9c04d73029c72bf7b0f2ba84 [abgeleitet]
 - **Detail-Anleitung:** https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790
@@ -7000,14 +7728,21 @@ Ubiquiti UniFi AC Mesh · ath79-generic · K1d
 Ubiquiti UniFi AC Mesh Pro · ath79-generic · K1d
 
 - **Weg ab Werk:** SSH auf die Stock-Firmware (ubnt/ubnt, 192.168.1.20), Schreibschutz per /proc/ubnthal/.uf aus, sysupgrade nach kernel0/kernel1 schreiben, bootselect setzen [abgeleitet: Ablauf aus UK-Ultra-Commit bf94e0a, gleiche ubnt_unifiac-Basis; Commit des Geräts ohne Anleitung]
+- **Taste und Zeitpunkt:** keine Taste; Gerät im Werkszustand normal starten (Strom per PoE), dann per SSH anmelden [geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24']
+- **Sichtbare Zeichen:** nach dem Neustart leuchtet die LED nach etwa 2 Minuten dauerhaft weiß (Wiki, für OpenWrt) [abgeleitet: Wiki toh/ubiquiti/unifiac]
 - **Übertragung:** ssh/scp: Gerät 192.168.1.20, ubnt/ubnt, Datei nach /tmp
+- **Rechner braucht:** SSH-/scp-Client; LAN-Kabel vom Rechner zum Gerät über PoE-Injektor oder PoE-Switch; Rechner feste IP aus 192.168.1.0/24, nicht .20 (z. B. 192.168.1.2 oder .10); Gerät 192.168.1.20, Login ubnt/ubnt [geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac]; neuere OpenSSH-Clients brauchen `scp -O` [geprüft: Commit bf94e0a]; Datei: Gluon-sysupgrade [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** SSH + dd auf der Stock-Firmware
+- **Typenschild/Verwechslung:** AC Pro und AC Mesh Pro sind gleiche Hardware bis auf USB; eigene Images [geprüft: Commit e420b7b]
+- **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; Stock 3.7.58 ist bevorzugt (hat noch `mtd`), ab 6.5.28 geht es nur mit `dd`; Schreibschutz mit `echo 5edfacbf > /proc/ubnthal/.uf` aufheben (scheitert bei manchen Versionen still) [abgeleitet: Wiki toh/ubiquiti/unifiac]; Downgrade in der Stock-Firmware mit `fwupdate.real -m <datei>` oder per TFTP-Recovery [abgeleitet: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_unifiac-mesh-pro-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [ar71xx-Commit 987b961537b7002eda21df97dd8bfebe8882bc6d]
+- **Dauer:** Schreiben per dd wenige Sekunden bis Minuten, erster Start etwa 2 Minuten [abgeleitet: Wiki]; während dd läuft nicht Strom ziehen [abgeleitet]
+- **Rückweg zur Herstellerfirmware:** Ubiquiti-TFTP-Recovery: Reset beim Einschalten etwa 15 s halten, bis der LED-Ring weiß/blau/aus wechselt, dann Stock-Firmware per `tftp put` an 192.168.1.20 [abgeleitet: Wiki toh/ubiquiti/unifiac]
 - **Gluon-RAMpe passt:** nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben
 - **Quelle (OpenWrt-Commit):** e420b7b5c517d03e1282b5889065e22143f9c4ef [abgeleitet]
 - **Detail-Anleitung:** https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790
@@ -7017,14 +7752,21 @@ Ubiquiti UniFi AC Mesh Pro · ath79-generic · K1d
 Ubiquiti UniFi AC Pro · ath79-generic · K1d
 
 - **Weg ab Werk:** SSH auf die Stock-Firmware (ubnt/ubnt, 192.168.1.20), Schreibschutz per /proc/ubnthal/.uf aus, sysupgrade nach kernel0/kernel1 schreiben, bootselect setzen [abgeleitet: Ablauf aus UK-Ultra-Commit bf94e0a, gleiche ubnt_unifiac-Basis; Commit des Geräts ohne Anleitung]
+- **Taste und Zeitpunkt:** keine Taste; Gerät im Werkszustand normal starten (Strom per PoE), dann per SSH anmelden [geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24']
+- **Sichtbare Zeichen:** nach dem Neustart leuchtet die LED nach etwa 2 Minuten dauerhaft weiß (Wiki, für OpenWrt) [abgeleitet: Wiki toh/ubiquiti/unifiac]
 - **Übertragung:** ssh/scp: Gerät 192.168.1.20, ubnt/ubnt, Datei nach /tmp
+- **Rechner braucht:** SSH-/scp-Client; LAN-Kabel vom Rechner zum Gerät über PoE-Injektor oder PoE-Switch; Rechner feste IP aus 192.168.1.0/24, nicht .20 (z. B. 192.168.1.2 oder .10); Gerät 192.168.1.20, Login ubnt/ubnt [geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac]; neuere OpenSSH-Clients brauchen `scp -O` [geprüft: Commit bf94e0a]; Datei: Gluon-sysupgrade [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** SSH + dd auf der Stock-Firmware
+- **Typenschild/Verwechslung:** AC Pro und AC Mesh Pro sind gleiche Hardware bis auf USB; eigene Images [geprüft: Commit e420b7b]
+- **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; Stock 3.7.58 ist bevorzugt (hat noch `mtd`), ab 6.5.28 geht es nur mit `dd`; Schreibschutz mit `echo 5edfacbf > /proc/ubnthal/.uf` aufheben (scheitert bei manchen Versionen still) [abgeleitet: Wiki toh/ubiquiti/unifiac]; Downgrade in der Stock-Firmware mit `fwupdate.real -m <datei>` oder per TFTP-Recovery [abgeleitet: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_unifiac-pro-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [abgeleitet: Mesh Pro ist laut ar71xx-Commit Hardwarekopie des AC Pro]
+- **Dauer:** Schreiben per dd wenige Sekunden bis Minuten, erster Start etwa 2 Minuten [abgeleitet: Wiki]; während dd läuft nicht Strom ziehen [abgeleitet]
+- **Rückweg zur Herstellerfirmware:** Ubiquiti-TFTP-Recovery: Reset beim Einschalten etwa 15 s halten, bis der LED-Ring weiß/blau/aus wechselt, dann Stock-Firmware per `tftp put` an 192.168.1.20 [abgeleitet: Wiki toh/ubiquiti/unifiac]
 - **Gluon-RAMpe passt:** nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben
 - **Quelle (OpenWrt-Commit):** 7dd3d7e1d3845160c2ef51e6148b452e666bd6f5 [abgeleitet]
 - **Detail-Anleitung:** https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790
@@ -7034,10 +7776,13 @@ Ubiquiti UniFi AC Pro · ath79-generic · K1d
 Ubiquiti UniFi AP · ath79-generic · K0+
 
 - **Weg ab Werk:** Commit ohne Anleitung; vermutlich wie UniFi AP Outdoor+ (gleiche ubnt-bz-Basis): SCP + fwupdate.real [abgeleitet]
+- **Taste und Zeitpunkt:** keine Taste; Gerät im Werkszustand normal starten (Strom per PoE), dann per SSH anmelden [geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24'] [für dieses Gerät abgeleitet: Commit ohne Anleitung]
 - **Übertragung:** ssh/scp [abgeleitet]
+- **Rechner braucht:** SSH-/scp-Client; LAN-Kabel vom Rechner zum Gerät über PoE-Injektor oder PoE-Switch; Rechner feste IP aus 192.168.1.0/24, nicht .20 (z. B. 192.168.1.2 oder .10); Gerät 192.168.1.20, Login ubnt/ubnt [geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac]; neuere OpenSSH-Clients brauchen `scp -O` [geprüft: Commit bf94e0a]; Datei: Gluon-sysupgrade [geprüft: Commits] [für dieses Gerät abgeleitet]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** SSH auf der Stock-Firmware [abgeleitet]
+- **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_unifi-ap-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_unifi-ap-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -7050,10 +7795,13 @@ Ubiquiti UniFi AP · ath79-generic · K0+
 Ubiquiti UniFi AP Outdoor+ · ath79-generic · K0+
 
 - **Weg ab Werk:** factory per SCP auf die Stock-Firmware, dann `fwupdate.real -m <openwrt.bin> -d` [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; Gerät im Werkszustand normal starten (Strom per PoE), dann per SSH anmelden [geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24']
 - **Übertragung:** ssh/scp
+- **Rechner braucht:** SSH-/scp-Client; LAN-Kabel vom Rechner zum Gerät über PoE-Injektor oder PoE-Switch; Rechner feste IP aus 192.168.1.0/24, nicht .20 (z. B. 192.168.1.2 oder .10); Gerät 192.168.1.20, Login ubnt/ubnt [geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac]; neuere OpenSSH-Clients brauchen `scp -O` [geprüft: Commit bf94e0a]; Datei per scp aufs Gerät, dort `fwupdate.real -m <datei> -d` [geprüft: Commit 51f578e]; welches Image (factory oder sysupgrade) nennt der Commit nicht, Bestand sagt factory [abgeleitet]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** SSH auf der Stock-Firmware
+- **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_unifi-ap-outdoor-plus-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_unifi-ap-outdoor-plus-squashfs-factory.bin)
 - **Stock-Teile:** keine
@@ -7066,10 +7814,13 @@ Ubiquiti UniFi AP Outdoor+ · ath79-generic · K0+
 Ubiquiti UniFi Swiss Army Knife Ultra · ath79-generic · K1d
 
 - **Weg ab Werk:** SSH auf die Stock-Firmware (ubnt/ubnt, 192.168.1.20), `echo 5edfacbf > /proc/ubnthal/.uf`, sysupgrade per dd nach mtdblock2 und mtdblock3, bootselect auf kernel0, reboot [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; Gerät im Werkszustand normal starten (Strom per PoE), dann per SSH anmelden [geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24']
 - **Übertragung:** ssh/scp: Gerät 192.168.1.20, ubnt/ubnt, `scp -O ... /tmp/firmware.bin`
+- **Rechner braucht:** SSH-/scp-Client; LAN-Kabel vom Rechner zum Gerät über PoE-Injektor oder PoE-Switch; Rechner feste IP aus 192.168.1.0/24, nicht .20 (z. B. 192.168.1.2 oder .10); Gerät 192.168.1.20, Login ubnt/ubnt [geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac]; neuere OpenSSH-Clients brauchen `scp -O` [geprüft: Commit bf94e0a]; Datei: Gluon-sysupgrade [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** SSH + dd auf der Stock-Firmware
+- **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; Schreibschutz aufheben mit `echo "5edfacbf" > /proc/ubnthal/.uf` [geprüft: Commit bf94e0a]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_uk-ultra-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
@@ -7083,14 +7834,18 @@ Ubiquiti UniFi Swiss Army Knife Ultra · ath79-generic · K1d
 Ubiquiti UniFi AC HD · ipq806x-generic · K1d
 
 - **Weg ab Werk:** SSH (ubnt/ubnt), Byte 7 von `bootselect` (mtd11) nullen, sysupgrade per dd nach `kernel0` (mtdblock12), Neustart [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; Gerät im Werkszustand normal starten (Strom per PoE), dann per SSH anmelden [geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24']
 - **Übertragung:** ssh/scp: Gerät 192.168.1.20, Login ubnt/ubnt
+- **Rechner braucht:** SSH-/scp-Client; LAN-Kabel vom Rechner zum Gerät über PoE-Injektor oder PoE-Switch; Rechner feste IP aus 192.168.1.0/24, nicht .20 (z. B. 192.168.1.2 oder .10); Gerät 192.168.1.20, Login ubnt/ubnt [geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac]; neuere OpenSSH-Clients brauchen `scp -O` [geprüft: Commit bf94e0a]; Datei: Gluon-sysupgrade [geprüft: Commits]; Gluon-sysupgrade per scp nach /tmp [geprüft: Commit 4e46beb]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']
 - **initramfs-Link:** [24.10.8: initramfs-fit-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq806x/generic/openwrt-24.10.8-ipq806x-generic-ubnt_unifi-ac-hd-initramfs-fit-uImage.itb)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Rückweg zur Herstellerfirmware:** TFTP-Recovery mit dem Ubiquiti-Image [geprüft: Commit 4e46beb]
 - **Gluon-RAMpe passt:** nein, nicht nötig: der Weg schreibt das Gluon-sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** OpenWrt 4e46beb31342a2b02e32185e91806093f68a77be
 - **Detail-Anleitung:** -
@@ -7100,14 +7855,18 @@ Ubiquiti UniFi AC HD · ipq806x-generic · K1d
 Ubiquiti UniFi 6+ (U6+) · mediatek-filogic · K1d
 
 - **Weg ab Werk:** SSH (ubnt/ubnt), Kernel-Partitionen per `/proc/ubnthal/.uf` entsperren, `fw_setenv` boot_openwrt/bootcmd_real, kernel und root aus dem sysupgrade-tar per dd nach mmcblk0p6/p7, Bootflag in mmcblk0p8 [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; Gerät im Werkszustand normal starten (Strom per PoE), dann per SSH anmelden [geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24']
 - **Übertragung:** ssh/scp: Gerät 192.168.1.20, Rechner statisch 192.168.1.2, Login ubnt/ubnt
+- **Rechner braucht:** Gerät per PoE-Injektor oder PoE-Switch versorgen, Rechner fest auf 192.168.1.2, `ssh ubnt@192.168.1.20` (Passwort ubnt) [geprüft: Commit 75ee554]; Gluon-sysupgrade per scp nach /tmp/openwrt.bin [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; Wiki: getestet bis Stock 6.6.55, vermutlich auch später; sonst per TFTP-Recovery auf ältere Version [abgeleitet: Wiki toh/ubiquiti/unifi_6_plus]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-ubnt_unifi-6-plus-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Rückweg zur Herstellerfirmware:** TFTP-Recovery nach Ubiquiti-Doku, jede ältere Stock-Version möglich [abgeleitet: Wiki toh/ubiquiti/unifi_6_plus]
 - **Gluon-RAMpe passt:** nein, nicht nötig: der Weg schreibt das Gluon-sysupgrade direkt, ohne initramfs-Schritt
 - **Quelle (OpenWrt-Commit):** OpenWrt 75ee5546e9b7cfa5bbfd6f844ab8c5fffd5bb594
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=75ee5546e9b7cfa5bbfd6f844ab8c5fffd5bb594
@@ -7117,14 +7876,21 @@ Ubiquiti UniFi 6+ (U6+) · mediatek-filogic · K1d
 Ubiquiti UniFi 6 LR v1 · mediatek-mt7622 · K1d
 
 - **Weg ab Werk:** SSH (ubnt/ubnt), bootselect in `bs` nullen, sysupgrade per dd nach kernel0 und kernel1, Neustart [geprüft: 634c13c1]
+- **Taste und Zeitpunkt:** keine Taste; Gerät im Werkszustand normal starten (Strom per PoE), dann per SSH anmelden [geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24']
+- **Sichtbare Zeichen:** erster Start dauert etwa 4 Minuten, zum Ende blinkt die LED weiß/aus; danach dauerhaft blau = fertig [abgeleitet: Wiki toh/ubiquiti/unifi_6_lr]
 - **Übertragung:** ssh/scp: Gerät 192.168.1.20, Login ubnt/ubnt
+- **Rechner braucht:** SSH-/scp-Client; LAN-Kabel vom Rechner zum Gerät über PoE-Injektor oder PoE-Switch; Rechner feste IP aus 192.168.1.0/24, nicht .20 (z. B. 192.168.1.2 oder .10); Gerät 192.168.1.20, Login ubnt/ubnt [geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac]; neuere OpenSSH-Clients brauchen `scp -O` [geprüft: Commit bf94e0a]; Datei: Gluon-sysupgrade [geprüft: Commits]; ältere Stock-Firmware antwortet evtl. unter 192.168.1.34; SSH evtl. mit `-oHostKeyAlgorithms=+ssh-rsa` [abgeleitet: Wiki toh/ubiquiti/unifi_6_lr]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, Gehäuse verklebt)
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** v1: LED-Leiste mit RGB-Farben; v2: nur zwei einfache LEDs (weiß/blau) statt LED-Leiste; v3: andere Ethernet-PHY (RTL8211FS, nur 1 Gbit statt 2.5 Gbit), sonst wie v2 [geprüft: Commits 15a0247, 31d86a1, a0f4ead]; v3 laut Wiki ab Produktionswoche 2234 (KW 34/2022) [abgeleitet: Wiki]; falsche v2/v3-Wahl heißt vermutlich kein Ethernet nach dem Flashen [abgeleitet: Commit a0f4ead]; die frühe 'U6 LR-EA' ist ein MT7621-Gerät und keine dieser Varianten [geprüft: Commit fb4d7a9]
+- **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; ab Stock 6.2 vorher Schreibschutz aufheben: `echo 5edfacbf > /proc/ubnthal/.uf` (steht nicht im Commit) [abgeleitet: Wiki toh/ubiquiti/unifi_6_lr]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-ubnt_unifi-6-lr-v1-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** [24.10.8: ubootmod-initramfs-recovery.itb](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-ubnt_unifi-6-lr-v1-ubootmod-initramfs-recovery.itb)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Dauer:** erster Start etwa 4 Minuten, nicht Strom ziehen [abgeleitet: Wiki]
+- **Rückweg zur Herstellerfirmware:** TFTP-Recovery: Reset beim Einschalten halten bis die LED weiß-blau-aus wechselt, Stock-Firmware per TFTP [abgeleitet: Wiki toh/ubiquiti/unifi_6_lr]
 - **Gluon-RAMpe passt:** nein, nicht nötig: der Weg schreibt das Gluon-sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** OpenWrt 634c13c186646aff2badb51a43b248825d0fe5a0 (v1-Profil: 15a02471bb854245f8f94398c1e1d9ce29c2c341)
 - **Detail-Anleitung:** https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps
@@ -7134,14 +7900,21 @@ Ubiquiti UniFi 6 LR v1 · mediatek-mt7622 · K1d
 Ubiquiti UniFi 6 LR v2 · mediatek-mt7622 · K1d
 
 - **Weg ab Werk:** SSH (ubnt/ubnt), bootselect in `bs` nullen, sysupgrade per dd nach kernel0 und kernel1, Neustart [geprüft: 634c13c1] [für v2 abgeleitet, eigener Commit ohne Installationsabschnitt]
+- **Taste und Zeitpunkt:** keine Taste; Gerät im Werkszustand normal starten (Strom per PoE), dann per SSH anmelden [geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24']
+- **Sichtbare Zeichen:** weiße Dom-LED leuchtet ab Einschalten, blaue geht an, wenn das System läuft [geprüft: Commit 31d86a1]; erster Start dauert etwa 4 Minuten, zum Ende blinkt die LED weiß/aus; danach dauerhaft blau = fertig [abgeleitet: Wiki toh/ubiquiti/unifi_6_lr]
 - **Übertragung:** ssh/scp: Gerät 192.168.1.20, Login ubnt/ubnt
+- **Rechner braucht:** SSH-/scp-Client; LAN-Kabel vom Rechner zum Gerät über PoE-Injektor oder PoE-Switch; Rechner feste IP aus 192.168.1.0/24, nicht .20 (z. B. 192.168.1.2 oder .10); Gerät 192.168.1.20, Login ubnt/ubnt [geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac]; neuere OpenSSH-Clients brauchen `scp -O` [geprüft: Commit bf94e0a]; Datei: Gluon-sysupgrade [geprüft: Commits]; ältere Stock-Firmware antwortet evtl. unter 192.168.1.34; SSH evtl. mit `-oHostKeyAlgorithms=+ssh-rsa` [abgeleitet: Wiki toh/ubiquiti/unifi_6_lr]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, Gehäuse verklebt)
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** v1: LED-Leiste mit RGB-Farben; v2: nur zwei einfache LEDs (weiß/blau) statt LED-Leiste; v3: andere Ethernet-PHY (RTL8211FS, nur 1 Gbit statt 2.5 Gbit), sonst wie v2 [geprüft: Commits 15a0247, 31d86a1, a0f4ead]; v3 laut Wiki ab Produktionswoche 2234 (KW 34/2022) [abgeleitet: Wiki]; falsche v2/v3-Wahl heißt vermutlich kein Ethernet nach dem Flashen [abgeleitet: Commit a0f4ead]; die frühe 'U6 LR-EA' ist ein MT7621-Gerät und keine dieser Varianten [geprüft: Commit fb4d7a9]
+- **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; ab Stock 6.2 vorher Schreibschutz aufheben: `echo 5edfacbf > /proc/ubnthal/.uf` (steht nicht im Commit) [abgeleitet: Wiki toh/ubiquiti/unifi_6_lr]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-ubnt_unifi-6-lr-v2-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** [24.10.8: ubootmod-initramfs-recovery.itb](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-ubnt_unifi-6-lr-v2-ubootmod-initramfs-recovery.itb)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Dauer:** erster Start etwa 4 Minuten, nicht Strom ziehen [abgeleitet: Wiki]
+- **Rückweg zur Herstellerfirmware:** TFTP-Recovery: Reset beim Einschalten halten bis die LED weiß-blau-aus wechselt, Stock-Firmware per TFTP [abgeleitet: Wiki toh/ubiquiti/unifi_6_lr]
 - **Gluon-RAMpe passt:** nein, nicht nötig: der Weg schreibt das Gluon-sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** OpenWrt 634c13c186646aff2badb51a43b248825d0fe5a0 (v2: 31d86a1a119265393db02aa66e6bc6518ee7b905)
 - **Detail-Anleitung:** https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps
@@ -7151,14 +7924,21 @@ Ubiquiti UniFi 6 LR v2 · mediatek-mt7622 · K1d
 Ubiquiti UniFi 6 LR v3 · mediatek-mt7622 · K1d
 
 - **Weg ab Werk:** SSH (ubnt/ubnt), bootselect in `bs` nullen, sysupgrade per dd nach kernel0 und kernel1, Neustart [geprüft: 634c13c1] [für v3 abgeleitet, eigener Commit ohne Installationsabschnitt]
+- **Taste und Zeitpunkt:** keine Taste; Gerät im Werkszustand normal starten (Strom per PoE), dann per SSH anmelden [geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24']
+- **Sichtbare Zeichen:** erster Start dauert etwa 4 Minuten, zum Ende blinkt die LED weiß/aus; danach dauerhaft blau = fertig [abgeleitet: Wiki toh/ubiquiti/unifi_6_lr]
 - **Übertragung:** ssh/scp: Gerät 192.168.1.20, Login ubnt/ubnt
+- **Rechner braucht:** SSH-/scp-Client; LAN-Kabel vom Rechner zum Gerät über PoE-Injektor oder PoE-Switch; Rechner feste IP aus 192.168.1.0/24, nicht .20 (z. B. 192.168.1.2 oder .10); Gerät 192.168.1.20, Login ubnt/ubnt [geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac]; neuere OpenSSH-Clients brauchen `scp -O` [geprüft: Commit bf94e0a]; Datei: Gluon-sysupgrade [geprüft: Commits]; ältere Stock-Firmware antwortet evtl. unter 192.168.1.34; SSH evtl. mit `-oHostKeyAlgorithms=+ssh-rsa` [abgeleitet: Wiki toh/ubiquiti/unifi_6_lr]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, Gehäuse verklebt)
 - **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** v1: LED-Leiste mit RGB-Farben; v2: nur zwei einfache LEDs (weiß/blau) statt LED-Leiste; v3: andere Ethernet-PHY (RTL8211FS, nur 1 Gbit statt 2.5 Gbit), sonst wie v2 [geprüft: Commits 15a0247, 31d86a1, a0f4ead]; v3 laut Wiki ab Produktionswoche 2234 (KW 34/2022) [abgeleitet: Wiki]; falsche v2/v3-Wahl heißt vermutlich kein Ethernet nach dem Flashen [abgeleitet: Commit a0f4ead]; die frühe 'U6 LR-EA' ist ein MT7621-Gerät und keine dieser Varianten [geprüft: Commit fb4d7a9]
+- **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; ab Stock 6.2 vorher Schreibschutz aufheben: `echo 5edfacbf > /proc/ubnthal/.uf` (steht nicht im Commit) [abgeleitet: Wiki toh/ubiquiti/unifi_6_lr]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-ubnt_unifi-6-lr-v3-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** [24.10.8: ubootmod-initramfs-recovery.itb](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-ubnt_unifi-6-lr-v3-ubootmod-initramfs-recovery.itb)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Dauer:** erster Start etwa 4 Minuten, nicht Strom ziehen [abgeleitet: Wiki]
+- **Rückweg zur Herstellerfirmware:** TFTP-Recovery: Reset beim Einschalten halten bis die LED weiß-blau-aus wechselt, Stock-Firmware per TFTP [abgeleitet: Wiki toh/ubiquiti/unifi_6_lr]
 - **Gluon-RAMpe passt:** nein, nicht nötig: der Weg schreibt das Gluon-sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** OpenWrt 634c13c186646aff2badb51a43b248825d0fe5a0 (v3: a0f4eadf6a25fb54c189bde91425673e11125d35)
 - **Detail-Anleitung:** https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps
@@ -7168,14 +7948,19 @@ Ubiquiti UniFi 6 LR v3 · mediatek-mt7622 · K1d
 Ubiquiti UniFi 6 Lite · ramips-mt7621 · K1d
 
 - **Weg ab Werk:** SSH auf Stock (ubnt/ubnt, 192.168.1.20): `fw_setenv devmode TRUE`, boot_openwrt/bootcmd setzen, sysupgrade per scp, bs-Flag nullen, sysupgrade per dd in kernel0 und kernel1 [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; Gerät im Werkszustand normal starten (Strom per PoE), dann per SSH anmelden [geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24']
 - **Übertragung:** ssh/scp: Gerät 192.168.1.20
+- **Rechner braucht:** SSH-/scp-Client; LAN-Kabel vom Rechner zum Gerät über PoE-Injektor oder PoE-Switch; Rechner feste IP aus 192.168.1.0/24, nicht .20 (z. B. 192.168.1.2 oder .10); Gerät 192.168.1.20, Login ubnt/ubnt [geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac]; neuere OpenSSH-Clients brauchen `scp -O` [geprüft: Commit bf94e0a]; Datei: Gluon-sysupgrade [geprüft: Commits]; zusätzlich `fw_setenv` (devmode, boot_openwrt, bootcmd) auf dem Gerät [geprüft: Commit fb4d7a9]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** ssh, dd, fw_setenv
+- **Typenschild/Verwechslung:** U6 Lite teilt die MT7621-Plattform mit U6 IW, U6 Mesh, U6 Extender und der frühen U6 LR-EA, die alle eigene Images brauchen [geprüft: Commit fb4d7a9, FIT-Konfigurationen]
+- **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; ab Stock 6.5 vorher auf 6.0.14 downgraden [abgeleitet: Wiki toh/ubiquiti/unifi_6_lite]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-ubnt_unifi-6-lite-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Rückweg zur Herstellerfirmware:** TFTP-Recovery mit Ubiquiti-Firmware [abgeleitet: Wiki toh/ubiquiti/unifi_6_lite]
 - **Gluon-RAMpe passt:** nein: der SSH-Weg schreibt das sysupgrade direkt; ein Ramboot ginge nur seriell (`fdt rm /signature`, TFTP C0A80114.img)
 - **Quelle (OpenWrt-Commit):** fb4d7a9680117a00721936c98ce41eeb2dea95c9
 - **Detail-Anleitung:** https://openwrt.org/toh/ubiquiti/unifi6lite#installation
@@ -7185,14 +7970,18 @@ Ubiquiti UniFi 6 Lite · ramips-mt7621 · K1d
 Ubiquiti UniFi nanoHD · ramips-mt7621 · K1d
 
 - **Weg ab Werk:** SSH auf Stock (ubnt/ubnt, 192.168.1.20; Stock v3.9.27, ggf. downgraden): bs-Flag nullen, sysupgrade per dd in kernel0 und kernel1 [geprüft]
+- **Taste und Zeitpunkt:** keine Taste; Gerät im Werkszustand normal starten (Strom per PoE), dann per SSH anmelden [geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24']
 - **Übertragung:** ssh/scp: Gerät 192.168.1.20
+- **Rechner braucht:** SSH-/scp-Client; LAN-Kabel vom Rechner zum Gerät über PoE-Injektor oder PoE-Switch; Rechner feste IP aus 192.168.1.0/24, nicht .20 (z. B. 192.168.1.2 oder .10); Gerät 192.168.1.20, Login ubnt/ubnt [geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac]; neuere OpenSSH-Clients brauchen `scp -O` [geprüft: Commit bf94e0a]; Datei: Gluon-sysupgrade [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** ssh, dd
+- **Bedingung an die Herstellerfirmware:** Anleitung gilt für Stock v3.9.27, bei anderer Version vorher downgraden [geprüft: Commit 4c8446b]; Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-ubnt_unifi-nanohd-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
 - **Stock-Teile:** -
 - **RAM:** 128 MB
+- **Dauer:** nach dem Schreiben neu starten oder Strom aus/an [geprüft: Commit 4c8446b]; Dauer in keiner Quelle
 - **Gluon-RAMpe passt:** nein: SSH-Weg schreibt das sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** 4c8446bf39de99990847eb4bc7744e25835a34f5
 
@@ -7404,7 +8193,7 @@ Xiaomi Mi Router 4C · ramips-mt76x8 · K2
 
 
 1. **ERX/ERX-SFP: Gluon-RAMpe passt für 2025.1 nicht.** EdgeOS schreibt das
-   factory.tar in einen 3-MB-Kernel-Slot. Laut `erx-migration-howto.md` hat
+   factory.tar in einen 3-MB-Kernel-Slot. Laut Neanderfunk-Notiz zur ERX-Migration hat
    der 6.6-Kernel allein 3 173 556 Byte; ein Gluon-initramfs mit Rootfs ist
    größer. OpenWrt 24.10.8 baut auch kein factory.tar mehr. Das betrifft
    NOTIZEN.md Punkt 4 (oszilloskops Original-Anwendungsfall) [abgeleitet].
@@ -7412,10 +8201,10 @@ Xiaomi Mi Router 4C · ramips-mt76x8 · K2
    Gluon baut factory und ein eigenes recovery.bin (squashfs, kein initramfs).
 3. **Widersprüche zu älteren Neanderfunk-Notizen, offen:**
    - DIR-878/DIR-882: OpenWrt-Commits d7233b0a6a9b8cb9207a74a8cb3d0525170cf504 und 73e8f23579bcb87764dae9ed0aefe28be3183d3e beschreiben die
-     D-Link-Web-Recovery auf 192.168.0.1; `recovery-wege.md` Abschnitt 6 sagt
+     D-Link-Web-Recovery auf 192.168.0.1; `Neanderfunk-Notiz` Abschnitt 6 sagt
      "DIR-Reihe über TFTP" (Quelle dort: ToH).
    - DAP-X1860: Commit 3c31f6b521bb5fc49e222a8f2bcd454b73452a0e lädt das factory.bin in die Recovery;
-     `dlink-flashen.md` (01.10.2026) nennt OpenWrt-initramfs.
+     `Neanderfunk-Notiz` (01.10.2026) nennt OpenWrt-initramfs.
 4. **WNDR3700 v5:** OpenWrt baut seit 2fdd02cc7c3516c2cce2ace2c7b539e0821ecbe8 ein factory.img für
    nmrpflash, Gluon setzt trotzdem `factory = false` (Gerät dort ohnehin
    broken, "untested").
@@ -7468,7 +8257,7 @@ Xiaomi Mi Router 4C · ramips-mt76x8 · K2
 6. **GL-MT2500:** Die neue HW-Revision mit Airoha-PHY hat in OpenWrt 24.10 das
    eigene Profil `glinet_gl-mt2500-airoha` [geprüft: 24.10.8-Liste]; Gluon
    führt nur die MaxLinear-Fassung.
-7. **Mercusys MR90X:** `erstinstallation-ohne-factory.md` beschreibt
+7. **Mercusys MR90X:** `eine ältere Neanderfunk-Notiz` beschreibt
    "tp_boot_idx 0, dann nimmt die U-Boot-Web-Recovery ein initramfs". Commit
    und Wiki-Abschnitt "Stock bootloader" beschreiben stattdessen
    busybox + `ubiupdatevol` ins kernel-Volume; die U-Boot-Web-Recovery steht
