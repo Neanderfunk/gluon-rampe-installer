@@ -444,7 +444,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: Installer-initramfs per tftpboot statt OpenWrt-initramfs; seriell bleibt [abgeleitet]",
+   "rampe": "teilweise: RAMpe-initramfs per tftpboot statt OpenWrt-initramfs; seriell bleibt [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "c9ac7b17296ff29d9df39db8a68c449ef1514bbd [geprüft]",
    "anleitung": ""
@@ -696,7 +696,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: Installer als 1401A8C0.img statt OpenWrt-initramfs, Upload-Seite statt scp; seriell bleibt",
+   "rampe": "teilweise: Gluon-RAMpe als 1401A8C0.img statt OpenWrt-initramfs, Upload-Seite statt scp; seriell bleibt",
    "rampe_rezept": "",
    "quelle": "ebddc5f984a240980303aed68524eb615484eef8 [geprüft]",
    "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=ebddc5f984a240980303aed68524eb615484eef8"
@@ -724,7 +724,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: Installer als 1D01A8C0.img statt OpenWrt-initramfs; seriell bleibt",
+   "rampe": "teilweise: Gluon-RAMpe als 1D01A8C0.img statt OpenWrt-initramfs; seriell bleibt",
    "rampe_rezept": "",
    "quelle": "f8c87aa2d27ab405f284dd4357377ab5c893a345 [geprüft]",
    "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f8c87aa2d27ab405f284dd4357377ab5c893a345"
@@ -1172,7 +1172,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "ja: Installer-initramfs unter diesem Namen bereitstellen; der Installer muss zusätzlich `fw_setenv bootcmd run bootcmd_1` setzen (OpenWrt-platform.sh tut es nicht) [geprüft im Baum]",
+   "rampe": "ja: RAMpe-initramfs unter diesem Namen bereitstellen; die Gluon-RAMpe muss zusätzlich `fw_setenv bootcmd run bootcmd_1` setzen (OpenWrt-platform.sh tut es nicht) [geprüft im Baum]",
    "rampe_rezept": "",
    "quelle": "c4931713df8ffb3c4e5c1be7d0b6d4aa96a7dd4c [geprüft]",
    "anleitung": ""
@@ -1200,7 +1200,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "ja: Installer-initramfs unter diesem Namen bereitstellen; der Installer muss zusätzlich `fw_setenv bootcmd run bootcmd_1` setzen (OpenWrt-platform.sh tut es nicht) [geprüft im Baum]",
+   "rampe": "ja: RAMpe-initramfs unter diesem Namen bereitstellen; die Gluon-RAMpe muss zusätzlich `fw_setenv bootcmd run bootcmd_1` setzen (OpenWrt-platform.sh tut es nicht) [geprüft im Baum]",
    "rampe_rezept": "",
    "quelle": "647614803473757e3b2d93d46938afccd61a5a5d [geprüft]",
    "anleitung": ""
@@ -1256,7 +1256,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "9a172797e593c061f6759a37eaeba2956ad8d72f [geprüft]",
    "anleitung": ""
@@ -1284,7 +1284,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "eaf2e32c12655d7fb58e158086a784393dc6f69a [geprüft]",
    "anleitung": ""
@@ -1312,7 +1312,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "ae7680dc4bf914d640dba32c8f1c36631768a56a [geprüft]",
    "anleitung": ""
@@ -1340,7 +1340,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "0988e03f0e676286f3377d1530ebfb0d819ee629 [geprüft]",
    "anleitung": ""
@@ -1368,7 +1368,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "4b35999588ee6dbe1fd818760b358b1191ddd0be [geprüft]",
    "anleitung": ""
@@ -1396,7 +1396,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "d9a3af46d8a1001223c2a327f449b7048d0fd5f6 [geprüft]",
    "anleitung": ""
@@ -1424,7 +1424,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "e06c9eec5dc8a3721df768ab952712cf015d4e6f [geprüft]",
    "anleitung": ""
@@ -1452,7 +1452,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "31172e53f9d0971204e6fa7e3541c0695d99618a [geprüft]",
    "anleitung": ""
@@ -1480,7 +1480,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "a462412977cc25b79a7a3479527e754d85c23fd7 [geprüft]",
    "anleitung": ""
@@ -1508,7 +1508,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "f096accce26bc46831e859ccd40b3f88e404cc7e [geprüft]",
    "anleitung": ""
@@ -1536,7 +1536,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "75900a25ed2acd4201bcd9a5516bdf7cdb9a8e73 [geprüft]",
    "anleitung": ""
@@ -1564,7 +1564,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "5b37b52e69884c6c843738cc45ed8a1deba0eba3 [geprüft]",
    "anleitung": ""
@@ -1592,7 +1592,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "eb3a5ddba0d4d0c4ab1f21ccbfbcf9aa0254bce9 [geprüft]",
    "anleitung": ""
@@ -1620,7 +1620,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "8143709c90c3aa0a84e14cf4a9dfbcb365b0d966 [geprüft]",
    "anleitung": ""
@@ -1648,7 +1648,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "ff9e48e75c191e0d7e08a14791853559d509ca2e [geprüft]",
    "anleitung": ""
@@ -1676,7 +1676,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "dd1d95cb0357278900d09fae3ad20e9e0b2d569a [geprüft]",
    "anleitung": ""
@@ -1704,7 +1704,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "80713657b20d58c2fb7fa503e24cbf7db379550f [geprüft]",
    "anleitung": ""
@@ -1732,7 +1732,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "97f561725962ddb8823b2e01563a0f37f7930477 [geprüft]",
    "anleitung": ""
@@ -1760,7 +1760,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "1699c1dc7f26b332f868d338457abfbe716d6ba0 (Einführung, Anleitung) [geprüft]",
    "anleitung": ""
@@ -1788,7 +1788,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts",
+   "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "72ef5945508193228544bcd7fcfe81b32e8dc042 [geprüft]",
    "anleitung": ""
@@ -1872,7 +1872,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: Installer als 1401A8C0.img; Achtung, das initramfs ist hier unkomprimiert (KERNEL_INITRAMFS ... uImage none, OpenWrt 23.7 MB); seriell bleibt",
+   "rampe": "teilweise: Gluon-RAMpe als 1401A8C0.img; Achtung, das initramfs ist hier unkomprimiert (KERNEL_INITRAMFS ... uImage none, OpenWrt 23.7 MB); seriell bleibt",
    "rampe_rezept": "",
    "quelle": "d2b8ccb1c04def81224da6f42f644c7d239b9986 [geprüft]",
    "anleitung": "https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Siemens-AP3610"
@@ -1956,7 +1956,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: Installer statt OpenWrt-initramfs; seriell bleibt",
+   "rampe": "teilweise: Gluon-RAMpe statt OpenWrt-initramfs; seriell bleibt",
    "rampe_rezept": "",
    "quelle": "0dc58214896aacf67a3759495d70e2b4e9c160d8 (Einführung, Anleitung); fc31261c3307458e38c9a676211a25c99c044ece (DTS-Umbenennung) [geprüft]",
    "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0dc58214896aacf67a3759495d70e2b4e9c160d8"
@@ -2404,7 +2404,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: Installer-initramfs per tftpboot; seriell bleibt",
+   "rampe": "teilweise: RAMpe-initramfs per tftpboot; seriell bleibt",
    "rampe_rezept": "",
    "quelle": "f5d2c91415a68f554815860d574145644fc31c16 [geprüft]",
    "anleitung": ""
@@ -3552,7 +3552,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "ja: Gluon liefert hier selbst das initramfs als factory (mikrotik.inc); Installer wäre die Variante mit Upload-Seite. Prüfen: startet Gluons initramfs-factory überhaupt im Config-Mode (Befund 70_initramfs_test aus NOTIZEN.md)? [abgeleitet]",
+   "rampe": "ja: Gluon liefert hier selbst das initramfs als factory (mikrotik.inc); Gluon-RAMpe wäre die Variante mit Upload-Seite. Prüfen: startet Gluons initramfs-factory überhaupt im Config-Mode (Befund 70_initramfs_test aus NOTIZEN.md)? [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "5ce64e0646fcd5c4f374b4de898b591560c32e18 [geprüft]",
    "anleitung": ""
@@ -3636,7 +3636,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "ja: Gluon liefert hier selbst das initramfs als factory (mikrotik.inc); Installer wäre die Variante mit Upload-Seite. Prüfen: startet Gluons initramfs-factory überhaupt im Config-Mode (Befund 70_initramfs_test aus NOTIZEN.md)? [abgeleitet]",
+   "rampe": "ja: Gluon liefert hier selbst das initramfs als factory (mikrotik.inc); Gluon-RAMpe wäre die Variante mit Upload-Seite. Prüfen: startet Gluons initramfs-factory überhaupt im Config-Mode (Befund 70_initramfs_test aus NOTIZEN.md)? [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "817bf0204569ca28121576c13f48186ed7b7c2ae [geprüft]",
    "anleitung": ""
@@ -3664,7 +3664,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: statt factory per nand write könnte man den Installer per tftpboot starten; seriell bleibt [abgeleitet]",
+   "rampe": "teilweise: statt factory per nand write könnte man die Gluon-RAMpe per tftpboot starten; seriell bleibt [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "62db255543c8fb5d1787caf36c6c7c9c51db71cd [geprüft]",
    "anleitung": ""
@@ -3776,7 +3776,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: U-Boot-Rescue nimmt NAND-factory.img (Kernel+UBI), kein initramfs; ein Installer in diesem Format wäre ein eigenes Projekt [abgeleitet]",
+   "rampe": "nein: U-Boot-Rescue nimmt NAND-factory.img (Kernel+UBI), kein initramfs; eine Gluon-RAMpe in diesem Format wäre ein eigenes Projekt [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "af8a059bb41dd7afee49ce9a5d52e9a8e010bbd8 [geprüft]",
    "anleitung": ""
@@ -3860,7 +3860,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: Installer statt OpenWrt-initramfs; der Installer müsste aber das factory (nicht sysupgrade) per mtd schreiben [abgeleitet]",
+   "rampe": "teilweise: Gluon-RAMpe statt OpenWrt-initramfs; die Gluon-RAMpe müsste aber das factory (nicht sysupgrade) per mtd schreiben [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "1e1695f959e678868bb7911d059b847f38fc9cf4 [geprüft]",
    "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1e1695f959e678868bb7911d059b847f38fc9cf4"
@@ -3888,7 +3888,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "ja (Exploit-Weg): genau der Fall \"initramfs aus der Stock-Shell schreiben\", Installer statt OpenWrt-initramfs [abgeleitet]; Gluon markiert das Gerät broken mit \"case must be opened\" - laut Commit nicht zwingend",
+   "rampe": "ja (Exploit-Weg): genau der Fall \"initramfs aus der Stock-Shell schreiben\", Gluon-RAMpe statt OpenWrt-initramfs [abgeleitet]; Gluon markiert das Gerät broken mit \"case must be opened\" - laut Commit nicht zwingend",
    "rampe_rezept": "",
    "quelle": "7ac8da00609f42b8aba74b7efc6b0d055b7cef3e [geprüft]",
    "anleitung": ""
@@ -4112,7 +4112,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: Installer-initramfs als ipq40xx.ari geht, aber vor dem sysupgrade muss `ubiformat` laufen (fehlt dem Installer) und Gluon baut für ipq40xx-generic kein initramfs; seriell bleibt [abgeleitet]",
+   "rampe": "teilweise: RAMpe-initramfs als ipq40xx.ari geht, aber vor dem sysupgrade muss `ubiformat` laufen (fehlt der Gluon-RAMpe) und Gluon baut für ipq40xx-generic kein initramfs; seriell bleibt [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75",
    "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=102c8c55f217606cdbdc9a449667e034676b3e75"
@@ -4280,7 +4280,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "ja: statt des OpenWrt-initramfs das Installer-initramfs per mtd-write schreiben; SSH-Schritt bleibt; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
+   "rampe": "ja: statt des OpenWrt-initramfs das RAMpe-initramfs per mtd-write schreiben; SSH-Schritt bleibt; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "OpenWrt 9ad3967f140bd6d08796f1ec151b753186b3eb44",
    "anleitung": "https://openwrt.org/toh/asus/lyra_map-ac2200#oem_easy_installation"
@@ -4364,7 +4364,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: das Installer-initramfs passt als FRITZ7530.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
+   "rampe": "teilweise: das RAMpe-initramfs passt als FRITZ7530.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b",
    "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7530#installation"
@@ -4392,7 +4392,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: das Installer-initramfs passt als FRITZ1200.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
+   "rampe": "teilweise: das RAMpe-initramfs passt als FRITZ1200.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "OpenWrt 7f187229a8e9b7966248b1e024217e07a9fc3e50",
    "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7f187229a8e9b7966248b1e024217e07a9fc3e50"
@@ -4420,7 +4420,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: das Installer-initramfs passt als FRITZ3000.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
+   "rampe": "teilweise: das RAMpe-initramfs passt als FRITZ3000.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "OpenWrt 148d29d47b1d555d0058dcc5dda450b74c4628ec",
    "anleitung": "-"
@@ -4448,7 +4448,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: Installer als openwrt-3915.bin, seriell bleibt; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
+   "rampe": "teilweise: Gluon-RAMpe als openwrt-3915.bin, seriell bleibt; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "OpenWrt e16a0e7e8876df0a92ec4779fe766de1a943307a",
    "anleitung": "-"
@@ -4588,7 +4588,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: ein Installer bräuchte das Linksys-factory-Format (Kernel + UBI, linksys-image), kein initramfs; einfacher wäre `factory` in Gluon einzuschalten [abgeleitet]",
+   "rampe": "teilweise: eine Gluon-RAMpe bräuchte das Linksys-factory-Format (Kernel + UBI, linksys-image), kein initramfs; einfacher wäre `factory` in Gluon einzuschalten [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "OpenWrt a9071d02b5ab11fbd73ea42076a09f2fd8136517",
    "anleitung": "-"
@@ -5036,7 +5036,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: Installer als TFTP-initramfs möglich, aber der `ubirmvol`-Schritt fehlt ihm; seriell bleibt [abgeleitet]",
+   "rampe": "teilweise: Gluon-RAMpe als TFTP-initramfs möglich, aber der `ubirmvol`-Schritt fehlt ihm; seriell bleibt [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "OpenWrt 0de6a3339f1aadc1de2c9371435e3de239a00645 (Gluon: broken)",
    "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0de6a3339f1aadc1de2c9371435e3de239a00645"
@@ -5120,7 +5120,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "ja: Netboot nimmt ein initramfs; laut Installer-NOTIZEN startet ein Gluon-initramfs nicht im Config-Mode, der Installer wäre der passende Ersatz für Gluons eigenes initramfs-\"factory\" [abgeleitet]",
+   "rampe": "ja: Netboot nimmt ein initramfs; laut RAMpe-NOTIZEN startet ein Gluon-initramfs nicht im Config-Mode, die Gluon-RAMpe wäre der passende Ersatz für Gluons eigenes initramfs-\"factory\" [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "OpenWrt faea7becafc634dc882f0ad8f9388862ccd5bd0d",
    "anleitung": "-"
@@ -5204,7 +5204,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: Installer müsste das Aruba-`.ari`-Format (Vendor-Header) bekommen, Gluon baut für ipq806x kein initramfs; Bootloader-Tausch und UBI-Umbau bleiben seriell. OpenWrt-Artefakte nur als Snapshot (in keinem Release bis 25.12.5) [geprüft]",
+   "rampe": "teilweise: Gluon-RAMpe müsste das Aruba-`.ari`-Format (Vendor-Header) bekommen, Gluon baut für ipq806x kein initramfs; Bootloader-Tausch und UBI-Umbau bleiben seriell. OpenWrt-Artefakte nur als Snapshot (in keinem Release bis 25.12.5) [geprüft]",
    "rampe_rezept": "",
    "quelle": "OpenWrt d2a75029a5f8e54e1fd2f252f73b9a430a030116 (25.12: 65f01eb3576f69233e8b6c67d85ffd38fde47a1a); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]",
    "anleitung": "https://github.com/lukasstockner/ap325-apboot-openwrt"
@@ -5232,7 +5232,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: Installer als TFTP-initramfs, seriell bleibt; Gluon baut für ipq806x kein initramfs; QCA9990 ohne 802.11s [abgeleitet]",
+   "rampe": "teilweise: Gluon-RAMpe als TFTP-initramfs, seriell bleibt; Gluon baut für ipq806x kein initramfs; QCA9990 ohne 802.11s [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "OpenWrt 3aef61060e3f51aa43fe494d5ff173e81dd43003",
    "anleitung": "-"
@@ -5512,7 +5512,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "ja: eva_ramboot.py bootet das Installer-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]",
+   "rampe": "ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "eae6cac6a30b95bef04d033ed8a303b7e35a078b",
    "anleitung": "https://openwrt.org/toh/avm/avm_7362_sl#installation"
@@ -5540,7 +5540,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "ja: eva_ramboot.py bootet das Installer-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]",
+   "rampe": "ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "20f48c8ae334f8502e756282995cc84d89fa81c1",
    "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7412#installation"
@@ -5568,7 +5568,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "ja: eva_ramboot.py bootet das Installer-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]",
+   "rampe": "ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "6c85a449a988876fdfd4ce84d6aa5ffe4a2820c1",
    "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7430#installation"
@@ -5708,7 +5708,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "ja: Hersteller-UI nimmt ein initramfs im ASUS-TRX; Installer-Rezept muss das ARTIFACT `initramfs.trx` einsammeln [abgeleitet]",
+   "rampe": "ja: Hersteller-UI nimmt ein initramfs im ASUS-TRX; RAMpe-Rezept muss das ARTIFACT `initramfs.trx` einsammeln [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "OpenWrt 99708cc16dbd7c93db80698fbe5c69f07995a3e6",
    "anleitung": "https://openwrt.org/toh/asus/rt-ax52#installation"
@@ -5736,7 +5736,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: OpenWrt baut für die RT-AX59U kein `initramfs.trx` (24.10.8 und 25.12.5 nur initramfs-kernel.bin) [geprüft]; ein Installer-TRX wie bei der RT-AX52 wäre zu bauen, ob die Stock-UI es nimmt: offen",
+   "rampe": "teilweise: OpenWrt baut für die RT-AX59U kein `initramfs.trx` (24.10.8 und 25.12.5 nur initramfs-kernel.bin) [geprüft]; eine Gluon-RAMpe-TRX wie bei der RT-AX52 wäre zu bauen, ob die Stock-UI es nimmt: offen",
    "rampe_rezept": "",
    "quelle": "OpenWrt 782eb050082acac93c2f9b3eb22348234bc93e99; gluon-patches-hardware 8dbae18666543aa9b8b5e7faa1d267024d62071e (Gluon-Zeile)",
    "anleitung": "-"
@@ -5764,7 +5764,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: der SSH-Weg schreibt ein initramfs ins Flash; ob ein Gluon-/Installer-initramfs statt des herbetom-Sonderbaus bootet, ist nicht geprüft",
+   "rampe": "teilweise: der SSH-Weg schreibt ein initramfs ins Flash; ob ein Gluon-/RAMpe-initramfs statt des herbetom-Sonderbaus bootet, ist nicht geprüft",
    "rampe_rezept": "",
    "quelle": "OpenWrt e7c399bee677e9bac66e1bea697aefb8d828edfe",
    "anleitung": "https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-ASUS-TUF-AX4200"
@@ -5792,7 +5792,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: wie TUF-AX4200; über die Gehäuselöcher ist auch der TFTP-Weg ohne Öffnen möglich, dort passt der Installer als initramfs [abgeleitet]",
+   "rampe": "teilweise: wie TUF-AX4200; über die Gehäuselöcher ist auch der TFTP-Weg ohne Öffnen möglich, dort passt die Gluon-RAMpe als initramfs [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "OpenWrt d522ccecb28f941aadcaf7a50cd6daa861f468a7",
    "anleitung": "https://github.com/herbetom/openwrt-asus-filogic-factory/releases/latest"
@@ -6016,7 +6016,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: Installer ersetzt das OpenWrt-initramfs im TFTP-Schritt, der serielle Teil bleibt",
+   "rampe": "teilweise: Gluon-RAMpe ersetzt das OpenWrt-initramfs im TFTP-Schritt, der serielle Teil bleibt",
    "rampe_rezept": "",
    "quelle": "OpenWrt 63b8d98dd0d2f7797ea5b5f25978590982bbbb5d",
    "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010"
@@ -6212,7 +6212,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "ja: Installer-Image gebaut, Header wie OpenWrt, Hardware-Test offen [geprüft: Installer docs/NOTIZEN.md]",
+   "rampe": "ja: RAMpe-Image gebaut, Header wie OpenWrt, Hardware-Test offen [geprüft: gluon-rampe-installer docs/NOTIZEN.md]",
    "rampe_rezept": "",
    "quelle": "OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f",
    "anleitung": "https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/"
@@ -6240,7 +6240,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "ja: Gluon baut selbst ein `-recovery.bin`; laut Installer-NOTIZEN startet ein Gluon-initramfs aber nicht im Config-Mode, vermutlich derselbe Fehler wie beim M30 [abgeleitet]; das Installer-Image wäre der Ersatz",
+   "rampe": "ja: Gluon baut selbst ein `-recovery.bin`; laut RAMpe-NOTIZEN startet ein Gluon-initramfs aber nicht im Config-Mode, vermutlich derselbe Fehler wie beim M30 [abgeleitet]; das RAMpe-Image wäre der Ersatz",
    "rampe_rezept": "",
    "quelle": "OpenWrt 7271ee587cd104d30d6d46dd3c623c9d4602bd0c",
    "anleitung": "-"
@@ -6279,7 +6279,7 @@
    "target": "mediatek-filogic",
    "kat": "K1d",
    "familie": "glinet",
-   "weg": "GL.iNet-Stock-UI bzw. U-Boot-Web-Failsafe nimmt das sysupgrade direkt [abgeleitet: Commit ohne Installationsabschnitt, Installer docs/GERAETE.md]",
+   "weg": "GL.iNet-Stock-UI bzw. U-Boot-Web-Failsafe nimmt das sysupgrade direkt [abgeleitet: Commit ohne Installationsabschnitt, gluon-rampe-installer docs/GERAETE.md]",
    "taste": "",
    "zeichen": "",
    "uebertragung": "webui-upload (GL.iNet-UI); bzw. recovery-web (GL.iNet-U-Boot, Reset beim Einschalten) [abgeleitet]",
@@ -6380,7 +6380,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: das Installer-initramfs könnte das OpenWrt-initramfs im kernel-Volume ersetzen; Exploit und fw_setenv bleiben Handarbeit [abgeleitet]. Hinweis: erstinstallation-ohne-factory.md beschreibt \"tp_boot_idx 0, dann U-Boot-Web-Recovery nimmt initramfs\" - weder im Commit noch im Wiki-Abschnitt \"Stock bootloader\" so belegt",
+   "rampe": "teilweise: das RAMpe-initramfs könnte das OpenWrt-initramfs im kernel-Volume ersetzen; Exploit und fw_setenv bleiben Handarbeit [abgeleitet]. Hinweis: erstinstallation-ohne-factory.md beschreibt \"tp_boot_idx 0, dann U-Boot-Web-Recovery nimmt initramfs\" - weder im Commit noch im Wiki-Abschnitt \"Stock bootloader\" so belegt",
    "rampe_rezept": "",
    "quelle": "OpenWrt e4fe3097ef6a961874b66932a0ac4be18070630a",
    "anleitung": "https://openwrt.org/toh/mercusys/mr90x_v1#installation_stock_bootloader"
@@ -6520,7 +6520,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: Installer als `initramfs-factory.ubi` (ubinize-kernel) bauen, ersetzt den OpenWrt-Zwischenschritt; der Exploit bleibt [abgeleitet]",
+   "rampe": "teilweise: Gluon-RAMpe als `initramfs-factory.ubi` (ubinize-kernel) bauen, ersetzt den OpenWrt-Zwischenschritt; der Exploit bleibt [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "OpenWrt 7dbcc1215a56cc1da68c81bf92d7efa174c5e051",
    "anleitung": "-"
@@ -6548,7 +6548,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: Bootloader-Tausch braucht eine OpenWrt-Shell mit kmod-mtd-rw, der Installer kann nur sysupgrade [abgeleitet]",
+   "rampe": "nein: Bootloader-Tausch braucht eine OpenWrt-Shell mit kmod-mtd-rw, die Gluon-RAMpe kann nur sysupgrade [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "OpenWrt 7dbcc1215a56cc1da68c81bf92d7efa174c5e051",
    "anleitung": "-"
@@ -6800,7 +6800,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: nach dem seriellen TFTP-Boot macht der Installer den sysupgrade-Schritt statt scp; bootcmd/saveenv bleibt seriell",
+   "rampe": "teilweise: nach dem seriellen TFTP-Boot macht die Gluon-RAMpe den sysupgrade-Schritt statt scp; bootcmd/saveenv bleibt seriell",
    "rampe_rezept": "",
    "quelle": "765f66810a3324cc35fa6471ee8eeee335ba8c2b",
    "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b"
@@ -6828,7 +6828,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: ubiformat vor dem sysupgrade macht der Installer nicht",
+   "rampe": "teilweise: ubiformat vor dem sysupgrade macht die Gluon-RAMpe nicht",
    "rampe_rezept": "",
    "quelle": "97e4311fca73d064d17065e7844699aa777cb157",
    "anleitung": ""
@@ -6884,7 +6884,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: Installer statt scp+sysupgrade; der serielle Teil bleibt",
+   "rampe": "teilweise: Gluon-RAMpe statt scp+sysupgrade; der serielle Teil bleibt",
    "rampe_rezept": "",
    "quelle": "f2b7d9dc1ca3d33f14961cf2885639f4f9e8965e",
    "anleitung": ""
@@ -6996,7 +6996,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: Ramboot passt; ubirmvol und fw_setenv vor dem sysupgrade macht der Installer nicht",
+   "rampe": "teilweise: Ramboot passt; ubirmvol und fw_setenv vor dem sysupgrade macht die Gluon-RAMpe nicht",
    "rampe_rezept": "",
    "quelle": "b368373fab45f31963cd2bc1c6ab90e0a577e611",
    "anleitung": ""
@@ -7052,7 +7052,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "ja: Installer-initramfs in dasselbe Format packen (ARTIFACT web-ui-factory.fit); Gluon baut für qualcommax kein initramfs, Rezept braucht TARGET_ROOTFS_INITRAMFS [abgeleitet]",
+   "rampe": "ja: RAMpe-initramfs in dasselbe Format packen (ARTIFACT web-ui-factory.fit); Gluon baut für qualcommax kein initramfs, Rezept braucht TARGET_ROOTFS_INITRAMFS [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "OpenWrt 7801161c4bb2413817b3dfd01695050e2da27bf3",
    "anleitung": "-"
@@ -7080,7 +7080,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: web-ui-factory ist ein squashfs-Flash-Image (tplink-image-2022, in 24.10 nicht vorhanden), kein initramfs; Installer bräuchte dieses Format [abgeleitet]",
+   "rampe": "teilweise: web-ui-factory ist ein squashfs-Flash-Image (tplink-image-2022, in 24.10 nicht vorhanden), kein initramfs; Gluon-RAMpe bräuchte dieses Format [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "OpenWrt 4b6e7da0f7499acb69feaacca79e0ee826c0b8db; gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]",
    "anleitung": "-"
@@ -7108,7 +7108,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "teilweise: Installer als `initramfs-factory.ubi` bauen, ersetzt den OpenWrt-Zwischenschritt; Exploit bleibt; Gluon baut für qualcommax kein initramfs [abgeleitet]",
+   "rampe": "teilweise: Gluon-RAMpe als `initramfs-factory.ubi` bauen, ersetzt den OpenWrt-Zwischenschritt; Exploit bleibt; Gluon baut für qualcommax kein initramfs [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "OpenWrt 8364f0816417bfe404f7bded4eaa4f4a60c6d006",
    "anleitung": "-"
@@ -7864,7 +7864,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "ja: factory.bin = Kette `append-image-stage initramfs-kernel.bin`, `inteno-bootfs`, `inteno-y3-header EX400` (mt7621.mk); Gluon baut es nur nicht, weil das Rezept CONFIG_TARGET_ROOTFS_INITRAMFS braucht. Ein Installer-Bau ergibt direkt ein Installer-factory [abgeleitet aus mk]",
+   "rampe": "ja: factory.bin = Kette `append-image-stage initramfs-kernel.bin`, `inteno-bootfs`, `inteno-y3-header EX400` (mt7621.mk); Gluon baut es nur nicht, weil das Rezept CONFIG_TARGET_ROOTFS_INITRAMFS braucht. Eine Gluon-RAMpe-Bau ergibt direkt eine Gluon-RAMpe-factory [abgeleitet aus mk]",
    "rampe_rezept": "",
    "quelle": "dd0c2839a81bb3c5067be99b02ec5c0adff93ac6",
    "anleitung": "https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400"
@@ -7948,7 +7948,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "ja: Netboot lädt ein beliebiges initramfs (ELF); Installer statt OpenWrt-initramfs [abgeleitet]",
+   "rampe": "ja: Netboot lädt ein beliebiges initramfs (ELF); Gluon-RAMpe statt OpenWrt-initramfs [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "52f2d7d2a9dc3e142bb957462a30806eb5cebaf4 (+ faf94d926e2810f895f2a98d4a49ee2fe8f673e8: Erstunterstützung mit Bootloader-Tausch, überholt)",
    "anleitung": "https://openwrt.org/toh/mikrotik/common"
@@ -8508,7 +8508,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein: Gluon baut kernel1/rootfs0 nicht, OpenWrt-Images nötig; Installer ersetzte nur LuCI, wenn ein initramfs in kernel1 bootet (ungeprüft)",
+   "rampe": "nein: Gluon baut kernel1/rootfs0 nicht, OpenWrt-Images nötig; Gluon-RAMpe ersetzte nur LuCI, wenn ein initramfs in kernel1 bootet (ungeprüft)",
    "rampe_rezept": "",
    "quelle": "6e283cdc0da25928f8148805ebef7f8f2b769ee8",
    "anleitung": ""
@@ -9740,7 +9740,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein; der Installer-Prototyp wird hier nur in QEMU getestet (x86-64)",
+   "rampe": "nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)",
    "rampe_rezept": "",
    "quelle": "Gluon targets/x86-64",
    "anleitung": "-"
@@ -9768,7 +9768,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein; der Installer-Prototyp wird hier nur in QEMU getestet (x86-64)",
+   "rampe": "nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)",
    "rampe_rezept": "",
    "quelle": "Gluon targets/x86-generic",
    "anleitung": "-"
@@ -9796,7 +9796,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein; der Installer-Prototyp wird hier nur in QEMU getestet (x86-64)",
+   "rampe": "nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)",
    "rampe_rezept": "",
    "quelle": "Gluon targets/x86-geode",
    "anleitung": "-"
@@ -9824,7 +9824,7 @@
    "dauer": "",
    "rueckweg": "",
    "hw_test": "",
-   "rampe": "nein; der Installer-Prototyp wird hier nur in QEMU getestet (x86-64)",
+   "rampe": "nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)",
    "rampe_rezept": "",
    "quelle": "Gluon targets/x86-legacy",
    "anleitung": "-"

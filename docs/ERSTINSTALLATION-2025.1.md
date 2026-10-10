@@ -30,20 +30,26 @@ deren Einzelbefunde im Anhang stehen.
 
 ## Kategorien
 
-| Kat. | Bedeutung | Installer |
-|---|---|---|
-| K0 | Gluon-factory direkt aus der Stock-Firmware (Web-UI-Upload) | unnötig |
-| K0+ | Gluon-factory vorhanden, der Weg ist aber mehr als ein Web-UI-Upload (TFTP-Recovery, versteckte Seite, SSH-Vorbereitung, nmrpflash, ap51-flash) | unnötig |
-| K1 | ohne Öffnen: Hersteller-Recovery, Netboot oder Werkzeug bootet ein initramfs, danach sysupgrade | **passt** |
-| K1d | ohne Öffnen: Hersteller- oder Bootloader-Weg schreibt das Gluon-sysupgrade bzw. ein Gluon-Sonderimage direkt (GL.iNet-U-Boot, EVA, ap51-flash, SSH/dd, Exploit) | unnötig |
-| K2 | Hersteller-Zwischenfirmware, Exploit oder Spezialweg mit fremdem Zwischenimage (Cudy-Zwischenfirmware, Xiaomi, ASUS TUF, AVM 75x0) | teilweise |
-| K3 | Teile der Stock-Firmware nötig (per dd voran-/angehängt), modifiziertes OpenWrt oder Layout-Umbau (UBI, ERX) | meist nein |
-| K4 | serielle Konsole + TFTP-initramfs | ersetzt nur das Zwischenimage |
-| K5 | Bootloader entsperren oder ersetzen, Signaturen umgehen (Aruba AP-11, Meraki MR33) | nein |
-| offen | Weg ab Werk nicht belegt | |
+| Kat. | Bedeutung | Gluon-RAMpe | Stufe für Lesende (Vorschlag) |
+|---|---|---|---|
+| K0 | Gluon-factory direkt aus der Stock-Firmware (Web-UI-Upload) | unnötig | einfach |
+| K0+ | Gluon-factory vorhanden, der Weg ist aber mehr als ein Web-UI-Upload (TFTP-Recovery, versteckte Seite, SSH-Vorbereitung, nmrpflash, ap51-flash) | unnötig | mit Werkzeug |
+| K1 | ohne Öffnen: Hersteller-Recovery, Netboot oder Werkzeug bootet ein initramfs, danach sysupgrade | **passt** | mit Werkzeug |
+| K1d | ohne Öffnen: Hersteller- oder Bootloader-Weg schreibt das Gluon-sysupgrade bzw. ein Gluon-Sonderimage direkt (GL.iNet-U-Boot, EVA, ap51-flash, SSH/dd, Exploit) | unnötig | mit Werkzeug |
+| K2 | Hersteller-Zwischenfirmware, Exploit oder Spezialweg mit fremdem Zwischenimage (Cudy-Zwischenfirmware, Xiaomi, ASUS TUF, AVM 75x0) | teilweise | fortgeschritten |
+| K3 | Teile der Stock-Firmware nötig (per dd voran-/angehängt), modifiziertes OpenWrt oder Layout-Umbau (UBI, ERX) | meist nein | Werkstatt |
+| K4 | serielle Konsole + TFTP-initramfs | ersetzt nur das Zwischenimage | Werkstatt |
+| K5 | Bootloader entsperren oder ersetzen, Signaturen umgehen (Aruba AP-11, Meraki MR33) | nein | nur Werkstatt |
+| offen | Weg ab Werk nicht belegt | | ? |
+
+Stufen: K0..K5 bleiben intern; in Anleitungen steht die Stufe in Worten
+(Wunsch Content). "mit Werkzeug" = Taste, Recovery-Seite oder Programm auf dem
+Rechner, Gehäuse bleibt zu; "fortgeschritten" = Zwischenfirmware oder Exploit;
+"Werkstatt" = serielle Konsole oder Teile der Herstellerfirmware. Die Worte
+legt Content fest.
 
 Abgleich: Die drei Teile haben K2 verschieden weit gefasst. Vereinheitlicht
-nach diesen Regeln: K2 mit "Installer passt: ja" wird K1; K2, bei dem der Weg
+nach diesen Regeln: K2 mit "Gluon-RAMpe passt: ja" wird K1; K2, bei dem der Weg
 das Gluon-Image direkt nimmt, wird K1d (bzw. K0+, wenn es ein Gluon-factory
 ist); "K0 (besonders)" heißt jetzt K0+.
 
@@ -133,7 +139,7 @@ Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-95
 
 ## Wichtigste Befunde
 
-- **Der Installer hilft gezielt, nicht breit.** Bei den meisten Geräten ohne
+- **Die Gluon-RAMpe hilft gezielt, nicht breit.** Bei den meisten Geräten ohne
   factory nimmt der Hersteller-Weg das Gluon-Image ohnehin direkt (K1d), oder
   es bleibt ein serieller bzw. Exploit-Schritt. Gute Kandidaten: D-Link M30/M60,
   ASUS RT-AX52/RT-AX53U, Genexis Pulse EX400 (OpenWrt-factory ist ein initramfs
@@ -141,20 +147,20 @@ Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-95
   3390/7362 SL/7412/7430 (`eva_ramboot.py`), ZTE MF286R (Exploit), ASUS Lyra.
 - **Fehlender Schritt vor dem sysupgrade:** Bei Aruba (`ubiformat`), AVM
   7520/7530/Repeater (U-Boot schreiben, `ubirmvol`), ZTE MF289F, OCEDO
-  (`ubirmvol`, `fw_setenv`) reicht der Upload allein nicht. Ein Installer
+  (`ubirmvol`, `fw_setenv`) reicht der Upload allein nicht. Eine Gluon-RAMpe
   bräuchte je Gerät ein Vorbereitungsskript.
 - **Hersteller-Formate:** Die Hersteller-Wege wollen oft ein verpacktes
   initramfs (ASUS-TRX, D-Link-Header, Netgear `web-ui-factory.fit`, Xiaomi
   `initramfs-factory.ubi`, Aruba `.ari`). Gluon schaltet `TARGET_ROOTFS_INITRAMFS`
-  nur für filogic und ipq40xx-mikrotik ein; jedes Installer-Rezept braucht den
+  nur für filogic und ipq40xx-mikrotik ein; jedes RAMpe-Rezept braucht den
   Schalter und das passende Hersteller-Format.
 - **K3 (Stock-Teile per dd):** TP-Link Archer C2 v1, C20 v1, C20 v5, C50 v4,
   C50 v6 brauchen den U-Boot-Teil aus der TP-Link-Firmware (dd-Befehle und
-  Downloads in der Tabelle). Der Installer bringt hier nichts. In ath79 gibt es
+  Downloads in der Tabelle). Die Gluon-RAMpe bringt hier nichts. In ath79 gibt es
   keinen K3-Fall.
-- **ERX/ERX-SFP passt für den Installer nicht:** Der 6.6-Kernel ist größer als
+- **ERX/ERX-SFP passt für die Gluon-RAMpe nicht:** Der 6.6-Kernel ist größer als
   der 3-MB-Slot, OpenWrt 24.10.8 baut kein factory.tar mehr (Neanderfunk-Notiz zur ERX-Migration).
-- **Mögliche Gluon-Korrekturen statt Installer:** Linksys MR8300,
+- **Mögliche Gluon-Korrekturen statt Gluon-RAMpe:** Linksys MR8300,
   WNDR3700 v5, Archer C60 v1 und MikroTik mAP lite/wAP ac haben `factory = false`
   ohne erkennbaren Grund, obwohl OpenWrt (teils) ein brauchbares factory baut.
 - **Widersprüche zu älteren Neanderfunk-Notizen, offen:** Mercusys MR90X (ältere Neanderfunk-Notiz
@@ -548,7 +554,7 @@ OpenMesh A40 · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 9a172797e593c061f6759a37eaeba2956ad8d72f [geprüft]
 
 #### openmesh-a60
@@ -564,7 +570,7 @@ OpenMesh A60 · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** eaf2e32c12655d7fb58e158086a784393dc6f69a [geprüft]
 
 #### openmesh-mr1750-v1
@@ -580,7 +586,7 @@ OpenMesh MR1750 v1 · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** ae7680dc4bf914d640dba32c8f1c36631768a56a [geprüft]
 
 #### openmesh-mr1750-v2
@@ -596,7 +602,7 @@ OpenMesh MR1750 v2 · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 0988e03f0e676286f3377d1530ebfb0d819ee629 [geprüft]
 
 #### openmesh-mr600-v1
@@ -612,7 +618,7 @@ OpenMesh MR600 v1 · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 4b35999588ee6dbe1fd818760b358b1191ddd0be [geprüft]
 
 #### openmesh-mr600-v2
@@ -628,7 +634,7 @@ OpenMesh MR600 v2 · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** d9a3af46d8a1001223c2a327f449b7048d0fd5f6 [geprüft]
 
 #### openmesh-mr900-v1
@@ -644,7 +650,7 @@ OpenMesh MR900 v1 · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** e06c9eec5dc8a3721df768ab952712cf015d4e6f [geprüft]
 
 #### openmesh-mr900-v2
@@ -660,7 +666,7 @@ OpenMesh MR900 v2 · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 31172e53f9d0971204e6fa7e3541c0695d99618a [geprüft]
 
 #### openmesh-om2p-hs-v1
@@ -676,7 +682,7 @@ OpenMesh OM2P-HS v1 · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** a462412977cc25b79a7a3479527e754d85c23fd7 [geprüft]
 
 #### openmesh-om2p-hs-v2
@@ -692,7 +698,7 @@ OpenMesh OM2P-HS v2 · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** f096accce26bc46831e859ccd40b3f88e404cc7e [geprüft]
 
 #### openmesh-om2p-hs-v3
@@ -708,7 +714,7 @@ OpenMesh OM2P-HS v3 · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 75900a25ed2acd4201bcd9a5516bdf7cdb9a8e73 [geprüft]
 
 #### openmesh-om2p-hs-v4
@@ -724,7 +730,7 @@ OpenMesh OM2P-HS v4 · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 5b37b52e69884c6c843738cc45ed8a1deba0eba3 [geprüft]
 
 #### openmesh-om2p-lc
@@ -740,7 +746,7 @@ OpenMesh OM2P-LC · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** eb3a5ddba0d4d0c4ab1f21ccbfbcf9aa0254bce9 [geprüft]
 
 #### openmesh-om2p-v1
@@ -756,7 +762,7 @@ OpenMesh OM2P v1 · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 32 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 8143709c90c3aa0a84e14cf4a9dfbcb365b0d966 [geprüft]
 
 #### openmesh-om2p-v2
@@ -772,7 +778,7 @@ OpenMesh OM2P v2 · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** ff9e48e75c191e0d7e08a14791853559d509ca2e [geprüft]
 
 #### openmesh-om2p-v4
@@ -788,7 +794,7 @@ OpenMesh OM2P v4 · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** dd1d95cb0357278900d09fae3ad20e9e0b2d569a [geprüft]
 
 #### openmesh-om5p
@@ -804,7 +810,7 @@ OpenMesh OM5P · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 80713657b20d58c2fb7fa503e24cbf7db379550f [geprüft]
 
 #### openmesh-om5p-ac-v1
@@ -820,7 +826,7 @@ OpenMesh OM5P-AC v1 · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 97f561725962ddb8823b2e01563a0f37f7930477 [geprüft]
 
 #### openmesh-om5p-ac-v2
@@ -836,7 +842,7 @@ OpenMesh OM5P-AC v2 · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 1699c1dc7f26b332f868d338457abfbe716d6ba0 (Einführung, Anleitung) [geprüft]
 
 #### openmesh-om5p-an
@@ -852,7 +858,7 @@ OpenMesh OM5P-AN · ath79-generic · K1d
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
-- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte der Installer das OpenWrt-initramfs ersetzen, spart aber nichts
+- **Gluon-RAMpe passt:** nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts
 - **Quelle (OpenWrt-Commit):** 72ef5945508193228544bcd7fcfe81b32e8dc042 [geprüft]
 
 #### plasma-cloud-pa300
@@ -972,7 +978,7 @@ Aruba AP-303 · ipq40xx-generic · K4
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 512 MB
-- **Gluon-RAMpe passt:** teilweise: Installer-initramfs als ipq40xx.ari geht, aber vor dem sysupgrade muss `ubiformat` laufen (fehlt dem Installer) und Gluon baut für ipq40xx-generic kein initramfs; seriell bleibt [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: RAMpe-initramfs als ipq40xx.ari geht, aber vor dem sysupgrade muss `ubiformat` laufen (fehlt der Gluon-RAMpe) und Gluon baut für ipq40xx-generic kein initramfs; seriell bleibt [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=102c8c55f217606cdbdc9a449667e034676b3e75
 
@@ -1115,7 +1121,7 @@ ASUS TUF-AX4200 · mediatek-filogic · K2
 - **Factory-/Stock-Image-Link:** [herbetom filogic-v2](https://github.com/herbetom/openwrt-asus-filogic-factory/releases/download/filogic-v2/openwrt-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
-- **Gluon-RAMpe passt:** teilweise: der SSH-Weg schreibt ein initramfs ins Flash; ob ein Gluon-/Installer-initramfs statt des herbetom-Sonderbaus bootet, ist nicht geprüft
+- **Gluon-RAMpe passt:** teilweise: der SSH-Weg schreibt ein initramfs ins Flash; ob ein Gluon-/RAMpe-initramfs statt des herbetom-Sonderbaus bootet, ist nicht geprüft
 - **Quelle (OpenWrt-Commit):** OpenWrt e7c399bee677e9bac66e1bea697aefb8d828edfe
 - **Detail-Anleitung:** https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-ASUS-TUF-AX4200
 
@@ -1132,7 +1138,7 @@ ASUS TUF-AX6000 · mediatek-filogic · K2
 - **Factory-/Stock-Image-Link:** [herbetom filogic-v2](https://github.com/herbetom/openwrt-asus-filogic-factory/releases/download/filogic-v2/openwrt-mediatek-filogic-asus_tuf-ax6000-initramfs-kernel.bin)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
-- **Gluon-RAMpe passt:** teilweise: wie TUF-AX4200; über die Gehäuselöcher ist auch der TFTP-Weg ohne Öffnen möglich, dort passt der Installer als initramfs [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: wie TUF-AX4200; über die Gehäuselöcher ist auch der TFTP-Weg ohne Öffnen möglich, dort passt die Gluon-RAMpe als initramfs [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt d522ccecb28f941aadcaf7a50cd6daa861f468a7
 - **Detail-Anleitung:** https://github.com/herbetom/openwrt-asus-filogic-factory/releases/latest
 
@@ -1341,7 +1347,7 @@ AVM FRITZ!Box 7362 SL · lantiq-xrx200 · K1
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 128 MB
-- **Gluon-RAMpe passt:** ja: eva_ramboot.py bootet das Installer-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]
+- **Gluon-RAMpe passt:** ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]
 - **Quelle (OpenWrt-Commit):** eae6cac6a30b95bef04d033ed8a303b7e35a078b
 - **Detail-Anleitung:** https://openwrt.org/toh/avm/avm_7362_sl#installation
 
@@ -1358,7 +1364,7 @@ AVM FRITZ!Box 7412 · lantiq-xrx200 · K1
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 128 MB
-- **Gluon-RAMpe passt:** ja: eva_ramboot.py bootet das Installer-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]
+- **Gluon-RAMpe passt:** ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 20f48c8ae334f8502e756282995cc84d89fa81c1
 - **Detail-Anleitung:** https://openwrt.org/toh/avm/avm_fritz_box_7412#installation
 
@@ -1375,7 +1381,7 @@ AVM FRITZ!Box 7430 · lantiq-xrx200 · K1
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 128 MB
-- **Gluon-RAMpe passt:** ja: eva_ramboot.py bootet das Installer-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]
+- **Gluon-RAMpe passt:** ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 6c85a449a988876fdfd4ce84d6aa5ffe4a2820c1
 - **Detail-Anleitung:** https://openwrt.org/toh/avm/avm_fritz_box_7430#installation
 
@@ -1413,7 +1419,7 @@ AVM FRITZ!Box 7530 · ipq40xx-generic · K2
 - **Factory-/Stock-Image-Link:** [24.10.8: uboot-fritz7530.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/u-boot-fritz7530/uboot-fritz7530.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Gluon-RAMpe passt:** teilweise: das Installer-initramfs passt als FRITZ7530.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: das RAMpe-initramfs passt als FRITZ7530.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b
 - **Detail-Anleitung:** https://openwrt.org/toh/avm/avm_fritz_box_7530#installation
 
@@ -1430,7 +1436,7 @@ AVM FRITZ!Repeater 1200 · ipq40xx-generic · K2
 - **Factory-/Stock-Image-Link:** [24.10.8: uboot-fritz1200.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/u-boot-fritz1200/uboot-fritz1200.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Gluon-RAMpe passt:** teilweise: das Installer-initramfs passt als FRITZ1200.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: das RAMpe-initramfs passt als FRITZ1200.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt 7f187229a8e9b7966248b1e024217e07a9fc3e50
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7f187229a8e9b7966248b1e024217e07a9fc3e50
 
@@ -1447,7 +1453,7 @@ AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) · ipq40xx-gen
 - **Factory-/Stock-Image-Link:** [24.10.8: uboot-fritz3000.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/u-boot-fritz3000/uboot-fritz3000.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Gluon-RAMpe passt:** teilweise: das Installer-initramfs passt als FRITZ3000.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: das RAMpe-initramfs passt als FRITZ3000.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt 148d29d47b1d555d0058dcc5dda450b74c4628ec
 - **Detail-Anleitung:** -
 
@@ -1917,7 +1923,7 @@ D-Link AQUILA PRO AI M30 A1 · mediatek-filogic · K1
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** nur wenn die zweite Partition aktiv ist: OEM-Image von D-Link verschlüsselt und entschlüsselt (m32-firmware-util von RolandoMagico) [geprüft]
 - **RAM:** 512 MB
-- **Gluon-RAMpe passt:** ja: Installer-Image gebaut, Header wie OpenWrt, Hardware-Test offen [geprüft: Installer docs/NOTIZEN.md]
+- **Gluon-RAMpe passt:** ja: RAMpe-Image gebaut, Header wie OpenWrt, Hardware-Test offen [geprüft: gluon-rampe-installer docs/NOTIZEN.md]
 - **Quelle (OpenWrt-Commit):** OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f
 - **Detail-Anleitung:** https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/
 
@@ -1934,7 +1940,7 @@ D-Link AQUILA PRO AI M60 A1 · mediatek-filogic · K1
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 512 MB
-- **Gluon-RAMpe passt:** ja: Gluon baut selbst ein `-recovery.bin`; laut Installer-NOTIZEN startet ein Gluon-initramfs aber nicht im Config-Mode, vermutlich derselbe Fehler wie beim M30 [abgeleitet]; das Installer-Image wäre der Ersatz
+- **Gluon-RAMpe passt:** ja: Gluon baut selbst ein `-recovery.bin`; laut RAMpe-NOTIZEN startet ein Gluon-initramfs aber nicht im Config-Mode, vermutlich derselbe Fehler wie beim M30 [abgeleitet]; das RAMpe-Image wäre der Ersatz
 - **Quelle (OpenWrt-Commit):** OpenWrt 7271ee587cd104d30d6d46dd3c623c9d4602bd0c
 - **Detail-Anleitung:** -
 
@@ -2167,7 +2173,7 @@ GL.iNet GL-XE300 · ath79-nand · K2
 - **Factory-/Stock-Image-Link:** kein Gluon-factory; OpenWrt: [squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img) (HEAD 200)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
-- **Gluon-RAMpe passt:** nein: U-Boot-Rescue nimmt NAND-factory.img (Kernel+UBI), kein initramfs; ein Installer in diesem Format wäre ein eigenes Projekt [abgeleitet]
+- **Gluon-RAMpe passt:** nein: U-Boot-Rescue nimmt NAND-factory.img (Kernel+UBI), kein initramfs; eine Gluon-RAMpe in diesem Format wäre ein eigenes Projekt [abgeleitet]
 - **Quelle (OpenWrt-Commit):** af8a059bb41dd7afee49ce9a5d52e9a8e010bbd8 [geprüft]
 
 #### gl.inet-gl-ap1300
@@ -2225,7 +2231,7 @@ GL.iNet GL-MT2500 (MaxLinear-PHY) · mediatek-filogic · K1d
 
 GL.iNet GL-MT3000 · mediatek-filogic · K1d
 
-- **Weg ab Werk:** GL.iNet-Stock-UI bzw. U-Boot-Web-Failsafe nimmt das sysupgrade direkt [abgeleitet: Commit ohne Installationsabschnitt, Installer docs/GERAETE.md]
+- **Weg ab Werk:** GL.iNet-Stock-UI bzw. U-Boot-Web-Failsafe nimmt das sysupgrade direkt [abgeleitet: Commit ohne Installationsabschnitt, gluon-rampe-installer docs/GERAETE.md]
 - **Übertragung:** webui-upload (GL.iNet-UI); bzw. recovery-web (GL.iNet-U-Boot, Reset beim Einschalten) [abgeleitet]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
@@ -2520,7 +2526,7 @@ x86 (x86-64) · x86-64 · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory
 - **Stock-Teile:** -
 - **RAM:** -
-- **Gluon-RAMpe passt:** nein; der Installer-Prototyp wird hier nur in QEMU getestet (x86-64)
+- **Gluon-RAMpe passt:** nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)
 - **Quelle (OpenWrt-Commit):** Gluon targets/x86-64
 - **Detail-Anleitung:** -
 
@@ -2537,7 +2543,7 @@ x86 (x86-generic) · x86-generic · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory
 - **Stock-Teile:** -
 - **RAM:** -
-- **Gluon-RAMpe passt:** nein; der Installer-Prototyp wird hier nur in QEMU getestet (x86-64)
+- **Gluon-RAMpe passt:** nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)
 - **Quelle (OpenWrt-Commit):** Gluon targets/x86-generic
 - **Detail-Anleitung:** -
 
@@ -2554,7 +2560,7 @@ x86 (x86-geode) · x86-geode · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory
 - **Stock-Teile:** -
 - **RAM:** -
-- **Gluon-RAMpe passt:** nein; der Installer-Prototyp wird hier nur in QEMU getestet (x86-64)
+- **Gluon-RAMpe passt:** nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)
 - **Quelle (OpenWrt-Commit):** Gluon targets/x86-geode
 - **Detail-Anleitung:** -
 
@@ -2571,7 +2577,7 @@ x86 (x86-legacy) · x86-legacy · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory
 - **Stock-Teile:** -
 - **RAM:** -
-- **Gluon-RAMpe passt:** nein; der Installer-Prototyp wird hier nur in QEMU getestet (x86-64)
+- **Gluon-RAMpe passt:** nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)
 - **Quelle (OpenWrt-Commit):** Gluon targets/x86-legacy
 - **Detail-Anleitung:** -
 
@@ -3443,7 +3449,7 @@ Linksys MR8300 · ipq40xx-generic · K0
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_mr8300-squashfs-factory.bin)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
-- **Gluon-RAMpe passt:** teilweise: ein Installer bräuchte das Linksys-factory-Format (Kernel + UBI, linksys-image), kein initramfs; einfacher wäre `factory` in Gluon einzuschalten [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: eine Gluon-RAMpe bräuchte das Linksys-factory-Format (Kernel + UBI, linksys-image), kein initramfs; einfacher wäre `factory` in Gluon einzuschalten [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt a9071d02b5ab11fbd73ea42076a09f2fd8136517
 - **Detail-Anleitung:** -
 
@@ -4009,7 +4015,7 @@ MikroTik RouterBOARD 951Ui-2nD (hAP) · ath79-mikrotik · K1
 - **Factory-/Stock-Image-Link:** Gluon-factory = initramfs (mikrotik.inc)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
-- **Gluon-RAMpe passt:** ja: Gluon liefert hier selbst das initramfs als factory (mikrotik.inc); Installer wäre die Variante mit Upload-Seite. Prüfen: startet Gluons initramfs-factory überhaupt im Config-Mode (Befund 70_initramfs_test aus NOTIZEN.md)? [abgeleitet]
+- **Gluon-RAMpe passt:** ja: Gluon liefert hier selbst das initramfs als factory (mikrotik.inc); Gluon-RAMpe wäre die Variante mit Upload-Seite. Prüfen: startet Gluons initramfs-factory überhaupt im Config-Mode (Befund 70_initramfs_test aus NOTIZEN.md)? [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 5ce64e0646fcd5c4f374b4de898b591560c32e18 [geprüft]
 
 #### mikrotik-routerboard-mapl-2nd
@@ -4057,7 +4063,7 @@ MikroTik RouterBOARD wAPR-2nD (wAP R) · ath79-mikrotik · K1
 - **Factory-/Stock-Image-Link:** Gluon-factory = initramfs (mikrotik.inc)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
-- **Gluon-RAMpe passt:** ja: Gluon liefert hier selbst das initramfs als factory (mikrotik.inc); Installer wäre die Variante mit Upload-Seite. Prüfen: startet Gluons initramfs-factory überhaupt im Config-Mode (Befund 70_initramfs_test aus NOTIZEN.md)? [abgeleitet]
+- **Gluon-RAMpe passt:** ja: Gluon liefert hier selbst das initramfs als factory (mikrotik.inc); Gluon-RAMpe wäre die Variante mit Upload-Seite. Prüfen: startet Gluons initramfs-factory überhaupt im Config-Mode (Befund 70_initramfs_test aus NOTIZEN.md)? [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 817bf0204569ca28121576c13f48186ed7b7c2ae [geprüft]
 
 #### mikrotik-discg-5acd
@@ -4090,7 +4096,7 @@ MikroTik hAP ac2 (RBD52G-5HacD2HnD) · ipq40xx-mikrotik · K1
 - **Factory-/Stock-Image-Link:** Gluon `-factory` = initramfs-kernel
 - **Stock-Teile:** -
 - **RAM:** 128 MB
-- **Gluon-RAMpe passt:** ja: Netboot nimmt ein initramfs; laut Installer-NOTIZEN startet ein Gluon-initramfs nicht im Config-Mode, der Installer wäre der passende Ersatz für Gluons eigenes initramfs-"factory" [abgeleitet]
+- **Gluon-RAMpe passt:** ja: Netboot nimmt ein initramfs; laut RAMpe-NOTIZEN startet ein Gluon-initramfs nicht im Config-Mode, die Gluon-RAMpe wäre der passende Ersatz für Gluons eigenes initramfs-"factory" [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt faea7becafc634dc882f0ad8f9388862ccd5bd0d
 - **Detail-Anleitung:** -
 
@@ -4141,7 +4147,7 @@ MikroTik hEX RB750Gr3 (Alias mikrotik-routerboard-hex-v3) · ramips-mt7621 · K1
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Gluon-RAMpe passt:** ja: Netboot lädt ein beliebiges initramfs (ELF); Installer statt OpenWrt-initramfs [abgeleitet]
+- **Gluon-RAMpe passt:** ja: Netboot lädt ein beliebiges initramfs (ELF); Gluon-RAMpe statt OpenWrt-initramfs [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 52f2d7d2a9dc3e142bb957462a30806eb5cebaf4 (+ faf94d926e2810f895f2a98d4a49ee2fe8f673e8: Erstunterstützung mit Bootloader-Tausch, überholt)
 - **Detail-Anleitung:** https://openwrt.org/toh/mikrotik/common
 
@@ -4416,7 +4422,7 @@ Ocedo Koala · ath79-generic · K1
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
-- **Gluon-RAMpe passt:** ja: Installer-initramfs unter diesem Namen bereitstellen; der Installer muss zusätzlich `fw_setenv bootcmd run bootcmd_1` setzen (OpenWrt-platform.sh tut es nicht) [geprüft im Baum]
+- **Gluon-RAMpe passt:** ja: RAMpe-initramfs unter diesem Namen bereitstellen; die Gluon-RAMpe muss zusätzlich `fw_setenv bootcmd run bootcmd_1` setzen (OpenWrt-platform.sh tut es nicht) [geprüft im Baum]
 - **Quelle (OpenWrt-Commit):** c4931713df8ffb3c4e5c1be7d0b6d4aa96a7dd4c [geprüft]
 
 #### ocedo-raccoon
@@ -4432,7 +4438,7 @@ Ocedo Raccoon · ath79-generic · K1
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
-- **Gluon-RAMpe passt:** ja: Installer-initramfs unter diesem Namen bereitstellen; der Installer muss zusätzlich `fw_setenv bootcmd run bootcmd_1` setzen (OpenWrt-platform.sh tut es nicht) [geprüft im Baum]
+- **Gluon-RAMpe passt:** ja: RAMpe-initramfs unter diesem Namen bereitstellen; die Gluon-RAMpe muss zusätzlich `fw_setenv bootcmd run bootcmd_1` setzen (OpenWrt-platform.sh tut es nicht) [geprüft im Baum]
 - **Quelle (OpenWrt-Commit):** 647614803473757e3b2d93d46938afccd61a5a5d [geprüft]
 
 #### ocedo-panda
@@ -4448,7 +4454,7 @@ OCEDO Panda · mpc85xx-p1020 · K1
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 1 GB
-- **Gluon-RAMpe passt:** teilweise: Ramboot passt; ubirmvol und fw_setenv vor dem sysupgrade macht der Installer nicht
+- **Gluon-RAMpe passt:** teilweise: Ramboot passt; ubirmvol und fw_setenv vor dem sysupgrade macht die Gluon-RAMpe nicht
 - **Quelle (OpenWrt-Commit):** b368373fab45f31963cd2bc1c6ab90e0a577e611
 
 ### Familie `recovery-web`
@@ -4603,7 +4609,7 @@ D-Link DIR-505 · ath79-generic · K4
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
-- **Gluon-RAMpe passt:** teilweise: Installer-initramfs per tftpboot statt OpenWrt-initramfs; seriell bleibt [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: RAMpe-initramfs per tftpboot statt OpenWrt-initramfs; seriell bleibt [abgeleitet]
 - **Quelle (OpenWrt-Commit):** c9ac7b17296ff29d9df39db8a68c449ef1514bbd [geprüft]
 
 #### enterasys-ws-ap3705i
@@ -4619,7 +4625,7 @@ Enterasys WS-AP3705i · ath79-generic · K4
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
-- **Gluon-RAMpe passt:** teilweise: Installer als 1401A8C0.img statt OpenWrt-initramfs, Upload-Seite statt scp; seriell bleibt
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als 1401A8C0.img statt OpenWrt-initramfs, Upload-Seite statt scp; seriell bleibt
 - **Quelle (OpenWrt-Commit):** ebddc5f984a240980303aed68524eb615484eef8 [geprüft]
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=ebddc5f984a240980303aed68524eb615484eef8
 
@@ -4636,7 +4642,7 @@ Extreme Networks WS-AP3805i · ath79-generic · K4
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 256 MB [Commit]
-- **Gluon-RAMpe passt:** teilweise: Installer als 1D01A8C0.img statt OpenWrt-initramfs; seriell bleibt
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als 1D01A8C0.img statt OpenWrt-initramfs; seriell bleibt
 - **Quelle (OpenWrt-Commit):** f8c87aa2d27ab405f284dd4357377ab5c893a345 [geprüft]
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f8c87aa2d27ab405f284dd4357377ab5c893a345
 
@@ -4653,7 +4659,7 @@ Siemens WS-AP3610 · ath79-generic · K4
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit: 2x 64M DDR1]
-- **Gluon-RAMpe passt:** teilweise: Installer als 1401A8C0.img; Achtung, das initramfs ist hier unkomprimiert (KERNEL_INITRAMFS ... uImage none, OpenWrt 23.7 MB); seriell bleibt
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als 1401A8C0.img; Achtung, das initramfs ist hier unkomprimiert (KERNEL_INITRAMFS ... uImage none, OpenWrt 23.7 MB); seriell bleibt
 - **Quelle (OpenWrt-Commit):** d2b8ccb1c04def81224da6f42f644c7d239b9986 [geprüft]
 - **Detail-Anleitung:** https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Siemens-AP3610
 
@@ -4670,7 +4676,7 @@ Sophos AP15 (broken) · ath79-generic · K4
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** ?
-- **Gluon-RAMpe passt:** teilweise: Installer statt OpenWrt-initramfs; seriell bleibt
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt OpenWrt-initramfs; seriell bleibt
 - **Quelle (OpenWrt-Commit):** 0dc58214896aacf67a3759495d70e2b4e9c160d8 (Einführung, Anleitung); fc31261c3307458e38c9a676211a25c99c044ece (DTS-Umbenennung) [geprüft]
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0dc58214896aacf67a3759495d70e2b4e9c160d8
 
@@ -4687,7 +4693,7 @@ TP-Link Archer D50 v1 (broken) · ath79-generic · K4
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** für die Installation keine; Rückweg: OEM-Datei per `dd skip=257 bs=512 count=15616` zuschneiden (Hersteller-Download TP-Link)
 - **RAM:** 64 MB [Commit]
-- **Gluon-RAMpe passt:** teilweise: Installer-initramfs per tftpboot; seriell bleibt
+- **Gluon-RAMpe passt:** teilweise: RAMpe-initramfs per tftpboot; seriell bleibt
 - **Quelle (OpenWrt-Commit):** f5d2c91415a68f554815860d574145644fc31c16 [geprüft]
 
 #### aerohive-hiveap-121
@@ -4703,7 +4709,7 @@ Aerohive HiveAP 121 · ath79-nand · K4
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-aerohive_hiveap-121-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
-- **Gluon-RAMpe passt:** teilweise: statt factory per nand write könnte man den Installer per tftpboot starten; seriell bleibt [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: statt factory per nand write könnte man die Gluon-RAMpe per tftpboot starten; seriell bleibt [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 62db255543c8fb5d1787caf36c6c7c9c51db71cd [geprüft]
 
 #### zte-mf281
@@ -4719,7 +4725,7 @@ ZTE MF281 (broken) · ath79-nand · K4
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-zte_mf281-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
-- **Gluon-RAMpe passt:** teilweise: Installer statt OpenWrt-initramfs; der Installer müsste aber das factory (nicht sysupgrade) per mtd schreiben [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt OpenWrt-initramfs; die Gluon-RAMpe müsste aber das factory (nicht sysupgrade) per mtd schreiben [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 1e1695f959e678868bb7911d059b847f38fc9cf4 [geprüft]
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1e1695f959e678868bb7911d059b847f38fc9cf4
 
@@ -4736,7 +4742,7 @@ Extreme Networks WS-AP3915i · ipq40xx-generic · K4
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 512 MB
-- **Gluon-RAMpe passt:** teilweise: Installer als openwrt-3915.bin, seriell bleibt; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als openwrt-3915.bin, seriell bleibt; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt e16a0e7e8876df0a92ec4779fe766de1a943307a
 - **Detail-Anleitung:** -
 
@@ -4753,7 +4759,7 @@ ZTE MF289F · ipq40xx-generic · K4
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** - (Backup mtd16 web, mtd17 rootfs für den Rückweg)
 - **RAM:** 256 MB
-- **Gluon-RAMpe passt:** teilweise: Installer als TFTP-initramfs möglich, aber der `ubirmvol`-Schritt fehlt ihm; seriell bleibt [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als TFTP-initramfs möglich, aber der `ubirmvol`-Schritt fehlt ihm; seriell bleibt [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt 0de6a3339f1aadc1de2c9371435e3de239a00645 (Gluon: broken)
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0de6a3339f1aadc1de2c9371435e3de239a00645
 
@@ -4770,7 +4776,7 @@ Extreme Networks AP3935i/e · ipq806x-generic · K4
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-nand-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq806x/generic/openwrt-24.10.8-ipq806x-generic-extreme_ap3935-squashfs-nand-factory.bin)
 - **Stock-Teile:** -
 - **RAM:** ?
-- **Gluon-RAMpe passt:** teilweise: Installer als TFTP-initramfs, seriell bleibt; Gluon baut für ipq806x kein initramfs; QCA9990 ohne 802.11s [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als TFTP-initramfs, seriell bleibt; Gluon baut für ipq806x kein initramfs; QCA9990 ohne 802.11s [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt 3aef61060e3f51aa43fe494d5ff173e81dd43003
 - **Detail-Anleitung:** -
 
@@ -4803,7 +4809,7 @@ Cudy TR3000 v1 (128 MB Flash) · mediatek-filogic · K4
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 512 MB
-- **Gluon-RAMpe passt:** teilweise: Installer ersetzt das OpenWrt-initramfs im TFTP-Schritt, der serielle Teil bleibt
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe ersetzt das OpenWrt-initramfs im TFTP-Schritt, der serielle Teil bleibt
 - **Quelle (OpenWrt-Commit):** OpenWrt 63b8d98dd0d2f7797ea5b5f25978590982bbbb5d
 - **Detail-Anleitung:** https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
 
@@ -4836,7 +4842,7 @@ Enterasys WS-AP3715i · mpc85xx-p1010 · K4
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Gluon-RAMpe passt:** teilweise: nach dem seriellen TFTP-Boot macht der Installer den sysupgrade-Schritt statt scp; bootcmd/saveenv bleibt seriell
+- **Gluon-RAMpe passt:** teilweise: nach dem seriellen TFTP-Boot macht die Gluon-RAMpe den sysupgrade-Schritt statt scp; bootcmd/saveenv bleibt seriell
 - **Quelle (OpenWrt-Commit):** 765f66810a3324cc35fa6471ee8eeee335ba8c2b
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b
 
@@ -4853,7 +4859,7 @@ Sophos RED 15w Rev. 1 · mpc85xx-p1010 · K4
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 128 MB
-- **Gluon-RAMpe passt:** teilweise: ubiformat vor dem sysupgrade macht der Installer nicht
+- **Gluon-RAMpe passt:** teilweise: ubiformat vor dem sysupgrade macht die Gluon-RAMpe nicht
 - **Quelle (OpenWrt-Commit):** 97e4311fca73d064d17065e7844699aa777cb157
 
 #### aerohive-hiveap-330
@@ -4869,7 +4875,7 @@ Aerohive HiveAP 330 · mpc85xx-p1020 · K4
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Gluon-RAMpe passt:** teilweise: Installer statt scp+sysupgrade; der serielle Teil bleibt
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt scp+sysupgrade; der serielle Teil bleibt
 - **Quelle (OpenWrt-Commit):** f2b7d9dc1ca3d33f14961cf2885639f4f9e8965e
 
 #### enterasys-ws-ap3710i
@@ -4919,7 +4925,7 @@ TP-Link EAP620 HD v1 · qualcommax-ipq807x · K4
 - **Factory-/Stock-Image-Link:** [25.12.5: squashfs-web-ui-factory.bin](https://downloads.openwrt.org/releases/25.12.5/targets/qualcommax/ipq807x/openwrt-25.12.5-qualcommax-ipq807x-tplink_eap620hd-v1-squashfs-web-ui-factory.bin)
 - **Stock-Teile:** -
 - **RAM:** 1 GB
-- **Gluon-RAMpe passt:** teilweise: web-ui-factory ist ein squashfs-Flash-Image (tplink-image-2022, in 24.10 nicht vorhanden), kein initramfs; Installer bräuchte dieses Format [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: web-ui-factory ist ein squashfs-Flash-Image (tplink-image-2022, in 24.10 nicht vorhanden), kein initramfs; Gluon-RAMpe bräuchte dieses Format [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt 4b6e7da0f7499acb69feaacca79e0ee826c0b8db; gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
 - **Detail-Anleitung:** -
 
@@ -4994,7 +5000,7 @@ Aruba AP-324/AP-325, Siemens Scalance W1750D · ipq806x-generic · K5
 - **Factory-/Stock-Image-Link:** [snapshot: apboot.mbn](https://downloads.openwrt.org/snapshots/targets/ipq806x/generic/openwrt-ipq806x-generic-aruba_ap-32x-apboot.mbn)
 - **Stock-Teile:** - (Bootloader aus OpenWrt-Paket; Backup aos0/aos1 für den Rückweg)
 - **RAM:** 512 MB
-- **Gluon-RAMpe passt:** teilweise: Installer müsste das Aruba-`.ari`-Format (Vendor-Header) bekommen, Gluon baut für ipq806x kein initramfs; Bootloader-Tausch und UBI-Umbau bleiben seriell. OpenWrt-Artefakte nur als Snapshot (in keinem Release bis 25.12.5) [geprüft]
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe müsste das Aruba-`.ari`-Format (Vendor-Header) bekommen, Gluon baut für ipq806x kein initramfs; Bootloader-Tausch und UBI-Umbau bleiben seriell. OpenWrt-Artefakte nur als Snapshot (in keinem Release bis 25.12.5) [geprüft]
 - **Quelle (OpenWrt-Commit):** OpenWrt d2a75029a5f8e54e1fd2f252f73b9a430a030116 (25.12: 65f01eb3576f69233e8b6c67d85ffd38fde47a1a); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
 - **Detail-Anleitung:** https://github.com/lukasstockner/ap325-apboot-openwrt
 
@@ -5036,7 +5042,7 @@ ASUS Lyra MAP-AC2200 · ipq40xx-generic · K1
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Gluon-RAMpe passt:** ja: statt des OpenWrt-initramfs das Installer-initramfs per mtd-write schreiben; SSH-Schritt bleibt; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
+- **Gluon-RAMpe passt:** ja: statt des OpenWrt-initramfs das RAMpe-initramfs per mtd-write schreiben; SSH-Schritt bleibt; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt 9ad3967f140bd6d08796f1ec151b753186b3eb44
 - **Detail-Anleitung:** https://openwrt.org/toh/asus/lyra_map-ac2200#oem_easy_installation
 
@@ -5057,7 +5063,7 @@ ASUS RT-AX52 · mediatek-filogic · K1
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Gluon-RAMpe passt:** ja: Hersteller-UI nimmt ein initramfs im ASUS-TRX; Installer-Rezept muss das ARTIFACT `initramfs.trx` einsammeln [abgeleitet]
+- **Gluon-RAMpe passt:** ja: Hersteller-UI nimmt ein initramfs im ASUS-TRX; RAMpe-Rezept muss das ARTIFACT `initramfs.trx` einsammeln [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt 99708cc16dbd7c93db80698fbe5c69f07995a3e6
 - **Detail-Anleitung:** https://openwrt.org/toh/asus/rt-ax52#installation
 
@@ -5078,7 +5084,7 @@ ASUS RT-AX59U · mediatek-filogic · K2
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 512 MB
-- **Gluon-RAMpe passt:** teilweise: OpenWrt baut für die RT-AX59U kein `initramfs.trx` (24.10.8 und 25.12.5 nur initramfs-kernel.bin) [geprüft]; ein Installer-TRX wie bei der RT-AX52 wäre zu bauen, ob die Stock-UI es nimmt: offen
+- **Gluon-RAMpe passt:** teilweise: OpenWrt baut für die RT-AX59U kein `initramfs.trx` (24.10.8 und 25.12.5 nur initramfs-kernel.bin) [geprüft]; eine Gluon-RAMpe-TRX wie bei der RT-AX52 wäre zu bauen, ob die Stock-UI es nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 782eb050082acac93c2f9b3eb22348234bc93e99; gluon-patches-hardware 8dbae18666543aa9b8b5e7faa1d267024d62071e (Gluon-Zeile)
 - **Detail-Anleitung:** -
 
@@ -5179,7 +5185,7 @@ Genexis/Inteno Pulse EX400 · ramips-mt7621 · K1
 - **Factory-/Stock-Image-Link:** [factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-genexis_pulse-ex400-factory.bin) (200)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Gluon-RAMpe passt:** ja: factory.bin = Kette `append-image-stage initramfs-kernel.bin`, `inteno-bootfs`, `inteno-y3-header EX400` (mt7621.mk); Gluon baut es nur nicht, weil das Rezept CONFIG_TARGET_ROOTFS_INITRAMFS braucht. Ein Installer-Bau ergibt direkt ein Installer-factory [abgeleitet aus mk]
+- **Gluon-RAMpe passt:** ja: factory.bin = Kette `append-image-stage initramfs-kernel.bin`, `inteno-bootfs`, `inteno-y3-header EX400` (mt7621.mk); Gluon baut es nur nicht, weil das Rezept CONFIG_TARGET_ROOTFS_INITRAMFS braucht. Eine Gluon-RAMpe-Bau ergibt direkt eine Gluon-RAMpe-factory [abgeleitet aus mk]
 - **Quelle (OpenWrt-Commit):** dd0c2839a81bb3c5067be99b02ec5c0adff93ac6
 - **Detail-Anleitung:** https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400
 
@@ -5304,7 +5310,7 @@ Mercusys MR90X v1 · mediatek-filogic · K2
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** - (Wiki: Backup tp_data/boot für den Rückweg)
 - **RAM:** 512 MB
-- **Gluon-RAMpe passt:** teilweise: das Installer-initramfs könnte das OpenWrt-initramfs im kernel-Volume ersetzen; Exploit und fw_setenv bleiben Handarbeit [abgeleitet]. Hinweis: erstinstallation-ohne-factory.md beschreibt "tp_boot_idx 0, dann U-Boot-Web-Recovery nimmt initramfs" - weder im Commit noch im Wiki-Abschnitt "Stock bootloader" so belegt
+- **Gluon-RAMpe passt:** teilweise: das RAMpe-initramfs könnte das OpenWrt-initramfs im kernel-Volume ersetzen; Exploit und fw_setenv bleiben Handarbeit [abgeleitet]. Hinweis: erstinstallation-ohne-factory.md beschreibt "tp_boot_idx 0, dann U-Boot-Web-Recovery nimmt initramfs" - weder im Commit noch im Wiki-Abschnitt "Stock bootloader" so belegt
 - **Quelle (OpenWrt-Commit):** OpenWrt e4fe3097ef6a961874b66932a0ac4be18070630a
 - **Detail-Anleitung:** https://openwrt.org/toh/mercusys/mr90x_v1#installation_stock_bootloader
 
@@ -5325,7 +5331,7 @@ NETGEAR WAX218 · qualcommax-ipq807x · K1
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 366 MB nutzbar (laut Commit)
-- **Gluon-RAMpe passt:** ja: Installer-initramfs in dasselbe Format packen (ARTIFACT web-ui-factory.fit); Gluon baut für qualcommax kein initramfs, Rezept braucht TARGET_ROOTFS_INITRAMFS [abgeleitet]
+- **Gluon-RAMpe passt:** ja: RAMpe-initramfs in dasselbe Format packen (ARTIFACT web-ui-factory.fit); Gluon baut für qualcommax kein initramfs, Rezept braucht TARGET_ROOTFS_INITRAMFS [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt 7801161c4bb2413817b3dfd01695050e2da27bf3
 - **Detail-Anleitung:** -
 
@@ -5447,7 +5453,7 @@ Xiaomi AX3600 · qualcommax-ipq807x · K2
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 512 MB
-- **Gluon-RAMpe passt:** teilweise: Installer als `initramfs-factory.ubi` bauen, ersetzt den OpenWrt-Zwischenschritt; Exploit bleibt; Gluon baut für qualcommax kein initramfs [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als `initramfs-factory.ubi` bauen, ersetzt den OpenWrt-Zwischenschritt; Exploit bleibt; Gluon baut für qualcommax kein initramfs [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt 8364f0816417bfe404f7bded4eaa4f4a60c6d006
 - **Detail-Anleitung:** -
 
@@ -5468,7 +5474,7 @@ Xiaomi Mi Router 3G · ramips-mt7621 · K2
 - **Factory-/Stock-Image-Link:** [squashfs-kernel1.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_mi-router-3g-squashfs-kernel1.bin) (200), [squashfs-rootfs0.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_mi-router-3g-squashfs-rootfs0.bin) (200)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Gluon-RAMpe passt:** nein: Gluon baut kernel1/rootfs0 nicht, OpenWrt-Images nötig; Installer ersetzte nur LuCI, wenn ein initramfs in kernel1 bootet (ungeprüft)
+- **Gluon-RAMpe passt:** nein: Gluon baut kernel1/rootfs0 nicht, OpenWrt-Images nötig; Gluon-RAMpe ersetzte nur LuCI, wenn ein initramfs in kernel1 bootet (ungeprüft)
 - **Quelle (OpenWrt-Commit):** 6e283cdc0da25928f8148805ebef7f8f2b769ee8
 
 ### Familie `sonderweg-xiaomi-mi-router-ax3000t`
@@ -5488,7 +5494,7 @@ Xiaomi Mi Router AX3000T · mediatek-filogic · K2
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** - (Backup BL2, Nvram, Bdata, Factory, FIP, ubi, KF für den Rückweg)
 - **RAM:** 256 MB
-- **Gluon-RAMpe passt:** teilweise: Installer als `initramfs-factory.ubi` (ubinize-kernel) bauen, ersetzt den OpenWrt-Zwischenschritt; der Exploit bleibt [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als `initramfs-factory.ubi` (ubinize-kernel) bauen, ersetzt den OpenWrt-Zwischenschritt; der Exploit bleibt [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt 7dbcc1215a56cc1da68c81bf92d7efa174c5e051
 - **Detail-Anleitung:** -
 
@@ -5509,7 +5515,7 @@ Xiaomi Mi Router AX3000T (OpenWrt-U-Boot-Layout) · mediatek-filogic · K3
 - **Factory-/Stock-Image-Link:** [24.10.8: preloader.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-xiaomi_mi-router-ax3000t-ubootmod-preloader.bin)<br>[24.10.8: bl31-uboot.fip](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-xiaomi_mi-router-ax3000t-ubootmod-bl31-uboot.fip)
 - **Stock-Teile:** - (Bootloader aus OpenWrt; Backup für den Rückweg)
 - **RAM:** 256 MB
-- **Gluon-RAMpe passt:** nein: Bootloader-Tausch braucht eine OpenWrt-Shell mit kmod-mtd-rw, der Installer kann nur sysupgrade [abgeleitet]
+- **Gluon-RAMpe passt:** nein: Bootloader-Tausch braucht eine OpenWrt-Shell mit kmod-mtd-rw, die Gluon-RAMpe kann nur sysupgrade [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt 7dbcc1215a56cc1da68c81bf92d7efa174c5e051
 - **Detail-Anleitung:** -
 
@@ -5551,7 +5557,7 @@ ZTE MF286R (broken) · ath79-nand · K1
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** für die Installation keine; Rückweg nur mit eigenem Backup (Stock-Firmware nicht öffentlich, providerspezifisch); TFTP-Notweg braucht 8 MB Nullen vor dem initramfs (`root_uImage`, Server 192.0.0.1/8)
 - **RAM:** 128 MB [Commit]
-- **Gluon-RAMpe passt:** ja (Exploit-Weg): genau der Fall "initramfs aus der Stock-Shell schreiben", Installer statt OpenWrt-initramfs [abgeleitet]; Gluon markiert das Gerät broken mit "case must be opened" - laut Commit nicht zwingend
+- **Gluon-RAMpe passt:** ja (Exploit-Weg): genau der Fall "initramfs aus der Stock-Shell schreiben", Gluon-RAMpe statt OpenWrt-initramfs [abgeleitet]; Gluon markiert das Gerät broken mit "case must be opened" - laut Commit nicht zwingend
 - **Quelle (OpenWrt-Commit):** 7ac8da00609f42b8aba74b7efc6b0d055b7cef3e [geprüft]
 
 ### Familie `sonderweg-zyxel-nbg6616`
@@ -6570,12 +6576,12 @@ Xiaomi Mi Router 4C · ramips-mt76x8 · K2
    Sektoren oder Header aus der Stock-Firmware. Nur Rückwege brauchen Stock-Teile
    (Archer D50: OEM-Datei mit `dd` zuschneiden; ZTE MF286R: eigenes Backup, die
    Stock-Firmware ist nicht öffentlich).
-2. **Der Installer passt direkt nur bei 6 Geräten (K1)**: OCEDO Koala und
+2. **Die Gluon-RAMpe passt direkt nur bei 6 Geräten (K1)**: OCEDO Koala und
    Raccoon (Bootloader lädt per TFTP ein initramfs, ohne Gehäuse öffnen) und
-   die vier MikroTik (Netboot). Bei OCEDO müsste der Installer zusätzlich
+   die vier MikroTik (Netboot). Bei OCEDO müsste die Gluon-RAMpe zusätzlich
    `fw_setenv bootcmd run bootcmd_1` setzen; OpenWrt tut das beim sysupgrade
    nicht (im Baum geprüft). Dazu ZTE MF286R über den Exploit-Weg (siehe 5).
-3. **54 der 69 Geräte ohne factory brauchen den Installer nicht**, weil der
+3. **54 der 69 Geräte ohne factory brauchen die Gluon-RAMpe nicht**, weil der
    Herstellerweg das Gluon-sysupgrade direkt nimmt: 20 OpenMesh (ap51-flash),
    4 AVM (EVA), 8 GL.iNet, 7 devolo, 5 Sophos (XG-Appliance), 6 UniFi AC/UK-Ultra
    (SSH + dd), ALFA AP121F, COMFAST, Joy-IT, LibreRouter. Die übrigen K2:
@@ -6584,13 +6590,13 @@ Xiaomi Mi Router 4C · ramips-mt76x8 · K2
    v1 (siehe 6) und ZTE MF286R (siehe 5).
 4. **K4 (6 ohne factory)**: Enterasys WS-AP3705i und Siemens WS-AP3610 haben
    die Konsole außen (Cisco-RJ45), Gehäuse bleibt zu; Extreme WS-AP3805i,
-   Sophos AP15, Archer D50 und DIR-505 brauchen UART innen bzw. ohne Angabe. Der
-   Installer ersetzt dort nur das OpenWrt-initramfs, der serielle Teil bleibt.
+   Sophos AP15, Archer D50 und DIR-505 brauchen UART innen bzw. ohne Angabe. Die
+   Gluon-RAMpe ersetzt dort nur das OpenWrt-initramfs, der serielle Teil bleibt.
    Siemens: das initramfs ist unkomprimiert (OpenWrt 23.7 MB).
 5. **ZTE MF286R**: Gluon markiert das Gerät broken mit "case must be opened to
    install". Laut OpenWrt-Commit `7ac8da00` geht es ohne Öffnen: Root-Shell über
    eine Lücke im URL-Filter des Web-UI, dann OpenWrt-initramfs mit `nandwrite`
-   in die "firmware"-Partition und neu starten. Genau dort passt der Installer.
+   in die "firmware"-Partition und neu starten. Genau dort passt die Gluon-RAMpe.
    Die Dateinamen im Commit gelten der MF286A; ob alles auch für die R gilt,
    ist nicht einzeln belegt.
 6. **TP-Link Archer C60 v1**: Gluon setzt `factory = false` ohne Begründung
@@ -6625,12 +6631,12 @@ Xiaomi Mi Router 4C · ramips-mt76x8 · K2
 ### Teil ramips, lantiq, mpc85xx
 
 
-1. **ERX/ERX-SFP: Installer passt für 2025.1 nicht.** EdgeOS schreibt das
+1. **ERX/ERX-SFP: Gluon-RAMpe passt für 2025.1 nicht.** EdgeOS schreibt das
    factory.tar in einen 3-MB-Kernel-Slot. Laut `erx-migration-howto.md` hat
    der 6.6-Kernel allein 3 173 556 Byte; ein Gluon-initramfs mit Rootfs ist
    größer. OpenWrt 24.10.8 baut auch kein factory.tar mehr. Das betrifft
    NOTIZEN.md Punkt 4 (oszilloskops Original-Anwendungsfall) [abgeleitet].
-2. **COVR-X1860 ist kein Installer-Kandidat** (steht in GERAETE.md noch so):
+2. **COVR-X1860 ist kein RAMpe-Kandidat** (steht in GERAETE.md noch so):
    Gluon baut factory und ein eigenes recovery.bin (squashfs, kein initramfs).
 3. **Widersprüche zu älteren Neanderfunk-Notizen, offen:**
    - DIR-878/DIR-882: OpenWrt-Commits d7233b0a6a9b8cb9207a74a8cb3d0525170cf504 und 73e8f23579bcb87764dae9ed0aefe28be3183d3e beschreiben die
@@ -6666,7 +6672,7 @@ Xiaomi Mi Router 4C · ramips-mt76x8 · K2
 1. **initramfs fehlt im Gluon-Bau.** Gluon schaltet `TARGET_ROOTFS_INITRAMFS`
    nur in mediatek-filogic und ipq40xx-mikrotik ein [geprüft: targets/].
    Für ipq40xx-generic, ipq806x, qualcommax und mediatek-mt7622 braucht jedes
-   Installer-Rezept `ensure_target_config … TARGET_ROOTFS_INITRAMFS`.
+   RAMpe-Rezept `ensure_target_config … TARGET_ROOTFS_INITRAMFS`.
 2. **Hersteller-Formate statt nacktem initramfs.** Der Hersteller-Weg nimmt
    oft eine verpackte Form: ASUS-TRX (`initramfs.trx`, RT-AX52), D-Link-Header
    (`squashfs-recovery.bin`), Netgear `web-ui-factory.fit` (WAX218), Xiaomi
@@ -6674,19 +6680,19 @@ Xiaomi Mi Router 4C · ramips-mt76x8 · K2
    erzeugt sie als IMAGES/ARTIFACTS, sobald initramfs an ist [geprüft:
    Image-Rezepte]; ob Gluons `extra_images` die ARTIFACTS einsammelt, ist nicht
    geprüft.
-3. **Dem Installer fehlen Vorbereitungsschritte vor dem sysupgrade.** Aruba
+3. **Der Gluon-RAMpe fehlen Vorbereitungsschritte vor dem sysupgrade.** Aruba
    (`ubiformat`), AVM 7520/7530/Repeater (U-Boot nach uboot0/1, `ubirmvol`),
-   ZTE MF289F (`ubirmvol`). Mit einem gerätespezifischen Hook im Installer
+   ZTE MF289F (`ubirmvol`). Mit einem gerätespezifischen Hook in der Gluon-RAMpe
    würden aus diesen "teilweise" ein "ja"; der serielle bzw. EVA-Teil bleibt.
 4. **MikroTik:** Gluons "factory" für den hAP ac2 ist selbst ein
-   `-initramfs-kernel` (mikrotik.inc). Laut Installer-NOTIZEN startet ein
+   `-initramfs-kernel` (mikrotik.inc). Laut RAMpe-NOTIZEN startet ein
    Gluon-initramfs nie im Config-Mode; ob der hAP ac2 aus diesem "factory"
    heraus überhaupt bequem ins sysupgrade kommt, wäre zu prüfen
    [abgeleitet]. SXTsq und wAP ac haben in Gluon gar kein initramfs
-   (`factory = false`). Alle drei sind gute Installer-Kandidaten.
+   (`factory = false`). Alle drei sind gute RAMpe-Kandidaten.
 5. **Linksys MR8300:** OpenWrt baut ein factory, das die Linksys-UI annimmt
    [geprüft: Commit], Gluon setzt trotzdem `factory = false` (Gluon d04ea647
-   ohne Begründung). Kandidat für eine Gluon-Korrektur statt Installer.
+   ohne Begründung). Kandidat für eine Gluon-Korrektur statt Gluon-RAMpe.
 6. **GL-MT2500:** Die neue HW-Revision mit Airoha-PHY hat in OpenWrt 24.10 das
    eigene Profil `glinet_gl-mt2500-airoha` [geprüft: 24.10.8-Liste]; Gluon
    führt nur die MaxLinear-Fassung.
@@ -6697,7 +6703,7 @@ Xiaomi Mi Router 4C · ramips-mt76x8 · K2
    dort nur für die OEM-Firmware. Die ältere Neanderfunk-Notiz ist so nicht belegt.
 8. **Linksys WHW01:** Der OpenWrt-Commit kennt nur UART + TFTP, das Wiki
    (10.10.2026) beschreibt den Upload über die Linksys-UI im Support-Modus.
-9. **Backports nicht in Vanilla-Gluon.** Der Installer baut gegen Gluon
+9. **Backports nicht in Vanilla-Gluon.** Die Gluon-RAMpe baut gegen Gluon
    v2025.1.3 ohne unsere Patches; für AP-32x, AP3000 Wall, WR3000U, M3000 v2
    und EAP620 HD müsste er gluon-patches-hardware einspielen. Für AP-32x und
    WR3000U gibt es OpenWrt-Images nur als Snapshot, nicht in 25.12.5
@@ -6707,8 +6713,8 @@ Xiaomi Mi Router 4C · ramips-mt76x8 · K2
     gesperrt und brauchte ein entsperrtes apboot aus einem fremden, gepatchten
     SPI-Dump (K5). Ob AP-303/303H/365 aus heutiger Produktion ebenso gesperrt
     sind: offen.
-11. **Cudy:** Alle Cudy-Geräte gehen über die Cudy-Zwischenfirmware; der
-    Installer bringt dort nichts. Ausnahme TR3000 v1 (128 MB): keine
+11. **Cudy:** Alle Cudy-Geräte gehen über die Cudy-Zwischenfirmware; die
+    Gluon-RAMpe bringt dort nichts. Ausnahme TR3000 v1 (128 MB): keine
     Zwischenfirmware im Spiegel, heute nur UART. Ob Cudys TFTP-Recovery
     (`recovery.bin` von 192.168.1.88, Reset beim Einschalten) ein fremdes
     initramfs annimmt, steht in keinem Commit (M3000-Commit: "not understood
