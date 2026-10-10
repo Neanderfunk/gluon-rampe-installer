@@ -993,6 +993,32 @@ Abweichungen:
 - asus-tuf-*: Ab welcher ASUS-Firmware SSH/`mtd-write` gesperrt sein könnte, nicht belegt.
 - asus-rt-ac51u: ob das Restoration-Tool die Endung `.trx` verlangt (Wiki benennt in `factory.trx` um), nicht belegt.
 
+## Nachprüfung am Wiki-Rohtext (10.10.2026)
+
+Die Gerätewerte in den Daten mit `[Wiki-Zusammenfassung]` wurden am
+DokuWiki-Rohtext (`?do=export_raw`, 95 Seiten) nachgeprüft: 809 Marken, davon
+jetzt rund 740 `[geprüft: Wiki …]`, 67 bleiben `[Wiki-Zusammenfassung]`, weil
+die Seite fehlt (u. a. OCEDO, Sophos AP15, EX400 im Darmstadt-Wiki,
+FriendlyElec-Wiki, ToH-Datensätze). Die Marken in den Familiennotizen oben
+sind NICHT nachgeprüft.
+
+Korrigiert:
+- Linksys EA8300: zwischen OpenWrt 22.03.5/22.03.6 und Gluon-sysupgrade erst
+  `fw_setenv kernsize 500000` (ohne `=`), sonst Soft-Brick; damit ist der
+  Widerspruch zum Weg über 22.03 aufgelöst. MR8300 bleibt offen.
+- TP-Link TL-WR1043ND v2/v3, TL-WR1043N v5, v4: neueste Herstellerfirmware
+  unter http://192.168.0.1, nicht 192.168.1.1.
+- TL-WR810N v1: der Soft-Brick war ab 19.07.7 behoben, die späteren Fixes
+  betreffen nur den USB-Strom.
+- x86: Rufus/balenaEtcher nur unter Windows, macOS nur Keka zum Entpacken.
+- Archer C2600: Web-Upload nur mit Build 20150610 Rel. 32140 belegt, nicht "ab".
+
+Nebenbefunde aus dem Rohtext (nicht eingetragen): Nexx WT3020 (alter Hinweis,
+erstes factory scheitert mit "Bad Magic Number"); RE200 v4 (Herstellerfirmware
+verlangt höheres `soft_ver`, nach Rückweg kein erneutes Flashen); RT-AX59U
+(OpenWrt 24.10.0 brickt Geräte mit U-Boot ab 2022.10, für 24.10.1+ vermutlich
+behoben); DIR-505 (`Hit any key to stop autoboot: 0`, Unterbrechen schwierig).
+
 ## Kandidaten für Hardwaretests
 
 Wo der einfachere Weg nur schlecht belegt ist, würde ein Test am Gerät die
