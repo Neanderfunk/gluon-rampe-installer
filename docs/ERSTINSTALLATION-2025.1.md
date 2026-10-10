@@ -130,8 +130,8 @@ Bei 15 Geräten mit Exploit- oder Bootloader-Weg (Xiaomi, Mercusys MR90X,
 ZTE MF286R, Meraki MR33, Google WiFi, Aruba AP11, HP MSM460, Arcadyan
 VGV7510KW22, TP-Link TD-W8970) sind die Angaben noch nicht umsortiert: Der
 frühere Text "Rechner braucht" steht unverändert unter Programm, markiert mit
-"[noch nicht aufgeteilt]". Für 21 Geräte (ASUS Firmware Restoration und TUF,
-OCEDO, Sophos XG, Xiaomi OpenWRTInvasion und AC2100) fehlen die Felder noch.
+"[noch nicht aufgeteilt]". Für 8 Xiaomi-Geräte (OpenWRTInvasion und AC2100)
+fehlen die Felder noch.
 
 ## Zahlen
 
@@ -1640,14 +1640,34 @@ Aruba Instant On AP17 (Alias von aruba-ap-365) · ipq40xx-generic · K4
 ASUS RT-AC51U · ramips-mt7620 · K1d
 
 - **Weg ab Werk:** Reset beim Einschalten halten bis die Power-LED langsam blinkt; der Bootloader nimmt das sysupgrade per TFTP oder per ASUS Firmware Restoration [geprüft]
+- **Schritte (Normalweg):**
+  1. Gluon-sysupgrade-Image für den RT-AC51U bereitlegen; die Rettungsfunktion nimmt es direkt [geprüft: Commit 5f93298]
+  2. Rechner fest auf 192.168.1.75, Netzmaske 255.255.255.0 stellen [geprüft: Commit 5f93298]
+  3. Netzwerkkabel vom Rechner in LAN-Port 1 (nicht WAN) [geprüft: Commit 5f93298; nicht WAN: abgeleitet: Wiki toh/asus/rt-ac51u]
+  4. Strom ziehen, Reset-Taste (mit einem Stift) drücken und halten, Strom wieder anstecken [geprüft: Commit 5f93298]
+  5. Halten, bis die Power-LED langsam blinkt (Rettungsmodus), dann loslassen [geprüft: Commit 5f93298, ASUS-FAQ 1000814]
+  6. Mit einem TFTP-Client im binary-Modus an 192.168.1.1 senden: `tftp` > `binary` > `connect 192.168.1.1` > `put <Gluon-sysupgrade>` > `quit` [geprüft: Commit 5f93298]
+  7. Während des Schreibens blinkt die Power-LED schnell; fertig, wenn sie dauerhaft leuchtet, währenddessen nicht Strom ziehen [abgeleitet: Wiki toh/asus/rt-ac51u]
+  8. Rechner wieder auf automatische Adresse (DHCP) stellen [geprüft: ASUS-FAQ 1000814]
+- **Taste und Zeitpunkt:** Reset-Taste beim Einstecken des Stroms gedrückt halten, loslassen, wenn die Power-LED langsam blinkt [geprüft: Commit 5f93298, ASUS-FAQ 1000814]; laut Commit "a few seconds" [geprüft], laut Wiki etwa 5 s (Restoration) bzw. 10 s (TFTP) [abgeleitet: Wiki toh/asus/rt-ac51u]
+- **Sichtbare Zeichen:** Power-LED blinkt langsam = Rettungsmodus erreicht [geprüft: Commit 5f93298, ASUS-FAQ 1000814]; blinkt schnell = wird geschrieben; leuchtet dauerhaft = fertig [abgeleitet: Wiki toh/asus/rt-ac51u]
 - **Übertragung:** tftp-server-am-geraet: Gerät 192.168.1.1, Rechner 192.168.1.75, LAN1; Dateiname beliebig (`tftp put`); alternativ herstellertool
+- **Anschluss:** LAN-Port 1 [geprüft: Commit 5f93298], nicht WAN [abgeleitet: Wiki toh/asus/rt-ac51u]; am Rechner nur diese eine Netzwerkverbindung, andere Adapter abschalten [abgeleitet: Wiki toh/asus/rt-ac51u]
+- **Adressen:** Rechner 192.168.1.75/255.255.255.0, Gerät 192.168.1.1 [geprüft: Commit 5f93298]; kein DHCP [abgeleitet]
+- **Programm:** TFTP-Client mit binary-Modus (Linux `tftp`; Windows: TFTP-Client nachinstallieren) [geprüft: Commit 5f93298; Windows abgeleitet]; Wiki setzt zusätzlich `timeout 120` [abgeleitet: Wiki toh/asus/rt-ac51u]
+- **Datei:** Gluon-sysupgrade-Image direkt [geprüft: Commit 5f93298 nennt das sysupgrade]; beim `tftp put` ist der Dateiname frei [abgeleitet: Bootloader ist TFTP-Server]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** ASUS Firmware Restoration (Windows) oder tftp-Client
+- **Typenschild/Verwechslung:** RT-AC51U heißt auch RT-AC750 (gleiches Stock-Image) [abgeleitet: Wiki toh/asus/rt-ac51u]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7620/openwrt-24.10.8-ramips-mt7620-asus_rt-ac51u-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
 - **Stock-Teile:** -
 - **RAM:** 64 MB
+- **Dauer:** Upload und Schreiben etwa 1 Minute, bis die Power-LED dauerhaft leuchtet, währenddessen nicht Strom ziehen [geprüft: ASUS-FAQ 1000814 für die Rettungsfunktion]
+- **Fehlerbild:** Firmware Restoration meldet, der Router sei nicht im Rettungsmodus: andere Netzwerkadapter am Rechner abschalten [abgeleitet: Wiki toh/asus/rt-ac51u]
+- **Notweg:** [Alternative] ASUS Firmware Restoration (nur Windows XP bis 11) [geprüft: ASUS-FAQ 1000814]: Rechner 192.168.1.10/255.255.255.0 [geprüft: ASUS-FAQ 1000814] (Commit nennt auch hierfür 192.168.1.75 [geprüft: Commit 5f93298]); alle anderen Netzwerkadapter abschalten, sonst meint das Tool, der Router sei nicht im Rettungsmodus [abgeleitet: Wiki toh/asus/rt-ac51u]; Gluon-sysupgrade in `factory.trx` umbenennen [abgeleitet: Wiki toh/asus/rt-ac51u, ob nötig offen], in Rettungsmodus bringen (Power-LED blinkt langsam), im Tool auswählen und Upload; nach etwa 1 Minute leuchtet die Power-LED dauerhaft = fertig [geprüft: ASUS-FAQ 1000814]
+- **Rückweg zur Herstellerfirmware:** ASUS-Firmware (.trx, entpackt) mit ASUS Firmware Restoration im Rettungsmodus aufspielen; ASUS nennt das ausdrücklich auch für "third-party firmware" [geprüft: ASUS-FAQ 1000814]
 - **Gluon-RAMpe passt:** nein, unnötig: Recovery nimmt das sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** 5f932988c3b65af14bd6e48a05cc2204b7aeb419
 - **Detail-Anleitung:** https://openwrt.org/toh/asus/rt-ac51u#installation
@@ -1657,14 +1677,31 @@ ASUS RT-AC51U · ramips-mt7620 · K1d
 ASUS RT-AC57U v1 · ramips-mt7621 · K1d
 
 - **Weg ab Werk:** Reset beim Einschalten 5 s, Bootloader nimmt das sysupgrade per TFTP; alternativ SSH auf Stock + `mtd-write -i owrt.bin -d linux` [geprüft]
+- **Schritte (Normalweg):**
+  1. Gluon-sysupgrade-Image für den RT-AC57U v1 bereitlegen [geprüft: Commit 14e0e4f]
+  2. Rechner fest auf 192.168.1.75 stellen [geprüft: Commit 14e0e4f], Netzmaske 255.255.255.0 [abgeleitet: Schwestergerät RT-AC51U, ASUS-FAQ 1000814]
+  3. Netzwerkkabel vom Rechner in einen LAN-Port, am besten LAN 1 [abgeleitet: RT-AC51U-Commit, ASUS-FAQ]
+  4. Router mit gedrückter Reset-Taste einschalten [geprüft: Commit 14e0e4f]
+  5. Reset-Taste nach 5 Sekunden loslassen [geprüft: Commit 14e0e4f]
+  6. Image per TFTP senden: `tftp -4 -v -m binary 192.168.1.1 -c put <Gluon-sysupgrade>` [geprüft: Commit 14e0e4f]
+  7. Warten, bis die Power-LED dauerhaft leuchtet, währenddessen nicht Strom ziehen [abgeleitet: ASUS-FAQ 1000814, Rettungsmodus allgemein]
+- **Taste und Zeitpunkt:** Reset-Taste beim Einschalten gedrückt halten, nach 5 Sekunden loslassen [geprüft: Commit 14e0e4f]; laut Wiki im Rettungsmodus loslassen, wenn die vordere LED langsam blinkt [abgeleitet: Wiki toh/asus/rt-ac57u]
+- **Sichtbare Zeichen:** Power-LED (vorne) blinkt langsam = Rettungsmodus [abgeleitet: Wiki toh/asus/rt-ac57u; geprüft: ASUS-FAQ 1000814 allgemein]; Power-LED leuchtet ruhig = fertig [geprüft: ASUS-FAQ 1000814 allgemein]; unter OpenWrt/Gluon zeigt die blaue Power-LED den Zustand [geprüft: DTS am Pin, led-boot/running = power]
 - **Übertragung:** tftp-server-am-geraet: Gerät 192.168.1.1, Rechner 192.168.1.75; oder ssh/scp admin@192.168.1.1
+- **Anschluss:** LAN-Port, Port 1 [abgeleitet: Schwestergerät RT-AC51U]; nicht WAN [abgeleitet]
+- **Adressen:** Rechner 192.168.1.75 [geprüft: Commit 14e0e4f], /24 [abgeleitet], Gerät 192.168.1.1 [geprüft: Commit 14e0e4f]; kein DHCP [abgeleitet]
+- **Programm:** TFTP-Client (`tftp -4 -v -m binary ... -c put`, tftp-hpa unter Linux) [geprüft: Commit 14e0e4f; tftp-hpa abgeleitet]
+- **Datei:** Gluon-sysupgrade-Image direkt [geprüft: Commit 14e0e4f nennt das sysupgrade]; Dateiname beim `put` frei [abgeleitet: Bootloader ist TFTP-Server]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** tftp-Client
+- **Typenschild/Verwechslung:** nur RT-AC57U v1 (MediaTek MT7621), das ist ein umgelabelter RT-AC1200GU [geprüft: Commit 14e0e4f, Image-Rezept am Pin DEVICE_ALT0 RT-AC1200GU]; RT-AC57U v2 (ab August 2019) hat einen Qualcomm-SoC, v3 (ab März 2020) ebenfalls anders; nicht mit anderen Geräten namens RT-AC1200... verwechseln [abgeleitet: Wiki toh/asus/rt-ac57u]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-asus_rt-ac57u-v1-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
 - **Stock-Teile:** -
 - **RAM:** 128 MB
+- **Notweg:** [Alternative] SSH in die Herstellerfirmware: Einrichtungsassistent abschließen, unter "Administration" -> "System" SSH einschalten, Login wie Weboberfläche [geprüft: Commit 14e0e4f]; `scp owrt.bin admin@192.168.1.1:/tmp`, `ssh admin@192.168.1.1`, `mtd-write -i /tmp/owrt.bin -d linux`, `reboot` [geprüft: Commit 14e0e4f]; mtd-write zeigt nichts an und dauert etwa 30 Sekunden [abgeleitet: Wiki toh/asus/rt-ac57u]; [Notfall] serielle Konsole neben der Power-LED: TX - RX - GND - 3V3 (3V3 am nächsten zur Power-LED, nicht anschließen), 57600 8N1 [geprüft: Commit 14e0e4f; nicht anschließen abgeleitet]
+- **Rückweg zur Herstellerfirmware:** ASUS Firmware Restoration (Windows): ASUS-Firmware (*.trx) herunterladen, Reset beim Einschalten halten bis die vordere LED langsam blinkt, Rechner 192.168.1.10/255.255.255.0, Upload [abgeleitet: Wiki toh/asus/rt-ac57u; geprüft: ASUS-FAQ 1000814]
 - **Gluon-RAMpe passt:** nein, unnötig: sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** 14e0e4f138e35c3e2a15cc3a836c939547ee053b
 
@@ -1673,14 +1710,39 @@ ASUS RT-AC57U v1 · ramips-mt7621 · K1d
 ASUS RT-AX53U (RT-AX1800U) · ramips-mt7621 · K1
 
 - **Weg ab Werk:** Stock-Web-UI nimmt OpenWrt nicht. Reset beim Einschalten halten bis die Power-LED sehr langsam blinkt, initramfs-kernel per TFTP oder ASUS Firmware Restoration, dann sysupgrade; Alternative: SSH auf Stock + mtd-write mit factory [abgeleitet: Wiki; der Commit nennt nur das serielle U-Boot-Menü mit factory]
+- **Schritte (Normalweg):**
+  1. OpenWrt-initramfs `openwrt-24.10.8-ramips-mt7621-asus_rt-ax53u-initramfs-kernel.bin` und das Gluon-sysupgrade herunterladen; das factory-Image wird bei diesem Weg nicht gebraucht [abgeleitet: Wiki toh/asus/rt-ax53u; Link: Inventar]
+  2. Alle Netzwerkkabel und USB-Geräte vom Router abziehen [abgeleitet: Wiki toh/asus/rt-ax53u]
+  3. Rechner an den Port LAN1 (genau diesen) anschließen [abgeleitet: Wiki toh/asus/rt-ax53u]
+  4. Rechner fest auf 192.168.1.10/24 stellen, von allen anderen Netzen trennen [abgeleitet: Wiki toh/asus/rt-ax53u; geprüft: ASUS-FAQ 1000814]
+  5. Strom ziehen, Reset-Taste drücken und halten, Strom anstecken [abgeleitet: Wiki toh/asus/rt-ax53u; geprüft: ASUS-FAQ 1000814]
+  6. Halten, bis die Power-LED sehr langsam blinkt [abgeleitet: Wiki toh/asus/rt-ax53u]
+  7. initramfs senden: `curl -T <initramfs-kernel.bin> tftp://192.168.1.1` (oder anderer TFTP-Client) [abgeleitet: Wiki toh/asus/rt-ax53u]
+  8. Warten (bis einige Minuten), der Router startet neu in das OpenWrt-initramfs [abgeleitet: Wiki toh/asus/rt-ax53u]
+  9. http://192.168.1.1/cgi-bin/luci/ öffnen, Login root ohne Passwort, System -> "Backup / Flash firmware" -> "Flash new firmware image": Gluon-sysupgrade hochladen; ohne Weboberfläche per SSH und `sysupgrade` [abgeleitet: Wiki toh/asus/rt-ax53u]
+  10. Netzwerkeinstellungen am Rechner zurückstellen [abgeleitet: Wiki toh/asus/rt-ax53u]
+- **Warnung:** RT-AX1800 (ohne U) nicht flashen, das ist nicht dasselbe Gerät [abgeleitet: Wiki toh/asus/rt-ax53u]; laut Wiki hat das Gerät kein JTAG [abgeleitet: Wiki]
+- **Taste und Zeitpunkt:** Reset-Taste (z. B. mit einem Stift) beim Einstecken des Stroms gedrückt halten, bis die Power-LED sehr langsam blinkt [abgeleitet: Wiki toh/asus/rt-ax53u; geprüft: ASUS-FAQ 1000814 allgemein]
+- **Sichtbare Zeichen:** Power-LED blinkt sehr langsam = Rettungsmodus [abgeleitet: Wiki toh/asus/rt-ax53u; geprüft: ASUS-FAQ 1000814 "slowly flashing"]; danach startet der Router selbst neu (LEDs beobachten) [abgeleitet: Wiki]; unter OpenWrt/Gluon zeigt die blaue Power-LED den Zustand [geprüft: DTS am Pin, led-boot/running = power]
 - **Übertragung:** tftp-server-am-geraet: Gerät 192.168.1.1, Rechner 192.168.1.10, Port LAN1, Dateiname beliebig; oder herstellertool ASUS Firmware Restoration
+- **Anschluss:** genau LAN1 [abgeleitet: Wiki toh/asus/rt-ax53u]; alle anderen Kabel und USB-Geräte am Router abziehen, Rechner von allen anderen Netzen trennen [abgeleitet: Wiki]
+- **Adressen:** Rechner 192.168.1.10/255.255.255.0 (laut Wiki auch andere Adresse in 192.168.1.0/24) [abgeleitet: Wiki toh/asus/rt-ax53u; geprüft: ASUS-FAQ 1000814], Router im Rettungsmodus 192.168.1.1 [abgeleitet: Wiki]; OpenWrt-initramfs danach ebenfalls 192.168.1.1 [abgeleitet: Wiki]
+- **Programm:** Linux/macOS: TFTP-Client, z. B. `curl -T` [abgeleitet: Wiki toh/asus/rt-ax53u]; Windows: ASUS Firmware Restoration [abgeleitet: Wiki; geprüft: ASUS-FAQ 1000814 nur Windows]; danach Browser (LuCI) oder ssh [abgeleitet: Wiki]
+- **Zugang:** OpenWrt-initramfs: LuCI bzw. SSH als root ohne Passwort [abgeleitet: Wiki toh/asus/rt-ax53u]
+- **Datei:** Rettungsmodus: OpenWrt-`initramfs-kernel.bin` (nicht factory) [abgeleitet: Wiki toh/asus/rt-ax53u]; Gluon baut kein initramfs, darum das OpenWrt-24.10.8-initramfs [abgeleitet: Inventar]; Dateiname beim TFTP-Senden frei [abgeleitet: Bootloader ist TFTP-Server]; danach Gluon-sysupgrade
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** tftp-Client oder ASUS Firmware Restoration
+- **Typenschild/Verwechslung:** RT-AX53U = RT-AX1800U [geprüft: Image-Rezept am Pin DEVICE_ALT0]; RT-AX1800 (ohne U) ist ein anderes Gerät [abgeleitet: Wiki toh/asus/rt-ax53u]
+- **Bedingung an die Herstellerfirmware:** Die Weboberfläche der Herstellerfirmware nimmt OpenWrt nicht an [abgeleitet: Wiki toh/asus/rt-ax53u]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-asus_rt-ax53u-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community) (für mtd-write bzw. U-Boot-Menü)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Dauer:** Übertragung und Neustart in das initramfs bis einige Minuten [abgeleitet: Wiki toh/asus/rt-ax53u]; danach sysupgrade, währenddessen nicht Strom ziehen [abgeleitet]
+- **Fehlerbild:** Firmware Restoration meldet, der Router sei nicht im Rettungsmodus: andere Netzwerkadapter abschalten [abgeleitet: Wiki toh/asus/rt-ac51u, Schwestergerät]; nach dem Senden scheint nichts zu passieren: bis einige Minuten warten, der Router startet selbst neu [abgeleitet: Wiki toh/asus/rt-ax53u]
+- **Notweg:** [Alternative] SSH in die Herstellerfirmware: in der Weboberfläche (http://192.168.50.1/) unter Administration -> System -> Service SSH einschalten, ggf. Router neu starten; Login wie Weboberfläche (meist admin); Gluon-factory-Image auf den Router holen (wget oder `cat <datei> | ssh admin@<router> "cat > /root/<datei>"`), `mtd-write -i <factory.bin> -d Kernel`, dann `reboot`; `-r` kennen nicht alle ASUS-Versionen [abgeleitet: Wiki toh/asus/rt-ax53u]; hängt der Neustart (Kernel-Panic), Strom aus/an [abgeleitet: Wiki]; [Notfall] seriell (J2, Gehäuse öffnen, Stiftleiste einlöten): 115200 8N1, beliebige Taste unterbricht U-Boot (etwa 3 s Zeitfenster), Menü 2 "Upgrade firmware", Enter bei "Run firmware after upgrading? (Y/n)", 0 = TFTP client, U-Boot 192.168.1.1, TFTP-Server 192.168.1.2, Netzmaske 255.255.255.0, Dateiname `openwrt-ramips-mt7621-asus_rt-ax53u-squashfs-factory.bin`, nach "Firmware upgrade completed!" neu starten [geprüft: Commit 8c00fd9; J2, Zeitfenster und Einlöten: abgeleitet: Wiki]
+- **Rückweg zur Herstellerfirmware:** ASUS-Firmware (.trx aus dem entpackten Download) im Rettungsmodus per TFTP oder ASUS Firmware Restoration aufspielen [abgeleitet: Wiki toh/asus/rt-ax53u]; riskanter aus OpenWrt: `mtd -r write asus.trx firmware` (ab OpenWrt 22.03.4) [abgeleitet: Wiki]
 - **Gluon-RAMpe passt:** ja: genau der Fall "erst initramfs, dann sysupgrade"
 - **Gluon-RAMpe-Rezept:** devices/asus-rt-ax53u.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per ASUS-Rescue (TFTP put)
 - **Quelle (OpenWrt-Commit):** 8c00fd9b4519bf0ef8fb3470a6df421b9f38c03c
@@ -1695,14 +1757,38 @@ ASUS RT-AX53U (RT-AX1800U) · ramips-mt7621 · K1
 ASUS TUF-AX4200 · mediatek-filogic · K2
 
 - **Weg ab Werk:** OpenWrt-Commit nennt nur UART + TFTP-initramfs [geprüft]; ohne UART: SSH in die Stock-Firmware, Sonderbau "factory-initramfs" (herbetom) per wget holen und mit `mtd-write -d linux` schreiben, dann sysupgrade [geprüft: Release-Text herbetom filogic-v2]
+- **Schritte (Normalweg):**
+  1. Sonderbau "factory-initramfs" für den TUF-AX4200 von herbetom (Release filogic-v2, `openwrt-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin`) und das Gluon-sysupgrade herunterladen [geprüft: Release-Text herbetom filogic-v2]
+  2. Auf dem Rechner einen Ordner anlegen, den Sonderbau dort als `openwrt.bin` ablegen und einen Webserver auf Port 8080 starten: `python3 -m http.server -d /tmp/openwrt-webroot 8080` [geprüft: Release-Text herbetom filogic-v2]
+  3. Rechner per Kabel an den Router, Weboberfläche der Herstellerfirmware öffnen (192.168.50.1) und den Einrichtungsassistenten abschließen [geprüft: Release-Text herbetom filogic-v2]; Adresse [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]
+  4. Unter Administration -> System SSH-Zugang mit Passwort-Login einschalten (LAN only), SSH-Port 22 [geprüft: Release-Text herbetom filogic-v2]; "LAN only" [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]
+  5. `ssh admin@192.168.50.1` (Benutzername wie im Assistenten gewählt) [geprüft: Release-Text herbetom filogic-v2]; Benutzerhinweis [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]
+  6. Auf dem Router mit `vi` in `/etc/hosts` unten eine Zeile mit der IP des Rechners und dem Namen `openwrtimage.lan` ergänzen, z. B. `192.168.50.196 openwrtimage.lan` [geprüft: Release-Text herbetom filogic-v2]; Beispiel [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]
+  7. `wget -O /tmp/openwrt.bin http://openwrtimage.lan:8080/openwrt.bin` [geprüft: Release-Text herbetom filogic-v2]
+  8. `mtd-erase -d linux` [geprüft: Release-Text herbetom filogic-v2]
+  9. `mtd-write -i /tmp/openwrt.bin -d linux` [geprüft: Release-Text herbetom filogic-v2]
+  10. Router stromlos machen und wieder einschalten (Power-Cycle) [geprüft: Release-Text herbetom filogic-v2]
+  11. Gluon-sysupgrade mit `scp -O <Gluon-sysupgrade> root@192.168.1.1:/tmp` übertragen, dann `ssh root@192.168.1.1` [geprüft: Release-Text herbetom filogic-v2]; ssh-Schritt [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]
+  12. `sysupgrade -n /tmp/<Gluon-sysupgrade>` [geprüft: Release-Text herbetom filogic-v2]
+- **Warnung:** Zwischen `mtd-erase -d linux` und dem Ende von `mtd-write` ist die Herstellerfirmware gelöscht und noch nichts Startbares im Flash: dabei nicht Strom ziehen; Rettung dann nur über die serielle Konsole und TFTP [abgeleitet: Release-Text herbetom filogic-v2, Commits]; UART-VCC nie anschließen [geprüft: Commits e7c399b, d522cce]
+- **Taste und Zeitpunkt:** keine Taste im Normalweg [abgeleitet: Release-Text herbetom filogic-v2 nennt keine]
+- **Sichtbare Zeichen:** Herstellerfirmware: Einrichtungsassistent in der Weboberfläche, SSH-Schalter unter Administration -> System [geprüft: Release-Text herbetom filogic-v2]; `mtd-erase`/`mtd-write` melden sich ohne Fortschrittsanzeige [abgeleitet]; unter OpenWrt/Gluon zeigt die System-LED den Zustand [geprüft: DTS am Pin, led-boot/running = led_system]
 - **Übertragung:** ssh + http-server-noetig: SSH admin@192.168.50.1, Rechner-HTTP-Server Port 8080 (Name openwrtimage.lan per /etc/hosts), Datei openwrt.bin; seriell: tftp-client Server 192.168.1.66, Gerät 192.168.1.1, Datei tufax4200.bin
+- **Anschluss:** Rechner per Kabel an einen LAN-Port [abgeleitet: Herstellerfirmware ab Werk, SSH nur LAN]; gelbe Ports sind LAN [abgeleitet: Commit 237b1c2 zum TUF-AX4200Q]
+- **Adressen:** Herstellerfirmware 192.168.50.1 [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext], Rechner bekommt dort per DHCP eine Adresse [abgeleitet: Commit 237b1c2 zum TUF-AX4200Q]; Rechner-IP in `/etc/hosts` des Routers als `openwrtimage.lan`, Webserver Port 8080 [geprüft: Release-Text herbetom filogic-v2]; nach dem Power-Cycle OpenWrt-initramfs auf 192.168.1.1 [geprüft: Release-Text herbetom filogic-v2] [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]
+- **Programm:** Python 3 (`python3 -m http.server`), ssh, scp mit `-O` (altes SCP-Protokoll) [geprüft: Release-Text herbetom filogic-v2]; auf dem Router vi, wget, mtd-erase, mtd-write aus der Herstellerfirmware [geprüft: Release-Text herbetom filogic-v2]
+- **Zugang:** Herstellerfirmware: SSH admin@192.168.50.1 mit dem Passwort aus dem Einrichtungsassistenten, Passwort-Login einschalten [geprüft: Release-Text herbetom filogic-v2] [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]; OpenWrt-initramfs: root@192.168.1.1 [geprüft: Release-Text herbetom filogic-v2], ohne Passwort [abgeleitet: OpenWrt-Standard]
+- **Datei:** Sonderbau `openwrt-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin` (herbetom filogic-v2, Dezember 2023) auf dem Webserver als `openwrt.bin`, auf dem Router als `/tmp/openwrt.bin` [geprüft: Release-Text herbetom filogic-v2]; das normale OpenWrt-initramfs ist dafür nicht genannt [abgeleitet]; Freifunk Darmstadt verlinkt die ältere Fassung filogic-v1 (blocktrron) [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]; danach Gluon-sysupgrade
 - **seriell nötig:** nein (nur für den seriellen Notweg: ja)
 - **Gehäuse öffnen:** nein (Lage der Konsole für den seriellen Notweg nicht belegt: ?)
 - **Werkzeug/Spezial:** Sonderbau herbetom (Dez. 2023)
+- **Typenschild/Verwechslung:** TUF-AX4200 (ein 2.5-GbE-Port) nicht mit TUF-AX4200Q (zwei 2.5-GbE-Ports) verwechseln, eigenes Image [abgeleitet: Wiki toh/asus/tuf-ax4200; geprüft: Commit 237b1c2, Image-Rezept am Pin]; Gluon 2025.1 kennt nur den TUF-AX4200 [geprüft: gluon targets/mediatek-filogic]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** [herbetom filogic-v2](https://github.com/herbetom/openwrt-asus-filogic-factory/releases/download/filogic-v2/openwrt-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Notweg:** [Notfall] seriell + TFTP: Gehäuse öffnen (4 Gummifüße ab, 4 Schrauben darunter, Deckel abziehen), Konsole unten rechts auf der Hauptplatine [abgeleitet: Wiki toh/asus/tuf-ax4200]; 3.3 V, 115200 8N1, Belegung aufgedruckt, VCC nicht anschließen [geprüft: Commit e7c399b]; OpenWrt-initramfs als `tufax4200.bin` auf TFTP-Server 192.168.1.66/24 [geprüft: Commit e7c399b], Kabel z. B. an LAN 1 [abgeleitet: Wiki]; beim Hinweis `4` drücken, dann `setenv ipaddr 192.168.1.1`, `setenv serverip 192.168.1.66`, `tftpboot 0x46000000 tufax4200.bin`, `bootm 0x46000000`; im OpenWrt Gluon-sysupgrade per scp und `sysupgrade -n` [geprüft: Commit e7c399b]; [einfacher, schlechter belegt] inoffizielles `openwrt-24_tuf-ax4200-initramfs.trx` (Google Drive oder github.com/openwrt-xiaomi/builder) über die Weboberfläche der Herstellerfirmware einspielen, Router startet OpenWrt-initramfs auf http://192.168.1.1, dann sysupgrade ohne "Einstellungen behalten" [abgeleitet: Wiki toh/asus/tuf-ax4200; ToH: "unofficial tested method with trx image"]
+- **Rückweg zur Herstellerfirmware:** laut Wiki könnte ASUS Firmware Restoration (Rettungsmodus) helfen [abgeleitet: Wiki toh/asus/tuf-ax4200, Abschnitt Debricking]
 - **Gluon-RAMpe passt:** teilweise: der SSH-Weg schreibt ein initramfs ins Flash; ob ein Gluon-/RAMpe-initramfs statt des herbetom-Sonderbaus bootet, ist nicht geprüft
 - **Gluon-RAMpe-Rezept:** devices/asus-tuf-ax4200.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` mit eingebettetem initramfs (`TARGET_ROOTFS_INITRAMFS_SEPARATE` aus) für SSH `mtd-write` oder UART + TFTP; eigener Bau-Lauf
 - **Quelle (OpenWrt-Commit):** OpenWrt e7c399bee677e9bac66e1bea697aefb8d828edfe
@@ -1713,14 +1799,38 @@ ASUS TUF-AX4200 · mediatek-filogic · K2
 ASUS TUF-AX6000 · mediatek-filogic · K2
 
 - **Weg ab Werk:** wie TUF-AX4200: SSH + mtd-write des herbetom-Sonderbaus [geprüft: Release-Text], oder UART + TFTP-initramfs [geprüft]
+- **Schritte (Normalweg):**
+  1. Sonderbau "factory-initramfs" für den TUF-AX6000 von herbetom (Release filogic-v2, `openwrt-mediatek-filogic-asus_tuf-ax6000-initramfs-kernel.bin`) und das Gluon-sysupgrade herunterladen [geprüft: Release-Text herbetom filogic-v2]
+  2. Auf dem Rechner einen Ordner anlegen, den Sonderbau dort als `openwrt.bin` ablegen und einen Webserver auf Port 8080 starten: `python3 -m http.server -d /tmp/openwrt-webroot 8080` [geprüft: Release-Text herbetom filogic-v2]
+  3. Rechner per Kabel an den Router, Weboberfläche der Herstellerfirmware öffnen (192.168.50.1) und den Einrichtungsassistenten abschließen [geprüft: Release-Text herbetom filogic-v2]; Adresse [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]
+  4. Unter Administration -> System SSH-Zugang mit Passwort-Login einschalten (LAN only), SSH-Port 22 [geprüft: Release-Text herbetom filogic-v2]; "LAN only" [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]
+  5. `ssh admin@192.168.50.1` (Benutzername wie im Assistenten gewählt) [geprüft: Release-Text herbetom filogic-v2]; Benutzerhinweis [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]
+  6. Auf dem Router mit `vi` in `/etc/hosts` unten eine Zeile mit der IP des Rechners und dem Namen `openwrtimage.lan` ergänzen, z. B. `192.168.50.196 openwrtimage.lan` [geprüft: Release-Text herbetom filogic-v2]; Beispiel [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]
+  7. `wget -O /tmp/openwrt.bin http://openwrtimage.lan:8080/openwrt.bin` [geprüft: Release-Text herbetom filogic-v2]
+  8. `mtd-erase -d linux` [geprüft: Release-Text herbetom filogic-v2]
+  9. `mtd-write -i /tmp/openwrt.bin -d linux` [geprüft: Release-Text herbetom filogic-v2]
+  10. Router stromlos machen und wieder einschalten (Power-Cycle) [geprüft: Release-Text herbetom filogic-v2]
+  11. Gluon-sysupgrade mit `scp -O <Gluon-sysupgrade> root@192.168.1.1:/tmp` übertragen, dann `ssh root@192.168.1.1` [geprüft: Release-Text herbetom filogic-v2]; ssh-Schritt [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]
+  12. `sysupgrade -n /tmp/<Gluon-sysupgrade>` [geprüft: Release-Text herbetom filogic-v2]
+- **Warnung:** Zwischen `mtd-erase -d linux` und dem Ende von `mtd-write` ist die Herstellerfirmware gelöscht und noch nichts Startbares im Flash: dabei nicht Strom ziehen; Rettung dann nur über die serielle Konsole und TFTP [abgeleitet: Release-Text herbetom filogic-v2, Commits]; UART-VCC nie anschließen [geprüft: Commits e7c399b, d522cce]
+- **Taste und Zeitpunkt:** keine Taste im Normalweg [abgeleitet: Release-Text herbetom filogic-v2 nennt keine]
+- **Sichtbare Zeichen:** Herstellerfirmware: Einrichtungsassistent in der Weboberfläche, SSH-Schalter unter Administration -> System [geprüft: Release-Text herbetom filogic-v2]; `mtd-erase`/`mtd-write` melden sich ohne Fortschrittsanzeige [abgeleitet]; unter OpenWrt/Gluon zeigt die System-LED den Zustand [geprüft: DTS am Pin, led-boot/running = led_system]
 - **Übertragung:** ssh + http-server-noetig wie TUF-AX4200; seriell: tftp-client Server 192.168.1.70, Gerät 192.168.1.1, Datei TUF-AX6000.bin (U-Boot-Menü 1 oder 4)
+- **Anschluss:** Rechner per Kabel an einen LAN-Port [abgeleitet: Herstellerfirmware ab Werk, SSH nur LAN]; gelbe Ports sind LAN [abgeleitet: Commit 237b1c2 zum TUF-AX4200Q]
+- **Adressen:** Herstellerfirmware 192.168.50.1 [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext], Rechner bekommt dort per DHCP eine Adresse [abgeleitet: Commit 237b1c2 zum TUF-AX4200Q]; Rechner-IP in `/etc/hosts` des Routers als `openwrtimage.lan`, Webserver Port 8080 [geprüft: Release-Text herbetom filogic-v2]; nach dem Power-Cycle OpenWrt-initramfs auf 192.168.1.1 [geprüft: Release-Text herbetom filogic-v2] [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]
+- **Programm:** Python 3 (`python3 -m http.server`), ssh, scp mit `-O` (altes SCP-Protokoll) [geprüft: Release-Text herbetom filogic-v2]; auf dem Router vi, wget, mtd-erase, mtd-write aus der Herstellerfirmware [geprüft: Release-Text herbetom filogic-v2]
+- **Zugang:** Herstellerfirmware: SSH admin@192.168.50.1 mit dem Passwort aus dem Einrichtungsassistenten, Passwort-Login einschalten [geprüft: Release-Text herbetom filogic-v2] [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]; OpenWrt-initramfs: root@192.168.1.1 [geprüft: Release-Text herbetom filogic-v2], ohne Passwort [abgeleitet: OpenWrt-Standard]
+- **Datei:** Sonderbau `openwrt-mediatek-filogic-asus_tuf-ax6000-initramfs-kernel.bin` (herbetom filogic-v2, Dezember 2023) auf dem Webserver als `openwrt.bin`, auf dem Router als `/tmp/openwrt.bin` [geprüft: Release-Text herbetom filogic-v2]; das normale OpenWrt-initramfs ist dafür nicht genannt [abgeleitet]; Freifunk Darmstadt verlinkt die ältere Fassung filogic-v1 (blocktrron) [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]; danach Gluon-sysupgrade
 - **seriell nötig:** nein (nur für den seriellen Notweg: ja)
 - **Gehäuse öffnen:** nein, Konsole außen: drei Löcher im Gehäuse (von unten RX, TX, GND), Stiftleisten-Drähte, 115200 8N1 [geprüft]
 - **Werkzeug/Spezial:** Sonderbau herbetom (Dez. 2023)
+- **Typenschild/Verwechslung:** TUF-AX6000: vier Gigabit-LAN, ein 2.5-GbE-LAN, 2.5-GbE-WAN [abgeleitet: Wiki toh/asus/tuf-ax6000]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-asus_tuf-ax6000-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** [herbetom filogic-v2](https://github.com/herbetom/openwrt-asus-filogic-factory/releases/download/filogic-v2/openwrt-mediatek-filogic-asus_tuf-ax6000-initramfs-kernel.bin)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Notweg:** [Notfall] seriell + TFTP ohne Öffnen: drei Löcher im Gehäuse, von unten RX, TX, GND (teilweise verdeckt), drei Stiftleisten-Drähte (Plastikhülse ab) hineinstecken [geprüft: Commit d522cce]; 3.3 V, 115200 8N1, VCC nicht anschließen [geprüft: Commit d522cce]; OpenWrt-initramfs als `TUF-AX6000.bin` auf TFTP-Server 192.168.1.70/24 [geprüft: Commit d522cce] (Wiki: `tufax6000.bin`, Kabel z. B. an LAN 1 [abgeleitet: Wiki toh/asus/tuf-ax6000]); beim Hinweis `4`: `setenv ipaddr 192.168.1.1`, `setenv serverip 192.168.1.70`, `tftpboot 0x46000000 TUF-AX6000.bin`, `bootm 0x46000000`; oder `1` und im Assistenten Geräte-IP 192.168.1.1, Server-IP 192.168.1.70 und Dateiname eingeben (Vorgabe dort `TUF-AX6000.trx`, durch den tatsächlichen Namen ersetzen); im OpenWrt Gluon-sysupgrade per scp und `sysupgrade -n` [geprüft: Commit d522cce; Ersetzen abgeleitet]; [einfacher, schlechter belegt] inoffizielles `openwrt-24_tuf-ax6000-initramfs.trx` (Google Drive oder github.com/openwrt-xiaomi/builder) über die Weboberfläche der Herstellerfirmware, dann sysupgrade ohne "Einstellungen behalten" [abgeleitet: Wiki toh/asus/tuf-ax6000]
+- **Rückweg zur Herstellerfirmware:** laut Wiki über das Paket facinstall (openwrt-xiaomi) die ASUS-TRX in LuCI einspielen, dann Rechner auf 192.168.50.10 und 70-120 Sekunden warten [abgeleitet: Wiki toh/asus/tuf-ax6000]; sonst ASUS Firmware Restoration [abgeleitet: dasselbe Wiki, Debricking]
 - **Gluon-RAMpe passt:** teilweise: wie TUF-AX4200; über die Gehäuselöcher ist auch der TFTP-Weg ohne Öffnen möglich, dort passt die Gluon-RAMpe als initramfs [abgeleitet]
 - **Gluon-RAMpe-Rezept:** devices/asus-tuf-ax6000.sh (Rezept-Entwurf, nicht gebaut): wie TUF-AX4200; eigener Bau-Lauf
 - **Quelle (OpenWrt-Commit):** OpenWrt d522ccecb28f941aadcaf7a50cd6daa861f468a7
@@ -8030,7 +8140,25 @@ NETGEAR R6120 · ramips-mt76x8 · K0
 Ocedo Koala · ath79-generic · K1
 
 - **Weg ab Werk:** Reset beim Einschalten halten: der Bootloader lädt per TFTP ein initramfs und startet es; danach sysupgrade und `fw_setenv bootcmd run bootcmd_1` (Flip-Flop-Bootloader) [geprüft]
+- **Schritte (Normalweg):**
+  1. OpenWrt-initramfs für den Koala besorgen und im TFTP-Verzeichnis in `koala-uImage-initramfs-lzma.bin` umbenennen [geprüft: Commit c493171]
+  2. Zur Sicherheit dieselbe Datei zusätzlich als `koala-uimage-factory` ablegen [geprüft: Commit c493171 nennt beide Namen; doppelt ablegen abgeleitet]
+  3. Rechner fest auf 192.168.100.8 stellen, TFTP-Server starten [geprüft: Commit c493171]
+  4. Netzwerkkabel vom Rechner an die (einzige) Netzwerkbuchse des Geräts [abgeleitet: OpenWrt kennt nur eth0 als LAN, 02_network am Pin]
+  5. Reset-Taste drücken und halten, dann Strom anstecken [geprüft: Commit c493171]
+  6. Warten, bis das Gerät die Datei geholt und das OpenWrt-initramfs gestartet hat [geprüft: Commit c493171]
+  7. Rechner auf eine Adresse im Netz 192.168.1.0/24 umstellen, per SSH an root@192.168.1.1 [abgeleitet: OpenWrt-initramfs-Standard]
+  8. Gluon-sysupgrade-Image per scp nach /tmp kopieren [abgeleitet: OpenWrt-Standard]
+  9. Im initramfs `fw_setenv bootcmd run bootcmd_1` ausführen (Flip-Flop-Bootloader auf den OpenWrt-Teil stellen) [geprüft: Commit c493171]
+  10. `sysupgrade -n /tmp/<Gluon-sysupgrade>`; das Gerät startet danach selbst neu [geprüft: Commit c493171 (sysupgrade oder mtd); Reihenfolge fw_setenv vor sysupgrade abgeleitet, weil sysupgrade selbst neu startet]
+- **Taste und Zeitpunkt:** Reset-Taste beim Einschalten (Strom anstecken) gedrückt halten [geprüft: Commit c493171]; wie lange, steht nicht in der Quelle, bis die TFTP-Anfrage kommt [abgeleitet]
+- **Sichtbare Zeichen:** Im OpenWrt-initramfs und später in Gluon zeigt die blaue SYS-LED den Zustand: blinkt beim Start, leuchtet ruhig, wenn fertig gestartet [abgeleitet: DTS am Pin led-boot/led-running = blue:sys, Verhalten nach OpenWrt-diag.sh]; grüne Power-LED leuchtet dauerhaft [geprüft: DTS am Pin, default-state on]
 - **Übertragung:** tftp-client-am-geraet: Server 192.168.100.8, Datei koala-uImage-initramfs-lzma.bin (je nach Stock auch koala-uimage-factory)
+- **Anschluss:** einzige Netzwerkbuchse (OpenWrt: eth0 = LAN) [geprüft: 02_network am Pin]; Stromversorgung 12 V / 2 A über Hohlstecker [Wiki-Zusammenfassung: ToH-Datensatz]
+- **Adressen:** TFTP-Server auf dem Rechner: 192.168.100.8 [geprüft: Commit c493171], Netzmaske /24 [abgeleitet: Panda-Commit b368373 nennt 192.168.100.8/24]; danach OpenWrt-initramfs unter 192.168.1.1, Rechner z. B. 192.168.1.2/24, kein DHCP [abgeleitet: OpenWrt-Standard]
+- **Programm:** TFTP-Server (z. B. dnsmasq, tftpd-hpa, unter Windows tftpd64) [geprüft: Commit c493171 verlangt TFTP-Server; Programme abgeleitet]; ssh und scp [abgeleitet: OpenWrt-Standard]
+- **Zugang:** SSH root@192.168.1.1 ohne Passwort im OpenWrt-initramfs [abgeleitet: OpenWrt-Standard]
+- **Datei:** OpenWrt-initramfs `openwrt-24.10.8-ath79-generic-ocedo_koala-initramfs-kernel.bin` (uImage lzma) [geprüft: Image-Rezept am Pin, Download-Liste] als `koala-uImage-initramfs-lzma.bin`, je nach Herstellersoftware holt das Gerät `koala-uimage-factory` (gleicher Inhalt) [geprüft: Commit c493171]; Groß-/Kleinschreibung genau so [abgeleitet: better safe than sorry]; danach Gluon-sysupgrade. Laut Commit eded295 muss die Erstinstallation mit einem älteren OpenWrt erfolgen, falls das Image größer als eine OS-Partition (7424 KiB) wird [geprüft: Commit eded295, IMAGE_SIZE früher 7424k]; Neanderfunk-sysupgrade bisher etwa 6977 KiB [abgeleitet: Testbau 26090815sta laut Rezept devices/ocedo-koala.sh]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** keins (Hersteller-TFTP-Boot)
@@ -8038,6 +8166,8 @@ Ocedo Koala · ath79-generic · K1
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Fehlerbild:** Nach dem sysupgrade startet weder OpenWrt/Gluon noch die Herstellerfirmware: `fw_setenv bootcmd run bootcmd_1` fehlte; erneut per Reset-Taste das initramfs per TFTP laden, fw_setenv setzen, sysupgrade wiederholen [abgeleitet: Commit c493171 Flip-Flop-Bootloader; TFTP-Weg liegt im unberührten Bootloader]
+- **Notweg:** [Notfall] serielle Konsole: Stiftleiste neben dem schwarzen Metallschirm, Belegung 3.3V - GND - TX - RX (Pad mit Pfeil = 3.3V, nicht anschließen), 115200 8N1 [geprüft: Commit c493171]; [Alternative] statt sysupgrade aus dem initramfs mit `mtd` schreiben [geprüft: Commit c493171]
 - **Gluon-RAMpe passt:** ja: RAMpe-initramfs unter diesem Namen bereitstellen; die Gluon-RAMpe muss zusätzlich `fw_setenv bootcmd run bootcmd_1` setzen (OpenWrt-platform.sh tut es nicht) [geprüft im Baum]
 - **Gluon-RAMpe-Rezept:** devices/ocedo-koala.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `koala-uImage-initramfs-lzma.bin` per TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`fw_setenv bootcmd run bootcmd_1`)
 - **Quelle (OpenWrt-Commit):** c4931713df8ffb3c4e5c1be7d0b6d4aa96a7dd4c [geprüft]
@@ -8047,7 +8177,25 @@ Ocedo Koala · ath79-generic · K1
 Ocedo Raccoon · ath79-generic · K1
 
 - **Weg ab Werk:** Reset beim Einschalten halten: der Bootloader lädt per TFTP ein initramfs und startet es; danach sysupgrade und `fw_setenv bootcmd run bootcmd_1` (Flip-Flop-Bootloader) [geprüft]
+- **Schritte (Normalweg):**
+  1. OpenWrt-initramfs für den Raccoon besorgen und im TFTP-Verzeichnis in `raccoon-uImage-initramfs-lzma.bin` umbenennen [geprüft: Commit 6476148]
+  2. Zur Sicherheit dieselbe Datei zusätzlich als `raccoon-uimage-factory` ablegen [geprüft: Commit 6476148 nennt beide Namen; doppelt ablegen abgeleitet]
+  3. Rechner fest auf 192.168.100.8 stellen, TFTP-Server starten [geprüft: Commit 6476148]
+  4. Netzwerkkabel vom Rechner an die (einzige) Netzwerkbuchse des Geräts [abgeleitet: OpenWrt kennt nur eth0 als LAN, 02_network am Pin]
+  5. Reset-Taste drücken und halten, dann Strom anstecken [geprüft: Commit 6476148]
+  6. Warten, bis das Gerät die Datei geholt und das OpenWrt-initramfs gestartet hat [geprüft: Commit 6476148]
+  7. Rechner auf eine Adresse im Netz 192.168.1.0/24 umstellen, per SSH an root@192.168.1.1 [abgeleitet: OpenWrt-initramfs-Standard]
+  8. Gluon-sysupgrade-Image per scp nach /tmp kopieren [abgeleitet: OpenWrt-Standard]
+  9. Im initramfs `fw_setenv bootcmd run bootcmd_1` ausführen (Flip-Flop-Bootloader auf den OpenWrt-Teil stellen) [geprüft: Commit 6476148]
+  10. `sysupgrade -n /tmp/<Gluon-sysupgrade>`; das Gerät startet danach selbst neu [geprüft: Commit 6476148 (sysupgrade oder mtd); Reihenfolge fw_setenv vor sysupgrade abgeleitet, weil sysupgrade selbst neu startet]
+- **Taste und Zeitpunkt:** Reset-Taste beim Einschalten (Strom anstecken) gedrückt halten [geprüft: Commit 6476148]; wie lange, steht nicht in der Quelle, bis die TFTP-Anfrage kommt [abgeleitet]
+- **Sichtbare Zeichen:** Im OpenWrt-initramfs und später in Gluon zeigt die blaue SYS-LED den Zustand: blinkt beim Start, leuchtet ruhig, wenn fertig gestartet [abgeleitet: DTS am Pin led-boot/led-running = blue:sys, Verhalten nach OpenWrt-diag.sh]; grüne Power-LED leuchtet dauerhaft [geprüft: DTS am Pin, default-state on]
 - **Übertragung:** tftp-client-am-geraet: Server 192.168.100.8, Datei raccoon-uImage-initramfs-lzma.bin (je nach Stock auch raccoon-uimage-factory)
+- **Anschluss:** einzige Netzwerkbuchse (OpenWrt: eth0 = LAN) [geprüft: 02_network am Pin]; Stromversorgung 12 V / 2 A über Hohlstecker [Wiki-Zusammenfassung: ToH-Datensatz]
+- **Adressen:** TFTP-Server auf dem Rechner: 192.168.100.8 [geprüft: Commit 6476148], Netzmaske /24 [abgeleitet: Panda-Commit b368373 nennt 192.168.100.8/24]; danach OpenWrt-initramfs unter 192.168.1.1, Rechner z. B. 192.168.1.2/24, kein DHCP [abgeleitet: OpenWrt-Standard]
+- **Programm:** TFTP-Server (z. B. dnsmasq, tftpd-hpa, unter Windows tftpd64) [geprüft: Commit 6476148 verlangt TFTP-Server; Programme abgeleitet]; ssh und scp [abgeleitet: OpenWrt-Standard]
+- **Zugang:** SSH root@192.168.1.1 ohne Passwort im OpenWrt-initramfs [abgeleitet: OpenWrt-Standard]
+- **Datei:** OpenWrt-initramfs `openwrt-24.10.8-ath79-generic-ocedo_raccoon-initramfs-kernel.bin` (uImage lzma) [geprüft: Image-Rezept am Pin, Download-Liste] als `raccoon-uImage-initramfs-lzma.bin`, je nach Herstellersoftware holt das Gerät `raccoon-uimage-factory` (gleicher Inhalt) [geprüft: Commit 6476148]; Groß-/Kleinschreibung genau so [abgeleitet: better safe than sorry]; danach Gluon-sysupgrade. Laut Commit eded295 muss die Erstinstallation mit einem älteren OpenWrt erfolgen, falls das Image größer als eine OS-Partition (7424 KiB) wird [geprüft: Commit eded295, IMAGE_SIZE früher 7424k]; Neanderfunk-sysupgrade bisher etwa 6977 KiB [abgeleitet: Testbau 26090815sta laut Rezept devices/ocedo-raccoon.sh]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** keins (Hersteller-TFTP-Boot)
@@ -8055,6 +8203,8 @@ Ocedo Raccoon · ath79-generic · K1
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Fehlerbild:** Nach dem sysupgrade startet weder OpenWrt/Gluon noch die Herstellerfirmware: `fw_setenv bootcmd run bootcmd_1` fehlte; erneut per Reset-Taste das initramfs per TFTP laden, fw_setenv setzen, sysupgrade wiederholen [abgeleitet: Commit 6476148 Flip-Flop-Bootloader; TFTP-Weg liegt im unberührten Bootloader]
+- **Notweg:** [Notfall] serielle Konsole: Stiftleiste neben dem schwarzen Metallschirm, Belegung 3.3V - GND - TX - RX (Pad mit Pfeil = 3.3V, nicht anschließen), 115200 8N1 [geprüft: Commit 6476148]; U-Boot startet nicht mit angeschlossener Konsole: ohne Konsole einschalten, nach 3 Sekunden anstecken [geprüft: Commit 6476148]; [Alternative] statt sysupgrade aus dem initramfs mit `mtd` schreiben [geprüft: Commit 6476148]
 - **Gluon-RAMpe passt:** ja: RAMpe-initramfs unter diesem Namen bereitstellen; die Gluon-RAMpe muss zusätzlich `fw_setenv bootcmd run bootcmd_1` setzen (OpenWrt-platform.sh tut es nicht) [geprüft im Baum]
 - **Gluon-RAMpe-Rezept:** devices/ocedo-raccoon.sh (Rezept-Entwurf, nicht gebaut): wie Koala, als `raccoon-uImage-initramfs-lzma.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`fw_setenv`)
 - **Quelle (OpenWrt-Commit):** 647614803473757e3b2d93d46938afccd61a5a5d [geprüft]
@@ -8064,7 +8214,26 @@ Ocedo Raccoon · ath79-generic · K1
 OCEDO Panda · mpc85xx-p1020 · K1
 
 - **Weg ab Werk:** Reset beim Einschalten: der Bootloader holt initramfs und DTB per TFTP und bootet im RAM; dann per SSH Werks-UBI-Volumes löschen (ubirmvol), bootcmd per fw_setenv setzen, sysupgrade -n [geprüft]
+- **Schritte (Normalweg):**
+  1. OpenWrt-initramfs, DTB (fdt.bin) und Gluon-sysupgrade herunterladen [geprüft: Commit b368373]
+  2. initramfs ins TFTP-Verzeichnis legen und in `panda-uimage-factory` umbenennen [geprüft: Commit b368373]
+  3. DTB ins TFTP-Verzeichnis legen und in `panda.fdt` umbenennen [geprüft: Commit b368373]
+  4. TFTP-Server auf 192.168.100.8/24 starten [geprüft: Commit b368373]
+  5. Gerät mit gedrückter Reset-Taste einschalten; es holt initramfs und DTB per TFTP und startet OpenWrt im RAM [geprüft: Commit b368373]
+  6. Per SSH auf das Gerät (OpenWrt-initramfs 192.168.1.1) [geprüft: Commit b368373; Adresse abgeleitet: OpenWrt-Standard]
+  7. Hersteller-Volumes löschen: `ubirmvol /dev/ubi0 --name=kernel1`, `--name=rootfs1`, `--name=devicetree1` (gibt etwa 60 MiB frei) [geprüft: Commit b368373]
+  8. U-Boot umstellen: `fw_setenv bootcmd_owrt "ubi part ubi && ubi read 0x1000000 kernel && bootm 0x1000000"`, `fw_setenv bootargs_owrt "setenv bootargs console=ttyS0,115200 ubi.mtd=3,2048"`, `fw_setenv bootcmd "run bootargs_owrt; run bootcmd_owrt"` [geprüft: Commit b368373]
+  9. Gluon-sysupgrade per scp nach /tmp kopieren [geprüft: Commit b368373]
+  10. `sysupgrade -n /tmp/<Gluon-sysupgrade>` [geprüft: Commit b368373]
+- **Warnung:** Zusätzlich `kernel2`, `devicetree2`, `rootfs2` und `storage` löschen geht, aber nur wenn kein Rückweg zur Herstellerfirmware gewünscht ist [geprüft: Commit b368373]
+- **Taste und Zeitpunkt:** Reset-Taste beim Einschalten gedrückt halten [geprüft: Commit b368373]; Dauer nicht angegeben [abgeleitet]
+- **Sichtbare Zeichen:** Im OpenWrt-initramfs und in Gluon zeigt die blaue System-LED den Zustand: blinkt beim Start, leuchtet ruhig, wenn fertig [abgeleitet: DTS am Pin led-boot/led-running = blue:system, Verhalten nach OpenWrt-diag.sh]; grüne Power-LED [geprüft: DTS am Pin]
 - **Übertragung:** tftp-client-am-geraet: Server 192.168.100.8, Dateien panda-uimage-factory (initramfs) + panda.fdt
+- **Anschluss:** 8 LAN-Ports (Switch) und 1 WAN [geprüft: 02_network am Pin, lan1-lan8 + eth1]; an welchem Port der Bootloader TFTP spricht, ist nicht belegt [abgeleitet]; Strom 12 V / 2 A Hohlstecker [Wiki-Zusammenfassung: ToH-Datensatz]
+- **Adressen:** TFTP-Server 192.168.100.8/24 [geprüft: Commit b368373]; OpenWrt-initramfs danach unter 192.168.1.1, Rechner z. B. 192.168.1.2/24 [abgeleitet: OpenWrt-Standard]
+- **Programm:** TFTP-Server [geprüft: Commit b368373] (z. B. dnsmasq, tftpd-hpa, tftpd64 [abgeleitet]); ssh und scp [geprüft: Commit b368373]
+- **Zugang:** SSH root@192.168.1.1 ohne Passwort im OpenWrt-initramfs [abgeleitet: OpenWrt-Standard]
+- **Datei:** `openwrt-24.10.8-mpc85xx-p1020-ocedo_panda-initramfs-kernel.bin` als `panda-uimage-factory` und `...-ocedo_panda-squashfs-fdt.bin` als `panda.fdt` [geprüft: Commit b368373, Image-Rezept p1020.mk am Pin]; Namen genau so [abgeleitet: better safe than sorry]; danach Gluon-sysupgrade
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** TFTP-Server
@@ -8072,6 +8241,8 @@ OCEDO Panda · mpc85xx-p1020 · K1
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 1 GB
+- **Fehlerbild:** Nach dem sysupgrade startet wieder die Herstellerfirmware bzw. das neue UBI passt nicht: ubirmvol- und fw_setenv-Schritte fehlten, erneut per Reset-Taste das initramfs laden und nachholen [abgeleitet: Commit b368373 Schritte 6 und 7, Rezept devices/ocedo-panda.sh]
+- **Rückweg zur Herstellerfirmware:** Volumes `kernel2`, `devicetree2`, `rootfs2`, `storage` stehen lassen, dann bleibt ein Rückweg möglich; der Weg selbst ist nicht beschrieben [geprüft: Commit b368373]
 - **Gluon-RAMpe passt:** teilweise: Ramboot passt; ubirmvol und fw_setenv vor dem sysupgrade macht die Gluon-RAMpe nicht
 - **Gluon-RAMpe-Rezept:** devices/ocedo-panda.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` als `panda-uimage-factory` + DTB als `panda.fdt`; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubirmvol`, `fw_setenv`)
 - **Quelle (OpenWrt-Commit):** b368373fab45f31963cd2bc1c6ab90e0a577e611
@@ -10069,14 +10240,38 @@ ZyXEL WSM20 (Multy M1) · ramips-mt7621 · K1
 Sophos AP100 · ath79-generic · K1d
 
 - **Weg ab Werk:** Über eine Sophos-XG-Appliance (awetool) Root-Shell auf dem AP, sysupgrade per `mtd -r write ... astaro_image`; alternativ UART + U-Boot (`tftpboot`, `cp.b` nach 0x9f070000) [geprüft]
+- **Schritte (Normalweg):**
+  1. Auf der Sophos-Website registrieren und eine kostenlose Home-Use-Lizenz für XG Firewall holen [geprüft: Commit 6f1efb2]
+  2. XG-Software auf einem passenden PC oder in einer virtuellen Maschine installieren, Ersteinrichtung abschließen, SSH-Konsolenzugang einschalten [geprüft: Commit 6f1efb2]
+  3. Den AP100 an die LAN-Schnittstelle der XG-Appliance anschließen [geprüft: Commit 6f1efb2]
+  4. Den AP in der XG-Weboberfläche freigeben (approve) und warten, bis er als "Active" erscheint, das kann 3-5 Minuten dauern [geprüft: Commit 6f1efb2]
+  5. Per SSH auf die XG-Appliance, Advanced Console öffnen (Menüpunkt 5, dann Menüpunkt 3) [geprüft: Commit 6f1efb2]
+  6. `sudo awetool` starten, Menüpunkt zum SSH-Verbinden auf einen AP wählen, die Frage nach SSH auf dem AP mit Yes beantworten [geprüft: Commit 6f1efb2]
+  7. 2-3 Minuten warten, dann den AP im awetool-Menü erneut wählen: man hat eine Root-Shell auf dem AP [geprüft: Commit 6f1efb2]
+  8. Gluon-sysupgrade-Image per SCP/TFTP o. ä. als `/tmp/openwrt.bin` auf den AP kopieren [geprüft: Commit 6f1efb2]
+  9. `mtd -r write /tmp/openwrt.bin astaro_image` ausführen [geprüft: Commit 6f1efb2]
+  10. Wenn fertig, startet der AP neu in die neue Firmware [geprüft: Commit 6f1efb2]
+- **Warnung:** Nur im seriellen Notweg: `cp.b` schreibt direkt ins Flash; Zieladresse genau 0x9f070000 [geprüft: Commit 6f1efb2], darunter liegen U-Boot, art (WLAN-Kalibrierung) und config (MAC-Adresse), ein Fehler dort macht das Gerät unbrauchbar bzw. ohne WLAN [abgeleitet: Partitionstabelle im DTS am Pin, Flash ab 0x9f000000]
+- **Taste und Zeitpunkt:** keine Taste im Normalweg [geprüft: Commit 6f1efb2]
+- **Sichtbare Zeichen:** XG-Weboberfläche zeigt den AP nach dem Freigeben als "Active" [geprüft: Commit 6f1efb2]; awetool fragt, ob SSH auf dem AP eingeschaltet werden soll (Yes) [geprüft: Commit 6f1efb2]; unter OpenWrt/Gluon: grüne und rote Status-LED teilen sich einen Lichtleiter [geprüft: Commit 6f1efb2]; grün = Start/Betrieb, rot = Failsafe/Upgrade [geprüft: DTS-Aliase am Pin, qca9558_sophos_ap.dtsi]
 - **Übertragung:** ssh/scp über Sophos-XG (awetool); alternativ tftp-client am U-Boot: Server 192.168.99.8/24, Datei uImage_AP100 [Commit nennt uImage_AP100C als Beispiel]
+- **Anschluss:** AP-Ethernet an die LAN-Schnittstelle der XG-Appliance [geprüft: Commit 6f1efb2]; läuft die XG als VM, braucht der Rechner dafür eine eigene Netzwerkkarte, die an das LAN der VM gebrückt ist [abgeleitet]; Strom: 802.3af-PoE am einzigen Gigabit-Port oder 12 V über Hohlbuchse 5.5x2.1 mm [geprüft: Commit 6f1efb2]
+- **Adressen:** keine festen Adressen nötig: die XG-Appliance verwaltet den AP, awetool verbindet per SSH [geprüft: Commit 6f1efb2]; LAN-Adresse der XG legt man bei der Ersteinrichtung fest [abgeleitet]
+- **Programm:** Sophos-XG-Firewall-Software (Home-Use-Lizenz) auf PC oder VM, ssh, scp, auf der XG `sudo awetool` [geprüft: Commit 6f1efb2]; laut Commit geht auch eine Sophos-SG-Appliance [geprüft: Commit 6f1efb2]
+- **Zugang:** SSH auf die XG-Appliance, Advanced Console = Menüpunkt 5, dann 3; `sudo awetool` liefert die Root-Shell auf dem AP [geprüft: Commit 6f1efb2]
+- **Datei:** Gluon-sysupgrade-Image, auf dem AP als `/tmp/openwrt.bin` [geprüft: Commit 6f1efb2]; OpenWrt baut für die Sophos-APs nur sysupgrade, kein factory [geprüft: Image-Rezept am Pin, Inventar]
 - **seriell nötig:** nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen U-Boot-Weg: ja, UART nach Abnehmen des Deckels; die RJ45-Konsole außen ist laut Commit in der Herstellerfirmware abgeschaltet)
 - **Werkzeug/Spezial:** Sophos-XG-Appliance (Home-Use-Lizenz, VM) mit `sudo awetool`
+- **Typenschild/Verwechslung:** AP100 und AP55 sind baugleich, der AP55 ist per Kalibrierdaten auf 2x2 begrenzt; trotzdem eigenes Image je Modell [geprüft: Commit 6f1efb2, Image-Rezepte am Pin]; AP100 hat RJ45-Konsole und USB, der AP100C nicht [geprüft: Commit 6f1efb2]; Outdoor-Modell AP100X ist ein anderes Gerät ohne Image [abgeleitet: kein Image am Pin]
+- **Bedingung an die Herstellerfirmware:** Sophos-Konto für die kostenlose Home-Use-Lizenz nötig [geprüft: Commit 6f1efb2]; der AP muss sich mit der XG verwalten lassen: Sophos hat die AP-Serie (AP15/AP15C, AP55/AP55C, AP100/AP100C) zum 31.03.2023 abgekündigt, ab dann lassen sie sich laut Sophos nicht mehr an XG (SFOS), SG UTM oder Sophos Central betreiben [Forum-Zusammenfassung: avanet.com End-of-Sale-Artikel]; laut Websuche später verlängert bis 31.12.2023 und unterstützt von SFOS 15.01.0 bis 19.x, nicht auf XGS-Hardware [Forum-Zusammenfassung: Sophos-Community-Blog "EOL Extension: AP Series", nur über Websuche gelesen]; also eine ältere XG-Version (bis 19.x) als VM verwenden [abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-sophos_ap100-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** Freigabe in der XG 3-5 Minuten, nach dem Einschalten von SSH 2-3 Minuten warten [geprüft: Commit 6f1efb2]; Schreibdauer von `mtd` nicht angegeben, währenddessen nicht Strom ziehen [abgeleitet]
+- **Fehlerbild:** Der AP erscheint in der XG nicht oder wird nicht "Active": XG-Version kennt die abgekündigte AP-Serie nicht mehr, ältere SFOS-Version (bis 19.x) nehmen [abgeleitet: Sophos-EOL-Angaben, siehe stock_bedingung]
+- **Notweg:** [Notfall] U-Boot über die interne serielle Schnittstelle: Rechner mit TFTP-Server auf 192.168.99.8, Netzmaske 255.255.255.0 [geprüft: Commit 6f1efb2]; Gluon-sysupgrade ins TFTP-Verzeichnis als `uImage_AP100` [geprüft: Commit 6f1efb2 nennt nur `uImage_AP100C` als Beispiel; Name für dieses Modell abgeleitet: `tftpboot` ohne Argument lädt die in U-Boot hinterlegte Datei, im U-Boot mit `printenv bootfile` nachsehen]; 4-Pin-3.3V-UART nach Abnehmen des oberen Deckels, Pin 1 auf dem Aufdruck markiert, Pins 1-4 = 3.3V, GND, TX, RX (3.3V nicht anschließen) [geprüft: Commit 6f1efb2; 3.3V-Hinweis abgeleitet]; die RJ45-Konsole außen ist in der Herstellerfirmware abgeschaltet [geprüft: Commit 6f1efb2]; AP-Ethernet direkt an den Rechner [geprüft: Commit 6f1efb2]; Terminal 115200 8N1, AP einschalten, beim Hinweis mit einer Taste den Autoboot abbrechen [geprüft: Commit 6f1efb2]; dann `tftpboot`, `cp.b $fileaddr 0x9f070000 $filesize`, `boot`, der AP startet die neue Firmware [geprüft: Commit 6f1efb2]
 - **Gluon-RAMpe passt:** nein: beide Wege schreiben das sysupgrade direkt (mtd write bzw. cp.b)
 - **Quelle (OpenWrt-Commit):** 6f1efb28983758116a8ecaf9c93e1d875bb70af7 [geprüft]
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7
@@ -10086,14 +10281,38 @@ Sophos AP100 · ath79-generic · K1d
 Sophos AP100C · ath79-generic · K1d
 
 - **Weg ab Werk:** Über eine Sophos-XG-Appliance (awetool) Root-Shell auf dem AP, sysupgrade per `mtd -r write ... astaro_image`; alternativ UART + U-Boot (`tftpboot`, `cp.b` nach 0x9f070000) [geprüft]
+- **Schritte (Normalweg):**
+  1. Auf der Sophos-Website registrieren und eine kostenlose Home-Use-Lizenz für XG Firewall holen [geprüft: Commit 6f1efb2]
+  2. XG-Software auf einem passenden PC oder in einer virtuellen Maschine installieren, Ersteinrichtung abschließen, SSH-Konsolenzugang einschalten [geprüft: Commit 6f1efb2]
+  3. Den AP100C an die LAN-Schnittstelle der XG-Appliance anschließen [geprüft: Commit 6f1efb2]
+  4. Den AP in der XG-Weboberfläche freigeben (approve) und warten, bis er als "Active" erscheint, das kann 3-5 Minuten dauern [geprüft: Commit 6f1efb2]
+  5. Per SSH auf die XG-Appliance, Advanced Console öffnen (Menüpunkt 5, dann Menüpunkt 3) [geprüft: Commit 6f1efb2]
+  6. `sudo awetool` starten, Menüpunkt zum SSH-Verbinden auf einen AP wählen, die Frage nach SSH auf dem AP mit Yes beantworten [geprüft: Commit 6f1efb2]
+  7. 2-3 Minuten warten, dann den AP im awetool-Menü erneut wählen: man hat eine Root-Shell auf dem AP [geprüft: Commit 6f1efb2]
+  8. Gluon-sysupgrade-Image per SCP/TFTP o. ä. als `/tmp/openwrt.bin` auf den AP kopieren [geprüft: Commit 6f1efb2]
+  9. `mtd -r write /tmp/openwrt.bin astaro_image` ausführen [geprüft: Commit 6f1efb2]
+  10. Wenn fertig, startet der AP neu in die neue Firmware [geprüft: Commit 6f1efb2]
+- **Warnung:** Nur im seriellen Notweg: `cp.b` schreibt direkt ins Flash; Zieladresse genau 0x9f070000 [geprüft: Commit 6f1efb2], darunter liegen U-Boot, art (WLAN-Kalibrierung) und config (MAC-Adresse), ein Fehler dort macht das Gerät unbrauchbar bzw. ohne WLAN [abgeleitet: Partitionstabelle im DTS am Pin, Flash ab 0x9f000000]
+- **Taste und Zeitpunkt:** keine Taste im Normalweg [geprüft: Commit 6f1efb2]
+- **Sichtbare Zeichen:** XG-Weboberfläche zeigt den AP nach dem Freigeben als "Active" [geprüft: Commit 6f1efb2]; awetool fragt, ob SSH auf dem AP eingeschaltet werden soll (Yes) [geprüft: Commit 6f1efb2]; unter OpenWrt/Gluon: grüne und rote Status-LED teilen sich einen Lichtleiter [geprüft: Commit 6f1efb2]; grün = Start/Betrieb, rot = Failsafe/Upgrade [geprüft: DTS-Aliase am Pin, qca9558_sophos_ap.dtsi]
 - **Übertragung:** ssh/scp über Sophos-XG (awetool); alternativ tftp-client am U-Boot: Server 192.168.99.8/24, Datei uImage_AP100C [Commit nennt uImage_AP100C als Beispiel]
+- **Anschluss:** AP-Ethernet an die LAN-Schnittstelle der XG-Appliance [geprüft: Commit 6f1efb2]; läuft die XG als VM, braucht der Rechner dafür eine eigene Netzwerkkarte, die an das LAN der VM gebrückt ist [abgeleitet]; Strom: 802.3af-PoE am einzigen Gigabit-Port oder 12 V über Hohlbuchse 5.5x2.1 mm [geprüft: Commit 6f1efb2]
+- **Adressen:** keine festen Adressen nötig: die XG-Appliance verwaltet den AP, awetool verbindet per SSH [geprüft: Commit 6f1efb2]; LAN-Adresse der XG legt man bei der Ersteinrichtung fest [abgeleitet]
+- **Programm:** Sophos-XG-Firewall-Software (Home-Use-Lizenz) auf PC oder VM, ssh, scp, auf der XG `sudo awetool` [geprüft: Commit 6f1efb2]; laut Commit geht auch eine Sophos-SG-Appliance [geprüft: Commit 6f1efb2]
+- **Zugang:** SSH auf die XG-Appliance, Advanced Console = Menüpunkt 5, dann 3; `sudo awetool` liefert die Root-Shell auf dem AP [geprüft: Commit 6f1efb2]
+- **Datei:** Gluon-sysupgrade-Image, auf dem AP als `/tmp/openwrt.bin` [geprüft: Commit 6f1efb2]; OpenWrt baut für die Sophos-APs nur sysupgrade, kein factory [geprüft: Image-Rezept am Pin, Inventar]
 - **seriell nötig:** nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen U-Boot-Weg: ja, Platine ausbauen, drei Schrauben, 4-Pin-UART)
 - **Werkzeug/Spezial:** Sophos-XG-Appliance (Home-Use-Lizenz, VM) mit `sudo awetool`
+- **Typenschild/Verwechslung:** AP100C ohne RJ45-Konsole und ohne USB, AP100 mit [geprüft: Commit 6f1efb2]; AP100C und AP55C baugleich, AP55C auf 2x2 begrenzt, eigenes Image je Modell [geprüft: Commit 6f1efb2, Image-Rezepte am Pin]
+- **Bedingung an die Herstellerfirmware:** Sophos-Konto für die kostenlose Home-Use-Lizenz nötig [geprüft: Commit 6f1efb2]; der AP muss sich mit der XG verwalten lassen: Sophos hat die AP-Serie (AP15/AP15C, AP55/AP55C, AP100/AP100C) zum 31.03.2023 abgekündigt, ab dann lassen sie sich laut Sophos nicht mehr an XG (SFOS), SG UTM oder Sophos Central betreiben [Forum-Zusammenfassung: avanet.com End-of-Sale-Artikel]; laut Websuche später verlängert bis 31.12.2023 und unterstützt von SFOS 15.01.0 bis 19.x, nicht auf XGS-Hardware [Forum-Zusammenfassung: Sophos-Community-Blog "EOL Extension: AP Series", nur über Websuche gelesen]; also eine ältere XG-Version (bis 19.x) als VM verwenden [abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-sophos_ap100c-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** Freigabe in der XG 3-5 Minuten, nach dem Einschalten von SSH 2-3 Minuten warten [geprüft: Commit 6f1efb2]; Schreibdauer von `mtd` nicht angegeben, währenddessen nicht Strom ziehen [abgeleitet]
+- **Fehlerbild:** Der AP erscheint in der XG nicht oder wird nicht "Active": XG-Version kennt die abgekündigte AP-Serie nicht mehr, ältere SFOS-Version (bis 19.x) nehmen [abgeleitet: Sophos-EOL-Angaben, siehe stock_bedingung]
+- **Notweg:** [Notfall] U-Boot über die interne serielle Schnittstelle: Rechner mit TFTP-Server auf 192.168.99.8, Netzmaske 255.255.255.0 [geprüft: Commit 6f1efb2]; Gluon-sysupgrade ins TFTP-Verzeichnis als `uImage_AP100C` [geprüft: Commit 6f1efb2]; Name genau so [abgeleitet: better safe than sorry]; 4-Pin-3.3V-UART: Platine ausbauen (drei Schrauben), Pin 1 auf dem Aufdruck markiert, Pins 1-4 = 3.3V, GND, TX, RX (3.3V nicht anschließen) [geprüft: Commit 6f1efb2; 3.3V-Hinweis abgeleitet]; AP-Ethernet direkt an den Rechner [geprüft: Commit 6f1efb2]; Terminal 115200 8N1, AP einschalten, beim Hinweis mit einer Taste den Autoboot abbrechen [geprüft: Commit 6f1efb2]; dann `tftpboot`, `cp.b $fileaddr 0x9f070000 $filesize`, `boot`, der AP startet die neue Firmware [geprüft: Commit 6f1efb2]
 - **Gluon-RAMpe passt:** nein: beide Wege schreiben das sysupgrade direkt (mtd write bzw. cp.b)
 - **Quelle (OpenWrt-Commit):** 6f1efb28983758116a8ecaf9c93e1d875bb70af7 [geprüft]
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7
@@ -10103,14 +10322,38 @@ Sophos AP100C · ath79-generic · K1d
 Sophos AP15C · ath79-generic · K1d
 
 - **Weg ab Werk:** Über eine Sophos-XG-Appliance (awetool) Root-Shell auf dem AP, sysupgrade per `mtd -r write ... astaro_image`; alternativ UART + U-Boot (`tftpboot`, `cp.b` nach 0x9f070000) [geprüft]
+- **Schritte (Normalweg):**
+  1. Auf der Sophos-Website registrieren und eine kostenlose Home-Use-Lizenz für XG Firewall holen [geprüft: Commit 2d465fb]
+  2. XG-Software auf einem passenden PC oder in einer virtuellen Maschine installieren, Ersteinrichtung abschließen, SSH-Konsolenzugang einschalten [geprüft: Commit 2d465fb]
+  3. Den AP15C an die LAN-Schnittstelle der XG-Appliance anschließen [geprüft: Commit 2d465fb]
+  4. Den AP in der XG-Weboberfläche freigeben (approve) und warten, bis er als "Active" erscheint, das kann 3-5 Minuten dauern [geprüft: Commit 2d465fb]
+  5. Per SSH auf die XG-Appliance, Advanced Console öffnen (Menüpunkt 5, dann Menüpunkt 3) [geprüft: Commit 2d465fb]
+  6. `sudo awetool` starten, Menüpunkt zum SSH-Verbinden auf einen AP wählen, die Frage nach SSH auf dem AP mit Yes beantworten [geprüft: Commit 2d465fb]
+  7. 2-3 Minuten warten, dann den AP im awetool-Menü erneut wählen: man hat eine Root-Shell auf dem AP [geprüft: Commit 2d465fb]
+  8. Gluon-sysupgrade-Image per SCP/TFTP o. ä. als `/tmp/openwrt.bin` auf den AP kopieren [geprüft: Commit 2d465fb]
+  9. `mtd -r write /tmp/openwrt.bin astaro_image` ausführen [geprüft: Commit 2d465fb]
+  10. Wenn fertig, startet der AP neu in die neue Firmware [geprüft: Commit 2d465fb]
+- **Warnung:** Nur im seriellen Notweg: `cp.b` schreibt direkt ins Flash; Zieladresse genau 0x9f070000 [geprüft: Commit 2d465fb], darunter liegen U-Boot, art (WLAN-Kalibrierung) und config (MAC-Adresse), ein Fehler dort macht das Gerät unbrauchbar bzw. ohne WLAN [abgeleitet: Partitionstabelle im DTS am Pin, Flash ab 0x9f000000]
+- **Taste und Zeitpunkt:** keine Taste im Normalweg [geprüft: Commit 2d465fb]
+- **Sichtbare Zeichen:** XG-Weboberfläche zeigt den AP nach dem Freigeben als "Active" [geprüft: Commit 2d465fb]; awetool fragt, ob SSH auf dem AP eingeschaltet werden soll (Yes) [geprüft: Commit 2d465fb]; unter OpenWrt/Gluon: grün = Start/Betrieb, gelb = Failsafe/Upgrade [geprüft: DTS-Aliase am Pin, qca9557_sophos_ap15c.dts]
 - **Übertragung:** ssh/scp über Sophos-XG (awetool); alternativ tftp-client am U-Boot: Server 192.168.99.8/24, Datei uImage_AP15C
+- **Anschluss:** AP-Ethernet an die LAN-Schnittstelle der XG-Appliance [geprüft: Commit 2d465fb]; läuft die XG als VM, braucht der Rechner dafür eine eigene Netzwerkkarte, die an das LAN der VM gebrückt ist [abgeleitet]; Strom: 12 V / 1 A über Hohlbuchse oder 802.3af-PoE [Wiki-Zusammenfassung: ToH-Datensatz]
+- **Adressen:** keine festen Adressen nötig: die XG-Appliance verwaltet den AP, awetool verbindet per SSH [geprüft: Commit 2d465fb]; LAN-Adresse der XG legt man bei der Ersteinrichtung fest [abgeleitet]
+- **Programm:** Sophos-XG-Firewall-Software (Home-Use-Lizenz) auf PC oder VM, ssh, scp, auf der XG `sudo awetool` [geprüft: Commit 2d465fb]; laut Commit geht auch eine Sophos-SG-Appliance [geprüft: Commit 2d465fb]
+- **Zugang:** SSH auf die XG-Appliance, Advanced Console = Menüpunkt 5, dann 3; `sudo awetool` liefert die Root-Shell auf dem AP [geprüft: Commit 2d465fb]
+- **Datei:** Gluon-sysupgrade-Image, auf dem AP als `/tmp/openwrt.bin` [geprüft: Commit 2d465fb]; OpenWrt baut für die Sophos-APs nur sysupgrade, kein factory [geprüft: Image-Rezept am Pin, Inventar]
 - **seriell nötig:** nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen U-Boot-Weg: ja, laut Commit 4-Pin-UART innen; RJ45-Konsole außen vorhanden, ob im U-Boot nutzbar: ?)
 - **Werkzeug/Spezial:** Sophos-XG-Appliance (Home-Use-Lizenz, VM) mit `sudo awetool`
+- **Typenschild/Verwechslung:** AP15C hat dieselbe Hardware wie der AP15, aber zusätzlich Reset-Taste und RJ45-Konsole außen; eigenes Image (sophos-ap15c, nicht sophos-ap15) [geprüft: Commit 2d465fb, Image-Rezepte am Pin]
+- **Bedingung an die Herstellerfirmware:** Sophos-Konto für die kostenlose Home-Use-Lizenz nötig [geprüft: Commit 2d465fb]; der AP muss sich mit der XG verwalten lassen: Sophos hat die AP-Serie (AP15/AP15C, AP55/AP55C, AP100/AP100C) zum 31.03.2023 abgekündigt, ab dann lassen sie sich laut Sophos nicht mehr an XG (SFOS), SG UTM oder Sophos Central betreiben [Forum-Zusammenfassung: avanet.com End-of-Sale-Artikel]; laut Websuche später verlängert bis 31.12.2023 und unterstützt von SFOS 15.01.0 bis 19.x, nicht auf XGS-Hardware [Forum-Zusammenfassung: Sophos-Community-Blog "EOL Extension: AP Series", nur über Websuche gelesen]; also eine ältere XG-Version (bis 19.x) als VM verwenden [abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-sophos_ap15c-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** ?
+- **Dauer:** Freigabe in der XG 3-5 Minuten, nach dem Einschalten von SSH 2-3 Minuten warten [geprüft: Commit 2d465fb]; Schreibdauer von `mtd` nicht angegeben, währenddessen nicht Strom ziehen [abgeleitet]
+- **Fehlerbild:** Der AP erscheint in der XG nicht oder wird nicht "Active": XG-Version kennt die abgekündigte AP-Serie nicht mehr, ältere SFOS-Version (bis 19.x) nehmen [abgeleitet: Sophos-EOL-Angaben, siehe stock_bedingung]
+- **Notweg:** [Notfall] U-Boot über die interne serielle Schnittstelle: Rechner mit TFTP-Server auf 192.168.99.8, Netzmaske 255.255.255.0 [geprüft: Commit 2d465fb]; Gluon-sysupgrade ins TFTP-Verzeichnis als `uImage_AP15C` [geprüft: Commit 2d465fb]; Name genau so [abgeleitet: better safe than sorry]; 4-Pin-3.3V-UART im geöffneten Gehäuse [geprüft: Commit 2d465fb]; Belegung im Commit nur per Verweis auf den AP100-Commit (Pins 1-4 = 3.3V, GND, TX, RX), für den AP15C nicht eigens belegt [abgeleitet]; außen hat der AP15C eine RJ45-Konsole, ob U-Boot dort spricht, ist nicht belegt [geprüft: Commit 2d465fb; U-Boot offen]; AP-Ethernet direkt an den Rechner [geprüft: Commit 2d465fb]; Terminal 115200 8N1, AP einschalten, beim Hinweis mit einer Taste den Autoboot abbrechen [geprüft: Commit 2d465fb]; dann `tftpboot`, `cp.b $fileaddr 0x9f070000 $filesize`, `boot`, der AP startet die neue Firmware [geprüft: Commit 2d465fb]
 - **Gluon-RAMpe passt:** nein: beide Wege schreiben das sysupgrade direkt (mtd write bzw. cp.b)
 - **Quelle (OpenWrt-Commit):** 2d465fbf570e1f3286210305a26580cd417fec7c [geprüft]
 
@@ -10119,14 +10362,38 @@ Sophos AP15C · ath79-generic · K1d
 Sophos AP55 · ath79-generic · K1d
 
 - **Weg ab Werk:** Über eine Sophos-XG-Appliance (awetool) Root-Shell auf dem AP, sysupgrade per `mtd -r write ... astaro_image`; alternativ UART + U-Boot (`tftpboot`, `cp.b` nach 0x9f070000) [geprüft]
+- **Schritte (Normalweg):**
+  1. Auf der Sophos-Website registrieren und eine kostenlose Home-Use-Lizenz für XG Firewall holen [geprüft: Commit 6f1efb2]
+  2. XG-Software auf einem passenden PC oder in einer virtuellen Maschine installieren, Ersteinrichtung abschließen, SSH-Konsolenzugang einschalten [geprüft: Commit 6f1efb2]
+  3. Den AP55 an die LAN-Schnittstelle der XG-Appliance anschließen [geprüft: Commit 6f1efb2]
+  4. Den AP in der XG-Weboberfläche freigeben (approve) und warten, bis er als "Active" erscheint, das kann 3-5 Minuten dauern [geprüft: Commit 6f1efb2]
+  5. Per SSH auf die XG-Appliance, Advanced Console öffnen (Menüpunkt 5, dann Menüpunkt 3) [geprüft: Commit 6f1efb2]
+  6. `sudo awetool` starten, Menüpunkt zum SSH-Verbinden auf einen AP wählen, die Frage nach SSH auf dem AP mit Yes beantworten [geprüft: Commit 6f1efb2]
+  7. 2-3 Minuten warten, dann den AP im awetool-Menü erneut wählen: man hat eine Root-Shell auf dem AP [geprüft: Commit 6f1efb2]
+  8. Gluon-sysupgrade-Image per SCP/TFTP o. ä. als `/tmp/openwrt.bin` auf den AP kopieren [geprüft: Commit 6f1efb2]
+  9. `mtd -r write /tmp/openwrt.bin astaro_image` ausführen [geprüft: Commit 6f1efb2]
+  10. Wenn fertig, startet der AP neu in die neue Firmware [geprüft: Commit 6f1efb2]
+- **Warnung:** Nur im seriellen Notweg: `cp.b` schreibt direkt ins Flash; Zieladresse genau 0x9f070000 [geprüft: Commit 6f1efb2], darunter liegen U-Boot, art (WLAN-Kalibrierung) und config (MAC-Adresse), ein Fehler dort macht das Gerät unbrauchbar bzw. ohne WLAN [abgeleitet: Partitionstabelle im DTS am Pin, Flash ab 0x9f000000]
+- **Taste und Zeitpunkt:** keine Taste im Normalweg [geprüft: Commit 6f1efb2]
+- **Sichtbare Zeichen:** XG-Weboberfläche zeigt den AP nach dem Freigeben als "Active" [geprüft: Commit 6f1efb2]; awetool fragt, ob SSH auf dem AP eingeschaltet werden soll (Yes) [geprüft: Commit 6f1efb2]; unter OpenWrt/Gluon: grüne und rote Status-LED teilen sich einen Lichtleiter [geprüft: Commit 6f1efb2]; grün = Start/Betrieb, rot = Failsafe/Upgrade [geprüft: DTS-Aliase am Pin, qca9558_sophos_ap.dtsi]
 - **Übertragung:** ssh/scp über Sophos-XG (awetool); alternativ tftp-client am U-Boot: Server 192.168.99.8/24, Datei uImage_AP55 [Commit nennt uImage_AP100C als Beispiel]
+- **Anschluss:** AP-Ethernet an die LAN-Schnittstelle der XG-Appliance [geprüft: Commit 6f1efb2]; läuft die XG als VM, braucht der Rechner dafür eine eigene Netzwerkkarte, die an das LAN der VM gebrückt ist [abgeleitet]; Strom: 802.3af-PoE am einzigen Gigabit-Port oder 12 V über Hohlbuchse 5.5x2.1 mm [geprüft: Commit 6f1efb2]
+- **Adressen:** keine festen Adressen nötig: die XG-Appliance verwaltet den AP, awetool verbindet per SSH [geprüft: Commit 6f1efb2]; LAN-Adresse der XG legt man bei der Ersteinrichtung fest [abgeleitet]
+- **Programm:** Sophos-XG-Firewall-Software (Home-Use-Lizenz) auf PC oder VM, ssh, scp, auf der XG `sudo awetool` [geprüft: Commit 6f1efb2]; laut Commit geht auch eine Sophos-SG-Appliance [geprüft: Commit 6f1efb2]
+- **Zugang:** SSH auf die XG-Appliance, Advanced Console = Menüpunkt 5, dann 3; `sudo awetool` liefert die Root-Shell auf dem AP [geprüft: Commit 6f1efb2]
+- **Datei:** Gluon-sysupgrade-Image, auf dem AP als `/tmp/openwrt.bin` [geprüft: Commit 6f1efb2]; OpenWrt baut für die Sophos-APs nur sysupgrade, kein factory [geprüft: Image-Rezept am Pin, Inventar]
 - **seriell nötig:** nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen U-Boot-Weg: ja, UART nach Abnehmen des Deckels; die RJ45-Konsole außen ist laut Commit in der Herstellerfirmware abgeschaltet)
 - **Werkzeug/Spezial:** Sophos-XG-Appliance (Home-Use-Lizenz, VM) mit `sudo awetool`
+- **Typenschild/Verwechslung:** AP55 ist baugleich mit dem AP100, aber 2x2 (dritter Zweig ohne Kalibrierdaten); nicht das AP100-Image nehmen [geprüft: Commit 6f1efb2; Image-Wahl abgeleitet]; AP55 hat RJ45-Konsole und USB, der AP55C nicht [geprüft: Commit 6f1efb2]
+- **Bedingung an die Herstellerfirmware:** Sophos-Konto für die kostenlose Home-Use-Lizenz nötig [geprüft: Commit 6f1efb2]; der AP muss sich mit der XG verwalten lassen: Sophos hat die AP-Serie (AP15/AP15C, AP55/AP55C, AP100/AP100C) zum 31.03.2023 abgekündigt, ab dann lassen sie sich laut Sophos nicht mehr an XG (SFOS), SG UTM oder Sophos Central betreiben [Forum-Zusammenfassung: avanet.com End-of-Sale-Artikel]; laut Websuche später verlängert bis 31.12.2023 und unterstützt von SFOS 15.01.0 bis 19.x, nicht auf XGS-Hardware [Forum-Zusammenfassung: Sophos-Community-Blog "EOL Extension: AP Series", nur über Websuche gelesen]; also eine ältere XG-Version (bis 19.x) als VM verwenden [abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-sophos_ap55-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** Freigabe in der XG 3-5 Minuten, nach dem Einschalten von SSH 2-3 Minuten warten [geprüft: Commit 6f1efb2]; Schreibdauer von `mtd` nicht angegeben, währenddessen nicht Strom ziehen [abgeleitet]
+- **Fehlerbild:** Der AP erscheint in der XG nicht oder wird nicht "Active": XG-Version kennt die abgekündigte AP-Serie nicht mehr, ältere SFOS-Version (bis 19.x) nehmen [abgeleitet: Sophos-EOL-Angaben, siehe stock_bedingung]
+- **Notweg:** [Notfall] U-Boot über die interne serielle Schnittstelle: Rechner mit TFTP-Server auf 192.168.99.8, Netzmaske 255.255.255.0 [geprüft: Commit 6f1efb2]; Gluon-sysupgrade ins TFTP-Verzeichnis als `uImage_AP55` [geprüft: Commit 6f1efb2 nennt nur `uImage_AP100C` als Beispiel; Name für dieses Modell abgeleitet: `tftpboot` ohne Argument lädt die in U-Boot hinterlegte Datei, im U-Boot mit `printenv bootfile` nachsehen]; 4-Pin-3.3V-UART nach Abnehmen des oberen Deckels, Pin 1 auf dem Aufdruck markiert, Pins 1-4 = 3.3V, GND, TX, RX (3.3V nicht anschließen) [geprüft: Commit 6f1efb2; 3.3V-Hinweis abgeleitet]; die RJ45-Konsole außen ist in der Herstellerfirmware abgeschaltet [geprüft: Commit 6f1efb2]; AP-Ethernet direkt an den Rechner [geprüft: Commit 6f1efb2]; Terminal 115200 8N1, AP einschalten, beim Hinweis mit einer Taste den Autoboot abbrechen [geprüft: Commit 6f1efb2]; dann `tftpboot`, `cp.b $fileaddr 0x9f070000 $filesize`, `boot`, der AP startet die neue Firmware [geprüft: Commit 6f1efb2]
 - **Gluon-RAMpe passt:** nein: beide Wege schreiben das sysupgrade direkt (mtd write bzw. cp.b)
 - **Quelle (OpenWrt-Commit):** 6f1efb28983758116a8ecaf9c93e1d875bb70af7 [geprüft]
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7
@@ -10136,14 +10403,38 @@ Sophos AP55 · ath79-generic · K1d
 Sophos AP55C · ath79-generic · K1d
 
 - **Weg ab Werk:** Über eine Sophos-XG-Appliance (awetool) Root-Shell auf dem AP, sysupgrade per `mtd -r write ... astaro_image`; alternativ UART + U-Boot (`tftpboot`, `cp.b` nach 0x9f070000) [geprüft]
+- **Schritte (Normalweg):**
+  1. Auf der Sophos-Website registrieren und eine kostenlose Home-Use-Lizenz für XG Firewall holen [geprüft: Commit 6f1efb2]
+  2. XG-Software auf einem passenden PC oder in einer virtuellen Maschine installieren, Ersteinrichtung abschließen, SSH-Konsolenzugang einschalten [geprüft: Commit 6f1efb2]
+  3. Den AP55C an die LAN-Schnittstelle der XG-Appliance anschließen [geprüft: Commit 6f1efb2]
+  4. Den AP in der XG-Weboberfläche freigeben (approve) und warten, bis er als "Active" erscheint, das kann 3-5 Minuten dauern [geprüft: Commit 6f1efb2]
+  5. Per SSH auf die XG-Appliance, Advanced Console öffnen (Menüpunkt 5, dann Menüpunkt 3) [geprüft: Commit 6f1efb2]
+  6. `sudo awetool` starten, Menüpunkt zum SSH-Verbinden auf einen AP wählen, die Frage nach SSH auf dem AP mit Yes beantworten [geprüft: Commit 6f1efb2]
+  7. 2-3 Minuten warten, dann den AP im awetool-Menü erneut wählen: man hat eine Root-Shell auf dem AP [geprüft: Commit 6f1efb2]
+  8. Gluon-sysupgrade-Image per SCP/TFTP o. ä. als `/tmp/openwrt.bin` auf den AP kopieren [geprüft: Commit 6f1efb2]
+  9. `mtd -r write /tmp/openwrt.bin astaro_image` ausführen [geprüft: Commit 6f1efb2]
+  10. Wenn fertig, startet der AP neu in die neue Firmware [geprüft: Commit 6f1efb2]
+- **Warnung:** Nur im seriellen Notweg: `cp.b` schreibt direkt ins Flash; Zieladresse genau 0x9f070000 [geprüft: Commit 6f1efb2], darunter liegen U-Boot, art (WLAN-Kalibrierung) und config (MAC-Adresse), ein Fehler dort macht das Gerät unbrauchbar bzw. ohne WLAN [abgeleitet: Partitionstabelle im DTS am Pin, Flash ab 0x9f000000]
+- **Taste und Zeitpunkt:** keine Taste im Normalweg [geprüft: Commit 6f1efb2]
+- **Sichtbare Zeichen:** XG-Weboberfläche zeigt den AP nach dem Freigeben als "Active" [geprüft: Commit 6f1efb2]; awetool fragt, ob SSH auf dem AP eingeschaltet werden soll (Yes) [geprüft: Commit 6f1efb2]; unter OpenWrt/Gluon: grüne und rote Status-LED teilen sich einen Lichtleiter [geprüft: Commit 6f1efb2]; grün = Start/Betrieb, rot = Failsafe/Upgrade [geprüft: DTS-Aliase am Pin, qca9558_sophos_ap.dtsi]
 - **Übertragung:** ssh/scp über Sophos-XG (awetool); alternativ tftp-client am U-Boot: Server 192.168.99.8/24, Datei uImage_AP55C [Commit nennt uImage_AP100C als Beispiel]
+- **Anschluss:** AP-Ethernet an die LAN-Schnittstelle der XG-Appliance [geprüft: Commit 6f1efb2]; läuft die XG als VM, braucht der Rechner dafür eine eigene Netzwerkkarte, die an das LAN der VM gebrückt ist [abgeleitet]; Strom: 802.3af-PoE am einzigen Gigabit-Port oder 12 V über Hohlbuchse 5.5x2.1 mm [geprüft: Commit 6f1efb2]
+- **Adressen:** keine festen Adressen nötig: die XG-Appliance verwaltet den AP, awetool verbindet per SSH [geprüft: Commit 6f1efb2]; LAN-Adresse der XG legt man bei der Ersteinrichtung fest [abgeleitet]
+- **Programm:** Sophos-XG-Firewall-Software (Home-Use-Lizenz) auf PC oder VM, ssh, scp, auf der XG `sudo awetool` [geprüft: Commit 6f1efb2]; laut Commit geht auch eine Sophos-SG-Appliance [geprüft: Commit 6f1efb2]
+- **Zugang:** SSH auf die XG-Appliance, Advanced Console = Menüpunkt 5, dann 3; `sudo awetool` liefert die Root-Shell auf dem AP [geprüft: Commit 6f1efb2]
+- **Datei:** Gluon-sysupgrade-Image, auf dem AP als `/tmp/openwrt.bin` [geprüft: Commit 6f1efb2]; OpenWrt baut für die Sophos-APs nur sysupgrade, kein factory [geprüft: Image-Rezept am Pin, Inventar]
 - **seriell nötig:** nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen U-Boot-Weg: ja, Platine ausbauen, drei Schrauben, 4-Pin-UART)
 - **Werkzeug/Spezial:** Sophos-XG-Appliance (Home-Use-Lizenz, VM) mit `sudo awetool`
+- **Typenschild/Verwechslung:** AP55C ist baugleich mit dem AP100C, aber 2x2; nicht das AP100C-Image nehmen [geprüft: Commit 6f1efb2; Image-Wahl abgeleitet]; AP55C ohne RJ45-Konsole und USB, AP55 mit [geprüft: Commit 6f1efb2]
+- **Bedingung an die Herstellerfirmware:** Sophos-Konto für die kostenlose Home-Use-Lizenz nötig [geprüft: Commit 6f1efb2]; der AP muss sich mit der XG verwalten lassen: Sophos hat die AP-Serie (AP15/AP15C, AP55/AP55C, AP100/AP100C) zum 31.03.2023 abgekündigt, ab dann lassen sie sich laut Sophos nicht mehr an XG (SFOS), SG UTM oder Sophos Central betreiben [Forum-Zusammenfassung: avanet.com End-of-Sale-Artikel]; laut Websuche später verlängert bis 31.12.2023 und unterstützt von SFOS 15.01.0 bis 19.x, nicht auf XGS-Hardware [Forum-Zusammenfassung: Sophos-Community-Blog "EOL Extension: AP Series", nur über Websuche gelesen]; also eine ältere XG-Version (bis 19.x) als VM verwenden [abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-sophos_ap55c-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
+- **Dauer:** Freigabe in der XG 3-5 Minuten, nach dem Einschalten von SSH 2-3 Minuten warten [geprüft: Commit 6f1efb2]; Schreibdauer von `mtd` nicht angegeben, währenddessen nicht Strom ziehen [abgeleitet]
+- **Fehlerbild:** Der AP erscheint in der XG nicht oder wird nicht "Active": XG-Version kennt die abgekündigte AP-Serie nicht mehr, ältere SFOS-Version (bis 19.x) nehmen [abgeleitet: Sophos-EOL-Angaben, siehe stock_bedingung]
+- **Notweg:** [Notfall] U-Boot über die interne serielle Schnittstelle: Rechner mit TFTP-Server auf 192.168.99.8, Netzmaske 255.255.255.0 [geprüft: Commit 6f1efb2]; Gluon-sysupgrade ins TFTP-Verzeichnis als `uImage_AP55C` [geprüft: Commit 6f1efb2 nennt nur `uImage_AP100C` als Beispiel; Name für dieses Modell abgeleitet: `tftpboot` ohne Argument lädt die in U-Boot hinterlegte Datei, im U-Boot mit `printenv bootfile` nachsehen]; 4-Pin-3.3V-UART: Platine ausbauen (drei Schrauben), Pin 1 auf dem Aufdruck markiert, Pins 1-4 = 3.3V, GND, TX, RX (3.3V nicht anschließen) [geprüft: Commit 6f1efb2; 3.3V-Hinweis abgeleitet]; AP-Ethernet direkt an den Rechner [geprüft: Commit 6f1efb2]; Terminal 115200 8N1, AP einschalten, beim Hinweis mit einer Taste den Autoboot abbrechen [geprüft: Commit 6f1efb2]; dann `tftpboot`, `cp.b $fileaddr 0x9f070000 $filesize`, `boot`, der AP startet die neue Firmware [geprüft: Commit 6f1efb2]
 - **Gluon-RAMpe passt:** nein: beide Wege schreiben das sysupgrade direkt (mtd write bzw. cp.b)
 - **Quelle (OpenWrt-Commit):** 6f1efb28983758116a8ecaf9c93e1d875bb70af7 [geprüft]
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7

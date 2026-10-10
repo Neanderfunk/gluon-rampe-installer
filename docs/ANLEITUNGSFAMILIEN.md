@@ -867,6 +867,132 @@ Je Gerät ein Abschnitt: Kern-Ablauf, beste Quelle(n), Besonderheit. Details in 
 
 Commit-Texte je Gerät: D-commits/<gluon_name>.txt; Wiki-Rohtexte: D-wiki/*.txt (Abruf 10.10.2026).
 
+## Teil C3: ASUS Firmware Restoration, ASUS TUF, OCEDO, Sophos XG
+
+Stand 10.10.2026. Gerätewerte in C3.json (neue Feldstruktur); hier gemeinsamer Ablauf je Familie, Quellen, Abweichungen.
+
+### ocedo-tftp (3 Geräte: ocedo-koala, ocedo-raccoon, ocedo-panda)
+
+Gemeinsamer Ablauf:
+- Reset-Taste halten, Strom anstecken; der Hersteller-Bootloader holt per TFTP von 192.168.100.8 ein initramfs (Panda zusätzlich DTB) und startet es im RAM [geprüft: Commits c493171, 6476148, b368373]
+- Rechner braucht nur einen TFTP-Server mit fester IP 192.168.100.8 (/24 laut Panda-Commit), kein Öffnen, keine Konsole [geprüft: Commits]
+- Gluon baut für diese Geräte kein initramfs/factory; man nimmt das OpenWrt-24.10.8-initramfs (Download-Link im Inventar) [geprüft: Inventar, Image-Rezepte am Pin]
+- im initramfs vor dem sysupgrade den Bootloader umstellen: Koala/Raccoon `fw_setenv bootcmd run bootcmd_1` (Flip-Flop-Bootloader), Panda `ubirmvol` der Hersteller-Volumes + drei `fw_setenv` [geprüft: Commits]; OpenWrts sysupgrade macht das nicht selbst [geprüft: platform.sh am Pin, Rezepte devices/ocedo-*.sh]
+- dann Gluon-sysupgrade per scp und `sysupgrade -n` [geprüft: Panda-Commit; Koala/Raccoon "sysupgrade or mtd"]
+- Statusanzeige unter OpenWrt/Gluon: blaue SYS-LED (led-boot/running/upgrade) [geprüft: DTS am Pin; Blinkverhalten abgeleitet]
+
+Quellen:
+- https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c4931713df8ffb3c4e5c1be7d0b6d4aa96a7dd4c (Koala)
+- https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=647614803473757e3b2d93d46938afccd61a5a5d (Raccoon)
+- https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=b368373fab45f31963cd2bc1c6ab90e0a577e611 (Panda)
+- https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=eded295cd7fd53bfa5afcb67a1b91cfda0523ba6 (Koala/Raccoon: OS-Partitionen zusammengelegt, Größengrenze Erstinstallation)
+- OpenWrt-Wiki: keine Geräteseiten (toh/ocedo/koala existiert nicht); ToH-Datensatz zitiert nur den Commit
+- Rezepte devices/ocedo-koala.sh, ocedo-panda.sh, docs/ENTWURF-VORBEREITUNG.md im Installer-Repo
+
+Abweichungen:
+- Koala/Raccoon: Dateiname `<modell>-uImage-initramfs-lzma.bin`, je nach Herstellersoftware `<modell>-uimage-factory`; beide ablegen [geprüft: Commits]
+- Raccoon: U-Boot startet nicht mit angeschlossener serieller Konsole (erst nach 3 s anstecken), nur für den Notweg wichtig [geprüft: Commit 6476148]
+- Panda: zwei Dateien `panda-uimage-factory` + `panda.fdt`; 8 LAN + WAN, TFTP-Port nicht belegt; Löschen von kernel2/rootfs2/devicetree2/storage verbaut den Rückweg [geprüft: Commit b368373]
+- Koala/Raccoon: seit eded295 ist die firmware-Partition 0xe80000 groß (IMAGE_SIZE 14848k); Erstinstallation laut Commit mit älterem OpenWrt, falls das Image größer als eine alte OS-Partition (7424 KiB) wird [geprüft: Commit eded295]
+
+### sophos-xg-awetool (5 Geräte: sophos-ap100, sophos-ap100c, sophos-ap55, sophos-ap55c, sophos-ap15c)
+
+Gemeinsamer Ablauf:
+- Sophos-Konto, kostenlose Home-Use-Lizenz für XG Firewall, XG auf PC oder VM installieren, SSH-Konsolenzugang einschalten [geprüft: Commits 6f1efb2, 2d465fb]
+- AP an die LAN-Schnittstelle der XG, in der XG-Weboberfläche freigeben, warten bis "Active" (3-5 Minuten) [geprüft: Commits]
+- SSH auf die XG, Advanced Console (5, dann 3), `sudo awetool`, SSH auf dem AP einschalten (Yes), 2-3 Minuten warten, AP erneut wählen = Root-Shell auf dem AP [geprüft: Commits]
+- Gluon-sysupgrade als `/tmp/openwrt.bin` auf den AP, `mtd -r write /tmp/openwrt.bin astaro_image`, AP startet neu [geprüft: Commits]
+- Notweg ohne XG: interne 3.3-V-UART (115200 8N1), TFTP-Server 192.168.99.8/24, `tftpboot`, `cp.b $fileaddr 0x9f070000 $filesize`, `boot` [geprüft: Commits]
+- Haken: Sophos hat die AP-Serie zum 31.03.2023 abgekündigt; danach laut Sophos nicht mehr an XG/SFOS betreibbar; laut Websuche (Sophos-Community) verlängert bis 31.12.2023, unterstützt SFOS 15.01.0 bis 19.x, nicht XGS [Forum-Zusammenfassung]; der XG-Weg braucht also eine ältere SFOS-Version [abgeleitet]
+
+Quellen:
+- https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 (AP100/AP100C/AP55/AP55C)
+- https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2d465fbf570e1f3286210305a26580cd417fec7c (AP15C, Text fast wörtlich übernommen; Fußnote [4] fehlt dort)
+- https://www.avanet.com/en/blog/end-of-sale-ap-series-indoor-access-points-retire/ (EOL-Daten, per WebFetch)
+- https://community.sophos.com/sophoswireless/b/blog/posts/eol-extension-ap-series-access-points (Verlängerung, SFOS-Versionen; nur über Websuche, WebFetch lieferte leere Seite)
+- OpenWrt-Wiki: keine Geräteseiten; ToH-Datensatz: "Sophos Firewall appliance or console access required", 115200 8N1, 3.3 V
+
+Abweichungen:
+- TFTP-Dateiname im U-Boot-Notweg: Commit nennt nur `uImage_AP100C` (6f1efb2) bzw. `uImage_AP15C` (2d465fb); für AP100/AP55/AP55C ist der Name nicht belegt (`tftpboot` ohne Argument nutzt U-Boots `bootfile`) [abgeleitet]
+- UART-Zugang: AP100/AP55 nach Abnehmen des Deckels; AP100C/AP55C Platine ausbauen (drei Schrauben); AP15C nicht beschrieben [geprüft: Commits]
+- RJ45-Konsole außen: AP100/AP55 und AP15C haben eine; bei AP100/AP55 in der Herstellerfirmware abgeschaltet, unter OpenWrt aktiv [geprüft: Commits]; ToH: RS-232-Pegel
+- LEDs unter OpenWrt: AP100/AP55-Familie grün/rot, AP15C grün/gelb [geprüft: DTS am Pin]
+- Strom: AP100/AP55-Familie 802.3af oder 12 V 5.5x2.1 [geprüft: Commit]; AP15C 12 V/1 A oder 802.3af [Wiki-Zusammenfassung: ToH]
+
+### asus-firmware-restoration (3 Geräte: asus-rt-ac51u, asus-rt-ac57u-v1, asus-rt-ax53u)
+
+Gemeinsamer Ablauf:
+- Rettungsmodus (Rescue Mode) des ASUS-Bootloaders: Strom ziehen, Reset halten, Strom anstecken, halten bis die Power-LED langsam blinkt [geprüft: ASUS-FAQ 1000814, Commits 5f93298, 14e0e4f]
+- Gerät ist dann TFTP-Server auf 192.168.1.1; Rechner fest im Netz 192.168.1.0/24, per `tftp put` (binary) senden [geprüft: Commits]; Dateiname beim put frei [abgeleitet]
+- Windows-Alternative: ASUS Firmware Restoration (Windows XP bis 11), Rechner 192.168.1.10/24 [geprüft: ASUS-FAQ 1000814]; alle anderen Adapter abschalten [abgeleitet: Wiki]
+- fertig, wenn die Power-LED dauerhaft leuchtet, etwa 1 Minute [geprüft: ASUS-FAQ 1000814]
+- RT-AC51U und RT-AC57U v1 nehmen das Gluon-sysupgrade direkt; RT-AX53U (NAND) bekommt zuerst das OpenWrt-initramfs, dann Gluon-sysupgrade aus dem initramfs [geprüft: Commits; AX53U abgeleitet: Wiki]
+- Rückweg: ASUS-Firmware (.trx) im selben Rettungsmodus [geprüft: ASUS-FAQ 1000814, nennt "third-party firmware"]
+
+Quellen:
+- https://www.asus.com/support/faq/1000814/ (Herstellerdoku, per curl im Original gelesen: IP 192.168.1.10/24, LED, 1 Minute, nur Windows)
+- https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5f932988c3b65af14bd6e48a05cc2204b7aeb419 (RT-AC51U)
+- https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=14e0e4f138e35c3e2a15cc3a836c939547ee053b (RT-AC57U v1)
+- https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=8c00fd9b4519bf0ef8fb3470a6df421b9f38c03c (RT-AX53U, nur seriell)
+- https://openwrt.org/toh/asus/rt-ac51u, https://openwrt.org/toh/asus/rt-ac57u, https://openwrt.org/toh/asus/rt-ax53u (Rohtext per ?do=export_raw gelesen, trotzdem als [abgeleitet: Wiki] markiert)
+
+Abweichungen:
+- Rechner-IP: Commits RT-AC51U/AC57U 192.168.1.75; ASUS-FAQ und Wiki (Restoration-Tool, AX53U) 192.168.1.10
+- Haltezeit: AC57U-Commit 5 s; AC51U "a few seconds" (Wiki 5 s Restoration / 10 s TFTP); AX53U bis die Power-LED "sehr langsam" blinkt
+- RT-AC51U: Wiki benennt das sysupgrade für das Restoration-Tool in `factory.trx` um (strengster Name, ob nötig offen); Wiki: Power-LED blinkt schnell beim Schreiben
+- RT-AC57U v1: nur v1 (MediaTek, = RT-AC1200GU); v2/v3 andere Hardware; Alternative SSH + `mtd-write -d linux`; UART 57600 8N1
+- RT-AX53U = RT-AX1800U, nicht RT-AX1800 (ohne U); Weboberfläche nimmt OpenWrt nicht; Alternative SSH + `mtd-write -d Kernel` mit factory; seriell U-Boot-Menü 2 (Commit)
+
+### asus-tuf-herbetom (2 Geräte: asus-tuf-ax4200, asus-tuf-ax6000)
+
+Gemeinsamer Ablauf:
+- Herstellerfirmware einrichten (Assistent, 192.168.50.1), unter Administration -> System SSH mit Passwort-Login einschalten (LAN only, Port 22) [geprüft: Release-Text herbetom filogic-v2, Freifunk-Darmstadt-Wiki]
+- Sonderbau "factory-initramfs" (herbetom filogic-v2) als `openwrt.bin` per `python3 -m http.server ... 8080` bereitstellen; auf dem Router in `/etc/hosts` `openwrtimage.lan` auf die Rechner-IP setzen, `wget -O /tmp/openwrt.bin http://openwrtimage.lan:8080/openwrt.bin` [geprüft: Release-Text]
+- `mtd-erase -d linux`, `mtd-write -i /tmp/openwrt.bin -d linux`, Power-Cycle [geprüft: Release-Text]
+- OpenWrt-initramfs auf 192.168.1.1: Gluon-sysupgrade per `scp -O` nach /tmp, `sysupgrade -n` [geprüft: Release-Text]
+- Notweg seriell + TFTP (U-Boot-Taste `4`, `tftpboot 0x46000000 <datei>`, `bootm`) [geprüft: Commits e7c399b, d522cce]; AX6000 ohne Öffnen über drei Gehäuselöcher
+
+Quellen:
+- https://github.com/herbetom/openwrt-asus-filogic-factory/releases/tag/filogic-v2 (Release-Text per GitHub-API im Original gelesen; Assets nur AX4200/AX6000-initramfs-kernel.bin)
+- https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-ASUS-TUF-AX4200 (Rohtext per raw.githubusercontent.com/wiki; nennt filogic-v1 von blocktrron)
+- https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e7c399bee677e9bac66e1bea697aefb8d828edfe (AX4200, seriell)
+- https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=d522ccecb28f941aadcaf7a50cd6daa861f468a7 (AX6000, seriell über Gehäuselöcher)
+- https://openwrt.org/toh/asus/tuf-ax4200, https://openwrt.org/toh/asus/tuf-ax6000 (Rohtext; inoffizielle initramfs.trx über die ASUS-Weboberfläche, Gehäuse öffnen, Rückweg facinstall)
+
+Abweichungen:
+- TFTP-Notweg: AX4200 Server 192.168.1.66, `tufax4200.bin`; AX6000 Server 192.168.1.70, `TUF-AX6000.bin` (Commit) bzw. `tufax6000.bin` (Wiki); AX6000 zusätzlich U-Boot-Menü `1` mit Vorgabe-Dateiname `TUF-AX6000.trx`
+- Konsole: AX4200 Gehäuse öffnen (Wiki: 4 Gummifüße, 4 Schrauben), AX6000 drei Löcher außen (von unten RX, TX, GND)
+- AX4200 nicht mit AX4200Q verwechseln (Q: zweiter 2.5-GbE-Port, eigenes Image, nicht in Gluon 2025.1)
+- OpenWrt hat seit Feb. 2025 für beide einen U-Boot-Workaround ("u-boot-dont-touch-spi-nand", Commit bbe51e7) und seit Feb. 2024 NVMEM-on-UBI (25c9ebc, 1794309); herbetom-Sonderbau ist von Dez. 2023, also älter [geprüft: Commits]; ob das beim sysupgrade auf Gluon 2025.1 stört, ist nicht belegt (siehe Offen)
+
+### Widersprüche zu vorhandenen Feldern
+
+| Gerät | Feld | alt | neu | Quelle |
+|---|---|---|---|---|
+| asus-rt-ac51u | uebertragung | Rechner 192.168.1.75 | für ASUS Firmware Restoration nennt ASUS 192.168.1.10 (TFTP-Weg laut Commit 192.168.1.75 bleibt) | ASUS-FAQ 1000814, Wiki toh/asus/rt-ac51u |
+| asus-rt-ac57u-v1 | uebertragung | Rechner 192.168.1.75 | Restoration-Rückweg laut Wiki 192.168.1.10 (TFTP laut Commit 192.168.1.75 bleibt) | Wiki toh/asus/rt-ac57u |
+| asus-tuf-ax6000 | uebertragung | seriell Datei TUF-AX6000.bin (U-Boot-Menü 1 oder 4) | Commit: `TUF-AX6000.bin` bei Menü 4; Menü 1 fragt den Namen ab, Vorgabe `TUF-AX6000.trx`; Wiki nennt `tufax6000.bin` | Commit d522cce, Wiki toh/asus/tuf-ax6000 |
+| asus-tuf-ax4200, asus-tuf-ax6000 | weg | SSH + `mtd-write -d linux` | vorher zusätzlich `mtd-erase -d linux`, Power-Cycle statt reboot | Release-Text herbetom filogic-v2 |
+| asus-tuf-ax4200 | weg | "OpenWrt-Commit nennt nur UART + TFTP" | Wiki nennt inzwischen auch eine inoffizielle initramfs.trx über die ASUS-Weboberfläche (ohne Öffnen) | Wiki toh/asus/tuf-ax4200 |
+| asus-tuf-ax4200 | gehaeuse | "Lage der Konsole ... nicht belegt: ?" | Gehäuse öffnen: 4 Gummifüße, 4 Schrauben, Deckel abziehen; Konsole unten rechts auf der Hauptplatine | Wiki toh/asus/tuf-ax4200 |
+| asus-rt-ax53u | uebertragung | Rechner 192.168.1.10, "Dateiname beliebig" | passt; Wiki: initramfs-kernel, nicht factory | Wiki toh/asus/rt-ax53u |
+| sophos-ap15c | gehaeuse | RJ45-Konsole außen, "ob im U-Boot nutzbar: ?" | bleibt offen; Commit 2d465fb verweist auf Fußnote [4] des AP100-Commits, die im AP15C-Commit fehlt | Commit 2d465fb |
+| sophos-ap100, -ap55, -ap55c | uebertragung | Datei uImage_AP100 / _AP55 / _AP55C | nicht belegt: Commit nennt nur `uImage_AP100C`; `tftpboot` ohne Argument nimmt U-Boots `bootfile` | Commit 6f1efb2 |
+| sophos-* (alle 5) | werkzeug | Sophos-XG-Appliance (Home-Use-Lizenz, VM) | Sophos hat die AP-Serie zum 31.03.2023 (verlängert 31.12.2023) abgekündigt; XG muss eine ältere SFOS-Version (bis 19.x, kein XGS) sein | avanet.com, Sophos-Community (Websuche) |
+
+### Offen
+
+- sophos-*: Gibt es die Home-Use-Lizenz und eine SFOS-Version bis 19.x noch zum Download? Nicht geprüft. Lassen sich die C-Modelle (AP15C, AP55C, AP100C) an einer XG verwalten oder nur über Sophos Central? Commit 6f1efb2 sagt XG für alle (Autor hat AP55C/AP100C getestet).
+- sophos-*: Sophos-Community-Blog "EOL Extension: AP Series" lieferte per WebFetch keine Seite; Angaben (31.12.2023, SFOS 15.01.0 bis 19.x, nicht XGS) nur aus der Websuche-Zusammenfassung.
+- sophos-ap100, -ap55, -ap55c: TFTP-Dateiname im U-Boot nicht belegt (`printenv bootfile`).
+- ocedo-panda: an welchem der 8 LAN-Ports bzw. WAN der Bootloader TFTP spricht, nicht belegt.
+- ocedo-*: Wie lange die Reset-Taste zu halten ist und welche LED den TFTP-Boot anzeigt, steht nirgends; kein OpenWrt-Wiki zu OCEDO.
+- ocedo-koala, ocedo-raccoon: Commit eded295 sagt, die Erstinstallation müsse mit älterem OpenWrt erfolgen, falls das Image größer als eine alte OS-Partition (7424 KiB) wird; warum genau (Flip-Flop-bootcmd_1 lädt evtl. nur bis zur alten Grenze?), steht nicht da. Neanderfunk-sysupgrade bisher etwa 6977 KiB.
+- asus-tuf-ax4200, -ax6000: herbetom-Sonderbau (Dez. 2023) vor NVMEM-on-UBI (Feb. 2024) und U-Boot-Workaround (Feb. 2025); `sysupgrade -n` auf Gluon 2025.1 nicht belegt. Darmstadt nutzt den Weg mit Gluon, Version dort nicht genannt.
+- asus-tuf-ax4200: Das AX4200Q-Rezept baut eine `initramfs.trx` mit `asus-trx -n TUF-AX4200`; die Wiki-Methode per Weboberfläche nutzt eine fremde trx (openwrt-xiaomi/builder). Ob Gluon/RAMpe so eine trx für den AX4200 bauen könnte, ist offen.
+- asus-tuf-*: Ab welcher ASUS-Firmware SSH/`mtd-write` gesperrt sein könnte, nicht belegt.
+- asus-rt-ac51u: ob das Restoration-Tool die Endung `.trx` verlangt (Wiki benennt in `factory.trx` um), nicht belegt.
+
 ## Kandidaten für Hardwaretests
 
 Wo der einfachere Weg nur schlecht belegt ist, würde ein Test am Gerät die
