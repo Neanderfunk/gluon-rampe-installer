@@ -171,7 +171,9 @@ Gluon bricht sonst mit "unknown devices" ab.
   Stock-Firmware SSH/Telnet zu bekommen. Ob Port 20001 dabei geprüft wurde,
   steht dort nicht. Erster Test am Gerät: Port 20001 offen? IPTV/VLAN-Menü
   vorhanden? Die `fw_setenv`-Werte des MR90X (bootargs, fdtcontroladdr)
-  passen wegen MT7981 statt MT7986 nicht 1:1 [abgeleitet].
+  passen wegen MT7981 statt MT7986 nicht 1:1 [abgeleitet] OpenWrt behandelt beide Geräte in
+  `uboot-envtools` (gleicher Eintrag) und im sysupgrade (`CI_UBIPART="ubi0"`,
+  `nand_do_upgrade`) gleich [geprüft: OpenWrt am Pin a1ea57bd].
 - **RT-AX59U:** über die Web-UI nur mit einem fremden "transit TRX"; ein eigenes
   TRX bräuchte einen Eingriff in OpenWrt, ob die Stock-UI es nimmt, ist offen.
 
