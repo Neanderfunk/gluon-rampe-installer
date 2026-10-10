@@ -4647,10 +4647,10 @@ x86 (x86-64) · x86-64 · K0
   2. Gluon-factory-Image `squashfs-combined-efi` (.img.gz) für x86-64 herunterladen [geprüft: targets/x86*]
   3. Image entpacken (gzip -d, unter Windows/macOS 7zip bzw. Keka) [geprüft: Wiki docs:guide-user:installation:openwrt_x86]
   4. Soll die interne Platte beschrieben werden: den Rechner von einem Live-USB starten [abgeleitet]
-  5. Image auf das ganze Blockgerät schreiben (Linux: dd auf /dev/sdX, nicht auf eine Partition; Windows: Rufus oder balenaEtcher) [geprüft: Wiki docs:guide-user:installation:openwrt_x86, korrigiert]
+  5. Image auf das ganze Blockgerät schreiben (Linux: dd auf /dev/sdX, nicht auf eine Partition; Windows: Rufus oder balenaEtcher) [geprüft: Wiki docs:guide-user:installation:openwrt_x86, korrigiert]; macOS: balenaEtcher [abgeleitet: Herstellerseite]
   6. Datenträger einbauen bzw. Rechner davon starten [abgeleitet]
 - **Übertragung:** Datenträger direkt beschreiben
-- **Programm:** Image auf das ganze Blockgerät schreiben (Linux: gzip -d, dann dd auf /dev/sdX, nicht auf eine Partition); Windows: Rufus oder balenaEtcher, vorher mit 7zip (Windows) bzw. Keka (macOS) entpacken [geprüft: Wiki docs:guide-user:installation:openwrt_x86, korrigiert]; soll die interne Platte beschrieben werden, den Rechner dafür von einem Live-USB starten [abgeleitet]
+- **Programm:** Image auf das ganze Blockgerät schreiben (Linux: gzip -d, dann dd auf /dev/sdX, nicht auf eine Partition); Windows: Rufus oder balenaEtcher, vorher mit 7zip entpacken; macOS: mit Keka entpacken [geprüft: Wiki docs:guide-user:installation:openwrt_x86, korrigiert]; macOS zum Schreiben: balenaEtcher (läuft unter Windows, macOS und Linux), Rufus nur unter Windows [abgeleitet: Herstellerseite]; soll die interne Platte beschrieben werden, den Rechner dafür von einem Live-USB starten [abgeleitet]
 - **Datei:** Gluon-factory `squashfs-combined-efi` (.img.gz), für VMs .vdi/.vmdk [geprüft: targets/x86*]; für VirtualBox/VMware gibt es fertige .vdi/.vmdk [geprüft: Gluon docs/user/x86.rst, targets/x86.inc]; Gluon liefert nur combined-efi; laut Image-Rezept enthält es zusätzlich GRUB für BIOS-Start, sollte also mit UEFI und BIOS starten [geprüft: Gluon targets/x86.inc, OpenWrt x86/image/Makefile; BIOS-Start abgeleitet, nicht getestet]; zu Secure Boot sagen die Quellen nichts [abgeleitet: Wiki openwrt_x86 ohne Angabe]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
@@ -4678,10 +4678,10 @@ x86 (x86-generic) · x86-generic · K0
   2. Gluon-factory-Image `squashfs-combined-efi` (.img.gz) für x86-generic herunterladen [geprüft: targets/x86*]
   3. Image entpacken (gzip -d, unter Windows/macOS 7zip bzw. Keka) [geprüft: Wiki docs:guide-user:installation:openwrt_x86]
   4. Soll die interne Platte beschrieben werden: den Rechner von einem Live-USB starten [abgeleitet]
-  5. Image auf das ganze Blockgerät schreiben (Linux: dd auf /dev/sdX, nicht auf eine Partition; Windows/macOS: Rufus oder balenaEtcher) [geprüft: Wiki docs:guide-user:installation:openwrt_x86]
+  5. Image auf das ganze Blockgerät schreiben (Linux: dd auf /dev/sdX, nicht auf eine Partition; Windows: Rufus oder balenaEtcher) [geprüft: Wiki docs:guide-user:installation:openwrt_x86, korrigiert]; macOS: balenaEtcher [abgeleitet: Herstellerseite]
   6. Datenträger einbauen bzw. Rechner davon starten [abgeleitet]
 - **Übertragung:** Datenträger direkt beschreiben
-- **Programm:** Image auf das ganze Blockgerät schreiben (Linux: gzip -d, dann dd auf /dev/sdX, nicht auf eine Partition); Windows/macOS: Rufus oder balenaEtcher, vorher mit 7zip bzw. Keka entpacken [geprüft: Wiki docs:guide-user:installation:openwrt_x86]; soll die interne Platte beschrieben werden, den Rechner dafür von einem Live-USB starten [abgeleitet]
+- **Programm:** Image auf das ganze Blockgerät schreiben (Linux: gzip -d, dann dd auf /dev/sdX, nicht auf eine Partition); Windows: Rufus oder balenaEtcher, vorher mit 7zip entpacken; macOS: mit Keka entpacken [geprüft: Wiki docs:guide-user:installation:openwrt_x86, korrigiert]; macOS zum Schreiben: balenaEtcher (läuft unter Windows, macOS und Linux), Rufus nur unter Windows [abgeleitet: Herstellerseite]; soll die interne Platte beschrieben werden, den Rechner dafür von einem Live-USB starten [abgeleitet]
 - **Datei:** Gluon-factory `squashfs-combined-efi` (.img.gz), für VMs .vdi/.vmdk [geprüft: targets/x86*]; für VirtualBox/VMware gibt es fertige .vdi/.vmdk [geprüft: Gluon docs/user/x86.rst, targets/x86.inc]; Gluon liefert nur combined-efi; laut Image-Rezept enthält es zusätzlich GRUB für BIOS-Start, sollte also mit UEFI und BIOS starten [geprüft: Gluon targets/x86.inc, OpenWrt x86/image/Makefile; BIOS-Start abgeleitet, nicht getestet]; zu Secure Boot sagen die Quellen nichts [abgeleitet: Wiki openwrt_x86 ohne Angabe]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
@@ -4707,10 +4707,10 @@ x86 (x86-geode) · x86-geode · K0
   2. Gluon-factory-Image `squashfs-combined` (.img.gz) für x86-geode herunterladen [geprüft: targets/x86*]
   3. Image entpacken (gzip -d, unter Windows/macOS 7zip bzw. Keka) [geprüft: Wiki docs:guide-user:installation:openwrt_x86]
   4. Soll die interne Platte beschrieben werden: den Rechner von einem Live-USB starten [abgeleitet]
-  5. Image auf das ganze Blockgerät schreiben (Linux: dd auf /dev/sdX, nicht auf eine Partition; Windows: Rufus oder balenaEtcher) [geprüft: Wiki docs:guide-user:installation:openwrt_x86, korrigiert]
+  5. Image auf das ganze Blockgerät schreiben (Linux: dd auf /dev/sdX, nicht auf eine Partition; Windows: Rufus oder balenaEtcher) [geprüft: Wiki docs:guide-user:installation:openwrt_x86, korrigiert]; macOS: balenaEtcher [abgeleitet: Herstellerseite]
   6. Datenträger einbauen bzw. Rechner davon starten [abgeleitet]
 - **Übertragung:** Datenträger direkt beschreiben
-- **Programm:** Image auf das ganze Blockgerät schreiben (Linux: gzip -d, dann dd auf /dev/sdX, nicht auf eine Partition); Windows: Rufus oder balenaEtcher, vorher mit 7zip entpacken; macOS: mit Keka entpacken [geprüft: Wiki docs:guide-user:installation:openwrt_x86, korrigiert]; soll die interne Platte beschrieben werden, den Rechner dafür von einem Live-USB starten [abgeleitet]
+- **Programm:** Image auf das ganze Blockgerät schreiben (Linux: gzip -d, dann dd auf /dev/sdX, nicht auf eine Partition); Windows: Rufus oder balenaEtcher, vorher mit 7zip entpacken; macOS: mit Keka entpacken [geprüft: Wiki docs:guide-user:installation:openwrt_x86, korrigiert]; macOS zum Schreiben: balenaEtcher (läuft unter Windows, macOS und Linux), Rufus nur unter Windows [abgeleitet: Herstellerseite]; soll die interne Platte beschrieben werden, den Rechner dafür von einem Live-USB starten [abgeleitet]
 - **Datei:** Gluon `squashfs-combined` (.img.gz) [geprüft: targets/x86*]; Image nur für BIOS-Start (combined ohne EFI) [geprüft: Gluon targets/x86-geode, OpenWrt image/geode.mk]; für VirtualBox/VMware gibt es fertige .vdi/.vmdk [geprüft: Gluon docs/user/x86.rst, targets/x86.inc]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
@@ -4736,10 +4736,10 @@ x86 (x86-legacy) · x86-legacy · K0
   2. Gluon-factory-Image `squashfs-combined-efi` (.img.gz) für x86-legacy herunterladen [geprüft: targets/x86*]
   3. Image entpacken (gzip -d, unter Windows/macOS 7zip bzw. Keka) [geprüft: Wiki docs:guide-user:installation:openwrt_x86]
   4. Soll die interne Platte beschrieben werden: den Rechner von einem Live-USB starten [abgeleitet]
-  5. Image auf das ganze Blockgerät schreiben (Linux: dd auf /dev/sdX, nicht auf eine Partition; Windows: Rufus oder balenaEtcher) [geprüft: Wiki docs:guide-user:installation:openwrt_x86, korrigiert]
+  5. Image auf das ganze Blockgerät schreiben (Linux: dd auf /dev/sdX, nicht auf eine Partition; Windows: Rufus oder balenaEtcher) [geprüft: Wiki docs:guide-user:installation:openwrt_x86, korrigiert]; macOS: balenaEtcher [abgeleitet: Herstellerseite]
   6. Datenträger einbauen bzw. Rechner davon starten [abgeleitet]
 - **Übertragung:** Datenträger direkt beschreiben
-- **Programm:** Image auf das ganze Blockgerät schreiben (Linux: gzip -d, dann dd auf /dev/sdX, nicht auf eine Partition); Windows: Rufus oder balenaEtcher, vorher mit 7zip (Windows) bzw. Keka (macOS) entpacken [geprüft: Wiki docs:guide-user:installation:openwrt_x86, korrigiert]; soll die interne Platte beschrieben werden, den Rechner dafür von einem Live-USB starten [abgeleitet]
+- **Programm:** Image auf das ganze Blockgerät schreiben (Linux: gzip -d, dann dd auf /dev/sdX, nicht auf eine Partition); Windows: Rufus oder balenaEtcher, vorher mit 7zip entpacken; macOS: mit Keka entpacken [geprüft: Wiki docs:guide-user:installation:openwrt_x86, korrigiert]; macOS zum Schreiben: balenaEtcher (läuft unter Windows, macOS und Linux), Rufus nur unter Windows [abgeleitet: Herstellerseite]; soll die interne Platte beschrieben werden, den Rechner dafür von einem Live-USB starten [abgeleitet]
 - **Datei:** Gluon-factory `squashfs-combined-efi` (.img.gz), für VMs .vdi/.vmdk [geprüft: targets/x86*]; für VirtualBox/VMware gibt es fertige .vdi/.vmdk [geprüft: Gluon docs/user/x86.rst, targets/x86.inc]; Gluon liefert nur combined-efi; laut Image-Rezept enthält es zusätzlich GRUB für BIOS-Start, sollte also mit UEFI und BIOS starten [geprüft: Gluon targets/x86.inc, OpenWrt x86/image/Makefile; BIOS-Start abgeleitet, nicht getestet]; zu Secure Boot sagen die Quellen nichts [abgeleitet: Wiki openwrt_x86 ohne Angabe]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
