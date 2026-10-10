@@ -32,26 +32,80 @@ Vollständiges Inventar aller Gluon-2025.1-Geräte mit Weg ab Werk,
 
 ## Kandidaten (alle ungeprüft)
 
-Aus Gluon v2025.1.3, `factory = false`, und der jeweiligen OpenWrt-Wiki-Seite
-zu prüfen. Reihenfolge nach Nutzen.
+Abgeglichen mit dem Inventar aller Gluon-2025.1-Geräte (router-werkstatt
+`docs/erstinstallation-2025.1.md`, Stand 10.10.2026; dort je Gerät Weg,
+Übertragung, Konsole, Links und Quelle). Nichts davon auf Hardware getestet.
 
-| Gerät | Target | vermuteter Weg | Anmerkung |
-|---|---|---|---|
-| D-Link AQUILA PRO AI M60 A1 | mediatek-filogic | wie M30 | Gluon hat dort (noch) ein recovery-Image – vermutlich derselbe initramfs-Config-Mode-Fehler wie bei der M30 |
-| D-Link COVR-X1860 A1 | ramips-mt7621 | D-Link-Recovery | Gluon baut `-recovery`; prüfen, ob es ein initramfs ist |
-| Ubiquiti EdgeRouter X / X-SFP | ramips-mt7621 | EdgeOS-Upgrade (tar) | oszilloskops Ursprung; braucht ein EdgeOS-taugliches Image statt `-recovery` |
-| ASUS RT-AX52, TUF-AX4200, TUF-AX6000, RT-AX53U | mediatek-filogic / ramips-mt7621 | ASUS-Web-UI oder Firmware Restoration nimmt OpenWrt-initramfs | typischer „erst initramfs, dann sysupgrade“-Fall |
-| TP-Link-Geräte mit `-tftp-recovery` | ramips-mt76x8 | TFTP | Installer statt OpenWrt-initramfs: bringt nur die Gluon-Seite, spart kein TFTP |
-| Ubiquiti UniFi 6 Lite/Plus/LR | div. | SSH + initramfs | kein Weg über eine Web-UI, Nutzen gering |
+### Passt (Ramboot ohne Öffnen, danach Upload)
 
-Nicht Kandidat, soweit bekannt:
-- Cudy: Die Web-UI nimmt nur von Cudy signierte Images an. Cudys eigene
-  OpenWrt-Zwischenfirmware ist schon der Zwischenschritt.
-- GL.iNet: Die U-Boot-Web-UI nimmt das sysupgrade direkt.
-- Xiaomi: Der Weg führt über einen Exploit, einen Hersteller-Upload gibt es nicht.
-- AVM: EVA per FTP mit eigenem Werkzeug.
-- Linksys E8450 (UBI): Der OpenWrt-Installer muss das Flash auf UBI umbauen,
-  und genau das kann dieser Installer nicht.
+| Gerät | Target | Hersteller-Weg | Format/Bedingung | RAM |
+|---|---|---|---|---|
+| D-Link M60 A1 | mediatek-filogic | D-Link-Recovery 192.168.200.1 | D-Link-Header wie M30; Gluons eigenes `-recovery.bin` vermutlich mit dem Config-Mode-Fehler | 512 MB |
+| ASUS RT-AX52 | mediatek-filogic | Web-UI 192.168.50.1 | `initramfs.trx` (OpenWrt-ARTIFACT) einsammeln | 256 MB |
+| ASUS RT-AX53U | ramips-mt7621 | ASUS-Rescue, TFTP-Server im Gerät 192.168.1.1 | initramfs | 256 MB |
+| Genexis Pulse EX400 | ramips-mt7621 | Web-UI / Recovery 192.168.1.1 | OpenWrt-factory ist initramfs mit Inteno-Header; Gluon setzt `factory = false` nur wegen des initramfs-Schalters. Bester neuer Kandidat | 256 MB |
+| Zyxel WSM20 | ramips-mt7621 | versteckte Upgrade-Seite | initramfs mit znet-Header; Zyxel-Cloud-Registrierung nötig | 256 MB |
+| MikroTik hAP ac2, wAP ac, SXTsq 5 ac, DISC | ipq40xx-mikrotik | Netboot (eigener BOOTP/DHCP- und TFTP-Server) | initramfs; Gluons "factory" ist selbst ein initramfs ohne Config-Mode, daher mitbauen | 128-256 MB |
+| MikroTik hAP (951Ui-2nD), mAP lite, wAP, wAP G-5HacT2HnD | ath79-mikrotik | Netboot | wie oben | 64 MB, knapp |
+| MikroTik RB750Gr3 | ramips-mt7621 | Netboot | ELF-initramfs | 256 MB |
+| AVM FRITZ!Box 3390, 7362 SL, 7412, 7430 | lantiq-xrx200 | `eva_ramboot.py` (FTP 192.168.178.1) | initramfs lzma-komprimiert | 128 MB |
+| Netgear WAX218 | qualcommax-ipq807x | Web-UI | `web-ui-factory.fit` (ARTIFACT); Gluon baut für qualcommax kein initramfs | 512 MB |
+| OCEDO Koala, Raccoon | ath79-generic | Reset beim Einschalten, Gerät holt per TFTP von 192.168.100.8 | zusätzlich `fw_setenv bootcmd run bootcmd_1` nötig | 128 MB |
+| ZTE MF286R | ath79-nand | Exploit im Web-UI, initramfs per `nandwrite` | Weg für die MF286A belegt | 128 MB |
+| ASUS Lyra (MAP-AC2200) | ipq40xx-generic | SSH, initramfs per `mtd-write` | | 256 MB |
+
+### Teilweise (Installer ersetzt nur das Zwischenimage)
+
+- **Seriell + TFTP, Konsole außen (Gehäuse bleibt zu):** Enterasys
+  WS-AP3705i, WS-AP3710i, WS-AP3715i; Extreme WS-AP3825i, WS-AP3805i,
+  WS-AP3915i, AP3935; Siemens WS-AP3610 (initramfs unkomprimiert); Aerohive
+  HiveAP 330 (RJ45 mit RS232-Pegel). Der Installer ersetzt "scp + sysupgrade",
+  `bootcmd`/`saveenv` bleiben seriell.
+- **Seriell, Gehäuse auf:** Sophos AP15, Archer D50, DIR-505, Aerohive
+  HiveAP 121, ZTE MF281, Cudy TR3000 v1, TP-Link EAP620 HD.
+- **Vorbereitender Schritt fehlt dem Installer:** Aruba AP-303/303H/365/AP11D/AP17
+  und Instant On AP11 (`ubiformat`; AP11 zusätzlich apboot-Entsperrung, K5);
+  AVM 7520/7530/Repeater 1200/3000 (U-Boot schreiben, `ubirmvol`); ZTE MF289F
+  (`ubirmvol`); OCEDO Panda und Sophos RED 15w (`ubirmvol`/`ubiformat`,
+  `fw_setenv`). Ein Installer bräuchte je Gerät ein Vorbereitungsskript.
+- **Exploit bleibt:** Xiaomi AX3000T, AX3600 (`initramfs-factory.ubi`),
+  Mercusys MR90X, ASUS TUF-AX4200/AX6000, ASUS RT-AX59U (kein `initramfs.trx`
+  in OpenWrt).
+- **Bootloader tauschen:** Aruba AP-32x (Format `.ari`).
+
+### Nicht Kandidat
+
+- **D-Link COVR-X1860:** Gluon baut factory und ein eigenes recovery (squashfs).
+- **Ubiquiti EdgeRouter X / X-SFP:** Der 6.6-Kernel passt nicht in den
+  3-MB-Kernel-Slot von EdgeOS, OpenWrt 24.10.8 baut kein factory.tar mehr.
+  oszilloskops Ursprungsfall ist unter 2025.1 kein Fall für den Installer,
+  dafür gibt es die ERX-Migration (router-werkstatt `docs/erx-migration-howto.md`).
+- **Cudy:** Stock und Recovery prüfen Cudys Signatur; die Cudy-Zwischenfirmware
+  ist schon der Zwischenschritt.
+- **GL.iNet, Open-Mesh/Plasma Cloud, devolo, Sophos AP55/100, UniFi, Wavlink,
+  AVM mit EVA-Image:** Der Hersteller- oder Bootloader-Weg nimmt das
+  Gluon-Image direkt (Kategorie K1d im Inventar).
+- **TP-Link mit `-tftp-recovery`/`-bootloader.bin` (mt76x8):** installiert
+  Gluon direkt über die TFTP-Recovery.
+- **Linksys E8450 (UBI), Xiaomi AX3000T im OpenWrt-U-Boot-Layout:**
+  Bootloader-Tausch, das kann der Installer nicht.
+- **Meraki MR33, Google WiFi:** Bootloader bzw. Signatur.
+
+### Wahrscheinlich besser in Gluon zu lösen
+
+Linksys MR8300, Netgear WNDR3700 v5, Archer C60 v1 und MikroTik mAP lite/wAP ac
+haben `factory = false` ohne erkennbaren Grund, obwohl OpenWrt (teils) ein
+brauchbares factory baut.
+
+### Für jedes Rezept zu beachten
+
+Gluon schaltet `TARGET_ROOTFS_INITRAMFS` nur für mediatek-filogic und
+ipq40xx-mikrotik ein; ipq40xx-generic, ipq806x, qualcommax und mt7622 brauchen
+`ensure_target_config`. Viele Hersteller-Wege wollen ein verpacktes initramfs
+(ASUS-TRX, D-Link-Header, Netgear `web-ui-factory.fit`, Xiaomi
+`initramfs-factory.ubi`, Aruba `.ari`, Inteno-Header), das OpenWrt als
+IMAGES/ARTIFACTS baut. Ob Gluons `extra_images` die ARTIFACTS einsammelt, ist
+offen.
 
 ## Ein Gerät ergänzen
 
