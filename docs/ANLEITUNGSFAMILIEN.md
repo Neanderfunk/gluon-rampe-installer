@@ -6,15 +6,22 @@ Je Familie: gemeinsamer Ablauf, beste Quellen, Abweichungen. Die Werte je Gerät
 stehen in [`data/geraete-2025.1.json`](../data/geraete-2025.1.json) (Felder
 `taste`, `zeichen`, `rechner`, `verwechslung`, `stock_bedingung`, `dauer`,
 `rueckweg`). Recherchiert in vier Teilen am 10.10.2026, nichts auf Hardware
-geprüft. "Widersprüche zu vorhandenen Feldern" sind nicht eingearbeitet, sondern
+geprüft.
+
+Belegmarken: **[geprüft: …]** nur für Quellen im Original (Commit, Makefile,
+DTS, Skript am Pin, Herstellerdoku, Projekt-README). **[Wiki-Zusammenfassung: …]**
+heißt: Das OpenWrt-Wiki (bzw. ein anderes Wiki) ließ sich nur über eine
+Zusammenfassung lesen, nicht im Rohtext; das ist schwächer als "geprüft" und
+vor einer Anleitung am Original nachzulesen (Wunsch Content, 10.10.2026).
+**[abgeleitet: …]** ist eigener Schluss oder Analogie. "Widersprüche zu vorhandenen Feldern" sind nicht eingearbeitet, sondern
 zur Klärung gesammelt.
 
 ## Teil A: k0-webui und image-auf-datentraeger
 
-Stand 10.10.2026. Gerätewerte stehen in `A.json` (99 Geräte, nur gefüllte Felder).
+Stand 10.10.2026, 99 Geräte.
 Hinweis zu den Belegmarken: Das OpenWrt-Wiki ließ sich nur per WebFetch lesen
 (Botsperre gegen curl). WebFetch liefert eine Zusammenfassung durch ein Hilfsmodell,
-keinen Rohtext. "[geprüft: Wiki ...]" heißt also "so in der Wiedergabe der Wiki-Seite
+keinen Rohtext. "[Wiki-Zusammenfassung: ...]" heißt also "so in der Wiedergabe der Wiki-Seite
 gelesen". Commits, Image-Rezepte, DTS und die tplink-safeloader-Supportlisten sind
 dagegen lokal im Original gelesen (OpenWrt-Pin a1ea57bd, firmware-utils 2025.08.03).
 
@@ -32,12 +39,12 @@ dagegen lokal im Original gelesen (OpenWrt-Pin a1ea57bd, firmware-utils 2025.08.
   hochladen, Rückfragen bestätigen. Adresse, Login und Menüpfad je Gerät stehen in
   `rechner`. [geprüft: Commits/Wiki je Gerät]
 - Bei älteren TP-Link-Oberflächen den Dateinamen vorher kurz umbenennen (z. B. `factory.bin`).
-  [geprüft: Wiki archer-c5-c7-wdr7500, archer_c7, tl-wr1043nd, tl-wr842nd, tl-wr902ac_v1, cpe510]
-  - Pharos: höchstens 68 Zeichen. [geprüft: Wiki cpe510]
-  - Archer A7 v5: Umbenennen nicht nötig. [geprüft: Wiki archer_a7_v5]
+  [geprüft: archer_c7, tl-wr1043nd, tl-wr842nd, tl-wr902ac_v1, cpe510; Wiki-Zusammenfassung: archer-c5-c7-wdr7500]
+  - Pharos: höchstens 68 Zeichen. [Wiki-Zusammenfassung: cpe510]
+  - Archer A7 v5: Umbenennen nicht nötig. [Wiki-Zusammenfassung: archer_a7_v5]
 - Während des Schreibens nicht ausschalten und nicht neu laden. Bei TP-Link löscht der
-  Bootloader vorher den ganzen Flash. [geprüft: Wiki archer-c5-c7-wdr7500]
-  - Dauer meist 1 bis 5 Minuten. Bei Repeatern (RE200) bis 20 Minuten. [geprüft: Wiki je Gerät]
+  Bootloader vorher den ganzen Flash. [Wiki-Zusammenfassung: archer-c5-c7-wdr7500]
+  - Dauer meist 1 bis 5 Minuten. Bei Repeatern (RE200) bis 20 Minuten. [Wiki-Zusammenfassung: je Gerät]
 - Fertig ist es so: Das Gerät startet selbst neu, und Gluon startet beim ersten Mal im
   Konfigurationsmodus.
   - Die Status-LED blinkt dann langsam, etwa 1 s an und 0,3 s aus (`status_led_set_timer 1000 300`).
@@ -143,7 +150,7 @@ also nicht ohne Aufwand. Deshalb steht dort nichts im Feld.
     [geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts]
   - dd, Rufus und Win32DiskImager brauchen eine entpackte `.img`.
   - Mit dd immer auf das ganze Gerät schreiben (`/dev/sdX`), nicht auf eine Partition.
-  - [geprüft: Wiki raspberry_pi, nanopi_r2s, openwrt_x86, FriendlyElec-Wiki]
+  - [geprüft: nanopi_r2s, openwrt_x86; Wiki-Zusammenfassung: raspberry_pi, FriendlyElec-Wiki]
 - NanoPi- und x86-`.img.gz` haben angehängte Metadaten. `gzip -d` meldet dann vermutlich
   "trailing garbage ignored", die Datei ist trotzdem in Ordnung.
   [geprüft: append-metadata in rockchip/x86 image/Makefile; Meldung abgeleitet, nicht getestet]
@@ -203,8 +210,8 @@ Kartenzugriff. [abgeleitet: kein led-boot/running-Alias im bcm27xx-DTS]
 | tp-link-archer-c20i | weg | factory im Stock-Web-UI, ohne Einschränkung | aus Build 151014 per Web-UI flashen scheint zu bricken, vorher Build 140709 | Wiki toh/tp-link/archer_c20i |
 | tp-link-archer-c2600 | uebertragung | webui-upload | Hardware v1.1: Werks-Login geht nicht, nur TFTP (ArcherC2600_1.0_tp_recovery.bin, 192.168.0.66) | Wiki toh/tp-link/archer_c2600_v1 |
 | tp-link-archer-a7-v5 | uebertragung | TFTP-Datei ArcherC7v5_tp_recovery.bin | kein Widerspruch: Wiki bestätigt den "C7"-Namen für das A7 v5 (Hinweis, weil es wie ein Tippfehler aussieht) | Wiki toh/tp-link/archer_a7_v5 |
-| netgear-wndr3700, -v2, wndr3800(ch), netgear-wndr4300, netgear-nighthawk-x4s-r7800, netgear-wax220 | weg | "[abgeleitet: Commit ohne Anleitung / Image-Rezept]" | Wiki beschreibt den Web-Upload des factory.img ausdrücklich, könnte also [geprüft: Wiki] werden | Wiki toh/netgear/wndr3700, wndr3800, wndr4300, r7800, wax220 |
-| tp-link-tl-wdr3600-v1, tl-wdr4300-v1, archer-c25-v1, archer-c5-v1, tl-wr1043nd-v2..v4, tl-wr2543n-nd, tl-wdr4900-v1 | weg | "[abgeleitet: Commit ohne Anleitung]" | Wiki beschreibt den Web-Upload, könnte [geprüft: Wiki] werden | Wiki je Gerät |
+| netgear-wndr3700, -v2, wndr3800(ch), netgear-wndr4300, netgear-nighthawk-x4s-r7800, netgear-wax220 | weg | "[abgeleitet: Commit ohne Anleitung / Image-Rezept]" | Wiki beschreibt den Web-Upload des factory.img ausdrücklich, könnte also [Wiki-Zusammenfassung: OpenWrt-Wiki] werden | Wiki toh/netgear/wndr3700, wndr3800, wndr4300, r7800, wax220 |
+| tp-link-tl-wdr3600-v1, tl-wdr4300-v1, archer-c25-v1, archer-c5-v1, tl-wr1043nd-v2..v4, tl-wr2543n-nd, tl-wdr4900-v1 | weg | "[abgeleitet: Commit ohne Anleitung]" | Wiki beschreibt den Web-Upload, könnte [Wiki-Zusammenfassung: OpenWrt-Wiki] werden | Wiki je Gerät |
 
 ### Offen
 
@@ -455,7 +462,7 @@ Gemeinsamer Ablauf:
 - Gerät AUS, `nmrpflash -i <interface> -f <gluon-factory>` starten; bei "Waiting for Ethernet connection" Gerät einschalten (manche Geräte brauchen dabei die Reset-Taste) [geprüft: README].
 - IPs vergibt nmrpflash selbst (10.164.183.252/253); bei Problemen Rechner fest 10.164.183.253 [geprüft: README, Orbi-Commit].
 - Nach "Uploading ... OK" schreibt das Gerät ("Waiting for remote to respond", Keep-alive); nicht Strom ziehen bis "Reboot your device now." [geprüft: README]; Dauer meist Minuten, bis 15 min und mehr berichtet [geprüft: README].
-- Viele Modelle nehmen das Gluon-factory auch in der Netgear-Weboberfläche (EX*, EAX12, WAX202, WAX206, R6220, R6260) [geprüft: Commits; R6220/R6260 Wiki].
+- Viele Modelle nehmen das Gluon-factory auch in der Netgear-Weboberfläche (EX*, EAX12, WAX202, WAX206, R6220, R6260) [geprüft: Commits; Wiki-Zusammenfassung: R6220/R6260 Wiki].
 
 Beste Quellen:
 - https://github.com/jclehner/nmrpflash (README)
@@ -659,9 +666,9 @@ Stand 10.10.2026. Felder in D.json; hier gemeinsamer Ablauf, Quellen, Abweichung
 
 Gemeinsamer Ablauf:
 - Konsole: 9600 8N1, 3,3 V. AP-303/303H: Micro-USB-Buchse "Console" ist nur UART-Stecker, eigenes Kabel aus altem Micro-USB-Kabel + USB-TTL-Adapter; nie normales USB-Kabel an den Rechner [geprüft: Commits 102c8c5, c6e972c]. AP-365: echte USB-Konsole (CP2101), normales Kabel [geprüft: Commit 300b7fe].
-- Boot unterbrechen: Enter bei "Hit <Enter> to stop autoboot" (Countdown ca. 2 s) [geprüft: Commits; Countdown Wiki-Bootlog].
+- Boot unterbrechen: Enter bei "Hit <Enter> to stop autoboot" (Countdown ca. 2 s) [geprüft: Commits; Wiki-Zusammenfassung: Countdown Wiki-Bootlog].
 - Rechner: feste IP 192.168.1.75/24, TFTP-Server, OpenWrt- bzw. RAMpe-initramfs als `ipq40xx.ari` [geprüft: Commits]. AP-303H: TFTP nur über Port E0 [geprüft].
-- apboot-Variablen setzen, saveenv, `run ramboot_openwrt`; die Meldung "Invalid image format version" nach dem Laden ist normal [geprüft: Wiki toh/aruba/ap-303].
+- apboot-Variablen setzen, saveenv, `run ramboot_openwrt`; die Meldung "Invalid image format version" nach dem Laden ist normal [Wiki-Zusammenfassung: toh/aruba/ap-303].
 - Im initramfs: sysupgrade per scp nach /tmp, `ubidetach`/`ubiformat` der UBI-Partition, `sysupgrade -n` [geprüft: Commits].
 - Rückweg: `setenv bootcmd "boot"; saveenv` [geprüft: Commits].
 
@@ -677,7 +684,7 @@ Abweichungen:
 ### Familie seriell-tftp (22 Geräte)
 
 Gemeinsamer Ablauf:
-- Konsole anschließen: entweder Cisco-Konsolenkabel am RJ45 "Console" (RS232-Pegel; Enterasys/Extreme/Siemens/Aerohive) oder USB-TTL 3,3 V an Pins/Testpunkten in geöffnetem Gehäuse (Cudy, ZTE, Xiaomi, TP-Link, Sophos AP15, AP3805i). USB-TTL an RS232-Port geht nicht und kann Schaden nehmen [geprüft: Wiki toh/aerohive/ap121]. 3V3/VCC-Pin nie anschließen [geprüft: Commits MF281, Wiki 4A].
+- Konsole anschließen: entweder Cisco-Konsolenkabel am RJ45 "Console" (RS232-Pegel; Enterasys/Extreme/Siemens/Aerohive) oder USB-TTL 3,3 V an Pins/Testpunkten in geöffnetem Gehäuse (Cudy, ZTE, Xiaomi, TP-Link, Sophos AP15, AP3805i). USB-TTL an RS232-Port geht nicht und kann Schaden nehmen [Wiki-Zusammenfassung: toh/aerohive/ap121]. 3V3/VCC-Pin nie anschließen [geprüft: Commits MF281; Wiki-Zusammenfassung: 4A].
 - Terminal 115200 8N1, Ausnahme Aerohive 9600 [geprüft: Commits].
 - Boot unterbrechen: gerätespezifische Taste im Terminal (Enter, Leertaste, `s`, `t`, ESC, Ctrl-C, Ctrl+B, beliebig), oft nur 1-2 s Zeitfenster; U-Boot-Login bei Enterasys/Extreme admin/new2day, Aerohive `AhNf?d@ta06`/`administrator` [geprüft: Commits].
 - Rechner: TFTP-Server mit fester IP laut Gerät (192.168.1.66 bei David-Bauer-Ports, sonst verschieden), Datei mit vorgegebenem Namen; wo `tftpboot` ohne Dateinamen läuft (AP3705i, Siemens), ist der Name (Geräte-IP in Hex, z. B. 1401A8C0.img = 192.168.1.20) zwingend [abgeleitet: U-Boot-Standard].
@@ -703,7 +710,7 @@ Abweichungen (Kurzliste):
 Je Gerät ein Abschnitt: Kern-Ablauf, beste Quelle(n), Besonderheit. Details in D.json.
 
 #### sonderweg-arcadyan-vgv7510kw22
-- Ablauf: OpenWrt-U-Boot (nor) über brnboot in den RAM (seriell: 3x Leertaste, `!`, `sx`) oder per Recovery-Web/16-MB-Vollimage, dann U-Boot in NOR, dann sysupgrade per TFTP [geprüft: Wiki].
+- Ablauf: OpenWrt-U-Boot (nor) über brnboot in den RAM (seriell: 3x Leertaste, `!`, `sx`) oder per Recovery-Web/16-MB-Vollimage, dann U-Boot in NOR, dann sysupgrade per TFTP [Wiki-Zusammenfassung: OpenWrt-Wiki].
 - Quelle: https://openwrt.org/toh/arcadyan/vgv7510kw22, Forum-Thread im Feld anleitung.
 - Besonderheit: brn- und nor-Images nicht mischbar.
 
@@ -717,11 +724,11 @@ Je Gerät ein Abschnitt: Kern-Ablauf, beste Quelle(n), Besonderheit. Details in 
 - Quellen: Neanderfunk-Notiz, https://github.com/Sc4ndium90/aruba-ap11-openwrt, https://openwrt.org/toh/aruba/ap-303 (AP11-Bootlog).
 
 #### sonderweg-asus-lyra-map-ac2200
-- Ablauf: SSH in Stock, initramfs nach /tmp, `mtd-unlock -d linux`, `mtd-write -d linux -i ...`, `reboot -f`, sysupgrade [geprüft: Commit 9ad3967, Wiki].
+- Ablauf: SSH in Stock, initramfs nach /tmp, `mtd-unlock -d linux`, `mtd-write -d linux -i ...`, `reboot -f`, sysupgrade [geprüft: Commit 9ad3967; Wiki-Zusammenfassung: OpenWrt-Wiki].
 - Quelle: https://openwrt.org/toh/asus/lyra_map-ac2200 (LED-Ablauf blau).
 
 #### sonderweg-asus-rt-ax52
-- Ablauf: Stock-Web-UI nimmt `initramfs.trx`, danach sysupgrade; bei Ablehnung Downgrade per ASUS Firmware Restoration [geprüft: Commit, Wiki].
+- Ablauf: Stock-Web-UI nimmt `initramfs.trx`, danach sysupgrade; bei Ablehnung Downgrade per ASUS Firmware Restoration [geprüft: Commit; Wiki-Zusammenfassung: OpenWrt-Wiki].
 - Quelle: https://openwrt.org/toh/asus/rt-ax52
 
 #### sonderweg-asus-rt-ax59u
@@ -735,19 +742,19 @@ Je Gerät ein Abschnitt: Kern-Ablauf, beste Quelle(n), Besonderheit. Details in 
 - Ablauf: Stock (OpenWrt-basiert) nimmt sysupgrade; alternativ Recovery-Web (Reset ca. 5 s beim Einstecken, LEDs blinken schnell, 192.168.1.1) [geprüft: Commit ee3a6ad].
 
 #### sonderweg-d-link-dir825b1
-- Ablauf laut Wiki: D-Link-Recovery (Reset bis Power-LED orange blinkt, 192.168.0.100 -> 192.168.0.1, alter Browser) mit OpenWrt-23.05.5-factory, dann sysupgrade [geprüft: Wiki].
+- Ablauf laut Wiki: D-Link-Recovery (Reset bis Power-LED orange blinkt, 192.168.0.100 -> 192.168.0.1, alter Browser) mit OpenWrt-23.05.5-factory, dann sysupgrade [Wiki-Zusammenfassung: OpenWrt-Wiki].
 - Quelle: https://openwrt.org/toh/d-link/dir-825
 
 #### sonderweg-devolo-dlan-pro-1200+-wifi-ac
-- Ablauf: Bootloader-TFTP: Reset beim Einschalten ca. 15 s, Gerät holt `uploadfile` von 192.168.0.100 [geprüft: Commit 624b85e, Wiki].
+- Ablauf: Bootloader-TFTP: Reset beim Einschalten ca. 15 s, Gerät holt `uploadfile` von 192.168.0.100 [geprüft: Commit 624b85e; Wiki-Zusammenfassung: OpenWrt-Wiki].
 - Quelle: https://openwrt.org/toh/devolo/dlan_pro_1200_wifi_ac
 
 #### sonderweg-genexis-pulse-ex400
-- Ablauf: Stock-Web-UI oder U-Boot-Recovery (Reset beim Einschalten, http://192.168.1.1) nimmt factory, dann sysupgrade [geprüft: Commit dd0c283, Darmstadt-Wiki].
+- Ablauf: Stock-Web-UI oder U-Boot-Recovery (Reset beim Einschalten, http://192.168.1.1) nimmt factory, dann sysupgrade [geprüft: Commit dd0c283; Wiki-Zusammenfassung: Darmstadt-Wiki].
 - Quelle: https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400 (deutsch, Gluon-bezogen)
 
 #### sonderweg-google-wifi-gale
-- Ablauf: Google-Recovery auf Werkszustand, Gehäuse öffnen, Developer-Mode über Reset + SW7, OpenWrt-factory vom USB-Stick booten, per ssh/dd auf die eMMC [geprüft: Wiki].
+- Ablauf: Google-Recovery auf Werkszustand, Gehäuse öffnen, Developer-Mode über Reset + SW7, OpenWrt-factory vom USB-Stick booten, per ssh/dd auf die eMMC [Wiki-Zusammenfassung: OpenWrt-Wiki].
 - Quelle: https://openwrt.org/toh/google/wifi (genaue LED-Folge, getestete USB-C-Hubs)
 
 #### sonderweg-hewlett-packard-msm460
@@ -758,15 +765,15 @@ Je Gerät ein Abschnitt: Kern-Ablauf, beste Quelle(n), Besonderheit. Details in 
 - Ablauf: OpenWrt/LibreRouterOS ab Werk, sysupgrade über Web oder `sysupgrade -n` [geprüft: Commit 24463d0].
 
 #### sonderweg-linksys-e8450-ubi
-- Ablauf heute: owrt-ubi-installer-Image über die Stock-Weboberfläche, Bootchain-Backup sichern, sysupgrade [geprüft: README dangowrt/owrt-ubi-installer, Wiki]; Commit-Weg veraltet (siehe Widersprüche).
+- Ablauf heute: owrt-ubi-installer-Image über die Stock-Weboberfläche, Bootchain-Backup sichern, sysupgrade [geprüft: README dangowrt/owrt-ubi-installer; Wiki-Zusammenfassung: OpenWrt-Wiki]; Commit-Weg veraltet (siehe Widersprüche).
 - Quellen: https://github.com/dangowrt/owrt-ubi-installer, https://openwrt.org/toh/linksys/e8450
 
 #### sonderweg-meraki-mr33-access-point
-- Ablauf: Bootloader-Version prüfen, ubootwrite lädt mr33-uboot.bin (250-300 s), initramfs per `tftp put`, UBI umbauen, sysupgrade [geprüft: Wiki, Commit 4943afd].
+- Ablauf: Bootloader-Version prüfen, ubootwrite lädt mr33-uboot.bin (250-300 s), initramfs per `tftp put`, UBI umbauen, sysupgrade [geprüft: Commit 4943afd; Wiki-Zusammenfassung: OpenWrt-Wiki].
 - Quelle: https://openwrt.org/toh/meraki/mr33
 
 #### sonderweg-mercusys-mr90x-v1
-- Ablauf: SSH Port 20001, telnet-Hintertür über 65-iptv + IPTV-Schalter, busybox-arm64, initramfs ins UBI-Volume kernel, fw_setenv, sysupgrade [geprüft: Commit e4fe309, Wiki].
+- Ablauf: SSH Port 20001, telnet-Hintertür über 65-iptv + IPTV-Schalter, busybox-arm64, initramfs ins UBI-Volume kernel, fw_setenv, sysupgrade [geprüft: Commit e4fe309; Wiki-Zusammenfassung: OpenWrt-Wiki].
 - Quelle: https://openwrt.org/toh/mercusys/mr90x_v1
 
 #### sonderweg-netgear-wax218
@@ -780,22 +787,22 @@ Je Gerät ein Abschnitt: Kern-Ablauf, beste Quelle(n), Besonderheit. Details in 
 - Quelle: https://openwrt.org/toh/tp-link/archer_c60_v2
 
 #### sonderweg-tp-link-td-w8970
-- Ablauf: ohne Öffnen Shell per SSID-Injection oder StatPost (telnet 1023), mit Öffnen seriell `t` + TFTP [geprüft: Wiki].
+- Ablauf: ohne Öffnen Shell per SSID-Injection oder StatPost (telnet 1023), mit Öffnen seriell `t` + TFTP [Wiki-Zusammenfassung: OpenWrt-Wiki].
 - Quelle: https://openwrt.org/toh/tp-link/td-w8970_v1
 
 #### sonderweg-ubiquiti-nanobeam-ac-gen1-xc
-- Ablauf: airOS XC v8.7.0/8.7.4, per SSH gepatchtes `fwupdate.real -m <factory>` [geprüft: Wiki].
+- Ablauf: airOS XC v8.7.0/8.7.4, per SSH gepatchtes `fwupdate.real -m <factory>` [Wiki-Zusammenfassung: OpenWrt-Wiki].
 - Quelle: https://openwrt.org/toh/ubiquiti/common
 
 #### sonderweg-wavlink-wl-wn573hx3
 - Ablauf: versteckte Seite meshUpgrade.html nimmt das sysupgrade, danach Werkseinstellungen [geprüft: Commit ca38f13].
 
 #### sonderweg-xiaomi-ax3600
-- Ablauf: SSH per stok-Exploit (Stock CN 1.0.17) oder bdata-Patch, `initramfs-factory.ubi` per ubiformat in die inaktive rootfs-mtd + nvram, sysupgrade [geprüft: Commit 8364f08, Wiki].
+- Ablauf: SSH per stok-Exploit (Stock CN 1.0.17) oder bdata-Patch, `initramfs-factory.ubi` per ubiformat in die inaktive rootfs-mtd + nvram, sysupgrade [geprüft: Commit 8364f08; Wiki-Zusammenfassung: OpenWrt-Wiki].
 - Quelle: https://openwrt.org/toh/xiaomi/ax3600
 
 #### sonderweg-xiaomi-mi-router-3g
-- Ablauf: SSH (Entwickler-Firmware + miwifi_ssh.bin vom USB-Stick) oder OpenWRTInvasion, kernel1/rootfs0 per mtd [geprüft: Commit 6e283cd, Wiki].
+- Ablauf: SSH (Entwickler-Firmware + miwifi_ssh.bin vom USB-Stick) oder OpenWRTInvasion, kernel1/rootfs0 per mtd [geprüft: Commit 6e283cd; Wiki-Zusammenfassung: OpenWrt-Wiki].
 - Quelle: https://openwrt.org/toh/xiaomi/mir3g
 
 #### sonderweg-xiaomi-mi-router-ax3000t / -openwrt-u-boot-layout
@@ -803,7 +810,7 @@ Je Gerät ein Abschnitt: Kern-Ablauf, beste Quelle(n), Besonderheit. Details in 
 - Quelle: https://openwrt.org/toh/xiaomi/ax3000t (Tabelle Stock-Version -> Exploit, Hardware-Varianten)
 
 #### sonderweg-xiaomi-redmi-router-ax6s
-- Ablauf: Telnet (ab Werk oder Closed-Beta 1.2.7 beim RB03), Passwort aus Seriennummer, nvram, factory per wget + mtd [geprüft: Commit 9f9477b, Wiki].
+- Ablauf: Telnet (ab Werk oder Closed-Beta 1.2.7 beim RB03), Passwort aus Seriennummer, nvram, factory per wget + mtd [geprüft: Commit 9f9477b; Wiki-Zusammenfassung: OpenWrt-Wiki].
 - Quelle: https://openwrt.org/toh/xiaomi/ax3200; Neanderfunk-Notiz
 
 #### sonderweg-zte-mf286r
@@ -815,7 +822,7 @@ Je Gerät ein Abschnitt: Kern-Ablauf, beste Quelle(n), Besonderheit. Details in 
 - Quelle: https://openwrt.org/toh/zyxel/nbg6616
 
 #### sonderweg-zyxel-wsm20
-- Ablauf: versteckte Seite /gui/#/main/debug/firmwareupgrade nimmt initramfs-kernel.bin, danach sysupgrade [geprüft: Commit 28df7f7, Wiki].
+- Ablauf: versteckte Seite /gui/#/main/debug/firmwareupgrade nimmt initramfs-kernel.bin, danach sysupgrade [geprüft: Commit 28df7f7; Wiki-Zusammenfassung: OpenWrt-Wiki].
 - Quellen: https://openwrt.org/toh/zyxel/wsm20 (LED-Folge), https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/
 
 ### Widersprüche zu vorhandenen Feldern
