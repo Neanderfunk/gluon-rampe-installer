@@ -2037,6 +2037,7 @@ Cudy WR3000S v1 · mediatek-filogic · K2
 - **RAM:** 256 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Rückweg zur Herstellerfirmware:** Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ "How to recovery ... to Cudy official firmware"]
+- **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 4779e954fa847c4b376623bc3bdf9651007e8a89
 - **Detail-Anleitung:** https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
@@ -2383,6 +2384,7 @@ D-Link AQUILA PRO AI M30 A1 · mediatek-filogic · K1
 - **RAM:** 512 MB
 - **Dauer:** kann über 10 Minuten dauern, auch mit langer Stille nach der Übertragung, während das Gerät schreibt; nicht abbrechen, nicht Strom ziehen [geprüft: Neanderfunk-Notiz, M60: 10-11 min gemessen]
 - **Rückweg zur Herstellerfirmware:** Recovery wie oben (Rechner 192.168.200.2) mit einem entschlüsselten D-Link-Image (m32-firmware-util von RolandoMagico) [geprüft: Commit 29cca6c]
+- **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen; RAMpe-Image gebaut und Inhalt geprüft, Hardware-Test der RAMpe offen
 - **Gluon-RAMpe passt:** ja: RAMpe-Image gebaut, Header wie OpenWrt, Hardware-Test offen [geprüft: gluon-rampe-installer docs/NOTIZEN.md]
 - **Gluon-RAMpe-Rezept:** devices/d-link-aquila-pro-ai-m30-a1.sh: `-recovery.bin` (D-Link-Header) für die D-Link-Recovery; gebaut, Inhalt geprüft, Hardware-Test offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f
@@ -3144,6 +3146,7 @@ x86 (x86-64) · x86-64 · K0
 - **Stock-Teile:** -
 - **RAM:** -
 - **Dauer:** Image nur ca. 120 MB, Schreiben Sekunden bis etwa eine Minute [abgeleitet: Imagegröße]
+- **Hardware-Test:** Testgeräte bei Neanderfunk vorhanden (VM und Fujitsu FUTRO S550); RAMpe in QEMU Ende-zu-Ende geprüft
 - **Gluon-RAMpe passt:** nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)
 - **Gluon-RAMpe-Rezept:** devices/x86-64.sh: Testgerät, in QEMU Ende-zu-Ende geprüft
 - **Quelle (OpenWrt-Commit):** Gluon targets/x86-64
@@ -3545,6 +3548,7 @@ TP-Link Archer C25 v1 (broken) · ath79-generic · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c25-v1-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
+- **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** fde0abf267033bfaaf08dc2f5cbba2bf2a3ff897 (ohne Anleitung) [abgeleitet]
 
@@ -3900,6 +3904,7 @@ TP-Link TL-WDR3600 v1 · ath79-generic · K0
 - **Stock-Teile:** keine
 - **RAM:** ?
 - **Dauer:** ca. 20 s Übertragung, 90 s Schreiben, 30 s Neustart; nicht ausschalten [Wiki-Zusammenfassung: toh/tp-link/tl-wdr4300_v1]
+- **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** a7e1e919afa9659f66dada5e69d1b162f447ced7 (ohne Anleitung) [abgeleitet]
 
@@ -3956,6 +3961,7 @@ TP-Link TL-WR1043N/ND v2 · ath79-generic · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr1043nd-v2-squashfs-factory.bin)
 - **Stock-Teile:** keine
 - **RAM:** ?
+- **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** b1a173d7c396c0a9e6bb0078a1a061eb9fdd0316 (ohne Anleitung) [abgeleitet]
 
@@ -4480,6 +4486,7 @@ Zyxel NWA50AX Pro · mediatek-filogic · K0
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-zyxel_nwa50ax-pro-squashfs-factory.bin)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
+- **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt f0445746f6fd96fc7c5394b238153bd2ff22bc5b
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f0445746f6fd96fc7c5394b238153bd2ff22bc5b
@@ -4615,6 +4622,7 @@ D-Link COVR-X1860 A1 · ramips-mt7621 · K0
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Rückweg zur Herstellerfirmware:** Recovery mit entschlüsselter D-Link-Firmware (`dlink-sge-image COVR-X1860 <orig> <out> -d`) [geprüft: Commit 0a18259e]
+- **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** nicht nötig (Gluon hat factory und recovery); steht in GERAETE.md noch als Kandidat
 - **Quelle (OpenWrt-Commit):** 0a18259e4aa361cd9e5848c038be4b9f4e3bfcc6
 - **Detail-Anleitung:** https://freifunk-aachen.de/2023/08/03/installationsanleitung-d-link-covr-x1860/
@@ -4786,6 +4794,7 @@ ZyXEL NWA55AXE (Gluon: broken) · ramips-mt7621 · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
+- **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** a0b7fef0ffe4cd9cca39a652a37e4f3ce8f0a681
 - **Detail-Anleitung:** https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964
@@ -6052,6 +6061,7 @@ Extreme Networks WS-AP3825i · mpc85xx-p1020 · K4
 - **RAM:** 256 MB
 - **Dauer:** Erster Start nach dem sysupgrade bis ca. 360 s (Wiki-Log), nicht Strom ziehen solange die Power-LED blinkt [Wiki-Zusammenfassung: OpenWrt-Wiki]
 - **Rückweg zur Herstellerfirmware:** Stock-bootcmd in Variable boot_flash; vorher Backup der Partition "firmware" [geprüft: Commit]
+- **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** teilweise: wie WS-AP3715i
 - **Gluon-RAMpe-Rezept:** devices/extreme-networks-ws-ap3825i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (FIT) per U-Boot-TFTP; `bootcmd` bleibt seriell
 - **Quelle (OpenWrt-Commit):** 7e614820a89208c4e91a3a5f9de07a5402accdaa
@@ -6574,6 +6584,7 @@ Mercusys MR90X v1 · mediatek-filogic · K2
 - **Stock-Teile:** - (Wiki: Backup tp_data/boot für den Rückweg)
 - **RAM:** 512 MB
 - **Rückweg zur Herstellerfirmware:** Backups von boot und tp_data nötig; Reset beim Einschalten startet die U-Boot-Web-Recovery auf http://192.168.1.1 für die OEM-Firmware [geprüft: Commit; Wiki-Zusammenfassung: OpenWrt-Wiki]
+- **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** teilweise: das RAMpe-initramfs könnte das OpenWrt-initramfs im kernel-Volume ersetzen; Exploit und fw_setenv bleiben Handarbeit [abgeleitet]. Hinweis: eine ältere Neanderfunk-Notiz beschreibt "tp_boot_idx 0, dann U-Boot-Web-Recovery nimmt initramfs" - weder im Commit noch im Wiki-Abschnitt "Stock bootloader" so belegt
 - **Gluon-RAMpe-Rezept:** devices/mercusys-mr90x-v1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell
 - **Quelle (OpenWrt-Commit):** OpenWrt e4fe3097ef6a961874b66932a0ac4be18070630a
@@ -7503,6 +7514,7 @@ TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54) · ramips-mt76x8 · K3
 - **RAM:** 64 MB
 - **Dauer:** TFTP: etwa 1 Minute bis zum Neustart [geprüft: Commit]; nach jedem Versuch mindestens 3 Minuten oder bis 3 oder mehr LEDs leuchten warten, sonst Gefahr eines Bricks [abgeleitet: Wiki C50]; nicht Strom ziehen [abgeleitet]
 - **Rückweg zur Herstellerfirmware:** TP-Link-Firmware über die Web-Recovery (192.168.0.1, Update-Flag wie oben) einspielen [geprüft: Commit "vendor-firmware ... can be written"]
+- **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade lässt sich direkt anhängen, kein Ramboot-Schritt
 - **Quelle (OpenWrt-Commit):** e9ac1b19e0f3d383ab83373c261bfb5527a29521
 
@@ -7528,6 +7540,7 @@ Ubiquiti EdgeRouter X · ramips-mt7621 · K3
 - **Stock-Teile:** Umbau des Kernel-Layouts (Boot-Index in factory, Offset 160)
 - **RAM:** 256 MB
 - **Rückweg zur Herstellerfirmware:** EdgeOS nach Ubiquiti-Anleitung help.ui.com/hc/en-us/articles/360019289113 wieder aufspielen [abgeleitet: Wiki]
+- **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** nein für 2025.1: EdgeOS schreibt in einen 3-MB-Kernel-Slot; Kernel 6.6 allein hat 3 173 556 Byte (Neanderfunk-Notiz), ein Gluon-initramfs mit Rootfs passt erst recht nicht [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 4e31b2e8697c21f9bd6493bb3d78a4a41c6a9a52
 - **Detail-Anleitung:** https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp
@@ -8055,6 +8068,7 @@ Xiaomi Mi Router 4A Gigabit · ramips-mt7621 · K1d
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
 - **Stock-Teile:** -
 - **RAM:** 128 MB
+- **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** nein: Exploit schreibt das sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** a51e46e543ef2e923fb97fb092d04355dfca7d7d
 - **Detail-Anleitung:** https://github.com/acecilia/OpenWRTInvasion/blob/master/README.md
