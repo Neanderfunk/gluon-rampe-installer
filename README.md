@@ -45,6 +45,9 @@ ein Installer-Image je Gerät reicht für alle Communities.
 | x86-64 | x86-64 | `…-initramfs-kernel.bin` per QEMU `-kernel` | Ende-zu-Ende getestet (`test/qemu-x86-64.sh`) |
 
 Weitere Kandidaten und wie man ein Gerät ergänzt: `docs/GERAETE.md`.
+Wie jedes Gerät mit Gluon 2025.1 ab Werk installiert wird (Übertragungsweg,
+serielle Konsole, Links, Eignung für die Gluon-RAMpe):
+[`docs/ERSTINSTALLATION-2025.1.md`](docs/ERSTINSTALLATION-2025.1.md).
 Wie es funktioniert: `docs/FUNKTIONSWEISE.md`.
 
 ## Benutzen (Beispiel M30)

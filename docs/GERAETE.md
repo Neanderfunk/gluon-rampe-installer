@@ -20,8 +20,8 @@ im Config-Mode), wird das Installer-Image für dieses Gerät mitgebaut
 (adorfer 10.10.2026). Ein Installer-Image zu viel kostet nur Bauzeit.
 
 Vollständiges Inventar aller Gluon-2025.1-Geräte mit Weg ab Werk,
-Übertragung, Konsole, Links und Installer-Eignung: router-werkstatt
-`docs/erstinstallation-2025.1.md`.
+Übertragung, Konsole, Links und Installer-Eignung:
+[ERSTINSTALLATION-2025.1.md](ERSTINSTALLATION-2025.1.md).
 
 ## Stand
 
@@ -32,8 +32,8 @@ Vollständiges Inventar aller Gluon-2025.1-Geräte mit Weg ab Werk,
 
 ## Kandidaten (alle ungeprüft)
 
-Abgeglichen mit dem Inventar aller Gluon-2025.1-Geräte (router-werkstatt
-`docs/erstinstallation-2025.1.md`, Stand 10.10.2026; dort je Gerät Weg,
+Abgeglichen mit dem Inventar aller Gluon-2025.1-Geräte
+([ERSTINSTALLATION-2025.1.md](ERSTINSTALLATION-2025.1.md), Stand 10.10.2026; dort je Gerät Weg,
 Übertragung, Konsole, Links und Quelle). Nichts davon auf Hardware getestet.
 
 ### Passt (Ramboot ohne Öffnen, danach Upload)
