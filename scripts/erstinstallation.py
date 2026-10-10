@@ -32,10 +32,16 @@ FELDER = OrderedDict([
     ("kat", "Kat."),
     ("familie", "Anleitungsfamilie"),
     ("weg", "Weg ab Werk"),
+    ("schritte", "Schritte (Normalweg)"),
+    ("warnung", "Warnung"),
     ("taste", "Taste und Zeitpunkt"),
     ("zeichen", "Sichtbare Zeichen"),
     ("uebertragung", "Übertragung"),
-    ("rechner", "Rechner braucht"),
+    ("anschluss", "Anschluss"),
+    ("adressen", "Adressen"),
+    ("programm", "Programm"),
+    ("zugang", "Zugang"),
+    ("datei", "Datei"),
     ("seriell", "seriell nötig"),
     ("gehaeuse", "Gehäuse öffnen"),
     ("werkzeug", "Werkzeug/Spezial"),
@@ -46,6 +52,8 @@ FELDER = OrderedDict([
     ("stock_teile", "Stock-Teile"),
     ("ram", "RAM"),
     ("dauer", "Dauer"),
+    ("fehlerbild", "Fehlerbild"),
+    ("notweg", "Notweg"),
     ("rueckweg", "Rückweg zur Herstellerfirmware"),
     ("hw_test", "Hardware-Test"),
     ("rampe", "Gluon-RAMpe passt"),
@@ -115,7 +123,11 @@ def einzelheiten(geraete):
             for k, label in FELDER.items():
                 if k in KOPF or not g[k]:
                     continue
-                z.append(f"- **{label}:** {g[k]}")
+                if isinstance(g[k], list):
+                    z.append(f"- **{label}:**")
+                    z += [f"  {i}. {schritt}" for i, schritt in enumerate(g[k], 1)]
+                else:
+                    z.append(f"- **{label}:** {g[k]}")
             z.append("")
     return z
 
@@ -159,6 +171,10 @@ def main():
         fehlt = set(FELDER) - set(g)
         if fehlt:
             sys.exit(f"{g.get('gluon_name')}: Felder fehlen: {sorted(fehlt)}")
+        if set(g) - set(FELDER):
+            sys.exit(f"{g['gluon_name']}: unbekannte Felder: {sorted(set(g) - set(FELDER))}")
+        if not isinstance(g["schritte"], list):
+            sys.exit(f"{g['gluon_name']}: schritte muss eine Liste sein")
     namen = Counter(g["gluon_name"] for g in geraete)
     doppelt = [n for n, k in namen.items() if k > 1]
     if doppelt:
