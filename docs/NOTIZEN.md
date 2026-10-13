@@ -71,17 +71,24 @@ Entstanden am 11.09.2026 in der Neanderfunk-Firmware-Session. Idee: adorfer
   `gluon-nef-21_dias-26101300bro-d-link-aquila-pro-ai-m60-a1-sysupgrade.bin`
   (SHA256 `8833d7c5…`, 9.790.274 Bytes); Prüfsummenseite und Flash liefen, das
   Gerät läuft mit der Firmware. Das UBI-Switch-Image war nicht nötig.
+  - Zeiten und LED: Upload etwa 4 Minuten (Testplatz 30.09. mit OpenWrt-Image
+    gleicher Größe: rund 11), danach etwa 4 Minuten weißes Blinken (Recovery
+    schreibt, Neustart), dann Blinken im 1-Hz-Takt = RAMpe im Config-Mode.
   - Die RAMpe zeigt MAC `06:00:dc:ea:e7:af` (Hostname `0600dceae7af`): die
     bekannte falsche MAC aus Odm-Offset 0x81, weil die RAMpe ohne
     gluon-patches-hardware gebaut ist. Ohne Folgen, da mit `sysupgrade -n`
     geflasht wird und die Neanderfunk-Firmware die MAC selbst richtig liest
     [abgeleitet, am Gerät noch bestätigen].
-  - Ein unvollständiger Upload (Datei nicht gefunden, PowerShell-Variable in
-    cmd) war harmlos: Der Router startete wieder die Herstellerfirmware.
-  - Aus WSL2 im Mirrored-Modus kam keine Verbindung zu `192.168.200.1`
-    zustande, aus Windows schon.
-  - Noch nicht festgehalten: Dauer des Recovery-Uploads, ob die Firmware danach
-    im Config-Mode startet, MAC vom Aufkleber danach, WLAN.
+  - Stolperfallen beim Upload, **nicht RAMpe-spezifisch**: Sie liegen an der
+    D-Link-Recovery bzw. am Upload-Weg und treten genauso unter Linux mit dem
+    OpenWrt-initramfs auf (am Wochenende 10./11.10. sind zwei Nutzer daran
+    gescheitert). Ein unvollständiger Upload (hier: Datei nicht gefunden,
+    PowerShell-Variable in cmd) ist harmlos, der Router startet wieder die
+    Herstellerfirmware. Rechner-Eigenheiten: unter Windows `curl.exe`; aus WSL2
+    im Mirrored-Modus kam keine Verbindung zu `192.168.200.1` zustande, aus
+    Windows schon.
+  - Noch offen: ob die Firmware nach dem sysupgrade aus der RAMpe im
+    Config-Mode startet und wie lange das dauert, MAC vom Aufkleber danach, WLAN.
 
 ## Offen / nächste Schritte
 
