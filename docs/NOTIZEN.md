@@ -87,8 +87,15 @@ Entstanden am 11.09.2026 in der Neanderfunk-Firmware-Session. Idee: adorfer
     Herstellerfirmware. Rechner-Eigenheiten: unter Windows `curl.exe`; aus WSL2
     im Mirrored-Modus kam keine Verbindung zu `192.168.200.1` zustande, aus
     Windows schon.
-  - Noch offen: ob die Firmware nach dem sysupgrade aus der RAMpe im
-    Config-Mode startet und wie lange das dauert, MAC vom Aufkleber danach, WLAN.
+  - Nach dem sysupgrade aus der RAMpe: Neanderfunk-Firmware nach unter 2
+    Minuten da, primäre MAC = Aufkleber (Odm-Fix wirkt beim Erststart),
+    Vorgabe-Hostname nach Neanderfunk-Schema, WLAN-Mesh läuft, beide Radios mit
+    Client-Netz und OWE. Nicht notiert: ob sie über den Config-Mode kam.
+  - Die Herstellerfirmware antwortet mit ihrem Admin-Login ebenfalls unter
+    `192.168.200.1`; wer nach dem Upload eine Seite mit Passwortabfrage sieht,
+    ist zurück in der Herstellerfirmware.
+  - Browser-Upload in die Recovery war bei den zwei Nutzern vom Wochenende auch
+    in Chromium nach unter 1 s "fertig", ohne Übertragung: curl ist der Weg.
 
 ## Offen / nächste Schritte
 
