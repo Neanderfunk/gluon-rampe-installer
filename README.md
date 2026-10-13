@@ -42,6 +42,7 @@ ein RAMpe-Image je Gerät reicht für alle Communities.
 | Gerät | Target | Einspielen | Stand |
 |---|---|---|---|
 | D-Link AQUILA PRO AI M30 A1 | mediatek-filogic | `…-recovery.bin` über die D-Link-Recovery (192.168.200.1) | gebaut, **auf Hardware ungetestet** |
+| D-Link AQUILA PRO AI M60 A1 | mediatek-filogic | `…-recovery.bin` über die D-Link-Recovery (192.168.200.1), per `curl` | **am Gerät erprobt** (13.10.2026, Gluon-sysupgrade geflasht; `docs/NOTIZEN.md`, "Getestet") |
 | x86-64 | x86-64 | `…-initramfs-kernel.bin` per QEMU `-kernel` | Ende-zu-Ende getestet (`test/qemu-x86-64.sh`) |
 
 Weitere Kandidaten und wie man ein Gerät ergänzt: `docs/GERAETE.md`.

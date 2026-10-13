@@ -80,7 +80,7 @@ legt das Image des Hauptnamens unter beiden Namen ab.
 | ASUS TUF-AX6000 | `asus-tuf-ax6000` | mediatek-filogic | K2 | devices/asus-tuf-ax6000.sh (Rezept-Entwurf, nicht gebaut): wie TUF-AX4200; eigener Bau-Lauf |
 | Cudy TR3000 v1 (128 MB Flash) | `cudy-tr3000-v1` | mediatek-filogic | K4 | devices/cudy-tr3000-v1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per U-Boot-TFTP |
 | D-Link AQUILA PRO AI M30 A1 | `d-link-aquila-pro-ai-m30-a1` | mediatek-filogic | K1 | devices/d-link-aquila-pro-ai-m30-a1.sh: `-recovery.bin` (D-Link-Header DLK6E6110001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, Hardware-Test offen |
-| D-Link AQUILA PRO AI M60 A1 | `d-link-aquila-pro-ai-m60-a1` | mediatek-filogic | K1 | devices/d-link-aquila-pro-ai-m60-a1.sh: `-recovery.bin` (D-Link-Header DLK6E8202001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, Hardware-Test offen. Gluons eigenes recovery.bin (z. B. Neanderfunk 26100702bro) startet vermutlich wie bei der M30 nicht im Config-Mode [abgeleitet] |
+| D-Link AQUILA PRO AI M60 A1 | `d-link-aquila-pro-ai-m60-a1` | mediatek-filogic | K1 | devices/d-link-aquila-pro-ai-m60-a1.sh: `-recovery.bin` (D-Link-Header DLK6E8202001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, am Gerät erprobt 13.10.2026 (Neanderfunk-sysupgrade geflasht). Gluons eigenes recovery.bin (z. B. Neanderfunk 26100702bro) startet vermutlich wie bei der M30 nicht im Config-Mode [abgeleitet] |
 | Mercusys MR80X v3 | `mercusys-mr80x-v3` | mediatek-filogic | K4 | devices/mercusys-mr80x-v3.sh (gebaut 10.10.2026 lokal, initramfs etwa 8.1 MB, `91_installer_initramfs` geprüft, Hardware-Test offen): trägt das Gerät in Gluon ein (`ensure_device`); `initramfs-kernel.bin` per UART + TFTP |
 | Mercusys MR90X v1 | `mercusys-mr90x-v1` | mediatek-filogic | K2 | devices/mercusys-mr90x-v1.sh (gebaut 10.10.2026 lokal, initramfs etwa 8.1 MB, `91_installer_initramfs` geprüft, Hardware-Test offen): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell |
 | Xiaomi Mi Router AX3000T | `xiaomi-mi-router-ax3000t` | mediatek-filogic | K2 | devices/xiaomi-mi-router-ax3000t.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt |
@@ -181,13 +181,13 @@ Gluon bricht sonst mit "unknown devices" ab.
 
 Abgeglichen mit dem Inventar aller Gluon-2025.1-Geräte
 ([ERSTINSTALLATION-2025.1.md](ERSTINSTALLATION-2025.1.md), Stand 10.10.2026; dort je Gerät Weg,
-Übertragung, Konsole, Links und Quelle). Nichts davon auf Hardware getestet.
+Übertragung, Konsole, Links und Quelle). Auf Hardware getestet ist bisher nur der D-Link M60 A1.
 
 ### Passt (Ramboot ohne Öffnen, danach Upload)
 
 | Gerät | Target | Hersteller-Weg | Format/Bedingung | RAM |
 |---|---|---|---|---|
-| D-Link M60 A1 | mediatek-filogic | D-Link-Recovery 192.168.200.1 | D-Link-Header wie M30; Gluons eigenes `-recovery.bin` vermutlich mit dem Config-Mode-Fehler | 512 MB |
+| D-Link M60 A1 | mediatek-filogic | D-Link-Recovery 192.168.200.1 | D-Link-Header wie M30; Gluons eigenes `-recovery.bin` vermutlich mit dem Config-Mode-Fehler. **RAMpe am Gerät erprobt 13.10.2026** (NOTIZEN, "Getestet") | 512 MB |
 | ASUS RT-AX52 | mediatek-filogic | Web-UI 192.168.50.1 | `initramfs.trx` (OpenWrt-ARTIFACT) einsammeln | 256 MB |
 | ASUS RT-AX53U | ramips-mt7621 | ASUS-Rescue, TFTP-Server im Gerät 192.168.1.1 | initramfs | 256 MB |
 | Genexis Pulse EX400 | ramips-mt7621 | Web-UI / Recovery 192.168.1.1 | OpenWrt-factory ist initramfs mit Inteno-Header; Gluon setzt `factory = false` nur wegen des initramfs-Schalters. Bester neuer Kandidat | 256 MB |
