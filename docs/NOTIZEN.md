@@ -71,9 +71,14 @@ Entstanden am 11.09.2026 in der Neanderfunk-Firmware-Session. Idee: adorfer
   `gluon-nef-21_dias-26101300bro-d-link-aquila-pro-ai-m60-a1-sysupgrade.bin`
   (SHA256 `8833d7c5…`, 9.790.274 Bytes); Prüfsummenseite und Flash liefen, das
   Gerät läuft mit der Firmware. Das UBI-Switch-Image war nicht nötig.
-  - Zeiten und LED: Upload etwa 4 Minuten (Testplatz 30.09. mit OpenWrt-Image
-    gleicher Größe: rund 11), danach etwa 4 Minuten weißes Blinken (Recovery
-    schreibt, Neustart), dann Blinken im 1-Hz-Takt = RAMpe im Config-Mode.
+  - Zeiten und LED (zweiter Durchgang gemessen): Datenübertragung etwa 31 s für
+    50 MB, curl wartet danach auf die Antwort; LED blinkt rot während Upload und
+    Schreiben (wie Commit 7271ee5), Neustart etwa 1:45 min nach Upload-Start,
+    1-Hz-Blinken = RAMpe im Config-Mode gut 2 Minuten nach Upload-Start
+    (Testplatz 30.09. mit OpenWrt-Image gleicher Größe: rund 11 Minuten). Ein
+    orangefarbenes Dimmen ist nicht die Recovery; nur die Reset-Taste führt
+    hinein. Maßstab für Erfolg ist die Menge (etwa 52,4 Mio. Bytes), nicht die
+    Dauer; der Fehlversuch war "Failed to connect", HTTP 000, 0 Bytes.
   - Die RAMpe zeigt MAC `06:00:dc:ea:e7:af` (Hostname `0600dceae7af`): die
     bekannte falsche MAC aus Odm-Offset 0x81, weil die RAMpe ohne
     gluon-patches-hardware gebaut ist. Ohne Folgen, da mit `sysupgrade -n`
