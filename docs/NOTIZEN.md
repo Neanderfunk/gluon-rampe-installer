@@ -164,3 +164,47 @@ Wie die D-Link-Geräte geflasht werden, steht in der Router-Werkstatt unter
 - **Nächster Bau:** filogic in einem Lauf:
   `contrib/docker/run.sh ./build.sh mediatek-filogic d-link-aquila-pro-ai-m30-a1 mercusys-mr90x-v1 mercusys-mr80x-v3`
   (dabei prüfen: Dateinamen `gluon-rampe-…`, Seite zeigt "Gluon-RAMpe").
+
+## Stand 13.10.2026
+
+- **Rezepte:** 57 in `devices/` (24 aus Gruppe A, 29 aus Gruppe B, dazu M30,
+  x86-64, MR90X, MR80X), plus 5 Aliasnamen ohne eigenes Rezept (Instant On
+  AP11/AP11D/AP17, FRITZ!Box 7520, DISC Lite5 ac). Alle per Trockenlauf gegen
+  `targets/` von Gluon v2025.1.3 geprüft (Lua gültig, Geräte bekannt).
+  `lib.sh`: `ensure_target_config_value`, `ensure_device` mit Lua-Option,
+  `ensure_device_option`, `ensure_site_packages`, `ensure_site_unbroken`,
+  `ensure_openwrt_backport` (`RAMPE_HW_PATCHES`). `build.sh`: Rezepte vor
+  `make update`, sammelt jedes `-initramfs*` ein, warnt bei nichts
+  eingesammelt bzw. ab 32 MiB. Bau-Läufe je Target in `docs/GERAETE.md`.
+- **Gebaut (lokal, 10.10.2026), Hardware-Test offen:** M30 und M60
+  `-recovery.bin` (D-Link-Header und `91_installer_initramfs` geprüft), MR80X
+  v3 und MR90X v1 `initramfs-kernel.bin` (je etwa 8.1 MB). Liegen in `out/`.
+- **Vorbereitung vor dem sysupgrade** (Aruba, AVM 7530/Repeater, MF289F,
+  OCEDO, RED 15w, MF281, AVM 7412/7430): zwei Entwürfe in
+  `docs/ENTWURF-VORBEREITUNG.md` (Controller-Haken bzw.
+  `platform_pre_upgrade`), bewusst nicht übernommen (ungetesteter Flash-Code).
+- **Inventar:** gepflegt wird nur `data/geraete-2025.1.json`;
+  `scripts/erstinstallation.py` erzeugt daraus `ERSTINSTALLATION-2025.1.md`
+  und die Rezepttabelle in `GERAETE.md` (`--check`). Felder für die
+  Anleitungen nach Content-Vorschlag: `schritte` (Liste, Normalweg), `warnung`,
+  `notweg` (mit Art `[Notfall]`/`[Alternative]`/`[einfacher, schlechter
+  belegt]`), `fehlerbild`, `anschluss`, `adressen`, `programm`, `zugang`,
+  `datei`, `taste`, `zeichen`, `verwechslung`, `stock_bedingung`, `dauer`,
+  `rueckweg` (nice to have), `hw_test`. Befüllt für 343 von 351 Geräten; es
+  fehlen die 8 Xiaomi-Exploit-Geräte (der Sicherheitsfilter der Agenten brach
+  ab), 15 Exploit-/Bootloader-Geräte sind nur mechanisch übernommen
+  (`[noch nicht aufgeteilt]`). Familiennotizen, Widersprüche und Hardwaretest-
+  Kandidaten in `docs/ANLEITUNGSFAMILIEN.md`.
+- **Belegmarken:** `[geprüft: …]` nur für Quellen im Original. Die Wiki-Angaben
+  sind am DokuWiki-Rohtext nachgeprüft (809 Marken, rund 740 jetzt
+  `[geprüft: Wiki …]`, 14 Angaben korrigiert, u. a. EA8300 `fw_setenv
+  kernsize 500000`). 67 bleiben `[Wiki-Zusammenfassung]` (Seite fehlt).
+- **Hardware-Tests geplant:** M30/M60 (RAMpe-`recovery.bin` per `curl` in die
+  D-Link-Recovery, siehe GERAETE.md), MR80X v3 (erst prüfen, ob die Stock-
+  Firmware SSH 20001 und IPTV/Hotplug wie der MR90X hat), dazu die zwölf
+  Geräte mit `[einfacher, schlechter belegt]`.
+- **Nicht Gluon-RAMpe, aber verwandt:** Mercusys MR3000X v2.0 (= MR80X v2,
+  IPQ5018, 256 MB) läuft am Testplatz mit OpenWrt main (c127dev-Build, WLAN
+  mit `kmod-ath11k-smallbuffers`); OpenWrt 24.10/25.12 und damit Gluon 2025.1
+  kennen das Gerät nicht. Einzelheiten router-werkstatt
+  `docs/mercusys-mr3000x-v2.md`.
