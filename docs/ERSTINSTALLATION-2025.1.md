@@ -151,9 +151,9 @@ fehlen die Felder noch.
 | offen | 1 |
 | **gesamt** | **351** |
 
-Gluon-RAMpe passt: **ja 24**, teilweise 38, nein/unnötig 289.
+Gluon-RAMpe passt: **ja 31**, teilweise 39, nein/unnötig 281.
 
-Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-951ui-2nd-hap`, `mikrotik-routerboard-mapl-2nd`, `mikrotik-routerboard-wap-g-5hact2hnd`, `mikrotik-routerboard-wapr-2nd`, `zte-mf286r`, `asus-lyra-map-ac2200`, `mikrotik-discg-5acd`, `mikrotik-hap-ac2`, `mikrotik-sxtsq-5-ac-rbsxtsqg-5acd`, `mikrotik-wap-ac`, `avm-fritz-box-3390`, `avm-fritz-box-7362-sl`, `avm-fritz-box-7412`, `avm-fritz-box-7430`, `asus-rt-ax52`, `d-link-aquila-pro-ai-m30-a1`, `d-link-aquila-pro-ai-m60-a1`, `netgear-wax218`, `asus-rt-ax53u`, `genexis-pulse-ex400`, `mikrotik-routerboard-750gr3`, `zyxel-wsm20`.
+Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-951ui-2nd-hap`, `mikrotik-routerboard-mapl-2nd`, `mikrotik-routerboard-wap-g-5hact2hnd`, `mikrotik-routerboard-wapr-2nd`, `gl.inet-gl-e750`, `gl.inet-gl-xe300`, `zte-mf286r`, `asus-lyra-map-ac2200`, `linksys-mr8300-dallas`, `mikrotik-discg-5acd`, `mikrotik-hap-ac2`, `mikrotik-sxtsq-5-ac-rbsxtsqg-5acd`, `mikrotik-wap-ac`, `avm-fritz-box-3390`, `avm-fritz-box-7362-sl`, `avm-fritz-box-7412`, `avm-fritz-box-7430`, `asus-rt-ax52`, `d-link-aquila-pro-ai-m30-a1`, `d-link-aquila-pro-ai-m60-a1`, `netgear-wax218`, `asus-rt-ax53u`, `genexis-pulse-ex400`, `mikrotik-routerboard-750gr3`, `netgear-wndr3700-v5`, `xiaomi-mi-router-3g`, `xiaomi-mi-router-ac2100`, `xiaomi-redmi-router-ac2100`, `zyxel-wsm20`.
 
 <!-- END erzeugt:zahlen -->
 
@@ -214,7 +214,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [d-link-dap-2680-a1](#d-link-dap-2680-a1) | D-Link DAP-2680 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5b58710fad2137eedad874f0fe8fe22082d1edc6 |
 | [d-link-dap-2695-a1](#d-link-dap-2695-a1) | D-Link DAP-2695 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [d-link-dir-505](#d-link-dir-505) | D-Link DIR-505 | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ? | teilweise | ja |  |
-| [d-link-dir825b1](#d-link-dir825b1) | D-Link DIR-825 B1 | ath79-generic | offen | [`sonderweg-d-link-dir825b1`](#familie-sonderweg-d-link-dir825b1) | ? | ? | ? | offen |  |  |
+| [d-link-dir825b1](#d-link-dir825b1) | D-Link DIR-825 B1 | ath79-generic | offen | [`sonderweg-d-link-dir825b1`](#familie-sonderweg-d-link-dir825b1) | ? | ? | ? | offen | ja |  |
 | [devolo-dlan-pro-1200+-wifi-ac](#devolo-dlan-pro-1200+-wifi-ac) | devolo dLAN pro 1200+ WiFi ac (broken) | ath79-generic | K1d | [`sonderweg-devolo-dlan-pro-1200+-wifi-ac`](#familie-sonderweg-devolo-dlan-pro-1200+-wifi-ac) | tftp-client-am-geraet | nein | nein | nein |  |  |
 | [devolo-wifi-pro-1200e](#devolo-wifi-pro-1200e) | devolo WiFi pro 1200e | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1724d4e9ed7716a5444eca42adf045c2f3afc554 |
 | [devolo-wifi-pro-1200i](#devolo-wifi-pro-1200i) | devolo WiFi pro 1200i | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c8115167f946be85f812f3c94d6294b67ac8944c |
@@ -279,7 +279,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [tp-link-archer-c58-v1](#tp-link-archer-c58-v1) | TP-Link Archer C58 v1 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [tp-link-archer-c59-v1](#tp-link-archer-c59-v1) | TP-Link Archer C59 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [tp-link-archer-c6-v2-eu-ru-jp](#tp-link-archer-c6-v2-eu-ru-jp) | TP-Link Archer C6 v2 (EU/RU/JP) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-archer-c60-v1](#tp-link-archer-c60-v1) | TP-Link Archer C60 v1 | ath79-generic | K2 | [`sonderweg-tp-link-archer-c60-v1`](#familie-sonderweg-tp-link-archer-c60-v1) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c60-v1](#tp-link-archer-c60-v1) | TP-Link Archer C60 v1 | ath79-generic | K2 | [`sonderweg-tp-link-archer-c60-v1`](#familie-sonderweg-tp-link-archer-c60-v1) | webui-upload | nein | nein | teilweise | ja |  |
 | [tp-link-archer-c7-v2](#tp-link-archer-c7-v2) | TP-Link Archer C7 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [tp-link-archer-c7-v4](#tp-link-archer-c7-v4) | TP-Link Archer C7 v4 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [tp-link-archer-c7-v5](#tp-link-archer-c7-v5) | TP-Link Archer C7 v5 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
@@ -331,8 +331,8 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [aerohive-hiveap-121](#aerohive-hiveap-121) | Aerohive HiveAP 121 | ath79-nand | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ? | teilweise | ja |  |
 | [gl.inet-gl-ar300m-nor](#gl.inet-gl-ar300m-nor) | GL.iNet GL-AR300M NOR | ath79-nand | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
 | [gl.inet-gl-ar750s-nor](#gl.inet-gl-ar750s-nor) | GL.iNet GL-AR750S NOR | ath79-nand | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
-| [gl.inet-gl-e750](#gl.inet-gl-e750) | GL.iNet GL-E750 (broken) | ath79-nand | K2 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
-| [gl.inet-gl-xe300](#gl.inet-gl-xe300) | GL.iNet GL-XE300 | ath79-nand | K2 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
+| [gl.inet-gl-e750](#gl.inet-gl-e750) | GL.iNet GL-E750 (broken) | ath79-nand | K2 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | ja | ja |  |
+| [gl.inet-gl-xe300](#gl.inet-gl-xe300) | GL.iNet GL-XE300 | ath79-nand | K2 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | ja | ja |  |
 | [netgear-wndr3700-v4](#netgear-wndr3700-v4) | NETGEAR WNDR3700 v4 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [netgear-wndr4300](#netgear-wndr4300) | NETGEAR WNDR4300 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [zte-mf281](#zte-mf281) | ZTE MF281 (broken) | ath79-nand | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1e1695f959e678868bb7911d059b847f38fc9cf4 |
@@ -361,7 +361,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [gl.inet-gl-b1300](#gl.inet-gl-b1300) | GL.iNet GL-B1300 | ipq40xx-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | - |
 | [linksys-ea6350v3](#linksys-ea6350v3) | Linksys EA6350 v3 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
 | [linksys-ea8300-dallas](#linksys-ea8300-dallas) | Linksys EA8300 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
-| [linksys-mr8300-dallas](#linksys-mr8300-dallas) | Linksys MR8300 | ipq40xx-generic | K2 | [`sonderweg-linksys-mr8300-dallas`](#familie-sonderweg-linksys-mr8300-dallas) | webui-upload | nein | nein | teilweise |  | - |
+| [linksys-mr8300-dallas](#linksys-mr8300-dallas) | Linksys MR8300 | ipq40xx-generic | K2 | [`sonderweg-linksys-mr8300-dallas`](#familie-sonderweg-linksys-mr8300-dallas) | webui-upload | nein | nein | ja | ja | - |
 | [linksys-vlp01](#linksys-vlp01) | Linksys VLP01 (Alias von linksys-whw01) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/whw01_v1#installation |
 | [linksys-whw01](#linksys-whw01) | Linksys WHW01 v1 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/whw01_v1#installation |
 | [linksys-whw03-v2-velop](#linksys-whw03-v2-velop) | Linksys WHW03 v2 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/whw03_v2#oem_easy_installation |
@@ -474,7 +474,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [cudy-x6-v2](#cudy-x6-v2) | Cudy X6 v2 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
 | [d-link-covr-x1860-a1](#d-link-covr-x1860-a1) | D-Link COVR-X1860 A1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://freifunk-aachen.de/2023/08/03/installationsanleitung-d-link-covr-x1860/ |
 | [d-link-dap-1620-b1](#d-link-dap-1620-b1) | D-Link DAP-1620 B1 (Gluon: broken) | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e4c7703d2a62b8914e4723adae3f67c68a57532c |
-| [d-link-dap-x1860-a1](#d-link-dap-x1860-a1) | D-Link DAP-X1860 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-d-link-dap-x1860/987 |
+| [d-link-dap-x1860-a1](#d-link-dap-x1860-a1) | D-Link DAP-X1860 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | teilweise | ja | https://forum.darmstadt.freifunk.net/t/installation-d-link-dap-x1860/987 |
 | [d-link-dir-860l-b1](#d-link-dir-860l-b1) | D-Link DIR-860L B1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [d-link-dir-878-a1](#d-link-dir-878-a1) | D-Link DIR-878 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | https://openwrt.org/toh/d-link/dir-878_a1#installation |
 | [d-link-dir-882-a1](#d-link-dir-882-a1) | D-Link DIR-882 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | https://openwrt.org/toh/d-link/dir-882_a1#installation |
@@ -488,7 +488,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [netgear-r6260](#netgear-r6260) | NETGEAR R6260 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  |  |
 | [netgear-wac104](#netgear-wac104) | NETGEAR WAC104 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [netgear-wax202](#netgear-wax202) | NETGEAR WAX202 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/netgear/wax202#oem_easy_installation |
-| [netgear-wndr3700-v5](#netgear-wndr3700-v5) | NETGEAR WNDR3700 v5 (Gluon: broken, "untested") | ramips-mt7621 | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  |  |
+| [netgear-wndr3700-v5](#netgear-wndr3700-v5) | NETGEAR WNDR3700 v5 (Gluon: broken, "untested") | ramips-mt7621 | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | ja | ja |  |
 | [totolink-x5000r](#totolink-x5000r) | TOTOLINK X5000R | ramips-mt7621 | K1d | [`sonderweg-totolink-x5000r`](#familie-sonderweg-totolink-x5000r) | webui-upload | nein | nein | nein |  |  |
 | [tp-link-archer-ax23-v1](#tp-link-archer-ax23-v1) | TP-Link Archer AX23 v1 (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [tp-link-archer-c6-v3](#tp-link-archer-c6-v3) | TP-Link Archer C6 v3 (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
@@ -501,12 +501,12 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [ubiquiti-unifi-6-lite](#ubiquiti-unifi-6-lite) | Ubiquiti UniFi 6 Lite | ramips-mt7621 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://openwrt.org/toh/ubiquiti/unifi6lite#installation |
 | [ubiquiti-unifi-nanohd](#ubiquiti-unifi-nanohd) | Ubiquiti UniFi nanoHD | ramips-mt7621 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  |  |
 | [wavlink-ws-wn572hp3-4g](#wavlink-ws-wn572hp3-4g) | Wavlink WS-WN572HP3 4G | ramips-mt7621 | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6cd1035d8dc001561331ca9e613d7dfc7d0fd7a6 |
-| [xiaomi-mi-router-3g](#xiaomi-mi-router-3g) | Xiaomi Mi Router 3G | ramips-mt7621 | K2 | [`sonderweg-xiaomi-mi-router-3g`](#familie-sonderweg-xiaomi-mi-router-3g) | ssh | nein | nein | nein |  |  |
+| [xiaomi-mi-router-3g](#xiaomi-mi-router-3g) | Xiaomi Mi Router 3G | ramips-mt7621 | K2 | [`sonderweg-xiaomi-mi-router-3g`](#familie-sonderweg-xiaomi-mi-router-3g) | ssh | nein | nein | ja | ja |  |
 | [xiaomi-mi-router-3g-v2](#xiaomi-mi-router-3g-v2) | Xiaomi Mi Router 3G v2 | ramips-mt7621 | K2 | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  |  |
 | [xiaomi-mi-router-4a-gigabit-edition](#xiaomi-mi-router-4a-gigabit-edition) | Xiaomi Mi Router 4A Gigabit | ramips-mt7621 | K1d | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  | https://github.com/acecilia/OpenWRTInvasion/blob/master/README.md |
 | [xiaomi-mi-router-4a-gigabit-edition-v2](#xiaomi-mi-router-4a-gigabit-edition-v2) | Xiaomi Mi Router 4A Gigabit v2 | ramips-mt7621 | K1d | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  |  |
-| [xiaomi-mi-router-ac2100](#xiaomi-mi-router-ac2100) | Xiaomi Mi Router AC2100 (R2100) | ramips-mt7621 | K2 | [`xiaomi-ac2100-pppoe`](#familie-xiaomi-ac2100-pppoe) | ssh | nein | nein | nein |  |  |
-| [xiaomi-redmi-router-ac2100](#xiaomi-redmi-router-ac2100) | Xiaomi Redmi Router AC2100 (RM2100) | ramips-mt7621 | K2 | [`xiaomi-ac2100-pppoe`](#familie-xiaomi-ac2100-pppoe) | ssh | nein | nein | nein |  | https://openwrt.org/toh/xiaomi/xiaomi_redmi_router_ac2100 |
+| [xiaomi-mi-router-ac2100](#xiaomi-mi-router-ac2100) | Xiaomi Mi Router AC2100 (R2100) | ramips-mt7621 | K2 | [`xiaomi-ac2100-pppoe`](#familie-xiaomi-ac2100-pppoe) | ssh | nein | nein | ja | ja |  |
+| [xiaomi-redmi-router-ac2100](#xiaomi-redmi-router-ac2100) | Xiaomi Redmi Router AC2100 (RM2100) | ramips-mt7621 | K2 | [`xiaomi-ac2100-pppoe`](#familie-xiaomi-ac2100-pppoe) | ssh | nein | nein | ja | ja | https://openwrt.org/toh/xiaomi/xiaomi_redmi_router_ac2100 |
 | [zbtlink-zbt-wg3526-16m](#zbtlink-zbt-wg3526-16m) | ZBT WG3526 16M | ramips-mt7621 | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
 | [zbtlink-zbt-wg3526-32m](#zbtlink-zbt-wg3526-32m) | ZBT WG3526 32M | ramips-mt7621 | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
 | [zyxel-nwa50ax](#zyxel-nwa50ax) | ZyXEL NWA50AX (Alias NWA90AX) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964 |
@@ -3639,7 +3639,8 @@ D-Link DAP-X1860 A1 · ramips-mt7621 · K0
 - **RAM:** 256 MB
 - **Fehlerbild:** md5-Warnung der Recovery-Seite: harmlos [abgeleitet: Forum Darmstadt laut Notiz]
 - **Rückweg zur Herstellerfirmware:** D-Link-Firmware entpacken/entschlüsseln (tar, openssl, Befehl im Commit), kernel_DAP-X1860.bin per Recovery aufspielen [geprüft: Commit 3c31f6b]
-- **Gluon-RAMpe passt:** nicht nötig, falls factory klappt; sonst ja (Recovery nimmt laut Neanderfunk-Notiz ein initramfs)
+- **Gluon-RAMpe passt:** teilweise: Rückfall, falls das Gluon-factory nicht klappt: RAMpe-initramfs für die Web-Recovery statt OpenWrt-initramfs [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/d-link-dap-x1860-a1.sh: `-initramfs-kernel.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** 3c31f6b521bb5fc49e222a8f2bcd454b73452a0e
 - **Detail-Anleitung:** https://forum.darmstadt.freifunk.net/t/installation-d-link-dap-x1860/987
 
@@ -3987,7 +3988,8 @@ GL.iNet GL-E750 (broken) · ath79-nand · K2
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
 - **Dauer:** etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
-- **Gluon-RAMpe passt:** nein: U-Boot-Web nimmt NAND-factory.img (Kernel+UBI), kein initramfs [abgeleitet]
+- **Gluon-RAMpe passt:** ja: dauerhafte RAMpe als NAND-factory.img für die U-Boot-Web-Oberfläche statt OpenWrt-Zwischenschritt, danach Config-Mode der RAMpe und sysupgrade [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/gl.inet-gl-e750.sh: `-factory.img` (Kernel + UBI), broken = false für diesen Bau; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** 68ac3f2cddab8422d7de0ce1a78d23edf29012e7 [geprüft]
 
 #### gl.inet-gl-xe300
@@ -4020,7 +4022,8 @@ GL.iNet GL-XE300 · ath79-nand · K2
 - **RAM:** 128 MB [Commit]
 - **Dauer:** etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Rückweg zur Herstellerfirmware:** Stock-Firmware von GL.iNet laden und auf demselben U-Boot-Weg aufspielen [geprüft: Commit af8a059]
-- **Gluon-RAMpe passt:** nein: U-Boot-Rescue nimmt NAND-factory.img (Kernel+UBI), kein initramfs; eine Gluon-RAMpe in diesem Format wäre ein eigenes Projekt [abgeleitet]
+- **Gluon-RAMpe passt:** ja: dauerhafte RAMpe als NAND-factory.img für die U-Boot-Rescue statt OpenWrt-Zwischenschritt [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/gl.inet-gl-xe300.sh: `-factory.img` (Kernel + UBI); Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** af8a059bb41dd7afee49ce9a5d52e9a8e010bbd8 [geprüft]
 
 #### gl.inet-gl-ap1300
@@ -8069,7 +8072,8 @@ NETGEAR WNDR3700 v5 (Gluon: broken, "untested") · ramips-mt7621 · K0+
 - **Stock-Teile:** -
 - **RAM:** 128 MB
 - **Dauer:** nach dem Upload schreibt das Gerät; meist wenige Minuten, Berichte bis 15 Minuten und mehr; erst nach 'Reboot your device now.' Strom ziehen [geprüft: nmrpflash-README]
-- **Gluon-RAMpe passt:** nein, unnötig: OpenWrt baut ein factory.img (Sercomm), Gluon setzt trotzdem `factory = false`; mit factory wäre es K0
+- **Gluon-RAMpe passt:** ja: dauerhafte RAMpe als Sercomm-factory.img per nmrpflash statt OpenWrt-Zwischenschritt [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/netgear-wndr3700-v5.sh: `-factory.img` (Sercomm), broken = false für diesen Bau; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** cb049e71cdc08e17f664403a0ef970c480ae5c4a + 2fdd02cc7c3516c2cce2ace2c7b539e0821ecbe8 (factory-Image)
 
 #### netgear-r6020
@@ -9540,7 +9544,8 @@ D-Link DIR-825 B1 · ath79-generic · offen
 - **RAM:** ?
 - **Fehlerbild:** Recovery-Seite zeigt nicht 'Device is Upgrading the Firmware' mit Prozent: ungeeigneter Browser, einen der alten Browser nehmen [geprüft: Wiki toh:d-link:dir-825]
 - **Notweg:** [Alternative] Bis Stock 2.05WW Build 05Beta01 nimmt die normale Update-Seite der Stock-Firmware das OpenWrt-factory [geprüft: Wiki toh:d-link:dir-825]
-- **Gluon-RAMpe passt:** offen: nur wenn die D-Link-Recovery ein initramfs nimmt; Größe ist der Engpass [abgeleitet]
+- **Gluon-RAMpe passt:** offen: RAMpe-initramfs wird gebaut, um die Größe gegen die 6144k der D-Link-Recovery zu sehen; ob die Recovery es nimmt, ist offen [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/d-link-dir825b1.sh: `-initramfs-kernel.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** 97de133368762824ba3d7e9d95f97011a597ec1a (ohne Anleitung); 4309be6bcb3d3cbf8fa5ae7eddb1520737542c6c (factory entfernt) [geprüft]
 
 ### Familie `sonderweg-devolo-dlan-pro-1200+-wifi-ac`
@@ -9771,7 +9776,8 @@ Linksys MR8300 · ipq40xx-generic · K2
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_mr8300-squashfs-factory.bin)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
-- **Gluon-RAMpe passt:** teilweise: eine Gluon-RAMpe bräuchte das Linksys-factory-Format (Kernel + UBI, linksys-image), kein initramfs; einfacher wäre `factory` in Gluon einzuschalten [abgeleitet]
+- **Gluon-RAMpe passt:** ja: dauerhafte RAMpe als Linksys-factory.bin für die Linksys-UI statt OpenWrt-Zwischenschritt [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/linksys-mr8300-dallas.sh: `-factory.bin` (linksys-image type=MR8300); Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** OpenWrt a9071d02b5ab11fbd73ea42076a09f2fd8136517
 - **Detail-Anleitung:** -
 
@@ -9917,7 +9923,8 @@ TP-Link Archer C60 v1 · ath79-generic · K2
 - **Stock-Teile:** keine
 - **RAM:** 64 MB [Commit]
 - **Notweg:** [Notfall] TFTP-Recovery (nur mit factory-Image): Gerät aus, Reset halten, einschalten, ca. 15 s halten, loslassen [geprüft: Commit 6d313da]; Rechner feste IP 192.168.0.66, Datei genau `tp_recovery.bin` (= factory) [geprüft: Commit]; dauert ca. 30 s [geprüft: Commit]. Ohne factory-Image: Gehäuse öffnen, UART-Header auf der Platine, im U-Boot das sysupgrade per TFTP laden und nach 0x9f020000 schreiben [geprüft]
-- **Gluon-RAMpe passt:** nein: TP-Link-Web/-TFTP nehmen nur safeloader-factory, kein initramfs; im UART-Weg teilweise
+- **Gluon-RAMpe passt:** teilweise: nur im UART-Weg, RAMpe-initramfs per TFTP in den RAM statt sysupgrade nach 0x9f020000; 64 MB RAM knapp [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/tp-link-archer-c60-v1.sh: `-initramfs-kernel.bin` für U-Boot/TFTP; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** 6d313da6dc5f655d92aa86e2ec42ecfcf763df3d [geprüft]; Gluon c2fc4e5a (factory = false ohne Begründung, PR #3034 hakt "flashable from vendor firmware" an)
 
 ### Familie `sonderweg-tp-link-td-w8970`
@@ -10057,7 +10064,8 @@ Xiaomi Mi Router 3G · ramips-mt7621 · K2
 - **Factory-/Stock-Image-Link:** [squashfs-kernel1.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_mi-router-3g-squashfs-kernel1.bin) (200), [squashfs-rootfs0.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_mi-router-3g-squashfs-rootfs0.bin) (200)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Gluon-RAMpe passt:** nein: Gluon baut kernel1/rootfs0 nicht, OpenWrt-Images nötig; Gluon-RAMpe ersetzte nur LuCI, wenn ein initramfs in kernel1 bootet (ungeprüft)
+- **Gluon-RAMpe passt:** ja: dauerhafte RAMpe als kernel1.bin + rootfs0.bin statt der OpenWrt-Images [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/xiaomi-mi-router-3g.sh: `-kernel1.bin` und `-rootfs0.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** 6e283cdc0da25928f8148805ebef7f8f2b769ee8
 
 ### Familie `sonderweg-xiaomi-mi-router-ax3000t`
@@ -11963,7 +11971,8 @@ Xiaomi Mi Router AC2100 (R2100) · ramips-mt7621 · K2
 - **Factory-/Stock-Image-Link:** [squashfs-kernel1.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_mi-router-ac2100-squashfs-kernel1.bin) (200), [squashfs-rootfs0.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_mi-router-ac2100-squashfs-rootfs0.bin) (200)
 - **Stock-Teile:** -
 - **RAM:** 128 MB
-- **Gluon-RAMpe passt:** nein: OpenWrt-kernel1/rootfs0 nötig, Gluon baut sie nicht
+- **Gluon-RAMpe passt:** ja: dauerhafte RAMpe als kernel1.bin + rootfs0.bin statt der OpenWrt-Images [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/xiaomi-mi-router-ac2100.sh: `-kernel1.bin` und `-rootfs0.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** 53a1fede1f9856b61092ce4693e7610a515d562b
 
 #### xiaomi-redmi-router-ac2100
@@ -11979,7 +11988,8 @@ Xiaomi Redmi Router AC2100 (RM2100) · ramips-mt7621 · K2
 - **Factory-/Stock-Image-Link:** [squashfs-kernel1.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_redmi-router-ac2100-squashfs-kernel1.bin) (200), [squashfs-rootfs0.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_redmi-router-ac2100-squashfs-rootfs0.bin) (200)
 - **Stock-Teile:** -
 - **RAM:** 128 MB
-- **Gluon-RAMpe passt:** nein: OpenWrt-kernel1/rootfs0 nötig, Gluon baut sie nicht
+- **Gluon-RAMpe passt:** ja: dauerhafte RAMpe als kernel1.bin + rootfs0.bin statt der OpenWrt-Images [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/xiaomi-redmi-router-ac2100.sh: `-kernel1.bin` und `-rootfs0.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** f3792690c4f0567a8965d82898295b9d50c3bb7e
 - **Detail-Anleitung:** https://openwrt.org/toh/xiaomi/xiaomi_redmi_router_ac2100
 

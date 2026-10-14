@@ -37,18 +37,22 @@ legt das Image des Hauptnamens unter beiden Namen ab.
 | Gerät | Gluon-Name | Target | Kat. | Rezept und Stand |
 |---|---|---|---|---|
 | D-Link DIR-505 | `d-link-dir-505` | ath79-generic | K4 | devices/d-link-dir-505.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; UART, IPs und Ladeadresse nicht belegt; 64 MB RAM |
+| D-Link DIR-825 B1 | `d-link-dir825b1` | ath79-generic | offen | devices/d-link-dir825b1.sh: `-initramfs-kernel.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet |
 | Enterasys WS-AP3705i | `enterasys-ws-ap3705i` | ath79-generic | K4 | devices/enterasys-ws-ap3705i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `1401A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell |
 | Extreme Networks WS-AP3805i | `extreme-networks-ws-ap3805i` | ath79-generic | K4 | devices/extreme-networks-ws-ap3805i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `1D01A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell |
 | Ocedo Koala | `ocedo-koala` | ath79-generic | K1 | devices/ocedo-koala.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `koala-uImage-initramfs-lzma.bin` per TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`fw_setenv bootcmd run bootcmd_1`) |
 | Ocedo Raccoon | `ocedo-raccoon` | ath79-generic | K1 | devices/ocedo-raccoon.sh (Rezept-Entwurf, nicht gebaut): wie Koala, als `raccoon-uImage-initramfs-lzma.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`fw_setenv`) |
 | Siemens WS-AP3610 | `siemens-ws-ap3610` | ath79-generic | K4 | devices/siemens-ws-ap3610.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma statt unkomprimiert wie bei OpenWrt) als `1401A8C0.img` per U-Boot-TFTP |
 | Sophos AP15 (broken) | `sophos-ap15` | ath79-generic | K4 | devices/sophos-ap15.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-"broken"-Gerät gezielt; `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; RAM nicht belegt |
+| TP-Link Archer C60 v1 | `tp-link-archer-c60-v1` | ath79-generic | K2 | devices/tp-link-archer-c60-v1.sh: `-initramfs-kernel.bin` für U-Boot/TFTP; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet |
 | TP-Link Archer D50 v1 (broken) | `tp-link-archer-d50-v1` | ath79-generic | K4 | devices/tp-link-archer-d50-v1.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-"broken"-Gerät gezielt; `initramfs-kernel.bin` (lzma, TP-Link-Header) per U-Boot-TFTP; 64 MB RAM knapp |
 | MikroTik RouterBOARD 951Ui-2nD (hAP) | `mikrotik-routerboard-951ui-2nd-hap` | ath79-mikrotik | K1 | devices/mikrotik-routerboard-951ui-2nd-hap.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp |
 | MikroTik RouterBOARD mAPL-2nD (mAP lite) | `mikrotik-routerboard-mapl-2nd` | ath79-mikrotik | K1 | devices/mikrotik-routerboard-mapl-2nd.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp |
 | MikroTik RouterBOARD wAP G-5HacT2HnD (wAP AC) | `mikrotik-routerboard-wap-g-5hact2hnd` | ath79-mikrotik | K1 | devices/mikrotik-routerboard-wap-g-5hact2hnd.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM mit ath10k am knappsten |
 | MikroTik RouterBOARD wAPR-2nD (wAP R) | `mikrotik-routerboard-wapr-2nd` | ath79-mikrotik | K1 | devices/mikrotik-routerboard-wapr-2nd.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp |
 | Aerohive HiveAP 121 | `aerohive-hiveap-121` | ath79-nand | K4 | devices/aerohive-hiveap-121.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; Gluon-factory per `nand write` ist der einfachere Weg |
+| GL.iNet GL-E750 (broken) | `gl.inet-gl-e750` | ath79-nand | K2 | devices/gl.inet-gl-e750.sh: `-factory.img` (Kernel + UBI), broken = false für diesen Bau; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet |
+| GL.iNet GL-XE300 | `gl.inet-gl-xe300` | ath79-nand | K2 | devices/gl.inet-gl-xe300.sh: `-factory.img` (Kernel + UBI); Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet |
 | ZTE MF281 (broken) | `zte-mf281` | ath79-nand | K4 | devices/zte-mf281.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-"broken"-Gerät gezielt; `initramfs-kernel.bin` als `speedbox-2.bin` per U-Boot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubiformat`, nicht durch den Commit gedeckt) |
 | ZTE MF286R (broken) | `zte-mf286r` | ath79-nand | K1 | devices/zte-mf286r.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` per `nandwrite` nach dem Exploit (Weg nur für die MF286A belegt) |
 | Aruba AP-303 | `aruba-ap-303` | ipq40xx-generic | K4 | devices/aruba-ap-303.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `ipq40xx.ari` per APBoot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`) |
@@ -63,6 +67,7 @@ legt das Image des Hauptnamens unter beiden Namen ab.
 | AVM FRITZ!Repeater 1200 | `avm-fritz-repeater-1200` | ipq40xx-generic | K2 | devices/avm-fritz-repeater-1200.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `FRITZ1200.bin` + `uboot-fritz1200.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (U-Boot schreiben, `ubirmvol`) |
 | AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) | `avm-fritz-repeater-3000` | ipq40xx-generic | K2 | devices/avm-fritz-repeater-3000.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `FRITZ3000.bin` + `uboot-fritz3000.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (U-Boot schreiben, `ubirmvol`) |
 | Extreme Networks WS-AP3915i | `extreme-networks-ws-ap3915i` | ipq40xx-generic | K4 | devices/extreme-networks-ws-ap3915i.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `openwrt-3915.bin` per U-Boot-TFTP |
+| Linksys MR8300 | `linksys-mr8300-dallas` | ipq40xx-generic | K2 | devices/linksys-mr8300-dallas.sh: `-factory.bin` (linksys-image type=MR8300); Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet |
 | ZTE MF289F | `zte-mf289f` | ipq40xx-generic | K4 | devices/zte-mf289f.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-"broken"-Gerät gezielt; `-initramfs-zImage.itb` per U-Boot-TFTP; Vorbereitung (`ubirmvol`) muss schon vor der Imageprüfung laufen, fehlt der RAMpe-Seite noch |
 | MikroTik DISC Lite5 ac (Alias von mikrotik-sxtsq-5-ac-rbsxtsqg-5acd) | `mikrotik-discg-5acd` | ipq40xx-mikrotik | K1 | Alias: Image aus devices/mikrotik-sxtsq-5-ac-rbsxtsqg-5acd.sh; RAM des DISC nicht belegt |
 | MikroTik hAP ac2 (RBD52G-5HacD2HnD) | `mikrotik-hap-ac2` | ipq40xx-mikrotik | K1 | devices/mikrotik-hap-ac2.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); schaltet Gluons "factory" (= Community-initramfs ohne Config-Mode) ab |
@@ -94,8 +99,13 @@ legt das Image des Hauptnamens unter beiden Namen ab.
 | TP-Link EAP620 HD v1 | `tp-link-eap620-hd-v1` | qualcommax-ipq807x | K4 | devices/tp-link-eap620-hd-v1.sh (Rezept-Entwurf, nicht gebaut): Backport aus gluon-patches-hardware (`RAMPE_HW_PATCHES`); `-initramfs-uImage.itb` per U-Boot-TFTP |
 | Xiaomi AX3600 | `xiaomi-ax3600` | qualcommax-ipq807x | K2 | devices/xiaomi-ax3600.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt |
 | ASUS RT-AX53U (RT-AX1800U) | `asus-rt-ax53u` | ramips-mt7621 | K1 | devices/asus-rt-ax53u.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per ASUS-Rescue (TFTP put) |
+| D-Link DAP-X1860 A1 | `d-link-dap-x1860-a1` | ramips-mt7621 | K0 | devices/d-link-dap-x1860-a1.sh: `-initramfs-kernel.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet |
 | Genexis/Inteno Pulse EX400 | `genexis-pulse-ex400` | ramips-mt7621 | K1 | devices/genexis-pulse-ex400.sh (Rezept-Entwurf, nicht gebaut): `-factory.bin` (initramfs in UBIFS-bootfs, Inteno-Kopf); bootfs höchstens etwa 11.6 MiB |
 | MikroTik hEX RB750Gr3 (Alias mikrotik-routerboard-hex-v3) | `mikrotik-routerboard-750gr3` | ramips-mt7621 | K1 | devices/mikrotik-routerboard-750gr3.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` (ELF); Netboot (BOOTP/DHCP + TFTP) |
+| NETGEAR WNDR3700 v5 (Gluon: broken, "untested") | `netgear-wndr3700-v5` | ramips-mt7621 | K0+ | devices/netgear-wndr3700-v5.sh: `-factory.img` (Sercomm), broken = false für diesen Bau; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet |
+| Xiaomi Mi Router 3G | `xiaomi-mi-router-3g` | ramips-mt7621 | K2 | devices/xiaomi-mi-router-3g.sh: `-kernel1.bin` und `-rootfs0.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet |
+| Xiaomi Mi Router AC2100 (R2100) | `xiaomi-mi-router-ac2100` | ramips-mt7621 | K2 | devices/xiaomi-mi-router-ac2100.sh: `-kernel1.bin` und `-rootfs0.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet |
+| Xiaomi Redmi Router AC2100 (RM2100) | `xiaomi-redmi-router-ac2100` | ramips-mt7621 | K2 | devices/xiaomi-redmi-router-ac2100.sh: `-kernel1.bin` und `-rootfs0.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet |
 | ZyXEL WSM20 (Multy M1) | `zyxel-wsm20` | ramips-mt7621 | K1 | devices/zyxel-wsm20.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (znet-Header schon drin) für die versteckte Upgrade-Seite |
 | x86 (x86-64) | `x86-64` | x86-64 | K0 | devices/x86-64.sh: Testgerät, in QEMU Ende-zu-Ende geprüft |
 
@@ -125,6 +135,23 @@ contrib/docker/run.sh ./build.sh ath79-nand zte-mf286r zte-mf281 aerohive-hiveap
 contrib/docker/run.sh ./build.sh mpc85xx-p1020 ocedo-panda enterasys-ws-ap3710i extreme-networks-ws-ap3825i aerohive-hiveap-330
 contrib/docker/run.sh ./build.sh mpc85xx-p1010 enterasys-ws-ap3715i sophos-red-15w-rev.1
 ```
+
+Dazu seit 14.10.2026 Geräte, die ab Werk ein dauerhaftes OpenWrt im
+Hersteller-Format brauchen, weil Gluon dafür nur sysupgrade baut (die RAMpe
+entsteht dann selbst in diesem Format: NAND-`factory.img`, Linksys- und
+Sercomm-factory, Xiaomi `kernel1.bin` + `rootfs0.bin`), und Geräte, bei denen
+nur ein initramfs per UART oder Recovery hilft:
+
+```sh
+contrib/docker/run.sh ./build.sh ath79-nand gl.inet-gl-e750 gl.inet-gl-xe300
+contrib/docker/run.sh ./build.sh ipq40xx-generic linksys-mr8300-dallas
+contrib/docker/run.sh ./build.sh ramips-mt7621 netgear-wndr3700-v5 xiaomi-mi-router-3g xiaomi-mi-router-ac2100 xiaomi-redmi-router-ac2100 d-link-dap-x1860-a1
+contrib/docker/run.sh ./build.sh ath79-generic tp-link-archer-c60-v1 d-link-dir825b1
+```
+
+Eine dauerhaft geflashte RAMpe startet wie jedes unkonfigurierte Gluon im
+Config-Mode (90_setup_mode), dort ist die Upload-Seite [abgeleitet, am Gerät
+noch nicht erprobt].
 
 `ramips-mt7621` lässt sich auch in einem Lauf mit RT-AX53U, EX400 und WSM20
 bauen. Alias-Namen (DISC Lite5 ac zu SXTsq 5 ac) nicht als Gerät angeben,
