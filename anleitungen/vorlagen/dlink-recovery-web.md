@@ -28,7 +28,8 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
   optional (leer = Satz entfällt)
     led_recovery         sichtbares Zeichen der Recovery, als Satzende nach
                          "bis die LED …", z. B. "rot blinkt"; leer = nicht belegt
-    anschluss            welche Buchse, z. B. "LAN1"
+    anschluss            nach "und zwar mit …", z. B. "der Buchse LAN1" oder
+                         "einer der LAN-Buchsen, nicht mit WAN"
     taste_hinweis        z. B. "Nur die Reset-Taste führt in die Recovery, keine andere."
     led_falsch           was NICHT die Recovery ist
     recovery_wartezeit   Wartezeit, bis die Recovery-Seite bereit ist
@@ -91,7 +92,7 @@ wirklich über das Kabel spricht.
    [Feste IP-Adresse einstellen](grundlagen/feste-ip.md).
 
 3. **Kabel stecken.** Verbinde den Rechner mit dem Router
-   {%- if w.anschluss %}, und zwar mit der Buchse **{{ w.anschluss }}**{% endif %}.
+   {%- if w.anschluss %}, und zwar mit {{ w.anschluss }}{% endif %}.
    Der Router hat noch keinen Strom.
 
 4. **Router in die Recovery bringen.** Drück mit der Büroklammer die
