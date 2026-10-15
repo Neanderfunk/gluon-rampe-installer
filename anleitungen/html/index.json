@@ -42,6 +42,20 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "asus-tuf-ax4200",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/asus-tuf-ax4200.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "asus-tuf-ax6000",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/asus-tuf-ax6000.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "avm-fritz-box-3370-rev-2-hynix-nand",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-3370-rev-2-hynix-nand.html",
   "status": "ungeprüft",

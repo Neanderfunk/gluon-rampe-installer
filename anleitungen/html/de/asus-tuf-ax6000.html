@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASUS TUF-AX6000: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="asus-tuf-ax6000">
+<meta name="anleitung:modell" content="ASUS TUF-AX6000">
+<meta name="anleitung:anzeige" content="ASUS TUF-AX6000">
+<meta name="anleitung:familie" content="asus-tuf-herbetom">
+<meta name="anleitung:gluon_broken" content="false">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="fortgeschritten">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="ssh-scp">
+<meta name="anleitung:daten_stand" content="a602f5a">
+<meta name="anleitung:vorlage_stand" content="0a1a0e7">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<h1>ASUS TUF-AX6000: Freifunk-Firmware installieren</h1>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> So beschreiben die Entwickler von OpenWrt
+bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
+ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
+klappt.
+Freifunk Darmstadt beschreibt denselben Weg für ihre Freifunk-Firmware.</p>
+<p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+Anleitung für alle nach dir besser:</p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20ASUS%20TUF-AX6000">projekt@neanderfunk.de</a></p>
+</blockquote>
+<p>Die ASUS-Firmware nimmt keine fremde Firmware über ihre Weboberfläche an.
+Der Weg führt über SSH, also die Anmeldung im Terminal, und hat drei
+Etappen:</p>
+<ol>
+<li><strong>Ein kleines OpenWrt in den Speicher schreiben.</strong> Du meldest dich per
+SSH an der ASUS-Firmware an. Der Router holt sich eine OpenWrt-Datei von
+deinem Rechner und schreibt sie anstelle der ASUS-Firmware in den
+Speicher.</li>
+<li><strong>OpenWrt starten.</strong> Nach einem Neustart läuft dieses kleine OpenWrt.</li>
+<li><strong>Die Freifunk-Firmware aufspielen.</strong> Aus OpenWrt heraus installierst du
+die Freifunk-Firmware deiner Community.</li>
+</ol>
+<p>Du brauchst dafür SSH und scp (<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>)
+und Python 3 auf deinem Rechner. Rechne mit einer Dreiviertelstunde.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>den Router mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
+Netzwerkkabel</li>
+<li><code>ssh</code> und <code>scp</code> (<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>)</li>
+<li><strong>Python 3</strong>. Unter Linux und macOS ist es meist schon da, unter Windows
+bekommst du es bei <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>.</li>
+<li>diese zwei Dateien:
+<ol>
+<li>das OpenWrt-&quot;factory-initramfs&quot; für den ASUS TUF-AX6000:
+<a href="https://github.com/herbetom/openwrt-asus-filogic-factory/releases/download/filogic-v2/openwrt-mediatek-filogic-asus_tuf-ax6000-initramfs-kernel.bin">openwrt-mediatek-filogic-asus_tuf-ax6000-initramfs-kernel.bin</a>. Die Datei hat ein Freifunk-Entwickler für genau diesen Zweck gebaut (Dezember 2023); eine offizielle Datei von OpenWrt dafür gibt es nicht.</li>
+<li>die Freifunk-Firmware deiner Community für den ASUS TUF-AX6000, und zwar
+das <strong>sysupgrade</strong>-Image. Benenn es in <code>gluon.bin</code> um, dann passen die
+Befehle unten ohne Änderung.</li>
+</ol>
+</li>
+</ul>
+<h2>Schritte</h2>
+<h3>OpenWrt in den Speicher schreiben</h3>
+<ol>
+<li>
+<p><strong>Webserver auf dem Rechner starten.</strong> Leg einen Ordner <code>openwrt-webroot</code>
+an, kopier die OpenWrt-Datei hinein und benenn sie dort in <code>openwrt.bin</code>
+um. Öffne ein Terminal in dem Ordner, <strong>in dem</strong> <code>openwrt-webroot</code> liegt,
+und starte:</p>
+<pre><code>python3 -m http.server -d openwrt-webroot 8080
+</code></pre>
+<p>Unter Windows heißt der Befehl <code>py</code> statt <code>python3</code>. Erlaube der
+Windows-Firewall beim ersten Start den Zugriff. Lass das Terminal offen,
+bis Schritt 6 vorbei ist.</p>
+</li>
+<li>
+<p><strong>Router einrichten.</strong> Steck das Kabel vom Rechner in eine LAN-Buchse des
+Routers und schalte ihn ein. Der Rechner bleibt auf &quot;automatisch&quot; (DHCP).
+Öffne <code>http://192.168.50.1</code> und geh den Einrichtungsassistenten der
+ASUS-Firmware durch. Merk dir den Benutzernamen und das Passwort, das du
+dort vergibst.</p>
+</li>
+<li>
+<p><strong>SSH einschalten.</strong> In der ASUS-Oberfläche unter <strong>Administration →
+System → Service</strong> SSH einschalten, und zwar <strong>&quot;LAN only&quot;</strong>, mit
+Anmeldung per Passwort, Port <strong>22</strong>. Speichern.</p>
+</li>
+<li>
+<p><strong>Anmelden.</strong> In einem zweiten Terminal auf deinem Rechner (statt <code>admin</code>
+den Benutzernamen aus Schritt 2):</p>
+<pre><code>ssh admin@192.168.50.1
+</code></pre>
+</li>
+<li>
+<p><strong>Dem Router deinen Rechner bekannt machen.</strong> Gib auf dem Router ein:</p>
+<pre><code>echo &quot;${SSH_CLIENT%% *} openwrtimage.lan&quot; &gt;&gt; /etc/hosts
+tail -1 /etc/hosts
+</code></pre>
+<p><strong>Prüfen:</strong> Die letzte Zeile lautet etwa <code>192.168.50.123 openwrtimage.lan</code>,
+also eine Adresse und dahinter <code>openwrtimage.lan</code>. Steht vorn keine
+Adresse, such die Adresse deines Rechners heraus (Windows: <code>ipconfig</code>,
+Linux: <code>ip addr</code>, macOS: <code>ipconfig getifaddr en0</code>) und trag sie von Hand
+ein, zum Beispiel:</p>
+<pre><code>echo &quot;192.168.50.123 openwrtimage.lan&quot; &gt;&gt; /etc/hosts
+</code></pre>
+</li>
+<li>
+<p><strong>OpenWrt holen.</strong> Auf dem Router:</p>
+<pre><code>wget -O /tmp/openwrt.bin http://openwrtimage.lan:8080/openwrt.bin
+</code></pre>
+<p><strong>Prüfen:</strong> <code>wget</code> meldet keinen Fehler, und im Terminal mit dem
+Webserver erscheint eine Zeile mit <code>GET /openwrt.bin</code> und <code>200</code>. Sonst
+hier aufhören und Schritt 1 und 5 prüfen.</p>
+</li>
+<li>
+<p><strong>Schreiben.</strong> Jetzt wird die ASUS-Firmware überschrieben.</p>
+<blockquote>
+<p><strong>Ab dem ersten Befehl, bis <code>mtd-write</code> fertig ist, auf keinen Fall den
+Strom ziehen.</strong> In dieser Zeit ist die ASUS-Firmware schon gelöscht und
+OpenWrt noch nicht vollständig geschrieben. Dann hilft nur noch die
+serielle Konsole.</p>
+</blockquote>
+<p>Gib die beiden Befehle nacheinander ein, genau so:</p>
+<pre><code>mtd-erase -d linux
+mtd-write -i /tmp/openwrt.bin -d linux
+</code></pre>
+<p>Beide Befehle zeigen keinen Fortschritt. Warte, bis die Eingabe wieder
+erscheint.</p>
+</li>
+</ol>
+<h3>OpenWrt starten</h3>
+<ol start="8">
+<li><strong>Neu starten.</strong> Zieh den Stecker des Netzteils, warte ein paar Sekunden
+und steck ihn wieder ein. Nach etwa einer Minute läuft OpenWrt unter
+<code>192.168.1.1</code>. Damit dein Rechner eine passende Adresse bekommt, zieh das
+Netzwerkkabel am Rechner kurz ab und steck es wieder ein.</li>
+</ol>
+<h3>Freifunk-Firmware aufspielen</h3>
+<ol start="9">
+<li>
+<p><strong>Freifunk-Firmware kopieren und installieren.</strong> Im Terminal auf deinem
+Rechner, im Ordner mit <code>gluon.bin</code>:</p>
+<pre><code>scp -O gluon.bin root@192.168.1.1:/tmp/gluon.bin
+ssh root@192.168.1.1 &quot;sysupgrade -n /tmp/gluon.bin&quot;
+</code></pre>
+<p>Ein Passwort gibt es nicht. Nach dem zweiten Befehl bricht die Verbindung
+ab, oft mit einer Meldung wie <code>Command failed: … (Connection failed)</code>.
+Das ist harmlos.</p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Einige Minuten warten, Strom nicht ziehen. Danach startet
+die Freifunk-Firmware deiner Community: je nach Community zuerst mit
+einer Einrichtungsseite unter <code>http://192.168.1.1</code> oder gleich im
+Betrieb. Den Webserver aus Schritt 1 kannst du mit Strg+C beenden.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>In Schritt 5 steht eine Adresse vor <code>openwrtimage.lan</code>.</li>
+<li>In Schritt 6 zeigt der Webserver <code>GET /openwrt.bin</code> mit <code>200</code>.</li>
+<li>Nach Schritt 8 antwortet OpenWrt unter <code>192.168.1.1</code>.</li>
+<li>Nach Schritt 10 meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong><code>ssh</code> kommt in Schritt 4 nicht durch.</strong> Prüf in der ASUS-Oberfläche, ob
+SSH an ist, &quot;LAN only&quot; und Port 22. Den Benutzernamen hast du im
+Assistenten selbst vergeben.</li>
+<li><strong><code>wget</code> meldet einen Fehler.</strong> Läuft der Webserver noch? Lässt die
+Firewall deines Rechners Port 8080 durch? Stimmt die Adresse in
+<code>/etc/hosts</code> (Schritt 5)? Liegt <code>openwrt.bin</code> wirklich im Ordner
+<code>openwrt-webroot</code>?</li>
+<li><strong>Nach Schritt 8 antwortet nichts unter <code>192.168.1.1</code>.</strong> Warte noch etwas
+und steck das Netzwerkkabel am Rechner neu ein. Kommt auch nach fünf
+Minuten nichts, schreib uns. Weiter geht es dann nur über die serielle
+Konsole im Router.</li>
+<li><strong>Meldet <code>ssh</code> &quot;REMOTE HOST IDENTIFICATION HAS CHANGED&quot;</strong>, siehe
+<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>.</li>
+</ul>
+<h2>Zurück zur ASUS-Firmware</h2>
+<p>Laut OpenWrt-Wiki hilft dafür das ASUS-Werkzeug &quot;Firmware Restoration&quot; mit
+dem Rettungsmodus des Routers. Ausprobiert haben wir es nicht.</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Sichtbare Zeichen, Datei, Gluon-RAMpe passt)</li>
+<li>abgeleitet: Commit 237b1c2 zum TUF-AX4200Q (Anschluss, Adressen)</li>
+<li>abgeleitet: Herstellerfirmware ab Werk, SSH nur LAN (Anschluss)</li>
+<li>abgeleitet: OpenWrt-Standard (Zugang)</li>
+<li>abgeleitet: Release-Text herbetom filogic-v2 nennt keine (Taste und Zeitpunkt)</li>
+<li>abgeleitet: Release-Text herbetom filogic-v2, Commits (Warnung)</li>
+<li>abgeleitet: Wiki toh/asus/tuf-ax6000 (Typenschild/Verwechslung, Notweg, Rückweg zur Herstellerfirmware)</li>
+<li>abgeleitet: dasselbe Wiki, Debricking (Rückweg zur Herstellerfirmware)</li>
+<li>abgeleitet: dropbear setzt SSH_CLIENT (Schritte (Normalweg))</li>
+<li>geprüft (Weg ab Werk, Datei, Gehäuse öffnen)</li>
+<li>geprüft: Commit d522cce (Notweg)</li>
+<li>geprüft: Commit d522cce; Ersetzen abgeleitet (Notweg)</li>
+<li>geprüft: Commits e7c399b, d522cce (Warnung)</li>
+<li>geprüft: DTS am Pin, led-boot/running = led_system (Sichtbare Zeichen)</li>
+<li>geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext (Schritte (Normalweg), Adressen, Zugang, Datei)</li>
+<li>geprüft: Release-Text (Weg ab Werk)</li>
+<li>geprüft: Release-Text herbetom filogic-v2 (Schritte (Normalweg), Sichtbare Zeichen, Adressen, Programm, Zugang, Datei)</li>
+<li>Geräteeintrag: OpenWrt d522ccecb28f941aadcaf7a50cd6daa861f468a7</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>
