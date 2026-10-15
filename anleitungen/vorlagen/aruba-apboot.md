@@ -10,8 +10,9 @@ alle David Bauer; OpenWrt-Wiki toh:aruba:ap-303 (nandboot mit
 harmlos, billige Adapter versagten), toh:aruba:ap-303h (wählerischer
 Konsolenanschluss).
 
-Abschnitt "älteren Bootloader aufspielen" (nur mit bootm_weg = "apboot",
-gedacht für den AP11): Freifunk-Darmstadt-Wiki "Aruba AP11" (blocktrron, APBoot
+Teil "Älteren Bootloader aufspielen" (nur mit bootm_weg = "apboot", AP11),
+steht als fester erster Teil vor "OpenWrt starten", weil praktisch alle
+Geräte den neuen Bootloader haben (adorfer 15.10.2026): Freifunk-Darmstadt-Wiki "Aruba AP11" (blocktrron, APBoot
 2.6.2.9 getestet). Die Adressen sind dort 192.168.1.6/.66, hier an den
 übrigen Weg angeglichen (192.168.1.105/.75). Die Datei (APBoot 2.5.0.2) stellt
 Neanderfunk selbst bereit (Auftrag adorfer 15.10.2026); ihre SHA256 ist die,
@@ -41,8 +42,8 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
                          Netzwerkbuchse"
     ssh_buchse           Buchse für scp/ssh, wenn sie anders ist, z. B. "E1, E2
                          oder E3" (AP-303H)
-    bootm_weg            "apboot": Abschnitt "älteren Bootloader aufspielen"
-                         zeigen (nur AP11)
+    bootm_weg            "apboot": Teil "Älteren Bootloader aufspielen" als
+                         ersten Teil zeigen (nur AP11)
     apboot_datei, apboot_url, apboot_sha256
                          bei bootm_weg nötig: der ältere Bootloader
                          (ap303-loader-2.5.0.2.bin, 983.040 Bytes,
@@ -71,7 +72,21 @@ Aruba-Access-Points nehmen eine fremde Firmware nicht über ihre
 Weboberfläche an. Der Weg führt über die **serielle Konsole**, also ein
 Kabel, über das du den Bootloader des Geräts (bei Aruba heißt er "APBoot")
 direkt bedienst. Das Gehäuse musst du dafür nicht öffnen.
+{% if apboot %}
+Der Weg hat drei Etappen:
 
+1. **Älteren Bootloader aufspielen.** Praktisch alle Geräte dieses Typs
+   haben inzwischen einen Bootloader, aus dem der Hersteller Befehle
+   entfernt hat, die OpenWrt braucht. Du ersetzt ihn zuerst durch eine
+   ältere Fassung. Das ist der heikelste Teil; lies ihn vorher einmal ganz
+   durch.
+2. **OpenWrt starten.** Du stellst den Bootloader so ein, dass er ein
+   kleines OpenWrt per TFTP von deinem Rechner holt und startet. Es läuft
+   nur im Arbeitsspeicher.
+3. **Die Freifunk-Firmware aufspielen.** Aus diesem OpenWrt heraus bereitest
+   du den Speicher vor und installierst die Freifunk-Firmware deiner
+   Community.
+{% else %}
 Der Weg hat zwei Etappen:
 
 1. **OpenWrt starten.** Du stellst den Bootloader so ein, dass er ein
@@ -80,7 +95,7 @@ Der Weg hat zwei Etappen:
 2. **Die Freifunk-Firmware aufspielen.** Aus diesem OpenWrt heraus bereitest
    du den Speicher vor und installierst die Freifunk-Firmware deiner
    Community.
-
+{% endif %}
 Dafür brauchst du drei Werkzeuge, die auf eigenen Seiten erklärt sind:
 [Serielle Konsole benutzen](grundlagen/serielle-konsole.md),
 [TFTP-Server einrichten](grundlagen/tftp-server.md) und
@@ -120,8 +135,7 @@ einer Stunde, ohne das Kabel zu bauen.
      das **sysupgrade**-Image. Benenn es in `gluon.bin` um, dann passen die
      Befehle unten ohne Änderung.
 {%- if apboot %}
-  3. nur wenn dein Gerät den neueren Bootloader hat (siehe "Älteren
-     Bootloader aufspielen" unten): den älteren Bootloader
+  3. den älteren Bootloader
      [{{ w.apboot_datei }}]({{ w.apboot_url }}), SHA256
      `{{ w.apboot_sha256 }}`. Leg ihn ebenfalls in den Ordner deines
      TFTP-Servers, unter genau diesem Namen.
@@ -157,8 +171,15 @@ werden.
 {%- endif %}
 
 ## Schritte
+{%- set o = 4 if apboot else 0 %}
+{%- set s_env = 6 + o %}
+{%- set s_ram = 7 + o %}
+{%- set s_login = 8 + o %}
+{%- set s_mtd = 9 + o %}
+{%- set s_write = 10 + o %}
+{%- set s_done = 11 + o %}
 
-### Teil 1: OpenWrt starten
+### Vorbereitung
 
 1. **Feste Adresse am Rechner.** Stell deinen Rechner auf
    `192.168.1.75`, Netzmaske `255.255.255.0`
@@ -166,11 +187,13 @@ werden.
    Adresse sucht der Access Point den TFTP-Server.
 
 2. **TFTP-Server starten.** Starte den TFTP-Server mit dem Ordner, in dem
-   `ipq40xx.ari` liegt ([TFTP-Server einrichten](grundlagen/tftp-server.md)).
+   `ipq40xx.ari`
+   {%- if apboot %} und `{{ w.apboot_datei }}` liegen{% else %} liegt{% endif %}
+   ([TFTP-Server einrichten](grundlagen/tftp-server.md)).
 
 3. **Kabel anschließen.** Netzwerkkabel vom Rechner an
    {%- if tftp_buchse %} die Buchse **{{ tftp_buchse }}** des Access Points.
-   Nur über diese Buchse holt er sich die Datei.
+   Nur über diese Buchse holt er sich die Dateien.
    {%- else %} die Netzwerkbuchse des Access Points.{% endif %}
    Das Konsolenkabel an die Konsolenbuchse, das andere Ende an den Rechner.
    Strom noch nicht anschließen.
@@ -186,67 +209,138 @@ werden.
    drück am besten schon beim Einschalten immer wieder Enter. **Prüfen:** Es
    erscheint die Eingabeaufforderung `apboot>`. Sonst Strom ziehen und noch
    einmal.
+   {%- if apboot %}
 
-6. **Bootloader einstellen.** Gib diese Befehle ein, jede Zeile einzeln, und
-   warte nach jeder Zeile auf `apboot>`:
+   Steht in der ersten Zeile schon `APBoot 2.5.0.2`, ist der ältere
+   Bootloader bereits drauf, etwa bei einem Gerät aus zweiter Hand. Dann
+   überspring den nächsten Teil und mach mit Schritt {{ s_env }} weiter.
+   {%- endif %}
+{%- if apboot %}
 
-   ```
-   setenv bootargs_openwrt "setenv bootargs console={{ w.tty }},9600n8"
-   setenv nandboot_openwrt "run bootargs_openwrt; ubi part aos1; ubi read 0x85000000 kernel; set fdt_high 0x87000000; bootm 0x85000000"
-   setenv ramboot_openwrt "run bootargs_openwrt; setenv ipaddr 192.168.1.105; setenv serverip 192.168.1.75; netget; set fdt_high 0x87000000; bootm"
-   setenv bootcmd "run nandboot_openwrt"
-   saveenv
-   ```
+### Älteren Bootloader aufspielen
 
-   **Prüfen:** Gib `printenv ramboot_openwrt` ein. Die Ausgabe muss genau
-   der dritten Zeile oben entsprechen. Sonst diese Zeile noch einmal
-   eingeben und wieder `saveenv`.
+> **Warnung:** Hier überschreibst du den Bootloader des Geräts. Geht dabei
+> etwas schief, zum Beispiel eine falsche Datei, ein Tippfehler in den
+> Adressen oder ein Stromausfall mittendrin, startet das Gerät nicht mehr.
+> Dann hilft nur noch ein Programmiergerät für den Speicherchip. Mach das
+> nur bei dem Gerät, für das diese Anleitung gilt, und halte dich genau an
+> die Befehle.
 
-   Damit startet der Access Point ab jetzt OpenWrt statt der
-   Aruba-Firmware. Die Aruba-Firmware bleibt im Speicher, siehe "Zurück zur
-   Aruba-Firmware".
+Praktisch alle Geräte dieses Typs haben inzwischen einen neueren Bootloader
+(zum Beispiel `APBoot 2.6.2.9`), aus dem der Hersteller Befehle entfernt
+hat, die OpenWrt braucht. Du ersetzt ihn durch die ältere Fassung
+`APBoot 2.5.0.2` aus einem älteren Gerät desselben Typs. Freifunk Darmstadt
+hat diesen Weg ausprobiert. Überschrieben wird nur der Bereich des
+Bootloaders, nicht der Rest des Speichers.
 
-7. **OpenWrt laden.** Gib ein:
-
-   ```
-   run ramboot_openwrt
-   ```
-
-   Der Access Point holt `ipq40xx.ari` von deinem Rechner. Danach erscheint
-   `Invalid image format version`, das ist normal. Kurz darauf startet
-   OpenWrt, das Terminal zeigt viele Zeilen. Warte, bis
-   `Please press Enter to activate this console.` erscheint.
-
-   **Kommt stattdessen `Unknown command 'bootm'`**, hat dein Gerät einen
-   neueren Bootloader. Lies dann unter "Wenn etwas schiefgeht" weiter.
-
-### Teil 2: Freifunk-Firmware aufspielen
-
-8. **Anmelden.**
-   {%- if ssh_buchse %} Steck das Netzwerkkabel jetzt in die Buchse
-   **{{ ssh_buchse }}**. Unter OpenWrt ist {{ tftp_buchse or "die bisherige Buchse" }}
-   der Internet-Anschluss und nicht erreichbar.{% endif %}
-   Öffne ein zweites Terminal im Ordner mit `gluon.bin` und gib ein:
+6. **Datei prüfen.** Prüf auf deinem Rechner die SHA256 von
+   `{{ w.apboot_datei }}` im Ordner des TFTP-Servers: unter Linux
+   `sha256sum {{ w.apboot_datei }}`, unter macOS
+   `shasum -a 256 {{ w.apboot_datei }}`, in der Windows-PowerShell
+   `Get-FileHash {{ w.apboot_datei }}`. Das Ergebnis muss genau so lauten
+   (Groß- und Kleinschreibung spielt keine Rolle):
 
    ```
-   scp -O gluon.bin root@192.168.1.1:/tmp/gluon.bin
-   ssh root@192.168.1.1
+   {{ w.apboot_sha256 }}
+   ```
+   {%- if w.get("apboot_sha256_url") %}
+
+   Unter Linux geht es auch in einem Schritt: Lade die
+   [Prüfsummendatei]({{ w.get("apboot_sha256_url") }}) in denselben Ordner
+   und gib `sha256sum -c {{ w.get("apboot_sha256_url").split("/")[-1] }}`
+   ein. Es muss `OK` erscheinen.
+   {%- endif %}
+
+   Stimmt die Summe nicht, hier aufhören.
+
+7. **Datei laden.** Gib im Terminal bei `apboot>` ein (eine Zeile):
+
+   ```
+   setenv ipaddr 192.168.1.105; setenv serverip 192.168.1.75; netget 0x84000000 {{ w.apboot_datei }}
    ```
 
-   Ein Passwort gibt es nicht. Meldet `ssh` "REMOTE HOST IDENTIFICATION HAS
-   CHANGED", siehe [SSH und scp benutzen](grundlagen/ssh-scp.md).
+   **Prüfen:** Es erscheint `Bytes transferred = 983040 (f0000 hex)`. Die
+   Meldung `Invalid image format version` danach ist hier normal. Steht
+   dort eine andere Zahl oder ein Fehler, **hier aufhören** und auf keinen
+   Fall Schritt 8 eingeben.
 
-9. **Speicher prüfen.** Auf dem Access Point:
+8. **Bootloader schreiben.** Gib ein (eine Zeile, genau so):
 
    ```
-   grep ubi /proc/mtd
+   sf probe; sf protect off; sf erase 0xf0000 0xf0000; sf write 0x84000000 0xf0000 0xf0000
    ```
 
-   **Prüfen:** Die Ausgabe beginnt mit
-   `{{ w.mtd | replace("/dev/", "") }}:` und endet mit `"ubi"`. Sonst hier
-   aufhören und uns schreiben.
+   Strom nicht ziehen. Warte, bis wieder `apboot>` erscheint. Meldet der
+   Bootloader `Unknown command 'sf'`, gib zuerst `diag` ein und dann die
+   Zeile noch einmal.
 
-10. **Speicher vorbereiten und Freifunk-Firmware schreiben.** Gib ein, Zeile
+9. **Neu starten.** Gib `reset` ein. **Prüfen:** Die erste Zeile lautet
+   jetzt `APBoot 2.5.0.2`. Halt den Bootloader wie in Schritt 5 wieder an,
+   bis `apboot>` erscheint.
+{%- endif %}
+
+### OpenWrt starten
+
+{{ s_env }}. **Bootloader einstellen.** Gib diese Befehle ein, jede Zeile einzeln, und
+    warte nach jeder Zeile auf `apboot>`:
+
+    ```
+    setenv bootargs_openwrt "setenv bootargs console={{ w.tty }},9600n8"
+    setenv nandboot_openwrt "run bootargs_openwrt; ubi part aos1; ubi read 0x85000000 kernel; set fdt_high 0x87000000; bootm 0x85000000"
+    setenv ramboot_openwrt "run bootargs_openwrt; setenv ipaddr 192.168.1.105; setenv serverip 192.168.1.75; netget; set fdt_high 0x87000000; bootm"
+    setenv bootcmd "run nandboot_openwrt"
+    saveenv
+    ```
+
+    **Prüfen:** Gib `printenv ramboot_openwrt` ein. Die Ausgabe muss genau
+    der dritten Zeile oben entsprechen. Sonst diese Zeile noch einmal
+    eingeben und wieder `saveenv`.
+
+    Damit startet der Access Point ab jetzt OpenWrt statt der
+    Aruba-Firmware. Die Aruba-Firmware bleibt im Speicher, siehe "Zurück zur
+    Aruba-Firmware".
+
+{{ s_ram }}. **OpenWrt laden.** Gib ein:
+
+    ```
+    run ramboot_openwrt
+    ```
+
+    Der Access Point holt `ipq40xx.ari` von deinem Rechner. Danach erscheint
+    `Invalid image format version`, das ist normal. Kurz darauf startet
+    OpenWrt, das Terminal zeigt viele Zeilen. Warte, bis
+    `Please press Enter to activate this console.` erscheint.
+
+    **Kommt stattdessen `Unknown command 'bootm'`**, lies unter "Wenn etwas
+    schiefgeht" weiter.
+
+### Freifunk-Firmware aufspielen
+
+{{ s_login }}. **Anmelden.**
+    {%- if ssh_buchse %} Steck das Netzwerkkabel jetzt in die Buchse
+    **{{ ssh_buchse }}**. Unter OpenWrt ist {{ tftp_buchse or "die bisherige Buchse" }}
+    der Internet-Anschluss und nicht erreichbar.{% endif %}
+    Öffne ein zweites Terminal im Ordner mit `gluon.bin` und gib ein:
+
+    ```
+    scp -O gluon.bin root@192.168.1.1:/tmp/gluon.bin
+    ssh root@192.168.1.1
+    ```
+
+    Ein Passwort gibt es nicht. Meldet `ssh` "REMOTE HOST IDENTIFICATION HAS
+    CHANGED", siehe [SSH und scp benutzen](grundlagen/ssh-scp.md).
+
+{{ s_mtd }}. **Speicher prüfen.** Auf dem Access Point:
+
+    ```
+    grep ubi /proc/mtd
+    ```
+
+    **Prüfen:** Die Ausgabe beginnt mit
+    `{{ w.mtd | replace("/dev/", "") }}:` und endet mit `"ubi"`. Sonst hier
+    aufhören und uns schreiben.
+
+{{ s_write }}. **Speicher vorbereiten und Freifunk-Firmware schreiben.** Gib ein, Zeile
     für Zeile:
 
     ```
@@ -259,7 +353,7 @@ werden.
     `ubiformat` danach ohne Fehler durchläuft. Fragt `ubiformat` nach, mit
     `y` bestätigen. Nach `sysupgrade` bricht die Verbindung ab.
 
-11. **Fertig.** Einige Minuten warten, Strom nicht ziehen. Im
+{{ s_done }}. **Fertig.** Einige Minuten warten, Strom nicht ziehen. Im
     Konsolen-Terminal siehst du den Neustart. Stell den Rechner wieder auf
     "automatisch". Danach startet die Freifunk-Firmware deiner Community: je
     nach Community zuerst mit einer Einrichtungsseite unter
@@ -268,10 +362,14 @@ werden.
 ## Woran du erkennst, dass es geklappt hat
 
 - In Schritt 5 erscheint `apboot>`.
-- In Schritt 7 zeigt der Bootloader, dass er die Datei geholt hat
+{%- if apboot %}
+- In Schritt 7 kommt `Bytes transferred = 983040 (f0000 hex)`, und nach
+  Schritt 9 lautet die erste Zeile `APBoot 2.5.0.2`.
+{%- endif %}
+- In Schritt {{ s_ram }} zeigt der Bootloader, dass er die Datei geholt hat
   (`Bytes transferred = …`), und OpenWrt startet.
-- In Schritt 9 zeigt `grep` die Partition `"ubi"`.
-- Nach Schritt 11 meldet sich die Freifunk-Firmware.
+- In Schritt {{ s_mtd }} zeigt `grep` die Partition `"ubi"`.
+- Nach Schritt {{ s_done }} meldet sich die Freifunk-Firmware.
 
 ## Wenn etwas schiefgeht
 
@@ -281,15 +379,14 @@ werden.
 - **Text erscheint, aber Enter wirkt nicht.** Der Konsolenanschluss der
   Aruba-Geräte ist wählerisch. Mit manchen Adaptern kann man mitlesen, aber
   nichts eingeben. Versuch einen anderen Adapter.
-- **In Schritt 7 kommt die Datei nicht an** (der Bootloader wiederholt es
-  oder bricht ab). Prüf die feste Adresse `192.168.1.75`, die Firewall
-  deines Rechners und den Dateinamen `ipq40xx.ari`
+- **Eine Datei kommt nicht an** (der Bootloader wiederholt es oder bricht
+  ab). Prüf die feste Adresse `192.168.1.75`, die Firewall deines Rechners
+  und den Dateinamen
   {%- if tftp_buchse %}, und ob das Kabel in {{ tftp_buchse }} steckt{% endif %}.
-- **In Schritt 7 kommt `Unknown command 'bootm'`.**
-  {%- if apboot %} Dann hat dein Gerät den neueren Bootloader (meist
-  `APBoot 2.6.…` in der ersten Zeile). Weiter geht es nur mit dem Abschnitt
-  "Älteren Bootloader aufspielen" weiter unten. **Lies dort zuerst die
-  Warnung.**
+- **In Schritt {{ s_ram }} kommt `Unknown command 'bootm'`.**
+  {%- if apboot %} Dann läuft noch der neuere Bootloader. Prüf beim
+  Einschalten die erste Zeile: Sie muss `APBoot 2.5.0.2` lauten. Sonst den
+  Teil "Älteren Bootloader aufspielen" wiederholen.
   {%- elif w.get("bootm_hinweis") %} {{ w.get("bootm_hinweis") }}
   {%- else %} Dann hat dein Gerät vermutlich einen neueren Bootloader, aus
   dem der Hersteller Befehle entfernt hat, die OpenWrt braucht. Einen
@@ -301,8 +398,8 @@ werden.
   Willst du an dieser Stelle aufhören, stell im Bootloader den Start der
   Aruba-Firmware wieder her, wie unter "Zurück zur Aruba-Firmware"
   beschrieben.
-- **In Schritt 8 antwortet nichts.** Warte noch eine Minute, OpenWrt
-  braucht etwas.
+- **In Schritt {{ s_login }} antwortet nichts.** Warte noch eine Minute,
+  OpenWrt braucht etwas.
   {%- if ssh_buchse %} Prüf, ob das Kabel jetzt in {{ ssh_buchse }}
   steckt.{% endif %}
 - **`ubiformat` meldet einen Fehler.** Nicht weitermachen, sondern die
@@ -310,73 +407,6 @@ werden.
   schreiben.
 {%- if zusatz.fehler is defined and zusatz.fehler %}
 {{ zusatz.fehler }}
-{%- endif %}
-{%- if apboot %}
-
-## Älteren Bootloader aufspielen
-
-> **Warnung:** Hier überschreibst du den Bootloader des Geräts. Geht dabei
-> etwas schief, zum Beispiel eine falsche Datei, ein Tippfehler in den
-> Adressen oder ein Stromausfall mittendrin, startet das Gerät nicht mehr.
-> Dann hilft nur noch ein Programmiergerät für den Speicherchip. Mach das
-> nur, wenn in Schritt 7 `Unknown command 'bootm'` kam, und nur bei dem
-> Gerät, für das diese Anleitung gilt.
-
-Neuere Geräte haben einen Bootloader, aus dem der Hersteller Befehle
-entfernt hat (Freifunk Darmstadt hat den Weg mit `APBoot 2.6.2.9`
-ausprobiert). Du ersetzt ihn durch die ältere Fassung `APBoot 2.5.0.2` aus
-einem älteren Gerät desselben Typs. Überschrieben wird nur der Bereich des
-Bootloaders, nicht der Rest des Speichers.
-
-1. **Datei holen und prüfen.** Lade
-   [{{ w.apboot_datei }}]({{ w.apboot_url }}) herunter
-   (983.040 Bytes). Prüf die SHA256: unter Linux `sha256sum {{ w.apboot_datei }}`,
-   unter macOS `shasum -a 256 {{ w.apboot_datei }}`, in der Windows-PowerShell
-   `Get-FileHash {{ w.apboot_datei }}`. Das Ergebnis muss genau so lauten
-   (Groß- und Kleinschreibung spielt keine Rolle):
-
-   ```
-   {{ w.apboot_sha256 }}
-   ```
-
-   {%- if w.get("apboot_sha256_url") %}
-
-   Unter Linux geht es auch in einem Schritt: Lade die
-   [Prüfsummendatei]({{ w.get("apboot_sha256_url") }}) in denselben Ordner
-   und gib `sha256sum -c {{ w.get("apboot_sha256_url").split("/")[-1] }}`
-   ein. Es muss `OK` erscheinen.
-   {%- endif %}
-
-   Stimmt die Summe nicht, hier aufhören. Leg die Datei in den Ordner des
-   TFTP-Servers, neben `ipq40xx.ari`.
-
-2. **Bootloader anhalten.** Strom ziehen und wieder anschließen, wie in
-   Schritt 5 bis `apboot>`.
-
-3. **Datei laden.** Gib ein (eine Zeile):
-
-   ```
-   setenv ipaddr 192.168.1.105; setenv serverip 192.168.1.75; netget 0x84000000 {{ w.apboot_datei }}
-   ```
-
-   **Prüfen:** Es erscheint `Bytes transferred = 983040 (f0000 hex)`. Die
-   Meldung `Invalid image format version` danach ist auch hier normal.
-   Steht dort eine andere Zahl oder ein Fehler, **hier aufhören** und auf
-   keinen Fall Schritt 4 eingeben.
-
-4. **Bootloader schreiben.** Gib ein (eine Zeile, genau so):
-
-   ```
-   sf probe; sf protect off; sf erase 0xf0000 0xf0000; sf write 0x84000000 0xf0000 0xf0000
-   ```
-
-   Strom nicht ziehen. Warte, bis wieder `apboot>` erscheint. Meldet der
-   Bootloader `Unknown command 'sf'`, gib zuerst `diag` ein und dann die
-   Zeile noch einmal.
-
-5. **Neu starten.** Gib `reset` ein. **Prüfen:** Die erste Zeile lautet
-   jetzt `APBoot 2.5.0.2`. Dann weiter mit Schritt 5 oben. Gib dabei auch
-   die Befehle aus Schritt 6 noch einmal ein.
 {%- endif %}
 
 ## Zurück zur Aruba-Firmware
