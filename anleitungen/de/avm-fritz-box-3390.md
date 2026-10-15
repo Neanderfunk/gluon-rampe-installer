@@ -9,7 +9,7 @@ stufe: mit Werkzeug
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-avm-fritz-box-3390-initramfs-kernel.bin
 grundlagen: [avm-eva, browser-https, feste-ip]
-daten_stand: af4b93c
+daten_stand: 05f68f3
 vorlage_stand: 869501c
 ---
 

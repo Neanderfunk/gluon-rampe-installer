@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AVM FRITZ!Box 7520: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="avm-fritz-box-7520">
+<meta name="anleitung:modell" content="AVM FRITZ!Box 7520 (Alias von avm-fritz-box-7530)">
+<meta name="anleitung:anzeige" content="AVM FRITZ!Box 7520">
+<meta name="anleitung:familie" content="avm-eva-uboot">
+<meta name="anleitung:gluon_broken" content="false">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="fortgeschritten">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:rampe_image" content="gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb">
+<meta name="anleitung:grundlagen" content="avm-eva, feste-ip, tftp-server">
+<meta name="anleitung:daten_stand" content="05f68f3">
+<meta name="anleitung:vorlage_stand" content="f5bedda">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<h1>AVM FRITZ!Box 7520: Freifunk-Firmware installieren</h1>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Wichtige Schritte haben wir von
+ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
+aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+beschrieben.
+Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.</p>
+<p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+Anleitung für alle nach dir besser:</p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20AVM%20FRITZ%21Box%207520">projekt@neanderfunk.de</a></p>
+</blockquote>
+<blockquote>
+<p><strong>Danach ist FRITZ!OS weg.</strong> Bei diesem Gerät ersetzt die Installation den
+Bootloader und entfernt die Firmware von AVM. Zurück geht es danach nur
+noch mit dem Wiederherstellungs-Programm von AVM (siehe unten).</p>
+</blockquote>
+<p>Bei diesem Gerät geht es in drei Etappen, alle vom Rechner aus und ohne das
+Gerät zu öffnen:</p>
+<ol>
+<li>Über den Bootloader von AVM kommt ein neuer Bootloader (U-Boot) in den
+Arbeitsspeicher (<a href="grundlagen/avm-eva.html">Der Bootloader von AVM (EVA)</a>).</li>
+<li>Der holt sich per TFTP die <strong>Gluon-RAMpe</strong>: eine kleine Firmware, die nur
+eins kann, nämlich die Freifunk-Firmware deiner Community annehmen.</li>
+<li>Auf der Seite der RAMpe lädst du die Freifunk-Firmware hoch. Die RAMpe
+bereitet den Speicher vor und schreibt dann die Freifunk-Firmware.</li>
+</ol>
+<h2>Was du brauchst</h2>
+<ul>
+<li>das Gerät mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
+Netzwerkkabel</li>
+<li>Python 3 und das kleine Programm <a href="https://raw.githubusercontent.com/openwrt/openwrt/a1ea57bd050c172fdc2b851824ebd9782aafb055/scripts/flashing/eva_ramboot.py">eva_ramboot.py</a> von OpenWrt</li>
+<li>einen TFTP-Server auf dem Rechner (<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>)</li>
+<li>den Bootloader für dieses Gerät: <a href="https://download.ffnef.de/other/Gluon-Installer-RAMpe/uboot-fritz7520.bin">uboot-fritz7520.bin</a></li>
+<li>die RAMpe für dieses Gerät: <a href="https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb">gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb</a></li>
+<li>die Freifunk-Firmware deiner Community für dieses Gerät, und zwar das
+<strong>sysupgrade</strong>-Image</li>
+</ul>
+<h2>Vorher prüfen</h2>
+<p>Die 7520 bekommt dieselbe RAMpe wie die 7530, aber ihren eigenen
+Bootloader (<code>uboot-fritz7520.bin</code>) und den TFTP-Namen <code>FRITZ7520.bin</code>. Die
+RAMpe erkennt sie an ihrer Hardware-Kennung (247).</p>
+<p><strong>Offen:</strong> Manche 7520 wurden durch Ändern der Hardware-Kennung zu einer 7530
+umgestellt. So ein Gerät bekäme von der RAMpe den Bootloader der 7530. Ob das
+passt, ist nicht belegt.</p>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Dateien bereitlegen.</strong> eva_ramboot.py und <code>uboot-fritz7520.bin</code> in einen
+Ordner, dort ein Terminal öffnen. Die RAMpe in den Ordner des
+TFTP-Servers legen und <strong>genau in <code>FRITZ7520.bin</code> umbenennen</strong>.</p>
+</li>
+<li>
+<p><strong>Rechner vorbereiten.</strong> Feste Adresse <code>192.168.178.10</code>, Netzmaske
+<code>255.255.255.0</code> (<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).
+WLAN am Rechner aus. Kabel an eine LAN-Buchse des Geräts.</p>
+</li>
+<li>
+<p><strong>Bootloader laden.</strong> Strom an das Gerät, und sobald der Rechner eine
+Netzwerkverbindung anzeigt:</p>
+<pre><code>python3 eva_ramboot.py --offset 0x85000000 192.168.178.1 uboot-fritz7520.bin
+</code></pre>
+<p>Kommt eine Fehlermeldung, war das Zeitfenster vorbei: Strom ziehen und
+noch einmal.</p>
+</li>
+<li>
+<p><strong>RAMpe per TFTP.</strong> Stell den Rechner jetzt um auf die feste Adresse
+<code>192.168.1.70</code>, Netzmaske <code>255.255.255.0</code>, und starte den TFTP-Server.
+Der neue Bootloader fragt alle 5 Sekunden nach <code>FRITZ7520.bin</code>; der
+TFTP-Server zeigt, wenn die Datei abgeholt wird. Danach startet die RAMpe
+aus dem Arbeitsspeicher. Das dauert bis zu 2 Minuten.</p>
+</li>
+<li>
+<p><strong>Die Seite der RAMpe.</strong> Öffne <code>http://192.168.1.1</code> (der Rechner kann auf
+<code>192.168.1.70</code> bleiben). Die Seite weist darauf hin, dass sie bei diesem
+Gerät den Speicher vorbereitet, den neuen Bootloader dauerhaft schreibt
+und die Firmware von AVM entfernt.</p>
+<p><img src="../bilder/allgemein/rampe-seite.png" alt="Die Seite der RAMpe: &quot;Firmware aktualisieren&quot; mit Feld für die Datei und Knopf &quot;Datei hochladen&quot;" /></p>
+</li>
+<li>
+<p><strong>Freifunk-Firmware hochladen.</strong> Wähl das sysupgrade-Image deiner
+Community und klick &quot;Datei hochladen&quot;. Die RAMpe zeigt die Prüfsumme
+(SHA256); vergleich sie mit der Angabe deiner Community und klick
+&quot;Fortfahren&quot;.</p>
+<p><img src="../bilder/allgemein/rampe-pruefsumme.png" alt="Die RAMpe zeigt Prüfsumme und Größe der Datei, darunter &quot;Abbrechen&quot; und &quot;Fortfahren&quot;" /></p>
+</li>
+<li>
+<p><strong>Warten.</strong> Die RAMpe schreibt zuerst den Bootloader, entfernt die
+Firmware von AVM und schreibt dann die Freifunk-Firmware. <strong>Strom nicht
+ziehen.</strong></p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Stell den Rechner wieder auf &quot;automatisch&quot;. Danach startet die
+Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
+Einrichtungsseite unter <code>http://192.168.1.1</code> oder gleich im Betrieb.</p>
+</li>
+</ol>
+<p>Tipp für Linux: Mit <code>ip addr add</code> kannst du dem Netzwerkanschluss beide
+Adressen gleichzeitig geben (<code>192.168.178.10/24</code> und <code>192.168.1.70/24</code>);
+dann entfällt das Umstellen in Schritt 4.</p>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>eva_ramboot.py endet ohne Fehlermeldung.</li>
+<li>Der TFTP-Server zeigt, dass <code>FRITZ7520.bin</code> abgeholt wurde.</li>
+<li>Unter <code>http://192.168.1.1</code> erscheint die Seite der RAMpe.</li>
+<li>Nach Schritt 7 meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>eva_ramboot.py bekommt keine Verbindung.</strong> Das Zeitfenster ist kurz.
+Strom ziehen, einstecken, sofort noch einmal. Ein einfacher Switch zwischen
+Gerät und Rechner hilft. Laut OpenWrt nehmen manche Geräte beim Start auch
+<code>192.168.1.1</code> statt <code>192.168.178.1</code>.</li>
+<li><strong>Der TFTP-Server meldet keine Anfrage.</strong> Prüf die Adresse
+<code>192.168.1.70</code>, die Firewall und den Dateinamen <code>FRITZ7520.bin</code> (genau
+so, Groß- und Kleinschreibung zählt).</li>
+<li><strong>Die RAMpe meldet &quot;Die Vorbereitung dieses Geräts ist fehlgeschlagen. Die
+Freifunk-Firmware wurde nicht aufgespielt.&quot;</strong> Dann wurde nichts
+geschrieben. Schick uns bitte das Protokoll, das darunter steht, an
+<a href="mailto:projekt@neanderfunk.de">projekt@neanderfunk.de</a>.</li>
+<li><strong>Nach einem Abbruch startet das Gerät mit dem neuen Bootloader, aber ohne
+Freifunk-Firmware.</strong> Dann einfach ab Schritt 4 noch einmal: Der neue
+Bootloader fragt beim Start wieder per TFTP nach der RAMpe.</li>
+</ul>
+<h2>Zurück zu FRITZ!OS</h2>
+<p>Der Bootloader von AVM selbst bleibt unberührt. Mit dem
+Wiederherstellungs-Programm von AVM (für Windows; auf dem Download-Server von
+AVM im Ordner des Geräts unter &quot;recover&quot;) lässt sich FRITZ!OS zurückspielen.
+Laut OpenWrt hilft im Notfall die Version FRITZ!OS 7.21.</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Weg ab Werk, Dauer)</li>
+<li>abgeleitet: OpenWrt-Wiki &quot;AVM recovery tool&quot; (Rückweg zur Herstellerfirmware)</li>
+<li>abgeleitet: Wiki (Typenschild/Verwechslung)</li>
+<li>abgeleitet: Wiki 7520/7530 (Schritte (Normalweg), Sichtbare Zeichen, Typenschild/Verwechslung)</li>
+<li>abgeleitet: Wiki 7520/7530, nur als Ausweg (Fehlerbild)</li>
+<li>abgeleitet: Wiki 7530 (Adressen)</li>
+<li>abgeleitet: dasselbe Wiki (Rückweg zur Herstellerfirmware)</li>
+<li>geprüft (Schritte (Normalweg))</li>
+<li>geprüft: Commit (Schritte (Normalweg), Sichtbare Zeichen, Anschluss, Adressen, Programm, Datei, Dauer)</li>
+<li>geprüft: Commit 95b0c07a (Schritte (Normalweg), Taste und Zeitpunkt)</li>
+<li>geprüft: Commit, U-Boot-Quelltext: serverip 192.168.1.70, bootfile FRITZ7520.bin (Schritte (Normalweg), Adressen, Programm, Datei)</li>
+<li>geprüft: Download-Liste 24.10.8 (Weg ab Werk)</li>
+<li>geprüft: U-Boot-Quelle chunkeey/FritzBox-4040-UBOOT, include/configs/fritz7520.h (Gluon-RAMpe-Rezept)</li>
+<li>geprüft: U-Boot-Quelltext chunkeey FritzBox-4040-UBOOT (Sichtbare Zeichen)</li>
+<li>geprüft: uboot-fritz4040/Makefile am Pin, U-Boot-Quelltext (Typenschild/Verwechslung)</li>
+<li>geprüft; abgeleitet (Schritte (Normalweg))</li>
+<li>Geräteeintrag: OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

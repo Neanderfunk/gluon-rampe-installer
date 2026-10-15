@@ -77,6 +77,34 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "avm-fritz-box-7520",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-7520.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "avm-fritz-box-7530",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-7530.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "avm-fritz-repeater-1200",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-repeater-1200.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "avm-fritz-repeater-3000",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-repeater-3000.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "avm-fritz-wlan-repeater-1750e",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-wlan-repeater-1750e.html",
   "status": "ungeprüft",

@@ -8,7 +8,7 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [curl, feste-ip]
-daten_stand: af4b93c
+daten_stand: 05f68f3
 vorlage_stand: 393f161
 ---
 
