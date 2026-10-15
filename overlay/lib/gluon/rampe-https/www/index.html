@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gluon-RAMpe</title>
+<script>location.replace('http://' + location.hostname + '/');</script>
+<style>body{font-family:sans-serif;max-width:40em;margin:2em auto;padding:0 1em;line-height:1.5}</style>
+</head>
+<body>
+<p>Die Gluon-RAMpe läuft ohne https. Weiter zu
+<a id="l" href="http://192.168.1.1/">http://192.168.1.1/</a>.</p>
+<p lang="en">Gluon-RAMpe runs without https. Continue to
+<a id="m" href="http://192.168.1.1/">http://192.168.1.1/</a>.</p>
+<script>
+var u = 'http://' + location.hostname + '/';
+['l', 'm'].forEach(function (i) { var a = document.getElementById(i); a.href = u; a.textContent = u; });
+</script>
+</body>
+</html>

@@ -82,6 +82,17 @@ echo "== Overlay -> openwrt/files"
 rm -rf "$GLUON_DIR/openwrt/files"
 cp -a "$ROOT/overlay" "$GLUON_DIR/openwrt/files"
 
+echo "== HTTPS-Umleitung: Schluessel und selbstsigniertes Zertifikat"
+# Fuer S51rampe-https (Port 443 leitet auf http:// um). Je Lauf neu erzeugt,
+# damit kein privater Schluessel im Repo liegt. Er schuetzt nichts: ueber
+# diese Verbindung geht nur die Umleitung, der Browser warnt ohnehin.
+command -v openssl >/dev/null || { echo "openssl fehlt (HTTPS-Umleitung)" >&2; exit 1; }
+openssl req -x509 -newkey ec -pkeyopt ec_paramgen_curve:P-256 -nodes -days 3650 \
+	-subj "/CN=Gluon-RAMpe" -addext "subjectAltName=IP:192.168.1.1" \
+	-keyout "$GLUON_DIR/openwrt/files/lib/gluon/rampe-https/key.pem" \
+	-out "$GLUON_DIR/openwrt/files/lib/gluon/rampe-https/cert.pem" 2>/dev/null \
+	|| { echo "Zertifikat fuer die HTTPS-Umleitung nicht erzeugt" >&2; exit 1; }
+
 echo "== Config-Mode: gluon.css mit Versionsanhang"
 # Gluon liefert /static/ ohne Cache-Control und mit festem Last-Modified aus;
 # Browser halten gluon.css deshalb lange im Cache. Unter 192.168.1.1 laeuft vor

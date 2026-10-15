@@ -12,7 +12,7 @@ Als **initramfs**: das Rootfs steckt im Kernel-Image und wird bei jedem Start
 ins RAM entpackt. Das Image selbst liegt im Flash (Hersteller-Recovery,
 -Web-UI) oder wird per TFTP/`-kernel` gestartet.
 
-## Die vier Eingriffe (overlay/ -> openwrt/files)
+## Die Eingriffe (overlay/ -> openwrt/files, build.sh)
 
 1. **`lib/preinit/91_installer_initramfs`** – der wichtigste. OpenWrts
    `lib/preinit/70_initramfs_test` führt beim initramfs-Boot die Hooks
@@ -32,6 +32,25 @@ ins RAM entpackt. Das Image selbst liegt im Flash (Hersteller-Recovery,
    `sysupgrade -n --ignore-minor-compat-version` auf.
 
 Dazu `usr/share/doc/gluon-rampe/CREDITS` (Credit + MIT-Text).
+
+Seit 15.10.2026 zwei Ergänzungen, beide aus Erfahrungen am Gerät:
+
+5. **`lib/gluon/setup-mode/rc.d/S51rampe-https`** – Umleitung von https auf
+   http. Firefox und Chrome setzen bei „192.168.1.1“ + Enter oft selbst
+   `https://` davor (adorfer, Windows 11). Gluons Config-Mode läuft nur auf
+   Port 80 (`S50uhttpd` von gluon-config-mode-core), ohne Dienst auf 443 käme
+   nur eine Fehlerseite. Ein zweiter uhttpd antwortet auf 443 per TLS mit einem
+   beim Bau erzeugten selbstsignierten Zertifikat (`build.sh`, je Lauf neu,
+   kein Schlüssel im Repo) und liefert für jede Adresse
+   `lib/gluon/rampe-https/www/index.html`, die auf `http://<Host>/` umleitet.
+   Der Browser warnt einmal vor dem Zertifikat; nach „trotzdem fortfahren“
+   geht es weiter. Braucht `libustream-mbedtls` (Site-Paket); fehlt die
+   Bibliothek oder das Zertifikat, startet die Umleitung nicht.
+6. **`gluon.css?v=<Release>`** – `build.sh` hängt im Theme des Config-Modes die
+   Release-Kennung an das Stylesheet (wie Neanderfunks
+   `web-static-version.patch`). Unter 192.168.1.1 läuft vor und nach der RAMpe
+   ein anderer Config-Mode; ohne eigene Adresse nähme der Browser dessen
+   `gluon.css` aus dem Cache.
 
 ## Ablauf auf dem Gerät
 

@@ -6,4 +6,6 @@ features {
 
 packages {
 	'gluon-web-admin',
+	-- TLS fuer die Umleitung https -> http (S51rampe-https)
+	'libustream-mbedtls',
 }
