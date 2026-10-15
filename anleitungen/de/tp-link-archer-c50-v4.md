@@ -12,8 +12,8 @@ status: erprobt
 erprobt_am: 2026-10-15
 erprobt_mit: Gluon 2023.2.6 (26091920sta), U-Boot-Teil aus Archer C50(EU)_V4_250117
 grundlagen: [feste-ip, tftp-server]
-daten_stand: b55eef92
-vorlage_stand: 839fdda0
+daten_stand: 555d2189
+vorlage_stand: 8ebdf8cb
 ---
 
 # TP-Link Archer C50 v4: Freifunk-Firmware installieren
@@ -45,7 +45,8 @@ mit einer halben Stunde.
 - den Router mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
   Netzwerkkabel
 - die **TP-Link-Firmware** für genau dieses Modell und diese Version, von der
-  [Download-Seite bei TP-Link](https://www.tp-link.com/de/support/download/archer-c50/v4/).
+  [Download-Seite bei TP-Link](https://www.tp-link.com/de/support/download/archer-c50/v4/). Bei uns hat es mit der TP-Link-Firmware
+  `Archer C50(EU)_V4_250117` geklappt.
 - die Freifunk-Firmware deiner Community für den TP-Link Archer C50 v4: im
   Firmware-Selector unter "Wähle Deine Installationsart" der Knopf
   **Upgrade** (die Datei endet auf `-sysupgrade.bin`). **Nicht allein

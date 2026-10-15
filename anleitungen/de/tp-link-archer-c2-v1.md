@@ -10,8 +10,8 @@ level_text: Besondere Programme
 risiko: bootloader
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: b55eef92
-vorlage_stand: 839fdda0
+daten_stand: 555d2189
+vorlage_stand: 8ebdf8cb
 ---
 
 # TP-Link Archer C2 v1: Freifunk-Firmware installieren

@@ -10,8 +10,8 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: b55eef92
-vorlage_stand: 839fdda0
+daten_stand: 555d2189
+vorlage_stand: 8ebdf8cb
 ---
 
 # TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54): Freifunk-Firmware installieren
