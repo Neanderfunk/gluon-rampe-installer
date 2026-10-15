@@ -15981,20 +15981,9 @@
    "rampe": "teilweise: nach dem seriellen TFTP-Boot macht die Gluon-RAMpe den sysupgrade-Schritt statt scp; bootcmd/saveenv bleibt seriell",
    "rampe_rezept": "devices/enterasys-ws-ap3715i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `ap3715.bin` per U-Boot-TFTP; entpackt über 11 MB droht Überlappung",
    "quelle": "765f66810a3324cc35fa6471ee8eeee335ba8c2b",
-   "anleitung": "anleitungen/de/enterasys-ws-ap3715i.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b",
+   "anleitung": "- (zurückgezogen 16.10.2026, adorfer: das sysupgrade von Gluon 2025.1 bootet auf dem WS-AP3715i nicht, https://github.com/freifunk-gluon/gluon/issues/3842; Fix in OpenWrt https://github.com/openwrt/openwrt/pull/25541, Werte bis 440a725 in der Git-Geschichte)",
    "erprobt": {},
-   "werte": {
-    "initramfs_datei": "openwrt-24.10.8-mpc85xx-p1010-enterasys_ws-ap3715i-initramfs-kernel.bin",
-    "initramfs_url": "https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1010/openwrt-24.10.8-mpc85xx-p1010-enterasys_ws-ap3715i-initramfs-kernel.bin",
-    "tftp_name": "ap3715.bin",
-    "server_ip": "192.168.1.66",
-    "konsole": "rj45",
-    "anhalten": "Drück Enter, sobald die Aufforderung erscheint, den automatischen Start abzubrechen.",
-    "befehle": "setenv ramboot_openwrt \"setenv ipaddr 192.168.1.1; setenv serverip 192.168.1.66; tftpboot 0x2000000 ap3715.bin; bootm\"\nsetenv boot_openwrt \"sf probe 0; sf read 0x2000000 0x140000 0x1000000; bootm 0x2000000\"\nsetenv bootcmd \"run boot_openwrt\"\nsaveenv\nrun ramboot_openwrt",
-    "baud": "115200",
-    "login": "admin / new2day",
-    "sicherheit": "quelle"
-   }
+   "werte": {}
   },
   {
    "gluon_name": "sophos-red-15w-rev.1",

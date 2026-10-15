@@ -458,7 +458,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [ubiquiti-unifi-6-lr-v2](#ubiquiti-unifi-6-lr-v2) | Ubiquiti UniFi 6 LR v2 | mediatek-mt7622 | K1d | L4 | normal | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-lr-v2.md); https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
 | [ubiquiti-unifi-6-lr-v3](#ubiquiti-unifi-6-lr-v3) | Ubiquiti UniFi 6 LR v3 | mediatek-mt7622 | K1d | L4 | normal | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-lr-v3.md); https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
 | [xiaomi-redmi-router-ax6s](#xiaomi-redmi-router-ax6s) | Xiaomi Redmi Router AX6S / AX3200 | mediatek-mt7622 | K0+ | offen | normal | [`sonderweg-xiaomi-redmi-router-ax6s`](#familie-sonderweg-xiaomi-redmi-router-ax6s) | webui-upload | nein | nein | nein |  | - |
-| [enterasys-ws-ap3715i](#enterasys-ws-ap3715i) | Enterasys WS-AP3715i | mpc85xx-p1010 | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/enterasys-ws-ap3715i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b |
+| [enterasys-ws-ap3715i](#enterasys-ws-ap3715i) | Enterasys WS-AP3715i | mpc85xx-p1010 | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | - (zurückgezogen 16.10.2026, adorfer: das sysupgrade von Gluon 2025.1 bootet auf dem WS-AP3715i nicht, https://github.com/freifunk-gluon/gluon/issues/3842; Fix in OpenWrt https://github.com/openwrt/openwrt/pull/25541, Werte bis 440a725 in der Git-Geschichte) |
 | [sophos-red-15w-rev.1](#sophos-red-15w-rev.1) | Sophos RED 15w Rev. 1 | mpc85xx-p1010 | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja |  |
 | [tp-link-tl-wdr4900-v1](#tp-link-tl-wdr4900-v1) | TP-Link TL-WDR4900 v1 | mpc85xx-p1010 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wdr4900-v1.md) |
 | [aerohive-hiveap-330](#aerohive-hiveap-330) | Aerohive HiveAP 330 | mpc85xx-p1020 | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja |  |
@@ -9883,12 +9883,7 @@ Enterasys WS-AP3715i · mpc85xx-p1010 · K4
 - **Gluon-RAMpe passt:** teilweise: nach dem seriellen TFTP-Boot macht die Gluon-RAMpe den sysupgrade-Schritt statt scp; bootcmd/saveenv bleibt seriell
 - **Gluon-RAMpe-Rezept:** devices/enterasys-ws-ap3715i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `ap3715.bin` per U-Boot-TFTP; entpackt über 11 MB droht Überlappung
 - **Quelle (OpenWrt-Commit):** 765f66810a3324cc35fa6471ee8eeee335ba8c2b
-- **Detail-Anleitung:** anleitungen/de/enterasys-ws-ap3715i.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b
-- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-mpc85xx-p1010-enterasys_ws-ap3715i-initramfs-kernel.bin; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1010/openwrt-24.10.8-mpc85xx-p1010-enterasys_ws-ap3715i-initramfs-kernel.bin; tftp_name = ap3715.bin; server_ip = 192.168.1.66; konsole = rj45; anhalten = Drück Enter, sobald die Aufforderung erscheint, den automatischen Start abzubrechen.; befehle = setenv ramboot_openwrt "setenv ipaddr 192.168.1.1; setenv serverip 192.168.1.66; tftpboot 0x2000000 ap3715.bin; bootm"
-setenv boot_openwrt "sf probe 0; sf read 0x2000000 0x140000 0x1000000; bootm 0x2000000"
-setenv bootcmd "run boot_openwrt"
-saveenv
-run ramboot_openwrt; baud = 115200; login = admin / new2day; sicherheit = quelle
+- **Detail-Anleitung:** - (zurückgezogen 16.10.2026, adorfer: das sysupgrade von Gluon 2025.1 bootet auf dem WS-AP3715i nicht, https://github.com/freifunk-gluon/gluon/issues/3842; Fix in OpenWrt https://github.com/openwrt/openwrt/pull/25541, Werte bis 440a725 in der Git-Geschichte)
 
 #### sophos-red-15w-rev.1
 
