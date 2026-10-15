@@ -106,7 +106,7 @@ legt das Image des Hauptnamens unter beiden Namen ab.
 | Xiaomi Mi Router 3G | `xiaomi-mi-router-3g` | ramips-mt7621 | K2 | devices/xiaomi-mi-router-3g.sh: `-kernel1.bin` und `-rootfs0.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet |
 | Xiaomi Mi Router AC2100 (R2100) | `xiaomi-mi-router-ac2100` | ramips-mt7621 | K2 | devices/xiaomi-mi-router-ac2100.sh: `-kernel1.bin` und `-rootfs0.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet |
 | Xiaomi Redmi Router AC2100 (RM2100) | `xiaomi-redmi-router-ac2100` | ramips-mt7621 | K2 | devices/xiaomi-redmi-router-ac2100.sh: `-kernel1.bin` und `-rootfs0.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet |
-| ZyXEL WSM20 (Multy M1) | `zyxel-wsm20` | ramips-mt7621 | K1 | devices/zyxel-wsm20.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (znet-Header schon drin) für die versteckte Upgrade-Seite |
+| ZyXEL WSM20 (Multy M1) | `zyxel-wsm20` | ramips-mt7621 | K1 | devices/zyxel-wsm20.sh (gebaut 15.10.2026): `initramfs-kernel.bin` (znet-Header schon drin, 7.481.920 Bytes, unter den 8 MiB Kernel) für die versteckte Upgrade-Seite; am Gerät ungetestet |
 | x86 (x86-64) | `x86-64` | x86-64 | K0 | devices/x86-64.sh: Testgerät, in QEMU Ende-zu-Ende geprüft |
 
 <!-- END erzeugt:rezepte -->
@@ -225,7 +225,7 @@ Abgeglichen mit dem Inventar aller Gluon-2025.1-Geräte
 | ASUS RT-AX52 | mediatek-filogic | Web-UI 192.168.50.1 | `initramfs.trx` (OpenWrt-ARTIFACT) einsammeln | 256 MB |
 | ASUS RT-AX53U | ramips-mt7621 | ASUS-Rescue, TFTP-Server im Gerät 192.168.1.1 | initramfs | 256 MB |
 | Genexis Pulse EX400 | ramips-mt7621 | Web-UI / Recovery 192.168.1.1 | OpenWrt-factory ist initramfs mit Inteno-Header; Gluon setzt `factory = false` nur wegen des initramfs-Schalters. Bester neuer Kandidat | 256 MB |
-| Zyxel WSM20 | ramips-mt7621 | versteckte Upgrade-Seite | initramfs mit znet-Header; Zyxel-Cloud-Registrierung nötig | 256 MB |
+| Zyxel WSM20 | ramips-mt7621 | versteckte Upgrade-Seite | initramfs mit znet-Header; keine Zyxel-Cloud-Registrierung nötig (Freifunk Aachen, Wiki) | 256 MB |
 | MikroTik hAP ac2, wAP ac, SXTsq 5 ac, DISC | ipq40xx-mikrotik | Netboot (eigener BOOTP/DHCP- und TFTP-Server) | initramfs; Gluons "factory" ist selbst ein initramfs ohne Config-Mode, daher mitbauen | 128-256 MB |
 | MikroTik hAP (951Ui-2nD), mAP lite, wAP, wAP G-5HacT2HnD | ath79-mikrotik | Netboot | wie oben | 64 MB, knapp |
 | MikroTik RB750Gr3 | ramips-mt7621 | Netboot | ELF-initramfs | 256 MB |

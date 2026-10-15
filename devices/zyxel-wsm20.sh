@@ -1,8 +1,9 @@
 # Zyxel WSM20 / Multy M1 (ramips-mt7621, 256 MB RAM, 128 MB NAND)
 #
-# Einspielen ueber die versteckte Upgrade-Seite der Stock-Web-UI. Das Geraet
-# muss vorher in der Zyxel-Cloud registriert sein. Dann
-# https://192.168.212.1/gui/#/main/debug/firmwareupgrade oeffnen und das rohe
+# Einspielen ueber die versteckte Upgrade-Seite der Stock-Web-UI, ohne
+# Zyxel-Cloud-Registrierung (der Commit verlangte sie noch; Wiki und Freifunk
+# Aachen 04.01.2024 kommen ohne aus, adorfer hat so installiert). Rechner an
+# LAN1, http://192.168.212.1/gui/#/main/debug/firmwareupgrade oeffnen und das rohe
 # RAMpe-initramfs (out/images/gluon-rampe-<Datum>-zyxel-wsm20-initramfs-kernel.bin)
 # hochladen. Danach die RAMpe unter http://192.168.1.1, Community-sysupgrade
 # hochladen. Laut Commit setzt das sysupgrade die Boot-Nummer auf die erste
@@ -16,9 +17,8 @@
 # sammelt ihn schon ein, kein extra_images noetig.
 # Groesse: Firmware-Slots je 0x2800000 = 40 MiB; OpenWrts "kernel" darin ist
 # 8 MiB (KERNEL_SIZE 8192k gilt aber nur fuer das sysupgrade) [geprueft: DTS,
-# mk]. OpenWrt-24.10.8-initramfs 7657036 Byte [geprueft]. Ob der Stock-U-Boot
-# mehr als 8 MiB Kernel liest: offen; das RAMpe-initramfs nach dem Bau gegen
-# 8 MiB pruefen. RAM 256 MB.
+# mk]. OpenWrt-24.10.8-initramfs 7657036 Byte [geprueft]. RAMpe-initramfs
+# (Stand 20261015) 7481920 Byte, also unter 8 MiB. RAM 256 MB.
 # Kompression: ramips-Default LZMA [geprueft].
 # Vorbereitungsskript: keins noetig.
 # Ungetestet.

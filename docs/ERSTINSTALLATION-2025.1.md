@@ -10529,33 +10529,38 @@ Zyxel NBG6616 · ath79-generic · K5
 
 ZyXEL WSM20 (Multy M1) · ramips-mt7621 · K1
 
-- **Weg ab Werk:** Gerät in der Zyxel-Cloud registrieren, im Stock-Web-UI die versteckte Seite /gui/#/main/debug/firmwareupgrade öffnen, initramfs-kernel.bin hochladen, dann sysupgrade [geprüft]
+- **Weg ab Werk:** Ohne Zyxel-Cloud: Rechner an LAN1, in der Stock-Web-UI die versteckte Seite http://192.168.212.1/gui/#/main/debug/firmwareupgrade öffnen, initramfs-kernel.bin hochladen, dann Gluon-sysupgrade über LuCI auf 192.168.1.1 [geprüft: Freifunk Aachen 04.01.2024, Wiki toh:zyxel:wsm20; Neanderfunk-Notiz, adorfer 15.10.2026: nach dieser Anleitung installiert, läuft als Testknoten in 21_dias (dias-d41ad11183d0, Gluon 2023.2.6, Karte 15.10.2026)]
 - **Schritte (Normalweg):**
-  1. Gerät in der Zyxel-Cloud registrieren (laut Wiki geht die Seite auch ohne Registrierung). [geprüft: Commit, Wiki toh:zyxel:wsm20]
-  2. Leuchtet beim Start die rote LED, war das Gerät schon eingerichtet: nach dem Start Reset einige Sekunden halten, bis die Front-LEDs blinken (Werksreset). [geprüft: Wiki toh:zyxel:wsm20]
-  3. Rechner per Netzwerkkabel verbinden und im Browser die versteckte Seite http(s)://192.168.212.1/gui/#/main/debug/firmwareupgrade öffnen. [geprüft: Commit 28df7f7, Wiki toh:zyxel:wsm20]
-  4. Ca. 1 min warten, bis der Upload-Knopf aktiv wird. [geprüft: Wiki toh:zyxel:wsm20]
-  5. `initramfs-kernel.bin` hochladen. [geprüft]
-  6. Warten, bis die LED nach rot, grün und weiß blinkend weiß dauerhaft leuchtet, währenddessen nicht Strom ziehen. [geprüft: Wiki toh:zyxel:wsm20; 'nicht Strom ziehen' abgeleitet]
-  7. Netzwerkkabel ggf. kurz ziehen, damit der Rechner eine neue Adresse holt; OpenWrt ist unter 192.168.1.1. [geprüft: Commit 28df7f7, Wiki toh:zyxel:wsm20]
-  8. Gluon per sysupgrade installieren. [geprüft]
-- **Taste und Zeitpunkt:** Leuchtet beim Start die rote LED, war das Gerät schon eingerichtet: nach dem Start Reset einige Sekunden halten, bis die Front-LEDs blinken (Werksreset) [geprüft: Wiki toh:zyxel:wsm20]
-- **Sichtbare Zeichen:** Upgrade-Seite lädt ca. 1 min, dann wird der Upload-Knopf aktiv. Beim Flashen blinkt die LED ca. 10 s rot (etwa 1/s), dann grün dauerhaft, dann weiß schnell, weiß langsam; fertig bei weißem Dauerlicht [geprüft: Wiki toh:zyxel:wsm20]
-- **Übertragung:** webui-upload: https://192.168.212.1/gui/#/main/debug/firmwareupgrade
-- **Adressen:** Stock 192.168.212.1 (http oder https); danach OpenWrt auf 192.168.1.1, ggf. Netzwerkkabel kurz ziehen, damit der Rechner eine neue Adresse holt [geprüft: Commit 28df7f7, Wiki toh:zyxel:wsm20]
+  1. Nur den Rechner per Netzwerkkabel an LAN1 anschließen, dann Strom an [geprüft: Freifunk Aachen 04.01.2024]; kein Internet-Anschluss am Gerät [abgeleitet: Freifunk Aachen 04.01.2024, FAQ: rote LED = eingerichtet und ohne Internet]
+  2. LED-Folge abwarten: erst türkis, dann türkis blinkend (etwa 2/s), schließlich grün blinkend (etwa 2/s) [geprüft: Freifunk Aachen 04.01.2024]
+  3. Leuchtet die LED stattdessen rot, war das Gerät schon eingerichtet: Reset-Taste im laufenden Betrieb etwa 5 s halten, bis die LED gelb wird und blinkt, Werksreset abwarten [geprüft: Freifunk Aachen 04.01.2024]
+  4. Im Browser http://192.168.212.1/gui/#/main/debug/firmwareupgrade öffnen; leitet die Seite auf die Einrichtung des Herstellers um, zurückspringen oder die Adresse in einem neuen Tab öffnen [geprüft: Freifunk Aachen 04.01.2024]
+  5. Ist die Seite ausgegraut (ggf. mit Ladeanimation), 1 bis 2 Minuten warten, bis "Upload File" anklickbar ist [geprüft: Freifunk Aachen 04.01.2024; Neanderfunk-Notiz, adorfer: Wartezeit auf der Upgrade-Seite am Gerät so erlebt]
+  6. initramfs-kernel.bin hochladen und mit "OK" bestätigen; erst Upload in Prozent, dann 150 Sekunden Countdown [geprüft: Freifunk Aachen 04.01.2024]
+  7. Leuchtet die LED dauerhaft weiß, läuft OpenWrt im Arbeitsspeicher [geprüft: Freifunk Aachen 04.01.2024]
+  8. http://192.168.1.1/cgi-bin/luci/ öffnen, "Login" ohne Passwort, System > Backup / Flash Firmware > "Flash image…", Gluon-sysupgrade wählen, "Keep settings" abwählen, "Continue" [geprüft: Freifunk Aachen 04.01.2024]
+  9. Etwa 2 Minuten warten (LED zwischendurch türkis, beim Schreiben weiß blinkend); blinkt sie langsam weiß, ist der Konfigurationsmodus unter http://192.168.1.1/cgi-bin/config/wizard erreichbar [geprüft: Freifunk Aachen 04.01.2024]
+- **Taste und Zeitpunkt:** Reset-Taste (Rückseite, spitzer Gegenstand) nur bei roter LED: im laufenden Betrieb etwa 5 s, bis die LED gelb wird und blinkt (Werksreset) [geprüft: Freifunk Aachen 04.01.2024]
+- **Sichtbare Zeichen:** Vor dem Flashen: türkis, dann türkis blinkend, dann grün blinkend (bereit); rot = schon eingerichtet und ohne Internet. Upgrade-Seite anfangs ausgegraut, nach 1 bis 2 Minuten aktiv. Nach dem Upload 150 s Countdown, dann weiß dauerhaft = OpenWrt im RAM. Nach dem sysupgrade türkis, weiß blinkend beim Schreiben, langsam weiß blinkend = Konfigurationsmodus [geprüft: Freifunk Aachen 04.01.2024]
+- **Übertragung:** webui-upload: http://192.168.212.1/gui/#/main/debug/firmwareupgrade
+- **Anschluss:** LAN1, nur der Rechner [geprüft: Freifunk Aachen 04.01.2024]; kein Internet am Gerät [abgeleitet: Freifunk Aachen, FAQ: rote LED = eingerichtet und ohne Internet]
+- **Adressen:** Stock http://192.168.212.1 (Umleitung auf die Einrichtungsseite: zurück oder neuer Tab) [geprüft: Freifunk Aachen 04.01.2024]; danach OpenWrt http://192.168.1.1/cgi-bin/luci/ ohne Passwort [geprüft: Freifunk Aachen 04.01.2024]; Gluon-Konfigurationsmodus http://192.168.1.1/cgi-bin/config/wizard [geprüft: Freifunk Aachen 04.01.2024]; ggf. Netzwerkkabel kurz ziehen, damit der Rechner eine neue Adresse holt [geprüft: Commit 28df7f7, Wiki toh:zyxel:wsm20]
 - **Programm:** Browser [geprüft: Commit 28df7f7]
-- **Zugang:** Versteckte Seite /gui/#/main/debug/firmwareupgrade der Stock-Web-UI [geprüft: Commit 28df7f7, Wiki toh:zyxel:wsm20]
-- **Datei:** `initramfs-kernel.bin`, danach Gluon-sysupgrade [geprüft]
+- **Zugang:** Versteckte Seite /gui/#/main/debug/firmwareupgrade der Stock-Web-UI, ohne Anmeldung und ohne Zyxel-Cloud [geprüft: Freifunk Aachen 04.01.2024]; LuCI ohne Passwort [geprüft: Freifunk Aachen 04.01.2024]
+- **Datei:** OpenWrt-initramfs-kernel.bin, danach Gluon-sysupgrade [geprüft: Freifunk Aachen 04.01.2024]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
-- **Werkzeug/Spezial:** Zyxel-Cloud-Konto
-- **Bedingung an die Herstellerfirmware:** Commit: Gerät muss in der Zyxel-Cloud registriert sein; Wiki: die Seite geht auch ohne Registrierung, sonst registrieren [geprüft: Commit, Wiki toh:zyxel:wsm20]
+- **Werkzeug/Spezial:** -
+- **Bedingung an die Herstellerfirmware:** Keine Zyxel-Cloud-Registrierung nötig [geprüft: Freifunk Aachen 04.01.2024 + Wiki toh:zyxel:wsm20; Neanderfunk-Notiz, adorfer 15.10.2026: nach dieser Anleitung installiert, läuft als Testknoten in 21_dias (dias-d41ad11183d0, Gluon 2023.2.6, Karte 15.10.2026)]; der Commit 28df7f7 hatte sie noch verlangt [geprüft: Commit]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Gluon-RAMpe passt:** ja: der Hersteller-Weg nimmt ein initramfs (KERNEL_INITRAMFS mit znet-Header, mt7621.mk); Cloud-Registrierung bleibt
-- **Gluon-RAMpe-Rezept:** devices/zyxel-wsm20.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (znet-Header schon drin) für die versteckte Upgrade-Seite
+- **Dauer:** Upgrade-Seite 1 bis 2 Minuten, Upload plus 150 s, sysupgrade etwa 2 Minuten [geprüft: Freifunk Aachen 04.01.2024]
+- **Fehlerbild:** Rote LED vor dem Flashen: schon eingerichtet und ohne Internet, Werksreset [geprüft: Freifunk Aachen 04.01.2024]
+- **Hardware-Test:** adorfer: Gerät nach der Aachener Anleitung installiert (OpenWrt-initramfs + LuCI), läuft als Testknoten dias-d41ad11183d0 in 21_dias; RAMpe-Weg am Gerät ungetestet
+- **Gluon-RAMpe passt:** ja: die versteckte Upgrade-Seite nimmt das RAMpe-initramfs (znet-Header, KERNEL_INITRAMFS in mt7621.mk); danach Community-sysupgrade auf der RAMpe-Seite statt in LuCI [abgeleitet]; keine Cloud-Registrierung
+- **Gluon-RAMpe-Rezept:** devices/zyxel-wsm20.sh (gebaut 15.10.2026): `initramfs-kernel.bin` (znet-Header schon drin, 7.481.920 Bytes, unter den 8 MiB Kernel) für die versteckte Upgrade-Seite; am Gerät ungetestet
 - **Quelle (OpenWrt-Commit):** 28df7f7ff251d8684caa60f07ed0ba0c4a8e71f4
 - **Detail-Anleitung:** https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/
 
