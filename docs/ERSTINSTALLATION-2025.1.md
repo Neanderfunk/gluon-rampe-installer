@@ -477,8 +477,8 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [netgear-ex3700](#netgear-ex3700) | NETGEAR EX3700/EX3800 (Alias netgear-ex3800) | ramips-mt7620 | K0 | L0.1 | normal | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-ex3700.md); https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-wi-fi-range-extender-ex3700/ |
 | [netgear-ex6130](#netgear-ex6130) | NETGEAR EX6130 | ramips-mt7620 | K0 | L0.1 | normal | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-ex6130.md) |
 | [nexx-wt3020-8m](#nexx-wt3020-8m) | Nexx WT3020 8M (Aliase WT3020AD/F/H) | ramips-mt7620 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/nexx-wt3020-8m.md) |
-| [tp-link-archer-c2-v1](#tp-link-archer-c2-v1) | TP-Link Archer C2 v1 | ramips-mt7620 | K3 | L5 | bootloader | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | tftp-client-am-geraet | nein | nein | nein |  |  |
-| [tp-link-archer-c20-v1](#tp-link-archer-c20-v1) | TP-Link Archer C20 v1 | ramips-mt7620 | K3 | L5 | bootloader | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | tftp-client-am-geraet | nein | nein | nein |  |  |
+| [tp-link-archer-c2-v1](#tp-link-archer-c2-v1) | TP-Link Archer C2 v1 | ramips-mt7620 | K3 | L5 | bootloader | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c2-v1.md) |
+| [tp-link-archer-c20-v1](#tp-link-archer-c20-v1) | TP-Link Archer C20 v1 | ramips-mt7620 | K3 | L5 | bootloader | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c20-v1.md) |
 | [tp-link-archer-c20i](#tp-link-archer-c20i) | TP-Link Archer C20i | ramips-mt7620 | K0 | L1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c20i.md) |
 | [tp-link-archer-c50-v1](#tp-link-archer-c50-v1) | TP-Link Archer C50 v1 | ramips-mt7620 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c50-v1.md) |
 | [xiaomi-miwifi-mini](#xiaomi-miwifi-mini) | Xiaomi MiWiFi Mini | ramips-mt7620 | K1d | L4 | normal | [`ssh-stock`](#familie-ssh-stock) | ssh | nein | nein | nein |  |  |
@@ -12186,7 +12186,7 @@ TP-Link Archer C2 v1 · ramips-mt7620 · K3
 - **Übertragung:** tftp-client-am-geraet: Server 192.168.0.66, Datei ArcherC2V1_tp_recovery.bin
 - **Anschluss:** Kabel an LAN [geprüft: Commit]
 - **Adressen:** Rechner feste IP 192.168.0.66/24 [geprüft: Commit; abgeleitet: Wiki C50 zur Schreibweise]
-- **Programm:** Linux/macOS mit dd und cat [abgeleitet: Commit]; TFTP-Server [geprüft: Commit; abgeleitet: Wiki C50 zur Schreibweise]
+- **Programm:** Linux/macOS mit dd und cat [abgeleitet: Commit]; TFTP-Server [geprüft: Commit; abgeleitet: Wiki C50 zur Schreibweise]; U-Boot-Teil per `dd … bs=512 count=256 skip=1` (C20-Form, Commit 161a3be) bzw. `bs=1 skip=512 count=131072` (C2-Form, Commit 8375623): dieselben 131.072 Byte; Python-Einzeiler `read(131584)[512:]` ebenfalls byte-gleich [geprüft: Test Neanderfunk 15.10.2026]; TFTP-Recovery überschreibt die Bootloader-Partition [geprüft: Commit 8375623, "WARNING: This method also overwrites the bootloader partition!"]
 - **Datei:** TP-Link-Firmware Archer C2 V1 von tp-link.com [geprüft: Commit] als Quelle des U-Boot-Teils; Datei auf dem TFTP-Server genau ArcherC2V1_tp_recovery.bin, "V1" groß [geprüft: Commit; abgeleitet: Wiki C50 zur Schreibweise]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
@@ -12202,6 +12202,8 @@ TP-Link Archer C2 v1 · ramips-mt7620 · K3
 - **Dauer:** bis 20-25 Minuten, dann Neustart von selbst [geprüft: Commit]; in dieser Zeit auf keinen Fall Strom ziehen, der Bootloader wird mitgeschrieben [abgeleitet]
 - **Gluon-RAMpe passt:** nein: Recovery schreibt Flash, bootet nichts aus dem RAM; das Gluon-sysupgrade lässt sich direkt anhängen
 - **Quelle (OpenWrt-Commit):** 8375623a064037bbdd914bd9e7529eefa7172560
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c2-v1.md
+- **Werte für die Anleitung:** weg = tftp-voll; stock_url = https://www.tp-link.com/en/support/download/archer-c2/v1/; tftp_name = ArcherC2V1_tp_recovery.bin; taste = Halt die WPS/Reset-Taste gedrückt, schalte den Router ein und halt sie noch 10 Sekunden weiter.; dauer = Laut OpenWrt dauert das bis zu 20 bis 25 Minuten; erst bei 100 % startet er neu.; sicherheit = quelle
 
 #### tp-link-archer-c20-v1
 
@@ -12220,7 +12222,7 @@ TP-Link Archer C20 v1 · ramips-mt7620 · K3
 - **Sichtbare Zeichen:** nach dem Schreiben leuchtet eine weiße LED [abgeleitet: Wiki C20 v1]; Router startet selbst neu [geprüft: Commit]
 - **Übertragung:** tftp-client-am-geraet: Server 192.168.0.66, Datei ArcherC20V1_tp_recovery.bin
 - **Adressen:** Rechner feste IP 192.168.0.66/24, Gateway 192.168.0.1 [abgeleitet: Wiki C20 v1]
-- **Programm:** Linux/macOS mit dd und cat [abgeleitet]; TFTP-Server (z. B. Tftpd64) [geprüft: Commit]
+- **Programm:** Linux/macOS mit dd und cat [abgeleitet]; TFTP-Server (z. B. Tftpd64) [geprüft: Commit]; U-Boot-Teil per `dd … bs=512 count=256 skip=1` (C20-Form, Commit 161a3be) bzw. `bs=1 skip=512 count=131072` (C2-Form, Commit 8375623): dieselben 131.072 Byte; Python-Einzeiler `read(131584)[512:]` ebenfalls byte-gleich [geprüft: Test Neanderfunk 15.10.2026]; TFTP-Recovery überschreibt die Bootloader-Partition [geprüft: Commit 8375623, "WARNING: This method also overwrites the bootloader partition!"]
 - **Datei:** TP-Link-Firmware Archer C20 v1 (..._up_boot...) [geprüft: Commit] als Quelle des U-Boot-Teils; Datei auf dem TFTP-Server genau ArcherC20V1_tp_recovery.bin [geprüft: Commit]
 - **seriell nötig:** nein (nur für den seriellen Notweg: ja)
 - **Gehäuse öffnen:** nein
@@ -12236,6 +12238,8 @@ TP-Link Archer C20 v1 · ramips-mt7620 · K3
 - **Dauer:** bis 20-25 Minuten, dann Neustart von selbst [abgeleitet: Wiki C20 v1]; nicht Strom ziehen
 - **Gluon-RAMpe passt:** nein: wie Archer C2 v1
 - **Quelle (OpenWrt-Commit):** 161a3be5adb21135eb75da81247fa5e04b6ea676
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c20-v1.md
+- **Werte für die Anleitung:** weg = tftp-voll; stock_url = https://www.tp-link.com/en/support/download/archer-c20/v1/; tftp_name = ArcherC20V1_tp_recovery.bin; taste = Halt die Reset-Taste gedrückt, schalte den Router ein und halt sie etwa 6 bis 7 Sekunden weiter, bis der Router die Datei holt.; stock_hinweis = Nimm die Datei mit „up_boot“ im Namen.; sicherheit = abgeleitet; sicherheit_hinweis = Der Weg von OpenWrt nutzt ein Image, das es nicht mehr gibt; wir nehmen stattdessen wie beim Archer C2 v1 das sysupgrade.
 
 #### tp-link-archer-c20-v5
 

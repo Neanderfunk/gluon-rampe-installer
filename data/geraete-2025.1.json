@@ -17126,7 +17126,7 @@
    "uebertragung": "tftp-client-am-geraet: Server 192.168.0.66, Datei ArcherC2V1_tp_recovery.bin",
    "anschluss": "Kabel an LAN [geprüft: Commit]",
    "adressen": "Rechner feste IP 192.168.0.66/24 [geprüft: Commit; abgeleitet: Wiki C50 zur Schreibweise]",
-   "programm": "Linux/macOS mit dd und cat [abgeleitet: Commit]; TFTP-Server [geprüft: Commit; abgeleitet: Wiki C50 zur Schreibweise]",
+   "programm": "Linux/macOS mit dd und cat [abgeleitet: Commit]; TFTP-Server [geprüft: Commit; abgeleitet: Wiki C50 zur Schreibweise]; U-Boot-Teil per `dd … bs=512 count=256 skip=1` (C20-Form, Commit 161a3be) bzw. `bs=1 skip=512 count=131072` (C2-Form, Commit 8375623): dieselben 131.072 Byte; Python-Einzeiler `read(131584)[512:]` ebenfalls byte-gleich [geprüft: Test Neanderfunk 15.10.2026]; TFTP-Recovery überschreibt die Bootloader-Partition [geprüft: Commit 8375623, \"WARNING: This method also overwrites the bootloader partition!\"]",
    "zugang": "",
    "datei": "TP-Link-Firmware Archer C2 V1 von tp-link.com [geprüft: Commit] als Quelle des U-Boot-Teils; Datei auf dem TFTP-Server genau ArcherC2V1_tp_recovery.bin, \"V1\" groß [geprüft: Commit; abgeleitet: Wiki C50 zur Schreibweise]",
    "seriell": "nein",
@@ -17156,9 +17156,16 @@
    "rampe": "nein: Recovery schreibt Flash, bootet nichts aus dem RAM; das Gluon-sysupgrade lässt sich direkt anhängen",
    "rampe_rezept": "",
    "quelle": "8375623a064037bbdd914bd9e7529eefa7172560",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/tp-link-archer-c2-v1.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "tftp-voll",
+    "stock_url": "https://www.tp-link.com/en/support/download/archer-c2/v1/",
+    "tftp_name": "ArcherC2V1_tp_recovery.bin",
+    "taste": "Halt die WPS/Reset-Taste gedrückt, schalte den Router ein und halt sie noch 10 Sekunden weiter.",
+    "dauer": "Laut OpenWrt dauert das bis zu 20 bis 25 Minuten; erst bei 100 % startet er neu.",
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "tp-link-archer-c20-v1",
@@ -17183,7 +17190,7 @@
    "uebertragung": "tftp-client-am-geraet: Server 192.168.0.66, Datei ArcherC20V1_tp_recovery.bin",
    "anschluss": "",
    "adressen": "Rechner feste IP 192.168.0.66/24, Gateway 192.168.0.1 [abgeleitet: Wiki C20 v1]",
-   "programm": "Linux/macOS mit dd und cat [abgeleitet]; TFTP-Server (z. B. Tftpd64) [geprüft: Commit]",
+   "programm": "Linux/macOS mit dd und cat [abgeleitet]; TFTP-Server (z. B. Tftpd64) [geprüft: Commit]; U-Boot-Teil per `dd … bs=512 count=256 skip=1` (C20-Form, Commit 161a3be) bzw. `bs=1 skip=512 count=131072` (C2-Form, Commit 8375623): dieselben 131.072 Byte; Python-Einzeiler `read(131584)[512:]` ebenfalls byte-gleich [geprüft: Test Neanderfunk 15.10.2026]; TFTP-Recovery überschreibt die Bootloader-Partition [geprüft: Commit 8375623, \"WARNING: This method also overwrites the bootloader partition!\"]",
    "zugang": "",
    "datei": "TP-Link-Firmware Archer C20 v1 (..._up_boot...) [geprüft: Commit] als Quelle des U-Boot-Teils; Datei auf dem TFTP-Server genau ArcherC20V1_tp_recovery.bin [geprüft: Commit]",
    "seriell": "nein (nur für den seriellen Notweg: ja)",
@@ -17213,9 +17220,17 @@
    "rampe": "nein: wie Archer C2 v1",
    "rampe_rezept": "",
    "quelle": "161a3be5adb21135eb75da81247fa5e04b6ea676",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/tp-link-archer-c20-v1.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "tftp-voll",
+    "stock_url": "https://www.tp-link.com/en/support/download/archer-c20/v1/",
+    "tftp_name": "ArcherC20V1_tp_recovery.bin",
+    "taste": "Halt die Reset-Taste gedrückt, schalte den Router ein und halt sie etwa 6 bis 7 Sekunden weiter, bis der Router die Datei holt.",
+    "stock_hinweis": "Nimm die Datei mit „up_boot“ im Namen.",
+    "sicherheit": "abgeleitet",
+    "sicherheit_hinweis": "Der Weg von OpenWrt nutzt ein Image, das es nicht mehr gibt; wir nehmen stattdessen wie beim Archer C2 v1 das sysupgrade."
+   }
   },
   {
    "gluon_name": "tp-link-archer-c20i",
