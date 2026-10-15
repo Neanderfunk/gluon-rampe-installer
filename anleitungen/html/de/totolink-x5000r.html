@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TOTOLINK X5000R: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="totolink-x5000r">
+<meta name="anleitung:modell" content="TOTOLINK X5000R">
+<meta name="anleitung:anzeige" content="TOTOLINK X5000R">
+<meta name="anleitung:familie" content="sonderweg-totolink-x5000r">
+<meta name="anleitung:gluon_broken" content="false">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="mit Werkzeug">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="browser-https, feste-ip">
+<meta name="anleitung:daten_stand" content="979581e">
+<meta name="anleitung:vorlage_stand" content="674e643">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<h1>TOTOLINK X5000R: Freifunk-Firmware installieren</h1>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> So beschreiben die Entwickler von OpenWrt
+bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
+ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
+klappt.
+Den Umweg über die ältere TOTOLINK-Firmware kennen wir nur aus Berichten im OpenWrt-Forum.</p>
+<p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+Anleitung für alle nach dir besser:</p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20TOTOLINK%20X5000R">projekt@neanderfunk.de</a></p>
+</blockquote>
+<p>Beim TOTOLINK X5000R nimmt die Weboberfläche von TOTOLINK die Freifunk-Firmware
+direkt an. Manche neueren Versionen der TOTOLINK-Firmware lehnen die Datei
+allerdings ab. Dann spielst du zuerst über
+den Notfall-Modus des Routers eine ältere TOTOLINK-Firmware auf und danach
+die Freifunk-Firmware. Rechne mit einer Viertelstunde, mit Umweg mit einer
+halben Stunde.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>den Router mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
+Netzwerkkabel</li>
+<li>die Freifunk-Firmware deiner Community für den TOTOLINK X5000R, und zwar das
+<strong>sysupgrade</strong>-Image</li>
+<li>nur für den Umweg: die ältere TOTOLINK-Firmware
+<a href="https://web.archive.org/web/20251202002316id_/https://www.totolink.net/data/upload/20201223/f468696a985bdf6e544cdcadbc1585ec.zip">f468696a985bdf6e544cdcadbc1585ec.zip</a>, SHA256 <code>4fdb1bbf1773a3e7bb3d2f36953411e93a7da52277ee8e79e1dd54909e74daeb</code>. TOTOLINK bietet sie auf der eigenen Seite nicht mehr an; der Link führt auf die Originaldatei von totolink.net im Internet Archive. Pack das ZIP aus; gebraucht wird die Datei
+<code>TOTOLINK_C8343R-1C_X5000R_IP04433_MT7621A_SPI_16M256M_V9.1.0u.6118_B20201102_ALL.web</code> darin.</li>
+</ul>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Rechner anschließen.</strong> Steck das Kabel vom Rechner in eine
+LAN-Buchse des Routers und schalte ihn ein. Der Rechner bleibt auf
+&quot;automatisch&quot; (DHCP).</p>
+</li>
+<li>
+<p><strong>Weboberfläche öffnen.</strong> Öffne im Browser <code>http://192.168.0.1</code> (oder
+<code>http://itotolink.net</code>) und melde dich an.</p>
+</li>
+<li>
+<p><strong>Freifunk-Firmware hochladen.</strong> Such den Menüpunkt für das
+Firmware-Update (bei neueren Versionen <strong>Tools → Upgrade → Local
+Upgrade</strong>) und wähl das sysupgrade-Image deiner Community aus. Starte das
+Update.</p>
+<p><strong>Meldet die Oberfläche &quot;Invalid upgrade firmware file&quot;</strong> oder etwas
+Ähnliches, ist die TOTOLINK-Firmware zu neu. Dann zuerst den Abschnitt
+&quot;Umweg: ältere TOTOLINK-Firmware aufspielen&quot; unten, danach diese Schritte
+noch einmal.</p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Der Router schreibt die Freifunk-Firmware und startet neu,
+einige Minuten, Strom nicht ziehen. Danach startet die Freifunk-Firmware
+deiner Community: je nach Community zuerst mit einer Einrichtungsseite
+unter <code>http://192.168.1.1</code> oder gleich im Betrieb.</p>
+</li>
+</ol>
+<h2>Umweg: ältere TOTOLINK-Firmware aufspielen</h2>
+<p>Der Router hat einen Notfall-Modus im Bootloader, der jede
+TOTOLINK-Firmware annimmt, auch eine ältere. Danach nimmt die Weboberfläche
+auch wieder die Freifunk-Firmware.</p>
+<ol>
+<li>
+<p><strong>Datei prüfen.</strong> Prüf die SHA256 der heruntergeladenen Datei: unter
+Linux <code>sha256sum f468696a985bdf6e544cdcadbc1585ec.zip</code>, unter macOS
+<code>shasum -a 256 f468696a985bdf6e544cdcadbc1585ec.zip</code>, in der Windows-PowerShell
+<code>Get-FileHash f468696a985bdf6e544cdcadbc1585ec.zip</code>. Das Ergebnis muss
+<code>4fdb1bbf1773a3e7bb3d2f36953411e93a7da52277ee8e79e1dd54909e74daeb</code> lauten (Groß- und Kleinschreibung spielt keine
+Rolle). Dann das ZIP auspacken.</p>
+</li>
+<li>
+<p><strong>Feste Adresse am Rechner.</strong> Stell deinen Rechner auf <code>192.168.1.10</code>,
+Netzmaske <code>255.255.255.0</code>
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).</p>
+</li>
+<li>
+<p><strong>Notfall-Modus starten.</strong> Zieh den Stecker des Netzteils. Halt die
+<strong>Reset</strong>-Taste gedrückt und steck das Netzteil wieder ein. Halt die
+Taste weiter, bis <strong>alle LAN-LEDs</strong> grün leuchten und kurz darauf die
+blaue Status-LED einmal blinkt. Dann loslassen.</p>
+</li>
+<li>
+<p><strong>Kabel an LAN1.</strong> Steck das Kabel vom Rechner in die Buchse <strong>LAN1</strong>.</p>
+</li>
+<li>
+<p><strong>Notfall-Seite öffnen.</strong> Öffne im Browser <code>http://192.168.1.1</code>. Es
+erscheint eine schlichte Seite zum Aktualisieren der Firmware. Kommt
+nichts, prüf mit <code>ping 192.168.1.1</code>, ob der Router antwortet. Wenn
+nicht, fang bei Schritt 3 wieder an.</p>
+</li>
+<li>
+<p><strong>Ältere Firmware hochladen.</strong> Wähl <code>TOTOLINK_C8343R-1C_X5000R_IP04433_MT7621A_SPI_16M256M_V9.1.0u.6118_B20201102_ALL.web</code> aus und starte das Update. Die Seite
+zeigt &quot;Update in Progress&quot;.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Der Router schreibt die Firmware und startet von selbst neu.
+Danach geht das Licht an den LAN-Buchsen aus, bis auf die Buchse mit
+deinem Kabel, und die blaue Status-LED blinkt langsam. Dann ist er
+fertig. Strom bis dahin nicht ziehen.</p>
+</li>
+<li>
+<p><strong>Zurück zum Anfang.</strong> Stell den Rechner wieder auf &quot;automatisch&quot; und
+mach oben mit Schritt 2 weiter.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>In Schritt 3 nimmt die Weboberfläche die Datei an und zeigt den Fortschritt.</li>
+<li>Nach Schritt 4 meldet sich die Freifunk-Firmware.</li>
+<li>Beim Umweg erscheint in Schritt 5 die Notfall-Seite, und nach Schritt 7
+meldet sich wieder die TOTOLINK-Oberfläche unter <code>http://192.168.0.1</code>.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Die Weboberfläche lehnt die Datei ab.</strong> Siehe &quot;Umweg&quot; oben.</li>
+<li><strong>Die Notfall-Seite erscheint nicht.</strong> Prüf die feste Adresse am Rechner,
+ob das Kabel in LAN1 steckt und ob die Reset-Taste schon vor dem Strom
+gedrückt war. Manche Browser machen aus <code>http</code> von selbst <code>https</code>, siehe
+<a href="grundlagen/browser-https.html">Browser macht https daraus</a>.</li>
+<li><strong>Der Router startet nach dem Update nicht richtig.</strong> Der Notfall-Modus
+steckt im Bootloader und bleibt erhalten. Spiel über ihn die ältere
+TOTOLINK-Firmware auf (Umweg) und fang von vorn an.</li>
+</ul>
+<h2>Zurück zur TOTOLINK-Firmware</h2>
+<p>Über den Notfall-Modus (Umweg, Schritte 2 bis 7) nimmt der Router jede
+TOTOLINK-Firmware an, auch eine neuere.</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet: sysupgrade startet neu (Schritte (Normalweg))</li>
+<li>abgeleitet: webui-upload (Schritte (Normalweg))</li>
+<li>geprüft (Weg ab Werk, Schritte (Normalweg), Datei)</li>
+<li>geprüft: Commit 23be410 (Schritte (Normalweg), Programm)</li>
+<li>geprüft: forum.openwrt.org t/113153 #1, #3 (2021-11-28); t/124500 #1, #3 (2022-04-05) (Bedingung an die Herstellerfirmware)</li>
+<li>geprüft: geladen und gehasht 15.10.2026 (Bedingung an die Herstellerfirmware)</li>
+<li>Geräteeintrag: 23be410b3d1267c752bf9f6e5c8f5a514dc562c4</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>
