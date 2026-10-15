@@ -6429,18 +6429,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target, ohne Anleitung) [abgeleitet]",
-   "anleitung": "anleitungen/de/ubiquiti-rocket-m-xm.md",
+   "anleitung": "- (keine Anleitung: XM ist Sackgasse, adorfer 15.10.2026)",
    "erprobt": {},
-   "werte": {
-    "taste_ort": "",
-    "kabel_am_geraet": false,
-    "led_schreiben": "",
-    "dauer": "",
-    "geraet_ip": "192.168.1.20",
-    "rechner_ip": "192.168.1.21",
-    "taste": "etwa 8 Sekunden, bis die Signal-LEDs abwechselnd blinken",
-    "sicherheit": "abgeleitet"
-   }
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-unifi-ac-lite",

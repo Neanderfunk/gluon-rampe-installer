@@ -314,7 +314,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [ubiquiti-nanobeam-m5-xw](#ubiquiti-nanobeam-m5-xw) | Ubiquiti NanoBeam M5 XW (Alias von ubiquiti-nanostation-loco-m-xw) | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-nanobeam-m5-xw.md) |
 | [ubiquiti-nanostation-loco-m-xw](#ubiquiti-nanostation-loco-m-xw) | Ubiquiti Nanostation Loco M XW | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-nanostation-loco-m-xw.md) |
 | [ubiquiti-nanostation-m-xw](#ubiquiti-nanostation-m-xw) | Ubiquiti Nanostation M XW | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-nanostation-m-xw.md) |
-| [ubiquiti-rocket-m-xm](#ubiquiti-rocket-m-xm) | Ubiquiti Rocket M XM | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-rocket-m-xm.md) |
+| [ubiquiti-rocket-m-xm](#ubiquiti-rocket-m-xm) | Ubiquiti Rocket M XM | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | - (keine Anleitung: XM ist Sackgasse, adorfer 15.10.2026) |
 | [ubiquiti-unifi-ac-lite](#ubiquiti-unifi-ac-lite) | Ubiquiti UniFi AC Lite | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-lite.md); https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
 | [ubiquiti-unifi-ac-lr](#ubiquiti-unifi-ac-lr) | Ubiquiti UniFi AC LR | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-lr.md); https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
 | [ubiquiti-unifi-ac-mesh](#ubiquiti-unifi-ac-mesh) | Ubiquiti UniFi AC Mesh | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-mesh.md); https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
@@ -11740,8 +11740,7 @@ Ubiquiti Rocket M XM · ath79-generic · K0+
 - **Rückweg zur Herstellerfirmware:** gleicher TFTP-Weg mit dem AirOS-Image, möglichst genau der vorher installierten Version [abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target, ohne Anleitung) [abgeleitet]
-- **Detail-Anleitung:** anleitungen/de/ubiquiti-rocket-m-xm.md
-- **Werte für die Anleitung:** kabel_am_geraet = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.21; taste = etwa 8 Sekunden, bis die Signal-LEDs abwechselnd blinken; sicherheit = abgeleitet
+- **Detail-Anleitung:** - (keine Anleitung: XM ist Sackgasse, adorfer 15.10.2026)
 
 #### ubiquiti-unifi-ap-pro
 
