@@ -3335,7 +3335,7 @@
    "uebertragung": "ssh/scp über Sophos-XG (awetool); alternativ tftp-client am U-Boot: Server 192.168.99.8/24, Datei uImage_AP100 [Commit nennt uImage_AP100C als Beispiel]",
    "anschluss": "AP-Ethernet an die LAN-Schnittstelle der XG-Appliance [geprüft: Commit 6f1efb2]; läuft die XG als VM, braucht der Rechner dafür eine eigene Netzwerkkarte, die an das LAN der VM gebrückt ist [abgeleitet]; Strom: 802.3af-PoE am einzigen Gigabit-Port oder 12 V über Hohlbuchse 5.5x2.1 mm [geprüft: Commit 6f1efb2]",
    "adressen": "keine festen Adressen nötig: die XG-Appliance verwaltet den AP, awetool verbindet per SSH [geprüft: Commit 6f1efb2]; LAN-Adresse der XG legt man bei der Ersteinrichtung fest [abgeleitet]",
-   "programm": "Sophos-XG-Firewall-Software (Home-Use-Lizenz) auf PC oder VM, ssh, scp, auf der XG `sudo awetool` [geprüft: Commit 6f1efb2]; laut Commit geht auch eine Sophos-SG-Appliance [geprüft: Commit 6f1efb2]",
+   "programm": "Sophos-XG-Firewall-Software (Home-Use-Lizenz) auf PC oder VM, ssh, scp, auf der XG `sudo awetool` [geprüft: Commit 6f1efb2]; laut Commit geht auch eine Sophos-SG-Appliance [geprüft: Commit 6f1efb2]; UART: AP100/AP55 nach Abnehmen des oberen Deckels, AP100C/AP55C nur mit ausgebauter Platine (drei Schrauben); Datei uImage_AP100C, 'cp.b $fileaddr 0x9f070000 $filesize' [geprüft: OpenWrt-Commit 6f1efb2, Fußnote 4]",
    "zugang": "SSH auf die XG-Appliance, Advanced Console = Menüpunkt 5, dann 3; `sudo awetool` liefert die Root-Shell auf dem AP [geprüft: Commit 6f1efb2]",
    "datei": "Gluon-sysupgrade-Image, auf dem AP als `/tmp/openwrt.bin` [geprüft: Commit 6f1efb2]; OpenWrt baut für die Sophos-APs nur sysupgrade, kein factory [geprüft: Image-Rezept am Pin, Inventar]",
    "seriell": "nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)",
@@ -3355,9 +3355,14 @@
    "rampe": "nein: beide Wege schreiben das sysupgrade direkt (mtd write bzw. cp.b)",
    "rampe_rezept": "",
    "quelle": "6f1efb28983758116a8ecaf9c93e1d875bb70af7 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7",
+   "anleitung": "anleitungen/de/sophos-ap100.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "tftp_name": "uImage_AP100",
+    "uart_ort": "Nimm dafür den oberen Deckel ab.",
+    "sicherheit": "abgeleitet",
+    "sicherheit_hinweis": "Den Dateinamen für TFTP haben wir nach dem Muster der Schwestermodelle angenommen; sucht der Bootloader einen anderen, steht er in seiner Ausgabe."
+   }
   },
   {
    "gluon_name": "sophos-ap100c",
@@ -3386,7 +3391,7 @@
    "uebertragung": "ssh/scp über Sophos-XG (awetool); alternativ tftp-client am U-Boot: Server 192.168.99.8/24, Datei uImage_AP100C [Commit nennt uImage_AP100C als Beispiel]",
    "anschluss": "AP-Ethernet an die LAN-Schnittstelle der XG-Appliance [geprüft: Commit 6f1efb2]; läuft die XG als VM, braucht der Rechner dafür eine eigene Netzwerkkarte, die an das LAN der VM gebrückt ist [abgeleitet]; Strom: 802.3af-PoE am einzigen Gigabit-Port oder 12 V über Hohlbuchse 5.5x2.1 mm [geprüft: Commit 6f1efb2]",
    "adressen": "keine festen Adressen nötig: die XG-Appliance verwaltet den AP, awetool verbindet per SSH [geprüft: Commit 6f1efb2]; LAN-Adresse der XG legt man bei der Ersteinrichtung fest [abgeleitet]",
-   "programm": "Sophos-XG-Firewall-Software (Home-Use-Lizenz) auf PC oder VM, ssh, scp, auf der XG `sudo awetool` [geprüft: Commit 6f1efb2]; laut Commit geht auch eine Sophos-SG-Appliance [geprüft: Commit 6f1efb2]",
+   "programm": "Sophos-XG-Firewall-Software (Home-Use-Lizenz) auf PC oder VM, ssh, scp, auf der XG `sudo awetool` [geprüft: Commit 6f1efb2]; laut Commit geht auch eine Sophos-SG-Appliance [geprüft: Commit 6f1efb2]; UART: AP100/AP55 nach Abnehmen des oberen Deckels, AP100C/AP55C nur mit ausgebauter Platine (drei Schrauben); Datei uImage_AP100C, 'cp.b $fileaddr 0x9f070000 $filesize' [geprüft: OpenWrt-Commit 6f1efb2, Fußnote 4]",
    "zugang": "SSH auf die XG-Appliance, Advanced Console = Menüpunkt 5, dann 3; `sudo awetool` liefert die Root-Shell auf dem AP [geprüft: Commit 6f1efb2]",
    "datei": "Gluon-sysupgrade-Image, auf dem AP als `/tmp/openwrt.bin` [geprüft: Commit 6f1efb2]; OpenWrt baut für die Sophos-APs nur sysupgrade, kein factory [geprüft: Image-Rezept am Pin, Inventar]",
    "seriell": "nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)",
@@ -3406,9 +3411,13 @@
    "rampe": "nein: beide Wege schreiben das sysupgrade direkt (mtd write bzw. cp.b)",
    "rampe_rezept": "",
    "quelle": "6f1efb28983758116a8ecaf9c93e1d875bb70af7 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7",
+   "anleitung": "anleitungen/de/sophos-ap100c.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "tftp_name": "uImage_AP100C",
+    "uart_ort": "Die Platine muss dafür aus dem Gehäuse; sie ist mit drei Schrauben befestigt.",
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "sophos-ap15",
@@ -3453,9 +3462,22 @@
    "rampe": "teilweise: Gluon-RAMpe statt OpenWrt-initramfs; seriell bleibt",
    "rampe_rezept": "devices/sophos-ap15.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-\"broken\"-Gerät gezielt; `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; RAM nicht belegt",
    "quelle": "0dc58214896aacf67a3759495d70e2b4e9c160d8 (Einführung, Anleitung); fc31261c3307458e38c9a676211a25c99c044ece (DTS-Umbenennung) [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0dc58214896aacf67a3759495d70e2b4e9c160d8",
+   "anleitung": "anleitungen/de/sophos-ap15.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0dc58214896aacf67a3759495d70e2b4e9c160d8",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "initramfs_datei": "openwrt-24.10.8-ath79-generic-sophos_ap15-initramfs-kernel.bin",
+    "initramfs_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-sophos_ap15-initramfs-kernel.bin",
+    "tftp_name": "boot.bin",
+    "server_ip": "192.168.99.8",
+    "baud": "115200",
+    "anhalten": "Sobald die Aufforderung erscheint, den automatischen Start abzubrechen, drück eine Taste.",
+    "prompt": "ath>",
+    "konsole": "uart",
+    "konsole_ort": "auf der Platine (Gehäuse öffnen)",
+    "befehle": "tftpboot 0x81000000 boot.bin\nbootm 0x81000000",
+    "sicherheit": "quelle",
+    "sicherheit_hinweis": "Laut OpenWrt an zwei Geräten ausprobiert."
+   }
   },
   {
    "gluon_name": "sophos-ap15c",
@@ -3484,7 +3506,7 @@
    "uebertragung": "ssh/scp über Sophos-XG (awetool); alternativ tftp-client am U-Boot: Server 192.168.99.8/24, Datei uImage_AP15C",
    "anschluss": "AP-Ethernet an die LAN-Schnittstelle der XG-Appliance [geprüft: Commit 2d465fb]; läuft die XG als VM, braucht der Rechner dafür eine eigene Netzwerkkarte, die an das LAN der VM gebrückt ist [abgeleitet]; Strom: 12 V / 1 A über Hohlbuchse oder 802.3af-PoE [Wiki-Zusammenfassung: ToH-Datensatz]",
    "adressen": "keine festen Adressen nötig: die XG-Appliance verwaltet den AP, awetool verbindet per SSH [geprüft: Commit 2d465fb]; LAN-Adresse der XG legt man bei der Ersteinrichtung fest [abgeleitet]",
-   "programm": "Sophos-XG-Firewall-Software (Home-Use-Lizenz) auf PC oder VM, ssh, scp, auf der XG `sudo awetool` [geprüft: Commit 2d465fb]; laut Commit geht auch eine Sophos-SG-Appliance [geprüft: Commit 2d465fb]",
+   "programm": "Sophos-XG-Firewall-Software (Home-Use-Lizenz) auf PC oder VM, ssh, scp, auf der XG `sudo awetool` [geprüft: Commit 2d465fb]; laut Commit geht auch eine Sophos-SG-Appliance [geprüft: Commit 2d465fb]; Datei uImage_AP15C, 'cp.b $fileaddr 0x9f070000 $filesize' [geprüft: OpenWrt-Commit 2d465fbf57, Cherry-Pick von a7abc7ec]",
    "zugang": "SSH auf die XG-Appliance, Advanced Console = Menüpunkt 5, dann 3; `sudo awetool` liefert die Root-Shell auf dem AP [geprüft: Commit 2d465fb]",
    "datei": "Gluon-sysupgrade-Image, auf dem AP als `/tmp/openwrt.bin` [geprüft: Commit 2d465fb]; OpenWrt baut für die Sophos-APs nur sysupgrade, kein factory [geprüft: Image-Rezept am Pin, Inventar]",
    "seriell": "nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)",
@@ -3504,9 +3526,12 @@
    "rampe": "nein: beide Wege schreiben das sysupgrade direkt (mtd write bzw. cp.b)",
    "rampe_rezept": "",
    "quelle": "2d465fbf570e1f3286210305a26580cd417fec7c [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/sophos-ap15c.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "tftp_name": "uImage_AP15C",
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "sophos-ap55",
@@ -3535,7 +3560,7 @@
    "uebertragung": "ssh/scp über Sophos-XG (awetool); alternativ tftp-client am U-Boot: Server 192.168.99.8/24, Datei uImage_AP55 [Commit nennt uImage_AP100C als Beispiel]",
    "anschluss": "AP-Ethernet an die LAN-Schnittstelle der XG-Appliance [geprüft: Commit 6f1efb2]; läuft die XG als VM, braucht der Rechner dafür eine eigene Netzwerkkarte, die an das LAN der VM gebrückt ist [abgeleitet]; Strom: 802.3af-PoE am einzigen Gigabit-Port oder 12 V über Hohlbuchse 5.5x2.1 mm [geprüft: Commit 6f1efb2]",
    "adressen": "keine festen Adressen nötig: die XG-Appliance verwaltet den AP, awetool verbindet per SSH [geprüft: Commit 6f1efb2]; LAN-Adresse der XG legt man bei der Ersteinrichtung fest [abgeleitet]",
-   "programm": "Sophos-XG-Firewall-Software (Home-Use-Lizenz) auf PC oder VM, ssh, scp, auf der XG `sudo awetool` [geprüft: Commit 6f1efb2]; laut Commit geht auch eine Sophos-SG-Appliance [geprüft: Commit 6f1efb2]",
+   "programm": "Sophos-XG-Firewall-Software (Home-Use-Lizenz) auf PC oder VM, ssh, scp, auf der XG `sudo awetool` [geprüft: Commit 6f1efb2]; laut Commit geht auch eine Sophos-SG-Appliance [geprüft: Commit 6f1efb2]; UART: AP100/AP55 nach Abnehmen des oberen Deckels, AP100C/AP55C nur mit ausgebauter Platine (drei Schrauben); Datei uImage_AP100C, 'cp.b $fileaddr 0x9f070000 $filesize' [geprüft: OpenWrt-Commit 6f1efb2, Fußnote 4]",
    "zugang": "SSH auf die XG-Appliance, Advanced Console = Menüpunkt 5, dann 3; `sudo awetool` liefert die Root-Shell auf dem AP [geprüft: Commit 6f1efb2]",
    "datei": "Gluon-sysupgrade-Image, auf dem AP als `/tmp/openwrt.bin` [geprüft: Commit 6f1efb2]; OpenWrt baut für die Sophos-APs nur sysupgrade, kein factory [geprüft: Image-Rezept am Pin, Inventar]",
    "seriell": "nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)",
@@ -3555,9 +3580,14 @@
    "rampe": "nein: beide Wege schreiben das sysupgrade direkt (mtd write bzw. cp.b)",
    "rampe_rezept": "",
    "quelle": "6f1efb28983758116a8ecaf9c93e1d875bb70af7 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7",
+   "anleitung": "anleitungen/de/sophos-ap55.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "tftp_name": "uImage_AP55",
+    "uart_ort": "Nimm dafür den oberen Deckel ab.",
+    "sicherheit": "abgeleitet",
+    "sicherheit_hinweis": "Den Dateinamen für TFTP haben wir nach dem Muster der Schwestermodelle angenommen; sucht der Bootloader einen anderen, steht er in seiner Ausgabe."
+   }
   },
   {
    "gluon_name": "sophos-ap55c",
@@ -3586,7 +3616,7 @@
    "uebertragung": "ssh/scp über Sophos-XG (awetool); alternativ tftp-client am U-Boot: Server 192.168.99.8/24, Datei uImage_AP55C [Commit nennt uImage_AP100C als Beispiel]",
    "anschluss": "AP-Ethernet an die LAN-Schnittstelle der XG-Appliance [geprüft: Commit 6f1efb2]; läuft die XG als VM, braucht der Rechner dafür eine eigene Netzwerkkarte, die an das LAN der VM gebrückt ist [abgeleitet]; Strom: 802.3af-PoE am einzigen Gigabit-Port oder 12 V über Hohlbuchse 5.5x2.1 mm [geprüft: Commit 6f1efb2]",
    "adressen": "keine festen Adressen nötig: die XG-Appliance verwaltet den AP, awetool verbindet per SSH [geprüft: Commit 6f1efb2]; LAN-Adresse der XG legt man bei der Ersteinrichtung fest [abgeleitet]",
-   "programm": "Sophos-XG-Firewall-Software (Home-Use-Lizenz) auf PC oder VM, ssh, scp, auf der XG `sudo awetool` [geprüft: Commit 6f1efb2]; laut Commit geht auch eine Sophos-SG-Appliance [geprüft: Commit 6f1efb2]",
+   "programm": "Sophos-XG-Firewall-Software (Home-Use-Lizenz) auf PC oder VM, ssh, scp, auf der XG `sudo awetool` [geprüft: Commit 6f1efb2]; laut Commit geht auch eine Sophos-SG-Appliance [geprüft: Commit 6f1efb2]; UART: AP100/AP55 nach Abnehmen des oberen Deckels, AP100C/AP55C nur mit ausgebauter Platine (drei Schrauben); Datei uImage_AP100C, 'cp.b $fileaddr 0x9f070000 $filesize' [geprüft: OpenWrt-Commit 6f1efb2, Fußnote 4]",
    "zugang": "SSH auf die XG-Appliance, Advanced Console = Menüpunkt 5, dann 3; `sudo awetool` liefert die Root-Shell auf dem AP [geprüft: Commit 6f1efb2]",
    "datei": "Gluon-sysupgrade-Image, auf dem AP als `/tmp/openwrt.bin` [geprüft: Commit 6f1efb2]; OpenWrt baut für die Sophos-APs nur sysupgrade, kein factory [geprüft: Image-Rezept am Pin, Inventar]",
    "seriell": "nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)",
@@ -3606,9 +3636,14 @@
    "rampe": "nein: beide Wege schreiben das sysupgrade direkt (mtd write bzw. cp.b)",
    "rampe_rezept": "",
    "quelle": "6f1efb28983758116a8ecaf9c93e1d875bb70af7 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7",
+   "anleitung": "anleitungen/de/sophos-ap55c.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "tftp_name": "uImage_AP55C",
+    "uart_ort": "Die Platine muss dafür aus dem Gehäuse; sie ist mit drei Schrauben befestigt.",
+    "sicherheit": "abgeleitet",
+    "sicherheit_hinweis": "Den Dateinamen für TFTP haben wir nach dem Muster der Schwestermodelle angenommen; sucht der Bootloader einen anderen, steht er in seiner Ausgabe."
+   }
   },
   {
    "gluon_name": "teltonika-rut230-v1",
