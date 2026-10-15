@@ -33,9 +33,9 @@ deren Einzelbefunde im Anhang stehen.
 | Kat. | Bedeutung | Gluon-RAMpe | Stufe für Lesende (Vorschlag) |
 |---|---|---|---|
 | K0 | Gluon-factory direkt aus der Stock-Firmware (Web-UI-Upload) | unnötig | einfach |
-| K0+ | Gluon-factory vorhanden, der Weg ist aber mehr als ein Web-UI-Upload (TFTP-Recovery, versteckte Seite, SSH-Vorbereitung, nmrpflash, ap51-flash) | unnötig | mit Werkzeug |
-| K1 | ohne Öffnen: Hersteller-Recovery, Netboot oder Werkzeug bootet ein initramfs, danach sysupgrade | **passt** | mit Werkzeug |
-| K1d | ohne Öffnen: Hersteller- oder Bootloader-Weg schreibt das Gluon-sysupgrade bzw. ein Gluon-Sonderimage direkt (GL.iNet-U-Boot, EVA, ap51-flash, SSH/dd, Exploit) | unnötig | mit Werkzeug |
+| K0+ | Gluon-factory vorhanden, der Weg ist aber mehr als ein Web-UI-Upload (TFTP-Recovery, versteckte Seite, SSH-Vorbereitung, nmrpflash, ap51-flash) | unnötig | mit scripts/Netzwerktools |
+| K1 | ohne Öffnen: Hersteller-Recovery, Netboot oder Werkzeug bootet ein initramfs, danach sysupgrade | **passt** | mit scripts/Netzwerktools |
+| K1d | ohne Öffnen: Hersteller- oder Bootloader-Weg schreibt das Gluon-sysupgrade bzw. ein Gluon-Sonderimage direkt (GL.iNet-U-Boot, EVA, ap51-flash, SSH/dd, Exploit) | unnötig | mit scripts/Netzwerktools |
 | K2 | Hersteller-Zwischenfirmware, Exploit oder Spezialweg mit fremdem Zwischenimage (Cudy-Zwischenfirmware, Xiaomi, ASUS TUF, AVM 75x0) | teilweise | fortgeschritten |
 | K3 | Teile der Stock-Firmware nötig (per dd voran-/angehängt), modifiziertes OpenWrt oder Layout-Umbau (UBI, ERX) | meist nein | Werkstatt |
 | K4 | serielle Konsole + TFTP-initramfs | ersetzt nur das Zwischenimage | Werkstatt |

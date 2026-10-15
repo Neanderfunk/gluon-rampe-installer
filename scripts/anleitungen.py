@@ -50,8 +50,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from erstinstallation import FELDER  # noqa: E402  (Feld -> Beschriftung)
 
 # Kategorie -> Stufe fuer Lesende (Tabelle "Kategorien" in ERSTINSTALLATION)
-STUFE = {"K0": "einfach", "K0+": "mit Werkzeug", "K1": "mit Werkzeug",
-         "K1d": "mit Werkzeug", "K2": "fortgeschritten", "K3": "Werkstatt",
+STUFE = {"K0": "einfach", "K0+": "mit scripts/Netzwerktools", "K1": "mit scripts/Netzwerktools",
+         "K1d": "mit scripts/Netzwerktools", "K2": "fortgeschritten", "K3": "Werkstatt",
          "K4": "Werkstatt", "K5": "Werkstatt", "offen": "Werkstatt"}
 
 # Belegmarken: [geprueft: ...], [abgeleitet ...], [Wiki-Zusammenfassung: ...] ...
