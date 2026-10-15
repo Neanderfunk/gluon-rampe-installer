@@ -317,8 +317,8 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [ubiquiti-unifi-ac-lite](#ubiquiti-unifi-ac-lite) | Ubiquiti UniFi AC Lite | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-lite.md); https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
 | [ubiquiti-unifi-ac-lr](#ubiquiti-unifi-ac-lr) | Ubiquiti UniFi AC LR | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-lr.md); https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
 | [ubiquiti-unifi-ac-mesh](#ubiquiti-unifi-ac-mesh) | Ubiquiti UniFi AC Mesh | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-mesh.md); https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
-| [ubiquiti-unifi-ac-mesh-pro](#ubiquiti-unifi-ac-mesh-pro) | Ubiquiti UniFi AC Mesh Pro | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
-| [ubiquiti-unifi-ac-pro](#ubiquiti-unifi-ac-pro) | Ubiquiti UniFi AC Pro | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
+| [ubiquiti-unifi-ac-mesh-pro](#ubiquiti-unifi-ac-mesh-pro) | Ubiquiti UniFi AC Mesh Pro | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-mesh-pro.md); https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
+| [ubiquiti-unifi-ac-pro](#ubiquiti-unifi-ac-pro) | Ubiquiti UniFi AC Pro | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-pro.md); https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
 | [ubiquiti-unifi-ap](#ubiquiti-unifi-ap) | Ubiquiti UniFi AP | ath79-generic | K0+ | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  |  |
 | [ubiquiti-unifi-ap-outdoor+](#ubiquiti-unifi-ap-outdoor+) | Ubiquiti UniFi AP Outdoor+ | ath79-generic | K0+ | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ap-outdoor+.md) |
 | [ubiquiti-unifi-ap-pro](#ubiquiti-unifi-ap-pro) | Ubiquiti UniFi AP Pro | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ap-pro.md) |
@@ -11657,7 +11657,7 @@ Ubiquiti UniFi AC Mesh · ath79-generic · K1d
 
 Ubiquiti UniFi AC Mesh Pro · ath79-generic · K1d
 
-- **Weg ab Werk:** SSH auf die Stock-Firmware (ubnt/ubnt, 192.168.1.20), Schreibschutz per /proc/ubnthal/.uf aus, sysupgrade nach kernel0/kernel1 schreiben, bootselect setzen [abgeleitet: Ablauf aus UK-Ultra-Commit bf94e0a, gleiche ubnt_unifiac-Basis; Commit des Geräts ohne Anleitung]
+- **Weg ab Werk:** SSH auf die Stock-Firmware (ubnt/ubnt, 192.168.1.20), Schreibschutz per /proc/ubnthal/.uf aus, sysupgrade nach kernel0/kernel1 schreiben, bootselect setzen [abgeleitet: Ablauf aus UK-Ultra-Commit bf94e0a, gleiche ubnt_unifiac-Basis; Commit des Geräts ohne Anleitung]; Weg mit dd und Schreibschutz-Freigabe [abgeleitet: dd-Weg wie bei AC Lite und AC Pro (forum.freifunk.net/t/23422 #10, #25/#26; Neanderfunk-Notiz AC Pro 2025), kein eigener Praxisbericht zum AC Mesh Pro; Partitionsbelegung aus der AC-Lite-Ausgabe übertragen, die Prüfzeile fängt eine Abweichung ab]
 - **Schritte (Normalweg):**
   1. Typenschild lesen: AC Pro und AC Mesh Pro haben eigene Images [geprüft: Commit e420b7b]
   2. Gerät im Werkszustand starten (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']
@@ -11687,16 +11687,18 @@ Ubiquiti UniFi AC Mesh Pro · ath79-generic · K1d
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [ar71xx-Commit 987b961537b7002eda21df97dd8bfebe8882bc6d]
 - **Dauer:** Schreiben per dd wenige Sekunden bis Minuten, erster Start etwa 2 Minuten [abgeleitet: Wiki]; während dd läuft nicht Strom ziehen [abgeleitet]
+- **Notweg:** [Alternative] Downgrade der Ubiquiti-Firmware auf 3.7.58 (per syswrapper.sh upgrade2), danach mtd; neuere Firmware hat den mtd-Weg nicht mehr [abgeleitet: Downgrade-Weg wie bei AC Lite und AC Mesh (forum.freifunk.net/t/13863 #134), Datei aus dem U7PG2-Ordner wie beim AC Lite; kein eigener Bericht zum AC Mesh Pro]
 - **Rückweg zur Herstellerfirmware:** Ubiquiti-TFTP-Recovery: Reset beim Einschalten etwa 15 s halten, bis der LED-Ring weiß/blau/aus wechselt, dann Stock-Firmware per `tftp put` an 192.168.1.20 [abgeleitet: Wiki toh/ubiquiti/unifiac]
 - **Gluon-RAMpe passt:** nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben
 - **Quelle (OpenWrt-Commit):** e420b7b5c517d03e1282b5889065e22143f9c4ef [abgeleitet]
-- **Detail-Anleitung:** https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790
+- **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-ac-mesh-pro.md; https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790
+- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt
 
 #### ubiquiti-unifi-ac-pro
 
 Ubiquiti UniFi AC Pro · ath79-generic · K1d
 
-- **Weg ab Werk:** SSH auf die Stock-Firmware (ubnt/ubnt, 192.168.1.20), Schreibschutz per /proc/ubnthal/.uf aus, sysupgrade nach kernel0/kernel1 schreiben, bootselect setzen [abgeleitet: Ablauf aus UK-Ultra-Commit bf94e0a, gleiche ubnt_unifiac-Basis; Commit des Geräts ohne Anleitung]
+- **Weg ab Werk:** SSH auf die Stock-Firmware (ubnt/ubnt, 192.168.1.20), Schreibschutz per /proc/ubnthal/.uf aus, sysupgrade nach kernel0/kernel1 schreiben, bootselect setzen [abgeleitet: Ablauf aus UK-Ultra-Commit bf94e0a, gleiche ubnt_unifiac-Basis; Commit des Geräts ohne Anleitung]; Weg mit dd und Schreibschutz-Freigabe [Neanderfunk-Notiz: adorfer 2025, AC Pro, dd-Weg nach blocktrron, erfolgreich (Angabe adorfer 15.10.2026)] [Forum: forum.freifunk.net/t/23422 #25/#26, AC Pro Gen2 6.5.62, nach Werksreset erfolgreich] [abgeleitet: Partitionsbelegung mtd2/mtd3/mtd4 aus der AC-Lite-Ausgabe in 23422 #10 übertragen; die Prüfzeile fängt eine Abweichung ab]
 - **Schritte (Normalweg):**
   1. Typenschild lesen: AC Pro und AC Mesh Pro haben eigene Images [geprüft: Commit e420b7b]
   2. Gerät im Werkszustand starten (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']
@@ -11726,10 +11728,12 @@ Ubiquiti UniFi AC Pro · ath79-generic · K1d
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [abgeleitet: Mesh Pro ist laut ar71xx-Commit Hardwarekopie des AC Pro]
 - **Dauer:** Schreiben per dd wenige Sekunden bis Minuten, erster Start etwa 2 Minuten [abgeleitet: Wiki]; während dd läuft nicht Strom ziehen [abgeleitet]
+- **Notweg:** [Alternative] Downgrade der Ubiquiti-Firmware auf 3.7.58 (per syswrapper.sh upgrade2), danach mtd; neuere Firmware hat den mtd-Weg nicht mehr [Forum: forum.freifunk.net/t/13863 #134 (adorfer, 2018, AC Lite und AC Mesh, Downgrade 3.7.58 per syswrapper.sh upgrade2, dann mtd)] [geprüft: dl.ui.com/unifi/firmware/U7PG2/3.7.58.6385/BZ.qca956x.v3.7.58.6385.170508.0957.bin (U7PG2-Ordner, gleiche Datei wie beim AC Lite), HTTP 200, 7.764.011 Bytes, SHA256 cfe2e639c430d1a849c2892effb84157e82ea9cb08d174547c1e001d4d4388a8, abgerufen 15.10.2026]
 - **Rückweg zur Herstellerfirmware:** Ubiquiti-TFTP-Recovery: Reset beim Einschalten etwa 15 s halten, bis der LED-Ring weiß/blau/aus wechselt, dann Stock-Firmware per `tftp put` an 192.168.1.20 [abgeleitet: Wiki toh/ubiquiti/unifiac]
 - **Gluon-RAMpe passt:** nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben
 - **Quelle (OpenWrt-Commit):** 7dd3d7e1d3845160c2ef51e6148b452e666bd6f5 [abgeleitet]
-- **Detail-Anleitung:** https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790
+- **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-ac-pro.md; https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790
+- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt
 
 #### ubiquiti-unifi-ap
 
