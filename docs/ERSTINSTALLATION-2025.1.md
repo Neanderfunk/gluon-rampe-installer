@@ -12304,9 +12304,11 @@ TP-Link Archer C50 v4 · ramips-mt76x8 · K3
 - **Dauer:** nach jedem Versuch mindestens 3 Minuten oder bis 3 oder mehr LEDs leuchten warten [abgeleitet: Wiki C50]; nicht Strom ziehen [abgeleitet]
 - **Notweg:** [Notfall] Web-Recovery: öffnet sich nur über das Update-Flag: TP-Link-Update starten, etwa 3 s warten (Anzeige springt auf 0 %), dann Strom ziehen [geprüft: Commit]; Web-Recovery aktiv: beim Start sind alle LEDs aus außer der WPS-LED [geprüft: Commit]; Rechner feste IP im Netz 192.168.0.x/24, Gerät 192.168.0.1, dort kein DHCP [geprüft: Commit]; dort boot.bin hochladen [geprüft]. TFTP: Reset drücken und halten, Strom an [geprüft: Commit], laut Wiki C50 etwa 8 s, bis alle LEDs aufhören zu blinken und die WPS-LED angeht [abgeleitet: Wiki C50]; Rechner feste IP 192.168.0.66/24, TFTP-Server, Datei genau tp_recovery.bin [geprüft: Commit]; Router holt tp_recovery.bin, schreibt und startet nach etwa 1 Minute in OpenWrt/Gluon [geprüft: Commit]
 - **Rückweg zur Herstellerfirmware:** TP-Link-Firmware über die Web-Recovery (192.168.0.1, aktiviert über das Update-Flag wie unter notweg) einspielen [geprüft: Commit "vendor-firmware ... can be written"]
+- **Hardware-Test:** erfolgreich, genau dieser Weg (U-Boot-Teil aus der TP-Link-Firmware + Gluon-sysupgrade über die TP-Link-Oberfläche): adorfer 15.10.2026, TP-Link-Firmware Archer C50(EU)_V4_250117 als Quelle; Knoten dias-C50v4-test-ef7b (74da88faef7b) in 21_dias online mit 26091920sta (Karte gegengeprüft)
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade lässt sich direkt anhängen, kein Ramboot-Schritt
 - **Quelle (OpenWrt-Commit):** 01dcd574a24864c10a9c4df4304a3ce0da5c11a9
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-c50-v4.md
+- **Am Gerät erprobt (für die Anleitung):** am = 2026-10-15; mit = Gluon 2023.2.6 (26091920sta), U-Boot-Teil aus Archer C50(EU)_V4_250117
 - **Werte für die Anleitung:** stock_url = https://www.tp-link.com/de/support/download/archer-c50/v4/; sicherheit = quelle
 
 #### tp-link-archer-c50-v6-ca-eu-ru
