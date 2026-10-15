@@ -12,7 +12,7 @@
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="feste-ip, ssh-scp, tftp-client">
 <meta name="anleitung:daten_stand" content="685706f">
-<meta name="anleitung:vorlage_stand" content="91b66c0">
+<meta name="anleitung:vorlage_stand" content="af4b08d">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -75,8 +75,9 @@ vertraust: mit <code>yes</code> bestätigen.</p>
 <p><strong>Firmware schreiben.</strong> Gib diese Befehle <strong>einzeln und genau so</strong> ein,
 jeweils mit Enter. Am besten kopierst du sie Zeile für Zeile.</p>
 <pre><code>cat /proc/mtd
-# Weiter nur, wenn in der Ausgabe bootselect bei mtd11 und kernel0 bei mtd12 steht.
-dd if=/dev/zero bs=1 count=1 seek=7 conv=notrunc of=/dev/mtd11
+</code></pre>
+<p><strong>Prüfen:</strong> Weiter nur, wenn in der Ausgabe bootselect bei mtd11 und kernel0 bei mtd12 steht. Sonst hier aufhören.</p>
+<pre><code>dd if=/dev/zero bs=1 count=1 seek=7 conv=notrunc of=/dev/mtd11
 dd if=/tmp/sysupgrade.bin of=/dev/mtdblock12
 reboot
 </code></pre>

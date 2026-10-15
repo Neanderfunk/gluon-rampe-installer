@@ -7,7 +7,7 @@ stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip, ssh-scp, tftp-client]
 daten_stand: 685706f
-vorlage_stand: 91b66c0
+vorlage_stand: af4b08d
 ---
 
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
@@ -73,7 +73,11 @@ Werkseinstellungen zurück oder entferne es im Controller.
 
    ```
    cat /proc/mtd
-   # Weiter nur, wenn in der Ausgabe bootselect bei mtd11 und kernel0 bei mtd12 steht.
+   ```
+
+   **Prüfen:** Weiter nur, wenn in der Ausgabe bootselect bei mtd11 und kernel0 bei mtd12 steht. Sonst hier aufhören.
+
+   ```
    dd if=/dev/zero bs=1 count=1 seek=7 conv=notrunc of=/dev/mtd11
    dd if=/tmp/sysupgrade.bin of=/dev/mtdblock12
    reboot

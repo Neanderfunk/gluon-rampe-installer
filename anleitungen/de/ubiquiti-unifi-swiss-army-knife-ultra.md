@@ -7,7 +7,7 @@ stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip, ssh-scp, tftp-client]
 daten_stand: 685706f
-vorlage_stand: 91b66c0
+vorlage_stand: af4b08d
 ---
 
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
@@ -74,7 +74,11 @@ Werkseinstellungen zurück oder entferne es im Controller.
    ```
    echo "5edfacbf" > /proc/ubnthal/.uf
    cat /proc/mtd
-   # Weiter nur, wenn in der Ausgabe kernel0 bei mtd2 und kernel1 bei mtd3 steht.
+   ```
+
+   **Prüfen:** Weiter nur, wenn in der Ausgabe kernel0 bei mtd2 und kernel1 bei mtd3 steht. Sonst hier aufhören.
+
+   ```
    dd if=/tmp/firmware.bin of=/dev/mtdblock2
    dd if=/tmp/firmware.bin of=/dev/mtdblock3
    dd if=/dev/zero bs=1 count=1 of=/dev/mtd4

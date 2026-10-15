@@ -7,7 +7,7 @@ stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip, ssh-scp, tftp-client]
 daten_stand: 685706f
-vorlage_stand: 91b66c0
+vorlage_stand: af4b08d
 ---
 
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen

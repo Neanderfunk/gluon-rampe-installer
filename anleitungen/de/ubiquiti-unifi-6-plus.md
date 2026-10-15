@@ -7,7 +7,7 @@ stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip, ssh-scp, tftp-client]
 daten_stand: 685706f
-vorlage_stand: 91b66c0
+vorlage_stand: af4b08d
 ---
 
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
@@ -82,7 +82,11 @@ einspielen.
    grep PARTNAME /sys/block/mmcblk0/mmcblk0p6/uevent
    grep PARTNAME /sys/block/mmcblk0/mmcblk0p7/uevent
    grep PARTNAME /sys/block/mmcblk0/mmcblk0p8/uevent
-   # Weiter nur, wenn die drei Antworten PARTNAME=kernel0, PARTNAME=kernel1 und PARTNAME=bs lauten.
+   ```
+
+   **Prüfen:** Weiter nur, wenn die drei Antworten PARTNAME=kernel0, PARTNAME=kernel1 und PARTNAME=bs lauten. Sonst hier aufhören.
+
+   ```
    fw_setenv boot_openwrt "fdt addr \$(fdtcontroladdr); fdt rm /signature; bootubnt"
    fw_setenv bootcmd_real "run boot_openwrt"
    fw_printenv

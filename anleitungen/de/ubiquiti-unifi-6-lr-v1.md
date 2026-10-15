@@ -7,7 +7,7 @@ stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip, ssh-scp, tftp-client]
 daten_stand: 685706f
-vorlage_stand: 91b66c0
+vorlage_stand: af4b08d
 ---
 
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
@@ -50,10 +50,20 @@ vermutlich kein Netzwerk.
 
 Die frühe "U6 LR-EA" ist keine dieser Versionen.
 
-Ab Ubiquiti-Firmware 6.2 muss vor den Schreibbefehlen der Schreibschutz
-aufgehoben werden (`echo 5edfacbf > /proc/ubnthal/.uf`). Ältere
-Ubiquiti-Firmware antwortet laut OpenWrt eventuell unter `192.168.1.34`
-statt `192.168.1.20`.
+**Schreibschutz ab Herstellerfirmware 6.2:** Läuft auf dem Gerät
+Ubiquiti-Firmware 6.2 oder neuer, gib laut OpenWrt nach dem Anmelden
+(Schritt 5) zuerst diesen Befehl ein, bevor du mit Schritt 6 weitermachst:
+
+```
+echo 5edfacbf > /proc/ubnthal/.uf
+```
+
+Weißt du die Version nicht, gib ihn trotzdem ein. Meldet er "No such file or
+directory", ist die Firmware älter und du machst einfach mit Schritt 6
+weiter.
+
+Ältere Ubiquiti-Firmware antwortet laut OpenWrt eventuell unter
+`192.168.1.34` statt `192.168.1.20`.
 
 ## Schritte
 
@@ -91,7 +101,11 @@ statt `192.168.1.20`.
 
    ```
    cat /proc/mtd
-   # Weiter nur, wenn in der Ausgabe bs bei mtd6, kernel0 bei mtd8 und kernel1 bei mtd9 steht.
+   ```
+
+   **Prüfen:** Weiter nur, wenn in der Ausgabe bs bei mtd6, kernel0 bei mtd8 und kernel1 bei mtd9 steht. Sonst hier aufhören.
+
+   ```
    dd if=/dev/zero bs=1 count=1 of=/dev/mtdblock6
    dd if=/tmp/openwrt.bin of=/dev/mtdblock8
    dd if=/tmp/openwrt.bin of=/dev/mtdblock9

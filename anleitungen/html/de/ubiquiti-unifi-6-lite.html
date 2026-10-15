@@ -12,7 +12,7 @@
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="feste-ip, ssh-scp, tftp-client">
 <meta name="anleitung:daten_stand" content="685706f">
-<meta name="anleitung:vorlage_stand" content="91b66c0">
+<meta name="anleitung:vorlage_stand" content="af4b08d">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -86,8 +86,9 @@ jeweils mit Enter. Am besten kopierst du sie Zeile für Zeile.</p>
 fw_setenv boot_openwrt &quot;fdt addr \$(fdtcontroladdr); fdt rm /signature; bootubnt&quot;
 fw_setenv bootcmd &quot;run boot_openwrt&quot;
 cat /proc/mtd
-# Weiter nur, wenn in der Ausgabe bs bei mtd4, kernel0 bei mtd6 und kernel1 bei mtd7 steht.
-dd if=/dev/zero bs=1 count=1 of=/dev/mtdblock4
+</code></pre>
+<p><strong>Prüfen:</strong> Weiter nur, wenn in der Ausgabe bs bei mtd4, kernel0 bei mtd6 und kernel1 bei mtd7 steht. Sonst hier aufhören.</p>
+<pre><code>dd if=/dev/zero bs=1 count=1 of=/dev/mtdblock4
 dd if=/tmp/openwrt.bin of=/dev/mtdblock6
 dd if=/tmp/openwrt.bin of=/dev/mtdblock7
 reboot

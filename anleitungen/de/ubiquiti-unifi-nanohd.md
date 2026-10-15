@@ -7,7 +7,7 @@ stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip, ssh-scp, tftp-client]
 daten_stand: 685706f
-vorlage_stand: 91b66c0
+vorlage_stand: af4b08d
 ---
 
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
@@ -80,7 +80,11 @@ und wieder an.
 
    ```
    cat /proc/mtd
-   # Weiter nur, wenn in der Ausgabe bs bei mtd4, kernel0 bei mtd6 und kernel1 bei mtd7 steht.
+   ```
+
+   **Prüfen:** Weiter nur, wenn in der Ausgabe bs bei mtd4, kernel0 bei mtd6 und kernel1 bei mtd7 steht. Sonst hier aufhören.
+
+   ```
    dd if=/dev/zero bs=1 count=1 of=/dev/mtd4
    dd if=/tmp/openwrt-sysupgrade.bin of=/dev/mtdblock6
    dd if=/tmp/openwrt-sysupgrade.bin of=/dev/mtdblock7
