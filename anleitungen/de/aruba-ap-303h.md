@@ -9,7 +9,7 @@ stufe: Werkstatt
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
 daten_stand: 37aa5ed
-vorlage_stand: 50d8c76
+vorlage_stand: 9b742b8
 ---
 
 # Aruba AP-303H: Freifunk-Firmware installieren

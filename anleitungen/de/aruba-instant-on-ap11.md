@@ -9,7 +9,7 @@ stufe: Werkstatt
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
 daten_stand: 37aa5ed
-vorlage_stand: 50d8c76
+vorlage_stand: 9b742b8
 ---
 
 # Aruba Instant On AP11: Freifunk-Firmware installieren
@@ -64,6 +64,11 @@ einer Stunde, ohne das Kabel zu bauen.
   2. die Freifunk-Firmware deiner Community für den Aruba Instant On AP11, und zwar
      das **sysupgrade**-Image. Benenn es in `gluon.bin` um, dann passen die
      Befehle unten ohne Änderung.
+  3. nur wenn dein Gerät den neueren Bootloader hat (siehe "Älteren
+     Bootloader aufspielen" unten): den älteren Bootloader
+     [ap303-loader-2.5.0.2.bin](https://firmware.ffnef.de/other/dump/ap303-loader-2.5.0.2.bin), SHA256
+     `69e45b047de07ceeeb4a3daec6232ba2902acea8806075af80c2725ea52298a5`. Leg ihn ebenfalls in den Ordner deines
+     TFTP-Servers, unter genau diesem Namen.
 
 ## Vorher prüfen
 
