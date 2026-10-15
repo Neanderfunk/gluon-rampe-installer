@@ -11183,7 +11183,7 @@
     "Rechner per Kabel an den Router, Weboberfläche der Herstellerfirmware öffnen (192.168.50.1) und den Einrichtungsassistenten abschließen [geprüft: Release-Text herbetom filogic-v2]; Adresse [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]",
     "Unter Administration -> System SSH-Zugang mit Passwort-Login einschalten (LAN only), SSH-Port 22 [geprüft: Release-Text herbetom filogic-v2]; \"LAN only\" [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]",
     "`ssh admin@192.168.50.1` (Benutzername wie im Assistenten gewählt) [geprüft: Release-Text herbetom filogic-v2]; Benutzerhinweis [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]",
-    "Auf dem Router mit `vi` in `/etc/hosts` unten eine Zeile mit der IP des Rechners und dem Namen `openwrtimage.lan` ergänzen, z. B. `192.168.50.196 openwrtimage.lan` [geprüft: Release-Text herbetom filogic-v2]; Beispiel [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]",
+    "Auf dem Router mit `vi` in `/etc/hosts` unten eine Zeile mit der IP des Rechners und dem Namen `openwrtimage.lan` ergänzen, z. B. `192.168.50.196 openwrtimage.lan` [geprüft: Release-Text herbetom filogic-v2]; Beispiel [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]; in der Anleitung entsteht die Zeile per `echo \"${SSH_CLIENT%% *} openwrtimage.lan\" >> /etc/hosts` mit Prüfung per `tail -1`, sonst von Hand [abgeleitet: dropbear setzt SSH_CLIENT; Content 0a1a0e7]",
     "`wget -O /tmp/openwrt.bin http://openwrtimage.lan:8080/openwrt.bin` [geprüft: Release-Text herbetom filogic-v2]",
     "`mtd-erase -d linux` [geprüft: Release-Text herbetom filogic-v2]",
     "`mtd-write -i /tmp/openwrt.bin -d linux` [geprüft: Release-Text herbetom filogic-v2]",
@@ -11199,7 +11199,7 @@
    "adressen": "Herstellerfirmware 192.168.50.1 [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext], Rechner bekommt dort per DHCP eine Adresse [abgeleitet: Commit 237b1c2 zum TUF-AX4200Q]; Rechner-IP in `/etc/hosts` des Routers als `openwrtimage.lan`, Webserver Port 8080 [geprüft: Release-Text herbetom filogic-v2]; nach dem Power-Cycle OpenWrt-initramfs auf 192.168.1.1 [geprüft: Release-Text herbetom filogic-v2] [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]",
    "programm": "Python 3 (`python3 -m http.server`), ssh, scp mit `-O` (altes SCP-Protokoll) [geprüft: Release-Text herbetom filogic-v2]; auf dem Router vi, wget, mtd-erase, mtd-write aus der Herstellerfirmware [geprüft: Release-Text herbetom filogic-v2]",
    "zugang": "Herstellerfirmware: SSH admin@192.168.50.1 mit dem Passwort aus dem Einrichtungsassistenten, Passwort-Login einschalten [geprüft: Release-Text herbetom filogic-v2] [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]; OpenWrt-initramfs: root@192.168.1.1 [geprüft: Release-Text herbetom filogic-v2], ohne Passwort [abgeleitet: OpenWrt-Standard]",
-   "datei": "Sonderbau `openwrt-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin` (herbetom filogic-v2, Dezember 2023) auf dem Webserver als `openwrt.bin`, auf dem Router als `/tmp/openwrt.bin` [geprüft: Release-Text herbetom filogic-v2]; das normale OpenWrt-initramfs ist dafür nicht genannt [abgeleitet]; Freifunk Darmstadt verlinkt die ältere Fassung filogic-v1 (blocktrron) [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]; danach Gluon-sysupgrade",
+   "datei": "Sonderbau `openwrt-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin` (herbetom filogic-v2, Dezember 2023) auf dem Webserver als `openwrt.bin`, auf dem Router als `/tmp/openwrt.bin` [geprüft: Release-Text herbetom filogic-v2]; das normale OpenWrt-initramfs ist dafür nicht genannt [abgeleitet]; Freifunk Darmstadt verlinkt die ältere Fassung filogic-v1 (blocktrron) [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]; danach Gluon-sysupgrade; Datei geladen 15.10.2026: HEAD 200, 7.929.856 Byte, SHA256 c1e5129065f47774d3b5af3c464e1c9220d3a145ae7f8a47f14b42787e9fdc49 [geprüft]",
    "seriell": "nein (nur für den seriellen Notweg: ja)",
    "gehaeuse": "nein (Lage der Konsole für den seriellen Notweg nicht belegt: ?)",
    "werkzeug": "Sonderbau herbetom (Dez. 2023)",
@@ -11217,9 +11217,15 @@
    "rampe": "teilweise: der SSH-Weg schreibt ein initramfs ins Flash; ob ein Gluon-/RAMpe-initramfs statt des herbetom-Sonderbaus bootet, ist nicht geprüft",
    "rampe_rezept": "devices/asus-tuf-ax4200.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` mit eingebettetem initramfs (`TARGET_ROOTFS_INITRAMFS_SEPARATE` aus) für SSH `mtd-write` oder UART + TFTP; eigener Bau-Lauf",
    "quelle": "OpenWrt e7c399bee677e9bac66e1bea697aefb8d828edfe",
-   "anleitung": "https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-ASUS-TUF-AX4200",
+   "anleitung": "anleitungen/de/asus-tuf-ax4200.md; https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-ASUS-TUF-AX4200",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "factory_datei": "openwrt-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin",
+    "factory_url": "https://github.com/herbetom/openwrt-asus-filogic-factory/releases/download/filogic-v2/openwrt-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin",
+    "factory_hinweis": "Die Datei hat ein Freifunk-Entwickler für genau diesen Zweck gebaut (Dezember 2023); eine offizielle Datei von OpenWrt dafür gibt es nicht.",
+    "sicherheit": "quelle",
+    "sicherheit_hinweis": "Freifunk Darmstadt beschreibt denselben Weg für ihre Freifunk-Firmware."
+   }
   },
   {
    "gluon_name": "asus-tuf-ax6000",
@@ -11236,7 +11242,7 @@
     "Rechner per Kabel an den Router, Weboberfläche der Herstellerfirmware öffnen (192.168.50.1) und den Einrichtungsassistenten abschließen [geprüft: Release-Text herbetom filogic-v2]; Adresse [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]",
     "Unter Administration -> System SSH-Zugang mit Passwort-Login einschalten (LAN only), SSH-Port 22 [geprüft: Release-Text herbetom filogic-v2]; \"LAN only\" [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]",
     "`ssh admin@192.168.50.1` (Benutzername wie im Assistenten gewählt) [geprüft: Release-Text herbetom filogic-v2]; Benutzerhinweis [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]",
-    "Auf dem Router mit `vi` in `/etc/hosts` unten eine Zeile mit der IP des Rechners und dem Namen `openwrtimage.lan` ergänzen, z. B. `192.168.50.196 openwrtimage.lan` [geprüft: Release-Text herbetom filogic-v2]; Beispiel [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]",
+    "Auf dem Router mit `vi` in `/etc/hosts` unten eine Zeile mit der IP des Rechners und dem Namen `openwrtimage.lan` ergänzen, z. B. `192.168.50.196 openwrtimage.lan` [geprüft: Release-Text herbetom filogic-v2]; Beispiel [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]; in der Anleitung entsteht die Zeile per `echo \"${SSH_CLIENT%% *} openwrtimage.lan\" >> /etc/hosts` mit Prüfung per `tail -1`, sonst von Hand [abgeleitet: dropbear setzt SSH_CLIENT; Content 0a1a0e7]",
     "`wget -O /tmp/openwrt.bin http://openwrtimage.lan:8080/openwrt.bin` [geprüft: Release-Text herbetom filogic-v2]",
     "`mtd-erase -d linux` [geprüft: Release-Text herbetom filogic-v2]",
     "`mtd-write -i /tmp/openwrt.bin -d linux` [geprüft: Release-Text herbetom filogic-v2]",
@@ -11252,7 +11258,7 @@
    "adressen": "Herstellerfirmware 192.168.50.1 [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext], Rechner bekommt dort per DHCP eine Adresse [abgeleitet: Commit 237b1c2 zum TUF-AX4200Q]; Rechner-IP in `/etc/hosts` des Routers als `openwrtimage.lan`, Webserver Port 8080 [geprüft: Release-Text herbetom filogic-v2]; nach dem Power-Cycle OpenWrt-initramfs auf 192.168.1.1 [geprüft: Release-Text herbetom filogic-v2] [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]",
    "programm": "Python 3 (`python3 -m http.server`), ssh, scp mit `-O` (altes SCP-Protokoll) [geprüft: Release-Text herbetom filogic-v2]; auf dem Router vi, wget, mtd-erase, mtd-write aus der Herstellerfirmware [geprüft: Release-Text herbetom filogic-v2]",
    "zugang": "Herstellerfirmware: SSH admin@192.168.50.1 mit dem Passwort aus dem Einrichtungsassistenten, Passwort-Login einschalten [geprüft: Release-Text herbetom filogic-v2] [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]; OpenWrt-initramfs: root@192.168.1.1 [geprüft: Release-Text herbetom filogic-v2], ohne Passwort [abgeleitet: OpenWrt-Standard]",
-   "datei": "Sonderbau `openwrt-mediatek-filogic-asus_tuf-ax6000-initramfs-kernel.bin` (herbetom filogic-v2, Dezember 2023) auf dem Webserver als `openwrt.bin`, auf dem Router als `/tmp/openwrt.bin` [geprüft: Release-Text herbetom filogic-v2]; das normale OpenWrt-initramfs ist dafür nicht genannt [abgeleitet]; Freifunk Darmstadt verlinkt die ältere Fassung filogic-v1 (blocktrron) [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]; danach Gluon-sysupgrade",
+   "datei": "Sonderbau `openwrt-mediatek-filogic-asus_tuf-ax6000-initramfs-kernel.bin` (herbetom filogic-v2, Dezember 2023) auf dem Webserver als `openwrt.bin`, auf dem Router als `/tmp/openwrt.bin` [geprüft: Release-Text herbetom filogic-v2]; das normale OpenWrt-initramfs ist dafür nicht genannt [abgeleitet]; Freifunk Darmstadt verlinkt die ältere Fassung filogic-v1 (blocktrron) [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]; danach Gluon-sysupgrade; Datei geladen 15.10.2026: HEAD 200, 7.929.856 Byte, SHA256 c488b6e5107b524bff4da6da034d3dae1511c11e4376a56f28788fd867e2fdc7 [geprüft]",
    "seriell": "nein (nur für den seriellen Notweg: ja)",
    "gehaeuse": "nein, Konsole außen: drei Löcher im Gehäuse (von unten RX, TX, GND), Stiftleisten-Drähte, 115200 8N1 [geprüft]",
    "werkzeug": "Sonderbau herbetom (Dez. 2023)",
@@ -11270,9 +11276,15 @@
    "rampe": "teilweise: wie TUF-AX4200; über die Gehäuselöcher ist auch der TFTP-Weg ohne Öffnen möglich, dort passt die Gluon-RAMpe als initramfs [abgeleitet]",
    "rampe_rezept": "devices/asus-tuf-ax6000.sh (Rezept-Entwurf, nicht gebaut): wie TUF-AX4200; eigener Bau-Lauf",
    "quelle": "OpenWrt d522ccecb28f941aadcaf7a50cd6daa861f468a7",
-   "anleitung": "https://github.com/herbetom/openwrt-asus-filogic-factory/releases/latest",
+   "anleitung": "anleitungen/de/asus-tuf-ax6000.md; https://github.com/herbetom/openwrt-asus-filogic-factory/releases/latest",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "factory_datei": "openwrt-mediatek-filogic-asus_tuf-ax6000-initramfs-kernel.bin",
+    "factory_url": "https://github.com/herbetom/openwrt-asus-filogic-factory/releases/download/filogic-v2/openwrt-mediatek-filogic-asus_tuf-ax6000-initramfs-kernel.bin",
+    "factory_hinweis": "Die Datei hat ein Freifunk-Entwickler für genau diesen Zweck gebaut (Dezember 2023); eine offizielle Datei von OpenWrt dafür gibt es nicht.",
+    "sicherheit": "quelle",
+    "sicherheit_hinweis": "Freifunk Darmstadt beschreibt denselben Weg für ihre Freifunk-Firmware."
+   }
   },
   {
    "gluon_name": "cudy-ap3000-outdoor-v1",
