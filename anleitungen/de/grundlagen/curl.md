@@ -19,27 +19,29 @@ wie du ihn ausführst.
 
 ## Windows 10 und 11
 
-curl ist eingebaut und heißt `curl.exe`.
+curl ist eingebaut und heißt `curl.exe`. Nimm dafür die **PowerShell**.
 
-1. Win + R, `cmd` eingeben, Enter. Es öffnet sich die Eingabeaufforderung.
+1. PowerShell öffnen: im Startmenü "PowerShell" suchen, oder im Explorer im
+   Ordner mit der Datei Rechtsklick auf eine freie Stelle, "Im Terminal
+   öffnen" (Windows 11) bzw. mit gedrückter Umschalttaste
+   "PowerShell-Fenster hier öffnen" (Windows 10). Vorne in der Zeile steht
+   dann `PS`.
 2. In den Ordner mit der Datei wechseln, zum Beispiel:
 
    ```
-   cd %USERPROFILE%\Downloads
+   cd $env:USERPROFILE\Downloads
    ```
 
 3. Befehl aus der Geräteanleitung einfügen (Rechtsklick fügt ein), Enter.
 
-**In der PowerShell** (blaues oder schwarzes Fenster mit `PS` vorn) gelten
-andere Regeln:
+Worauf es in der PowerShell ankommt:
 
 - `curl.exe` immer ausschreiben. `curl` allein ist dort ein anderes Programm.
-- Der Ordner heißt `$env:USERPROFILE\Downloads` statt
-  `%USERPROFILE%\Downloads`.
-- Statt `-o NUL` schreibst du `-o antwort.bin`. Die Antwort des Routers
-  landet dann in dieser Datei; sie ist unwichtig und kann weg.
+- `-o antwort.bin` nimmt die Antwort des Routers auf; die Datei ist unwichtig
+  und kann danach weg.
 
-Einfacher ist meist, gleich die Eingabeaufforderung "cmd" zu nehmen.
+In der alten Eingabeaufforderung "cmd" ist der Upload bei uns schon nach
+wenigen Sekunden abgebrochen; nimm deshalb die PowerShell.
 
 **Nicht aus der WSL** (Linux unter Windows): Von dort kam bei uns keine
 Verbindung zur Recovery zustande, aus Windows selbst schon.

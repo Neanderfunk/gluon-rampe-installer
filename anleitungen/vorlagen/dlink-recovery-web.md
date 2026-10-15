@@ -130,8 +130,7 @@ wirklich über das Kabel spricht.
    {%- endif %}
 
 6. **Datei mit curl hochladen.** Öffne ein Terminal (unter Windows die
-   Eingabeaufforderung "cmd"), wechsle in den Ordner mit der Datei und gib
-   ein:
+   **PowerShell**), wechsle in den Ordner mit der Datei und gib ein:
 
    Linux und macOS:
 
@@ -139,14 +138,15 @@ wirklich über das Kabel spricht.
    curl -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o /dev/null -F "firmware=@{{ w.datei_beispiel }};type=application/octet-stream" http://{{ w.recovery_ip }}{{ w.upload_pfad }}
    ```
 
-   Windows (cmd):
+   Windows (PowerShell):
 
    ```
-   curl.exe -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o NUL -F "firmware=@{{ w.datei_beispiel }};type=application/octet-stream" http://{{ w.recovery_ip }}{{ w.upload_pfad }}
+   curl.exe -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o antwort.bin -F "firmware=@{{ w.datei_beispiel }};type=application/octet-stream" http://{{ w.recovery_ip }}{{ w.upload_pfad }}
    ```
 
-   Den echten Dateinamen statt `{{ w.datei_beispiel }}` einsetzen. Für die
-   PowerShell sieht der Befehl etwas anders aus, siehe
+   Den echten Dateinamen statt `{{ w.datei_beispiel }}` einsetzen. Unter
+   Windows `curl.exe` genau so ausschreiben; `antwort.bin` nimmt nur die
+   Antwort des Routers auf und kann danach weg. Mehr unter
    [curl benutzen](grundlagen/curl.md).
 
 7. **Warten.** curl überträgt die Datei und wartet dann weiter, während die
