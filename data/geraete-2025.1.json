@@ -10715,7 +10715,7 @@
   {
    "gluon_name": "avm-fritz-box-7360-sl",
    "modell": "AVM FRITZ!Box 7360 SL (Alias 7360 v1)",
-   "anzeige": "",
+   "anzeige": "AVM FRITZ!Box 7360 SL",
    "target": "lantiq-xrx200",
    "gluon_broken": false,
    "kat": "K1d",

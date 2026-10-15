@@ -2135,6 +2135,7 @@ AVM FRITZ!Box 3370 Rev. 2, Micron-NAND (Gluon: broken) · lantiq-xrx200 · K1d
 
 AVM FRITZ!Box 7360 SL (Alias 7360 v1) · lantiq-xrx200 · K1d
 
+- **Anzeigename (überschreibt den bereinigten Modellnamen):** AVM FRITZ!Box 7360 SL
 - **Weg ab Werk:** ADAM2/EVA-FTP: `quote GETENV HWRevision` (181 = SL, 183 = v1), `bin`, `quote MEDIA FLSH`, sysupgrade nach mtd1 [abgeleitet: Wiki; Commit ohne Text]
 - **Schritte (Normalweg):**
   1. Per EVA-FTP `quote GETENV HWRevision` prüfen: 181 = SL, 183 = v1, beide passen [abgeleitet: Wiki 7360]
