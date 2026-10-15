@@ -10,5 +10,7 @@ Reset-Taste (Unterseite) beim Einschalten gedrückt halten, bis die
 Status-LED oben **rot blinkt**. Rechner fest auf `192.168.0.10`, Netzmaske
 `255.255.255.0`, Kabel an die rechte LAN-Buchse. Dann in einem
 Chromium-basierten Browser `http://192.168.0.1` öffnen und das
-Gluon-**recovery**-Image (nicht das factory) hochladen. Die Notfall-Seite
+Gluon-**recovery**-Image (nicht das factory) hochladen. Im Firmware-Selector
+findest du es unter "Wähle Deine Installationsart" beim Knopf
+**Recovery-Image**, die Datei endet auf `-recovery.bin`. Die Notfall-Seite
 antwortet nicht auf `ping`.

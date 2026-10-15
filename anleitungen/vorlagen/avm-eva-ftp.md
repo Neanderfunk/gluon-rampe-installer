@@ -38,9 +38,15 @@ das richtige Timing. Wie der Bootloader funktioniert, steht unter
 - Python 3 und das Programm
   [fritzflash.py](https://github.com/freifunk-darmstadt/fritz-tools)
 {%- endif %}
+{%- set eva = w.ftp_befehle and (w.ftp_befehle | join(" ")).find("-eva-kernel") >= 0 %}
 - die Freifunk-Firmware deiner Community für dieses Gerät,
   {%- if art == "bootloader" %} und zwar das Image mit **„-bootloader.bin“**
-  am Ende, nicht das sysupgrade
+  am Ende, nicht das sysupgrade. Im Firmware-Selector wählst du dafür unter
+  "Wähle Deine Installationsart" den Knopf **Bootloader-Image**.
+  {%- elif eva %} und zwar zwei Dateien, die in Schritt 4 genannt sind. Im
+  Firmware-Selector findest du sie unter "Wähle Deine Installationsart": die
+  Datei auf `-eva-kernel.bin` beim Knopf **Bootloader-Kernel-Image**, die
+  Datei auf `-eva-filesystem.bin` beim Knopf **Bootloader-Root-Image**.
   {%- elif w.ftp_befehle %} die Dateien, die in Schritt 4 genannt sind
   {%- else %} und zwar das **sysupgrade**-Image. Das ist hier richtig, auch
   für die erste Installation.{% endif %}
