@@ -16389,9 +16389,14 @@
    "rampe": "nein: der Weg schreibt ein factory, kein Ramboot-Schritt [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "af329ec38980e2f706411a11b9f344a62eb0dd8f",
-   "anleitung": "https://github.com/blocktrron/msm460-flashing?tab=readme-ov-file",
+   "anleitung": "anleitungen/de/hewlett-packard-msm460.md; https://github.com/blocktrron/msm460-flashing?tab=readme-ov-file",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "commands_url": "https://raw.githubusercontent.com/blocktrron/msm460-flashing/0d1dd58d7187b89dff43d0f5d852502f719e7441/commands.tftp",
+    "uboot_url": "https://raw.githubusercontent.com/blocktrron/msm460-flashing/0d1dd58d7187b89dff43d0f5d852502f719e7441/msm460-uboot.bin",
+    "sicherheit": "abgeleitet",
+    "sicherheit_hinweis": "Dass der neue Bootloader die Freifunk-Firmware von selbst holt, haben wir aus seinem Quelltext abgeleitet."
+   }
   },
   {
    "gluon_name": "ocedo-panda",

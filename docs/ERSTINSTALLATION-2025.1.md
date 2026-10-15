@@ -464,7 +464,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [aerohive-hiveap-330](#aerohive-hiveap-330) | Aerohive HiveAP 330 | mpc85xx-p1020 | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja |  |
 | [enterasys-ws-ap3710i](#enterasys-ws-ap3710i) | Enterasys WS-AP3710i | mpc85xx-p1020 | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/enterasys-ws-ap3710i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=16b01fb1b9c99513c318109bef96a1a3545c57a0 |
 | [extreme-networks-ws-ap3825i](#extreme-networks-ws-ap3825i) | Extreme Networks WS-AP3825i | mpc85xx-p1020 | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | vermutlich | ja | [Anleitung](../anleitungen/de/extreme-networks-ws-ap3825i.md); https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923 |
-| [hewlett-packard-msm460](#hewlett-packard-msm460) | HPE MSM460 | mpc85xx-p1020 | K5 | L4 | bootloader | [`sonderweg-hewlett-packard-msm460`](#familie-sonderweg-hewlett-packard-msm460) | tftp-server-am-geraet | nein | nein | nein |  | https://github.com/blocktrron/msm460-flashing?tab=readme-ov-file |
+| [hewlett-packard-msm460](#hewlett-packard-msm460) | HPE MSM460 | mpc85xx-p1020 | K5 | L4 | bootloader | [`sonderweg-hewlett-packard-msm460`](#familie-sonderweg-hewlett-packard-msm460) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/hewlett-packard-msm460.md); https://github.com/blocktrron/msm460-flashing?tab=readme-ov-file |
 | [ocedo-panda](#ocedo-panda) | OCEDO Panda | mpc85xx-p1020 | K1 | offen | normal | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | teilweise | ja |  |
 | [linksys-mx5300](#linksys-mx5300) | Linksys MX5300 | qualcommax-ipq807x | K0 | L0.1 | normal | [`sonderweg-linksys-mx5300`](#familie-sonderweg-linksys-mx5300) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-mx5300.md) |
 | [netgear-wax218](#netgear-wax218) | NETGEAR WAX218 | qualcommax-ipq807x | K1 | offen | normal | [`sonderweg-netgear-wax218`](#familie-sonderweg-netgear-wax218) | webui-upload | nein | nein | ja | ja | - |
@@ -10588,7 +10588,8 @@ HPE MSM460 · mpc85xx-p1020 · K5
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** nein: der Weg schreibt ein factory, kein Ramboot-Schritt [abgeleitet]
 - **Quelle (OpenWrt-Commit):** af329ec38980e2f706411a11b9f344a62eb0dd8f
-- **Detail-Anleitung:** https://github.com/blocktrron/msm460-flashing?tab=readme-ov-file
+- **Detail-Anleitung:** anleitungen/de/hewlett-packard-msm460.md; https://github.com/blocktrron/msm460-flashing?tab=readme-ov-file
+- **Werte für die Anleitung:** commands_url = https://raw.githubusercontent.com/blocktrron/msm460-flashing/0d1dd58d7187b89dff43d0f5d852502f719e7441/commands.tftp; uboot_url = https://raw.githubusercontent.com/blocktrron/msm460-flashing/0d1dd58d7187b89dff43d0f5d852502f719e7441/msm460-uboot.bin; sicherheit = abgeleitet; sicherheit_hinweis = Dass der neue Bootloader die Freifunk-Firmware von selbst holt, haben wir aus seinem Quelltext abgeleitet.
 
 ### Familie `sonderweg-librerouter-v1`
 
