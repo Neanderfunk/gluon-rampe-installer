@@ -5,7 +5,8 @@ anzeige: GL.iNet GL-E750
 familie: glinet
 gluon_broken: true
 sprache: de
-stufe: fortgeschritten
+level: L3
+risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-gl.inet-gl-e750-factory.img
 grundlagen: [browser-https, feste-ip]

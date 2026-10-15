@@ -5,7 +5,8 @@ anzeige: ASUS TUF-AX4200
 familie: asus-tuf-herbetom
 gluon_broken: false
 sprache: de
-stufe: fortgeschritten
+level: L4
+risiko: normal
 status: ungeprüft
 grundlagen: [ssh-scp]
 daten_stand: 3b96298

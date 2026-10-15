@@ -5,7 +5,8 @@ anzeige: GL.iNet GL-AP1300
 familie: glinet
 gluon_broken: false
 sprache: de
-stufe: einfach
+level: L3
+risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip]
 daten_stand: 3b96298

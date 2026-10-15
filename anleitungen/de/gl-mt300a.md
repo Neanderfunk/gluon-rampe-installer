@@ -5,7 +5,8 @@ anzeige: GL.iNet GL-MT300A
 familie: glinet
 gluon_broken: false
 sprache: de
-stufe: mit scripts/Netzwerktools
+level: L0
+risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip]
 daten_stand: 3b96298

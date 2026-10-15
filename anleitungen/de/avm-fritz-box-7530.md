@@ -5,7 +5,8 @@ anzeige: AVM FRITZ!Box 7530
 familie: avm-eva-uboot
 gluon_broken: false
 sprache: de
-stufe: fortgeschritten
+level: L5
+risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb
 grundlagen: [avm-eva, feste-ip, tftp-server]

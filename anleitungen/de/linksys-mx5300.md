@@ -5,7 +5,8 @@ anzeige: Linksys MX5300
 familie: sonderweg-linksys-mx5300
 gluon_broken: false
 sprache: de
-stufe: einfach
+level: L0.1
+risiko: normal
 status: ungeprüft
 grundlagen: [ssh-scp]
 daten_stand: 3b96298

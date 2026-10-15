@@ -5,7 +5,8 @@ anzeige: GL.iNet GL-XE300
 familie: glinet
 gluon_broken: false
 sprache: de
-stufe: fortgeschritten
+level: L3
+risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-gl.inet-gl-xe300-factory.img
 grundlagen: [browser-https, feste-ip]

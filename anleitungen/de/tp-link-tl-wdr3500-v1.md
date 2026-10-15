@@ -5,7 +5,8 @@ anzeige: TP-Link TL-WDR3500 v1
 familie: k0-webui
 gluon_broken: false
 sprache: de
-stufe: einfach
+level: L0.1
+risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
 daten_stand: 3b96298

@@ -5,7 +5,8 @@ anzeige: Zyxel NWA90AX Pro
 familie: k0-webui
 gluon_broken: false
 sprache: de
-stufe: einfach
+level: L3
+risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip]
 daten_stand: 3b96298

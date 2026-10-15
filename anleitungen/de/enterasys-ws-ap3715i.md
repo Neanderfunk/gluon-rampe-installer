@@ -5,7 +5,8 @@ anzeige: Enterasys WS-AP3715i
 familie: seriell-tftp
 gluon_broken: false
 sprache: de
-stufe: Werkstatt
+level: L6
+risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
 daten_stand: 3b96298

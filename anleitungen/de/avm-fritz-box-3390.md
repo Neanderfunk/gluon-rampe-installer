@@ -5,7 +5,8 @@ anzeige: AVM FRITZ!Box 3390
 familie: avm-eva-ramboot
 gluon_broken: false
 sprache: de
-stufe: mit scripts/Netzwerktools
+level: L5
+risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-avm-fritz-box-3390-initramfs-kernel.bin
 grundlagen: [avm-eva, browser-https, feste-ip]

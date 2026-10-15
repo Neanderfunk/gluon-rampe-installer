@@ -5,7 +5,8 @@ anzeige: D-Link DAP-1330 A1
 familie: k0-webui
 gluon_broken: false
 sprache: de
-stufe: einfach
+level: L0.1
+risiko: normal
 status: ungeprüft
 grundlagen: [curl]
 daten_stand: 3b96298

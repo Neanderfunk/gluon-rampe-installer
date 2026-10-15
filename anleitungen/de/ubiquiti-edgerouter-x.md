@@ -5,7 +5,8 @@ anzeige: Ubiquiti EdgeRouter X
 familie: ubiquiti-edgerouter
 gluon_broken: false
 sprache: de
-stufe: Werkstatt
+level: L4
+risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, ssh-scp]
 daten_stand: 3b96298

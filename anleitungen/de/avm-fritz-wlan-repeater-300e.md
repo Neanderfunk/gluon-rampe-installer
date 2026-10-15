@@ -5,7 +5,8 @@ anzeige: AVM FRITZ!WLAN Repeater 300E
 familie: avm-eva-ftp
 gluon_broken: false
 sprache: de
-stufe: mit scripts/Netzwerktools
+level: L5
+risiko: normal
 status: ungeprüft
 grundlagen: [avm-eva, feste-ip]
 daten_stand: 3b96298

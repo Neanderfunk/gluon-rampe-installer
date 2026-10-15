@@ -5,7 +5,8 @@ anzeige: Ubiquiti UniFi AC Pro
 familie: ubiquiti-unifi-ssh
 gluon_broken: false
 sprache: de
-stufe: mit scripts/Netzwerktools
+level: L4
+risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, schreibschutz, ssh-scp, tftp-client]
 daten_stand: 3b96298

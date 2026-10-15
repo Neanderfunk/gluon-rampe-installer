@@ -5,7 +5,8 @@ anzeige: D-Link AQUILA PRO AI M60 A1
 familie: dlink-recovery-web
 gluon_broken: false
 sprache: de
-stufe: mit scripts/Netzwerktools
+level: L4
+risiko: normal
 status: erprobt
 erprobt_am: 2026-10-13
 erprobt_mit: gluon-rampe-20261010-d-link-aquila-pro-ai-m60-a1-recovery.bin

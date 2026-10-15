@@ -5,7 +5,8 @@ anzeige: TP-Link TL-WR841N v13
 familie: tplink-tftp-recovery
 gluon_broken: false
 sprache: de
-stufe: mit scripts/Netzwerktools
+level: L4
+risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
 daten_stand: 3b96298

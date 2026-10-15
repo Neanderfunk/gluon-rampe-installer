@@ -5,7 +5,8 @@ anzeige: NETGEAR EX6150 (v1)
 familie: netgear-nmrp
 gluon_broken: false
 sprache: de
-stufe: einfach
+level: L0.1
+risiko: normal
 status: ungeprüft
 grundlagen: [nmrpflash]
 daten_stand: 3b96298

@@ -5,7 +5,8 @@ anzeige: Cudy X6 v1
 familie: cudy-zwischenfirmware
 gluon_broken: false
 sprache: de
-stufe: fortgeschritten
+level: L1
+risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
 daten_stand: 3b96298

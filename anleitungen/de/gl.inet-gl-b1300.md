@@ -5,7 +5,8 @@ anzeige: GL.iNet GL-B1300
 familie: glinet
 gluon_broken: false
 sprache: de
-stufe: mit scripts/Netzwerktools
+level: L3
+risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
 daten_stand: 3b96298

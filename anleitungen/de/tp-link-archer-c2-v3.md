@@ -5,7 +5,8 @@ anzeige: TP-Link Archer C2 v3
 familie: k0-webui
 gluon_broken: true
 sprache: de
-stufe: einfach
+level: L0.1
+risiko: normal
 status: ungeprüft
 grundlagen: []
 daten_stand: 3b96298

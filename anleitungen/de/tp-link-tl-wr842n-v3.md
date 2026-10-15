@@ -5,7 +5,8 @@ anzeige: TP-Link TL-WR842N v3
 familie: k0-webui
 gluon_broken: false
 sprache: de
-stufe: einfach
+level: L0.1
+risiko: normal
 status: ungeprüft
 grundlagen: []
 daten_stand: 3b96298

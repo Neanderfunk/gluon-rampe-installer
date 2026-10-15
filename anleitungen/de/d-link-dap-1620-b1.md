@@ -5,7 +5,8 @@ anzeige: D-Link DAP-1620 B1
 familie: dlink-recovery-web
 gluon_broken: true
 sprache: de
-stufe: einfach
+level: L4
+risiko: normal
 status: ungeprüft
 grundlagen: [curl, feste-ip]
 daten_stand: 3b96298

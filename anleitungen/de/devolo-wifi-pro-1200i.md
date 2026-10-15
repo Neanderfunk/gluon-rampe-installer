@@ -5,7 +5,8 @@ anzeige: devolo WiFi pro 1200i
 familie: devolo-ssh
 gluon_broken: false
 sprache: de
-stufe: mit scripts/Netzwerktools
+level: L4
+risiko: normal
 status: ungeprüft
 grundlagen: [ssh-scp]
 daten_stand: 3b96298

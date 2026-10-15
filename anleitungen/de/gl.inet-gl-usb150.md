@@ -5,7 +5,8 @@ anzeige: GL.iNET GL-USB150
 familie: glinet
 gluon_broken: false
 sprache: de
-stufe: mit scripts/Netzwerktools
+level: L0
+risiko: normal
 status: ungeprüft
 grundlagen: []
 daten_stand: 3b96298

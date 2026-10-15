@@ -5,7 +5,8 @@ anzeige: TOTOLINK X5000R
 familie: sonderweg-totolink-x5000r
 gluon_broken: false
 sprache: de
-stufe: mit scripts/Netzwerktools
+level: L1
+risiko: normal
 status: ungeprüft
 grundlagen: [browser-https, feste-ip]
 daten_stand: 3b96298

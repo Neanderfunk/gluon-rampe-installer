@@ -5,7 +5,8 @@ anzeige: AVM FRITZ!Box 3370 Rev. 2, Hynix-NAND
 familie: avm-eva-ftp
 gluon_broken: true
 sprache: de
-stufe: mit scripts/Netzwerktools
+level: L5
+risiko: normal
 status: ungeprüft
 grundlagen: [avm-eva, feste-ip]
 daten_stand: 3b96298

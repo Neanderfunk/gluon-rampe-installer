@@ -5,7 +5,8 @@ anzeige: TP-Link Archer C58 v1
 familie: k0-webui
 gluon_broken: true
 sprache: de
-stufe: einfach
+level: L0.1
+risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
 daten_stand: 3b96298

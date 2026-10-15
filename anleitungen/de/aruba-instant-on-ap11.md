@@ -5,7 +5,8 @@ anzeige: Aruba Instant On AP11
 familie: aruba-apboot
 gluon_broken: false
 sprache: de
-stufe: Werkstatt
+level: L6
+risiko: bootloader
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
 daten_stand: 3b96298

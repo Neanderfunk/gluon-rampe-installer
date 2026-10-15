@@ -5,7 +5,8 @@ anzeige: AVM FRITZ!Repeater 3000
 familie: avm-eva-uboot
 gluon_broken: true
 sprache: de
-stufe: fortgeschritten
+level: L5
+risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-avm-fritz-repeater-3000-initramfs-uImage.itb
 grundlagen: [avm-eva, feste-ip, tftp-server]

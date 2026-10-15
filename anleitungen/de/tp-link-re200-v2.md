@@ -5,7 +5,8 @@ anzeige: TP-Link RE200 v2
 familie: k0-webui
 gluon_broken: false
 sprache: de
-stufe: einfach
+level: L0.1
+risiko: normal
 status: ungeprüft
 grundlagen: []
 daten_stand: 3b96298

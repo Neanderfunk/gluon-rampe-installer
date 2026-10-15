@@ -5,7 +5,8 @@ anzeige: TP-Link Archer C20i
 familie: k0-webui
 gluon_broken: false
 sprache: de
-stufe: einfach
+level: L1
+risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
 daten_stand: 3b96298

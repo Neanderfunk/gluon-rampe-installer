@@ -5,7 +5,8 @@ anzeige: Raspberry Pi 4 Model B
 familie: image-auf-datentraeger
 gluon_broken: false
 sprache: de
-stufe: einfach
+level: L4
+risiko: normal
 status: ungeprüft
 grundlagen: [image-schreiben]
 daten_stand: 3b96298
