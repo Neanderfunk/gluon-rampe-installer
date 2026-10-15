@@ -8,8 +8,8 @@ sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [browser-https, feste-ip]
-daten_stand: 37aa5ed
-vorlage_stand: 674e643
+daten_stand: ebc2777
+vorlage_stand: 565e893
 ---
 
 # TOTOLINK X5000R: Freifunk-Firmware installieren
@@ -40,8 +40,7 @@ halben Stunde.
 - die Freifunk-Firmware deiner Community für den TOTOLINK X5000R, und zwar das
   **sysupgrade**-Image
 - nur für den Umweg: die ältere TOTOLINK-Firmware
-  [f468696a985bdf6e544cdcadbc1585ec.zip](https://web.archive.org/web/20251202002316id_/https://www.totolink.net/data/upload/20201223/f468696a985bdf6e544cdcadbc1585ec.zip), SHA256 `4fdb1bbf1773a3e7bb3d2f36953411e93a7da52277ee8e79e1dd54909e74daeb`. TOTOLINK bietet sie auf der eigenen Seite nicht mehr an; der Link führt auf die Originaldatei von totolink.net im Internet Archive. Pack das ZIP aus; gebraucht wird die Datei
-  `TOTOLINK_C8343R-1C_X5000R_IP04433_MT7621A_SPI_16M256M_V9.1.0u.6118_B20201102_ALL.web` darin.
+  [X5000R_V9.1.0u.6118_B20201102.zip](https://download.ffnef.de/other/dump/X5000R_V9.1.0u.6118_B20201102.zip). TOTOLINK bietet sie nicht mehr an; wir stellen die Originaldatei bereit.
 
 ## Schritte
 
@@ -73,12 +72,9 @@ Der Router hat einen Notfall-Modus im Bootloader, der jede
 TOTOLINK-Firmware annimmt, auch eine ältere. Danach nimmt die Weboberfläche
 auch wieder die Freifunk-Firmware.
 
-1. **Datei prüfen.** Prüf die SHA256 der heruntergeladenen Datei: unter
-   Linux `sha256sum f468696a985bdf6e544cdcadbc1585ec.zip`, unter macOS
-   `shasum -a 256 f468696a985bdf6e544cdcadbc1585ec.zip`, in der Windows-PowerShell
-   `Get-FileHash f468696a985bdf6e544cdcadbc1585ec.zip`. Das Ergebnis muss
-   `4fdb1bbf1773a3e7bb3d2f36953411e93a7da52277ee8e79e1dd54909e74daeb` lauten (Groß- und Kleinschreibung spielt keine
-   Rolle). Dann das ZIP auspacken.
+1. **ZIP auspacken.** Pack `X5000R_V9.1.0u.6118_B20201102.zip` aus. Kommt dabei keine
+   Fehlermeldung, ist die Datei heil. Gebraucht wird
+   `TOTOLINK_C8343R-1C_X5000R_IP04433_MT7621A_SPI_16M256M_V9.1.0u.6118_B20201102_ALL.web` darin.
 
 2. **Feste Adresse am Rechner.** Stell deinen Rechner auf `192.168.1.10`,
    Netzmaske `255.255.255.0`

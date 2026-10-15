@@ -8,8 +8,8 @@ sprache: de
 stufe: Werkstatt
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 37aa5ed
-vorlage_stand: 7b06003
+daten_stand: ebc2777
+vorlage_stand: 565e893
 ---
 
 # Aruba Instant On AP11: Freifunk-Firmware installieren
@@ -69,10 +69,11 @@ einer Stunde, ohne das Kabel zu bauen.
   2. die Freifunk-Firmware deiner Community für den Aruba Instant On AP11, und zwar
      das **sysupgrade**-Image. Benenn es in `gluon.bin` um, dann passen die
      Befehle unten ohne Änderung.
-  3. den älteren Bootloader
-     [ap303-loader-2.5.0.2.bin](https://firmware.ffnef.de/other/dump/ap303-loader-2.5.0.2.bin), SHA256
-     `69e45b047de07ceeeb4a3daec6232ba2902acea8806075af80c2725ea52298a5`. Leg ihn ebenfalls in den Ordner deines
-     TFTP-Servers, unter genau diesem Namen.
+  3. den älteren Bootloader als ZIP-Archiv:
+     [ap303-loader-2.5.0.2.zip](https://download.ffnef.de/other/dump/ap303-loader-2.5.0.2.zip). Pack es aus. Kommt dabei
+     keine Fehlermeldung, ist die Datei heil. Leg `ap303-loader-2.5.0.2.bin` aus
+     dem Archiv ebenfalls in den Ordner deines TFTP-Servers, unter genau
+     diesem Namen.
 
 ## Vorher prüfen
 
@@ -138,7 +139,7 @@ werden.
 
    Steht in der ersten Zeile schon `APBoot 2.5.0.2`, ist der ältere
    Bootloader bereits drauf, etwa bei einem Gerät aus zweiter Hand. Dann
-   überspring den nächsten Teil und mach mit Schritt 10 weiter.
+   überspring den nächsten Teil und mach mit Schritt 9 weiter.
 
 ### Älteren Bootloader aufspielen
 
@@ -156,25 +157,7 @@ hat, die OpenWrt braucht. Du ersetzt ihn durch die ältere Fassung
 hat diesen Weg ausprobiert. Überschrieben wird nur der Bereich des
 Bootloaders, nicht der Rest des Speichers.
 
-6. **Datei prüfen.** Prüf auf deinem Rechner die SHA256 von
-   `ap303-loader-2.5.0.2.bin` im Ordner des TFTP-Servers: unter Linux
-   `sha256sum ap303-loader-2.5.0.2.bin`, unter macOS
-   `shasum -a 256 ap303-loader-2.5.0.2.bin`, in der Windows-PowerShell
-   `Get-FileHash ap303-loader-2.5.0.2.bin`. Das Ergebnis muss genau so lauten
-   (Groß- und Kleinschreibung spielt keine Rolle):
-
-   ```
-   69e45b047de07ceeeb4a3daec6232ba2902acea8806075af80c2725ea52298a5
-   ```
-
-   Unter Linux geht es auch in einem Schritt: Lade die
-   [Prüfsummendatei](https://firmware.ffnef.de/other/dump/ap303-loader-2.5.0.2.bin.sha256) in denselben Ordner
-   und gib `sha256sum -c ap303-loader-2.5.0.2.bin.sha256`
-   ein. Es muss `OK` erscheinen.
-
-   Stimmt die Summe nicht, hier aufhören.
-
-7. **Datei laden.** Gib im Terminal bei `apboot>` ein (eine Zeile):
+6. **Datei laden.** Gib im Terminal bei `apboot>` ein (eine Zeile):
 
    ```
    setenv ipaddr 192.168.1.105; setenv serverip 192.168.1.75; netget 0x84000000 ap303-loader-2.5.0.2.bin
@@ -183,9 +166,9 @@ Bootloaders, nicht der Rest des Speichers.
    **Prüfen:** Es erscheint `Bytes transferred = 983040 (f0000 hex)`. Die
    Meldung `Invalid image format version` danach ist hier normal. Steht
    dort eine andere Zahl oder ein Fehler, **hier aufhören** und auf keinen
-   Fall Schritt 8 eingeben.
+   Fall Schritt 7 eingeben.
 
-8. **Bootloader schreiben.** Gib ein (eine Zeile, genau so):
+7. **Bootloader schreiben.** Gib ein (eine Zeile, genau so):
 
    ```
    sf probe; sf protect off; sf erase 0xf0000 0xf0000; sf write 0x84000000 0xf0000 0xf0000
@@ -195,13 +178,13 @@ Bootloaders, nicht der Rest des Speichers.
    Bootloader `Unknown command 'sf'`, gib zuerst `diag` ein und dann die
    Zeile noch einmal.
 
-9. **Neu starten.** Gib `reset` ein. **Prüfen:** Die erste Zeile lautet
+8. **Neu starten.** Gib `reset` ein. **Prüfen:** Die erste Zeile lautet
    jetzt `APBoot 2.5.0.2`. Halt den Bootloader wie in Schritt 5 wieder an,
    bis `apboot>` erscheint.
 
 ### OpenWrt starten
 
-10. **Bootloader einstellen.** Gib diese Befehle ein, jede Zeile einzeln, und
+9. **Bootloader einstellen.** Gib diese Befehle ein, jede Zeile einzeln, und
     warte nach jeder Zeile auf `apboot>`:
 
     ```
@@ -220,7 +203,7 @@ Bootloaders, nicht der Rest des Speichers.
     Aruba-Firmware. Die Aruba-Firmware bleibt im Speicher, siehe "Zurück zur
     Aruba-Firmware".
 
-11. **OpenWrt laden.** Gib ein:
+10. **OpenWrt laden.** Gib ein:
 
     ```
     run ramboot_openwrt
@@ -236,7 +219,7 @@ Bootloaders, nicht der Rest des Speichers.
 
 ### Freifunk-Firmware aufspielen
 
-12. **Anmelden.**
+11. **Anmelden.**
     Öffne ein zweites Terminal im Ordner mit `gluon.bin` und gib ein:
 
     ```
@@ -247,7 +230,7 @@ Bootloaders, nicht der Rest des Speichers.
     Ein Passwort gibt es nicht. Meldet `ssh` "REMOTE HOST IDENTIFICATION HAS
     CHANGED", siehe [SSH und scp benutzen](grundlagen/ssh-scp.md).
 
-13. **Speicher prüfen.** Auf dem Access Point:
+12. **Speicher prüfen.** Auf dem Access Point:
 
     ```
     grep ubi /proc/mtd
@@ -257,7 +240,7 @@ Bootloaders, nicht der Rest des Speichers.
     `mtd1:` und endet mit `"ubi"`. Sonst hier
     aufhören und uns schreiben.
 
-14. **Speicher vorbereiten und Freifunk-Firmware schreiben.** Gib ein, Zeile
+13. **Speicher vorbereiten und Freifunk-Firmware schreiben.** Gib ein, Zeile
     für Zeile:
 
     ```
@@ -270,7 +253,7 @@ Bootloaders, nicht der Rest des Speichers.
     `ubiformat` danach ohne Fehler durchläuft. Fragt `ubiformat` nach, mit
     `y` bestätigen. Nach `sysupgrade` bricht die Verbindung ab.
 
-15. **Fertig.** Einige Minuten warten, Strom nicht ziehen. Im
+14. **Fertig.** Einige Minuten warten, Strom nicht ziehen. Im
     Konsolen-Terminal siehst du den Neustart. Stell den Rechner wieder auf
     "automatisch". Danach startet die Freifunk-Firmware deiner Community: je
     nach Community zuerst mit einer Einrichtungsseite unter
@@ -279,12 +262,12 @@ Bootloaders, nicht der Rest des Speichers.
 ## Woran du erkennst, dass es geklappt hat
 
 - In Schritt 5 erscheint `apboot>`.
-- In Schritt 7 kommt `Bytes transferred = 983040 (f0000 hex)`, und nach
-  Schritt 9 lautet die erste Zeile `APBoot 2.5.0.2`.
-- In Schritt 11 zeigt der Bootloader, dass er die Datei geholt hat
+- In Schritt 6 kommt `Bytes transferred = 983040 (f0000 hex)`, und nach
+  Schritt 8 lautet die erste Zeile `APBoot 2.5.0.2`.
+- In Schritt 10 zeigt der Bootloader, dass er die Datei geholt hat
   (`Bytes transferred = …`), und OpenWrt startet.
-- In Schritt 13 zeigt `grep` die Partition `"ubi"`.
-- Nach Schritt 15 meldet sich die Freifunk-Firmware.
+- In Schritt 12 zeigt `grep` die Partition `"ubi"`.
+- Nach Schritt 14 meldet sich die Freifunk-Firmware.
 
 ## Wenn etwas schiefgeht
 
@@ -297,13 +280,13 @@ Bootloaders, nicht der Rest des Speichers.
 - **Eine Datei kommt nicht an** (der Bootloader wiederholt es oder bricht
   ab). Prüf die feste Adresse `192.168.1.75`, die Firewall deines Rechners
   und den Dateinamen.
-- **In Schritt 11 kommt `Unknown command 'bootm'`.** Dann läuft noch der neuere Bootloader. Prüf beim
+- **In Schritt 10 kommt `Unknown command 'bootm'`.** Dann läuft noch der neuere Bootloader. Prüf beim
   Einschalten die erste Zeile: Sie muss `APBoot 2.5.0.2` lauten. Sonst den
   Teil "Älteren Bootloader aufspielen" wiederholen.
   Willst du an dieser Stelle aufhören, stell im Bootloader den Start der
   Aruba-Firmware wieder her, wie unter "Zurück zur Aruba-Firmware"
   beschrieben.
-- **In Schritt 12 antwortet nichts.** Warte noch eine Minute,
+- **In Schritt 11 antwortet nichts.** Warte noch eine Minute,
   OpenWrt braucht etwas.
 - **`ubiformat` meldet einen Fehler.** Nicht weitermachen, sondern die
   Ausgabe abschreiben (oder die Mitschrift des Terminals nehmen) und uns
@@ -325,7 +308,7 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 
 - abgeleitet (Typenschild/Verwechslung)
 - abgeleitet: Alias, gleiche Platine (Gehäuse öffnen)
-- geprüft: Datei geladen 15.10.2026, SHA256 gleich der im Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9) für apboot-unlocked.bin (Werkzeug/Spezial)
+- geprüft: Datei und ZIP geladen 15.10.2026, SHA256 gleich der im Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9) für apboot-unlocked.bin (Werkzeug/Spezial)
 - geprüft: Forum t/22653 #28 (adorfer, 03.04.2023, Abzüge) (Stock-Teile)
 - geprüft: Forum t/22653 #29 (blocktrron, 14.06.2024) (Programm)
 - geprüft: Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9); Adressen dort .6/.66, in der Anleitung .105/.75 (Programm)

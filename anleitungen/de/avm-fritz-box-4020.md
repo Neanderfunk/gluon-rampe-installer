@@ -8,7 +8,7 @@ sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [avm-eva, feste-ip]
-daten_stand: 37aa5ed
+daten_stand: ebc2777
 vorlage_stand: 869501c
 ---
 

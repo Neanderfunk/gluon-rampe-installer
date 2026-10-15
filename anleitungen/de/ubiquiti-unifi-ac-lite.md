@@ -8,7 +8,7 @@ sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip, schreibschutz, ssh-scp, tftp-client]
-daten_stand: 37aa5ed
+daten_stand: ebc2777
 vorlage_stand: 393f161
 ---
 

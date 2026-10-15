@@ -8,8 +8,8 @@ sprache: de
 stufe: Werkstatt
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 37aa5ed
-vorlage_stand: 7b06003
+daten_stand: ebc2777
+vorlage_stand: 565e893
 ---
 
 # Aruba AP-365: Freifunk-Firmware installieren

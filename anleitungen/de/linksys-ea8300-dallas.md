@@ -8,7 +8,7 @@ sprache: de
 stufe: fortgeschritten
 status: ungeprüft
 grundlagen: [ssh-scp]
-daten_stand: 37aa5ed
+daten_stand: ebc2777
 vorlage_stand: 393f161
 ---
 

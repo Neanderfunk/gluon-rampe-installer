@@ -13,8 +13,8 @@
 <meta name="anleitung:stufe" content="Werkstatt">
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="feste-ip, serielle-konsole, ssh-scp, tftp-server">
-<meta name="anleitung:daten_stand" content="37aa5ed">
-<meta name="anleitung:vorlage_stand" content="7b06003">
+<meta name="anleitung:daten_stand" content="ebc2777">
+<meta name="anleitung:vorlage_stand" content="565e893">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -72,10 +72,11 @@ Leg es in den Ordner deines TFTP-Servers und benenn es dort genau in
 <li>die Freifunk-Firmware deiner Community für den Aruba Instant On AP11, und zwar
 das <strong>sysupgrade</strong>-Image. Benenn es in <code>gluon.bin</code> um, dann passen die
 Befehle unten ohne Änderung.</li>
-<li>den älteren Bootloader
-<a href="https://firmware.ffnef.de/other/dump/ap303-loader-2.5.0.2.bin">ap303-loader-2.5.0.2.bin</a>, SHA256
-<code>69e45b047de07ceeeb4a3daec6232ba2902acea8806075af80c2725ea52298a5</code>. Leg ihn ebenfalls in den Ordner deines
-TFTP-Servers, unter genau diesem Namen.</li>
+<li>den älteren Bootloader als ZIP-Archiv:
+<a href="https://download.ffnef.de/other/dump/ap303-loader-2.5.0.2.zip">ap303-loader-2.5.0.2.zip</a>. Pack es aus. Kommt dabei
+keine Fehlermeldung, ist die Datei heil. Leg <code>ap303-loader-2.5.0.2.bin</code> aus
+dem Archiv ebenfalls in den Ordner deines TFTP-Servers, unter genau
+diesem Namen.</li>
 </ol>
 </li>
 </ul>
@@ -167,7 +168,7 @@ erscheint die Eingabeaufforderung <code>apboot&gt;</code>. Sonst Strom ziehen un
 einmal.</p>
 <p>Steht in der ersten Zeile schon <code>APBoot 2.5.0.2</code>, ist der ältere
 Bootloader bereits drauf, etwa bei einem Gerät aus zweiter Hand. Dann
-überspring den nächsten Teil und mach mit Schritt 10 weiter.</p>
+überspring den nächsten Teil und mach mit Schritt 9 weiter.</p>
 </li>
 </ol>
 <h3>Älteren Bootloader aufspielen</h3>
@@ -187,28 +188,13 @@ hat diesen Weg ausprobiert. Überschrieben wird nur der Bereich des
 Bootloaders, nicht der Rest des Speichers.</p>
 <ol start="6">
 <li>
-<p><strong>Datei prüfen.</strong> Prüf auf deinem Rechner die SHA256 von
-<code>ap303-loader-2.5.0.2.bin</code> im Ordner des TFTP-Servers: unter Linux
-<code>sha256sum ap303-loader-2.5.0.2.bin</code>, unter macOS
-<code>shasum -a 256 ap303-loader-2.5.0.2.bin</code>, in der Windows-PowerShell
-<code>Get-FileHash ap303-loader-2.5.0.2.bin</code>. Das Ergebnis muss genau so lauten
-(Groß- und Kleinschreibung spielt keine Rolle):</p>
-<pre><code>69e45b047de07ceeeb4a3daec6232ba2902acea8806075af80c2725ea52298a5
-</code></pre>
-<p>Unter Linux geht es auch in einem Schritt: Lade die
-<a href="https://firmware.ffnef.de/other/dump/ap303-loader-2.5.0.2.bin.sha256">Prüfsummendatei</a> in denselben Ordner
-und gib <code>sha256sum -c ap303-loader-2.5.0.2.bin.sha256</code>
-ein. Es muss <code>OK</code> erscheinen.</p>
-<p>Stimmt die Summe nicht, hier aufhören.</p>
-</li>
-<li>
 <p><strong>Datei laden.</strong> Gib im Terminal bei <code>apboot&gt;</code> ein (eine Zeile):</p>
 <pre><code>setenv ipaddr 192.168.1.105; setenv serverip 192.168.1.75; netget 0x84000000 ap303-loader-2.5.0.2.bin
 </code></pre>
 <p><strong>Prüfen:</strong> Es erscheint <code>Bytes transferred = 983040 (f0000 hex)</code>. Die
 Meldung <code>Invalid image format version</code> danach ist hier normal. Steht
 dort eine andere Zahl oder ein Fehler, <strong>hier aufhören</strong> und auf keinen
-Fall Schritt 8 eingeben.</p>
+Fall Schritt 7 eingeben.</p>
 </li>
 <li>
 <p><strong>Bootloader schreiben.</strong> Gib ein (eine Zeile, genau so):</p>
@@ -225,7 +211,7 @@ bis <code>apboot&gt;</code> erscheint.</p>
 </li>
 </ol>
 <h3>OpenWrt starten</h3>
-<ol start="10">
+<ol start="9">
 <li>
 <p><strong>Bootloader einstellen.</strong> Gib diese Befehle ein, jede Zeile einzeln, und
 warte nach jeder Zeile auf <code>apboot&gt;</code>:</p>
@@ -255,7 +241,7 @@ schiefgeht&quot; weiter.</p>
 </li>
 </ol>
 <h3>Freifunk-Firmware aufspielen</h3>
-<ol start="12">
+<ol start="11">
 <li>
 <p><strong>Anmelden.</strong>
 Öffne ein zweites Terminal im Ordner mit <code>gluon.bin</code> und gib ein:</p>
@@ -295,12 +281,12 @@ nach Community zuerst mit einer Einrichtungsseite unter
 <h2>Woran du erkennst, dass es geklappt hat</h2>
 <ul>
 <li>In Schritt 5 erscheint <code>apboot&gt;</code>.</li>
-<li>In Schritt 7 kommt <code>Bytes transferred = 983040 (f0000 hex)</code>, und nach
-Schritt 9 lautet die erste Zeile <code>APBoot 2.5.0.2</code>.</li>
-<li>In Schritt 11 zeigt der Bootloader, dass er die Datei geholt hat
+<li>In Schritt 6 kommt <code>Bytes transferred = 983040 (f0000 hex)</code>, und nach
+Schritt 8 lautet die erste Zeile <code>APBoot 2.5.0.2</code>.</li>
+<li>In Schritt 10 zeigt der Bootloader, dass er die Datei geholt hat
 (<code>Bytes transferred = …</code>), und OpenWrt startet.</li>
-<li>In Schritt 13 zeigt <code>grep</code> die Partition <code>&quot;ubi&quot;</code>.</li>
-<li>Nach Schritt 15 meldet sich die Freifunk-Firmware.</li>
+<li>In Schritt 12 zeigt <code>grep</code> die Partition <code>&quot;ubi&quot;</code>.</li>
+<li>Nach Schritt 14 meldet sich die Freifunk-Firmware.</li>
 </ul>
 <h2>Wenn etwas schiefgeht</h2>
 <ul>
@@ -313,13 +299,13 @@ nichts eingeben. Versuch einen anderen Adapter.</li>
 <li><strong>Eine Datei kommt nicht an</strong> (der Bootloader wiederholt es oder bricht
 ab). Prüf die feste Adresse <code>192.168.1.75</code>, die Firewall deines Rechners
 und den Dateinamen.</li>
-<li><strong>In Schritt 11 kommt <code>Unknown command 'bootm'</code>.</strong> Dann läuft noch der neuere Bootloader. Prüf beim
+<li><strong>In Schritt 10 kommt <code>Unknown command 'bootm'</code>.</strong> Dann läuft noch der neuere Bootloader. Prüf beim
 Einschalten die erste Zeile: Sie muss <code>APBoot 2.5.0.2</code> lauten. Sonst den
 Teil &quot;Älteren Bootloader aufspielen&quot; wiederholen.
 Willst du an dieser Stelle aufhören, stell im Bootloader den Start der
 Aruba-Firmware wieder her, wie unter &quot;Zurück zur Aruba-Firmware&quot;
 beschrieben.</li>
-<li><strong>In Schritt 12 antwortet nichts.</strong> Warte noch eine Minute,
+<li><strong>In Schritt 11 antwortet nichts.</strong> Warte noch eine Minute,
 OpenWrt braucht etwas.</li>
 <li><strong><code>ubiformat</code> meldet einen Fehler.</strong> Nicht weitermachen, sondern die
 Ausgabe abschreiben (oder die Mitschrift des Terminals nehmen) und uns
@@ -336,7 +322,7 @@ saveenv
 <ul>
 <li>abgeleitet (Typenschild/Verwechslung)</li>
 <li>abgeleitet: Alias, gleiche Platine (Gehäuse öffnen)</li>
-<li>geprüft: Datei geladen 15.10.2026, SHA256 gleich der im Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9) für apboot-unlocked.bin (Werkzeug/Spezial)</li>
+<li>geprüft: Datei und ZIP geladen 15.10.2026, SHA256 gleich der im Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9) für apboot-unlocked.bin (Werkzeug/Spezial)</li>
 <li>geprüft: Forum t/22653 #28 (adorfer, 03.04.2023, Abzüge) (Stock-Teile)</li>
 <li>geprüft: Forum t/22653 #29 (blocktrron, 14.06.2024) (Programm)</li>
 <li>geprüft: Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9); Adressen dort .6/.66, in der Anleitung .105/.75 (Programm)</li>

@@ -8,7 +8,7 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [tftp-server]
-daten_stand: 37aa5ed
+daten_stand: ebc2777
 vorlage_stand: bfd0482
 ---
 

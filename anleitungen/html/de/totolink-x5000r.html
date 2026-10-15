@@ -13,8 +13,8 @@
 <meta name="anleitung:stufe" content="mit Werkzeug">
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-https, feste-ip">
-<meta name="anleitung:daten_stand" content="37aa5ed">
-<meta name="anleitung:vorlage_stand" content="674e643">
+<meta name="anleitung:daten_stand" content="ebc2777">
+<meta name="anleitung:vorlage_stand" content="565e893">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -43,8 +43,7 @@ Netzwerkkabel</li>
 <li>die Freifunk-Firmware deiner Community für den TOTOLINK X5000R, und zwar das
 <strong>sysupgrade</strong>-Image</li>
 <li>nur für den Umweg: die ältere TOTOLINK-Firmware
-<a href="https://web.archive.org/web/20251202002316id_/https://www.totolink.net/data/upload/20201223/f468696a985bdf6e544cdcadbc1585ec.zip">f468696a985bdf6e544cdcadbc1585ec.zip</a>, SHA256 <code>4fdb1bbf1773a3e7bb3d2f36953411e93a7da52277ee8e79e1dd54909e74daeb</code>. TOTOLINK bietet sie auf der eigenen Seite nicht mehr an; der Link führt auf die Originaldatei von totolink.net im Internet Archive. Pack das ZIP aus; gebraucht wird die Datei
-<code>TOTOLINK_C8343R-1C_X5000R_IP04433_MT7621A_SPI_16M256M_V9.1.0u.6118_B20201102_ALL.web</code> darin.</li>
+<a href="https://download.ffnef.de/other/dump/X5000R_V9.1.0u.6118_B20201102.zip">X5000R_V9.1.0u.6118_B20201102.zip</a>. TOTOLINK bietet sie nicht mehr an; wir stellen die Originaldatei bereit.</li>
 </ul>
 <h2>Schritte</h2>
 <ol>
@@ -80,12 +79,9 @@ TOTOLINK-Firmware annimmt, auch eine ältere. Danach nimmt die Weboberfläche
 auch wieder die Freifunk-Firmware.</p>
 <ol>
 <li>
-<p><strong>Datei prüfen.</strong> Prüf die SHA256 der heruntergeladenen Datei: unter
-Linux <code>sha256sum f468696a985bdf6e544cdcadbc1585ec.zip</code>, unter macOS
-<code>shasum -a 256 f468696a985bdf6e544cdcadbc1585ec.zip</code>, in der Windows-PowerShell
-<code>Get-FileHash f468696a985bdf6e544cdcadbc1585ec.zip</code>. Das Ergebnis muss
-<code>4fdb1bbf1773a3e7bb3d2f36953411e93a7da52277ee8e79e1dd54909e74daeb</code> lauten (Groß- und Kleinschreibung spielt keine
-Rolle). Dann das ZIP auspacken.</p>
+<p><strong>ZIP auspacken.</strong> Pack <code>X5000R_V9.1.0u.6118_B20201102.zip</code> aus. Kommt dabei keine
+Fehlermeldung, ist die Datei heil. Gebraucht wird
+<code>TOTOLINK_C8343R-1C_X5000R_IP04433_MT7621A_SPI_16M256M_V9.1.0u.6118_B20201102_ALL.web</code> darin.</p>
 </li>
 <li>
 <p><strong>Feste Adresse am Rechner.</strong> Stell deinen Rechner auf <code>192.168.1.10</code>,
