@@ -195,6 +195,8 @@ Nur, wenn auf dem Gerät noch eine Ubiquiti-Firmware **älter als 4.3** läuft.
 
 Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 
+- Forum: forum.freifunk.net/t/13863 #134 (adorfer, 2018, AC Lite und AC Mesh, Downgrade 3.7.58 per syswrapper.sh upgrade2, dann mtd) (Notweg)
+- Forum: forum.freifunk.net/t/23422 #10 (blocktrron, 2022, AC Lite 6.2.35, dd-Weg, am 15.10.2026 am Beitrag gegengelesen), #24 (2023: "funktioniert noch auf aktueller Firmware"), #26 (nach Werksreset ok); #8/#3: Downgrade unter 4.3.31 scheitert (Weg ab Werk)
 - abgeleitet (Dauer, Quelle (OpenWrt-Commit))
 - abgeleitet: Ablauf aus UK-Ultra-Commit bf94e0a, gleiche ubnt_unifiac-Basis; Commit des Geräts ohne Anleitung (Weg ab Werk, Schritte (Normalweg))
 - abgeleitet: Commits nennen 'factory defaults' (Schritte (Normalweg), Bedingung an die Herstellerfirmware)
