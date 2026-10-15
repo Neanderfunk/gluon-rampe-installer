@@ -6,13 +6,14 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [curl, feste-ip]
-daten_stand: 97041cf
-vorlage_stand: 39c7c43
+daten_stand: 5ff1a0d
+vorlage_stand: b3e7e14
 ---
 
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
 > zusammengestellt, aber noch niemand hat sie an einem D-Link DIR-878 A1 Schritt
-> für Schritt nachvollzogen. Wenn du es tust: Schreib uns, ob es geklappt hat.
+> für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de), ob es geklappt hat.
 
 # D-Link DIR-878 A1: Freifunk-Firmware installieren
 

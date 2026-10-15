@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TFTP-Server einrichten</title>
+<meta name="anleitung:grundlage" content="tftp-server">
+<link rel="stylesheet" href="../../anleitung.css">
+</head>
+<body>
+<hr />
+<h2>thema: tftp-server
+sprache: de
+status: ungeprüft</h2>
+<blockquote>
+<p><strong>Noch nicht gegengelesen.</strong> Diese Grundlagen-Seite ist ein Entwurf.</p>
+</blockquote>
+<h1>TFTP-Server einrichten</h1>
+<p>Viele Router holen sich im Notfall eine Firmware-Datei selbst von deinem
+Rechner, und zwar über <strong>TFTP</strong>, ein sehr einfaches Übertragungsverfahren.
+Dein Rechner spielt dafür den TFTP-Server: Er stellt einen Ordner bereit, aus
+dem der Router eine Datei mit einem festen Namen abholt.</p>
+<p>Was die Geräteanleitung dir sagt:</p>
+<ul>
+<li>welche <strong>feste Adresse</strong> dein Rechner haben muss (zum Beispiel
+<code>192.168.1.88</code>), siehe <a href="feste-ip.html">Feste IP-Adresse einstellen</a></li>
+<li>wie die Datei <strong>genau heißen</strong> muss (zum Beispiel <code>recovery.bin</code>). Der
+Router sucht nur diesen einen Namen, Groß- und Kleinschreibung zählt.</li>
+</ul>
+<h2>Windows: Tftpd64</h2>
+<ol>
+<li>Tftpd64 herunterladen und installieren (oder die portable Fassung
+entpacken). Cudy und viele Hersteller nennen es auch &quot;tftp32&quot;.</li>
+<li>Die Firmware-Datei in einen eigenen Ordner legen und genau so benennen,
+wie die Geräteanleitung es sagt. Achtung: Windows blendet Dateiendungen
+gern aus. Heißt die Datei im Explorer <code>recovery.bin</code>, kann sie in
+Wirklichkeit <code>recovery.bin.bin</code> heißen. Im Explorer unter &quot;Ansicht&quot; die
+&quot;Dateinamenerweiterungen&quot; einschalten.</li>
+<li>Tftpd64 starten. Bei <strong>Current Directory</strong> über &quot;Browse&quot; den Ordner
+wählen. Bei <strong>Server interfaces</strong> die feste Adresse aus der
+Geräteanleitung auswählen.</li>
+<li>Die <strong>Windows-Firewall</strong> blockiert TFTP. Erlaube Tftpd64 beim ersten
+Start den Zugriff, auch für &quot;öffentliche Netzwerke&quot;. Klappt es trotzdem
+nicht, schalte die Firewall für die Dauer der Installation ab und danach
+wieder an.</li>
+<li>Tftpd64 offen lassen. Im Reiter &quot;Log viewer&quot; siehst du, wenn der Router
+die Datei abholt.</li>
+</ol>
+<h2>Linux</h2>
+<p>Am einfachsten mit <code>dnsmasq</code>, nur als TFTP-Server und nur so lange, wie du
+es brauchst. Die Datei liegt im Ordner <code>~/tftp</code>, der Anschluss heißt hier
+<code>eth0</code> (Name mit <code>ip link</code> nachsehen):</p>
+<pre><code class="language-sh">mkdir -p ~/tftp
+cp &lt;Firmware-Datei&gt; ~/tftp/recovery.bin
+sudo dnsmasq --no-daemon --port=0 --enable-tftp --tftp-root=&quot;$HOME/tftp&quot; --interface=eth0 --bind-interfaces
+</code></pre>
+<p><code>--port=0</code> schaltet den DNS-Teil ab. Läuft eine Firewall (ufw, firewalld),
+muss sie UDP-Port 69 durchlassen. Mit Strg+C beendest du den Server.</p>
+<h2>macOS</h2>
+<p>macOS hat einen TFTP-Server eingebaut, der aus <code>/private/tftpboot</code> liefert:</p>
+<pre><code class="language-sh">sudo cp &lt;Firmware-Datei&gt; /private/tftpboot/recovery.bin
+sudo chmod 644 /private/tftpboot/recovery.bin
+sudo launchctl load -F /System/Library/LaunchDaemons/tftp.plist
+</code></pre>
+<p>Danach wieder abschalten:</p>
+<pre><code class="language-sh">sudo launchctl unload -F /System/Library/LaunchDaemons/tftp.plist
+</code></pre>
+<h2>Woran du erkennst, dass es klappt</h2>
+<p>Der TFTP-Server zeigt, dass eine Datei abgeholt wird (Tftpd64 im Log, dnsmasq
+im Terminal mit &quot;sent … to 192.168.…&quot;). Kommt nichts, prüf der Reihe nach:
+feste Adresse am Rechner, Kabel an der richtigen Buchse, Firewall, Dateiname.</p>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

@@ -9,8 +9,8 @@ erprobt_am: 2026-10-13
 erprobt_mit: gluon-rampe-20261010-d-link-aquila-pro-ai-m60-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m60-a1-recovery.bin
 grundlagen: [browser-https, curl, feste-ip]
-daten_stand: 97041cf
-vorlage_stand: 39c7c43
+daten_stand: 5ff1a0d
+vorlage_stand: b3e7e14
 ---
 
 > **Am Gerät erprobt** am 13.10.2026 mit `gluon-rampe-20261010-d-link-aquila-pro-ai-m60-a1-recovery.bin`. Das aktuelle Image ist neuer und in dieser Form
@@ -69,6 +69,8 @@ wirklich über das Kabel spricht.
    Schritt 4.
    Ein `ping` hilft hier nicht, die Recovery antwortet nicht darauf.
 
+   ![Die Recovery-Seite im Browser: Überschrift, Feld für die Datei, Knopf "Upgrade". Hier nichts hochladen.](../bilder/d-link-aquila-pro-ai-m60-a1/recovery-seite.png)
+
 6. **Datei mit curl hochladen.** Öffne ein Terminal (unter Windows die
    Eingabeaufforderung "cmd"), wechsle in den Ordner mit der Datei und gib
    ein:
@@ -109,10 +111,19 @@ wirklich über das Kabel spricht.
    benannt), dann kommt die Seite. Mehr dazu unter
    [Browser macht https daraus](grundlagen/browser-https.md).
 
+   ![Die Seite der RAMpe: "Firmware aktualisieren" mit Feld für die Datei und Knopf "Datei hochladen"](../bilder/allgemein/rampe-seite.png)
+
 9. **Freifunk-Firmware hochladen.** Wähl das sysupgrade-Image deiner
    Community aus und klick "Datei hochladen". Die RAMpe zeigt die Prüfsumme
    (SHA256) der Datei. Vergleich sie mit der Prüfsumme, die deine Community
    zur Datei angibt. Stimmt sie, klick "Fortfahren".
+
+   ![Die RAMpe zeigt Prüfsumme und Größe der Datei, darunter "Abbrechen" und "Fortfahren"](../bilder/allgemein/rampe-pruefsumme.png)
+
+   Danach erscheint der Hinweis, dass die Firmware jetzt geschrieben wird.
+   Jetzt den Strom nicht unterbrechen.
+
+   ![Hinweis der RAMpe: Die Firmware wird jetzt aktualisiert, Stromversorgung nicht unterbrechen](../bilder/allgemein/rampe-flash-laeuft.png)
 
 10. **Fertig.** Nach unter 2 Minuten startet die Freifunk-Firmware
     deiner Community: je nach Community zuerst mit einer Einrichtungsseite
@@ -123,6 +134,8 @@ wirklich über das Kabel spricht.
 
 - curl meldet am Ende **etwa 52,4 Millionen Bytes**. Wie lange das gedauert
   hat, ist egal, es zählt die Menge.
+
+  ![curl in der PowerShell: oben ein Fehlversuch mit "Failed to connect" und 0 Bytes, unten ein vollständiger Upload mit 50.00M bei 100 %](../bilder/d-link-aquila-pro-ai-m60-a1/curl-ausgabe.png)
 - Nach dem Neustart blinkt die LED gleichmäßig, etwa einmal pro Sekunde, und unter `http://192.168.1.1`
   steht "Firmware aktualisieren".
 - Die Erfolgsmeldung der D-Link-Seite zählt nicht, sie erscheint immer.

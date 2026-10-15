@@ -12,15 +12,16 @@
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:rampe_image" content="gluon-rampe-*-d-link-aquila-pro-ai-m30-a1-recovery.bin">
 <meta name="anleitung:grundlagen" content="browser-https, curl, feste-ip">
-<meta name="anleitung:daten_stand" content="97041cf">
-<meta name="anleitung:vorlage_stand" content="39c7c43">
+<meta name="anleitung:daten_stand" content="5ff1a0d">
+<meta name="anleitung:vorlage_stand" content="b3e7e14">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <blockquote>
 <p><strong>Noch nicht am Gerät erprobt.</strong> Diese Anleitung ist aus Quellen
 zusammengestellt, aber noch niemand hat sie an einem D-Link AQUILA PRO AI M30 A1 Schritt
-für Schritt nachvollzogen. Wenn du es tust: Schreib uns, ob es geklappt hat.</p>
+für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
+<a href="mailto:projekt@neanderfunk.de">projekt@neanderfunk.de</a>, ob es geklappt hat.</p>
 </blockquote>
 <h1>D-Link AQUILA PRO AI M30 A1: Freifunk-Firmware installieren</h1>
 <p>Der D-Link AQUILA PRO AI M30 A1 hat eine eingebaute Notfall-Seite von D-Link, die
@@ -106,12 +107,17 @@ Zertifikat, hat er von sich aus <code>https://</code> vor die Adresse gesetzt. K
 auf &quot;Erweitert&quot; und &quot;Trotzdem fortfahren&quot; (je nach Browser etwas anders
 benannt), dann kommt die Seite. Mehr dazu unter
 <a href="grundlagen/browser-https.html">Browser macht https daraus</a>.</p>
+<p><img src="../bilder/allgemein/rampe-seite.png" alt="Die Seite der RAMpe: &quot;Firmware aktualisieren&quot; mit Feld für die Datei und Knopf &quot;Datei hochladen&quot;" /></p>
 </li>
 <li>
 <p><strong>Freifunk-Firmware hochladen.</strong> Wähl das sysupgrade-Image deiner
 Community aus und klick &quot;Datei hochladen&quot;. Die RAMpe zeigt die Prüfsumme
 (SHA256) der Datei. Vergleich sie mit der Prüfsumme, die deine Community
 zur Datei angibt. Stimmt sie, klick &quot;Fortfahren&quot;.</p>
+<p><img src="../bilder/allgemein/rampe-pruefsumme.png" alt="Die RAMpe zeigt Prüfsumme und Größe der Datei, darunter &quot;Abbrechen&quot; und &quot;Fortfahren&quot;" /></p>
+<p>Danach erscheint der Hinweis, dass die Firmware jetzt geschrieben wird.
+Jetzt den Strom nicht unterbrechen.</p>
+<p><img src="../bilder/allgemein/rampe-flash-laeuft.png" alt="Hinweis der RAMpe: Die Firmware wird jetzt aktualisiert, Stromversorgung nicht unterbrechen" /></p>
 </li>
 <li>
 <p><strong>Fertig.</strong> Nach wenige Minuten startet die Freifunk-Firmware

@@ -14,8 +14,8 @@
 <meta name="anleitung:erprobt_mit" content="gluon-rampe-20261010-d-link-aquila-pro-ai-m60-a1-recovery.bin">
 <meta name="anleitung:rampe_image" content="gluon-rampe-*-d-link-aquila-pro-ai-m60-a1-recovery.bin">
 <meta name="anleitung:grundlagen" content="browser-https, curl, feste-ip">
-<meta name="anleitung:daten_stand" content="97041cf">
-<meta name="anleitung:vorlage_stand" content="39c7c43">
+<meta name="anleitung:daten_stand" content="5ff1a0d">
+<meta name="anleitung:vorlage_stand" content="b3e7e14">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -77,6 +77,7 @@ Kommt stattdessen eine aufwendigere Seite, die nach einem Passwort fragt,
 ist das die normale D-Link-Firmware, nicht die Recovery: zurück zu
 Schritt 4.
 Ein <code>ping</code> hilft hier nicht, die Recovery antwortet nicht darauf.</p>
+<p><img src="../bilder/d-link-aquila-pro-ai-m60-a1/recovery-seite.png" alt="Die Recovery-Seite im Browser: Überschrift, Feld für die Datei, Knopf &quot;Upgrade&quot;. Hier nichts hochladen." /></p>
 </li>
 <li>
 <p><strong>Datei mit curl hochladen.</strong> Öffne ein Terminal (unter Windows die
@@ -113,12 +114,17 @@ Zertifikat, hat er von sich aus <code>https://</code> vor die Adresse gesetzt. K
 auf &quot;Erweitert&quot; und &quot;Trotzdem fortfahren&quot; (je nach Browser etwas anders
 benannt), dann kommt die Seite. Mehr dazu unter
 <a href="grundlagen/browser-https.html">Browser macht https daraus</a>.</p>
+<p><img src="../bilder/allgemein/rampe-seite.png" alt="Die Seite der RAMpe: &quot;Firmware aktualisieren&quot; mit Feld für die Datei und Knopf &quot;Datei hochladen&quot;" /></p>
 </li>
 <li>
 <p><strong>Freifunk-Firmware hochladen.</strong> Wähl das sysupgrade-Image deiner
 Community aus und klick &quot;Datei hochladen&quot;. Die RAMpe zeigt die Prüfsumme
 (SHA256) der Datei. Vergleich sie mit der Prüfsumme, die deine Community
 zur Datei angibt. Stimmt sie, klick &quot;Fortfahren&quot;.</p>
+<p><img src="../bilder/allgemein/rampe-pruefsumme.png" alt="Die RAMpe zeigt Prüfsumme und Größe der Datei, darunter &quot;Abbrechen&quot; und &quot;Fortfahren&quot;" /></p>
+<p>Danach erscheint der Hinweis, dass die Firmware jetzt geschrieben wird.
+Jetzt den Strom nicht unterbrechen.</p>
+<p><img src="../bilder/allgemein/rampe-flash-laeuft.png" alt="Hinweis der RAMpe: Die Firmware wird jetzt aktualisiert, Stromversorgung nicht unterbrechen" /></p>
 </li>
 <li>
 <p><strong>Fertig.</strong> Nach unter 2 Minuten startet die Freifunk-Firmware
@@ -129,11 +135,18 @@ beschreibt deine Community.</p>
 </ol>
 <h2>Woran du erkennst, dass es geklappt hat</h2>
 <ul>
-<li>curl meldet am Ende <strong>etwa 52,4 Millionen Bytes</strong>. Wie lange das gedauert
-hat, ist egal, es zählt die Menge.</li>
-<li>Nach dem Neustart blinkt die LED gleichmäßig, etwa einmal pro Sekunde, und unter <code>http://192.168.1.1</code>
-steht &quot;Firmware aktualisieren&quot;.</li>
-<li>Die Erfolgsmeldung der D-Link-Seite zählt nicht, sie erscheint immer.</li>
+<li>
+<p>curl meldet am Ende <strong>etwa 52,4 Millionen Bytes</strong>. Wie lange das gedauert
+hat, ist egal, es zählt die Menge.</p>
+<p><img src="../bilder/d-link-aquila-pro-ai-m60-a1/curl-ausgabe.png" alt="curl in der PowerShell: oben ein Fehlversuch mit &quot;Failed to connect&quot; und 0 Bytes, unten ein vollständiger Upload mit 50.00M bei 100 %" /></p>
+</li>
+<li>
+<p>Nach dem Neustart blinkt die LED gleichmäßig, etwa einmal pro Sekunde, und unter <code>http://192.168.1.1</code>
+steht &quot;Firmware aktualisieren&quot;.</p>
+</li>
+<li>
+<p>Die Erfolgsmeldung der D-Link-Seite zählt nicht, sie erscheint immer.</p>
+</li>
 </ul>
 <h2>Wenn etwas schiefgeht</h2>
 <ul>

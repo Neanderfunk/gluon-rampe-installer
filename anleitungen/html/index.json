@@ -1,5 +1,145 @@
 [
  {
+  "gluon_name": "cudy-ap1300-outdoor-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-ap1300-outdoor-v1.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-ap3000-outdoor-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-ap3000-outdoor-v1.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-ap3000-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-ap3000-v1.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-ap3000-wall-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-ap3000-wall-v1.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-m1800",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-m1800.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-m3000-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-m3000-v1.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-m3000-v2-with-motorcomm-yt8821",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-m3000-v2-with-motorcomm-yt8821.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-re3000-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-re3000-v1.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-tr1200-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-tr1200-v1.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-tr3000-256mb-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-tr3000-256mb-v1.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-wr1300-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-wr1300-v1.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-wr2100",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-wr2100.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-wr3000-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-wr3000-v1.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-wr3000e-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-wr3000e-v1.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-wr3000h-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-wr3000h-v1.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-wr3000p-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-wr3000p-v1.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-wr3000s-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-wr3000s-v1.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-wr3000u-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-wr3000u-v1.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-x6-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-x6-v1.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-x6-v2",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-x6-v2.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "d-link-aquila-pro-ai-m30-a1",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-aquila-pro-ai-m30-a1.html",
   "status": "ungeprüft",

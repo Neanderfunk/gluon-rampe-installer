@@ -7,13 +7,14 @@ stufe: mit Werkzeug
 status: ungeprüft
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m30-a1-recovery.bin
 grundlagen: [browser-https, curl, feste-ip]
-daten_stand: 97041cf
-vorlage_stand: 39c7c43
+daten_stand: 5ff1a0d
+vorlage_stand: b3e7e14
 ---
 
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
 > zusammengestellt, aber noch niemand hat sie an einem D-Link AQUILA PRO AI M30 A1 Schritt
-> für Schritt nachvollzogen. Wenn du es tust: Schreib uns, ob es geklappt hat.
+> für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de), ob es geklappt hat.
 
 # D-Link AQUILA PRO AI M30 A1: Freifunk-Firmware installieren
 
@@ -102,10 +103,19 @@ wirklich über das Kabel spricht.
    benannt), dann kommt die Seite. Mehr dazu unter
    [Browser macht https daraus](grundlagen/browser-https.md).
 
+   ![Die Seite der RAMpe: "Firmware aktualisieren" mit Feld für die Datei und Knopf "Datei hochladen"](../bilder/allgemein/rampe-seite.png)
+
 9. **Freifunk-Firmware hochladen.** Wähl das sysupgrade-Image deiner
    Community aus und klick "Datei hochladen". Die RAMpe zeigt die Prüfsumme
    (SHA256) der Datei. Vergleich sie mit der Prüfsumme, die deine Community
    zur Datei angibt. Stimmt sie, klick "Fortfahren".
+
+   ![Die RAMpe zeigt Prüfsumme und Größe der Datei, darunter "Abbrechen" und "Fortfahren"](../bilder/allgemein/rampe-pruefsumme.png)
+
+   Danach erscheint der Hinweis, dass die Firmware jetzt geschrieben wird.
+   Jetzt den Strom nicht unterbrechen.
+
+   ![Hinweis der RAMpe: Die Firmware wird jetzt aktualisiert, Stromversorgung nicht unterbrechen](../bilder/allgemein/rampe-flash-laeuft.png)
 
 10. **Fertig.** Nach wenige Minuten startet die Freifunk-Firmware
     deiner Community: je nach Community zuerst mit einer Einrichtungsseite

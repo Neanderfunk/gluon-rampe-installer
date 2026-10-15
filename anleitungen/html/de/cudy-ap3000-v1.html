@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cudy AP3000 v1: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="cudy-ap3000-v1">
+<meta name="anleitung:modell" content="Cudy AP3000 v1">
+<meta name="anleitung:familie" content="cudy-zwischenfirmware">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="fortgeschritten">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="feste-ip, tftp-server">
+<meta name="anleitung:daten_stand" content="5ff1a0d">
+<meta name="anleitung:vorlage_stand" content="b3e7e14">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Diese Anleitung ist aus Quellen
+zusammengestellt, aber noch niemand hat sie an einem Cudy AP3000 v1 Schritt
+für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
+<a href="mailto:projekt@neanderfunk.de">projekt@neanderfunk.de</a>, ob es geklappt hat.</p>
+</blockquote>
+<h1>Cudy AP3000 v1: Freifunk-Firmware installieren</h1>
+<p>Router von Cudy nehmen ab Werk nur Firmware an, die Cudy selbst
+unterschrieben hat. Deshalb geht es in zwei Schritten: Zuerst kommt eine
+<strong>Zwischenfirmware von Cudy</strong> auf den Router, ein OpenWrt, das Cudy
+unterschrieben hat. Darüber spielst du dann die <strong>Freifunk-Firmware</strong> deiner
+Community ein. Beides geht im Browser, du brauchst kein Zusatzprogramm.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>den Router und sein Netzteil</li>
+<li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
+<li>die <strong>Zwischenfirmware von Cudy</strong> für genau dieses Modell:
+<a href="https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_V1.0/">Ordner AP3000_V1.0 in unserem Spiegel</a>, Datei <code>cudy_ap3000-v1-sysupgrade.bin</code></li>
+<li>die Freifunk-Firmware deiner Community für den Cudy AP3000 v1, und zwar das
+<strong>sysupgrade</strong>-Image, nicht &quot;factory&quot;. Das ist bei Cudy richtig, auch wenn
+es die erste Installation ist.</li>
+</ul>
+<p>Modell und Version stehen auf dem Aufkleber unter dem Gerät. Vergleich sie
+genau mit &quot;Cudy AP3000 v1&quot;, bevor du anfängst.</p>
+<h2>Vorher prüfen</h2>
+<p>Nicht verwechseln mit dem AP3000 Outdoor oder dem AP3000 Wall, die haben je
+ihre eigene Zwischenfirmware. Die Zwischenfirmware für den AP3000 v1 hat Cudy
+nicht öffentlich abgelegt; die Datei bei uns stammt direkt vom Cudy-Support.</p>
+<h2>Schritte</h2>
+<h3>Teil 1: Zwischenfirmware von Cudy</h3>
+<ol>
+<li>
+<p><strong>Dateien bereitlegen.</strong> Lade die Zwischenfirmware und das
+sysupgrade-Image herunter und leg sie in einen Ordner, den du
+wiederfindest.</p>
+</li>
+<li>
+<p><strong>Verbinden.</strong> Versorg den Router mit Strom und steck den Rechner per
+Kabel an eine <strong>LAN</strong>-Buchse. Der Rechner holt sich seine Adresse
+automatisch, so wie er normalerweise eingestellt ist.</p>
+</li>
+<li>
+<p><strong>Cudy-Oberfläche öffnen.</strong> Öffne im Browser <code>http://192.168.10.1</code> und
+melde dich mit dem Passwort <code>admin</code> an. Beim ersten Mal fragt der Router
+einige Einstellungen ab: alles mit &quot;Weiter&quot; bestätigen, am Ende
+speichern.</p>
+</li>
+<li>
+<p><strong>Zwischenfirmware hochladen.</strong> Geh zu <strong>Erweiterte Einstellungen →
+System → Firmware</strong> und wähl die Zwischenfirmware aus. Die Bezeichnungen
+können je nach Modell und Alter der Cudy-Firmware etwas anders heißen.</p>
+</li>
+<li>
+<p><strong>Prüfsumme vergleichen.</strong> Nach dem Hochladen zeigt der Router eine
+MD5-Prüfsumme. Sie muss genau so aussehen:</p>
+<pre><code>d7e8c124cfd04c88bbdbe2e4c67e9faf
+</code></pre>
+<p>Stimmt sie, klick auf <strong>Fortfahren</strong>.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Der Router schreibt die Zwischenfirmware und startet neu. Das
+dauert einige Minuten. <strong>Strom nicht ziehen.</strong></p>
+</li>
+</ol>
+<h3>Teil 2: Freifunk-Firmware</h3>
+<ol start="7">
+<li>
+<p><strong>OpenWrt-Oberfläche öffnen.</strong>
+Öffne <code>http://192.168.1.1</code>. Es erscheint die Anmeldung von OpenWrt
+(&quot;LuCI&quot;). Das Passwort-Feld bleibt leer, einfach anmelden.</p>
+</li>
+<li>
+<p><strong>Freifunk-Firmware auswählen.</strong> Geh zu <strong>System → Backup / Firmware
+Update</strong> (englisch &quot;Backup / Flash Firmware&quot;). Ganz unten unter &quot;Firmware
+aktualisieren&quot; (englisch &quot;Flash image…&quot;) wählst du das sysupgrade-Image
+deiner Community aus.</p>
+</li>
+<li>
+<p><strong>Einstellungen nicht behalten.</strong> Bevor es losgeht, zeigt OpenWrt ein
+Fenster mit einem Haken bei <strong>&quot;Einstellungen beibehalten&quot;</strong> (englisch
+&quot;Keep settings&quot;). <strong>Entfern diesen Haken.</strong> Es darf kein Haken mehr
+gesetzt sein.
+Dann <strong>Fortfahren</strong>.</p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Der Router schreibt die Freifunk-Firmware und startet neu,
+wieder einige Minuten, Strom nicht ziehen. Danach startet die
+Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
+Einrichtungsseite unter <code>http://192.168.1.1</code> oder gleich im Betrieb. Wie
+es weitergeht, beschreibt deine Community.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>Nach Schritt 5 stimmt die Prüfsumme genau.</li>
+<li>Nach Schritt 6 zeigt <code>http://192.168.1.1</code> die Anmeldung von OpenWrt.</li>
+<li>Nach Schritt 10 meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Die Prüfsumme stimmt nicht.</strong> Nicht fortfahren. Lad die Datei neu herunter
+und prüf, ob es die für dein Modell und deine Version ist.</li>
+<li><strong>Die Cudy-Oberfläche nimmt die Datei nicht an.</strong> Meist ist es die
+Zwischenfirmware eines anderen Modells oder einer anderen Version. Vergleich
+noch einmal mit dem Aufkleber.</li>
+<li><strong>Nach Schritt 6 antwortet <code>http://192.168.1.1</code> nicht.</strong> Steck das Kabel in
+eine andere Buchse. Bei manchen Modellen tauschen LAN und WAN nach dem
+Wechsel auf OpenWrt die Rolle.</li>
+<li><strong>Unter <code>http://192.168.10.1</code> kommt keine Cudy-Seite, sondern schon
+OpenWrt.</strong> Dann ist die Zwischenfirmware vermutlich schon drauf: weiter bei
+Schritt 7. Läuft dort eine ganz andere Firmware, geht die Zwischenfirmware
+nicht mehr. Cudy nimmt sie nur an, solange die Original-Oberfläche läuft.
+Dann zuerst zurück zur Cudy-Firmware (unten).</li>
+</ul>
+<h2>Zurück zur Cudy-Firmware</h2>
+<p>Wenn der Router nicht mehr richtig startet oder du wieder die
+Original-Firmware willst, hat Cudy einen Notfall-Weg. Er braucht etwas
+Werkzeug: einen TFTP-Server auf deinem Rechner
+(<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>) und eine feste
+Adresse am Rechner (<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).</p>
+<ol>
+<li>Lade die Cudy-Firmware für dein Modell von der
+Download-Seite von Cudy herunter, benenne sie in
+<code>recovery.bin</code> um (genau so) und leg sie in den Ordner des TFTP-Servers.</li>
+<li>Stell deinen Rechner fest auf <code>192.168.1.88</code>, Netzmaske <code>255.255.255.0</code>,
+und starte den TFTP-Server.</li>
+<li>Steck das Kabel an eine
+LAN-Buchse. Der Router hat noch keinen Strom.</li>
+<li>Drück die Reset-Taste und halte sie gedrückt, steck den Strom ein und halte
+weiter, bis
+alle LEDs schnell blinken oder der TFTP-Server den Download zeigt. Dann
+loslassen.</li>
+<li>Blinken die LEDs langsam, ist der Router fertig. Danach den Rechner wieder
+auf &quot;automatisch&quot; stellen; die Cudy-Oberfläche ist unter
+<code>http://192.168.10.1</code> erreichbar.</li>
+</ol>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet: Router ist in beiden Firmwares DHCP-Server (Schritte (Normalweg), Anschluss, Adressen, Programm)</li>
+<li>abgeleitet: sysupgrade schreibt den Flash (Schritte (Normalweg), Dauer)</li>
+<li>geprüft: Commit-Texte (Gluon-RAMpe passt)</li>
+<li>geprüft: Commit/Neanderfunk-Notiz (Weg ab Werk, Schritte (Normalweg))</li>
+<li>geprüft: Cudy-FAQ &quot;How to recovery ... to Cudy official firmware&quot; (Rückweg zur Herstellerfirmware)</li>
+<li>geprüft: Cudy-FAQ &quot;OpenWrt Software Download&quot; (Bedingung an die Herstellerfirmware)</li>
+<li>geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer, Fehlerbild)</li>
+<li>geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)</li>
+<li>geprüft: Spiegel-Ordner (Typenschild/Verwechslung)</li>
+<li>Geräteeintrag: OpenWrt 6dacba30a75b0ac8a65115f78808a97abbb34939</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>
