@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-10-15
 erprobt_mit: Gluon 2023.2.6 (26091920sta), U-Boot-Teil aus Archer C50(EU)_V4_250117
 grundlagen: [feste-ip, tftp-server]
-daten_stand: 8a173cbb
+daten_stand: c21be24c
 vorlage_stand: 8ebdf8cb
 ---
 

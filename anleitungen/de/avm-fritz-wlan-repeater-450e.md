@@ -10,7 +10,7 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [avm-eva, feste-ip]
-daten_stand: 8a173cbb
+daten_stand: c21be24c
 vorlage_stand: 2a45b69b
 ---
 

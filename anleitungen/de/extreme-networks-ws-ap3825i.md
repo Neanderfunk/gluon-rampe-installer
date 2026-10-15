@@ -10,7 +10,7 @@ level_text: Serielles Kabel
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 8a173cbb
+daten_stand: c21be24c
 vorlage_stand: 4935d8a7
 ---
 
@@ -188,6 +188,7 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Neanderfunk-Notiz (Dauer)
 - geprüft: OpenWrt-Issue 17152 (Gluon-RAMpe passt)
 - geprüft: OpenWrt-Issue 17152 (offen): adorfer 29.03.2025 "broken in 24.x and 23, tested with 4 devices … 22.03.0 works", jensgraef 15.05.2025 "sysupgrade of openwrt-24.10 without any problems", jbusuttil 03.09.2026 22.03.0, dann sysupgrade; Datei archive.openwrt.org 22.03.0, SHA256 fc9a27d9… laut sha256sums, 6.879.964 Byte (Bedingung an die Herstellerfirmware)
+- geprüft: OpenWrt-Issue 25302, Tabelle: WS-AP3825i-initramfs 24.10.8 ❌ (Gluon-RAMpe passt)
 - geprüft: Wiki toh:extreme_networks:ws-ap3825i (Schritte (Normalweg), Anschluss, Datei, Dauer, Fehlerbild)
 - geprüft: Wiki toh:extreme_networks:ws-ap3825i, Titel (Typenschild/Verwechslung)
 - geprüft: forum.darmstadt.freifunk.net t/923 #1 (TomH, 30.04.2022), am 15.10.2026 gelesen: 192.168.1.66/.22, ws-ap3825i-initramfs.bin, Prompt 'Boot (PRI)->', Anhalten bei 'Scanning JFFS2 FS:' (Weg ab Werk)

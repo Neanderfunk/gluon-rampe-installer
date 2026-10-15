@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m30-a1-recovery.bin
 grundlagen: [browser-https, curl, feste-ip]
-daten_stand: 8a173cbb
+daten_stand: c21be24c
 vorlage_stand: 85ca2180
 ---
 

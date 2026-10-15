@@ -10,7 +10,7 @@ level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: 8a173cbb
+daten_stand: c21be24c
 vorlage_stand: cc34fa66
 ---
 

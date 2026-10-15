@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-avm-fritz-box-7430-initramfs-kernel.bin
 grundlagen: [avm-eva, browser-https, feste-ip]
-daten_stand: 8a173cbb
+daten_stand: c21be24c
 vorlage_stand: 869501ce
 ---
 
