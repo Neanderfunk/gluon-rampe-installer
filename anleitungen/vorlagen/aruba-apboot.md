@@ -44,12 +44,16 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
                          oder E3" (AP-303H)
     bootm_weg            "apboot": Teil "Älteren Bootloader aufspielen" als
                          ersten Teil zeigen (nur AP11)
-    apboot_datei, apboot_url, apboot_sha256
-                         bei bootm_weg nötig: der ältere Bootloader
-                         (ap303-loader-2.5.0.2.bin, 983.040 Bytes,
-                         SHA256 69e45b04…98a5)
-    apboot_sha256_url    optional: Prüfsummendatei daneben (nur Dateiname
-                         darin, für sha256sum -c)
+    apboot_url, apboot_datei
+                         bei bootm_weg nötig: Download des älteren
+                         Bootloaders und Name der Datei, die in den
+                         TFTP-Ordner kommt (ap303-loader-2.5.0.2.bin,
+                         983.040 Bytes). Endet apboot_url auf .zip, ist
+                         apboot_datei die Datei im Archiv; dann gilt
+                         "Auspacken ohne Fehler" als Prüfung (adorfer
+                         15.10.2026: das machen mehr Leute als SHA-Summen
+                         vergleichen), sonst gibt es einen Prüfschritt.
+    apboot_sha256        bei Download ohne ZIP nötig: SHA256 der Datei
     bootm_hinweis        ganze Sätze statt des Standardtexts, wenn "Unknown
                          command 'bootm'" kommt und es keinen bootm_weg gibt.
                          Der Standardtext verweist bewusst auf keine andere
@@ -63,6 +67,8 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 {%- set tftp_buchse = w.get("tftp_buchse") -%}
 {%- set ssh_buchse = w.get("ssh_buchse") -%}
 {%- set apboot = w.get("bootm_weg") == "apboot" and w.get("apboot_url") -%}
+{%- set apboot_zip = apboot and w.apboot_url.endswith(".zip") -%}
+{%- set apboot_download = w.apboot_url.split("/")[-1] if apboot else "" -%}
 
 # {{ modell }}: Freifunk-Firmware installieren
 
@@ -134,7 +140,13 @@ einer Stunde, ohne das Kabel zu bauen.
   2. die Freifunk-Firmware deiner Community für den {{ modell }}, und zwar
      das **sysupgrade**-Image. Benenn es in `gluon.bin` um, dann passen die
      Befehle unten ohne Änderung.
-{%- if apboot %}
+{%- if apboot_zip %}
+  3. den älteren Bootloader als ZIP-Archiv:
+     [{{ apboot_download }}]({{ w.apboot_url }}). Pack es aus. Kommt dabei
+     keine Fehlermeldung, ist die Datei heil. Leg `{{ w.apboot_datei }}` aus
+     dem Archiv ebenfalls in den Ordner deines TFTP-Servers, unter genau
+     diesem Namen.
+{%- elif apboot %}
   3. den älteren Bootloader
      [{{ w.apboot_datei }}]({{ w.apboot_url }}), SHA256
      `{{ w.apboot_sha256 }}`. Leg ihn ebenfalls in den Ordner deines
@@ -171,7 +183,11 @@ werden.
 {%- endif %}
 
 ## Schritte
-{%- set o = 4 if apboot else 0 %}
+{%- set pruef = 0 if apboot_zip else 1 %}
+{%- set s_net = 6 + pruef %}
+{%- set s_sf = 7 + pruef %}
+{%- set s_reset = 8 + pruef %}
+{%- set o = (3 + pruef) if apboot else 0 %}
 {%- set s_env = 6 + o %}
 {%- set s_ram = 7 + o %}
 {%- set s_login = 8 + o %}
@@ -233,6 +249,7 @@ hat, die OpenWrt braucht. Du ersetzt ihn durch die ältere Fassung
 hat diesen Weg ausprobiert. Überschrieben wird nur der Bereich des
 Bootloaders, nicht der Rest des Speichers.
 
+{% if not apboot_zip -%}
 6. **Datei prüfen.** Prüf auf deinem Rechner die SHA256 von
    `{{ w.apboot_datei }}` im Ordner des TFTP-Servers: unter Linux
    `sha256sum {{ w.apboot_datei }}`, unter macOS
@@ -243,17 +260,11 @@ Bootloaders, nicht der Rest des Speichers.
    ```
    {{ w.apboot_sha256 }}
    ```
-   {%- if w.get("apboot_sha256_url") %}
-
-   Unter Linux geht es auch in einem Schritt: Lade die
-   [Prüfsummendatei]({{ w.get("apboot_sha256_url") }}) in denselben Ordner
-   und gib `sha256sum -c {{ w.get("apboot_sha256_url").split("/")[-1] }}`
-   ein. Es muss `OK` erscheinen.
-   {%- endif %}
 
    Stimmt die Summe nicht, hier aufhören.
 
-7. **Datei laden.** Gib im Terminal bei `apboot>` ein (eine Zeile):
+{% endif -%}
+{{ s_net }}. **Datei laden.** Gib im Terminal bei `apboot>` ein (eine Zeile):
 
    ```
    setenv ipaddr 192.168.1.105; setenv serverip 192.168.1.75; netget 0x84000000 {{ w.apboot_datei }}
@@ -262,9 +273,9 @@ Bootloaders, nicht der Rest des Speichers.
    **Prüfen:** Es erscheint `Bytes transferred = 983040 (f0000 hex)`. Die
    Meldung `Invalid image format version` danach ist hier normal. Steht
    dort eine andere Zahl oder ein Fehler, **hier aufhören** und auf keinen
-   Fall Schritt 8 eingeben.
+   Fall Schritt {{ s_sf }} eingeben.
 
-8. **Bootloader schreiben.** Gib ein (eine Zeile, genau so):
+{{ s_sf }}. **Bootloader schreiben.** Gib ein (eine Zeile, genau so):
 
    ```
    sf probe; sf protect off; sf erase 0xf0000 0xf0000; sf write 0x84000000 0xf0000 0xf0000
@@ -274,7 +285,7 @@ Bootloaders, nicht der Rest des Speichers.
    Bootloader `Unknown command 'sf'`, gib zuerst `diag` ein und dann die
    Zeile noch einmal.
 
-9. **Neu starten.** Gib `reset` ein. **Prüfen:** Die erste Zeile lautet
+{{ s_reset }}. **Neu starten.** Gib `reset` ein. **Prüfen:** Die erste Zeile lautet
    jetzt `APBoot 2.5.0.2`. Halt den Bootloader wie in Schritt 5 wieder an,
    bis `apboot>` erscheint.
 {%- endif %}
@@ -363,8 +374,8 @@ Bootloaders, nicht der Rest des Speichers.
 
 - In Schritt 5 erscheint `apboot>`.
 {%- if apboot %}
-- In Schritt 7 kommt `Bytes transferred = 983040 (f0000 hex)`, und nach
-  Schritt 9 lautet die erste Zeile `APBoot 2.5.0.2`.
+- In Schritt {{ s_net }} kommt `Bytes transferred = 983040 (f0000 hex)`, und nach
+  Schritt {{ s_reset }} lautet die erste Zeile `APBoot 2.5.0.2`.
 {%- endif %}
 - In Schritt {{ s_ram }} zeigt der Bootloader, dass er die Datei geholt hat
   (`Bytes transferred = …`), und OpenWrt startet.
