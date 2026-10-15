@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Image auf einen Datenträger schreiben</title>
+<meta name="anleitung:grundlage" content="image-schreiben">
+<link rel="stylesheet" href="../../anleitung.css">
+</head>
+<body>
+<hr />
+<h2>thema: image-schreiben
+sprache: de
+status: ungeprüft</h2>
+<blockquote>
+<p><strong>Noch nicht gegengelesen.</strong> Diese Grundlagen-Seite ist ein Entwurf.</p>
+</blockquote>
+<h1>Image auf einen Datenträger schreiben</h1>
+<p>Bei Raspberry Pi, NanoPi und x86-Rechnern gibt es keine Firmware, die man
+hochlädt. Die Freifunk-Firmware wird stattdessen als fertiges Abbild
+(&quot;Image&quot;) auf den Datenträger geschrieben, von dem das Gerät startet: eine
+microSD-Karte, eine Festplatte, eine SSD oder einen USB-Stick.</p>
+<h2>Worauf es ankommt</h2>
+<ul>
+<li>Die Firmware kommt als <code>.img.gz</code>, also gepackt. Auf den Datenträger muss
+das <strong>ausgepackte, rohe <code>.img</code></strong>.</li>
+<li>Es wird auf den <strong>ganzen Datenträger</strong> geschrieben, nicht in eine Partition
+und nicht als Datei in ein Dateisystem. Was vorher darauf war, ist danach
+weg.</li>
+<li>Das Image ist nur gut 100 MB groß. Der Rest des Datenträgers bleibt
+ungenutzt; jede Karte ab etwa 256 MB reicht.</li>
+</ul>
+<p>Es gibt grafische Programme, die das erledigen, für Windows, macOS und Linux;
+einige können <code>.img.gz</code> sogar direkt schreiben. Deren Bedienung erklären wir
+hier nicht. Wichtig ist nur: Sie müssen das rohe Image auf den ganzen
+Datenträger schreiben.</p>
+<h2>Linux im Terminal (Referenz)</h2>
+<ol>
+<li>
+<p><strong>Datenträger finden.</strong> Vorher und nachher, mit eingesteckter Karte bzw.
+angeschlossenem Stick:</p>
+<pre><code class="language-sh">lsblk
+</code></pre>
+<p>Der neu aufgetauchte Eintrag ist es, zum Beispiel <code>sdb</code> (ganzer
+Datenträger) mit <code>sdb1</code> (Partition darauf). Hier heißt er im Folgenden
+<code>/dev/sdX</code>. <strong>Doppelt prüfen:</strong> Ein Tippfehler überschreibt die falsche
+Platte.</p>
+</li>
+<li>
+<p><strong>Partitionen aushängen,</strong> falls das System sie automatisch eingebunden
+hat:</p>
+<pre><code class="language-sh">sudo umount /dev/sdX?*
+</code></pre>
+</li>
+<li>
+<p><strong>Image auspacken.</strong></p>
+<pre><code class="language-sh">gunzip -k gluon-…img.gz
+</code></pre>
+<p>Meldet <code>gunzip</code> &quot;trailing garbage ignored&quot;, ist das in Ordnung: Hinter
+den gepackten Daten hängen bei manchen Images Zusatzangaben, das
+ausgepackte <code>.img</code> ist trotzdem vollständig.</p>
+</li>
+<li>
+<p><strong>Schreiben.</strong></p>
+<pre><code class="language-sh">sudo dd if=gluon-…img of=/dev/sdX bs=4M conv=fsync status=progress
+sync
+</code></pre>
+<p>Das dauert Sekunden bis etwa eine Minute. Danach den Datenträger
+abziehen.</p>
+</li>
+</ol>
+<h2>macOS im Terminal</h2>
+<p>Wie unter Linux, nur heißt der Datenträger <code>/dev/diskN</code> (zu finden mit
+<code>diskutil list</code>), ausgehängt wird er mit <code>diskutil unmountDisk /dev/diskN</code>,
+und bei <code>dd</code> nimmt man <code>of=/dev/rdiskN bs=4m</code>.</p>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

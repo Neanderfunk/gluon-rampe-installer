@@ -259,6 +259,34 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "friendlyelec-nanopi-r2c",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/friendlyelec-nanopi-r2c.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "friendlyelec-nanopi-r2s",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/friendlyelec-nanopi-r2s.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "friendlyelec-nanopi-r3s",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/friendlyelec-nanopi-r3s.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "friendlyelec-nanopi-r4s",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/friendlyelec-nanopi-r4s.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "gl-mt300a",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/gl-mt300a.html",
   "status": "ungeprüft",
@@ -462,8 +490,36 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "netgear-eax12",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-eax12.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-ex3700",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-ex3700.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "netgear-ex6100v2",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-ex6100v2.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-ex6130",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-ex6130.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-ex6150",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-ex6150.html",
   "status": "ungeprüft",
   "stufe": "einfach",
   "sprache": "de"
@@ -483,8 +539,78 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "netgear-r6020",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-r6020.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-r6120",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-r6120.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-r6220",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-r6220.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-r6260",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-r6260.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-rbr50",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-rbr50.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-rbs50",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-rbs50.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-srr60",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-srr60.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-srs60",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-srs60.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "netgear-wac104",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wac104.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-wax202",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wax202.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-wax206",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wax206.html",
   "status": "ungeprüft",
   "stufe": "einfach",
   "sprache": "de"
@@ -515,6 +641,13 @@
   "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wndr3700-v4.html",
   "status": "ungeprüft",
   "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-wndr3700-v5",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wndr3700-v5.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
   "sprache": "de"
  },
  {
@@ -569,6 +702,34 @@
  {
   "gluon_name": "openwrt-one",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/openwrt-one.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "raspberrypi-2-model-b",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/raspberrypi-2-model-b.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "raspberrypi-3-model-b",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/raspberrypi-3-model-b.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "raspberrypi-4-model-b",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/raspberrypi-4-model-b.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "raspberrypi-model-b",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/raspberrypi-model-b.html",
   "status": "ungeprüft",
   "stufe": "einfach",
   "sprache": "de"
@@ -1005,6 +1166,34 @@
   "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-swiss-army-knife-ultra.html",
   "status": "ungeprüft",
   "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "x86-64",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/x86-64.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "x86-generic",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/x86-generic.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "x86-geode",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/x86-geode.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "x86-legacy",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/x86-legacy.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
   "sprache": "de"
  },
  {

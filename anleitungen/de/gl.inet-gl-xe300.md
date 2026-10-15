@@ -6,7 +6,7 @@ sprache: de
 stufe: fortgeschritten
 status: ungeprüft
 grundlagen: [feste-ip]
-daten_stand: d60cc39
+daten_stand: 0a4f2b3
 vorlage_stand: ab9e04f
 ---
 

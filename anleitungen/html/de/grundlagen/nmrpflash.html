@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nmrpflash benutzen</title>
+<meta name="anleitung:grundlage" content="nmrpflash">
+<link rel="stylesheet" href="../../anleitung.css">
+</head>
+<body>
+<hr />
+<h2>thema: nmrpflash
+sprache: de
+status: ungeprüft</h2>
+<blockquote>
+<p><strong>Noch nicht gegengelesen.</strong> Diese Grundlagen-Seite ist ein Entwurf.</p>
+</blockquote>
+<h1>nmrpflash benutzen</h1>
+<p>Viele Netgear-Geräte haben im Bootloader einen Notfall-Weg namens NMRP:
+Direkt nach dem Einschalten fragen sie im Netzwerk, ob jemand eine Firmware
+für sie hat. Das Programm <strong>nmrpflash</strong> antwortet darauf und schickt die
+Datei. Das klappt auch, wenn die Netgear-Oberfläche fremde Firmware ablehnt
+oder das Gerät nicht mehr startet.</p>
+<h2>Besorgen</h2>
+<p>Fertige Programme für Linux, macOS und Windows gibt es auf der
+<a href="https://github.com/jclehner/nmrpflash/releases/latest">Download-Seite von nmrpflash</a>.
+ZIP-Datei herunterladen und auspacken.</p>
+<ul>
+<li><strong>Windows</strong> braucht zusätzlich <a href="https://nmap.org/npcap/#download">Npcap</a>.
+Beim Installieren <strong>&quot;WinPcap API-compatible Mode&quot;</strong> anhaken. Fehlt das,
+meldet nmrpflash &quot;wpcap.dll is missing&quot;.</li>
+<li><strong>Linux</strong> braucht die Pakete <code>libpcap</code> und <code>libnl-3</code>; manche
+Distributionen haben nmrpflash auch selbst im Paketangebot (oft veraltet).</li>
+<li><strong>macOS:</strong> Laut nmrpflash am besten über Homebrew (<code>brew install nmrpflash</code>).</li>
+</ul>
+<p>nmrpflash braucht Administrator-Rechte: unter Linux und macOS mit <code>sudo</code>
+davor, unter Windows die Eingabeaufforderung mit Rechtsklick &quot;Als
+Administrator ausführen&quot; öffnen.</p>
+<h2>Den richtigen Netzwerkanschluss finden</h2>
+<pre><code>nmrpflash -L
+</code></pre>
+<p>zeigt alle Netzwerkanschlüsse des Rechners, zum Beispiel:</p>
+<pre><code>eth0      192.168.1.2  c0:de:fa:ce:01:23
+eth2      0.0.0.0      ca:fe:ba:be:45:67
+wifi0     10.0.10.138  de:ad:be:ef:89:ab
+</code></pre>
+<p>Gesucht ist der Anschluss, an dem das Kabel zum Netgear-Gerät steckt. Unter
+Windows heißen sie <code>net0</code>, <code>net1</code> … Im Zweifel einmal ohne und einmal mit
+eingestecktem Kabel aufrufen und vergleichen.</p>
+<h2>Ablauf</h2>
+<ol>
+<li>
+<p>Gerät <strong>aus</strong>. Kabel direkt vom Rechner an die LAN-Buchse des Geräts
+(bei Netgear oft blau; bei mehreren die mit &quot;1&quot;).</p>
+</li>
+<li>
+<p>Firewall am Rechner für die Dauer ausschalten.</p>
+</li>
+<li>
+<p>Starten, mit dem Anschlussnamen von oben und der Firmware-Datei:</p>
+<pre><code>nmrpflash -i eth2 -f firmware.img
+</code></pre>
+</li>
+<li>
+<p>Sobald <code>Waiting for Ethernet connection</code> erscheint: Gerät <strong>einschalten</strong>.</p>
+</li>
+<li>
+<p>nmrpflash meldet dann der Reihe nach:</p>
+<pre><code>Received upload request: filename 'firmware'.
+Uploading firmware.img ... OK
+Waiting for remote to respond.
+Received keep-alive request (11).
+Remote finished. Closing connection.
+Reboot your device now.
+</code></pre>
+<p>Bei <code>Waiting for remote to respond.</code> schreibt das Gerät. Das kann dauern,
+es wurden 15 Minuten und mehr beobachtet. <strong>Erst bei <code>Reboot your device now.</code> ist es fertig.</strong> Vorher nicht den Strom ziehen.</p>
+</li>
+<li>
+<p>Gerät neu starten (aus und wieder ein).</p>
+</li>
+</ol>
+<p>nmrpflash vergibt die Adressen selbst (<code>10.164.183.252</code> und <code>.253</code>); am
+Rechner musst du nichts einstellen.</p>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>&quot;No response after 60 seconds.&quot;</strong> Reihenfolge einhalten: erst nmrpflash
+starten, dann das Gerät einschalten. Manche Geräte brauchen beim
+Einschalten zusätzlich die gedrückte Reset-Taste. Eine andere LAN-Buchse
+probieren.</li>
+<li><strong>&quot;Timeout while waiting for ACK(0)/OACK.&quot;</strong> Meist die Firewall. Ausschalten
+und noch einmal.</li>
+<li><strong>&quot;No suitable network interfaces found.&quot;</strong> Der Netzwerkanschluss ist
+ausgeschaltet. Unter Windows hilft manchmal, den Npcap-Dienst neu zu
+starten (als Administrator: <code>net stop npcap</code>, dann <code>net start npcap</code>).</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

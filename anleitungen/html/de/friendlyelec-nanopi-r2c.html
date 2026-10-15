@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FriendlyElec NanoPi R2C: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="friendlyelec-nanopi-r2c">
+<meta name="anleitung:modell" content="FriendlyElec NanoPi R2C">
+<meta name="anleitung:familie" content="image-auf-datentraeger">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="einfach">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="image-schreiben">
+<meta name="anleitung:daten_stand" content="0a4f2b3">
+<meta name="anleitung:vorlage_stand" content="deba706">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Diese Anleitung ist aus Quellen
+zusammengestellt, aber noch niemand hat sie an einem FriendlyElec NanoPi R2C Schritt
+für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
+<a href="mailto:projekt@neanderfunk.de">projekt@neanderfunk.de</a>, ob es geklappt hat.</p>
+</blockquote>
+<h1>FriendlyElec NanoPi R2C: Freifunk-Firmware installieren</h1>
+<p>Beim FriendlyElec NanoPi R2C gibt es keine Firmware, die man über eine Oberfläche
+hochlädt. Die Freifunk-Firmware wird als fertiges Abbild direkt auf
+eine microSD-Karte geschrieben, und das Gerät startet davon.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>das Gerät und eine microSD-Karte</li>
+<li>einen Rechner, an dem du eine microSD-Karte beschreiben kannst</li>
+<li>ein Netzwerkkabel für die Einrichtung</li>
+<li>die Freifunk-Firmware deiner Community für den FriendlyElec NanoPi R2C, und zwar das
+<strong>sysupgrade</strong>-Image (Endung <code>.img.gz</code>). Das ist hier richtig, auch für die
+erste Installation: Für dieses Gerät gibt es kein factory-Image.</li>
+</ul>
+<h2>Vorher prüfen</h2>
+<p>Der R2C sieht aus wie der <a href="friendlyelec-nanopi-r2s.html">R2S</a>, hat aber einen
+anderen Netzwerkchip und braucht sein eigenes Image. Den R2C Plus (mit
+eingebautem Speicher) gibt es nicht als Freifunk-Firmware.</p>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Datei bereitlegen.</strong> Lade das sysupgrade-Image herunter.</p>
+</li>
+<li>
+<p><strong>Image schreiben.</strong> Schreib das ausgepackte Image auf eine microSD-Karte,
+und zwar auf den ganzen Datenträger. Wie das geht, steht unter
+<a href="grundlagen/image-schreiben.html">Image auf einen Datenträger schreiben</a>.
+<strong>Alles, was vorher darauf war, ist danach weg.</strong></p>
+</li>
+<li>
+<p><strong>Einsetzen.</strong> Steck den frisch beschriebenen Datenträger in das Gerät
+bzw. schließ ihn an.</p>
+</li>
+<li>
+<p><strong>Verbinden und einschalten.</strong> Steck das Netzwerkkabel vom Rechner an
+die LAN-Buchse (nicht WAN). Der Rechner holt sich seine Adresse automatisch. Dann
+das Gerät einschalten. Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).</p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Die Freifunk-Firmware startet: je nach Community zuerst mit
+einer Einrichtungsseite unter <code>http://192.168.1.1</code> oder gleich im Betrieb.</p>
+</li>
+</ol>
+<p><strong>Karte nicht tauschen:</strong> Das Gerät leitet seine Netzwerkadresse (MAC) aus
+der Seriennummer der Speicherkarte ab. Mit einer anderen Karte bekommt es eine
+andere Adresse und erscheint in der Freifunk-Karte als neuer Knoten.</p>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>Nach einer Minute oder zwei meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Das Gerät startet nicht.</strong> Meist wurde das Image in eine Partition oder
+als Datei geschrieben statt auf den ganzen Datenträger, oder es wurde nicht
+ausgepackt. Noch einmal nach
+<a href="grundlagen/image-schreiben.html">Image auf einen Datenträger schreiben</a>.</li>
+<li><strong>Beim Auspacken kommt &quot;trailing garbage ignored&quot;.</strong> Das ist harmlos.</li>
+</ul>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Schritte (Normalweg), Anschluss)</li>
+<li>abgeleitet: Gluons Setup-Mode läuft an den LAN-Buchsen, nicht an WAN (Anschluss)</li>
+<li>abgeleitet: Imagegröße aus Config-images.in (Schritte (Normalweg), Dauer)</li>
+<li>abgeleitet: OpenWrt diag.sh (Sichtbare Zeichen)</li>
+<li>abgeleitet: targets/rockchip-armv8 (Weg ab Werk, Schritte (Normalweg), Datei)</li>
+<li>geprüft: OpenWrt rockchip/image/Makefile append-metadata; gzip-Verhalten abgeleitet (Fehlerbild)</li>
+<li>geprüft: OpenWrt-Commits 8f578c15/78226647; Gluon targets/rockchip-armv8 (Schritte (Normalweg), Typenschild/Verwechslung)</li>
+<li>geprüft: OpenWrt-Patch led-boot/running = sys_led, diag.sh, Gluon gluon-setup-mode S96led (Sichtbare Zeichen)</li>
+<li>geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi (Schritte (Normalweg), Programm)</li>
+<li>geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi, Wiki toh:friendlyarm:nanopi_r2s (dd, gzip -d); Win32DiskImager: Wiki-Zusammenfassung: FriendlyElec-Wiki, nicht lokal (Programm)</li>
+<li>geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts (Schritte (Normalweg), Programm)</li>
+<li>Geräteeintrag: Gluon targets/rockchip-armv8; R2C: gluon-patches-hardware devices/add-nanopi-r2c</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

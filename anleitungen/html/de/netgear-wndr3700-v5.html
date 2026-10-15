@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NETGEAR WNDR3700 v5 (Gluon: broken, &quot;untested&quot;): Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="netgear-wndr3700-v5">
+<meta name="anleitung:modell" content="NETGEAR WNDR3700 v5 (Gluon: broken, &quot;untested&quot;)">
+<meta name="anleitung:familie" content="netgear-nmrp">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="mit Werkzeug">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="nmrpflash">
+<meta name="anleitung:daten_stand" content="0a4f2b3">
+<meta name="anleitung:vorlage_stand" content="deba706">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Diese Anleitung ist aus Quellen
+zusammengestellt, aber noch niemand hat sie an einem NETGEAR WNDR3700 v5 (Gluon: broken, &quot;untested&quot;) Schritt
+für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
+<a href="mailto:projekt@neanderfunk.de">projekt@neanderfunk.de</a>, ob es geklappt hat.</p>
+</blockquote>
+<h1>NETGEAR WNDR3700 v5 (Gluon: broken, &quot;untested&quot;): Freifunk-Firmware installieren</h1>
+<p>Viele Netgear-Geräte fragen direkt nach dem Einschalten im Netzwerk, ob
+jemand eine Firmware für sie hat. Das Programm <strong>nmrpflash</strong> auf deinem
+Rechner antwortet darauf und schickt die Freifunk-Firmware. Das geht auch
+dann, wenn die Netgear-Oberfläche fremde Firmware nicht annimmt.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>das Gerät mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
+Netzwerkkabel</li>
+<li>das Programm nmrpflash (<a href="grundlagen/nmrpflash.html">nmrpflash benutzen</a>)</li>
+<li>OpenWrt für den NETGEAR WNDR3700 v5 (Gluon: broken, &quot;untested&quot;):
+<a href="https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img">openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img</a>. Die Freifunk-Firmware
+gibt es für dieses Gerät nicht in der Form, die nmrpflash schickt; deshalb
+kommt erst OpenWrt drauf und darüber die Freifunk-Firmware.</li>
+<li>die Freifunk-Firmware deiner Community für den NETGEAR WNDR3700 v5 (Gluon: broken, &quot;untested&quot;), und zwar das
+<strong>sysupgrade</strong>-Image</li>
+</ul>
+<h2>Vorher prüfen</h2>
+<p>Nur der WNDR3700 <strong>v5</strong>. WNDR3700 v1 bis v4 sind ganz andere Geräte mit
+eigenen Images. Prüf den Aufkleber auf &quot;v5&quot;.</p>
+<p>Die Freifunk-Firmware für den WNDR3700 v5 gilt bei Gluon als ungetestet.</p>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>nmrpflash bereitlegen.</strong> Lade nmrpflash herunter und richte es ein, wie
+unter <a href="grundlagen/nmrpflash.html">nmrpflash benutzen</a> beschrieben. Leg die OpenWrt-Datei
+in denselben Ordner und benenne es in <code>firmware.img</code> um.</p>
+</li>
+<li>
+<p><strong>Verbinden.</strong> Das Gerät ist <strong>aus</strong>. Steck das Kabel vom Rechner an die LAN-Buchse (bei
+Netgear oft blau; bei mehreren die mit &quot;1&quot;). Schalte die
+Firewall am Rechner für die Dauer aus.</p>
+</li>
+<li>
+<p><strong>Anschluss finden.</strong> Im Terminal (als Administrator bzw. mit <code>sudo</code>):</p>
+<pre><code>nmrpflash -L
+</code></pre>
+<p>Merk dir den Namen des Anschlusses, an dem das Kabel steckt, zum Beispiel
+<code>eth0</code> oder <code>net1</code>.</p>
+</li>
+<li>
+<p><strong>nmrpflash starten.</strong> Mit diesem Namen statt <code>eth0</code>:</p>
+<pre><code>nmrpflash -i eth0 -f firmware.img
+</code></pre>
+</li>
+<li>
+<p><strong>Gerät einschalten,</strong> sobald <code>Waiting for Ethernet connection</code> erscheint.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> nmrpflash meldet <code>Uploading … OK</code> und dann <code>Waiting for remote to respond.</code> Jetzt schreibt das Gerät, das dauert meist wenige Minuten,
+manchmal 15 Minuten und mehr. <strong>Strom nicht ziehen,</strong> bis
+<code>Reboot your device now.</code> erscheint.</p>
+</li>
+<li>
+<p><strong>Neu starten.</strong> Schalte das Gerät aus und wieder ein.</p>
+</li>
+<li>
+<p><strong>Freifunk-Firmware über OpenWrt.</strong> Stell den Rechner auf
+&quot;automatisch&quot;, öffne <code>http://192.168.1.1</code> und melde dich an
+(Passwort-Feld leer). Unter <strong>System → Backup / Flash Firmware</strong>,
+&quot;Flash image…&quot;, das Freifunk-sysupgrade-Image wählen, <strong>den Haken bei
+&quot;Keep settings&quot; entfernen</strong> und <strong>Continue</strong>. Einige Minuten warten.</p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Danach startet die Freifunk-Firmware deiner Community: je nach
+Community zuerst mit einer Einrichtungsseite unter <code>http://192.168.1.1</code>
+oder gleich im Betrieb.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>nmrpflash endet mit <code>Reboot your device now.</code></li>
+<li>Nach dem Neustart meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>&quot;No response after 60 seconds.&quot;</strong> Reihenfolge einhalten: erst nmrpflash
+starten, dann das Gerät einschalten. Manche Netgear-Geräte brauchen beim
+Einschalten zusätzlich die gedrückte Reset-Taste. Eine andere LAN-Buchse
+probieren.</li>
+<li><strong>&quot;Timeout while waiting for ACK(0)/OACK.&quot;</strong> Meist die Firewall am Rechner.</li>
+<li>Weitere Meldungen erklärt <a href="grundlagen/nmrpflash.html">nmrpflash benutzen</a>.</li>
+</ul>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Gluon-RAMpe passt)</li>
+<li>abgeleitet: Commit cb049e7 nennt MT7621S für v5 (Schritte (Normalweg), Typenschild/Verwechslung)</li>
+<li>geprüft (Weg ab Werk, Schritte (Normalweg))</li>
+<li>geprüft: Commit 2fdd02c 'factory image ... can be flashed using nmrpflash' (Datei)</li>
+<li>geprüft: OpenWrt 24.10.8 ramips/mt7621, factory.img in sha256sums gelistet und per HEAD erreichbar, 15.10.2026 (Weg ab Werk)</li>
+<li>geprüft: nmrpflash-README (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Anschluss, Adressen, Programm, Dauer)</li>
+<li>Geräteeintrag: cb049e71cdc08e17f664403a0ef970c480ae5c4a + 2fdd02cc7c3516c2cce2ace2c7b539e0821ecbe8 (factory-Image)</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

@@ -6,7 +6,7 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [curl, feste-ip]
-daten_stand: d60cc39
+daten_stand: 0a4f2b3
 vorlage_stand: b3e7e14
 ---
 

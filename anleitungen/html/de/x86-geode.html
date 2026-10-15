@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>x86 (x86-geode): Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="x86-geode">
+<meta name="anleitung:modell" content="x86 (x86-geode)">
+<meta name="anleitung:familie" content="image-auf-datentraeger">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="einfach">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="image-schreiben">
+<meta name="anleitung:daten_stand" content="0a4f2b3">
+<meta name="anleitung:vorlage_stand" content="deba706">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Diese Anleitung ist aus Quellen
+zusammengestellt, aber noch niemand hat sie an einem x86 (x86-geode) Schritt
+für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
+<a href="mailto:projekt@neanderfunk.de">projekt@neanderfunk.de</a>, ob es geklappt hat.</p>
+</blockquote>
+<h1>x86 (x86-geode): Freifunk-Firmware installieren</h1>
+<p>Beim x86 (x86-geode) gibt es keine Firmware, die man über eine Oberfläche
+hochlädt. Die Freifunk-Firmware wird als fertiges Abbild direkt auf
+eine Festplatte, eine SSD oder einen USB-Stick geschrieben, und das Gerät startet davon.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>das Gerät und eine Festplatte, eine SSD oder einen USB-Stick</li>
+<li>einen Rechner, an dem du eine Festplatte, eine SSD oder einen USB-Stick beschreiben kannst</li>
+<li>ein Netzwerkkabel für die Einrichtung</li>
+<li>die Freifunk-Firmware deiner Community für den x86 (x86-geode), und zwar das
+<strong>factory</strong>-Image (Endung <code>.img.gz</code>)</li>
+</ul>
+<h2>Vorher prüfen</h2>
+<p>Für x86-Rechner gibt es vier Varianten der Freifunk-Firmware; welche passt,
+hängt vom Prozessor ab:</p>
+<ul>
+<li><a href="x86-64.html">x86-64</a>: fast alle Rechner mit 64-Bit-Prozessor, etwa ab
+Anfang der 2000er Jahre</li>
+<li><a href="x86-generic.html">x86-generic</a>: 32-Bit-Rechner ab Pentium 4, auch einige
+ältere Atom</li>
+<li><a href="x86-geode.html">x86-geode</a>: Boards mit AMD Geode, zum Beispiel PC Engines
+ALIX oder Soekris net5501</li>
+<li><a href="x86-legacy.html">x86-legacy</a>: sehr alte Rechner (Pentium MMX), zum Beispiel
+ältere Soekris-Boards</li>
+</ul>
+<p>Das Image für Geode startet nur per BIOS.</p>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Datei bereitlegen.</strong> Lade das factory-Image herunter.</p>
+</li>
+<li>
+<p><strong>Image schreiben.</strong> Schreib das ausgepackte Image auf eine Festplatte, eine SSD oder einen USB-Stick,
+und zwar auf den ganzen Datenträger. Wie das geht, steht unter
+<a href="grundlagen/image-schreiben.html">Image auf einen Datenträger schreiben</a>.
+<strong>Alles, was vorher darauf war, ist danach weg.</strong></p>
+</li>
+<li>
+<p><strong>Einsetzen.</strong> Steck den frisch beschriebenen Datenträger in das Gerät
+bzw. schließ ihn an.</p>
+</li>
+<li>
+<p><strong>Verbinden und einschalten.</strong> Steck das Netzwerkkabel vom Rechner an
+die erste Netzwerkbuchse. Der Rechner holt sich seine Adresse automatisch. Dann
+das Gerät einschalten.</p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Die Freifunk-Firmware startet: je nach Community zuerst mit
+einer Einrichtungsseite unter <code>http://192.168.1.1</code> oder gleich im Betrieb.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>Nach einer Minute oder zwei meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Das Gerät startet nicht.</strong> Meist wurde das Image in eine Partition oder
+als Datei geschrieben statt auf den ganzen Datenträger, oder es wurde nicht
+ausgepackt. Noch einmal nach
+<a href="grundlagen/image-schreiben.html">Image auf einen Datenträger schreiben</a>.</li>
+<li><strong>Beim Auspacken kommt &quot;trailing garbage ignored&quot;.</strong> Das ist harmlos.</li>
+</ul>
+<h2>In einer virtuellen Maschine</h2>
+<p>Für VirtualBox und VMware gibt es die Firmware auch als fertige virtuelle
+Festplatte (<code>.vdi</code> bzw. <code>.vmdk</code>). Die bindest du als Festplatte einer neuen
+virtuellen Maschine ein, statt ein Image zu schreiben.</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Schritte (Normalweg), Programm)</li>
+<li>abgeleitet: GNU coreutils (Schritte (Normalweg))</li>
+<li>abgeleitet: GNU coreutils dd (Schritte (Normalweg))</li>
+<li>abgeleitet: Herstellerseite (Programm)</li>
+<li>abgeleitet: Imagegröße (Dauer)</li>
+<li>geprüft: Gluon docs/user/x86.rst, targets/x86.inc (Datei)</li>
+<li>geprüft: Gluon docs/user/x86.rst: &quot;compressed raw image, can be written to a disk directly&quot; (Schritte (Normalweg))</li>
+<li>geprüft: Gluon targets/x86-geode, OpenWrt image/geode.mk (Datei)</li>
+<li>geprüft: OpenWrt x86/geode/target.mk (Schritte (Normalweg), Typenschild/Verwechslung)</li>
+<li>geprüft: OpenWrt x86/image/Makefile append-metadata; gzip-Verhalten abgeleitet (Fehlerbild)</li>
+<li>geprüft: Wiki docs:guide-user:installation:openwrt_x86 (Schritte (Normalweg), Programm)</li>
+<li>geprüft: Wiki docs:guide-user:installation:openwrt_x86, korrigiert (Programm)</li>
+<li>geprüft: targets/x86* (Weg ab Werk, Schritte (Normalweg), Datei)</li>
+<li>Geräteeintrag: Gluon targets/x86-geode</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

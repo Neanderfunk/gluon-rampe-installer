@@ -9,7 +9,7 @@ erprobt_am: 2026-10-13
 erprobt_mit: gluon-rampe-20261010-d-link-aquila-pro-ai-m60-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m60-a1-recovery.bin
 grundlagen: [browser-https, curl, feste-ip]
-daten_stand: d60cc39
+daten_stand: 0a4f2b3
 vorlage_stand: b3e7e14
 ---
 
@@ -29,7 +29,7 @@ kein Passwort.
 
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - eine Büroklammer für die Reset-Taste
-- die RAMpe-Datei für dieses Gerät: `gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin`
+- die RAMpe-Datei für dieses Gerät: `gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin` ([herunterladen](https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin))
 - die Freifunk-Firmware deiner Community für den D-Link AQUILA PRO AI M60 A1, und zwar das
   **sysupgrade**-Image
 - das Programm **curl** zum Hochladen. Unter Linux und macOS ist es meist

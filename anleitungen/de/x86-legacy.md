@@ -1,0 +1,104 @@
+---
+gluon_name: x86-legacy
+modell: x86 (x86-legacy)
+familie: image-auf-datentraeger
+sprache: de
+stufe: einfach
+status: ungeprüft
+grundlagen: [image-schreiben]
+daten_stand: 0a4f2b3
+vorlage_stand: deba706
+---
+
+> **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
+> zusammengestellt, aber noch niemand hat sie an einem x86 (x86-legacy) Schritt
+> für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de), ob es geklappt hat.
+
+# x86 (x86-legacy): Freifunk-Firmware installieren
+
+Beim x86 (x86-legacy) gibt es keine Firmware, die man über eine Oberfläche
+hochlädt. Die Freifunk-Firmware wird als fertiges Abbild direkt auf
+eine Festplatte, eine SSD oder einen USB-Stick geschrieben, und das Gerät startet davon.
+
+## Was du brauchst
+
+- das Gerät und eine Festplatte, eine SSD oder einen USB-Stick
+- einen Rechner, an dem du eine Festplatte, eine SSD oder einen USB-Stick beschreiben kannst
+- ein Netzwerkkabel für die Einrichtung
+- die Freifunk-Firmware deiner Community für den x86 (x86-legacy), und zwar das
+  **factory**-Image (Endung `.img.gz`)
+
+## Vorher prüfen
+
+Für x86-Rechner gibt es vier Varianten der Freifunk-Firmware; welche passt,
+hängt vom Prozessor ab:
+
+- [x86-64](x86-64.md): fast alle Rechner mit 64-Bit-Prozessor, etwa ab
+  Anfang der 2000er Jahre
+- [x86-generic](x86-generic.md): 32-Bit-Rechner ab Pentium 4, auch einige
+  ältere Atom
+- [x86-geode](x86-geode.md): Boards mit AMD Geode, zum Beispiel PC Engines
+  ALIX oder Soekris net5501
+- [x86-legacy](x86-legacy.md): sehr alte Rechner (Pentium MMX), zum Beispiel
+  ältere Soekris-Boards
+
+Das Image startet laut seinem Aufbau sowohl per UEFI als auch per BIOS. Ob
+es mit eingeschaltetem Secure Boot startet, sagt keine unserer Quellen.
+
+## Schritte
+
+1. **Datei bereitlegen.** Lade das factory-Image herunter.
+
+2. **Image schreiben.** Schreib das ausgepackte Image auf eine Festplatte, eine SSD oder einen USB-Stick,
+   und zwar auf den ganzen Datenträger. Wie das geht, steht unter
+   [Image auf einen Datenträger schreiben](grundlagen/image-schreiben.md).
+   **Alles, was vorher darauf war, ist danach weg.**
+
+3. **Einsetzen.** Steck den frisch beschriebenen Datenträger in das Gerät
+   bzw. schließ ihn an.
+
+4. **Verbinden und einschalten.** Steck das Netzwerkkabel vom Rechner an
+   die erste Netzwerkbuchse. Der Rechner holt sich seine Adresse automatisch. Dann
+   das Gerät einschalten.
+
+5. **Fertig.** Die Freifunk-Firmware startet: je nach Community zuerst mit
+   einer Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
+
+## Woran du erkennst, dass es geklappt hat
+
+- Nach einer Minute oder zwei meldet sich die Freifunk-Firmware.
+
+## Wenn etwas schiefgeht
+
+- **Das Gerät startet nicht.** Meist wurde das Image in eine Partition oder
+  als Datei geschrieben statt auf den ganzen Datenträger, oder es wurde nicht
+  ausgepackt. Noch einmal nach
+  [Image auf einen Datenträger schreiben](grundlagen/image-schreiben.md).
+- **Beim Auspacken kommt "trailing garbage ignored".** Das ist harmlos.
+
+## In einer virtuellen Maschine
+
+Für VirtualBox und VMware gibt es die Firmware auch als fertige virtuelle
+Festplatte (`.vdi` bzw. `.vmdk`). Die bindest du als Festplatte einer neuen
+virtuellen Maschine ein, statt ein Image zu schreiben.
+
+## Herkunft der Angaben
+
+Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
+
+- abgeleitet (Schritte (Normalweg), Programm)
+- abgeleitet: GNU coreutils (Schritte (Normalweg))
+- abgeleitet: GNU coreutils dd (Schritte (Normalweg))
+- abgeleitet: Herstellerseite (Programm)
+- abgeleitet: Imagegröße (Dauer)
+- abgeleitet: Wiki openwrt_x86 ohne Angabe (Datei)
+- geprüft: Gluon docs/user/x86.rst, OpenWrt x86/legacy/target.mk (Schritte (Normalweg), Typenschild/Verwechslung)
+- geprüft: Gluon docs/user/x86.rst, targets/x86.inc (Datei)
+- geprüft: Gluon docs/user/x86.rst: "compressed raw image, can be written to a disk directly" (Schritte (Normalweg))
+- geprüft: Gluon targets/x86.inc, OpenWrt x86/image/Makefile; BIOS-Start abgeleitet, nicht getestet (Datei)
+- geprüft: OpenWrt x86/image/Makefile append-metadata; gzip-Verhalten abgeleitet (Fehlerbild)
+- geprüft: Wiki docs:guide-user:installation:openwrt_x86 (Schritte (Normalweg), Programm)
+- geprüft: Wiki docs:guide-user:installation:openwrt_x86, korrigiert (Programm)
+- geprüft: targets/x86* (Weg ab Werk, Schritte (Normalweg), Datei)
+- Geräteeintrag: Gluon targets/x86-legacy
