@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HPE MSM460: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="hewlett-packard-msm460">
+<meta name="anleitung:modell" content="HPE MSM460">
+<meta name="anleitung:anzeige" content="HPE MSM460">
+<meta name="anleitung:familie" content="sonderweg-hewlett-packard-msm460">
+<meta name="anleitung:gluon_broken" content="false">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:level" content="L4">
+<meta name="anleitung:level_text" content="Netzwerkwerkzeuge">
+<meta name="anleitung:risiko" content="bootloader">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="feste-ip, tftp-client, tftp-server">
+<meta name="anleitung:daten_stand" content="03ee77d">
+<meta name="anleitung:vorlage_stand" content="05fb36b">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<h1>HPE MSM460: Freifunk-Firmware installieren</h1>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Wichtige Schritte haben wir von
+ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
+aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+beschrieben.
+Dass der neue Bootloader die Freifunk-Firmware von selbst holt, haben wir aus seinem Quelltext abgeleitet.</p>
+<p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+Anleitung für alle nach dir besser:</p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20HPE%20MSM460">projekt@neanderfunk.de</a></p>
+</blockquote>
+<blockquote>
+<p><strong>Achtung, Bootloader:</strong> Bei diesem Gerät wird der Bootloader verändert,
+also das kleine Programm, das vor jeder Firmware startet. Geht dabei etwas
+schief, etwa durch einen Stromausfall oder eine falsche Datei, startet das
+Gerät womöglich nicht mehr. Ohne Flash-Programmer gibt es dann meist kein
+Zurück. Lies die Anleitung vorher einmal ganz durch und halte dich genau an
+die Befehle.</p>
+</blockquote>
+<p>Der MSM460 nimmt keine fremde Firmware über seine Weboberfläche an. Es gibt
+aber einen Weg ohne Öffnen des Gehäuses: Im Notfall-Modus nimmt die
+HP-Firmware eine Befehlsdatei per Netzwerk an. Damit tauschst du den
+Bootloader gegen einen, den ein Freifunk-Entwickler für genau dieses Gerät
+gebaut hat. Der neue Bootloader holt sich dann die Freifunk-Firmware von
+deinem Rechner und schreibt sie selbst.</p>
+<p>Einen einfachen Weg zurück zur HP-Firmware gibt es danach nicht.</p>
+<p>Du brauchst einen TFTP-Server und einen TFTP-Client auf deinem Rechner
+(<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>,
+<a href="grundlagen/tftp-client.html">TFTP-Client benutzen</a>). Rechne mit einer halben
+Stunde.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>den Access Point und einen <strong>PoE-Injektor</strong>. Der MSM460 bekommt seinen
+Strom über das Netzwerkkabel.</li>
+<li>einen Rechner mit Netzwerkanschluss und zwei Netzwerkkabel (Rechner zum
+Injektor, Injektor zum Access Point)</li>
+<li>diese drei Dateien, alle im Ordner deines TFTP-Servers und genau so
+benannt:
+<ol>
+<li>die Befehlsdatei <a href="https://raw.githubusercontent.com/blocktrron/msm460-flashing/0d1dd58d7187b89dff43d0f5d852502f719e7441/commands.tftp">commands.tftp</a> (genau
+131.072 Bytes)</li>
+<li>der neue Bootloader <a href="https://raw.githubusercontent.com/blocktrron/msm460-flashing/0d1dd58d7187b89dff43d0f5d852502f719e7441/msm460-uboot.bin">msm460-uboot.bin</a></li>
+<li>die Freifunk-Firmware deiner Community für den HPE MSM460, und zwar
+das <strong>factory</strong>-Image (im Firmware-Selector unter &quot;Wähle Deine
+Installationsart&quot; der Knopf <strong>Erstinstallation</strong>). Benenn es in
+<strong><code>msm460-factory.bin</code></strong> um.</li>
+</ol>
+</li>
+</ul>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Feste Adresse am Rechner.</strong> Stell deinen Rechner auf <code>192.168.1.66</code>,
+Netzmaske <code>255.255.255.0</code>
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).</p>
+</li>
+<li>
+<p><strong>TFTP-Server starten</strong> mit dem Ordner, in dem die drei Dateien liegen.
+Lass ihn bis zum Schluss laufen; in seinem Protokoll siehst du später,
+welche Datei der Access Point gerade holt.</p>
+</li>
+<li>
+<p><strong>Notfall-Modus starten.</strong> Verbinde den Rechner mit dem LAN-Anschluss
+des PoE-Injektors. Halt die <strong>Reset</strong>-Taste des Access Points gedrückt
+und steck dabei das Kabel vom Injektor (PoE-Anschluss) in den Access
+Point. Die LEDs fangen an zu blinken und blinken nach etwa 15 Sekunden
+schneller. Dann loslassen.</p>
+</li>
+<li>
+<p><strong>Befehlsdatei schicken.</strong> Öffne ein Terminal im Ordner mit den Dateien
+und gib ein:</p>
+<ul>
+<li>
+<p>Linux:</p>
+<pre><code>tftp 192.168.1.1 -m binary -c put commands.tftp nflashd.cccc9999
+</code></pre>
+</li>
+<li>
+<p>Windows (Eingabeaufforderung):</p>
+<pre><code>tftp -i 192.168.1.1 PUT commands.tftp nflashd.cccc9999
+</code></pre>
+</li>
+<li>
+<p>macOS: <code>tftp 192.168.1.1</code>, dann nacheinander <code>binary</code>,
+<code>put commands.tftp nflashd.cccc9999</code> und <code>quit</code>.</p>
+</li>
+</ul>
+<p>Am Ende meldet das Programm <strong>&quot;Transfer timed out&quot;</strong> oder eine
+Zeitüberschreitung. Das ist hier normal.</p>
+</li>
+<li>
+<p><strong>Warten, Strom nicht ziehen.</strong> Im Protokoll des TFTP-Servers siehst du,
+wie der Access Point zuerst <code>msm460-uboot.bin</code> holt. Er schreibt den neuen
+Bootloader und startet neu. Weil noch keine Freifunk-Firmware im Speicher
+ist, holt der neue Bootloader dann von selbst <code>msm460-factory.bin</code> und
+schreibt sie. Das dauert einige Minuten. Am Ende zeigen die LEDs ein
+gleichbleibendes Blinkmuster
+(<a href="https://github.com/blocktrron/msm460-flashing/blob/0d1dd58d7187b89dff43d0f5d852502f719e7441/images/blink-pattern.gif">so sieht es aus</a>).</p>
+</li>
+<li>
+<p><strong>Neu starten.</strong> Zieh das Kabel am Access Point kurz ab und steck es
+wieder ein. Jetzt startet die Freifunk-Firmware. Stell den Rechner wieder
+auf &quot;automatisch&quot;. Je nach Community kommt zuerst eine Einrichtungsseite
+unter <code>http://192.168.1.1</code>, oder der Access Point geht gleich in Betrieb.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>In Schritt 3 blinken die LEDs nach etwa 15 Sekunden schneller.</li>
+<li>In Schritt 5 zeigt der TFTP-Server erst <code>msm460-uboot.bin</code>, später
+<code>msm460-factory.bin</code>.</li>
+<li>Nach Schritt 6 meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Die LEDs blinken nicht schneller.</strong> Kabel abziehen und Schritt 3
+wiederholen. Die Reset-Taste muss schon gedrückt sein, bevor der Strom
+kommt.</li>
+<li><strong>Der TFTP-Server zeigt keinen Abruf von <code>msm460-uboot.bin</code>.</strong> Prüf die
+feste Adresse <code>192.168.1.66</code>, die Firewall deines Rechners (der Abruf
+kommt vom Access Point) und die Dateinamen. Dann ab Schritt 3 noch einmal.</li>
+<li><strong><code>msm460-uboot.bin</code> wurde geholt, <code>msm460-factory.bin</code> aber nicht.</strong> Nicht
+den Strom ziehen. Prüf den Namen der Freifunk-Datei; der neue Bootloader
+versucht es immer wieder, bis die Datei da ist.</li>
+</ul>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Gluon-RAMpe passt)</li>
+<li>geprüft (Weg ab Werk)</li>
+<li>geprüft: Commit af329ec, README blocktrron/msm460-flashing (Taste und Zeitpunkt)</li>
+<li>geprüft: Commit, README (Sichtbare Zeichen, Programm)</li>
+<li>Geräteeintrag: af329ec38980e2f706411a11b9f344a62eb0dd8f</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

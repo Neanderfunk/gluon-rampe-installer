@@ -824,6 +824,14 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "hewlett-packard-msm460",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/hewlett-packard-msm460.html",
+  "status": "ungeprüft",
+  "level": "L4",
+  "risiko": "bootloader",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "linksys-ea6350v3",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/linksys-ea6350v3.html",
   "status": "ungeprüft",
