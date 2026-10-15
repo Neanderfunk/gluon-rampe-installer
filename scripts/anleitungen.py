@@ -37,6 +37,7 @@
 import argparse
 import html
 import json
+import level
 import re
 import subprocess
 import sys
@@ -50,9 +51,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from erstinstallation import FELDER  # noqa: E402  (Feld -> Beschriftung)
 
 # Kategorie -> Stufe fuer Lesende (Tabelle "Kategorien" in ERSTINSTALLATION)
-STUFE = {"K0": "einfach", "K0+": "mit scripts/Netzwerktools", "K1": "mit scripts/Netzwerktools",
-         "K1d": "mit scripts/Netzwerktools", "K2": "fortgeschritten", "K3": "Werkstatt",
-         "K4": "Werkstatt", "K5": "Werkstatt", "offen": "Werkstatt"}
 
 # Belegmarken: [geprueft: ...], [abgeleitet ...], [Wiki-Zusammenfassung: ...] ...
 MARKE = re.compile(r"\[([^\[\]]*(?:geprüft|abgeleitet|Zusammenfassung|ungeprüft|Forum:|Neanderfunk-Notiz:|Wiki-Rohtext:)[^\[\]]*)\]")
@@ -221,6 +219,7 @@ def seiten_erzeugen(geraete, quelle, jinja2):
         am = erprobt.get("am", "")
         am_de = ".".join(reversed(am.split("-"))) if re.fullmatch(r"\d{4}-\d\d-\d\d", am) else am
         ctx.update(modell=anzeige(g), anzeige=anzeige(g), broken=g["gluon_broken"],
+                   level=level.level(g["level_merkmale"]), risiko=g["risiko"],
                    werte=werte, status=status, erprobt_am=am_de,
                    erprobt_mit=erprobt.get("mit", ""),
                    erprobt_mit_aelter=bool(status == "erprobt" and aktuell
@@ -234,7 +233,8 @@ def seiten_erzeugen(geraete, quelle, jinja2):
         body = re.sub(r"\n{3,}", "\n\n", body).strip() + "\n"
         kopf = {"gluon_name": g["gluon_name"], "modell": g["modell"], "anzeige": anzeige(g),
                 "familie": g["familie"], "gluon_broken": g["gluon_broken"],
-                "sprache": SPRACHE, "stufe": STUFE.get(g["kat"], "Werkstatt"), "status": status}
+                "sprache": SPRACHE, "level": level.level(g["level_merkmale"]), "risiko": g["risiko"],
+                "status": status}
         if status == "erprobt":
             kopf.update(erprobt_am=erprobt["am"], erprobt_mit=erprobt.get("mit", ""))
         if werte.get("rampe_datei"):
@@ -256,6 +256,7 @@ code{padding:.05em .3em;border-radius:3px}pre{padding:.7rem .8rem;overflow-x:aut
 blockquote{margin:1rem 0;padding:.6rem .9rem;background:var(--hinweis);border-left:4px solid #c9962b}
 blockquote p{margin:.2rem 0}ol>li{margin:.5rem 0}.fuss{margin-top:3rem;color:var(--leise);font-size:.85rem}
 table{border-collapse:collapse}td,th{border:1px solid var(--rand);padding:.25rem .5rem;text-align:left}
+.uebersicht table{width:100%}.uebersicht td,.uebersicht th{overflow-wrap:break-word;hyphens:auto;vertical-align:top}
 """
 
 
@@ -266,10 +267,12 @@ def html_seite(titel, body_md, meta, md, tiefe):
     metas = "\n".join(f'<meta name="anleitung:{html.escape(k)}" content="{html.escape(", ".join(v) if isinstance(v, list) else yaml_wert(v) if isinstance(v, bool) else str(v))}">'
                       for k, v in meta.items())
     css = "../" * tiefe + "anleitung.css"
+    klasse = ' class="uebersicht"' if "uebersicht" in meta else ""
     return (f'<!DOCTYPE html>\n<html lang="{SPRACHE}">\n<head>\n<meta charset="utf-8">\n'
             f'<meta name="viewport" content="width=device-width, initial-scale=1">\n'
             f"<title>{html.escape(titel)}</title>\n{metas}\n"
-            f'<link rel="stylesheet" href="{css}">\n</head>\n<body>\n{inhalt}\n'
+            f'<link rel="stylesheet" href="{css}">\n</head>\n'
+            f"<body{klasse}>\n{inhalt}\n"
             f'<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus '
             f'<a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>\n'
             f"</body>\n</html>\n")
@@ -326,15 +329,18 @@ def main():
                 dateien[h / "bilder" / p.relative_to(a.quelle / "bilder")] = p.read_bytes()
         liste = ["# Freifunk-Firmware installieren", "",
                  "Anleitungen je Gerät. Ungeprüfte Anleitungen sind aus Quellen "
-                 "zusammengestellt und noch nicht am Gerät nachvollzogen.", ""]
-        liste += [f"- [{k['anzeige']}]({n}.md): {k['status']}, {k['stufe']}"
+                 "zusammengestellt und noch nicht am Gerät nachvollzogen.", "",
+                 "| Gerät | Stand | Level |", "|---|---|---|"]
+        liste += [f"| [{k['anzeige'].replace('|', '/')}]({n}.md) | {k['status']} | {k['level']}"
+                  + (", **Bootloader-Risiko**" if k["risiko"] == "bootloader" else "") + " |"
                   for n, (k, _) in seiten.items()]
         dateien[h / SPRACHE / "index.html"] = html_seite(
             "Freifunk-Firmware installieren", "\n".join(liste) + "\n", {"uebersicht": SPRACHE}, md, 1)
         if a.basis_url:
             basis = a.basis_url.rstrip("/")
             idx = [{"gluon_name": n, "url": f"{basis}/{SPRACHE}/{n}.html", "status": k["status"],
-                    "stufe": k["stufe"], "sprache": SPRACHE} for n, (k, _) in seiten.items()]
+                    "level": k["level"], "risiko": k["risiko"], "sprache": SPRACHE}
+                   for n, (k, _) in seiten.items()]
             dateien[h / "index.json"] = json.dumps(idx, ensure_ascii=False, indent=1) + "\n"
 
     if a.verlinken and not a.check:
