@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ubiquiti EdgeRouter X: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="ubiquiti-edgerouter-x">
+<meta name="anleitung:modell" content="Ubiquiti EdgeRouter X">
+<meta name="anleitung:familie" content="ubiquiti-edgerouter">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="Werkstatt">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="feste-ip, ssh-scp">
+<meta name="anleitung:daten_stand" content="5e09bfd">
+<meta name="anleitung:vorlage_stand" content="12da4a4">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Diese Anleitung ist aus Quellen
+zusammengestellt, aber noch niemand hat sie an einem Ubiquiti EdgeRouter X Schritt
+für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
+<a href="mailto:projekt@neanderfunk.de">projekt@neanderfunk.de</a>, ob es geklappt hat.</p>
+</blockquote>
+<h1>Ubiquiti EdgeRouter X: Freifunk-Firmware installieren</h1>
+<p>Diese Anleitung ist für einen Ubiquiti EdgeRouter X, auf dem noch die Firmware von
+Ubiquiti läuft (EdgeOS), und der neu mit Freifunk anfangen soll.</p>
+<p>Der Weg hat drei Etappen, weil es keine Abkürzung gibt:</p>
+<ol>
+<li><strong>Aus EdgeOS heraus ein altes OpenWrt aufspielen.</strong> EdgeOS nimmt nur
+Dateien in einem bestimmten Format an, und die gibt es nur für ältere
+OpenWrt-Versionen.</li>
+<li><strong>Auf das neue Speicherlayout umstellen.</strong> Die Firmware ab Gluon 2025.1
+(Linux 6.6) ist zu groß für den alten Platz im Speicher. Ein Skript teilt
+den Speicher neu ein und spielt dabei OpenWrt 24.10 auf.</li>
+<li><strong>Die Freifunk-Firmware aufspielen</strong>, ganz normal über die
+Weboberfläche von OpenWrt.</li>
+</ol>
+<p>Du arbeitest dabei mit SSH und scp im Terminal. Wenn das neu für dich ist,
+lies vorher <a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>. Rechne mit einer
+Stunde.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>den Router mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
+Netzwerkkabel</li>
+<li><code>ssh</code> und <code>scp</code> (<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>)</li>
+<li>diese vier Dateien, alle in einem Ordner:
+<ol>
+<li>das OpenWrt-factory-Image für EdgeOS:
+<a href="https://raw.githubusercontent.com/stman/OpenWRT-19.07.2-factory-tar-file-for-Ubiquiti-EdgeRouter-x/de2ade9e0c5356af31e5ae0ff011fd22525e8342/Version%2022.03/openwrt-ramips-mt7621-ubnt_edgerouter-x-initramfs-factory.tar">openwrt-ramips-mt7621-ubnt_edgerouter-x-initramfs-factory.tar</a>
+(3.010.560 Bytes), SHA256
+<code>8f6f370dd7a8bc3e702fba607f175ac5b892a6d8cc852faa94fa73b0f8eccb42</code>.
+Es stammt nicht von OpenWrt selbst, sondern von einem Nutzer, der es
+gebaut hat, weil OpenWrt für diesen Router keine solche Datei mehr
+erzeugt; das OpenWrt-Wiki verweist darauf.</li>
+<li>die beiden Umstellungs-Skripte
+<a href="https://raw.githubusercontent.com/darkxst/erx-migration/d29f71a94ec3fadd1f31bee2b39536f395ee9aa5/ubnt_erx_migrate.sh">ubnt_erx_migrate.sh</a> und
+<a href="https://raw.githubusercontent.com/darkxst/erx-migration/d29f71a94ec3fadd1f31bee2b39536f395ee9aa5/ubnt_erx_stage2.sh">ubnt_erx_stage2.sh</a>, genau unter
+diesen Namen</li>
+<li>OpenWrt 24.10 für dein Modell:
+<a href="https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-squashfs-sysupgrade.bin">openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-squashfs-sysupgrade.bin</a>, SHA256
+<code>6c39f0140e06cef4832a4d65cbb48caa7e0b540c45fb1f82598c17d30f3e7026</code></li>
+<li>die Freifunk-Firmware deiner Community für den Ubiquiti EdgeRouter X, und zwar
+das <strong>sysupgrade</strong>-Image</li>
+</ol>
+</li>
+</ul>
+<h2>Vorher prüfen</h2>
+<ul>
+<li>Diese Anleitung ist für den <strong>EdgeRouter X</strong> (fünf Netzwerkbuchsen, kein
+SFP-Anschluss). Der <a href="ubiquiti-edgerouter-x-sfp.html">EdgeRouter X-SFP</a> hat
+einen zusätzlichen SFP-Anschluss und braucht eigene Dateien.</li>
+<li>Bei manchen Communities trägt die Freifunk-Firmware für dieses Gerät einen
+Zusatz im Namen, bei Neanderfunk zum Beispiel
+<code>…-ubiquiti-edgerouter-x-ka-sysupgrade.bin</code>. Das <code>ka</code> steht für das neue
+Speicherlayout und ist hier genau richtig.</li>
+</ul>
+<h2>Empfohlen: EdgeOS und Bootloader vorher aktualisieren</h2>
+<p>OpenWrt empfiehlt, vor allem anderen die neueste EdgeOS-Version 2.x und das
+Bootloader-Update von Ubiquiti einzuspielen. Der neue Bootloader hat einen
+Notfall-Modus, der über die Reset-Taste erreichbar ist; ohne ihn bleibt im
+Notfall nur die serielle Konsole. Wie es geht, beschreibt Ubiquiti:
+<a href="https://www.ui.com/download/software/er-x">EdgeOS herunterladen</a>,
+<a href="https://help.ui.com/hc/en-us/articles/360009932554-EdgeRouter-How-to-Update-the-Bootloader">Bootloader aktualisieren</a>.</p>
+<h2>Schritte</h2>
+<h3>Teil 1: OpenWrt aus EdgeOS heraus aufspielen</h3>
+<ol>
+<li>
+<p><strong>Feste Adresse am Rechner.</strong> Stell deinen Rechner auf
+<code>192.168.1.10</code>, Netzmaske <code>255.255.255.0</code>
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).</p>
+</li>
+<li>
+<p><strong>Kabel an eth0.</strong> Steck das Kabel vom Rechner in die Buchse <strong>eth0</strong>
+des Routers und schalte ihn ein. Warte, bis er gestartet ist (etwa eine
+Minute).</p>
+</li>
+<li>
+<p><strong>factory-Image einspielen.</strong> Öffne ein Terminal im Ordner mit den
+Dateien:</p>
+<pre><code>scp -O openwrt-ramips-mt7621-ubnt_edgerouter-x-initramfs-factory.tar ubnt@192.168.1.1:/tmp/
+ssh ubnt@192.168.1.1
+</code></pre>
+<p>Das Passwort ist jeweils <code>ubnt</code> (sofern es niemand geändert hat). Auf dem
+Router dann:</p>
+<pre><code>add system image /tmp/openwrt-ramips-mt7621-ubnt_edgerouter-x-initramfs-factory.tar
+reboot
+</code></pre>
+<p>Die Meldung <code>line 509: [: too many arguments</code> dabei ist harmlos; am Ende
+muss <code>Upgrade completed</code> stehen. <code>reboot</code> fragt eventuell nach: mit <code>y</code>
+bestätigen.</p>
+<p>Statt mit <code>scp</code> und <code>ssh</code> geht das auch in der Weboberfläche von EdgeOS
+(<code>https://192.168.1.1</code>): unten links auf <strong>System</strong>, dann bei &quot;Upgrade
+System Image&quot; die Datei hochladen.</p>
+</li>
+<li>
+<p><strong>Kabel an eth1.</strong> Nach dem Neustart läuft OpenWrt, und das antwortet
+<strong>nicht mehr an eth0, sondern an eth1</strong>. Steck das Kabel um und warte etwa
+eine Minute. Dann:</p>
+<pre><code>ssh root@192.168.1.1
+</code></pre>
+<p>Ein Passwort gibt es nicht. Meldet <code>ssh</code> &quot;REMOTE HOST IDENTIFICATION HAS
+CHANGED&quot;, ist das hier richtig so, siehe
+<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>. Mit <code>exit</code> wieder
+abmelden.</p>
+</li>
+</ol>
+<h3>Teil 2: Auf das neue Speicherlayout umstellen</h3>
+<ol start="5">
+<li>
+<p><strong>Dateien hinüberkopieren.</strong> Im Terminal auf deinem Rechner:</p>
+<pre><code>scp -O ubnt_erx_migrate.sh ubnt_erx_stage2.sh root@192.168.1.1:/tmp/
+scp -O openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-squashfs-sysupgrade.bin root@192.168.1.1:/tmp/sysupgrade.img
+</code></pre>
+<p>Die OpenWrt-Datei heißt auf dem Router <code>sysupgrade.img</code>. Unter diesem
+Namen findet das Skript sie und lädt nichts aus dem Internet nach.</p>
+</li>
+<li>
+<p><strong>Umstellen.</strong> Melde dich an und starte das Skript:</p>
+<pre><code>ssh root@192.168.1.1
+cd /tmp
+chmod +x ubnt_erx_migrate.sh
+./ubnt_erx_migrate.sh
+</code></pre>
+<p>Es meldet <code>Found local /tmp/sysupgrade.img... Skipping download step.</code> und
+fragt <code>Do you want to proceed with the migration? (y/n)</code>: <code>y</code> eintippen,
+Enter. Danach bricht die Verbindung ab. Der Router schreibt Kernel und
+System neu und startet neu. <strong>Einige Minuten warten, Strom nicht
+ziehen.</strong></p>
+</li>
+<li>
+<p><strong>Prüfen.</strong> Melde dich wieder an (<code>ssh root@192.168.1.1</code>, kein Passwort)
+und gib ein:</p>
+<pre><code>cat /proc/mtd
+</code></pre>
+<p><strong>Prüfen:</strong> In der Ausgabe muss eine Zeile <code>mtd3: 00600000 00020000 &quot;kernel&quot;</code> stehen, und es darf kein <code>kernel1</code> und <code>kernel2</code> mehr geben.
+Dann ist das neue Layout drin. Sonst hier aufhören und melden.</p>
+</li>
+</ol>
+<h3>Teil 3: Freifunk-Firmware aufspielen</h3>
+<ol start="8">
+<li>
+<p><strong>Weboberfläche öffnen.</strong> Öffne im Browser <code>http://192.168.1.1</code>. Es
+erscheint die Anmeldung von OpenWrt. Das Passwort-Feld bleibt leer.</p>
+</li>
+<li>
+<p><strong>Freifunk-Firmware hochladen.</strong> Geh zu <strong>System → Backup / Flash
+Firmware</strong>, ganz unten &quot;Flash image…&quot;, und wähl das sysupgrade-Image
+deiner Community aus. Im folgenden Fenster den Haken bei <strong>&quot;Keep
+settings&quot;</strong> (Einstellungen beibehalten) <strong>entfernen</strong>, dann
+<strong>Continue</strong>.</p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Der Router schreibt die Freifunk-Firmware und startet neu,
+einige Minuten, Strom nicht ziehen. Stell den Rechner wieder auf
+&quot;automatisch&quot;. Danach startet die Freifunk-Firmware deiner Community: je
+nach Community zuerst mit einer Einrichtungsseite unter
+<code>http://192.168.1.1</code> oder gleich im Betrieb.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>In Schritt 3 endet EdgeOS mit <code>Upgrade completed</code>.</li>
+<li>In Schritt 4 meldet sich OpenWrt an <strong>eth1</strong>.</li>
+<li>In Schritt 7 zeigt <code>cat /proc/mtd</code> eine Partition <code>kernel</code> mit <code>00600000</code>.</li>
+<li>Nach Schritt 10 meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>In Schritt 4 antwortet nichts.</strong> Das Kabel steckt noch an eth0. OpenWrt
+ist an <strong>eth1</strong> erreichbar.</li>
+<li><strong><code>scp</code> meldet einen Fehler.</strong> Das <code>-O</code> fehlt, oder der Router hat kein
+<code>scp</code>. Dann geht es auch so, zum Beispiel für die OpenWrt-Datei:
+<code>ssh root@192.168.1.1 &quot;cat &gt; /tmp/sysupgrade.img&quot; &lt; openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-squashfs-sysupgrade.bin</code>
+(in der Eingabeaufforderung &quot;cmd&quot;, nicht in der PowerShell).</li>
+<li><strong>Das Skript meldet &quot;Incompatible board&quot;.</strong> Dann läuft auf dem Router
+nicht das OpenWrt aus Teil 1. Zurück zu Schritt 3.</li>
+<li><strong>Das Skript meldet &quot;Invalid image file&quot;.</strong> Die Datei <code>/tmp/sysupgrade.img</code>
+ist nicht vollständig angekommen. Schritt 5 wiederholen.</li>
+<li><strong>EdgeOS lehnt das factory-Image ab</strong> (&quot;invalid firmware&quot;). Das OpenWrt-Wiki
+nennt dafür einen Umweg über ältere EdgeOS-Versionen:
+<a href="https://openwrt.org/toh/ubiquiti/edgerouter_x_er-x_ka">https://openwrt.org/toh/ubiquiti/edgerouter_x_er-x_ka</a>.</li>
+<li><strong>Der Router startet nach Schritt 6 nicht wieder.</strong> Nicht wild
+ausprobieren. Mit aktualisiertem Bootloader (siehe oben) gibt es den
+Notfall-Modus über die Reset-Taste, sonst nur die serielle Konsole
+(57600 Baud). Frag deine Community oder uns.</li>
+</ul>
+<h2>Zurück zur Ubiquiti-Firmware</h2>
+<p>Ubiquiti beschreibt, wie EdgeOS wieder aufgespielt wird:
+<a href="https://help.ui.com/hc/en-us/articles/360019289113">https://help.ui.com/hc/en-us/articles/360019289113</a>.</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>Wiki-Rohtext: toh:ubiquiti:edgerouter_x_er-x_ka, 15.10.2026 (Weg ab Werk)</li>
+<li>abgeleitet (Gluon-RAMpe passt)</li>
+<li>abgeleitet: Wiki (Schritte (Normalweg), Anschluss, Adressen, Zugang, Bedingung an die Herstellerfirmware, Rückweg zur Herstellerfirmware)</li>
+<li>abgeleitet: Wiki toh/ubiquiti/edgerouter_x_er-x_ka (Schritte (Normalweg), Taste und Zeitpunkt, Anschluss, Adressen, Programm, Zugang)</li>
+<li>abgeleitet: Wiki; vgl. Bestand werkzeug (Schritte (Normalweg), Programm, Datei)</li>
+<li>geprüft: Commit 9715beb (Schritte (Normalweg), Typenschild/Verwechslung)</li>
+<li>geprüft: Commit, mk, Wiki toh:ubiquiti:edgerouter_x_er-x_ka (Weg ab Werk, Schritte (Normalweg), Datei, Notweg)</li>
+<li>geprüft: OpenWrt 24.10.8 sha256sums für das sysupgrade, am 15.10.2026 abgeglichen (Weg ab Werk)</li>
+<li>geprüft: darkxst/erx-migration README und ubnt_erx_migrate.sh, Commit d29f71a: eine vorher abgelegte /tmp/sysupgrade.img überspringt den Download, Board edgerouter-x oder -x-sfp erlaubt (Weg ab Werk)</li>
+<li>geprüft: stman OpenWrt-22.03-initramfs-factory.tar, Commit de2ade9, SHA256 gegen sha256sums (Weg ab Werk)</li>
+<li>Geräteeintrag: 4e31b2e8697c21f9bd6493bb3d78a4a41c6a9a52</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

@@ -490,6 +490,20 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "ubiquiti-edgerouter-x",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-edgerouter-x.html",
+  "status": "ungeprüft",
+  "stufe": "Werkstatt",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "ubiquiti-edgerouter-x-sfp",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-edgerouter-x-sfp.html",
+  "status": "ungeprüft",
+  "stufe": "Werkstatt",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "ubiquiti-nanostation-loco-m-xw",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-nanostation-loco-m-xw.html",
   "status": "ungeprüft",
