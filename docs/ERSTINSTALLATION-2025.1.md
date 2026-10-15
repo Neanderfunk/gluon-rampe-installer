@@ -143,15 +143,15 @@ fehlen die Felder noch.
 | K0 | 117 |
 | K0+ | 25 |
 | K1 | 25 |
-| K1d | 99 |
+| K1d | 100 |
 | K2 | 43 |
 | K3 | 9 |
 | K4 | 26 |
 | K5 | 7 |
 | offen | 1 |
-| **gesamt** | **352** |
+| **gesamt** | **353** |
 
-Gluon-RAMpe passt: **ja 35**, teilweise 33, nein/unnötig 284.
+Gluon-RAMpe passt: **ja 35**, teilweise 33, nein/unnötig 285.
 
 Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-951ui-2nd-hap`, `mikrotik-routerboard-mapl-2nd`, `mikrotik-routerboard-wap-g-5hact2hnd`, `mikrotik-routerboard-wapr-2nd`, `gl.inet-gl-e750`, `gl.inet-gl-xe300`, `zte-mf286r`, `asus-lyra-map-ac2200`, `avm-fritz-box-7520`, `avm-fritz-box-7530`, `avm-fritz-repeater-1200`, `avm-fritz-repeater-3000`, `linksys-mr8300-dallas`, `mikrotik-discg-5acd`, `mikrotik-hap-ac2`, `mikrotik-sxtsq-5-ac-rbsxtsqg-5acd`, `mikrotik-wap-ac`, `avm-fritz-box-3390`, `avm-fritz-box-7362-sl`, `avm-fritz-box-7412`, `avm-fritz-box-7430`, `asus-rt-ax52`, `d-link-aquila-pro-ai-m30-a1`, `d-link-aquila-pro-ai-m60-a1`, `netgear-wax218`, `asus-rt-ax53u`, `genexis-pulse-ex400`, `mikrotik-routerboard-750gr3`, `netgear-wndr3700-v5`, `xiaomi-mi-router-3g`, `xiaomi-mi-router-ac2100`, `xiaomi-redmi-router-ac2100`, `zyxel-wsm20`.
 
@@ -394,6 +394,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [avm-fritz-box-3370-rev-2-micron-nand](#avm-fritz-box-3370-rev-2-micron-nand) | AVM FRITZ!Box 3370 Rev. 2, Micron-NAND (Gluon: broken) | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-3370-rev-2-micron-nand.md); https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation |
 | [avm-fritz-box-3390](#avm-fritz-box-3390) | AVM FRITZ!Box 3390 | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja | ja | [Anleitung](../anleitungen/de/avm-fritz-box-3390.md) |
 | [avm-fritz-box-7360-sl](#avm-fritz-box-7360-sl) | AVM FRITZ!Box 7360 SL (Alias 7360 v1) | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-7360-sl.md); https://fritz-tools.readthedocs.io/ |
+| [avm-fritz-box-7360-v1](#avm-fritz-box-7360-v1) | AVM FRITZ!Box 7360 v1 (Alias von avm-fritz-box-7360-sl) | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-7360-v1.md) |
 | [avm-fritz-box-7360-v2](#avm-fritz-box-7360-v2) | AVM FRITZ!Box 7360 v2 | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-7360-v2.md) |
 | [avm-fritz-box-7362-sl](#avm-fritz-box-7362-sl) | AVM FRITZ!Box 7362 SL | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja | ja | [Anleitung](../anleitungen/de/avm-fritz-box-7362-sl.md); https://openwrt.org/toh/avm/avm_7362_sl#installation |
 | [avm-fritz-box-7412](#avm-fritz-box-7412) | AVM FRITZ!Box 7412 | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja | ja | [Anleitung](../anleitungen/de/avm-fritz-box-7412.md); https://openwrt.org/toh/avm/avm_fritz_box_7412#installation |
@@ -1870,7 +1871,7 @@ ASUS TUF-AX6000 · mediatek-filogic · K2
 
 ### Familie `avm-eva-ftp`
 
-10 Gerät(e).
+11 Gerät(e).
 
 #### avm-fritz-box-4020
 
@@ -2166,6 +2167,45 @@ AVM FRITZ!Box 7360 SL (Alias 7360 v1) · lantiq-xrx200 · K1d
 - **Gluon-RAMpe passt:** nein, unnötig: sysupgrade direkt per FTP
 - **Quelle (OpenWrt-Commit):** bf007a480a46a9fa843765a54fc2f8aa32b2683f (ohne Installationstext) + Wiki toh:avm:fritz.box.wlan.7360
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-box-7360-sl.md; https://fritz-tools.readthedocs.io/
+- **Werte für die Anleitung:** sicherheit = abgeleitet
+
+#### avm-fritz-box-7360-v1
+
+AVM FRITZ!Box 7360 v1 (Alias von avm-fritz-box-7360-sl) · lantiq-xrx200 · K1d
+
+- **Anzeigename (überschreibt den bereinigten Modellnamen):** AVM FRITZ!Box 7360 v1
+- **Weg ab Werk:** ADAM2/EVA-FTP: `quote GETENV HWRevision` (181 = SL, 183 = v1), `bin`, `quote MEDIA FLSH`, sysupgrade nach mtd1 [abgeleitet: Wiki; Commit ohne Text]
+- **Schritte (Normalweg):**
+  1. Per EVA-FTP `quote GETENV HWRevision` prüfen: 181 = SL, 183 = v1, beide passen [abgeleitet: Wiki 7360]
+  2. Rechner fest auf 192.168.178.2/24 stellen, WLAN am Rechner aus [geprüft: fritz-tools/fritzflash.py; geprüft: fritz-tools-Doku]
+  3. Kabel vom Rechner an die gelbe LAN-Buchse, nur dieses eine Kabel [geprüft: fritz-tools-Doku]
+  4. Gluon-sysupgrade-Image bereitlegen [abgeleitet: Wiki; Commit ohne Text]
+  5. Strom ziehen, Strom wieder an [geprüft: Commits, fritz-tools/fritzflash.py]
+  6. Sofort per FTP mit der Box verbinden (192.168.178.1), Login adam2/adam2 [abgeleitet: Wiki; Commit ohne Text]
+  7. binary und passive einschalten, `quote MEDIA FLSH` senden [abgeleitet: Wiki; Commit ohne Text]
+  8. `put <Gluon-sysupgrade-Image> mtd1` [abgeleitet: Wiki; Commit ohne Text]
+  9. Warten, bis die rote Info-LED aus ist, währenddessen nicht Strom ziehen [geprüft: fritz-tools/fritzflash.py; abgeleitet: Commit 7360 v2, Wiki 4020/7360]
+  10. Danach Strom aus/an [geprüft: Commit]
+- **Taste und Zeitpunkt:** keine Taste; das Zeitfenster ist der Bootloader-Start: Strom ziehen, Strom wieder an, sofort per FTP verbinden [geprüft: Commits, fritz-tools/fritzflash.py]
+- **Sichtbare Zeichen:** Bootloader-Fenster: Power-LED blinkt noch [abgeleitet: Wiki 4040]; während des Schreibens leuchtet die rote Info-LED, das ist normal, nicht Strom ziehen [geprüft: fritz-tools/fritzflash.py]; Info-LED aus = fertig [abgeleitet: Commit 7360 v2, Wiki 4020/7360]
+- **Übertragung:** ftp: Gerät 192.168.178.1
+- **Anschluss:** gelbe LAN-Buchse [geprüft: fritz-tools-Doku]; WLAN am Rechner aus, nur dieses eine Kabel [geprüft: fritz-tools-Doku]; ungemanagter Switch zwischen Box und Rechner hilft, weil der Link sonst zu spät hochkommt [geprüft: fritz-tools/fritzflash.py, Wiki toh:avm:avm_fritz_wlan_repeater_1750e]
+- **Adressen:** Rechner feste IP 192.168.178.2, Netzmaske 255.255.255.0, Gateway 192.168.178.1, kein DNS [geprüft: fritz-tools/fritzflash.py]
+- **Programm:** fritzflash.py (Python 3, Windows/macOS/Linux) [geprüft: fritz-tools-Doku] oder Kommandozeilen-ftp mit passive-Modus; das ftp.exe von Windows kann kein passive [abgeleitet: Wiki 4020/3370]
+- **seriell nötig:** nein
+- **Gehäuse öffnen:** nein
+- **Werkzeug/Spezial:** ftp-Client
+- **Typenschild/Verwechslung:** 7360 gibt es als SL (HWRevision 181), v1 (183) und v2 (196); dieses Image für 181 und 183, für 196 das 7360-v2-Image; prüfen per EVA-FTP `quote GETENV HWRevision` [abgeleitet: Wiki 7360]; in FRITZ!OS: Versionsnummer beginnt bei v1 mit 111, bei v2 mit 124 [abgeleitet: Wiki 7360]
+- **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/lantiq/xrx200/openwrt-24.10.8-lantiq-xrx200-avm_fritz7360sl-initramfs-kernel.bin) (200)
+- **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
+- **Stock-Teile:** -
+- **RAM:** 128 MB
+- **Dauer:** Fenster nach dem Einschalten nur wenige Sekunden (fritzflash: 10 s, Wiki 4020: 5 s) [geprüft: fritz-tools/fritzflash.py; abgeleitet: Wiki]; Schreiben bis 2 Minuten [geprüft: Commit], nicht Strom ziehen; danach Neustart, Konfigurationsmodus nach 2-5 Minuten unter http://192.168.1.1 [geprüft: fritz-tools/fritzflash.py]
+- **Fehlerbild:** FTP an LAN 1 klappt nicht: LAN 3 versuchen [abgeleitet: Wiki 7360]
+- **Rückweg zur Herstellerfirmware:** AVM-Recovery-Tool für genau dieses Modell (Windows-.exe von download.avm.de/<produkt>/.../recover/) [abgeleitet: OpenWrt-Wiki "AVM recovery tool"]; Provider-Geräte (z. B. 1&1) verweigern das evtl., dann vorher per EVA-FTP `quote UNSETENV provider` [abgeleitet: dasselbe Wiki]
+- **Gluon-RAMpe passt:** nein, unnötig: sysupgrade direkt per FTP
+- **Quelle (OpenWrt-Commit):** bf007a480a46a9fa843765a54fc2f8aa32b2683f (ohne Installationstext) + Wiki toh:avm:fritz.box.wlan.7360; Gluon-Alias von avm-fritz-box-7360-sl [geprüft: Gluon targets/lantiq-xrx200 v2025.1.3, aliases]
+- **Detail-Anleitung:** anleitungen/de/avm-fritz-box-7360-v1.md
 - **Werte für die Anleitung:** sicherheit = abgeleitet
 
 #### avm-fritz-box-7360-v2
