@@ -8,7 +8,7 @@ sprache: de
 stufe: mit scripts/Netzwerktools
 status: ungeprüft
 grundlagen: [feste-ip, ssh-scp]
-daten_stand: a1d9c99
+daten_stand: 3b96298
 vorlage_stand: 568889c
 ---
 
