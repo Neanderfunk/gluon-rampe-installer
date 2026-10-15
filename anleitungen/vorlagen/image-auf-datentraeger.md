@@ -91,6 +91,16 @@ andere Adresse und erscheint in der Freifunk-Karte als neuer Knoten.
 Für VirtualBox und VMware gibt es die Firmware auch als fertige virtuelle
 Festplatte (`.vdi` bzw. `.vmdk`). Die bindest du als Festplatte einer neuen
 virtuellen Maschine ein, statt ein Image zu schreiben.
+
+**Wichtig: Die Netzwerkschnittstellen der virtuellen Maschine müssen
+beliebige MAC-Adressen nutzen dürfen** ("Promiscuous Mode" bzw. "MAC Address
+Changes" und "Forged Transmits" erlauben). Die Freifunk-Firmware verwendet
+mehrere MAC-Adressen; ist das nicht erlaubt, kommt keine Verbindung
+zustande. Das gilt für Proxmox, VirtualBox, ESXi und QEMU gleichermaßen.
+
+Dasselbe gilt für Switches mit MAC-basierter Port-Security: Dort müssen am
+Anschluss zwei bis vier MAC-Adressen freigegeben sein; welche, steht im Log
+des Switches.
 {%- endif %}
 
 {{ zusatz.text }}
