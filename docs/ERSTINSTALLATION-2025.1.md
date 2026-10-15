@@ -144,14 +144,14 @@ fehlen die Felder noch.
 | K0+ | 25 |
 | K1 | 25 |
 | K1d | 99 |
-| K2 | 42 |
+| K2 | 43 |
 | K3 | 9 |
-| K4 | 27 |
+| K4 | 26 |
 | K5 | 7 |
 | offen | 1 |
 | **gesamt** | **352** |
 
-Gluon-RAMpe passt: **ja 35**, teilweise 34, nein/unnötig 283.
+Gluon-RAMpe passt: **ja 35**, teilweise 33, nein/unnötig 284.
 
 Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-951ui-2nd-hap`, `mikrotik-routerboard-mapl-2nd`, `mikrotik-routerboard-wap-g-5hact2hnd`, `mikrotik-routerboard-wapr-2nd`, `gl.inet-gl-e750`, `gl.inet-gl-xe300`, `zte-mf286r`, `asus-lyra-map-ac2200`, `avm-fritz-box-7520`, `avm-fritz-box-7530`, `avm-fritz-repeater-1200`, `avm-fritz-repeater-3000`, `linksys-mr8300-dallas`, `mikrotik-discg-5acd`, `mikrotik-hap-ac2`, `mikrotik-sxtsq-5-ac-rbsxtsqg-5acd`, `mikrotik-wap-ac`, `avm-fritz-box-3390`, `avm-fritz-box-7362-sl`, `avm-fritz-box-7412`, `avm-fritz-box-7430`, `asus-rt-ax52`, `d-link-aquila-pro-ai-m30-a1`, `d-link-aquila-pro-ai-m60-a1`, `netgear-wax218`, `asus-rt-ax53u`, `genexis-pulse-ex400`, `mikrotik-routerboard-750gr3`, `netgear-wndr3700-v5`, `xiaomi-mi-router-3g`, `xiaomi-mi-router-ac2100`, `xiaomi-redmi-router-ac2100`, `zyxel-wsm20`.
 
@@ -413,7 +413,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [cudy-m3000-v2-with-motorcomm-yt8821](#cudy-m3000-v2-with-motorcomm-yt8821) | Cudy M3000 v2 mit Motorcomm YT8821 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-m3000-v2-with-motorcomm-yt8821.md) |
 | [cudy-re3000-v1](#cudy-re3000-v1) | Cudy RE3000 v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-re3000-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
 | [cudy-tr3000-256mb-v1](#cudy-tr3000-256mb-v1) | Cudy TR3000 256 MB v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-tr3000-256mb-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-tr3000-v1](#cudy-tr3000-v1) | Cudy TR3000 v1 (128 MB Flash) | mediatek-filogic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-tr3000-v1](#cudy-tr3000-v1) | Cudy TR3000 v1 (128 MB Flash) | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | tftp-client | nein | ja | nein | ja | [Anleitung](../anleitungen/de/cudy-tr3000-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
 | [cudy-wr3000-v1](#cudy-wr3000-v1) | Cudy WR3000 v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr3000-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
 | [cudy-wr3000e-v1](#cudy-wr3000e-v1) | Cudy WR3000E v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr3000e-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
 | [cudy-wr3000h-v1](#cudy-wr3000h-v1) | Cudy WR3000H v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr3000h-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
@@ -2564,7 +2564,7 @@ AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) · ipq40xx-gen
 
 ### Familie `cudy-zwischenfirmware`
 
-20 Gerät(e).
+21 Gerät(e).
 
 #### cudy-ap3000-outdoor-v1
 
@@ -2606,7 +2606,7 @@ Cudy AP3000 Outdoor v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 19d770d7b91aaca1de18281dea0da8616df34c6c
 - **Detail-Anleitung:** anleitungen/de/cudy-ap3000-outdoor-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_ap3000outdoor-v1-sysupgrade_20251119.bin; zwischen_md5 = a2817017a7cfd1229ba5f6b592726a88; zwischen_nur_cudy = False; neuer_flash = True; strom = über PoE, also mit einem PoE-Injektor oder PoE-Switch; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_Outdoor_1.0/; zwischen_url_text = Ordner AP3000_Outdoor_1.0 in unserem Spiegel; sicherheit = quelle
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-ap3000-outdoor.bin; zwischen_md5 = a2817017a7cfd1229ba5f6b592726a88; zwischen_nur_cudy = False; neuer_flash = True; strom = über PoE, also mit einem PoE-Injektor oder PoE-Switch; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-ap3000-outdoor.bin; zwischen_url_text = Zwischenfirmware für den Cudy AP3000 Outdoor v1 aus unserem Spiegel; sicherheit = quelle
 
 #### cudy-ap3000-v1
 
@@ -2646,7 +2646,7 @@ Cudy AP3000 v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 6dacba30a75b0ac8a65115f78808a97abbb34939
 - **Detail-Anleitung:** anleitungen/de/cudy-ap3000-v1.md
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_ap3000-v1-sysupgrade.bin; zwischen_md5 = d7e8c124cfd04c88bbdbe2e4c67e9faf; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_V1.0/; zwischen_url_text = Ordner AP3000_V1.0 in unserem Spiegel; sicherheit = quelle
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-ap3000.bin; zwischen_md5 = 7023a3bd44e4ae0bf09de4ed9cb44335; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-ap3000.bin; zwischen_url_text = Zwischenfirmware für den Cudy AP3000 v1 aus unserem Spiegel; sicherheit = quelle
 
 #### cudy-ap3000-wall-v1
 
@@ -2688,7 +2688,7 @@ Cudy AP3000 Wall v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt afad4c71f8d558ca86b997781ca0236f321cf1e9 (25.12: 45788a48c7); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
 - **Detail-Anleitung:** anleitungen/de/cudy-ap3000-wall-v1.md
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_ap3000wall-v1-sysupgrade_20251119.bin; zwischen_md5 = 376d404fd1535cc51168e365e2374427; zwischen_nur_cudy = False; neuer_flash = True; strom = über PoE, also mit einem PoE-Injektor oder PoE-Switch; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_Wall_1.0/; zwischen_url_text = Ordner AP3000_Wall_1.0 in unserem Spiegel; sicherheit = quelle
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-ap3000-wall.bin; zwischen_md5 = 376d404fd1535cc51168e365e2374427; zwischen_nur_cudy = False; neuer_flash = True; strom = über PoE, also mit einem PoE-Injektor oder PoE-Switch; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-ap3000-wall.bin; zwischen_url_text = Zwischenfirmware für den Cudy AP3000 Wall v1 aus unserem Spiegel; sicherheit = quelle
 
 #### cudy-m3000-v1
 
@@ -2730,7 +2730,7 @@ Cudy M3000 v1 (RTL8221B) · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 20e4a18feb3f766b0f6ebec1afc154b345398a7a
 - **Detail-Anleitung:** anleitungen/de/cudy-m3000-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_m3000-v1-sysupgrade_20251119.bin; zwischen_md5 = 2bcdf420444309bdef463dd278d15ba4; zwischen_nur_cudy = False; neuer_flash = True; luci_buchse = den schwarzen 1-Gbps-Port; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M3000_1.0_2.0/; zwischen_url_text = Ordner M3000_1.0_2.0 in unserem Spiegel; sicherheit = abgeleitet
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-m3000.bin; zwischen_md5 = 2bcdf420444309bdef463dd278d15ba4; zwischen_nur_cudy = False; neuer_flash = True; luci_buchse = den schwarzen 1-Gbps-Port; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-m3000.bin; zwischen_url_text = Zwischenfirmware für den Cudy M3000 v1 (RTL8221B) aus unserem Spiegel; sicherheit = abgeleitet
 
 #### cudy-m3000-v2-with-motorcomm-yt8821
 
@@ -2811,7 +2811,7 @@ Cudy RE3000 v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt e8f75973172749874afa13e4f746acd8cb515de2
 - **Detail-Anleitung:** anleitungen/de/cudy-re3000-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_re3000-v1-sysupgrade.bin; zwischen_md5 = d350aa4ec09cd51ce5727958f6712c62; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/RE3000_V1/; zwischen_url_text = Ordner RE3000_V1 in unserem Spiegel; sicherheit = quelle
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-re3000.bin; zwischen_md5 = d350aa4ec09cd51ce5727958f6712c62; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-re3000.bin; zwischen_url_text = Zwischenfirmware für den Cudy RE3000 v1 aus unserem Spiegel; sicherheit = quelle
 
 #### cudy-tr3000-256mb-v1
 
@@ -2852,7 +2852,45 @@ Cudy TR3000 256 MB v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 0ec28e59a815bb43c359328c8fd644f399d344da
 - **Detail-Anleitung:** anleitungen/de/cudy-tr3000-256mb-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_tr3000-256mb-v1-sysupgrade.bin; zwischen_md5 = 93615f1c40cdd64179753aee5a32aa06; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; rueckweg_halten = mindestens 5 Sekunden; rueckweg_quelle = beim Cudy-Support (China) auf Anfrage; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/TR3000_256MB_Flash_V1_not_for_TR3000_V1_/; zwischen_url_text = Ordner TR3000_256MB_Flash_V1_not_for_TR3000_V1_ in unserem Spiegel; sicherheit = quelle
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-tr3000-256mb.bin; zwischen_md5 = 93615f1c40cdd64179753aee5a32aa06; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; rueckweg_halten = mindestens 5 Sekunden; rueckweg_quelle = beim Cudy-Support (China) auf Anfrage; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-tr3000-256mb.bin; zwischen_url_text = Zwischenfirmware für den Cudy TR3000 256 MB v1 aus unserem Spiegel; sicherheit = quelle
+
+#### cudy-tr3000-v1
+
+Cudy TR3000 v1 (128 MB Flash) · mediatek-filogic · K2
+
+- **Weg ab Werk:** Cudys signierte OpenWrt-Zwischenfirmware (TR3000 V1_20251118: cudy_tr3000-v1-sysupgrade_20251112_release.bin, supported_devices cudy,tr3000-v1) im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne "Einstellungen behalten" [geprüft: forum.darmstadt.freifunk.net t/1010 #1 (TomH, 09.04.2025, am 15.10.2026 gelesen), mit älterer Fassung MD5 b8333d8e…; Spiegel firmware.ffnef.de/other/cudy-mirror-20261015 (Cudys Drive-Ordner, geholt 15.10.2026; MD5 geprüft)]
+- **Schritte (Normalweg):**
+  1. Zwischenfirmware cudy-tr3000.bin aus unserem Spiegel und das Gluon-sysupgrade herunterladen [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261015 (Cudys Drive-Ordner, geholt 15.10.2026; MD5 geprüft)]
+  2. Rechner an die LAN-Buchse, http://192.168.10.1/ öffnen, Passwort admin, Ersteinrichtung durchklicken [geprüft: forum.darmstadt.freifunk.net t/1010 #1 (TomH, 09.04.2025, am 15.10.2026 gelesen)]
+  3. Erweiterte Einstellungen > System > Firmware, Zwischenfirmware hochladen [geprüft: forum.darmstadt.freifunk.net t/1010 #1 (TomH, 09.04.2025, am 15.10.2026 gelesen)]
+  4. Angezeigte MD5 vergleichen (4551e961e22c0dafab13f5251d64d042 für die Datei aus dem Spiegel), dann Fortfahren [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261015 (Cudys Drive-Ordner, geholt 15.10.2026; MD5 geprüft); Ablauf forum.darmstadt.freifunk.net t/1010 #1 (TomH, 09.04.2025, am 15.10.2026 gelesen)]
+  5. Nach dem Neustart http://192.168.1.1/ (LuCI), Passwort leer lassen [geprüft: forum.darmstadt.freifunk.net t/1010 #1 (TomH, 09.04.2025, am 15.10.2026 gelesen)]
+  6. Gluon-sysupgrade hochladen, Haken bei "Einstellungen behalten" entfernen [geprüft: forum.darmstadt.freifunk.net t/1010 #1 (TomH, 09.04.2025, am 15.10.2026 gelesen)]
+  7. Einige Minuten warten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
+- **Taste und Zeitpunkt:** Reset gedrückt halten, Strom einschalten, Reset mindestens 5 s weiter halten [geprüft: Commit 63b8d98, Wiki toh:cudy:tr3000]
+- **Sichtbare Zeichen:** Die OEM-TFTP-Recovery startet und soll nach ca. 5 s scheitern, danach öffnet sich die U-Boot-Shell von selbst [geprüft: Commit 63b8d98, Wiki toh:cudy:tr3000]
+- **Übertragung:** tftp-client: Server 192.168.1.88/24, Gerät 192.168.1.1, Datei per `setenv bootfile`
+- **Anschluss:** Gehäuse öffnen, USB-TTL 3,3 V an zwei Testpunkte unten auf der Platine (Ports links, LEDs rechts: links RX, rechts TX) plus GND; Wiki empfiehlt eine spezielle Klemme dafür [geprüft: Wiki toh:cudy:tr3000]. Rechner an LAN [geprüft: Commit]
+- **Adressen:** Rechner feste IP 192.168.1.88/24, Gerät 192.168.1.1 [geprüft: Commit]
+- **Programm:** Serielles Terminal, TFTP-Server [geprüft: Commit]
+- **Zugang:** Terminal 115200 8N1 [geprüft: Commit]; U-Boot-Shell über Reset beim Einschalten [geprüft: Commit 63b8d98, Wiki toh:cudy:tr3000]
+- **Datei:** Dateiname per `setenv bootfile` frei, Wiki: Name muss 'initramfs' enthalten; strengster Name `initramfs-kernel.bin` [Zwang: abgeleitet; geprüft: Wiki toh:cudy:tr3000]
+- **seriell nötig:** nein
+- **Gehäuse öffnen:** ja (interne Testpunkte)
+- **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** 128-MB- und 256-MB-Flash-Version: Angabe auf Karton/Typenschild; die 256-MB-Version hat ein eigenes Image [geprüft: Wiki toh:cudy:tr3000]. Nicht mit dem 'ubootmod'-Image (OpenWrt-U-Boot-Layout) mischen [abgeleitet: Wiki]
+- **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-cudy_tr3000-v1-initramfs-kernel.bin)
+- **Factory-/Stock-Image-Link:** -
+- **Stock-Teile:** -
+- **RAM:** 512 MB
+- **Dauer:** TFTP-Fenster laut Wiki 10 s [geprüft: Wiki toh:cudy:tr3000]
+- **Notweg:** [Notfall] seriell: Gehäuse öffnen und USB-TTL 3,3 V an zwei Testpunkte unten auf der Platine (Ports links, LEDs rechts: links RX, rechts TX) plus GND anschließen. [geprüft: Wiki toh:cudy:tr3000] / Terminal mit 115200 8N1 öffnen. [geprüft: Commit] / Rechner an LAN, feste IP 192.168.1.88/24, TFTP-Server mit dem initramfs als `initramfs-kernel.bin` starten. [geprüft: Commit; Zwang: abgeleitet] / Reset gedrückt halten, Strom einschalten, Reset mindestens 5 s weiter halten. [geprüft: Commit 63b8d98, Wiki toh:cudy:tr3000] / Warten, bis die OEM-TFTP-Recovery nach ca. 5 s scheitert und sich die U-Boot-Shell öffnet. [geprüft: Commit 63b8d98, Wiki toh:cudy:tr3000] / Mit `setenv bootfile` den Dateinamen setzen und das initramfs per TFTP (Gerät 192.168.1.1) booten. [geprüft] / Gluon per sysupgrade installieren. [geprüft]
+- **Rückweg zur Herstellerfirmware:** Reset beim Einschalten startet die Cudy-TFTP-Recovery, die nur signierte Cudy-Firmware annimmt [geprüft: Wiki toh:cudy:tr3000]
+- **Gluon-RAMpe passt:** nicht nötig (Cudy-Zwischenfirmware); seriell wäre die RAMpe im TFTP-Schritt möglich
+- **Gluon-RAMpe-Rezept:** devices/cudy-tr3000-v1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per U-Boot-TFTP
+- **Quelle (OpenWrt-Commit):** OpenWrt 63b8d98dd0d2f7797ea5b5f25978590982bbbb5d
+- **Detail-Anleitung:** anleitungen/de/cudy-tr3000-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-tr3000.bin; zwischen_md5 = 4551e961e22c0dafab13f5251d64d042; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; rueckweg_halten = mindestens 5 Sekunden; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-tr3000.bin; zwischen_url_text = Zwischenfirmware für den Cudy TR3000 v1 (128 MB Flash) aus unserem Spiegel; sicherheit = quelle
 
 #### cudy-wr3000-v1
 
@@ -2893,7 +2931,7 @@ Cudy WR3000 v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt c9cb6411c1a70516d5922e88c45b338de041baba
 - **Detail-Anleitung:** anleitungen/de/cudy-wr3000-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = openwrt-mediatek-filogic-cudy_wr3000-v1-sysupgrade.bin; zwischen_md5 = 6d29a32db9453ee62a071b344476e9c2; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000+V1_without_recovery_TFTP/; zwischen_url_text = Ordner WR3000+V1_without_recovery_TFTP in unserem Spiegel; sicherheit = quelle
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr3000.bin; zwischen_md5 = 6d29a32db9453ee62a071b344476e9c2; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR3000 v1 aus unserem Spiegel; sicherheit = quelle
 
 #### cudy-wr3000e-v1
 
@@ -2934,7 +2972,7 @@ Cudy WR3000E v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt f50551dd18318f2255da3ecd5de5cc1078201651
 - **Detail-Anleitung:** anleitungen/de/cudy-wr3000e-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_wr3000e-v1-sysupgrade_20251119.bin; zwischen_md5 = 249c150e7676facc9f33d79e634ec4a3; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000E_1.0/; zwischen_url_text = Ordner WR3000E_1.0 in unserem Spiegel; sicherheit = quelle
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr3000e.bin; zwischen_md5 = 249c150e7676facc9f33d79e634ec4a3; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000e.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR3000E v1 aus unserem Spiegel; sicherheit = quelle
 
 #### cudy-wr3000h-v1
 
@@ -2975,7 +3013,7 @@ Cudy WR3000H v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt fdbbb8415fd19ae0748a2bbe41b15257054e4077
 - **Detail-Anleitung:** anleitungen/de/cudy-wr3000h-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_wr3000h-v1-sysupgrade_20251119.bin; zwischen_md5 = 1c9321928f7da093cd2b8631d3554743; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000H_1.0/; zwischen_url_text = Ordner WR3000H_1.0 in unserem Spiegel; sicherheit = quelle
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr3000h.bin; zwischen_md5 = 1c9321928f7da093cd2b8631d3554743; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000h.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR3000H v1 aus unserem Spiegel; sicherheit = quelle
 
 #### cudy-wr3000p-v1
 
@@ -3016,7 +3054,7 @@ Cudy WR3000P v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 51108508f10eb25f99395ec9334f996813bc5a22; gluon-patches-hardware 8dbae18666543aa9b8b5e7faa1d267024d62071e (Gluon-Zeile)
 - **Detail-Anleitung:** anleitungen/de/cudy-wr3000p-v1.md
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_wr3000p-v1-sysupgrade_20251119.bin; zwischen_md5 = cd87fc98daf8755b8190cc63f0083f38; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000P_1.0/; zwischen_url_text = Ordner WR3000P_1.0 in unserem Spiegel; sicherheit = quelle
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr3000p.bin; zwischen_md5 = cd87fc98daf8755b8190cc63f0083f38; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000p.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR3000P v1 aus unserem Spiegel; sicherheit = quelle
 
 #### cudy-wr3000s-v1
 
@@ -3058,7 +3096,7 @@ Cudy WR3000S v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 4779e954fa847c4b376623bc3bdf9651007e8a89
 - **Detail-Anleitung:** anleitungen/de/cudy-wr3000s-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_wr3000s-v1-sysupgrade_20251119.bin; zwischen_md5 = 403e276f74fd29917fd4260294d1a137; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000S_1.0/; zwischen_url_text = Ordner WR3000S_1.0 in unserem Spiegel; sicherheit = quelle
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr3000s.bin; zwischen_md5 = 403e276f74fd29917fd4260294d1a137; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000s.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR3000S v1 aus unserem Spiegel; sicherheit = quelle
 
 #### cudy-wr3000u-v1
 
@@ -3178,7 +3216,7 @@ Cudy M1800 · ramips-mt7621 · K2
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** f6d394e9f2fd41547236c092ac914322220eb77c
 - **Detail-Anleitung:** anleitungen/de/cudy-m1800.md
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = openwrt-22.03.2-ramips-mt7621-cudy_m1800v2-squashfs-flash.bin; zwischen_md5 = 0c19a13f261fc7b3b0fade2b263203d5; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M1800+V2/; zwischen_url_text = Ordner M1800+V2 in unserem Spiegel; sicherheit = unsicher; sicherheit_hinweis = Die Cudy-Zwischenfirmware, die wir gefunden haben, ist für den „M1800+ V2“ gedacht. Ob dein M1800 sie annimmt, wissen wir nicht.
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-m1800.bin; zwischen_md5 = 0c19a13f261fc7b3b0fade2b263203d5; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-m1800.bin; zwischen_url_text = Zwischenfirmware für den Cudy M1800 aus unserem Spiegel; sicherheit = unsicher; sicherheit_hinweis = Die Cudy-Zwischenfirmware, die wir gefunden haben, ist für den „M1800+ V2“ gedacht. Ob dein M1800 sie annimmt, wissen wir nicht.
 
 #### cudy-wr1300-v1
 
@@ -3218,7 +3256,7 @@ Cudy WR1300 v1 · ramips-mt7621 · K2
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** cd2b661453a8a2b8260dfb9b9c0dc5297b981331
 - **Detail-Anleitung:** anleitungen/de/cudy-wr1300-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = openwrt-22.03.2-ramips-mt7621-cudy_wr1300v1-squashfs-flash.bin; zwischen_md5 = 34f1ecdcd756fdae90abf3c76def2d43; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = True; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR1300+V1/; zwischen_url_text = Ordner WR1300+V1 in unserem Spiegel; sicherheit = quelle
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr1300.bin; zwischen_md5 = 34f1ecdcd756fdae90abf3c76def2d43; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = True; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr1300.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR1300 v1 aus unserem Spiegel; sicherheit = quelle
 
 #### cudy-wr2100
 
@@ -3257,7 +3295,7 @@ Cudy WR2100 · ramips-mt7621 · K2
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** 3501db9b9b4a71ae52c539b46af817783c327866
 - **Detail-Anleitung:** anleitungen/de/cudy-wr2100.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = openwrt-ramips-mt7621-cudy-wr2100-squashfs-flash.bin; zwischen_md5 = 002345fcc699c7b5a99b8fdb99dd6719; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR2100+V1/; zwischen_url_text = Ordner WR2100+V1 in unserem Spiegel; sicherheit = quelle
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr2100.bin; zwischen_md5 = 002345fcc699c7b5a99b8fdb99dd6719; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr2100.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR2100 aus unserem Spiegel; sicherheit = quelle
 
 #### cudy-x6-v1
 
@@ -3297,7 +3335,7 @@ Cudy X6 v1 · ramips-mt7621 · K2
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** 4a8eaa5c7c9235212c4af022c18b2dfbadfe557f
 - **Detail-Anleitung:** anleitungen/de/cudy-x6-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = openwrt-ramips-mt7621-cudy-x6-flash.bin; zwischen_md5 = f321fc7c41731875faa3cdc9ee8d583f; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = True; rueckweg_halten = mindestens 8 Sekunden; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/X6+V1/; zwischen_url_text = Ordner X6+V1 in unserem Spiegel; sicherheit = quelle
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-x6-v1.bin; zwischen_md5 = f321fc7c41731875faa3cdc9ee8d583f; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = True; rueckweg_halten = mindestens 8 Sekunden; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-x6-v1.bin; zwischen_url_text = Zwischenfirmware für den Cudy X6 v1 aus unserem Spiegel; sicherheit = quelle
 
 #### cudy-x6-v2
 
@@ -3337,7 +3375,7 @@ Cudy X6 v2 · ramips-mt7621 · K2
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** e38de40f8dd350344407fe5a91e81191f6960804
 - **Detail-Anleitung:** anleitungen/de/cudy-x6-v2.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = openwrt-22.03-ramips-mt7621-cudy_x6v2-squashfs-flash.bin; zwischen_md5 = 89c000214e74b6ad89f5b9951fe0f226; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/X6+V2/; zwischen_url_text = Ordner X6+V2 in unserem Spiegel; sicherheit = quelle
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-x6-v2.bin; zwischen_md5 = 89c000214e74b6ad89f5b9951fe0f226; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-x6-v2.bin; zwischen_url_text = Zwischenfirmware für den Cudy X6 v2 aus unserem Spiegel; sicherheit = quelle
 
 #### cudy-tr1200-v1
 
@@ -3376,7 +3414,7 @@ Cudy TR1200 v1 · ramips-mt76x8 · K2
 - **Gluon-RAMpe passt:** nein: Signaturprüfung wie bei allen Cudy
 - **Quelle (OpenWrt-Commit):** f1091ef7ac3596f1e401b918a36273672acbe389
 - **Detail-Anleitung:** anleitungen/de/cudy-tr1200-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = TR1200-OpenWRT-Flash.bin; zwischen_md5 = 62180e158bb123193a5eb8878adff942; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; rueckweg_buchse = die WAN-Buchse; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/TR1200_V1/; zwischen_url_text = Ordner TR1200_V1 in unserem Spiegel; sicherheit = abgeleitet
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-tr1200.bin; zwischen_md5 = 62180e158bb123193a5eb8878adff942; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; rueckweg_buchse = die WAN-Buchse; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-tr1200.bin; zwischen_url_text = Zwischenfirmware für den Cudy TR1200 v1 aus unserem Spiegel; sicherheit = abgeleitet
 
 ### Familie `devolo-ssh`
 
@@ -8766,7 +8804,7 @@ RAVPower RP-WD009 · ramips-mt76x8 · K0
 
 ### Familie `seriell-tftp`
 
-22 Gerät(e).
+21 Gerät(e).
 
 #### d-link-dir-505
 
@@ -9174,42 +9212,6 @@ TP-Link TD-W8980 (Alias TD-W9980; Gluon: broken, 5 GHz) · lantiq-xrx200_legacy 
 - **Notweg:** [Alternative] Weboberfläche nur mit Stock-Firmware älter als 12.10.2013, danach nimmt sie nur RSA-signierte Images [geprüft: Wiki toh:tp-link:td-w8980_v1]; Shell-Injection wie beim TD-W9980 [abgeleitet: Wiki]
 - **Gluon-RAMpe passt:** nein
 - **Quelle (OpenWrt-Commit):** 161179f40bd7899516518f3844fea28c6dd86efc (ohne Installationstext)
-
-#### cudy-tr3000-v1
-
-Cudy TR3000 v1 (128 MB Flash) · mediatek-filogic · K4
-
-- **Weg ab Werk:** UART + TFTP-initramfs (Reset beim Einschalten 5 s halten, U-Boot-Shell), dann sysupgrade [geprüft]; eine Cudy-Zwischenfirmware fehlt im Spiegel und bei Cudy (Stand Neanderfunk-Notiz 08.10.2026), sonst wäre es K2
-- **Schritte (Normalweg):**
-  1. Gehäuse öffnen und USB-TTL 3,3 V an zwei Testpunkte unten auf der Platine (Ports links, LEDs rechts: links RX, rechts TX) plus GND anschließen. [geprüft: Wiki toh:cudy:tr3000]
-  2. Terminal mit 115200 8N1 öffnen. [geprüft: Commit]
-  3. Rechner an LAN, feste IP 192.168.1.88/24, TFTP-Server mit dem initramfs als `initramfs-kernel.bin` starten. [geprüft: Commit; Zwang: abgeleitet]
-  4. Reset gedrückt halten, Strom einschalten, Reset mindestens 5 s weiter halten. [geprüft: Commit 63b8d98, Wiki toh:cudy:tr3000]
-  5. Warten, bis die OEM-TFTP-Recovery nach ca. 5 s scheitert und sich die U-Boot-Shell öffnet. [geprüft: Commit 63b8d98, Wiki toh:cudy:tr3000]
-  6. Mit `setenv bootfile` den Dateinamen setzen und das initramfs per TFTP (Gerät 192.168.1.1) booten. [geprüft]
-  7. Gluon per sysupgrade installieren. [geprüft]
-- **Taste und Zeitpunkt:** Reset gedrückt halten, Strom einschalten, Reset mindestens 5 s weiter halten [geprüft: Commit 63b8d98, Wiki toh:cudy:tr3000]
-- **Sichtbare Zeichen:** Die OEM-TFTP-Recovery startet und soll nach ca. 5 s scheitern, danach öffnet sich die U-Boot-Shell von selbst [geprüft: Commit 63b8d98, Wiki toh:cudy:tr3000]
-- **Übertragung:** tftp-client: Server 192.168.1.88/24, Gerät 192.168.1.1, Datei per `setenv bootfile`
-- **Anschluss:** Gehäuse öffnen, USB-TTL 3,3 V an zwei Testpunkte unten auf der Platine (Ports links, LEDs rechts: links RX, rechts TX) plus GND; Wiki empfiehlt eine spezielle Klemme dafür [geprüft: Wiki toh:cudy:tr3000]. Rechner an LAN [geprüft: Commit]
-- **Adressen:** Rechner feste IP 192.168.1.88/24, Gerät 192.168.1.1 [geprüft: Commit]
-- **Programm:** Serielles Terminal, TFTP-Server [geprüft: Commit]
-- **Zugang:** Terminal 115200 8N1 [geprüft: Commit]; U-Boot-Shell über Reset beim Einschalten [geprüft: Commit 63b8d98, Wiki toh:cudy:tr3000]
-- **Datei:** Dateiname per `setenv bootfile` frei, Wiki: Name muss 'initramfs' enthalten; strengster Name `initramfs-kernel.bin` [Zwang: abgeleitet; geprüft: Wiki toh:cudy:tr3000]
-- **seriell nötig:** ja
-- **Gehäuse öffnen:** ja (interne Testpunkte)
-- **Werkzeug/Spezial:** -
-- **Typenschild/Verwechslung:** 128-MB- und 256-MB-Flash-Version: Angabe auf Karton/Typenschild; die 256-MB-Version hat ein eigenes Image [geprüft: Wiki toh:cudy:tr3000]. Nicht mit dem 'ubootmod'-Image (OpenWrt-U-Boot-Layout) mischen [abgeleitet: Wiki]
-- **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-cudy_tr3000-v1-initramfs-kernel.bin)
-- **Factory-/Stock-Image-Link:** -
-- **Stock-Teile:** -
-- **RAM:** 512 MB
-- **Dauer:** TFTP-Fenster laut Wiki 10 s [geprüft: Wiki toh:cudy:tr3000]
-- **Rückweg zur Herstellerfirmware:** Reset beim Einschalten startet die Cudy-TFTP-Recovery, die nur signierte Cudy-Firmware annimmt [geprüft: Wiki toh:cudy:tr3000]
-- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe ersetzt das OpenWrt-initramfs im TFTP-Schritt, der serielle Teil bleibt
-- **Gluon-RAMpe-Rezept:** devices/cudy-tr3000-v1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per U-Boot-TFTP
-- **Quelle (OpenWrt-Commit):** OpenWrt 63b8d98dd0d2f7797ea5b5f25978590982bbbb5d
-- **Detail-Anleitung:** https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
 
 #### mercusys-mr80x-v3
 

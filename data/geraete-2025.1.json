@@ -11325,7 +11325,7 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.1",
-    "zwischen_datei": "cudy_ap3000outdoor-v1-sysupgrade_20251119.bin",
+    "zwischen_datei": "cudy-ap3000-outdoor.bin",
     "zwischen_md5": "a2817017a7cfd1229ba5f6b592726a88",
     "zwischen_nur_cudy": false,
     "neuer_flash": true,
@@ -11335,8 +11335,8 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_Outdoor_1.0/",
-    "zwischen_url_text": "Ordner AP3000_Outdoor_1.0 in unserem Spiegel",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-ap3000-outdoor.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy AP3000 Outdoor v1 aus unserem Spiegel",
     "sicherheit": "quelle"
    }
   },
@@ -11390,8 +11390,8 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.1",
-    "zwischen_datei": "cudy_ap3000-v1-sysupgrade.bin",
-    "zwischen_md5": "d7e8c124cfd04c88bbdbe2e4c67e9faf",
+    "zwischen_datei": "cudy-ap3000.bin",
+    "zwischen_md5": "7023a3bd44e4ae0bf09de4ed9cb44335",
     "zwischen_nur_cudy": false,
     "neuer_flash": false,
     "strom": "",
@@ -11400,8 +11400,8 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_V1.0/",
-    "zwischen_url_text": "Ordner AP3000_V1.0 in unserem Spiegel",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-ap3000.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy AP3000 v1 aus unserem Spiegel",
     "sicherheit": "quelle"
    }
   },
@@ -11456,7 +11456,7 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.1",
-    "zwischen_datei": "cudy_ap3000wall-v1-sysupgrade_20251119.bin",
+    "zwischen_datei": "cudy-ap3000-wall.bin",
     "zwischen_md5": "376d404fd1535cc51168e365e2374427",
     "zwischen_nur_cudy": false,
     "neuer_flash": true,
@@ -11466,8 +11466,8 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_Wall_1.0/",
-    "zwischen_url_text": "Ordner AP3000_Wall_1.0 in unserem Spiegel",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-ap3000-wall.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy AP3000 Wall v1 aus unserem Spiegel",
     "sicherheit": "quelle"
    }
   },
@@ -11522,7 +11522,7 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.1",
-    "zwischen_datei": "cudy_m3000-v1-sysupgrade_20251119.bin",
+    "zwischen_datei": "cudy-m3000.bin",
     "zwischen_md5": "2bcdf420444309bdef463dd278d15ba4",
     "zwischen_nur_cudy": false,
     "neuer_flash": true,
@@ -11532,8 +11532,8 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M3000_1.0_2.0/",
-    "zwischen_url_text": "Ordner M3000_1.0_2.0 in unserem Spiegel",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-m3000.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy M3000 v1 (RTL8221B) aus unserem Spiegel",
     "sicherheit": "abgeleitet"
    }
   },
@@ -11653,7 +11653,7 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.1",
-    "zwischen_datei": "cudy_re3000-v1-sysupgrade.bin",
+    "zwischen_datei": "cudy-re3000.bin",
     "zwischen_md5": "d350aa4ec09cd51ce5727958f6712c62",
     "zwischen_nur_cudy": false,
     "neuer_flash": false,
@@ -11663,8 +11663,8 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/RE3000_V1/",
-    "zwischen_url_text": "Ordner RE3000_V1 in unserem Spiegel",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-re3000.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy RE3000 v1 aus unserem Spiegel",
     "sicherheit": "quelle"
    }
   },
@@ -11718,7 +11718,7 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.1",
-    "zwischen_datei": "cudy_tr3000-256mb-v1-sysupgrade.bin",
+    "zwischen_datei": "cudy-tr3000-256mb.bin",
     "zwischen_md5": "93615f1c40cdd64179753aee5a32aa06",
     "zwischen_nur_cudy": false,
     "neuer_flash": false,
@@ -11728,8 +11728,8 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "mindestens 5 Sekunden",
     "rueckweg_quelle": "beim Cudy-Support (China) auf Anfrage",
-    "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/TR3000_256MB_Flash_V1_not_for_TR3000_V1_/",
-    "zwischen_url_text": "Ordner TR3000_256MB_Flash_V1_not_for_TR3000_V1_ in unserem Spiegel",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-tr3000-256mb.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy TR3000 256 MB v1 aus unserem Spiegel",
     "sicherheit": "quelle"
    }
   },
@@ -11739,17 +11739,17 @@
    "anzeige": "",
    "target": "mediatek-filogic",
    "gluon_broken": false,
-   "kat": "K4",
-   "familie": "seriell-tftp",
-   "weg": "UART + TFTP-initramfs (Reset beim Einschalten 5 s halten, U-Boot-Shell), dann sysupgrade [geprüft]; eine Cudy-Zwischenfirmware fehlt im Spiegel und bei Cudy (Stand Neanderfunk-Notiz 08.10.2026), sonst wäre es K2",
+   "kat": "K2",
+   "familie": "cudy-zwischenfirmware",
+   "weg": "Cudys signierte OpenWrt-Zwischenfirmware (TR3000 V1_20251118: cudy_tr3000-v1-sysupgrade_20251112_release.bin, supported_devices cudy,tr3000-v1) im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne \"Einstellungen behalten\" [geprüft: forum.darmstadt.freifunk.net t/1010 #1 (TomH, 09.04.2025, am 15.10.2026 gelesen), mit älterer Fassung MD5 b8333d8e…; Spiegel firmware.ffnef.de/other/cudy-mirror-20261015 (Cudys Drive-Ordner, geholt 15.10.2026; MD5 geprüft)]",
    "schritte": [
-    "Gehäuse öffnen und USB-TTL 3,3 V an zwei Testpunkte unten auf der Platine (Ports links, LEDs rechts: links RX, rechts TX) plus GND anschließen. [geprüft: Wiki toh:cudy:tr3000]",
-    "Terminal mit 115200 8N1 öffnen. [geprüft: Commit]",
-    "Rechner an LAN, feste IP 192.168.1.88/24, TFTP-Server mit dem initramfs als `initramfs-kernel.bin` starten. [geprüft: Commit; Zwang: abgeleitet]",
-    "Reset gedrückt halten, Strom einschalten, Reset mindestens 5 s weiter halten. [geprüft: Commit 63b8d98, Wiki toh:cudy:tr3000]",
-    "Warten, bis die OEM-TFTP-Recovery nach ca. 5 s scheitert und sich die U-Boot-Shell öffnet. [geprüft: Commit 63b8d98, Wiki toh:cudy:tr3000]",
-    "Mit `setenv bootfile` den Dateinamen setzen und das initramfs per TFTP (Gerät 192.168.1.1) booten. [geprüft]",
-    "Gluon per sysupgrade installieren. [geprüft]"
+    "Zwischenfirmware cudy-tr3000.bin aus unserem Spiegel und das Gluon-sysupgrade herunterladen [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261015 (Cudys Drive-Ordner, geholt 15.10.2026; MD5 geprüft)]",
+    "Rechner an die LAN-Buchse, http://192.168.10.1/ öffnen, Passwort admin, Ersteinrichtung durchklicken [geprüft: forum.darmstadt.freifunk.net t/1010 #1 (TomH, 09.04.2025, am 15.10.2026 gelesen)]",
+    "Erweiterte Einstellungen > System > Firmware, Zwischenfirmware hochladen [geprüft: forum.darmstadt.freifunk.net t/1010 #1 (TomH, 09.04.2025, am 15.10.2026 gelesen)]",
+    "Angezeigte MD5 vergleichen (4551e961e22c0dafab13f5251d64d042 für die Datei aus dem Spiegel), dann Fortfahren [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261015 (Cudys Drive-Ordner, geholt 15.10.2026; MD5 geprüft); Ablauf forum.darmstadt.freifunk.net t/1010 #1 (TomH, 09.04.2025, am 15.10.2026 gelesen)]",
+    "Nach dem Neustart http://192.168.1.1/ (LuCI), Passwort leer lassen [geprüft: forum.darmstadt.freifunk.net t/1010 #1 (TomH, 09.04.2025, am 15.10.2026 gelesen)]",
+    "Gluon-sysupgrade hochladen, Haken bei \"Einstellungen behalten\" entfernen [geprüft: forum.darmstadt.freifunk.net t/1010 #1 (TomH, 09.04.2025, am 15.10.2026 gelesen)]",
+    "Einige Minuten warten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]"
    ],
    "warnung": "",
    "taste": "Reset gedrückt halten, Strom einschalten, Reset mindestens 5 s weiter halten [geprüft: Commit 63b8d98, Wiki toh:cudy:tr3000]",
@@ -11760,7 +11760,7 @@
    "programm": "Serielles Terminal, TFTP-Server [geprüft: Commit]",
    "zugang": "Terminal 115200 8N1 [geprüft: Commit]; U-Boot-Shell über Reset beim Einschalten [geprüft: Commit 63b8d98, Wiki toh:cudy:tr3000]",
    "datei": "Dateiname per `setenv bootfile` frei, Wiki: Name muss 'initramfs' enthalten; strengster Name `initramfs-kernel.bin` [Zwang: abgeleitet; geprüft: Wiki toh:cudy:tr3000]",
-   "seriell": "ja",
+   "seriell": "nein",
    "gehaeuse": "ja (interne Testpunkte)",
    "werkzeug": "-",
    "verwechslung": "128-MB- und 256-MB-Flash-Version: Angabe auf Karton/Typenschild; die 256-MB-Version hat ein eigenes Image [geprüft: Wiki toh:cudy:tr3000]. Nicht mit dem 'ubootmod'-Image (OpenWrt-U-Boot-Layout) mischen [abgeleitet: Wiki]",
@@ -11771,15 +11771,30 @@
    "ram": "512 MB",
    "dauer": "TFTP-Fenster laut Wiki 10 s [geprüft: Wiki toh:cudy:tr3000]",
    "fehlerbild": "",
-   "notweg": "",
+   "notweg": "[Notfall] seriell: Gehäuse öffnen und USB-TTL 3,3 V an zwei Testpunkte unten auf der Platine (Ports links, LEDs rechts: links RX, rechts TX) plus GND anschließen. [geprüft: Wiki toh:cudy:tr3000] / Terminal mit 115200 8N1 öffnen. [geprüft: Commit] / Rechner an LAN, feste IP 192.168.1.88/24, TFTP-Server mit dem initramfs als `initramfs-kernel.bin` starten. [geprüft: Commit; Zwang: abgeleitet] / Reset gedrückt halten, Strom einschalten, Reset mindestens 5 s weiter halten. [geprüft: Commit 63b8d98, Wiki toh:cudy:tr3000] / Warten, bis die OEM-TFTP-Recovery nach ca. 5 s scheitert und sich die U-Boot-Shell öffnet. [geprüft: Commit 63b8d98, Wiki toh:cudy:tr3000] / Mit `setenv bootfile` den Dateinamen setzen und das initramfs per TFTP (Gerät 192.168.1.1) booten. [geprüft] / Gluon per sysupgrade installieren. [geprüft]",
    "rueckweg": "Reset beim Einschalten startet die Cudy-TFTP-Recovery, die nur signierte Cudy-Firmware annimmt [geprüft: Wiki toh:cudy:tr3000]",
    "hw_test": "",
-   "rampe": "teilweise: Gluon-RAMpe ersetzt das OpenWrt-initramfs im TFTP-Schritt, der serielle Teil bleibt",
+   "rampe": "nicht nötig (Cudy-Zwischenfirmware); seriell wäre die RAMpe im TFTP-Schritt möglich",
    "rampe_rezept": "devices/cudy-tr3000-v1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per U-Boot-TFTP",
    "quelle": "OpenWrt 63b8d98dd0d2f7797ea5b5f25978590982bbbb5d",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
+   "anleitung": "anleitungen/de/cudy-tr3000-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "cudy_ip": "192.168.10.1",
+    "zwischen_datei": "cudy-tr3000.bin",
+    "zwischen_md5": "4551e961e22c0dafab13f5251d64d042",
+    "zwischen_nur_cudy": false,
+    "neuer_flash": false,
+    "strom": "",
+    "luci_buchse": "",
+    "force_upgrade": false,
+    "rueckweg_buchse": "",
+    "rueckweg_halten": "mindestens 5 Sekunden",
+    "rueckweg_quelle": "",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-tr3000.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy TR3000 v1 (128 MB Flash) aus unserem Spiegel",
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "cudy-wr3000-v1",
@@ -11831,7 +11846,7 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.1",
-    "zwischen_datei": "openwrt-mediatek-filogic-cudy_wr3000-v1-sysupgrade.bin",
+    "zwischen_datei": "cudy-wr3000.bin",
     "zwischen_md5": "6d29a32db9453ee62a071b344476e9c2",
     "zwischen_nur_cudy": false,
     "neuer_flash": false,
@@ -11841,8 +11856,8 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000+V1_without_recovery_TFTP/",
-    "zwischen_url_text": "Ordner WR3000+V1_without_recovery_TFTP in unserem Spiegel",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy WR3000 v1 aus unserem Spiegel",
     "sicherheit": "quelle"
    }
   },
@@ -11896,7 +11911,7 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.1",
-    "zwischen_datei": "cudy_wr3000e-v1-sysupgrade_20251119.bin",
+    "zwischen_datei": "cudy-wr3000e.bin",
     "zwischen_md5": "249c150e7676facc9f33d79e634ec4a3",
     "zwischen_nur_cudy": false,
     "neuer_flash": true,
@@ -11906,8 +11921,8 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000E_1.0/",
-    "zwischen_url_text": "Ordner WR3000E_1.0 in unserem Spiegel",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000e.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy WR3000E v1 aus unserem Spiegel",
     "sicherheit": "quelle"
    }
   },
@@ -11961,7 +11976,7 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.1",
-    "zwischen_datei": "cudy_wr3000h-v1-sysupgrade_20251119.bin",
+    "zwischen_datei": "cudy-wr3000h.bin",
     "zwischen_md5": "1c9321928f7da093cd2b8631d3554743",
     "zwischen_nur_cudy": false,
     "neuer_flash": true,
@@ -11971,8 +11986,8 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000H_1.0/",
-    "zwischen_url_text": "Ordner WR3000H_1.0 in unserem Spiegel",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000h.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy WR3000H v1 aus unserem Spiegel",
     "sicherheit": "quelle"
    }
   },
@@ -12026,7 +12041,7 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.1",
-    "zwischen_datei": "cudy_wr3000p-v1-sysupgrade_20251119.bin",
+    "zwischen_datei": "cudy-wr3000p.bin",
     "zwischen_md5": "cd87fc98daf8755b8190cc63f0083f38",
     "zwischen_nur_cudy": false,
     "neuer_flash": true,
@@ -12036,8 +12051,8 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000P_1.0/",
-    "zwischen_url_text": "Ordner WR3000P_1.0 in unserem Spiegel",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000p.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy WR3000P v1 aus unserem Spiegel",
     "sicherheit": "quelle"
    }
   },
@@ -12091,7 +12106,7 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.1",
-    "zwischen_datei": "cudy_wr3000s-v1-sysupgrade_20251119.bin",
+    "zwischen_datei": "cudy-wr3000s.bin",
     "zwischen_md5": "403e276f74fd29917fd4260294d1a137",
     "zwischen_nur_cudy": false,
     "neuer_flash": true,
@@ -12101,8 +12116,8 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000S_1.0/",
-    "zwischen_url_text": "Ordner WR3000S_1.0 in unserem Spiegel",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000s.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy WR3000S v1 aus unserem Spiegel",
     "sicherheit": "quelle"
    }
   },
@@ -14725,7 +14740,7 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.1",
-    "zwischen_datei": "openwrt-22.03.2-ramips-mt7621-cudy_m1800v2-squashfs-flash.bin",
+    "zwischen_datei": "cudy-m1800.bin",
     "zwischen_md5": "0c19a13f261fc7b3b0fade2b263203d5",
     "zwischen_nur_cudy": false,
     "neuer_flash": false,
@@ -14735,8 +14750,8 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M1800+V2/",
-    "zwischen_url_text": "Ordner M1800+V2 in unserem Spiegel",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-m1800.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy M1800 aus unserem Spiegel",
     "sicherheit": "unsicher",
     "sicherheit_hinweis": "Die Cudy-Zwischenfirmware, die wir gefunden haben, ist für den „M1800+ V2“ gedacht. Ob dein M1800 sie annimmt, wissen wir nicht."
    }
@@ -14791,7 +14806,7 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.1",
-    "zwischen_datei": "openwrt-22.03.2-ramips-mt7621-cudy_wr1300v1-squashfs-flash.bin",
+    "zwischen_datei": "cudy-wr1300.bin",
     "zwischen_md5": "34f1ecdcd756fdae90abf3c76def2d43",
     "zwischen_nur_cudy": false,
     "neuer_flash": false,
@@ -14801,8 +14816,8 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR1300+V1/",
-    "zwischen_url_text": "Ordner WR1300+V1 in unserem Spiegel",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr1300.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy WR1300 v1 aus unserem Spiegel",
     "sicherheit": "quelle"
    }
   },
@@ -14856,7 +14871,7 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.1",
-    "zwischen_datei": "openwrt-ramips-mt7621-cudy-wr2100-squashfs-flash.bin",
+    "zwischen_datei": "cudy-wr2100.bin",
     "zwischen_md5": "002345fcc699c7b5a99b8fdb99dd6719",
     "zwischen_nur_cudy": false,
     "neuer_flash": false,
@@ -14866,8 +14881,8 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR2100+V1/",
-    "zwischen_url_text": "Ordner WR2100+V1 in unserem Spiegel",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr2100.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy WR2100 aus unserem Spiegel",
     "sicherheit": "quelle"
    }
   },
@@ -14921,7 +14936,7 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.1",
-    "zwischen_datei": "openwrt-ramips-mt7621-cudy-x6-flash.bin",
+    "zwischen_datei": "cudy-x6-v1.bin",
     "zwischen_md5": "f321fc7c41731875faa3cdc9ee8d583f",
     "zwischen_nur_cudy": false,
     "neuer_flash": false,
@@ -14931,8 +14946,8 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "mindestens 8 Sekunden",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/X6+V1/",
-    "zwischen_url_text": "Ordner X6+V1 in unserem Spiegel",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-x6-v1.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy X6 v1 aus unserem Spiegel",
     "sicherheit": "quelle"
    }
   },
@@ -14986,7 +15001,7 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.1",
-    "zwischen_datei": "openwrt-22.03-ramips-mt7621-cudy_x6v2-squashfs-flash.bin",
+    "zwischen_datei": "cudy-x6-v2.bin",
     "zwischen_md5": "89c000214e74b6ad89f5b9951fe0f226",
     "zwischen_nur_cudy": false,
     "neuer_flash": false,
@@ -14996,8 +15011,8 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/X6+V2/",
-    "zwischen_url_text": "Ordner X6+V2 in unserem Spiegel",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-x6-v2.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy X6 v2 aus unserem Spiegel",
     "sicherheit": "quelle"
    }
   },
@@ -17186,7 +17201,7 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.1",
-    "zwischen_datei": "TR1200-OpenWRT-Flash.bin",
+    "zwischen_datei": "cudy-tr1200.bin",
     "zwischen_md5": "62180e158bb123193a5eb8878adff942",
     "zwischen_nur_cudy": false,
     "neuer_flash": false,
@@ -17196,8 +17211,8 @@
     "rueckweg_buchse": "die WAN-Buchse",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/TR1200_V1/",
-    "zwischen_url_text": "Ordner TR1200_V1 in unserem Spiegel",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-tr1200.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy TR1200 v1 aus unserem Spiegel",
     "sicherheit": "abgeleitet"
    }
   },
