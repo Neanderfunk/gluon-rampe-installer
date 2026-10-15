@@ -35,6 +35,11 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     gl_menue             optional: z. B. "Upgrade → Local Upgrade" (leer = "meist Upgrade")
     per_wlan             optional true: nur per WLAN erreichbar (Ethernet ist WAN)
     usb                  optional true: das Gerät steckt im USB-Port des Rechners
+
+  RAMpe als zweiter Weg (siehe _rampe.md, alles optional)
+    rampe_url            Direktlink auf die RAMpe-Datei für dieses Gerät
+    rampe_datei          Dateiname dazu
+    rampe_weg            ganzer Satz, wie die RAMpe statt OpenWrt aufs Gerät kommt
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
@@ -208,6 +213,8 @@ mehr, hilft der eingebaute Notfall-Modus:
    "Update firmware".
 4. Etwa 3 Minuten warten, Strom nicht ziehen.
 {%- endif %}
+
+{% include "_rampe.md" %}
 
 {{ zusatz.text }}
 

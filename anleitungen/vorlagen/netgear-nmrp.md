@@ -17,6 +17,11 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     web_nicht            true: die Netgear-Oberfläche nimmt es nicht, nur nmrpflash
     zwischen_datei       OpenWrt-factory als Zwischenschritt (wenn Gluon keins baut)
     zwischen_url         Download-Adresse dazu
+
+  RAMpe als zweiter Weg (siehe _rampe.md, alles optional)
+    rampe_url            Direktlink auf die RAMpe-Datei für dieses Gerät
+    rampe_datei          Dateiname dazu
+    rampe_weg            ganzer Satz, wie die RAMpe statt OpenWrt aufs Gerät kommt
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
@@ -135,6 +140,8 @@ Weg mit nmrpflash.
 Bei diesem Gerät nimmt die Netgear-Oberfläche die Freifunk-Firmware nicht
 an. nmrpflash ist der Weg.
 {%- endif %}
+
+{% include "_rampe.md" %}
 
 {{ zusatz.text }}
 

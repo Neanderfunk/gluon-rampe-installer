@@ -36,7 +36,8 @@ den Werten (alle optional):
 {%- endif %}
 {%- endif %}
 >
-> Hast du es ausprobiert? Schreib uns bitte, ob es geklappt hat, auch wenn
-> nicht. Das hilft allen, die nach dir kommen:
+> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject={{ ("Anleitung " ~ modell) | urlencode }})
