@@ -5,7 +5,7 @@ anzeige: Sophos AP15C
 familie: sophos-xg-awetool
 gluon_broken: false
 sprache: de
-stufe: mit Werkzeug
+stufe: mit scripts/Netzwerktools
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, tftp-server]
 daten_stand: 95e5f91

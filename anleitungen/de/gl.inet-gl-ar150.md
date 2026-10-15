@@ -5,7 +5,7 @@ anzeige: GL.iNet GL-AR150
 familie: glinet
 gluon_broken: false
 sprache: de
-stufe: mit Werkzeug
+stufe: mit scripts/Netzwerktools
 status: ungeprüft
 grundlagen: [feste-ip]
 daten_stand: 95e5f91

@@ -5,7 +5,7 @@ anzeige: AVM FRITZ!WLAN Repeater 450E
 familie: avm-eva-ftp
 gluon_broken: false
 sprache: de
-stufe: mit Werkzeug
+stufe: mit scripts/Netzwerktools
 status: ungeprüft
 grundlagen: [avm-eva, feste-ip]
 daten_stand: 95e5f91

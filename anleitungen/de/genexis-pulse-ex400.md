@@ -5,7 +5,7 @@ anzeige: Genexis/Inteno Pulse EX400
 familie: sonderweg-genexis-pulse-ex400
 gluon_broken: false
 sprache: de
-stufe: mit Werkzeug
+stufe: mit scripts/Netzwerktools
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-genexis-pulse-ex400-factory.bin
 grundlagen: [browser-https, feste-ip, ssh-scp]

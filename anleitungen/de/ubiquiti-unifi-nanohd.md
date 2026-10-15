@@ -5,7 +5,7 @@ anzeige: Ubiquiti UniFi nanoHD
 familie: ubiquiti-unifi-ssh
 gluon_broken: false
 sprache: de
-stufe: mit Werkzeug
+stufe: mit scripts/Netzwerktools
 status: ungeprüft
 grundlagen: [feste-ip, ssh-scp, tftp-client]
 daten_stand: 95e5f91

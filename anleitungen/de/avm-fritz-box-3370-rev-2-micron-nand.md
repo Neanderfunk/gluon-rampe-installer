@@ -5,7 +5,7 @@ anzeige: AVM FRITZ!Box 3370 Rev. 2, Micron-NAND
 familie: avm-eva-ftp
 gluon_broken: true
 sprache: de
-stufe: mit Werkzeug
+stufe: mit scripts/Netzwerktools
 status: ungeprüft
 grundlagen: [avm-eva, feste-ip]
 daten_stand: 95e5f91

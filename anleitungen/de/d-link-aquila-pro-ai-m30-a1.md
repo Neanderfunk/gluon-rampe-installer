@@ -5,7 +5,7 @@ anzeige: D-Link AQUILA PRO AI M30 A1
 familie: dlink-recovery-web
 gluon_broken: false
 sprache: de
-stufe: mit Werkzeug
+stufe: mit scripts/Netzwerktools
 status: ungeprüft
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m30-a1-recovery.bin
 grundlagen: [browser-https, curl, feste-ip]

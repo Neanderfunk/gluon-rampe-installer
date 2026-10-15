@@ -5,7 +5,7 @@ anzeige: ZyXEL WSM20 (Multy M1)
 familie: sonderweg-zyxel-wsm20
 gluon_broken: false
 sprache: de
-stufe: mit Werkzeug
+stufe: mit scripts/Netzwerktools
 status: erprobt
 erprobt_am: 2026-09-19
 erprobt_mit: Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs

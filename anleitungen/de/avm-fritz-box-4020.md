@@ -5,7 +5,7 @@ anzeige: AVM FRITZ!Box 4020
 familie: avm-eva-ftp
 gluon_broken: false
 sprache: de
-stufe: mit Werkzeug
+stufe: mit scripts/Netzwerktools
 status: ungeprüft
 grundlagen: [avm-eva, feste-ip]
 daten_stand: 95e5f91

@@ -5,7 +5,7 @@ anzeige: Ubiquiti Nanostation Loco M XW
 familie: ubiquiti-tftp
 gluon_broken: false
 sprache: de
-stufe: mit Werkzeug
+stufe: mit scripts/Netzwerktools
 status: ungeprüft
 grundlagen: [feste-ip, tftp-client]
 daten_stand: 95e5f91

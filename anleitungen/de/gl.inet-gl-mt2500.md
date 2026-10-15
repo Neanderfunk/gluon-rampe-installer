@@ -5,7 +5,7 @@ anzeige: GL.iNet GL-MT2500 (MaxLinear-PHY)
 familie: glinet
 gluon_broken: false
 sprache: de
-stufe: mit Werkzeug
+stufe: mit scripts/Netzwerktools
 status: ungeprüft
 grundlagen: []
 daten_stand: 95e5f91

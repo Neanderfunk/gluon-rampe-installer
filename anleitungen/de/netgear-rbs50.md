@@ -5,7 +5,7 @@ anzeige: NETGEAR Orbi RBS50 v1
 familie: netgear-nmrp
 gluon_broken: false
 sprache: de
-stufe: mit Werkzeug
+stufe: mit scripts/Netzwerktools
 status: ungeprüft
 grundlagen: [nmrpflash]
 daten_stand: 95e5f91

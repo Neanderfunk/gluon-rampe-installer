@@ -5,7 +5,7 @@ anzeige: TP-Link EAP225-Outdoor v1
 familie: tplink-eap-ssh
 gluon_broken: false
 sprache: de
-stufe: mit Werkzeug
+stufe: mit scripts/Netzwerktools
 status: ungeprüft
 grundlagen: [feste-ip, ssh-scp]
 daten_stand: 95e5f91
