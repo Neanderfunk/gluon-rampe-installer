@@ -10,8 +10,8 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [nmrpflash]
-daten_stand: 03ee77d
-vorlage_stand: 02b6142
+daten_stand: 071c7876
+vorlage_stand: 02b61429
 ---
 
 # NETGEAR R6260: Freifunk-Firmware installieren

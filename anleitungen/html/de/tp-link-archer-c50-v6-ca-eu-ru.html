@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54): Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="tp-link-archer-c50-v6-ca-eu-ru">
+<meta name="anleitung:modell" content="TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54)">
+<meta name="anleitung:anzeige" content="TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54)">
+<meta name="anleitung:familie" content="tplink-ubootteil-dd">
+<meta name="anleitung:gluon_broken" content="false">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:level" content="L5">
+<meta name="anleitung:level_text" content="Besondere Programme">
+<meta name="anleitung:risiko" content="normal">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="feste-ip, tftp-server">
+<meta name="anleitung:daten_stand" content="071c7876">
+<meta name="anleitung:vorlage_stand" content="f0521fe3">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<h1>TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54): Freifunk-Firmware installieren</h1>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> So beschreiben die Entwickler von OpenWrt
+bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
+ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
+klappt.</p>
+<p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+Anleitung für alle nach dir besser:</p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20Archer%20C50%20v6%20%28CA/EU/RU%3B%20nicht%20ES%20%3D%20C54%29">projekt@neanderfunk.de</a></p>
+</blockquote>
+<blockquote>
+<p><strong>Wichtig: Lade nie die Freifunk-Datei allein über die
+TP-Link-Oberfläche hoch.</strong> Der Firmware-Selector bietet für dieses Gerät
+nur den Knopf <strong>Upgrade</strong> an. Genau diese Datei macht den Router
+unbrauchbar, wenn du sie unverändert bei TP-Link hochlädst. Sie muss
+vorher mit einem Stück der TP-Link-Firmware zusammengesetzt werden, wie
+unten beschrieben.</p>
+</blockquote>
+<p>Der TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54) braucht beim Start ein kleines Programm aus der
+TP-Link-Firmware, den sogenannten U-Boot-Teil. Die Freifunk-Firmware bringt
+ihn nicht mit. Deshalb schneidest du ihn aus der TP-Link-Firmware heraus,
+hängst die Freifunk-Firmware an und lädst das Ergebnis über die
+TP-Link-Oberfläche hoch. Das Zusammensetzen ist ein einziger Befehl. Rechne
+mit einer halben Stunde.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>den Router mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
+Netzwerkkabel</li>
+<li>die <strong>TP-Link-Firmware</strong> für genau dieses Modell und diese Version, von der
+<a href="https://www.tp-link.com/de/support/download/archer-c50/v6/">Download-Seite bei TP-Link</a>. Nimm die TP-Link-Firmware für die Variante auf dem Typenschild (CA/EU oder RU).</li>
+<li>die Freifunk-Firmware deiner Community für den TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54): im
+Firmware-Selector unter &quot;Wähle Deine Installationsart&quot; der Knopf
+<strong>Upgrade</strong> (die Datei endet auf <code>-sysupgrade.bin</code>). <strong>Nicht allein
+hochladen</strong>, siehe oben.</li>
+<li>zum Zusammensetzen: unter Linux und macOS die Befehle <code>dd</code> und <code>cat</code> (sind
+schon da), unter Windows <strong>Python 3</strong> (<a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>)</li>
+</ul>
+<h2>Vorher prüfen</h2>
+<p>Diese Anleitung gilt nur für den Archer C50 v6 aus Kanada, der EU oder
+Russland. Die spanische Variante (ES) ist in Wirklichkeit ein umbenannter
+Archer C54 und geht so <strong>nicht</strong>. Nimm die TP-Link-Firmware für die Variante
+auf dem Typenschild (CA/EU oder RU).</p>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Dateien bereitlegen.</strong> Leg einen Ordner an. Pack die TP-Link-Firmware
+(ein ZIP-Archiv) dort aus und benenn die <code>.bin</code>-Datei darin in
+<code>tpl.bin</code> um. Leg die Freifunk-Datei daneben und benenn sie in
+<code>gluon.bin</code> um.</p>
+</li>
+<li>
+<p><strong>Zusammensetzen.</strong> Öffne ein Terminal in dem Ordner und gib ein:</p>
+<ul>
+<li>
+<p>Linux und macOS:</p>
+<pre><code>dd if=tpl.bin of=boot.bin bs=131584 count=1
+cat gluon.bin &gt;&gt; boot.bin
+</code></pre>
+</li>
+<li>
+<p>Windows (PowerShell oder Eingabeaufforderung), geht auch unter Linux
+und macOS mit <code>python3</code> statt <code>py</code>:</p>
+<pre><code>py -c &quot;open('boot.bin','wb').write(open('tpl.bin','rb').read(131584)+open('gluon.bin','rb').read())&quot;
+</code></pre>
+</li>
+</ul>
+<p><strong>Prüfen:</strong> <code>boot.bin</code> ist genau <strong>131.584 Bytes größer</strong> als
+<code>gluon.bin</code>. Die Größe in Bytes zeigt unter Windows <code>dir</code>, unter Linux
+und macOS <code>ls -l</code>. Stimmt das nicht, hier aufhören.</p>
+</li>
+<li>
+<p><strong>TP-Link-Oberfläche öffnen.</strong> Verbinde den Rechner per Kabel mit einer
+LAN-Buchse des Routers und schalte ihn ein. Der Rechner bleibt auf
+&quot;automatisch&quot;. Öffne <code>http://192.168.0.1</code> (oder
+<code>http://tplinkwifi.net</code>) und melde dich an.</p>
+</li>
+<li>
+<p><strong>boot.bin hochladen.</strong> Geh zum Firmware-Update (meist unter
+&quot;Systemtools&quot; bzw. &quot;System Tools&quot; → &quot;Firmware-Upgrade&quot;), wähl
+<strong><code>boot.bin</code></strong> aus, nicht <code>gluon.bin</code>, und starte das Update.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Mindestens <strong>3 Minuten</strong>, oder bis drei oder mehr LEDs
+leuchten. <strong>Vorher auf keinen Fall den Strom ziehen.</strong></p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Danach startet die Freifunk-Firmware deiner Community: je
+nach Community zuerst mit einer Einrichtungsseite unter
+<code>http://192.168.1.1</code> oder gleich im Betrieb.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>In Schritt 2 ist <code>boot.bin</code> 131.584 Bytes größer als <code>gluon.bin</code>.</li>
+<li>In Schritt 4 nimmt die Oberfläche die Datei an.</li>
+<li>Nach Schritt 5 meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Die Oberfläche lehnt <code>boot.bin</code> ab.</strong> Prüf, ob die TP-Link-Firmware
+genau zu Modell, Version und Region deines Routers passt (Typenschild),
+und ob du <code>boot.bin</code> gewählt hast.</li>
+<li><strong>Der Router startet nach dem Update nicht richtig</strong>, oder er hängt im
+Notfall-Modus (nur die WPS-LED leuchtet): siehe &quot;Notfall-Seite&quot; unten.</li>
+</ul>
+<h2>Notfall-Seite</h2>
+<p>Der Router hat eine Notfall-Seite im Bootloader. Sie öffnet sich, wenn ein
+Firmware-Update abgebrochen wurde. So erreichst du sie absichtlich:</p>
+<ol>
+<li>Starte in der TP-Link-Oberfläche ein Update mit der <strong>TP-Link-Firmware</strong>
+(<code>tpl.bin</code>). Sobald die Anzeige auf 0 % springt (nach etwa 3 Sekunden),
+zieh den Strom. Das ist ungefährlich: Der Router merkt sich nur, dass ein
+Update angefangen hat, bevor er etwas schreibt.</li>
+<li>Stell deinen Rechner auf die feste Adresse <code>192.168.0.10</code>, Netzmaske
+<code>255.255.255.0</code> (<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).
+In diesem Modus verteilt der Router keine Adressen.</li>
+<li>Strom wieder anschließen. Alle LEDs sind aus, nur die WPS-LED leuchtet.</li>
+<li>Öffne <code>http://192.168.0.1</code>, lade dort <code>boot.bin</code> hoch und warte wie oben
+mindestens 3 Minuten.</li>
+</ol>
+<p>Über dieselbe Seite kommt auch die TP-Link-Firmware wieder auf das Gerät,
+wenn du zurück willst.</p>
+<h2>Notweg über TFTP</h2>
+<p>Klappt auch die Notfall-Seite nicht, holt sich der Router beim Einschalten
+mit gedrückter Reset-Taste eine Datei per TFTP
+(<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>). Diese Datei ist
+anders aufgebaut als <code>boot.bin</code>:</p>
+<ul>
+<li>
+<p>Linux und macOS:</p>
+<pre><code>dd if=/dev/zero of=tp_recovery.bin bs=196608 count=1
+dd if=tpl.bin of=tmp.bin bs=131584 count=1
+dd if=tmp.bin of=teil.bin bs=512 skip=1
+cat teil.bin &gt;&gt; tp_recovery.bin
+cat gluon.bin &gt;&gt; tp_recovery.bin
+</code></pre>
+</li>
+<li>
+<p>Windows (oder überall mit Python):</p>
+<pre><code>py -c &quot;open('tp_recovery.bin','wb').write(bytes(196608)+open('tpl.bin','rb').read(131584)[512:]+open('gluon.bin','rb').read())&quot;
+</code></pre>
+</li>
+</ul>
+<p>Dann den Rechner fest auf <code>192.168.0.66</code> stellen, Netzmaske
+<code>255.255.255.0</code>, den TFTP-Server mit dem Ordner starten, in dem
+<code>tp_recovery.bin</code> liegt, und den Router mit gedrückter Reset-Taste
+einschalten. Laut OpenWrt-Wiki etwa 8 Sekunden halten, bis alle LEDs
+aufhören zu blinken und die WPS-LED angeht. Der Router holt die Datei,
+schreibt sie und startet nach etwa einer Minute neu.</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Dauer)</li>
+<li>abgeleitet: Commit nutzt dd/cat (Programm)</li>
+<li>abgeleitet: Wiki C50 (Warnung, Dauer, Notweg)</li>
+<li>abgeleitet: Wiki C50; abgeleitet (Schritte (Normalweg))</li>
+<li>geprüft (Weg ab Werk, Notweg)</li>
+<li>geprüft: Commit (Schritte (Normalweg), Taste und Zeitpunkt, Datei, Typenschild/Verwechslung, Notweg)</li>
+<li>geprüft: Commit &quot;vendor-firmware ... can be written&quot; (Rückweg zur Herstellerfirmware)</li>
+<li>geprüft: Commit e9ac1b19 (Typenschild/Verwechslung)</li>
+<li>geprüft: Commit; abgeleitet: Wiki C20 v5 &quot;regional match&quot; (Schritte (Normalweg), Datei)</li>
+<li>geprüft: Test Neanderfunk 15.10.2026, byte-gleich mit dd/cat aus Commit 01dcd574 (Programm)</li>
+<li>geprüft; abgeleitet: Commit nutzt dd/cat (Schritte (Normalweg))</li>
+<li>geprüft; geprüft: Commit (Schritte (Normalweg))</li>
+<li>Geräteeintrag: e9ac1b19e0f3d383ab83373c261bfb5527a29521</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

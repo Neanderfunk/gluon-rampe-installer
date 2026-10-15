@@ -10,8 +10,8 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: 03ee77d
-vorlage_stand: 393f161
+daten_stand: 071c7876
+vorlage_stand: 393f1614
 ---
 
 # Cudy TR3000 256 MB v1: Freifunk-Firmware installieren

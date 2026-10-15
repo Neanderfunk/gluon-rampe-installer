@@ -11,8 +11,8 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-gl.inet-gl-e750-factory.img
 grundlagen: [browser-https, feste-ip]
-daten_stand: 03ee77d
-vorlage_stand: 393f161
+daten_stand: 071c7876
+vorlage_stand: 393f1614
 ---
 
 # GL.iNet GL-E750: Freifunk-Firmware installieren

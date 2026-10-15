@@ -10,8 +10,8 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: 03ee77d
-vorlage_stand: bfd0482
+daten_stand: 071c7876
+vorlage_stand: bfd04827
 ---
 
 # TP-Link Archer C58 v1: Freifunk-Firmware installieren

@@ -10,8 +10,8 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip]
-daten_stand: 03ee77d
-vorlage_stand: 393f161
+daten_stand: 071c7876
+vorlage_stand: 393f1614
 ---
 
 # GL.iNet GL-AR300M16: Freifunk-Firmware installieren

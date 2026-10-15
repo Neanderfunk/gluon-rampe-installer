@@ -10,8 +10,8 @@ level_text: Serielles Kabel
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 03ee77d
-vorlage_stand: 4935d8a
+daten_stand: 071c7876
+vorlage_stand: 4935d8a7
 ---
 
 # Siemens WS-AP3610: Freifunk-Firmware installieren

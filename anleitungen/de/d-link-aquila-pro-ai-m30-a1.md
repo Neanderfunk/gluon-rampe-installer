@@ -11,8 +11,8 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m30-a1-recovery.bin
 grundlagen: [browser-https, curl, feste-ip]
-daten_stand: 03ee77d
-vorlage_stand: 85ca218
+daten_stand: 071c7876
+vorlage_stand: 85ca2180
 ---
 
 # D-Link AQUILA PRO AI M30 A1: Freifunk-Firmware installieren

@@ -10,8 +10,8 @@ level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, ssh-scp]
-daten_stand: 03ee77d
-vorlage_stand: 568889c
+daten_stand: 071c7876
+vorlage_stand: 568889cf
 ---
 
 # TP-Link EAP225-Outdoor v3: Freifunk-Firmware installieren

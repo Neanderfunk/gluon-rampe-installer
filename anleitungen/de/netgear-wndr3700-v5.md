@@ -11,8 +11,8 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-netgear-wndr3700-v5-factory.img
 grundlagen: [browser-https, nmrpflash]
-daten_stand: 03ee77d
-vorlage_stand: 02b6142
+daten_stand: 071c7876
+vorlage_stand: 02b61429
 ---
 
 # NETGEAR WNDR3700 v5: Freifunk-Firmware installieren

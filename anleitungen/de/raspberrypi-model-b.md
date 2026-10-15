@@ -10,8 +10,8 @@ level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
 grundlagen: [image-schreiben]
-daten_stand: 03ee77d
-vorlage_stand: 6eae926
+daten_stand: 071c7876
+vorlage_stand: 6eae926f
 ---
 
 # Raspberry Pi 1 Model B/B+: Freifunk-Firmware installieren

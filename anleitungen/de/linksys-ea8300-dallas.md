@@ -10,8 +10,8 @@ level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
 grundlagen: [ssh-scp]
-daten_stand: 03ee77d
-vorlage_stand: 393f161
+daten_stand: 071c7876
+vorlage_stand: 393f1614
 ---
 
 # Linksys EA8300: Freifunk-Firmware installieren

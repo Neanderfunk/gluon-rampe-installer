@@ -10,8 +10,8 @@ level_text: Gehäuse öffnen
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, tftp-server]
-daten_stand: 03ee77d
-vorlage_stand: f350b7d
+daten_stand: 071c7876
+vorlage_stand: f350b7d3
 ---
 
 # Sophos AP55: Freifunk-Firmware installieren

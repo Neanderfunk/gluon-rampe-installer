@@ -11,8 +11,8 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-avm-fritz-repeater-3000-initramfs-uImage.itb
 grundlagen: [avm-eva, feste-ip, tftp-server]
-daten_stand: 03ee77d
-vorlage_stand: 79f8a17
+daten_stand: 071c7876
+vorlage_stand: 79f8a174
 ---
 
 # AVM FRITZ!Repeater 3000: Freifunk-Firmware installieren

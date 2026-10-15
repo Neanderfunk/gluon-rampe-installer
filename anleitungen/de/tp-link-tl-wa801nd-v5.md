@@ -10,8 +10,8 @@ level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: 03ee77d
-vorlage_stand: cc34fa6
+daten_stand: 071c7876
+vorlage_stand: cc34fa66
 ---
 
 # TP-Link TL-WA801ND v5: Freifunk-Firmware installieren

@@ -10,8 +10,8 @@ level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
 grundlagen: [curl, feste-ip]
-daten_stand: 03ee77d
-vorlage_stand: 85ca218
+daten_stand: 071c7876
+vorlage_stand: 85ca2180
 ---
 
 # D-Link DIR-878 A1: Freifunk-Firmware installieren

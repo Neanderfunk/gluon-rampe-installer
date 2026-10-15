@@ -11,8 +11,8 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-avm-fritz-box-7362-sl-initramfs-kernel.bin
 grundlagen: [avm-eva, browser-https, feste-ip]
-daten_stand: 03ee77d
-vorlage_stand: 869501c
+daten_stand: 071c7876
+vorlage_stand: 869501ce
 ---
 
 # AVM FRITZ!Box 7362 SL: Freifunk-Firmware installieren

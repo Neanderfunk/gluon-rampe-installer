@@ -10,8 +10,8 @@ level_text: Netzwerkwerkzeuge
 risiko: bootloader
 status: ungeprüft
 grundlagen: [feste-ip, tftp-client, tftp-server]
-daten_stand: 03ee77d
-vorlage_stand: 05fb36b
+daten_stand: 071c7876
+vorlage_stand: 05fb36b9
 ---
 
 # HPE MSM460: Freifunk-Firmware installieren

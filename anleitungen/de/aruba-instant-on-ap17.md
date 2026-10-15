@@ -10,8 +10,8 @@ level_text: Serielles Kabel
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 03ee77d
-vorlage_stand: 565e893
+daten_stand: 071c7876
+vorlage_stand: 565e8935
 ---
 
 # Aruba Instant On AP17: Freifunk-Firmware installieren

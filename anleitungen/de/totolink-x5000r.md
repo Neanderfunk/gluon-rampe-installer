@@ -10,8 +10,8 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-https, feste-ip]
-daten_stand: 03ee77d
-vorlage_stand: 565e893
+daten_stand: 071c7876
+vorlage_stand: 565e8935
 ---
 
 # TOTOLINK X5000R: Freifunk-Firmware installieren
