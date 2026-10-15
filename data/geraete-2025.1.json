@@ -1249,9 +1249,12 @@
    "rampe": "nein: Gluon-sysupgrade geht direkt",
    "rampe_rezept": "",
    "quelle": "b4d3110ac1f1f1962f812ac139c437837a448cff [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/gl.inet-6416.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "uboot",
+    "taste": "Strom ab, Reset-Taste halten, Strom wieder an. Die LED blinkt einige Male grün, dann ganz kurz rot: beim roten Blinken loslassen."
+   }
   },
   {
    "gluon_name": "gl.inet-gl-ar150",
@@ -1296,9 +1299,14 @@
    "rampe": "nein: Gluon-sysupgrade geht direkt [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target, ohne Anleitung) [abgeleitet]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/gl.inet-gl-ar150.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "uboot",
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die rote LED 5-mal geblinkt hat; beim 6. Blinken loslassen.",
+    "led_uboot": "Leuchtet nur noch die linke grüne LED, ist der Notfall-Modus erreicht.",
+    "led_schreiben": "Gehen alle LEDs aus, ist das Schreiben fertig."
+   }
   },
   {
    "gluon_name": "gl.inet-gl-ar300m-lite",
@@ -1340,9 +1348,13 @@
    "rampe": "nein: Gluon-sysupgrade geht direkt",
    "rampe_rezept": "",
    "quelle": "fefa34def84561688e6af2feeec2dbb390ba4486 [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/gl.inet-gl-ar300m-lite.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "gl-ui",
+    "gl_menue": "Advanced",
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen."
+   }
   },
   {
    "gluon_name": "gl.inet-gl-ar300m16",
@@ -1387,9 +1399,12 @@
    "rampe": "nein: Gluon-sysupgrade geht direkt",
    "rampe_rezept": "",
    "quelle": "b591cabd3989b44cfaf15248af9e55a0300a9c0a [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/gl.inet-gl-ar300m16.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "uboot",
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen."
+   }
   },
   {
    "gluon_name": "gl.inet-gl-ar750",
@@ -1431,9 +1446,12 @@
    "rampe": "nein: Gluon-sysupgrade geht direkt",
    "rampe_rezept": "",
    "quelle": "921675a2d148330a7ec44f10ea4d583b8d7b5a44 [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/gl.inet-gl-ar750.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "gl-ui",
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen."
+   }
   },
   {
    "gluon_name": "gl.inet-gl-usb150",
@@ -1475,9 +1493,12 @@
    "rampe": "nein: Gluon-sysupgrade geht direkt",
    "rampe_rezept": "",
    "quelle": "a1b5a43fc4b0edda5bbbb4eb0130ba9160dc515b [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/gl.inet-gl-usb150.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "gl-ui",
+    "usb": true
+   }
   },
   {
    "gluon_name": "joy-it-jt-or750i",
@@ -6952,9 +6973,12 @@
    "rampe": "nein: Gluon-sysupgrade (NOR) geht direkt",
    "rampe_rezept": "",
    "quelle": "55e6c903ae20bd8e694f4626166766e59602f87c (NOR/NAND-Aufteilung, Anleitung); 6e78d546d1197d7a3ec4cbc7aab22286ad49fb0f (Umbenennung) [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/gl.inet-gl-ar300m-nor.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "uboot",
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen."
+   }
   },
   {
    "gluon_name": "gl.inet-gl-ar750s-nor",
@@ -7000,9 +7024,14 @@
    "rampe": "nein: Gluon-sysupgrade (NOR) geht direkt",
    "rampe_rezept": "",
    "quelle": "af28d8a539fe64bfc893f798fdbbc49b4e78352a (Einführung, Anleitung); b496a2294c6e663a2dcbf08d714443e758d1269d (NOR/NAND) [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/gl.inet-gl-ar750s-nor.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "uboot",
+    "taste": "Strom ab, Reset-Taste halten, Strom wieder an und halten, bis die rechte LED 5-mal geblinkt hat. Dann loslassen.",
+    "uboot_abschnitt": "im Abschnitt „NOR flash“ mit „update nor firmware“",
+    "kabel_ziehen": true
+   }
   },
   {
    "gluon_name": "gl.inet-gl-e750",
@@ -7010,7 +7039,7 @@
    "target": "ath79-nand",
    "kat": "K2",
    "familie": "glinet",
-   "weg": "Mit GL-Firmware 3.100 nur über den U-Boot (GL.iNet-Debrick-Anleitung), weil deren sysupgrade den größeren Kernel zerstört [geprüft]; Gluon baut kein factory.img, OpenWrt schon",
+   "weg": "Mit GL-Firmware 3.100 nur über den U-Boot (GL.iNet-Debrick-Anleitung), weil deren sysupgrade den größeren Kernel zerstört [geprüft]; Gluon baut kein factory.img, OpenWrt schon; Zwischenstufe OpenWrt 24.10.8-factory.img über den U-Boot [geprüft: OpenWrt 24.10.8 ath79/nand, Datei in sha256sums gelistet und per HEAD erreichbar, 15.10.2026]",
    "schritte": [
     "Rechner per Kabel an einen LAN-Port anschließen, alle anderen Ports frei lassen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]",
     "Am Rechner feste IP 192.168.1.2, Netzmaske 255.255.255.0 einstellen, VPN/Proxy (auch Tailscale/ZeroTier) ausschalten [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]",
@@ -7047,9 +7076,15 @@
    "rampe": "ja: dauerhafte RAMpe als NAND-factory.img für die U-Boot-Web-Oberfläche statt OpenWrt-Zwischenschritt, danach Config-Mode der RAMpe und sysupgrade [abgeleitet]",
    "rampe_rezept": "devices/gl.inet-gl-e750.sh: `-factory.img` (Kernel + UBI), broken = false für diesen Bau; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet",
    "quelle": "68ac3f2cddab8422d7de0ce1a78d23edf29012e7 [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/gl.inet-gl-e750.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "uboot",
+    "taste": "Halte die Reset-Taste gedrückt und schalte den Router ein.",
+    "led_uboot": "Auf dem Display steht erst „Booting“, dann „Reset Counting 1 to 4“, dann „Please Open Web 192.168.1.1“: Jetzt loslassen.",
+    "zwischen_datei": "openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img",
+    "zwischen_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img"
+   }
   },
   {
    "gluon_name": "gl.inet-gl-xe300",
@@ -7057,7 +7092,7 @@
    "target": "ath79-nand",
    "kat": "K2",
    "familie": "glinet",
-   "weg": "U-Boot-Rescue: Reset und Power gleichzeitig halten bis LAN-LED 5x blinkt, http://192.168.1.1, factory-Image hochladen [geprüft]; Gluon baut kein factory.img -> OpenWrt-factory.img als Zwischenschritt [abgeleitet]",
+   "weg": "U-Boot-Rescue: Reset und Power gleichzeitig halten bis LAN-LED 5x blinkt, http://192.168.1.1, factory-Image hochladen [geprüft]; Gluon baut kein factory.img -> OpenWrt-factory.img als Zwischenschritt [abgeleitet]; Zwischenstufe OpenWrt 24.10.8-factory.img über den U-Boot [geprüft: OpenWrt 24.10.8 ath79/nand, Datei in sha256sums gelistet und per HEAD erreichbar, 15.10.2026]",
    "schritte": [
     "Rechner per Kabel an einen LAN-Port anschließen, alle anderen Ports frei lassen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]",
     "Am Rechner feste IP 192.168.1.2, Netzmaske 255.255.255.0 einstellen, VPN/Proxy (auch Tailscale/ZeroTier) ausschalten [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]",
@@ -7094,9 +7129,15 @@
    "rampe": "ja: dauerhafte RAMpe als NAND-factory.img für die U-Boot-Rescue statt OpenWrt-Zwischenschritt [abgeleitet]",
    "rampe_rezept": "devices/gl.inet-gl-xe300.sh: `-factory.img` (Kernel + UBI); Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet",
    "quelle": "af8a059bb41dd7afee49ce9a5d52e9a8e010bbd8 [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/gl.inet-gl-xe300.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "uboot",
+    "taste": "Drück die Reset-Taste und die Power-Taste gleichzeitig und halte beide, bis die LAN-LED 5-mal geblinkt hat. Dann beide loslassen.",
+    "led_uboot": "Bleibt die WLAN-LED an, ist der Notfall-Modus erreicht.",
+    "zwischen_datei": "openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img",
+    "zwischen_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img"
+   }
   },
   {
    "gluon_name": "netgear-wndr3700-v4",
@@ -8241,9 +8282,14 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt b9389186b012e5bd99ea6523b8220aaee6ca0085",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/gl.inet-gl-ap1300.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "uboot",
+    "uboot_datei": "factory",
+    "taste": "Drück die Reset-Taste, steck den Strom ein und halte sie etwa 10 Sekunden, bis die Power-LED schneller blinkt. Dann loslassen.",
+    "led_uboot": "Die Power-LED blinkt erst 5-mal langsam, leuchtet kurz und blinkt dann dauernd schnell."
+   }
   },
   {
    "gluon_name": "gl.inet-gl-b1300",
@@ -8288,9 +8334,14 @@
    "rampe": "nein, nicht nötig: der Bootloader nimmt das Gluon-sysupgrade",
    "rampe_rezept": "",
    "quelle": "OpenWrt 04d3308b6248ef21a6f0bc3378b342906c2d2865",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/gl.inet-gl-b1300.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "uboot",
+    "dateiname": "lede-gl-b1300.bin",
+    "taste": "Drück die Reset-Taste, steck den Strom ein und halte die Taste, bis die LEDs dauerhaft leuchten. Dann loslassen.",
+    "led_schreiben": "Beim Schreiben blinkt die WLAN-LED."
+   }
   },
   {
    "gluon_name": "linksys-ea6350v3",
@@ -11507,9 +11558,12 @@
    "rampe": "nein, nicht nötig: Hersteller-UI nimmt das Gluon-sysupgrade",
    "rampe_rezept": "",
    "quelle": "OpenWrt 12396686484a488dff1c4a1ee8b5197c552572fe",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/gl.inet-gl-mt2500.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "gl-ui",
+    "gl_url": "http://192.168.8.1"
+   }
   },
   {
    "gluon_name": "gl.inet-gl-mt3000",
@@ -11551,9 +11605,14 @@
    "rampe": "nein, nicht nötig: Hersteller-UI nimmt das Gluon-sysupgrade",
    "rampe_rezept": "",
    "quelle": "OpenWrt 7cbe34170e3d8471c1ebacde33a2372c92433be4",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/gl.inet-gl-mt3000.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "gl-ui",
+    "gl_url": "http://192.168.8.1",
+    "gl_menue": "Upgrade",
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die blaue LED 6-mal geblinkt hat und dann dauerhaft weiß leuchtet. Dann loslassen."
+   }
   },
   {
    "gluon_name": "gl.inet-gl-mt6000",
@@ -11595,9 +11654,15 @@
    "rampe": "nein, nicht nötig: Hersteller-UI nimmt das Gluon-sysupgrade",
    "rampe_rezept": "",
    "quelle": "OpenWrt fe10f9743935d6986e80e7cb082469e6bc5a03f0; gluon-patches-hardware 8dbae18666543aa9b8b5e7faa1d267024d62071e (Gluon-Zeile)",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/gl.inet-gl-mt6000.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "gl-ui",
+    "gl_url": "http://192.168.8.1",
+    "gl_menue": "Upgrade",
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die blaue LED 6-mal geblinkt hat und dann dauerhaft weiß leuchtet. Dann loslassen.",
+    "anschluss": "LAN 2, 3 oder 4 (nicht LAN 1)"
+   }
   },
   {
    "gluon_name": "mercusys-mr80x-v3",
@@ -13007,9 +13072,12 @@
    "rampe": "nein, unnötig: sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "96ee39b184a3863bba1cc42efc5bbd34495d20ff (ohne Installationstext) + Wiki toh:gl.inet",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/gl-mt300a.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "gl-ui",
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 3-mal geblinkt hat. Dann loslassen."
+   }
   },
   {
    "gluon_name": "gl-mt300n",
@@ -13050,9 +13118,12 @@
    "rampe": "nein, unnötig: sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "be53e5a154931109dd76a8015583123201c4b602 (ohne Installationstext) + Wiki toh:gl.inet",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/gl-mt300n.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "gl-ui",
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 3-mal geblinkt hat. Dann loslassen."
+   }
   },
   {
    "gluon_name": "gl-mt750",
@@ -13092,9 +13163,12 @@
    "rampe": "nein, unnötig: sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "be7962925927ab5cdc7a13fdb24d1b08792f8f23 (ohne Installationstext) + Wiki toh:gl.inet",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/gl-mt750.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "gl-ui",
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED blinkt (vermutlich 3-mal wie beim MT300A). Dann loslassen."
+   }
   },
   {
    "gluon_name": "netgear-ex3700",
@@ -14391,9 +14465,13 @@
    "rampe": "nein, unnötig: sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "d89a7f0120db42d4fae1656e1860ef49523acabb",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/gl.inet-gl-mt1300.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "uboot",
+    "taste": "Drück die Reset-Taste, steck den Strom ein und halte die Taste, bis die blaue LED 5-mal geblinkt hat und die weiße LED angeht. Dann loslassen.",
+    "led_schreiben": "Während des Schreibens blinkt die blaue LED; hört sie auf, ist das Schreiben fertig."
+   }
   },
   {
    "gluon_name": "mercusys-mr70x-v1",
@@ -16100,9 +16178,12 @@
    "rampe": "nein, unnötig",
    "rampe_rezept": "",
    "quelle": "abbfcc85259a4f6658c61e99dd3d2d3567e3eb3a",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/gl-mt300n-v2.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "uboot",
+    "taste": "Drück die Reset-Taste, steck den Strom ein und halte die Taste, bis die rote LED nach 5-maligem Blinken dauerhaft hell leuchtet. Dann loslassen."
+   }
   },
   {
    "gluon_name": "gl.inet-microuter-n300",
@@ -16145,9 +16226,15 @@
    "rampe": "nein, unnötig",
    "rampe_rezept": "",
    "quelle": "b30f2281cce6649567e0194d203f06517d173115",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/gl.inet-microuter-n300.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "gl-ui",
+    "gl_url": "http://192.168.8.1",
+    "gl_menue": "Update → Local Update",
+    "per_wlan": true,
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen."
+   }
   },
   {
    "gluon_name": "gl.inet-vixmini",
@@ -16190,9 +16277,15 @@
    "rampe": "nein, unnötig",
    "rampe_rezept": "",
    "quelle": "43e8c37cb4da64a12a3cb88a84b19db7f2fc640c",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/gl.inet-vixmini.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "weg": "gl-ui",
+    "gl_url": "http://192.168.8.1",
+    "gl_menue": "Update → Local Update",
+    "per_wlan": true,
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen."
+   }
   },
   {
    "gluon_name": "netgear-r6020",

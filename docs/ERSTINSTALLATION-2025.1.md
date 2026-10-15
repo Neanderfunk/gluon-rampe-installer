@@ -224,12 +224,12 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [devolo-wifi-pro-1750x](#devolo-wifi-pro-1750x) | devolo WiFi pro 1750x | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=cb3cd526948af3f69da1af18e035177a0a8f58e3 |
 | [enterasys-ws-ap3705i](#enterasys-ws-ap3705i) | Enterasys WS-AP3705i | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=ebddc5f984a240980303aed68524eb615484eef8 |
 | [extreme-networks-ws-ap3805i](#extreme-networks-ws-ap3805i) | Extreme Networks WS-AP3805i | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f8c87aa2d27ab405f284dd4357377ab5c893a345 |
-| [gl.inet-6416](#gl.inet-6416) | GL.iNet 6416 | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
-| [gl.inet-gl-ar150](#gl.inet-gl-ar150) | GL.iNet GL-AR150 | ath79-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
-| [gl.inet-gl-ar300m-lite](#gl.inet-gl-ar300m-lite) | GL.iNet GL-AR300M Lite | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
-| [gl.inet-gl-ar300m16](#gl.inet-gl-ar300m16) | GL.iNet GL-AR300M16 | ath79-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
-| [gl.inet-gl-ar750](#gl.inet-gl-ar750) | GL.iNet GL-AR750 | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
-| [gl.inet-gl-usb150](#gl.inet-gl-usb150) | GL.iNET GL-USB150 | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
+| [gl.inet-6416](#gl.inet-6416) | GL.iNet 6416 | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-6416.md) |
+| [gl.inet-gl-ar150](#gl.inet-gl-ar150) | GL.iNet GL-AR150 | ath79-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar150.md) |
+| [gl.inet-gl-ar300m-lite](#gl.inet-gl-ar300m-lite) | GL.iNet GL-AR300M Lite | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar300m-lite.md) |
+| [gl.inet-gl-ar300m16](#gl.inet-gl-ar300m16) | GL.iNet GL-AR300M16 | ath79-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar300m16.md) |
+| [gl.inet-gl-ar750](#gl.inet-gl-ar750) | GL.iNet GL-AR750 | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar750.md) |
+| [gl.inet-gl-usb150](#gl.inet-gl-usb150) | GL.iNET GL-USB150 | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-usb150.md) |
 | [joy-it-jt-or750i](#joy-it-jt-or750i) | Joy-IT JT-OR750i | ath79-generic | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  | https://wiki.freifunk-stuttgart.net/technik:hardware:joy-it_jt-or750i |
 | [librerouter-v1](#librerouter-v1) | Librerouter LibreRouter v1 | ath79-generic | K1d | [`sonderweg-librerouter-v1`](#familie-sonderweg-librerouter-v1) | webui-upload | nein | nein | nein |  |  |
 | [netgear-wndr3700](#netgear-wndr3700) | NETGEAR WNDR3700 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr3700.md) |
@@ -329,10 +329,10 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [mikrotik-routerboard-wap-g-5hact2hnd](#mikrotik-routerboard-wap-g-5hact2hnd) | MikroTik RouterBOARD wAP G-5HacT2HnD (wAP AC) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja |  |
 | [mikrotik-routerboard-wapr-2nd](#mikrotik-routerboard-wapr-2nd) | MikroTik RouterBOARD wAPR-2nD (wAP R) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja |  |
 | [aerohive-hiveap-121](#aerohive-hiveap-121) | Aerohive HiveAP 121 | ath79-nand | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ? | teilweise | ja |  |
-| [gl.inet-gl-ar300m-nor](#gl.inet-gl-ar300m-nor) | GL.iNet GL-AR300M NOR | ath79-nand | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
-| [gl.inet-gl-ar750s-nor](#gl.inet-gl-ar750s-nor) | GL.iNet GL-AR750S NOR | ath79-nand | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
-| [gl.inet-gl-e750](#gl.inet-gl-e750) | GL.iNet GL-E750 (broken) | ath79-nand | K2 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | ja | ja |  |
-| [gl.inet-gl-xe300](#gl.inet-gl-xe300) | GL.iNet GL-XE300 | ath79-nand | K2 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | ja | ja |  |
+| [gl.inet-gl-ar300m-nor](#gl.inet-gl-ar300m-nor) | GL.iNet GL-AR300M NOR | ath79-nand | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar300m-nor.md) |
+| [gl.inet-gl-ar750s-nor](#gl.inet-gl-ar750s-nor) | GL.iNet GL-AR750S NOR | ath79-nand | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar750s-nor.md) |
+| [gl.inet-gl-e750](#gl.inet-gl-e750) | GL.iNet GL-E750 (broken) | ath79-nand | K2 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | ja | ja | [Anleitung](../anleitungen/de/gl.inet-gl-e750.md) |
+| [gl.inet-gl-xe300](#gl.inet-gl-xe300) | GL.iNet GL-XE300 | ath79-nand | K2 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | ja | ja | [Anleitung](../anleitungen/de/gl.inet-gl-xe300.md) |
 | [netgear-wndr3700-v4](#netgear-wndr3700-v4) | NETGEAR WNDR3700 v4 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr3700-v4.md) |
 | [netgear-wndr4300](#netgear-wndr4300) | NETGEAR WNDR4300 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr4300.md) |
 | [zte-mf281](#zte-mf281) | ZTE MF281 (broken) | ath79-nand | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1e1695f959e678868bb7911d059b847f38fc9cf4 |
@@ -357,8 +357,8 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [avm-fritz-repeater-1200](#avm-fritz-repeater-1200) | AVM FRITZ!Repeater 1200 | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7f187229a8e9b7966248b1e024217e07a9fc3e50 |
 | [avm-fritz-repeater-3000](#avm-fritz-repeater-3000) | AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | teilweise | ja | - |
 | [extreme-networks-ws-ap3915i](#extreme-networks-ws-ap3915i) | Extreme Networks WS-AP3915i | ipq40xx-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | - |
-| [gl.inet-gl-ap1300](#gl.inet-gl-ap1300) | GL.iNet GL-AP1300 | ipq40xx-generic | K0 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | - |
-| [gl.inet-gl-b1300](#gl.inet-gl-b1300) | GL.iNet GL-B1300 | ipq40xx-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | - |
+| [gl.inet-gl-ap1300](#gl.inet-gl-ap1300) | GL.iNet GL-AP1300 | ipq40xx-generic | K0 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ap1300.md) |
+| [gl.inet-gl-b1300](#gl.inet-gl-b1300) | GL.iNet GL-B1300 | ipq40xx-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-b1300.md) |
 | [linksys-ea6350v3](#linksys-ea6350v3) | Linksys EA6350 v3 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-ea6350v3.md) |
 | [linksys-ea8300-dallas](#linksys-ea8300-dallas) | Linksys EA8300 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
 | [linksys-mr8300-dallas](#linksys-mr8300-dallas) | Linksys MR8300 | ipq40xx-generic | K2 | [`sonderweg-linksys-mr8300-dallas`](#familie-sonderweg-linksys-mr8300-dallas) | webui-upload | nein | nein | ja | ja | - |
@@ -421,9 +421,9 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [cudy-wr3000u-v1](#cudy-wr3000u-v1) | Cudy WR3000U v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr3000u-v1.md) |
 | [d-link-aquila-pro-ai-m30-a1](#d-link-aquila-pro-ai-m30-a1) | D-Link AQUILA PRO AI M30 A1 | mediatek-filogic | K1 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | ja | ja | [Anleitung](../anleitungen/de/d-link-aquila-pro-ai-m30-a1.md); https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/ |
 | [d-link-aquila-pro-ai-m60-a1](#d-link-aquila-pro-ai-m60-a1) | D-Link AQUILA PRO AI M60 A1 | mediatek-filogic | K1 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | ja | ja | [Anleitung](../anleitungen/de/d-link-aquila-pro-ai-m60-a1.md) |
-| [gl.inet-gl-mt2500](#gl.inet-gl-mt2500) | GL.iNet GL-MT2500 (MaxLinear-PHY) | mediatek-filogic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | - |
-| [gl.inet-gl-mt3000](#gl.inet-gl-mt3000) | GL.iNet GL-MT3000 | mediatek-filogic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | - |
-| [gl.inet-gl-mt6000](#gl.inet-gl-mt6000) | GL.iNet GL-MT6000 | mediatek-filogic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | - |
+| [gl.inet-gl-mt2500](#gl.inet-gl-mt2500) | GL.iNet GL-MT2500 (MaxLinear-PHY) | mediatek-filogic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt2500.md) |
+| [gl.inet-gl-mt3000](#gl.inet-gl-mt3000) | GL.iNet GL-MT3000 | mediatek-filogic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt3000.md) |
+| [gl.inet-gl-mt6000](#gl.inet-gl-mt6000) | GL.iNet GL-MT6000 | mediatek-filogic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt6000.md) |
 | [mercusys-mr80x-v3](#mercusys-mr80x-v3) | Mercusys MR80X v3 | mediatek-filogic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise | ja |  |
 | [mercusys-mr90x-v1](#mercusys-mr90x-v1) | Mercusys MR90X v1 | mediatek-filogic | K2 | [`sonderweg-mercusys-mr90x-v1`](#familie-sonderweg-mercusys-mr90x-v1) | ssh | nein | nein | teilweise | ja | https://openwrt.org/toh/mercusys/mr90x_v1#installation_stock_bootloader |
 | [netgear-wax220](#netgear-wax220) | NETGEAR WAX220 | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wax220.md); https://openwrt.org/toh/netgear/wax220#oem_easy_installation |
@@ -453,9 +453,9 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [tp-link-eap620-hd-v1](#tp-link-eap620-hd-v1) | TP-Link EAP620 HD v1 | qualcommax-ipq807x | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | - |
 | [xiaomi-ax3600](#xiaomi-ax3600) | Xiaomi AX3600 | qualcommax-ipq807x | K2 | [`sonderweg-xiaomi-ax3600`](#familie-sonderweg-xiaomi-ax3600) | ssh | nein | nein | teilweise | ja | - |
 | [asus-rt-ac51u](#asus-rt-ac51u) | ASUS RT-AC51U | ramips-mt7620 | K1d | [`asus-firmware-restoration`](#familie-asus-firmware-restoration) | tftp-server-am-geraet | nein | nein | nein |  | https://openwrt.org/toh/asus/rt-ac51u#installation |
-| [gl-mt300a](#gl-mt300a) | GL.iNet GL-MT300A | ramips-mt7620 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
-| [gl-mt300n](#gl-mt300n) | GL.iNet GL-MT300N (v1) | ramips-mt7620 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
-| [gl-mt750](#gl-mt750) | GL.iNet GL-MT750 | ramips-mt7620 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
+| [gl-mt300a](#gl-mt300a) | GL.iNet GL-MT300A | ramips-mt7620 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl-mt300a.md) |
+| [gl-mt300n](#gl-mt300n) | GL.iNet GL-MT300N (v1) | ramips-mt7620 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl-mt300n.md) |
+| [gl-mt750](#gl-mt750) | GL.iNet GL-MT750 | ramips-mt7620 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl-mt750.md) |
 | [netgear-ex3700](#netgear-ex3700) | NETGEAR EX3700/EX3800 (Alias netgear-ex3800) | ramips-mt7620 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-wi-fi-range-extender-ex3700/ |
 | [netgear-ex6130](#netgear-ex6130) | NETGEAR EX6130 | ramips-mt7620 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  |  |
 | [nexx-wt3020-8m](#nexx-wt3020-8m) | Nexx WT3020 8M (Aliase WT3020AD/F/H) | ramips-mt7620 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/nexx-wt3020-8m.md) |
@@ -479,7 +479,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [d-link-dir-878-a1](#d-link-dir-878-a1) | D-Link DIR-878 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dir-878-a1.md); https://openwrt.org/toh/d-link/dir-878_a1#installation |
 | [d-link-dir-882-a1](#d-link-dir-882-a1) | D-Link DIR-882 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dir-882-a1.md); https://openwrt.org/toh/d-link/dir-882_a1#installation |
 | [genexis-pulse-ex400](#genexis-pulse-ex400) | Genexis/Inteno Pulse EX400 | ramips-mt7621 | K1 | [`sonderweg-genexis-pulse-ex400`](#familie-sonderweg-genexis-pulse-ex400) | webui-upload | nein | nein | ja | ja | https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400 |
-| [gl.inet-gl-mt1300](#gl.inet-gl-mt1300) | GL.iNet GL-MT1300 (Beryl) | ramips-mt7621 | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
+| [gl.inet-gl-mt1300](#gl.inet-gl-mt1300) | GL.iNet GL-MT1300 (Beryl) | ramips-mt7621 | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt1300.md) |
 | [mercusys-mr70x-v1](#mercusys-mr70x-v1) | Mercusys MR70X v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/mercusys-mr70x-v1.md) |
 | [mikrotik-routerboard-750gr3](#mikrotik-routerboard-750gr3) | MikroTik hEX RB750Gr3 (Alias mikrotik-routerboard-hex-v3) | ramips-mt7621 | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja | https://openwrt.org/toh/mikrotik/common |
 | [netgear-eax12](#netgear-eax12) | NETGEAR EAX12 (Aliase EAX11 v2, EAX15 v2) | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  |  |
@@ -514,9 +514,9 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [zyxel-wsm20](#zyxel-wsm20) | ZyXEL WSM20 (Multy M1) | ramips-mt7621 | K1 | [`sonderweg-zyxel-wsm20`](#familie-sonderweg-zyxel-wsm20) | webui-upload | nein | nein | ja | ja | https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/ |
 | [cudy-tr1200-v1](#cudy-tr1200-v1) | Cudy TR1200 v1 | ramips-mt76x8 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-tr1200-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
 | [cudy-wr1000](#cudy-wr1000) | Cudy WR1000 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr1000.md) |
-| [gl-mt300n-v2](#gl-mt300n-v2) | GL.iNet GL-MT300N v2 | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
-| [gl.inet-microuter-n300](#gl.inet-microuter-n300) | GL.iNet microuter-N300 | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
-| [gl.inet-vixmini](#gl.inet-vixmini) | GL.iNet VIXMINI | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
+| [gl-mt300n-v2](#gl-mt300n-v2) | GL.iNet GL-MT300N v2 | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl-mt300n-v2.md) |
+| [gl.inet-microuter-n300](#gl.inet-microuter-n300) | GL.iNet microuter-N300 | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-microuter-n300.md) |
+| [gl.inet-vixmini](#gl.inet-vixmini) | GL.iNet VIXMINI | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-vixmini.md) |
 | [netgear-r6020](#netgear-r6020) | NETGEAR R6020 | ramips-mt76x8 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  |  |
 | [netgear-r6120](#netgear-r6120) | NETGEAR R6120 | ramips-mt76x8 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-r6120/ |
 | [ravpower-rp-wd009](#ravpower-rp-wd009) | RAVPower RP-WD009 | ramips-mt76x8 | K0 | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  | https://openwrt.org/toh/ravpower/rp-wd009#oem_installation_using_the_tftp_method |
@@ -3768,6 +3768,8 @@ GL.iNet 6416 · ath79-generic · K1d
 - **Notweg:** [einfacher, schlechter belegt] Gluon-sysupgrade über die Stock-GUI hochladen [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade geht direkt
 - **Quelle (OpenWrt-Commit):** b4d3110ac1f1f1962f812ac139c437837a448cff [geprüft]
+- **Detail-Anleitung:** anleitungen/de/gl.inet-6416.md
+- **Werte für die Anleitung:** weg = uboot; taste = Strom ab, Reset-Taste halten, Strom wieder an. Die LED blinkt einige Male grün, dann ganz kurz rot: beim roten Blinken loslassen.
 
 #### gl.inet-gl-ar150
 
@@ -3801,6 +3803,8 @@ GL.iNet GL-AR150 · ath79-generic · K1d
 - **Notweg:** [Alternative] Stock-GUI mit sysupgrade [abgeleitet: Wiki, Stock ist GL.iNet-OpenWrt]
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade geht direkt [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target, ohne Anleitung) [abgeleitet]
+- **Detail-Anleitung:** anleitungen/de/gl.inet-gl-ar150.md
+- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die rote LED 5-mal geblinkt hat; beim 6. Blinken loslassen.; led_uboot = Leuchtet nur noch die linke grüne LED, ist der Notfall-Modus erreicht.; led_schreiben = Gehen alle LEDs aus, ist das Schreiben fertig.
 
 #### gl.inet-gl-ar300m-lite
 
@@ -3829,6 +3833,8 @@ GL.iNet GL-AR300M Lite · ath79-generic · K1d
 - **Notweg:** [Notfall] U-Boot-Weboberfläche: Reset-Taste fest drücken und gleichzeitig Strom einstecken, gedrückt halten bis das LED-Muster wechselt, dann loslassen; Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus; etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; LED blinkt 5x [abgeleitet: GL-Doku-Eintrag 'GL-AR300M (Shadow)'] [abgeleitet: GL-Doku AR300M]
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade geht direkt
 - **Quelle (OpenWrt-Commit):** fefa34def84561688e6af2feeec2dbb390ba4486 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/gl.inet-gl-ar300m-lite.md
+- **Werte für die Anleitung:** weg = gl-ui; gl_menue = Advanced; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.
 
 #### gl.inet-gl-ar300m16
 
@@ -3864,6 +3870,8 @@ GL.iNet GL-AR300M16 · ath79-generic · K1d
 - **Notweg:** [Alternative] aus der NOR-Stock-Firmware per ssh `sysupgrade --force` [geprüft: Commit b591cab]
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade geht direkt
 - **Quelle (OpenWrt-Commit):** b591cabd3989b44cfaf15248af9e55a0300a9c0a [geprüft]
+- **Detail-Anleitung:** anleitungen/de/gl.inet-gl-ar300m16.md
+- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.
 
 #### gl.inet-gl-ar750
 
@@ -3891,6 +3899,8 @@ GL.iNet GL-AR750 · ath79-generic · K1d
 - **Notweg:** [Notfall] U-Boot-Weboberfläche: Reset-Taste fest drücken und gleichzeitig Strom einstecken, gedrückt halten bis das LED-Muster wechselt, dann loslassen; Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus; etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; LED blinkt 5x [geprüft: GL-Doku 'GL-AR750 (Creta)'] [geprüft: GL-Doku]
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade geht direkt
 - **Quelle (OpenWrt-Commit):** 921675a2d148330a7ec44f10ea4d583b8d7b5a44 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/gl.inet-gl-ar750.md
+- **Werte für die Anleitung:** weg = gl-ui; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.
 
 #### gl.inet-gl-usb150
 
@@ -3918,6 +3928,8 @@ GL.iNET GL-USB150 · ath79-generic · K1d
 - **Notweg:** [Notfall] U-Boot: Reset halten beim Einstecken, LED blinkt 5x [abgeleitet: GL-Doku 'GL-USB150 (Microuter): The LED flashes 5 times', Handhabung beim USB-Stick abgeleitet]
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade geht direkt
 - **Quelle (OpenWrt-Commit):** a1b5a43fc4b0edda5bbbb4eb0130ba9160dc515b [geprüft]
+- **Detail-Anleitung:** anleitungen/de/gl.inet-gl-usb150.md
+- **Werte für die Anleitung:** weg = gl-ui; usb = True
 
 #### gl.inet-gl-ar300m-nor
 
@@ -3952,6 +3964,8 @@ GL.iNet GL-AR300M NOR · ath79-nand · K1d
 - **Dauer:** etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade (NOR) geht direkt
 - **Quelle (OpenWrt-Commit):** 55e6c903ae20bd8e694f4626166766e59602f87c (NOR/NAND-Aufteilung, Anleitung); 6e78d546d1197d7a3ec4cbc7aab22286ad49fb0f (Umbenennung) [geprüft]
+- **Detail-Anleitung:** anleitungen/de/gl.inet-gl-ar300m-nor.md
+- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.
 
 #### gl.inet-gl-ar750s-nor
 
@@ -3986,12 +4000,14 @@ GL.iNet GL-AR750S NOR · ath79-nand · K1d
 - **Dauer:** etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade (NOR) geht direkt
 - **Quelle (OpenWrt-Commit):** af28d8a539fe64bfc893f798fdbbc49b4e78352a (Einführung, Anleitung); b496a2294c6e663a2dcbf08d714443e758d1269d (NOR/NAND) [geprüft]
+- **Detail-Anleitung:** anleitungen/de/gl.inet-gl-ar750s-nor.md
+- **Werte für die Anleitung:** weg = uboot; taste = Strom ab, Reset-Taste halten, Strom wieder an und halten, bis die rechte LED 5-mal geblinkt hat. Dann loslassen.; uboot_abschnitt = im Abschnitt „NOR flash“ mit „update nor firmware“; kabel_ziehen = True
 
 #### gl.inet-gl-e750
 
 GL.iNet GL-E750 (broken) · ath79-nand · K2
 
-- **Weg ab Werk:** Mit GL-Firmware 3.100 nur über den U-Boot (GL.iNet-Debrick-Anleitung), weil deren sysupgrade den größeren Kernel zerstört [geprüft]; Gluon baut kein factory.img, OpenWrt schon
+- **Weg ab Werk:** Mit GL-Firmware 3.100 nur über den U-Boot (GL.iNet-Debrick-Anleitung), weil deren sysupgrade den größeren Kernel zerstört [geprüft]; Gluon baut kein factory.img, OpenWrt schon; Zwischenstufe OpenWrt 24.10.8-factory.img über den U-Boot [geprüft: OpenWrt 24.10.8 ath79/nand, Datei in sha256sums gelistet und per HEAD erreichbar, 15.10.2026]
 - **Schritte (Normalweg):**
   1. Rechner per Kabel an einen LAN-Port anschließen, alle anderen Ports frei lassen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
   2. Am Rechner feste IP 192.168.1.2, Netzmaske 255.255.255.0 einstellen, VPN/Proxy (auch Tailscale/ZeroTier) ausschalten [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
@@ -4020,12 +4036,14 @@ GL.iNet GL-E750 (broken) · ath79-nand · K2
 - **Gluon-RAMpe passt:** ja: dauerhafte RAMpe als NAND-factory.img für die U-Boot-Web-Oberfläche statt OpenWrt-Zwischenschritt, danach Config-Mode der RAMpe und sysupgrade [abgeleitet]
 - **Gluon-RAMpe-Rezept:** devices/gl.inet-gl-e750.sh: `-factory.img` (Kernel + UBI), broken = false für diesen Bau; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** 68ac3f2cddab8422d7de0ce1a78d23edf29012e7 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/gl.inet-gl-e750.md
+- **Werte für die Anleitung:** weg = uboot; taste = Halte die Reset-Taste gedrückt und schalte den Router ein.; led_uboot = Auf dem Display steht erst „Booting“, dann „Reset Counting 1 to 4“, dann „Please Open Web 192.168.1.1“: Jetzt loslassen.; zwischen_datei = openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img
 
 #### gl.inet-gl-xe300
 
 GL.iNet GL-XE300 · ath79-nand · K2
 
-- **Weg ab Werk:** U-Boot-Rescue: Reset und Power gleichzeitig halten bis LAN-LED 5x blinkt, http://192.168.1.1, factory-Image hochladen [geprüft]; Gluon baut kein factory.img -> OpenWrt-factory.img als Zwischenschritt [abgeleitet]
+- **Weg ab Werk:** U-Boot-Rescue: Reset und Power gleichzeitig halten bis LAN-LED 5x blinkt, http://192.168.1.1, factory-Image hochladen [geprüft]; Gluon baut kein factory.img -> OpenWrt-factory.img als Zwischenschritt [abgeleitet]; Zwischenstufe OpenWrt 24.10.8-factory.img über den U-Boot [geprüft: OpenWrt 24.10.8 ath79/nand, Datei in sha256sums gelistet und per HEAD erreichbar, 15.10.2026]
 - **Schritte (Normalweg):**
   1. Rechner per Kabel an einen LAN-Port anschließen, alle anderen Ports frei lassen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
   2. Am Rechner feste IP 192.168.1.2, Netzmaske 255.255.255.0 einstellen, VPN/Proxy (auch Tailscale/ZeroTier) ausschalten [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
@@ -4054,6 +4072,8 @@ GL.iNet GL-XE300 · ath79-nand · K2
 - **Gluon-RAMpe passt:** ja: dauerhafte RAMpe als NAND-factory.img für die U-Boot-Rescue statt OpenWrt-Zwischenschritt [abgeleitet]
 - **Gluon-RAMpe-Rezept:** devices/gl.inet-gl-xe300.sh: `-factory.img` (Kernel + UBI); Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** af8a059bb41dd7afee49ce9a5d52e9a8e010bbd8 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/gl.inet-gl-xe300.md
+- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste und die Power-Taste gleichzeitig und halte beide, bis die LAN-LED 5-mal geblinkt hat. Dann beide loslassen.; led_uboot = Bleibt die WLAN-LED an, ist der Notfall-Modus erreicht.; zwischen_datei = openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img
 
 #### gl.inet-gl-ap1300
 
@@ -4086,7 +4106,8 @@ GL.iNet GL-AP1300 · ipq40xx-generic · K0
 - **Notweg:** [Notfall] U-Boot-TFTP `run lf`, nur mit serieller Konsole [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt b9389186b012e5bd99ea6523b8220aaee6ca0085
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/gl.inet-gl-ap1300.md
+- **Werte für die Anleitung:** weg = uboot; uboot_datei = factory; taste = Drück die Reset-Taste, steck den Strom ein und halte sie etwa 10 Sekunden, bis die Power-LED schneller blinkt. Dann loslassen.; led_uboot = Die Power-LED blinkt erst 5-mal langsam, leuchtet kurz und blinkt dann dauernd schnell.
 
 #### gl.inet-gl-b1300
 
@@ -4120,7 +4141,8 @@ GL.iNet GL-B1300 · ipq40xx-generic · K1d
 - **Notweg:** [Notfall] TFTP: liegt die Datei `lede-gl-b1300.bin` auf einem TFTP-Server 192.168.1.2, holt der U-Boot sie selbst [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein, nicht nötig: der Bootloader nimmt das Gluon-sysupgrade
 - **Quelle (OpenWrt-Commit):** OpenWrt 04d3308b6248ef21a6f0bc3378b342906c2d2865
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/gl.inet-gl-b1300.md
+- **Werte für die Anleitung:** weg = uboot; dateiname = lede-gl-b1300.bin; taste = Drück die Reset-Taste, steck den Strom ein und halte die Taste, bis die LEDs dauerhaft leuchten. Dann loslassen.; led_schreiben = Beim Schreiben blinkt die WLAN-LED.
 
 #### gl.inet-gl-mt2500
 
@@ -4149,7 +4171,8 @@ GL.iNet GL-MT2500 (MaxLinear-PHY) · mediatek-filogic · K1d
 - **Notweg:** [Notfall] U-Boot: Reset-Taste fest drücken und gleichzeitig Strom einstecken, gedrückt halten bis das LED-Muster wechselt, dann loslassen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; Power-LED blinkt 5x blau, dann dauerhaft weiß [geprüft: GL-Doku 'GL-MT2500/GL-MT2500A'] [geprüft: GL-Doku]; laut Commit nimmt der Hersteller-U-Boot aber keine Images an [geprüft: Commit 1239668]
 - **Gluon-RAMpe passt:** nein, nicht nötig: Hersteller-UI nimmt das Gluon-sysupgrade
 - **Quelle (OpenWrt-Commit):** OpenWrt 12396686484a488dff1c4a1ee8b5197c552572fe
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/gl.inet-gl-mt2500.md
+- **Werte für die Anleitung:** weg = gl-ui; gl_url = http://192.168.8.1
 
 #### gl.inet-gl-mt3000
 
@@ -4177,7 +4200,8 @@ GL.iNet GL-MT3000 · mediatek-filogic · K1d
 - **Notweg:** [Notfall] U-Boot-Weboberfläche: Reset-Taste fest drücken und gleichzeitig Strom einstecken, gedrückt halten bis das LED-Muster wechselt, dann loslassen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; blaue LED blinkt 6x, dann dauerhaft weiß [geprüft: GL-Doku 'GL-MT3000 (Beryl AX)'] [geprüft: GL-Doku]; Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus; etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein, nicht nötig: Hersteller-UI nimmt das Gluon-sysupgrade
 - **Quelle (OpenWrt-Commit):** OpenWrt 7cbe34170e3d8471c1ebacde33a2372c92433be4
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/gl.inet-gl-mt3000.md
+- **Werte für die Anleitung:** weg = gl-ui; gl_url = http://192.168.8.1; gl_menue = Upgrade; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die blaue LED 6-mal geblinkt hat und dann dauerhaft weiß leuchtet. Dann loslassen.
 
 #### gl.inet-gl-mt6000
 
@@ -4207,7 +4231,8 @@ GL.iNet GL-MT6000 · mediatek-filogic · K1d
 - **Rückweg zur Herstellerfirmware:** GL.iNet-sysupgrade ohne Einstellungen aufspielen (OEM-Firmware ist ein OpenWrt-Fork) [abgeleitet: Wiki toh/gl.inet/gl-mt6000]
 - **Gluon-RAMpe passt:** nein, nicht nötig: Hersteller-UI nimmt das Gluon-sysupgrade
 - **Quelle (OpenWrt-Commit):** OpenWrt fe10f9743935d6986e80e7cb082469e6bc5a03f0; gluon-patches-hardware 8dbae18666543aa9b8b5e7faa1d267024d62071e (Gluon-Zeile)
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/gl.inet-gl-mt6000.md
+- **Werte für die Anleitung:** weg = gl-ui; gl_url = http://192.168.8.1; gl_menue = Upgrade; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die blaue LED 6-mal geblinkt hat und dann dauerhaft weiß leuchtet. Dann loslassen.; anschluss = LAN 2, 3 oder 4 (nicht LAN 1)
 
 #### gl-mt300a
 
@@ -4232,6 +4257,8 @@ GL.iNet GL-MT300A · ramips-mt7620 · K1d
 - **Notweg:** [Notfall] U-Boot-Web: Reset beim Einstecken mind. 3 s halten [abgeleitet: Wiki, Commit ohne Installationstext]; Reset-Taste fest drücken und gleichzeitig Strom einstecken, gedrückt halten bis das LED-Muster wechselt, dann loslassen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; loslassen nach 3x Blinken [geprüft: GL-Doku 'GL-MT300N and GL-MT300A: The LED flashes 3 times']; LED blinkt 3x = U-Boot-Weboberfläche erreicht [geprüft: GL-Doku], Fertig-Zeichen in keiner Quelle; Gerät 192.168.1.1, Rechner 192.168.1.2/24; Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus; etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein, unnötig: sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** 96ee39b184a3863bba1cc42efc5bbd34495d20ff (ohne Installationstext) + Wiki toh:gl.inet
+- **Detail-Anleitung:** anleitungen/de/gl-mt300a.md
+- **Werte für die Anleitung:** weg = gl-ui; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 3-mal geblinkt hat. Dann loslassen.
 
 #### gl-mt300n
 
@@ -4258,6 +4285,8 @@ GL.iNet GL-MT300N (v1) · ramips-mt7620 · K1d
 - **Notweg:** [Notfall] U-Boot-Web: Reset beim Einstecken mind. 3 s halten [abgeleitet: Wiki, Commit ohne Installationstext]; Reset-Taste fest drücken und gleichzeitig Strom einstecken, gedrückt halten bis das LED-Muster wechselt, dann loslassen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; loslassen nach 3x Blinken [geprüft: GL-Doku 'GL-MT300N and GL-MT300A: The LED flashes 3 times']; LED blinkt 3x = U-Boot-Weboberfläche erreicht [geprüft: GL-Doku], Fertig-Zeichen in keiner Quelle; Gerät 192.168.1.1, Rechner 192.168.1.2/24; Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus; etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein, unnötig: sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** be53e5a154931109dd76a8015583123201c4b602 (ohne Installationstext) + Wiki toh:gl.inet
+- **Detail-Anleitung:** anleitungen/de/gl-mt300n.md
+- **Werte für die Anleitung:** weg = gl-ui; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 3-mal geblinkt hat. Dann loslassen.
 
 #### gl-mt750
 
@@ -4281,6 +4310,8 @@ GL.iNet GL-MT750 · ramips-mt7620 · K1d
 - **Notweg:** [Notfall] U-Boot-Web: Reset beim Einstecken mind. 3 s halten [abgeleitet: Wiki, Commit ohne Installationstext]; Reset-Taste beim Einstecken des Stroms halten, bis die LED blinkt (vermutlich 3x wie GL-MT300A/MT300N, selbe Baureihe) [abgeleitet: GL-Doku nennt das MT750 nicht, Wiki ohne Anleitung]; Gerät 192.168.1.1, Rechner 192.168.1.2/24; Rechner per Kabel an einen LAN-Port, alle anderen Ports frei; feste IP 192.168.1.2, Netzmaske 255.255.255.0; Browser auf http://192.168.1.1; VPN/Proxy (auch Tailscale/ZeroTier) aus; etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; Wiki-Tipp gegen Browser-Cache: http://192.168.1.1/index.html?index [abgeleitet: Wiki toh/gl.inet/gl-mt750]
 - **Gluon-RAMpe passt:** nein, unnötig: sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** be7962925927ab5cdc7a13fdb24d1b08792f8f23 (ohne Installationstext) + Wiki toh:gl.inet
+- **Detail-Anleitung:** anleitungen/de/gl-mt750.md
+- **Werte für die Anleitung:** weg = gl-ui; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED blinkt (vermutlich 3-mal wie beim MT300A). Dann loslassen.
 
 #### gl.inet-gl-mt1300
 
@@ -4313,6 +4344,8 @@ GL.iNet GL-MT1300 (Beryl) · ramips-mt7621 · K1d
 - **Dauer:** etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; währenddessen blinkt die blaue LED [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein, unnötig: sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** d89a7f0120db42d4fae1656e1860ef49523acabb
+- **Detail-Anleitung:** anleitungen/de/gl.inet-gl-mt1300.md
+- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste, steck den Strom ein und halte die Taste, bis die blaue LED 5-mal geblinkt hat und die weiße LED angeht. Dann loslassen.; led_schreiben = Während des Schreibens blinkt die blaue LED; hört sie auf, ist das Schreiben fertig.
 
 #### gl-mt300n-v2
 
@@ -4347,6 +4380,8 @@ GL.iNet GL-MT300N v2 · ramips-mt76x8 · K1d
 - **Notweg:** [einfacher, schlechter belegt] Stock (GL.iNet-LEDE) nimmt das sysupgrade auch in LuCI, Einstellungen nicht behalten [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein, unnötig
 - **Quelle (OpenWrt-Commit):** abbfcc85259a4f6658c61e99dd3d2d3567e3eb3a
+- **Detail-Anleitung:** anleitungen/de/gl-mt300n-v2.md
+- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste, steck den Strom ein und halte die Taste, bis die rote LED nach 5-maligem Blinken dauerhaft hell leuchtet. Dann loslassen.
 
 #### gl.inet-microuter-n300
 
@@ -4377,6 +4412,8 @@ GL.iNet microuter-N300 · ramips-mt76x8 · K1d
 - **Notweg:** [Notfall] U-Boot-Web: Reset halten und einschalten, LED blinkt 5x [geprüft: Commit b30f228, GL-Doku 'microuter-N300: 5 times'] [geprüft: Commit, GL-Doku]; feste IPv4 aus 192.168.1.0/24, sysupgrade an http://192.168.1.1 [geprüft: Commit]; etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein, unnötig
 - **Quelle (OpenWrt-Commit):** b30f2281cce6649567e0194d203f06517d173115
+- **Detail-Anleitung:** anleitungen/de/gl.inet-microuter-n300.md
+- **Werte für die Anleitung:** weg = gl-ui; gl_url = http://192.168.8.1; gl_menue = Update → Local Update; per_wlan = True; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.
 
 #### gl.inet-vixmini
 
@@ -4407,6 +4444,8 @@ GL.iNet VIXMINI · ramips-mt76x8 · K1d
 - **Notweg:** [Notfall] U-Boot-Web: Reset halten und einschalten, LED blinkt 5x [geprüft: Commit 43e8c37]; feste IPv4 aus 192.168.1.0/24, sysupgrade an http://192.168.1.1 [geprüft: Commit]; etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
 - **Gluon-RAMpe passt:** nein, unnötig
 - **Quelle (OpenWrt-Commit):** 43e8c37cb4da64a12a3cb88a84b19db7f2fc640c
+- **Detail-Anleitung:** anleitungen/de/gl.inet-vixmini.md
+- **Werte für die Anleitung:** weg = gl-ui; gl_url = http://192.168.8.1; gl_menue = Update → Local Update; per_wlan = True; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.
 
 ### Familie `image-auf-datentraeger`
 
