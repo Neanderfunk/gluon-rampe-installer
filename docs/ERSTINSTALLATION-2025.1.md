@@ -222,8 +222,8 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [devolo-wifi-pro-1750e](#devolo-wifi-pro-1750e) | devolo WiFi pro 1750e | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/devolo-wifi-pro-1750e.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1c2f7b511514d43d8a826b26e09817b2750a2bf4 |
 | [devolo-wifi-pro-1750i](#devolo-wifi-pro-1750i) | devolo WiFi pro 1750i | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/devolo-wifi-pro-1750i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=8d68be8057d6c689025cc236d20b96b77a6ccf30 |
 | [devolo-wifi-pro-1750x](#devolo-wifi-pro-1750x) | devolo WiFi pro 1750x | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/devolo-wifi-pro-1750x.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=cb3cd526948af3f69da1af18e035177a0a8f58e3 |
-| [enterasys-ws-ap3705i](#enterasys-ws-ap3705i) | Enterasys WS-AP3705i | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=ebddc5f984a240980303aed68524eb615484eef8 |
-| [extreme-networks-ws-ap3805i](#extreme-networks-ws-ap3805i) | Extreme Networks WS-AP3805i | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f8c87aa2d27ab405f284dd4357377ab5c893a345 |
+| [enterasys-ws-ap3705i](#enterasys-ws-ap3705i) | Enterasys WS-AP3705i | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/enterasys-ws-ap3705i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=ebddc5f984a240980303aed68524eb615484eef8 |
+| [extreme-networks-ws-ap3805i](#extreme-networks-ws-ap3805i) | Extreme Networks WS-AP3805i | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | [Anleitung](../anleitungen/de/extreme-networks-ws-ap3805i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f8c87aa2d27ab405f284dd4357377ab5c893a345 |
 | [gl.inet-6416](#gl.inet-6416) | GL.iNet 6416 | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-6416.md) |
 | [gl.inet-gl-ar150](#gl.inet-gl-ar150) | GL.iNet GL-AR150 | ath79-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar150.md) |
 | [gl.inet-gl-ar300m-lite](#gl.inet-gl-ar300m-lite) | GL.iNet GL-AR300M Lite | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar300m-lite.md) |
@@ -441,11 +441,11 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [ubiquiti-unifi-6-lr-v2](#ubiquiti-unifi-6-lr-v2) | Ubiquiti UniFi 6 LR v2 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-lr-v2.md); https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
 | [ubiquiti-unifi-6-lr-v3](#ubiquiti-unifi-6-lr-v3) | Ubiquiti UniFi 6 LR v3 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-lr-v3.md); https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
 | [xiaomi-redmi-router-ax6s](#xiaomi-redmi-router-ax6s) | Xiaomi Redmi Router AX6S / AX3200 | mediatek-mt7622 | K0+ | [`sonderweg-xiaomi-redmi-router-ax6s`](#familie-sonderweg-xiaomi-redmi-router-ax6s) | webui-upload | nein | nein | nein |  | - |
-| [enterasys-ws-ap3715i](#enterasys-ws-ap3715i) | Enterasys WS-AP3715i | mpc85xx-p1010 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b |
+| [enterasys-ws-ap3715i](#enterasys-ws-ap3715i) | Enterasys WS-AP3715i | mpc85xx-p1010 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/enterasys-ws-ap3715i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b |
 | [sophos-red-15w-rev.1](#sophos-red-15w-rev.1) | Sophos RED 15w Rev. 1 | mpc85xx-p1010 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja |  |
 | [tp-link-tl-wdr4900-v1](#tp-link-tl-wdr4900-v1) | TP-Link TL-WDR4900 v1 | mpc85xx-p1010 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wdr4900-v1.md) |
 | [aerohive-hiveap-330](#aerohive-hiveap-330) | Aerohive HiveAP 330 | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja |  |
-| [enterasys-ws-ap3710i](#enterasys-ws-ap3710i) | Enterasys WS-AP3710i | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=16b01fb1b9c99513c318109bef96a1a3545c57a0 |
+| [enterasys-ws-ap3710i](#enterasys-ws-ap3710i) | Enterasys WS-AP3710i | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/enterasys-ws-ap3710i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=16b01fb1b9c99513c318109bef96a1a3545c57a0 |
 | [extreme-networks-ws-ap3825i](#extreme-networks-ws-ap3825i) | Extreme Networks WS-AP3825i | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | vermutlich | ja | [Anleitung](../anleitungen/de/extreme-networks-ws-ap3825i.md); https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923 |
 | [hewlett-packard-msm460](#hewlett-packard-msm460) | HPE MSM460 | mpc85xx-p1020 | K5 | [`sonderweg-hewlett-packard-msm460`](#familie-sonderweg-hewlett-packard-msm460) | tftp-server-am-geraet | nein | nein | nein |  | https://github.com/blocktrron/msm460-flashing?tab=readme-ov-file |
 | [ocedo-panda](#ocedo-panda) | OCEDO Panda | mpc85xx-p1020 | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | teilweise | ja |  |
@@ -8864,7 +8864,7 @@ Enterasys WS-AP3705i · ath79-generic · K4
 - **Übertragung:** tftp-client am U-Boot: Server 192.168.1.66/24, Datei 1401A8C0.img
 - **Anschluss:** Cisco-Konsolenkabel am RJ45 auf der Rückseite [geprüft: Commit]; Netzwerkkabel zum TFTP-Server [geprüft]
 - **Adressen:** TFTP-Server mit fester IP 192.168.1.66/24; Geräte-IP 192.168.1.20 (1401A8C0 in Hex) [geprüft: Commit; Hex-Deutung abgeleitet]
-- **Programm:** Serielles Terminal, TFTP-Server [geprüft: Commit]
+- **Programm:** Serielles Terminal, TFTP-Server [geprüft: Commit]; Bootloader-Befehle wörtlich (Zeilenumbrüche des Commit-Texts zusammengezogen), Dateiname 1401A8C0.img, TFTP-Server 192.168.1.66, admin/new2day [geprüft: OpenWrt-Commit ebddc5f, am 15.10.2026 nachgelesen]
 - **Zugang:** 115200 8N1 [geprüft: Commit]. Strom anlegen und sofort im Terminal eine Taste drücken, wenn zur Unterbrechung aufgefordert wird (bootdelay nur 1 s); Login admin/new2day [geprüft: Commit ebddc5f]
 - **Datei:** OpenWrt-initramfs genau als `1401A8C0.img`: ramboot_openwrt ruft `tftpboot` ohne Dateinamen auf, U-Boot holt dann den Standardnamen aus der Geräte-IP in Hex (1401A8C0 = 192.168.1.20), der Name ist also zwingend [geprüft: Commit; Hex-Deutung abgeleitet]. Danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** ja
@@ -8877,7 +8877,12 @@ Enterasys WS-AP3705i · ath79-generic · K4
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als 1401A8C0.img statt OpenWrt-initramfs, Upload-Seite statt scp; seriell bleibt
 - **Gluon-RAMpe-Rezept:** devices/enterasys-ws-ap3705i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `1401A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell
 - **Quelle (OpenWrt-Commit):** ebddc5f984a240980303aed68524eb615484eef8 [geprüft]
-- **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=ebddc5f984a240980303aed68524eb615484eef8
+- **Detail-Anleitung:** anleitungen/de/enterasys-ws-ap3705i.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=ebddc5f984a240980303aed68524eb615484eef8
+- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ath79-generic-enterasys_ws-ap3705i-initramfs-kernel.bin; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-enterasys_ws-ap3705i-initramfs-kernel.bin; tftp_name = 1401A8C0.img; server_ip = 192.168.1.66; konsole = rj45; anhalten = Sobald die Aufforderung erscheint, brich den Start mit Enter ab; dafür ist nur eine Sekunde Zeit, drück am besten schon beim Einschalten immer wieder Enter.; befehle = setenv boot_openwrt 'setenv bootargs; bootm 0xbf230000'
+setenv ramboot_openwrt 'setenv serverip 192.168.1.66; tftpboot 0x85000000; bootm'
+setenv bootcmd 'run boot_openwrt'
+saveenv
+run ramboot_openwrt; baud = 115200; login = admin / new2day; sicherheit = quelle
 
 #### extreme-networks-ws-ap3805i
 
@@ -8896,7 +8901,7 @@ Extreme Networks WS-AP3805i · ath79-generic · K4
 - **Übertragung:** tftp-client am U-Boot: Server 192.168.1.66/24, Datei 1D01A8C0.img
 - **Anschluss:** Gehäuse öffnen, USB-TTL 3,3 V an UART-Pins J10: 3.3V - GND - TX - RX, das Pfeil-Pad ist 3,3 V (nicht anschließen [abgeleitet]) [geprüft: Commit]; Netzwerkkabel zum TFTP-Server [geprüft]
 - **Adressen:** TFTP-Server mit fester IP 192.168.1.66/24 [geprüft: Commit]
-- **Programm:** Serielles Terminal, TFTP-Server [geprüft: Commit]
+- **Programm:** Serielles Terminal, TFTP-Server [geprüft: Commit]; Bootloader-Befehle wörtlich (Zeilenumbrüche des Commit-Texts zusammengezogen), Dateiname 1D01A8C0.img, TFTP-Server 192.168.1.66, admin/new2day [geprüft: OpenWrt-Commit f8c87aa, am 15.10.2026 nachgelesen]
 - **Zugang:** 115200 8N1 [geprüft: Commit]. Strom anlegen und bei Aufforderung den Boot unterbrechen; Login admin/new2day [geprüft: Commit f8c87aa]
 - **Datei:** OpenWrt-initramfs als `1D01A8C0.img` (steht im Befehl; Name so übernehmen) [geprüft: Commit]. Danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** ja
@@ -8909,7 +8914,12 @@ Extreme Networks WS-AP3805i · ath79-generic · K4
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als 1D01A8C0.img statt OpenWrt-initramfs; seriell bleibt
 - **Gluon-RAMpe-Rezept:** devices/extreme-networks-ws-ap3805i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `1D01A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell
 - **Quelle (OpenWrt-Commit):** f8c87aa2d27ab405f284dd4357377ab5c893a345 [geprüft]
-- **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f8c87aa2d27ab405f284dd4357377ab5c893a345
+- **Detail-Anleitung:** anleitungen/de/extreme-networks-ws-ap3805i.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f8c87aa2d27ab405f284dd4357377ab5c893a345
+- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ath79-generic-extreme-networks_ws-ap3805i-initramfs-kernel.bin; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-extreme-networks_ws-ap3805i-initramfs-kernel.bin; tftp_name = 1D01A8C0.img; server_ip = 192.168.1.66; konsole = uart; konsole_ort = Stiftleiste J10 auf der Platine; Belegung 3,3 V, GND, TX, RX, den 3,3-V-Stift nicht anschließen; anhalten = Sobald die Aufforderung erscheint, brich den Start mit Enter ab.; befehle = setenv boot_openwrt 'setenv bootargs; bootm 0xa1280000'
+setenv ramboot_openwrt 'setenv serverip 192.168.1.66; tftpboot 0x89000000 1D01A8C0.img; bootm'
+setenv bootcmd 'run boot_openwrt'
+saveenv
+run ramboot_openwrt; baud = 115200; login = admin / new2day; sicherheit = quelle
 
 #### siemens-ws-ap3610
 
@@ -9274,7 +9284,7 @@ Enterasys WS-AP3715i · mpc85xx-p1010 · K4
 - **Übertragung:** tftp-client-am-geraet: Server 192.168.1.66, Gerät 192.168.1.1, Datei ap3715.bin
 - **Anschluss:** Cisco-Konsolenkabel (RJ45) [geprüft: Commit]; Rechner per Netzwerkkabel für TFTP [abgeleitet: TFTP-Weg]
 - **Adressen:** TFTP-Server mit fester IP 192.168.1.66/24, Gerät 192.168.1.1 [geprüft: Commit]
-- **Programm:** Serielles Terminal, TFTP-Server, scp [geprüft: Commit]
+- **Programm:** Serielles Terminal, TFTP-Server, scp [geprüft: Commit]; Bootloader-Befehle wörtlich (Zeilenumbrüche des Commit-Texts zusammengezogen), Dateiname ap3715.bin, TFTP-Server 192.168.1.66, admin/new2day [geprüft: OpenWrt-Commit 765f668, am 15.10.2026 nachgelesen]
 - **Zugang:** 115200 8N1 [geprüft: Commit]; Login admin/new2day [geprüft: Commit 765f668]
 - **Datei:** Initramfs als `ap3715.bin` (steht im Befehl) [geprüft: Commit]; danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** ja
@@ -9288,7 +9298,12 @@ Enterasys WS-AP3715i · mpc85xx-p1010 · K4
 - **Gluon-RAMpe passt:** teilweise: nach dem seriellen TFTP-Boot macht die Gluon-RAMpe den sysupgrade-Schritt statt scp; bootcmd/saveenv bleibt seriell
 - **Gluon-RAMpe-Rezept:** devices/enterasys-ws-ap3715i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `ap3715.bin` per U-Boot-TFTP; entpackt über 11 MB droht Überlappung
 - **Quelle (OpenWrt-Commit):** 765f66810a3324cc35fa6471ee8eeee335ba8c2b
-- **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b
+- **Detail-Anleitung:** anleitungen/de/enterasys-ws-ap3715i.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b
+- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-mpc85xx-p1010-enterasys_ws-ap3715i-initramfs-kernel.bin; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1010/openwrt-24.10.8-mpc85xx-p1010-enterasys_ws-ap3715i-initramfs-kernel.bin; tftp_name = ap3715.bin; server_ip = 192.168.1.66; konsole = rj45; anhalten = Drück Enter, sobald die Aufforderung erscheint, den automatischen Start abzubrechen.; befehle = setenv ramboot_openwrt "setenv ipaddr 192.168.1.1; setenv serverip 192.168.1.66; tftpboot 0x2000000 ap3715.bin; bootm"
+setenv boot_openwrt "sf probe 0; sf read 0x2000000 0x140000 0x1000000; bootm 0x2000000"
+setenv bootcmd "run boot_openwrt"
+saveenv
+run ramboot_openwrt; baud = 115200; login = admin / new2day; sicherheit = quelle
 
 #### sophos-red-15w-rev.1
 
@@ -9379,7 +9394,7 @@ Enterasys WS-AP3710i · mpc85xx-p1020 · K4
 - **Übertragung:** tftp-client-am-geraet: Server 192.168.200.200, Datei 01C8A8C0.img
 - **Anschluss:** Cisco-Konsolenkabel am RJ45 neben dem Ethernet-Port [geprüft: Commit]; Rechner per Netzwerkkabel für TFTP [abgeleitet: TFTP-Weg]
 - **Adressen:** TFTP-Server mit fester IP 192.168.200.200/24 [geprüft: Commit]
-- **Programm:** Serielles Terminal, TFTP-Server, scp [geprüft: Commit]
+- **Programm:** Serielles Terminal, TFTP-Server, scp [geprüft: Commit]; Bootloader-Befehle wörtlich (Zeilenumbrüche des Commit-Texts zusammengezogen), Dateiname 01C8A8C0.img, TFTP-Server 192.168.200.200, admin/new2day [geprüft: OpenWrt-Commit 16b01fb, am 15.10.2026 nachgelesen]
 - **Zugang:** 115200 8N1 [geprüft: Commit]; Login admin/new2day [geprüft: Commit 16b01fb]
 - **Datei:** Initramfs als `01C8A8C0.img` (steht im tftpboot-Befehl; Name so übernehmen) [geprüft: Commit]; danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** ja
@@ -9395,7 +9410,11 @@ Enterasys WS-AP3710i · mpc85xx-p1020 · K4
 - **Gluon-RAMpe passt:** teilweise: wie WS-AP3715i
 - **Gluon-RAMpe-Rezept:** devices/enterasys-ws-ap3710i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` als `01C8A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell
 - **Quelle (OpenWrt-Commit):** 16b01fb1b9c99513c318109bef96a1a3545c57a0
-- **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=16b01fb1b9c99513c318109bef96a1a3545c57a0
+- **Detail-Anleitung:** anleitungen/de/enterasys-ws-ap3710i.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=16b01fb1b9c99513c318109bef96a1a3545c57a0
+- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-mpc85xx-p1020-enterasys_ws-ap3710i-initramfs-kernel.bin; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1020/openwrt-24.10.8-mpc85xx-p1020-enterasys_ws-ap3710i-initramfs-kernel.bin; tftp_name = 01C8A8C0.img; server_ip = 192.168.200.200; konsole = rj45; konsole_ort = neben der Netzwerkbuchse; anhalten = Drück Enter, sobald die Aufforderung erscheint, den automatischen Start abzubrechen.; befehle = setenv boot_openwrt "setenv bootargs; cp.b 0xee000000 0x1000000 0x1000000; bootm 0x1000000"
+setenv bootcmd "run boot_openwrt"
+saveenv
+tftpboot 0x1000000 192.168.200.200:01C8A8C0.img; bootm; rueckweg = Zurück zur Herstellerfirmware geht nur mit einer Sicherung der Partition "firmware", die du vor Schritt 7 aus OpenWrt heraus gemacht hast; der alte Startbefehl steht im Bootloader in der Variable boot_flash. Das beschreiben wir hier nicht.; baud = 115200; login = admin / new2day; sicherheit = quelle
 
 #### extreme-networks-ws-ap3825i
 
