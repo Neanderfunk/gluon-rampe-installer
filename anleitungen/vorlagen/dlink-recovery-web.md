@@ -36,6 +36,7 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     seitentitel          Titel der Recovery-Seite im Browser
     herstellerseite_gleiche_ip   true: die Herstellerfirmware antwortet unter derselben Adresse
     dauer_lang           längste beobachtete Dauer, z. B. "über 10 Minuten"
+    rampe_url            Download-Ort der RAMpe-Datei (Verzeichnis oder Datei)
 -#}
 {%- set w = werte -%}
 {%- if status == "ungeprüft" %}
@@ -66,6 +67,7 @@ kein Passwort.
 - eine Büroklammer für die Reset-Taste
 {%- if w.datei_art == "rampe" %}
 - die RAMpe-Datei für dieses Gerät: `{{ w.rampe_datei }}`
+  {%- if w.rampe_url %} ([herunterladen]({{ w.rampe_url }})){% endif %}
 - die Freifunk-Firmware deiner Community für den {{ modell }}, und zwar das
   **sysupgrade**-Image
 {%- else %}
