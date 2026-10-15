@@ -114,13 +114,15 @@ def herkunft(g):
 
 def zusatz(quelle, name):
     """zusatz/<name>.md aufteilen: Abschnitt '## Wenn etwas schiefgeht' -> fehler,
-    '## Vorher prüfen' -> vorher (jeweils ohne Ueberschrift), alles andere -> text."""
-    leer = {"fehler": "", "vorher": "", "text": ""}
+    '## Vorher prüfen' -> vorher, '## Achtung' -> achtung (Warnkasten oben, jeweils ohne
+    Ueberschrift), alles andere -> text."""
+    leer = {"fehler": "", "vorher": "", "achtung": "", "text": ""}
     p = quelle / "zusatz" / f"{name}.md"
     if not p.exists():
         return leer
     teile, teil = {k: [] for k in leer}, "text"
-    eigene = {"## Wenn etwas schiefgeht": "fehler", "## Vorher prüfen": "vorher"}
+    eigene = {"## Wenn etwas schiefgeht": "fehler", "## Vorher prüfen": "vorher",
+              "## Achtung": "achtung"}
     for zeile in p.read_text(encoding="utf-8").splitlines():
         if zeile.startswith("## "):
             teil = eigene.get(zeile.strip(), "text")
