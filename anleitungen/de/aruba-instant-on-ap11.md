@@ -8,8 +8,8 @@ sprache: de
 stufe: Werkstatt
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: def09e4
-vorlage_stand: c717a22
+daten_stand: 37aa5ed
+vorlage_stand: 50d8c76
 ---
 
 # Aruba Instant On AP11: Freifunk-Firmware installieren

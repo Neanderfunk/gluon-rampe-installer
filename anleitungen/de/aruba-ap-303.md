@@ -8,8 +8,8 @@ sprache: de
 stufe: Werkstatt
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: def09e4
-vorlage_stand: c717a22
+daten_stand: 37aa5ed
+vorlage_stand: 50d8c76
 ---
 
 # Aruba AP-303: Freifunk-Firmware installieren
@@ -214,11 +214,7 @@ werden.
 - **In Schritt 7 kommt die Datei nicht an** (der Bootloader wiederholt es
   oder bricht ab). Prüf die feste Adresse `192.168.1.75`, die Firewall
   deines Rechners und den Dateinamen `ipq40xx.ari`.
-- **In Schritt 7 kommt `Unknown command 'bootm'`.** Dann hat dein Gerät einen neueren Bootloader, aus dem der
-  Hersteller Befehle entfernt hat, die OpenWrt braucht. Für den
-  [Aruba Instant On AP11](aruba-instant-on-ap11.md) gibt es einen Weg
-  über einen älteren Bootloader; für dein Gerät haben wir noch keinen.
-  Bitte probier ihn nicht auf eigene Faust, sondern schreib uns.
+- **In Schritt 7 kommt `Unknown command 'bootm'`.** Dann hat dein Gerät einen neueren Bootloader, aus dem der Hersteller Befehle entfernt hat, die OpenWrt braucht. Für den baugleichen [Aruba Instant On AP11](aruba-instant-on-ap11.md) gibt es einen Weg über einen älteren Bootloader. Ob er auch für den AP-303 passt, wissen wir noch nicht. Bitte probier ihn nicht auf eigene Faust, sondern schreib uns.
   Willst du an dieser Stelle aufhören, stell im Bootloader den Start der
   Aruba-Firmware wieder her, wie unter "Zurück zur Aruba-Firmware"
   beschrieben.

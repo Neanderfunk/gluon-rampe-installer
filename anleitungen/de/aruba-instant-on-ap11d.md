@@ -8,8 +8,8 @@ sprache: de
 stufe: Werkstatt
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: def09e4
-vorlage_stand: c717a22
+daten_stand: 37aa5ed
+vorlage_stand: 50d8c76
 ---
 
 # Aruba Instant On AP11D: Freifunk-Firmware installieren
@@ -72,8 +72,11 @@ einer Stunde, ohne das Kabel zu bauen.
 - Nicht verwechseln mit dem [Instant On AP11](aruba-instant-on-ap11.md) ohne
   "D", dem Gerät für Decke oder Wand mit einer Netzwerkbuchse. Der braucht
   andere Dateien.
-- Ob neuere AP11D denselben neueren Bootloader haben wie neuere AP11, wissen
-  wir nicht. Wenn in Schritt 7 `Unknown command 'bootm'` kommt, schreib uns.
+- Wir vermuten, dass neuere AP11D denselben gesperrten Bootloader haben wie
+  neuere Instant On AP11. Rückmeldungen dazu haben wir noch keine. Kommt in
+  Schritt 7 `Unknown command 'bootm'`, schreib uns bitte, damit wir es
+  belegen können. Der ältere Bootloader von der AP11-Seite passt **nicht**
+  zum AP11D.
 
 ## Das Konsolenkabel bauen
 
@@ -221,11 +224,12 @@ werden.
 - **In Schritt 7 kommt die Datei nicht an** (der Bootloader wiederholt es
   oder bricht ab). Prüf die feste Adresse `192.168.1.75`, die Firewall
   deines Rechners und den Dateinamen `ipq40xx.ari`, und ob das Kabel in E0 steckt.
-- **In Schritt 7 kommt `Unknown command 'bootm'`.** Dann hat dein Gerät einen neueren Bootloader, aus dem der
-  Hersteller Befehle entfernt hat, die OpenWrt braucht. Für den
-  [Aruba Instant On AP11](aruba-instant-on-ap11.md) gibt es einen Weg
-  über einen älteren Bootloader; für dein Gerät haben wir noch keinen.
-  Bitte probier ihn nicht auf eigene Faust, sondern schreib uns.
+- **In Schritt 7 kommt `Unknown command 'bootm'`.** Dann hat dein Gerät vermutlich einen neueren Bootloader, aus
+  dem der Hersteller Befehle entfernt hat, die OpenWrt braucht. Einen
+  passenden älteren Bootloader für den Aruba Instant On AP11D haben wir noch nicht.
+  Bitte schreib uns, damit wir es klären können. **Schreib auf keinen Fall
+  den Bootloader eines anderen Modells auf dein Gerät**, auch nicht den von
+  der Seite eines ähnlichen Geräts: Es könnte danach nicht mehr starten.
   Willst du an dieser Stelle aufhören, stell im Bootloader den Start der
   Aruba-Firmware wieder her, wie unter "Zurück zur Aruba-Firmware"
   beschrieben.

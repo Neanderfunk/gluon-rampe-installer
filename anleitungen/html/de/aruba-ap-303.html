@@ -13,8 +13,8 @@
 <meta name="anleitung:stufe" content="Werkstatt">
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="feste-ip, serielle-konsole, ssh-scp, tftp-server">
-<meta name="anleitung:daten_stand" content="def09e4">
-<meta name="anleitung:vorlage_stand" content="c717a22">
+<meta name="anleitung:daten_stand" content="37aa5ed">
+<meta name="anleitung:vorlage_stand" content="50d8c76">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -235,11 +235,7 @@ nichts eingeben. Versuch einen anderen Adapter.</li>
 <li><strong>In Schritt 7 kommt die Datei nicht an</strong> (der Bootloader wiederholt es
 oder bricht ab). Prüf die feste Adresse <code>192.168.1.75</code>, die Firewall
 deines Rechners und den Dateinamen <code>ipq40xx.ari</code>.</li>
-<li><strong>In Schritt 7 kommt <code>Unknown command 'bootm'</code>.</strong> Dann hat dein Gerät einen neueren Bootloader, aus dem der
-Hersteller Befehle entfernt hat, die OpenWrt braucht. Für den
-<a href="aruba-instant-on-ap11.html">Aruba Instant On AP11</a> gibt es einen Weg
-über einen älteren Bootloader; für dein Gerät haben wir noch keinen.
-Bitte probier ihn nicht auf eigene Faust, sondern schreib uns.
+<li><strong>In Schritt 7 kommt <code>Unknown command 'bootm'</code>.</strong> Dann hat dein Gerät einen neueren Bootloader, aus dem der Hersteller Befehle entfernt hat, die OpenWrt braucht. Für den baugleichen <a href="aruba-instant-on-ap11.html">Aruba Instant On AP11</a> gibt es einen Weg über einen älteren Bootloader. Ob er auch für den AP-303 passt, wissen wir noch nicht. Bitte probier ihn nicht auf eigene Faust, sondern schreib uns.
 Willst du an dieser Stelle aufhören, stell im Bootloader den Start der
 Aruba-Firmware wieder her, wie unter &quot;Zurück zur Aruba-Firmware&quot;
 beschrieben.</li>
