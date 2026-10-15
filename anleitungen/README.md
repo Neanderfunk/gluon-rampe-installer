@@ -38,10 +38,18 @@ scheitern, statt eine Lücke in den Text zu schreiben. Platzhalter sind die
 Felder des Geräts, `{{ werte.recovery_ip }}` usw., dazu `{{ zusatz.fehler }}`
 und `{{ zusatz.text }}` und `{{ herkunft }}`.
 
-Ein Zusatz `zusatz/<gluon_name>.md` ist Markdown. Was unter der Überschrift
-`## Wenn etwas schiefgeht` steht, hängt das Skript an die gleichnamige Liste
-der Vorlage an (`zusatz.fehler`), alles andere kommt als eigener Abschnitt vor
-"Herkunft der Angaben" (`zusatz.text`). Ohne Zusatzdatei sind beide leer.
+Ein Zusatz `zusatz/<gluon_name>.md` ist Markdown. Das Skript teilt ihn an
+festen Überschriften auf:
+
+- `## Vorher prüfen` -> `zusatz.vorher` (ohne Überschrift; die Vorlage setzt
+  ihn vor die Schritte, z. B. Verwechslungen beim Modell)
+- `## Wenn etwas schiefgeht` -> `zusatz.fehler` (ohne Überschrift; hängt an
+  die gleichnamige Liste der Vorlage)
+- alles andere -> `zusatz.text` (mit Überschriften, vor "Herkunft der Angaben")
+
+Ohne Zusatzdatei oder ohne den Abschnitt ist der jeweilige Teil leer.
+Verweise auf andere Geräteseiten schreibt man als `<gluon_name>.md`; das
+Skript macht daraus in der HTML-Ausgabe `.html`.
 
 Die vorhandenen JSON-Felder (`schritte`, `zeichen`, `dauer` …) sind
 Rohmaterial: lange Sätze mit Belegmarken, für die Recherche gedacht. Die
