@@ -153,7 +153,11 @@ Eine dauerhaft geflashte RAMpe startet wie jedes unkonfigurierte Gluon im
 Config-Mode (90_setup_mode), dort ist die Upload-Seite. Am D-Link M60 A1 ist
 das belegt: Dessen `-recovery.bin` ist eine squashfs-RAMpe, die die
 D-Link-Recovery in den Flash schreibt; sie kam im Config-Mode hoch
-(13.10.2026, adorfer). Die neuen Formate selbst sind ungetestet.
+(13.10.2026, adorfer). Sie bleibt im Flash und kommt nach jedem Neustart
+wieder im Config-Mode mit der Upload-Seite hoch, bis ein sysupgrade sie
+ersetzt (adorfer, 15.10.2026); der Config-Mode-Wizard, der das beenden würde,
+fehlt in der RAMpe [abgeleitet]. Ein Neustart oder Stromausfall in dieser
+Phase ist damit harmlos. Die neuen Formate selbst sind ungetestet.
 
 `ramips-mt7621` lässt sich auch in einem Lauf mit RT-AX53U, EX400 und WSM20
 bauen. Alias-Namen (DISC Lite5 ac zu SXTsq 5 ac) nicht als Gerät angeben,
