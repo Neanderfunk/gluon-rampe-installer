@@ -1,14 +1,18 @@
 ---
 gluon_name: tp-link-archer-c7-v4
 modell: TP-Link Archer C7 v4
+anzeige: TP-Link Archer C7 v4
 familie: k0-webui
+gluon_broken: false
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# TP-Link Archer C7 v4: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
@@ -20,8 +24,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20Archer%20C7%20v4)
-
-# TP-Link Archer C7 v4: Freifunk-Firmware installieren
 
 Beim TP-Link Archer C7 v4 geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update

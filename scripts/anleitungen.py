@@ -145,14 +145,48 @@ def datum8(text):
     return m.group(1) if m else ""
 
 
+def yaml_wert(b):
+    """Skalar fuer den YAML-Kopf; Texte mit ': ', ' #' oder Sonderzeichen vorn in
+    Anfuehrungszeichen (JSON-String ist gueltiges YAML)."""
+    if isinstance(b, bool):
+        return "true" if b else "false"
+    if isinstance(b, list):
+        return "[" + ", ".join(b) + "]"
+    s = str(b)
+    if not s or ": " in s or " #" in s or s.endswith(":") or s[0] in "&*!|>'\"%@`{[,?-#":
+        return json.dumps(s, ensure_ascii=False)
+    return s
+
+
 def kopf_yaml(k):
     zeilen = ["---"]
     for a, b in k.items():
-        if isinstance(b, list):
-            b = "[" + ", ".join(b) + "]"
-        zeilen.append(f"{a}: {b}")
+        zeilen.append(f"{a}: {yaml_wert(b)}")
     zeilen.append("---")
     return "\n".join(zeilen)
+
+
+def anzeige(g):
+    """Modellname fuer Leser. Klammern mit Gluon-Interna fallen weg: "(broken)",
+    "(Gluon: broken ...)", "(Alias von <gluon_name>)"; Aliase mit Lesernamen werden mit
+    " / " angehaengt. Ein gesetztes Feld "anzeige" gilt unveraendert."""
+    if g.get("anzeige"):
+        return g["anzeige"]
+    m = re.fullmatch(r"(.*?)\s*\(([^()]*)\)", g["modell"])
+    if not m:
+        return g["modell"]
+    name, behalten = m.group(1), []
+    for teil in (t.strip() for t in m.group(2).split(";")):
+        if re.match(r"(Gluon: )?broken\b", teil):
+            continue
+        a = re.fullmatch(r"Aliase?(?: von)? (.+)", teil)
+        if a:
+            for x in (x.strip() for x in a.group(1).split(",")):
+                if not re.fullmatch(r"[a-z0-9.+]+(-[a-z0-9.+]+)+", x):  # kein Gluon-Name
+                    name += f" / {x}"
+            continue
+        behalten.append(teil)
+    return name + (f" ({'; '.join(behalten)})" if behalten else "")
 
 
 def seiten_erzeugen(geraete, quelle, jinja2):
@@ -177,7 +211,8 @@ def seiten_erzeugen(geraete, quelle, jinja2):
         ctx = dict(g)
         am = erprobt.get("am", "")
         am_de = ".".join(reversed(am.split("-"))) if re.fullmatch(r"\d{4}-\d\d-\d\d", am) else am
-        ctx.update(werte=werte, status=status, erprobt_am=am_de,
+        ctx.update(modell=anzeige(g), anzeige=anzeige(g), broken=g["gluon_broken"],
+                   werte=werte, status=status, erprobt_am=am_de,
                    erprobt_mit=erprobt.get("mit", ""),
                    erprobt_mit_aelter=bool(status == "erprobt" and aktuell
                                            and datum8(erprobt.get("mit")) < aktuell),
@@ -188,7 +223,8 @@ def seiten_erzeugen(geraete, quelle, jinja2):
         except jinja2.UndefinedError as e:
             sys.exit(f"{g['gluon_name']} (Vorlage {g['familie']}): {e}")
         body = re.sub(r"\n{3,}", "\n\n", body).strip() + "\n"
-        kopf = {"gluon_name": g["gluon_name"], "modell": g["modell"], "familie": g["familie"],
+        kopf = {"gluon_name": g["gluon_name"], "modell": g["modell"], "anzeige": anzeige(g),
+                "familie": g["familie"], "gluon_broken": g["gluon_broken"],
                 "sprache": SPRACHE, "stufe": STUFE.get(g["kat"], "Werkstatt"), "status": status}
         if status == "erprobt":
             kopf.update(erprobt_am=erprobt["am"], erprobt_mit=erprobt.get("mit", ""))
@@ -218,7 +254,7 @@ def html_seite(titel, body_md, meta, md, tiefe):
     """tiefe: Verzeichnisebenen unter html/ (fuer den Pfad zu anleitung.css)."""
     inhalt = md.render(body_md)
     inhalt = re.sub(r'href="([^":]+)\.md(#[^"]*)?"', r'href="\1.html\2"', inhalt)
-    metas = "\n".join(f'<meta name="anleitung:{html.escape(k)}" content="{html.escape(", ".join(v) if isinstance(v, list) else str(v))}">'
+    metas = "\n".join(f'<meta name="anleitung:{html.escape(k)}" content="{html.escape(", ".join(v) if isinstance(v, list) else yaml_wert(v) if isinstance(v, bool) else str(v))}">'
                       for k, v in meta.items())
     css = "../" * tiefe + "anleitung.css"
     return (f'<!DOCTYPE html>\n<html lang="{SPRACHE}">\n<head>\n<meta charset="utf-8">\n'
@@ -270,7 +306,7 @@ def main():
         dateien[h / "anleitung.css"] = CSS
         for name, (kopf, body) in seiten.items():
             dateien[h / SPRACHE / f"{name}.html"] = html_seite(
-                f"{kopf['modell']}: Freifunk-Firmware installieren", body, kopf, md, 1)
+                f"{kopf['anzeige']}: Freifunk-Firmware installieren", body, kopf, md, 1)
         for p in sorted((a.quelle / SPRACHE / "grundlagen").glob("*.md")):
             t = p.read_text(encoding="utf-8")
             titel = (re.search(r"^# (.+)$", t, re.M) or [None, p.stem])[1]
@@ -282,7 +318,7 @@ def main():
         liste = ["# Freifunk-Firmware installieren", "",
                  "Anleitungen je Gerät. Ungeprüfte Anleitungen sind aus Quellen "
                  "zusammengestellt und noch nicht am Gerät nachvollzogen.", ""]
-        liste += [f"- [{k['modell']}]({n}.md): {k['status']}, {k['stufe']}"
+        liste += [f"- [{k['anzeige']}]({n}.md): {k['status']}, {k['stufe']}"
                   for n, (k, _) in seiten.items()]
         dateien[h / SPRACHE / "index.html"] = html_seite(
             "Freifunk-Firmware installieren", "\n".join(liste) + "\n", {"uebersicht": SPRACHE}, md, 1)

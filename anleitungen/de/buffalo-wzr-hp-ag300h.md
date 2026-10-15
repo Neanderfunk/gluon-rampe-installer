@@ -1,14 +1,18 @@
 ---
 gluon_name: buffalo-wzr-hp-ag300h
 modell: Buffalo WZR-HP-AG300H
+anzeige: Buffalo WZR-HP-AG300H
 familie: k0-webui
+gluon_broken: false
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: []
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# Buffalo WZR-HP-AG300H: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
 > bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
@@ -20,8 +24,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Buffalo%20WZR-HP-AG300H)
-
-# Buffalo WZR-HP-AG300H: Freifunk-Firmware installieren
 
 Beim Buffalo WZR-HP-AG300H geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update

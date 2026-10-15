@@ -1,14 +1,18 @@
 ---
 gluon_name: tp-link-cpe710-v1
 modell: TP-Link CPE710 v1
+anzeige: TP-Link CPE710 v1
 familie: k0-webui
+gluon_broken: false
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [feste-ip]
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# TP-Link CPE710 v1: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
 > bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
@@ -20,8 +24,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20CPE710%20v1)
-
-# TP-Link CPE710 v1: Freifunk-Firmware installieren
 
 Beim TP-Link CPE710 v1 geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update

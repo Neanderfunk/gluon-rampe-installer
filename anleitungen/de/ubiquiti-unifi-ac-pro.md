@@ -1,14 +1,18 @@
 ---
 gluon_name: ubiquiti-unifi-ac-pro
 modell: Ubiquiti UniFi AC Pro
+anzeige: Ubiquiti UniFi AC Pro
 familie: ubiquiti-unifi-ssh
+gluon_broken: false
 sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip, schreibschutz, ssh-scp, tftp-client]
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# Ubiquiti UniFi AC Pro: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
@@ -21,8 +25,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Ubiquiti%20UniFi%20AC%20Pro)
-
-# Ubiquiti UniFi AC Pro: Freifunk-Firmware installieren
 
 Die UniFi-Geräte von Ubiquiti haben keine Oberfläche, über die man fremde
 Firmware hochladen kann. Man meldet sich stattdessen per **SSH** auf dem

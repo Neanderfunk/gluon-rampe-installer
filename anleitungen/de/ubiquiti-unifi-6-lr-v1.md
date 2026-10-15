@@ -1,14 +1,18 @@
 ---
 gluon_name: ubiquiti-unifi-6-lr-v1
 modell: Ubiquiti UniFi 6 LR v1
+anzeige: Ubiquiti UniFi 6 LR v1
 familie: ubiquiti-unifi-ssh
+gluon_broken: false
 sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip, schreibschutz, ssh-scp, tftp-client]
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# Ubiquiti UniFi 6 LR v1: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
@@ -20,8 +24,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Ubiquiti%20UniFi%206%20LR%20v1)
-
-# Ubiquiti UniFi 6 LR v1: Freifunk-Firmware installieren
 
 Die UniFi-Geräte von Ubiquiti haben keine Oberfläche, über die man fremde
 Firmware hochladen kann. Man meldet sich stattdessen per **SSH** auf dem

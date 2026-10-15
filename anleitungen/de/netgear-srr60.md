@@ -1,14 +1,18 @@
 ---
 gluon_name: netgear-srr60
 modell: NETGEAR Orbi Pro SRR60
+anzeige: NETGEAR Orbi Pro SRR60
 familie: netgear-nmrp
+gluon_broken: false
 sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [nmrpflash]
 daten_stand: lokal
-vorlage_stand: ce95dd8
+vorlage_stand: 393f161
 ---
+
+# NETGEAR Orbi Pro SRR60: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
 > bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
@@ -20,8 +24,6 @@ vorlage_stand: ce95dd8
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20NETGEAR%20Orbi%20Pro%20SRR60)
-
-# NETGEAR Orbi Pro SRR60: Freifunk-Firmware installieren
 
 Viele Netgear-Geräte fragen direkt nach dem Einschalten im Netzwerk, ob
 jemand eine Firmware für sie hat. Das Programm **nmrpflash** auf deinem

@@ -1,14 +1,18 @@
 ---
 gluon_name: netgear-r6220
 modell: NETGEAR R6220
+anzeige: NETGEAR R6220
 familie: netgear-nmrp
+gluon_broken: false
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [nmrpflash]
 daten_stand: lokal
-vorlage_stand: ce95dd8
+vorlage_stand: 393f161
 ---
+
+# NETGEAR R6220: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
@@ -20,8 +24,6 @@ vorlage_stand: ce95dd8
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20NETGEAR%20R6220)
-
-# NETGEAR R6220: Freifunk-Firmware installieren
 
 Viele Netgear-Geräte fragen direkt nach dem Einschalten im Netzwerk, ob
 jemand eine Firmware für sie hat. Das Programm **nmrpflash** auf deinem

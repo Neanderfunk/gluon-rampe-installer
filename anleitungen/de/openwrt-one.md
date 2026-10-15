@@ -1,14 +1,18 @@
 ---
 gluon_name: openwrt-one
 modell: OpenWrt One
+anzeige: OpenWrt One
 familie: k0-webui
+gluon_broken: false
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: []
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# OpenWrt One: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
@@ -20,8 +24,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20OpenWrt%20One)
-
-# OpenWrt One: Freifunk-Firmware installieren
 
 Beim OpenWrt One geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update

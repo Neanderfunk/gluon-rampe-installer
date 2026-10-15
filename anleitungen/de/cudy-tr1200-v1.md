@@ -1,14 +1,18 @@
 ---
 gluon_name: cudy-tr1200-v1
 modell: Cudy TR1200 v1
+anzeige: Cudy TR1200 v1
 familie: cudy-zwischenfirmware
+gluon_broken: false
 sprache: de
 stufe: fortgeschritten
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# Cudy TR1200 v1: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
@@ -20,8 +24,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Cudy%20TR1200%20v1)
-
-# Cudy TR1200 v1: Freifunk-Firmware installieren
 
 Router von Cudy nehmen ab Werk nur Firmware an, die Cudy selbst
 unterschrieben hat. Deshalb geht es in zwei Schritten: Zuerst kommt eine

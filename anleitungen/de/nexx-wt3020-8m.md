@@ -1,14 +1,18 @@
 ---
 gluon_name: nexx-wt3020-8m
 modell: Nexx WT3020 8M (Aliase WT3020AD/F/H)
+anzeige: Nexx WT3020 8M / WT3020AD/F/H
 familie: k0-webui
+gluon_broken: false
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: []
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# Nexx WT3020 8M / WT3020AD/F/H: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
@@ -19,11 +23,9 @@ vorlage_stand: 1473aca
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Nexx%20WT3020%208M%20%28Aliase%20WT3020AD/F/H%29)
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Nexx%20WT3020%208M%20/%20WT3020AD/F/H)
 
-# Nexx WT3020 8M (Aliase WT3020AD/F/H): Freifunk-Firmware installieren
-
-Beim Nexx WT3020 8M (Aliase WT3020AD/F/H) geht die Installation über die normale Weboberfläche des
+Beim Nexx WT3020 8M / WT3020AD/F/H geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update
 des Herstellers hinkäme. Du brauchst nur einen Browser.
 
@@ -31,13 +33,13 @@ des Herstellers hinkäme. Du brauchst nur einen Browser.
 
 - das Gerät und sein Netzteil
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
-- die Freifunk-Firmware deiner Community für den Nexx WT3020 8M (Aliase WT3020AD/F/H), und zwar das
+- die Freifunk-Firmware deiner Community für den Nexx WT3020 8M / WT3020AD/F/H, und zwar das
   **factory**-Image für die Erstinstallation, nicht "sysupgrade"
 
 Auf dem Aufkleber unter dem Gerät stehen Modell und Hardware-Version (bei
 TP-Link etwa "Ver: 5.0", bei anderen "H/W Ver."). Viele Geräte gibt es in
 mehreren Versionen, und jede braucht ihr eigenes Image. Vergleich den
-Aufkleber genau mit "Nexx WT3020 8M (Aliase WT3020AD/F/H)", bevor du anfängst.
+Aufkleber genau mit "Nexx WT3020 8M / WT3020AD/F/H", bevor du anfängst.
 
 ## Vorher prüfen
 

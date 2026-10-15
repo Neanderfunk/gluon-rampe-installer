@@ -1,14 +1,18 @@
 ---
 gluon_name: tp-link-tl-wdr4300-v1
 modell: TP-Link TL-WDR4300 v1
+anzeige: TP-Link TL-WDR4300 v1
 familie: k0-webui
+gluon_broken: false
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: []
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# TP-Link TL-WDR4300 v1: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
@@ -20,8 +24,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20TL-WDR4300%20v1)
-
-# TP-Link TL-WDR4300 v1: Freifunk-Firmware installieren
 
 Beim TP-Link TL-WDR4300 v1 geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update

@@ -1,14 +1,18 @@
 ---
 gluon_name: linksys-whw03-velop
 modell: Linksys WHW03 v1 (Velop)
+anzeige: Linksys WHW03 v1 (Velop)
 familie: k0-webui
+gluon_broken: false
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: []
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# Linksys WHW03 v1 (Velop): Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
 > bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
@@ -20,8 +24,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Linksys%20WHW03%20v1%20%28Velop%29)
-
-# Linksys WHW03 v1 (Velop): Freifunk-Firmware installieren
 
 Beim Linksys WHW03 v1 (Velop) geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update

@@ -1,29 +1,33 @@
 ---
 gluon_name: d-link-dap-1620-b1
-modell: D-Link DAP-1620 B1 (Gluon: broken)
+modell: "D-Link DAP-1620 B1 (Gluon: broken)"
+anzeige: D-Link DAP-1620 B1
 familie: dlink-recovery-web
+gluon_broken: true
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [curl, feste-ip]
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# D-Link DAP-1620 B1: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
 > aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
 > beschrieben.
+> Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
+> getestet ("broken"); nicht jede Community bietet sie an.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20D-Link%20DAP-1620%20B1%20%28Gluon%3A%20broken%29)
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20D-Link%20DAP-1620%20B1)
 
-# D-Link DAP-1620 B1 (Gluon: broken): Freifunk-Firmware installieren
-
-Der D-Link DAP-1620 B1 (Gluon: broken) hat eine eingebaute Notfall-Seite von D-Link, die
+Der D-Link DAP-1620 B1 hat eine eingebaute Notfall-Seite von D-Link, die
 **Recovery**. Sie nimmt eine Firmware-Datei an und schreibt sie in den
 Speicher, auch wenn sonst nichts mehr geht. Über sie kommt die Freifunk-Firmware direkt auf den Router.
 
@@ -31,7 +35,7 @@ Speicher, auch wenn sonst nichts mehr geht. Über sie kommt die Freifunk-Firmwar
 
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - eine Büroklammer für die Reset-Taste
-- die Freifunk-Firmware deiner Community für den D-Link DAP-1620 B1 (Gluon: broken), und zwar das
+- die Freifunk-Firmware deiner Community für den D-Link DAP-1620 B1, und zwar das
   **factory**-Image
 - das Programm **curl** zum Hochladen. Unter Linux und macOS ist es meist
   schon da, unter Windows 10 und 11 heißt es `curl.exe` und ist eingebaut

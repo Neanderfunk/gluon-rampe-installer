@@ -3,44 +3,48 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TP-Link Archer C58 v1 (broken): Freifunk-Firmware installieren</title>
+<title>TP-Link Archer C58 v1: Freifunk-Firmware installieren</title>
 <meta name="anleitung:gluon_name" content="tp-link-archer-c58-v1">
 <meta name="anleitung:modell" content="TP-Link Archer C58 v1 (broken)">
+<meta name="anleitung:anzeige" content="TP-Link Archer C58 v1">
 <meta name="anleitung:familie" content="k0-webui">
+<meta name="anleitung:gluon_broken" content="true">
 <meta name="anleitung:sprache" content="de">
 <meta name="anleitung:stufe" content="einfach">
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="feste-ip, tftp-server">
 <meta name="anleitung:daten_stand" content="lokal">
-<meta name="anleitung:vorlage_stand" content="1473aca">
+<meta name="anleitung:vorlage_stand" content="393f161">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
+<h1>TP-Link Archer C58 v1: Freifunk-Firmware installieren</h1>
 <blockquote>
 <p><strong>Noch nicht am Gerät erprobt.</strong> So beschreiben die Entwickler von OpenWrt
 bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
 ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
-klappt.</p>
+klappt.
+Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
+getestet (&quot;broken&quot;); nicht jede Community bietet sie an.</p>
 <p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
-<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20Archer%20C58%20v1%20%28broken%29">projekt@neanderfunk.de</a></p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20Archer%20C58%20v1">projekt@neanderfunk.de</a></p>
 </blockquote>
-<h1>TP-Link Archer C58 v1 (broken): Freifunk-Firmware installieren</h1>
-<p>Beim TP-Link Archer C58 v1 (broken) geht die Installation über die normale Weboberfläche des
+<p>Beim TP-Link Archer C58 v1 geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update
 des Herstellers hinkäme. Du brauchst nur einen Browser.</p>
 <h2>Was du brauchst</h2>
 <ul>
 <li>das Gerät und sein Netzteil</li>
 <li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
-<li>die Freifunk-Firmware deiner Community für den TP-Link Archer C58 v1 (broken), und zwar das
+<li>die Freifunk-Firmware deiner Community für den TP-Link Archer C58 v1, und zwar das
 <strong>factory</strong>-Image für die Erstinstallation, nicht &quot;sysupgrade&quot;</li>
 </ul>
 <p>Auf dem Aufkleber unter dem Gerät stehen Modell und Hardware-Version (bei
 TP-Link etwa &quot;Ver: 5.0&quot;, bei anderen &quot;H/W Ver.&quot;). Viele Geräte gibt es in
 mehreren Versionen, und jede braucht ihr eigenes Image. Vergleich den
-Aufkleber genau mit &quot;TP-Link Archer C58 v1 (broken)&quot;, bevor du anfängst.</p>
+Aufkleber genau mit &quot;TP-Link Archer C58 v1&quot;, bevor du anfängst.</p>
 <h2>Vorher prüfen</h2>
 <p>Archer C58 v1 und C59 v1 sehen ähnlich aus, brauchen aber je ihr eigenes
 Image. Der C59 hat einen USB-Anschluss, der C58 nicht.</p>

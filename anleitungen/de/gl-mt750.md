@@ -1,14 +1,18 @@
 ---
 gluon_name: gl-mt750
 modell: GL.iNet GL-MT750
+anzeige: GL.iNet GL-MT750
 familie: glinet
+gluon_broken: false
 sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip]
 daten_stand: lokal
-vorlage_stand: ce95dd8
+vorlage_stand: 393f161
 ---
+
+# GL.iNet GL-MT750: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
@@ -20,8 +24,6 @@ vorlage_stand: ce95dd8
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20GL.iNet%20GL-MT750)
-
-# GL.iNet GL-MT750: Freifunk-Firmware installieren
 
 GL.iNet liefert seine Router mit einer eigenen Variante von OpenWrt aus.
 Die Freifunk-Firmware lädst du deshalb ganz einfach über die Oberfläche von

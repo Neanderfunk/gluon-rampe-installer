@@ -1,14 +1,18 @@
 ---
 gluon_name: linksys-vlp01
 modell: Linksys VLP01 (Alias von linksys-whw01)
+anzeige: Linksys VLP01
 familie: k0-webui
+gluon_broken: false
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: []
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# Linksys VLP01: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
@@ -19,11 +23,9 @@ vorlage_stand: 1473aca
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Linksys%20VLP01%20%28Alias%20von%20linksys-whw01%29)
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Linksys%20VLP01)
 
-# Linksys VLP01 (Alias von linksys-whw01): Freifunk-Firmware installieren
-
-Beim Linksys VLP01 (Alias von linksys-whw01) geht die Installation über die normale Weboberfläche des
+Beim Linksys VLP01 geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update
 des Herstellers hinkäme. Du brauchst nur einen Browser.
 
@@ -31,13 +33,13 @@ des Herstellers hinkäme. Du brauchst nur einen Browser.
 
 - das Gerät und sein Netzteil
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
-- die Freifunk-Firmware deiner Community für den Linksys VLP01 (Alias von linksys-whw01), und zwar das
+- die Freifunk-Firmware deiner Community für den Linksys VLP01, und zwar das
   **factory**-Image für die Erstinstallation, nicht "sysupgrade"
 
 Auf dem Aufkleber unter dem Gerät stehen Modell und Hardware-Version (bei
 TP-Link etwa "Ver: 5.0", bei anderen "H/W Ver."). Viele Geräte gibt es in
 mehreren Versionen, und jede braucht ihr eigenes Image. Vergleich den
-Aufkleber genau mit "Linksys VLP01 (Alias von linksys-whw01)", bevor du anfängst.
+Aufkleber genau mit "Linksys VLP01", bevor du anfängst.
 
 ## Vorher prüfen
 

@@ -1,15 +1,19 @@
 ---
 gluon_name: d-link-aquila-pro-ai-m30-a1
 modell: D-Link AQUILA PRO AI M30 A1
+anzeige: D-Link AQUILA PRO AI M30 A1
 familie: dlink-recovery-web
+gluon_broken: false
 sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m30-a1-recovery.bin
 grundlagen: [browser-https, curl, feste-ip]
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# D-Link AQUILA PRO AI M30 A1: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
 > bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
@@ -21,8 +25,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20D-Link%20AQUILA%20PRO%20AI%20M30%20A1)
-
-# D-Link AQUILA PRO AI M30 A1: Freifunk-Firmware installieren
 
 Der D-Link AQUILA PRO AI M30 A1 hat eine eingebaute Notfall-Seite von D-Link, die
 **Recovery**. Sie nimmt eine Firmware-Datei an und schreibt sie in den

@@ -3,19 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nexx WT3020 8M (Aliase WT3020AD/F/H): Freifunk-Firmware installieren</title>
+<title>Nexx WT3020 8M / WT3020AD/F/H: Freifunk-Firmware installieren</title>
 <meta name="anleitung:gluon_name" content="nexx-wt3020-8m">
 <meta name="anleitung:modell" content="Nexx WT3020 8M (Aliase WT3020AD/F/H)">
+<meta name="anleitung:anzeige" content="Nexx WT3020 8M / WT3020AD/F/H">
 <meta name="anleitung:familie" content="k0-webui">
+<meta name="anleitung:gluon_broken" content="false">
 <meta name="anleitung:sprache" content="de">
 <meta name="anleitung:stufe" content="einfach">
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="">
 <meta name="anleitung:daten_stand" content="lokal">
-<meta name="anleitung:vorlage_stand" content="1473aca">
+<meta name="anleitung:vorlage_stand" content="393f161">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
+<h1>Nexx WT3020 8M / WT3020AD/F/H: Freifunk-Firmware installieren</h1>
 <blockquote>
 <p><strong>Noch nicht am Gerät erprobt.</strong> Wichtige Schritte haben wir von
 ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
@@ -24,23 +27,22 @@ beschrieben.</p>
 <p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
-<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20Nexx%20WT3020%208M%20%28Aliase%20WT3020AD/F/H%29">projekt@neanderfunk.de</a></p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20Nexx%20WT3020%208M%20/%20WT3020AD/F/H">projekt@neanderfunk.de</a></p>
 </blockquote>
-<h1>Nexx WT3020 8M (Aliase WT3020AD/F/H): Freifunk-Firmware installieren</h1>
-<p>Beim Nexx WT3020 8M (Aliase WT3020AD/F/H) geht die Installation über die normale Weboberfläche des
+<p>Beim Nexx WT3020 8M / WT3020AD/F/H geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update
 des Herstellers hinkäme. Du brauchst nur einen Browser.</p>
 <h2>Was du brauchst</h2>
 <ul>
 <li>das Gerät und sein Netzteil</li>
 <li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
-<li>die Freifunk-Firmware deiner Community für den Nexx WT3020 8M (Aliase WT3020AD/F/H), und zwar das
+<li>die Freifunk-Firmware deiner Community für den Nexx WT3020 8M / WT3020AD/F/H, und zwar das
 <strong>factory</strong>-Image für die Erstinstallation, nicht &quot;sysupgrade&quot;</li>
 </ul>
 <p>Auf dem Aufkleber unter dem Gerät stehen Modell und Hardware-Version (bei
 TP-Link etwa &quot;Ver: 5.0&quot;, bei anderen &quot;H/W Ver.&quot;). Viele Geräte gibt es in
 mehreren Versionen, und jede braucht ihr eigenes Image. Vergleich den
-Aufkleber genau mit &quot;Nexx WT3020 8M (Aliase WT3020AD/F/H)&quot;, bevor du anfängst.</p>
+Aufkleber genau mit &quot;Nexx WT3020 8M / WT3020AD/F/H&quot;, bevor du anfängst.</p>
 <h2>Vorher prüfen</h2>
 <p>Nur die Varianten <strong>mit USB</strong> (WT3020H, WT3020F, WT3020AD) mit 8 MB
 Speicher. Der WT3020A ohne USB hat nur 4 MB und geht nicht. Den WT3020H

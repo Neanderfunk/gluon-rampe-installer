@@ -1,14 +1,18 @@
 ---
 gluon_name: cudy-m1800
 modell: Cudy M1800
+anzeige: Cudy M1800
 familie: cudy-zwischenfirmware
+gluon_broken: false
 sprache: de
 stufe: fortgeschritten
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# Cudy M1800: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Einzelne Schritte beruhen nur auf
 > Vermutungen oder auf einem einzelnen Bericht. Probier es nur, wenn du
@@ -20,8 +24,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Cudy%20M1800)
-
-# Cudy M1800: Freifunk-Firmware installieren
 
 Router von Cudy nehmen ab Werk nur Firmware an, die Cudy selbst
 unterschrieben hat. Deshalb geht es in zwei Schritten: Zuerst kommt eine

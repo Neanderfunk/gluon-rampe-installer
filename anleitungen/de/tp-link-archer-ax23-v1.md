@@ -1,29 +1,33 @@
 ---
 gluon_name: tp-link-archer-ax23-v1
-modell: TP-Link Archer AX23 v1 (Gluon: broken)
+modell: "TP-Link Archer AX23 v1 (Gluon: broken)"
+anzeige: TP-Link Archer AX23 v1
 familie: k0-webui
+gluon_broken: true
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [curl]
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# TP-Link Archer AX23 v1: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
 > bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
 > ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
 > klappt.
+> Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
+> getestet ("broken"); nicht jede Community bietet sie an.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20Archer%20AX23%20v1%20%28Gluon%3A%20broken%29)
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20Archer%20AX23%20v1)
 
-# TP-Link Archer AX23 v1 (Gluon: broken): Freifunk-Firmware installieren
-
-Beim TP-Link Archer AX23 v1 (Gluon: broken) geht die Installation über die normale Weboberfläche des
+Beim TP-Link Archer AX23 v1 geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update
 des Herstellers hinkäme. Du brauchst nur einen Browser.
 
@@ -31,13 +35,13 @@ des Herstellers hinkäme. Du brauchst nur einen Browser.
 
 - das Gerät und sein Netzteil
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
-- die Freifunk-Firmware deiner Community für den TP-Link Archer AX23 v1 (Gluon: broken), und zwar das
+- die Freifunk-Firmware deiner Community für den TP-Link Archer AX23 v1, und zwar das
   **factory**-Image für die Erstinstallation, nicht "sysupgrade"
 
 Auf dem Aufkleber unter dem Gerät stehen Modell und Hardware-Version (bei
 TP-Link etwa "Ver: 5.0", bei anderen "H/W Ver."). Viele Geräte gibt es in
 mehreren Versionen, und jede braucht ihr eigenes Image. Vergleich den
-Aufkleber genau mit "TP-Link Archer AX23 v1 (Gluon: broken)", bevor du anfängst.
+Aufkleber genau mit "TP-Link Archer AX23 v1", bevor du anfängst.
 
 ## Vorher prüfen
 

@@ -1,14 +1,18 @@
 ---
 gluon_name: linksys-mx5300
 modell: Linksys MX5300
+anzeige: Linksys MX5300
 familie: sonderweg-linksys-mx5300
+gluon_broken: false
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [ssh-scp]
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# Linksys MX5300: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
 > bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
@@ -21,8 +25,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Linksys%20MX5300)
-
-# Linksys MX5300: Freifunk-Firmware installieren
 
 Der MX5300 hat in seiner Linksys-Firmware eine versteckte Seite, über die
 sich die Freifunk-Firmware direkt hochladen lässt. Du brauchst nur einen

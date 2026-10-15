@@ -1,14 +1,18 @@
 ---
 gluon_name: d-link-dir-878-a1
 modell: D-Link DIR-878 A1
+anzeige: D-Link DIR-878 A1
 familie: dlink-recovery-web
+gluon_broken: false
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [curl, feste-ip]
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# D-Link DIR-878 A1: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
 > bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
@@ -21,8 +25,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20D-Link%20DIR-878%20A1)
-
-# D-Link DIR-878 A1: Freifunk-Firmware installieren
 
 Der D-Link DIR-878 A1 hat eine eingebaute Notfall-Seite von D-Link, die
 **Recovery**. Sie nimmt eine Firmware-Datei an und schreibt sie in den

@@ -1,14 +1,18 @@
 ---
 gluon_name: cudy-wr3000h-v1
 modell: Cudy WR3000H v1
+anzeige: Cudy WR3000H v1
 familie: cudy-zwischenfirmware
+gluon_broken: false
 sprache: de
 stufe: fortgeschritten
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# Cudy WR3000H v1: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
 > bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
@@ -20,8 +24,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Cudy%20WR3000H%20v1)
-
-# Cudy WR3000H v1: Freifunk-Firmware installieren
 
 Router von Cudy nehmen ab Werk nur Firmware an, die Cudy selbst
 unterschrieben hat. Deshalb geht es in zwei Schritten: Zuerst kommt eine

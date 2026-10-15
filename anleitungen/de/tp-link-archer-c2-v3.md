@@ -1,29 +1,33 @@
 ---
 gluon_name: tp-link-archer-c2-v3
 modell: TP-Link Archer C2 v3 (broken)
+anzeige: TP-Link Archer C2 v3
 familie: k0-webui
+gluon_broken: true
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: []
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# TP-Link Archer C2 v3: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
 > aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
 > beschrieben.
+> Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
+> getestet ("broken"); nicht jede Community bietet sie an.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20Archer%20C2%20v3%20%28broken%29)
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20Archer%20C2%20v3)
 
-# TP-Link Archer C2 v3 (broken): Freifunk-Firmware installieren
-
-Beim TP-Link Archer C2 v3 (broken) geht die Installation über die normale Weboberfläche des
+Beim TP-Link Archer C2 v3 geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update
 des Herstellers hinkäme. Du brauchst nur einen Browser.
 
@@ -31,13 +35,13 @@ des Herstellers hinkäme. Du brauchst nur einen Browser.
 
 - das Gerät und sein Netzteil
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
-- die Freifunk-Firmware deiner Community für den TP-Link Archer C2 v3 (broken), und zwar das
+- die Freifunk-Firmware deiner Community für den TP-Link Archer C2 v3, und zwar das
   **factory**-Image für die Erstinstallation, nicht "sysupgrade"
 
 Auf dem Aufkleber unter dem Gerät stehen Modell und Hardware-Version (bei
 TP-Link etwa "Ver: 5.0", bei anderen "H/W Ver."). Viele Geräte gibt es in
 mehreren Versionen, und jede braucht ihr eigenes Image. Vergleich den
-Aufkleber genau mit "TP-Link Archer C2 v3 (broken)", bevor du anfängst.
+Aufkleber genau mit "TP-Link Archer C2 v3", bevor du anfängst.
 
 ## Vorher prüfen
 

@@ -1,14 +1,18 @@
 ---
 gluon_name: ubiquiti-unifi-nanohd
 modell: Ubiquiti UniFi nanoHD
+anzeige: Ubiquiti UniFi nanoHD
 familie: ubiquiti-unifi-ssh
+gluon_broken: false
 sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip, ssh-scp, tftp-client]
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# Ubiquiti UniFi nanoHD: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
 > bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
@@ -20,8 +24,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Ubiquiti%20UniFi%20nanoHD)
-
-# Ubiquiti UniFi nanoHD: Freifunk-Firmware installieren
 
 Die UniFi-Geräte von Ubiquiti haben keine Oberfläche, über die man fremde
 Firmware hochladen kann. Man meldet sich stattdessen per **SSH** auf dem

@@ -1,14 +1,18 @@
 ---
 gluon_name: netgear-eax12
 modell: NETGEAR EAX12 (Aliase EAX11 v2, EAX15 v2)
+anzeige: NETGEAR EAX12 / EAX11 v2 / EAX15 v2
 familie: netgear-nmrp
+gluon_broken: false
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [nmrpflash]
 daten_stand: lokal
-vorlage_stand: ce95dd8
+vorlage_stand: 393f161
 ---
+
+# NETGEAR EAX12 / EAX11 v2 / EAX15 v2: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
 > bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
@@ -19,9 +23,7 @@ vorlage_stand: ce95dd8
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20NETGEAR%20EAX12%20%28Aliase%20EAX11%20v2%2C%20EAX15%20v2%29)
-
-# NETGEAR EAX12 (Aliase EAX11 v2, EAX15 v2): Freifunk-Firmware installieren
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20NETGEAR%20EAX12%20/%20EAX11%20v2%20/%20EAX15%20v2)
 
 Viele Netgear-Geräte fragen direkt nach dem Einschalten im Netzwerk, ob
 jemand eine Firmware für sie hat. Das Programm **nmrpflash** auf deinem
@@ -33,7 +35,7 @@ dann, wenn die Netgear-Oberfläche fremde Firmware nicht annimmt.
 - das Gerät mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
   Netzwerkkabel
 - das Programm nmrpflash ([nmrpflash benutzen](grundlagen/nmrpflash.md))
-- die Freifunk-Firmware deiner Community für den NETGEAR EAX12 (Aliase EAX11 v2, EAX15 v2), und zwar das
+- die Freifunk-Firmware deiner Community für den NETGEAR EAX12 / EAX11 v2 / EAX15 v2, und zwar das
   **factory**-Image
 
 ## Vorher prüfen

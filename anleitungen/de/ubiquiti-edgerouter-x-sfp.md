@@ -1,14 +1,18 @@
 ---
 gluon_name: ubiquiti-edgerouter-x-sfp
 modell: Ubiquiti EdgeRouter X-SFP
+anzeige: Ubiquiti EdgeRouter X-SFP
 familie: ubiquiti-edgerouter
+gluon_broken: false
 sprache: de
 stufe: Werkstatt
 status: ungeprüft
 grundlagen: [feste-ip, ssh-scp]
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# Ubiquiti EdgeRouter X-SFP: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
@@ -20,8 +24,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Ubiquiti%20EdgeRouter%20X-SFP)
-
-# Ubiquiti EdgeRouter X-SFP: Freifunk-Firmware installieren
 
 Diese Anleitung ist für einen Ubiquiti EdgeRouter X-SFP, auf dem noch die Firmware von
 Ubiquiti läuft (EdgeOS), und der neu mit Freifunk anfangen soll.

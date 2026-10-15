@@ -1,14 +1,18 @@
 ---
 gluon_name: friendlyelec-nanopi-r3s
 modell: FriendlyElec NanoPi R3S
+anzeige: FriendlyElec NanoPi R3S
 familie: image-auf-datentraeger
+gluon_broken: false
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [image-schreiben]
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# FriendlyElec NanoPi R3S: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
 > bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
@@ -20,8 +24,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20FriendlyElec%20NanoPi%20R3S)
-
-# FriendlyElec NanoPi R3S: Freifunk-Firmware installieren
 
 Beim FriendlyElec NanoPi R3S gibt es keine Firmware, die man über eine Oberfläche
 hochlädt. Die Freifunk-Firmware wird als fertiges Abbild direkt auf

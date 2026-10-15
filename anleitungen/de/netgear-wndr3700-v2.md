@@ -1,14 +1,18 @@
 ---
 gluon_name: netgear-wndr3700-v2
 modell: NETGEAR WNDR3700 v2
+anzeige: NETGEAR WNDR3700 v2
 familie: k0-webui
+gluon_broken: false
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: []
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# NETGEAR WNDR3700 v2: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
@@ -20,8 +24,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20NETGEAR%20WNDR3700%20v2)
-
-# NETGEAR WNDR3700 v2: Freifunk-Firmware installieren
 
 Beim NETGEAR WNDR3700 v2 geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update

@@ -1,14 +1,18 @@
 ---
 gluon_name: ubiquiti-rocket-m-xm
 modell: Ubiquiti Rocket M XM
+anzeige: Ubiquiti Rocket M XM
 familie: ubiquiti-tftp
+gluon_broken: false
 sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip, tftp-client]
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# Ubiquiti Rocket M XM: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
@@ -20,8 +24,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Ubiquiti%20Rocket%20M%20XM)
-
-# Ubiquiti Rocket M XM: Freifunk-Firmware installieren
 
 Ubiquiti-Geräte haben einen eingebauten Notfall-Modus: Hält man beim
 Einschalten die Reset-Taste, wartet das Gerät darauf, dass ihm jemand eine

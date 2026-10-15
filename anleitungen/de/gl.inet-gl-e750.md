@@ -1,28 +1,32 @@
 ---
 gluon_name: gl.inet-gl-e750
 modell: GL.iNet GL-E750 (broken)
+anzeige: GL.iNet GL-E750
 familie: glinet
+gluon_broken: true
 sprache: de
 stufe: fortgeschritten
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-gl.inet-gl-e750-factory.img
 grundlagen: [browser-https, feste-ip]
 daten_stand: lokal
-vorlage_stand: ce95dd8
+vorlage_stand: 393f161
 ---
+
+# GL.iNet GL-E750: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
 > bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
 > ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
 > klappt.
+> Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
+> getestet ("broken"); nicht jede Community bietet sie an.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20GL.iNet%20GL-E750%20%28broken%29)
-
-# GL.iNet GL-E750 (broken): Freifunk-Firmware installieren
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20GL.iNet%20GL-E750)
 
 GL.iNet-Router haben einen eingebauten Notfall-Modus: Hält man beim
 Einschalten die Reset-Taste, startet statt der Firmware eine schlichte
@@ -33,11 +37,11 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
 
 - den Router mit Netzteil
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
-- OpenWrt für den GL.iNet GL-E750 (broken):
+- OpenWrt für den GL.iNet GL-E750:
   [openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img). Die Freifunk-Firmware
   gibt es nicht in der Form, die der Notfall-Modus annimmt; deshalb kommt
   erst OpenWrt drauf und darüber die Freifunk-Firmware.
-- die Freifunk-Firmware deiner Community für den GL.iNet GL-E750 (broken), und zwar das
+- die Freifunk-Firmware deiner Community für den GL.iNet GL-E750, und zwar das
   **sysupgrade**-Image
 
 ## Vorher prüfen
@@ -99,10 +103,10 @@ Den Notfall-Modus zeigt beim E750 das Display an: erst "Booting", dann
 Statt erst OpenWrt und dann die Freifunk-Firmware aufzuspielen, geht es auch
 mit der **Gluon-RAMpe**: einer kleinen Firmware, die nur eins kann, nämlich
 die Freifunk-Firmware deiner Community annehmen. Das spart die
-OpenWrt-Etappe. Für den GL.iNet GL-E750 (broken) ist dieser Weg **noch von niemandem
+OpenWrt-Etappe. Für den GL.iNet GL-E750 ist dieser Weg **noch von niemandem
 ausprobiert**; die RAMpe selbst läuft auf anderen Geräten.
 
-1. Lade die RAMpe für den GL.iNet GL-E750 (broken) herunter:
+1. Lade die RAMpe für den GL.iNet GL-E750 herunter:
    [gluon-rampe-20261015-gl.inet-gl-e750-factory.img](https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-gl.inet-gl-e750-factory.img).
 2. Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch.
 3. Nach dem Neustart öffne `http://192.168.1.1`. Es erscheint die Seite

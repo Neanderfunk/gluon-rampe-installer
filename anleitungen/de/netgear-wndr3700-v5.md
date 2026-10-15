@@ -1,28 +1,32 @@
 ---
 gluon_name: netgear-wndr3700-v5
-modell: NETGEAR WNDR3700 v5 (Gluon: broken, "untested")
+modell: "NETGEAR WNDR3700 v5 (Gluon: broken, \"untested\")"
+anzeige: NETGEAR WNDR3700 v5
 familie: netgear-nmrp
+gluon_broken: true
 sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-netgear-wndr3700-v5-factory.img
 grundlagen: [browser-https, nmrpflash]
 daten_stand: lokal
-vorlage_stand: ce95dd8
+vorlage_stand: 393f161
 ---
+
+# NETGEAR WNDR3700 v5: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
 > bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
 > ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
 > klappt.
+> Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
+> getestet ("broken"); nicht jede Community bietet sie an.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20NETGEAR%20WNDR3700%20v5%20%28Gluon%3A%20broken%2C%20%22untested%22%29)
-
-# NETGEAR WNDR3700 v5 (Gluon: broken, "untested"): Freifunk-Firmware installieren
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20NETGEAR%20WNDR3700%20v5)
 
 Viele Netgear-Geräte fragen direkt nach dem Einschalten im Netzwerk, ob
 jemand eine Firmware für sie hat. Das Programm **nmrpflash** auf deinem
@@ -34,11 +38,11 @@ dann, wenn die Netgear-Oberfläche fremde Firmware nicht annimmt.
 - das Gerät mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
   Netzwerkkabel
 - das Programm nmrpflash ([nmrpflash benutzen](grundlagen/nmrpflash.md))
-- OpenWrt für den NETGEAR WNDR3700 v5 (Gluon: broken, "untested"):
+- OpenWrt für den NETGEAR WNDR3700 v5:
   [openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img). Die Freifunk-Firmware
   gibt es für dieses Gerät nicht in der Form, die nmrpflash schickt; deshalb
   kommt erst OpenWrt drauf und darüber die Freifunk-Firmware.
-- die Freifunk-Firmware deiner Community für den NETGEAR WNDR3700 v5 (Gluon: broken, "untested"), und zwar das
+- die Freifunk-Firmware deiner Community für den NETGEAR WNDR3700 v5, und zwar das
   **sysupgrade**-Image
 
 ## Vorher prüfen
@@ -111,10 +115,10 @@ Die Freifunk-Firmware für den WNDR3700 v5 gilt bei Gluon als ungetestet.
 Statt erst OpenWrt und dann die Freifunk-Firmware aufzuspielen, geht es auch
 mit der **Gluon-RAMpe**: einer kleinen Firmware, die nur eins kann, nämlich
 die Freifunk-Firmware deiner Community annehmen. Das spart die
-OpenWrt-Etappe. Für den NETGEAR WNDR3700 v5 (Gluon: broken, "untested") ist dieser Weg **noch von niemandem
+OpenWrt-Etappe. Für den NETGEAR WNDR3700 v5 ist dieser Weg **noch von niemandem
 ausprobiert**; die RAMpe selbst läuft auf anderen Geräten.
 
-1. Lade die RAMpe für den NETGEAR WNDR3700 v5 (Gluon: broken, "untested") herunter:
+1. Lade die RAMpe für den NETGEAR WNDR3700 v5 herunter:
    [gluon-rampe-20261015-netgear-wndr3700-v5-factory.img](https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-netgear-wndr3700-v5-factory.img).
 2. Benenne die RAMpe in firmware.img um und schick sie in Schritt 4 mit nmrpflash statt der OpenWrt-Datei.
 3. Nach dem Neustart öffne `http://192.168.1.1`. Es erscheint die Seite

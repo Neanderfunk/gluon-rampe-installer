@@ -1,7 +1,9 @@
 ---
 gluon_name: d-link-aquila-pro-ai-m60-a1
 modell: D-Link AQUILA PRO AI M60 A1
+anzeige: D-Link AQUILA PRO AI M60 A1
 familie: dlink-recovery-web
+gluon_broken: false
 sprache: de
 stufe: mit Werkzeug
 status: erprobt
@@ -10,8 +12,10 @@ erprobt_mit: gluon-rampe-20261010-d-link-aquila-pro-ai-m60-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m60-a1-recovery.bin
 grundlagen: [browser-https, curl, feste-ip]
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# D-Link AQUILA PRO AI M60 A1: Freifunk-Firmware installieren
 
 > **Am Gerät erprobt** am 13.10.2026 mit `gluon-rampe-20261010-d-link-aquila-pro-ai-m60-a1-recovery.bin`. Das aktuelle Image ist neuer und in dieser Form
 > noch nicht am Gerät gelaufen.
@@ -21,8 +25,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20D-Link%20AQUILA%20PRO%20AI%20M60%20A1)
-
-# D-Link AQUILA PRO AI M60 A1: Freifunk-Firmware installieren
 
 Der D-Link AQUILA PRO AI M60 A1 hat eine eingebaute Notfall-Seite von D-Link, die
 **Recovery**. Sie nimmt eine Firmware-Datei an und schreibt sie in den

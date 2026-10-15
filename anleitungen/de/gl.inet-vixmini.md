@@ -1,14 +1,18 @@
 ---
 gluon_name: gl.inet-vixmini
 modell: GL.iNet VIXMINI
+anzeige: GL.iNet VIXMINI
 familie: glinet
+gluon_broken: false
 sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip]
 daten_stand: lokal
-vorlage_stand: ce95dd8
+vorlage_stand: 393f161
 ---
+
+# GL.iNet VIXMINI: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
 > bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
@@ -20,8 +24,6 @@ vorlage_stand: ce95dd8
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20GL.iNet%20VIXMINI)
-
-# GL.iNet VIXMINI: Freifunk-Firmware installieren
 
 GL.iNet liefert seine Router mit einer eigenen Variante von OpenWrt aus.
 Die Freifunk-Firmware lädst du deshalb ganz einfach über die Oberfläche von

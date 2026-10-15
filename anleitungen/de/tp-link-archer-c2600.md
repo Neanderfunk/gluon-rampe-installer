@@ -1,27 +1,31 @@
 ---
 gluon_name: tp-link-archer-c2600
 modell: TP-Link Archer C2600 v1
+anzeige: TP-Link Archer C2600 v1
 familie: k0-webui
+gluon_broken: true
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: []
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# TP-Link Archer C2600 v1: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
 > aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
 > beschrieben.
+> Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
+> getestet ("broken"); nicht jede Community bietet sie an.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20Archer%20C2600%20v1)
-
-# TP-Link Archer C2600 v1: Freifunk-Firmware installieren
 
 Beim TP-Link Archer C2600 v1 geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update

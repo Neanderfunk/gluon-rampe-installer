@@ -1,14 +1,18 @@
 ---
 gluon_name: linksys-ea8300-dallas
 modell: Linksys EA8300
+anzeige: Linksys EA8300
 familie: sonderweg-linksys-ea8300
+gluon_broken: false
 sprache: de
 stufe: fortgeschritten
 status: ungeprüft
 grundlagen: [ssh-scp]
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# Linksys EA8300: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
@@ -21,8 +25,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Linksys%20EA8300)
-
-# Linksys EA8300: Freifunk-Firmware installieren
 
 > **Wichtig:** Lade **nicht** die Freifunk-Firmware direkt über die
 > Linksys-Oberfläche hoch. Laut OpenWrt macht jede Firmware ab OpenWrt 23.05

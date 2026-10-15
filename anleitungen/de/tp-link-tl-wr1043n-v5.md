@@ -1,14 +1,18 @@
 ---
 gluon_name: tp-link-tl-wr1043n-v5
 modell: TP-Link TL-WR1043N v5
+anzeige: TP-Link TL-WR1043N v5
 familie: k0-webui
+gluon_broken: false
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: []
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# TP-Link TL-WR1043N v5: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
 > bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
@@ -20,8 +24,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20TL-WR1043N%20v5)
-
-# TP-Link TL-WR1043N v5: Freifunk-Firmware installieren
 
 Beim TP-Link TL-WR1043N v5 geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update

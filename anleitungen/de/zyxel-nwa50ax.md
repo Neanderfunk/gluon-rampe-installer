@@ -1,14 +1,18 @@
 ---
 gluon_name: zyxel-nwa50ax
 modell: ZyXEL NWA50AX (Alias NWA90AX)
+anzeige: ZyXEL NWA50AX / NWA90AX
 familie: k0-webui
+gluon_broken: false
 sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: []
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# ZyXEL NWA50AX / NWA90AX: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
 > bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
@@ -19,11 +23,9 @@ vorlage_stand: 1473aca
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20ZyXEL%20NWA50AX%20%28Alias%20NWA90AX%29)
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20ZyXEL%20NWA50AX%20/%20NWA90AX)
 
-# ZyXEL NWA50AX (Alias NWA90AX): Freifunk-Firmware installieren
-
-Beim ZyXEL NWA50AX (Alias NWA90AX) geht die Installation über die normale Weboberfläche des
+Beim ZyXEL NWA50AX / NWA90AX geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update
 des Herstellers hinkäme. Du brauchst nur einen Browser.
 
@@ -31,13 +33,13 @@ des Herstellers hinkäme. Du brauchst nur einen Browser.
 
 - das Gerät und sein Netzteil
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
-- die Freifunk-Firmware deiner Community für den ZyXEL NWA50AX (Alias NWA90AX), und zwar das
+- die Freifunk-Firmware deiner Community für den ZyXEL NWA50AX / NWA90AX, und zwar das
   **factory**-Image für die Erstinstallation, nicht "sysupgrade"
 
 Auf dem Aufkleber unter dem Gerät stehen Modell und Hardware-Version (bei
 TP-Link etwa "Ver: 5.0", bei anderen "H/W Ver."). Viele Geräte gibt es in
 mehreren Versionen, und jede braucht ihr eigenes Image. Vergleich den
-Aufkleber genau mit "ZyXEL NWA50AX (Alias NWA90AX)", bevor du anfängst.
+Aufkleber genau mit "ZyXEL NWA50AX / NWA90AX", bevor du anfängst.
 
 ## Vorher prüfen
 

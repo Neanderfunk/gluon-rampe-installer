@@ -1,14 +1,18 @@
 ---
 gluon_name: cudy-m3000-v1
 modell: Cudy M3000 v1 (RTL8221B)
+anzeige: Cudy M3000 v1 (RTL8221B)
 familie: cudy-zwischenfirmware
+gluon_broken: false
 sprache: de
 stufe: fortgeschritten
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
 daten_stand: lokal
-vorlage_stand: 1473aca
+vorlage_stand: 393f161
 ---
+
+# Cudy M3000 v1 (RTL8221B): Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
@@ -20,8 +24,6 @@ vorlage_stand: 1473aca
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Cudy%20M3000%20v1%20%28RTL8221B%29)
-
-# Cudy M3000 v1 (RTL8221B): Freifunk-Firmware installieren
 
 Router von Cudy nehmen ab Werk nur Firmware an, die Cudy selbst
 unterschrieben hat. Deshalb geht es in zwei Schritten: Zuerst kommt eine

@@ -1,14 +1,18 @@
 ---
 gluon_name: gl.inet-gl-usb150
 modell: GL.iNET GL-USB150
+anzeige: GL.iNET GL-USB150
 familie: glinet
+gluon_broken: false
 sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: []
 daten_stand: lokal
-vorlage_stand: ce95dd8
+vorlage_stand: 393f161
 ---
+
+# GL.iNET GL-USB150: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
@@ -20,8 +24,6 @@ vorlage_stand: ce95dd8
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20GL.iNET%20GL-USB150)
-
-# GL.iNET GL-USB150: Freifunk-Firmware installieren
 
 GL.iNet liefert seine Router mit einer eigenen Variante von OpenWrt aus.
 Die Freifunk-Firmware lädst du deshalb ganz einfach über die Oberfläche von
