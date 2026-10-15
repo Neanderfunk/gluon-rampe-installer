@@ -539,10 +539,10 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [netgear-r6120](#netgear-r6120) | NETGEAR R6120 | ramips-mt76x8 | K0 | L5 | normal | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-r6120.md); https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-r6120/ |
 | [ravpower-rp-wd009](#ravpower-rp-wd009) | RAVPower RP-WD009 | ramips-mt76x8 | K0 | L3 | normal | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  | https://openwrt.org/toh/ravpower/rp-wd009#oem_installation_using_the_tftp_method |
 | [tp-link-archer-c20-v4](#tp-link-archer-c20-v4) | TP-Link Archer C20 v4 | ramips-mt76x8 | K1d | L4 | normal | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c20-v4.md) |
-| [tp-link-archer-c20-v5](#tp-link-archer-c20-v5) | TP-Link Archer C20 v5 | ramips-mt76x8 | K3 | L5 | normal | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c20-v5](#tp-link-archer-c20-v5) | TP-Link Archer C20 v5 | ramips-mt76x8 | K3 | L5 | normal | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c20-v5.md) |
 | [tp-link-archer-c50-v3](#tp-link-archer-c50-v3) | TP-Link Archer C50 v3 | ramips-mt76x8 | K1d | L4 | normal | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c50-v3.md) |
-| [tp-link-archer-c50-v4](#tp-link-archer-c50-v4) | TP-Link Archer C50 v4 | ramips-mt76x8 | K3 | L5 | normal | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-archer-c50-v6-ca-eu-ru](#tp-link-archer-c50-v6-ca-eu-ru) | TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54) | ramips-mt76x8 | K3 | L5 | normal | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c50-v4](#tp-link-archer-c50-v4) | TP-Link Archer C50 v4 | ramips-mt76x8 | K3 | L5 | normal | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c50-v4.md) |
+| [tp-link-archer-c50-v6-ca-eu-ru](#tp-link-archer-c50-v6-ca-eu-ru) | TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54) | ramips-mt76x8 | K3 | L5 | normal | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c50-v6-ca-eu-ru.md) |
 | [tp-link-re200-v2](#tp-link-re200-v2) | TP-Link RE200 v2 | ramips-mt76x8 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re200-v2.md) |
 | [tp-link-re200-v3](#tp-link-re200-v3) | TP-Link RE200 v3 | ramips-mt76x8 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re200-v3.md) |
 | [tp-link-re200-v4](#tp-link-re200-v4) | TP-Link RE200 v4 | ramips-mt76x8 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re200-v4.md) |
@@ -12251,7 +12251,7 @@ TP-Link Archer C20 v5 · ramips-mt76x8 · K3
 - **Warnung:** das unveränderte Gluon-sysupgrade nie über die TP-Link-Weboberfläche, das bricked [abgeleitet: Wiki C50]; nach jedem Versuch mindestens 3 Minuten oder bis 3 oder mehr LEDs leuchten warten, sonst Gefahr eines Bricks [abgeleitet: Wiki C50]
 - **Taste und Zeitpunkt:** Weboberflächen-Weg: keine Taste [geprüft: Commit]
 - **Übertragung:** webui-upload; recovery-web: Gerät 192.168.0.1, Rechner statisch; tftp-client-am-geraet: Server 192.168.0.66, Datei tp_recovery.bin
-- **Programm:** Linux/macOS mit dd und cat zum Zusammenbauen (oder WSL) [abgeleitet: Commit nutzt dd/cat]
+- **Programm:** Linux/macOS mit dd und cat zum Zusammenbauen (oder WSL) [abgeleitet: Commit nutzt dd/cat]; Python-Einzeiler für Windows (boot.bin und tp_recovery.bin) byte-gleich mit der dd/cat-Folge aus dem Commit [geprüft: Test Neanderfunk 15.10.2026, byte-gleich mit dd/cat aus Commit 01dcd574]
 - **Datei:** TP-Link-Firmware passend zu Modell, Version und Region von tp-link.com [geprüft: Commit; abgeleitet: Wiki C20 v5 "regional match"]; der U-Boot-Teil muss aus einer TP-Link-Firmware für genau dieses Modell/diese Version stammen (erste 131584 Byte) [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
@@ -12268,6 +12268,8 @@ TP-Link Archer C20 v5 · ramips-mt76x8 · K3
 - **Rückweg zur Herstellerfirmware:** TP-Link-Firmware über die Web-Recovery (192.168.0.1, aktiviert über das Update-Flag wie unter notweg) einspielen [geprüft: Commit "vendor-firmware ... can be written"]
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade lässt sich direkt anhängen, kein Ramboot-Schritt
 - **Quelle (OpenWrt-Commit):** 86e7353bff2a5de257de8ec62e782f016eed143c
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c20-v5.md
+- **Werte für die Anleitung:** stock_url = https://www.tp-link.com/de/support/download/archer-c20/v5/; region = Nimm die TP-Link-Firmware für die Region auf dem Typenschild (in Europa: EU).; sicherheit = quelle
 
 #### tp-link-archer-c50-v4
 
@@ -12283,7 +12285,7 @@ TP-Link Archer C50 v4 · ramips-mt76x8 · K3
 - **Warnung:** das unveränderte Gluon-sysupgrade nie über die TP-Link-Weboberfläche, das bricked [abgeleitet: Wiki C50]; nach jedem Versuch mindestens 3 Minuten oder bis 3 oder mehr LEDs leuchten warten, sonst Gefahr eines Bricks [abgeleitet: Wiki C50]
 - **Taste und Zeitpunkt:** Weboberflächen-Weg: keine Taste [geprüft: Commit]
 - **Übertragung:** webui-upload; recovery-web: Gerät 192.168.0.1, Rechner statisch; tftp-client-am-geraet: Server 192.168.0.66, Datei tp_recovery.bin
-- **Programm:** Linux/macOS mit dd und cat zum Zusammenbauen (oder WSL) [abgeleitet: Commit nutzt dd/cat]
+- **Programm:** Linux/macOS mit dd und cat zum Zusammenbauen (oder WSL) [abgeleitet: Commit nutzt dd/cat]; Python-Einzeiler für Windows (boot.bin und tp_recovery.bin) byte-gleich mit der dd/cat-Folge aus dem Commit [geprüft: Test Neanderfunk 15.10.2026, byte-gleich mit dd/cat aus Commit 01dcd574]
 - **Datei:** TP-Link-Firmware passend zu Modell, Version und Region von tp-link.com [geprüft: Commit; abgeleitet: Wiki C20 v5 "regional match"]; der U-Boot-Teil muss aus einer TP-Link-Firmware für genau dieses Modell/diese Version stammen (erste 131584 Byte) [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
@@ -12300,6 +12302,8 @@ TP-Link Archer C50 v4 · ramips-mt76x8 · K3
 - **Rückweg zur Herstellerfirmware:** TP-Link-Firmware über die Web-Recovery (192.168.0.1, aktiviert über das Update-Flag wie unter notweg) einspielen [geprüft: Commit "vendor-firmware ... can be written"]
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade lässt sich direkt anhängen, kein Ramboot-Schritt
 - **Quelle (OpenWrt-Commit):** 01dcd574a24864c10a9c4df4304a3ce0da5c11a9
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c50-v4.md
+- **Werte für die Anleitung:** stock_url = https://www.tp-link.com/de/support/download/archer-c50/v4/; sicherheit = quelle
 
 #### tp-link-archer-c50-v6-ca-eu-ru
 
@@ -12315,7 +12319,7 @@ TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54) · ramips-mt76x8 · K3
 - **Warnung:** das unveränderte Gluon-sysupgrade nie über die TP-Link-Weboberfläche, das bricked [abgeleitet: Wiki C50]; nach jedem Versuch mindestens 3 Minuten oder bis 3 oder mehr LEDs leuchten warten, sonst Gefahr eines Bricks [abgeleitet: Wiki C50]
 - **Taste und Zeitpunkt:** Weboberflächen-Weg: keine Taste [geprüft: Commit]
 - **Übertragung:** webui-upload; recovery-web: Gerät 192.168.0.1, Rechner statisch; tftp-client-am-geraet: Server 192.168.0.66, Datei tp_recovery.bin
-- **Programm:** Linux/macOS mit dd und cat zum Zusammenbauen (oder WSL) [abgeleitet: Commit nutzt dd/cat]
+- **Programm:** Linux/macOS mit dd und cat zum Zusammenbauen (oder WSL) [abgeleitet: Commit nutzt dd/cat]; Python-Einzeiler für Windows (boot.bin und tp_recovery.bin) byte-gleich mit der dd/cat-Folge aus dem Commit [geprüft: Test Neanderfunk 15.10.2026, byte-gleich mit dd/cat aus Commit 01dcd574]
 - **Datei:** TP-Link-Firmware passend zu Modell, Version und Region von tp-link.com [geprüft: Commit; abgeleitet: Wiki C20 v5 "regional match"]; der U-Boot-Teil muss aus einer TP-Link-Firmware für genau dieses Modell/diese Version stammen (erste 131584 Byte) [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
@@ -12333,6 +12337,8 @@ TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54) · ramips-mt76x8 · K3
 - **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade lässt sich direkt anhängen, kein Ramboot-Schritt
 - **Quelle (OpenWrt-Commit):** e9ac1b19e0f3d383ab83373c261bfb5527a29521
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c50-v6-ca-eu-ru.md
+- **Werte für die Anleitung:** stock_url = https://www.tp-link.com/de/support/download/archer-c50/v6/; region = Nimm die TP-Link-Firmware für die Variante auf dem Typenschild (CA/EU oder RU).; sicherheit = quelle
 
 ### Familie `ubiquiti-edgerouter`
 

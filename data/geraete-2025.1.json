@@ -21135,7 +21135,7 @@
    "uebertragung": "webui-upload; recovery-web: Gerät 192.168.0.1, Rechner statisch; tftp-client-am-geraet: Server 192.168.0.66, Datei tp_recovery.bin",
    "anschluss": "",
    "adressen": "",
-   "programm": "Linux/macOS mit dd und cat zum Zusammenbauen (oder WSL) [abgeleitet: Commit nutzt dd/cat]",
+   "programm": "Linux/macOS mit dd und cat zum Zusammenbauen (oder WSL) [abgeleitet: Commit nutzt dd/cat]; Python-Einzeiler für Windows (boot.bin und tp_recovery.bin) byte-gleich mit der dd/cat-Folge aus dem Commit [geprüft: Test Neanderfunk 15.10.2026, byte-gleich mit dd/cat aus Commit 01dcd574]",
    "zugang": "",
    "datei": "TP-Link-Firmware passend zu Modell, Version und Region von tp-link.com [geprüft: Commit; abgeleitet: Wiki C20 v5 \"regional match\"]; der U-Boot-Teil muss aus einer TP-Link-Firmware für genau dieses Modell/diese Version stammen (erste 131584 Byte) [geprüft: Commit]",
    "seriell": "nein",
@@ -21165,9 +21165,13 @@
    "rampe": "nein: Gluon-sysupgrade lässt sich direkt anhängen, kein Ramboot-Schritt",
    "rampe_rezept": "",
    "quelle": "86e7353bff2a5de257de8ec62e782f016eed143c",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/tp-link-archer-c20-v5.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "https://www.tp-link.com/de/support/download/archer-c20/v5/",
+    "region": "Nimm die TP-Link-Firmware für die Region auf dem Typenschild (in Europa: EU).",
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "tp-link-archer-c50-v3",
@@ -21254,7 +21258,7 @@
    "uebertragung": "webui-upload; recovery-web: Gerät 192.168.0.1, Rechner statisch; tftp-client-am-geraet: Server 192.168.0.66, Datei tp_recovery.bin",
    "anschluss": "",
    "adressen": "",
-   "programm": "Linux/macOS mit dd und cat zum Zusammenbauen (oder WSL) [abgeleitet: Commit nutzt dd/cat]",
+   "programm": "Linux/macOS mit dd und cat zum Zusammenbauen (oder WSL) [abgeleitet: Commit nutzt dd/cat]; Python-Einzeiler für Windows (boot.bin und tp_recovery.bin) byte-gleich mit der dd/cat-Folge aus dem Commit [geprüft: Test Neanderfunk 15.10.2026, byte-gleich mit dd/cat aus Commit 01dcd574]",
    "zugang": "",
    "datei": "TP-Link-Firmware passend zu Modell, Version und Region von tp-link.com [geprüft: Commit; abgeleitet: Wiki C20 v5 \"regional match\"]; der U-Boot-Teil muss aus einer TP-Link-Firmware für genau dieses Modell/diese Version stammen (erste 131584 Byte) [geprüft: Commit]",
    "seriell": "nein",
@@ -21284,9 +21288,12 @@
    "rampe": "nein: Gluon-sysupgrade lässt sich direkt anhängen, kein Ramboot-Schritt",
    "rampe_rezept": "",
    "quelle": "01dcd574a24864c10a9c4df4304a3ce0da5c11a9",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/tp-link-archer-c50-v4.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "https://www.tp-link.com/de/support/download/archer-c50/v4/",
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "tp-link-archer-c50-v6-ca-eu-ru",
@@ -21310,7 +21317,7 @@
    "uebertragung": "webui-upload; recovery-web: Gerät 192.168.0.1, Rechner statisch; tftp-client-am-geraet: Server 192.168.0.66, Datei tp_recovery.bin",
    "anschluss": "",
    "adressen": "",
-   "programm": "Linux/macOS mit dd und cat zum Zusammenbauen (oder WSL) [abgeleitet: Commit nutzt dd/cat]",
+   "programm": "Linux/macOS mit dd und cat zum Zusammenbauen (oder WSL) [abgeleitet: Commit nutzt dd/cat]; Python-Einzeiler für Windows (boot.bin und tp_recovery.bin) byte-gleich mit der dd/cat-Folge aus dem Commit [geprüft: Test Neanderfunk 15.10.2026, byte-gleich mit dd/cat aus Commit 01dcd574]",
    "zugang": "",
    "datei": "TP-Link-Firmware passend zu Modell, Version und Region von tp-link.com [geprüft: Commit; abgeleitet: Wiki C20 v5 \"regional match\"]; der U-Boot-Teil muss aus einer TP-Link-Firmware für genau dieses Modell/diese Version stammen (erste 131584 Byte) [geprüft: Commit]",
    "seriell": "nein",
@@ -21340,9 +21347,13 @@
    "rampe": "nein: Gluon-sysupgrade lässt sich direkt anhängen, kein Ramboot-Schritt",
    "rampe_rezept": "",
    "quelle": "e9ac1b19e0f3d383ab83373c261bfb5527a29521",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/tp-link-archer-c50-v6-ca-eu-ru.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "https://www.tp-link.com/de/support/download/archer-c50/v6/",
+    "region": "Nimm die TP-Link-Firmware für die Variante auf dem Typenschild (CA/EU oder RU).",
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "tp-link-re200-v2",
