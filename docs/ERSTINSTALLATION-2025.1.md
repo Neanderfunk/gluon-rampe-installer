@@ -522,21 +522,21 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [netgear-r6020](#netgear-r6020) | NETGEAR R6020 | ramips-mt76x8 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-r6020.md) |
 | [netgear-r6120](#netgear-r6120) | NETGEAR R6120 | ramips-mt76x8 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-r6120.md); https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-r6120/ |
 | [ravpower-rp-wd009](#ravpower-rp-wd009) | RAVPower RP-WD009 | ramips-mt76x8 | K0 | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  | https://openwrt.org/toh/ravpower/rp-wd009#oem_installation_using_the_tftp_method |
-| [tp-link-archer-c20-v4](#tp-link-archer-c20-v4) | TP-Link Archer C20 v4 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |  |
+| [tp-link-archer-c20-v4](#tp-link-archer-c20-v4) | TP-Link Archer C20 v4 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c20-v4.md) |
 | [tp-link-archer-c20-v5](#tp-link-archer-c20-v5) | TP-Link Archer C20 v5 | ramips-mt76x8 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-archer-c50-v3](#tp-link-archer-c50-v3) | TP-Link Archer C50 v3 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |  |
+| [tp-link-archer-c50-v3](#tp-link-archer-c50-v3) | TP-Link Archer C50 v3 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c50-v3.md) |
 | [tp-link-archer-c50-v4](#tp-link-archer-c50-v4) | TP-Link Archer C50 v4 | ramips-mt76x8 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |  |
 | [tp-link-archer-c50-v6-ca-eu-ru](#tp-link-archer-c50-v6-ca-eu-ru) | TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54) | ramips-mt76x8 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |  |
 | [tp-link-re200-v2](#tp-link-re200-v2) | TP-Link RE200 v2 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re200-v2.md) |
 | [tp-link-re200-v3](#tp-link-re200-v3) | TP-Link RE200 v3 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re200-v3.md) |
 | [tp-link-re200-v4](#tp-link-re200-v4) | TP-Link RE200 v4 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re200-v4.md) |
-| [tp-link-tl-mr3020-v3](#tp-link-tl-mr3020-v3) | TP-Link TL-MR3020 v3 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |  |
-| [tp-link-tl-mr3420-v5](#tp-link-tl-mr3420-v5) | TP-Link TL-MR3420 v5 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |  |
-| [tp-link-tl-mr6400-v5](#tp-link-tl-mr6400-v5) | TP-Link TL-MR6400 v5 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |  |
-| [tp-link-tl-wa801nd-v5](#tp-link-tl-wa801nd-v5) | TP-Link TL-WA801ND v5 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |  |
-| [tp-link-tl-wr841n-v13](#tp-link-tl-wr841n-v13) | TP-Link TL-WR841N v13 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | https://openwrt.org/toh/tp-link/tl-wr841nd#tftp_recovery_via_bootloader_for_v8_v9_v10_v11_v12_v13 |
-| [tp-link-tl-wr902ac-v3](#tp-link-tl-wr902ac-v3) | TP-Link TL-WR902AC v3 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | https://openwrt.org/toh/tp-link/tl-wr902ac_v3#installation |
-| [tp-link-tl-wr902ac-v4](#tp-link-tl-wr902ac-v4) | TP-Link TL-WR902AC v4 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |  |
+| [tp-link-tl-mr3020-v3](#tp-link-tl-mr3020-v3) | TP-Link TL-MR3020 v3 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-mr3020-v3.md) |
+| [tp-link-tl-mr3420-v5](#tp-link-tl-mr3420-v5) | TP-Link TL-MR3420 v5 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-mr3420-v5.md) |
+| [tp-link-tl-mr6400-v5](#tp-link-tl-mr6400-v5) | TP-Link TL-MR6400 v5 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-mr6400-v5.md) |
+| [tp-link-tl-wa801nd-v5](#tp-link-tl-wa801nd-v5) | TP-Link TL-WA801ND v5 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wa801nd-v5.md) |
+| [tp-link-tl-wr841n-v13](#tp-link-tl-wr841n-v13) | TP-Link TL-WR841N v13 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr841n-v13.md); https://openwrt.org/toh/tp-link/tl-wr841nd#tftp_recovery_via_bootloader_for_v8_v9_v10_v11_v12_v13 |
+| [tp-link-tl-wr902ac-v3](#tp-link-tl-wr902ac-v3) | TP-Link TL-WR902AC v3 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr902ac-v3.md); https://openwrt.org/toh/tp-link/tl-wr902ac_v3#installation |
+| [tp-link-tl-wr902ac-v4](#tp-link-tl-wr902ac-v4) | TP-Link TL-WR902AC v4 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr902ac-v4.md) |
 | [vocore2](#vocore2) | VoCore2 | ramips-mt76x8 | K1d | [`ssh-stock`](#familie-ssh-stock) | ssh | nein | nein | nein |  |  |
 | [xiaomi-mi-ra75](#xiaomi-mi-ra75) | Xiaomi Mi WiFi Range Extender AC1200 RA75 (Gluon: broken, "Only serial flash possible") | ramips-mt76x8 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein |  |  |
 | [xiaomi-mi-router-4a-100m-edition](#xiaomi-mi-router-4a-100m-edition) | Xiaomi Mi Router 4A 100M | ramips-mt76x8 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein |  | https://openwrt.org/toh/xiaomi/mi_router_4a_mir4a_100m#installation |
@@ -11165,7 +11165,7 @@ TP-Link Archer C20 v4 · ramips-mt76x8 · K1d
 - **Anschluss:** Kabel an eine LAN-Buchse [abgeleitet]
 - **Adressen:** Rechner feste IP 192.168.0.66, Netzmaske 255.255.255.0 [geprüft: Commit]
 - **Programm:** TFTP-Server (Linux z. B. tftpd-hpa, Windows z. B. Tftpd64) [abgeleitet: Wiki]; Firewall am Rechner darf TFTP nicht blocken [abgeleitet]
-- **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]
+- **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]; Gluon baut dafür das Sonderimage -bootloader.bin (aus -squashfs-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 v2025.1.3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** TFTP-Server
@@ -11178,6 +11178,8 @@ TP-Link Archer C20 v4 · ramips-mt76x8 · K1d
 - **Rückweg zur Herstellerfirmware:** TP-Link-Firmware per derselben TFTP-Recovery als tp_recovery.bin; bei Dateien mit "boot" im Namen vorher die ersten 512 Byte abschneiden (`dd if=orig.bin of=tp_recovery.bin skip=1 bs=512`) [abgeleitet: Wiki C50/MR6400 v5]; Modellversion und Region der TP-Link-Datei müssen passen [abgeleitet]
 - **Gluon-RAMpe passt:** nein, unnötig: Gluon-Image direkt; Recovery schreibt Flash, bootet nichts aus dem RAM
 - **Quelle (OpenWrt-Commit):** 5bdd238b634a34b038fbea9046893de29a77c000
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c20-v4.md
+- **Werte für die Anleitung:** rechner_ip = 192.168.0.66; taste = Halt die Reset-Taste gedrückt, schalte den Router ein und halt sie noch etwa 7 Sekunden weiter.; zeichen = Laut OpenWrt-Wiki flackert die Power-LED dann etwa 3 Sekunden schnell (Download) und blinkt danach etwa 40 Sekunden gelegentlich (Schreiben); dann startet der Router von selbst neu.; sicherheit = quelle
 
 #### tp-link-archer-c50-v3
 
@@ -11199,7 +11201,7 @@ TP-Link Archer C50 v3 · ramips-mt76x8 · K1d
 - **Anschluss:** Kabel an eine LAN-Buchse [abgeleitet]
 - **Adressen:** Rechner feste IP 192.168.0.66, Netzmaske 255.255.255.0 [geprüft: Commit]
 - **Programm:** TFTP-Server (Linux z. B. tftpd-hpa, Windows z. B. Tftpd64) [abgeleitet: Wiki]; Firewall am Rechner darf TFTP nicht blocken [abgeleitet]
-- **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]
+- **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]; Gluon baut dafür das Sonderimage -bootloader.bin (aus -squashfs-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 v2025.1.3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** TFTP-Server
@@ -11212,6 +11214,8 @@ TP-Link Archer C50 v3 · ramips-mt76x8 · K1d
 - **Rückweg zur Herstellerfirmware:** TP-Link-Firmware (z. B. Archer_C50v3_EU_..._up_boot) mit `dd if=<tp-link>.bin of=tp_recovery.bin skip=1 bs=512` vorbereiten und per TFTP-Recovery einspielen [abgeleitet: Wiki C50 Debricking]
 - **Gluon-RAMpe passt:** nein, unnötig: Gluon-Image direkt; Recovery schreibt Flash, bootet nichts aus dem RAM
 - **Quelle (OpenWrt-Commit):** 14951e8f8e09ba6e2cff140769189a66155a5345
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c50-v3.md
+- **Werte für die Anleitung:** rechner_ip = 192.168.0.66; taste = Halt die Reset-Taste gedrückt, schalte den Router ein und halt sie noch etwa 7 Sekunden weiter.; zeichen = Laut OpenWrt-Wiki hören dann alle LEDs auf zu blinken, und die WPS-LED geht an.; sicherheit = quelle
 
 #### tp-link-tl-mr3020-v3
 
@@ -11232,7 +11236,7 @@ TP-Link TL-MR3020 v3 · ramips-mt76x8 · K1d
 - **Anschluss:** Kabel an eine LAN-Buchse [abgeleitet]
 - **Adressen:** Rechner feste IP 192.168.0.225, Netzmaske 255.255.255.0 [geprüft: Commit]
 - **Programm:** TFTP-Server (Linux z. B. tftpd-hpa, Windows z. B. Tftpd64) [abgeleitet: Wiki]; Firewall am Rechner darf TFTP nicht blocken [abgeleitet]
-- **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]
+- **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]; Gluon baut dafür das Sonderimage -bootloader.bin (aus -squashfs-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 v2025.1.3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** TFTP-Server
@@ -11245,6 +11249,8 @@ TP-Link TL-MR3020 v3 · ramips-mt76x8 · K1d
 - **Rückweg zur Herstellerfirmware:** TP-Link-Firmware per derselben TFTP-Recovery als tp_recovery.bin; bei Dateien mit "boot" im Namen vorher die ersten 512 Byte abschneiden (`dd if=orig.bin of=tp_recovery.bin skip=1 bs=512`) [abgeleitet: Wiki C50/MR6400 v5]; Modellversion und Region der TP-Link-Datei müssen passen [abgeleitet]
 - **Gluon-RAMpe passt:** nein, unnötig: Gluon-Image direkt; Recovery schreibt Flash, bootet nichts aus dem RAM
 - **Quelle (OpenWrt-Commit):** 6bbb2202551be394fead2efd99eb946f846fc63d
+- **Detail-Anleitung:** anleitungen/de/tp-link-tl-mr3020-v3.md
+- **Werte für die Anleitung:** rechner_ip = 192.168.0.225; strom = über USB; taste = Halt die Reset-Taste gedrückt, steck das USB-Stromkabel ein und halt sie noch etwa 7 Sekunden weiter.; sicherheit = quelle
 
 #### tp-link-tl-mr3420-v5
 
@@ -11265,7 +11271,7 @@ TP-Link TL-MR3420 v5 · ramips-mt76x8 · K1d
 - **Anschluss:** Kabel an eine LAN-Buchse [abgeleitet]
 - **Adressen:** Rechner feste IP 192.168.0.225, Netzmaske 255.255.255.0 [geprüft: Commit]
 - **Programm:** TFTP-Server (Linux z. B. tftpd-hpa, Windows z. B. Tftpd64) [abgeleitet: Wiki]; Firewall am Rechner darf TFTP nicht blocken [abgeleitet]
-- **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]
+- **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]; Gluon baut dafür das Sonderimage -bootloader.bin (aus -squashfs-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 v2025.1.3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** TFTP-Server
@@ -11278,6 +11284,8 @@ TP-Link TL-MR3420 v5 · ramips-mt76x8 · K1d
 - **Rückweg zur Herstellerfirmware:** TP-Link-Firmware per derselben TFTP-Recovery als tp_recovery.bin; bei Dateien mit "boot" im Namen vorher die ersten 512 Byte abschneiden (`dd if=orig.bin of=tp_recovery.bin skip=1 bs=512`) [abgeleitet: Wiki C50/MR6400 v5]; Modellversion und Region der TP-Link-Datei müssen passen [abgeleitet]
 - **Gluon-RAMpe passt:** nein, unnötig: Gluon-Image direkt; Recovery schreibt Flash, bootet nichts aus dem RAM
 - **Quelle (OpenWrt-Commit):** 39e9bfb18199b046bd3b613002112e4e6dd53658
+- **Detail-Anleitung:** anleitungen/de/tp-link-tl-mr3420-v5.md
+- **Werte für die Anleitung:** rechner_ip = 192.168.0.225; taste = Halt die Reset-Taste gedrückt, schalte den Router ein und halt sie noch etwa 7 Sekunden weiter.; sicherheit = quelle
 
 #### tp-link-tl-mr6400-v5
 
@@ -11298,7 +11306,7 @@ TP-Link TL-MR6400 v5 · ramips-mt76x8 · K1d
 - **Anschluss:** Kabel an eine LAN-Buchse [abgeleitet]
 - **Adressen:** Rechner feste IP 192.168.0.225, Netzmaske 255.255.255.0 [geprüft: Commit]; Router hat in der Recovery 192.168.0.2 [abgeleitet: Wiki MR6400 v5]
 - **Programm:** TFTP-Server (Linux z. B. tftpd-hpa, Windows z. B. Tftpd64) [abgeleitet: Wiki]; Firewall am Rechner darf TFTP nicht blocken [abgeleitet]
-- **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]
+- **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]; Gluon baut dafür das Sonderimage -bootloader.bin (aus -squashfs-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 v2025.1.3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** TFTP-Server
@@ -11311,6 +11319,8 @@ TP-Link TL-MR6400 v5 · ramips-mt76x8 · K1d
 - **Rückweg zur Herstellerfirmware:** TP-Link-Firmware mit `dd if="original.bin" of="tp_recovery.bin" skip=1 bs=512 count=16000` vorbereiten, per TFTP-Recovery (192.168.0.225) einspielen [abgeleitet: Wiki MR6400 v5]
 - **Gluon-RAMpe passt:** nein, unnötig: Gluon-Image direkt; Recovery schreibt Flash, bootet nichts aus dem RAM
 - **Quelle (OpenWrt-Commit):** b641eb6ecfbfc2c6a488483332d4b5a6ee4c736c
+- **Detail-Anleitung:** anleitungen/de/tp-link-tl-mr6400-v5.md
+- **Werte für die Anleitung:** rechner_ip = 192.168.0.225; taste = Halt die Reset-Taste gedrückt, schalte den Router ein und halt sie mindestens 8 Sekunden weiter.; zeichen = Laut OpenWrt-Wiki blinkt nach dem Download die Power-LED etwa 3 Minuten; dann startet der Router neu.; sicherheit = quelle
 
 #### tp-link-tl-wa801nd-v5
 
@@ -11332,7 +11342,7 @@ TP-Link TL-WA801ND v5 · ramips-mt76x8 · K1d
 - **Anschluss:** Kabel an eine LAN-Buchse [abgeleitet]
 - **Adressen:** Rechner feste IP 192.168.0.66, Netzmaske 255.255.255.0 [geprüft: Commit]
 - **Programm:** TFTP-Server (Linux z. B. tftpd-hpa, Windows z. B. Tftpd64) [abgeleitet: Wiki]; Firewall am Rechner darf TFTP nicht blocken [abgeleitet]
-- **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]
+- **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]; Gluon baut dafür das Sonderimage -bootloader.bin (aus -squashfs-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 v2025.1.3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** TFTP-Server
@@ -11345,6 +11355,8 @@ TP-Link TL-WA801ND v5 · ramips-mt76x8 · K1d
 - **Rückweg zur Herstellerfirmware:** TP-Link-Firmware per derselben TFTP-Recovery als tp_recovery.bin; bei Dateien mit "boot" im Namen vorher die ersten 512 Byte abschneiden (`dd if=orig.bin of=tp_recovery.bin skip=1 bs=512`) [abgeleitet: Wiki C50/MR6400 v5]; Modellversion und Region der TP-Link-Datei müssen passen [abgeleitet]
 - **Gluon-RAMpe passt:** nein, unnötig: Gluon-Image direkt; Recovery schreibt Flash, bootet nichts aus dem RAM
 - **Quelle (OpenWrt-Commit):** ce31bdc20c3f2eb387a84c277dff76324a8e39c7
+- **Detail-Anleitung:** anleitungen/de/tp-link-tl-wa801nd-v5.md
+- **Werte für die Anleitung:** rechner_ip = 192.168.0.66; taste = Halt die WPS- und die Reset-Taste zusammen gedrückt, schalte das Gerät ein und halt sie etwa 10 Sekunden weiter, bis die Schloss-LED (ganz rechts) leuchtet.; sicherheit = quelle
 
 #### tp-link-tl-wr841n-v13
 
@@ -11366,7 +11378,7 @@ TP-Link TL-WR841N v13 · ramips-mt76x8 · K1d
 - **Anschluss:** Kabel an eine LAN-Buchse [abgeleitet]
 - **Adressen:** Rechner feste IP 192.168.0.66, Netzmaske 255.255.255.0 [geprüft: Commit]; Router hat in der Recovery 192.168.0.2 [abgeleitet: Wiki]
 - **Programm:** TFTP-Server (Linux z. B. tftpd-hpa, Windows z. B. Tftpd64) [abgeleitet: Wiki]; Firewall am Rechner darf TFTP nicht blocken [abgeleitet]
-- **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]
+- **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]; Gluon baut dafür das Sonderimage -bootloader.bin (aus -squashfs-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 v2025.1.3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** TFTP-Server
@@ -11379,7 +11391,8 @@ TP-Link TL-WR841N v13 · ramips-mt76x8 · K1d
 - **Rückweg zur Herstellerfirmware:** TP-Link-Firmware per TFTP-Recovery; beim v13 laut Wiki ohne Abschneiden [abgeleitet: Wiki WR841ND "unless you are using v13"]
 - **Gluon-RAMpe passt:** nein, unnötig: Gluon-Image direkt; Recovery schreibt Flash, bootet nichts aus dem RAM
 - **Quelle (OpenWrt-Commit):** 24043a0d2e01b9843c0dc529205b3b0bc7ecbbf9
-- **Detail-Anleitung:** https://openwrt.org/toh/tp-link/tl-wr841nd#tftp_recovery_via_bootloader_for_v8_v9_v10_v11_v12_v13
+- **Detail-Anleitung:** anleitungen/de/tp-link-tl-wr841n-v13.md; https://openwrt.org/toh/tp-link/tl-wr841nd#tftp_recovery_via_bootloader_for_v8_v9_v10_v11_v12_v13
+- **Werte für die Anleitung:** rechner_ip = 192.168.0.66; taste = Halt die Reset-Taste gedrückt, schalte den Router ein und halt sie noch etwa 7 Sekunden weiter.; zeichen = Laut OpenWrt-Wiki leuchtet im Notfall-Modus die Schloss-LED.; sicherheit = quelle
 
 #### tp-link-tl-wr902ac-v3
 
@@ -11400,7 +11413,7 @@ TP-Link TL-WR902AC v3 · ramips-mt76x8 · K1d
 - **Anschluss:** Kabel an eine LAN-Buchse [abgeleitet]
 - **Adressen:** Rechner feste IP 192.168.0.66, Netzmaske 255.255.255.0 [geprüft: Commit]
 - **Programm:** TFTP-Server (Linux z. B. tftpd-hpa, Windows z. B. Tftpd64) [abgeleitet: Wiki]; Firewall am Rechner darf TFTP nicht blocken [abgeleitet]
-- **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]
+- **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]; Gluon baut dafür das Sonderimage -bootloader.bin (aus -squashfs-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 v2025.1.3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** TFTP-Server
@@ -11413,7 +11426,8 @@ TP-Link TL-WR902AC v3 · ramips-mt76x8 · K1d
 - **Rückweg zur Herstellerfirmware:** TP-Link-Firmware per derselben TFTP-Recovery als tp_recovery.bin; bei Dateien mit "boot" im Namen vorher die ersten 512 Byte abschneiden (`dd if=orig.bin of=tp_recovery.bin skip=1 bs=512`) [abgeleitet: Wiki C50/MR6400 v5]; Modellversion und Region der TP-Link-Datei müssen passen [abgeleitet]
 - **Gluon-RAMpe passt:** nein, unnötig: Gluon-Image direkt; Recovery schreibt Flash, bootet nichts aus dem RAM
 - **Quelle (OpenWrt-Commit):** d13b05741a4d05a271d26fc3be61e76530025098
-- **Detail-Anleitung:** https://openwrt.org/toh/tp-link/tl-wr902ac_v3#installation
+- **Detail-Anleitung:** anleitungen/de/tp-link-tl-wr902ac-v3.md; https://openwrt.org/toh/tp-link/tl-wr902ac_v3#installation
+- **Werte für die Anleitung:** rechner_ip = 192.168.0.66; taste = Halt die Reset-Taste gedrückt, schalte den Router ein und halt sie noch etwa 7 Sekunden weiter.; sicherheit = quelle
 
 #### tp-link-tl-wr902ac-v4
 
@@ -11434,7 +11448,7 @@ TP-Link TL-WR902AC v4 · ramips-mt76x8 · K1d
 - **Anschluss:** Kabel an eine LAN-Buchse [abgeleitet]
 - **Adressen:** Rechner feste IP 192.168.0.66, Netzmaske 255.255.255.0 [geprüft: Commit]
 - **Programm:** TFTP-Server (Linux z. B. tftpd-hpa, Windows z. B. Tftpd64) [abgeleitet: Wiki]; Firewall am Rechner darf TFTP nicht blocken [abgeleitet]
-- **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin UND zusätzlich als tp_recover.bin (Commit schreibt "tp_recover.bin", alle Schwestergeräte "tp_recovery.bin"; welcher Name gilt, ist ungeklärt) [abgeleitet: Commit ffa40fcc vs. Schwestergeräte] ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]
+- **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin UND zusätzlich als tp_recover.bin (Commit schreibt "tp_recover.bin", alle Schwestergeräte "tp_recovery.bin"; welcher Name gilt, ist ungeklärt) [abgeleitet: Commit ffa40fcc vs. Schwestergeräte] ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]; Dateiname im Commit tp_recover.bin, bei den Schwestergeräten tp_recovery.bin; die Anleitung lässt beide ablegen [geprüft: OpenWrt-Commit ffa40fc; Lösung abgeleitet]; Gluon baut dafür das Sonderimage -bootloader.bin (aus -squashfs-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 v2025.1.3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** TFTP-Server
@@ -11447,6 +11461,8 @@ TP-Link TL-WR902AC v4 · ramips-mt76x8 · K1d
 - **Rückweg zur Herstellerfirmware:** TP-Link-Firmware per derselben TFTP-Recovery als tp_recovery.bin; bei Dateien mit "boot" im Namen vorher die ersten 512 Byte abschneiden (`dd if=orig.bin of=tp_recovery.bin skip=1 bs=512`) [abgeleitet: Wiki C50/MR6400 v5]; Modellversion und Region der TP-Link-Datei müssen passen [abgeleitet]
 - **Gluon-RAMpe passt:** nein, unnötig: Gluon-Image direkt; Recovery schreibt Flash, bootet nichts aus dem RAM
 - **Quelle (OpenWrt-Commit):** ffa40fcc7fe1aee041775e097bccecb9be83cd21
+- **Detail-Anleitung:** anleitungen/de/tp-link-tl-wr902ac-v4.md
+- **Werte für die Anleitung:** rechner_ip = 192.168.0.66; taste = Halt die Reset-Taste gedrückt, schalte den Router ein und lass sie los, sobald die LED blinkt.; tftp_name2 = tp_recover.bin; sicherheit = abgeleitet; sicherheit_hinweis = Der Commit von OpenWrt nennt einen anderen Dateinamen als bei allen Schwestergeräten; deshalb legst du die Datei unter beiden Namen ab.
 
 ### Familie `tplink-ubootteil-dd`
 
