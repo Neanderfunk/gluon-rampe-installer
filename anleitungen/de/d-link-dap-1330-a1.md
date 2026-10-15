@@ -6,7 +6,7 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [curl]
-daten_stand: fbe5766
+daten_stand: d60cc39
 vorlage_stand: aa479e3
 ---
 

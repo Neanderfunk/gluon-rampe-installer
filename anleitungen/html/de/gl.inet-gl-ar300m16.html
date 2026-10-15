@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GL.iNet GL-AR300M16: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="gl.inet-gl-ar300m16">
+<meta name="anleitung:modell" content="GL.iNet GL-AR300M16">
+<meta name="anleitung:familie" content="glinet">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="mit Werkzeug">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="feste-ip">
+<meta name="anleitung:daten_stand" content="d60cc39">
+<meta name="anleitung:vorlage_stand" content="ab9e04f">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Diese Anleitung ist aus Quellen
+zusammengestellt, aber noch niemand hat sie an einem GL.iNet GL-AR300M16 Schritt
+für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
+<a href="mailto:projekt@neanderfunk.de">projekt@neanderfunk.de</a>, ob es geklappt hat.</p>
+</blockquote>
+<h1>GL.iNet GL-AR300M16: Freifunk-Firmware installieren</h1>
+<p>GL.iNet-Router haben einen eingebauten Notfall-Modus: Hält man beim
+Einschalten die Reset-Taste, startet statt der Firmware eine schlichte
+Webseite zum Hochladen. Über die kommt die Freifunk-Firmware auf den Router.
+Du brauchst nur einen Browser und eine feste Adresse am Rechner.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>den Router mit Netzteil</li>
+<li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
+<li>die Freifunk-Firmware deiner Community für den GL.iNet GL-AR300M16, und zwar das
+<strong>sysupgrade</strong>-Image</li>
+</ul>
+<h2>Vorher prüfen</h2>
+<p>GL-AR300M (mit zusätzlichem NAND-Speicher), GL-AR300M16 (nur 16 MB NOR) und
+GL-AR300M-Lite (nur ein Netzwerkanschluss) brauchen je ihr eigenes Image.</p>
+<p>Noch Ende 2024 wurden AR300M mit einem alten Bootloader verkauft, der neue
+Images ablehnen kann. Laut OpenWrt lässt er sich über
+<code>http://192.168.1.1/uboot.html</code> im Notfall-Modus aktualisieren.</p>
+<p>Statt über den Notfall-Modus geht es laut OpenWrt auch aus der GL.iNet-Firmware
+heraus per SSH mit <code>sysupgrade --force</code>.</p>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Datei bereitlegen.</strong> Lade das sysupgrade-Image herunter.</p>
+</li>
+<li>
+<p><strong>Feste Adresse am Rechner.</strong> Stell deinen Rechner auf <code>192.168.1.2</code>,
+Netzmaske <code>255.255.255.0</code>
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>). Schalte ein VPN
+am Rechner aus (auch Tailscale oder ZeroTier), das stört sonst.</p>
+</li>
+<li>
+<p><strong>Kabel stecken.</strong> Steck das Kabel vom Rechner an eine LAN-Buchse.
+Alle anderen Buchsen bleiben frei. Der Router hat noch keinen Strom.</p>
+</li>
+<li>
+<p><strong>Notfall-Modus starten.</strong> Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.</p>
+</li>
+<li>
+<p><strong>Hochladen.</strong> Öffne im Browser <code>http://192.168.1.1</code>. Es erscheint die
+schlichte Notfall-Seite. Wähl das sysupgrade-Image aus und
+starte das Hochladen (&quot;Update firmware&quot;).</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Der Router schreibt die Firmware, das dauert etwa
+3 Minuten.
+<strong>Strom nicht ziehen.</strong></p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Stell den Rechner wieder auf &quot;automatisch&quot;. Danach startet die
+Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
+Einrichtungsseite unter <code>http://192.168.1.1</code> oder gleich im Betrieb.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>In Schritt 4 zeigen die LEDs, dass der Notfall-Modus erreicht ist, und
+unter <code>http://192.168.1.1</code> kommt die Notfall-Seite.</li>
+<li>Nach dem Neustart meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Unter <code>http://192.168.1.1</code> kommt nichts.</strong> Prüf die feste Adresse
+(Schritt 2), schalte VPN-Programme aus und versuch Schritt 4 noch einmal,
+diesmal genau auf die LEDs achtend. Hilft ein anderer Browser oder ein
+privates Fenster, lag es am Zwischenspeicher des Browsers.</li>
+</ul>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Übertragung)</li>
+<li>abgeleitet: GL-Doku AR300M (Sichtbare Zeichen)</li>
+<li>abgeleitet: GL-Doku-Eintrag 'GL-AR300M (Shadow)' (Schritte (Normalweg), Taste und Zeitpunkt)</li>
+<li>abgeleitet: Wiki toh/gl.inet/gl-ar300m (Bedingung an die Herstellerfirmware)</li>
+<li>geprüft (Weg ab Werk, Schritte (Normalweg), Datei, Quelle (OpenWrt-Commit))</li>
+<li>geprüft: Commit b591cab (Schritte (Normalweg), Typenschild/Verwechslung, Notweg)</li>
+<li>geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026) (Schritte (Normalweg), Taste und Zeitpunkt, Anschluss, Adressen, Programm, Dauer)</li>
+<li>Geräteeintrag: b591cabd3989b44cfaf15248af9e55a0300a9c0a [geprüft]</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

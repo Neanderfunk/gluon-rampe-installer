@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GL.iNet microuter-N300: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="gl.inet-microuter-n300">
+<meta name="anleitung:modell" content="GL.iNet microuter-N300">
+<meta name="anleitung:familie" content="glinet">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="mit Werkzeug">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="feste-ip">
+<meta name="anleitung:daten_stand" content="d60cc39">
+<meta name="anleitung:vorlage_stand" content="ab9e04f">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Diese Anleitung ist aus Quellen
+zusammengestellt, aber noch niemand hat sie an einem GL.iNet microuter-N300 Schritt
+für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
+<a href="mailto:projekt@neanderfunk.de">projekt@neanderfunk.de</a>, ob es geklappt hat.</p>
+</blockquote>
+<h1>GL.iNet microuter-N300: Freifunk-Firmware installieren</h1>
+<p>GL.iNet liefert seine Router mit einer eigenen Variante von OpenWrt aus.
+Die Freifunk-Firmware lädst du deshalb ganz einfach über die Oberfläche von
+GL.iNet hoch, wie ein normales Update. Du brauchst nur einen Browser.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>den Router mit Netzteil</li>
+<li>einen Rechner oder Laptop mit WLAN</li>
+<li>die Freifunk-Firmware deiner Community für den GL.iNet microuter-N300, und zwar das
+<strong>sysupgrade</strong>-Image. Das ist bei GL.iNet richtig, auch wenn es die erste
+Installation ist.</li>
+</ul>
+<h2>Vorher prüfen</h2>
+<p>microuter-N300 und VIXMINI sehen gleich aus, haben aber verschieden viel
+Speicher und je ihr eigenes Image (nicht <a href="gl.inet-vixmini.html">VIXMINI</a>).</p>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Datei bereitlegen.</strong> Lade das sysupgrade-Image herunter.</p>
+</li>
+<li>
+<p><strong>Verbinden.</strong> Verbinde dich per <strong>WLAN</strong> mit dem Router. Sein
+Netzwerkanschluss ist ab Werk für den Internetzugang gedacht (WAN), darüber
+kommst du nicht an die Oberfläche. Name und Passwort des WLANs stehen auf
+dem Aufkleber.</p>
+</li>
+<li>
+<p><strong>Oberfläche öffnen.</strong> Öffne im Browser <code>http://192.168.8.1</code>. Beim ersten Mal
+fragt GL.iNet nach Sprache und einem Passwort für die Verwaltung: Leg eins
+fest, du brauchst es nur für diese Installation.</p>
+</li>
+<li>
+<p><strong>Firmware hochladen.</strong> Geh zu <strong>Update → Local Update</strong> und wähl das
+sysupgrade-Image aus. <strong>Einstellungen nicht behalten:</strong> Entfern den Haken
+bei &quot;Keep Settings&quot; (oder wähl &quot;Do not keep configuration&quot;). Dann das
+Update starten.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Der Router schreibt die Firmware und startet neu, einige
+Minuten. <strong>Strom nicht ziehen.</strong></p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Danach startet die Freifunk-Firmware deiner Community: je nach
+Community zuerst mit einer Einrichtungsseite unter <code>http://192.168.1.1</code>
+oder gleich im Betrieb. Für die Einrichtung brauchst du jetzt ein
+Netzwerkkabel, das WLAN des Herstellers gibt es nicht mehr.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>Nach dem Neustart meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Die Oberfläche lehnt die Datei ab.</strong> Prüf, ob es das sysupgrade-Image für
+genau dieses Modell ist. Sonst hilft der Notfall-Modus (unten).</li>
+</ul>
+<h2>Notfall: U-Boot-Weboberfläche</h2>
+<p>Klappt es über die GL.iNet-Oberfläche nicht, oder startet der Router nicht
+mehr, hilft der eingebaute Notfall-Modus:</p>
+<ol>
+<li>Rechner fest auf <code>192.168.1.2</code>, Netzmaske <code>255.255.255.0</code>
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>), VPN am Rechner
+aus. Kabel an eine LAN-Buchse,
+alle anderen Buchsen frei.</li>
+<li>Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.</li>
+<li>Im Browser <code>http://192.168.1.1</code> öffnen, das sysupgrade-Image auswählen,
+&quot;Update firmware&quot;.</li>
+<li>Etwa 3 Minuten warten, Strom nicht ziehen.</li>
+</ol>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>geprüft (Weg ab Werk, Schritte (Normalweg))</li>
+<li>geprüft: Commit (Notweg)</li>
+<li>geprüft: Commit b30f228 (Schritte (Normalweg), Anschluss, Adressen, Programm, Datei, Typenschild/Verwechslung)</li>
+<li>geprüft: Commit b30f228, GL-Doku 'microuter-N300: 5 times' (Taste und Zeitpunkt, Notweg)</li>
+<li>geprüft: Commit, GL-Doku (Notweg)</li>
+<li>geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026) (Notweg)</li>
+<li>Geräteeintrag: b30f2281cce6649567e0194d203f06517d173115</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

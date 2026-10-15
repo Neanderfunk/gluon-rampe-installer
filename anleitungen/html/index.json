@@ -259,6 +259,160 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "gl-mt300a",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl-mt300a.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl-mt300n",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl-mt300n.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl-mt300n-v2",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl-mt300n-v2.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl-mt750",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl-mt750.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl.inet-6416",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-6416.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl.inet-gl-ap1300",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-ap1300.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl.inet-gl-ar150",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-ar150.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl.inet-gl-ar300m-lite",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-ar300m-lite.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl.inet-gl-ar300m-nor",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-ar300m-nor.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl.inet-gl-ar300m16",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-ar300m16.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl.inet-gl-ar750",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-ar750.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl.inet-gl-ar750s-nor",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-ar750s-nor.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl.inet-gl-b1300",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-b1300.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl.inet-gl-e750",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-e750.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl.inet-gl-mt1300",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-mt1300.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl.inet-gl-mt2500",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-mt2500.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl.inet-gl-mt3000",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-mt3000.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl.inet-gl-mt6000",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-mt6000.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl.inet-gl-usb150",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-usb150.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl.inet-gl-xe300",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-xe300.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl.inet-microuter-n300",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-microuter-n300.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "gl.inet-vixmini",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-vixmini.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "linksys-ea6350v3",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/linksys-ea6350v3.html",
   "status": "ungeprüft",

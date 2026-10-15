@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GL.iNet 6416: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="gl.inet-6416">
+<meta name="anleitung:modell" content="GL.iNet 6416">
+<meta name="anleitung:familie" content="glinet">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="mit Werkzeug">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="feste-ip">
+<meta name="anleitung:daten_stand" content="d60cc39">
+<meta name="anleitung:vorlage_stand" content="ab9e04f">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Diese Anleitung ist aus Quellen
+zusammengestellt, aber noch niemand hat sie an einem GL.iNet 6416 Schritt
+für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
+<a href="mailto:projekt@neanderfunk.de">projekt@neanderfunk.de</a>, ob es geklappt hat.</p>
+</blockquote>
+<h1>GL.iNet 6416: Freifunk-Firmware installieren</h1>
+<p>GL.iNet-Router haben einen eingebauten Notfall-Modus: Hält man beim
+Einschalten die Reset-Taste, startet statt der Firmware eine schlichte
+Webseite zum Hochladen. Über die kommt die Freifunk-Firmware auf den Router.
+Du brauchst nur einen Browser und eine feste Adresse am Rechner.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>den Router mit Netzteil</li>
+<li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
+<li>die Freifunk-Firmware deiner Community für den GL.iNet 6416, und zwar das
+<strong>sysupgrade</strong>-Image</li>
+</ul>
+<h2>Vorher prüfen</h2>
+<p>6408 und 6416 sehen gleich aus und unterscheiden sich nur im Speicher (8 MB
+bzw. 16 MB). Nimm das Image für genau dein Gerät. Es gibt auch Ausführungen
+mit nur einem Netzwerkanschluss von anderen Anbietern.</p>
+<p>Der Notfall-Modus ist beim 6416 nur aus dem OpenWrt-Wiki beschrieben, und
+woran man das Ende des Schreibens erkennt, nennt keine Quelle. Einfacher, aber
+schlechter belegt: Das sysupgrade-Image direkt über die GL.iNet-Oberfläche
+hochladen.</p>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Datei bereitlegen.</strong> Lade das sysupgrade-Image herunter.</p>
+</li>
+<li>
+<p><strong>Feste Adresse am Rechner.</strong> Stell deinen Rechner auf <code>192.168.1.2</code>,
+Netzmaske <code>255.255.255.0</code>
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>). Schalte ein VPN
+am Rechner aus (auch Tailscale oder ZeroTier), das stört sonst.</p>
+</li>
+<li>
+<p><strong>Kabel stecken.</strong> Steck das Kabel vom Rechner an eine LAN-Buchse.
+Alle anderen Buchsen bleiben frei. Der Router hat noch keinen Strom.</p>
+</li>
+<li>
+<p><strong>Notfall-Modus starten.</strong> Strom ab, Reset-Taste halten, Strom wieder an. Die LED blinkt einige Male grün, dann ganz kurz rot: beim roten Blinken loslassen.</p>
+</li>
+<li>
+<p><strong>Hochladen.</strong> Öffne im Browser <code>http://192.168.1.1</code>. Es erscheint die
+schlichte Notfall-Seite. Wähl das sysupgrade-Image aus und
+starte das Hochladen (&quot;Update firmware&quot;).</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Der Router schreibt die Firmware, das dauert etwa
+3 Minuten.
+<strong>Strom nicht ziehen.</strong></p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Stell den Rechner wieder auf &quot;automatisch&quot;. Danach startet die
+Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
+Einrichtungsseite unter <code>http://192.168.1.1</code> oder gleich im Betrieb.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>In Schritt 4 zeigen die LEDs, dass der Notfall-Modus erreicht ist, und
+unter <code>http://192.168.1.1</code> kommt die Notfall-Seite.</li>
+<li>Nach dem Neustart meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Unter <code>http://192.168.1.1</code> kommt nichts.</strong> Prüf die feste Adresse
+(Schritt 2), schalte VPN-Programme aus und versuch Schritt 4 noch einmal,
+diesmal genau auf die LEDs achtend. Hilft ein anderer Browser oder ein
+privates Fenster, lag es am Zwischenspeicher des Browsers.</li>
+</ul>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet: Wiki (Sichtbare Zeichen)</li>
+<li>abgeleitet: Wiki toh/gl.inet/6416 (Schritte (Normalweg), Taste und Zeitpunkt)</li>
+<li>abgeleitet: Wiki; Geräteadresse 192.168.1.1 geprüft: Commit b4d3110 (Schritte (Normalweg), Anschluss, Adressen, Programm)</li>
+<li>geprüft (Weg ab Werk, Schritte (Normalweg), Quelle (OpenWrt-Commit))</li>
+<li>geprüft: Commit (Datei, Notweg)</li>
+<li>geprüft: Commit b4d3110 (Typenschild/Verwechslung)</li>
+<li>Geräteeintrag: b4d3110ac1f1f1962f812ac139c437837a448cff [geprüft]</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

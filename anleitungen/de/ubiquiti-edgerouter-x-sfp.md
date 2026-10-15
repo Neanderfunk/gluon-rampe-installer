@@ -6,7 +6,7 @@ sprache: de
 stufe: Werkstatt
 status: ungeprüft
 grundlagen: [feste-ip, ssh-scp]
-daten_stand: fbe5766
+daten_stand: d60cc39
 vorlage_stand: 12da4a4
 ---
 
