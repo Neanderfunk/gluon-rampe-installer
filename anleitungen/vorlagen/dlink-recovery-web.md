@@ -12,10 +12,10 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     recovery_ip          Adresse der Recovery, z. B. 192.168.200.1
     rechner_ip           feste Adresse für den Rechner, z. B. 192.168.200.66
                          (Netzmaske immer 255.255.255.0)
-    led_recovery         sichtbares Zeichen der Recovery, z. B. "blinkt rot"
     datei_art            "rampe" (RAMpe-recovery.bin, danach sysupgrade)
                          oder "factory" (Gluon-factory direkt in die Recovery)
     dauer_neustart       Zeit vom Upload-Start bis zum Neustart, z. B. "gut 2 Minuten"
+    upload_pfad          Pfad für den Upload, z. B. "/upload.cgi" oder "/"
     datei_beispiel       Dateiname im curl-Befehl, z. B. gluon-rampe-20261015-…-recovery.bin
 
   bei datei_art = "rampe"
@@ -26,6 +26,8 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     dauer_gluon          z. B. "unter 2 Minuten"
 
   optional (leer = Satz entfällt)
+    led_recovery         sichtbares Zeichen der Recovery, als Satzende nach
+                         "bis die LED …", z. B. "rot blinkt"; leer = nicht belegt
     anschluss            welche Buchse, z. B. "LAN1"
     taste_hinweis        z. B. "Nur die Reset-Taste führt in die Recovery, keine andere."
     led_falsch           was NICHT die Recovery ist
@@ -94,7 +96,14 @@ wirklich über das Kabel spricht.
 
 4. **Router in die Recovery bringen.** Drück mit der Büroklammer die
    Reset-Taste und halte sie gedrückt. Steck jetzt den Strom ein und halte
+   {%- if w.led_recovery %}
    die Taste weiter, bis die LED **{{ w.led_recovery }}**. Dann loslassen.
+   {%- else %}
+   die Taste weiter gedrückt. Woran man bei diesem Gerät sieht, dass die
+   Recovery bereit ist, wissen wir noch nicht. Lass nach etwa 10 Sekunden los
+   und prüf in Schritt 5, ob die Recovery-Seite erscheint; wenn nicht, noch
+   einmal und länger halten.
+   {%- endif %}
    {%- if w.taste_hinweis %}
    {{ w.taste_hinweis }}
    {%- endif %}
@@ -124,13 +133,13 @@ wirklich über das Kabel spricht.
    Linux und macOS:
 
    ```sh
-   curl -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o /dev/null -F "firmware=@{{ w.datei_beispiel }};type=application/octet-stream" http://{{ w.recovery_ip }}/upload.cgi
+   curl -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o /dev/null -F "firmware=@{{ w.datei_beispiel }};type=application/octet-stream" http://{{ w.recovery_ip }}{{ w.upload_pfad }}
    ```
 
    Windows (cmd):
 
    ```
-   curl.exe -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o NUL -F "firmware=@{{ w.datei_beispiel }};type=application/octet-stream" http://{{ w.recovery_ip }}/upload.cgi
+   curl.exe -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o NUL -F "firmware=@{{ w.datei_beispiel }};type=application/octet-stream" http://{{ w.recovery_ip }}{{ w.upload_pfad }}
    ```
 
    Den echten Dateinamen statt `{{ w.datei_beispiel }}` einsetzen. Für die
@@ -138,7 +147,7 @@ wirklich über das Kabel spricht.
    [curl benutzen](grundlagen/curl.md).
 
 7. **Warten.** curl überträgt die Datei und wartet dann weiter, während die
-   Recovery schreibt. Die LED bleibt dabei wie in Schritt 4. Bis zum
+   Recovery schreibt.{% if w.led_recovery %} Die LED bleibt dabei wie in Schritt 4.{% endif %} Bis zum
    Neustart vergehen meist {{ w.dauer_neustart }}
    {%- if w.dauer_lang %}, es kann aber auch {{ w.dauer_lang }} dauern{% endif %}.
    **Nicht abbrechen, Strom nicht ziehen.**
@@ -155,6 +164,11 @@ wirklich über das Kabel spricht.
    Die RAMpe bleibt auf dem Router, bis die Freifunk-Firmware sie ersetzt.
    Startet der Router zwischendurch neu, ist das harmlos: Seite einfach
    wieder aufrufen.
+   Zeigt der Browser stattdessen eine Warnung vor einem unsicheren
+   Zertifikat, hat er von sich aus `https://` vor die Adresse gesetzt. Klick
+   auf "Erweitert" und "Trotzdem fortfahren" (je nach Browser etwas anders
+   benannt), dann kommt die Seite. Mehr dazu unter
+   [Browser macht https daraus](grundlagen/browser-https.md).
 
 9. **Freifunk-Firmware hochladen.** Wähl das sysupgrade-Image deiner
    Community aus und klick "Datei hochladen". Die RAMpe zeigt die Prüfsumme
