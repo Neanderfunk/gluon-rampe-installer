@@ -356,16 +356,28 @@ def main():
 
     veraltet = [p for p, t in dateien.items()
                 if not p.exists() or p.read_bytes() != inhalt(t)]
+    # Seiten von Geraeten, die keine Anleitung mehr haben (Werte entfernt): erzeugte
+    # Dateien direkt in <sprache>/ bzw. html/<sprache>/, die dieser Lauf nicht schreibt
+    verwaist = [p for p in sorted((a.ausgabe / SPRACHE).glob("*.md")) if p not in dateien]
+    if a.html:
+        verwaist += [p for p in sorted((a.ausgabe / "html" / SPRACHE).glob("*.html"))
+                     if p not in dateien]
     if a.check:
         if veraltet:
             sys.exit(f"{len(veraltet)} Datei(en) nicht aktuell, z. B. {veraltet[0]}: "
+                     "scripts/anleitungen.py laufen lassen")
+        if verwaist:
+            sys.exit(f"{len(verwaist)} Seite(n) ohne Geraet, z. B. {verwaist[0]}: "
                      "scripts/anleitungen.py laufen lassen")
         return
     for p in veraltet:
         p.parent.mkdir(parents=True, exist_ok=True)
         p.write_bytes(inhalt(dateien[p]))
-    print(f"{len(seiten)} Anleitung(en) erzeugt, {len(veraltet)} Datei(en) geschrieben; "
-          f"{len(ohne)} Geräte noch ohne Vorlage oder Werte.")
+    for p in verwaist:
+        p.unlink()
+    print(f"{len(seiten)} Anleitung(en) erzeugt, {len(veraltet)} Datei(en) geschrieben"
+          + (f", {len(verwaist)} verwaiste entfernt" if verwaist else "")
+          + f"; {len(ohne)} Geräte noch ohne Vorlage oder Werte.")
 
 
 if __name__ == "__main__":
