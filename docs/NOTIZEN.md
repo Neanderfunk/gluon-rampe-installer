@@ -258,3 +258,24 @@ Wie die D-Link-Geräte geflasht werden, steht in der Router-Werkstatt unter
   IPQ5018, 256 MB) läuft am Testplatz mit OpenWrt main (c127dev-Build, WLAN
   mit `kmod-ath11k-smallbuffers`); OpenWrt 24.10/25.12 und damit Gluon 2025.1
   kennen das Gerät nicht. Einzelheiten in einer Neanderfunk-Notiz.
+
+## Stand 15.10.2026: alle Rezepte gebaut
+
+- **67 Rezepte, 85 Dateien** `out/gluon-rampe-20261015-*`, alle 14 Bauläufe
+  ohne Fehler und ohne "nichts eingesammelt". Liste je Gerät mit Art, Größe
+  und SHA256: `out/LISTE-20261015.md` (geht mit den Images auf den
+  Firmware-Server), Prüfsummen `out/SHA256SUMS`.
+- Neu in allen Images: `gluon.css?v=<Release>` (Browser-Cache) und die
+  Umleitung https -> http auf Port 443 (selbstsigniertes Zertifikat je Lauf,
+  `libustream-mbedtls`). x86-64 in QEMU bestanden (`test/qemu-x86-64.sh`,
+  prüft beides mit).
+- `build.sh`: Kernel-Modulpakete je Lauf neu verpacken (gemeinsames Staging
+  gleicher Architekturen), Release-Kennung in allen Dateinamen.
+- Zehn neue Rezepte (dauerhafte RAMpe im Hersteller-Format bzw. initramfs):
+  GL-E750, GL-XE300, MR8300, WNDR3700 v5, Xiaomi Mi 3G, Mi AC2100, Redmi
+  AC2100, Archer C60 v1, DIR-825 B1, DAP-X1860.
+- DIR-825 B1: RAMpe-initramfs 6.257.577 Bytes (6111 KiB), also unter den
+  6144k der D-Link-Recovery; das OpenWrt-initramfs 24.10.8 lag mit 6145 KB
+  knapp darüber. Ob die Recovery es nimmt, ist weiter offen.
+- Stände ohne Cache-Schutz vom 14.10. liegen in `out/alt-20261014-ohne-cache-schutz/`,
+  der am M60 erprobte Stand vom 10.10. weiter in `out/`.
