@@ -8,8 +8,8 @@ sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [avm-eva, feste-ip]
-daten_stand: c31462f
-vorlage_stand: 869501c
+daten_stand: 8ee56d9
+vorlage_stand: 2a45b69
 ---
 
 # AVM FRITZ!Box 4040: Freifunk-Firmware installieren
@@ -38,7 +38,8 @@ das richtige Timing. Wie der Bootloader funktioniert, steht unter
 - Python 3 und das Programm
   [fritzflash.py](https://github.com/freifunk-darmstadt/fritz-tools)
 - die Freifunk-Firmware deiner Community für dieses Gerät, und zwar das Image mit **„-bootloader.bin“**
-  am Ende, nicht das sysupgrade
+  am Ende, nicht das sysupgrade. Im Firmware-Selector wählst du dafür unter
+  "Wähle Deine Installationsart" den Knopf **Bootloader-Image**.
 
 ## Vorher prüfen
 

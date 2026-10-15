@@ -8,7 +8,7 @@ sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip, schreibschutz, ssh-scp, tftp-client]
-daten_stand: c31462f
+daten_stand: 8ee56d9
 vorlage_stand: 393f161
 ---
 
@@ -113,7 +113,7 @@ scheinbar fehlerfrei durch, schreiben aber nichts. Mehr dazu unter
    dmesg | grep mtk_sgmii_init
    ```
 
-   **Prüfen:** Weiter nur, wenn in der Ausgabe kein RTL8211 steht (mit RTL8211 ist es ein v3, dann gilt die Anleitung für den UniFi 6 LR v3). Sonst hier aufhören.
+   **Prüfen:** Weiter nur, wenn in der Ausgabe kein RTL8211 steht (mit RTL8211 ist es ein v3, dann gilt die Anleitung für den [UniFi 6 LR v3](ubiquiti-unifi-6-lr-v3.md)). Sonst hier aufhören.
 
    ```
    cat /proc/mtd

@@ -8,7 +8,7 @@ sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip, schreibschutz, ssh-scp, tftp-client]
-daten_stand: c31462f
+daten_stand: 8ee56d9
 vorlage_stand: 393f161
 ---
 
@@ -113,7 +113,7 @@ scheinbar fehlerfrei durch, schreiben aber nichts. Mehr dazu unter
    dmesg | grep mtk_sgmii_init
    ```
 
-   **Prüfen:** Weiter nur, wenn in der Ausgabe RTL8211 steht (ohne RTL8211 ist es kein v3, siehe Vorher prüfen). Sonst hier aufhören.
+   **Prüfen:** Weiter nur, wenn in der Ausgabe RTL8211 steht (ohne RTL8211 ist es ein v1 oder v2, siehe Vorher prüfen). Sonst hier aufhören.
 
    ```
    cat /proc/mtd

@@ -8,8 +8,8 @@ sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [avm-eva, feste-ip]
-daten_stand: c31462f
-vorlage_stand: 869501c
+daten_stand: 8ee56d9
+vorlage_stand: 2a45b69
 ---
 
 # AVM FRITZ!WLAN Repeater 1750E: Freifunk-Firmware installieren

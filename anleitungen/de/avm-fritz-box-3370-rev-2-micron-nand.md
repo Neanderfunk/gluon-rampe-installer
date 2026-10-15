@@ -8,8 +8,8 @@ sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [avm-eva, feste-ip]
-daten_stand: c31462f
-vorlage_stand: 869501c
+daten_stand: 8ee56d9
+vorlage_stand: 2a45b69
 ---
 
 # AVM FRITZ!Box 3370 Rev. 2, Micron-NAND: Freifunk-Firmware installieren
@@ -38,7 +38,10 @@ das richtige Timing. Wie der Bootloader funktioniert, steht unter
 - das Gerät mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
   Netzwerkkabel; ein einfacher Switch dazwischen hilft beim Timing
 - einen Rechner mit Linux oder macOS (für `ftp`)
-- die Freifunk-Firmware deiner Community für dieses Gerät, die Dateien, die in Schritt 4 genannt sind
+- die Freifunk-Firmware deiner Community für dieses Gerät, und zwar zwei Dateien, die in Schritt 4 genannt sind. Im
+  Firmware-Selector findest du sie unter "Wähle Deine Installationsart": die
+  Datei auf `-eva-kernel.bin` beim Knopf **Bootloader-Kernel-Image**, die
+  Datei auf `-eva-filesystem.bin` beim Knopf **Bootloader-Root-Image**.
 
 ## Vorher prüfen
 
