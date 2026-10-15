@@ -24,30 +24,32 @@ Ende, wie viel angekommen ist.</p>
 <p>Den genauen Befehl für dein Gerät findest du in dessen Anleitung. Hier steht,
 wie du ihn ausführst.</p>
 <h2>Windows 10 und 11</h2>
-<p>curl ist eingebaut und heißt <code>curl.exe</code>.</p>
+<p>curl ist eingebaut und heißt <code>curl.exe</code>. Nimm dafür die <strong>PowerShell</strong>.</p>
 <ol>
 <li>
-<p>Win + R, <code>cmd</code> eingeben, Enter. Es öffnet sich die Eingabeaufforderung.</p>
+<p>PowerShell öffnen: im Startmenü &quot;PowerShell&quot; suchen, oder im Explorer im
+Ordner mit der Datei Rechtsklick auf eine freie Stelle, &quot;Im Terminal
+öffnen&quot; (Windows 11) bzw. mit gedrückter Umschalttaste
+&quot;PowerShell-Fenster hier öffnen&quot; (Windows 10). Vorne in der Zeile steht
+dann <code>PS</code>.</p>
 </li>
 <li>
 <p>In den Ordner mit der Datei wechseln, zum Beispiel:</p>
-<pre><code>cd %USERPROFILE%\Downloads
+<pre><code>cd $env:USERPROFILE\Downloads
 </code></pre>
 </li>
 <li>
 <p>Befehl aus der Geräteanleitung einfügen (Rechtsklick fügt ein), Enter.</p>
 </li>
 </ol>
-<p><strong>In der PowerShell</strong> (blaues oder schwarzes Fenster mit <code>PS</code> vorn) gelten
-andere Regeln:</p>
+<p>Worauf es in der PowerShell ankommt:</p>
 <ul>
 <li><code>curl.exe</code> immer ausschreiben. <code>curl</code> allein ist dort ein anderes Programm.</li>
-<li>Der Ordner heißt <code>$env:USERPROFILE\Downloads</code> statt
-<code>%USERPROFILE%\Downloads</code>.</li>
-<li>Statt <code>-o NUL</code> schreibst du <code>-o antwort.bin</code>. Die Antwort des Routers
-landet dann in dieser Datei; sie ist unwichtig und kann weg.</li>
+<li><code>-o antwort.bin</code> nimmt die Antwort des Routers auf; die Datei ist unwichtig
+und kann danach weg.</li>
 </ul>
-<p>Einfacher ist meist, gleich die Eingabeaufforderung &quot;cmd&quot; zu nehmen.</p>
+<p>In der alten Eingabeaufforderung &quot;cmd&quot; ist der Upload bei uns schon nach
+wenigen Sekunden abgebrochen; nimm deshalb die PowerShell.</p>
 <p><strong>Nicht aus der WSL</strong> (Linux unter Windows): Von dort kam bei uns keine
 Verbindung zur Recovery zustande, aus Windows selbst schon.</p>
 <h2>Linux und macOS</h2>

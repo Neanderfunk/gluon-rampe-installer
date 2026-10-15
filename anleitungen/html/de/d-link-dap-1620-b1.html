@@ -14,7 +14,7 @@
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="curl, feste-ip">
 <meta name="anleitung:daten_stand" content="30c9a43">
-<meta name="anleitung:vorlage_stand" content="393f161">
+<meta name="anleitung:vorlage_stand" content="85ca218">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -80,16 +80,16 @@ Ein <code>ping</code> hilft hier nicht, die Recovery antwortet nicht darauf.</p>
 </li>
 <li>
 <p><strong>Datei mit curl hochladen.</strong> Öffne ein Terminal (unter Windows die
-Eingabeaufforderung &quot;cmd&quot;), wechsle in den Ordner mit der Datei und gib
-ein:</p>
+<strong>PowerShell</strong>), wechsle in den Ordner mit der Datei und gib ein:</p>
 <p>Linux und macOS:</p>
 <pre><code class="language-sh">curl -H &quot;Expect:&quot; -w &quot;HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n&quot; -o /dev/null -F &quot;firmware=@gluon-&lt;community&gt;-&lt;release&gt;-d-link-dap-1620-b1-factory.bin;type=application/octet-stream&quot; http://192.168.0.50/upload.cgi
 </code></pre>
-<p>Windows (cmd):</p>
-<pre><code>curl.exe -H &quot;Expect:&quot; -w &quot;HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n&quot; -o NUL -F &quot;firmware=@gluon-&lt;community&gt;-&lt;release&gt;-d-link-dap-1620-b1-factory.bin;type=application/octet-stream&quot; http://192.168.0.50/upload.cgi
+<p>Windows (PowerShell):</p>
+<pre><code>curl.exe -H &quot;Expect:&quot; -w &quot;HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n&quot; -o antwort.bin -F &quot;firmware=@gluon-&lt;community&gt;-&lt;release&gt;-d-link-dap-1620-b1-factory.bin;type=application/octet-stream&quot; http://192.168.0.50/upload.cgi
 </code></pre>
-<p>Den echten Dateinamen statt <code>gluon-&lt;community&gt;-&lt;release&gt;-d-link-dap-1620-b1-factory.bin</code> einsetzen. Für die
-PowerShell sieht der Befehl etwas anders aus, siehe
+<p>Den echten Dateinamen statt <code>gluon-&lt;community&gt;-&lt;release&gt;-d-link-dap-1620-b1-factory.bin</code> einsetzen. Unter
+Windows <code>curl.exe</code> genau so ausschreiben; <code>antwort.bin</code> nimmt nur die
+Antwort des Routers auf und kann danach weg. Mehr unter
 <a href="grundlagen/curl.html">curl benutzen</a>.</p>
 </li>
 <li>

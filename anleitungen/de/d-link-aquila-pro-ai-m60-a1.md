@@ -12,7 +12,7 @@ erprobt_mit: gluon-rampe-20261010-d-link-aquila-pro-ai-m60-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m60-a1-recovery.bin
 grundlagen: [browser-https, curl, feste-ip]
 daten_stand: 30c9a43
-vorlage_stand: 393f161
+vorlage_stand: 85ca218
 ---
 
 # D-Link AQUILA PRO AI M60 A1: Freifunk-Firmware installieren
@@ -80,8 +80,7 @@ wirklich über das Kabel spricht.
    ![Die Recovery-Seite im Browser: Überschrift, Feld für die Datei, Knopf "Upgrade". Hier nichts hochladen.](../bilder/d-link-aquila-pro-ai-m60-a1/recovery-seite.png)
 
 6. **Datei mit curl hochladen.** Öffne ein Terminal (unter Windows die
-   Eingabeaufforderung "cmd"), wechsle in den Ordner mit der Datei und gib
-   ein:
+   **PowerShell**), wechsle in den Ordner mit der Datei und gib ein:
 
    Linux und macOS:
 
@@ -89,14 +88,15 @@ wirklich über das Kabel spricht.
    curl -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o /dev/null -F "firmware=@gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin;type=application/octet-stream" http://192.168.200.1/upload.cgi
    ```
 
-   Windows (cmd):
+   Windows (PowerShell):
 
    ```
-   curl.exe -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o NUL -F "firmware=@gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin;type=application/octet-stream" http://192.168.200.1/upload.cgi
+   curl.exe -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o antwort.bin -F "firmware=@gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin;type=application/octet-stream" http://192.168.200.1/upload.cgi
    ```
 
-   Den echten Dateinamen statt `gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin` einsetzen. Für die
-   PowerShell sieht der Befehl etwas anders aus, siehe
+   Den echten Dateinamen statt `gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin` einsetzen. Unter
+   Windows `curl.exe` genau so ausschreiben; `antwort.bin` nimmt nur die
+   Antwort des Routers auf und kann danach weg. Mehr unter
    [curl benutzen](grundlagen/curl.md).
 
 7. **Warten.** curl überträgt die Datei und wartet dann weiter, während die
