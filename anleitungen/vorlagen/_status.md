@@ -10,6 +10,9 @@ den Werten (alle optional):
                        Geräten oder aus dem Wiki übernommen) oder "unsicher" (einzelne
                        Schritte nur vermutet oder aus einem Einzelbericht)
   sicherheit_hinweis   ganzer Satz, was genau unsicher ist
+Dazu zusatz.achtung (Abschnitt "## Achtung" der Zusatzdatei): erscheint als
+Warnkasten direkt unter dem Statusblock, für Dinge, die das Gerät unbrauchbar
+machen können.
 -#}
 {%- set ws = werte -%}
 {%- if status == "erprobt" %}
@@ -46,3 +49,8 @@ den Werten (alle optional):
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject={{ ("Anleitung " ~ modell) | urlencode }})
+{%- set za = zusatz.get("achtung") if zusatz is defined else "" %}
+{%- if za %}
+
+> **Achtung:** {{ za | replace("\n", "\n> ") }}
+{%- endif %}
