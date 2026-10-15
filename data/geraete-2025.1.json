@@ -15886,7 +15886,7 @@
    "gehaeuse": "nein",
    "werkzeug": "-",
    "verwechslung": "",
-   "stock_bedingung": "",
+   "stock_bedingung": "Neuere TOTOLINK-Firmware (V9.1.0cu.1929, cu.2089) lehnt das Image mit \"Invalid upgrade firmware file\" ab; dann erst V9.1.0u.6118_B20201102 über den Notfall-Modus (Reset beim Einstecken, alle LAN-LEDs an, blaue Status-LED blinkt einmal, loslassen; LAN1, 192.168.1.x, http://192.168.1.1; fertig, wenn die blaue LED langsam blinkt) [geprüft: forum.openwrt.org t/113153 #1, #3 (2021-11-28); t/124500 #1, #3 (2022-04-05)]. Datei: Originaldownload von totolink.net im Internet Archive (f468696a985bdf6e544cdcadbc1585ec.zip, 8.993.132 Byte, SHA256 4fdb1bbf…daeb, darin die .web mit SHA256 2acd661c…ade9) [geprüft: geladen und gehasht 15.10.2026]; dass es die Datei der totolink.net-Downloadseite (id/218) ist, zeigt laut Content der Wayback-CDX",
    "initramfs": "[initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-totolink_x5000r-initramfs-kernel.bin) (200)",
    "factory": "Gluon-sysupgrade direkt",
    "stock_teile": "-",
@@ -15899,9 +15899,17 @@
    "rampe": "nein, unnötig: sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "23be410b3d1267c752bf9f6e5c8f5a514dc562c4",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/totolink-x5000r.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "alt_url": "https://web.archive.org/web/20251202002316id_/https://www.totolink.net/data/upload/20201223/f468696a985bdf6e544cdcadbc1585ec.zip",
+    "alt_datei": "f468696a985bdf6e544cdcadbc1585ec.zip",
+    "alt_sha256": "4fdb1bbf1773a3e7bb3d2f36953411e93a7da52277ee8e79e1dd54909e74daeb",
+    "alt_web": "TOTOLINK_C8343R-1C_X5000R_IP04433_MT7621A_SPI_16M256M_V9.1.0u.6118_B20201102_ALL.web",
+    "alt_hinweis": "TOTOLINK bietet sie auf der eigenen Seite nicht mehr an; der Link führt auf die Originaldatei von totolink.net im Internet Archive.",
+    "sicherheit": "quelle",
+    "sicherheit_hinweis": "Den Umweg über die ältere TOTOLINK-Firmware kennen wir nur aus Berichten im OpenWrt-Forum."
+   }
   },
   {
    "gluon_name": "tp-link-archer-ax23-v1",

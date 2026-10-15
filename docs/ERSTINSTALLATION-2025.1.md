@@ -489,7 +489,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [netgear-wac104](#netgear-wac104) | NETGEAR WAC104 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wac104.md) |
 | [netgear-wax202](#netgear-wax202) | NETGEAR WAX202 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wax202.md); https://openwrt.org/toh/netgear/wax202#oem_easy_installation |
 | [netgear-wndr3700-v5](#netgear-wndr3700-v5) | NETGEAR WNDR3700 v5 (Gluon: broken, "untested") | ramips-mt7621 | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | ja | ja | [Anleitung](../anleitungen/de/netgear-wndr3700-v5.md) |
-| [totolink-x5000r](#totolink-x5000r) | TOTOLINK X5000R | ramips-mt7621 | K1d | [`sonderweg-totolink-x5000r`](#familie-sonderweg-totolink-x5000r) | webui-upload | nein | nein | nein |  |  |
+| [totolink-x5000r](#totolink-x5000r) | TOTOLINK X5000R | ramips-mt7621 | K1d | [`sonderweg-totolink-x5000r`](#familie-sonderweg-totolink-x5000r) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/totolink-x5000r.md) |
 | [tp-link-archer-ax23-v1](#tp-link-archer-ax23-v1) | TP-Link Archer AX23 v1 (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-ax23-v1.md) |
 | [tp-link-archer-c6-v3](#tp-link-archer-c6-v3) | TP-Link Archer C6 v3 (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c6-v3.md) |
 | [tp-link-eap613-v1](#tp-link-eap613-v1) | TP-Link EAP613 v1 | ramips-mt7621 | K0 | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  |  |
@@ -10200,12 +10200,15 @@ TOTOLINK X5000R · ramips-mt7621 · K1d
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
+- **Bedingung an die Herstellerfirmware:** Neuere TOTOLINK-Firmware (V9.1.0cu.1929, cu.2089) lehnt das Image mit "Invalid upgrade firmware file" ab; dann erst V9.1.0u.6118_B20201102 über den Notfall-Modus (Reset beim Einstecken, alle LAN-LEDs an, blaue Status-LED blinkt einmal, loslassen; LAN1, 192.168.1.x, http://192.168.1.1; fertig, wenn die blaue LED langsam blinkt) [geprüft: forum.openwrt.org t/113153 #1, #3 (2021-11-28); t/124500 #1, #3 (2022-04-05)]. Datei: Originaldownload von totolink.net im Internet Archive (f468696a985bdf6e544cdcadbc1585ec.zip, 8.993.132 Byte, SHA256 4fdb1bbf…daeb, darin die .web mit SHA256 2acd661c…ade9) [geprüft: geladen und gehasht 15.10.2026]; dass es die Datei der totolink.net-Downloadseite (id/218) ist, zeigt laut Content der Wayback-CDX
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-totolink_x5000r-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** nein, unnötig: sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** 23be410b3d1267c752bf9f6e5c8f5a514dc562c4
+- **Detail-Anleitung:** anleitungen/de/totolink-x5000r.md
+- **Werte für die Anleitung:** alt_url = https://web.archive.org/web/20251202002316id_/https://www.totolink.net/data/upload/20201223/f468696a985bdf6e544cdcadbc1585ec.zip; alt_datei = f468696a985bdf6e544cdcadbc1585ec.zip; alt_sha256 = 4fdb1bbf1773a3e7bb3d2f36953411e93a7da52277ee8e79e1dd54909e74daeb; alt_web = TOTOLINK_C8343R-1C_X5000R_IP04433_MT7621A_SPI_16M256M_V9.1.0u.6118_B20201102_ALL.web; alt_hinweis = TOTOLINK bietet sie auf der eigenen Seite nicht mehr an; der Link führt auf die Originaldatei von totolink.net im Internet Archive.; sicherheit = quelle; sicherheit_hinweis = Den Umweg über die ältere TOTOLINK-Firmware kennen wir nur aus Berichten im OpenWrt-Forum.
 
 ### Familie `sonderweg-tp-link-archer-c60-v1`
 
