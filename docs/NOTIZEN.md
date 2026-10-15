@@ -127,6 +127,14 @@ Entstanden am 11.09.2026 in der Neanderfunk-Firmware-Session. Idee: adorfer
    schärfen (sysupgrade statt factory, Community-Download-Seite finden).
 7. Optional: Gluon-Version im Image-Namen, falls mehrere Basen parallel
    gebaut werden.
+8. **Langfristig: alle RAMpe-Bauten auf dem Buildhost** (adorfer
+   15.10.2026). Ein Skript, das im Container alle Rezepte durchbaut, ein
+   `build.sh`-Lauf je Target wie in `docs/GERAETE.md` "Bau-Läufe". Bisher
+   lief das von Hand mit einem lokalen Wrapper je Welle. Dazu ein zweiter
+   Strang für den **WS-AP3825i** auf älterer Basis: Jedes OpenWrt-initramfs
+   ab 23.05 hängt dort bei `ft_fixup_l2cache: FDT_ERR_NOTFOUND`, nur 22.03.0
+   startet (OpenWrt-Issue 17152). Kandidat ist eine RAMpe auf Gluon v2022.1
+   (OpenWrt 22.03). Dann gehört die Gluon-Basis in den Image-Namen (Punkt 7).
 
 ## Fallstricke beim Weiterbauen
 
