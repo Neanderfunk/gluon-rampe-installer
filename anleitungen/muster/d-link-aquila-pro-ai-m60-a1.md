@@ -1,0 +1,170 @@
+---
+gluon_name: d-link-aquila-pro-ai-m60-a1
+modell: D-Link AQUILA PRO AI M60 A1
+familie: dlink-recovery-web
+sprache: de
+stufe: mit Werkzeug
+status: erprobt
+erprobt_am: 2026-10-13
+erprobt_mit: gluon-rampe-20261010
+rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m60-a1-recovery.bin
+grundlagen: [feste-ip, curl]
+daten_stand: 81a88c4
+vorlage_stand: Entwurf
+---
+
+<!-- MUSTER, von Hand erzeugt (Content, 15.10.2026), bis scripts/anleitungen.py steht -->
+
+> **Am Gerät erprobt** am 13.10.2026 mit `gluon-rampe-20261010-d-link-aquila-pro-ai-m60-a1-recovery.bin`. Das aktuelle Image ist neuer und in dieser Form
+> noch nicht am Gerät gelaufen.
+
+# D-Link AQUILA PRO AI M60 A1: Freifunk-Firmware installieren
+
+Der D-Link AQUILA PRO AI M60 A1 hat eine eingebaute Notfall-Seite von D-Link, die
+**Recovery**. Sie nimmt eine Firmware-Datei an und schreibt sie in den
+Speicher, auch wenn sonst nichts mehr geht. Über sie kommt zuerst die
+**Gluon-RAMpe** auf den Router: eine kleine Seite, die nur eins kann, die
+Freifunk-Firmware deiner Community annehmen. Du brauchst dafür kein SSH und
+kein Passwort.
+
+## Was du brauchst
+
+- einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
+- eine Büroklammer für die Reset-Taste
+- die RAMpe-Datei für dieses Gerät: `gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin`
+- die Freifunk-Firmware deiner Community für den D-Link AQUILA PRO AI M60 A1, und zwar das
+  **sysupgrade**-Image
+- das Programm **curl** zum Hochladen. Unter Linux und macOS ist es meist
+  schon da, unter Windows 10 und 11 heißt es `curl.exe` und ist eingebaut
+  ([curl benutzen](grundlagen/curl.md)).
+
+WLAN am Rechner schaltest du für die Installation am besten aus, damit er
+wirklich über das Kabel spricht.
+
+## Schritte
+
+1. **Dateien bereitlegen.** Lade die RAMpe-Datei und das sysupgrade-Image herunter und leg sie in einen
+   Ordner, den du wiederfindest, zum Beispiel "Downloads".
+
+2. **Feste Adresse am Rechner.** Stell den Netzwerkanschluss deines Rechners
+   auf die feste Adresse `192.168.200.66` mit der Netzmaske
+   `255.255.255.0`. Ein Gateway brauchst du nicht. Wie das geht, steht unter
+   [Feste IP-Adresse einstellen](grundlagen/feste-ip.md).
+
+3. **Kabel stecken.** Verbinde den Rechner mit dem Router.
+   Der Router hat noch keinen Strom.
+
+4. **Router in die Recovery bringen.** Drück mit der Büroklammer die
+   Reset-Taste und halte sie gedrückt. Steck jetzt den Strom ein und halte
+   die Taste weiter, bis die LED **rot blinkt**. Dann loslassen.
+   Nur die Reset-Taste führt in die Recovery, keine der anderen Tasten.
+   Ein orangefarbenes Auf- und Abdimmen ist nicht die Recovery. Dann Strom ab und noch einmal.
+
+5. **Prüfen, ob die Recovery da ist.**
+   Öffne im Browser `http://192.168.200.1`. Es erscheint eine schlichte Seite
+   "D-link Router Recovery Mode".
+   **Lade dort nichts hoch.** Ihr Fortschrittsbalken läuft nur nach der Uhr
+   und sagt nichts darüber, ob die Datei ankam. Die Seite zeigt dir nur, dass
+   die Recovery bereit ist.
+   Kommt stattdessen eine aufwendigere Seite, die nach einem Passwort fragt,
+   ist das die normale D-Link-Firmware, nicht die Recovery: zurück zu
+   Schritt 4.
+   Ein `ping` hilft hier nicht, die Recovery antwortet nicht darauf.
+
+6. **Datei mit curl hochladen.** Öffne ein Terminal (unter Windows die
+   Eingabeaufforderung "cmd"), wechsle in den Ordner mit der Datei und gib
+   ein:
+
+   Linux und macOS:
+
+   ```sh
+   curl -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o /dev/null -F "firmware=@gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin;type=application/octet-stream" http://192.168.200.1/upload.cgi
+   ```
+
+   Windows (cmd):
+
+   ```
+   curl.exe -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o NUL -F "firmware=@gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin;type=application/octet-stream" http://192.168.200.1/upload.cgi
+   ```
+
+   Den echten Dateinamen statt `gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin` einsetzen. Für die
+   PowerShell sieht der Befehl etwas anders aus, siehe
+   [curl benutzen](grundlagen/curl.md).
+
+7. **Warten.** curl überträgt die Datei und wartet dann weiter, während die
+   Recovery schreibt. Die LED bleibt dabei wie in Schritt 4. Bis zum
+   Neustart vergehen meist knapp 2 Minuten, es kann aber auch über 10 Minuten dauern.
+   **Nicht abbrechen, Strom nicht ziehen.**
+   Am Ende zeigt curl, wie viel ankam. Geklappt hat es bei
+   **etwa 52,4 Millionen Bytes**. Steht da 0, kam nichts an (siehe "Wenn
+   etwas schiefgeht").
+
+8. **Die RAMpe.** Nach dem Neustart blinkt die LED gleichmäßig, etwa einmal pro Sekunde. Stell den Rechner
+   wieder auf "automatisch" (DHCP) und öffne `http://192.168.1.1`. Es
+   erscheint die Seite "Firmware aktualisieren".
+   Die RAMpe bleibt auf dem Router, bis die Freifunk-Firmware sie ersetzt.
+   Startet der Router zwischendurch neu, ist das harmlos: Seite einfach
+   wieder aufrufen.
+
+9. **Freifunk-Firmware hochladen.** Wähl das sysupgrade-Image deiner
+   Community aus und klick "Datei hochladen". Die RAMpe zeigt die Prüfsumme
+   (SHA256) der Datei. Vergleich sie mit der Prüfsumme, die deine Community
+   zur Datei angibt. Stimmt sie, klick "Fortfahren".
+
+10. **Fertig.** Nach unter 2 Minuten läuft die Freifunk-Firmware. Weiter
+    geht es mit der Einrichtung, wie deine Community sie beschreibt.
+
+## Woran du erkennst, dass es geklappt hat
+
+- curl meldet am Ende **etwa 52,4 Millionen Bytes**. Wie lange das gedauert
+  hat, ist egal, es zählt die Menge.
+- Nach dem Neustart blinkt die LED gleichmäßig, etwa einmal pro Sekunde, und unter `http://192.168.1.1`
+  steht "Firmware aktualisieren".
+- Die Erfolgsmeldung der D-Link-Seite zählt nicht, sie erscheint immer.
+
+## Wenn etwas schiefgeht
+
+- **curl meldet "Failed to connect", HTTP 000 und 0 Bytes.** Die Recovery war
+  nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
+  Router noch einmal in die Recovery bringen (Schritt 4).
+- **Nach dem Upload startet wieder die normale D-Link-Firmware.** Die Datei
+  ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
+  Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.
+- **Der Browser-Upload war nach einer Sekunde "fertig".** Dann ist nichts
+  übertragen worden. Das passiert auch in Chromium-Browsern. Nimm curl.
+- **Aus der WSL unter Windows kommt keine Verbindung zustande.** Nimm curl.exe
+  direkt in Windows, nicht in der WSL.
+- **Die LED bleibt nach dem Upload rot, oder der Router hängt beim Start.**
+  Der M60 hat zwei Speicherbereiche für die Firmware. Die Recovery schreibt in
+  den gerade aktiven, die Freifunk-Firmware startet aber nur aus dem ersten. War der zweite
+  aktiv, braucht es vorher ein Umschalt-Image ("M60-Recovery-UBI-Switch" von
+  RolandoMagico auf GitHub), das genauso über die Recovery hochgeladen wird.
+  Das ist ein Weg für Fortgeschrittene; frag im Zweifel deine Community. Bei
+  unserem Test war es nicht nötig.
+
+## Gut zu wissen
+
+- **Mehrfach-Packs:** Geräte aus Mehrfach-Packs (auf dem Typenschild "M60-2")
+  speichern ihre MAC-Adresse an anderer Stelle. Die RAMpe zeigt deshalb eine
+  falsche Adresse, die mit `06:00:` beginnt. Gluon ohne Korrektur übernimmt
+  diese falsche Adresse. Die Neanderfunk-Firmware enthält die Korrektur und
+  liest beim ersten Start die Adresse vom Aufkleber. Frag deine Community, ob
+  ihre Firmware das auch tut.
+- **Über die normale D-Link-Oberfläche** lässt sich der M60 nicht auf
+  Freifunk umstellen, nur über die Recovery.
+
+## Herkunft der Angaben
+
+- abgeleitet (Felder: rampe, rampe_rezept)
+- geprüft, am Gerät 29./30.09.2026 erprobt (Felder: datei, schritte, weg)
+- geprüft: Commit (Felder: fehlerbild, schritte, stock_bedingung, zeichen)
+- geprüft: Commit 7271ee5 (Felder: rueckweg, stock_bedingung, zeichen)
+- geprüft: Commit 7271ee5, am Gerät (Felder: adressen, schritte)
+- geprüft: Commits 'Chromium based'; Firefox abgeleitet: Forum Darmstadt laut Notiz (Felder: programm)
+- geprüft: Commits 29cca6c, 7271ee5; Neanderfunk-Notiz (Felder: schritte, taste)
+- geprüft: Neanderfunk-Notiz (Felder: adressen, datei, dauer, schritte, stock_bedingung, zeichen, zugang)
+- geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät (Felder: adressen, dauer, fehlerbild, hw_test, notweg, programm, rampe, taste, zeichen)
+- geprüft: Neanderfunk-Notiz 15.10.2026, am Gerät (Felder: notweg)
+- geprüft: Neanderfunk-Notiz, am Gerät bestätigt (Felder: verwechslung)
+- geprüft: Neanderfunk-Notiz, am M60 erprobt (Felder: programm)
+- Geräteeintrag: OpenWrt-Commit 7271ee5
