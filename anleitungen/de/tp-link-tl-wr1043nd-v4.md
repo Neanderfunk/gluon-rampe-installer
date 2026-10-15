@@ -6,7 +6,7 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: []
-daten_stand: 685706f
+daten_stand: f62a84f
 vorlage_stand: 7deda71
 ---
 

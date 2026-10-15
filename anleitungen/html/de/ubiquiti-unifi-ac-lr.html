@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ubiquiti UniFi AC LR: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="ubiquiti-unifi-ac-lr">
+<meta name="anleitung:modell" content="Ubiquiti UniFi AC LR">
+<meta name="anleitung:familie" content="ubiquiti-unifi-ssh">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="mit Werkzeug">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="feste-ip, ssh-scp, tftp-client">
+<meta name="anleitung:daten_stand" content="f62a84f">
+<meta name="anleitung:vorlage_stand" content="af4b08d">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Diese Anleitung ist aus Quellen
+zusammengestellt, aber noch niemand hat sie an einem Ubiquiti UniFi AC LR Schritt
+für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
+<a href="mailto:projekt@neanderfunk.de">projekt@neanderfunk.de</a>, ob es geklappt hat.</p>
+</blockquote>
+<h1>Ubiquiti UniFi AC LR: Freifunk-Firmware installieren</h1>
+<p>Die UniFi-Geräte von Ubiquiti haben keine Oberfläche, über die man fremde
+Firmware hochladen kann. Man meldet sich stattdessen per <strong>SSH</strong> auf dem
+Gerät an, kopiert die Freifunk-Firmware hinüber und schreibt sie mit ein paar
+Befehlen selbst in den Speicher. Das ist nicht schwer, aber die Befehle
+müssen genau stimmen. Wenn du noch nie mit SSH gearbeitet hast, lies vorher
+<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>das Gerät mit PoE-Injektor oder einem PoE-Switch</li>
+<li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
+<li>die Freifunk-Firmware deiner Community für den Ubiquiti UniFi AC LR, und zwar das
+<strong>sysupgrade</strong>-Image</li>
+<li><code>ssh</code> und <code>scp</code>. Unter Linux, macOS und Windows 10/11 sind sie eingebaut
+(<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>).</li>
+</ul>
+<p>Das Gerät muss im <strong>Werkszustand</strong> sein. Ist es in einem UniFi-Controller
+angemeldet, gelten dort andere Zugangsdaten. Setz es dann vorher auf
+Werkseinstellungen zurück oder entferne es im Controller.</p>
+<h2>Vorher prüfen</h2>
+<p>AC Lite, AC LR und AC Mesh sind innen gleich, haben aber verschiedene
+Antennen und brauchen je ihr <strong>eigenes</strong> Image. Lies den Aufkleber genau.</p>
+<p>Für diese Geräte gibt es zwei Wege:</p>
+<ul>
+<li><strong>Weg a (Schritte oben):</strong> Die Freifunk-Firmware wird mit <code>dd</code> direkt in
+den Speicher geschrieben. Das geht laut Freifunk-Forum auch mit aktueller
+Ubiquiti-Firmware (gezeigt mit 6.2.35, bestätigt Ende 2023). Das ist der
+Weg für die meisten Geräte.</li>
+<li><strong>Weg b (unten):</strong> Erst zurück auf die alte Ubiquiti-Firmware 3.7.58, dann
+mit <code>mtd</code> schreiben. Das ging früher überall, scheitert aber laut Forum,
+sobald Ubiquiti-Firmware 4.3 oder neuer drauf ist: Ubiquiti sperrt das
+Zurückgehen.</li>
+</ul>
+<p>Welche Version auf dem Gerät läuft, siehst du nach dem Anmelden in Schritt 5
+an der Eingabezeile, zum Beispiel <code>UAP-AC-Lite-BZ.6.2.35#</code>.</p>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Datei bereitlegen.</strong> Lade das sysupgrade-Image herunter und
+benenne es in <code>firmware.bin</code> um. Das erspart Tippfehler in den Befehlen.</p>
+</li>
+<li>
+<p><strong>Feste Adresse am Rechner.</strong> Stell deinen Rechner auf die feste Adresse
+<code>192.168.1.2</code> mit der Netzmaske <code>255.255.255.0</code>
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).</p>
+</li>
+<li>
+<p><strong>Verbinden.</strong> Steck das Kabel vom Rechner an die Buchse <strong>LAN</strong> des
+PoE-Injektors (oder an den PoE-Switch, an dem das Gerät hängt) und warte,
+bis das Gerät gestartet ist. Das dauert etwa eine Minute.</p>
+</li>
+<li>
+<p><strong>Firmware hinüberkopieren.</strong> Öffne ein Terminal im Ordner mit der Datei
+und gib ein:</p>
+<pre><code>scp -O firmware.bin ubnt@192.168.1.20:/tmp/firmware.bin
+</code></pre>
+<p>Das Passwort ist <code>ubnt</code>. Beim ersten Mal fragt <code>scp</code>, ob du dem Gerät
+vertraust: mit <code>yes</code> bestätigen.</p>
+</li>
+<li>
+<p><strong>Anmelden.</strong></p>
+<pre><code>ssh ubnt@192.168.1.20
+</code></pre>
+<p>Passwort wieder <code>ubnt</code>. Du bist jetzt auf dem Gerät angemeldet.</p>
+</li>
+<li>
+<p><strong>Firmware schreiben.</strong> Gib diese Befehle <strong>einzeln und genau so</strong> ein,
+jeweils mit Enter. Am besten kopierst du sie Zeile für Zeile.</p>
+<pre><code>cat /proc/mtd
+</code></pre>
+<p><strong>Prüfen:</strong> Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht. Sonst hier aufhören.</p>
+<pre><code>echo &quot;5edfacbf&quot; &gt; /proc/ubnthal/.uf
+dd if=/tmp/firmware.bin of=/dev/mtdblock2
+dd if=/tmp/firmware.bin of=/dev/mtdblock3
+dd if=/dev/zero bs=1 count=1 of=/dev/mtd4
+reboot
+</code></pre>
+<p>Ein Tippfehler an dieser Stelle kann das Gerät unbrauchbar machen. Meldet
+ein Befehl einen Fehler, mach <strong>nicht</strong> weiter, sondern melde dich bei
+deiner Community oder bei uns.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Das Gerät startet mit der Freifunk-Firmware neu. Der erste
+Start dauert etwa 2 Minuten.
+<strong>Strom nicht ziehen.</strong></p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Stell den Rechner wieder auf &quot;automatisch&quot;. Danach startet die
+Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
+Einrichtungsseite unter <code>http://192.168.1.1</code> oder gleich im Betrieb. Wie
+es weitergeht, beschreibt deine Community.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li><code>scp</code> kopiert die Datei ohne Fehlermeldung.</li>
+<li>Keiner der Befehle in Schritt 6 meldet einen Fehler.</li>
+<li>Nach dem Neustart meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong><code>ssh</code> oder <code>scp</code> meldet &quot;Connection refused&quot; oder &quot;Permission denied&quot;.</strong>
+Das Gerät ist nicht im Werkszustand, oder es ist noch nicht fertig
+gestartet. Zurücksetzen und noch einmal.</li>
+<li><strong><code>scp</code> meldet einen Fehler wie &quot;subsystem request failed&quot;.</strong> Das <code>-O</code> fehlt
+im Befehl.</li>
+<li><strong>&quot;no matching host key type found&quot;.</strong> Dein SSH ist neuer als das Gerät.
+Häng an <code>ssh</code> und <code>scp</code> noch <code>-o HostKeyAlgorithms=+ssh-rsa</code> an, siehe
+<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>.</li>
+<li><strong>&quot;REMOTE HOST IDENTIFICATION HAS CHANGED&quot;.</strong> Du hast schon einmal ein
+anderes Gerät unter derselben Adresse benutzt. Siehe
+<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>.</li>
+<li><strong>Nach dem Neustart läuft wieder die Ubiquiti-Firmware.</strong> Dann hat das
+Aufheben des Schreibschutzes nicht gegriffen, die Befehle melden das nicht.
+Setz das Gerät auf Werkseinstellungen zurück und mach alles noch einmal;
+im Forum hat genau das geholfen.</li>
+</ul>
+<h2>Zurück zur Ubiquiti-Firmware</h2>
+<p>UniFi-Geräte haben einen TFTP-Notfall-Modus. Strom aus, Reset-Taste drücken
+und halten, Strom ein. Halte sie gedrückt:
+etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt. Dann schickst du die Original-Firmware von Ubiquiti per
+TFTP an <code>192.168.1.20</code>, wie unter
+<a href="grundlagen/tftp-client.html">TFTP-Client benutzen</a> beschrieben.</p>
+<h2>Weg b: erst zurück auf Ubiquiti-Firmware 3.7.58</h2>
+<p>Nur, wenn auf dem Gerät noch eine Ubiquiti-Firmware <strong>älter als 4.3</strong> läuft.</p>
+<ol>
+<li>
+<p>Lade die alte Firmware direkt bei Ubiquiti herunter:
+<a href="https://dl.ui.com/unifi/firmware/U7PG2/3.7.58.6385/BZ.qca956x.v3.7.58.6385.170508.0957.bin">BZ.qca956x.v3.7.58.6385.170508.0957.bin</a>
+(7.764.011 Bytes). Prüfsumme (SHA256):</p>
+<pre><code>cfe2e639c430d1a849c2892effb84157e82ea9cb08d174547c1e001d4d4388a8
+</code></pre>
+<p>Benenne sie in <code>fwupdate.bin</code> um.</p>
+</li>
+<li>
+<p>Rechner, Kabel und feste Adresse wie in Schritt 2 und 3 oben. Dann:</p>
+<pre><code>scp -O fwupdate.bin ubnt@192.168.1.20:/tmp/fwupdate.bin
+ssh ubnt@192.168.1.20
+</code></pre>
+</li>
+<li>
+<p>Auf dem Gerät:</p>
+<pre><code>syswrapper.sh upgrade2 &amp;
+</code></pre>
+<p>Das Gerät schreibt die alte Firmware und startet neu; die
+SSH-Verbindung bricht dabei ab. Warte einige Minuten.</p>
+</li>
+<li>
+<p>Kopier die Freifunk-Firmware wie in Schritt 4 oben nach
+<code>/tmp/firmware.bin</code> und melde dich wie in Schritt 5 an. Die Eingabezeile
+zeigt jetzt <code>BZ.v3.7.58#</code>.</p>
+</li>
+<li>
+<p>Statt der Befehle aus Schritt 6:</p>
+<pre><code>mtd write /tmp/firmware.bin kernel0
+mtd write /tmp/firmware.bin kernel1
+dd if=/dev/zero bs=1 count=1 of=/dev/mtd$(cat /proc/mtd|grep bs|cut -c4)
+reboot
+</code></pre>
+<p>Danach startet die Freifunk-Firmware.</p>
+</li>
+</ol>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Dauer, Quelle (OpenWrt-Commit))</li>
+<li>abgeleitet: Ablauf aus UK-Ultra-Commit bf94e0a, gleiche ubnt_unifiac-Basis; Commit des Geräts ohne Anleitung (Weg ab Werk, Schritte (Normalweg))</li>
+<li>abgeleitet: Commits nennen 'factory defaults' (Schritte (Normalweg), Bedingung an die Herstellerfirmware)</li>
+<li>abgeleitet: Partitionsbelegung mtd2/mtd3/mtd4 aus der AC-Lite-Ausgabe in #10 übertragen; die Prüfzeile fängt eine Abweichung ab (Weg ab Werk)</li>
+<li>abgeleitet: Wiki (Bedingung an die Herstellerfirmware, Dauer)</li>
+<li>abgeleitet: Wiki toh/ubiquiti/unifiac (Schritte (Normalweg), Sichtbare Zeichen, Bedingung an die Herstellerfirmware, Rückweg zur Herstellerfirmware)</li>
+<li>abgeleitet: laut Commit Hardware wie AC Lite (RAM)</li>
+<li>geprüft: Commit bf94e0a (Schritte (Normalweg), Programm)</li>
+<li>geprüft: Commits (Datei)</li>
+<li>geprüft: Commits 07c1ddf, 4456dd4 (Schritte (Normalweg), Typenschild/Verwechslung)</li>
+<li>geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24' (Schritte (Normalweg), Taste und Zeitpunkt)</li>
+<li>geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang)</li>
+<li>geprüft: dl.ui.com/unifi/firmware/U7PG2/3.7.58.6385/BZ.qca956x.v3.7.58.6385.170508.0957.bin, HTTP 200, 7.764.011 Bytes, SHA256 cfe2e639c430d1a849c2892effb84157e82ea9cb08d174547c1e001d4d4388a8, abgerufen 15.10.2026 (Notweg)</li>
+<li>Geräteeintrag: 07c1ddf522dbe6085af664cf03a41f636a70b99c [abgeleitet]</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

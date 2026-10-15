@@ -539,6 +539,27 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "ubiquiti-unifi-ac-lite",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-ac-lite.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "ubiquiti-unifi-ac-lr",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-ac-lr.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "ubiquiti-unifi-ac-mesh",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-ac-mesh.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "ubiquiti-unifi-ap-outdoor+",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-ap-outdoor+.html",
   "status": "ungeprüft",
