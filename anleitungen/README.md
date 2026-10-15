@@ -69,7 +69,7 @@ gluon_name: d-link-aquila-pro-ai-m60-a1
 modell: D-Link AQUILA PRO AI M60 A1
 familie: dlink-recovery-web
 sprache: de
-stufe: mit Werkzeug        # einfach | mit Werkzeug | fortgeschritten | Werkstatt
+stufe: mit scripts/Netzwerktools   # einfach | mit scripts/Netzwerktools | fortgeschritten | Werkstatt
 status: erprobt            # ungeprüft | erprobt
 erprobt_am: 2026-10-13     # nur bei status: erprobt
 erprobt_mit: gluon-rampe-20261010   # was am Gerät lief
@@ -136,7 +136,7 @@ der eine URL in einem neuen Tab öffnet. Daraus folgt:
   [
     {"gluon_name": "d-link-aquila-pro-ai-m60-a1",
      "url": "https://<Host>/<Pfad>/html/de/d-link-aquila-pro-ai-m60-a1.html",
-     "status": "erprobt", "stufe": "mit Werkzeug", "sprache": "de"}
+     "status": "erprobt", "stufe": "mit scripts/Netzwerktools", "sprache": "de"}
   ]
   ```
 
