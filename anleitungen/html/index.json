@@ -180,5 +180,313 @@
   "status": "ungeprüft",
   "stufe": "einfach",
   "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-archer-a7-v5",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-a7-v5.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-archer-ax23-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-ax23-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-archer-c2-v3",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c2-v3.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-archer-c20i",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c20i.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-archer-c25-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c25-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-archer-c2600",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c2600.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-archer-c5-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c5-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-archer-c50-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c50-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-archer-c58-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c58-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-archer-c59-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c59-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-archer-c6-v2-eu-ru-jp",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c6-v2-eu-ru-jp.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-archer-c6-v3",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c6-v3.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-archer-c7-v2",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c7-v2.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-archer-c7-v4",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c7-v4.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-archer-c7-v5",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c7-v5.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-cpe210-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-cpe210-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-cpe210-v2",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-cpe210-v2.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-cpe210-v3",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-cpe210-v3.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-cpe220-v3",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-cpe220-v3.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-cpe510-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-cpe510-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-cpe510-v2",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-cpe510-v2.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-cpe510-v3",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-cpe510-v3.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-cpe710-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-cpe710-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-cpe710-v2",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-cpe710-v2.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-re200-v2",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-re200-v2.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-re200-v3",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-re200-v3.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-re200-v4",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-re200-v4.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-re500-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-re500-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-re650-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-re650-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-tl-wdr3500-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wdr3500-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-tl-wdr3600-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wdr3600-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-tl-wdr4300-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wdr4300-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-tl-wdr4900-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wdr4900-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-tl-wr1043n-v5",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr1043n-v5.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-tl-wr1043nd-v2",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr1043nd-v2.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-tl-wr1043nd-v3",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr1043nd-v3.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-tl-wr1043nd-v4",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr1043nd-v4.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-tl-wr2543n-nd",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr2543n-nd.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-tl-wr810n-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr810n-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-tl-wr842n-v3",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr842n-v3.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-tl-wr902ac-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr902ac-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-wbs210-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-wbs210-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-wbs210-v2",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-wbs210-v2.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-wbs510-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-wbs510-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
  }
 ]

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TP-Link RE200 v2: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="tp-link-re200-v2">
+<meta name="anleitung:modell" content="TP-Link RE200 v2">
+<meta name="anleitung:familie" content="k0-webui">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="einfach">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="">
+<meta name="anleitung:daten_stand" content="0d84d1c">
+<meta name="anleitung:vorlage_stand" content="47c7bb2">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Diese Anleitung ist aus Quellen
+zusammengestellt, aber noch niemand hat sie an einem TP-Link RE200 v2 Schritt
+für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
+<a href="mailto:projekt@neanderfunk.de">projekt@neanderfunk.de</a>, ob es geklappt hat.</p>
+</blockquote>
+<h1>TP-Link RE200 v2: Freifunk-Firmware installieren</h1>
+<p>Beim TP-Link RE200 v2 geht die Installation über die normale Weboberfläche des
+Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update
+des Herstellers hinkäme. Du brauchst nur einen Browser.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>das Gerät und sein Netzteil</li>
+<li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
+<li>die Freifunk-Firmware deiner Community für den TP-Link RE200 v2, und zwar das
+<strong>factory</strong>-Image für die Erstinstallation, nicht &quot;sysupgrade&quot;</li>
+</ul>
+<p>Auf dem Aufkleber unter dem Gerät stehen Modell und Hardware-Version (bei
+TP-Link etwa &quot;Ver: 5.0&quot;, bei anderen &quot;H/W Ver.&quot;). Viele Geräte gibt es in
+mehreren Versionen, und jede braucht ihr eigenes Image. Vergleich den
+Aufkleber genau mit &quot;TP-Link RE200 v2&quot;, bevor du anfängst.</p>
+<h2>Vorher prüfen</h2>
+<ul>
+<li>RE200 v2, v3 und v4 brauchen je ihr eigenes Image; diese Anleitung ist für
+die <strong>v2</strong>. Der <strong>RE200 v5 geht nicht</strong>.</li>
+<li>Der RE200 hat <strong>keinen Notfall-Weg</strong>. Geht beim Hochladen etwas schief,
+hilft nur noch die serielle Konsole, und dafür muss das verschweißte
+Gehäuse auf. Also: Datei und Version genau prüfen, und während der
+Installation den Stecker in Ruhe lassen.</li>
+</ul>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Datei bereitlegen.</strong> Lade das factory-Image herunter.</p>
+</li>
+<li>
+<p><strong>Verbinden.</strong> Versorg das Gerät mit Strom und steck das Kabel vom
+Rechner an eine LAN-Buchse des
+Geräts (nicht WAN oder Internet).
+Der Rechner holt sich seine Adresse automatisch, so wie er normalerweise
+eingestellt ist.</p>
+</li>
+<li>
+<p><strong>Oberfläche öffnen.</strong> Öffne im Browser die Adresse der Oberfläche. Sie steht meist
+auf dem Aufkleber unter dem Gerät. Melde dich mit
+den Zugangsdaten vom Aufkleber an, oder leg beim ersten Aufruf ein
+Passwort fest.</p>
+</li>
+<li>
+<p><strong>Firmware-Update aufrufen.</strong> Such den Menüpunkt für das Firmware-Update. Er heißt je nach
+Hersteller etwa &quot;Firmware Upgrade&quot;, &quot;Firmware-Update&quot; oder &quot;Firmware
+aktualisieren&quot; und liegt oft unter &quot;System&quot;, &quot;System Tools&quot; oder
+&quot;Verwaltung&quot;.</p>
+</li>
+<li>
+<p><strong>Hochladen.</strong> Wähl das factory-Image aus, starte das Update und
+bestätige die Rückfragen.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Das Gerät schreibt die Firmware und startet neu. Das dauert
+bis zu 20 Minuten.
+<strong>Nicht ausschalten, Strom nicht ziehen und die Seite nicht neu laden.</strong>
+Manche Geräte löschen zuerst den ganzen Speicher; ein Abbruch in dieser
+Zeit kann sie unbrauchbar machen.</p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Danach startet die Freifunk-Firmware deiner Community: je nach
+Community zuerst mit einer Einrichtungsseite unter <code>http://192.168.1.1</code>
+oder gleich im Betrieb.
+Wie es weitergeht, beschreibt deine Community.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>Das Gerät startet nach einigen Minuten von selbst neu.</li>
+<li>Die Herstelleroberfläche ist weg. Stattdessen meldet sich die
+Freifunk-Firmware, oft zuerst mit der Einrichtungsseite unter
+<code>http://192.168.1.1</code>.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Die Oberfläche lehnt die Datei ab.</strong> Häufige Gründe: Das Image ist für
+eine andere Hardware-Version oder Region (Aufkleber prüfen), der Dateiname
+ist zu lang (kurz umbenennen, z. B. in <code>factory.bin</code>), oder die
+Herstellerfirmware ist zu neu und sperrt fremde Firmware (siehe &quot;Vorher
+prüfen&quot;, falls vorhanden).</li>
+<li><strong>Nach dem Neustart ist unter <code>http://192.168.1.1</code> nichts.</strong> Stell den
+Rechner auf &quot;automatisch&quot; und zieh das Kabel kurz ab und wieder an. Je nach
+Community startet die Firmware auch gleich im Betrieb ohne
+Einrichtungsseite.</li>
+</ul>
+<h2>Notfall</h2>
+<p>Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses.</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet: getrennte Gluon-Geräte; OpenWrt-Commits (Schritte (Normalweg), Typenschild/Verwechslung)</li>
+<li>geprüft (Weg ab Werk, Schritte (Normalweg), Programm, Datei)</li>
+<li>geprüft: Commit 6d6f36ae/009e62c9/33b76d66 (Warnung)</li>
+<li>geprüft: Wiki toh:tp-link:re200 (Typenschild/Verwechslung)</li>
+<li>nicht ausstecken abgeleitet; geprüft: Wiki toh:tp-link:re200 (Schritte (Normalweg), Dauer)</li>
+<li>Geräteeintrag: 6d6f36ae787c3b339b16c1d345a90faa1d9f4011</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

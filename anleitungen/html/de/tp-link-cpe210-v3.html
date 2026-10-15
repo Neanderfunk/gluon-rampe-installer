@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TP-Link CPE210 v3: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="tp-link-cpe210-v3">
+<meta name="anleitung:modell" content="TP-Link CPE210 v3">
+<meta name="anleitung:familie" content="k0-webui">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="einfach">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="feste-ip">
+<meta name="anleitung:daten_stand" content="0d84d1c">
+<meta name="anleitung:vorlage_stand" content="47c7bb2">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Diese Anleitung ist aus Quellen
+zusammengestellt, aber noch niemand hat sie an einem TP-Link CPE210 v3 Schritt
+für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
+<a href="mailto:projekt@neanderfunk.de">projekt@neanderfunk.de</a>, ob es geklappt hat.</p>
+</blockquote>
+<h1>TP-Link CPE210 v3: Freifunk-Firmware installieren</h1>
+<p>Beim TP-Link CPE210 v3 geht die Installation über die normale Weboberfläche des
+Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update
+des Herstellers hinkäme. Du brauchst nur einen Browser.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>das Gerät und Strom über den PoE-Injektor</li>
+<li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
+<li>die Freifunk-Firmware deiner Community für den TP-Link CPE210 v3, und zwar das
+<strong>factory</strong>-Image für die Erstinstallation, nicht &quot;sysupgrade&quot;</li>
+</ul>
+<p>Auf dem Aufkleber unter dem Gerät stehen Modell und Hardware-Version (bei
+TP-Link etwa &quot;Ver: 5.0&quot;, bei anderen &quot;H/W Ver.&quot;). Viele Geräte gibt es in
+mehreren Versionen, und jede braucht ihr eigenes Image. Vergleich den
+Aufkleber genau mit &quot;TP-Link CPE210 v3&quot;, bevor du anfängst.</p>
+<h2>Vorher prüfen</h2>
+<p>Dieses Image passt zum CPE210 mit Hardware 3.0, 3.1 und <strong>3.20</strong>. Die Hardware-Version steht auf dem Aufkleber (&quot;Ver&quot;).</p>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Datei bereitlegen.</strong> Lade das factory-Image herunter. Benenne es danach in <code>factory.bin</code> um, genau
+so. Die Oberfläche lehnt den langen Originalnamen sonst ab. Achtung:
+Windows blendet Dateiendungen gern aus; schalte sie im Explorer unter
+&quot;Ansicht&quot; ein, damit nicht <code>factory.bin.bin</code> daraus wird.</p>
+</li>
+<li>
+<p><strong>Verbinden.</strong> Versorg das Gerät mit Strom und steck das Kabel vom
+Rechner an die LAN-Buchse des PoE-Injektors.
+Stell deinen Rechner auf die feste Adresse <code>192.168.0.10</code> mit der
+Netzmaske <code>255.255.255.0</code>
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).</p>
+</li>
+<li>
+<p><strong>Oberfläche öffnen.</strong> Öffne im Browser <code>https://192.168.0.254</code>.
+Der Browser warnt vor dem Zertifikat. Das ist hier normal: auf
+&quot;Erweitert&quot; und dann auf &quot;Weiter&quot; bzw. &quot;Risiko akzeptieren&quot; klicken.
+Diese Oberfläche nutzt noch eine alte Verschlüsselung (TLS 1.0), die
+aktuelle Browser ablehnen. In Firefox kannst du sie für die Installation
+erlauben: In die Adresszeile <code>about:config</code> eingeben,
+<code>security.tls.version.min</code> suchen und auf <code>1</code> stellen. Danach wieder auf
+den alten Wert (<code>3</code>) zurückstellen. Melde dich an: Benutzer <code>admin</code>, Passwort <code>admin</code>.</p>
+</li>
+<li>
+<p><strong>Firmware-Update aufrufen.</strong> Such den Menüpunkt für das Firmware-Update. Er heißt je nach
+Hersteller etwa &quot;Firmware Upgrade&quot;, &quot;Firmware-Update&quot; oder &quot;Firmware
+aktualisieren&quot; und liegt oft unter &quot;System&quot;, &quot;System Tools&quot; oder
+&quot;Verwaltung&quot;.</p>
+</li>
+<li>
+<p><strong>Hochladen.</strong> Wähl das factory-Image aus, starte das Update und
+bestätige die Rückfragen.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Das Gerät schreibt die Firmware und startet neu. Das dauert
+einige Minuten.
+<strong>Nicht ausschalten, Strom nicht ziehen und die Seite nicht neu laden.</strong>
+Manche Geräte löschen zuerst den ganzen Speicher; ein Abbruch in dieser
+Zeit kann sie unbrauchbar machen.</p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Danach startet die Freifunk-Firmware deiner Community: je nach
+Community zuerst mit einer Einrichtungsseite unter <code>http://192.168.1.1</code>
+oder gleich im Betrieb. Stell den Rechner vorher wieder auf &quot;automatisch&quot;.
+Wie es weitergeht, beschreibt deine Community.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>Das Gerät startet nach einigen Minuten von selbst neu.</li>
+<li>Die Herstelleroberfläche ist weg. Stattdessen meldet sich die
+Freifunk-Firmware, oft zuerst mit der Einrichtungsseite unter
+<code>http://192.168.1.1</code>.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Die Oberfläche lehnt die Datei ab.</strong> Häufige Gründe: Das Image ist für
+eine andere Hardware-Version oder Region (Aufkleber prüfen), der Dateiname
+ist zu lang (kurz umbenennen, z. B. in <code>factory.bin</code>), oder die
+Herstellerfirmware ist zu neu und sperrt fremde Firmware (siehe &quot;Vorher
+prüfen&quot;, falls vorhanden).</li>
+<li><strong>Nach dem Neustart ist unter <code>http://192.168.1.1</code> nichts.</strong> Stell den
+Rechner auf &quot;automatisch&quot; und zieh das Kabel kurz ab und wieder an. Je nach
+Community startet die Firmware auch gleich im Betrieb ohne
+Einrichtungsseite.</li>
+</ul>
+<h2>Notfall</h2>
+<p>Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Schritte (Normalweg))</li>
+<li>geprüft (Weg ab Werk, Schritte (Normalweg), Programm, Quelle (OpenWrt-Commit))</li>
+<li>geprüft: OpenWrt-Commit (Rückweg zur Herstellerfirmware)</li>
+<li>geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg (Notweg, Rückweg zur Herstellerfirmware)</li>
+<li>geprüft: cpe510, Wiki toh:tp-link:cpe210 (Schritte (Normalweg), Adressen, Programm, Zugang)</li>
+<li>geprüft: cpe510, Wiki toh:tp-link:cpe510 (Schritte (Normalweg), Datei)</li>
+<li>geprüft: tplink-safeloader CPE210V3 (Schritte (Normalweg), Typenschild/Verwechslung)</li>
+<li>Geräteeintrag: 5ec205d7ac00de89510a6e71055d45aa57b705e1 [geprüft]</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TP-Link TL-WR1043N/ND v3: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="tp-link-tl-wr1043nd-v3">
+<meta name="anleitung:modell" content="TP-Link TL-WR1043N/ND v3">
+<meta name="anleitung:familie" content="k0-webui">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="einfach">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="">
+<meta name="anleitung:daten_stand" content="0d84d1c">
+<meta name="anleitung:vorlage_stand" content="47c7bb2">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Diese Anleitung ist aus Quellen
+zusammengestellt, aber noch niemand hat sie an einem TP-Link TL-WR1043N/ND v3 Schritt
+für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
+<a href="mailto:projekt@neanderfunk.de">projekt@neanderfunk.de</a>, ob es geklappt hat.</p>
+</blockquote>
+<h1>TP-Link TL-WR1043N/ND v3: Freifunk-Firmware installieren</h1>
+<p>Beim TP-Link TL-WR1043N/ND v3 geht die Installation über die normale Weboberfläche des
+Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update
+des Herstellers hinkäme. Du brauchst nur einen Browser.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>das Gerät und sein Netzteil</li>
+<li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
+<li>die Freifunk-Firmware deiner Community für den TP-Link TL-WR1043N/ND v3, und zwar das
+<strong>factory</strong>-Image für die Erstinstallation, nicht &quot;sysupgrade&quot;</li>
+</ul>
+<p>Auf dem Aufkleber unter dem Gerät stehen Modell und Hardware-Version (bei
+TP-Link etwa &quot;Ver: 5.0&quot;, bei anderen &quot;H/W Ver.&quot;). Viele Geräte gibt es in
+mehreren Versionen, und jede braucht ihr eigenes Image. Vergleich den
+Aufkleber genau mit &quot;TP-Link TL-WR1043N/ND v3&quot;, bevor du anfängst.</p>
+<h2>Vorher prüfen</h2>
+<p>TL-WR1043N/ND v2, v3, v4 und der TL-WR1043N v5 brauchen je ihr eigenes
+Image, auch wenn sich manche sehr ähnlich sind. Prüf die Version auf dem
+Aufkleber: Diese Anleitung ist für die <strong>v3</strong>.</p>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Datei bereitlegen.</strong> Lade das factory-Image herunter.</p>
+</li>
+<li>
+<p><strong>Verbinden.</strong> Versorg das Gerät mit Strom und steck das Kabel vom
+Rechner an eine LAN-Buchse des
+Geräts (nicht WAN oder Internet).
+Der Rechner holt sich seine Adresse automatisch, so wie er normalerweise
+eingestellt ist.</p>
+</li>
+<li>
+<p><strong>Oberfläche öffnen.</strong> Öffne im Browser <code>http://192.168.0.1 oder http://192.168.1.1</code>. Melde dich mit
+den Zugangsdaten vom Aufkleber an, oder leg beim ersten Aufruf ein
+Passwort fest.</p>
+</li>
+<li>
+<p><strong>Firmware-Update aufrufen.</strong> Such den Menüpunkt für das Firmware-Update. Er heißt je nach
+Hersteller etwa &quot;Firmware Upgrade&quot;, &quot;Firmware-Update&quot; oder &quot;Firmware
+aktualisieren&quot; und liegt oft unter &quot;System&quot;, &quot;System Tools&quot; oder
+&quot;Verwaltung&quot;.</p>
+</li>
+<li>
+<p><strong>Hochladen.</strong> Wähl das factory-Image aus, starte das Update und
+bestätige die Rückfragen.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Das Gerät schreibt die Firmware und startet neu. Das dauert
+einige Minuten.
+<strong>Nicht ausschalten, Strom nicht ziehen und die Seite nicht neu laden.</strong>
+Manche Geräte löschen zuerst den ganzen Speicher; ein Abbruch in dieser
+Zeit kann sie unbrauchbar machen.</p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Danach startet die Freifunk-Firmware deiner Community: je nach
+Community zuerst mit einer Einrichtungsseite unter <code>http://192.168.1.1</code>
+oder gleich im Betrieb.
+Wie es weitergeht, beschreibt deine Community.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>Das Gerät startet nach einigen Minuten von selbst neu.</li>
+<li>Die Herstelleroberfläche ist weg. Stattdessen meldet sich die
+Freifunk-Firmware, oft zuerst mit der Einrichtungsseite unter
+<code>http://192.168.1.1</code>.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Die Oberfläche lehnt die Datei ab.</strong> Häufige Gründe: Das Image ist für
+eine andere Hardware-Version oder Region (Aufkleber prüfen), der Dateiname
+ist zu lang (kurz umbenennen, z. B. in <code>factory.bin</code>), oder die
+Herstellerfirmware ist zu neu und sperrt fremde Firmware (siehe &quot;Vorher
+prüfen&quot;, falls vorhanden).</li>
+<li><strong>Nach dem Neustart ist unter <code>http://192.168.1.1</code> nichts.</strong> Stell den
+Rechner auf &quot;automatisch&quot; und zieh das Kabel kurz ab und wieder an. Je nach
+Community startet die Firmware auch gleich im Betrieb ohne
+Einrichtungsseite.</li>
+<li><strong>Die Seite fragt immer wieder &quot;Please choose a file to upgrade&quot;.</strong> Der
+Dateiname ist zu lang. Benenne die Datei um, z. B. in <code>firmware.bin</code>.</li>
+</ul>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Schritte (Normalweg), Quelle (OpenWrt-Commit))</li>
+<li>abgeleitet: Commit ohne Anleitung (Weg ab Werk, Schritte (Normalweg), Datei)</li>
+<li>geprüft: OpenWrt generic-tp-link.mk, Hardware-ID 0x10430002/0x10430003 (Schritte (Normalweg), Typenschild/Verwechslung)</li>
+<li>geprüft: Wiki toh:tp-link:tl-wr1043nd (Schritte (Normalweg), Programm, Typenschild/Verwechslung, Fehlerbild)</li>
+<li>geprüft: Wiki toh:tp-link:tl-wr1043nd, korrigiert (Adressen)</li>
+<li>Geräteeintrag: b1a173d7c396c0a9e6bb0078a1a061eb9fdd0316 (ohne Anleitung) [abgeleitet]</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>
