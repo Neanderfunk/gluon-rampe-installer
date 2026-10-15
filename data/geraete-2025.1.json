@@ -10341,7 +10341,7 @@
     "led_rampe": "blinkt die LED gleichmäßig, etwa einmal pro Sekunde",
     "seitentitel": "D-link Router Recovery Mode",
     "herstellerseite_gleiche_ip": true,
-    "anschluss": "einer der LAN-Buchsen (nicht WAN)",
+    "anschluss": "einer der LAN-Buchsen, nicht mit WAN",
     "recovery_wartezeit": "",
     "rechner_ip": "192.168.200.66",
     "dauer_neustart": "knapp 2 Minuten",
@@ -12910,7 +12910,7 @@
    "erprobt": {},
    "werte": {
     "datei_art": "factory",
-    "anschluss": "LAN1",
+    "anschluss": "der Buchse LAN1",
     "taste_hinweis": "Die Reset-Taste sitzt auf der Rückseite; gemeint ist die Power-LED, das dauert etwa 10 Sekunden.",
     "led_falsch": "",
     "recovery_wartezeit": "etwa 30 Sekunden",

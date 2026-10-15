@@ -3586,7 +3586,7 @@ D-Link AQUILA PRO AI M60 A1 · mediatek-filogic · K1
 - **Quelle (OpenWrt-Commit):** OpenWrt 7271ee587cd104d30d6d46dd3c623c9d4602bd0c
 - **Detail-Anleitung:** -
 - **Am Gerät erprobt (für die Anleitung):** am = 2026-10-13; mit = gluon-rampe-20261010-d-link-aquila-pro-ai-m60-a1-recovery.bin; weg = RAMpe über die D-Link-Recovery, dann sysupgrade
-- **Werte für die Anleitung:** recovery_ip = 192.168.200.1; led_recovery = rot blinkt; datei_art = rampe; upload_pfad = /upload.cgi; rampe_ip = 192.168.1.1; rampe_bytes = etwa 52,4 Millionen; led_rampe = blinkt die LED gleichmäßig, etwa einmal pro Sekunde; seitentitel = D-link Router Recovery Mode; herstellerseite_gleiche_ip = True; anschluss = einer der LAN-Buchsen (nicht WAN); rechner_ip = 192.168.200.66; dauer_neustart = knapp 2 Minuten; dauer_lang = über 10 Minuten; dauer_gluon = unter 2 Minuten; datei_beispiel = gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin; rampe_datei = gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin; taste_hinweis = Nur die Reset-Taste führt in die Recovery, keine der anderen Tasten.; led_falsch = Ein orangefarbenes Auf- und Abdimmen ist nicht die Recovery.
+- **Werte für die Anleitung:** recovery_ip = 192.168.200.1; led_recovery = rot blinkt; datei_art = rampe; upload_pfad = /upload.cgi; rampe_ip = 192.168.1.1; rampe_bytes = etwa 52,4 Millionen; led_rampe = blinkt die LED gleichmäßig, etwa einmal pro Sekunde; seitentitel = D-link Router Recovery Mode; herstellerseite_gleiche_ip = True; anschluss = einer der LAN-Buchsen, nicht mit WAN; rechner_ip = 192.168.200.66; dauer_neustart = knapp 2 Minuten; dauer_lang = über 10 Minuten; dauer_gluon = unter 2 Minuten; datei_beispiel = gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin; rampe_datei = gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin; taste_hinweis = Nur die Reset-Taste führt in die Recovery, keine der anderen Tasten.; led_falsch = Ein orangefarbenes Auf- und Abdimmen ist nicht die Recovery.
 
 #### d-link-dap-1620-b1
 
@@ -3681,7 +3681,7 @@ D-Link DIR-878 A1 · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** d7233b0a6a9b8cb9207a74a8cb3d0525170cf504
 - **Detail-Anleitung:** https://openwrt.org/toh/d-link/dir-878_a1#installation
-- **Werte für die Anleitung:** datei_art = factory; anschluss = LAN1; taste_hinweis = Die Reset-Taste sitzt auf der Rückseite; gemeint ist die Power-LED, das dauert etwa 10 Sekunden.; recovery_wartezeit = etwa 30 Sekunden; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.1; rechner_ip = 192.168.0.2; led_recovery = orange blinkt; upload_pfad = /; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dir-878-a1-factory.bin
+- **Werte für die Anleitung:** datei_art = factory; anschluss = der Buchse LAN1; taste_hinweis = Die Reset-Taste sitzt auf der Rückseite; gemeint ist die Power-LED, das dauert etwa 10 Sekunden.; recovery_wartezeit = etwa 30 Sekunden; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.1; rechner_ip = 192.168.0.2; led_recovery = orange blinkt; upload_pfad = /; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dir-878-a1-factory.bin
 
 #### d-link-dir-882-a1
 
