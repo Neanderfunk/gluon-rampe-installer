@@ -95,7 +95,10 @@
    "quelle": "3f8c5d547677e7f4e450e88379c03448b8f53b1d [geprüft]",
    "anleitung": "https://fritz-tools.readthedocs.io/",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "ersatz_ip": "169.254.157.1",
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "avm-fritz-wlan-repeater-1750e",
@@ -145,7 +148,10 @@
    "quelle": "8918c038f330a1bb5a898d80c170caf9f42cac89 [geprüft]",
    "anleitung": "",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "ersatz_ip": "169.254.78.1",
+    "sicherheit": "abgeleitet"
+   }
   },
   {
    "gluon_name": "avm-fritz-wlan-repeater-300e",
@@ -195,7 +201,9 @@
    "quelle": "75ed56a08a4ce978323259a59a8f45ceed511584 (ath79, ohne Anleitung); e7cd6f5d66b827e31cfa7e7bc019ac1b86aac770 (ar71xx, EVA-Anleitung) [geprüft]",
    "anleitung": "https://fritz-tools.readthedocs.io/",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "avm-fritz-wlan-repeater-450e",
@@ -245,7 +253,9 @@
    "quelle": "8d9c1087e4d07d625a9fef61d5dce71d850732ae [geprüft]",
    "anleitung": "https://fritz-tools.readthedocs.io/",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "buffalo-wzr-600dhp",
@@ -8409,7 +8419,10 @@
    "quelle": "OpenWrt 1cb406d019dc84497a8405c470f0b0394d5ff64a + 70e6ea319d3bfdfdb34be540dc7d89aa175b5587",
    "anleitung": "https://fritz-tools.readthedocs.io/",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "datei_art": "bootloader",
+    "sicherheit": "abgeleitet"
+   }
   },
   {
    "gluon_name": "avm-fritz-box-7520",
@@ -10346,7 +10359,19 @@
    "quelle": "0b62fe5ed87ecac52301096b15abb69f96117c8c",
    "anleitung": "https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "rechner_ip": "192.168.178.10",
+    "ftp_befehle": [
+     "binary",
+     "debug",
+     "passive",
+     "quote SETENV linux_fs_start 0",
+     "quote MEDIA FLSH",
+     "put gluon-<community>-<release>-avm-fritz-box-3370-rev-2-hynix-nand-eva-kernel.bin mtd1",
+     "put gluon-<community>-<release>-avm-fritz-box-3370-rev-2-hynix-nand-eva-filesystem.bin mtd0"
+    ],
+    "sicherheit": "abgeleitet"
+   }
   },
   {
    "gluon_name": "avm-fritz-box-3370-rev-2-micron-nand",
@@ -10395,7 +10420,19 @@
    "quelle": "0b62fe5ed87ecac52301096b15abb69f96117c8c",
    "anleitung": "https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "rechner_ip": "192.168.178.10",
+    "ftp_befehle": [
+     "binary",
+     "debug",
+     "passive",
+     "quote SETENV linux_fs_start 0",
+     "quote MEDIA FLSH",
+     "put gluon-<community>-<release>-avm-fritz-box-3370-rev-2-micron-nand-eva-kernel.bin mtd1",
+     "put gluon-<community>-<release>-avm-fritz-box-3370-rev-2-micron-nand-eva-filesystem.bin mtd0"
+    ],
+    "sicherheit": "abgeleitet"
+   }
   },
   {
    "gluon_name": "avm-fritz-box-3390",
@@ -10443,7 +10480,11 @@
    "quelle": "73ec21cde2cde1fc27f66b08e8762cdc3c78b61a",
    "anleitung": "",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-3390-initramfs-kernel.bin",
+    "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-3390-initramfs-kernel.bin",
+    "sicherheit": "abgeleitet"
+   }
   },
   {
    "gluon_name": "avm-fritz-box-7360-sl",
@@ -10494,7 +10535,9 @@
    "quelle": "bf007a480a46a9fa843765a54fc2f8aa32b2683f (ohne Installationstext) + Wiki toh:avm:fritz.box.wlan.7360",
    "anleitung": "https://fritz-tools.readthedocs.io/",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "sicherheit": "abgeleitet"
+   }
   },
   {
    "gluon_name": "avm-fritz-box-7360-v2",
@@ -10545,7 +10588,9 @@
    "quelle": "78bebe680f67e8967c2baad8a5c07035d431f9d5",
    "anleitung": "",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "sicherheit": "abgeleitet"
+   }
   },
   {
    "gluon_name": "avm-fritz-box-7362-sl",
@@ -10593,7 +10638,12 @@
    "quelle": "eae6cac6a30b95bef04d033ed8a303b7e35a078b",
    "anleitung": "https://openwrt.org/toh/avm/avm_7362_sl#installation",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "led_rampe": "Die Power-LED blinkt dann rot.",
+    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7362-sl-initramfs-kernel.bin",
+    "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-7362-sl-initramfs-kernel.bin",
+    "sicherheit": "abgeleitet"
+   }
   },
   {
    "gluon_name": "avm-fritz-box-7412",
@@ -10642,7 +10692,12 @@
    "quelle": "20f48c8ae334f8502e756282995cc84d89fa81c1",
    "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7412#installation",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "ersatz_ip": "169.254.120.1",
+    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7412-initramfs-kernel.bin",
+    "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-7412-initramfs-kernel.bin",
+    "sicherheit": "abgeleitet"
+   }
   },
   {
    "gluon_name": "avm-fritz-box-7430",
@@ -10691,7 +10746,12 @@
    "quelle": "6c85a449a988876fdfd4ce84d6aa5ffe4a2820c1",
    "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7430#installation",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "ersatz_ip": "169.254.120.1",
+    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7430-initramfs-kernel.bin",
+    "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-7430-initramfs-kernel.bin",
+    "sicherheit": "abgeleitet"
+   }
   },
   {
    "gluon_name": "tp-link-td-w8970",
@@ -10828,7 +10888,9 @@
    "quelle": "02d53e6a2113f80ae429664e7990d167fbf44604",
    "anleitung": "https://fritz-tools.readthedocs.io/",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "netgear-dgn3500b",

@@ -1875,6 +1875,7 @@ AVM FRITZ!Box 4020 · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: EVA nimmt das Gluon-sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** 3f8c5d547677e7f4e450e88379c03448b8f53b1d [geprüft]
 - **Detail-Anleitung:** https://fritz-tools.readthedocs.io/
+- **Werte für die Anleitung:** ersatz_ip = 169.254.157.1; sicherheit = quelle
 
 #### avm-fritz-wlan-repeater-1750e
 
@@ -1909,6 +1910,7 @@ AVM FRITZ!WLAN Repeater 1750E (broken) · ath79-generic · K1d
 - **Rückweg zur Herstellerfirmware:** AVM-Recovery-Tool für genau dieses Modell (Windows-.exe von download.avm.de/<produkt>/.../recover/) [abgeleitet: OpenWrt-Wiki "AVM recovery tool"]; Provider-Geräte (z. B. 1&1) verweigern das evtl., dann vorher per EVA-FTP `quote UNSETENV provider` [abgeleitet: dasselbe Wiki]
 - **Gluon-RAMpe passt:** nein: EVA nimmt das Gluon-sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** 8918c038f330a1bb5a898d80c170caf9f42cac89 [geprüft]
+- **Werte für die Anleitung:** ersatz_ip = 169.254.78.1; sicherheit = abgeleitet
 
 #### avm-fritz-wlan-repeater-300e
 
@@ -1944,6 +1946,7 @@ AVM FRITZ!WLAN Repeater 300E · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: EVA nimmt das Gluon-sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** 75ed56a08a4ce978323259a59a8f45ceed511584 (ath79, ohne Anleitung); e7cd6f5d66b827e31cfa7e7bc019ac1b86aac770 (ar71xx, EVA-Anleitung) [geprüft]
 - **Detail-Anleitung:** https://fritz-tools.readthedocs.io/
+- **Werte für die Anleitung:** sicherheit = quelle
 
 #### avm-fritz-wlan-repeater-450e
 
@@ -1979,6 +1982,7 @@ AVM FRITZ!WLAN Repeater 450E · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: EVA nimmt das Gluon-sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** 8d9c1087e4d07d625a9fef61d5dce71d850732ae [geprüft]
 - **Detail-Anleitung:** https://fritz-tools.readthedocs.io/
+- **Werte für die Anleitung:** sicherheit = quelle
 
 #### avm-fritz-box-4040
 
@@ -2015,6 +2019,7 @@ AVM FRITZ!Box 4040 · ipq40xx-generic · K1d
 - **Gluon-RAMpe passt:** nein, nicht nötig: Gluon baut das EVA-Image selbst (extra_images -bootloader)
 - **Quelle (OpenWrt-Commit):** OpenWrt 1cb406d019dc84497a8405c470f0b0394d5ff64a + 70e6ea319d3bfdfdb34be540dc7d89aa175b5587
 - **Detail-Anleitung:** https://fritz-tools.readthedocs.io/
+- **Werte für die Anleitung:** datei_art = bootloader; sicherheit = abgeleitet
 
 #### avm-fritz-box-3370-rev-2-hynix-nand
 
@@ -2052,6 +2057,7 @@ AVM FRITZ!Box 3370 Rev. 2, Hynix-NAND (Gluon: broken) · lantiq-xrx200 · K1d
 - **Gluon-RAMpe passt:** nein, unnötig: Gluon-EVA-Images direkt
 - **Quelle (OpenWrt-Commit):** 0b62fe5ed87ecac52301096b15abb69f96117c8c
 - **Detail-Anleitung:** https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation
+- **Werte für die Anleitung:** rechner_ip = 192.168.178.10; ftp_befehle = ['binary', 'debug', 'passive', 'quote SETENV linux_fs_start 0', 'quote MEDIA FLSH', 'put gluon-<community>-<release>-avm-fritz-box-3370-rev-2-hynix-nand-eva-kernel.bin mtd1', 'put gluon-<community>-<release>-avm-fritz-box-3370-rev-2-hynix-nand-eva-filesystem.bin mtd0']; sicherheit = abgeleitet
 
 #### avm-fritz-box-3370-rev-2-micron-nand
 
@@ -2089,6 +2095,7 @@ AVM FRITZ!Box 3370 Rev. 2, Micron-NAND (Gluon: broken) · lantiq-xrx200 · K1d
 - **Gluon-RAMpe passt:** nein, unnötig: Gluon-EVA-Images direkt
 - **Quelle (OpenWrt-Commit):** 0b62fe5ed87ecac52301096b15abb69f96117c8c
 - **Detail-Anleitung:** https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation
+- **Werte für die Anleitung:** rechner_ip = 192.168.178.10; ftp_befehle = ['binary', 'debug', 'passive', 'quote SETENV linux_fs_start 0', 'quote MEDIA FLSH', 'put gluon-<community>-<release>-avm-fritz-box-3370-rev-2-micron-nand-eva-kernel.bin mtd1', 'put gluon-<community>-<release>-avm-fritz-box-3370-rev-2-micron-nand-eva-filesystem.bin mtd0']; sicherheit = abgeleitet
 
 #### avm-fritz-box-7360-sl
 
@@ -2126,6 +2133,7 @@ AVM FRITZ!Box 7360 SL (Alias 7360 v1) · lantiq-xrx200 · K1d
 - **Gluon-RAMpe passt:** nein, unnötig: sysupgrade direkt per FTP
 - **Quelle (OpenWrt-Commit):** bf007a480a46a9fa843765a54fc2f8aa32b2683f (ohne Installationstext) + Wiki toh:avm:fritz.box.wlan.7360
 - **Detail-Anleitung:** https://fritz-tools.readthedocs.io/
+- **Werte für die Anleitung:** sicherheit = abgeleitet
 
 #### avm-fritz-box-7360-v2
 
@@ -2162,6 +2170,7 @@ AVM FRITZ!Box 7360 v2 · lantiq-xrx200 · K1d
 - **Rückweg zur Herstellerfirmware:** AVM-Recovery-Tool für genau dieses Modell (Windows-.exe von download.avm.de/<produkt>/.../recover/) [abgeleitet: OpenWrt-Wiki "AVM recovery tool"]; Provider-Geräte (z. B. 1&1) verweigern das evtl., dann vorher per EVA-FTP `quote UNSETENV provider` [abgeleitet: dasselbe Wiki]
 - **Gluon-RAMpe passt:** nein, unnötig
 - **Quelle (OpenWrt-Commit):** 78bebe680f67e8967c2baad8a5c07035d431f9d5
+- **Werte für die Anleitung:** sicherheit = abgeleitet
 
 #### avm-fritz-box-7312
 
@@ -2197,6 +2206,7 @@ AVM FRITZ!Box 7312 · lantiq-xway · K1d
 - **Gluon-RAMpe passt:** nein, unnötig
 - **Quelle (OpenWrt-Commit):** 02d53e6a2113f80ae429664e7990d167fbf44604
 - **Detail-Anleitung:** https://fritz-tools.readthedocs.io/
+- **Werte für die Anleitung:** sicherheit = quelle
 
 ### Familie `avm-eva-ramboot`
 
@@ -2236,6 +2246,7 @@ AVM FRITZ!Box 3390 · lantiq-xrx200 · K1
 - **Gluon-RAMpe passt:** ja: eva_ramboot.py bootet ein beliebiges initramfs [abgeleitet]
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-3390.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`
 - **Quelle (OpenWrt-Commit):** 73ec21cde2cde1fc27f66b08e8762cdc3c78b61a
+- **Werte für die Anleitung:** rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-3390-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261015-avm-fritz-box-3390-initramfs-kernel.bin; sicherheit = abgeleitet
 
 #### avm-fritz-box-7362-sl
 
@@ -2272,6 +2283,7 @@ AVM FRITZ!Box 7362 SL · lantiq-xrx200 · K1
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7362-sl.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`
 - **Quelle (OpenWrt-Commit):** eae6cac6a30b95bef04d033ed8a303b7e35a078b
 - **Detail-Anleitung:** https://openwrt.org/toh/avm/avm_7362_sl#installation
+- **Werte für die Anleitung:** led_rampe = Die Power-LED blinkt dann rot.; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7362-sl-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261015-avm-fritz-box-7362-sl-initramfs-kernel.bin; sicherheit = abgeleitet
 
 #### avm-fritz-box-7412
 
@@ -2310,6 +2322,7 @@ AVM FRITZ!Box 7412 · lantiq-xrx200 · K1
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7412.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch
 - **Quelle (OpenWrt-Commit):** 20f48c8ae334f8502e756282995cc84d89fa81c1
 - **Detail-Anleitung:** https://openwrt.org/toh/avm/avm_fritz_box_7412#installation
+- **Werte für die Anleitung:** ersatz_ip = 169.254.120.1; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7412-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261015-avm-fritz-box-7412-initramfs-kernel.bin; sicherheit = abgeleitet
 
 #### avm-fritz-box-7430
 
@@ -2349,6 +2362,7 @@ AVM FRITZ!Box 7430 · lantiq-xrx200 · K1
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7430.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch
 - **Quelle (OpenWrt-Commit):** 6c85a449a988876fdfd4ce84d6aa5ffe4a2820c1
 - **Detail-Anleitung:** https://openwrt.org/toh/avm/avm_fritz_box_7430#installation
+- **Werte für die Anleitung:** ersatz_ip = 169.254.120.1; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7430-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261015-avm-fritz-box-7430-initramfs-kernel.bin; sicherheit = abgeleitet
 
 ### Familie `avm-eva-uboot`
 
