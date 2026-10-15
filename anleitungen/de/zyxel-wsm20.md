@@ -12,7 +12,7 @@ erprobt_mit: Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs
 rampe_image: gluon-rampe-20261015-zyxel-wsm20-initramfs-kernel.bin
 grundlagen: [browser-https]
 daten_stand: 30c9a43
-vorlage_stand: 2d71776
+vorlage_stand: 79f8a17
 ---
 
 # ZyXEL WSM20 (Multy M1): Freifunk-Firmware installieren
