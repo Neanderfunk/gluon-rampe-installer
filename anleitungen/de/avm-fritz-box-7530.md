@@ -9,7 +9,7 @@ stufe: fortgeschritten
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb
 grundlagen: [avm-eva, feste-ip, tftp-server]
-daten_stand: 440a725
+daten_stand: b72261f
 vorlage_stand: 79f8a17
 ---
 

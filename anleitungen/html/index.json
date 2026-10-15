@@ -105,6 +105,13 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "avm-fritz-box-7360-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-7360-v1.html",
+  "status": "ungeprüft",
+  "stufe": "mit scripts/Netzwerktools",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "avm-fritz-box-7360-v2",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-7360-v2.html",
   "status": "ungeprüft",

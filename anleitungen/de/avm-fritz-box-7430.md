@@ -9,7 +9,7 @@ stufe: mit scripts/Netzwerktools
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-avm-fritz-box-7430-initramfs-kernel.bin
 grundlagen: [avm-eva, browser-https, feste-ip]
-daten_stand: 440a725
+daten_stand: b72261f
 vorlage_stand: 869501c
 ---
 

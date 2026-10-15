@@ -8,7 +8,7 @@ sprache: de
 stufe: mit scripts/Netzwerktools
 status: ungeprüft
 grundlagen: [ssh-scp]
-daten_stand: 440a725
+daten_stand: b72261f
 vorlage_stand: 99ea201
 ---
 

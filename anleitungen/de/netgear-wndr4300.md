@@ -8,7 +8,7 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: []
-daten_stand: 440a725
+daten_stand: b72261f
 vorlage_stand: bfd0482
 ---
 
