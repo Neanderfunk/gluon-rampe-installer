@@ -917,7 +917,7 @@
    "zeichen": "nach dem Neustart: blaue Status-LED = Gluon/OpenWrt läuft, rote = Upgrade/Failsafe [geprüft: DTS qca9558_devolo_*.dts, led-running/led-upgrade]",
    "uebertragung": "ssh/scp: root mit dem im Web-UI gesetzten Passwort, Ziel /tmp",
    "anschluss": "Rechner per Kabel [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
-   "adressen": "Stock-Weboberfläche laut Wiki 192.168.1.1 [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
+   "adressen": "Werksadresse der devolo-Firmware nirgends belegt; die 192.168.1.1 im Wiki ist die Netzkonfiguration von OpenWrt [abgeleitet: Wiki toh/devolo/wifi_pro_1750e, Tabelle der Netzwerk-Grundeinstellung]; die Anleitung lässt den Access Point per DHCP am Heimrouter eine Adresse holen und sie dort ablesen [abgeleitet]",
    "programm": "Browser für die Stock-Weboberfläche, dann scp und ssh [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
    "zugang": "Benutzer root, Passwort das beim ersten Einrichten in der Stock-Weboberfläche gesetzte [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
    "datei": "Gluon-sysupgrade nach /tmp, installieren mit `sysupgrade -n -F /tmp/<datei>` [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
@@ -938,9 +938,11 @@
    "rampe": "nein: Gluon-sysupgrade geht per `sysupgrade -F` direkt",
    "rampe_rezept": "",
    "quelle": "1724d4e9ed7716a5444eca42adf045c2f3afc554 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1724d4e9ed7716a5444eca42adf045c2f3afc554",
+   "anleitung": "anleitungen/de/devolo-wifi-pro-1200e.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1724d4e9ed7716a5444eca42adf045c2f3afc554",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "devolo-wifi-pro-1200i",
@@ -965,7 +967,7 @@
    "zeichen": "nach dem Neustart: blaue Status-LED = Gluon/OpenWrt läuft, rote = Upgrade/Failsafe [geprüft: DTS qca9558_devolo_*.dts, led-running/led-upgrade]",
    "uebertragung": "ssh/scp: root mit dem im Web-UI gesetzten Passwort, Ziel /tmp",
    "anschluss": "Rechner per Kabel [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
-   "adressen": "Stock-Weboberfläche laut Wiki 192.168.1.1 [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
+   "adressen": "Werksadresse der devolo-Firmware nirgends belegt; die 192.168.1.1 im Wiki ist die Netzkonfiguration von OpenWrt [abgeleitet: Wiki toh/devolo/wifi_pro_1750e, Tabelle der Netzwerk-Grundeinstellung]; die Anleitung lässt den Access Point per DHCP am Heimrouter eine Adresse holen und sie dort ablesen [abgeleitet]",
    "programm": "Browser für die Stock-Weboberfläche, dann scp und ssh [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
    "zugang": "Benutzer root, Passwort das beim ersten Einrichten in der Stock-Weboberfläche gesetzte [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
    "datei": "Gluon-sysupgrade nach /tmp, installieren mit `sysupgrade -n -F /tmp/<datei>` [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
@@ -986,9 +988,11 @@
    "rampe": "nein: Gluon-sysupgrade geht per `sysupgrade -F` direkt",
    "rampe_rezept": "",
    "quelle": "c8115167f946be85f812f3c94d6294b67ac8944c [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c8115167f946be85f812f3c94d6294b67ac8944c",
+   "anleitung": "anleitungen/de/devolo-wifi-pro-1200i.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c8115167f946be85f812f3c94d6294b67ac8944c",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "devolo-wifi-pro-1750c",
@@ -1013,7 +1017,7 @@
    "zeichen": "nach dem Neustart: blaue Status-LED = Gluon/OpenWrt läuft, rote = Upgrade/Failsafe [geprüft: DTS qca9558_devolo_*.dts, led-running/led-upgrade]",
    "uebertragung": "ssh/scp: root mit dem im Web-UI gesetzten Passwort, Ziel /tmp",
    "anschluss": "Rechner per Kabel [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
-   "adressen": "Stock-Weboberfläche laut Wiki 192.168.1.1 [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
+   "adressen": "Werksadresse der devolo-Firmware nirgends belegt; die 192.168.1.1 im Wiki ist die Netzkonfiguration von OpenWrt [abgeleitet: Wiki toh/devolo/wifi_pro_1750e, Tabelle der Netzwerk-Grundeinstellung]; die Anleitung lässt den Access Point per DHCP am Heimrouter eine Adresse holen und sie dort ablesen [abgeleitet]",
    "programm": "Browser für die Stock-Weboberfläche, dann scp und ssh [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
    "zugang": "Benutzer root, Passwort das beim ersten Einrichten in der Stock-Weboberfläche gesetzte [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
    "datei": "Gluon-sysupgrade nach /tmp, installieren mit `sysupgrade -n -F /tmp/<datei>` [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
@@ -1034,9 +1038,11 @@
    "rampe": "nein: Gluon-sysupgrade geht per `sysupgrade -F` direkt",
    "rampe_rezept": "",
    "quelle": "e67da3443168fa6b6727cd81a35d559be77d6b4c [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e67da3443168fa6b6727cd81a35d559be77d6b4c",
+   "anleitung": "anleitungen/de/devolo-wifi-pro-1750c.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e67da3443168fa6b6727cd81a35d559be77d6b4c",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "devolo-wifi-pro-1750e",
@@ -1060,8 +1066,8 @@
    "taste": "keine Taste [geprüft: Commits, Weg über die laufende Stock-Firmware]",
    "zeichen": "nach dem Neustart: blaue Status-LED = Gluon/OpenWrt läuft, rote = Upgrade/Failsafe [geprüft: DTS qca9558_devolo_*.dts, led-running/led-upgrade]",
    "uebertragung": "ssh/scp: root mit dem im Web-UI gesetzten Passwort, Ziel /tmp",
-   "anschluss": "Rechner per Kabel [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]; nach der Installation an LAN 2 (PoE) anschließen [abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
-   "adressen": "Stock-Weboberfläche laut Wiki 192.168.1.1 [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
+   "anschluss": "Rechner per Kabel [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]; nach der Installation an LAN 2 (PoE) anschließen [abgeleitet: Wiki toh/devolo/wifi_pro_1750e]; LAN 2 (PoE) [geprüft: Wiki toh/devolo/wifi_pro_1750e, \"Connect to LAN 2 (poe)\"]",
+   "adressen": "Werksadresse der devolo-Firmware nirgends belegt; die 192.168.1.1 im Wiki ist die Netzkonfiguration von OpenWrt [abgeleitet: Wiki toh/devolo/wifi_pro_1750e, Tabelle der Netzwerk-Grundeinstellung]; die Anleitung lässt den Access Point per DHCP am Heimrouter eine Adresse holen und sie dort ablesen [abgeleitet]",
    "programm": "Browser für die Stock-Weboberfläche, dann scp und ssh [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
    "zugang": "Benutzer root, Passwort das beim ersten Einrichten in der Stock-Weboberfläche gesetzte [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
    "datei": "Gluon-sysupgrade nach /tmp, installieren mit `sysupgrade -n -F /tmp/<datei>` [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
@@ -1082,9 +1088,12 @@
    "rampe": "nein: Gluon-sysupgrade geht per `sysupgrade -F` direkt",
    "rampe_rezept": "",
    "quelle": "1c2f7b511514d43d8a826b26e09817b2750a2bf4 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1c2f7b511514d43d8a826b26e09817b2750a2bf4",
+   "anleitung": "anleitungen/de/devolo-wifi-pro-1750e.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1c2f7b511514d43d8a826b26e09817b2750a2bf4",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "sicherheit": "quelle",
+    "buchse": "LAN 2 (PoE)"
+   }
   },
   {
    "gluon_name": "devolo-wifi-pro-1750i",
@@ -1109,7 +1118,7 @@
    "zeichen": "nach dem Neustart: blaue Status-LED = Gluon/OpenWrt läuft, rote = Upgrade/Failsafe [geprüft: DTS qca9558_devolo_*.dts, led-running/led-upgrade]",
    "uebertragung": "ssh/scp: root mit dem im Web-UI gesetzten Passwort, Ziel /tmp",
    "anschluss": "Rechner per Kabel [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
-   "adressen": "Stock-Weboberfläche laut Wiki 192.168.1.1 [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
+   "adressen": "Werksadresse der devolo-Firmware nirgends belegt; die 192.168.1.1 im Wiki ist die Netzkonfiguration von OpenWrt [abgeleitet: Wiki toh/devolo/wifi_pro_1750e, Tabelle der Netzwerk-Grundeinstellung]; die Anleitung lässt den Access Point per DHCP am Heimrouter eine Adresse holen und sie dort ablesen [abgeleitet]",
    "programm": "Browser für die Stock-Weboberfläche, dann scp und ssh [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
    "zugang": "Benutzer root, Passwort das beim ersten Einrichten in der Stock-Weboberfläche gesetzte [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
    "datei": "Gluon-sysupgrade nach /tmp, installieren mit `sysupgrade -n -F /tmp/<datei>` [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
@@ -1130,9 +1139,11 @@
    "rampe": "nein: Gluon-sysupgrade geht per `sysupgrade -F` direkt",
    "rampe_rezept": "",
    "quelle": "8d68be8057d6c689025cc236d20b96b77a6ccf30 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=8d68be8057d6c689025cc236d20b96b77a6ccf30",
+   "anleitung": "anleitungen/de/devolo-wifi-pro-1750i.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=8d68be8057d6c689025cc236d20b96b77a6ccf30",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "devolo-wifi-pro-1750x",
@@ -1157,7 +1168,7 @@
    "zeichen": "die neue Firmware nutzt nur die rote Status-LED (Start, Betrieb, Upgrade) [geprüft: DTS qca9558_devolo_dvl1750x.dts]",
    "uebertragung": "ssh/scp: root mit dem im Web-UI gesetzten Passwort, Ziel /tmp",
    "anschluss": "Rechner per Kabel [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
-   "adressen": "Stock-Weboberfläche laut Wiki 192.168.1.1 [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
+   "adressen": "Werksadresse der devolo-Firmware nirgends belegt; die 192.168.1.1 im Wiki ist die Netzkonfiguration von OpenWrt [abgeleitet: Wiki toh/devolo/wifi_pro_1750e, Tabelle der Netzwerk-Grundeinstellung]; die Anleitung lässt den Access Point per DHCP am Heimrouter eine Adresse holen und sie dort ablesen [abgeleitet]",
    "programm": "Browser für die Stock-Weboberfläche, dann scp und ssh [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
    "zugang": "Benutzer root, Passwort das beim ersten Einrichten in der Stock-Weboberfläche gesetzte [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
    "datei": "Gluon-sysupgrade nach /tmp, installieren mit `sysupgrade -n -F /tmp/<datei>` [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]",
@@ -1178,9 +1189,11 @@
    "rampe": "nein: Gluon-sysupgrade geht per `sysupgrade -F` direkt",
    "rampe_rezept": "",
    "quelle": "cb3cd526948af3f69da1af18e035177a0a8f58e3 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=cb3cd526948af3f69da1af18e035177a0a8f58e3",
+   "anleitung": "anleitungen/de/devolo-wifi-pro-1750x.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=cb3cd526948af3f69da1af18e035177a0a8f58e3",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "enterasys-ws-ap3705i",
