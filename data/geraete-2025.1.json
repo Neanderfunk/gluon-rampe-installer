@@ -93,7 +93,7 @@
    "rampe": "nein: EVA nimmt das Gluon-sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "3f8c5d547677e7f4e450e88379c03448b8f53b1d [geprüft]",
-   "anleitung": "https://fritz-tools.readthedocs.io/",
+   "anleitung": "anleitungen/de/avm-fritz-box-4020.md; https://fritz-tools.readthedocs.io/",
    "erprobt": {},
    "werte": {
     "ersatz_ip": "169.254.157.1",
@@ -146,7 +146,7 @@
    "rampe": "nein: EVA nimmt das Gluon-sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "8918c038f330a1bb5a898d80c170caf9f42cac89 [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/avm-fritz-wlan-repeater-1750e.md",
    "erprobt": {},
    "werte": {
     "ersatz_ip": "169.254.78.1",
@@ -199,7 +199,7 @@
    "rampe": "nein: EVA nimmt das Gluon-sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "75ed56a08a4ce978323259a59a8f45ceed511584 (ath79, ohne Anleitung); e7cd6f5d66b827e31cfa7e7bc019ac1b86aac770 (ar71xx, EVA-Anleitung) [geprüft]",
-   "anleitung": "https://fritz-tools.readthedocs.io/",
+   "anleitung": "anleitungen/de/avm-fritz-wlan-repeater-300e.md; https://fritz-tools.readthedocs.io/",
    "erprobt": {},
    "werte": {
     "sicherheit": "quelle"
@@ -251,7 +251,7 @@
    "rampe": "nein: EVA nimmt das Gluon-sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "8d9c1087e4d07d625a9fef61d5dce71d850732ae [geprüft]",
-   "anleitung": "https://fritz-tools.readthedocs.io/",
+   "anleitung": "anleitungen/de/avm-fritz-wlan-repeater-450e.md; https://fritz-tools.readthedocs.io/",
    "erprobt": {},
    "werte": {
     "sicherheit": "quelle"
@@ -8417,7 +8417,7 @@
    "rampe": "nein, nicht nötig: Gluon baut das EVA-Image selbst (extra_images -bootloader)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 1cb406d019dc84497a8405c470f0b0394d5ff64a + 70e6ea319d3bfdfdb34be540dc7d89aa175b5587",
-   "anleitung": "https://fritz-tools.readthedocs.io/",
+   "anleitung": "anleitungen/de/avm-fritz-box-4040.md; https://fritz-tools.readthedocs.io/",
    "erprobt": {},
    "werte": {
     "datei_art": "bootloader",
@@ -10357,7 +10357,7 @@
    "rampe": "nein, unnötig: Gluon-EVA-Images direkt",
    "rampe_rezept": "",
    "quelle": "0b62fe5ed87ecac52301096b15abb69f96117c8c",
-   "anleitung": "https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation",
+   "anleitung": "anleitungen/de/avm-fritz-box-3370-rev-2-hynix-nand.md; https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation",
    "erprobt": {},
    "werte": {
     "rechner_ip": "192.168.178.10",
@@ -10418,7 +10418,7 @@
    "rampe": "nein, unnötig: Gluon-EVA-Images direkt",
    "rampe_rezept": "",
    "quelle": "0b62fe5ed87ecac52301096b15abb69f96117c8c",
-   "anleitung": "https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation",
+   "anleitung": "anleitungen/de/avm-fritz-box-3370-rev-2-micron-nand.md; https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation",
    "erprobt": {},
    "werte": {
     "rechner_ip": "192.168.178.10",
@@ -10478,7 +10478,7 @@
    "rampe": "ja: eva_ramboot.py bootet ein beliebiges initramfs [abgeleitet]",
    "rampe_rezept": "devices/avm-fritz-box-3390.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`",
    "quelle": "73ec21cde2cde1fc27f66b08e8762cdc3c78b61a",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/avm-fritz-box-3390.md",
    "erprobt": {},
    "werte": {
     "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-3390-initramfs-kernel.bin",
@@ -10533,7 +10533,7 @@
    "rampe": "nein, unnötig: sysupgrade direkt per FTP",
    "rampe_rezept": "",
    "quelle": "bf007a480a46a9fa843765a54fc2f8aa32b2683f (ohne Installationstext) + Wiki toh:avm:fritz.box.wlan.7360",
-   "anleitung": "https://fritz-tools.readthedocs.io/",
+   "anleitung": "anleitungen/de/avm-fritz-box-7360-sl.md; https://fritz-tools.readthedocs.io/",
    "erprobt": {},
    "werte": {
     "sicherheit": "abgeleitet"
@@ -10586,7 +10586,7 @@
    "rampe": "nein, unnötig",
    "rampe_rezept": "",
    "quelle": "78bebe680f67e8967c2baad8a5c07035d431f9d5",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/avm-fritz-box-7360-v2.md",
    "erprobt": {},
    "werte": {
     "sicherheit": "abgeleitet"
@@ -10636,7 +10636,7 @@
    "rampe": "ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]",
    "rampe_rezept": "devices/avm-fritz-box-7362-sl.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`",
    "quelle": "eae6cac6a30b95bef04d033ed8a303b7e35a078b",
-   "anleitung": "https://openwrt.org/toh/avm/avm_7362_sl#installation",
+   "anleitung": "anleitungen/de/avm-fritz-box-7362-sl.md; https://openwrt.org/toh/avm/avm_7362_sl#installation",
    "erprobt": {},
    "werte": {
     "led_rampe": "Die Power-LED blinkt dann rot.",
@@ -10690,7 +10690,7 @@
    "rampe": "ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]",
    "rampe_rezept": "devices/avm-fritz-box-7412.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch",
    "quelle": "20f48c8ae334f8502e756282995cc84d89fa81c1",
-   "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7412#installation",
+   "anleitung": "anleitungen/de/avm-fritz-box-7412.md; https://openwrt.org/toh/avm/avm_fritz_box_7412#installation",
    "erprobt": {},
    "werte": {
     "ersatz_ip": "169.254.120.1",
@@ -10744,7 +10744,7 @@
    "rampe": "ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]",
    "rampe_rezept": "devices/avm-fritz-box-7430.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch",
    "quelle": "6c85a449a988876fdfd4ce84d6aa5ffe4a2820c1",
-   "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7430#installation",
+   "anleitung": "anleitungen/de/avm-fritz-box-7430.md; https://openwrt.org/toh/avm/avm_fritz_box_7430#installation",
    "erprobt": {},
    "werte": {
     "ersatz_ip": "169.254.120.1",
@@ -10886,7 +10886,7 @@
    "rampe": "nein, unnötig",
    "rampe_rezept": "",
    "quelle": "02d53e6a2113f80ae429664e7990d167fbf44604",
-   "anleitung": "https://fritz-tools.readthedocs.io/",
+   "anleitung": "anleitungen/de/avm-fritz-box-7312.md; https://fritz-tools.readthedocs.io/",
    "erprobt": {},
    "werte": {
     "sicherheit": "quelle"
