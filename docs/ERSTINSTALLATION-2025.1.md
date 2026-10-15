@@ -141,7 +141,7 @@ fehlen die Felder noch.
 | Kat. | Geräte |
 |---|---:|
 | K0 | 117 |
-| K0+ | 24 |
+| K0+ | 25 |
 | K1 | 25 |
 | K1d | 99 |
 | K2 | 42 |
@@ -149,9 +149,9 @@ fehlen die Felder noch.
 | K4 | 27 |
 | K5 | 7 |
 | offen | 1 |
-| **gesamt** | **351** |
+| **gesamt** | **352** |
 
-Gluon-RAMpe passt: **ja 35**, teilweise 35, nein/unnötig 281.
+Gluon-RAMpe passt: **ja 35**, teilweise 35, nein/unnötig 282.
 
 Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-951ui-2nd-hap`, `mikrotik-routerboard-mapl-2nd`, `mikrotik-routerboard-wap-g-5hact2hnd`, `mikrotik-routerboard-wapr-2nd`, `gl.inet-gl-e750`, `gl.inet-gl-xe300`, `zte-mf286r`, `asus-lyra-map-ac2200`, `avm-fritz-box-7520`, `avm-fritz-box-7530`, `avm-fritz-repeater-1200`, `avm-fritz-repeater-3000`, `linksys-mr8300-dallas`, `mikrotik-discg-5acd`, `mikrotik-hap-ac2`, `mikrotik-sxtsq-5-ac-rbsxtsqg-5acd`, `mikrotik-wap-ac`, `avm-fritz-box-3390`, `avm-fritz-box-7362-sl`, `avm-fritz-box-7412`, `avm-fritz-box-7430`, `asus-rt-ax52`, `d-link-aquila-pro-ai-m30-a1`, `d-link-aquila-pro-ai-m60-a1`, `netgear-wax218`, `asus-rt-ax53u`, `genexis-pulse-ex400`, `mikrotik-routerboard-750gr3`, `netgear-wndr3700-v5`, `xiaomi-mi-router-3g`, `xiaomi-mi-router-ac2100`, `xiaomi-redmi-router-ac2100`, `zyxel-wsm20`.
 
@@ -311,6 +311,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [tp-link-wbs210-v2](#tp-link-wbs210-v2) | TP-Link WBS210 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-wbs210-v2.md) |
 | [tp-link-wbs510-v1](#tp-link-wbs510-v1) | TP-Link WBS510 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-wbs510-v1.md) |
 | [ubiquiti-nanobeam-ac-gen1-xc](#ubiquiti-nanobeam-ac-gen1-xc) | Ubiquiti NanoBeam AC Gen1 (XC) | ath79-generic | K0+ | [`sonderweg-ubiquiti-nanobeam-ac-gen1-xc`](#familie-sonderweg-ubiquiti-nanobeam-ac-gen1-xc) | laut | nein | nein | nein |  |  |
+| [ubiquiti-nanobeam-m5-xw](#ubiquiti-nanobeam-m5-xw) | Ubiquiti NanoBeam M5 XW (Alias von ubiquiti-nanostation-loco-m-xw) | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-nanobeam-m5-xw.md) |
 | [ubiquiti-nanostation-loco-m-xw](#ubiquiti-nanostation-loco-m-xw) | Ubiquiti Nanostation Loco M XW | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-nanostation-loco-m-xw.md) |
 | [ubiquiti-nanostation-m-xw](#ubiquiti-nanostation-m-xw) | Ubiquiti Nanostation M XW | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-nanostation-m-xw.md) |
 | [ubiquiti-rocket-m-xm](#ubiquiti-rocket-m-xm) | Ubiquiti Rocket M XM | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-rocket-m-xm.md) |
@@ -11590,7 +11591,45 @@ Ubiquiti EdgeRouter X-SFP · ramips-mt7621 · K3
 
 ### Familie `ubiquiti-tftp`
 
-4 Gerät(e).
+5 Gerät(e).
+
+#### ubiquiti-nanobeam-m5-xw
+
+Ubiquiti NanoBeam M5 XW (Alias von ubiquiti-nanostation-loco-m-xw) · ath79-generic · K0+
+
+- **Anzeigename (überschreibt den bereinigten Modellnamen):** Ubiquiti NanoBeam M5 XW
+- **Weg ab Werk:** Ubiquiti-TFTP-Recovery: Reset beim Einstecken halten bis die LEDs wechselweise blinken, factory per TFTP an das Gerät [geprüft]
+- **Schritte (Normalweg):**
+  1. Board-Typ in der AirOS-Versionsangabe prüfen (Settings > System, z. B. 'XW.v6...'); XM-Geräte brauchen ein anderes Image [abgeleitet: Wiki toh/ubiquiti/common]
+  2. Rechner fest auf eine IP aus 192.168.1.0/24 stellen (nicht .20, z. B. .21), Netzmaske 255.255.255.0 [geprüft: Commits 633c430, 40530c8]
+  3. Kabel vom LAN-Ausgang des PoE-Injektors direkt zum Rechner [geprüft: Commits 633c430, 40530c8]
+  4. Reset-Taste am Gerät oder am PoE-Netzteil gedrückt halten, Gerät per PoE einschalten [geprüft: Commit 633c430]
+  5. Weiter halten, bis die Signal-LEDs abwechselnd blinken (LED1+LED3, dann LED2+LED4), dann loslassen [geprüft]
+  6. Image per TFTP an das Gerät: `tftp 192.168.1.20`, `binary`, `put <gluon-factory>.bin` [geprüft: Commits 633c430, 40530c8]
+  7. Warten: während des Schreibens laufen die Signal-LEDs der Reihe nach durch, dann Neustart; so lange nicht Strom ziehen [abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp]
+- **Taste und Zeitpunkt:** Reset-Taste am Gerät oder am PoE-Netzteil gedrückt halten, Gerät per PoE einschalten, weiter halten bis die LEDs abwechselnd blinken, dann loslassen [geprüft: Commit 633c430]
+- **Sichtbare Zeichen:** Signal-LEDs blinken abwechselnd (LED1+LED3, dann LED2+LED4) = TFTP-Modus erreicht [geprüft: Commits 633c430, 40530c8]; während des Schreibens laufen die Signal-LEDs der Reihe nach durch, dann Neustart [abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp]
+- **Übertragung:** tftp-server-am-geraet: Gerät 192.168.1.20, PC z. B. 192.168.1.21/24, `tftp put` factory (binary)
+- **Anschluss:** Kabel vom LAN-Ausgang des PoE-Injektors direkt zum Rechner [geprüft: Commits 633c430, 40530c8]
+- **Adressen:** Gerät 192.168.1.20 (TFTP-Server am Gerät); Rechner feste IP aus 192.168.1.0/24, nicht .20 (Commits nennen .21 bzw. .25, Wiki .254), Netzmaske 255.255.255.0 [geprüft: Commits 633c430, 40530c8]
+- **Programm:** TFTP-Client (z. B. `tftp` unter Linux, unter Windows TFTP-Client nachinstallieren): `tftp 192.168.1.20`, `binary`, `put <gluon-factory>.bin` [geprüft: Commits 633c430, 40530c8]
+- **Datei:** Gluon-factory [geprüft]; einen bestimmten Dateinamen verlangt keine Quelle, kurzer Name mit Endung .bin [abgeleitet: better safe than sorry]
+- **seriell nötig:** nein
+- **Gehäuse öffnen:** nein
+- **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** NanoBeam M5 XW: in Gluon ein Alias der NanoStation Loco M XW, gleiches Image [geprüft: Gluon targets/ath79-generic v2025.1.3, aliases]; nicht mit dem NanoBeam AC verwechseln; Bauart XW in der AirOS-Versionsangabe (Settings > System, z. B. 'XW.v6...') [abgeleitet: Wiki toh/ubiquiti/common]
+- **Bedingung an die Herstellerfirmware:** Wiki: XW-Geräte brauchen für die OpenWrt-Installation AirOS 6.0.4 oder älter (ab 6.0.6 nur signierte Firmware; Downgrade über 6.0.6-beta auf 6.0.4); neuere XW-Hardware-Revisionen nur über XW.v6.1.7.32555 + fwupdate.real (github true-systems/ubnt-openwrt-flashing) [abgeleitet: Wiki toh/ubiquiti/common]; ob die Grenze auch für den TFTP-Recovery-Weg gilt, ist offen
+- **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_nanostation-loco-m-xw-initramfs-kernel.bin) (Liste)
+- **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_nanostation-loco-m-xw-squashfs-factory.bin)
+- **Stock-Teile:** keine
+- **RAM:** 64 MB [Commit]
+- **Dauer:** Upload Sekunden, danach schreibt das Gerät einige Minuten; nicht Strom ziehen, solange die LEDs laufen [abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp]
+- **Notweg:** [Notfall] alternativ ap51-flash, das den Ubiquiti-TFTP-Modus beherrscht [abgeleitet: ap51-flash-Doku]
+- **Rückweg zur Herstellerfirmware:** gleicher TFTP-Weg mit dem AirOS-Image, möglichst genau der vorher installierten Version [abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp]
+- **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
+- **Quelle (OpenWrt-Commit):** 633c4304ad42d18d180ba65a264ba668de445d91 [geprüft]; Gluon-Alias von ubiquiti-nanostation-loco-m-xw
+- **Detail-Anleitung:** anleitungen/de/ubiquiti-nanobeam-m5-xw.md
+- **Werte für die Anleitung:** taste_ort = am Gerät oder am PoE-Netzteil; kabel_am_geraet = False; led_schreiben = laufen die Signal-LEDs der Reihe nach durch; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.21; taste = bis die Signal-LEDs abwechselnd blinken (erst LED 1 und 3, dann LED 2 und 4); sicherheit = abgeleitet
 
 #### ubiquiti-nanostation-loco-m-xw
 
