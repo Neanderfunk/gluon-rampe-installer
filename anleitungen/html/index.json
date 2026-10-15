@@ -1,0 +1,44 @@
+[
+ {
+  "gluon_name": "d-link-aquila-pro-ai-m30-a1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-aquila-pro-ai-m30-a1.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "d-link-aquila-pro-ai-m60-a1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-aquila-pro-ai-m60-a1.html",
+  "status": "erprobt",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "d-link-dap-1620-b1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dap-1620-b1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "d-link-dap-x1860-a1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dap-x1860-a1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "d-link-dir-878-a1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dir-878-a1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "d-link-dir-882-a1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dir-882-a1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ }
+]

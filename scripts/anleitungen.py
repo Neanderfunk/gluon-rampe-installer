@@ -5,8 +5,8 @@
 #
 #   scripts/anleitungen.py                    Markdown je Geraet schreiben
 #   scripts/anleitungen.py --html             dazu je Geraet eine HTML-Seite (markdown-it-py)
-#   scripts/anleitungen.py --html --basis-url https://host/pfad
-#                                             dazu html/index.json fuer den Selector
+#   scripts/anleitungen.py --html             schreibt auch html/index.json fuer den
+#                                             Selector (Basis-URL: Default unten)
 #   scripts/anleitungen.py --check [--html]   nur pruefen, ob alles aktuell ist
 #   scripts/anleitungen.py --verlinken        Feld "anleitung" im JSON auf die Seite setzen
 #
@@ -213,7 +213,10 @@ def main():
     ap.add_argument("--quelle", type=Path, default=ROOT / "anleitungen")
     ap.add_argument("--ausgabe", type=Path, default=ROOT / "anleitungen")
     ap.add_argument("--html", action="store_true")
-    ap.add_argument("--basis-url", default="", help="absolute Basis der html/-Seiten, ohne Vorgabe")
+    # Festgelegt von Supernode-Betrieb (15.10.2026): Der Downloader liefert
+    # anleitungen/html/ per Symlink unter dieser Adresse aus.
+    ap.add_argument("--basis-url", default="https://routersoftware.ffnef.de/anleitungen",
+                    help="absolute Adresse, unter der html/ liegt (leer: keine index.json)")
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--verlinken", action="store_true",
                     help="Feld anleitung im JSON auf die erzeugte Seite setzen")
