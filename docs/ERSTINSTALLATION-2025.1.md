@@ -293,9 +293,9 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [tp-link-cpe510-v3](#tp-link-cpe510-v3) | TP-Link CPE510 v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe510-v3.md) |
 | [tp-link-cpe710-v1](#tp-link-cpe710-v1) | TP-Link CPE710 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe710-v1.md) |
 | [tp-link-cpe710-v2](#tp-link-cpe710-v2) | TP-Link CPE710 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe710-v2.md) |
-| [tp-link-eap225-outdoor-v1](#tp-link-eap225-outdoor-v1) | TP-Link EAP225-Outdoor v1 | ath79-generic | K0+ | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=4f86edf477edbc0f20b5a49a69f658fa82158284 |
-| [tp-link-eap225-outdoor-v3](#tp-link-eap225-outdoor-v3) | TP-Link EAP225-Outdoor v3 | ath79-generic | K0+ | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7e4de89e631aaf56be5375662b7d5ed0f27e26f6 |
-| [tp-link-eap225-wall-v2](#tp-link-eap225-wall-v2) | TP-Link EAP225-Wall v2 | ath79-generic | K0+ | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  |  |
+| [tp-link-eap225-outdoor-v1](#tp-link-eap225-outdoor-v1) | TP-Link EAP225-Outdoor v1 | ath79-generic | K0+ | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-eap225-outdoor-v1.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=4f86edf477edbc0f20b5a49a69f658fa82158284 |
+| [tp-link-eap225-outdoor-v3](#tp-link-eap225-outdoor-v3) | TP-Link EAP225-Outdoor v3 | ath79-generic | K0+ | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-eap225-outdoor-v3.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7e4de89e631aaf56be5375662b7d5ed0f27e26f6 |
+| [tp-link-eap225-wall-v2](#tp-link-eap225-wall-v2) | TP-Link EAP225-Wall v2 | ath79-generic | K0+ | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-eap225-wall-v2.md) |
 | [tp-link-tl-wdr3500-v1](#tp-link-tl-wdr3500-v1) | TP-Link TL-WDR3500 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wdr3500-v1.md) |
 | [tp-link-tl-wdr3600-v1](#tp-link-tl-wdr3600-v1) | TP-Link TL-WDR3600 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wdr3600-v1.md) |
 | [tp-link-tl-wdr4300-v1](#tp-link-tl-wdr4300-v1) | TP-Link TL-WDR4300 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wdr4300-v1.md) |
@@ -493,8 +493,8 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [totolink-x5000r](#totolink-x5000r) | TOTOLINK X5000R | ramips-mt7621 | K1d | [`sonderweg-totolink-x5000r`](#familie-sonderweg-totolink-x5000r) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/totolink-x5000r.md) |
 | [tp-link-archer-ax23-v1](#tp-link-archer-ax23-v1) | TP-Link Archer AX23 v1 (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-ax23-v1.md) |
 | [tp-link-archer-c6-v3](#tp-link-archer-c6-v3) | TP-Link Archer C6 v3 (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c6-v3.md) |
-| [tp-link-eap613-v1](#tp-link-eap613-v1) | TP-Link EAP613 v1 | ramips-mt7621 | K0 | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  |  |
-| [tp-link-eap615-wall-v1](#tp-link-eap615-wall-v1) | TP-Link EAP615-Wall v1 | ramips-mt7621 | K0 | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  |  |
+| [tp-link-eap613-v1](#tp-link-eap613-v1) | TP-Link EAP613 v1 | ramips-mt7621 | K0 | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-eap613-v1.md) |
+| [tp-link-eap615-wall-v1](#tp-link-eap615-wall-v1) | TP-Link EAP615-Wall v1 | ramips-mt7621 | K0 | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-eap615-wall-v1.md) |
 | [tp-link-re500-v1](#tp-link-re500-v1) | TP-Link RE500 v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re500-v1.md) |
 | [tp-link-re650-v1](#tp-link-re650-v1) | TP-Link RE650 v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re650-v1.md) |
 | [ubiquiti-edgerouter-x](#ubiquiti-edgerouter-x) | Ubiquiti EdgeRouter X | ramips-mt7621 | K3 | [`ubiquiti-edgerouter`](#familie-ubiquiti-edgerouter) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-edgerouter-x.md); https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp |
@@ -3218,7 +3218,7 @@ Cudy M1800 · ramips-mt7621 · K2
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** f6d394e9f2fd41547236c092ac914322220eb77c
 - **Detail-Anleitung:** anleitungen/de/cudy-m1800.md
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-m1800.bin; zwischen_md5 = 0c19a13f261fc7b3b0fade2b263203d5; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-m1800.bin; zwischen_url_text = Zwischenfirmware für den Cudy M1800 aus unserem Spiegel; sicherheit = unsicher; sicherheit_hinweis = Die Cudy-Zwischenfirmware, die wir gefunden haben, ist für den „M1800+ V2“ gedacht. Ob dein M1800 sie annimmt, wissen wir nicht.
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-m1800.bin; zwischen_md5 = 0c19a13f261fc7b3b0fade2b263203d5; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-m1800.bin; zwischen_url_text = Zwischenfirmware für den Cudy M1800 aus unserem Spiegel; sicherheit = unsicher; sicherheit_hinweis = Cudy bietet dieselbe Zwischenfirmware unter „M1800 V2“ und „M1800+ V2“ an. Ob dein M1800 sie annimmt, wissen wir nicht.
 
 #### cudy-wr1300-v1
 
@@ -10922,7 +10922,8 @@ TP-Link EAP225-Outdoor v1 · ath79-generic · K0+
 - **Rückweg zur Herstellerfirmware:** Rückweg/Debrick nur seriell (Gehäuse öffnen, Lötpunkte) [geprüft: Commits]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 4f86edf477edbc0f20b5a49a69f658fa82158284 [geprüft]
-- **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=4f86edf477edbc0f20b5a49a69f658fa82158284
+- **Detail-Anleitung:** anleitungen/de/tp-link-eap225-outdoor-v1.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=4f86edf477edbc0f20b5a49a69f658fa82158284
+- **Werte für die Anleitung:** stock_min = 1.6.0; stock_getestet = v1.7.0; sicherheit = quelle
 
 #### tp-link-eap225-outdoor-v3
 
@@ -10958,7 +10959,8 @@ TP-Link EAP225-Outdoor v3 · ath79-generic · K0+
 - **Rückweg zur Herstellerfirmware:** Rückweg/Debrick nur seriell (Gehäuse öffnen, Lötpunkte) [geprüft: Commits]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 7e4de89e631aaf56be5375662b7d5ed0f27e26f6 [geprüft]
-- **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7e4de89e631aaf56be5375662b7d5ed0f27e26f6
+- **Detail-Anleitung:** anleitungen/de/tp-link-eap225-outdoor-v3.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7e4de89e631aaf56be5375662b7d5ed0f27e26f6
+- **Werte für die Anleitung:** stock_min = 1.6.0; sicherheit = quelle
 
 #### tp-link-eap225-wall-v2
 
@@ -10991,6 +10993,8 @@ TP-Link EAP225-Wall v2 · ath79-generic · K0+
 - **Rückweg zur Herstellerfirmware:** Rückweg/Debrick nur seriell (Gehäuse öffnen, Lötpunkte) [geprüft: Commits]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** c9f51a9ad6e8f99ed7adb78d208740b7d351985b [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-eap225-wall-v2.md
+- **Werte für die Anleitung:** stock_getestet = 1.20.0; sicherheit = quelle
 
 #### tp-link-eap613-v1
 
@@ -11022,6 +11026,8 @@ TP-Link EAP613 v1 · ramips-mt7621 · K0
 - **Rückweg zur Herstellerfirmware:** Debrick nur seriell (vier Schrauben hinten, Platine heraus, UART-Lötpunkte) [geprüft: Commit 11588c5]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 11588c52b47c2c3b2cdc7849ce9e4804bfdb8bb5
+- **Detail-Anleitung:** anleitungen/de/tp-link-eap613-v1.md
+- **Werte für die Anleitung:** strom = über PoE oder ein 12-V-Netzteil; sicherheit = quelle
 
 #### tp-link-eap615-wall-v1
 
@@ -11053,6 +11059,8 @@ TP-Link EAP615-Wall v1 · ramips-mt7621 · K0
 - **Rückweg zur Herstellerfirmware:** Debrick nur seriell (TTL-Header einlöten) [geprüft: Commit a1b8a4d]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** a1b8a4d7b3ff3fa671623e2bccafd43a3c141e07
+- **Detail-Anleitung:** anleitungen/de/tp-link-eap615-wall-v1.md
+- **Werte für die Anleitung:** sicherheit = quelle
 
 ### Familie `tplink-tftp-recovery`
 

@@ -5108,9 +5108,13 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "4f86edf477edbc0f20b5a49a69f658fa82158284 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=4f86edf477edbc0f20b5a49a69f658fa82158284",
+   "anleitung": "anleitungen/de/tp-link-eap225-outdoor-v1.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=4f86edf477edbc0f20b5a49a69f658fa82158284",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_min": "1.6.0",
+    "stock_getestet": "v1.7.0",
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "tp-link-eap225-outdoor-v3",
@@ -5157,9 +5161,12 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "7e4de89e631aaf56be5375662b7d5ed0f27e26f6 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7e4de89e631aaf56be5375662b7d5ed0f27e26f6",
+   "anleitung": "anleitungen/de/tp-link-eap225-outdoor-v3.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7e4de89e631aaf56be5375662b7d5ed0f27e26f6",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_min": "1.6.0",
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "tp-link-eap225-wall-v2",
@@ -5205,9 +5212,12 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "c9f51a9ad6e8f99ed7adb78d208740b7d351985b [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/tp-link-eap225-wall-v2.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_getestet": "1.20.0",
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "tp-link-tl-wdr3500-v1",
@@ -14765,7 +14775,7 @@
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-m1800.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy M1800 aus unserem Spiegel",
     "sicherheit": "unsicher",
-    "sicherheit_hinweis": "Die Cudy-Zwischenfirmware, die wir gefunden haben, ist für den „M1800+ V2“ gedacht. Ob dein M1800 sie annimmt, wissen wir nicht."
+    "sicherheit_hinweis": "Cudy bietet dieselbe Zwischenfirmware unter „M1800 V2“ und „M1800+ V2“ an. Ob dein M1800 sie annimmt, wissen wir nicht."
    }
   },
   {
@@ -16186,9 +16196,12 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "11588c52b47c2c3b2cdc7849ce9e4804bfdb8bb5",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/tp-link-eap613-v1.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "strom": "über PoE oder ein 12-V-Netzteil",
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "tp-link-eap615-wall-v1",
@@ -16234,9 +16247,11 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "a1b8a4d7b3ff3fa671623e2bccafd43a3c141e07",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/tp-link-eap615-wall-v1.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "tp-link-re500-v1",
