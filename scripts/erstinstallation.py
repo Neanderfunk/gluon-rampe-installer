@@ -90,6 +90,14 @@ def rezept_wort(g):
     return "Alias" if r.startswith("Alias") else ""
 
 
+def anleitung_zelle(a):
+    """Verweis auf eine erzeugte Anleitung (anleitungen/...) als Link aus docs/."""
+    teile = []
+    for t in a.split("; "):
+        teile.append(f"[Anleitung](../{t})" if t.startswith("anleitungen/") else zelle(t))
+    return "; ".join(teile)
+
+
 def uebersicht(geraete):
     z = ["Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den "
          "Einzelheiten des Geräts.", "",
@@ -103,7 +111,7 @@ def uebersicht(geraete):
             zelle(g["modell"]), g["target"], g["kat"], fam,
             zelle(kurz(g["uebertragung"])), zelle(kurz(g["seriell"])),
             zelle(kurz(g["gehaeuse"])), rampe_wort(g), rezept_wort(g),
-            zelle(g["anleitung"]),
+            anleitung_zelle(g["anleitung"]),
         ]) + " |")
     return z
 

@@ -8,6 +8,7 @@
 #   scripts/anleitungen.py --html --basis-url https://host/pfad
 #                                             dazu html/index.json fuer den Selector
 #   scripts/anleitungen.py --check [--html]   nur pruefen, ob alles aktuell ist
+#   scripts/anleitungen.py --verlinken        Feld "anleitung" im JSON auf die Seite setzen
 #
 # Quelle (--quelle, Default anleitungen/):
 #   vorlagen/<familie>.md           Jinja2-Vorlage je Anleitungsfamilie (Content)
@@ -214,6 +215,8 @@ def main():
     ap.add_argument("--html", action="store_true")
     ap.add_argument("--basis-url", default="", help="absolute Basis der html/-Seiten, ohne Vorgabe")
     ap.add_argument("--check", action="store_true")
+    ap.add_argument("--verlinken", action="store_true",
+                    help="Feld anleitung im JSON auf die erzeugte Seite setzen")
     a = ap.parse_args()
     try:
         import jinja2
@@ -260,6 +263,20 @@ def main():
             idx = [{"gluon_name": n, "url": f"{basis}/{SPRACHE}/{n}.html", "status": k["status"],
                     "stufe": k["stufe"], "sprache": SPRACHE} for n, (k, _) in seiten.items()]
             dateien[h / "index.json"] = json.dumps(idx, ensure_ascii=False, indent=1) + "\n"
+
+    if a.verlinken and not a.check:
+        roh = json.loads(DATEN.read_text(encoding="utf-8"))
+        n = 0
+        for g in roh["geraete"]:
+            ziel = f"anleitungen/{SPRACHE}/{g['gluon_name']}.md"
+            if g["gluon_name"] not in seiten or g["anleitung"].startswith(ziel):
+                continue
+            # vorhandene Verweise (fremde Anleitungen, Wiki, Commit) bleiben dahinter
+            g["anleitung"] = ziel if g["anleitung"] in ("", "-") else f"{ziel}; {g['anleitung']}"
+            n += 1
+        if n:
+            DATEN.write_text(json.dumps(roh, ensure_ascii=False, indent=1), encoding="utf-8")
+            print(f"{n} Link(s) im Feld anleitung gesetzt; danach erstinstallation.py laufen lassen.")
 
     veraltet = [p for p, t in dateien.items()
                 if not p.exists() or p.read_text(encoding="utf-8") != t]

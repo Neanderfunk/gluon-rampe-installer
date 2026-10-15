@@ -10259,7 +10259,7 @@
    "rampe": "ja: RAMpe-Image gebaut, Header wie OpenWrt, Hardware-Test offen [geprüft: gluon-rampe-installer docs/NOTIZEN.md]",
    "rampe_rezept": "devices/d-link-aquila-pro-ai-m30-a1.sh: `-recovery.bin` (D-Link-Header DLK6E6110001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, Hardware-Test offen",
    "quelle": "OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f",
-   "anleitung": "https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/",
+   "anleitung": "anleitungen/de/d-link-aquila-pro-ai-m30-a1.md; https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/",
    "erprobt": {},
    "werte": {
     "recovery_ip": "192.168.200.1",
@@ -10325,7 +10325,7 @@
    "rampe": "ja: RAMpe-`recovery.bin` am Gerät erprobt (13.10.2026) [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]; Gluons eigenes `-recovery.bin` startet laut RAMpe-NOTIZEN vermutlich wie beim M30 nicht im Config-Mode [abgeleitet]",
    "rampe_rezept": "devices/d-link-aquila-pro-ai-m60-a1.sh: `-recovery.bin` (D-Link-Header DLK6E8202001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, am Gerät erprobt 13.10.2026 (Neanderfunk-sysupgrade geflasht). Gluons eigenes recovery.bin (z. B. Neanderfunk 26100702bro) startet vermutlich wie bei der M30 nicht im Config-Mode [abgeleitet]",
    "quelle": "OpenWrt 7271ee587cd104d30d6d46dd3c623c9d4602bd0c",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/d-link-aquila-pro-ai-m60-a1.md",
    "erprobt": {
     "am": "2026-10-13",
     "mit": "gluon-rampe-20261010-d-link-aquila-pro-ai-m60-a1-recovery.bin",
@@ -12743,7 +12743,7 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "e4c7703d2a62b8914e4723adae3f67c68a57532c",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e4c7703d2a62b8914e4723adae3f67c68a57532c",
+   "anleitung": "anleitungen/de/d-link-dap-1620-b1.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e4c7703d2a62b8914e4723adae3f67c68a57532c",
    "erprobt": {},
    "werte": {
     "datei_art": "factory",
@@ -12802,7 +12802,7 @@
    "rampe": "teilweise: Rückfall, falls das Gluon-factory nicht klappt: RAMpe-initramfs für die Web-Recovery statt OpenWrt-initramfs [abgeleitet]",
    "rampe_rezept": "devices/d-link-dap-x1860-a1.sh: `-initramfs-kernel.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet",
    "quelle": "3c31f6b521bb5fc49e222a8f2bcd454b73452a0e",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-d-link-dap-x1860/987",
+   "anleitung": "anleitungen/de/d-link-dap-x1860-a1.md; https://forum.darmstadt.freifunk.net/t/installation-d-link-dap-x1860/987",
    "erprobt": {},
    "werte": {
     "datei_art": "factory",
@@ -12906,7 +12906,7 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "d7233b0a6a9b8cb9207a74a8cb3d0525170cf504",
-   "anleitung": "https://openwrt.org/toh/d-link/dir-878_a1#installation",
+   "anleitung": "anleitungen/de/d-link-dir-878-a1.md; https://openwrt.org/toh/d-link/dir-878_a1#installation",
    "erprobt": {},
    "werte": {
     "datei_art": "factory",
@@ -12965,7 +12965,7 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "73e8f23579bcb87764dae9ed0aefe28be3183d3e",
-   "anleitung": "https://openwrt.org/toh/d-link/dir-882_a1#installation",
+   "anleitung": "anleitungen/de/d-link-dir-882-a1.md; https://openwrt.org/toh/d-link/dir-882_a1#installation",
    "erprobt": {},
    "werte": {
     "datei_art": "factory",
