@@ -13161,7 +13161,7 @@
     "ziel": "/tmp/openwrt.bin",
     "befehle": [
      "dmesg | grep mtk_sgmii_init",
-     "# Weiter nur, wenn in der Ausgabe nicht RTL8211 steht. Steht es dort, ist es ein v3; dann gilt die Anleitung für den UniFi 6 LR v3.",
+     "# Weiter nur, wenn in der Ausgabe kein RTL8211 steht (mit RTL8211 ist es ein v3, dann gilt die Anleitung für den UniFi 6 LR v3).",
      "cat /proc/mtd",
      "# Weiter nur, wenn in der Ausgabe bs bei mtd6, kernel0 bei mtd8 und kernel1 bei mtd9 steht.",
      "dd if=/dev/zero bs=1 count=1 of=/dev/mtdblock6",
@@ -13231,7 +13231,7 @@
     "ziel": "/tmp/openwrt.bin",
     "befehle": [
      "dmesg | grep mtk_sgmii_init",
-     "# Weiter nur, wenn in der Ausgabe nicht RTL8211 steht. Steht es dort, ist es ein v3 (siehe Vorher prüfen).",
+     "# Weiter nur, wenn in der Ausgabe kein RTL8211 steht (mit RTL8211 ist es ein v3, siehe Vorher prüfen).",
      "cat /proc/mtd",
      "# Weiter nur, wenn in der Ausgabe bs bei mtd6, kernel0 bei mtd8 und kernel1 bei mtd9 steht.",
      "dd if=/dev/zero bs=1 count=1 of=/dev/mtdblock6",
@@ -13301,7 +13301,7 @@
     "ziel": "/tmp/openwrt.bin",
     "befehle": [
      "dmesg | grep mtk_sgmii_init",
-     "# Weiter nur, wenn in der Ausgabe RTL8211 steht. Sonst ist es kein v3 (siehe Vorher prüfen).",
+     "# Weiter nur, wenn in der Ausgabe RTL8211 steht (ohne RTL8211 ist es kein v3, siehe Vorher prüfen).",
      "cat /proc/mtd",
      "# Weiter nur, wenn in der Ausgabe bs bei mtd6, kernel0 bei mtd8 und kernel1 bei mtd9 steht.",
      "dd if=/dev/zero bs=1 count=1 of=/dev/mtdblock6",
