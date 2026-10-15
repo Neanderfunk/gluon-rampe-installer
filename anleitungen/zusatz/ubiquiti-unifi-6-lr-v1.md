@@ -11,7 +11,17 @@ vermutlich kein Netzwerk.
 
 Die frühe "U6 LR-EA" ist keine dieser Versionen.
 
-Ab Ubiquiti-Firmware 6.2 muss vor den Schreibbefehlen der Schreibschutz
-aufgehoben werden (`echo 5edfacbf > /proc/ubnthal/.uf`). Ältere
-Ubiquiti-Firmware antwortet laut OpenWrt eventuell unter `192.168.1.34`
-statt `192.168.1.20`.
+**Schreibschutz ab Herstellerfirmware 6.2:** Läuft auf dem Gerät
+Ubiquiti-Firmware 6.2 oder neuer, gib laut OpenWrt nach dem Anmelden
+(Schritt 5) zuerst diesen Befehl ein, bevor du mit Schritt 6 weitermachst:
+
+```
+echo 5edfacbf > /proc/ubnthal/.uf
+```
+
+Weißt du die Version nicht, gib ihn trotzdem ein. Meldet er "No such file or
+directory", ist die Firmware älter und du machst einfach mit Schritt 6
+weiter.
+
+Ältere Ubiquiti-Firmware antwortet laut OpenWrt eventuell unter
+`192.168.1.34` statt `192.168.1.20`.

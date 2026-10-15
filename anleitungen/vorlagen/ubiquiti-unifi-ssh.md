@@ -16,6 +16,9 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     befehle              Liste der Befehle auf dem Gerät, GENAU wie im
                          OpenWrt-Commit, mit {{ziel}} als Dateipfad;
                          der letzte ist meist "reboot"
+                         Eine Zeile, die mit "# " beginnt, ist eine Prüfung:
+                         Die Vorlage teilt dort den Befehlsblock und setzt den
+                         Text als "Prüfen: … Sonst hier aufhören." dazwischen.
 
   optional (leer = Satz entfällt bzw. allgemeiner Satz)
     dauer                erster Start, z. B. "etwa 4 Minuten" (leer = "einige Minuten")
@@ -98,11 +101,32 @@ Werkseinstellungen zurück oder entferne es im Controller.
 6. **Firmware schreiben.** Gib diese Befehle **einzeln und genau so** ein,
    jeweils mit Enter. Am besten kopierst du sie Zeile für Zeile.
 
-   ```
+{%- set ns = namespace(block=[]) %}
 {%- for z in w.befehle %}
-   {{ z }}
+{%- if z.startswith("# ") %}
+{%- if ns.block %}
+
+   ```
+{%- for y in ns.block %}
+   {{ y }}
 {%- endfor %}
    ```
+{%- set ns.block = [] %}
+{%- endif %}
+
+   **Prüfen:** {{ z[2:] }} Sonst hier aufhören.
+{%- else %}
+{%- set ns.block = ns.block + [z] %}
+{%- endif %}
+{%- endfor %}
+{%- if ns.block %}
+
+   ```
+{%- for y in ns.block %}
+   {{ y }}
+{%- endfor %}
+   ```
+{%- endif %}
 
    Ein Tippfehler an dieser Stelle kann das Gerät unbrauchbar machen. Meldet
    ein Befehl einen Fehler, mach **nicht** weiter, sondern melde dich bei
