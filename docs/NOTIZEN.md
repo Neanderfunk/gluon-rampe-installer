@@ -307,6 +307,57 @@ Wie die D-Link-Geräte geflasht werden, steht in der Router-Werkstatt unter
   **Am Gerät ungetestet.** Offen: eine per HWRevision zur 7530 umgestellte
   7520 (EVA-Offset im U-Boot unterscheidet sich).
 
+## Stand 16.10.2026: 249 Anleitungen, Levels, AVM-Vorbereitung
+
+**Anleitungen** (Vorlagen und Texte von Content, Werte und Erzeugung hier,
+Verdrahtung im Selector durch Supernode-Betrieb; live erst nach adorfers
+Deploy):
+- 249 Seiten. Seit 15.10. dazugekommen: AVM (eva-ftp, eva-ramboot,
+  eva-uboot), Zyxel WSM20 (erprobt), Genexis EX400, Aruba APBoot (6),
+  TOTOLINK X5000R, NanoBeam M5 XW, Cudy TR3000 v1 (Zwischenfirmware statt
+  seriell), ASUS TUF-AX4200/AX6000, TP-Link EAP (5), UniFi 6 LR v2/v3,
+  Sophos (6), devolo WiFi pro (6), seriell-tftp (WS-AP3825i, 3705i, 3710i,
+  3805i, Siemens AP3610), 7360 v1, HPE MSM460, TP-Link tftp-recovery (9),
+  Archer C50 v4 (erprobt 15.10. durch adorfer), C20 v5, C50 v6, C2 v1,
+  C20 v1.
+- Zurückgezogen: Rocket M XM (XM ist Sackgasse), WS-AP3715i (das
+  2025.1-sysupgrade bootet nicht, Gluon #3842, Fix OpenWrt-PR #25541 offen;
+  Werte in `440a725` zum Zurückholen).
+- **Levels L0 bis L8 und Risiko** (Einteilung adorfer 15.10.2026) ersetzen
+  die vier Stufen: `scripts/level.py` (Definitionen, Bezeichnungen für Lesende
+  von Content), je Gerät `level_merkmale` mit festen Werten, `risiko`
+  (normal/bootloader/offen) und `level_grund` für Einzelentscheidungen. Neue
+  Geräte bekommen ihre Merkmale von Hand: Familie = Hauptweg der Vorlage, feste
+  IP ergibt sich aus `rechner_ip`, GL.iNet aus `weg`. Entscheidungen adorfer:
+  Netgear mit nutzbarer Oberfläche nach dem leichtesten Weg (L0.1), feste IP
+  ohne Taste = L3, Image auf Datenträger = L4, AVM mit OpenWrt-U-Boot als zweiter
+  Stufe (EVA bleibt) = Risiko normal. Inventar mit Spalten Level/Risiko und
+  Zählung; `index.json` mit `level`/`risiko` statt `stufe`; Übersicht als
+  Tabelle Gerät | Stand | Level mit Legende, auf dem Handy ohne seitlichen
+  Überlauf.
+- Generator (`scripts/anleitungen.py`): Jinja-Lader für `{% include %}`,
+  sauberer Anzeigename und Feld `anzeige`, `gluon_broken`, YAML-Kopf gequotet,
+  Abschnitt "## Achtung" als Warnkasten, verwaiste Seiten werden entfernt,
+  Hinweis bei ungesicherten Daten. **Reihenfolge:** erst die Daten committen
+  (auch nach `--verlinken`), dann erzeugen, sonst steht `daten_stand: lokal`
+  auf allen Seiten.
+- Belegmarken erscheinen öffentlich unter "Herkunft der Angaben": dort keine
+  internen Sitzungsnamen ("Content"), eigene Tests als "Test Neanderfunk".
+- Spiegel und Downloads: Cudy-Zwischenfirmware als Direktlinks in
+  `firmware.ffnef.de/other/cudy-mirror-20261015/`; AP11-Bootloader und
+  X5000R-Altfirmware als ZIP in `download.ffnef.de/other/dump/`.
+
+**RAMpe:**
+- Vorbereitung vor dem sysupgrade für FRITZ!Box 7520/7530 und FRITZ!Repeater
+  1200/3000 eingebaut und im QEMU-Test geprüft (siehe Abschnitt 15.10.),
+  Images auf dem Server; am Gerät ungetestet.
+- WS-AP3825i: Das RAMpe-initramfs (Kernel 6.6) startet vermutlich nicht.
+  Ursache laut OpenWrt #25302: Bei größeren Images linkt der Bootwrapper den
+  Loader an eine andere Adresse als im uImage-Kopf. Fix PR #25541.
+- Langfristig (adorfer 16.10.): alle RAMpe-Bauten als ein Skript im Container
+  auf dem Buildhost, dazu ein Strang auf Gluon v2022.1 für den WS-AP3825i
+  (Punkt 8 unter "Offen").
+
 ## Idee: EdgeRouter X/X-SFP in einem Schritt (15.10.2026, ungeprüft)
 
 Auftrag adorfer, nur festgehalten, nicht begonnen. Heute braucht die
