@@ -8,7 +8,7 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [image-schreiben]
-daten_stand: 979581e
+daten_stand: 86ac252
 vorlage_stand: 6eae926
 ---
 

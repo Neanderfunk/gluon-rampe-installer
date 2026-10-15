@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ubiquiti NanoBeam M5 XW: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="ubiquiti-nanobeam-m5-xw">
+<meta name="anleitung:modell" content="Ubiquiti NanoBeam M5 XW (Alias von ubiquiti-nanostation-loco-m-xw)">
+<meta name="anleitung:anzeige" content="Ubiquiti NanoBeam M5 XW">
+<meta name="anleitung:familie" content="ubiquiti-tftp">
+<meta name="anleitung:gluon_broken" content="false">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="mit Werkzeug">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="feste-ip, tftp-client">
+<meta name="anleitung:daten_stand" content="86ac252">
+<meta name="anleitung:vorlage_stand" content="393f161">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<h1>Ubiquiti NanoBeam M5 XW: Freifunk-Firmware installieren</h1>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Wichtige Schritte haben wir von
+ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
+aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+beschrieben.</p>
+<p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+Anleitung für alle nach dir besser:</p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20Ubiquiti%20NanoBeam%20M5%20XW">projekt@neanderfunk.de</a></p>
+</blockquote>
+<p>Ubiquiti-Geräte haben einen eingebauten Notfall-Modus: Hält man beim
+Einschalten die Reset-Taste, wartet das Gerät darauf, dass ihm jemand eine
+Firmware per <strong>TFTP</strong> schickt. Genau darüber kommt die Freifunk-Firmware
+drauf. Du brauchst dafür ein kleines Programm auf dem Rechner, den
+TFTP-Client (<a href="grundlagen/tftp-client.html">TFTP-Client benutzen</a>), und eine
+feste Adresse am Rechner.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>das Gerät mit seinem PoE-Netzteil (PoE-Injektor)</li>
+<li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
+<li>eine Büroklammer für die Reset-Taste</li>
+<li>die Freifunk-Firmware deiner Community für den Ubiquiti NanoBeam M5 XW, und zwar das
+<strong>factory</strong>-Image für die Erstinstallation, nicht &quot;sysupgrade&quot;</li>
+<li>einen TFTP-Client (<a href="grundlagen/tftp-client.html">TFTP-Client benutzen</a>)</li>
+</ul>
+<h2>Vorher prüfen</h2>
+<p>Die Freifunk-Firmware für den NanoBeam M5 XW ist technisch dieselbe wie für
+die <a href="ubiquiti-nanostation-loco-m-xw.html">NanoStation Loco M XW</a>. Manche
+Communities bieten sie nur unter dem Namen der Loco an.</p>
+<p>Nicht verwechseln mit dem NanoBeam <strong>AC</strong>. Der braucht einen anderen Weg.</p>
+<p>Die Freifunk-Firmware für dieses Gerät ist nur für die Bauart <strong>XW</strong>. Die
+Bauart steht in der Versionsangabe der Ubiquiti-Firmware (AirOS, unter
+&quot;Settings → System&quot;), zum Beispiel &quot;XW.v6…&quot;.</p>
+<p>Laut OpenWrt nehmen XW-Geräte fremde Firmware nur bis AirOS 6.0.4 an; neuere
+Versionen verlangen signierte Firmware. Ob das auch für den TFTP-Weg gilt,
+ist nicht geklärt. Klappt es nicht, beschreibt OpenWrt unter
+<a href="https://openwrt.org/toh/ubiquiti/common">https://openwrt.org/toh/ubiquiti/common</a> den Weg über eine ältere
+AirOS-Version.</p>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Datei bereitlegen.</strong> Lade das factory-Image herunter und benenne es in
+einen kurzen Namen um, zum Beispiel <code>factory.bin</code>. Einen bestimmten Namen
+verlangt das Gerät nicht, ein kurzer erspart aber Tippfehler.</p>
+</li>
+<li>
+<p><strong>Feste Adresse am Rechner.</strong> Stell deinen Rechner auf die feste Adresse
+<code>192.168.1.21</code> mit der Netzmaske <code>255.255.255.0</code>
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>). Nicht
+<code>192.168.1.20</code>, die braucht das Gerät.</p>
+</li>
+<li>
+<p><strong>Verbinden.</strong> Steck das Kabel vom Rechner an die Buchse <strong>LAN</strong> des
+PoE-Injektors. Die Buchse <strong>PoE</strong> des Injektors geht zum Gerät.</p>
+</li>
+<li>
+<p><strong>Gerät in den TFTP-Modus bringen.</strong> Zieh den Injektor aus der Steckdose. Drück mit der Büroklammer
+die Reset-Taste (am Gerät oder am PoE-Netzteil) und
+halte sie gedrückt. Steck den Injektor wieder ein.
+Halte die Taste weiter gedrückt: bis die Signal-LEDs abwechselnd blinken (erst LED 1 und 3, dann LED 2 und 4). Dann loslassen.</p>
+</li>
+<li>
+<p><strong>Firmware schicken.</strong> Öffne ein Terminal im Ordner mit der Datei und
+schick sie an das Gerät.</p>
+<p>Linux und macOS:</p>
+<pre><code>tftp 192.168.1.20
+binary
+put factory.bin
+quit
+</code></pre>
+<p>Windows (Eingabeaufforderung &quot;cmd&quot;, TFTP-Client muss eingeschaltet sein):</p>
+<pre><code>tftp -i 192.168.1.20 PUT factory.bin
+</code></pre>
+<p>Die Übertragung dauert nur Sekunden.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Das Gerät schreibt die Firmware und startet neu; dabei laufen die Signal-LEDs der Reihe nach durch. Das
+dauert einige Minuten.
+<strong>Strom nicht ziehen, solange die LEDs laufen.</strong></p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Stell den Rechner wieder auf &quot;automatisch&quot;. Danach startet die
+Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
+Einrichtungsseite unter <code>http://192.168.1.1</code> oder gleich im Betrieb. Wie
+es weitergeht, beschreibt deine Community.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>In Schritt 4 zeigen die LEDs, dass der TFTP-Modus erreicht ist.</li>
+<li>Der TFTP-Client meldet die Übertragung ohne Fehler.</li>
+<li>Nach dem Neustart meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Der TFTP-Client meldet eine Zeitüberschreitung.</strong> Das Gerät war nicht im
+TFTP-Modus oder die Adresse am Rechner stimmt nicht. Prüf Schritt 2 und
+bring das Gerät noch einmal in den TFTP-Modus. Unter Windows kann auch die
+Firewall stören.</li>
+<li><strong>Das Gerät nimmt die Datei an, startet aber wieder mit der alten
+Firmware.</strong> Vermutlich passt das Image nicht zur Hardware (siehe &quot;Vorher
+prüfen&quot;), oder die Herstellerfirmware ist zu neu.</li>
+</ul>
+<h2>Zurück zur Ubiquiti-Firmware</h2>
+<p>Derselbe Weg geht auch rückwärts: Gerät wie in Schritt 4 in den TFTP-Modus
+bringen und statt der Freifunk-Firmware die Original-Firmware von Ubiquiti
+schicken, möglichst genau die Version, die vorher drauf war.</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp (Schritte (Normalweg), Sichtbare Zeichen, Dauer, Rückweg zur Herstellerfirmware)</li>
+<li>abgeleitet: Wiki toh/ubiquiti/common (Schritte (Normalweg), Typenschild/Verwechslung, Bedingung an die Herstellerfirmware)</li>
+<li>abgeleitet: ap51-flash-Doku (Notweg)</li>
+<li>abgeleitet: better safe than sorry (Datei)</li>
+<li>geprüft (Weg ab Werk, Schritte (Normalweg), Datei, Quelle (OpenWrt-Commit))</li>
+<li>geprüft: Commit 633c430 (Schritte (Normalweg), Taste und Zeitpunkt)</li>
+<li>geprüft: Commits 633c430, 40530c8 (Schritte (Normalweg), Sichtbare Zeichen, Anschluss, Adressen, Programm)</li>
+<li>geprüft: Gluon targets/ath79-generic v2025.1.3, aliases (Typenschild/Verwechslung)</li>
+<li>Geräteeintrag: 633c4304ad42d18d180ba65a264ba668de445d91 [geprüft]; Gluon-Alias von ubiquiti-nanostation-loco-m-xw</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>
