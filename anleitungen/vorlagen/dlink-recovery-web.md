@@ -42,16 +42,7 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
-{%- if status == "ungeprüft" %}
-> **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
-> zusammengestellt, aber noch niemand hat sie an einem {{ modell }} Schritt
-> für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de), ob es geklappt hat.
-{%- else %}
-> **Am Gerät erprobt** am {{ erprobt_am }} mit `{{ erprobt_mit }}`.
-{%- if erprobt_mit_aelter %} Das aktuelle Image ist neuer und in dieser Form
-> noch nicht am Gerät gelaufen.{% endif %}
-{%- endif %}
+{% include "_status.md" %}
 
 # {{ modell }}: Freifunk-Firmware installieren
 

@@ -86,6 +86,15 @@ Herkunft der Angaben.
 
 ## Status
 
+Der Statusblock oben auf jeder Seite kommt für alle Vorlagen aus
+`vorlagen/_status.md` (per `{% include %}`; Dateien mit `_` am Anfang sind
+keine Familien). Er sagt sichtbar, ob und womit die Anleitung am Gerät
+erprobt ist und, wenn nicht, wie sicher wir uns sind (Wert `sicherheit`:
+`quelle`, `abgeleitet` oder `unsicher`, dazu optional `sicherheit_hinweis`).
+Darunter steht immer die Bitte um Rückmeldung mit einem Mail-Link an
+projekt@neanderfunk.de (adorfer 15.10.2026).
+
+
 - `ungeprüft`: Oben steht sichtbar **"Noch nicht am Gerät erprobt"**. Das gilt
   auch für die Grundlagen-Seiten, bis jemand sie gegengelesen oder benutzt hat.
 - `erprobt`: nur, wenn `hw_test` einen erfolgreichen Durchgang mit genau
