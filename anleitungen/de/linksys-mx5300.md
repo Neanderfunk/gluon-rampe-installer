@@ -10,7 +10,7 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [ssh-scp]
-daten_stand: 071c7876
+daten_stand: 98c17d3b
 vorlage_stand: 393f1614
 ---
 

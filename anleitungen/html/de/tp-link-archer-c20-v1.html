@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TP-Link Archer C20 v1: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="tp-link-archer-c20-v1">
+<meta name="anleitung:modell" content="TP-Link Archer C20 v1">
+<meta name="anleitung:anzeige" content="TP-Link Archer C20 v1">
+<meta name="anleitung:familie" content="tplink-ubootteil-dd">
+<meta name="anleitung:gluon_broken" content="false">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:level" content="L5">
+<meta name="anleitung:level_text" content="Besondere Programme">
+<meta name="anleitung:risiko" content="bootloader">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="feste-ip, tftp-server">
+<meta name="anleitung:daten_stand" content="98c17d3b">
+<meta name="anleitung:vorlage_stand" content="839fdda0">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<h1>TP-Link Archer C20 v1: Freifunk-Firmware installieren</h1>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Wichtige Schritte haben wir von
+ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
+aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+beschrieben.
+Der Weg von OpenWrt nutzt ein Image, das es nicht mehr gibt; wir nehmen stattdessen wie beim Archer C2 v1 das sysupgrade.</p>
+<p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+Anleitung für alle nach dir besser:</p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20Archer%20C20%20v1">projekt@neanderfunk.de</a></p>
+</blockquote>
+<blockquote>
+<p><strong>Achtung, Bootloader:</strong> Bei diesem Gerät wird der Bootloader verändert,
+also das kleine Programm, das vor jeder Firmware startet. Geht dabei etwas
+schief, etwa durch einen Stromausfall oder eine falsche Datei, startet das
+Gerät womöglich nicht mehr. Ohne Flash-Programmer gibt es dann meist kein
+Zurück. Lies die Anleitung vorher einmal ganz durch und halte dich genau an
+die Befehle.</p>
+</blockquote>
+<blockquote>
+<p><strong>Wichtig: Nimm nie die Freifunk-Datei allein.</strong> Der Firmware-Selector
+bietet für dieses Gerät nur den Knopf <strong>Upgrade</strong> an. Lädst du diese Datei
+über die TP-Link-Oberfläche hoch, ist das Gerät danach nur noch über die
+serielle Konsole zu retten. Benennst du sie für den Notfall-Modus einfach
+um, überschreibt der Router damit seinen Bootloader, und dann hilft nur
+noch ein Flash-Programmer. Die Datei muss vorher mit einem Stück der
+TP-Link-Firmware zusammengesetzt werden, wie unten beschrieben.</p>
+</blockquote>
+<p>Beim TP-Link Archer C20 v1 geht die Freifunk-Firmware nur über den Notfall-Modus des
+Bootloaders auf das Gerät: Beim Einschalten mit gedrückter Taste holt er
+sich eine Datei per TFTP und schreibt sie <strong>ab dem Anfang des Speichers,
+samt Bootloader</strong>. Deshalb muss vorn in dieser Datei der Bootloader aus der
+TP-Link-Firmware stehen, dahinter die Freifunk-Firmware. Rechne mit einer
+Stunde.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>den Router mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
+Netzwerkkabel</li>
+<li>einen TFTP-Server auf dem Rechner
+(<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>)</li>
+<li>die <strong>TP-Link-Firmware</strong> für genau dieses Modell, von der
+<a href="https://www.tp-link.com/en/support/download/archer-c20/v1/">Download-Seite bei TP-Link</a>. Nimm die Datei mit „up_boot“ im Namen.</li>
+<li>die Freifunk-Firmware deiner Community für den TP-Link Archer C20 v1: im
+Firmware-Selector unter &quot;Wähle Deine Installationsart&quot; der Knopf
+<strong>Upgrade</strong> (die Datei endet auf <code>-sysupgrade.bin</code>). <strong>Nicht allein
+verwenden</strong>, siehe oben.</li>
+<li>zum Zusammensetzen: unter Linux und macOS die Befehle <code>dd</code> und <code>cat</code>,
+unter Windows <strong>Python 3</strong> (<a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>)</li>
+</ul>
+<h2>Vorher prüfen</h2>
+<p>Diese Anleitung gilt nur für den <strong>Archer C20 v1</strong> (mit USB-Buchse). Der
+Archer C20 v4 und v5 sind andere Geräte, ebenso der
+<a href="tp-link-archer-c20i.html">Archer C20i</a>. Die Version steht auf dem Typenschild
+unten am Gerät (&quot;Ver: 1.0&quot;).</p>
+<p>Laut OpenWrt-Wiki nimmt die TP-Link-Oberfläche beim C20 v1 eine fremde
+Firmware zwar an, beschädigt sie aber; danach hilft nur noch die serielle
+Konsole. Deshalb geht es hier nur über den Notfall-Modus.</p>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Dateien bereitlegen.</strong> Leg einen Ordner an. Pack die TP-Link-Firmware
+(ein ZIP-Archiv) dort aus und benenn die <code>.bin</code>-Datei darin in
+<code>tpl.bin</code> um. Leg die Freifunk-Datei daneben und benenn sie in
+<code>gluon.bin</code> um.</p>
+</li>
+<li>
+<p><strong>Zusammensetzen.</strong> Öffne ein Terminal in dem Ordner und gib ein:</p>
+<ul>
+<li>
+<p>Linux und macOS:</p>
+<pre><code>dd if=tpl.bin of=uboot.bin bs=512 count=256 skip=1
+cat uboot.bin gluon.bin &gt; ArcherC20V1_tp_recovery.bin
+</code></pre>
+</li>
+<li>
+<p>Windows (PowerShell oder Eingabeaufforderung), geht auch unter Linux
+und macOS mit <code>python3</code> statt <code>py</code>:</p>
+<pre><code>py -c &quot;open('ArcherC20V1_tp_recovery.bin','wb').write(open('tpl.bin','rb').read(131584)[512:]+open('gluon.bin','rb').read())&quot;
+</code></pre>
+</li>
+</ul>
+<p><strong>Prüfen:</strong> <code>ArcherC20V1_tp_recovery.bin</code> ist genau <strong>131.072 Bytes größer</strong> als
+<code>gluon.bin</code> (Größe in Bytes: Windows <code>dir</code>, Linux und macOS <code>ls -l</code>).
+<strong>Stimmt das nicht, auf keinen Fall weitermachen</strong>: Mit einer falschen
+Datei überschreibt der Router seinen Bootloader.</p>
+</li>
+<li>
+<p><strong>Feste Adresse am Rechner.</strong> Stell deinen Rechner auf <code>192.168.0.66</code>,
+Netzmaske <code>255.255.255.0</code>
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).</p>
+</li>
+<li>
+<p><strong>TFTP-Server starten</strong> mit dem Ordner, in dem <code>ArcherC20V1_tp_recovery.bin</code>
+liegt. Groß- und Kleinschreibung des Namens genau so.</p>
+</li>
+<li>
+<p><strong>Kabel anschließen.</strong> Netzwerkkabel vom Rechner an eine LAN-Buchse des
+Routers. Strom noch nicht anschließen.</p>
+</li>
+<li>
+<p><strong>Notfall-Modus starten.</strong> Halt die Reset-Taste gedrückt, schalte den Router ein und halt sie etwa 6 bis 7 Sekunden weiter, bis der Router die Datei holt. <strong>Prüfen:</strong> Im Protokoll des
+TFTP-Servers erscheint, dass <code>ArcherC20V1_tp_recovery.bin</code> abgeholt wird.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Der Router schreibt Bootloader und Freifunk-Firmware und
+startet von selbst neu.
+<strong>Auf keinen Fall den Strom ziehen</strong>, solange er schreibt.</p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Stell den Rechner wieder auf &quot;automatisch&quot;. Je nach Community
+kommt zuerst eine Einrichtungsseite unter <code>http://192.168.1.1</code>, oder der
+Router geht gleich in Betrieb.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>In Schritt 2 ist die Datei 131.072 Bytes größer als <code>gluon.bin</code>.</li>
+<li>In Schritt 6 zeigt der TFTP-Server den Abruf.</li>
+<li>Nach Schritt 7 meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Der Router holt die Datei nicht.</strong> Prüf feste Adresse <code>192.168.0.66</code>,
+Kabel an einer LAN-Buchse, Firewall und den Dateinamen. Windows blendet
+Dateiendungen gern aus. Dann den Notfall-Modus noch einmal starten.</li>
+<li><strong>Er hat die Datei geholt, startet aber nicht.</strong> Warte länger, das
+Schreiben kann lange dauern. Kommt auch nach einer halben Stunde nichts,
+schreib uns.</li>
+</ul>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Programm)</li>
+<li>abgeleitet: Wiki C20 v1 (Warnung, Taste und Zeitpunkt, Sichtbare Zeichen, Adressen, Dauer)</li>
+<li>abgeleitet: Wiki C20 v1; geprüft: Commit (Schritte (Normalweg))</li>
+<li>geprüft für den Weg, abgeleitet für die Image-Wahl (Weg ab Werk, Schritte (Normalweg))</li>
+<li>geprüft: Commit (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Programm, Datei)</li>
+<li>geprüft: Commit 8375623, &quot;WARNING: This method also overwrites the bootloader partition!&quot; (Programm)</li>
+<li>geprüft: Commits; abgeleitet: Wiki (Typenschild/Verwechslung)</li>
+<li>geprüft: Test Neanderfunk 15.10.2026 (Programm)</li>
+<li>Geräteeintrag: 161a3be5adb21135eb75da81247fa5e04b6ea676</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

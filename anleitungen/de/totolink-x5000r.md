@@ -10,7 +10,7 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-https, feste-ip]
-daten_stand: 071c7876
+daten_stand: 98c17d3b
 vorlage_stand: 565e8935
 ---
 

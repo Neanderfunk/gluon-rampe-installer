@@ -1264,11 +1264,27 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "tp-link-archer-c2-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c2-v1.html",
+  "status": "ungeprüft",
+  "level": "L5",
+  "risiko": "bootloader",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "tp-link-archer-c2-v3",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c2-v3.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-archer-c20-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c20-v1.html",
+  "status": "ungeprüft",
+  "level": "L5",
+  "risiko": "bootloader",
   "sprache": "de"
  },
  {
