@@ -511,7 +511,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [zbtlink-zbt-wg3526-32m](#zbtlink-zbt-wg3526-32m) | ZBT WG3526 32M | ramips-mt7621 | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
 | [zyxel-nwa50ax](#zyxel-nwa50ax) | ZyXEL NWA50AX (Alias NWA90AX) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa50ax.md); https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964 |
 | [zyxel-nwa55axe](#zyxel-nwa55axe) | ZyXEL NWA55AXE (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa55axe.md); https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964 |
-| [zyxel-wsm20](#zyxel-wsm20) | ZyXEL WSM20 (Multy M1) | ramips-mt7621 | K1 | [`sonderweg-zyxel-wsm20`](#familie-sonderweg-zyxel-wsm20) | webui-upload | nein | nein | ja | ja | https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/ |
+| [zyxel-wsm20](#zyxel-wsm20) | ZyXEL WSM20 (Multy M1) | ramips-mt7621 | K1 | [`sonderweg-zyxel-wsm20`](#familie-sonderweg-zyxel-wsm20) | webui-upload | nein | nein | ja | ja | [Anleitung](../anleitungen/de/zyxel-wsm20.md); https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/ |
 | [cudy-tr1200-v1](#cudy-tr1200-v1) | Cudy TR1200 v1 | ramips-mt76x8 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-tr1200-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
 | [cudy-wr1000](#cudy-wr1000) | Cudy WR1000 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr1000.md) |
 | [gl-mt300n-v2](#gl-mt300n-v2) | GL.iNet GL-MT300N v2 | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl-mt300n-v2.md) |
@@ -10562,7 +10562,8 @@ ZyXEL WSM20 (Multy M1) · ramips-mt7621 · K1
 - **Gluon-RAMpe passt:** ja: die versteckte Upgrade-Seite nimmt das RAMpe-initramfs (znet-Header, KERNEL_INITRAMFS in mt7621.mk); danach Community-sysupgrade auf der RAMpe-Seite statt in LuCI [abgeleitet]; keine Cloud-Registrierung
 - **Gluon-RAMpe-Rezept:** devices/zyxel-wsm20.sh (gebaut 15.10.2026): `initramfs-kernel.bin` (znet-Header schon drin, 7.481.920 Bytes, unter den 8 MiB Kernel) für die versteckte Upgrade-Seite; am Gerät ungetestet
 - **Quelle (OpenWrt-Commit):** 28df7f7ff251d8684caa60f07ed0ba0c4a8e71f4
-- **Detail-Anleitung:** https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/
+- **Detail-Anleitung:** anleitungen/de/zyxel-wsm20.md; https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/
+- **Werte für die Anleitung:** openwrt_datei = openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin; openwrt_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-zyxel-wsm20-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261015-zyxel-wsm20-initramfs-kernel.bin; rampe_weg = Lade in Schritt 4 statt der OpenWrt-Datei die RAMpe hoch; Teil 2 entfällt dann.; sicherheit = quelle; sicherheit_hinweis = Freifunk Aachen beschreibt den Weg so, und bei uns ist er an einem Gerät gelaufen; mit der RAMpe hat ihn noch niemand ausprobiert.
 
 ### Familie `sophos-xg-awetool`
 

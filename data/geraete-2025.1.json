@@ -16981,9 +16981,17 @@
    "rampe": "ja: die versteckte Upgrade-Seite nimmt das RAMpe-initramfs (znet-Header, KERNEL_INITRAMFS in mt7621.mk); danach Community-sysupgrade auf der RAMpe-Seite statt in LuCI [abgeleitet]; keine Cloud-Registrierung",
    "rampe_rezept": "devices/zyxel-wsm20.sh (gebaut 15.10.2026): `initramfs-kernel.bin` (znet-Header schon drin, 7.481.920 Bytes, unter den 8 MiB Kernel) für die versteckte Upgrade-Seite; am Gerät ungetestet",
    "quelle": "28df7f7ff251d8684caa60f07ed0ba0c4a8e71f4",
-   "anleitung": "https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/",
+   "anleitung": "anleitungen/de/zyxel-wsm20.md; https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "openwrt_datei": "openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin",
+    "openwrt_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin",
+    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-zyxel-wsm20-initramfs-kernel.bin",
+    "rampe_datei": "gluon-rampe-20261015-zyxel-wsm20-initramfs-kernel.bin",
+    "rampe_weg": "Lade in Schritt 4 statt der OpenWrt-Datei die RAMpe hoch; Teil 2 entfällt dann.",
+    "sicherheit": "quelle",
+    "sicherheit_hinweis": "Freifunk Aachen beschreibt den Weg so, und bei uns ist er an einem Gerät gelaufen; mit der RAMpe hat ihn noch niemand ausprobiert."
+   }
   },
   {
    "gluon_name": "cudy-tr1200-v1",
