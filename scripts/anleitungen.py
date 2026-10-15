@@ -219,7 +219,8 @@ def seiten_erzeugen(geraete, quelle, jinja2):
         am = erprobt.get("am", "")
         am_de = ".".join(reversed(am.split("-"))) if re.fullmatch(r"\d{4}-\d\d-\d\d", am) else am
         ctx.update(modell=anzeige(g), anzeige=anzeige(g), broken=g["gluon_broken"],
-                   level=level.level(g["level_merkmale"]), risiko=g["risiko"],
+                   level=level.level(g["level_merkmale"]),
+                   level_text=level.KURZ.get(level.level(g["level_merkmale"]), ""), risiko=g["risiko"],
                    werte=werte, status=status, erprobt_am=am_de,
                    erprobt_mit=erprobt.get("mit", ""),
                    erprobt_mit_aelter=bool(status == "erprobt" and aktuell
@@ -233,8 +234,9 @@ def seiten_erzeugen(geraete, quelle, jinja2):
         body = re.sub(r"\n{3,}", "\n\n", body).strip() + "\n"
         kopf = {"gluon_name": g["gluon_name"], "modell": g["modell"], "anzeige": anzeige(g),
                 "familie": g["familie"], "gluon_broken": g["gluon_broken"],
-                "sprache": SPRACHE, "level": level.level(g["level_merkmale"]), "risiko": g["risiko"],
-                "status": status}
+                "sprache": SPRACHE, "level": level.level(g["level_merkmale"]),
+                "level_text": level.KURZ.get(level.level(g["level_merkmale"]), ""),
+                "risiko": g["risiko"], "status": status}
         if status == "erprobt":
             kopf.update(erprobt_am=erprobt["am"], erprobt_mit=erprobt.get("mit", ""))
         if werte.get("rampe_datei"):
@@ -331,9 +333,13 @@ def main():
                  "Anleitungen je Gerät. Ungeprüfte Anleitungen sind aus Quellen "
                  "zusammengestellt und noch nicht am Gerät nachvollzogen.", "",
                  "| Gerät | Stand | Level |", "|---|---|---|"]
-        liste += [f"| [{k['anzeige'].replace('|', '/')}]({n}.md) | {k['status']} | {k['level']}"
+        liste += [f"| [{k['anzeige'].replace('|', '/')}]({n}.md) | {k['status']} | {k['level']} "
+                  f"{k['level_text']}"
                   + (", **Bootloader-Risiko**" if k["risiko"] == "bootloader" else "") + " |"
                   for n, (k, _) in seiten.items()]
+        liste += ["", "## Level", "", "| Level | Bedeutung |", "|---|---|"]
+        liste += [f"| {l} {level.KURZ[l]} | {level.LANG[l]} |" for l in level.LEVELS]
+        liste += ["", "## Risiko", "", level.RISIKO_TEXT]
         dateien[h / SPRACHE / "index.html"] = html_seite(
             "Freifunk-Firmware installieren", "\n".join(liste) + "\n", {"uebersicht": SPRACHE}, md, 1)
         if a.basis_url:

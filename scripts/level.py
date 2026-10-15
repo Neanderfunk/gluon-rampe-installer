@@ -34,6 +34,40 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 LEVELS = ["L0", "L0.1", "L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8"]
+
+# Wortlaut für Lesende: Content, anleitungen/README.md "Level und Risiko"
+KURZ = {
+    "L0": "Einfach hochladen",
+    "L0.1": "Hochladen, richtige Datei wählen",
+    "L1": "Zwei Schritte im Browser",
+    "L2": "Taste beim Einschalten",
+    "L3": "Feste Adresse am Rechner",
+    "L4": "Netzwerkwerkzeuge",
+    "L5": "Besondere Programme",
+    "L6": "Serielles Kabel",
+    "L7": "Gehäuse öffnen",
+    "L8": "Löten und Programmer",
+}
+LANG = {
+    "L0": "Die Freifunk-Firmware wird über die Weboberfläche des Geräts hochgeladen; es gibt nur eine passende Datei.",
+    "L0.1": "Wie L0, aber es gibt zwei Dateien (Erstinstallation und Upgrade), und man muss die richtige nehmen.",
+    "L1": "Erst eine Zwischenfirmware oder eine ältere Herstellerfirmware, dann die Freifunk-Firmware; alles im Browser.",
+    "L2": "Notfall-Modus per Taste, dann Hochladen im Browser; der Rechner bekommt seine Adresse von selbst.",
+    "L3": "Wie L2 oder ein anderer Weg im Browser, aber die Netzwerkeinstellung des Rechners muss von Hand umgestellt werden.",
+    "L4": "TFTP-Server, SSH, curl oder ein Image auf einen Datenträger schreiben; Programme, die es für jedes System gibt.",
+    "L5": "Skripte oder Programme außerhalb des Üblichen, oder Dateien vorher selbst zusammenbauen.",
+    "L6": "Ein Konsolenkabel am Gerät, ohne es zu öffnen.",
+    "L7": "Für die serielle Konsole muss das Gerät aufgeschraubt werden.",
+    "L8": "Klemmen am Speicherchip, Lötarbeiten oder ein Flash-Programmer.",
+}
+RISIKO_TEXT = (
+    "> **Risiko „normal“:** Der Bootloader des Geräts bleibt unangetastet.\n"
+    "> Solange das so ist, ist der Weg zurück eigentlich immer offen, notfalls\n"
+    "> über den Notfall-Modus per TFTP oder über die serielle Konsole.\n"
+    ">\n"
+    "> **Risiko „Bootloader“:** Hier wird der Bootloader selbst ersetzt oder\n"
+    "> verändert. Geht dabei etwas schief, gibt es ohne Flash-Programmer meist\n"
+    "> kein Zurück.")
 WERKZEUG = {"browser", "taste-web", "netztools", "datentraeger", "programm", "seriell", "offen"}
 RISIKO = {"normal", "bootloader", "offen"}
 
