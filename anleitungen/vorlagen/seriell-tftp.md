@@ -50,6 +50,7 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 {%- set konsole = w.get("konsole") or "rj45" -%}
 {%- set tftp_buchse = w.get("tftp_buchse") -%}
 {%- set ssh_buchse = w.get("ssh_buchse") -%}
+{%- set saveenv = "saveenv" in w.befehle -%}
 
 # {{ modell }}: Freifunk-Firmware installieren
 
@@ -142,10 +143,11 @@ einer Stunde.
    {%- if w.get("prompt") %} `{{ w.get("prompt") }}`{% endif %}. Sonst Strom
    ziehen und noch einmal.
 
-6. **Bootloader einstellen und OpenWrt laden.** Gib diese Befehle ein, jede
-   Zeile einzeln. Warte nach jeder Zeile, bis die Eingabeaufforderung
-   wieder erscheint; `saveenv` kann ein paar Sekunden brauchen, dabei
-   **nicht den Strom ziehen**:
+6. **{% if saveenv %}Bootloader einstellen und {% endif %}OpenWrt laden.** Gib
+   diese Befehle ein, jede Zeile einzeln. Warte nach jeder Zeile, bis die
+   Eingabeaufforderung wieder erscheint
+   {%- if saveenv %}; `saveenv` kann ein paar Sekunden brauchen, dabei
+   **nicht den Strom ziehen**{% endif %}:
 
    ```
 {%- for zeile in w.befehle.splitlines() %}
@@ -153,11 +155,13 @@ einer Stunde.
 {%- endfor %}
    ```
 
-   Die letzte Zeile holt `{{ w.tftp_name }}` von deinem Rechner und startet
+   Die Befehle holen `{{ w.tftp_name }}` von deinem Rechner und starten
    OpenWrt; das Terminal zeigt viele Zeilen. Warte, bis
    `Please press Enter to activate this console.` erscheint.
+   {%- if saveenv %}
 
    Ab jetzt startet das Gerät OpenWrt statt der Herstellerfirmware.
+   {%- endif %}
 
 ### Freifunk-Firmware aufspielen
 
