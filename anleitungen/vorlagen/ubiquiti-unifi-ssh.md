@@ -30,9 +30,10 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
 {%- set alt = " -o HostKeyAlgorithms=+ssh-rsa" if w.ssh_alt else "" -%}
-{% include "_status.md" %}
 
 # {{ modell }}: Freifunk-Firmware installieren
+
+{% include "_status.md" %}
 
 Die UniFi-Geräte von Ubiquiti haben keine Oberfläche, über die man fremde
 Firmware hochladen kann. Man meldet sich stattdessen per **SSH** auf dem

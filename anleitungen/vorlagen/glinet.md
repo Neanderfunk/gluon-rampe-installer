@@ -44,9 +44,10 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
 {%- set ud = w.uboot_datei if w.uboot_datei else "sysupgrade" -%}
-{% include "_status.md" %}
 
 # {{ modell }}: Freifunk-Firmware installieren
+
+{% include "_status.md" %}
 
 {% if w.weg == "gl-ui" -%}
 GL.iNet liefert seine Router mit einer eigenen Variante von OpenWrt aus.

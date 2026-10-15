@@ -8,9 +8,10 @@ OpenWrt-Commit.
 Werte: sicherheit, sicherheit_hinweis (siehe _status.md), sonst keine.
 -#}
 {%- set w = werte -%}
-{% include "_status.md" %}
 
 # {{ modell }}: Freifunk-Firmware installieren
+
+{% include "_status.md" %}
 
 Der MX5300 hat in seiner Linksys-Firmware eine versteckte Seite, über die
 sich die Freifunk-Firmware direkt hochladen lässt. Du brauchst nur einen

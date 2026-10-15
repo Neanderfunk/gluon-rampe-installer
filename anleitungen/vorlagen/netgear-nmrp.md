@@ -25,9 +25,10 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
-{% include "_status.md" %}
 
 # {{ modell }}: Freifunk-Firmware installieren
+
+{% include "_status.md" %}
 
 Viele Netgear-Geräte fragen direkt nach dem Einschalten im Netzwerk, ob
 jemand eine Firmware für sie hat. Das Programm **nmrpflash** auf deinem

@@ -42,9 +42,10 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
-{% include "_status.md" %}
 
 # {{ modell }}: Freifunk-Firmware installieren
+
+{% include "_status.md" %}
 
 Der {{ modell }} hat eine eingebaute Notfall-Seite von D-Link, die
 **Recovery**. Sie nimmt eine Firmware-Datei an und schreibt sie in den

@@ -21,9 +21,10 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
-{% include "_status.md" %}
 
 # {{ modell }}: Freifunk-Firmware installieren
+
+{% include "_status.md" %}
 
 Beim {{ modell }} gibt es keine Firmware, die man über eine Oberfläche
 hochlädt. Die Freifunk-Firmware wird als fertiges Abbild direkt auf

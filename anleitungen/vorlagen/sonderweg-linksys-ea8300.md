@@ -8,9 +8,10 @@ Durchsicht durch adorfer. Quelle: OpenWrt-Wiki toh:linksys:ea8300 (Rohtext
 Werte: sicherheit, sicherheit_hinweis (siehe _status.md), sonst keine.
 -#}
 {%- set w = werte -%}
-{% include "_status.md" %}
 
 # {{ modell }}: Freifunk-Firmware installieren
+
+{% include "_status.md" %}
 
 > **Wichtig:** Lade **nicht** die Freifunk-Firmware direkt über die
 > Linksys-Oberfläche hoch. Laut OpenWrt macht jede Firmware ab OpenWrt 23.05

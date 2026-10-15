@@ -2,7 +2,8 @@
 Gemeinsamer Statusblock für alle Vorlagen, eingebunden per include
 (Dateiname _status.md). Keine eigene Familie.
 
-Nutzt: status, erprobt_am, erprobt_mit, erprobt_mit_aelter, modell und aus
+Nutzt: status, erprobt_am, erprobt_mit, erprobt_mit_aelter, modell, broken
+(optional, vom Skript: Gluon führt das Gerät als broken) und aus
 den Werten (alle optional):
   sicherheit           "quelle" (der Weg steht so in einer Primärquelle: OpenWrt-Commit,
                        Herstellerdoku), "abgeleitet" (wichtige Schritte von ähnlichen
@@ -30,6 +31,10 @@ den Werten (alle optional):
 > notfalls einen Weg zurück kennst.
 {%- else %} Die Anleitung ist aus Quellen zusammengestellt. Wie gut jede
 > Angabe belegt ist, steht unten unter "Herkunft der Angaben".
+{%- endif %}
+{%- if broken is defined and broken %}
+> Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
+> getestet ("broken"); nicht jede Community bietet sie an.
 {%- endif %}
 {%- if ws.get("sicherheit_hinweis") %}
 > {{ ws.get("sicherheit_hinweis") }}

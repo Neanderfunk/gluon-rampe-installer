@@ -49,9 +49,10 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken), alle optional
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
 {%- set art = w.datei_art if w.datei_art else "factory" -%}
-{% include "_status.md" %}
 
 # {{ modell }}: Freifunk-Firmware installieren
+
+{% include "_status.md" %}
 
 Beim {{ modell }} geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update

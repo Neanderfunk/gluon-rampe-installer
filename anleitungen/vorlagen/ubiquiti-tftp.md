@@ -25,9 +25,10 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
-{% include "_status.md" %}
 
 # {{ modell }}: Freifunk-Firmware installieren
+
+{% include "_status.md" %}
 
 Ubiquiti-Geräte haben einen eingebauten Notfall-Modus: Hält man beim
 Einschalten die Reset-Taste, wartet das Gerät darauf, dass ihm jemand eine

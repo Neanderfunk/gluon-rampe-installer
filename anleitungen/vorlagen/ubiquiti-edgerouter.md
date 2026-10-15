@@ -26,9 +26,10 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 {%- set b = bilder if bilder is defined else {} -%}
 {%- set stman = "https://raw.githubusercontent.com/stman/OpenWRT-19.07.2-factory-tar-file-for-Ubiquiti-EdgeRouter-x/de2ade9e0c5356af31e5ae0ff011fd22525e8342/Version%2022.03/openwrt-ramips-mt7621-ubnt_edgerouter-x-initramfs-factory.tar" -%}
 {%- set darkxst = "https://raw.githubusercontent.com/darkxst/erx-migration/d29f71a94ec3fadd1f31bee2b39536f395ee9aa5/" -%}
-{% include "_status.md" %}
 
 # {{ modell }}: Freifunk-Firmware installieren
+
+{% include "_status.md" %}
 
 Diese Anleitung ist für einen {{ modell }}, auf dem noch die Firmware von
 Ubiquiti läuft (EdgeOS), und der neu mit Freifunk anfangen soll.

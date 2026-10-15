@@ -31,9 +31,10 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
-{% include "_status.md" %}
 
 # {{ modell }}: Freifunk-Firmware installieren
+
+{% include "_status.md" %}
 
 Router von Cudy nehmen ab Werk nur Firmware an, die Cudy selbst
 unterschrieben hat. Deshalb geht es in zwei Schritten: Zuerst kommt eine
