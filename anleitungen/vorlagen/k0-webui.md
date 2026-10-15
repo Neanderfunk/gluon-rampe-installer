@@ -12,7 +12,7 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken), alle optional
 
   Oberfläche
     stock_url            Adresse der Herstelleroberfläche, z. B. http://192.168.0.1;
-                         mehrere möglich als Text: "http://192.168.0.1 oder http://192.168.1.1"
+                         mehrere getrennt durch " oder ": "http://192.168.0.1 oder http://192.168.1.1"
     zugang               z. B. "Benutzer `admin`, Passwort `admin`"
     rechner_ip           feste Adresse für den Rechner, z. B. 192.168.0.10
                          (leer = Rechner holt die Adresse automatisch)
@@ -64,6 +64,10 @@ des Herstellers hinkäme. Du brauchst nur einen Browser.
 - das Gerät und
   {%- if w.strom %} Strom {{ w.strom }}{% else %} sein Netzteil{% endif %}
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
+{%- if w.tls_alt %}
+- den Browser **Firefox**; mit anderen Browsern lässt sich die Oberfläche
+  dieses Geräts nicht öffnen (siehe Schritt 3)
+{%- endif %}
 - die Freifunk-Firmware deiner Community für den {{ modell }}, und zwar das
   **factory**-Image für die Erstinstallation, nicht "sysupgrade"
   {%- if w.datei_hinweis %} ({{ w.datei_hinweis }}){% endif %}
@@ -101,25 +105,39 @@ Aufkleber genau mit "{{ modell }}", bevor du anfängst.
    eingestellt ist.
    {%- endif %}
 
+{% set adresse -%}
+{%- if w.stock_url -%}
+{%- for u in w.stock_url.split(" oder ") %}`{{ u }}`{% if not loop.last %} oder {% endif %}{% endfor -%}
+{%- else -%}
+die Adresse der Oberfläche (sie steht meist auf dem Aufkleber unter dem Gerät)
+{%- endif -%}
+{%- endset %}
 3. **Oberfläche öffnen.**
-   {%- if w.stock_url %} Öffne im Browser `{{ w.stock_url }}`.
-   {%- else %} Öffne im Browser die Adresse der Oberfläche. Sie steht meist
-   auf dem Aufkleber unter dem Gerät.
+   {%- if w.tls_alt %} Diese Oberfläche nutzt noch eine alte Verschlüsselung
+   (TLS 1.0). Aktuelle Browser lehnen sie ab, und **nur Firefox** lässt sich
+   so umstellen, dass er sie für die Installation doch annimmt. Mit Chrome,
+   Edge oder Safari geht es nicht. Stell Firefox deshalb zuerst um:
+
+   1. In die Adresszeile `about:config` eingeben, Enter. Die Warnung mit
+      "Risiko akzeptieren und fortfahren" bestätigen.
+   2. Oben im Suchfeld `security.tls.version.min` eingeben.
+   3. Auf den Stift rechts klicken, den Wert `3` durch `1` ersetzen und mit
+      dem Haken rechts speichern.
+
+   **Nach der Installation zurückstellen:** genauso, Wert wieder auf `3`.
+   Sonst bleibt dein Firefox auch bei anderen Seiten unnötig unsicher.
+
+   Öffne dann in Firefox {{ adresse }}.
+   {%- else %} Öffne im Browser {{ adresse }}.
    {%- endif %}
    {%- if w.zertifikat %}
    Der Browser warnt vor dem Zertifikat. Das ist hier normal: auf
    "Erweitert" und dann auf "Weiter" bzw. "Risiko akzeptieren" klicken.
    {%- endif %}
-   {%- if w.tls_alt %}
-   Diese Oberfläche nutzt noch eine alte Verschlüsselung (TLS 1.0), die
-   aktuelle Browser ablehnen. In Firefox kannst du sie für die Installation
-   erlauben: In die Adresszeile `about:config` eingeben,
-   `security.tls.version.min` suchen und auf `1` stellen. Danach wieder auf
-   den alten Wert (`3`) zurückstellen.
-   {%- endif %}
-   {%- if w.zugang %} Melde dich an: {{ w.zugang }}.{% else %} Melde dich mit
-   den Zugangsdaten vom Aufkleber an, oder leg beim ersten Aufruf ein
-   Passwort fest.{% endif %}
+   {%- if w.zugang %}
+   Melde dich an: {{ w.zugang }}.{% else %}
+   Melde dich mit den Zugangsdaten vom Aufkleber an, oder leg beim ersten
+   Aufruf ein Passwort fest.{% endif %}
 
 4. **Firmware-Update aufrufen.**
    {%- if w.menue %} Geh zu **{{ w.menue }}**.
