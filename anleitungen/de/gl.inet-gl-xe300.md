@@ -9,7 +9,7 @@ stufe: fortgeschritten
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-gl.inet-gl-xe300-factory.img
 grundlagen: [browser-https, feste-ip]
-daten_stand: 86ac252
+daten_stand: def09e4
 vorlage_stand: 393f161
 ---
 
