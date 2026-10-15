@@ -119,20 +119,44 @@ Rechner auf &quot;automatisch&quot; und zieh das Kabel kurz ab und wieder an. Je
 Community startet die Firmware auch gleich im Betrieb ohne
 Einrichtungsseite.</li>
 </ul>
-<h2>Notfall: TFTP</h2>
-<p>Hängt der Router in einer Startschleife, holt er sich laut OpenWrt beim
-Einschalten mit gedrückter Reset-Taste eine Datei namens
-<code>ArcherC20iV1_tp_recovery.bin</code> von einem TFTP-Server mit der Adresse
-<code>192.168.0.66</code> (<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>,
-<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).</p>
+<h2>Notfall: Firmware per TFTP</h2>
+<p>Startet das Gerät nach einem abgebrochenen Update nicht mehr, kann es sich
+eine Firmware selbst von deinem Rechner holen. Dafür brauchst du einen
+TFTP-Server (<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>) und eine
+feste Adresse am Rechner (<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).</p>
+<ol>
+<li>Leg die TP-Link-Firmware ohne ihren ersten 512-Byte-Block (siehe „Die Rettungsdatei vorbereiten“) unter dem Namen <code>ArcherC20iV1_tp_recovery.bin</code> in den
+Ordner des TFTP-Servers. Genau dieser Name, Groß- und Kleinschreibung
+zählt.</li>
+<li>Stell deinen Rechner fest auf <code>192.168.0.66</code>, Netzmaske
+<code>255.255.255.0</code>, und starte den TFTP-Server.</li>
+<li>Kabel an eine LAN-Buchse, Strom aus. Drück die Reset-Taste, halte sie
+gedrückt und schalte den Strom ein. Halte sie gedrückt:
+bis der TFTP-Server
+zeigt, dass die Datei abgeholt wird.</li>
+<li>Warten. Das Gerät
+schreibt die Datei und startet neu.</li>
+</ol>
+<h2>Die Rettungsdatei vorbereiten</h2>
+<p>Für den TFTP-Notfall-Weg (oben) braucht der C20i die <strong>TP-Link-Firmware ohne
+ihren ersten 512-Byte-Block</strong>, umbenannt in <code>ArcherC20iV1_tp_recovery.bin</code>.
+So haben wir unseren C20i aus der Startschleife geholt. Unter Linux oder
+macOS im Ordner mit der TP-Link-Datei:</p>
+<pre><code class="language-sh">dd if=&lt;TP-Link-Firmware&gt;.bin of=ArcherC20iV1_tp_recovery.bin bs=512 skip=1
+</code></pre>
+<p>Die fertige Datei war bei uns 8.126.464 Bytes groß. Danach läuft wieder die
+TP-Link-Firmware; dann wie oben erst Build 140709, dann die
+Freifunk-Firmware.</p>
 <h2>Herkunft der Angaben</h2>
 <p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
 <ul>
 <li>abgeleitet (Schritte (Normalweg))</li>
-<li>abgeleitet: Gluon baut factory; Wiki nennt nur TFTP-Recovery mit ArcherC20iV1_tp_recovery.bin von 192.168.0.66 (Weg ab Werk, Schritte (Normalweg), Programm, Datei, Notweg)</li>
+<li>abgeleitet: Gluon baut factory; Wiki nennt nur TFTP-Recovery mit ArcherC20iV1_tp_recovery.bin von 192.168.0.66 (Weg ab Werk, Schritte (Normalweg), Programm, Datei)</li>
 <li>geprüft: Gluon targets/ramips-mt7620, Wiki toh:tp-link:archer_c20i (Schritte (Normalweg), Typenschild/Verwechslung)</li>
+<li>geprüft: Neanderfunk-Notiz, adorfer 15.10.2026, am Gerät 06.10.2026: TP-Link-Firmware ohne ersten 512-Byte-Sektor (dd), als ArcherC20iV1_tp_recovery.bin per Tftpd64, Gerät aus der Startschleife geholt (Notweg)</li>
 <li>geprüft: Neanderfunk-Notiz, adorfer 15.10.2026, am Gerät: aus Build 151014 geflasht -&gt; Startschleife, Rettung nur per TFTP (Warnung, Bedingung an die Herstellerfirmware)</li>
 <li>geprüft: Wiki toh:tp-link:archer_c20i (Schritte (Normalweg), Warnung, Bedingung an die Herstellerfirmware)</li>
+<li>geprüft: Wiki toh:tp-link:archer_c20i (Dateiname, Server-IP) (Notweg)</li>
 <li>Geräteeintrag: 48d8bc4f971ad7795e3162134759caa37900138f (ohne Installationstext)</li>
 </ul>
 

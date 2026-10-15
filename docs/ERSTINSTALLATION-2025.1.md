@@ -6991,11 +6991,11 @@ TP-Link Archer C20i · ramips-mt7620 · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
 - **RAM:** 64 MB
-- **Notweg:** [Notfall] TFTP-Recovery laut Wiki: Datei ArcherC20iV1_tp_recovery.bin von TFTP-Server 192.168.0.66 [abgeleitet: Gluon baut factory; Wiki nennt nur TFTP-Recovery mit ArcherC20iV1_tp_recovery.bin von 192.168.0.66]
+- **Notweg:** [Notfall] TFTP-Recovery: Datei ArcherC20iV1_tp_recovery.bin (TP-Link-Firmware ohne ersten 512-Byte-Sektor) von TFTP-Server 192.168.0.66 [geprüft: Wiki toh:tp-link:archer_c20i (Dateiname, Server-IP)] [geprüft: Neanderfunk-Notiz, adorfer 15.10.2026, am Gerät 06.10.2026: TP-Link-Firmware ohne ersten 512-Byte-Sektor (dd), als ArcherC20iV1_tp_recovery.bin per Tftpd64, Gerät aus der Startschleife geholt]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 48d8bc4f971ad7795e3162134759caa37900138f (ohne Installationstext)
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-c20i.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; sicherheit = abgeleitet; sicherheit_hinweis = Die Gefahr aus Build 151014 kennen wir aus eigener Erfahrung; den Weg aus Build 140709 haben wir nicht selbst nachvollzogen.
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; tftp_datei = ArcherC20iV1_tp_recovery.bin; tftp_inhalt = die TP-Link-Firmware ohne ihren ersten 512-Byte-Block (siehe „Die Rettungsdatei vorbereiten“); tftp_server_ip = 192.168.0.66; sicherheit = abgeleitet; sicherheit_hinweis = Die Gefahr aus Build 151014 kennen wir aus eigener Erfahrung; den Weg aus Build 140709 haben wir nicht selbst nachvollzogen.
 
 #### tp-link-archer-c50-v1
 
