@@ -5,7 +5,7 @@
   AP-303 an.
 - Nicht verwechseln mit dem [Instant On AP11D](aruba-instant-on-ap11d.md),
   dem Tischgerät mit mehreren Netzwerkbuchsen. Der braucht andere Dateien.
-- Viele AP11 aus den letzten Jahren haben einen neueren Bootloader
-  (`APBoot 2.6.…` in der ersten Zeile von Schritt 5). Dann kommt in Schritt 7
-  `Unknown command 'bootm'`, und du brauchst den Abschnitt "Älteren
-  Bootloader aufspielen" unten. Lies ihn vorher einmal ganz durch.
+- Praktisch alle AP11 haben inzwischen den neueren Bootloader
+  (`APBoot 2.6.…`). Deshalb beginnt diese Anleitung damit, den älteren
+  aufzuspielen. Lies den Teil "Älteren Bootloader aufspielen" vorher einmal
+  ganz durch.
