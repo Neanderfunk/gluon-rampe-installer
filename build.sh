@@ -56,7 +56,7 @@ elif [ "$(git -C "$GLUON_DIR" describe --tags --exact-match 2>/dev/null)" != "$G
 fi
 # Die Rezepte aendern targets/ und patches/openwrt - vorher auf den Stand von
 # Gluon zurueck (abgelegte Backport-Patches sind unversioniert: clean).
-git -C "$GLUON_DIR" checkout -q -- targets patches
+git -C "$GLUON_DIR" checkout -q -- targets patches package/gluon-config-mode-theme
 git -C "$GLUON_DIR" clean -fdq -- patches
 
 # Die Rezepte duerfen die Site ergaenzen (ensure_site_*): nur in einer Kopie.
@@ -81,6 +81,27 @@ echo "== Overlay -> openwrt/files"
 # openwrt/files gehoert in diesem Baum allein der Gluon-RAMpe.
 rm -rf "$GLUON_DIR/openwrt/files"
 cp -a "$ROOT/overlay" "$GLUON_DIR/openwrt/files"
+
+echo "== Config-Mode: gluon.css mit Versionsanhang"
+# Gluon liefert /static/ ohne Cache-Control und mit festem Last-Modified aus;
+# Browser halten gluon.css deshalb lange im Cache. Unter 192.168.1.1 laeuft vor
+# und nach der RAMpe ein anderer Config-Mode (anderes Gluon, andere Community):
+# ohne eigene Adresse kaeme dessen gluon.css aus dem Cache und umgekehrt. Wie
+# Neanderfunks gluon-patches-packages status-page/web-static-version.patch:
+# ?v=<Release aus /lib/gluon/release>, uhttpd ignoriert den Query-String.
+# Im Baum zurueckgesetzt wird die Datei oben mit targets und patches.
+python3 - "$GLUON_DIR/package/gluon-config-mode-theme/files/lib/gluon/config-mode/view/theme/layout.html" <<'PY'
+import sys
+p = sys.argv[1]
+s = open(p).read()
+alt = 'href="/static/gluon.css"'
+neu = ('href="/static/gluon.css?v=<%| ((require(\'gluon.util\').readfile('
+       '\'/lib/gluon/release\') or \'\'):gsub(\'%s+\', \'\')) %>"')
+if neu not in s:
+    if alt not in s:
+        sys.exit("gluon.css-Einbindung nicht gefunden in " + p)
+    open(p, 'w').write(s.replace(alt, neu, 1))
+PY
 
 mkdir -p "$OUT"
 LOG="$OUT/build-$TARGET.log"
