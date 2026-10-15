@@ -1,8 +1,8 @@
 {#-
 Vorlage sonderweg-zyxel-wsm20 (nur Zyxel Multy M1 / WSM20): versteckte
 Upgrade-Seite der Zyxel-Firmware nimmt ein initramfs, danach sysupgrade
-über LuCI. Entwurf Content, 16.10.2026. Quellen: Freifunk Aachen
-(Stefan Limbach, 04.01.2024, im Original gelesen 16.10.2026), OpenWrt-Commit
+über LuCI. Entwurf Content, 15.10.2026. Quellen: Freifunk Aachen
+(Stefan Limbach, 04.01.2024, im Original gelesen 15.10.2026), OpenWrt-Commit
 28df7f7, OpenWrt-Wiki toh:zyxel:wsm20; adorfer hat so ein Gerät installiert.
 
 Vom Skript: bilder, modell, status, erprobt_am, erprobt_mit,

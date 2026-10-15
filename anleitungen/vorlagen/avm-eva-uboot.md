@@ -2,7 +2,7 @@
 Vorlage avm-eva-uboot (FRITZ!Box 7520/7530, FRITZ!Repeater 1200/3000):
 OpenWrt-U-Boot per EVA in den RAM, RAMpe per TFTP, auf der RAMpe-Seite
 Vorbereitung (U-Boot in den Flash, FRITZ!OS entfernen) und sysupgrade.
-Entwurf Content, 16.10.2026, nach Angaben Buildsystem (RAMpe 5b99784 ff.).
+Entwurf Content, 15.10.2026, nach Angaben Buildsystem (RAMpe 5b99784 ff.).
 
 Vom Skript: bilder, modell, status, erprobt_am, erprobt_mit,
 erprobt_mit_aelter, zusatz, herkunft, broken.

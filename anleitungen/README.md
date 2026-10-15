@@ -138,7 +138,7 @@ der eine URL in einem neuen Tab öffnet. Daraus folgt:
   ]
   ```
 
-- Der Selector verlinkt alle Seiten, auch ungeprüfte (adorfer 16.10.2026):
+- Der Selector verlinkt alle Seiten, auch ungeprüfte (adorfer 15.10.2026):
   Validieren lässt sich nur über Rückmeldungen aus dem Feld, und wie sicher
   eine Seite ist, sagt sie selbst oben im Statusblock.
 - Innerhalb der Seiten bleiben die Verweise relativ (Grundlagen, Bilder).
