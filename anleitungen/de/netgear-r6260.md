@@ -10,7 +10,7 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [nmrpflash]
-daten_stand: 98c17d3b
+daten_stand: b55eef92
 vorlage_stand: 02b61429
 ---
 

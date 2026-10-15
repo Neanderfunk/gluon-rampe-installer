@@ -8,18 +8,17 @@ sprache: de
 level: L5
 level_text: Besondere Programme
 risiko: normal
-status: ungeprüft
+status: erprobt
+erprobt_am: 2026-10-15
+erprobt_mit: Gluon 2023.2.6 (26091920sta), U-Boot-Teil aus Archer C50(EU)_V4_250117
 grundlagen: [feste-ip, tftp-server]
-daten_stand: 98c17d3b
+daten_stand: b55eef92
 vorlage_stand: 839fdda0
 ---
 
 # TP-Link Archer C50 v4: Freifunk-Firmware installieren
 
-> **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
-> bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
-> ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
-> klappt.
+> **Am Gerät erprobt** am 15.10.2026 mit `Gluon 2023.2.6 (26091920sta), U-Boot-Teil aus Archer C50(EU)_V4_250117`.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
