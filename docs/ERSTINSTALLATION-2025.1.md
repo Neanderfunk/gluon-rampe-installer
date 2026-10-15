@@ -446,7 +446,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [tp-link-tl-wdr4900-v1](#tp-link-tl-wdr4900-v1) | TP-Link TL-WDR4900 v1 | mpc85xx-p1010 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wdr4900-v1.md) |
 | [aerohive-hiveap-330](#aerohive-hiveap-330) | Aerohive HiveAP 330 | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja |  |
 | [enterasys-ws-ap3710i](#enterasys-ws-ap3710i) | Enterasys WS-AP3710i | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=16b01fb1b9c99513c318109bef96a1a3545c57a0 |
-| [extreme-networks-ws-ap3825i](#extreme-networks-ws-ap3825i) | Extreme Networks WS-AP3825i | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923 |
+| [extreme-networks-ws-ap3825i](#extreme-networks-ws-ap3825i) | Extreme Networks WS-AP3825i | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/extreme-networks-ws-ap3825i.md); https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923 |
 | [hewlett-packard-msm460](#hewlett-packard-msm460) | HPE MSM460 | mpc85xx-p1020 | K5 | [`sonderweg-hewlett-packard-msm460`](#familie-sonderweg-hewlett-packard-msm460) | tftp-server-am-geraet | nein | nein | nein |  | https://github.com/blocktrron/msm460-flashing?tab=readme-ov-file |
 | [ocedo-panda](#ocedo-panda) | OCEDO Panda | mpc85xx-p1020 | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | teilweise | ja |  |
 | [linksys-mx5300](#linksys-mx5300) | Linksys MX5300 | qualcommax-ipq807x | K0 | [`sonderweg-linksys-mx5300`](#familie-sonderweg-linksys-mx5300) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-mx5300.md) |
@@ -9389,7 +9389,7 @@ Enterasys WS-AP3710i · mpc85xx-p1020 · K4
 
 Extreme Networks WS-AP3825i · mpc85xx-p1020 · K4
 
-- **Weg ab Werk:** Seriell, Autoboot anhalten (admin/new2day), boot_openwrt/bootcmd setzen + saveenv, ipaddr/serverip setzen, initramfs per tftpboot laden und `bootm` von Hand in Einzelschritten (fdt-Relocation umgehen), dann sysupgrade per scp. Nach dem Flashen bis 600 s ohne Ping (Neanderfunk-Notiz) [geprüft]
+- **Weg ab Werk:** Seriell, Autoboot anhalten (admin/new2day), boot_openwrt/bootcmd setzen + saveenv, ipaddr/serverip setzen, initramfs per tftpboot laden und `bootm` von Hand in Einzelschritten (fdt-Relocation umgehen), dann sysupgrade per scp. Nach dem Flashen bis 600 s ohne Ping (Neanderfunk-Notiz) [geprüft]; Befehle wörtlich [geprüft: forum.darmstadt.freifunk.net t/923 #1 (TomH, 30.04.2022), am 15.10.2026 gelesen: 192.168.1.66/.22, ws-ap3825i-initramfs.bin, Prompt 'Boot (PRI)->', Anhalten bei 'Scanning JFFS2 FS:']
 - **Schritte (Normalweg):**
   1. Cisco-kompatibles RJ45-Konsolenkabel (RS232) an die Buchse neben der 12-V-Buchse anschließen, Terminal 115200 8N1. [geprüft: Commit]
   2. Rechner per Netzwerkkabel an LAN2, DHCP+TFTP-Server (z. B. dnsmasq, unter Windows tftpd64) starten oder IPs später per setenv setzen. [geprüft: Commit, Wiki toh:extreme_networks:ws-ap3825i]
@@ -9411,18 +9411,25 @@ Extreme Networks WS-AP3825i · mpc85xx-p1020 · K4
 - **Gehäuse öffnen:** nein, Konsole außen: RJ45 Cisco-kompatibel, RS232 (Wiki: "RJ45-RS232"), 115200 8N1
 - **Werkzeug/Spezial:** Konsolenkabel, TFTP-Server
 - **Typenschild/Verwechslung:** Gehäuse identisch mit Enterasys WS-AP3725i und Adtran BSAP-2030; ob die dasselbe Image nehmen, ist offen [geprüft: Commit]. Wiki-Seite gilt auch für WS-AP3825E [geprüft: Wiki toh:extreme_networks:ws-ap3825i, Titel]
+- **Bedingung an die Herstellerfirmware:** OpenWrt-initramfs 22.03.0 nehmen, neuere bleiben bei 'ft_fixup_l2cache: FDT_ERR_NOTFOUND' hängen; das sysupgrade darf neuer sein [geprüft: OpenWrt-Issue 17152 (offen): adorfer 29.03.2025 "broken in 24.x and 23, tested with 4 devices … 22.03.0 works", jensgraef 15.05.2025 "sysupgrade of openwrt-24.10 without any problems", jbusuttil 03.09.2026 22.03.0, dann sysupgrade; Datei archive.openwrt.org 22.03.0, SHA256 fc9a27d9… laut sha256sums, 6.879.964 Byte]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1020/openwrt-24.10.8-mpc85xx-p1020-extreme-networks_ws-ap3825i-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** -
 - **Stock-Teile:** -
 - **RAM:** 256 MB
-- **Dauer:** Erster Start nach dem sysupgrade bis ca. 360 s (Wiki-Log), nicht Strom ziehen solange die Power-LED blinkt [geprüft: Wiki toh:extreme_networks:ws-ap3825i]. Nach dem Flashen bis 600 s ohne Ping (Neanderfunk-Notiz) [geprüft]
+- **Dauer:** Erster Start nach dem sysupgrade bis ca. 360 s (Wiki-Log), nicht Strom ziehen solange die Power-LED blinkt [geprüft: Wiki toh:extreme_networks:ws-ap3825i]. Nach dem Flashen bis 600 s ohne Ping (Neanderfunk-Notiz) [geprüft]; adorfer 15.10.2026: bei rund zwölf Geräten jedes Mal sehr lange, einmal etwa 11 Minuten bis 192.168.1.1 antwortete, Konsole stumm [geprüft: Neanderfunk-Notiz]
 - **Fehlerbild:** Log endet mit 'ft_fixup_l2cache: FDT_ERR_NOTFOUND' = OpenWrt-Bug #17152: älteres initramfs (22.03.0) zum Booten nehmen [geprüft: Wiki toh:extreme_networks:ws-ap3825i]; gehen die Zugangsdaten admin/new2day nicht: normal booten lassen, dann Reset 5 s für Werkseinstellungen [geprüft: Wiki toh:extreme_networks:ws-ap3825i]
+- **Notweg:** [Notfall] Falsche Shell (/flash/home/admin, setenv unbekannt): zuerst den Bootloader anhalten, Prompt 'Boot (PRI)->' [geprüft: forum.darmstadt.freifunk.net t/923 #4, #7]; hängt saveenv, NICHT den Strom ziehen: im Forum war das Gerät danach tot [geprüft: forum.darmstadt.freifunk.net t/923 #8]
 - **Rückweg zur Herstellerfirmware:** Stock-bootcmd in Variable boot_flash; vorher Backup der Partition "firmware" [geprüft: Commit]
-- **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
+- **Hardware-Test:** adorfer: rund zwölf WS-AP3825i auf diesem Weg umgestellt, Datum und Image nicht festgehalten (Angabe 15.10.2026) -> sicherheit praxis statt erprobt; Testgerät bei Neanderfunk vorhanden
 - **Gluon-RAMpe passt:** teilweise: wie WS-AP3715i
 - **Gluon-RAMpe-Rezept:** devices/extreme-networks-ws-ap3825i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (FIT) per U-Boot-TFTP; `bootcmd` bleibt seriell
 - **Quelle (OpenWrt-Commit):** 7e614820a89208c4e91a3a5f9de07a5402accdaa
-- **Detail-Anleitung:** https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923
+- **Detail-Anleitung:** anleitungen/de/extreme-networks-ws-ap3825i.md; https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923
+- **Werte für die Anleitung:** initramfs_datei = openwrt-22.03.0-mpc85xx-p1020-extreme-networks_ws-ap3825i-initramfs-kernel.bin; initramfs_url = https://archive.openwrt.org/releases/22.03.0/targets/mpc85xx/p1020/openwrt-22.03.0-mpc85xx-p1020-extreme-networks_ws-ap3825i-initramfs-kernel.bin; initramfs_hinweis = Bewusst die alte Version 22.03.0: Mit neueren bleibt das Gerät beim Start mit der Meldung `ft_fixup_l2cache: FDT_ERR_NOTFOUND` hängen. Die Freifunk-Firmware, die du danach aufspielst, ist trotzdem aktuell.; tftp_name = ws-ap3825i-initramfs.bin; server_ip = 192.168.1.66; baud = 115200; anhalten = Sobald im Terminal `Scanning JFFS2 FS:` erscheint, drück einmal Enter und warte, bis der Bootloader nach den Zugangsdaten fragt.; login = admin / new2day; login_hinweis = Gehen sie nicht, lass das Gerät normal starten und halt dann die Reset-Taste mindestens 5 Sekunden gedrückt; das setzt die Herstellerfirmware auf Werkseinstellungen zurück.; prompt = Boot (PRI)->; konsole = rj45; konsole_ort = neben der Buchse für das 12-V-Netzteil; tftp_buchse = LAN2; ssh_buchse = LAN1; dauer = Das dauert bei diesem Gerät sehr lange, oft zehn Minuten und mehr, und die Konsole bleibt dabei lange stumm (siehe Achtung oben).; fertig_zeichen = Laut OpenWrt-Wiki blinkt die Power-LED, solange er beschäftigt ist, und leuchtet dauerhaft, wenn er fertig ist.; rueckweg = Zurück zur Herstellerfirmware geht nur mit einer Sicherung der Partition "firmware", die du vor Schritt 7 aus OpenWrt heraus gemacht hast. Das beschreiben wir hier nicht.; sicherheit = praxis; sicherheit_hinweis = Wir haben rund ein Dutzend dieser Geräte auf diesem Weg umgestellt.; befehle = setenv ramboot_openwrt "setenv ipaddr 192.168.1.22; setenv serverip 192.168.1.66; tftpboot 0x2000000 ws-ap3825i-initramfs.bin; interrupts off; bootm start 0x2000000; bootm loados; fdt resize; fdt boardsetup; fdt resize; fdt boardsetup; fdt chosen; fdt resize; fdt chosen; bootm prep; bootm go;"
+setenv boot_openwrt "cp.b 0xEC000000 0x2000000 0x2000000; interrupts off; bootm start 0x2000000; bootm loados; fdt resize; fdt boardsetup; fdt resize; fdt boardsetup; fdt chosen; fdt resize; fdt chosen; bootm prep; bootm go;"
+setenv bootcmd "run boot_openwrt";
+saveenv
+run ramboot_openwrt
 
 #### tp-link-eap620-hd-v1
 
