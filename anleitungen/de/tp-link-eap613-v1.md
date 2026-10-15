@@ -8,7 +8,7 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [feste-ip, ssh-scp]
-daten_stand: 5142b69
+daten_stand: c31462f
 vorlage_stand: 568889c
 ---
 

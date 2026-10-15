@@ -8,7 +8,7 @@ sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip, schreibschutz, ssh-scp, tftp-client]
-daten_stand: 5142b69
+daten_stand: c31462f
 vorlage_stand: 393f161
 ---
 
@@ -110,6 +110,12 @@ scheinbar fehlerfrei durch, schreiben aber nichts. Mehr dazu unter
    jeweils mit Enter. Am besten kopierst du sie Zeile für Zeile.
 
    ```
+   dmesg | grep mtk_sgmii_init
+   ```
+
+   **Prüfen:** Weiter nur, wenn in der Ausgabe kein RTL8211 steht (mit RTL8211 ist es ein v3, dann gilt die Anleitung für den UniFi 6 LR v3). Sonst hier aufhören.
+
+   ```
    cat /proc/mtd
    ```
 
@@ -178,4 +184,5 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Commits 15a0247, 31d86a1, a0f4ead (Schritte (Normalweg), Typenschild/Verwechslung)
 - geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24' (Schritte (Normalweg), Taste und Zeitpunkt)
 - geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang)
+- geprüft: Wiki toh:ubiquiti:unifi_6_lr, Rohtext 15.10.2026 (Typenschild/Verwechslung)
 - Geräteeintrag: OpenWrt 634c13c186646aff2badb51a43b248825d0fe5a0 (v1-Profil: 15a02471bb854245f8f94398c1e1d9ce29c2c341)

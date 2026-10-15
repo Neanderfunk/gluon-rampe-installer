@@ -8,7 +8,7 @@ sprache: de
 stufe: fortgeschritten
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: 5142b69
+daten_stand: c31462f
 vorlage_stand: 393f161
 ---
 
@@ -46,7 +46,8 @@ genau mit "Cudy M1800", bevor du anfängst.
 
 ## Vorher prüfen
 
-Cudy bietet die Zwischenfirmware nur für einen "M1800 V2" an. OpenWrt und die
+Cudy bietet die Zwischenfirmware unter "M1800 V2" und "M1800+ V2" an, es ist
+dieselbe Datei. OpenWrt und die
 Freifunk-Firmware kennen nur den "M1800" ohne Version. Ob beides
 zusammenpasst, ist nicht geprüft. Wenn du einen M1800 hast und es
 ausprobierst, sag uns bitte Bescheid, ob es geklappt hat.

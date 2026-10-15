@@ -9,7 +9,7 @@ stufe: fortgeschritten
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-avm-fritz-repeater-3000-initramfs-uImage.itb
 grundlagen: [avm-eva, feste-ip, tftp-server]
-daten_stand: 5142b69
+daten_stand: c31462f
 vorlage_stand: 79f8a17
 ---
 

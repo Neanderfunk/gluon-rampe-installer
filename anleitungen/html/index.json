@@ -1351,6 +1351,20 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "ubiquiti-unifi-6-lr-v2",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-6-lr-v2.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "ubiquiti-unifi-6-lr-v3",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-6-lr-v3.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "ubiquiti-unifi-6-plus",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-6-plus.html",
   "status": "ungeprüft",

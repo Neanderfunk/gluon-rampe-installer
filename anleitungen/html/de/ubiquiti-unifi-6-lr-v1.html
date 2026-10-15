@@ -13,7 +13,7 @@
 <meta name="anleitung:stufe" content="mit Werkzeug">
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="feste-ip, schreibschutz, ssh-scp, tftp-client">
-<meta name="anleitung:daten_stand" content="5142b69">
+<meta name="anleitung:daten_stand" content="c31462f">
 <meta name="anleitung:vorlage_stand" content="393f161">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
@@ -103,6 +103,9 @@ vertraust: mit <code>yes</code> bestätigen.</p>
 <li>
 <p><strong>Firmware schreiben.</strong> Gib diese Befehle <strong>einzeln und genau so</strong> ein,
 jeweils mit Enter. Am besten kopierst du sie Zeile für Zeile.</p>
+<pre><code>dmesg | grep mtk_sgmii_init
+</code></pre>
+<p><strong>Prüfen:</strong> Weiter nur, wenn in der Ausgabe kein RTL8211 steht (mit RTL8211 ist es ein v3, dann gilt die Anleitung für den UniFi 6 LR v3). Sonst hier aufhören.</p>
 <pre><code>cat /proc/mtd
 </code></pre>
 <p><strong>Prüfen:</strong> Weiter nur, wenn in der Ausgabe bs bei mtd6, kernel0 bei mtd8 und kernel1 bei mtd9 steht. Sonst hier aufhören.</p>
@@ -167,6 +170,7 @@ TFTP an <code>192.168.1.20</code>, wie unter
 <li>geprüft: Commits 15a0247, 31d86a1, a0f4ead (Schritte (Normalweg), Typenschild/Verwechslung)</li>
 <li>geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24' (Schritte (Normalweg), Taste und Zeitpunkt)</li>
 <li>geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang)</li>
+<li>geprüft: Wiki toh:ubiquiti:unifi_6_lr, Rohtext 15.10.2026 (Typenschild/Verwechslung)</li>
 <li>Geräteeintrag: OpenWrt 634c13c186646aff2badb51a43b248825d0fe5a0 (v1-Profil: 15a02471bb854245f8f94398c1e1d9ce29c2c341)</li>
 </ul>
 
