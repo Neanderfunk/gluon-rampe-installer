@@ -311,18 +311,18 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [tp-link-wbs210-v2](#tp-link-wbs210-v2) | TP-Link WBS210 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-wbs210-v2.md) |
 | [tp-link-wbs510-v1](#tp-link-wbs510-v1) | TP-Link WBS510 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-wbs510-v1.md) |
 | [ubiquiti-nanobeam-ac-gen1-xc](#ubiquiti-nanobeam-ac-gen1-xc) | Ubiquiti NanoBeam AC Gen1 (XC) | ath79-generic | K0+ | [`sonderweg-ubiquiti-nanobeam-ac-gen1-xc`](#familie-sonderweg-ubiquiti-nanobeam-ac-gen1-xc) | laut | nein | nein | nein |  |  |
-| [ubiquiti-nanostation-loco-m-xw](#ubiquiti-nanostation-loco-m-xw) | Ubiquiti Nanostation Loco M XW | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  |  |
-| [ubiquiti-nanostation-m-xw](#ubiquiti-nanostation-m-xw) | Ubiquiti Nanostation M XW | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  |  |
-| [ubiquiti-rocket-m-xm](#ubiquiti-rocket-m-xm) | Ubiquiti Rocket M XM | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  |  |
+| [ubiquiti-nanostation-loco-m-xw](#ubiquiti-nanostation-loco-m-xw) | Ubiquiti Nanostation Loco M XW | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-nanostation-loco-m-xw.md) |
+| [ubiquiti-nanostation-m-xw](#ubiquiti-nanostation-m-xw) | Ubiquiti Nanostation M XW | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-nanostation-m-xw.md) |
+| [ubiquiti-rocket-m-xm](#ubiquiti-rocket-m-xm) | Ubiquiti Rocket M XM | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-rocket-m-xm.md) |
 | [ubiquiti-unifi-ac-lite](#ubiquiti-unifi-ac-lite) | Ubiquiti UniFi AC Lite | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
 | [ubiquiti-unifi-ac-lr](#ubiquiti-unifi-ac-lr) | Ubiquiti UniFi AC LR | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
 | [ubiquiti-unifi-ac-mesh](#ubiquiti-unifi-ac-mesh) | Ubiquiti UniFi AC Mesh | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
 | [ubiquiti-unifi-ac-mesh-pro](#ubiquiti-unifi-ac-mesh-pro) | Ubiquiti UniFi AC Mesh Pro | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
 | [ubiquiti-unifi-ac-pro](#ubiquiti-unifi-ac-pro) | Ubiquiti UniFi AC Pro | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
 | [ubiquiti-unifi-ap](#ubiquiti-unifi-ap) | Ubiquiti UniFi AP | ath79-generic | K0+ | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  |  |
-| [ubiquiti-unifi-ap-outdoor+](#ubiquiti-unifi-ap-outdoor+) | Ubiquiti UniFi AP Outdoor+ | ath79-generic | K0+ | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  |  |
-| [ubiquiti-unifi-ap-pro](#ubiquiti-unifi-ap-pro) | Ubiquiti UniFi AP Pro | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  |  |
-| [ubiquiti-unifi-swiss-army-knife-ultra](#ubiquiti-unifi-swiss-army-knife-ultra) | Ubiquiti UniFi Swiss Army Knife Ultra | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5ad05681f2de00c8c6d6449df2b958b0838dbc1a |
+| [ubiquiti-unifi-ap-outdoor+](#ubiquiti-unifi-ap-outdoor+) | Ubiquiti UniFi AP Outdoor+ | ath79-generic | K0+ | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ap-outdoor+.md) |
+| [ubiquiti-unifi-ap-pro](#ubiquiti-unifi-ap-pro) | Ubiquiti UniFi AP Pro | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ap-pro.md) |
+| [ubiquiti-unifi-swiss-army-knife-ultra](#ubiquiti-unifi-swiss-army-knife-ultra) | Ubiquiti UniFi Swiss Army Knife Ultra | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-swiss-army-knife-ultra.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5ad05681f2de00c8c6d6449df2b958b0838dbc1a |
 | [zyxel-nbg6616](#zyxel-nbg6616) | Zyxel NBG6616 | ath79-generic | K5 | [`sonderweg-zyxel-nbg6616`](#familie-sonderweg-zyxel-nbg6616) | tftp-client-am-geraet | ja | ? | nein |  |  |
 | [mikrotik-routerboard-951ui-2nd-hap](#mikrotik-routerboard-951ui-2nd-hap) | MikroTik RouterBOARD 951Ui-2nD (hAP) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja |  |
 | [mikrotik-routerboard-mapl-2nd](#mikrotik-routerboard-mapl-2nd) | MikroTik RouterBOARD mAPL-2nD (mAP lite) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja |  |
@@ -387,7 +387,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [extreme-networks-ap3935](#extreme-networks-ap3935) | Extreme Networks AP3935i/e | ipq806x-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | - |
 | [netgear-nighthawk-x4s-r7800](#netgear-nighthawk-x4s-r7800) | NETGEAR Nighthawk X4S R7800 | ipq806x-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
 | [tp-link-archer-c2600](#tp-link-archer-c2600) | TP-Link Archer C2600 v1 | ipq806x-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c2600.md) |
-| [ubiquiti-unifi-ac-hd](#ubiquiti-unifi-ac-hd) | Ubiquiti UniFi AC HD | ipq806x-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | - |
+| [ubiquiti-unifi-ac-hd](#ubiquiti-unifi-ac-hd) | Ubiquiti UniFi AC HD | ipq806x-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-hd.md) |
 | [arcadyan-vgv7510kw22](#arcadyan-vgv7510kw22) | Arcadyan VGV7510KW22 / o2 Box 6431 (NOR-Image) | lantiq-xrx200 | K5 | [`sonderweg-arcadyan-vgv7510kw22`](#familie-sonderweg-arcadyan-vgv7510kw22) | recovery-web | teilweise | nein | nein |  | https://forum.openwrt.org/t/installing-lede-u-boot-via-brnboot-web-interface-without-rs232/9857/6 |
 | [avm-fritz-box-3370-rev-2-hynix-nand](#avm-fritz-box-3370-rev-2-hynix-nand) | AVM FRITZ!Box 3370 Rev. 2, Hynix-NAND (Gluon: broken) | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation |
 | [avm-fritz-box-3370-rev-2-micron-nand](#avm-fritz-box-3370-rev-2-micron-nand) | AVM FRITZ!Box 3370 Rev. 2, Micron-NAND (Gluon: broken) | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation |
@@ -428,7 +428,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [mercusys-mr90x-v1](#mercusys-mr90x-v1) | Mercusys MR90X v1 | mediatek-filogic | K2 | [`sonderweg-mercusys-mr90x-v1`](#familie-sonderweg-mercusys-mr90x-v1) | ssh | nein | nein | teilweise | ja | https://openwrt.org/toh/mercusys/mr90x_v1#installation_stock_bootloader |
 | [netgear-wax220](#netgear-wax220) | NETGEAR WAX220 | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/netgear/wax220#oem_easy_installation |
 | [openwrt-one](#openwrt-one) | OpenWrt One | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
-| [ubiquiti-unifi-6-plus](#ubiquiti-unifi-6-plus) | Ubiquiti UniFi 6+ (U6+) | mediatek-filogic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=75ee5546e9b7cfa5bbfd6f844ab8c5fffd5bb594 |
+| [ubiquiti-unifi-6-plus](#ubiquiti-unifi-6-plus) | Ubiquiti UniFi 6+ (U6+) | mediatek-filogic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-plus.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=75ee5546e9b7cfa5bbfd6f844ab8c5fffd5bb594 |
 | [wavlink-wl-wn573hx3](#wavlink-wl-wn573hx3) | WAVLINK WL-WN573HX3 / 7Links WLR-1300 | mediatek-filogic | K1d | [`sonderweg-wavlink-wl-wn573hx3`](#familie-sonderweg-wavlink-wl-wn573hx3) | webui-upload | nein | nein | nein |  | - |
 | [xiaomi-mi-router-ax3000t](#xiaomi-mi-router-ax3000t) | Xiaomi Mi Router AX3000T | mediatek-filogic | K2 | [`sonderweg-xiaomi-mi-router-ax3000t`](#familie-sonderweg-xiaomi-mi-router-ax3000t) | ssh | nein | nein | teilweise | ja | - |
 | [xiaomi-mi-router-ax3000t-openwrt-u-boot-layout](#xiaomi-mi-router-ax3000t-openwrt-u-boot-layout) | Xiaomi Mi Router AX3000T (OpenWrt-U-Boot-Layout) | mediatek-filogic | K3 | [`sonderweg-xiaomi-mi-router-ax3000t-openwrt-u-boot-layout`](#familie-sonderweg-xiaomi-mi-router-ax3000t-openwrt-u-boot-layout) | ssh | nein | nein | nein |  | - |
@@ -436,7 +436,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [zyxel-nwa90ax-pro](#zyxel-nwa90ax-pro) | Zyxel NWA90AX Pro (Alias von zyxel-nwa50ax-pro) | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
 | [linksys-e8450-ubi](#linksys-e8450-ubi) | Linksys E8450 / Belkin RT3200 (UBI-Layout) | mediatek-mt7622 | K3 | [`sonderweg-linksys-e8450-ubi`](#familie-sonderweg-linksys-e8450-ubi) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/e8450#installation |
 | [netgear-wax206](#netgear-wax206) | NETGEAR WAX206 | mediatek-mt7622 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/netgear/wax206#oem_easy_installation |
-| [ubiquiti-unifi-6-lr-v1](#ubiquiti-unifi-6-lr-v1) | Ubiquiti UniFi 6 LR v1 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
+| [ubiquiti-unifi-6-lr-v1](#ubiquiti-unifi-6-lr-v1) | Ubiquiti UniFi 6 LR v1 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-lr-v1.md); https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
 | [ubiquiti-unifi-6-lr-v2](#ubiquiti-unifi-6-lr-v2) | Ubiquiti UniFi 6 LR v2 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
 | [ubiquiti-unifi-6-lr-v3](#ubiquiti-unifi-6-lr-v3) | Ubiquiti UniFi 6 LR v3 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
 | [xiaomi-redmi-router-ax6s](#xiaomi-redmi-router-ax6s) | Xiaomi Redmi Router AX6S / AX3200 | mediatek-mt7622 | K0+ | [`sonderweg-xiaomi-redmi-router-ax6s`](#familie-sonderweg-xiaomi-redmi-router-ax6s) | webui-upload | nein | nein | nein |  | - |
@@ -498,8 +498,8 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [tp-link-re650-v1](#tp-link-re650-v1) | TP-Link RE650 v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re650-v1.md) |
 | [ubiquiti-edgerouter-x](#ubiquiti-edgerouter-x) | Ubiquiti EdgeRouter X | ramips-mt7621 | K3 | [`ubiquiti-edgerouter`](#familie-ubiquiti-edgerouter) | webui-upload | nein | nein | nein |  | https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp |
 | [ubiquiti-edgerouter-x-sfp](#ubiquiti-edgerouter-x-sfp) | Ubiquiti EdgeRouter X-SFP | ramips-mt7621 | K3 | [`ubiquiti-edgerouter`](#familie-ubiquiti-edgerouter) | webui-upload | nein | nein | nein |  | https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp |
-| [ubiquiti-unifi-6-lite](#ubiquiti-unifi-6-lite) | Ubiquiti UniFi 6 Lite | ramips-mt7621 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://openwrt.org/toh/ubiquiti/unifi6lite#installation |
-| [ubiquiti-unifi-nanohd](#ubiquiti-unifi-nanohd) | Ubiquiti UniFi nanoHD | ramips-mt7621 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  |  |
+| [ubiquiti-unifi-6-lite](#ubiquiti-unifi-6-lite) | Ubiquiti UniFi 6 Lite | ramips-mt7621 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-lite.md); https://openwrt.org/toh/ubiquiti/unifi6lite#installation |
+| [ubiquiti-unifi-nanohd](#ubiquiti-unifi-nanohd) | Ubiquiti UniFi nanoHD | ramips-mt7621 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-nanohd.md) |
 | [wavlink-ws-wn572hp3-4g](#wavlink-ws-wn572hp3-4g) | Wavlink WS-WN572HP3 4G | ramips-mt7621 | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6cd1035d8dc001561331ca9e613d7dfc7d0fd7a6 |
 | [xiaomi-mi-router-3g](#xiaomi-mi-router-3g) | Xiaomi Mi Router 3G | ramips-mt7621 | K2 | [`sonderweg-xiaomi-mi-router-3g`](#familie-sonderweg-xiaomi-mi-router-3g) | ssh | nein | nein | ja | ja |  |
 | [xiaomi-mi-router-3g-v2](#xiaomi-mi-router-3g-v2) | Xiaomi Mi Router 3G v2 | ramips-mt7621 | K2 | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  |  |
@@ -11416,6 +11416,8 @@ Ubiquiti Nanostation Loco M XW · ath79-generic · K0+
 - **Rückweg zur Herstellerfirmware:** gleicher TFTP-Weg mit dem AirOS-Image, möglichst genau der vorher installierten Version [abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 633c4304ad42d18d180ba65a264ba668de445d91 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/ubiquiti-nanostation-loco-m-xw.md
+- **Werte für die Anleitung:** taste_ort = am Gerät oder am PoE-Netzteil; kabel_am_geraet = False; led_schreiben = laufen die Signal-LEDs der Reihe nach durch; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.21; taste = bis die Signal-LEDs abwechselnd blinken (erst LED 1 und 3, dann LED 2 und 4)
 
 #### ubiquiti-nanostation-m-xw
 
@@ -11451,6 +11453,8 @@ Ubiquiti Nanostation M XW · ath79-generic · K0+
 - **Rückweg zur Herstellerfirmware:** gleicher TFTP-Weg mit dem AirOS-Image, möglichst genau der vorher installierten Version [abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 40530c8eb42aa4b98de10621b6c1c89030f00d0a [geprüft]
+- **Detail-Anleitung:** anleitungen/de/ubiquiti-nanostation-m-xw.md
+- **Werte für die Anleitung:** kabel_am_geraet = True; led_schreiben = laufen die Signal-LEDs der Reihe nach durch; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.21; taste = bis die Signal-LEDs abwechselnd blinken (erst LED 1 und 3, dann LED 2 und 4); das kann bis zu 25 Sekunden dauern
 
 #### ubiquiti-rocket-m-xm
 
@@ -11487,6 +11491,8 @@ Ubiquiti Rocket M XM · ath79-generic · K0+
 - **Rückweg zur Herstellerfirmware:** gleicher TFTP-Weg mit dem AirOS-Image, möglichst genau der vorher installierten Version [abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target, ohne Anleitung) [abgeleitet]
+- **Detail-Anleitung:** anleitungen/de/ubiquiti-rocket-m-xm.md
+- **Werte für die Anleitung:** kabel_am_geraet = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.21; taste = etwa 8 Sekunden, bis die Signal-LEDs abwechselnd blinken
 
 #### ubiquiti-unifi-ap-pro
 
@@ -11517,6 +11523,8 @@ Ubiquiti UniFi AP Pro · ath79-generic · K0+
 - **Notweg:** [Notfall] alternativ ap51-flash, das den Ubiquiti-TFTP-Modus beherrscht [abgeleitet: ap51-flash-Doku]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** b7da0d294465d5ab8d923f3b8265ece0a5847ac3 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-ap-pro.md
+- **Werte für die Anleitung:** kabel_am_geraet = False; dauer = etwa 2 Minuten; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.21; taste = 10 Sekunden
 
 ### Familie `ubiquiti-unifi-ssh`
 
@@ -11776,6 +11784,8 @@ Ubiquiti UniFi AP Outdoor+ · ath79-generic · K0+
 - **RAM:** 64 MB [Commit]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 51f578efa5012464a21565556eaf2027b3d88ab5 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-ap-outdoor+.md
+- **Werte für die Anleitung:** ssh_alt = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = factory; ziel = /tmp/openwrt.bin; befehle = ['fwupdate.real -m /tmp/openwrt.bin -d']
 
 #### ubiquiti-unifi-swiss-army-knife-ultra
 
@@ -11808,7 +11818,8 @@ Ubiquiti UniFi Swiss Army Knife Ultra · ath79-generic · K1d
 - **RAM:** 128 MB [Commit]
 - **Gluon-RAMpe passt:** nein: dd schreibt das Gluon-sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** bf94e0a38389b2ce5d33be9c97d104d36dd5ebd6 [geprüft]
-- **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5ad05681f2de00c8c6d6449df2b958b0838dbc1a
+- **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-swiss-army-knife-ultra.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5ad05681f2de00c8c6d6449df2b958b0838dbc1a
+- **Werte für die Anleitung:** ssh_alt = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2 und kernel1 bei mtd3 steht.', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']
 
 #### ubiquiti-unifi-ac-hd
 
@@ -11842,7 +11853,8 @@ Ubiquiti UniFi AC HD · ipq806x-generic · K1d
 - **Rückweg zur Herstellerfirmware:** TFTP-Recovery mit dem Ubiquiti-Image [geprüft: Commit 4e46beb]
 - **Gluon-RAMpe passt:** nein, nicht nötig: der Weg schreibt das Gluon-sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** OpenWrt 4e46beb31342a2b02e32185e91806093f68a77be
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-ac-hd.md
+- **Werte für die Anleitung:** ssh_alt = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/sysupgrade.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe bootselect bei mtd11 und kernel0 bei mtd12 steht.', 'dd if=/dev/zero bs=1 count=1 seek=7 conv=notrunc of=/dev/mtd11', 'dd if=/tmp/sysupgrade.bin of=/dev/mtdblock12', 'reboot']
 
 #### ubiquiti-unifi-6-plus
 
@@ -11877,7 +11889,8 @@ Ubiquiti UniFi 6+ (U6+) · mediatek-filogic · K1d
 - **Rückweg zur Herstellerfirmware:** TFTP-Recovery nach Ubiquiti-Doku, jede ältere Stock-Version möglich [abgeleitet: Wiki toh/ubiquiti/unifi_6_plus]
 - **Gluon-RAMpe passt:** nein, nicht nötig: der Weg schreibt das Gluon-sysupgrade direkt, ohne initramfs-Schritt
 - **Quelle (OpenWrt-Commit):** OpenWrt 75ee5546e9b7cfa5bbfd6f844ab8c5fffd5bb594
-- **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=75ee5546e9b7cfa5bbfd6f844ab8c5fffd5bb594
+- **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-6-plus.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=75ee5546e9b7cfa5bbfd6f844ab8c5fffd5bb594
+- **Werte für die Anleitung:** ssh_alt = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/openwrt.bin; befehle = ['echo 5edfacbf > /proc/ubnthal/.uf', 'grep PARTNAME /sys/block/mmcblk0/mmcblk0p6/uevent', 'grep PARTNAME /sys/block/mmcblk0/mmcblk0p7/uevent', 'grep PARTNAME /sys/block/mmcblk0/mmcblk0p8/uevent', '# Weiter nur, wenn die drei Antworten PARTNAME=kernel0, PARTNAME=kernel1 und PARTNAME=bs lauten.', 'fw_setenv boot_openwrt "fdt addr \\$(fdtcontroladdr); fdt rm /signature; bootubnt"', 'fw_setenv bootcmd_real "run boot_openwrt"', 'fw_printenv', 'tar xf /tmp/openwrt.bin sysupgrade-ubnt_unifi-6-plus/kernel -O | dd of=/dev/mmcblk0p6', 'tar xf /tmp/openwrt.bin sysupgrade-ubnt_unifi-6-plus/root -O | dd of=/dev/mmcblk0p7', 'echo -ne "\\x00\\x00\\x00\\x00\\x2b\\xe8\\x4d\\xa3" > /dev/mmcblk0p8', 'reboot']
 
 #### ubiquiti-unifi-6-lr-v1
 
@@ -11917,7 +11930,8 @@ Ubiquiti UniFi 6 LR v1 · mediatek-mt7622 · K1d
 - **Rückweg zur Herstellerfirmware:** TFTP-Recovery: Reset beim Einschalten halten bis die LED weiß-blau-aus wechselt, Stock-Firmware per TFTP [abgeleitet: Wiki toh/ubiquiti/unifi_6_lr]
 - **Gluon-RAMpe passt:** nein, nicht nötig: der Weg schreibt das Gluon-sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** OpenWrt 634c13c186646aff2badb51a43b248825d0fe5a0 (v1-Profil: 15a02471bb854245f8f94398c1e1d9ce29c2c341)
-- **Detail-Anleitung:** https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps
+- **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-6-lr-v1.md; https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps
+- **Werte für die Anleitung:** dauer = etwa 4 Minuten; ssh_alt = True; rueckweg_taste = bis die LED weiß, blau und aus wechselt; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/openwrt.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe bs bei mtd6, kernel0 bei mtd8 und kernel1 bei mtd9 steht.', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtdblock6', 'dd if=/tmp/openwrt.bin of=/dev/mtdblock8', 'dd if=/tmp/openwrt.bin of=/dev/mtdblock9', 'reboot']
 
 #### ubiquiti-unifi-6-lr-v2
 
@@ -12034,7 +12048,8 @@ Ubiquiti UniFi 6 Lite · ramips-mt7621 · K1d
 - **Rückweg zur Herstellerfirmware:** TFTP-Recovery mit Ubiquiti-Firmware [abgeleitet: Wiki toh/ubiquiti/unifi_6_lite]
 - **Gluon-RAMpe passt:** nein: der SSH-Weg schreibt das sysupgrade direkt; ein Ramboot ginge nur seriell (`fdt rm /signature`, TFTP C0A80114.img)
 - **Quelle (OpenWrt-Commit):** fb4d7a9680117a00721936c98ce41eeb2dea95c9
-- **Detail-Anleitung:** https://openwrt.org/toh/ubiquiti/unifi6lite#installation
+- **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-6-lite.md; https://openwrt.org/toh/ubiquiti/unifi6lite#installation
+- **Werte für die Anleitung:** ssh_alt = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/openwrt.bin; befehle = ['fw_setenv devmode TRUE', 'fw_setenv boot_openwrt "fdt addr \\$(fdtcontroladdr); fdt rm /signature; bootubnt"', 'fw_setenv bootcmd "run boot_openwrt"', 'cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe bs bei mtd4, kernel0 bei mtd6 und kernel1 bei mtd7 steht.', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtdblock4', 'dd if=/tmp/openwrt.bin of=/dev/mtdblock6', 'dd if=/tmp/openwrt.bin of=/dev/mtdblock7', 'reboot']
 
 #### ubiquiti-unifi-nanohd
 
@@ -12069,6 +12084,8 @@ Ubiquiti UniFi nanoHD · ramips-mt7621 · K1d
 - **Dauer:** Dauer in keiner Quelle; nach dem Schreiben neu starten oder Strom aus/an [geprüft: Commit 4c8446b]
 - **Gluon-RAMpe passt:** nein: SSH-Weg schreibt das sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** 4c8446bf39de99990847eb4bc7744e25835a34f5
+- **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-nanohd.md
+- **Werte für die Anleitung:** ssh_alt = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/openwrt-sysupgrade.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe bs bei mtd4, kernel0 bei mtd6 und kernel1 bei mtd7 steht.', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'dd if=/tmp/openwrt-sysupgrade.bin of=/dev/mtdblock6', 'dd if=/tmp/openwrt-sysupgrade.bin of=/dev/mtdblock7', 'reboot']
 
 ### Familie `xiaomi-ac2100-pppoe`
 
