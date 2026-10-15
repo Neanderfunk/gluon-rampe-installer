@@ -35,18 +35,16 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     gl_menue             optional: z. B. "Upgrade → Local Upgrade" (leer = "meist Upgrade")
     per_wlan             optional true: nur per WLAN erreichbar (Ethernet ist WAN)
     usb                  optional true: das Gerät steckt im USB-Port des Rechners
+
+  RAMpe als zweiter Weg (siehe _rampe.md, alles optional)
+    rampe_url            Direktlink auf die RAMpe-Datei für dieses Gerät
+    rampe_datei          Dateiname dazu
+    rampe_weg            ganzer Satz, wie die RAMpe statt OpenWrt aufs Gerät kommt
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
 {%- set ud = w.uboot_datei if w.uboot_datei else "sysupgrade" -%}
-{%- if status == "ungeprüft" %}
-> **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
-> zusammengestellt, aber noch niemand hat sie an einem {{ modell }} Schritt
-> für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de), ob es geklappt hat.
-{%- else %}
-> **Am Gerät erprobt** am {{ erprobt_am }} mit `{{ erprobt_mit }}`.
-{%- endif %}
+{% include "_status.md" %}
 
 # {{ modell }}: Freifunk-Firmware installieren
 
@@ -215,6 +213,8 @@ mehr, hilft der eingebaute Notfall-Modus:
    "Update firmware".
 4. Etwa 3 Minuten warten, Strom nicht ziehen.
 {%- endif %}
+
+{% include "_rampe.md" %}
 
 {{ zusatz.text }}
 
