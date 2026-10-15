@@ -100,6 +100,16 @@ Werkseinstellungen zurück oder entferne es im Controller.
 
 6. **Firmware schreiben.** Gib diese Befehle **einzeln und genau so** ein,
    jeweils mit Enter. Am besten kopierst du sie Zeile für Zeile.
+{%- set sp = namespace(uf=false) %}
+{%- for z in w.befehle %}{% if "/proc/ubnthal/.uf" in z %}{% set sp.uf = true %}{% endif %}{% endfor %}
+{%- if sp.uf %}
+
+   **Wichtig ist die Zeile mit `/proc/ubnthal/.uf`.** Sie hebt den
+   Schreibschutz auf, mit dem Ubiquiti den Speicher sperrt. Ohne sie laufen
+   die Schreibbefehle scheinbar fehlerfrei durch, aber es wird nichts
+   geschrieben, und nach dem Neustart ist wieder die Ubiquiti-Firmware da.
+   Mehr dazu unter [Schreibschutz im Flash](grundlagen/schreibschutz.md).
+{%- endif %}
 
 {%- set ns = namespace(block=[]) %}
 {%- for z in w.befehle %}

@@ -24,6 +24,7 @@ an der Eingabezeile, zum Beispiel `UAP-AC-Pro-Gen2-BZ.6.5.62#`.
   Aufheben des Schreibschutzes nicht gegriffen, die Befehle melden das nicht.
   Setz das Gerät auf Werkseinstellungen zurück und mach alles noch einmal;
   im Forum hat genau das geholfen.
+  Siehe [Schreibschutz im Flash](grundlagen/schreibschutz.md).
 
 ## Weg b: erst zurück auf Ubiquiti-Firmware 3.7.58
 

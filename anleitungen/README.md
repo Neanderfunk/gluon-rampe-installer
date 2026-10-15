@@ -97,6 +97,10 @@ Herkunft der Angaben.
 - Aus Sicht der Lesenden, "du", nummerierte Schritte.
 - Sichtbare Merkmale nennen: LED-Farbe und -Takt, Seitentitel, wie lange eine
   Taste gedrückt bleibt.
+- Schritte, die einen Schreibschutz im Flash aufheben, ausdrücklich benennen
+  und erklären, und wo möglich den Erfolg sichtbar prüfen lassen. Sie fehlen
+  sonst still: Alles läuft scheinbar fehlerfrei, aber nichts wird geschrieben
+  (adorfer 15.10.2026, siehe `de/grundlagen/schreibschutz.md`).
 - Nichts erfinden: Was im JSON fehlt, steht nicht im Text. Fehlt etwas für
   einen Schritt, kommt die Frage an das Buildsystem, nicht eine Annahme.
 - Keine internen Pfade oder Hostnamen; interne Quellen heißen

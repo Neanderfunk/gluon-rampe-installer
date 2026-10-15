@@ -21,7 +21,9 @@ echo 5edfacbf > /proc/ubnthal/.uf
 
 Weißt du die Version nicht, gib ihn trotzdem ein. Meldet er "No such file or
 directory", ist die Firmware älter und du machst einfach mit Schritt 6
-weiter.
+weiter. Ohne diesen Befehl laufen die Schreibbefehle bei neuerer Firmware
+scheinbar fehlerfrei durch, schreiben aber nichts. Mehr dazu unter
+[Schreibschutz im Flash](grundlagen/schreibschutz.md).
 
 Ältere Ubiquiti-Firmware antwortet laut OpenWrt eventuell unter
 `192.168.1.34` statt `192.168.1.20`.
