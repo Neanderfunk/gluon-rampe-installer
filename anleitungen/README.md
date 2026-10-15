@@ -91,3 +91,29 @@ Herkunft der Angaben.
   einen Schritt, kommt die Frage an das Buildsystem, nicht eine Annahme.
 - Keine internen Pfade oder Hostnamen; interne Quellen heißen
   "Neanderfunk-Notiz".
+
+## Einbindung in den Firmware-Selector
+
+Abgestimmt mit Supernode-Betrieb (15.10.2026): Der Selector **verlinkt** die
+Seiten, er bettet nichts ein. Er hat je Gerät genau einen Knopf "Anleitung",
+der eine URL in einem neuen Tab öffnet. Daraus folgt:
+
+- Jede Seite ist eine ganze, eigenständige HTML-Seite. Sie lädt nichts von
+  fremden Hosts, keine Schriften, keine Bibliotheken. Die Bilder liegen auf
+  demselben Host unter `bilder/<gluon_name>/…`.
+- Die Seiten liegen dauerhaft unter **HTTPS**. Der Knopf steht in einer
+  Firmware-Oberfläche, die Leute noch Jahre später benutzen.
+- Das Skript erzeugt zusätzlich eine Index-Datei `html/index.json` mit
+  absoluten URLs. Der Selector schlägt über Hersteller, Modell und Revision
+  nach und ordnet über `gluon_name` zu:
+
+  ```json
+  [
+    {"gluon_name": "d-link-aquila-pro-ai-m60-a1",
+     "url": "https://<Host>/<Pfad>/html/de/d-link-aquila-pro-ai-m60-a1.html",
+     "status": "erprobt", "stufe": "mit Werkzeug", "sprache": "de"}
+  ]
+  ```
+
+- Seiten mit `status: ungeprüft` verlinkt der Selector vorerst nicht.
+- Innerhalb der Seiten bleiben die Verweise relativ (Grundlagen, Bilder).
