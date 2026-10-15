@@ -6,6 +6,7 @@ familie: tplink-tftp-recovery
 gluon_broken: false
 sprache: de
 level: L4
+level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]

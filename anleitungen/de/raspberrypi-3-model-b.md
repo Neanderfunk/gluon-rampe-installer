@@ -6,6 +6,7 @@ familie: image-auf-datentraeger
 gluon_broken: false
 sprache: de
 level: L4
+level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
 grundlagen: [image-schreiben]

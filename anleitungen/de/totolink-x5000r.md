@@ -6,6 +6,7 @@ familie: sonderweg-totolink-x5000r
 gluon_broken: false
 sprache: de
 level: L1
+level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-https, feste-ip]

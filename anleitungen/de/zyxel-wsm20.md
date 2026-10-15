@@ -6,6 +6,7 @@ familie: sonderweg-zyxel-wsm20
 gluon_broken: false
 sprache: de
 level: L1
+level_text: Zwei Schritte im Browser
 risiko: normal
 status: erprobt
 erprobt_am: 2026-09-19

@@ -6,6 +6,7 @@ familie: k0-webui
 gluon_broken: false
 sprache: de
 level: L1
+level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]

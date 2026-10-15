@@ -6,6 +6,7 @@ familie: aruba-apboot
 gluon_broken: false
 sprache: de
 level: L6
+level_text: Serielles Kabel
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]

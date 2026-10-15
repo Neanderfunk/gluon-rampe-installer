@@ -6,6 +6,7 @@ familie: avm-eva-uboot
 gluon_broken: false
 sprache: de
 level: L5
+level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-avm-fritz-repeater-1200-initramfs-uImage.itb

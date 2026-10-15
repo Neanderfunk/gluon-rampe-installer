@@ -6,6 +6,7 @@ familie: glinet
 gluon_broken: false
 sprache: de
 level: L3
+level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-gl.inet-gl-xe300-factory.img

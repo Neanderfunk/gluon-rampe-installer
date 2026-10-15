@@ -6,6 +6,7 @@ familie: avm-eva-ramboot
 gluon_broken: false
 sprache: de
 level: L5
+level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-avm-fritz-box-3390-initramfs-kernel.bin

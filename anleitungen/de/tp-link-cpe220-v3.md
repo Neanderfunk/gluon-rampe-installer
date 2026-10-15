@@ -6,6 +6,7 @@ familie: k0-webui
 gluon_broken: false
 sprache: de
 level: L3
+level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip]

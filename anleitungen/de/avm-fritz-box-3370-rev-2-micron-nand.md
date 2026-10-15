@@ -6,6 +6,7 @@ familie: avm-eva-ftp
 gluon_broken: true
 sprache: de
 level: L5
+level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [avm-eva, feste-ip]

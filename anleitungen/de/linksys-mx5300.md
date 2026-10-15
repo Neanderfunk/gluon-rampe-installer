@@ -6,6 +6,7 @@ familie: sonderweg-linksys-mx5300
 gluon_broken: false
 sprache: de
 level: L0.1
+level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [ssh-scp]

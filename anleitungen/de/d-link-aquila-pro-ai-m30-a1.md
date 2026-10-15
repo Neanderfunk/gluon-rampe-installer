@@ -6,6 +6,7 @@ familie: dlink-recovery-web
 gluon_broken: false
 sprache: de
 level: L4
+level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m30-a1-recovery.bin

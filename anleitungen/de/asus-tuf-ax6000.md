@@ -6,6 +6,7 @@ familie: asus-tuf-herbetom
 gluon_broken: false
 sprache: de
 level: L4
+level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
 grundlagen: [ssh-scp]

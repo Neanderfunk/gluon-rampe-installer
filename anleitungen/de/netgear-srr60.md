@@ -6,11 +6,12 @@ familie: netgear-nmrp
 gluon_broken: false
 sprache: de
 level: L5
+level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [nmrpflash]
 daten_stand: 3b96298
-vorlage_stand: 393f161
+vorlage_stand: 02b6142
 ---
 
 # NETGEAR Orbi Pro SRR60: Freifunk-Firmware installieren

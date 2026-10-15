@@ -6,6 +6,7 @@ familie: seriell-tftp
 gluon_broken: true
 sprache: de
 level: L7
+level_text: Gehäuse öffnen
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]

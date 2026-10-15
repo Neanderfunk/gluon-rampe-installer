@@ -6,6 +6,7 @@ familie: sophos-xg-awetool
 gluon_broken: false
 sprache: de
 level: L7
+level_text: Gehäuse öffnen
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, tftp-server]

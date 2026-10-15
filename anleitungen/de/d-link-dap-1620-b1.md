@@ -6,6 +6,7 @@ familie: dlink-recovery-web
 gluon_broken: true
 sprache: de
 level: L4
+level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
 grundlagen: [curl, feste-ip]

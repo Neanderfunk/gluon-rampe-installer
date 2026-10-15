@@ -6,12 +6,13 @@ familie: netgear-nmrp
 gluon_broken: true
 sprache: de
 level: L5
+level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-netgear-wndr3700-v5-factory.img
 grundlagen: [browser-https, nmrpflash]
 daten_stand: 3b96298
-vorlage_stand: 393f161
+vorlage_stand: 02b6142
 ---
 
 # NETGEAR WNDR3700 v5: Freifunk-Firmware installieren

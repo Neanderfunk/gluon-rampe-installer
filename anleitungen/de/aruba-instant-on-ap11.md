@@ -6,6 +6,7 @@ familie: aruba-apboot
 gluon_broken: false
 sprache: de
 level: L6
+level_text: Serielles Kabel
 risiko: bootloader
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
@@ -26,6 +27,13 @@ vorlage_stand: 565e893
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Aruba%20Instant%20On%20AP11)
+
+> **Achtung, Bootloader:** Bei diesem Gerät wird der Bootloader verändert,
+> also das kleine Programm, das vor jeder Firmware startet. Geht dabei etwas
+> schief, etwa durch einen Stromausfall oder eine falsche Datei, startet das
+> Gerät womöglich nicht mehr. Ohne Flash-Programmer gibt es dann meist kein
+> Zurück. Lies die Anleitung vorher einmal ganz durch und halte dich genau an
+> die Befehle.
 
 Aruba-Access-Points nehmen eine fremde Firmware nicht über ihre
 Weboberfläche an. Der Weg führt über die **serielle Konsole**, also ein

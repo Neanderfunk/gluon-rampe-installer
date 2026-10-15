@@ -6,6 +6,7 @@ familie: dlink-recovery-web
 gluon_broken: false
 sprache: de
 level: L4
+level_text: Netzwerkwerkzeuge
 risiko: normal
 status: erprobt
 erprobt_am: 2026-10-13

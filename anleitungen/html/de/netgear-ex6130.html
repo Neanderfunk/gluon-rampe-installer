@@ -11,11 +11,12 @@
 <meta name="anleitung:gluon_broken" content="false">
 <meta name="anleitung:sprache" content="de">
 <meta name="anleitung:level" content="L0.1">
+<meta name="anleitung:level_text" content="Hochladen, richtige Datei wählen">
 <meta name="anleitung:risiko" content="normal">
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="nmrpflash">
 <meta name="anleitung:daten_stand" content="3b96298">
-<meta name="anleitung:vorlage_stand" content="393f161">
+<meta name="anleitung:vorlage_stand" content="02b6142">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -30,22 +31,67 @@ hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
 <p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20NETGEAR%20EX6130">projekt@neanderfunk.de</a></p>
 </blockquote>
-<p>Viele Netgear-Geräte fragen direkt nach dem Einschalten im Netzwerk, ob
-jemand eine Firmware für sie hat. Das Programm <strong>nmrpflash</strong> auf deinem
-Rechner antwortet darauf und schickt die Freifunk-Firmware. Das geht auch
-dann, wenn die Netgear-Oberfläche fremde Firmware nicht annimmt.</p>
+<p>Bei diesem Gerät nimmt die normale Weboberfläche von Netgear die
+Freifunk-Firmware an. Das ist der einfache Weg. Klappt er nicht, gibt es
+unten einen zweiten Weg mit dem Programm nmrpflash.</p>
 <h2>Was du brauchst</h2>
 <ul>
 <li>das Gerät mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
 Netzwerkkabel</li>
-<li>das Programm nmrpflash (<a href="grundlagen/nmrpflash.html">nmrpflash benutzen</a>)</li>
 <li>die Freifunk-Firmware deiner Community für den NETGEAR EX6130, und zwar das
-<strong>factory</strong>-Image</li>
+<strong>factory</strong>-Image (im Firmware-Selector unter &quot;Wähle Deine
+Installationsart&quot; der Knopf <strong>Erstinstallation</strong>)</li>
 </ul>
 <h2>Vorher prüfen</h2>
 <p>Der EX6130 hat dieselbe Platine wie <a href="netgear-ex3700.html">EX3700/EX3800</a>,
 braucht aber sein eigenes Image.</p>
 <h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Anschließen.</strong> Steck das Kabel vom Rechner an eine LAN-Buchse des
+Geräts und schalte es ein. Der Rechner bleibt auf &quot;automatisch&quot;
+(DHCP). Warte zwei Minuten.</p>
+</li>
+<li>
+<p><strong>Netgear-Oberfläche öffnen.</strong> Die Adresse steht auf dem Aufkleber des
+Geräts; bei Netgear-Routern ist es meist <code>http://routerlogin.net</code>, bei
+Repeatern <code>http://mywifiext.net</code>. Melde dich an; im Werkszustand fragt
+das Gerät zuerst nach einem neuen Passwort.</p>
+</li>
+<li>
+<p><strong>Freifunk-Firmware hochladen.</strong> Such den Menüpunkt für das
+Firmware-Update (meist unter &quot;Erweitert&quot; bzw. &quot;Advanced&quot; und dann
+&quot;Verwaltung&quot; bzw. &quot;Administration&quot;), wähl das factory-Image aus und
+starte das Update. Fragt die Oberfläche nach, ob sie wirklich diese
+Datei nehmen soll, bestätige.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Das Gerät schreibt die Freifunk-Firmware und startet neu,
+einige Minuten. <strong>Strom nicht ziehen.</strong></p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Danach startet die Freifunk-Firmware deiner Community: je
+nach Community zuerst mit einer Einrichtungsseite unter
+<code>http://192.168.1.1</code> oder gleich im Betrieb.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>In Schritt 3 nimmt die Oberfläche die Datei an und zeigt den Fortschritt.</li>
+<li>Nach Schritt 4 meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Die Oberfläche lehnt die Datei ab.</strong> Prüf, ob du das factory-Image für
+genau dein Modell genommen hast. Sonst nimm den Weg mit nmrpflash unten.</li>
+<li><strong>Das Gerät startet nach dem Update nicht richtig.</strong> Auch dann hilft der
+Weg mit nmrpflash: Der Bootloader nimmt die Firmware auch dann noch an.</li>
+</ul>
+<h2>Anderer Weg: mit nmrpflash</h2>
+<p>Netgear-Geräte fragen direkt nach dem Einschalten im Netzwerk, ob jemand
+eine Firmware für sie hat. Das Programm <strong>nmrpflash</strong> auf deinem Rechner
+antwortet darauf und schickt die Freifunk-Firmware
+(<a href="grundlagen/nmrpflash.html">nmrpflash benutzen</a>).</p>
 <ol>
 <li>
 <p><strong>nmrpflash bereitlegen.</strong> Lade nmrpflash herunter und richte es ein, wie
@@ -86,12 +132,7 @@ Community zuerst mit einer Einrichtungsseite unter <code>http://192.168.1.1</cod
 oder gleich im Betrieb.</p>
 </li>
 </ol>
-<h2>Woran du erkennst, dass es geklappt hat</h2>
-<ul>
-<li>nmrpflash endet mit <code>Reboot your device now.</code></li>
-<li>Nach dem Neustart meldet sich die Freifunk-Firmware.</li>
-</ul>
-<h2>Wenn etwas schiefgeht</h2>
+<p>Wenn nmrpflash Fehler meldet:</p>
 <ul>
 <li><strong>&quot;No response after 60 seconds.&quot;</strong> Reihenfolge einhalten: erst nmrpflash
 starten, dann das Gerät einschalten. Manche Netgear-Geräte brauchen beim
@@ -100,10 +141,6 @@ probieren.</li>
 <li><strong>&quot;Timeout while waiting for ACK(0)/OACK.&quot;</strong> Meist die Firewall am Rechner.</li>
 <li>Weitere Meldungen erklärt <a href="grundlagen/nmrpflash.html">nmrpflash benutzen</a>.</li>
 </ul>
-<h2>Anderer Weg: Netgear-Oberfläche</h2>
-<p>Bei diesem Gerät nimmt auch die normale Netgear-Oberfläche das factory-Image
-an, unter Firmware-Update. Das ist einfacher, aber schlechter belegt als der
-Weg mit nmrpflash.</p>
 <h2>Herkunft der Angaben</h2>
 <p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
 <ul>

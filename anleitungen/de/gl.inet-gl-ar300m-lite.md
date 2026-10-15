@@ -6,6 +6,7 @@ familie: glinet
 gluon_broken: false
 sprache: de
 level: L0
+level_text: Einfach hochladen
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip]
