@@ -13,13 +13,15 @@
 #
 # Kniffe: "/" leitet per meta-refresh weiter - Einstieg ist /cgi-bin/config.
 # gluon-web verlangt bei POST einen Origin-Header, der zum Host passt.
-# Braucht qemu-system-x86_64 (mit KVM deutlich schneller), curl, sfdisk.
+# Seit 15.10.2026 auch: gluon.css?v= und die Umleitung https (Port 443) -> http.
+# Braucht qemu-system-x86_64 (mit KVM deutlich schneller), curl, sfdisk, openssl.
 
 set -u
 KERNEL=${1:?installer-initramfs-kernel.bin}; FACTORY=${2:?factory.img.gz}; UPLOAD=${3:?sysupgrade.img.gz}
 WORK="$(cd "$(dirname "$0")" && pwd)/work"; mkdir -p "$WORK"; cd "$WORK"
 PORT=${PORT:-18080}
-NET="-netdev user,id=n0,net=192.168.1.0/24,host=192.168.1.2,dhcpstart=192.168.1.100,hostfwd=tcp:127.0.0.1:$PORT-192.168.1.1:80 -device e1000,netdev=n0"
+TLSPORT=${TLSPORT:-18443}
+NET="-netdev user,id=n0,net=192.168.1.0/24,host=192.168.1.2,dhcpstart=192.168.1.100,hostfwd=tcp:127.0.0.1:$PORT-192.168.1.1:80,hostfwd=tcp:127.0.0.1:$TLSPORT-192.168.1.1:443 -device e1000,netdev=n0"
 KVM=$([ -w /dev/kvm ] && echo -enable-kvm)
 URL="http://127.0.0.1:$PORT"
 
@@ -40,6 +42,15 @@ curl -s -L "$URL/cgi-bin/config" -o seite1.html -w '   Startseite: %{url_effecti
 ACTION=$(grep -o 'action="[^"]*"' seite1.html | head -1 | sed 's/action="//; s/"$//')
 grep -q 'name="image"' seite1.html && ! grep -q keepcfg seite1.html && echo "   Upload-Seite ohne 'Einstellungen behalten': ja" \
 	|| { echo "FEHLER: keine Installer-Upload-Seite"; ende; exit 1; }
+grep -q 'gluon.css?v=' seite1.html && echo "   gluon.css mit Versionsanhang: ja" \
+	|| { echo "FEHLER: gluon.css ohne ?v= (Cache-Schutz fehlt)"; ende; exit 1; }
+# Port 443: selbstsigniertes Zertifikat, jede Adresse leitet auf http:// um
+for pfad in / /irgendwas; do
+	curl -sk "https://127.0.0.1:$TLSPORT$pfad" -o seite-https.html -w "   https $pfad: %{http_code}\n"
+	grep -q "location.replace('http://'" seite-https.html \
+		|| { echo "FEHLER: https $pfad leitet nicht auf http um"; ende; exit 1; }
+done
+echo | openssl s_client -connect "127.0.0.1:$TLSPORT" 2>/dev/null | openssl x509 -noout -subject 2>/dev/null | sed 's/^/   Zertifikat: /'
 
 echo "== 2. hochladen und bestaetigen"
 curl -s -H "Origin: $URL" -F step=2 -F "image=@$UPLOAD" "$URL$ACTION" -o seite2.html -w '   Upload: %{http_code}\n'
