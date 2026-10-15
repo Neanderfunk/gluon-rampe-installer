@@ -8471,9 +8471,17 @@
    "rampe": "ja, mit Vorbereitung: wie 7530 (dasselbe Image, U-Boot nach HWRevision 247)",
    "rampe_rezept": "Alias: Image aus devices/avm-fritz-box-7530.sh (dort auch `uboot-fritz7520.bin`); TFTP-Dateiname `FRITZ7520.bin` [geprüft: U-Boot-Quelle chunkeey/FritzBox-4040-UBOOT, include/configs/fritz7520.h]",
    "quelle": "OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b",
-   "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7530#installation",
+   "anleitung": "anleitungen/de/avm-fritz-box-7520.md; https://openwrt.org/toh/avm/avm_fritz_box_7530#installation",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "uboot_datei": "uboot-fritz7520.bin",
+    "uboot_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/uboot-fritz7520.bin",
+    "tftp_name": "FRITZ7520.bin",
+    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb",
+    "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb",
+    "sicherheit": "abgeleitet",
+    "sicherheit_hinweis": "Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht."
+   }
   },
   {
    "gluon_name": "avm-fritz-box-7530",
@@ -8522,9 +8530,17 @@
    "rampe": "ja, mit Vorbereitung: das RAMpe-initramfs als FRITZ7530.bin (7520: FRITZ7520.bin); vor dem sysupgrade schreibt die RAMpe den OpenWrt-U-Boot (nach HWRevision 236/247) und entfernt avm_filesys_0/1 [geprüft: Commit 95b0c07a; Auswahl abgeleitet]; am Gerät ungetestet",
    "rampe_rezept": "devices/avm-fritz-box-7530.sh (gebaut 15.10.2026): `-initramfs-uImage.itb` als `FRITZ7530.bin`, dazu `uboot-fritz7530.bin`/`uboot-fritz7520.bin` für `eva_ramboot.py`; Vorbereitung vor dem sysupgrade in der RAMpe (overlay/lib/gluon-rampe/prepare/avm_fritzbox-7530.sh, U-Boot aus package/gluon-rampe-uboot-fritz), U-Boot-Wahl nach HWRevision aus dem TFFS; im QEMU-Test geprüft, am Gerät ungetestet",
    "quelle": "OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b",
-   "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7530#installation",
+   "anleitung": "anleitungen/de/avm-fritz-box-7530.md; https://openwrt.org/toh/avm/avm_fritz_box_7530#installation",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "uboot_datei": "uboot-fritz7530.bin",
+    "uboot_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/uboot-fritz7530.bin",
+    "tftp_name": "FRITZ7530.bin",
+    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb",
+    "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb",
+    "sicherheit": "abgeleitet",
+    "sicherheit_hinweis": "Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht."
+   }
   },
   {
    "gluon_name": "avm-fritz-repeater-1200",
@@ -8573,9 +8589,17 @@
    "rampe": "ja, mit Vorbereitung: das RAMpe-initramfs als FRITZ1200.bin; vor dem sysupgrade schreibt die RAMpe den OpenWrt-U-Boot und entfernt avm_filesys_0/1 [geprüft: Commit 7f187229]; am Gerät ungetestet",
    "rampe_rezept": "devices/avm-fritz-repeater-1200.sh (gebaut 15.10.2026): `-initramfs-uImage.itb` als `FRITZ1200.bin` + `uboot-fritz1200.bin`; Vorbereitung vor dem sysupgrade in der RAMpe (avm_fritzrepeater-1200.sh); am Gerät ungetestet",
    "quelle": "OpenWrt 7f187229a8e9b7966248b1e024217e07a9fc3e50",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7f187229a8e9b7966248b1e024217e07a9fc3e50",
+   "anleitung": "anleitungen/de/avm-fritz-repeater-1200.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7f187229a8e9b7966248b1e024217e07a9fc3e50",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "uboot_datei": "uboot-fritz1200.bin",
+    "uboot_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/uboot-fritz1200.bin",
+    "tftp_name": "FRITZ1200.bin",
+    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-repeater-1200-initramfs-uImage.itb",
+    "rampe_datei": "gluon-rampe-20261015-avm-fritz-repeater-1200-initramfs-uImage.itb",
+    "sicherheit": "abgeleitet",
+    "sicherheit_hinweis": "Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht."
+   }
   },
   {
    "gluon_name": "avm-fritz-repeater-3000",
@@ -8624,9 +8648,17 @@
    "rampe": "ja, mit Vorbereitung: das RAMpe-initramfs als FRITZ3000.bin; vor dem sysupgrade schreibt die RAMpe den OpenWrt-U-Boot und entfernt avm_filesys_0/1 [geprüft: Commit 148d29d4]; am Gerät ungetestet",
    "rampe_rezept": "devices/avm-fritz-repeater-3000.sh (gebaut 15.10.2026): trägt das Gerät in Gluon ein; `FRITZ3000.bin` + `uboot-fritz3000.bin`; Vorbereitung vor dem sysupgrade in der RAMpe (avm_fritzrepeater-3000.sh); am Gerät ungetestet",
    "quelle": "OpenWrt 148d29d47b1d555d0058dcc5dda450b74c4628ec",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/avm-fritz-repeater-3000.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "uboot_datei": "uboot-fritz3000.bin",
+    "uboot_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/uboot-fritz3000.bin",
+    "tftp_name": "FRITZ3000.bin",
+    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-repeater-3000-initramfs-uImage.itb",
+    "rampe_datei": "gluon-rampe-20261015-avm-fritz-repeater-3000-initramfs-uImage.itb",
+    "sicherheit": "abgeleitet",
+    "sicherheit_hinweis": "Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht."
+   }
   },
   {
    "gluon_name": "extreme-networks-ws-ap3915i",
