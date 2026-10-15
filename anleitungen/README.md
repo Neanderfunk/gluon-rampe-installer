@@ -103,6 +103,38 @@ projekt@neanderfunk.de (adorfer 15.10.2026).
   diesem Weg nennt. Oben steht dann Datum und welches Image lief. Ist das
   aktuelle Image neuer als das erprobte, sagt die Seite das.
 
+## Level und Risiko
+
+Seit 15.10.2026 (adorfer) hat jede Seite ein **Level** (L0 bis L8) statt
+der vier Stufen und dazu ein **Risiko**. Die Einteilung macht das Skript aus
+den Merkmalen je Gerät (`scripts/level.py`, dort die genauen Definitionen).
+Für Lesende gelten diese Bezeichnungen (Seitenkopf und Übersicht):
+
+| Level | kurz | für die Übersicht |
+|---|---|---|
+| L0 | Einfach hochladen | Die Freifunk-Firmware wird über die Weboberfläche des Geräts hochgeladen; es gibt nur eine passende Datei. |
+| L0.1 | Hochladen, richtige Datei wählen | Wie L0, aber es gibt zwei Dateien (Erstinstallation und Upgrade), und man muss die richtige nehmen. |
+| L1 | Zwei Schritte im Browser | Erst eine Zwischenfirmware oder eine ältere Herstellerfirmware, dann die Freifunk-Firmware; alles im Browser. |
+| L2 | Taste beim Einschalten | Notfall-Modus per Taste, dann Hochladen im Browser; der Rechner bekommt seine Adresse von selbst. |
+| L3 | Feste Adresse am Rechner | Wie L2 oder ein anderer Weg im Browser, aber die Netzwerkeinstellung des Rechners muss von Hand umgestellt werden. |
+| L4 | Netzwerkwerkzeuge | TFTP-Server, SSH, curl oder ein Image auf einen Datenträger schreiben; Programme, die es für jedes System gibt. |
+| L5 | Besondere Programme | Skripte oder Programme außerhalb des Üblichen, oder Dateien vorher selbst zusammenbauen. |
+| L6 | Serielles Kabel | Ein Konsolenkabel am Gerät, ohne es zu öffnen. |
+| L7 | Gehäuse öffnen | Für die serielle Konsole muss das Gerät aufgeschraubt werden. |
+| L8 | Löten und Programmer | Klemmen am Speicherchip, Lötarbeiten oder ein Flash-Programmer. |
+
+**Risiko**, Text für die Übersicht:
+
+> **Risiko „normal“:** Der Bootloader des Geräts bleibt unangetastet.
+> Solange das so ist, ist der Weg zurück eigentlich immer offen, notfalls
+> über den Notfall-Modus per TFTP oder über die serielle Konsole.
+> **Risiko „Bootloader“:** Hier wird der Bootloader selbst ersetzt oder
+> verändert. Geht dabei etwas schief, gibt es ohne Flash-Programmer meist
+> kein Zurück.
+
+Auf Seiten mit `risiko: bootloader` zeigt `vorlagen/_status.md` unter dem
+Statusblock einen Warnkasten (Variable `risiko` vom Skript).
+
 ## Regeln für den Text
 
 - Aus Sicht der Lesenden, "du", nummerierte Schritte.

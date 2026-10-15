@@ -12,6 +12,7 @@ den Werten (alle optional):
                        Geräten oder aus dem Wiki übernommen) oder "unsicher" (einzelne
                        Schritte nur vermutet oder aus einem Einzelbericht)
   sicherheit_hinweis   ganzer Satz, was genau unsicher ist
+Dazu risiko (vom Skript, optional): bei "bootloader" ein fester Warnkasten.
 Dazu zusatz.achtung (Abschnitt "## Achtung" der Zusatzdatei): erscheint als
 Warnkasten direkt unter dem Statusblock, für Dinge, die das Gerät unbrauchbar
 machen können.
@@ -62,6 +63,15 @@ machen können.
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject={{ ("Anleitung " ~ modell) | urlencode }})
+{%- if risiko is defined and risiko == "bootloader" %}
+
+> **Achtung, Bootloader:** Bei diesem Gerät wird der Bootloader verändert,
+> also das kleine Programm, das vor jeder Firmware startet. Geht dabei etwas
+> schief, etwa durch einen Stromausfall oder eine falsche Datei, startet das
+> Gerät womöglich nicht mehr. Ohne Flash-Programmer gibt es dann meist kein
+> Zurück. Lies die Anleitung vorher einmal ganz durch und halte dich genau an
+> die Befehle.
+{%- endif %}
 {%- set za = zusatz.get("achtung") if zusatz is defined else "" %}
 {%- if za %}
 
