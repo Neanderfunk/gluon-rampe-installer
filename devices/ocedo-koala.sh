@@ -3,7 +3,7 @@
 # Weg: Reset-Taste beim Einschalten halten; der Bootloader holt per TFTP von
 # 192.168.100.8 die Datei "koala-uImage-initramfs-lzma.bin" (je nach Stand der
 # Hersteller-Software auch "koala-uimage-factory") und startet sie im RAM.
-# Die Datei ist hier die RAMpe (out/gluon-rampe-<Datum>-ocedo-koala-initramfs-kernel.bin
+# Die Datei ist hier die RAMpe (out/images/gluon-rampe-<Datum>-ocedo-koala-initramfs-kernel.bin
 # umbenennen). Danach Community-sysupgrade ueber die Upload-Seite. Kein
 # Oeffnen, keine Konsole.
 # Quelle: OpenWrt c4931713df8ffb3c4e5c1be7d0b6d4aa96a7dd4c [geprueft]:

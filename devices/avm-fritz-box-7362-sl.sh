@@ -3,7 +3,7 @@
 # Weg: EVA-Ramboot per scripts/flashing/eva_ramboot.py beim Einschalten
 # ("approx. 4 seconds on 7362SL"), RAMpe im RAM, danach Community-sysupgrade
 # ueber die Upload-Seite.
-#   eva_ramboot.py 192.168.178.1 out/gluon-rampe-<Datum>-avm-fritz-box-7362-sl-initramfs-kernel.bin
+#   eva_ramboot.py 192.168.178.1 out/images/gluon-rampe-<Datum>-avm-fritz-box-7362-sl-initramfs-kernel.bin
 # Quelle: OpenWrt eae6cac6a30b95bef04d033ed8a303b7e35a078b [geprueft]:
 #   "IMPORTANT: set lzma compression in ramdisk options, bootloader stalls
 #    when receiving uncompressed images."

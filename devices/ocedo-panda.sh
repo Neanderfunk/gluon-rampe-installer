@@ -1,8 +1,8 @@
 # OCEDO Panda (mpc85xx-p1020, P1020, 1 GB RAM, 256 MB NAND)
 #
 # Weg: TFTP-Server 192.168.100.8/24 mit
-#   panda-uimage-factory  = RAMpe (out/gluon-rampe-<Datum>-ocedo-panda-initramfs-kernel.bin)
-#   panda.fdt             = DTB (out/gluon-rampe-<datum>-ocedo-panda-fdt.bin)
+#   panda-uimage-factory  = RAMpe (out/images/gluon-rampe-<Datum>-ocedo-panda-initramfs-kernel.bin)
+#   panda.fdt             = DTB (out/images/gluon-rampe-<datum>-ocedo-panda-fdt.bin)
 # Reset-Taste beim Einschalten halten; der Bootloader holt beides und startet
 # im RAM. Danach Community-sysupgrade ueber die Upload-Seite. Kein Oeffnen,
 # keine Konsole.

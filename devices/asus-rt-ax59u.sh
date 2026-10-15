@@ -2,7 +2,7 @@
 #
 # TEILWEISE. Die RAMpe deckt nur den seriellen Weg ab: UART (Pinout auf der
 # Platine), TFTP-Server 192.168.1.70/24, das rohe RAMpe-initramfs
-# (out/gluon-rampe-<Datum>-asus-rt-ax59u-initramfs-kernel.bin) als rtax59u.bin
+# (out/images/gluon-rampe-<Datum>-asus-rt-ax59u-initramfs-kernel.bin) als rtax59u.bin
 # ablegen, U-Boot mit Taste 4 anhalten, dann
 #   setenv ipaddr 192.168.1.1; setenv serverip 192.168.1.70
 #   tftpboot 0x46000000 rtax59u.bin; bootm 0x46000000

@@ -6,7 +6,7 @@
 # UBI-Volume "kernel", fw_setenv (u. a. tp_boot_idx 0), Neustart. Danach laeuft
 # das initramfs; hier die Gluon-RAMpe statt des OpenWrt-initramfs, die das
 # Community-sysupgrade per Upload einspielt (sonst scp + sysupgrade -n).
-# Gebraucht wird der rohe initramfs-Kernel (out/gluon-rampe-<geraet>-initramfs-kernel.bin).
+# Gebraucht wird der rohe initramfs-Kernel (out/images/gluon-rampe-<Datum>-<geraet>-initramfs-kernel.bin).
 # Ungetestet. Nicht verwechseln mit dem OpenWrt-Profil mercusys_mr90x-v1-ubi
 # (OpenWrt-U-Boot-Layout), das Gluon nicht baut.
 ensure_target_config mediatek-filogic TARGET_ROOTFS_INITRAMFS

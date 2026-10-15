@@ -30,7 +30,7 @@ Am einfachsten im Container (Docker), der alle Werkzeuge mitbringt:
 contrib/docker/run.sh ./build.sh mediatek-filogic d-link-aquila-pro-ai-m30-a1
 ```
 
-Die Images landen in `out/`. Ohne Container: `./build.sh …` auf einem Host
+Die Images landen in `out/images/`; dort liegt nur, was auf den Download-Server gehört (Images, `uboot-fritz*.bin`, `SHA256SUMS`, `LISTE.md`), es lässt sich also unverändert spiegeln. Logs liegen in `out/logs/`, ältere Stände eines Geräts wandern beim Neubau nach `out/archiv/`. Ohne Container: `./build.sh …` auf einem Host
 mit Gluons Bauabhängigkeiten (siehe `contrib/docker/Dockerfile`).
 
 Optionen per Umgebung: `GLUON_REF` (Default `v2025.1.3`), `JOBS`,

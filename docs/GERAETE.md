@@ -309,7 +309,7 @@ und `copy_output.lua` entfernt eingesammelte Images aus `openwrt/bin/targets`.
 
    `ensure_extra_image` nur, wenn Gluon das Hersteller-Image nicht ohnehin
    einsammelt. Gluon legt es unter `output/images/other/` ab, `build.sh`
-   kopiert es nach `out/`.
+   kopiert es nach `out/images/`.
 3. `./build.sh <target> <gluon-geraet>` (bzw. per `contrib/docker/run.sh`).
 4. Prüfen, bevor es an Hardware geht:
    - Das Image enthält ein initramfs mit `lib/preinit/91_installer_initramfs`

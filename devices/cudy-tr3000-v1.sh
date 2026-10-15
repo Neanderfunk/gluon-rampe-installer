@@ -3,7 +3,7 @@
 # TEILWEISE: UART (interne Testpunkte, Gehaeuse auf), 115200 8N1. Router aus,
 # RESET halten, einschalten, mindestens 5 s halten -> U-Boot-Shell. Rechner
 # 192.168.1.88/24 mit TFTP-Server, rohes RAMpe-initramfs
-# (out/gluon-rampe-<Datum>-cudy-tr3000-v1-initramfs-kernel.bin) bereitlegen, dann
+# (out/images/gluon-rampe-<Datum>-cudy-tr3000-v1-initramfs-kernel.bin) bereitlegen, dann
 #   setenv bootfile <dateiname>
 #   tftpboot
 #   bootm

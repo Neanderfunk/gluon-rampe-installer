@@ -32,6 +32,11 @@ GLUON_REPO="${GLUON_REPO:-https://github.com/freifunk-gluon/gluon.git}"
 GLUON_DIR="${GLUON_DIR:-$ROOT/gluon}"
 JOBS="${JOBS:-$(nproc)}"
 OUT="$ROOT/out"
+# out/images enthaelt nur, was auf den Download-Server gehoert, und wird "as is"
+# gespiegelt; Logs und aeltere Staende liegen daneben.
+IMAGES="$OUT/images"
+LOGS="$OUT/logs"
+ARCHIV="$OUT/archiv"
 # Release-Kennung der Images (Default wie site/site.mk: Baudatum). Einmal je
 # Lauf festgelegt und an make durchgereicht, damit alle eingesammelten Dateien
 # denselben Stand im Namen tragen, auch ueber Mitternacht.
@@ -118,8 +123,8 @@ if neu not in s:
     open(p, 'w').write(s.replace(alt, neu, 1))
 PY
 
-mkdir -p "$OUT"
-LOG="$OUT/build-$TARGET.log"
+mkdir -p "$IMAGES" "$LOGS" "$ARCHIV"
+LOG="$LOGS/build-$TARGET.log"
 : > "$LOG"
 
 echo "== Kernel-Modulpakete des Targets neu verpacken"
@@ -147,12 +152,21 @@ if ! make -C "$GLUON_DIR" GLUON_TARGET="$TARGET" GLUON_DEVICES="${DEVICES[*]}" \
 	exit 1
 fi
 
-echo "== Einsammeln nach $OUT"
+echo "== Einsammeln nach $IMAGES"
 for d in "${DEVICES[@]}"; do
 	found=0
+	# Aeltere Staende dieses Geraets nach archiv/: in images/ liegt je Geraet nur
+	# der aktuelle. Nach dem Geraetenamen muss eine Image-Endung folgen, damit
+	# aruba-ap-303 nicht aruba-ap-303h und netgear-wndr3700 nicht -wndr3700-v2 trifft.
+	for alt in "$IMAGES"/gluon-rampe-*; do
+		[ -f "$alt" ] || continue
+		b=${alt##*/}
+		[[ $b =~ ^gluon-rampe-([0-9]{8})-"$d"-(initramfs|recovery|factory|web-ui-factory|kernel1|rootfs0|fdt) ]] || continue
+		[ "${BASH_REMATCH[1]}" = "$RELEASE" ] || mv -v "$alt" "$ARCHIV/"
+	done
 	# Hersteller-Images (recovery, factory ...), die Gluon unter other/ ablegt
 	while IFS= read -r -d '' f; do
-		cp -v "$f" "$OUT/" && found=1
+		cp -v "$f" "$IMAGES/" && found=1
 	done < <(find "$GLUON_DIR/output/images/other" -name "gluon-rampe-*-$d-*" \
 		! -name '*-kernel.bin' ! -name '*-rootfs.img.gz' -print0)
 	# Der rohe initramfs-Kernel: fuer TFTP-/RAM-Boot und QEMU. Der Name haengt
@@ -166,7 +180,7 @@ for d in "${DEVICES[@]}"; do
 	profile=$(grep -o "device('$d',[[:space:]]*'[^']*'" "$GLUON_DIR/targets/$TARGET" | sed "s/.*'\([^']*\)'$/\1/")
 	for k in "$GLUON_DIR"/openwrt/bin/targets/*/*/openwrt-*-"$profile"-initramfs*; do
 		[ -f "$k" ] || continue
-		cp -v "$k" "$OUT/gluon-rampe-$RELEASE-$d-${k##*-"$profile"-}" && found=1
+		cp -v "$k" "$IMAGES/gluon-rampe-$RELEASE-$d-${k##*-"$profile"-}" && found=1
 		# TFTP mit 512-Byte-Bloecken und 16-Bit-Blockzaehler endet bei 32 MiB,
 		# eva_ramboot.py bricht ab 0x2000000 Byte ab.
 		size=$(stat -c %s "$k")
@@ -178,8 +192,8 @@ done
 # uboot-fritz4040 legt sie nach STAGING_DIR_IMAGE), nur wenn gebaut
 for u in "$GLUON_DIR"/openwrt/staging_dir/target-*/image/uboot-fritz*.bin; do
 	[ -f "$u" ] || continue
-	cp -v "$u" "$OUT/"
+	cp -v "$u" "$IMAGES/"
 done
-( cd "$OUT" && find . -maxdepth 1 -type f ! -name '*.log' ! -name SHA256SUMS -printf '%P\0' \
-	| sort -z | xargs -0r sha256sum -- > SHA256SUMS 2>/dev/null || true )
-ls -la "$OUT"
+# SHA256SUMS und LISTE.md (Geraet, Datei, Art, Groesse, SHA256) fuer images/
+python3 "$ROOT/scripts/rampe-liste.py" "$IMAGES"
+ls -la "$IMAGES"

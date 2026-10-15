@@ -262,10 +262,13 @@ Wie die D-Link-Geräte geflasht werden, steht in der Router-Werkstatt unter
 ## Stand 15.10.2026: alle Rezepte gebaut
 
 - **Veröffentlicht** (adorfer, 15.10.2026): https://download.ffnef.de/other/Gluon-Installer-RAMpe/
-- **67 Rezepte, 85 Dateien** `out/gluon-rampe-20261015-*`, alle 14 Bauläufe
-  ohne Fehler und ohne "nichts eingesammelt". Liste je Gerät mit Art, Größe
-  und SHA256: `out/LISTE-20261015.md` (geht mit den Images auf den
-  Firmware-Server), Prüfsummen `out/SHA256SUMS`.
+- **67 Rezepte, 85 Dateien** `gluon-rampe-20261015-*`, alle 14 Bauläufe
+  ohne Fehler und ohne "nichts eingesammelt". Seit 15.10.2026 (Wunsch
+  adorfer) baut `build.sh` in ein eigenes Verzeichnis `out/images/`, das nur
+  Veröffentlichbares enthält und "as is" auf den Server gespiegelt wird:
+  Images, `uboot-fritz*.bin`, `SHA256SUMS` und `LISTE.md` (Gerät, Datei, Art,
+  Größe, SHA256; `scripts/rampe-liste.py`). Logs in `out/logs/`, ältere Stände
+  eines Geräts verschiebt `build.sh` beim Neubau nach `out/archiv/`.
 - Neu in allen Images: `gluon.css?v=<Release>` (Browser-Cache) und die
   Umleitung https -> http auf Port 443 (selbstsigniertes Zertifikat je Lauf,
   `libustream-mbedtls`). x86-64 in QEMU bestanden (`test/qemu-x86-64.sh`,
@@ -279,7 +282,7 @@ Wie die D-Link-Geräte geflasht werden, steht in der Router-Werkstatt unter
   6144k der D-Link-Recovery; das OpenWrt-initramfs 24.10.8 lag mit 6145 KB
   knapp darüber. Ob die Recovery es nimmt, ist weiter offen.
 - Die Stände ohne Cache-Schutz vom 14.10. sind gelöscht (adorfer, 15.10.2026);
-  der am M60 erprobte Stand vom 10.10. liegt weiter in `out/`.
+  der am M60 erprobte Stand vom 10.10. liegt in `out/archiv/`.
 
 ## Idee: EdgeRouter X/X-SFP in einem Schritt (15.10.2026, ungeprüft)
 

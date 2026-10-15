@@ -26,7 +26,7 @@
 # Package/u-boot/install/default: $(CP) ... $(1)/) [geprueft]. Dass Gluon
 # das Paket per Geraete-packages ins initramfs nimmt: [abgeleitet], nach dem
 # ersten Bau im cpio pruefen. build.sh kann die .bin fuer eva_ramboot.py
-# zusaetzlich aus staging_dir/target-*/image/ nach out/ kopieren
+# zusaetzlich aus staging_dir/target-*/image/ nach out/images/ kopieren
 # (Build/InstallDev legt sie dort ab) [abgeleitet].
 #
 # 7520 oder 7530? Das RAMpe-Image ist fuer beide dasselbe (ein Profil, ein

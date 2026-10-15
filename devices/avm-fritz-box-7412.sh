@@ -3,7 +3,7 @@
 # Weg: EVA-Ramboot per scripts/flashing/eva_ramboot.py einige Sekunden nach
 # dem Einschalten (Ersatzadresse 169.254.120.1), RAMpe im RAM, danach
 # Community-sysupgrade ueber die Upload-Seite.
-#   eva_ramboot.py 192.168.178.1 out/gluon-rampe-<Datum>-avm-fritz-box-7412-initramfs-kernel.bin
+#   eva_ramboot.py 192.168.178.1 out/images/gluon-rampe-<Datum>-avm-fritz-box-7412-initramfs-kernel.bin
 # Quelle: OpenWrt 20f48c8ae334f8502e756282995cc84d89fa81c1 [geprueft]:
 #   lzma als Ramdisk-Kompression Pflicht ("bootloader stalls when receiving
 #   uncompressed images");
