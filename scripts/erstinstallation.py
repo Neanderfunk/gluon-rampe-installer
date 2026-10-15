@@ -14,6 +14,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 import json
+import level
 import re
 import sys
 from collections import Counter, OrderedDict
@@ -46,6 +47,9 @@ FELDER = OrderedDict([
     ("datei", "Datei"),
     ("seriell", "seriell nötig"),
     ("gehaeuse", "Gehäuse öffnen"),
+    ("level_merkmale", "Level-Merkmale (scripts/level.py)"),
+    ("risiko", "Risiko (normal / bootloader / offen)"),
+    ("level_grund", "Level: Einzelentscheidung"),
     ("werkzeug", "Werkzeug/Spezial"),
     ("verwechslung", "Typenschild/Verwechslung"),
     ("stock_bedingung", "Bedingung an die Herstellerfirmware"),
@@ -103,14 +107,15 @@ def anleitung_zelle(a):
 def uebersicht(geraete):
     z = ["Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den "
          "Einzelheiten des Geräts.", "",
-         "| Gluon-Name | Modell | Target | Kat. | Anleitungsfamilie | Übertragung "
+         "| Gluon-Name | Modell | Target | Kat. | Level | Risiko | Anleitungsfamilie | Übertragung "
          "| seriell nötig | Gehäuse öffnen | Gluon-RAMpe | RAMpe-Rezept | Detail-Anleitung |",
-         "|---|---|---|---|---|---|---|---|---|---|---|"]
+         "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
     for g in geraete:
         fam = f"[`{g['familie']}`](#familie-{g['familie']})" if g["familie"] else ""
         z.append("| " + " | ".join([
             f"[{g['gluon_name']}](#{g['gluon_name']})",
-            zelle(g["modell"]), g["target"], g["kat"], fam,
+            zelle(g["modell"]), g["target"], g["kat"], level.level(g["level_merkmale"]),
+            g["risiko"], fam,
             zelle(kurz(g["uebertragung"])), zelle(kurz(g["seriell"])),
             zelle(kurz(g["gehaeuse"])), rampe_wort(g), rezept_wort(g),
             anleitung_zelle(g["anleitung"]),
@@ -159,6 +164,12 @@ def zahlen(geraete):
     z += [f"Gluon-RAMpe passt: **ja {r['ja']}**, teilweise {r['teilweise']}, "
           f"nein/unnötig {len(geraete) - r['ja'] - r['teilweise']}.", "",
           "Gluon-RAMpe passt \"ja\": " + ", ".join(f"`{n}`" for n in ja) + "."]
+    lv = Counter(level.level(g["level_merkmale"]) for g in geraete)
+    ri = Counter(g["risiko"] for g in geraete)
+    z += ["", "| Level | Geräte |", "|---|---:|"]
+    z += [f"| {k} | {lv.get(k, 0)} |" for k in level.LEVELS + ["offen"]]
+    z += ["", "Risiko: " + ", ".join(f"{k} {ri.get(k, 0)}" for k in ("normal", "bootloader", "offen"))
+          + " (Merkmale und Regeln in `scripts/level.py`)."]
     return z
 
 
@@ -192,6 +203,9 @@ def main():
             sys.exit(f"{g['gluon_name']}: unbekannte Felder: {sorted(set(g) - set(FELDER))}")
         if not isinstance(g["schritte"], list):
             sys.exit(f"{g['gluon_name']}: schritte muss eine Liste sein")
+        fehler = level.pruefen(g)
+        if fehler:
+            sys.exit(f"{g['gluon_name']}: {fehler}")
         if not isinstance(g["gluon_broken"], bool):
             sys.exit(f"{g['gluon_name']}: gluon_broken muss true oder false sein")
         for k in ("werte", "erprobt"):
