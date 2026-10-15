@@ -7,7 +7,7 @@ stufe: einfach
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
 daten_stand: 685706f
-vorlage_stand: 47c7bb2
+vorlage_stand: 7deda71
 ---
 
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
@@ -52,9 +52,9 @@ dass 1.1.2 (Build 20210125) die Datei mit "Invalid File type" abgelehnt hat.
    Der Rechner holt sich seine Adresse automatisch, so wie er normalerweise
    eingestellt ist.
 
-3. **Oberfläche öffnen.** Öffne im Browser `http://192.168.0.1`. Melde dich mit
-   den Zugangsdaten vom Aufkleber an, oder leg beim ersten Aufruf ein
-   Passwort fest.
+3. **Oberfläche öffnen.** Öffne im Browser `http://192.168.0.1`.
+   Melde dich mit den Zugangsdaten vom Aufkleber an, oder leg beim ersten
+   Aufruf ein Passwort fest.
 
 4. **Firmware-Update aufrufen.** Such den Menüpunkt für das Firmware-Update. Er heißt je nach
    Hersteller etwa "Firmware Upgrade", "Firmware-Update" oder "Firmware

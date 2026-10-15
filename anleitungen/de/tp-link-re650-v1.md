@@ -7,7 +7,7 @@ stufe: einfach
 status: ungeprüft
 grundlagen: [feste-ip]
 daten_stand: 685706f
-vorlage_stand: 47c7bb2
+vorlage_stand: 7deda71
 ---
 
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
@@ -50,9 +50,9 @@ Aufkleber steht "1.0" bzw. "2.0".
    Netzmaske `255.255.255.0`
    ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
 
-3. **Oberfläche öffnen.** Öffne im Browser `http://192.168.0.254`. Melde dich mit
-   den Zugangsdaten vom Aufkleber an, oder leg beim ersten Aufruf ein
-   Passwort fest.
+3. **Oberfläche öffnen.** Öffne im Browser `http://192.168.0.254`.
+   Melde dich mit den Zugangsdaten vom Aufkleber an, oder leg beim ersten
+   Aufruf ein Passwort fest.
 
 4. **Firmware-Update aufrufen.** Such den Menüpunkt für das Firmware-Update. Er heißt je nach
    Hersteller etwa "Firmware Upgrade", "Firmware-Update" oder "Firmware

@@ -7,7 +7,7 @@ stufe: einfach
 status: ungeprüft
 grundlagen: []
 daten_stand: 685706f
-vorlage_stand: 47c7bb2
+vorlage_stand: 7deda71
 ---
 
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
@@ -43,10 +43,9 @@ Aufkleber genau mit "TP-Link Archer C25 v1 (broken)", bevor du anfängst.
    Der Rechner holt sich seine Adresse automatisch, so wie er normalerweise
    eingestellt ist.
 
-3. **Oberfläche öffnen.** Öffne im Browser die Adresse der Oberfläche. Sie steht meist
-   auf dem Aufkleber unter dem Gerät. Melde dich mit
-   den Zugangsdaten vom Aufkleber an, oder leg beim ersten Aufruf ein
-   Passwort fest.
+3. **Oberfläche öffnen.** Öffne im Browser die Adresse der Oberfläche (sie steht meist auf dem Aufkleber unter dem Gerät).
+   Melde dich mit den Zugangsdaten vom Aufkleber an, oder leg beim ersten
+   Aufruf ein Passwort fest.
 
 4. **Firmware-Update aufrufen.** Such den Menüpunkt für das Firmware-Update. Er heißt je nach
    Hersteller etwa "Firmware Upgrade", "Firmware-Update" oder "Firmware

@@ -7,7 +7,7 @@ stufe: einfach
 status: ungeprüft
 grundlagen: [feste-ip]
 daten_stand: 685706f
-vorlage_stand: 47c7bb2
+vorlage_stand: 7deda71
 ---
 
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
@@ -25,6 +25,8 @@ des Herstellers hinkäme. Du brauchst nur einen Browser.
 
 - das Gerät und Strom über den PoE-Injektor
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
+- den Browser **Firefox**; mit anderen Browsern lässt sich die Oberfläche
+  dieses Geräts nicht öffnen (siehe Schritt 3)
 - die Freifunk-Firmware deiner Community für den TP-Link CPE210 v2, und zwar das
   **factory**-Image für die Erstinstallation, nicht "sysupgrade"
 
@@ -50,14 +52,24 @@ Dieses Image passt zum CPE210 mit Hardware 2.0. v1 und v3 brauchen eigene Images
    Netzmaske `255.255.255.0`
    ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
 
-3. **Oberfläche öffnen.** Öffne im Browser `https://192.168.0.254`.
+3. **Oberfläche öffnen.** Diese Oberfläche nutzt noch eine alte Verschlüsselung
+   (TLS 1.0). Aktuelle Browser lehnen sie ab, und **nur Firefox** lässt sich
+   so umstellen, dass er sie für die Installation doch annimmt. Mit Chrome,
+   Edge oder Safari geht es nicht. Stell Firefox deshalb zuerst um:
+
+   1. In die Adresszeile `about:config` eingeben, Enter. Die Warnung mit
+      "Risiko akzeptieren und fortfahren" bestätigen.
+   2. Oben im Suchfeld `security.tls.version.min` eingeben.
+   3. Auf den Stift rechts klicken, den Wert `3` durch `1` ersetzen und mit
+      dem Haken rechts speichern.
+
+   **Nach der Installation zurückstellen:** genauso, Wert wieder auf `3`.
+   Sonst bleibt dein Firefox auch bei anderen Seiten unnötig unsicher.
+
+   Öffne dann in Firefox `https://192.168.0.254`.
    Der Browser warnt vor dem Zertifikat. Das ist hier normal: auf
    "Erweitert" und dann auf "Weiter" bzw. "Risiko akzeptieren" klicken.
-   Diese Oberfläche nutzt noch eine alte Verschlüsselung (TLS 1.0), die
-   aktuelle Browser ablehnen. In Firefox kannst du sie für die Installation
-   erlauben: In die Adresszeile `about:config` eingeben,
-   `security.tls.version.min` suchen und auf `1` stellen. Danach wieder auf
-   den alten Wert (`3`) zurückstellen. Melde dich an: Benutzer `admin`, Passwort `admin`.
+   Melde dich an: Benutzer `admin`, Passwort `admin`.
 
 4. **Firmware-Update aufrufen.** Such den Menüpunkt für das Firmware-Update. Er heißt je nach
    Hersteller etwa "Firmware Upgrade", "Firmware-Update" oder "Firmware

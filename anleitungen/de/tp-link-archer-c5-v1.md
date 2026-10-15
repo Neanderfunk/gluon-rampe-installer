@@ -7,7 +7,7 @@ stufe: einfach
 status: ungeprüft
 grundlagen: []
 daten_stand: 685706f
-vorlage_stand: 47c7bb2
+vorlage_stand: 7deda71
 ---
 
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
@@ -51,7 +51,8 @@ sind andere Geräte.
    Der Rechner holt sich seine Adresse automatisch, so wie er normalerweise
    eingestellt ist.
 
-3. **Oberfläche öffnen.** Öffne im Browser `http://192.168.0.1`. Melde dich an: Benutzer `admin`, Passwort `admin`.
+3. **Oberfläche öffnen.** Öffne im Browser `http://192.168.0.1`.
+   Melde dich an: Benutzer `admin`, Passwort `admin`.
 
 4. **Firmware-Update aufrufen.** Such den Menüpunkt für das Firmware-Update. Er heißt je nach
    Hersteller etwa "Firmware Upgrade", "Firmware-Update" oder "Firmware

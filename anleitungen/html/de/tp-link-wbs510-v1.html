@@ -12,7 +12,7 @@
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="feste-ip">
 <meta name="anleitung:daten_stand" content="685706f">
-<meta name="anleitung:vorlage_stand" content="47c7bb2">
+<meta name="anleitung:vorlage_stand" content="7deda71">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -30,6 +30,8 @@ des Herstellers hinkäme. Du brauchst nur einen Browser.</p>
 <ul>
 <li>das Gerät und Strom über den PoE-Injektor</li>
 <li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
+<li>den Browser <strong>Firefox</strong>; mit anderen Browsern lässt sich die Oberfläche
+dieses Geräts nicht öffnen (siehe Schritt 3)</li>
 <li>die Freifunk-Firmware deiner Community für den TP-Link WBS510 v1, und zwar das
 <strong>factory</strong>-Image für die Erstinstallation, nicht &quot;sysupgrade&quot;</li>
 </ul>
@@ -55,14 +57,23 @@ Netzmaske <code>255.255.255.0</code>
 (<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).</p>
 </li>
 <li>
-<p><strong>Oberfläche öffnen.</strong> Öffne im Browser <code>https://192.168.0.254</code>.
+<p><strong>Oberfläche öffnen.</strong> Diese Oberfläche nutzt noch eine alte Verschlüsselung
+(TLS 1.0). Aktuelle Browser lehnen sie ab, und <strong>nur Firefox</strong> lässt sich
+so umstellen, dass er sie für die Installation doch annimmt. Mit Chrome,
+Edge oder Safari geht es nicht. Stell Firefox deshalb zuerst um:</p>
+<ol>
+<li>In die Adresszeile <code>about:config</code> eingeben, Enter. Die Warnung mit
+&quot;Risiko akzeptieren und fortfahren&quot; bestätigen.</li>
+<li>Oben im Suchfeld <code>security.tls.version.min</code> eingeben.</li>
+<li>Auf den Stift rechts klicken, den Wert <code>3</code> durch <code>1</code> ersetzen und mit
+dem Haken rechts speichern.</li>
+</ol>
+<p><strong>Nach der Installation zurückstellen:</strong> genauso, Wert wieder auf <code>3</code>.
+Sonst bleibt dein Firefox auch bei anderen Seiten unnötig unsicher.</p>
+<p>Öffne dann in Firefox <code>https://192.168.0.254</code>.
 Der Browser warnt vor dem Zertifikat. Das ist hier normal: auf
 &quot;Erweitert&quot; und dann auf &quot;Weiter&quot; bzw. &quot;Risiko akzeptieren&quot; klicken.
-Diese Oberfläche nutzt noch eine alte Verschlüsselung (TLS 1.0), die
-aktuelle Browser ablehnen. In Firefox kannst du sie für die Installation
-erlauben: In die Adresszeile <code>about:config</code> eingeben,
-<code>security.tls.version.min</code> suchen und auf <code>1</code> stellen. Danach wieder auf
-den alten Wert (<code>3</code>) zurückstellen. Melde dich an: Benutzer <code>admin</code>, Passwort <code>admin</code>.</p>
+Melde dich an: Benutzer <code>admin</code>, Passwort <code>admin</code>.</p>
 </li>
 <li>
 <p><strong>Firmware-Update aufrufen.</strong> Such den Menüpunkt für das Firmware-Update. Er heißt je nach
