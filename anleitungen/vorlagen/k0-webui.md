@@ -24,6 +24,10 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken), alle optional
                          z. B. "die LAN-Buchse des PoE-Injektors"
 
   Datei
+    datei_art            "factory" (leer = factory) oder "sysupgrade", wenn ab Werk
+                         schon OpenWrt läuft (z. B. OpenWrt One)
+    einstellungen_abwaehlen  true: die Oberfläche bietet an, Einstellungen zu
+                         behalten (OpenWrt/LuCI); der Haken muss weg
     datei_hinweis        Zusatz zur Image-Auswahl, z. B. "mit „-eu“ im Namen"
     dateiname            Name, in den das Image vorher umbenannt werden muss,
                          z. B. factory.bin (genau so)
@@ -44,6 +48,7 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken), alle optional
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
+{%- set art = w.datei_art if w.datei_art else "factory" -%}
 {%- if status == "ungeprüft" %}
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
 > zusammengestellt, aber noch niemand hat sie an einem {{ modell }} Schritt
@@ -69,7 +74,11 @@ des Herstellers hinkäme. Du brauchst nur einen Browser.
   dieses Geräts nicht öffnen (siehe Schritt 3)
 {%- endif %}
 - die Freifunk-Firmware deiner Community für den {{ modell }}, und zwar das
+  {%- if art == "factory" %}
   **factory**-Image für die Erstinstallation, nicht "sysupgrade"
+  {%- else %}
+  **{{ art }}**-Image
+  {%- endif %}
   {%- if w.datei_hinweis %} ({{ w.datei_hinweis }}){% endif %}
 
 Auf dem Aufkleber unter dem Gerät stehen Modell und Hardware-Version (bei
@@ -85,7 +94,7 @@ Aufkleber genau mit "{{ modell }}", bevor du anfängst.
 
 ## Schritte
 
-1. **Datei bereitlegen.** Lade das factory-Image herunter.
+1. **Datei bereitlegen.** Lade das {{ art }}-Image herunter.
    {%- if w.dateiname %} Benenne es danach in `{{ w.dateiname }}` um, genau
    so. Die Oberfläche lehnt den langen Originalnamen sonst ab. Achtung:
    Windows blendet Dateiendungen gern aus; schalte sie im Explorer unter
@@ -151,8 +160,10 @@ die Adresse der Oberfläche (sie steht meist auf dem Aufkleber unter dem Gerät)
    ![Die Firmware-Seite der Herstelleroberfläche]({{ b["stock-firmware-seite"] }})
    {%- endif %}
 
-5. **Hochladen.** Wähl das factory-Image aus, starte das Update und
+5. **Hochladen.** Wähl das {{ art }}-Image aus, starte das Update und
    bestätige die Rückfragen.
+   {%- if w.einstellungen_abwaehlen %} Bietet die Seite an, die Einstellungen
+   zu behalten ("Keep settings"), **entfern diesen Haken**.{% endif %}
    {%- if w.nach_upload %} Danach zeigt der Browser {{ w.nach_upload }}. Das
    ist normal.{% endif %}
 
