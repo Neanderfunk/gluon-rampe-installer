@@ -6,14 +6,20 @@ sprache: de
 stufe: fortgeschritten
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: 0a4f2b3
-vorlage_stand: b3e7e14
+daten_stand: lokal
+vorlage_stand: 1473aca
 ---
 
-> **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
-> zusammengestellt, aber noch niemand hat sie an einem Cudy M1800 Schritt
-> für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de), ob es geklappt hat.
+> **Noch nicht am Gerät erprobt.** Einzelne Schritte beruhen nur auf
+> Vermutungen oder auf einem einzelnen Bericht. Probier es nur, wenn du
+> notfalls einen Weg zurück kennst.
+> Die Cudy-Zwischenfirmware, die wir gefunden haben, ist für den „M1800+ V2“ gedacht. Ob dein M1800 sie annimmt, wissen wir nicht.
+>
+> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Anleitung für alle nach dir besser:
+>
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Cudy%20M1800)
 
 # Cudy M1800: Freifunk-Firmware installieren
 

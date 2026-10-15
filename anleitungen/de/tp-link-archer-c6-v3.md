@@ -6,14 +6,20 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: []
-daten_stand: 0a4f2b3
-vorlage_stand: aa479e3
+daten_stand: lokal
+vorlage_stand: 1473aca
 ---
 
-> **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
-> zusammengestellt, aber noch niemand hat sie an einem TP-Link Archer C6 v3 (Gluon: broken) Schritt
-> für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de), ob es geklappt hat.
+> **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
+> bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
+> ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
+> klappt.
+>
+> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Anleitung für alle nach dir besser:
+>
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20Archer%20C6%20v3%20%28Gluon%3A%20broken%29)
 
 # TP-Link Archer C6 v3 (Gluon: broken): Freifunk-Firmware installieren
 

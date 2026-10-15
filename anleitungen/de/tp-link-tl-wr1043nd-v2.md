@@ -6,14 +6,20 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: []
-daten_stand: 0a4f2b3
-vorlage_stand: aa479e3
+daten_stand: lokal
+vorlage_stand: 1473aca
 ---
 
-> **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
-> zusammengestellt, aber noch niemand hat sie an einem TP-Link TL-WR1043N/ND v2 Schritt
-> für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de), ob es geklappt hat.
+> **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
+> ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
+> aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
+>
+> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Anleitung für alle nach dir besser:
+>
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20TL-WR1043N/ND%20v2)
 
 # TP-Link TL-WR1043N/ND v2: Freifunk-Firmware installieren
 

@@ -6,14 +6,20 @@ sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip]
-daten_stand: 0a4f2b3
-vorlage_stand: ab9e04f
+daten_stand: lokal
+vorlage_stand: ce95dd8
 ---
 
-> **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
-> zusammengestellt, aber noch niemand hat sie an einem GL.iNet 6416 Schritt
-> für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de), ob es geklappt hat.
+> **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
+> ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
+> aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
+>
+> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Anleitung für alle nach dir besser:
+>
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20GL.iNet%206416)
 
 # GL.iNet 6416: Freifunk-Firmware installieren
 

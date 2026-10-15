@@ -448,6 +448,20 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "linksys-ea8300-dallas",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/linksys-ea8300-dallas.html",
+  "status": "ungeprüft",
+  "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "linksys-mx5300",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/linksys-mx5300.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "linksys-vlp01",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/linksys-vlp01.html",
   "status": "ungeprüft",

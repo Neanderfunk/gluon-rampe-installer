@@ -6,14 +6,20 @@ sprache: de
 stufe: fortgeschritten
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: 0a4f2b3
-vorlage_stand: b3e7e14
+daten_stand: lokal
+vorlage_stand: 1473aca
 ---
 
-> **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
-> zusammengestellt, aber noch niemand hat sie an einem Cudy WR3000S v1 Schritt
-> für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de), ob es geklappt hat.
+> **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
+> bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
+> ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
+> klappt.
+>
+> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Anleitung für alle nach dir besser:
+>
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Cudy%20WR3000S%20v1)
 
 # Cudy WR3000S v1: Freifunk-Firmware installieren
 

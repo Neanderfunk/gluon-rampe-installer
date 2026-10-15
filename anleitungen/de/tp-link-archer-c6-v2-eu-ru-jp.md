@@ -6,14 +6,21 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: 0a4f2b3
-vorlage_stand: aa479e3
+daten_stand: lokal
+vorlage_stand: 1473aca
 ---
 
-> **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
-> zusammengestellt, aber noch niemand hat sie an einem TP-Link Archer C6 v2 (EU/RU/JP) Schritt
-> für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de), ob es geklappt hat.
+> **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
+> ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
+> aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
+> Ob die TP-Link-Oberfläche die Datei annimmt, hängt von der Version der Herstellerfirmware ab; mit 1.3.3 oder 1.3.7 sollte es am ehesten gehen.
+>
+> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Anleitung für alle nach dir besser:
+>
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20Archer%20C6%20v2%20%28EU/RU/JP%29)
 
 # TP-Link Archer C6 v2 (EU/RU/JP): Freifunk-Firmware installieren
 

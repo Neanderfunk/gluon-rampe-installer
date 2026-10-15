@@ -6,14 +6,20 @@ sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip]
-daten_stand: 0a4f2b3
-vorlage_stand: ab9e04f
+daten_stand: lokal
+vorlage_stand: ce95dd8
 ---
 
-> **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
-> zusammengestellt, aber noch niemand hat sie an einem GL.iNet microuter-N300 Schritt
-> für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de), ob es geklappt hat.
+> **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
+> bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
+> ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
+> klappt.
+>
+> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Anleitung für alle nach dir besser:
+>
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20GL.iNet%20microuter-N300)
 
 # GL.iNet microuter-N300: Freifunk-Firmware installieren
 

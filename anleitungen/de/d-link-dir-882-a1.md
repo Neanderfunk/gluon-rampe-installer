@@ -6,14 +6,21 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [curl, feste-ip]
-daten_stand: 0a4f2b3
-vorlage_stand: b3e7e14
+daten_stand: lokal
+vorlage_stand: 1473aca
 ---
 
-> **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
-> zusammengestellt, aber noch niemand hat sie an einem D-Link DIR-882 A1 Schritt
-> für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de), ob es geklappt hat.
+> **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
+> bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
+> ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
+> klappt.
+> Eine Notiz von uns nennt für die DIR-Reihe statt der Recovery-Seite einen Weg per TFTP; was davon für dieses Gerät stimmt, ist noch nicht geklärt.
+>
+> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Anleitung für alle nach dir besser:
+>
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20D-Link%20DIR-882%20A1)
 
 # D-Link DIR-882 A1: Freifunk-Firmware installieren
 

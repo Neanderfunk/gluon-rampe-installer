@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linksys EA8300: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="linksys-ea8300-dallas">
+<meta name="anleitung:modell" content="Linksys EA8300">
+<meta name="anleitung:familie" content="sonderweg-linksys-ea8300">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="fortgeschritten">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="ssh-scp">
+<meta name="anleitung:daten_stand" content="lokal">
+<meta name="anleitung:vorlage_stand" content="1473aca">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Wichtige Schritte haben wir von
+ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
+aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+beschrieben.
+Teil 1 und 2 beschreibt das OpenWrt-Wiki genau so. Dass sich die Freifunk-Firmware in Teil 3 wie OpenWrt mit „Force upgrade“ einspielen lässt, haben wir daraus abgeleitet.</p>
+<p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+Anleitung für alle nach dir besser:</p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20Linksys%20EA8300">projekt@neanderfunk.de</a></p>
+</blockquote>
+<h1>Linksys EA8300: Freifunk-Firmware installieren</h1>
+<blockquote>
+<p><strong>Wichtig:</strong> Lade <strong>nicht</strong> die Freifunk-Firmware direkt über die
+Linksys-Oberfläche hoch. Laut OpenWrt macht jede Firmware ab OpenWrt 23.05
+den EA8300 auf diesem Weg unbrauchbar, und die Freifunk-Firmware baut auf
+OpenWrt 24.10 auf.</p>
+</blockquote>
+<p>Der EA8300 braucht drei Etappen:</p>
+<ol>
+<li>Über die Linksys-Oberfläche kommt zuerst ein älteres OpenWrt (22.03.6).</li>
+<li>Darin wird im Bootloader der Platz für den Kernel von 3 auf 5 MB
+vergrößert. Das ist nur einmal im Leben des Geräts nötig.</li>
+<li>Danach lässt sich die Freifunk-Firmware ganz normal über die
+Weboberfläche von OpenWrt aufspielen.</li>
+</ol>
+<p>Für Etappe 2 brauchst du SSH (<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>).
+Rechne mit einer knappen Stunde.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>den Router mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
+Netzwerkkabel</li>
+<li>OpenWrt 22.03.6 für den EA8300:
+<a href="https://downloads.openwrt.org/releases/22.03.6/targets/ipq40xx/generic/openwrt-22.03.6-ipq40xx-generic-linksys_ea8300-squashfs-factory.bin">openwrt-22.03.6-ipq40xx-generic-linksys_ea8300-squashfs-factory.bin</a>,
+SHA256 <code>95593b6293cba4a1e1a5947f0d4975da4a2c5837e3666559e05852c920412fa5</code>.
+Genau diese Version (oder 22.03.5), keine neuere.</li>
+<li>die Freifunk-Firmware deiner Community für den Linksys EA8300, und zwar das
+<strong>factory</strong>-Image</li>
+<li><code>ssh</code> (<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>)</li>
+</ul>
+<h2>Schritte</h2>
+<h3>Teil 1: OpenWrt 22.03.6 über die Linksys-Oberfläche</h3>
+<ol>
+<li>
+<p><strong>Werkseinstellungen.</strong> War der Router schon eingerichtet (etwa mit einem
+Linksys-Konto), setz ihn zurück: Reset-Taste hinten etwa 10 Sekunden
+drücken.</p>
+</li>
+<li>
+<p><strong>Verbinden.</strong> Kabel vom Rechner an eine <strong>LAN</strong>-Buchse, <strong>nicht</strong> an
+&quot;Internet&quot;. Den Router einschalten und warten, bis die weiße
+LINKSYS-Leuchte dauerhaft leuchtet.</p>
+</li>
+<li>
+<p><strong>Oberfläche öffnen.</strong> Im Browser <code>http://192.168.1.1</code>. <strong>Nicht</strong> auf
+&quot;Next&quot; klicken, sondern auf <strong>&quot;Manual configuration&quot;</strong>. Auf der Seite
+&quot;Internet connection is down&quot; auf <strong>&quot;Login&quot;</strong>, Passwort <code>admin</code>.</p>
+</li>
+<li>
+<p><strong>OpenWrt hochladen.</strong> Unter <strong>&quot;Connectivity&quot;</strong>, Bereich &quot;Manual&quot;, die
+Datei <code>openwrt-22.03.6-…-squashfs-factory.bin</code> wählen und <strong>&quot;Start&quot;</strong>.
+Die Warnung bestätigen.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Der Router schreibt OpenWrt und startet neu. Der Browser meldet
+danach, dass der Router nicht gefunden wird. Das ist hier normal: Jetzt
+läuft OpenWrt.</p>
+</li>
+</ol>
+<h3>Teil 2: Platz für den Kernel vergrößern</h3>
+<ol start="6">
+<li>
+<p><strong>Anmelden.</strong></p>
+<pre><code>ssh root@192.168.1.1
+</code></pre>
+<p>Ein Passwort gibt es nicht. Meldet ssh &quot;REMOTE HOST IDENTIFICATION HAS
+CHANGED&quot;, siehe <a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>.</p>
+</li>
+<li>
+<p><strong>Nachsehen.</strong></p>
+<pre><code>fw_printenv
+</code></pre>
+<p>In der Ausgabe steht <code>kernsize=300000</code>.</p>
+</li>
+<li>
+<p><strong>Ändern.</strong> Genau so, <strong>ohne Gleichheitszeichen</strong>:</p>
+<pre><code>fw_setenv kernsize 500000
+</code></pre>
+<p>Ein <code>=</code> an dieser Stelle macht den Bootloader unbrauchbar; dann hilft nur
+noch die serielle Konsole.</p>
+</li>
+<li>
+<p><strong>Prüfen.</strong></p>
+<pre><code>fw_printenv
+</code></pre>
+<p><strong>Prüfen:</strong> Jetzt muss dort <code>kernsize=500000</code> stehen. Sonst hier aufhören.
+Dann neu starten:</p>
+<pre><code>reboot
+</code></pre>
+<p>OpenWrt startet wie vorher.</p>
+</li>
+</ol>
+<h3>Teil 3: Freifunk-Firmware</h3>
+<ol start="10">
+<li>
+<p><strong>Weboberfläche öffnen.</strong> <code>http://192.168.1.1</code>, anmelden mit leerem
+Passwort-Feld.</p>
+</li>
+<li>
+<p><strong>Hochladen.</strong> <strong>System → Backup / Flash Firmware</strong>, ganz unten
+&quot;Flash image…&quot;, das factory-Image der Freifunk-Firmware wählen. Im
+folgenden Fenster den Haken bei <strong>&quot;Keep settings&quot; entfernen</strong> und den
+Haken bei <strong>&quot;Force upgrade&quot;</strong> setzen. Dann <strong>Continue</strong>.</p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Einige Minuten warten, Strom nicht ziehen. Danach startet die
+Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
+Einrichtungsseite unter <code>http://192.168.1.1</code> oder gleich im Betrieb.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>Nach Teil 1 meldet sich OpenWrt (ssh ohne Passwort).</li>
+<li>In Schritt 9 steht <code>kernsize=500000</code>.</li>
+<li>Nach Teil 3 meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Der Router startet nicht mehr richtig.</strong> Der EA8300 hat zwei
+Firmware-Speicher. Einschalten, 10 Sekunden warten, ausschalten,
+5 Sekunden warten; das dreimal. Dann startet er die Firmware im anderen
+Speicher.</li>
+<li><strong>Du kommst nicht an die Linksys-Seite &quot;Connectivity&quot;.</strong> Werkseinstellungen
+wie in Schritt 1 und noch einmal.</li>
+</ul>
+<h2>Gut zu wissen</h2>
+<p>Der EA8300 wechselt bei jedem Flash zwischen seinen zwei Firmware-Speichern.
+Nach Teil 1 liegt die Linksys-Firmware noch im anderen Speicher; Teil 3
+überschreibt sie. Wer zur Linksys-Firmware zurück will: Laut OpenWrt kann
+OpenWrt ab 22.03.3 ein Linksys-Image direkt einspielen (sysupgrade mit
+&quot;Force&quot;).</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>Folge abgeleitet; geprüft: Wiki toh:linksys:ea8300 (Schritte (Normalweg), Warnung)</li>
+<li>Folge abgeleitet; geprüft: Wiki toh:linksys:ea8300, korrigiert (Schritte (Normalweg), Datei)</li>
+<li>abgeleitet (Schritte (Normalweg))</li>
+<li>geprüft: Commit a9071d02 (Schritte (Normalweg), Typenschild/Verwechslung)</li>
+<li>geprüft: Wiki toh:linksys:ea8300 (Weg ab Werk, Schritte (Normalweg), Adressen, Programm, Zugang, Rückweg zur Herstellerfirmware)</li>
+<li>geprüft: Wiki toh:linksys:ea8300; Gluon-Teil abgeleitet (Weg ab Werk)</li>
+<li>Geräteeintrag: OpenWrt 819e7946b0964725dab50c92797f49cf4053d955</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

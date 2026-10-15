@@ -140,11 +140,11 @@ fehlen die Felder noch.
 
 | Kat. | Geräte |
 |---|---:|
-| K0 | 118 |
+| K0 | 117 |
 | K0+ | 24 |
 | K1 | 25 |
 | K1d | 99 |
-| K2 | 41 |
+| K2 | 42 |
 | K3 | 9 |
 | K4 | 27 |
 | K5 | 7 |
@@ -360,7 +360,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [gl.inet-gl-ap1300](#gl.inet-gl-ap1300) | GL.iNet GL-AP1300 | ipq40xx-generic | K0 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ap1300.md) |
 | [gl.inet-gl-b1300](#gl.inet-gl-b1300) | GL.iNet GL-B1300 | ipq40xx-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-b1300.md) |
 | [linksys-ea6350v3](#linksys-ea6350v3) | Linksys EA6350 v3 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-ea6350v3.md) |
-| [linksys-ea8300-dallas](#linksys-ea8300-dallas) | Linksys EA8300 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
+| [linksys-ea8300-dallas](#linksys-ea8300-dallas) | Linksys EA8300 | ipq40xx-generic | K2 | [`sonderweg-linksys-ea8300`](#familie-sonderweg-linksys-ea8300) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-ea8300-dallas.md) |
 | [linksys-mr8300-dallas](#linksys-mr8300-dallas) | Linksys MR8300 | ipq40xx-generic | K2 | [`sonderweg-linksys-mr8300-dallas`](#familie-sonderweg-linksys-mr8300-dallas) | webui-upload | nein | nein | ja | ja | - |
 | [linksys-vlp01](#linksys-vlp01) | Linksys VLP01 (Alias von linksys-whw01) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-vlp01.md); https://openwrt.org/toh/linksys/whw01_v1#installation |
 | [linksys-whw01](#linksys-whw01) | Linksys WHW01 v1 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-whw01.md); https://openwrt.org/toh/linksys/whw01_v1#installation |
@@ -448,7 +448,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [extreme-networks-ws-ap3825i](#extreme-networks-ws-ap3825i) | Extreme Networks WS-AP3825i | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923 |
 | [hewlett-packard-msm460](#hewlett-packard-msm460) | HPE MSM460 | mpc85xx-p1020 | K5 | [`sonderweg-hewlett-packard-msm460`](#familie-sonderweg-hewlett-packard-msm460) | tftp-server-am-geraet | nein | nein | nein |  | https://github.com/blocktrron/msm460-flashing?tab=readme-ov-file |
 | [ocedo-panda](#ocedo-panda) | OCEDO Panda | mpc85xx-p1020 | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | teilweise | ja |  |
-| [linksys-mx5300](#linksys-mx5300) | Linksys MX5300 | qualcommax-ipq807x | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
+| [linksys-mx5300](#linksys-mx5300) | Linksys MX5300 | qualcommax-ipq807x | K0 | [`sonderweg-linksys-mx5300`](#familie-sonderweg-linksys-mx5300) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-mx5300.md) |
 | [netgear-wax218](#netgear-wax218) | NETGEAR WAX218 | qualcommax-ipq807x | K1 | [`sonderweg-netgear-wax218`](#familie-sonderweg-netgear-wax218) | webui-upload | nein | nein | ja | ja | - |
 | [tp-link-eap620-hd-v1](#tp-link-eap620-hd-v1) | TP-Link EAP620 HD v1 | qualcommax-ipq807x | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | - |
 | [xiaomi-ax3600](#xiaomi-ax3600) | Xiaomi AX3600 | qualcommax-ipq807x | K2 | [`sonderweg-xiaomi-ax3600`](#familie-sonderweg-xiaomi-ax3600) | ssh | nein | nein | teilweise | ja | - |
@@ -2551,7 +2551,7 @@ Cudy AP3000 Outdoor v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 19d770d7b91aaca1de18281dea0da8616df34c6c
 - **Detail-Anleitung:** anleitungen/de/cudy-ap3000-outdoor-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_ap3000outdoor-v1-sysupgrade_20251119.bin; zwischen_md5 = a2817017a7cfd1229ba5f6b592726a88; zwischen_nur_cudy = False; neuer_flash = True; strom = über PoE, also mit einem PoE-Injektor oder PoE-Switch; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_Outdoor_1.0/; zwischen_url_text = Ordner AP3000_Outdoor_1.0 in unserem Spiegel
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_ap3000outdoor-v1-sysupgrade_20251119.bin; zwischen_md5 = a2817017a7cfd1229ba5f6b592726a88; zwischen_nur_cudy = False; neuer_flash = True; strom = über PoE, also mit einem PoE-Injektor oder PoE-Switch; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_Outdoor_1.0/; zwischen_url_text = Ordner AP3000_Outdoor_1.0 in unserem Spiegel; sicherheit = quelle
 
 #### cudy-ap3000-v1
 
@@ -2591,7 +2591,7 @@ Cudy AP3000 v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 6dacba30a75b0ac8a65115f78808a97abbb34939
 - **Detail-Anleitung:** anleitungen/de/cudy-ap3000-v1.md
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_ap3000-v1-sysupgrade.bin; zwischen_md5 = d7e8c124cfd04c88bbdbe2e4c67e9faf; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_V1.0/; zwischen_url_text = Ordner AP3000_V1.0 in unserem Spiegel
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_ap3000-v1-sysupgrade.bin; zwischen_md5 = d7e8c124cfd04c88bbdbe2e4c67e9faf; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_V1.0/; zwischen_url_text = Ordner AP3000_V1.0 in unserem Spiegel; sicherheit = quelle
 
 #### cudy-ap3000-wall-v1
 
@@ -2633,7 +2633,7 @@ Cudy AP3000 Wall v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt afad4c71f8d558ca86b997781ca0236f321cf1e9 (25.12: 45788a48c7); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
 - **Detail-Anleitung:** anleitungen/de/cudy-ap3000-wall-v1.md
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_ap3000wall-v1-sysupgrade_20251119.bin; zwischen_md5 = 376d404fd1535cc51168e365e2374427; zwischen_nur_cudy = False; neuer_flash = True; strom = über PoE, also mit einem PoE-Injektor oder PoE-Switch; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_Wall_1.0/; zwischen_url_text = Ordner AP3000_Wall_1.0 in unserem Spiegel
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_ap3000wall-v1-sysupgrade_20251119.bin; zwischen_md5 = 376d404fd1535cc51168e365e2374427; zwischen_nur_cudy = False; neuer_flash = True; strom = über PoE, also mit einem PoE-Injektor oder PoE-Switch; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_Wall_1.0/; zwischen_url_text = Ordner AP3000_Wall_1.0 in unserem Spiegel; sicherheit = quelle
 
 #### cudy-m3000-v1
 
@@ -2675,7 +2675,7 @@ Cudy M3000 v1 (RTL8221B) · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 20e4a18feb3f766b0f6ebec1afc154b345398a7a
 - **Detail-Anleitung:** anleitungen/de/cudy-m3000-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_m3000-v1-sysupgrade_20251119.bin; zwischen_md5 = 2bcdf420444309bdef463dd278d15ba4; zwischen_nur_cudy = False; neuer_flash = True; luci_buchse = den schwarzen 1-Gbps-Port; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M3000_1.0_2.0/; zwischen_url_text = Ordner M3000_1.0_2.0 in unserem Spiegel
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_m3000-v1-sysupgrade_20251119.bin; zwischen_md5 = 2bcdf420444309bdef463dd278d15ba4; zwischen_nur_cudy = False; neuer_flash = True; luci_buchse = den schwarzen 1-Gbps-Port; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M3000_1.0_2.0/; zwischen_url_text = Ordner M3000_1.0_2.0 in unserem Spiegel; sicherheit = abgeleitet
 
 #### cudy-m3000-v2-with-motorcomm-yt8821
 
@@ -2717,7 +2717,7 @@ Cudy M3000 v2 mit Motorcomm YT8821 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 45b51ebaff51d2a49d149e9011717abb1b032683 (25.12: ca825537fb); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
 - **Detail-Anleitung:** anleitungen/de/cudy-m3000-v2-with-motorcomm-yt8821.md
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_nur_cudy = False; neuer_flash = True; luci_buchse = den Port „1Gbps LAN“; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M3000_1.0_2.0/; zwischen_url_text = Ordner M3000_1.0_2.0 in unserem Spiegel
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_nur_cudy = False; neuer_flash = True; luci_buchse = den Port „1Gbps LAN“; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M3000_1.0_2.0/; zwischen_url_text = Ordner M3000_1.0_2.0 in unserem Spiegel; sicherheit = quelle
 
 #### cudy-re3000-v1
 
@@ -2756,7 +2756,7 @@ Cudy RE3000 v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt e8f75973172749874afa13e4f746acd8cb515de2
 - **Detail-Anleitung:** anleitungen/de/cudy-re3000-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_re3000-v1-sysupgrade.bin; zwischen_md5 = d350aa4ec09cd51ce5727958f6712c62; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/RE3000_V1/; zwischen_url_text = Ordner RE3000_V1 in unserem Spiegel
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_re3000-v1-sysupgrade.bin; zwischen_md5 = d350aa4ec09cd51ce5727958f6712c62; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/RE3000_V1/; zwischen_url_text = Ordner RE3000_V1 in unserem Spiegel; sicherheit = quelle
 
 #### cudy-tr3000-256mb-v1
 
@@ -2797,7 +2797,7 @@ Cudy TR3000 256 MB v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 0ec28e59a815bb43c359328c8fd644f399d344da
 - **Detail-Anleitung:** anleitungen/de/cudy-tr3000-256mb-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_tr3000-256mb-v1-sysupgrade.bin; zwischen_md5 = 93615f1c40cdd64179753aee5a32aa06; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; rueckweg_halten = mindestens 5 Sekunden; rueckweg_quelle = beim Cudy-Support (China) auf Anfrage; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/TR3000_256MB_Flash_V1_not_for_TR3000_V1_/; zwischen_url_text = Ordner TR3000_256MB_Flash_V1_not_for_TR3000_V1_ in unserem Spiegel
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_tr3000-256mb-v1-sysupgrade.bin; zwischen_md5 = 93615f1c40cdd64179753aee5a32aa06; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; rueckweg_halten = mindestens 5 Sekunden; rueckweg_quelle = beim Cudy-Support (China) auf Anfrage; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/TR3000_256MB_Flash_V1_not_for_TR3000_V1_/; zwischen_url_text = Ordner TR3000_256MB_Flash_V1_not_for_TR3000_V1_ in unserem Spiegel; sicherheit = quelle
 
 #### cudy-wr3000-v1
 
@@ -2838,7 +2838,7 @@ Cudy WR3000 v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt c9cb6411c1a70516d5922e88c45b338de041baba
 - **Detail-Anleitung:** anleitungen/de/cudy-wr3000-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = openwrt-mediatek-filogic-cudy_wr3000-v1-sysupgrade.bin; zwischen_md5 = 6d29a32db9453ee62a071b344476e9c2; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000+V1_without_recovery_TFTP/; zwischen_url_text = Ordner WR3000+V1_without_recovery_TFTP in unserem Spiegel
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = openwrt-mediatek-filogic-cudy_wr3000-v1-sysupgrade.bin; zwischen_md5 = 6d29a32db9453ee62a071b344476e9c2; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000+V1_without_recovery_TFTP/; zwischen_url_text = Ordner WR3000+V1_without_recovery_TFTP in unserem Spiegel; sicherheit = quelle
 
 #### cudy-wr3000e-v1
 
@@ -2879,7 +2879,7 @@ Cudy WR3000E v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt f50551dd18318f2255da3ecd5de5cc1078201651
 - **Detail-Anleitung:** anleitungen/de/cudy-wr3000e-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_wr3000e-v1-sysupgrade_20251119.bin; zwischen_md5 = 249c150e7676facc9f33d79e634ec4a3; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000E_1.0/; zwischen_url_text = Ordner WR3000E_1.0 in unserem Spiegel
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_wr3000e-v1-sysupgrade_20251119.bin; zwischen_md5 = 249c150e7676facc9f33d79e634ec4a3; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000E_1.0/; zwischen_url_text = Ordner WR3000E_1.0 in unserem Spiegel; sicherheit = quelle
 
 #### cudy-wr3000h-v1
 
@@ -2920,7 +2920,7 @@ Cudy WR3000H v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt fdbbb8415fd19ae0748a2bbe41b15257054e4077
 - **Detail-Anleitung:** anleitungen/de/cudy-wr3000h-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_wr3000h-v1-sysupgrade_20251119.bin; zwischen_md5 = 1c9321928f7da093cd2b8631d3554743; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000H_1.0/; zwischen_url_text = Ordner WR3000H_1.0 in unserem Spiegel
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_wr3000h-v1-sysupgrade_20251119.bin; zwischen_md5 = 1c9321928f7da093cd2b8631d3554743; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000H_1.0/; zwischen_url_text = Ordner WR3000H_1.0 in unserem Spiegel; sicherheit = quelle
 
 #### cudy-wr3000p-v1
 
@@ -2961,7 +2961,7 @@ Cudy WR3000P v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 51108508f10eb25f99395ec9334f996813bc5a22; gluon-patches-hardware 8dbae18666543aa9b8b5e7faa1d267024d62071e (Gluon-Zeile)
 - **Detail-Anleitung:** anleitungen/de/cudy-wr3000p-v1.md
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_wr3000p-v1-sysupgrade_20251119.bin; zwischen_md5 = cd87fc98daf8755b8190cc63f0083f38; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000P_1.0/; zwischen_url_text = Ordner WR3000P_1.0 in unserem Spiegel
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_wr3000p-v1-sysupgrade_20251119.bin; zwischen_md5 = cd87fc98daf8755b8190cc63f0083f38; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000P_1.0/; zwischen_url_text = Ordner WR3000P_1.0 in unserem Spiegel; sicherheit = quelle
 
 #### cudy-wr3000s-v1
 
@@ -3003,7 +3003,7 @@ Cudy WR3000S v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 4779e954fa847c4b376623bc3bdf9651007e8a89
 - **Detail-Anleitung:** anleitungen/de/cudy-wr3000s-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_wr3000s-v1-sysupgrade_20251119.bin; zwischen_md5 = 403e276f74fd29917fd4260294d1a137; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000S_1.0/; zwischen_url_text = Ordner WR3000S_1.0 in unserem Spiegel
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy_wr3000s-v1-sysupgrade_20251119.bin; zwischen_md5 = 403e276f74fd29917fd4260294d1a137; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000S_1.0/; zwischen_url_text = Ordner WR3000S_1.0 in unserem Spiegel; sicherheit = quelle
 
 #### cudy-wr3000u-v1
 
@@ -3043,7 +3043,7 @@ Cudy WR3000U v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen; OpenWrt-Images nur als Snapshot (nicht in 25.12.5) [geprüft]
 - **Quelle (OpenWrt-Commit):** OpenWrt b9d7b448c256bb3860c7965ccf599c29c4847cb4 (25.12: 95dec97d08); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
 - **Detail-Anleitung:** anleitungen/de/cudy-wr3000u-v1.md
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_nur_cudy = True; neuer_flash = False; force_upgrade = False; rueckweg_halten = mindestens 5 Sekunden; rueckweg_quelle = von https://www.cudy.com/pages/download-center/wr3000u-256mb-1-0; zwischen_url = https://www.cudy.com/de-de/blogs/faq/openwrt-software-download; zwischen_url_text = Cudys Seite „OpenWrt Software Download“
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_nur_cudy = True; neuer_flash = False; force_upgrade = False; rueckweg_halten = mindestens 5 Sekunden; rueckweg_quelle = von https://www.cudy.com/pages/download-center/wr3000u-256mb-1-0; zwischen_url = https://www.cudy.com/de-de/blogs/faq/openwrt-software-download; zwischen_url_text = Cudys Seite „OpenWrt Software Download“; sicherheit = quelle
 
 #### cudy-ap1300-outdoor-v1
 
@@ -3083,7 +3083,7 @@ Cudy AP1300 Outdoor v1 · ramips-mt7621 · K2
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** c6e59d06afca02ccb2541631cacc769ae4d6569f
 - **Detail-Anleitung:** anleitungen/de/cudy-ap1300-outdoor-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.254; zwischen_datei = openwrt-ramips-mt7621-cudy_ap1300-outdoor-squashfs-flash.bin; zwischen_md5 = 22012cf6803c8c084a1fd9e88c998711; zwischen_nur_cudy = False; neuer_flash = False; strom = über PoE nach 802.3af (37-57 V), also mit einem PoE-Injektor oder PoE-Switch; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP1300_Outdoor_V1.0/; zwischen_url_text = Ordner AP1300_Outdoor_V1.0 in unserem Spiegel
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.254; zwischen_datei = openwrt-ramips-mt7621-cudy_ap1300-outdoor-squashfs-flash.bin; zwischen_md5 = 22012cf6803c8c084a1fd9e88c998711; zwischen_nur_cudy = False; neuer_flash = False; strom = über PoE nach 802.3af (37-57 V), also mit einem PoE-Injektor oder PoE-Switch; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP1300_Outdoor_V1.0/; zwischen_url_text = Ordner AP1300_Outdoor_V1.0 in unserem Spiegel; sicherheit = quelle
 
 #### cudy-m1800
 
@@ -3123,7 +3123,7 @@ Cudy M1800 · ramips-mt7621 · K2
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** f6d394e9f2fd41547236c092ac914322220eb77c
 - **Detail-Anleitung:** anleitungen/de/cudy-m1800.md
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = openwrt-22.03.2-ramips-mt7621-cudy_m1800v2-squashfs-flash.bin; zwischen_md5 = 0c19a13f261fc7b3b0fade2b263203d5; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M1800+V2/; zwischen_url_text = Ordner M1800+V2 in unserem Spiegel
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = openwrt-22.03.2-ramips-mt7621-cudy_m1800v2-squashfs-flash.bin; zwischen_md5 = 0c19a13f261fc7b3b0fade2b263203d5; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M1800+V2/; zwischen_url_text = Ordner M1800+V2 in unserem Spiegel; sicherheit = unsicher; sicherheit_hinweis = Die Cudy-Zwischenfirmware, die wir gefunden haben, ist für den „M1800+ V2“ gedacht. Ob dein M1800 sie annimmt, wissen wir nicht.
 
 #### cudy-wr1300-v1
 
@@ -3163,7 +3163,7 @@ Cudy WR1300 v1 · ramips-mt7621 · K2
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** cd2b661453a8a2b8260dfb9b9c0dc5297b981331
 - **Detail-Anleitung:** anleitungen/de/cudy-wr1300-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = openwrt-22.03.2-ramips-mt7621-cudy_wr1300v1-squashfs-flash.bin; zwischen_md5 = 34f1ecdcd756fdae90abf3c76def2d43; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = True; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR1300+V1/; zwischen_url_text = Ordner WR1300+V1 in unserem Spiegel
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = openwrt-22.03.2-ramips-mt7621-cudy_wr1300v1-squashfs-flash.bin; zwischen_md5 = 34f1ecdcd756fdae90abf3c76def2d43; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = True; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR1300+V1/; zwischen_url_text = Ordner WR1300+V1 in unserem Spiegel; sicherheit = quelle
 
 #### cudy-wr2100
 
@@ -3202,7 +3202,7 @@ Cudy WR2100 · ramips-mt7621 · K2
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** 3501db9b9b4a71ae52c539b46af817783c327866
 - **Detail-Anleitung:** anleitungen/de/cudy-wr2100.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = openwrt-ramips-mt7621-cudy-wr2100-squashfs-flash.bin; zwischen_md5 = 002345fcc699c7b5a99b8fdb99dd6719; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR2100+V1/; zwischen_url_text = Ordner WR2100+V1 in unserem Spiegel
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = openwrt-ramips-mt7621-cudy-wr2100-squashfs-flash.bin; zwischen_md5 = 002345fcc699c7b5a99b8fdb99dd6719; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR2100+V1/; zwischen_url_text = Ordner WR2100+V1 in unserem Spiegel; sicherheit = quelle
 
 #### cudy-x6-v1
 
@@ -3242,7 +3242,7 @@ Cudy X6 v1 · ramips-mt7621 · K2
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** 4a8eaa5c7c9235212c4af022c18b2dfbadfe557f
 - **Detail-Anleitung:** anleitungen/de/cudy-x6-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = openwrt-ramips-mt7621-cudy-x6-flash.bin; zwischen_md5 = f321fc7c41731875faa3cdc9ee8d583f; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = True; rueckweg_halten = mindestens 8 Sekunden; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/X6+V1/; zwischen_url_text = Ordner X6+V1 in unserem Spiegel
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = openwrt-ramips-mt7621-cudy-x6-flash.bin; zwischen_md5 = f321fc7c41731875faa3cdc9ee8d583f; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = True; rueckweg_halten = mindestens 8 Sekunden; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/X6+V1/; zwischen_url_text = Ordner X6+V1 in unserem Spiegel; sicherheit = quelle
 
 #### cudy-x6-v2
 
@@ -3282,7 +3282,7 @@ Cudy X6 v2 · ramips-mt7621 · K2
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** e38de40f8dd350344407fe5a91e81191f6960804
 - **Detail-Anleitung:** anleitungen/de/cudy-x6-v2.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = openwrt-22.03-ramips-mt7621-cudy_x6v2-squashfs-flash.bin; zwischen_md5 = 89c000214e74b6ad89f5b9951fe0f226; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/X6+V2/; zwischen_url_text = Ordner X6+V2 in unserem Spiegel
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = openwrt-22.03-ramips-mt7621-cudy_x6v2-squashfs-flash.bin; zwischen_md5 = 89c000214e74b6ad89f5b9951fe0f226; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/X6+V2/; zwischen_url_text = Ordner X6+V2 in unserem Spiegel; sicherheit = quelle
 
 #### cudy-tr1200-v1
 
@@ -3321,7 +3321,7 @@ Cudy TR1200 v1 · ramips-mt76x8 · K2
 - **Gluon-RAMpe passt:** nein: Signaturprüfung wie bei allen Cudy
 - **Quelle (OpenWrt-Commit):** f1091ef7ac3596f1e401b918a36273672acbe389
 - **Detail-Anleitung:** anleitungen/de/cudy-tr1200-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = TR1200-OpenWRT-Flash.bin; zwischen_md5 = 62180e158bb123193a5eb8878adff942; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; rueckweg_buchse = die WAN-Buchse; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/TR1200_V1/; zwischen_url_text = Ordner TR1200_V1 in unserem Spiegel
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = TR1200-OpenWRT-Flash.bin; zwischen_md5 = 62180e158bb123193a5eb8878adff942; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; rueckweg_buchse = die WAN-Buchse; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/TR1200_V1/; zwischen_url_text = Ordner TR1200_V1 in unserem Spiegel; sicherheit = abgeleitet
 
 ### Familie `devolo-ssh`
 
@@ -3565,7 +3565,7 @@ D-Link AQUILA PRO AI M30 A1 · mediatek-filogic · K1
 - **Gluon-RAMpe-Rezept:** devices/d-link-aquila-pro-ai-m30-a1.sh: `-recovery.bin` (D-Link-Header DLK6E6110001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, Hardware-Test offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f
 - **Detail-Anleitung:** anleitungen/de/d-link-aquila-pro-ai-m30-a1.md; https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/
-- **Werte für die Anleitung:** recovery_ip = 192.168.200.1; led_recovery = rot blinkt; datei_art = rampe; upload_pfad = /upload.cgi; rampe_ip = 192.168.1.1; rampe_bytes = etwa 52,4 Millionen; led_rampe = blinkt die LED gleichmäßig, etwa einmal pro Sekunde; herstellerseite_gleiche_ip = False; rechner_ip = 192.168.200.10; dauer_neustart = einige Minuten; dauer_lang = über 10 Minuten; dauer_gluon = wenige Minuten; datei_beispiel = gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin; rampe_datei = gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin
+- **Werte für die Anleitung:** recovery_ip = 192.168.200.1; led_recovery = rot blinkt; datei_art = rampe; upload_pfad = /upload.cgi; rampe_ip = 192.168.1.1; rampe_bytes = etwa 52,4 Millionen; led_rampe = blinkt die LED gleichmäßig, etwa einmal pro Sekunde; herstellerseite_gleiche_ip = False; rechner_ip = 192.168.200.10; dauer_neustart = einige Minuten; dauer_lang = über 10 Minuten; dauer_gluon = wenige Minuten; datei_beispiel = gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin; rampe_datei = gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin; sicherheit = quelle
 
 #### d-link-aquila-pro-ai-m60-a1
 
@@ -3637,7 +3637,7 @@ D-Link DAP-1620 B1 (Gluon: broken) · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** e4c7703d2a62b8914e4723adae3f67c68a57532c
 - **Detail-Anleitung:** anleitungen/de/d-link-dap-1620-b1.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e4c7703d2a62b8914e4723adae3f67c68a57532c
-- **Werte für die Anleitung:** datei_art = factory; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.50; rechner_ip = 192.168.0.65; upload_pfad = /upload.cgi; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dap-1620-b1-factory.bin
+- **Werte für die Anleitung:** datei_art = factory; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.50; rechner_ip = 192.168.0.65; upload_pfad = /upload.cgi; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dap-1620-b1-factory.bin; sicherheit = abgeleitet
 
 #### d-link-dap-x1860-a1
 
@@ -3669,7 +3669,7 @@ D-Link DAP-X1860 A1 · ramips-mt7621 · K0
 - **Gluon-RAMpe-Rezept:** devices/d-link-dap-x1860-a1.sh: `-initramfs-kernel.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** 3c31f6b521bb5fc49e222a8f2bcd454b73452a0e
 - **Detail-Anleitung:** anleitungen/de/d-link-dap-x1860-a1.md; https://forum.darmstadt.freifunk.net/t/installation-d-link-dap-x1860/987
-- **Werte für die Anleitung:** datei_art = factory; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.50; rechner_ip = 192.168.0.65; led_recovery = rot blinkt; upload_pfad = /upload.cgi; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dap-x1860-a1-factory.bin
+- **Werte für die Anleitung:** datei_art = factory; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.50; rechner_ip = 192.168.0.65; led_recovery = rot blinkt; upload_pfad = /upload.cgi; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dap-x1860-a1-factory.bin; sicherheit = quelle; sicherheit_hinweis = Eine Notiz von uns nennt für dieses Gerät statt der factory-Datei einen Umweg über OpenWrt; was davon stimmt, ist noch nicht geklärt.
 
 #### d-link-dir-878-a1
 
@@ -3702,7 +3702,7 @@ D-Link DIR-878 A1 · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** d7233b0a6a9b8cb9207a74a8cb3d0525170cf504
 - **Detail-Anleitung:** anleitungen/de/d-link-dir-878-a1.md; https://openwrt.org/toh/d-link/dir-878_a1#installation
-- **Werte für die Anleitung:** datei_art = factory; anschluss = der Buchse LAN1; taste_hinweis = Die Reset-Taste sitzt auf der Rückseite; gemeint ist die Power-LED, das dauert etwa 10 Sekunden.; recovery_wartezeit = etwa 30 Sekunden; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.1; rechner_ip = 192.168.0.2; led_recovery = orange blinkt; upload_pfad = /; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dir-878-a1-factory.bin
+- **Werte für die Anleitung:** datei_art = factory; anschluss = der Buchse LAN1; taste_hinweis = Die Reset-Taste sitzt auf der Rückseite; gemeint ist die Power-LED, das dauert etwa 10 Sekunden.; recovery_wartezeit = etwa 30 Sekunden; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.1; rechner_ip = 192.168.0.2; led_recovery = orange blinkt; upload_pfad = /; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dir-878-a1-factory.bin; sicherheit = quelle; sicherheit_hinweis = Eine Notiz von uns nennt für die DIR-Reihe statt der Recovery-Seite einen Weg per TFTP; was davon für dieses Gerät stimmt, ist noch nicht geklärt.
 
 #### d-link-dir-882-a1
 
@@ -3732,7 +3732,7 @@ D-Link DIR-882 A1 · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 73e8f23579bcb87764dae9ed0aefe28be3183d3e
 - **Detail-Anleitung:** anleitungen/de/d-link-dir-882-a1.md; https://openwrt.org/toh/d-link/dir-882_a1#installation
-- **Werte für die Anleitung:** datei_art = factory; taste_hinweis = Gemeint ist die Power-LED.; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.1; rechner_ip = 192.168.0.2; led_recovery = orange blinkt; upload_pfad = /; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dir-882-a1-factory.bin
+- **Werte für die Anleitung:** datei_art = factory; taste_hinweis = Gemeint ist die Power-LED.; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.1; rechner_ip = 192.168.0.2; led_recovery = orange blinkt; upload_pfad = /; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dir-882-a1-factory.bin; sicherheit = quelle; sicherheit_hinweis = Eine Notiz von uns nennt für die DIR-Reihe statt der Recovery-Seite einen Weg per TFTP; was davon für dieses Gerät stimmt, ist noch nicht geklärt.
 
 ### Familie `glinet`
 
@@ -3769,7 +3769,7 @@ GL.iNet 6416 · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade geht direkt
 - **Quelle (OpenWrt-Commit):** b4d3110ac1f1f1962f812ac139c437837a448cff [geprüft]
 - **Detail-Anleitung:** anleitungen/de/gl.inet-6416.md
-- **Werte für die Anleitung:** weg = uboot; taste = Strom ab, Reset-Taste halten, Strom wieder an. Die LED blinkt einige Male grün, dann ganz kurz rot: beim roten Blinken loslassen.
+- **Werte für die Anleitung:** weg = uboot; taste = Strom ab, Reset-Taste halten, Strom wieder an. Die LED blinkt einige Male grün, dann ganz kurz rot: beim roten Blinken loslassen.; sicherheit = abgeleitet
 
 #### gl.inet-gl-ar150
 
@@ -3804,7 +3804,7 @@ GL.iNet GL-AR150 · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade geht direkt [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target, ohne Anleitung) [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/gl.inet-gl-ar150.md
-- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die rote LED 5-mal geblinkt hat; beim 6. Blinken loslassen.; led_uboot = Leuchtet nur noch die linke grüne LED, ist der Notfall-Modus erreicht.; led_schreiben = Gehen alle LEDs aus, ist das Schreiben fertig.
+- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die rote LED 5-mal geblinkt hat; beim 6. Blinken loslassen.; led_uboot = Leuchtet nur noch die linke grüne LED, ist der Notfall-Modus erreicht.; led_schreiben = Gehen alle LEDs aus, ist das Schreiben fertig.; sicherheit = abgeleitet
 
 #### gl.inet-gl-ar300m-lite
 
@@ -3834,7 +3834,7 @@ GL.iNet GL-AR300M Lite · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade geht direkt
 - **Quelle (OpenWrt-Commit):** fefa34def84561688e6af2feeec2dbb390ba4486 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/gl.inet-gl-ar300m-lite.md
-- **Werte für die Anleitung:** weg = gl-ui; gl_menue = Advanced; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.
+- **Werte für die Anleitung:** weg = gl-ui; gl_menue = Advanced; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.; sicherheit = quelle
 
 #### gl.inet-gl-ar300m16
 
@@ -3871,7 +3871,7 @@ GL.iNet GL-AR300M16 · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade geht direkt
 - **Quelle (OpenWrt-Commit):** b591cabd3989b44cfaf15248af9e55a0300a9c0a [geprüft]
 - **Detail-Anleitung:** anleitungen/de/gl.inet-gl-ar300m16.md
-- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.
+- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.; sicherheit = abgeleitet
 
 #### gl.inet-gl-ar750
 
@@ -3900,7 +3900,7 @@ GL.iNet GL-AR750 · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade geht direkt
 - **Quelle (OpenWrt-Commit):** 921675a2d148330a7ec44f10ea4d583b8d7b5a44 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/gl.inet-gl-ar750.md
-- **Werte für die Anleitung:** weg = gl-ui; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.
+- **Werte für die Anleitung:** weg = gl-ui; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.; sicherheit = quelle
 
 #### gl.inet-gl-usb150
 
@@ -3929,7 +3929,7 @@ GL.iNET GL-USB150 · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade geht direkt
 - **Quelle (OpenWrt-Commit):** a1b5a43fc4b0edda5bbbb4eb0130ba9160dc515b [geprüft]
 - **Detail-Anleitung:** anleitungen/de/gl.inet-gl-usb150.md
-- **Werte für die Anleitung:** weg = gl-ui; usb = True
+- **Werte für die Anleitung:** weg = gl-ui; usb = True; sicherheit = abgeleitet
 
 #### gl.inet-gl-ar300m-nor
 
@@ -3965,7 +3965,7 @@ GL.iNet GL-AR300M NOR · ath79-nand · K1d
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade (NOR) geht direkt
 - **Quelle (OpenWrt-Commit):** 55e6c903ae20bd8e694f4626166766e59602f87c (NOR/NAND-Aufteilung, Anleitung); 6e78d546d1197d7a3ec4cbc7aab22286ad49fb0f (Umbenennung) [geprüft]
 - **Detail-Anleitung:** anleitungen/de/gl.inet-gl-ar300m-nor.md
-- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.
+- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.; sicherheit = quelle
 
 #### gl.inet-gl-ar750s-nor
 
@@ -4001,7 +4001,7 @@ GL.iNet GL-AR750S NOR · ath79-nand · K1d
 - **Gluon-RAMpe passt:** nein: Gluon-sysupgrade (NOR) geht direkt
 - **Quelle (OpenWrt-Commit):** af28d8a539fe64bfc893f798fdbbc49b4e78352a (Einführung, Anleitung); b496a2294c6e663a2dcbf08d714443e758d1269d (NOR/NAND) [geprüft]
 - **Detail-Anleitung:** anleitungen/de/gl.inet-gl-ar750s-nor.md
-- **Werte für die Anleitung:** weg = uboot; taste = Strom ab, Reset-Taste halten, Strom wieder an und halten, bis die rechte LED 5-mal geblinkt hat. Dann loslassen.; uboot_abschnitt = im Abschnitt „NOR flash“ mit „update nor firmware“; kabel_ziehen = True
+- **Werte für die Anleitung:** weg = uboot; taste = Strom ab, Reset-Taste halten, Strom wieder an und halten, bis die rechte LED 5-mal geblinkt hat. Dann loslassen.; uboot_abschnitt = im Abschnitt „NOR flash“ mit „update nor firmware“; kabel_ziehen = True; sicherheit = quelle
 
 #### gl.inet-gl-e750
 
@@ -4037,7 +4037,7 @@ GL.iNet GL-E750 (broken) · ath79-nand · K2
 - **Gluon-RAMpe-Rezept:** devices/gl.inet-gl-e750.sh: `-factory.img` (Kernel + UBI), broken = false für diesen Bau; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** 68ac3f2cddab8422d7de0ce1a78d23edf29012e7 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/gl.inet-gl-e750.md
-- **Werte für die Anleitung:** weg = uboot; taste = Halte die Reset-Taste gedrückt und schalte den Router ein.; led_uboot = Auf dem Display steht erst „Booting“, dann „Reset Counting 1 to 4“, dann „Please Open Web 192.168.1.1“: Jetzt loslassen.; zwischen_datei = openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img
+- **Werte für die Anleitung:** weg = uboot; taste = Halte die Reset-Taste gedrückt und schalte den Router ein.; led_uboot = Auf dem Display steht erst „Booting“, dann „Reset Counting 1 to 4“, dann „Please Open Web 192.168.1.1“: Jetzt loslassen.; zwischen_datei = openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img; sicherheit = quelle; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-gl.inet-gl-e750-factory.img; rampe_datei = gluon-rampe-20261015-gl.inet-gl-e750-factory.img; rampe_weg = Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch.
 
 #### gl.inet-gl-xe300
 
@@ -4073,7 +4073,7 @@ GL.iNet GL-XE300 · ath79-nand · K2
 - **Gluon-RAMpe-Rezept:** devices/gl.inet-gl-xe300.sh: `-factory.img` (Kernel + UBI); Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** af8a059bb41dd7afee49ce9a5d52e9a8e010bbd8 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/gl.inet-gl-xe300.md
-- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste und die Power-Taste gleichzeitig und halte beide, bis die LAN-LED 5-mal geblinkt hat. Dann beide loslassen.; led_uboot = Bleibt die WLAN-LED an, ist der Notfall-Modus erreicht.; zwischen_datei = openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img
+- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste und die Power-Taste gleichzeitig und halte beide, bis die LAN-LED 5-mal geblinkt hat. Dann beide loslassen.; led_uboot = Bleibt die WLAN-LED an, ist der Notfall-Modus erreicht.; zwischen_datei = openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img; sicherheit = quelle; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-gl.inet-gl-xe300-factory.img; rampe_datei = gluon-rampe-20261015-gl.inet-gl-xe300-factory.img; rampe_weg = Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch.
 
 #### gl.inet-gl-ap1300
 
@@ -4107,7 +4107,7 @@ GL.iNet GL-AP1300 · ipq40xx-generic · K0
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt b9389186b012e5bd99ea6523b8220aaee6ca0085
 - **Detail-Anleitung:** anleitungen/de/gl.inet-gl-ap1300.md
-- **Werte für die Anleitung:** weg = uboot; uboot_datei = factory; taste = Drück die Reset-Taste, steck den Strom ein und halte sie etwa 10 Sekunden, bis die Power-LED schneller blinkt. Dann loslassen.; led_uboot = Die Power-LED blinkt erst 5-mal langsam, leuchtet kurz und blinkt dann dauernd schnell.
+- **Werte für die Anleitung:** weg = uboot; uboot_datei = factory; taste = Drück die Reset-Taste, steck den Strom ein und halte sie etwa 10 Sekunden, bis die Power-LED schneller blinkt. Dann loslassen.; led_uboot = Die Power-LED blinkt erst 5-mal langsam, leuchtet kurz und blinkt dann dauernd schnell.; sicherheit = quelle
 
 #### gl.inet-gl-b1300
 
@@ -4142,7 +4142,7 @@ GL.iNet GL-B1300 · ipq40xx-generic · K1d
 - **Gluon-RAMpe passt:** nein, nicht nötig: der Bootloader nimmt das Gluon-sysupgrade
 - **Quelle (OpenWrt-Commit):** OpenWrt 04d3308b6248ef21a6f0bc3378b342906c2d2865
 - **Detail-Anleitung:** anleitungen/de/gl.inet-gl-b1300.md
-- **Werte für die Anleitung:** weg = uboot; dateiname = lede-gl-b1300.bin; taste = Drück die Reset-Taste, steck den Strom ein und halte die Taste, bis die LEDs dauerhaft leuchten. Dann loslassen.; led_schreiben = Beim Schreiben blinkt die WLAN-LED.
+- **Werte für die Anleitung:** weg = uboot; dateiname = lede-gl-b1300.bin; taste = Drück die Reset-Taste, steck den Strom ein und halte die Taste, bis die LEDs dauerhaft leuchten. Dann loslassen.; led_schreiben = Beim Schreiben blinkt die WLAN-LED.; sicherheit = quelle
 
 #### gl.inet-gl-mt2500
 
@@ -4172,7 +4172,7 @@ GL.iNet GL-MT2500 (MaxLinear-PHY) · mediatek-filogic · K1d
 - **Gluon-RAMpe passt:** nein, nicht nötig: Hersteller-UI nimmt das Gluon-sysupgrade
 - **Quelle (OpenWrt-Commit):** OpenWrt 12396686484a488dff1c4a1ee8b5197c552572fe
 - **Detail-Anleitung:** anleitungen/de/gl.inet-gl-mt2500.md
-- **Werte für die Anleitung:** weg = gl-ui; gl_url = http://192.168.8.1
+- **Werte für die Anleitung:** weg = gl-ui; gl_url = http://192.168.8.1; sicherheit = quelle
 
 #### gl.inet-gl-mt3000
 
@@ -4201,7 +4201,7 @@ GL.iNet GL-MT3000 · mediatek-filogic · K1d
 - **Gluon-RAMpe passt:** nein, nicht nötig: Hersteller-UI nimmt das Gluon-sysupgrade
 - **Quelle (OpenWrt-Commit):** OpenWrt 7cbe34170e3d8471c1ebacde33a2372c92433be4
 - **Detail-Anleitung:** anleitungen/de/gl.inet-gl-mt3000.md
-- **Werte für die Anleitung:** weg = gl-ui; gl_url = http://192.168.8.1; gl_menue = Upgrade; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die blaue LED 6-mal geblinkt hat und dann dauerhaft weiß leuchtet. Dann loslassen.
+- **Werte für die Anleitung:** weg = gl-ui; gl_url = http://192.168.8.1; gl_menue = Upgrade; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die blaue LED 6-mal geblinkt hat und dann dauerhaft weiß leuchtet. Dann loslassen.; sicherheit = abgeleitet
 
 #### gl.inet-gl-mt6000
 
@@ -4232,7 +4232,7 @@ GL.iNet GL-MT6000 · mediatek-filogic · K1d
 - **Gluon-RAMpe passt:** nein, nicht nötig: Hersteller-UI nimmt das Gluon-sysupgrade
 - **Quelle (OpenWrt-Commit):** OpenWrt fe10f9743935d6986e80e7cb082469e6bc5a03f0; gluon-patches-hardware 8dbae18666543aa9b8b5e7faa1d267024d62071e (Gluon-Zeile)
 - **Detail-Anleitung:** anleitungen/de/gl.inet-gl-mt6000.md
-- **Werte für die Anleitung:** weg = gl-ui; gl_url = http://192.168.8.1; gl_menue = Upgrade; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die blaue LED 6-mal geblinkt hat und dann dauerhaft weiß leuchtet. Dann loslassen.; anschluss = LAN 2, 3 oder 4 (nicht LAN 1)
+- **Werte für die Anleitung:** weg = gl-ui; gl_url = http://192.168.8.1; gl_menue = Upgrade; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die blaue LED 6-mal geblinkt hat und dann dauerhaft weiß leuchtet. Dann loslassen.; anschluss = LAN 2, 3 oder 4 (nicht LAN 1); sicherheit = abgeleitet
 
 #### gl-mt300a
 
@@ -4258,7 +4258,7 @@ GL.iNet GL-MT300A · ramips-mt7620 · K1d
 - **Gluon-RAMpe passt:** nein, unnötig: sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** 96ee39b184a3863bba1cc42efc5bbd34495d20ff (ohne Installationstext) + Wiki toh:gl.inet
 - **Detail-Anleitung:** anleitungen/de/gl-mt300a.md
-- **Werte für die Anleitung:** weg = gl-ui; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 3-mal geblinkt hat. Dann loslassen.
+- **Werte für die Anleitung:** weg = gl-ui; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 3-mal geblinkt hat. Dann loslassen.; sicherheit = abgeleitet
 
 #### gl-mt300n
 
@@ -4286,7 +4286,7 @@ GL.iNet GL-MT300N (v1) · ramips-mt7620 · K1d
 - **Gluon-RAMpe passt:** nein, unnötig: sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** be53e5a154931109dd76a8015583123201c4b602 (ohne Installationstext) + Wiki toh:gl.inet
 - **Detail-Anleitung:** anleitungen/de/gl-mt300n.md
-- **Werte für die Anleitung:** weg = gl-ui; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 3-mal geblinkt hat. Dann loslassen.
+- **Werte für die Anleitung:** weg = gl-ui; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 3-mal geblinkt hat. Dann loslassen.; sicherheit = abgeleitet
 
 #### gl-mt750
 
@@ -4311,7 +4311,7 @@ GL.iNet GL-MT750 · ramips-mt7620 · K1d
 - **Gluon-RAMpe passt:** nein, unnötig: sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** be7962925927ab5cdc7a13fdb24d1b08792f8f23 (ohne Installationstext) + Wiki toh:gl.inet
 - **Detail-Anleitung:** anleitungen/de/gl-mt750.md
-- **Werte für die Anleitung:** weg = gl-ui; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED blinkt (vermutlich 3-mal wie beim MT300A). Dann loslassen.
+- **Werte für die Anleitung:** weg = gl-ui; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED blinkt (vermutlich 3-mal wie beim MT300A). Dann loslassen.; sicherheit = abgeleitet
 
 #### gl.inet-gl-mt1300
 
@@ -4345,7 +4345,7 @@ GL.iNet GL-MT1300 (Beryl) · ramips-mt7621 · K1d
 - **Gluon-RAMpe passt:** nein, unnötig: sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** d89a7f0120db42d4fae1656e1860ef49523acabb
 - **Detail-Anleitung:** anleitungen/de/gl.inet-gl-mt1300.md
-- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste, steck den Strom ein und halte die Taste, bis die blaue LED 5-mal geblinkt hat und die weiße LED angeht. Dann loslassen.; led_schreiben = Während des Schreibens blinkt die blaue LED; hört sie auf, ist das Schreiben fertig.
+- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste, steck den Strom ein und halte die Taste, bis die blaue LED 5-mal geblinkt hat und die weiße LED angeht. Dann loslassen.; led_schreiben = Während des Schreibens blinkt die blaue LED; hört sie auf, ist das Schreiben fertig.; sicherheit = quelle
 
 #### gl-mt300n-v2
 
@@ -4381,7 +4381,7 @@ GL.iNet GL-MT300N v2 · ramips-mt76x8 · K1d
 - **Gluon-RAMpe passt:** nein, unnötig
 - **Quelle (OpenWrt-Commit):** abbfcc85259a4f6658c61e99dd3d2d3567e3eb3a
 - **Detail-Anleitung:** anleitungen/de/gl-mt300n-v2.md
-- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste, steck den Strom ein und halte die Taste, bis die rote LED nach 5-maligem Blinken dauerhaft hell leuchtet. Dann loslassen.
+- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste, steck den Strom ein und halte die Taste, bis die rote LED nach 5-maligem Blinken dauerhaft hell leuchtet. Dann loslassen.; sicherheit = quelle
 
 #### gl.inet-microuter-n300
 
@@ -4413,7 +4413,7 @@ GL.iNet microuter-N300 · ramips-mt76x8 · K1d
 - **Gluon-RAMpe passt:** nein, unnötig
 - **Quelle (OpenWrt-Commit):** b30f2281cce6649567e0194d203f06517d173115
 - **Detail-Anleitung:** anleitungen/de/gl.inet-microuter-n300.md
-- **Werte für die Anleitung:** weg = gl-ui; gl_url = http://192.168.8.1; gl_menue = Update → Local Update; per_wlan = True; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.
+- **Werte für die Anleitung:** weg = gl-ui; gl_url = http://192.168.8.1; gl_menue = Update → Local Update; per_wlan = True; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.; sicherheit = quelle
 
 #### gl.inet-vixmini
 
@@ -4445,7 +4445,7 @@ GL.iNet VIXMINI · ramips-mt76x8 · K1d
 - **Gluon-RAMpe passt:** nein, unnötig
 - **Quelle (OpenWrt-Commit):** 43e8c37cb4da64a12a3cb88a84b19db7f2fc640c
 - **Detail-Anleitung:** anleitungen/de/gl.inet-vixmini.md
-- **Werte für die Anleitung:** weg = gl-ui; gl_url = http://192.168.8.1; gl_menue = Update → Local Update; per_wlan = True; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.
+- **Werte für die Anleitung:** weg = gl-ui; gl_url = http://192.168.8.1; gl_menue = Update → Local Update; per_wlan = True; taste = Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.; sicherheit = quelle
 
 ### Familie `image-auf-datentraeger`
 
@@ -4481,7 +4481,7 @@ Raspberry Pi 1 Model B/B+ · bcm27xx-bcm2708 · K0
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/bcm27xx-bcm2708
 - **Detail-Anleitung:** anleitungen/de/raspberrypi-model-b.md
-- **Werte für die Anleitung:** datei_art = factory; medium = eine microSD-Karte; anschluss = die Netzwerkbuchse
+- **Werte für die Anleitung:** datei_art = factory; medium = eine microSD-Karte; anschluss = die Netzwerkbuchse; sicherheit = quelle
 
 #### raspberrypi-2-model-b
 
@@ -4513,7 +4513,7 @@ Raspberry Pi 2 Model B · bcm27xx-bcm2709 · K0
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/bcm27xx-bcm2709
 - **Detail-Anleitung:** anleitungen/de/raspberrypi-2-model-b.md
-- **Werte für die Anleitung:** datei_art = factory; medium = eine microSD-Karte; anschluss = die Netzwerkbuchse
+- **Werte für die Anleitung:** datei_art = factory; medium = eine microSD-Karte; anschluss = die Netzwerkbuchse; sicherheit = quelle
 
 #### raspberrypi-3-model-b
 
@@ -4545,7 +4545,7 @@ Raspberry Pi 3 Model B/B+ · bcm27xx-bcm2710 · K0
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/bcm27xx-bcm2710
 - **Detail-Anleitung:** anleitungen/de/raspberrypi-3-model-b.md
-- **Werte für die Anleitung:** datei_art = factory; medium = eine microSD-Karte; anschluss = die Netzwerkbuchse
+- **Werte für die Anleitung:** datei_art = factory; medium = eine microSD-Karte; anschluss = die Netzwerkbuchse; sicherheit = quelle
 
 #### raspberrypi-4-model-b
 
@@ -4577,7 +4577,7 @@ Raspberry Pi 4 Model B · bcm27xx-bcm2711 · K0
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/bcm27xx-bcm2711
 - **Detail-Anleitung:** anleitungen/de/raspberrypi-4-model-b.md
-- **Werte für die Anleitung:** datei_art = factory; medium = eine microSD-Karte; anschluss = die Netzwerkbuchse
+- **Werte für die Anleitung:** datei_art = factory; medium = eine microSD-Karte; anschluss = die Netzwerkbuchse; sicherheit = quelle
 
 #### friendlyelec-nanopi-r2c
 
@@ -4611,7 +4611,7 @@ FriendlyElec NanoPi R2C · rockchip-armv8 · K0
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/rockchip-armv8; R2C: gluon-patches-hardware devices/add-nanopi-r2c
 - **Detail-Anleitung:** anleitungen/de/friendlyelec-nanopi-r2c.md
-- **Werte für die Anleitung:** datei_art = sysupgrade; medium = eine microSD-Karte; anschluss = die LAN-Buchse (nicht WAN); led = Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).; karte_bleibt = True
+- **Werte für die Anleitung:** datei_art = sysupgrade; medium = eine microSD-Karte; anschluss = die LAN-Buchse (nicht WAN); led = Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).; karte_bleibt = True; sicherheit = quelle
 
 #### friendlyelec-nanopi-r2s
 
@@ -4645,7 +4645,7 @@ FriendlyElec NanoPi R2S · rockchip-armv8 · K0
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/rockchip-armv8
 - **Detail-Anleitung:** anleitungen/de/friendlyelec-nanopi-r2s.md
-- **Werte für die Anleitung:** datei_art = sysupgrade; medium = eine microSD-Karte; anschluss = die LAN-Buchse (nicht WAN); led = Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).; karte_bleibt = True
+- **Werte für die Anleitung:** datei_art = sysupgrade; medium = eine microSD-Karte; anschluss = die LAN-Buchse (nicht WAN); led = Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).; karte_bleibt = True; sicherheit = quelle
 
 #### friendlyelec-nanopi-r3s
 
@@ -4682,7 +4682,7 @@ FriendlyElec NanoPi R3S · rockchip-armv8 · K0
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/rockchip-armv8
 - **Detail-Anleitung:** anleitungen/de/friendlyelec-nanopi-r3s.md
-- **Werte für die Anleitung:** datei_art = sysupgrade; medium = eine microSD-Karte; anschluss = die LAN-Buchse (nicht WAN); led = Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).; karte_bleibt = True
+- **Werte für die Anleitung:** datei_art = sysupgrade; medium = eine microSD-Karte; anschluss = die LAN-Buchse (nicht WAN); led = Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).; karte_bleibt = True; sicherheit = quelle
 
 #### friendlyelec-nanopi-r4s
 
@@ -4716,7 +4716,7 @@ FriendlyElec NanoPi R4S (4 GB) · rockchip-armv8 · K0
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/rockchip-armv8
 - **Detail-Anleitung:** anleitungen/de/friendlyelec-nanopi-r4s.md
-- **Werte für die Anleitung:** datei_art = sysupgrade; medium = eine microSD-Karte; anschluss = die LAN-Buchse (nicht WAN); led = Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).; karte_bleibt = True
+- **Werte für die Anleitung:** datei_art = sysupgrade; medium = eine microSD-Karte; anschluss = die LAN-Buchse (nicht WAN); led = Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).; karte_bleibt = True; sicherheit = quelle
 
 #### x86-64
 
@@ -4750,7 +4750,7 @@ x86 (x86-64) · x86-64 · K0
 - **Gluon-RAMpe-Rezept:** devices/x86-64.sh: Testgerät, in QEMU Ende-zu-Ende geprüft
 - **Quelle (OpenWrt-Commit):** Gluon targets/x86-64
 - **Detail-Anleitung:** anleitungen/de/x86-64.md
-- **Werte für die Anleitung:** datei_art = factory; medium = eine Festplatte, eine SSD oder einen USB-Stick; anschluss = die erste Netzwerkbuchse; vm = True
+- **Werte für die Anleitung:** datei_art = factory; medium = eine Festplatte, eine SSD oder einen USB-Stick; anschluss = die erste Netzwerkbuchse; vm = True; sicherheit = quelle
 
 #### x86-generic
 
@@ -4782,7 +4782,7 @@ x86 (x86-generic) · x86-generic · K0
 - **Gluon-RAMpe passt:** nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)
 - **Quelle (OpenWrt-Commit):** Gluon targets/x86-generic
 - **Detail-Anleitung:** anleitungen/de/x86-generic.md
-- **Werte für die Anleitung:** datei_art = factory; medium = eine Festplatte, eine SSD oder einen USB-Stick; anschluss = die erste Netzwerkbuchse; vm = True
+- **Werte für die Anleitung:** datei_art = factory; medium = eine Festplatte, eine SSD oder einen USB-Stick; anschluss = die erste Netzwerkbuchse; vm = True; sicherheit = quelle
 
 #### x86-geode
 
@@ -4814,7 +4814,7 @@ x86 (x86-geode) · x86-geode · K0
 - **Gluon-RAMpe passt:** nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)
 - **Quelle (OpenWrt-Commit):** Gluon targets/x86-geode
 - **Detail-Anleitung:** anleitungen/de/x86-geode.md
-- **Werte für die Anleitung:** datei_art = factory; medium = eine Festplatte, eine SSD oder einen USB-Stick; anschluss = die erste Netzwerkbuchse; vm = True
+- **Werte für die Anleitung:** datei_art = factory; medium = eine Festplatte, eine SSD oder einen USB-Stick; anschluss = die erste Netzwerkbuchse; vm = True; sicherheit = quelle
 
 #### x86-legacy
 
@@ -4846,11 +4846,11 @@ x86 (x86-legacy) · x86-legacy · K0
 - **Gluon-RAMpe passt:** nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)
 - **Quelle (OpenWrt-Commit):** Gluon targets/x86-legacy
 - **Detail-Anleitung:** anleitungen/de/x86-legacy.md
-- **Werte für die Anleitung:** datei_art = factory; medium = eine Festplatte, eine SSD oder einen USB-Stick; anschluss = die erste Netzwerkbuchse; vm = True
+- **Werte für die Anleitung:** datei_art = factory; medium = eine Festplatte, eine SSD oder einen USB-Stick; anschluss = die erste Netzwerkbuchse; vm = True; sicherheit = quelle
 
 ### Familie `k0-webui`
 
-86 Gerät(e).
+84 Gerät(e).
 
 #### buffalo-wzr-600dhp
 
@@ -4879,7 +4879,7 @@ Buffalo WZR-600DHP · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 25f2f66eeaf720e3db154019fe0b32a146c6082f [geprüft]
 - **Detail-Anleitung:** anleitungen/de/buffalo-wzr-600dhp.md
-- **Werte für die Anleitung:** stock_url = http://192.168.11.1; menue = Administration → Firmware Upgrade
+- **Werte für die Anleitung:** stock_url = http://192.168.11.1; menue = Administration → Firmware Upgrade; sicherheit = quelle
 
 #### buffalo-wzr-hp-ag300h
 
@@ -4907,7 +4907,7 @@ Buffalo WZR-HP-AG300H · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 480bf28273926d7b30be21b7605dd4fefd07fc3a [geprüft]
 - **Detail-Anleitung:** anleitungen/de/buffalo-wzr-hp-ag300h.md
-- **Werte für die Anleitung:** stock_url = http://192.168.11.1; menue = Administration → Firmware Upgrade
+- **Werte für die Anleitung:** stock_url = http://192.168.11.1; menue = Administration → Firmware Upgrade; sicherheit = quelle
 
 #### buffalo-wzr-hp-g300nh-rtl8366s
 
@@ -4937,7 +4937,7 @@ Buffalo WZR-HP-G300NH (RTL8366S switch) · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** bc356de2850f14629cb1301be719772fa1212e72 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/buffalo-wzr-hp-g300nh-rtl8366s.md
-- **Werte für die Anleitung:** stock_url = http://192.168.11.1
+- **Werte für die Anleitung:** stock_url = http://192.168.11.1; sicherheit = quelle
 
 #### d-link-dap-1330-a1
 
@@ -4968,7 +4968,7 @@ D-Link DAP-1330 A1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 361c670a468cac8def368ed95487c72cfdb4a3fa [geprüft]
 - **Detail-Anleitung:** anleitungen/de/d-link-dap-1330-a1.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.50; zugang = ab Werk ohne Passwort
+- **Werte für die Anleitung:** stock_url = http://192.168.0.50; zugang = ab Werk ohne Passwort; sicherheit = quelle
 
 #### d-link-dap-1365-a1
 
@@ -4999,7 +4999,7 @@ D-Link DAP-1365 A1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 361c670a468cac8def368ed95487c72cfdb4a3fa [geprüft]
 - **Detail-Anleitung:** anleitungen/de/d-link-dap-1365-a1.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.50; zugang = ab Werk ohne Passwort
+- **Werte für die Anleitung:** stock_url = http://192.168.0.50; zugang = ab Werk ohne Passwort; sicherheit = quelle
 
 #### d-link-dap-2660-a1
 
@@ -5029,7 +5029,7 @@ D-Link DAP-2660 A1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 8ec997d0063bbc1ac41d1025f4c94ae6337899fa [geprüft]
 - **Detail-Anleitung:** anleitungen/de/d-link-dap-2660-a1.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.50; zugang = Benutzer `admin`, Passwort leer lassen
+- **Werte für die Anleitung:** stock_url = http://192.168.0.50; zugang = Benutzer `admin`, Passwort leer lassen; sicherheit = quelle
 
 #### d-link-dap-2680-a1
 
@@ -5059,7 +5059,7 @@ D-Link DAP-2680 A1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 5b58710fad2137eedad874f0fe8fe22082d1edc6 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/d-link-dap-2680-a1.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5b58710fad2137eedad874f0fe8fe22082d1edc6
-- **Werte für die Anleitung:** stock_url = http://192.168.0.50; zugang = Benutzer `admin`, Passwort leer lassen
+- **Werte für die Anleitung:** stock_url = http://192.168.0.50; zugang = Benutzer `admin`, Passwort leer lassen; sicherheit = quelle
 
 #### d-link-dap-2695-a1
 
@@ -5087,7 +5087,7 @@ D-Link DAP-2695 A1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** cd09f26660b684db541a0f49fc23988df142892c [geprüft]
 - **Detail-Anleitung:** anleitungen/de/d-link-dap-2695-a1.md
-- **Werte für die Anleitung:** 
+- **Werte für die Anleitung:** sicherheit = quelle
 
 #### netgear-wndr3700
 
@@ -5116,7 +5116,7 @@ NETGEAR WNDR3700 v1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 4dc7cb792a8e34b6ad97c7b8058c70311a06bd38 [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/netgear-wndr3700.md
-- **Werte für die Anleitung:** 
+- **Werte für die Anleitung:** sicherheit = abgeleitet
 
 #### netgear-wndr3700-v2
 
@@ -5145,7 +5145,7 @@ NETGEAR WNDR3700 v2 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 4dc7cb792a8e34b6ad97c7b8058c70311a06bd38 (ohne Anleitung) [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/netgear-wndr3700-v2.md
-- **Werte für die Anleitung:** 
+- **Werte für die Anleitung:** sicherheit = abgeleitet
 
 #### netgear-wndr3800
 
@@ -5176,7 +5176,7 @@ NETGEAR WNDR3800 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target, ohne Anleitung) [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/netgear-wndr3800.md
-- **Werte für die Anleitung:** stock_url = http://192.168.1.1; rechner_ip = 192.168.1.10; dauer = bis zu 10 Minuten
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; rechner_ip = 192.168.1.10; dauer = bis zu 10 Minuten; sicherheit = abgeleitet
 
 #### netgear-wndr3800ch
 
@@ -5207,7 +5207,7 @@ NETGEAR WNDR3800CH · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 00ed75f47f4726dff17c6d63d6847bc4f7a74970 [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/netgear-wndr3800ch.md
-- **Werte für die Anleitung:** stock_url = http://192.168.1.1; rechner_ip = 192.168.1.10; dauer = bis zu 10 Minuten
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; rechner_ip = 192.168.1.10; dauer = bis zu 10 Minuten; sicherheit = abgeleitet
 
 #### netgear-wndrmac-v2
 
@@ -5235,7 +5235,7 @@ NETGEAR WNDRMAC v2 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 7f297e740bc288d29fab1f7490ed0e2e49e9e6f9 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/netgear-wndrmac-v2.md
-- **Werte für die Anleitung:** 
+- **Werte für die Anleitung:** sicherheit = quelle
 
 #### netgear-wnr2200-16m
 
@@ -5265,7 +5265,7 @@ NETGEAR WNR2200 16M · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** f85d56bb034d8017bdb6b4bb493eb076a21d11b3 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/netgear-wnr2200-16m.md
-- **Werte für die Anleitung:** 
+- **Werte für die Anleitung:** sicherheit = quelle
 
 #### netgear-wnr2200-8m
 
@@ -5295,7 +5295,7 @@ NETGEAR WNR2200 8M · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** f85d56bb034d8017bdb6b4bb493eb076a21d11b3 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/netgear-wnr2200-8m.md
-- **Werte für die Anleitung:** 
+- **Werte für die Anleitung:** sicherheit = quelle
 
 #### tp-link-archer-a7-v5
 
@@ -5328,7 +5328,7 @@ TP-Link Archer A7 v5 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 1e4ee63cc8d1889a78b539a5ed7be8d56e9b976f [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-a7-v5.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zertifikat = False; tls_alt = False; nach_upload = eine Seite „page not found“; tftp_datei = ArcherC7v5_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = etwa 5 Sekunden; tftp_dauer = etwa 150 Sekunden
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zertifikat = False; tls_alt = False; nach_upload = eine Seite „page not found“; tftp_datei = ArcherC7v5_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = etwa 5 Sekunden; tftp_dauer = etwa 150 Sekunden; sicherheit = quelle
 
 #### tp-link-archer-c2-v3
 
@@ -5356,7 +5356,7 @@ TP-Link Archer C2 v3 (broken) · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 9c01273e5e7b3929ad46d974685ec29de207a8de [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-c2-v3.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; sicherheit = abgeleitet
 
 #### tp-link-archer-c25-v1
 
@@ -5383,7 +5383,7 @@ TP-Link Archer C25 v1 (broken) · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** fde0abf267033bfaaf08dc2f5cbba2bf2a3ff897 (ohne Anleitung) [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-c25-v1.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; sicherheit = abgeleitet
 
 #### tp-link-archer-c5-v1
 
@@ -5416,7 +5416,7 @@ TP-Link Archer C5 v1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 438605454980ee815a506a9a2a4a3532ab378922 (ohne Anleitung, Wiki-Verweis) [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-c5-v1.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False; dateiname = factory.bin
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False; dateiname = factory.bin; sicherheit = abgeleitet
 
 #### tp-link-archer-c58-v1
 
@@ -5444,7 +5444,7 @@ TP-Link Archer C58 v1 (broken) · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 946ffe470d923fdde53db68592437194e0c276fc [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-c58-v1.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; tftp_datei = tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_hinweis = Steck einen Switch zwischen Router und Rechner, sonst kommt die Verbindung womöglich zu langsam zustande.
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; tftp_datei = tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_hinweis = Steck einen Switch zwischen Router und Rechner, sonst kommt die Verbindung womöglich zu langsam zustande.; sicherheit = quelle
 
 #### tp-link-archer-c59-v1
 
@@ -5472,7 +5472,7 @@ TP-Link Archer C59 v1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 946ffe470d923fdde53db68592437194e0c276fc [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-c59-v1.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; tftp_datei = tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_hinweis = Steck einen Switch zwischen Router und Rechner, sonst kommt die Verbindung womöglich zu langsam zustande.
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; tftp_datei = tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_hinweis = Steck einen Switch zwischen Router und Rechner, sonst kommt die Verbindung womöglich zu langsam zustande.; sicherheit = quelle
 
 #### tp-link-archer-c6-v2-eu-ru-jp
 
@@ -5502,7 +5502,7 @@ TP-Link Archer C6 v2 (EU/RU/JP) · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** d03aae1a09fce5a5d5747855bc07ee1f54388e03 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-c6-v2-eu-ru-jp.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; tftp_datei = ArcherC6v2_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = bis die WPS-LED leuchtet; tftp_dauer = etwa 150 Sekunden
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; tftp_datei = ArcherC6v2_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = bis die WPS-LED leuchtet; tftp_dauer = etwa 150 Sekunden; sicherheit = abgeleitet; sicherheit_hinweis = Ob die TP-Link-Oberfläche die Datei annimmt, hängt von der Version der Herstellerfirmware ab; mit 1.3.3 oder 1.3.7 sollte es am ehesten gehen.
 
 #### tp-link-archer-c7-v2
 
@@ -5533,7 +5533,7 @@ TP-Link Archer C7 v2 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** ba74b45476ab1fe36f8449b18501ba5d2c01cf8c (ohne Anleitung) [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-c7-v2.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.1 oder http://192.168.1.1; zertifikat = False; tls_alt = False; datei_hinweis = mit „-eu“ bzw. „-us“ im Namen, passend zur Region auf dem Aufkleber; dateiname = firmware.bin
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1 oder http://192.168.1.1; zertifikat = False; tls_alt = False; datei_hinweis = mit „-eu“ bzw. „-us“ im Namen, passend zur Region auf dem Aufkleber; dateiname = firmware.bin; sicherheit = abgeleitet
 
 #### tp-link-archer-c7-v4
 
@@ -5563,7 +5563,7 @@ TP-Link Archer C7 v4 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 12310f05b7b080b016ec515796be437f4cd30b62 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-c7-v4.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.1 oder http://192.168.1.1; zertifikat = False; tls_alt = False; dateiname = firmware.bin; tftp_datei = ArcherC7v4_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = etwa 15 Sekunden; tftp_dauer = etwa 30 Sekunden
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1 oder http://192.168.1.1; zertifikat = False; tls_alt = False; dateiname = firmware.bin; tftp_datei = ArcherC7v4_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = etwa 15 Sekunden; tftp_dauer = etwa 30 Sekunden; sicherheit = abgeleitet
 
 #### tp-link-archer-c7-v5
 
@@ -5594,7 +5594,7 @@ TP-Link Archer C7 v5 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 8471944325db80ca37f7c756130070d0add58ff6 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-c7-v5.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.1 oder http://192.168.1.1; zertifikat = False; tls_alt = False; dateiname = firmware.bin; tftp_datei = ArcherC7v5_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = etwa 15 Sekunden; tftp_dauer = etwa 150 Sekunden
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1 oder http://192.168.1.1; zertifikat = False; tls_alt = False; dateiname = firmware.bin; tftp_datei = ArcherC7v5_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = etwa 15 Sekunden; tftp_dauer = etwa 150 Sekunden; sicherheit = abgeleitet
 
 #### tp-link-cpe210-v1
 
@@ -5628,7 +5628,7 @@ TP-Link CPE210 v1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 08857e69becc214336ba073bca6f626bfaa67781 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-cpe210-v1.md
-- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.; sicherheit = quelle
 
 #### tp-link-cpe210-v2
 
@@ -5662,7 +5662,7 @@ TP-Link CPE210 v2 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 141698ce8fbc52d253c9207ef46b3630a0870567 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-cpe210-v2.md
-- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.; sicherheit = quelle
 
 #### tp-link-cpe210-v3
 
@@ -5696,7 +5696,7 @@ TP-Link CPE210 v3 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 5ec205d7ac00de89510a6e71055d45aa57b705e1 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-cpe210-v3.md
-- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.; sicherheit = quelle
 
 #### tp-link-cpe220-v3
 
@@ -5730,7 +5730,7 @@ TP-Link CPE220 v3 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** bae0d47f2e36376d2876bc4d5557e3e11f80f2fb [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-cpe220-v3.md
-- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.; sicherheit = quelle
 
 #### tp-link-cpe510-v1
 
@@ -5764,7 +5764,7 @@ TP-Link CPE510 v1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 0104eed1e5ca93a1c912e2d9b70e800b8d3099ad [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-cpe510-v1.md
-- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.; sicherheit = quelle
 
 #### tp-link-cpe510-v2
 
@@ -5798,7 +5798,7 @@ TP-Link CPE510 v2 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** cad4132e003cecc386d791d552ddba42c182c216 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-cpe510-v2.md
-- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.; sicherheit = quelle
 
 #### tp-link-cpe510-v3
 
@@ -5832,7 +5832,7 @@ TP-Link CPE510 v3 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** cad4132e003cecc386d791d552ddba42c182c216 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-cpe510-v3.md
-- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.; sicherheit = quelle
 
 #### tp-link-cpe710-v1
 
@@ -5869,7 +5869,7 @@ TP-Link CPE710 v1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** ac03e246351fbfa98e98f0319cce3a8663f836d3 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-cpe710-v1.md
-- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.; sicherheit = quelle
 
 #### tp-link-cpe710-v2
 
@@ -5906,7 +5906,7 @@ TP-Link CPE710 v2 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 0b4d831886689b55e149e276dbca5b780fb6a00e [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-cpe710-v2.md
-- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.; sicherheit = abgeleitet
 
 #### tp-link-tl-wdr3500-v1
 
@@ -5934,7 +5934,7 @@ TP-Link TL-WDR3500 v1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** fbbb4eb8b41d59b38f41fe382c6e4108a36aa909 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-tl-wdr3500-v1.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; tftp_datei = wdr3500v1_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = etwa 15 Sekunden; tftp_dauer = etwa 30 Sekunden
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; tftp_datei = wdr3500v1_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = etwa 15 Sekunden; tftp_dauer = etwa 30 Sekunden; sicherheit = quelle
 
 #### tp-link-tl-wdr3600-v1
 
@@ -5969,7 +5969,7 @@ TP-Link TL-WDR3600 v1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** a7e1e919afa9659f66dada5e69d1b162f447ced7 (ohne Anleitung) [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/tp-link-tl-wdr3600-v1.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False; dateiname = wdr4300v1_en_3_14_3_up_boot(150518).bin; dauer = etwa zwei bis drei Minuten
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False; dateiname = wdr4300v1_en_3_14_3_up_boot(150518).bin; dauer = etwa zwei bis drei Minuten; sicherheit = abgeleitet
 
 #### tp-link-tl-wdr4300-v1
 
@@ -6003,7 +6003,7 @@ TP-Link TL-WDR4300 v1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** a7e1e919afa9659f66dada5e69d1b162f447ced7 (ohne Anleitung) [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/tp-link-tl-wdr4300-v1.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False; dateiname = wdr4300v1_en_3_14_3_up_boot(150518).bin; dauer = etwa zwei bis drei Minuten
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False; dateiname = wdr4300v1_en_3_14_3_up_boot(150518).bin; dauer = etwa zwei bis drei Minuten; sicherheit = abgeleitet
 
 #### tp-link-tl-wr1043n-v5
 
@@ -6034,7 +6034,7 @@ TP-Link TL-WR1043N v5 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** d4b89b7170ab82530cfaf21e5f00bee7088432e2 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-tl-wr1043n-v5.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.1 oder http://192.168.1.1; zertifikat = False; tls_alt = False
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1 oder http://192.168.1.1; zertifikat = False; tls_alt = False; sicherheit = quelle
 
 #### tp-link-tl-wr1043nd-v2
 
@@ -6065,7 +6065,7 @@ TP-Link TL-WR1043N/ND v2 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** b1a173d7c396c0a9e6bb0078a1a061eb9fdd0316 (ohne Anleitung) [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/tp-link-tl-wr1043nd-v2.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zertifikat = False; tls_alt = False
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zertifikat = False; tls_alt = False; sicherheit = abgeleitet
 
 #### tp-link-tl-wr1043nd-v3
 
@@ -6095,7 +6095,7 @@ TP-Link TL-WR1043N/ND v3 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** b1a173d7c396c0a9e6bb0078a1a061eb9fdd0316 (ohne Anleitung) [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/tp-link-tl-wr1043nd-v3.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.1 oder http://192.168.1.1; zertifikat = False; tls_alt = False
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1 oder http://192.168.1.1; zertifikat = False; tls_alt = False; sicherheit = abgeleitet
 
 #### tp-link-tl-wr1043nd-v4
 
@@ -6125,7 +6125,7 @@ TP-Link TL-WR1043N/ND v4 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 71ae0792bad1b0eeb476513e15b326409f15ccb0 (ohne Anleitung) [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/tp-link-tl-wr1043nd-v4.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zertifikat = False; tls_alt = False
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zertifikat = False; tls_alt = False; sicherheit = abgeleitet
 
 #### tp-link-tl-wr2543n-nd
 
@@ -6154,7 +6154,7 @@ TP-Link TL-WR2543N/ND v1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 2a7e03af37d1112c2c2f6b6c80283d4d49407889 (ohne Anleitung) [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/tp-link-tl-wr2543n-nd.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False; dauer = etwa zwei Minuten
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False; dauer = etwa zwei Minuten; sicherheit = abgeleitet
 
 #### tp-link-tl-wr810n-v1
 
@@ -6186,7 +6186,7 @@ TP-Link TL-WR810N v1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** cdbf2de77768dfde560b4ea663b4eac0d3a5a581 (Verweis); b23b0fb28b760ce66a8f93d4681c8bd300d75d30 (ar71xx, Anleitung) [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-tl-wr810n-v1.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False
+- **Werte für die Anleitung:** stock_url = http://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False; sicherheit = quelle
 
 #### tp-link-tl-wr842n-v3
 
@@ -6215,7 +6215,7 @@ TP-Link TL-WR842N v3 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** e0d98e120a94b75f63066d7abc6a392996ccb284 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-tl-wr842n-v3.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False; dateiname = firmware.bin
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False; dateiname = firmware.bin; sicherheit = quelle
 
 #### tp-link-tl-wr902ac-v1
 
@@ -6245,7 +6245,7 @@ TP-Link TL-WR902AC v1 (broken) · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 60de1fdbb4492b5270edf49d634979c0cfd1e743 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-tl-wr902ac-v1.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; dateiname = update.bin; tftp_datei = wr902acv1_un_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = bis die WPS-LED leuchtet
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; dateiname = update.bin; tftp_datei = wr902acv1_un_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = bis die WPS-LED leuchtet; sicherheit = quelle
 
 #### tp-link-wbs210-v1
 
@@ -6279,7 +6279,7 @@ TP-Link WBS210 v1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 866ad466626e6a83831f79e9dd072c31a2b71d66 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-wbs210-v1.md
-- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.; sicherheit = quelle
 
 #### tp-link-wbs210-v2
 
@@ -6313,7 +6313,7 @@ TP-Link WBS210 v2 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 3930aab2cb067d04f5c9ebbf1af57744e19355eb [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-wbs210-v2.md
-- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.; sicherheit = quelle
 
 #### tp-link-wbs510-v1
 
@@ -6347,7 +6347,7 @@ TP-Link WBS510 v1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 20fdfe37d21f19901eec86ace8da0c083faa7ebc [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-wbs510-v1.md
-- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.; sicherheit = quelle
 
 #### netgear-wndr3700-v4
 
@@ -6379,7 +6379,7 @@ NETGEAR WNDR3700 v4 · ath79-nand · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 7e623c312832386d5eb5aa970738288cf96d96c3 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/netgear-wndr3700-v4.md
-- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = Benutzer `admin`, Passwort `password`; dauer = einige Minuten
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = Benutzer `admin`, Passwort `password`; dauer = einige Minuten; sicherheit = abgeleitet
 
 #### netgear-wndr4300
 
@@ -6411,7 +6411,7 @@ NETGEAR WNDR4300 · ath79-nand · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 9b6f89c37fc9c2e23cc123bd7b5cf9a1f8dc301a [geprüft]
 - **Detail-Anleitung:** anleitungen/de/netgear-wndr4300.md
-- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = Benutzer `admin`, Passwort `password`; dauer = einige Minuten
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = Benutzer `admin`, Passwort `password`; dauer = einige Minuten; sicherheit = quelle
 
 #### zyxel-nbg6716
 
@@ -6440,7 +6440,7 @@ Zyxel NBG6716 · ath79-nand · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 99835e09992bb411519fda1f8d16a6d07df7f598 [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/zyxel-nbg6716.md
-- **Werte für die Anleitung:** 
+- **Werte für die Anleitung:** sicherheit = abgeleitet; sicherheit_hinweis = OpenWrt beschreibt nicht, wie die Datei aus der Zyxel-Firmware heraus auf das Gerät kommt; den Weg über die Zyxel-Oberfläche haben wir angenommen.
 
 #### linksys-ea6350v3
 
@@ -6471,39 +6471,7 @@ Linksys EA6350 v3 · ipq40xx-generic · K0
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt a873b292840848b67addb5be0c762d292bde33a1
 - **Detail-Anleitung:** anleitungen/de/linksys-ea6350v3.md
-- **Werte für die Anleitung:** stock_url = http://192.168.1.1; menue = Connectivity → Manual update
-
-#### linksys-ea8300-dallas
-
-Linksys EA8300 · ipq40xx-generic · K0
-
-- **Weg ab Werk:** Gluon-factory über die Linksys-UI [geprüft]
-- **Schritte (Normalweg):**
-  1. Typenschild prüfen: EA8300, nicht MR8300 [geprüft: Commit a9071d02]
-  2. Nicht das Gluon-factory nehmen, sondern das factory.bin von OpenWrt 22.03.5/22.03.6 bereitlegen, dazu das Gluon-sysupgrade-Image [Folge abgeleitet; geprüft: Wiki toh:linksys:ea8300]
-  3. Rechner mit dem Router verbinden und im Browser http://192.168.1.1 öffnen [geprüft: Wiki toh:linksys:ea8300]
-  4. "Manual configuration" > "Internet connection is down" > "Login" wählen, Passwort "admin" (Firmware Anfang 2019) [geprüft: Wiki toh:linksys:ea8300]
-  5. "Smart Wi-Fi Tools" > "Connectivity" > "Manual" öffnen und das OpenWrt-22.03.5-factory.bin hochladen [geprüft: Wiki toh:linksys:ea8300]
-  6. Nach dem Neustart in OpenWrt 22.03.5/22.03.6 zuerst per SSH `fw_setenv kernsize 500000` setzen (kein `=` tippen, sonst Soft-Brick des Bootloaders), mit `fw_printenv` prüfen (`kernsize=500000`) und neu starten; erst dann das Gluon-sysupgrade-Image ohne Übernahme der Einstellungen einspielen. Direkt von 22.03 auf 23.x oder neuer führt laut Wiki zum Soft-Brick [Folge abgeleitet; geprüft: Wiki toh:linksys:ea8300, korrigiert]
-  7. Warten, bis der Router mit Gluon neu gestartet ist [abgeleitet]
-- **Warnung:** WICHTIG: Laut Wiki führt ein factory-Image ab OpenWrt 23.05 (also auch das Gluon-2025.1-factory) über die Linksys-Oberfläche zum Soft-Brick [Folge abgeleitet; geprüft: Wiki toh:linksys:ea8300]
-- **Übertragung:** webui-upload: Gerät 192.168.1.1
-- **Adressen:** Router http://192.168.1.1 [geprüft: Wiki toh:linksys:ea8300]
-- **Programm:** Browser [geprüft: Wiki toh:linksys:ea8300]
-- **Zugang:** Passwort "admin" (Firmware Anfang 2019) [geprüft: Wiki toh:linksys:ea8300]
-- **Datei:** nur das factory.bin von OpenWrt 22.03.5/22.03.6 über die Linksys-Oberfläche; Gluon 2025.1 basiert auf OpenWrt 24.10, also erst OpenWrt 22.03.5-factory, dann dort `fw_setenv kernsize 500000` (Kernel-Bereich 5 MB statt 3 MB), erst dann Gluon-sysupgrade [Folge abgeleitet; geprüft: Wiki toh:linksys:ea8300, korrigiert]
-- **seriell nötig:** nein
-- **Gehäuse öffnen:** nein
-- **Werkzeug/Spezial:** -
-- **Typenschild/Verwechslung:** EA8300 (256 MB RAM) und MR8300 (512 MB RAM, geänderte LED-Leiste oben) sind fast gleich, aber je eigenes Image [geprüft: Commit a9071d02]
-- **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_ea8300-initramfs-zImage.itb)
-- **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_ea8300-squashfs-factory.bin)
-- **Stock-Teile:** -
-- **RAM:** 256 MB
-- **Rückweg zur Herstellerfirmware:** Dual-Partition: einschalten, 10 s warten, ausschalten, 5 s warten, dreimal: startet die andere Partition; wer zurück will, nicht zweimal flashen [geprüft: Wiki toh:linksys:ea8300]
-- **Gluon-RAMpe passt:** nein, nicht nötig (factory)
-- **Quelle (OpenWrt-Commit):** OpenWrt 819e7946b0964725dab50c92797f49cf4053d955
-- **Detail-Anleitung:** -
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; menue = Connectivity → Manual update; sicherheit = quelle
 
 #### linksys-vlp01
 
@@ -6531,7 +6499,7 @@ Linksys VLP01 (Alias von linksys-whw01) · ipq40xx-generic · K0
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt b4184c666c13fdf08ecd3abf340538d593e9084c
 - **Detail-Anleitung:** anleitungen/de/linksys-vlp01.md; https://openwrt.org/toh/linksys/whw01_v1#installation
-- **Werte für die Anleitung:** 
+- **Werte für die Anleitung:** sicherheit = abgeleitet
 
 #### linksys-whw01
 
@@ -6560,7 +6528,7 @@ Linksys WHW01 v1 (Velop) · ipq40xx-generic · K0
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory); beide Partitionen beachten
 - **Quelle (OpenWrt-Commit):** OpenWrt b4184c666c13fdf08ecd3abf340538d593e9084c
 - **Detail-Anleitung:** anleitungen/de/linksys-whw01.md; https://openwrt.org/toh/linksys/whw01_v1#installation
-- **Werte für die Anleitung:** 
+- **Werte für die Anleitung:** sicherheit = quelle
 
 #### linksys-whw03-v2-velop
 
@@ -6592,7 +6560,7 @@ Linksys WHW03 v2 (Velop) · ipq40xx-generic · K0
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 9e4ede8344d60d4837e047e9275c21fd2a8f130b
 - **Detail-Anleitung:** anleitungen/de/linksys-whw03-v2-velop.md; https://openwrt.org/toh/linksys/whw03_v2#oem_easy_installation
-- **Werte für die Anleitung:** stock_url = http://192.168.1.1/ca; zugang = mit dem Admin-Passwort (bei nicht eingerichteten Geräten `admin`); menue = Connectivity
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1/ca; zugang = mit dem Admin-Passwort (bei nicht eingerichteten Geräten `admin`); menue = Connectivity; sicherheit = quelle
 
 #### linksys-whw03-velop
 
@@ -6624,7 +6592,7 @@ Linksys WHW03 v1 (Velop) · ipq40xx-generic · K0
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt c90487556229ae264dec33305e5c71c4ef7dd1c5
 - **Detail-Anleitung:** anleitungen/de/linksys-whw03-velop.md; https://openwrt.org/toh/linksys/whw03_v1#oem_easy_installation
-- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = mit dem Admin-Passwort vom Aufkleber; menue = Link „CA“ unten → Connectivity → Choose file
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = mit dem Admin-Passwort vom Aufkleber; menue = Link „CA“ unten → Connectivity → Choose file; sicherheit = quelle
 
 #### netgear-ex6100v2
 
@@ -6654,7 +6622,7 @@ NETGEAR EX6100 v2 · ipq40xx-generic · K0
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 970f1914be3f299fb302ca74a214589397000858
 - **Detail-Anleitung:** anleitungen/de/netgear-ex6100v2.md
-- **Werte für die Anleitung:** nach_upload = eine zweite Rückfrage, weil die Netgear-Oberfläche die Freifunk-Firmware für eine ältere Version hält; bestätige auch sie
+- **Werte für die Anleitung:** nach_upload = eine zweite Rückfrage, weil die Netgear-Oberfläche die Freifunk-Firmware für eine ältere Version hält; bestätige auch sie; sicherheit = quelle
 
 #### netgear-ex6150v2
 
@@ -6684,7 +6652,7 @@ NETGEAR EX6150 v2 · ipq40xx-generic · K0
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 970f1914be3f299fb302ca74a214589397000858
 - **Detail-Anleitung:** anleitungen/de/netgear-ex6150v2.md; https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-fuer-netgear-wi-fi-range-extender-ex6150-v2/
-- **Werte für die Anleitung:** nach_upload = eine zweite Rückfrage, weil die Netgear-Oberfläche die Freifunk-Firmware für eine ältere Version hält; bestätige auch sie
+- **Werte für die Anleitung:** nach_upload = eine zweite Rückfrage, weil die Netgear-Oberfläche die Freifunk-Firmware für eine ältere Version hält; bestätige auch sie; sicherheit = quelle
 
 #### zyxel-nbg6617
 
@@ -6716,7 +6684,7 @@ Zyxel NBG6617 · ipq40xx-generic · K0
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 82618062cf7ed6b40d2c52c6f6b96364888ffda6
 - **Detail-Anleitung:** anleitungen/de/zyxel-nbg6617.md
-- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = Passwort `1234`; menue = Expert Mode → Maintenance → Firmware Upgrade
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = Passwort `1234`; menue = Expert Mode → Maintenance → Firmware Upgrade; sicherheit = quelle
 
 #### netgear-nighthawk-x4s-r7800
 
@@ -6745,7 +6713,7 @@ NETGEAR Nighthawk X4S R7800 · ipq806x-generic · K0
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 823242185b56ea518568296f1a5834f736f12076
 - **Detail-Anleitung:** anleitungen/de/netgear-nighthawk-x4s-r7800.md
-- **Werte für die Anleitung:** stock_url = http://192.168.1.1
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; sicherheit = abgeleitet
 
 #### tp-link-archer-c2600
 
@@ -6775,7 +6743,7 @@ TP-Link Archer C2600 v1 · ipq806x-generic · K0
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt ef02e8967cac02ebec78fadd063b367e67f8fbc6
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-c2600.md
-- **Werte für die Anleitung:** zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False
+- **Werte für die Anleitung:** zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False; sicherheit = abgeleitet
 
 #### netgear-dgn3500b
 
@@ -6805,7 +6773,7 @@ NETGEAR DGN3500B · lantiq-xway · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 575127fe1c82e814da155a15be0a02b4153e1d00
 - **Detail-Anleitung:** anleitungen/de/netgear-dgn3500b.md
-- **Werte für die Anleitung:** 
+- **Werte für die Anleitung:** sicherheit = quelle
 
 #### netgear-wax220
 
@@ -6833,7 +6801,7 @@ NETGEAR WAX220 · mediatek-filogic · K0
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 984786a2f7ec622c99e8c9cdada65d0ea0cf4e0b
 - **Detail-Anleitung:** anleitungen/de/netgear-wax220.md; https://openwrt.org/toh/netgear/wax220#oem_easy_installation
-- **Werte für die Anleitung:** dauer = etwa 20 Sekunden, dazu der Neustart
+- **Werte für die Anleitung:** dauer = etwa 20 Sekunden, dazu der Neustart; sicherheit = abgeleitet
 
 #### openwrt-one
 
@@ -6863,7 +6831,7 @@ OpenWrt One · mediatek-filogic · K0
 - **Gluon-RAMpe passt:** nein, nicht nötig
 - **Quelle (OpenWrt-Commit):** OpenWrt 797904b3cb4a5c575641c19e7f3989926e4c7902
 - **Detail-Anleitung:** anleitungen/de/openwrt-one.md
-- **Werte für die Anleitung:** stock_url = http://192.168.1.1; datei_art = sysupgrade; einstellungen_abwaehlen = True; menue = System → Backup / Flash Firmware
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; datei_art = sysupgrade; einstellungen_abwaehlen = True; menue = System → Backup / Flash Firmware; sicherheit = abgeleitet
 
 #### zyxel-nwa50ax-pro
 
@@ -6898,7 +6866,7 @@ Zyxel NWA50AX Pro · mediatek-filogic · K0
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt f0445746f6fd96fc7c5394b238153bd2ff22bc5b
 - **Detail-Anleitung:** anleitungen/de/zyxel-nwa50ax-pro.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f0445746f6fd96fc7c5394b238153bd2ff22bc5b
-- **Werte für die Anleitung:** stock_url = 192.168.1.2; rechner_ip = 192.168.1.10; zugang = Benutzer `admin`, Passwort vom Aufkleber hinten oder `1234`
+- **Werte für die Anleitung:** stock_url = 192.168.1.2; rechner_ip = 192.168.1.10; zugang = Benutzer `admin`, Passwort vom Aufkleber hinten oder `1234`; sicherheit = quelle
 
 #### zyxel-nwa90ax-pro
 
@@ -6927,7 +6895,7 @@ Zyxel NWA90AX Pro (Alias von zyxel-nwa50ax-pro) · mediatek-filogic · K0
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt e34e874a11f0506ff17365819bc101a455dc503e + 2cc8d3e382c0b8b919cef2e9f1cfec9ec7954150; gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
 - **Detail-Anleitung:** anleitungen/de/zyxel-nwa90ax-pro.md
-- **Werte für die Anleitung:** stock_url = 192.168.1.2; rechner_ip = 192.168.1.10; zugang = Benutzer `admin`, Passwort vom Aufkleber hinten oder `1234`
+- **Werte für die Anleitung:** stock_url = 192.168.1.2; rechner_ip = 192.168.1.10; zugang = Benutzer `admin`, Passwort vom Aufkleber hinten oder `1234`; sicherheit = abgeleitet
 
 #### tp-link-tl-wdr4900-v1
 
@@ -6954,40 +6922,7 @@ TP-Link TL-WDR4900 v1 · mpc85xx-p1010 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 4305c6cda18051efad9952425a8ce2478adc64b9 (ohne Installationstext)
 - **Detail-Anleitung:** anleitungen/de/tp-link-tl-wdr4900-v1.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False
-
-#### linksys-mx5300
-
-Linksys MX5300 · qualcommax-ipq807x · K0
-
-- **Weg ab Werk:** Gluon-factory über die Linksys-UI (manuelles Update); danach laut Commit dasselbe factory per `mtd write` auch in die zweite Partition [geprüft]
-- **Schritte (Normalweg):**
-  1. Gluon-factory-Image bereitlegen [geprüft]
-  2. Rechner mit dem Gerät verbinden und die Linksys-Oberfläche im Browser öffnen [geprüft: Commit 70fd815e]
-  3. Manuelles Firmware-Update öffnen (siehe https://www.linksys.com/hk/support-article?articleNum=274497) und das factory-Image hochladen [geprüft: Commit 70fd815e]
-  4. Warten, bis OpenWrt/Gluon das erste Mal gestartet ist [abgeleitet]
-  5. Danach aus OpenWrt heraus mit `fw_printenv -n boot_part` die aktive Partition ermitteln [geprüft: Commit 70fd815e]
-  6. Dual-Partition: dasselbe factory-Image per `mtd write` in die zweite Partition schreiben (kernel bzw. alt_kernel, je nach boot_part) [geprüft: Commit 70fd815e]
-- **Sichtbare Zeichen:** Erfolg beim Weg über fwupdate.html: Antwort {"result": "OK"} [geprüft: Wiki toh:linksys:mx5300]
-- **Übertragung:** webui-upload; alternativ usb (initramfs von FAT32-Stick, seriell)
-- **Adressen:** alternativ http://192.168.1.1/fwupdate.html (dort factory wählen, Update) [geprüft: Wiki toh:linksys:mx5300]
-- **Programm:** Browser [geprüft: Commit 70fd815e]; für die zweite Partition `mtd write` und `fw_printenv` auf dem Gerät [geprüft: Commit 70fd815e]
-- **Zugang:** auf fwupdate.html: admin/admin [geprüft: Wiki toh:linksys:mx5300]
-- **Datei:** Gluon-factory-Image, für beide Partitionen dasselbe [geprüft: Commit 70fd815e]
-- **seriell nötig:** nein
-- **Gehäuse öffnen:** nein
-- **Werkzeug/Spezial:** -
-- **Typenschild/Verwechslung:** MX10600 = 2er-Pack, MX15900 = 3er-Pack MX5300; das schwächere MX55EC wird teils auch als "AX5300" verkauft [geprüft: Wiki toh:linksys:mx5300]
-- **Bedingung an die Herstellerfirmware:** zuletzt geprüft mit Herstellerfirmware 1.1.12.210066 (14.04.2022); spätere Updates könnten den Weg brechen [geprüft: Wiki toh:linksys:mx5300]
-- **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/qualcommax/ipq807x/openwrt-24.10.8-qualcommax-ipq807x-linksys_mx5300-initramfs-uImage.itb)
-- **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/qualcommax/ipq807x/openwrt-24.10.8-qualcommax-ipq807x-linksys_mx5300-squashfs-factory.bin)
-- **Stock-Teile:** -
-- **RAM:** 1 GB
-- **Notweg:** [Notfall] USB: initramfs von einem FAT32-Stick, über die serielle Konsole [geprüft]
-- **Rückweg zur Herstellerfirmware:** Herstellerfirmware per `mtd -e kernel -n write FW_MX5300_….img kernel` und dasselbe für alt_kernel [geprüft: Commit 70fd815e]
-- **Gluon-RAMpe passt:** nein, nicht nötig (factory)
-- **Quelle (OpenWrt-Commit):** OpenWrt 70fd815e57dc98cef88828faa5ce71717540e99e
-- **Detail-Anleitung:** -
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; sicherheit = abgeleitet
 
 #### nexx-wt3020-8m
 
@@ -7018,7 +6953,7 @@ Nexx WT3020 8M (Aliase WT3020AD/F/H) · ramips-mt7620 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 7bac455a4ccd4a55e5db64c7eac224c98be045b6 (ohne Installationstext)
 - **Detail-Anleitung:** anleitungen/de/nexx-wt3020-8m.md
-- **Werte für die Anleitung:** stock_url = http://192.168.8.1; zugang = Benutzer `admin`, Passwort `admin`
+- **Werte für die Anleitung:** stock_url = http://192.168.8.1; zugang = Benutzer `admin`, Passwort `admin`; sicherheit = abgeleitet
 
 #### tp-link-archer-c20i
 
@@ -7049,7 +6984,7 @@ TP-Link Archer C20i · ramips-mt7620 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 48d8bc4f971ad7795e3162134759caa37900138f (ohne Installationstext)
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-c20i.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; sicherheit = abgeleitet
 
 #### tp-link-archer-c50-v1
 
@@ -7081,7 +7016,7 @@ TP-Link Archer C50 v1 · ramips-mt7620 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 1c00c09eb6af88a0a96451f8da6108171c46a42d (ohne Installationstext)
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-c50-v1.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zertifikat = False; tls_alt = False; datei_hinweis = mit „-eu“ bzw. „-us“ im Namen, passend zur Region auf dem Aufkleber
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zertifikat = False; tls_alt = False; datei_hinweis = mit „-eu“ bzw. „-us“ im Namen, passend zur Region auf dem Aufkleber; sicherheit = abgeleitet
 
 #### d-link-covr-x1860-a1
 
@@ -7113,7 +7048,7 @@ D-Link COVR-X1860 A1 · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon hat factory und recovery); steht in GERAETE.md noch als Kandidat
 - **Quelle (OpenWrt-Commit):** 0a18259e4aa361cd9e5848c038be4b9f4e3bfcc6
 - **Detail-Anleitung:** anleitungen/de/d-link-covr-x1860-a1.md; https://freifunk-aachen.de/2023/08/03/installationsanleitung-d-link-covr-x1860/
-- **Werte für die Anleitung:** stock_url = http://192.168.0.1/UpdateFirmware_Simple.html
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1/UpdateFirmware_Simple.html; sicherheit = quelle
 
 #### d-link-dir-860l-b1
 
@@ -7141,7 +7076,7 @@ D-Link DIR-860L B1 · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 40b740b23234574115225bf8bde7bc679f8034e1 (ohne Installationstext)
 - **Detail-Anleitung:** anleitungen/de/d-link-dir-860l-b1.md
-- **Werte für die Anleitung:** 
+- **Werte für die Anleitung:** sicherheit = abgeleitet
 
 #### mercusys-mr70x-v1
 
@@ -7169,7 +7104,7 @@ Mercusys MR70X v1 · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 47de2c686291e69afc9f443e27e1dfd11ed5fbe7
 - **Detail-Anleitung:** anleitungen/de/mercusys-mr70x-v1.md
-- **Werte für die Anleitung:** 
+- **Werte für die Anleitung:** sicherheit = quelle
 
 #### netgear-wac104
 
@@ -7196,7 +7131,7 @@ NETGEAR WAC104 · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 221d8a1c6086ffd8bc53f81d5074a177d8dd8480
 - **Detail-Anleitung:** anleitungen/de/netgear-wac104.md
-- **Werte für die Anleitung:** 
+- **Werte für die Anleitung:** sicherheit = quelle
 
 #### tp-link-archer-ax23-v1
 
@@ -7225,7 +7160,7 @@ TP-Link Archer AX23 v1 (Gluon: broken) · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 7dceef5ee554ec4ab5d2dd2ff999f4a60bf2e0f4
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-ax23-v1.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zertifikat = False; tls_alt = False
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zertifikat = False; tls_alt = False; sicherheit = quelle
 
 #### tp-link-archer-c6-v3
 
@@ -7253,7 +7188,7 @@ TP-Link Archer C6 v3 (Gluon: broken) · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** d22fb7f4fd833c420bc2ab34384862da0a6688b5
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-c6-v3.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; sicherheit = quelle
 
 #### tp-link-re500-v1
 
@@ -7281,7 +7216,7 @@ TP-Link RE500 v1 · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** ba0f4f0cfddc6f1152273565ec35f2a0bda1e95d
 - **Detail-Anleitung:** anleitungen/de/tp-link-re500-v1.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; sicherheit = quelle
 
 #### tp-link-re650-v1
 
@@ -7312,7 +7247,7 @@ TP-Link RE650 v1 · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 8c51ddeff0876b439ac35a3f492ab719085bfb9c
 - **Detail-Anleitung:** anleitungen/de/tp-link-re650-v1.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.254; rechner_ip = 192.168.0.10; zertifikat = False; tls_alt = False; dauer = etwa zweieinhalb Minuten
+- **Werte für die Anleitung:** stock_url = http://192.168.0.254; rechner_ip = 192.168.0.10; zertifikat = False; tls_alt = False; dauer = etwa zweieinhalb Minuten; sicherheit = quelle
 
 #### zyxel-nwa50ax
 
@@ -7344,7 +7279,7 @@ ZyXEL NWA50AX (Alias NWA90AX) · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** a0b7fef0ffe4cd9cca39a652a37e4f3ce8f0a681
 - **Detail-Anleitung:** anleitungen/de/zyxel-nwa50ax.md; https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964
-- **Werte für die Anleitung:** zugang = Benutzer `admin`, Passwort `1234`
+- **Werte für die Anleitung:** zugang = Benutzer `admin`, Passwort `1234`; sicherheit = quelle
 
 #### zyxel-nwa55axe
 
@@ -7378,7 +7313,7 @@ ZyXEL NWA55AXE (Gluon: broken) · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** a0b7fef0ffe4cd9cca39a652a37e4f3ce8f0a681
 - **Detail-Anleitung:** anleitungen/de/zyxel-nwa55axe.md; https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964
-- **Werte für die Anleitung:** stock_url = 192.168.1.2; rechner_ip = 192.168.1.10; zugang = Benutzer `admin`, Passwort vom Aufkleber
+- **Werte für die Anleitung:** stock_url = 192.168.1.2; rechner_ip = 192.168.1.10; zugang = Benutzer `admin`, Passwort vom Aufkleber; sicherheit = quelle
 
 #### cudy-wr1000
 
@@ -7405,7 +7340,7 @@ Cudy WR1000 · ramips-mt76x8 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 7c91144ae6a45dc8d7ca6b68b3403e166185a498
 - **Detail-Anleitung:** anleitungen/de/cudy-wr1000.md
-- **Werte für die Anleitung:** 
+- **Werte für die Anleitung:** sicherheit = quelle
 
 #### tp-link-re200-v2
 
@@ -7434,7 +7369,7 @@ TP-Link RE200 v2 · ramips-mt76x8 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 6d6f36ae787c3b339b16c1d345a90faa1d9f4011
 - **Detail-Anleitung:** anleitungen/de/tp-link-re200-v2.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; dauer = bis zu 20 Minuten; notweg_keiner = Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses.
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; dauer = bis zu 20 Minuten; notweg_keiner = Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses.; sicherheit = quelle
 
 #### tp-link-re200-v3
 
@@ -7465,7 +7400,7 @@ TP-Link RE200 v3 · ramips-mt76x8 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 009e62c92c35142c5be3b375d6c393e63d2d27eb
 - **Detail-Anleitung:** anleitungen/de/tp-link-re200-v3.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; dauer = bis zu 20 Minuten; notweg_keiner = Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses.
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; dauer = bis zu 20 Minuten; notweg_keiner = Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses.; sicherheit = quelle
 
 #### tp-link-re200-v4
 
@@ -7494,7 +7429,7 @@ TP-Link RE200 v4 · ramips-mt76x8 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 33b76d66d1afa9d888f32587b18d78a930593ca5
 - **Detail-Anleitung:** anleitungen/de/tp-link-re200-v4.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; dauer = bis zu 20 Minuten; notweg_keiner = Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses.
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; dauer = bis zu 20 Minuten; notweg_keiner = Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses.; sicherheit = quelle
 
 ### Familie `mikrotik-netboot`
 
@@ -7879,7 +7814,7 @@ NETGEAR Orbi RBR50 v1 · ipq40xx-generic · K0+
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
 - **Detail-Anleitung:** anleitungen/de/netgear-rbr50.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
-- **Werte für die Anleitung:** anschluss = die Buchse nahe der Ein/Aus-Taste; nach_neustart = Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten.
+- **Werte für die Anleitung:** anschluss = die Buchse nahe der Ein/Aus-Taste; nach_neustart = Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten.; sicherheit = quelle
 
 #### netgear-rbs50
 
@@ -7918,7 +7853,7 @@ NETGEAR Orbi RBS50 v1 · ipq40xx-generic · K0+
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
 - **Detail-Anleitung:** anleitungen/de/netgear-rbs50.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
-- **Werte für die Anleitung:** anschluss = die Buchse nahe der Ein/Aus-Taste; nach_neustart = Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten.
+- **Werte für die Anleitung:** anschluss = die Buchse nahe der Ein/Aus-Taste; nach_neustart = Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten.; sicherheit = quelle
 
 #### netgear-srr60
 
@@ -7957,7 +7892,7 @@ NETGEAR Orbi Pro SRR60 · ipq40xx-generic · K0+
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
 - **Detail-Anleitung:** anleitungen/de/netgear-srr60.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
-- **Werte für die Anleitung:** anschluss = die Buchse nahe der Ein/Aus-Taste; nach_neustart = Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten.
+- **Werte für die Anleitung:** anschluss = die Buchse nahe der Ein/Aus-Taste; nach_neustart = Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten.; sicherheit = quelle
 
 #### netgear-srs60
 
@@ -7996,7 +7931,7 @@ NETGEAR Orbi Pro SRS60 · ipq40xx-generic · K0+
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
 - **Detail-Anleitung:** anleitungen/de/netgear-srs60.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
-- **Werte für die Anleitung:** anschluss = die Buchse nahe der Ein/Aus-Taste; nach_neustart = Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten.
+- **Werte für die Anleitung:** anschluss = die Buchse nahe der Ein/Aus-Taste; nach_neustart = Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten.; sicherheit = quelle
 
 #### netgear-wax206
 
@@ -8031,7 +7966,7 @@ NETGEAR WAX206 · mediatek-mt7622 · K0
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt f6d2a23cbca61611663efb531c97efeded26e0cd
 - **Detail-Anleitung:** anleitungen/de/netgear-wax206.md; https://openwrt.org/toh/netgear/wax206#oem_easy_installation
-- **Werte für die Anleitung:** web_moeglich = True
+- **Werte für die Anleitung:** web_moeglich = True; sicherheit = quelle
 
 #### netgear-ex3700
 
@@ -8067,7 +8002,7 @@ NETGEAR EX3700/EX3800 (Alias netgear-ex3800) · ramips-mt7620 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** de33a4cef0411f13df397ada2dc3634c5748a457
 - **Detail-Anleitung:** anleitungen/de/netgear-ex3700.md; https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-wi-fi-range-extender-ex3700/
-- **Werte für die Anleitung:** web_moeglich = True
+- **Werte für die Anleitung:** web_moeglich = True; sicherheit = quelle
 
 #### netgear-ex6130
 
@@ -8103,7 +8038,7 @@ NETGEAR EX6130 · ramips-mt7620 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 0cbd2c74d0c9f41d07757907226e5cfeaf16e06a
 - **Detail-Anleitung:** anleitungen/de/netgear-ex6130.md
-- **Werte für die Anleitung:** web_moeglich = True
+- **Werte für die Anleitung:** web_moeglich = True; sicherheit = quelle
 
 #### netgear-eax12
 
@@ -8141,7 +8076,7 @@ NETGEAR EAX12 (Aliase EAX11 v2, EAX15 v2) · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 32ea8a9a7e4b1319607ae398e9bf7d8e3c4cd756
 - **Detail-Anleitung:** anleitungen/de/netgear-eax12.md
-- **Werte für die Anleitung:** web_moeglich = True
+- **Werte für die Anleitung:** web_moeglich = True; sicherheit = quelle
 
 #### netgear-ex6150
 
@@ -8177,7 +8112,7 @@ NETGEAR EX6150 (v1) · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 3f019bf96cdf52668750f67cb139fa1b5c538f0b
 - **Detail-Anleitung:** anleitungen/de/netgear-ex6150.md; https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-wi-fi-range-extender-ex6150-v2/
-- **Werte für die Anleitung:** web_moeglich = True
+- **Werte für die Anleitung:** web_moeglich = True; sicherheit = quelle
 
 #### netgear-r6220
 
@@ -8212,7 +8147,7 @@ NETGEAR R6220 · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 38bee61dab029a7608088f64da71c19cfc8cf267
 - **Detail-Anleitung:** anleitungen/de/netgear-r6220.md; https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-r6220/
-- **Werte für die Anleitung:** web_moeglich = True
+- **Werte für die Anleitung:** web_moeglich = True; sicherheit = abgeleitet
 
 #### netgear-r6260
 
@@ -8250,7 +8185,7 @@ NETGEAR R6260 · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 6cea9688af4a05f407266ed1de5a739e5c984b8c (ohne Installationstext)
 - **Detail-Anleitung:** anleitungen/de/netgear-r6260.md
-- **Werte für die Anleitung:** web_moeglich = True; anschluss = LAN 1 (die Buchse neben WAN), nicht WAN
+- **Werte für die Anleitung:** web_moeglich = True; anschluss = LAN 1 (die Buchse neben WAN), nicht WAN; sicherheit = abgeleitet
 
 #### netgear-wax202
 
@@ -8285,7 +8220,7 @@ NETGEAR WAX202 · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 0f068e7c4a83bcbf20c4e52a5f8a3f1fe2af2246
 - **Detail-Anleitung:** anleitungen/de/netgear-wax202.md; https://openwrt.org/toh/netgear/wax202#oem_easy_installation
-- **Werte für die Anleitung:** web_moeglich = True
+- **Werte für die Anleitung:** web_moeglich = True; sicherheit = quelle
 
 #### netgear-wndr3700-v5
 
@@ -8322,7 +8257,7 @@ NETGEAR WNDR3700 v5 (Gluon: broken, "untested") · ramips-mt7621 · K0+
 - **Gluon-RAMpe-Rezept:** devices/netgear-wndr3700-v5.sh: `-factory.img` (Sercomm), broken = false für diesen Bau; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** cb049e71cdc08e17f664403a0ef970c480ae5c4a + 2fdd02cc7c3516c2cce2ace2c7b539e0821ecbe8 (factory-Image)
 - **Detail-Anleitung:** anleitungen/de/netgear-wndr3700-v5.md
-- **Werte für die Anleitung:** zwischen_datei = openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img
+- **Werte für die Anleitung:** zwischen_datei = openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img; sicherheit = quelle; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-netgear-wndr3700-v5-factory.img; rampe_datei = gluon-rampe-20261015-netgear-wndr3700-v5-factory.img; rampe_weg = Benenne die RAMpe in firmware.img um und schick sie in Schritt 4 mit nmrpflash statt der OpenWrt-Datei.
 
 #### netgear-r6020
 
@@ -8359,7 +8294,7 @@ NETGEAR R6020 · ramips-mt76x8 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** edbc8e5512dccc2e0b6925258e34b3f21d66679c
 - **Detail-Anleitung:** anleitungen/de/netgear-r6020.md
-- **Werte für die Anleitung:** anschluss = die LAN-Buchse 1; nach_neustart = Schalte das Gerät einmal aus und wieder ein; dann startet es mit der neuen Firmware.; web_nicht = True
+- **Werte für die Anleitung:** anschluss = die LAN-Buchse 1; nach_neustart = Schalte das Gerät einmal aus und wieder ein; dann startet es mit der neuen Firmware.; web_nicht = True; sicherheit = quelle
 
 #### netgear-r6120
 
@@ -8393,7 +8328,7 @@ NETGEAR R6120 · ramips-mt76x8 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 5543d63fc84e64be83afaa4241369a07797f041b
 - **Detail-Anleitung:** anleitungen/de/netgear-r6120.md; https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-r6120/
-- **Werte für die Anleitung:** web_nicht = True
+- **Werte für die Anleitung:** web_nicht = True; sicherheit = quelle
 
 ### Familie `ocedo-tftp`
 
@@ -9998,6 +9933,43 @@ Linksys E8450 / Belkin RT3200 (UBI-Layout) · mediatek-mt7622 · K3
 - **Quelle (OpenWrt-Commit):** OpenWrt 02351861824a13ed158db1ef59aede2db6ba7568
 - **Detail-Anleitung:** https://openwrt.org/toh/linksys/e8450#installation
 
+### Familie `sonderweg-linksys-ea8300`
+
+1 Gerät(e).
+
+#### linksys-ea8300-dallas
+
+Linksys EA8300 · ipq40xx-generic · K2
+
+- **Weg ab Werk:** OpenWrt-22.03.6-factory über die Linksys-UI, dort per SSH `fw_setenv kernsize 500000`, dann Gluon-factory in LuCI mit "Force upgrade" [geprüft: Wiki toh:linksys:ea8300; Gluon-Teil abgeleitet]; Gluon-factory direkt über die Linksys-UI macht das Gerät unbrauchbar [geprüft: Wiki toh:linksys:ea8300]
+- **Schritte (Normalweg):**
+  1. Typenschild prüfen: EA8300, nicht MR8300 [geprüft: Commit a9071d02]
+  2. Nicht das Gluon-factory nehmen, sondern das factory.bin von OpenWrt 22.03.5/22.03.6 bereitlegen, dazu das Gluon-sysupgrade-Image [Folge abgeleitet; geprüft: Wiki toh:linksys:ea8300]
+  3. Rechner mit dem Router verbinden und im Browser http://192.168.1.1 öffnen [geprüft: Wiki toh:linksys:ea8300]
+  4. "Manual configuration" > "Internet connection is down" > "Login" wählen, Passwort "admin" (Firmware Anfang 2019) [geprüft: Wiki toh:linksys:ea8300]
+  5. "Smart Wi-Fi Tools" > "Connectivity" > "Manual" öffnen und das OpenWrt-22.03.5-factory.bin hochladen [geprüft: Wiki toh:linksys:ea8300]
+  6. Nach dem Neustart in OpenWrt 22.03.5/22.03.6 zuerst per SSH `fw_setenv kernsize 500000` setzen (kein `=` tippen, sonst Soft-Brick des Bootloaders), mit `fw_printenv` prüfen (`kernsize=500000`) und neu starten; erst dann das Gluon-sysupgrade-Image ohne Übernahme der Einstellungen einspielen. Direkt von 22.03 auf 23.x oder neuer führt laut Wiki zum Soft-Brick [Folge abgeleitet; geprüft: Wiki toh:linksys:ea8300, korrigiert]
+  7. Warten, bis der Router mit Gluon neu gestartet ist [abgeleitet]
+- **Warnung:** WICHTIG: Laut Wiki führt ein factory-Image ab OpenWrt 23.05 (also auch das Gluon-2025.1-factory) über die Linksys-Oberfläche zum Soft-Brick [Folge abgeleitet; geprüft: Wiki toh:linksys:ea8300]
+- **Übertragung:** webui-upload: Gerät 192.168.1.1
+- **Adressen:** Router http://192.168.1.1 [geprüft: Wiki toh:linksys:ea8300]
+- **Programm:** Browser [geprüft: Wiki toh:linksys:ea8300]
+- **Zugang:** Passwort "admin" (Firmware Anfang 2019) [geprüft: Wiki toh:linksys:ea8300]
+- **Datei:** nur das factory.bin von OpenWrt 22.03.5/22.03.6 über die Linksys-Oberfläche; Gluon 2025.1 basiert auf OpenWrt 24.10, also erst OpenWrt 22.03.5-factory, dann dort `fw_setenv kernsize 500000` (Kernel-Bereich 5 MB statt 3 MB), erst dann Gluon-sysupgrade [Folge abgeleitet; geprüft: Wiki toh:linksys:ea8300, korrigiert]
+- **seriell nötig:** nein
+- **Gehäuse öffnen:** nein
+- **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** EA8300 (256 MB RAM) und MR8300 (512 MB RAM, geänderte LED-Leiste oben) sind fast gleich, aber je eigenes Image [geprüft: Commit a9071d02]
+- **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_ea8300-initramfs-zImage.itb)
+- **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_ea8300-squashfs-factory.bin)
+- **Stock-Teile:** -
+- **RAM:** 256 MB
+- **Rückweg zur Herstellerfirmware:** Dual-Partition: einschalten, 10 s warten, ausschalten, 5 s warten, dreimal: startet die andere Partition; wer zurück will, nicht zweimal flashen [geprüft: Wiki toh:linksys:ea8300]
+- **Gluon-RAMpe passt:** nein, nicht nötig (factory)
+- **Quelle (OpenWrt-Commit):** OpenWrt 819e7946b0964725dab50c92797f49cf4053d955
+- **Detail-Anleitung:** anleitungen/de/linksys-ea8300-dallas.md
+- **Werte für die Anleitung:** sicherheit = abgeleitet; sicherheit_hinweis = Teil 1 und 2 beschreibt das OpenWrt-Wiki genau so. Dass sich die Freifunk-Firmware in Teil 3 wie OpenWrt mit „Force upgrade“ einspielen lässt, haben wir daraus abgeleitet.
+
 ### Familie `sonderweg-linksys-mr8300-dallas`
 
 1 Gerät(e).
@@ -10031,6 +10003,44 @@ Linksys MR8300 · ipq40xx-generic · K2
 - **Gluon-RAMpe-Rezept:** devices/linksys-mr8300-dallas.sh: `-factory.bin` (linksys-image type=MR8300); Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** OpenWrt a9071d02b5ab11fbd73ea42076a09f2fd8136517
 - **Detail-Anleitung:** -
+
+### Familie `sonderweg-linksys-mx5300`
+
+1 Gerät(e).
+
+#### linksys-mx5300
+
+Linksys MX5300 · qualcommax-ipq807x · K0
+
+- **Weg ab Werk:** Gluon-factory über die Linksys-UI (manuelles Update); danach laut Commit dasselbe factory per `mtd write` auch in die zweite Partition [geprüft]
+- **Schritte (Normalweg):**
+  1. Gluon-factory-Image bereitlegen [geprüft]
+  2. Rechner mit dem Gerät verbinden und die Linksys-Oberfläche im Browser öffnen [geprüft: Commit 70fd815e]
+  3. Manuelles Firmware-Update öffnen (siehe https://www.linksys.com/hk/support-article?articleNum=274497) und das factory-Image hochladen [geprüft: Commit 70fd815e]
+  4. Warten, bis OpenWrt/Gluon das erste Mal gestartet ist [abgeleitet]
+  5. Danach aus OpenWrt heraus mit `fw_printenv -n boot_part` die aktive Partition ermitteln [geprüft: Commit 70fd815e]
+  6. Dual-Partition: dasselbe factory-Image per `mtd write` in die zweite Partition schreiben (kernel bzw. alt_kernel, je nach boot_part) [geprüft: Commit 70fd815e]
+- **Sichtbare Zeichen:** Erfolg beim Weg über fwupdate.html: Antwort {"result": "OK"} [geprüft: Wiki toh:linksys:mx5300]
+- **Übertragung:** webui-upload; alternativ usb (initramfs von FAT32-Stick, seriell)
+- **Adressen:** alternativ http://192.168.1.1/fwupdate.html (dort factory wählen, Update) [geprüft: Wiki toh:linksys:mx5300]
+- **Programm:** Browser [geprüft: Commit 70fd815e]; für die zweite Partition `mtd write` und `fw_printenv` auf dem Gerät [geprüft: Commit 70fd815e]
+- **Zugang:** auf fwupdate.html: admin/admin [geprüft: Wiki toh:linksys:mx5300]
+- **Datei:** Gluon-factory-Image, für beide Partitionen dasselbe [geprüft: Commit 70fd815e]
+- **seriell nötig:** nein
+- **Gehäuse öffnen:** nein
+- **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** MX10600 = 2er-Pack, MX15900 = 3er-Pack MX5300; das schwächere MX55EC wird teils auch als "AX5300" verkauft [geprüft: Wiki toh:linksys:mx5300]
+- **Bedingung an die Herstellerfirmware:** zuletzt geprüft mit Herstellerfirmware 1.1.12.210066 (14.04.2022); spätere Updates könnten den Weg brechen [geprüft: Wiki toh:linksys:mx5300]
+- **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/qualcommax/ipq807x/openwrt-24.10.8-qualcommax-ipq807x-linksys_mx5300-initramfs-uImage.itb)
+- **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/qualcommax/ipq807x/openwrt-24.10.8-qualcommax-ipq807x-linksys_mx5300-squashfs-factory.bin)
+- **Stock-Teile:** -
+- **RAM:** 1 GB
+- **Notweg:** [Notfall] USB: initramfs von einem FAT32-Stick, über die serielle Konsole [geprüft]
+- **Rückweg zur Herstellerfirmware:** Herstellerfirmware per `mtd -e kernel -n write FW_MX5300_….img kernel` und dasselbe für alt_kernel [geprüft: Commit 70fd815e]
+- **Gluon-RAMpe passt:** nein, nicht nötig (factory)
+- **Quelle (OpenWrt-Commit):** OpenWrt 70fd815e57dc98cef88828faa5ce71717540e99e
+- **Detail-Anleitung:** anleitungen/de/linksys-mx5300.md
+- **Werte für die Anleitung:** sicherheit = quelle; sicherheit_hinweis = Laut OpenWrt zuletzt geprüft mit Linksys-Firmware 1.1.12.210066 (April 2022); spätere Linksys-Updates könnten den Weg verbauen.
 
 ### Familie `sonderweg-meraki-mr33-access-point`
 
@@ -11475,7 +11485,7 @@ Ubiquiti EdgeRouter X · ramips-mt7621 · K3
 - **Gluon-RAMpe passt:** nein für 2025.1: EdgeOS schreibt in einen 3-MB-Kernel-Slot; Kernel 6.6 allein hat 3 173 556 Byte (Neanderfunk-Notiz), ein Gluon-initramfs mit Rootfs passt erst recht nicht [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 4e31b2e8697c21f9bd6493bb3d78a4a41c6a9a52
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-edgerouter-x.md; https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp
-- **Werte für die Anleitung:** openwrt_datei = openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-squashfs-sysupgrade.bin; openwrt_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-squashfs-sysupgrade.bin; openwrt_sha256 = 6c39f0140e06cef4832a4d65cbb48caa7e0b540c45fb1f82598c17d30f3e7026
+- **Werte für die Anleitung:** openwrt_datei = openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-squashfs-sysupgrade.bin; openwrt_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-squashfs-sysupgrade.bin; openwrt_sha256 = 6c39f0140e06cef4832a4d65cbb48caa7e0b540c45fb1f82598c17d30f3e7026; sicherheit = abgeleitet
 
 #### ubiquiti-edgerouter-x-sfp
 
@@ -11513,7 +11523,7 @@ Ubiquiti EdgeRouter X-SFP · ramips-mt7621 · K3
 - **Gluon-RAMpe passt:** nein für 2025.1: EdgeOS schreibt in einen 3-MB-Kernel-Slot; Kernel 6.6 allein hat 3 173 556 Byte (Neanderfunk-Notiz), ein Gluon-initramfs mit Rootfs passt erst recht nicht [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 9715beb04c74a918697945b3e2d23a139bd04b70
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-edgerouter-x-sfp.md; https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp
-- **Werte für die Anleitung:** openwrt_datei = openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-sfp-squashfs-sysupgrade.bin; openwrt_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-sfp-squashfs-sysupgrade.bin; openwrt_sha256 = 6cc7cf45dad3ee1f2dfe6440ed032d8647d782630ed381eb4622fab3ff879e21
+- **Werte für die Anleitung:** openwrt_datei = openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-sfp-squashfs-sysupgrade.bin; openwrt_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-sfp-squashfs-sysupgrade.bin; openwrt_sha256 = 6cc7cf45dad3ee1f2dfe6440ed032d8647d782630ed381eb4622fab3ff879e21; sicherheit = abgeleitet
 
 ### Familie `ubiquiti-tftp`
 
@@ -11554,7 +11564,7 @@ Ubiquiti Nanostation Loco M XW · ath79-generic · K0+
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 633c4304ad42d18d180ba65a264ba668de445d91 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-nanostation-loco-m-xw.md
-- **Werte für die Anleitung:** taste_ort = am Gerät oder am PoE-Netzteil; kabel_am_geraet = False; led_schreiben = laufen die Signal-LEDs der Reihe nach durch; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.21; taste = bis die Signal-LEDs abwechselnd blinken (erst LED 1 und 3, dann LED 2 und 4)
+- **Werte für die Anleitung:** taste_ort = am Gerät oder am PoE-Netzteil; kabel_am_geraet = False; led_schreiben = laufen die Signal-LEDs der Reihe nach durch; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.21; taste = bis die Signal-LEDs abwechselnd blinken (erst LED 1 und 3, dann LED 2 und 4); sicherheit = abgeleitet
 
 #### ubiquiti-nanostation-m-xw
 
@@ -11591,7 +11601,7 @@ Ubiquiti Nanostation M XW · ath79-generic · K0+
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 40530c8eb42aa4b98de10621b6c1c89030f00d0a [geprüft]
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-nanostation-m-xw.md
-- **Werte für die Anleitung:** kabel_am_geraet = True; led_schreiben = laufen die Signal-LEDs der Reihe nach durch; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.21; taste = bis die Signal-LEDs abwechselnd blinken (erst LED 1 und 3, dann LED 2 und 4); das kann bis zu 25 Sekunden dauern
+- **Werte für die Anleitung:** kabel_am_geraet = True; led_schreiben = laufen die Signal-LEDs der Reihe nach durch; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.21; taste = bis die Signal-LEDs abwechselnd blinken (erst LED 1 und 3, dann LED 2 und 4); das kann bis zu 25 Sekunden dauern; sicherheit = abgeleitet
 
 #### ubiquiti-rocket-m-xm
 
@@ -11629,7 +11639,7 @@ Ubiquiti Rocket M XM · ath79-generic · K0+
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target, ohne Anleitung) [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-rocket-m-xm.md
-- **Werte für die Anleitung:** kabel_am_geraet = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.21; taste = etwa 8 Sekunden, bis die Signal-LEDs abwechselnd blinken
+- **Werte für die Anleitung:** kabel_am_geraet = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.21; taste = etwa 8 Sekunden, bis die Signal-LEDs abwechselnd blinken; sicherheit = abgeleitet
 
 #### ubiquiti-unifi-ap-pro
 
@@ -11661,7 +11671,7 @@ Ubiquiti UniFi AP Pro · ath79-generic · K0+
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** b7da0d294465d5ab8d923f3b8265ece0a5847ac3 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-ap-pro.md
-- **Werte für die Anleitung:** kabel_am_geraet = False; dauer = etwa 2 Minuten; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.21; taste = 10 Sekunden
+- **Werte für die Anleitung:** kabel_am_geraet = False; dauer = etwa 2 Minuten; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.21; taste = 10 Sekunden; sicherheit = abgeleitet
 
 ### Familie `ubiquiti-unifi-ssh`
 
@@ -11706,7 +11716,7 @@ Ubiquiti UniFi AC Lite · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben
 - **Quelle (OpenWrt-Commit):** cad843e1f57790a08dd4804011b6cd3a4796786b (ohne Anleitung); 56fddc2577baf194d1e9a7b37d454d12ff9fb469 (Umbenennung) [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-ac-lite.md; https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790
-- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt
+- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf haben wir vom UniFi Swiss Army Knife Ultra übernommen, der dieselbe Technik hat. Im Freifunk-Forum gibt es Erfolgsberichte für den AC Lite.
 
 #### ubiquiti-unifi-ac-lr
 
@@ -11747,7 +11757,7 @@ Ubiquiti UniFi AC LR · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben
 - **Quelle (OpenWrt-Commit):** 07c1ddf522dbe6085af664cf03a41f636a70b99c [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-ac-lr.md; https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790
-- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt
+- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt; sicherheit = abgeleitet; sicherheit_hinweis = Für den UniFi AC Lite und den AC Pro gibt es Erfolgsberichte mit diesem Weg, für dieses Modell liegt uns noch keiner vor.
 
 #### ubiquiti-unifi-ac-mesh
 
@@ -11788,7 +11798,7 @@ Ubiquiti UniFi AC Mesh · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben
 - **Quelle (OpenWrt-Commit):** 4456dd4660b4fa4e9c04d73029c72bf7b0f2ba84 [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-ac-mesh.md; https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790
-- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt
+- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt; sicherheit = abgeleitet; sicherheit_hinweis = Für den UniFi AC Lite und den AC Pro gibt es Erfolgsberichte mit diesem Weg, für dieses Modell liegt uns noch keiner vor.
 
 #### ubiquiti-unifi-ac-mesh-pro
 
@@ -11829,7 +11839,7 @@ Ubiquiti UniFi AC Mesh Pro · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben
 - **Quelle (OpenWrt-Commit):** e420b7b5c517d03e1282b5889065e22143f9c4ef [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-ac-mesh-pro.md; https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790
-- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt
+- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt; sicherheit = abgeleitet; sicherheit_hinweis = Für den UniFi AC Lite und den AC Pro gibt es Erfolgsberichte mit diesem Weg, für dieses Modell liegt uns noch keiner vor.
 
 #### ubiquiti-unifi-ac-pro
 
@@ -11870,7 +11880,7 @@ Ubiquiti UniFi AC Pro · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben
 - **Quelle (OpenWrt-Commit):** 7dd3d7e1d3845160c2ef51e6148b452e666bd6f5 [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-ac-pro.md; https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790
-- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt
+- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt; sicherheit = abgeleitet; sicherheit_hinweis = Bei uns ist dieser Weg 2025 schon an einem UniFi AC Pro gelaufen, und im Freifunk-Forum gibt es einen weiteren Erfolgsbericht.
 
 #### ubiquiti-unifi-ap
 
@@ -11932,7 +11942,7 @@ Ubiquiti UniFi AP Outdoor+ · ath79-generic · K0+
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 51f578efa5012464a21565556eaf2027b3d88ab5 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-ap-outdoor+.md
-- **Werte für die Anleitung:** ssh_alt = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = factory; ziel = /tmp/openwrt.bin; befehle = ['fwupdate.real -m /tmp/openwrt.bin -d']
+- **Werte für die Anleitung:** ssh_alt = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = factory; ziel = /tmp/openwrt.bin; befehle = ['fwupdate.real -m /tmp/openwrt.bin -d']; sicherheit = quelle
 
 #### ubiquiti-unifi-swiss-army-knife-ultra
 
@@ -11966,7 +11976,7 @@ Ubiquiti UniFi Swiss Army Knife Ultra · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: dd schreibt das Gluon-sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** bf94e0a38389b2ce5d33be9c97d104d36dd5ebd6 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-swiss-army-knife-ultra.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5ad05681f2de00c8c6d6449df2b958b0838dbc1a
-- **Werte für die Anleitung:** ssh_alt = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2 und kernel1 bei mtd3 steht.', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']
+- **Werte für die Anleitung:** ssh_alt = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2 und kernel1 bei mtd3 steht.', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; sicherheit = quelle
 
 #### ubiquiti-unifi-ac-hd
 
@@ -12001,7 +12011,7 @@ Ubiquiti UniFi AC HD · ipq806x-generic · K1d
 - **Gluon-RAMpe passt:** nein, nicht nötig: der Weg schreibt das Gluon-sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** OpenWrt 4e46beb31342a2b02e32185e91806093f68a77be
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-ac-hd.md
-- **Werte für die Anleitung:** ssh_alt = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/sysupgrade.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe bootselect bei mtd11 und kernel0 bei mtd12 steht.', 'dd if=/dev/zero bs=1 count=1 seek=7 conv=notrunc of=/dev/mtd11', 'dd if=/tmp/sysupgrade.bin of=/dev/mtdblock12', 'reboot']
+- **Werte für die Anleitung:** ssh_alt = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/sysupgrade.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe bootselect bei mtd11 und kernel0 bei mtd12 steht.', 'dd if=/dev/zero bs=1 count=1 seek=7 conv=notrunc of=/dev/mtd11', 'dd if=/tmp/sysupgrade.bin of=/dev/mtdblock12', 'reboot']; sicherheit = quelle
 
 #### ubiquiti-unifi-6-plus
 
@@ -12037,7 +12047,7 @@ Ubiquiti UniFi 6+ (U6+) · mediatek-filogic · K1d
 - **Gluon-RAMpe passt:** nein, nicht nötig: der Weg schreibt das Gluon-sysupgrade direkt, ohne initramfs-Schritt
 - **Quelle (OpenWrt-Commit):** OpenWrt 75ee5546e9b7cfa5bbfd6f844ab8c5fffd5bb594
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-6-plus.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=75ee5546e9b7cfa5bbfd6f844ab8c5fffd5bb594
-- **Werte für die Anleitung:** ssh_alt = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/openwrt.bin; befehle = ['echo 5edfacbf > /proc/ubnthal/.uf', 'grep PARTNAME /sys/block/mmcblk0/mmcblk0p6/uevent', 'grep PARTNAME /sys/block/mmcblk0/mmcblk0p7/uevent', 'grep PARTNAME /sys/block/mmcblk0/mmcblk0p8/uevent', '# Weiter nur, wenn die drei Antworten PARTNAME=kernel0, PARTNAME=kernel1 und PARTNAME=bs lauten.', 'fw_setenv boot_openwrt "fdt addr \\$(fdtcontroladdr); fdt rm /signature; bootubnt"', 'fw_setenv bootcmd_real "run boot_openwrt"', 'fw_printenv', 'tar xf /tmp/openwrt.bin sysupgrade-ubnt_unifi-6-plus/kernel -O | dd of=/dev/mmcblk0p6', 'tar xf /tmp/openwrt.bin sysupgrade-ubnt_unifi-6-plus/root -O | dd of=/dev/mmcblk0p7', 'echo -ne "\\x00\\x00\\x00\\x00\\x2b\\xe8\\x4d\\xa3" > /dev/mmcblk0p8', 'reboot']
+- **Werte für die Anleitung:** ssh_alt = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/openwrt.bin; befehle = ['echo 5edfacbf > /proc/ubnthal/.uf', 'grep PARTNAME /sys/block/mmcblk0/mmcblk0p6/uevent', 'grep PARTNAME /sys/block/mmcblk0/mmcblk0p7/uevent', 'grep PARTNAME /sys/block/mmcblk0/mmcblk0p8/uevent', '# Weiter nur, wenn die drei Antworten PARTNAME=kernel0, PARTNAME=kernel1 und PARTNAME=bs lauten.', 'fw_setenv boot_openwrt "fdt addr \\$(fdtcontroladdr); fdt rm /signature; bootubnt"', 'fw_setenv bootcmd_real "run boot_openwrt"', 'fw_printenv', 'tar xf /tmp/openwrt.bin sysupgrade-ubnt_unifi-6-plus/kernel -O | dd of=/dev/mmcblk0p6', 'tar xf /tmp/openwrt.bin sysupgrade-ubnt_unifi-6-plus/root -O | dd of=/dev/mmcblk0p7', 'echo -ne "\\x00\\x00\\x00\\x00\\x2b\\xe8\\x4d\\xa3" > /dev/mmcblk0p8', 'reboot']; sicherheit = quelle
 
 #### ubiquiti-unifi-6-lr-v1
 
@@ -12078,7 +12088,7 @@ Ubiquiti UniFi 6 LR v1 · mediatek-mt7622 · K1d
 - **Gluon-RAMpe passt:** nein, nicht nötig: der Weg schreibt das Gluon-sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** OpenWrt 634c13c186646aff2badb51a43b248825d0fe5a0 (v1-Profil: 15a02471bb854245f8f94398c1e1d9ce29c2c341)
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-6-lr-v1.md; https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps
-- **Werte für die Anleitung:** dauer = etwa 4 Minuten; ssh_alt = True; rueckweg_taste = bis die LED weiß, blau und aus wechselt; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/openwrt.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe bs bei mtd6, kernel0 bei mtd8 und kernel1 bei mtd9 steht.', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtdblock6', 'dd if=/tmp/openwrt.bin of=/dev/mtdblock8', 'dd if=/tmp/openwrt.bin of=/dev/mtdblock9', 'reboot']
+- **Werte für die Anleitung:** dauer = etwa 4 Minuten; ssh_alt = True; rueckweg_taste = bis die LED weiß, blau und aus wechselt; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/openwrt.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe bs bei mtd6, kernel0 bei mtd8 und kernel1 bei mtd9 steht.', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtdblock6', 'dd if=/tmp/openwrt.bin of=/dev/mtdblock8', 'dd if=/tmp/openwrt.bin of=/dev/mtdblock9', 'reboot']; sicherheit = abgeleitet
 
 #### ubiquiti-unifi-6-lr-v2
 
@@ -12196,7 +12206,7 @@ Ubiquiti UniFi 6 Lite · ramips-mt7621 · K1d
 - **Gluon-RAMpe passt:** nein: der SSH-Weg schreibt das sysupgrade direkt; ein Ramboot ginge nur seriell (`fdt rm /signature`, TFTP C0A80114.img)
 - **Quelle (OpenWrt-Commit):** fb4d7a9680117a00721936c98ce41eeb2dea95c9
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-6-lite.md; https://openwrt.org/toh/ubiquiti/unifi6lite#installation
-- **Werte für die Anleitung:** ssh_alt = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/openwrt.bin; befehle = ['fw_setenv devmode TRUE', 'fw_setenv boot_openwrt "fdt addr \\$(fdtcontroladdr); fdt rm /signature; bootubnt"', 'fw_setenv bootcmd "run boot_openwrt"', 'cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe bs bei mtd4, kernel0 bei mtd6 und kernel1 bei mtd7 steht.', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtdblock4', 'dd if=/tmp/openwrt.bin of=/dev/mtdblock6', 'dd if=/tmp/openwrt.bin of=/dev/mtdblock7', 'reboot']
+- **Werte für die Anleitung:** ssh_alt = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/openwrt.bin; befehle = ['fw_setenv devmode TRUE', 'fw_setenv boot_openwrt "fdt addr \\$(fdtcontroladdr); fdt rm /signature; bootubnt"', 'fw_setenv bootcmd "run boot_openwrt"', 'cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe bs bei mtd4, kernel0 bei mtd6 und kernel1 bei mtd7 steht.', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtdblock4', 'dd if=/tmp/openwrt.bin of=/dev/mtdblock6', 'dd if=/tmp/openwrt.bin of=/dev/mtdblock7', 'reboot']; sicherheit = abgeleitet
 
 #### ubiquiti-unifi-nanohd
 
@@ -12232,7 +12242,7 @@ Ubiquiti UniFi nanoHD · ramips-mt7621 · K1d
 - **Gluon-RAMpe passt:** nein: SSH-Weg schreibt das sysupgrade direkt
 - **Quelle (OpenWrt-Commit):** 4c8446bf39de99990847eb4bc7744e25835a34f5
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-nanohd.md
-- **Werte für die Anleitung:** ssh_alt = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/openwrt-sysupgrade.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe bs bei mtd4, kernel0 bei mtd6 und kernel1 bei mtd7 steht.', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'dd if=/tmp/openwrt-sysupgrade.bin of=/dev/mtdblock6', 'dd if=/tmp/openwrt-sysupgrade.bin of=/dev/mtdblock7', 'reboot']
+- **Werte für die Anleitung:** ssh_alt = False; geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/openwrt-sysupgrade.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe bs bei mtd4, kernel0 bei mtd6 und kernel1 bei mtd7 steht.', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'dd if=/tmp/openwrt-sysupgrade.bin of=/dev/mtdblock6', 'dd if=/tmp/openwrt-sysupgrade.bin of=/dev/mtdblock7', 'reboot']; sicherheit = quelle
 
 ### Familie `xiaomi-ac2100-pppoe`
 

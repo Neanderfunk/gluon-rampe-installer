@@ -5,15 +5,22 @@ familie: netgear-nmrp
 sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
-grundlagen: [nmrpflash]
-daten_stand: 0a4f2b3
-vorlage_stand: deba706
+rampe_image: gluon-rampe-20261015-netgear-wndr3700-v5-factory.img
+grundlagen: [browser-https, nmrpflash]
+daten_stand: lokal
+vorlage_stand: ce95dd8
 ---
 
-> **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
-> zusammengestellt, aber noch niemand hat sie an einem NETGEAR WNDR3700 v5 (Gluon: broken, "untested") Schritt
-> für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de), ob es geklappt hat.
+> **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
+> bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
+> ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
+> klappt.
+>
+> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Anleitung für alle nach dir besser:
+>
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20NETGEAR%20WNDR3700%20v5%20%28Gluon%3A%20broken%2C%20%22untested%22%29)
 
 # NETGEAR WNDR3700 v5 (Gluon: broken, "untested"): Freifunk-Firmware installieren
 
@@ -98,6 +105,30 @@ Die Freifunk-Firmware für den WNDR3700 v5 gilt bei Gluon als ungetestet.
   probieren.
 - **"Timeout while waiting for ACK(0)/OACK."** Meist die Firewall am Rechner.
 - Weitere Meldungen erklärt [nmrpflash benutzen](grundlagen/nmrpflash.md).
+
+## Anderer Weg: mit der Gluon-RAMpe (ungetestet)
+
+Statt erst OpenWrt und dann die Freifunk-Firmware aufzuspielen, geht es auch
+mit der **Gluon-RAMpe**: einer kleinen Firmware, die nur eins kann, nämlich
+die Freifunk-Firmware deiner Community annehmen. Das spart die
+OpenWrt-Etappe. Für den NETGEAR WNDR3700 v5 (Gluon: broken, "untested") ist dieser Weg **noch von niemandem
+ausprobiert**; die RAMpe selbst läuft auf anderen Geräten.
+
+1. Lade die RAMpe für den NETGEAR WNDR3700 v5 (Gluon: broken, "untested") herunter:
+   [gluon-rampe-20261015-netgear-wndr3700-v5-factory.img](https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-netgear-wndr3700-v5-factory.img).
+2. Benenne die RAMpe in firmware.img um und schick sie in Schritt 4 mit nmrpflash statt der OpenWrt-Datei.
+3. Nach dem Neustart öffne `http://192.168.1.1`. Es erscheint die Seite
+   "Firmware aktualisieren" der RAMpe. Startet der Router zwischendurch neu,
+   einfach die Seite wieder aufrufen.
+
+   ![Die Seite der RAMpe: "Firmware aktualisieren" mit Feld für die Datei und Knopf "Datei hochladen"](../bilder/allgemein/rampe-seite.png)
+4. Wähl das **sysupgrade**-Image deiner Community und klick "Datei
+   hochladen". Die RAMpe zeigt die Prüfsumme (SHA256); vergleich sie mit der
+   Angabe deiner Community und klick "Fortfahren".
+5. Nach wenigen Minuten startet die Freifunk-Firmware.
+
+Zeigt der Browser beim Aufruf eine Warnung vor dem Zertifikat, siehe
+[Browser macht https daraus](grundlagen/browser-https.md).
 
 ## Herkunft der Angaben
 

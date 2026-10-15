@@ -282,7 +282,8 @@
    "erprobt": {},
    "werte": {
     "stock_url": "http://192.168.11.1",
-    "menue": "Administration → Firmware Upgrade"
+    "menue": "Administration → Firmware Upgrade",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -329,7 +330,8 @@
    "erprobt": {},
    "werte": {
     "stock_url": "http://192.168.11.1",
-    "menue": "Administration → Firmware Upgrade"
+    "menue": "Administration → Firmware Upgrade",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -375,7 +377,8 @@
    "anleitung": "anleitungen/de/buffalo-wzr-hp-g300nh-rtl8366s.md",
    "erprobt": {},
    "werte": {
-    "stock_url": "http://192.168.11.1"
+    "stock_url": "http://192.168.11.1",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -510,7 +513,8 @@
    "erprobt": {},
    "werte": {
     "stock_url": "http://192.168.0.50",
-    "zugang": "ab Werk ohne Passwort"
+    "zugang": "ab Werk ohne Passwort",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -557,7 +561,8 @@
    "erprobt": {},
    "werte": {
     "stock_url": "http://192.168.0.50",
-    "zugang": "ab Werk ohne Passwort"
+    "zugang": "ab Werk ohne Passwort",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -605,7 +610,8 @@
    "erprobt": {},
    "werte": {
     "stock_url": "http://192.168.0.50",
-    "zugang": "Benutzer `admin`, Passwort leer lassen"
+    "zugang": "Benutzer `admin`, Passwort leer lassen",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -653,7 +659,8 @@
    "erprobt": {},
    "werte": {
     "stock_url": "http://192.168.0.50",
-    "zugang": "Benutzer `admin`, Passwort leer lassen"
+    "zugang": "Benutzer `admin`, Passwort leer lassen",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -699,7 +706,8 @@
    "anleitung": "anleitungen/de/d-link-dap-2695-a1.md",
    "erprobt": {},
    "werte": {
-    "stock_url": ""
+    "stock_url": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -1253,7 +1261,8 @@
    "erprobt": {},
    "werte": {
     "weg": "uboot",
-    "taste": "Strom ab, Reset-Taste halten, Strom wieder an. Die LED blinkt einige Male grün, dann ganz kurz rot: beim roten Blinken loslassen."
+    "taste": "Strom ab, Reset-Taste halten, Strom wieder an. Die LED blinkt einige Male grün, dann ganz kurz rot: beim roten Blinken loslassen.",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -1305,7 +1314,8 @@
     "weg": "uboot",
     "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die rote LED 5-mal geblinkt hat; beim 6. Blinken loslassen.",
     "led_uboot": "Leuchtet nur noch die linke grüne LED, ist der Notfall-Modus erreicht.",
-    "led_schreiben": "Gehen alle LEDs aus, ist das Schreiben fertig."
+    "led_schreiben": "Gehen alle LEDs aus, ist das Schreiben fertig.",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -1353,7 +1363,8 @@
    "werte": {
     "weg": "gl-ui",
     "gl_menue": "Advanced",
-    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen."
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -1403,7 +1414,8 @@
    "erprobt": {},
    "werte": {
     "weg": "uboot",
-    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen."
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -1450,7 +1462,8 @@
    "erprobt": {},
    "werte": {
     "weg": "gl-ui",
-    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen."
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -1497,7 +1510,8 @@
    "erprobt": {},
    "werte": {
     "weg": "gl-ui",
-    "usb": true
+    "usb": true,
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -1633,7 +1647,8 @@
    "anleitung": "anleitungen/de/netgear-wndr3700.md",
    "erprobt": {},
    "werte": {
-    "stock_url": ""
+    "stock_url": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -1680,7 +1695,8 @@
    "anleitung": "anleitungen/de/netgear-wndr3700-v2.md",
    "erprobt": {},
    "werte": {
-    "stock_url": ""
+    "stock_url": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -1729,7 +1745,8 @@
    "werte": {
     "stock_url": "http://192.168.1.1",
     "rechner_ip": "192.168.1.10",
-    "dauer": "bis zu 10 Minuten"
+    "dauer": "bis zu 10 Minuten",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -1778,7 +1795,8 @@
    "werte": {
     "stock_url": "http://192.168.1.1",
     "rechner_ip": "192.168.1.10",
-    "dauer": "bis zu 10 Minuten"
+    "dauer": "bis zu 10 Minuten",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -1824,7 +1842,8 @@
    "anleitung": "anleitungen/de/netgear-wndrmac-v2.md",
    "erprobt": {},
    "werte": {
-    "stock_url": ""
+    "stock_url": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -1871,7 +1890,8 @@
    "anleitung": "anleitungen/de/netgear-wnr2200-16m.md",
    "erprobt": {},
    "werte": {
-    "stock_url": ""
+    "stock_url": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -1918,7 +1938,8 @@
    "anleitung": "anleitungen/de/netgear-wnr2200-8m.md",
    "erprobt": {},
    "werte": {
-    "stock_url": ""
+    "stock_url": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -3541,7 +3562,8 @@
     "tftp_taste": "etwa 5 Sekunden",
     "tftp_dauer": "etwa 150 Sekunden",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -3606,7 +3628,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -3670,7 +3693,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -3736,7 +3760,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -3800,7 +3825,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "Steck einen Switch zwischen Router und Rechner, sonst kommt die Verbindung womöglich zu langsam zustande.",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -3864,7 +3890,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "Steck einen Switch zwischen Router und Rechner, sonst kommt die Verbindung womöglich zu langsam zustande.",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -3929,7 +3956,9 @@
     "tftp_taste": "bis die WPS-LED leuchtet",
     "tftp_dauer": "etwa 150 Sekunden",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "abgeleitet",
+    "sicherheit_hinweis": "Ob die TP-Link-Oberfläche die Datei annimmt, hängt von der Version der Herstellerfirmware ab; mit 1.3.3 oder 1.3.7 sollte es am ehesten gehen."
    }
   },
   {
@@ -4039,7 +4068,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -4104,7 +4134,8 @@
     "tftp_taste": "etwa 15 Sekunden",
     "tftp_dauer": "etwa 30 Sekunden",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -4169,7 +4200,8 @@
     "tftp_taste": "etwa 15 Sekunden",
     "tftp_dauer": "etwa 150 Sekunden",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -4281,7 +4313,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware."
+    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -4348,7 +4381,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware."
+    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -4415,7 +4449,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware."
+    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -4482,7 +4517,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware."
+    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -4549,7 +4585,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware."
+    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -4616,7 +4653,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware."
+    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -4683,7 +4721,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware."
+    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -4751,7 +4790,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware."
+    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -4819,7 +4859,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware."
+    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -5023,7 +5064,8 @@
     "tftp_taste": "etwa 15 Sekunden",
     "tftp_dauer": "etwa 30 Sekunden",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -5089,7 +5131,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -5155,7 +5198,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -5220,7 +5264,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -5285,7 +5330,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -5350,7 +5396,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -5415,7 +5462,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -5479,7 +5527,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -5544,7 +5593,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -5609,7 +5659,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -5674,7 +5725,8 @@
     "tftp_taste": "bis die WPS-LED leuchtet",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -5741,7 +5793,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware."
+    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -5808,7 +5861,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware."
+    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -5875,7 +5929,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware."
+    "notweg_keiner": "Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -5974,7 +6029,8 @@
     "dauer": "",
     "geraet_ip": "192.168.1.20",
     "rechner_ip": "192.168.1.21",
-    "taste": "bis die Signal-LEDs abwechselnd blinken (erst LED 1 und 3, dann LED 2 und 4)"
+    "taste": "bis die Signal-LEDs abwechselnd blinken (erst LED 1 und 3, dann LED 2 und 4)",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -6028,7 +6084,8 @@
     "dauer": "",
     "geraet_ip": "192.168.1.20",
     "rechner_ip": "192.168.1.21",
-    "taste": "bis die Signal-LEDs abwechselnd blinken (erst LED 1 und 3, dann LED 2 und 4); das kann bis zu 25 Sekunden dauern"
+    "taste": "bis die Signal-LEDs abwechselnd blinken (erst LED 1 und 3, dann LED 2 und 4); das kann bis zu 25 Sekunden dauern",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -6082,7 +6139,8 @@
     "dauer": "",
     "geraet_ip": "192.168.1.20",
     "rechner_ip": "192.168.1.21",
-    "taste": "etwa 8 Sekunden, bis die Signal-LEDs abwechselnd blinken"
+    "taste": "etwa 8 Sekunden, bis die Signal-LEDs abwechselnd blinken",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -6151,7 +6209,9 @@
     ],
     "dauer": "etwa 2 Minuten",
     "ssh_alt": false,
-    "rueckweg_taste": "etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt"
+    "rueckweg_taste": "etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt",
+    "sicherheit": "abgeleitet",
+    "sicherheit_hinweis": "Den Ablauf haben wir vom UniFi Swiss Army Knife Ultra übernommen, der dieselbe Technik hat. Im Freifunk-Forum gibt es Erfolgsberichte für den AC Lite."
    }
   },
   {
@@ -6220,7 +6280,9 @@
     ],
     "dauer": "etwa 2 Minuten",
     "ssh_alt": false,
-    "rueckweg_taste": "etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt"
+    "rueckweg_taste": "etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt",
+    "sicherheit": "abgeleitet",
+    "sicherheit_hinweis": "Für den UniFi AC Lite und den AC Pro gibt es Erfolgsberichte mit diesem Weg, für dieses Modell liegt uns noch keiner vor."
    }
   },
   {
@@ -6289,7 +6351,9 @@
     ],
     "dauer": "etwa 2 Minuten",
     "ssh_alt": false,
-    "rueckweg_taste": "etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt"
+    "rueckweg_taste": "etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt",
+    "sicherheit": "abgeleitet",
+    "sicherheit_hinweis": "Für den UniFi AC Lite und den AC Pro gibt es Erfolgsberichte mit diesem Weg, für dieses Modell liegt uns noch keiner vor."
    }
   },
   {
@@ -6358,7 +6422,9 @@
     ],
     "dauer": "etwa 2 Minuten",
     "ssh_alt": false,
-    "rueckweg_taste": "etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt"
+    "rueckweg_taste": "etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt",
+    "sicherheit": "abgeleitet",
+    "sicherheit_hinweis": "Für den UniFi AC Lite und den AC Pro gibt es Erfolgsberichte mit diesem Weg, für dieses Modell liegt uns noch keiner vor."
    }
   },
   {
@@ -6427,7 +6493,9 @@
     ],
     "dauer": "etwa 2 Minuten",
     "ssh_alt": false,
-    "rueckweg_taste": "etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt"
+    "rueckweg_taste": "etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt",
+    "sicherheit": "abgeleitet",
+    "sicherheit_hinweis": "Bei uns ist dieser Weg 2025 schon an einem UniFi AC Pro gelaufen, und im Freifunk-Forum gibt es einen weiteren Erfolgsbericht."
    }
   },
   {
@@ -6528,7 +6596,8 @@
     "ziel": "/tmp/openwrt.bin",
     "befehle": [
      "fwupdate.real -m /tmp/openwrt.bin -d"
-    ]
+    ],
+    "sicherheit": "quelle"
    }
   },
   {
@@ -6580,7 +6649,8 @@
     "dauer": "etwa 2 Minuten",
     "geraet_ip": "192.168.1.20",
     "rechner_ip": "192.168.1.21",
-    "taste": "10 Sekunden"
+    "taste": "10 Sekunden",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -6644,7 +6714,8 @@
      "dd if=/tmp/firmware.bin of=/dev/mtdblock3",
      "dd if=/dev/zero bs=1 count=1 of=/dev/mtd4",
      "reboot"
-    ]
+    ],
+    "sicherheit": "quelle"
    }
   },
   {
@@ -6977,7 +7048,8 @@
    "erprobt": {},
    "werte": {
     "weg": "uboot",
-    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen."
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -7030,7 +7102,8 @@
     "weg": "uboot",
     "taste": "Strom ab, Reset-Taste halten, Strom wieder an und halten, bis die rechte LED 5-mal geblinkt hat. Dann loslassen.",
     "uboot_abschnitt": "im Abschnitt „NOR flash“ mit „update nor firmware“",
-    "kabel_ziehen": true
+    "kabel_ziehen": true,
+    "sicherheit": "quelle"
    }
   },
   {
@@ -7083,7 +7156,11 @@
     "taste": "Halte die Reset-Taste gedrückt und schalte den Router ein.",
     "led_uboot": "Auf dem Display steht erst „Booting“, dann „Reset Counting 1 to 4“, dann „Please Open Web 192.168.1.1“: Jetzt loslassen.",
     "zwischen_datei": "openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img",
-    "zwischen_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img"
+    "zwischen_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img",
+    "sicherheit": "quelle",
+    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-gl.inet-gl-e750-factory.img",
+    "rampe_datei": "gluon-rampe-20261015-gl.inet-gl-e750-factory.img",
+    "rampe_weg": "Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch."
    }
   },
   {
@@ -7136,7 +7213,11 @@
     "taste": "Drück die Reset-Taste und die Power-Taste gleichzeitig und halte beide, bis die LAN-LED 5-mal geblinkt hat. Dann beide loslassen.",
     "led_uboot": "Bleibt die WLAN-LED an, ist der Notfall-Modus erreicht.",
     "zwischen_datei": "openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img",
-    "zwischen_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img"
+    "zwischen_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img",
+    "sicherheit": "quelle",
+    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-gl.inet-gl-xe300-factory.img",
+    "rampe_datei": "gluon-rampe-20261015-gl.inet-gl-xe300-factory.img",
+    "rampe_weg": "Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch."
    }
   },
   {
@@ -7185,7 +7266,8 @@
    "werte": {
     "stock_url": "http://192.168.1.1",
     "zugang": "Benutzer `admin`, Passwort `password`",
-    "dauer": "einige Minuten"
+    "dauer": "einige Minuten",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -7234,7 +7316,8 @@
    "werte": {
     "stock_url": "http://192.168.1.1",
     "zugang": "Benutzer `admin`, Passwort `password`",
-    "dauer": "einige Minuten"
+    "dauer": "einige Minuten",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -7364,7 +7447,9 @@
    "anleitung": "anleitungen/de/zyxel-nbg6716.md",
    "erprobt": {},
    "werte": {
-    "stock_url": ""
+    "stock_url": "",
+    "sicherheit": "abgeleitet",
+    "sicherheit_hinweis": "OpenWrt beschreibt nicht, wie die Datei aus der Zyxel-Firmware heraus auf das Gerät kommt; den Weg über die Zyxel-Oberfläche haben wir angenommen."
    }
   },
   {
@@ -7415,7 +7500,8 @@
    "werte": {
     "datei_art": "factory",
     "medium": "eine microSD-Karte",
-    "anschluss": "die Netzwerkbuchse"
+    "anschluss": "die Netzwerkbuchse",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -7466,7 +7552,8 @@
    "werte": {
     "datei_art": "factory",
     "medium": "eine microSD-Karte",
-    "anschluss": "die Netzwerkbuchse"
+    "anschluss": "die Netzwerkbuchse",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -7517,7 +7604,8 @@
    "werte": {
     "datei_art": "factory",
     "medium": "eine microSD-Karte",
-    "anschluss": "die Netzwerkbuchse"
+    "anschluss": "die Netzwerkbuchse",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -7568,7 +7656,8 @@
    "werte": {
     "datei_art": "factory",
     "medium": "eine microSD-Karte",
-    "anschluss": "die Netzwerkbuchse"
+    "anschluss": "die Netzwerkbuchse",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -8304,7 +8393,8 @@
     "weg": "uboot",
     "uboot_datei": "factory",
     "taste": "Drück die Reset-Taste, steck den Strom ein und halte sie etwa 10 Sekunden, bis die Power-LED schneller blinkt. Dann loslassen.",
-    "led_uboot": "Die Power-LED blinkt erst 5-mal langsam, leuchtet kurz und blinkt dann dauernd schnell."
+    "led_uboot": "Die Power-LED blinkt erst 5-mal langsam, leuchtet kurz und blinkt dann dauernd schnell.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -8356,7 +8446,8 @@
     "weg": "uboot",
     "dateiname": "lede-gl-b1300.bin",
     "taste": "Drück die Reset-Taste, steck den Strom ein und halte die Taste, bis die LEDs dauerhaft leuchten. Dann loslassen.",
-    "led_schreiben": "Beim Schreiben blinkt die WLAN-LED."
+    "led_schreiben": "Beim Schreiben blinkt die WLAN-LED.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -8404,16 +8495,17 @@
    "erprobt": {},
    "werte": {
     "stock_url": "http://192.168.1.1",
-    "menue": "Connectivity → Manual update"
+    "menue": "Connectivity → Manual update",
+    "sicherheit": "quelle"
    }
   },
   {
    "gluon_name": "linksys-ea8300-dallas",
    "modell": "Linksys EA8300",
    "target": "ipq40xx-generic",
-   "kat": "K0",
-   "familie": "k0-webui",
-   "weg": "Gluon-factory über die Linksys-UI [geprüft]",
+   "kat": "K2",
+   "familie": "sonderweg-linksys-ea8300",
+   "weg": "OpenWrt-22.03.6-factory über die Linksys-UI, dort per SSH `fw_setenv kernsize 500000`, dann Gluon-factory in LuCI mit \"Force upgrade\" [geprüft: Wiki toh:linksys:ea8300; Gluon-Teil abgeleitet]; Gluon-factory direkt über die Linksys-UI macht das Gerät unbrauchbar [geprüft: Wiki toh:linksys:ea8300]",
    "schritte": [
     "Typenschild prüfen: EA8300, nicht MR8300 [geprüft: Commit a9071d02]",
     "Nicht das Gluon-factory nehmen, sondern das factory.bin von OpenWrt 22.03.5/22.03.6 bereitlegen, dazu das Gluon-sysupgrade-Image [Folge abgeleitet; geprüft: Wiki toh:linksys:ea8300]",
@@ -8449,9 +8541,12 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 819e7946b0964725dab50c92797f49cf4053d955",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/linksys-ea8300-dallas.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "sicherheit": "abgeleitet",
+    "sicherheit_hinweis": "Teil 1 und 2 beschreibt das OpenWrt-Wiki genau so. Dass sich die Freifunk-Firmware in Teil 3 wie OpenWrt mit „Force upgrade“ einspielen lässt, haben wir daraus abgeleitet."
+   }
   },
   {
    "gluon_name": "linksys-mr8300-dallas",
@@ -8542,7 +8637,8 @@
    "anleitung": "anleitungen/de/linksys-vlp01.md; https://openwrt.org/toh/linksys/whw01_v1#installation",
    "erprobt": {},
    "werte": {
-    "stock_url": ""
+    "stock_url": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -8589,7 +8685,8 @@
    "anleitung": "anleitungen/de/linksys-whw01.md; https://openwrt.org/toh/linksys/whw01_v1#installation",
    "erprobt": {},
    "werte": {
-    "stock_url": ""
+    "stock_url": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -8639,7 +8736,8 @@
    "werte": {
     "stock_url": "http://192.168.1.1/ca",
     "zugang": "mit dem Admin-Passwort (bei nicht eingerichteten Geräten `admin`)",
-    "menue": "Connectivity"
+    "menue": "Connectivity",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -8689,7 +8787,8 @@
    "werte": {
     "stock_url": "http://192.168.1.1",
     "zugang": "mit dem Admin-Passwort vom Aufkleber",
-    "menue": "Link „CA“ unten → Connectivity → Choose file"
+    "menue": "Link „CA“ unten → Connectivity → Choose file",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -8774,7 +8873,8 @@
    "anleitung": "anleitungen/de/netgear-ex6100v2.md",
    "erprobt": {},
    "werte": {
-    "nach_upload": "eine zweite Rückfrage, weil die Netgear-Oberfläche die Freifunk-Firmware für eine ältere Version hält; bestätige auch sie"
+    "nach_upload": "eine zweite Rückfrage, weil die Netgear-Oberfläche die Freifunk-Firmware für eine ältere Version hält; bestätige auch sie",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -8821,7 +8921,8 @@
    "anleitung": "anleitungen/de/netgear-ex6150v2.md; https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-fuer-netgear-wi-fi-range-extender-ex6150-v2/",
    "erprobt": {},
    "werte": {
-    "nach_upload": "eine zweite Rückfrage, weil die Netgear-Oberfläche die Freifunk-Firmware für eine ältere Version hält; bestätige auch sie"
+    "nach_upload": "eine zweite Rückfrage, weil die Netgear-Oberfläche die Freifunk-Firmware für eine ältere Version hält; bestätige auch sie",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -8872,7 +8973,8 @@
    "erprobt": {},
    "werte": {
     "anschluss": "die Buchse nahe der Ein/Aus-Taste",
-    "nach_neustart": "Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten."
+    "nach_neustart": "Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -8923,7 +9025,8 @@
    "erprobt": {},
    "werte": {
     "anschluss": "die Buchse nahe der Ein/Aus-Taste",
-    "nach_neustart": "Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten."
+    "nach_neustart": "Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -8974,7 +9077,8 @@
    "erprobt": {},
    "werte": {
     "anschluss": "die Buchse nahe der Ein/Aus-Taste",
-    "nach_neustart": "Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten."
+    "nach_neustart": "Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -9025,7 +9129,8 @@
    "erprobt": {},
    "werte": {
     "anschluss": "die Buchse nahe der Ein/Aus-Taste",
-    "nach_neustart": "Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten."
+    "nach_neustart": "Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -9312,7 +9417,8 @@
    "werte": {
     "stock_url": "http://192.168.1.1",
     "zugang": "Passwort `1234`",
-    "menue": "Expert Mode → Maintenance → Firmware Upgrade"
+    "menue": "Expert Mode → Maintenance → Firmware Upgrade",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -9640,7 +9746,8 @@
    "anleitung": "anleitungen/de/netgear-nighthawk-x4s-r7800.md",
    "erprobt": {},
    "werte": {
-    "stock_url": "http://192.168.1.1"
+    "stock_url": "http://192.168.1.1",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -9705,7 +9812,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -9767,7 +9875,8 @@
      "dd if=/dev/zero bs=1 count=1 seek=7 conv=notrunc of=/dev/mtd11",
      "dd if=/tmp/sysupgrade.bin of=/dev/mtdblock12",
      "reboot"
-    ]
+    ],
+    "sicherheit": "quelle"
    }
   },
   {
@@ -10360,7 +10469,8 @@
    "anleitung": "anleitungen/de/netgear-dgn3500b.md",
    "erprobt": {},
    "werte": {
-    "stock_url": ""
+    "stock_url": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -10614,7 +10724,8 @@
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_Outdoor_1.0/",
-    "zwischen_url_text": "Ordner AP3000_Outdoor_1.0 in unserem Spiegel"
+    "zwischen_url_text": "Ordner AP3000_Outdoor_1.0 in unserem Spiegel",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -10676,7 +10787,8 @@
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_V1.0/",
-    "zwischen_url_text": "Ordner AP3000_V1.0 in unserem Spiegel"
+    "zwischen_url_text": "Ordner AP3000_V1.0 in unserem Spiegel",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -10739,7 +10851,8 @@
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_Wall_1.0/",
-    "zwischen_url_text": "Ordner AP3000_Wall_1.0 in unserem Spiegel"
+    "zwischen_url_text": "Ordner AP3000_Wall_1.0 in unserem Spiegel",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -10802,7 +10915,8 @@
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M3000_1.0_2.0/",
-    "zwischen_url_text": "Ordner M3000_1.0_2.0 in unserem Spiegel"
+    "zwischen_url_text": "Ordner M3000_1.0_2.0 in unserem Spiegel",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -10865,7 +10979,8 @@
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M3000_1.0_2.0/",
-    "zwischen_url_text": "Ordner M3000_1.0_2.0 in unserem Spiegel"
+    "zwischen_url_text": "Ordner M3000_1.0_2.0 in unserem Spiegel",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -10927,7 +11042,8 @@
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/RE3000_V1/",
-    "zwischen_url_text": "Ordner RE3000_V1 in unserem Spiegel"
+    "zwischen_url_text": "Ordner RE3000_V1 in unserem Spiegel",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -10989,7 +11105,8 @@
     "rueckweg_halten": "mindestens 5 Sekunden",
     "rueckweg_quelle": "beim Cudy-Support (China) auf Anfrage",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/TR3000_256MB_Flash_V1_not_for_TR3000_V1_/",
-    "zwischen_url_text": "Ordner TR3000_256MB_Flash_V1_not_for_TR3000_V1_ in unserem Spiegel"
+    "zwischen_url_text": "Ordner TR3000_256MB_Flash_V1_not_for_TR3000_V1_ in unserem Spiegel",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -11097,7 +11214,8 @@
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000+V1_without_recovery_TFTP/",
-    "zwischen_url_text": "Ordner WR3000+V1_without_recovery_TFTP in unserem Spiegel"
+    "zwischen_url_text": "Ordner WR3000+V1_without_recovery_TFTP in unserem Spiegel",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -11159,7 +11277,8 @@
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000E_1.0/",
-    "zwischen_url_text": "Ordner WR3000E_1.0 in unserem Spiegel"
+    "zwischen_url_text": "Ordner WR3000E_1.0 in unserem Spiegel",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -11221,7 +11340,8 @@
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000H_1.0/",
-    "zwischen_url_text": "Ordner WR3000H_1.0 in unserem Spiegel"
+    "zwischen_url_text": "Ordner WR3000H_1.0 in unserem Spiegel",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -11283,7 +11403,8 @@
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000P_1.0/",
-    "zwischen_url_text": "Ordner WR3000P_1.0 in unserem Spiegel"
+    "zwischen_url_text": "Ordner WR3000P_1.0 in unserem Spiegel",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -11345,7 +11466,8 @@
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000S_1.0/",
-    "zwischen_url_text": "Ordner WR3000S_1.0 in unserem Spiegel"
+    "zwischen_url_text": "Ordner WR3000S_1.0 in unserem Spiegel",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -11407,7 +11529,8 @@
     "rueckweg_halten": "mindestens 5 Sekunden",
     "rueckweg_quelle": "von https://www.cudy.com/pages/download-center/wr3000u-256mb-1-0",
     "zwischen_url": "https://www.cudy.com/de-de/blogs/faq/openwrt-software-download",
-    "zwischen_url_text": "Cudys Seite „OpenWrt Software Download“"
+    "zwischen_url_text": "Cudys Seite „OpenWrt Software Download“",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -11474,7 +11597,8 @@
     "rampe_datei": "gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin",
     "taste_hinweis": "",
     "led_falsch": "",
-    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin"
+    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -11592,7 +11716,8 @@
    "erprobt": {},
    "werte": {
     "weg": "gl-ui",
-    "gl_url": "http://192.168.8.1"
+    "gl_url": "http://192.168.8.1",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -11641,7 +11766,8 @@
     "weg": "gl-ui",
     "gl_url": "http://192.168.8.1",
     "gl_menue": "Upgrade",
-    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die blaue LED 6-mal geblinkt hat und dann dauerhaft weiß leuchtet. Dann loslassen."
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die blaue LED 6-mal geblinkt hat und dann dauerhaft weiß leuchtet. Dann loslassen.",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -11691,7 +11817,8 @@
     "gl_url": "http://192.168.8.1",
     "gl_menue": "Upgrade",
     "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die blaue LED 6-mal geblinkt hat und dann dauerhaft weiß leuchtet. Dann loslassen.",
-    "anschluss": "LAN 2, 3 oder 4 (nicht LAN 1)"
+    "anschluss": "LAN 2, 3 oder 4 (nicht LAN 1)",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -11821,7 +11948,8 @@
    "anleitung": "anleitungen/de/netgear-wax220.md; https://openwrt.org/toh/netgear/wax220#oem_easy_installation",
    "erprobt": {},
    "werte": {
-    "dauer": "etwa 20 Sekunden, dazu der Neustart"
+    "dauer": "etwa 20 Sekunden, dazu der Neustart",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -11870,7 +11998,8 @@
     "stock_url": "http://192.168.1.1",
     "datei_art": "sysupgrade",
     "einstellungen_abwaehlen": true,
-    "menue": "System → Backup / Flash Firmware"
+    "menue": "System → Backup / Flash Firmware",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -11940,7 +12069,8 @@
      "tar xf /tmp/openwrt.bin sysupgrade-ubnt_unifi-6-plus/root -O | dd of=/dev/mmcblk0p7",
      "echo -ne \"\\x00\\x00\\x00\\x00\\x2b\\xe8\\x4d\\xa3\" > /dev/mmcblk0p8",
      "reboot"
-    ]
+    ],
+    "sicherheit": "quelle"
    }
   },
   {
@@ -12112,7 +12242,8 @@
    "werte": {
     "stock_url": "192.168.1.2",
     "rechner_ip": "192.168.1.10",
-    "zugang": "Benutzer `admin`, Passwort vom Aufkleber hinten oder `1234`"
+    "zugang": "Benutzer `admin`, Passwort vom Aufkleber hinten oder `1234`",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -12161,7 +12292,8 @@
    "werte": {
     "stock_url": "192.168.1.2",
     "rechner_ip": "192.168.1.10",
-    "zugang": "Benutzer `admin`, Passwort vom Aufkleber hinten oder `1234`"
+    "zugang": "Benutzer `admin`, Passwort vom Aufkleber hinten oder `1234`",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -12257,7 +12389,8 @@
    "anleitung": "anleitungen/de/netgear-wax206.md; https://openwrt.org/toh/netgear/wax206#oem_easy_installation",
    "erprobt": {},
    "werte": {
-    "web_moeglich": true
+    "web_moeglich": true,
+    "sicherheit": "quelle"
    }
   },
   {
@@ -12322,7 +12455,8 @@
      "dd if=/tmp/openwrt.bin of=/dev/mtdblock8",
      "dd if=/tmp/openwrt.bin of=/dev/mtdblock9",
      "reboot"
-    ]
+    ],
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -12615,7 +12749,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -12851,7 +12986,7 @@
    "modell": "Linksys MX5300",
    "target": "qualcommax-ipq807x",
    "kat": "K0",
-   "familie": "k0-webui",
+   "familie": "sonderweg-linksys-mx5300",
    "weg": "Gluon-factory über die Linksys-UI (manuelles Update); danach laut Commit dasselbe factory per `mtd write` auch in die zweite Partition [geprüft]",
    "schritte": [
     "Gluon-factory-Image bereitlegen [geprüft]",
@@ -12887,9 +13022,12 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 70fd815e57dc98cef88828faa5ce71717540e99e",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/linksys-mx5300.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "sicherheit": "quelle",
+    "sicherheit_hinweis": "Laut OpenWrt zuletzt geprüft mit Linksys-Firmware 1.1.12.210066 (April 2022); spätere Linksys-Updates könnten den Weg verbauen."
+   }
   },
   {
    "gluon_name": "netgear-wax218",
@@ -13108,7 +13246,8 @@
    "erprobt": {},
    "werte": {
     "weg": "gl-ui",
-    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 3-mal geblinkt hat. Dann loslassen."
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 3-mal geblinkt hat. Dann loslassen.",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -13154,7 +13293,8 @@
    "erprobt": {},
    "werte": {
     "weg": "gl-ui",
-    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 3-mal geblinkt hat. Dann loslassen."
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 3-mal geblinkt hat. Dann loslassen.",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -13199,7 +13339,8 @@
    "erprobt": {},
    "werte": {
     "weg": "gl-ui",
-    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED blinkt (vermutlich 3-mal wie beim MT300A). Dann loslassen."
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED blinkt (vermutlich 3-mal wie beim MT300A). Dann loslassen.",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -13248,7 +13389,8 @@
    "anleitung": "anleitungen/de/netgear-ex3700.md; https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-wi-fi-range-extender-ex3700/",
    "erprobt": {},
    "werte": {
-    "web_moeglich": true
+    "web_moeglich": true,
+    "sicherheit": "quelle"
    }
   },
   {
@@ -13297,7 +13439,8 @@
    "anleitung": "anleitungen/de/netgear-ex6130.md",
    "erprobt": {},
    "werte": {
-    "web_moeglich": true
+    "web_moeglich": true,
+    "sicherheit": "quelle"
    }
   },
   {
@@ -13345,7 +13488,8 @@
    "erprobt": {},
    "werte": {
     "stock_url": "http://192.168.8.1",
-    "zugang": "Benutzer `admin`, Passwort `admin`"
+    "zugang": "Benutzer `admin`, Passwort `admin`",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -13501,7 +13645,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -13566,7 +13711,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -13769,7 +13915,8 @@
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP1300_Outdoor_V1.0/",
-    "zwischen_url_text": "Ordner AP1300_Outdoor_V1.0 in unserem Spiegel"
+    "zwischen_url_text": "Ordner AP1300_Outdoor_V1.0 in unserem Spiegel",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -13831,7 +13978,9 @@
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M1800+V2/",
-    "zwischen_url_text": "Ordner M1800+V2 in unserem Spiegel"
+    "zwischen_url_text": "Ordner M1800+V2 in unserem Spiegel",
+    "sicherheit": "unsicher",
+    "sicherheit_hinweis": "Die Cudy-Zwischenfirmware, die wir gefunden haben, ist für den „M1800+ V2“ gedacht. Ob dein M1800 sie annimmt, wissen wir nicht."
    }
   },
   {
@@ -13893,7 +14042,8 @@
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR1300+V1/",
-    "zwischen_url_text": "Ordner WR1300+V1 in unserem Spiegel"
+    "zwischen_url_text": "Ordner WR1300+V1 in unserem Spiegel",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -13955,7 +14105,8 @@
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR2100+V1/",
-    "zwischen_url_text": "Ordner WR2100+V1 in unserem Spiegel"
+    "zwischen_url_text": "Ordner WR2100+V1 in unserem Spiegel",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -14017,7 +14168,8 @@
     "rueckweg_halten": "mindestens 8 Sekunden",
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/X6+V1/",
-    "zwischen_url_text": "Ordner X6+V1 in unserem Spiegel"
+    "zwischen_url_text": "Ordner X6+V1 in unserem Spiegel",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -14079,7 +14231,8 @@
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/X6+V2/",
-    "zwischen_url_text": "Ordner X6+V2 in unserem Spiegel"
+    "zwischen_url_text": "Ordner X6+V2 in unserem Spiegel",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -14126,7 +14279,8 @@
    "anleitung": "anleitungen/de/d-link-covr-x1860-a1.md; https://freifunk-aachen.de/2023/08/03/installationsanleitung-d-link-covr-x1860/",
    "erprobt": {},
    "werte": {
-    "stock_url": "http://192.168.0.1/UpdateFirmware_Simple.html"
+    "stock_url": "http://192.168.0.1/UpdateFirmware_Simple.html",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -14185,7 +14339,8 @@
     "led_recovery": "",
     "upload_pfad": "/upload.cgi",
     "dauer_neustart": "einige Minuten",
-    "datei_beispiel": "gluon-<community>-<release>-d-link-dap-1620-b1-factory.bin"
+    "datei_beispiel": "gluon-<community>-<release>-d-link-dap-1620-b1-factory.bin",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -14244,7 +14399,9 @@
     "led_recovery": "rot blinkt",
     "upload_pfad": "/upload.cgi",
     "dauer_neustart": "einige Minuten",
-    "datei_beispiel": "gluon-<community>-<release>-d-link-dap-x1860-a1-factory.bin"
+    "datei_beispiel": "gluon-<community>-<release>-d-link-dap-x1860-a1-factory.bin",
+    "sicherheit": "quelle",
+    "sicherheit_hinweis": "Eine Notiz von uns nennt für dieses Gerät statt der factory-Datei einen Umweg über OpenWrt; was davon stimmt, ist noch nicht geklärt."
    }
   },
   {
@@ -14290,7 +14447,8 @@
    "anleitung": "anleitungen/de/d-link-dir-860l-b1.md",
    "erprobt": {},
    "werte": {
-    "stock_url": ""
+    "stock_url": "",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -14350,7 +14508,9 @@
     "led_recovery": "orange blinkt",
     "upload_pfad": "/",
     "dauer_neustart": "einige Minuten",
-    "datei_beispiel": "gluon-<community>-<release>-d-link-dir-878-a1-factory.bin"
+    "datei_beispiel": "gluon-<community>-<release>-d-link-dir-878-a1-factory.bin",
+    "sicherheit": "quelle",
+    "sicherheit_hinweis": "Eine Notiz von uns nennt für die DIR-Reihe statt der Recovery-Seite einen Weg per TFTP; was davon für dieses Gerät stimmt, ist noch nicht geklärt."
    }
   },
   {
@@ -14409,7 +14569,9 @@
     "led_recovery": "orange blinkt",
     "upload_pfad": "/",
     "dauer_neustart": "einige Minuten",
-    "datei_beispiel": "gluon-<community>-<release>-d-link-dir-882-a1-factory.bin"
+    "datei_beispiel": "gluon-<community>-<release>-d-link-dir-882-a1-factory.bin",
+    "sicherheit": "quelle",
+    "sicherheit_hinweis": "Eine Notiz von uns nennt für die DIR-Reihe statt der Recovery-Seite einen Weg per TFTP; was davon für dieses Gerät stimmt, ist noch nicht geklärt."
    }
   },
   {
@@ -14506,7 +14668,8 @@
    "werte": {
     "weg": "uboot",
     "taste": "Drück die Reset-Taste, steck den Strom ein und halte die Taste, bis die blaue LED 5-mal geblinkt hat und die weiße LED angeht. Dann loslassen.",
-    "led_schreiben": "Während des Schreibens blinkt die blaue LED; hört sie auf, ist das Schreiben fertig."
+    "led_schreiben": "Während des Schreibens blinkt die blaue LED; hört sie auf, ist das Schreiben fertig.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -14552,7 +14715,8 @@
    "anleitung": "anleitungen/de/mercusys-mr70x-v1.md",
    "erprobt": {},
    "werte": {
-    "stock_url": ""
+    "stock_url": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -14648,7 +14812,8 @@
    "anleitung": "anleitungen/de/netgear-eax12.md",
    "erprobt": {},
    "werte": {
-    "web_moeglich": true
+    "web_moeglich": true,
+    "sicherheit": "quelle"
    }
   },
   {
@@ -14697,7 +14862,8 @@
    "anleitung": "anleitungen/de/netgear-ex6150.md; https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-wi-fi-range-extender-ex6150-v2/",
    "erprobt": {},
    "werte": {
-    "web_moeglich": true
+    "web_moeglich": true,
+    "sicherheit": "quelle"
    }
   },
   {
@@ -14745,7 +14911,8 @@
    "anleitung": "anleitungen/de/netgear-r6220.md; https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-r6220/",
    "erprobt": {},
    "werte": {
-    "web_moeglich": true
+    "web_moeglich": true,
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -14795,7 +14962,8 @@
    "erprobt": {},
    "werte": {
     "web_moeglich": true,
-    "anschluss": "LAN 1 (die Buchse neben WAN), nicht WAN"
+    "anschluss": "LAN 1 (die Buchse neben WAN), nicht WAN",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -14841,7 +15009,8 @@
    "anleitung": "anleitungen/de/netgear-wac104.md",
    "erprobt": {},
    "werte": {
-    "stock_url": ""
+    "stock_url": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -14889,7 +15058,8 @@
    "anleitung": "anleitungen/de/netgear-wax202.md; https://openwrt.org/toh/netgear/wax202#oem_easy_installation",
    "erprobt": {},
    "werte": {
-    "web_moeglich": true
+    "web_moeglich": true,
+    "sicherheit": "quelle"
    }
   },
   {
@@ -14940,7 +15110,11 @@
    "erprobt": {},
    "werte": {
     "zwischen_datei": "openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img",
-    "zwischen_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img"
+    "zwischen_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img",
+    "sicherheit": "quelle",
+    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-netgear-wndr3700-v5-factory.img",
+    "rampe_datei": "gluon-rampe-20261015-netgear-wndr3700-v5-factory.img",
+    "rampe_weg": "Benenne die RAMpe in firmware.img um und schick sie in Schritt 4 mit nmrpflash statt der OpenWrt-Datei."
    }
   },
   {
@@ -15048,7 +15222,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -15113,7 +15288,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -15269,7 +15445,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -15334,7 +15511,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": ""
+    "notweg_keiner": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -15385,7 +15563,8 @@
    "werte": {
     "openwrt_datei": "openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-squashfs-sysupgrade.bin",
     "openwrt_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-squashfs-sysupgrade.bin",
-    "openwrt_sha256": "6c39f0140e06cef4832a4d65cbb48caa7e0b540c45fb1f82598c17d30f3e7026"
+    "openwrt_sha256": "6c39f0140e06cef4832a4d65cbb48caa7e0b540c45fb1f82598c17d30f3e7026",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -15436,7 +15615,8 @@
    "werte": {
     "openwrt_datei": "openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-sfp-squashfs-sysupgrade.bin",
     "openwrt_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-sfp-squashfs-sysupgrade.bin",
-    "openwrt_sha256": "6cc7cf45dad3ee1f2dfe6440ed032d8647d782630ed381eb4622fab3ff879e21"
+    "openwrt_sha256": "6cc7cf45dad3ee1f2dfe6440ed032d8647d782630ed381eb4622fab3ff879e21",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -15504,7 +15684,8 @@
      "dd if=/tmp/openwrt.bin of=/dev/mtdblock6",
      "dd if=/tmp/openwrt.bin of=/dev/mtdblock7",
      "reboot"
-    ]
+    ],
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -15568,7 +15749,8 @@
      "dd if=/tmp/openwrt-sysupgrade.bin of=/dev/mtdblock6",
      "dd if=/tmp/openwrt-sysupgrade.bin of=/dev/mtdblock7",
      "reboot"
-    ]
+    ],
+    "sicherheit": "quelle"
    }
   },
   {
@@ -15978,7 +16160,8 @@
    "anleitung": "anleitungen/de/zyxel-nwa50ax.md; https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964",
    "erprobt": {},
    "werte": {
-    "zugang": "Benutzer `admin`, Passwort `1234`"
+    "zugang": "Benutzer `admin`, Passwort `1234`",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -16027,7 +16210,8 @@
    "werte": {
     "stock_url": "192.168.1.2",
     "rechner_ip": "192.168.1.10",
-    "zugang": "Benutzer `admin`, Passwort vom Aufkleber"
+    "zugang": "Benutzer `admin`, Passwort vom Aufkleber",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -16136,7 +16320,8 @@
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/TR1200_V1/",
-    "zwischen_url_text": "Ordner TR1200_V1 in unserem Spiegel"
+    "zwischen_url_text": "Ordner TR1200_V1 in unserem Spiegel",
+    "sicherheit": "abgeleitet"
    }
   },
   {
@@ -16182,7 +16367,8 @@
    "anleitung": "anleitungen/de/cudy-wr1000.md",
    "erprobt": {},
    "werte": {
-    "stock_url": ""
+    "stock_url": "",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -16232,7 +16418,8 @@
    "erprobt": {},
    "werte": {
     "weg": "uboot",
-    "taste": "Drück die Reset-Taste, steck den Strom ein und halte die Taste, bis die rote LED nach 5-maligem Blinken dauerhaft hell leuchtet. Dann loslassen."
+    "taste": "Drück die Reset-Taste, steck den Strom ein und halte die Taste, bis die rote LED nach 5-maligem Blinken dauerhaft hell leuchtet. Dann loslassen.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -16283,7 +16470,8 @@
     "gl_url": "http://192.168.8.1",
     "gl_menue": "Update → Local Update",
     "per_wlan": true,
-    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen."
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -16334,7 +16522,8 @@
     "gl_url": "http://192.168.8.1",
     "gl_menue": "Update → Local Update",
     "per_wlan": true,
-    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen."
+    "taste": "Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -16386,7 +16575,8 @@
    "werte": {
     "anschluss": "die LAN-Buchse 1",
     "nach_neustart": "Schalte das Gerät einmal aus und wieder ein; dann startet es mit der neuen Firmware.",
-    "web_nicht": true
+    "web_nicht": true,
+    "sicherheit": "quelle"
    }
   },
   {
@@ -16434,7 +16624,8 @@
    "anleitung": "anleitungen/de/netgear-r6120.md; https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-r6120/",
    "erprobt": {},
    "werte": {
-    "web_nicht": true
+    "web_nicht": true,
+    "sicherheit": "quelle"
    }
   },
   {
@@ -16767,7 +16958,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": "Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses."
+    "notweg_keiner": "Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -16832,7 +17024,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": "Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses."
+    "notweg_keiner": "Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -16896,7 +17089,8 @@
     "tftp_taste": "",
     "tftp_dauer": "",
     "tftp_hinweis": "",
-    "notweg_keiner": "Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses."
+    "notweg_keiner": "Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses.",
+    "sicherheit": "quelle"
    }
   },
   {
@@ -17505,7 +17699,8 @@
     "medium": "eine microSD-Karte",
     "anschluss": "die LAN-Buchse (nicht WAN)",
     "led": "Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).",
-    "karte_bleibt": true
+    "karte_bleibt": true,
+    "sicherheit": "quelle"
    }
   },
   {
@@ -17558,7 +17753,8 @@
     "medium": "eine microSD-Karte",
     "anschluss": "die LAN-Buchse (nicht WAN)",
     "led": "Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).",
-    "karte_bleibt": true
+    "karte_bleibt": true,
+    "sicherheit": "quelle"
    }
   },
   {
@@ -17611,7 +17807,8 @@
     "medium": "eine microSD-Karte",
     "anschluss": "die LAN-Buchse (nicht WAN)",
     "led": "Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).",
-    "karte_bleibt": true
+    "karte_bleibt": true,
+    "sicherheit": "quelle"
    }
   },
   {
@@ -17664,7 +17861,8 @@
     "medium": "eine microSD-Karte",
     "anschluss": "die LAN-Buchse (nicht WAN)",
     "led": "Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).",
-    "karte_bleibt": true
+    "karte_bleibt": true,
+    "sicherheit": "quelle"
    }
   },
   {
@@ -17716,7 +17914,8 @@
     "datei_art": "factory",
     "medium": "eine Festplatte, eine SSD oder einen USB-Stick",
     "anschluss": "die erste Netzwerkbuchse",
-    "vm": true
+    "vm": true,
+    "sicherheit": "quelle"
    }
   },
   {
@@ -17768,7 +17967,8 @@
     "datei_art": "factory",
     "medium": "eine Festplatte, eine SSD oder einen USB-Stick",
     "anschluss": "die erste Netzwerkbuchse",
-    "vm": true
+    "vm": true,
+    "sicherheit": "quelle"
    }
   },
   {
@@ -17820,7 +18020,8 @@
     "datei_art": "factory",
     "medium": "eine Festplatte, eine SSD oder einen USB-Stick",
     "anschluss": "die erste Netzwerkbuchse",
-    "vm": true
+    "vm": true,
+    "sicherheit": "quelle"
    }
   },
   {
@@ -17872,7 +18073,8 @@
     "datei_art": "factory",
     "medium": "eine Festplatte, eine SSD oder einen USB-Stick",
     "anschluss": "die erste Netzwerkbuchse",
-    "vm": true
+    "vm": true,
+    "sicherheit": "quelle"
    }
   }
  ]

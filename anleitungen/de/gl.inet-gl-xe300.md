@@ -5,15 +5,22 @@ familie: glinet
 sprache: de
 stufe: fortgeschritten
 status: ungeprüft
-grundlagen: [feste-ip]
-daten_stand: 0a4f2b3
-vorlage_stand: ab9e04f
+rampe_image: gluon-rampe-20261015-gl.inet-gl-xe300-factory.img
+grundlagen: [browser-https, feste-ip]
+daten_stand: lokal
+vorlage_stand: ce95dd8
 ---
 
-> **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
-> zusammengestellt, aber noch niemand hat sie an einem GL.iNet GL-XE300 Schritt
-> für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de), ob es geklappt hat.
+> **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
+> bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
+> ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
+> klappt.
+>
+> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Anleitung für alle nach dir besser:
+>
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20GL.iNet%20GL-XE300)
 
 # GL.iNet GL-XE300: Freifunk-Firmware installieren
 
@@ -77,6 +84,30 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
   (Schritt 2), schalte VPN-Programme aus und versuch Schritt 4 noch einmal,
   diesmal genau auf die LEDs achtend. Hilft ein anderer Browser oder ein
   privates Fenster, lag es am Zwischenspeicher des Browsers.
+
+## Anderer Weg: mit der Gluon-RAMpe (ungetestet)
+
+Statt erst OpenWrt und dann die Freifunk-Firmware aufzuspielen, geht es auch
+mit der **Gluon-RAMpe**: einer kleinen Firmware, die nur eins kann, nämlich
+die Freifunk-Firmware deiner Community annehmen. Das spart die
+OpenWrt-Etappe. Für den GL.iNet GL-XE300 ist dieser Weg **noch von niemandem
+ausprobiert**; die RAMpe selbst läuft auf anderen Geräten.
+
+1. Lade die RAMpe für den GL.iNet GL-XE300 herunter:
+   [gluon-rampe-20261015-gl.inet-gl-xe300-factory.img](https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-gl.inet-gl-xe300-factory.img).
+2. Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch.
+3. Nach dem Neustart öffne `http://192.168.1.1`. Es erscheint die Seite
+   "Firmware aktualisieren" der RAMpe. Startet der Router zwischendurch neu,
+   einfach die Seite wieder aufrufen.
+
+   ![Die Seite der RAMpe: "Firmware aktualisieren" mit Feld für die Datei und Knopf "Datei hochladen"](../bilder/allgemein/rampe-seite.png)
+4. Wähl das **sysupgrade**-Image deiner Community und klick "Datei
+   hochladen". Die RAMpe zeigt die Prüfsumme (SHA256); vergleich sie mit der
+   Angabe deiner Community und klick "Fortfahren".
+5. Nach wenigen Minuten startet die Freifunk-Firmware.
+
+Zeigt der Browser beim Aufruf eine Warnung vor dem Zertifikat, siehe
+[Browser macht https daraus](grundlagen/browser-https.md).
 
 ## Zurück zur GL.iNet-Firmware
 

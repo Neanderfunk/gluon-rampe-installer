@@ -9,12 +9,18 @@ erprobt_am: 2026-10-13
 erprobt_mit: gluon-rampe-20261010-d-link-aquila-pro-ai-m60-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m60-a1-recovery.bin
 grundlagen: [browser-https, curl, feste-ip]
-daten_stand: 0a4f2b3
-vorlage_stand: b3e7e14
+daten_stand: lokal
+vorlage_stand: 1473aca
 ---
 
 > **Am Gerät erprobt** am 13.10.2026 mit `gluon-rampe-20261010-d-link-aquila-pro-ai-m60-a1-recovery.bin`. Das aktuelle Image ist neuer und in dieser Form
 > noch nicht am Gerät gelaufen.
+>
+> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Anleitung für alle nach dir besser:
+>
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20D-Link%20AQUILA%20PRO%20AI%20M60%20A1)
 
 # D-Link AQUILA PRO AI M60 A1: Freifunk-Firmware installieren
 

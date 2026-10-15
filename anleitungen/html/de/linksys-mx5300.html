@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linksys MX5300: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="linksys-mx5300">
+<meta name="anleitung:modell" content="Linksys MX5300">
+<meta name="anleitung:familie" content="sonderweg-linksys-mx5300">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="einfach">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="ssh-scp">
+<meta name="anleitung:daten_stand" content="lokal">
+<meta name="anleitung:vorlage_stand" content="1473aca">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> So beschreiben die Entwickler von OpenWrt
+bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
+ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
+klappt.
+Laut OpenWrt zuletzt geprüft mit Linksys-Firmware 1.1.12.210066 (April 2022); spätere Linksys-Updates könnten den Weg verbauen.</p>
+<p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+Anleitung für alle nach dir besser:</p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20Linksys%20MX5300">projekt@neanderfunk.de</a></p>
+</blockquote>
+<h1>Linksys MX5300: Freifunk-Firmware installieren</h1>
+<p>Der MX5300 hat in seiner Linksys-Firmware eine versteckte Seite, über die
+sich die Freifunk-Firmware direkt hochladen lässt. Du brauchst nur einen
+Browser.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>den Router mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
+Netzwerkkabel</li>
+<li>die Freifunk-Firmware deiner Community für den Linksys MX5300, und zwar das
+<strong>factory</strong>-Image</li>
+</ul>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Werkseinstellungen.</strong> OpenWrt empfiehlt, den Router vorher auf
+Werkseinstellungen zurückzusetzen; im Speicher bleiben sonst persönliche
+Einstellungen liegen.</p>
+</li>
+<li>
+<p><strong>Verbinden.</strong> Kabel vom Rechner an eine LAN-Buchse, Router einschalten.
+Der Rechner holt sich seine Adresse automatisch.</p>
+</li>
+<li>
+<p><strong>Update-Seite öffnen.</strong> Im Browser
+<code>http://192.168.1.1/fwupdate.html</code>. Benutzer <code>admin</code>, Passwort <code>admin</code>.</p>
+</li>
+<li>
+<p><strong>Hochladen.</strong> Das factory-Image wählen und auf <strong>&quot;Update&quot;</strong> klicken.
+<strong>Es kommt keine Rückfrage</strong>, prüf vorher, dass es die richtige Datei
+ist.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Ist alles gutgegangen, antwortet die Seite mit</p>
+<pre><code>{
+&quot;result&quot;: &quot;OK&quot;
+}
+</code></pre>
+<p>Danach startet der Router von selbst mit der Freifunk-Firmware: je nach
+Community zuerst mit einer Einrichtungsseite unter <code>http://192.168.1.1</code>
+oder gleich im Betrieb.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>Die Update-Seite antwortet mit <code>&quot;result&quot;: &quot;OK&quot;</code>.</li>
+<li>Nach dem Neustart meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Die Update-Seite geht nicht.</strong> Laut OpenWrt geht es auch über die normale
+Oberfläche: anmelden (Passwort <code>admin</code>), unten rechts auf <strong>&quot;CA&quot;</strong>, dann
+<strong>Connectivity → Basic</strong>, beim manuellen Firmware-Update das factory-Image
+wählen, <strong>&quot;Start&quot;</strong> und die Rückfragen bestätigen.</li>
+</ul>
+<h2>Für Erfahrene: auch den zweiten Speicher beschreiben</h2>
+<p>Der MX5300 hat zwei Firmware-Speicher. Die Freifunk-Firmware liegt nach
+Schritt 5 nur in einem; im anderen bleibt die Linksys-Firmware. Startet die
+Freifunk-Firmware mehrmals nicht, fällt der Router auf die Linksys-Firmware
+zurück. Die Entwickler von OpenWrt empfehlen deshalb, dasselbe factory-Image
+auch in den zweiten Speicher zu schreiben. Dafür brauchst du SSH-Zugang zur
+laufenden Freifunk-Firmware (<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>).
+Das factory-Image nach <code>/tmp/factory.bin</code> kopieren, dann:</p>
+<pre><code>fw_printenv -n boot_part
+</code></pre>
+<ul>
+<li>Antwort <code>2</code>: <code>mtd -r -e kernel -n write /tmp/factory.bin kernel</code></li>
+<li>Antwort <code>1</code>: <code>mtd -r -e alt_kernel -n write /tmp/factory.bin alt_kernel</code></li>
+</ul>
+<p>Damit ist allerdings auch die Linksys-Firmware weg.</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Schritte (Normalweg))</li>
+<li>geprüft (Weg ab Werk, Schritte (Normalweg), Notweg)</li>
+<li>geprüft: Commit 70fd815e (Schritte (Normalweg), Programm, Datei, Rückweg zur Herstellerfirmware)</li>
+<li>geprüft: Wiki toh:linksys:mx5300 (Sichtbare Zeichen, Adressen, Zugang, Typenschild/Verwechslung, Bedingung an die Herstellerfirmware)</li>
+<li>Geräteeintrag: OpenWrt 70fd815e57dc98cef88828faa5ce71717540e99e</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>
