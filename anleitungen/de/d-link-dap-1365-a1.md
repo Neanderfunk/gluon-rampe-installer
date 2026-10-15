@@ -8,7 +8,7 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [curl]
-daten_stand: c45cd1b
+daten_stand: 07a2d93
 vorlage_stand: bfd0482
 ---
 

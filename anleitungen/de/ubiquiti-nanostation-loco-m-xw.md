@@ -8,7 +8,7 @@ sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip, tftp-client]
-daten_stand: c45cd1b
+daten_stand: 07a2d93
 vorlage_stand: 393f161
 ---
 

@@ -8,7 +8,7 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [image-schreiben]
-daten_stand: c45cd1b
+daten_stand: 07a2d93
 vorlage_stand: 6eae926
 ---
 
@@ -104,7 +104,7 @@ des Switches.
 
 Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 
-- abgeleitet (Schritte (Normalweg), Programm)
+- abgeleitet (Schritte (Normalweg), Anschluss, Programm)
 - abgeleitet: GNU coreutils (Schritte (Normalweg))
 - abgeleitet: GNU coreutils dd (Schritte (Normalweg))
 - abgeleitet: Herstellerseite (Programm)
@@ -112,6 +112,7 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Gluon docs/user/x86.rst, targets/x86.inc (Datei)
 - geprüft: Gluon docs/user/x86.rst: "compressed raw image, can be written to a disk directly" (Schritte (Normalweg))
 - geprüft: Gluon targets/x86-geode, OpenWrt image/geode.mk (Datei)
+- geprüft: Neanderfunk-FAQ neanderfunk.de/mitmachen/router-einrichten, Abschnitte "MAC-Adressen" und "Virtuelle Maschinen und PCs": Promiscuous Mode in der VM, zwei bis vier MAC-Adressen bei Port-Security (Anschluss)
 - geprüft: OpenWrt x86/geode/target.mk (Schritte (Normalweg), Typenschild/Verwechslung)
 - geprüft: OpenWrt x86/image/Makefile append-metadata; gzip-Verhalten abgeleitet (Fehlerbild)
 - geprüft: Wiki docs:guide-user:installation:openwrt_x86 (Schritte (Normalweg), Programm)
