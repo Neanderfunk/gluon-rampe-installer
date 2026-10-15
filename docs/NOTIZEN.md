@@ -279,3 +279,25 @@ Wie die D-Link-Geräte geflasht werden, steht in der Router-Werkstatt unter
   knapp darüber. Ob die Recovery es nimmt, ist weiter offen.
 - Stände ohne Cache-Schutz vom 14.10. liegen in `out/alt-20261014-ohne-cache-schutz/`,
   der am M60 erprobte Stand vom 10.10. weiter in `out/`.
+
+## Idee: EdgeRouter X/X-SFP in einem Schritt (15.10.2026, ungeprüft)
+
+Auftrag adorfer, nur festgehalten, nicht begonnen. Heute braucht die
+Neuinstallation aus EdgeOS drei Etappen: OpenWrt-22.03-initramfs-factory.tar
+(stman) in EdgeOS, darkxst-Umstellung auf das 6-MB-Kernel-Layout mit OpenWrt
+24.10 als `/tmp/sysupgrade.img`, dann Gluon-sysupgrade über LuCI. Eine RAMpe
+auf Gluon-2025.1-Basis passt nicht in den 3-MB-Slot, den EdgeOS beschreibt
+(Kernel 6.6 allein 3.173.556 Byte).
+
+- darkxst `ubnt_erx_migrate.sh` (Commit d29f71a) prüft am Image nur, ob im
+  Tar `sysupgrade-*/kernel` und `root` liegen; Board `ubnt,edgerouter-x` oder
+  `-x-sfp`. Den Rest macht `ubnt_erx_stage2.sh` (Boot-Index in factory
+  Offset 160 auf 0, Kernel über kernel1/kernel2, Rootfs ins UBI).
+- Idee: ein Spezial-Image im EdgeOS-factory.tar-Format auf älterer Basis mit
+  kleinem Kernel (wie stman 22.03, 3.010.560 Byte), das statt LuCI nur die
+  RAMpe-Upload-Seite mitbringt und nach dem Hochladen des Gluon-2025.1-
+  sysupgrade die darkxst-Umstellung mit genau diesem Image ausführt. Dann
+  hieße es: factory.tar in EdgeOS, danach im Browser das Gluon-Image.
+- Ob sich das lohnt, entscheidet adorfer. Die Laienanleitung bleibt beim
+  belegten Weg über OpenWrt 24.10; eine Abkürzung "Gluon-Image direkt als
+  `/tmp/sysupgrade.img`" kommt dort nicht hinein (adorfer).
