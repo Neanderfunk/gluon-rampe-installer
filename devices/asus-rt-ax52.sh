@@ -27,7 +27,7 @@
 # RAM 256 MB [Commit], reicht [abgeleitet].
 #
 # Notweg (seriell, Rueckweg): TFTP-Server 192.168.1.70, Datei rtax52.bin =
-# rohes initramfs (out/gluon-rampe-asus-rt-ax52-initramfs-kernel.bin
+# rohes initramfs (out/gluon-rampe-<Datum>-asus-rt-ax52-initramfs-kernel.bin
 # umbenannt), U-Boot-Menue Taste 4 [geprueft, Commit].
 # Vorbereitungsskript: keins noetig.
 # Ungetestet.

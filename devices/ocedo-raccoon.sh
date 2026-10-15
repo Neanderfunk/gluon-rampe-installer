@@ -3,7 +3,7 @@
 # Weg: Reset-Taste beim Einschalten halten; der Bootloader holt per TFTP von
 # 192.168.100.8 die Datei "raccoon-uImage-initramfs-lzma.bin" (je nach Stand der
 # Hersteller-Software auch "raccoon-uimage-factory") und startet sie im RAM.
-# Die Datei ist hier die RAMpe (out/gluon-rampe-ocedo-raccoon-initramfs-kernel.bin
+# Die Datei ist hier die RAMpe (out/gluon-rampe-<Datum>-ocedo-raccoon-initramfs-kernel.bin
 # umbenennen). Danach Community-sysupgrade ueber die Upload-Seite. Kein
 # Oeffnen, keine Konsole.
 # Quelle: OpenWrt 647614803473757e3b2d93d46938afccd61a5a5d [geprueft]:

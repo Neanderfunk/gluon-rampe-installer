@@ -14,7 +14,7 @@
 # Rootfs steckt lzma-komprimiert im Kernel (mikrotik.inc setzt
 # TARGET_INITRAMFS_COMPRESSION_LZMA) [geprueft: ipq40xx/image/mikrotik.mk,
 # Gluon targets/mikrotik.inc]. build.sh legt es als
-# out/gluon-rampe-mikrotik-hap-ac2-initramfs-kernel.bin ab.
+# out/gluon-rampe-<Datum>-mikrotik-hap-ac2-initramfs-kernel.bin ab.
 # Gluon (mikrotik.inc) liefert genau dieses initramfs sonst als "factory"
 # aus: copy_output.lua kopiert es nach output/images/factory/ und loescht
 # es in openwrt/bin, build.sh faende dann nichts. Darum factory = false

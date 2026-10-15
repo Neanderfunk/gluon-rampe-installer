@@ -128,6 +128,13 @@ Entstanden am 11.09.2026 in der Neanderfunk-Firmware-Session. Idee: adorfer
 
 ## Fallstricke beim Weiterbauen
 
+- Targets derselben Architektur teilen sich `staging_dir/target-<arch>`
+  (filogic/qualcommax, ath79-*/lantiq, ipq40xx-generic/-mikrotik). Ohne
+  Neuverpacken von `package/kernel/linux` je Lauf prüft OpenWrt Kernel-Pakete
+  gegen die `provides`-Liste des anderen Targets (15.10.2026: TUF-Lauf,
+  `usbcore.ko` fehlt). `build.sh` macht das seitdem vor jedem Lauf.
+- Alle eingesammelten Images tragen seit 15.10.2026 die Release-Kennung
+  (Baudatum) im Namen, auch das rohe initramfs: `gluon-rampe-<Datum>-<gerät>-…`.
 - `gluon/` ist ein normaler Gluon-Checkout. Handänderungen darin gehen beim
   nächsten `build.sh` in `targets/` verloren (`git checkout -- targets`).
   `openwrt/files` wird jedes Mal komplett ersetzt.

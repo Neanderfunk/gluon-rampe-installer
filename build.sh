@@ -32,6 +32,10 @@ GLUON_REPO="${GLUON_REPO:-https://github.com/freifunk-gluon/gluon.git}"
 GLUON_DIR="${GLUON_DIR:-$ROOT/gluon}"
 JOBS="${JOBS:-$(nproc)}"
 OUT="$ROOT/out"
+# Release-Kennung der Images (Default wie site/site.mk: Baudatum). Einmal je
+# Lauf festgelegt und an make durchgereicht, damit alle eingesammelten Dateien
+# denselben Stand im Namen tragen, auch ueber Mitternacht.
+RELEASE="${GLUON_RELEASE:-$(date +%Y%m%d)}"
 
 if (( $# < 2 )); then
 	sed -n '3,20p' "$0" | sed 's/^# \{0,1\}//'
@@ -116,9 +120,27 @@ PY
 
 mkdir -p "$OUT"
 LOG="$OUT/build-$TARGET.log"
-echo "== make GLUON_TARGET=$TARGET GLUON_DEVICES=\"${DEVICES[*]}\" -j$JOBS  (Log: $LOG)"
+: > "$LOG"
+
+echo "== Kernel-Modulpakete des Targets neu verpacken"
+# Targets derselben Architektur (mediatek-filogic und qualcommax; ath79-* und
+# lantiq; ipq40xx-generic und -mikrotik) teilen sich staging_dir/target-<arch>
+# und damit pkginfo/kmod-*.provides. Baut ein Target nach einem anderen
+# Kernel-Pakete neu, prueft OpenWrt sie gegen die Liste des anderen Targets:
+# am 15.10.2026 scheiterte der TUF-Lauf so an "kmod-mt76-usb is missing
+# dependencies: usbcore.ko" (kmod-usb-core.provides leer, vom ipq807x-Lauf).
+# package/kernel/linux neu zu verpacken kostet etwa eine Minute; der Kernel
+# selbst wird dabei nicht neu gebaut.
+if ! { make -C "$GLUON_DIR" config GLUON_TARGET="$TARGET" GLUON_DEVICES="${DEVICES[*]}" \
+		GLUON_SITEDIR="$RAMPE_SITEDIR" GLUON_RELEASE="$RELEASE" \
+		&& make -C "$GLUON_DIR/openwrt" package/kernel/linux/clean; } >> "$LOG" 2>&1; then
+	echo "Vorbereitung (config, package/kernel/linux/clean) fehlgeschlagen, siehe $LOG" >&2
+	exit 1
+fi
+
+echo "== make GLUON_TARGET=$TARGET GLUON_DEVICES=\"${DEVICES[*]}\" GLUON_RELEASE=$RELEASE -j$JOBS  (Log: $LOG)"
 if ! make -C "$GLUON_DIR" GLUON_TARGET="$TARGET" GLUON_DEVICES="${DEVICES[*]}" \
-		GLUON_SITEDIR="$RAMPE_SITEDIR" -j"$JOBS" > "$LOG" 2>&1; then
+		GLUON_SITEDIR="$RAMPE_SITEDIR" GLUON_RELEASE="$RELEASE" -j"$JOBS" >> "$LOG" 2>&1; then
 	echo "Bau fehlgeschlagen, Ende des Logs:" >&2
 	tail -n 30 "$LOG" >&2
 	echo "Einzelheiten: make -C $GLUON_DIR GLUON_TARGET=$TARGET GLUON_SITEDIR=$RAMPE_SITEDIR -j1 V=s" >&2
@@ -144,7 +166,7 @@ for d in "${DEVICES[@]}"; do
 	profile=$(grep -o "device('$d',[[:space:]]*'[^']*'" "$GLUON_DIR/targets/$TARGET" | sed "s/.*'\([^']*\)'$/\1/")
 	for k in "$GLUON_DIR"/openwrt/bin/targets/*/*/openwrt-*-"$profile"-initramfs*; do
 		[ -f "$k" ] || continue
-		cp -v "$k" "$OUT/gluon-rampe-$d-${k##*-"$profile"-}" && found=1
+		cp -v "$k" "$OUT/gluon-rampe-$RELEASE-$d-${k##*-"$profile"-}" && found=1
 		# TFTP mit 512-Byte-Bloecken und 16-Bit-Blockzaehler endet bei 32 MiB,
 		# eva_ramboot.py bricht ab 0x2000000 Byte ab.
 		size=$(stat -c %s "$k")

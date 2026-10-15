@@ -3,7 +3,7 @@
 # Einspielen ueber die versteckte Upgrade-Seite der Stock-Web-UI. Das Geraet
 # muss vorher in der Zyxel-Cloud registriert sein. Dann
 # https://192.168.212.1/gui/#/main/debug/firmwareupgrade oeffnen und das rohe
-# RAMpe-initramfs (out/gluon-rampe-zyxel-wsm20-initramfs-kernel.bin)
+# RAMpe-initramfs (out/gluon-rampe-<Datum>-zyxel-wsm20-initramfs-kernel.bin)
 # hochladen. Danach die RAMpe unter http://192.168.1.1, Community-sysupgrade
 # hochladen. Laut Commit setzt das sysupgrade die Boot-Nummer auf die erste
 # Partition, falls das initramfs in RAS2 landete.

@@ -4,7 +4,7 @@
 # Rechner 192.168.1.10/24 an LAN1 (genau dieser Port), Router aus, Reset
 # halten, einschalten, halten bis die Power-LED sehr langsam blinkt. Dann
 # das rohe RAMpe-initramfs hochladen:
-#   curl -T gluon-rampe-asus-rt-ax53u-initramfs-kernel.bin tftp://192.168.1.1
+#   curl -T gluon-rampe-<Datum>-asus-rt-ax53u-initramfs-kernel.bin tftp://192.168.1.1
 # oder Windows: ASUS Firmware Restoration. Danach die RAMpe unter
 # http://192.168.1.1, Community-sysupgrade hochladen.
 # Quelle: OpenWrt-Wiki toh/asus/rt-ax53u (10.10.2026) [abgeleitet: Wiki];

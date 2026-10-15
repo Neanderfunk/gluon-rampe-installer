@@ -7,7 +7,7 @@
 #  2. Sicherung der mtd-Partitionen auf USB-Stick (Commit STEP 2; die
 #     Stock-Firmware ist nicht oeffentlich).
 #  3. RAMpe in die "firmware"-mtd schreiben und neu starten:
-#       nandwrite -p /dev/<firmware-mtd> gluon-rampe-zte-mf286r-initramfs-kernel.bin
+#       nandwrite -p /dev/<firmware-mtd> gluon-rampe-<Datum>-zte-mf286r-initramfs-kernel.bin
 #       reboot -f
 #     U-Boot startet es per "nboot", das nicht an die Kernel-Partitionsgroesse
 #     gebunden ist; "firmware" (Kernel + Rootfs der Stock-Firmware) ist beim

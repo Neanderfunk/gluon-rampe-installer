@@ -3,7 +3,7 @@
 # Weg: EVA-Ramboot per scripts/flashing/eva_ramboot.py einige Sekunden nach
 # dem Einschalten (Ersatzadresse 169.254.120.1), RAMpe im RAM, danach
 # Community-sysupgrade ueber die Upload-Seite.
-#   eva_ramboot.py 192.168.178.1 out/gluon-rampe-avm-fritz-box-7430-initramfs-kernel.bin
+#   eva_ramboot.py 192.168.178.1 out/gluon-rampe-<Datum>-avm-fritz-box-7430-initramfs-kernel.bin
 # Quelle: OpenWrt 6c85a449a988876fdfd4ce84d6aa5ffe4a2820c1 [geprueft]
 # ("./scripts/flashing/eva_ramboot.py 192.168.178.1 <path to your initramfs
 # image>", "If the script fails to reach the device, maybe try 169.254.120.1"):

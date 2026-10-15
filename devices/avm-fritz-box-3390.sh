@@ -4,7 +4,7 @@
 # scripts/flashing/eva_ramboot.py das initramfs per FTP (adam2/adam2) in den
 # RAM und startet es; hier die RAMpe. Danach Community-sysupgrade ueber die
 # Upload-Seite (192.168.1.1) statt "sysupgrade per scp".
-#   eva_ramboot.py 192.168.178.1 out/gluon-rampe-avm-fritz-box-3390-initramfs-kernel.bin
+#   eva_ramboot.py 192.168.178.1 out/gluon-rampe-<Datum>-avm-fritz-box-3390-initramfs-kernel.bin
 # Quelle: OpenWrt 73ec21cde2cde1fc27f66b08e8762cdc3c78b61a ("Use the
 # eva_ramboot.py script to boot the initramfs image. Then, transfer the
 # sysupgrade image to the device and run sysupgrade") [geprueft]. IP
