@@ -1,18 +1,18 @@
 ---
 gluon_name: avm-fritz-box-7360-sl
 modell: AVM FRITZ!Box 7360 SL (Alias 7360 v1)
-anzeige: AVM FRITZ!Box 7360 SL / 7360 v1
+anzeige: AVM FRITZ!Box 7360 SL
 familie: avm-eva-ftp
 gluon_broken: false
 sprache: de
 stufe: mit scripts/Netzwerktools
 status: ungeprüft
 grundlagen: [avm-eva, feste-ip]
-daten_stand: b3118aa
+daten_stand: 9e7cd27
 vorlage_stand: 2a45b69
 ---
 
-# AVM FRITZ!Box 7360 SL / 7360 v1: Freifunk-Firmware installieren
+# AVM FRITZ!Box 7360 SL: Freifunk-Firmware installieren
 
 > **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
@@ -23,7 +23,7 @@ vorlage_stand: 2a45b69
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
-> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20AVM%20FRITZ%21Box%207360%20SL%20/%207360%20v1)
+> [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20AVM%20FRITZ%21Box%207360%20SL)
 
 AVM-Geräte haben einen Bootloader, der in den ersten Sekunden nach dem
 Einschalten Verbindungen per FTP annimmt. Darüber kommt die
