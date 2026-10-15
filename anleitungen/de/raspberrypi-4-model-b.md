@@ -9,7 +9,7 @@ stufe: einfach
 status: ungeprüft
 grundlagen: [image-schreiben]
 daten_stand: c45cd1b
-vorlage_stand: 393f161
+vorlage_stand: 6eae926
 ---
 
 # Raspberry Pi 4 Model B: Freifunk-Firmware installieren
