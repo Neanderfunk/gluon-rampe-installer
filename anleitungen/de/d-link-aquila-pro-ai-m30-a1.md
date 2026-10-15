@@ -9,7 +9,7 @@ stufe: mit Werkzeug
 status: ungeprüft
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m30-a1-recovery.bin
 grundlagen: [browser-https, curl, feste-ip]
-daten_stand: a638c45
+daten_stand: 93737b0
 vorlage_stand: 85ca218
 ---
 

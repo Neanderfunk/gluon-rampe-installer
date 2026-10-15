@@ -8,7 +8,7 @@ sprache: de
 stufe: fortgeschritten
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: a638c45
+daten_stand: 93737b0
 vorlage_stand: 393f161
 ---
 
@@ -42,7 +42,7 @@ Community ein. Beides geht im Browser, du brauchst kein Zusatzprogramm.
 - den Router und Strom über PoE, also mit einem PoE-Injektor oder PoE-Switch
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - die **Zwischenfirmware von Cudy** für genau dieses Modell:
-  [Ordner AP3000_Wall_1.0 in unserem Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_Wall_1.0/), Datei `cudy_ap3000wall-v1-sysupgrade_20251119.bin`
+  [Zwischenfirmware für den Cudy AP3000 Wall v1 aus unserem Spiegel](https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-ap3000-wall.bin), Datei `cudy-ap3000-wall.bin`
 - die Freifunk-Firmware deiner Community für den Cudy AP3000 Wall v1, und zwar das
   **sysupgrade**-Image, nicht "factory". Das ist bei Cudy richtig, auch wenn
   es die erste Installation ist.

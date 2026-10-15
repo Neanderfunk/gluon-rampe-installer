@@ -8,7 +8,7 @@ sprache: de
 stufe: fortgeschritten
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: a638c45
+daten_stand: 93737b0
 vorlage_stand: 393f161
 ---
 
@@ -36,7 +36,7 @@ Community ein. Beides geht im Browser, du brauchst kein Zusatzprogramm.
 - den Router und sein Netzteil
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - die **Zwischenfirmware von Cudy** für genau dieses Modell:
-  [Ordner AP3000_V1.0 in unserem Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_V1.0/), Datei `cudy_ap3000-v1-sysupgrade.bin`
+  [Zwischenfirmware für den Cudy AP3000 v1 aus unserem Spiegel](https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-ap3000.bin), Datei `cudy-ap3000.bin`
 - die Freifunk-Firmware deiner Community für den Cudy AP3000 v1, und zwar das
   **sysupgrade**-Image, nicht "factory". Das ist bei Cudy richtig, auch wenn
   es die erste Installation ist.
@@ -75,7 +75,7 @@ nicht öffentlich abgelegt; die Datei bei uns stammt direkt vom Cudy-Support.
    MD5-Prüfsumme. Sie muss genau so aussehen:
 
    ```
-   d7e8c124cfd04c88bbdbe2e4c67e9faf
+   7023a3bd44e4ae0bf09de4ed9cb44335
    ```
 
    Stimmt sie, klick auf **Fortfahren**.

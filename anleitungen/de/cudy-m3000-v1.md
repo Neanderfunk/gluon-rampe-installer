@@ -8,7 +8,7 @@ sprache: de
 stufe: fortgeschritten
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: a638c45
+daten_stand: 93737b0
 vorlage_stand: 393f161
 ---
 
@@ -42,7 +42,7 @@ Community ein. Beides geht im Browser, du brauchst kein Zusatzprogramm.
 - den Router und sein Netzteil
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - die **Zwischenfirmware von Cudy** für genau dieses Modell:
-  [Ordner M3000_1.0_2.0 in unserem Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M3000_1.0_2.0/), Datei `cudy_m3000-v1-sysupgrade_20251119.bin`
+  [Zwischenfirmware für den Cudy M3000 v1 (RTL8221B) aus unserem Spiegel](https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-m3000.bin), Datei `cudy-m3000.bin`
 - die Freifunk-Firmware deiner Community für den Cudy M3000 v1 (RTL8221B), und zwar das
   **sysupgrade**-Image, nicht "factory". Das ist bei Cudy richtig, auch wenn
   es die erste Installation ist.

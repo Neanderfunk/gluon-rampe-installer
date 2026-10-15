@@ -8,7 +8,7 @@ sprache: de
 stufe: fortgeschritten
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: a638c45
+daten_stand: 93737b0
 vorlage_stand: 393f161
 ---
 
@@ -36,7 +36,7 @@ Community ein. Beides geht im Browser, du brauchst kein Zusatzprogramm.
 - den Router und sein Netzteil
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - die **Zwischenfirmware von Cudy** für genau dieses Modell:
-  [Ordner WR3000+V1_without_recovery_TFTP in unserem Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000+V1_without_recovery_TFTP/), Datei `openwrt-mediatek-filogic-cudy_wr3000-v1-sysupgrade.bin`
+  [Zwischenfirmware für den Cudy WR3000 v1 aus unserem Spiegel](https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000.bin), Datei `cudy-wr3000.bin`
 - die Freifunk-Firmware deiner Community für den Cudy WR3000 v1, und zwar das
   **sysupgrade**-Image, nicht "factory". Das ist bei Cudy richtig, auch wenn
   es die erste Installation ist.

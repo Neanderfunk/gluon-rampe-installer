@@ -8,7 +8,7 @@ sprache: de
 stufe: fortgeschritten
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: a638c45
+daten_stand: 93737b0
 vorlage_stand: 393f161
 ---
 
@@ -36,7 +36,7 @@ Community ein. Beides geht im Browser, du brauchst kein Zusatzprogramm.
 - den Router und sein Netzteil
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - die **Zwischenfirmware von Cudy** für genau dieses Modell:
-  [Ordner TR3000_256MB_Flash_V1_not_for_TR3000_V1_ in unserem Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/TR3000_256MB_Flash_V1_not_for_TR3000_V1_/), Datei `cudy_tr3000-256mb-v1-sysupgrade.bin`
+  [Zwischenfirmware für den Cudy TR3000 256 MB v1 aus unserem Spiegel](https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-tr3000-256mb.bin), Datei `cudy-tr3000-256mb.bin`
 - die Freifunk-Firmware deiner Community für den Cudy TR3000 256 MB v1, und zwar das
   **sysupgrade**-Image, nicht "factory". Das ist bei Cudy richtig, auch wenn
   es die erste Installation ist.
