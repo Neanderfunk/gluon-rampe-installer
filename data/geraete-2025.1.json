@@ -10328,7 +10328,7 @@
    "anleitung": "-",
    "erprobt": {
     "am": "2026-10-13",
-    "mit": "gluon-rampe-20261010",
+    "mit": "gluon-rampe-20261010-d-link-aquila-pro-ai-m60-a1-recovery.bin",
     "weg": "RAMpe über die D-Link-Recovery, dann sysupgrade"
    },
    "werte": {
@@ -10349,8 +10349,8 @@
     "dauer_gluon": "unter 2 Minuten",
     "datei_beispiel": "gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin",
     "rampe_datei": "gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin",
-    "taste_hinweis": "Nur die Reset-Taste führt in die Recovery, keine andere.",
-    "led_falsch": "Dimmt die LED orange hell und dunkel, ist das nicht die Recovery."
+    "taste_hinweis": "Nur die Reset-Taste führt in die Recovery, keine der anderen Tasten.",
+    "led_falsch": "Ein orangefarbenes Auf- und Abdimmen ist nicht die Recovery."
    }
   },
   {
