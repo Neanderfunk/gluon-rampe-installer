@@ -168,6 +168,9 @@ einer Stunde.
 7. **Freifunk-Firmware kopieren.**
    {%- if ssh_buchse %} Steck das Netzwerkkabel jetzt in die Buchse
    **{{ ssh_buchse }}**.{% endif %}
+   {%- if not w.server_ip.startswith("192.168.1.") %} OpenWrt antwortet
+   unter `192.168.1.1`. Stell deinen Rechner deshalb jetzt auf die feste
+   Adresse `192.168.1.10` um, Netzmaske `255.255.255.0`.{% endif %}
    Öffne ein zweites Terminal im Ordner mit `gluon.bin` und gib ein:
 
    ```
