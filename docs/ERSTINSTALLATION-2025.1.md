@@ -10558,11 +10558,12 @@ ZyXEL WSM20 (Multy M1) · ramips-mt7621 · K1
 - **RAM:** 256 MB
 - **Dauer:** Upgrade-Seite 1 bis 2 Minuten, Upload plus 150 s, sysupgrade etwa 2 Minuten [geprüft: Freifunk Aachen 04.01.2024]
 - **Fehlerbild:** Rote LED vor dem Flashen: schon eingerichtet und ohne Internet, Werksreset [geprüft: Freifunk Aachen 04.01.2024]
-- **Hardware-Test:** adorfer: Gerät nach der Aachener Anleitung installiert (OpenWrt-initramfs + LuCI), läuft als Testknoten dias-d41ad11183d0 in 21_dias; RAMpe-Weg am Gerät ungetestet
+- **Hardware-Test:** erfolgreich, genau dieser Weg (Freifunk Aachen: OpenWrt-initramfs über die versteckte Seite, dann sysupgrade in LuCI): adorfer, Testknoten dias-d41ad11183d0 in 21_dias, erstmals auf der Karte 19.09.2026 mit 26091920sta (Angabe adorfer 15.10.2026, Karte gegengeprüft); RAMpe-Weg am Gerät ungetestet
 - **Gluon-RAMpe passt:** ja: die versteckte Upgrade-Seite nimmt das RAMpe-initramfs (znet-Header, KERNEL_INITRAMFS in mt7621.mk); danach Community-sysupgrade auf der RAMpe-Seite statt in LuCI [abgeleitet]; keine Cloud-Registrierung
 - **Gluon-RAMpe-Rezept:** devices/zyxel-wsm20.sh (gebaut 15.10.2026): `initramfs-kernel.bin` (znet-Header schon drin, 7.481.920 Bytes, unter den 8 MiB Kernel) für die versteckte Upgrade-Seite; am Gerät ungetestet
 - **Quelle (OpenWrt-Commit):** 28df7f7ff251d8684caa60f07ed0ba0c4a8e71f4
 - **Detail-Anleitung:** anleitungen/de/zyxel-wsm20.md; https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/
+- **Am Gerät erprobt (für die Anleitung):** am = 2026-09-19; mit = Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs
 - **Werte für die Anleitung:** openwrt_datei = openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin; openwrt_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-zyxel-wsm20-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261015-zyxel-wsm20-initramfs-kernel.bin; rampe_weg = Lade in Schritt 4 statt der OpenWrt-Datei die RAMpe hoch; Teil 2 entfällt dann.; sicherheit = quelle; sicherheit_hinweis = Freifunk Aachen beschreibt den Weg so, und bei uns ist er an einem Gerät gelaufen; mit der RAMpe hat ihn noch niemand ausprobiert.
 
 ### Familie `sophos-xg-awetool`

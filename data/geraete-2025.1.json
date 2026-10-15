@@ -16977,12 +16977,15 @@
    "fehlerbild": "Rote LED vor dem Flashen: schon eingerichtet und ohne Internet, Werksreset [geprüft: Freifunk Aachen 04.01.2024]",
    "notweg": "",
    "rueckweg": "",
-   "hw_test": "adorfer: Gerät nach der Aachener Anleitung installiert (OpenWrt-initramfs + LuCI), läuft als Testknoten dias-d41ad11183d0 in 21_dias; RAMpe-Weg am Gerät ungetestet",
+   "hw_test": "erfolgreich, genau dieser Weg (Freifunk Aachen: OpenWrt-initramfs über die versteckte Seite, dann sysupgrade in LuCI): adorfer, Testknoten dias-d41ad11183d0 in 21_dias, erstmals auf der Karte 19.09.2026 mit 26091920sta (Angabe adorfer 15.10.2026, Karte gegengeprüft); RAMpe-Weg am Gerät ungetestet",
    "rampe": "ja: die versteckte Upgrade-Seite nimmt das RAMpe-initramfs (znet-Header, KERNEL_INITRAMFS in mt7621.mk); danach Community-sysupgrade auf der RAMpe-Seite statt in LuCI [abgeleitet]; keine Cloud-Registrierung",
    "rampe_rezept": "devices/zyxel-wsm20.sh (gebaut 15.10.2026): `initramfs-kernel.bin` (znet-Header schon drin, 7.481.920 Bytes, unter den 8 MiB Kernel) für die versteckte Upgrade-Seite; am Gerät ungetestet",
    "quelle": "28df7f7ff251d8684caa60f07ed0ba0c4a8e71f4",
    "anleitung": "anleitungen/de/zyxel-wsm20.md; https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/",
-   "erprobt": {},
+   "erprobt": {
+    "am": "2026-09-19",
+    "mit": "Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs"
+   },
    "werte": {
     "openwrt_datei": "openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin",
     "openwrt_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin",
