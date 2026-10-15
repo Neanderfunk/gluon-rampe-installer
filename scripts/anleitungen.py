@@ -23,7 +23,8 @@
 # - Eine Seite entsteht fuer jedes Geraet, dessen Familie eine Vorlage hat und
 #   dessen Block "werte" gefuellt ist. Die Vorlage bekommt die Felder des
 #   Geraets, "werte", dazu status, erprobt_am, erprobt_mit,
-#   erprobt_mit_aelter, zusatz.fehler, zusatz.text und herkunft.
+#   erprobt_mit_aelter, zusatz.fehler, zusatz.vorher, zusatz.text, bilder
+#   (Name -> relativer Pfad) und herkunft. bilder/ wird nach html/bilder kopiert.
 # - StrictUndefined: ein fehlender Wert laesst die Erzeugung scheitern, statt
 #   eine Luecke in den Text zu schreiben. Werte, die eine Vorlage in ihrem Kopf
 #   unter "optional" fuehrt, sind leer vorbelegt.
@@ -107,18 +108,31 @@ def herkunft(g):
 
 
 def zusatz(quelle, name):
-    """zusatz/<name>.md: Teil unter '## Wenn etwas schiefgeht' -> fehler, Rest -> text."""
+    """zusatz/<name>.md aufteilen: Abschnitt '## Wenn etwas schiefgeht' -> fehler,
+    '## Vorher prüfen' -> vorher (jeweils ohne Ueberschrift), alles andere -> text."""
+    leer = {"fehler": "", "vorher": "", "text": ""}
     p = quelle / "zusatz" / f"{name}.md"
     if not p.exists():
-        return {"fehler": "", "text": ""}
-    fehler, text, teil = [], [], None
+        return leer
+    teile, teil = {k: [] for k in leer}, "text"
+    eigene = {"## Wenn etwas schiefgeht": "fehler", "## Vorher prüfen": "vorher"}
     for zeile in p.read_text(encoding="utf-8").splitlines():
         if zeile.startswith("## "):
-            teil = "fehler" if zeile.strip() == "## Wenn etwas schiefgeht" else "text"
-            if teil == "fehler":
+            teil = eigene.get(zeile.strip(), "text")
+            if teil != "text":
                 continue
-        (fehler if teil == "fehler" else text).append(zeile)
-    return {"fehler": "\n".join(fehler).strip(), "text": "\n".join(text).strip()}
+        teile[teil].append(zeile)
+    return {k: "\n".join(v).strip() for k, v in teile.items()}
+
+
+def bilder(quelle, name):
+    """Name -> Pfad relativ zur erzeugten Seite (de/<g>.md und html/de/<g>.html
+    liegen gleich tief): erst bilder/<gluon_name>/, dann bilder/allgemein/."""
+    b = {}
+    for ordner in ("allgemein", name):          # geraeteeigene ueberschreiben
+        for p in sorted((quelle / "bilder" / ordner).glob("*.png")):
+            b[p.stem] = f"../bilder/{ordner}/{p.name}"
+    return b
 
 
 def datum8(text):
@@ -160,7 +174,8 @@ def seiten_erzeugen(geraete, quelle, jinja2):
                    erprobt_mit=erprobt.get("mit", ""),
                    erprobt_mit_aelter=bool(status == "erprobt" and aktuell
                                            and datum8(erprobt.get("mit")) < aktuell),
-                   zusatz=zusatz(quelle, g["gluon_name"]), herkunft=herkunft(g))
+                   zusatz=zusatz(quelle, g["gluon_name"]), bilder=bilder(quelle, g["gluon_name"]),
+                   herkunft=herkunft(g))
         try:
             body = env.from_string(vtext).render(**ctx)
         except jinja2.UndefinedError as e:
@@ -254,6 +269,9 @@ def main():
             titel = (re.search(r"^# (.+)$", t, re.M) or [None, p.stem])[1]
             dateien[h / SPRACHE / "grundlagen" / f"{p.stem}.html"] = html_seite(
                 titel, t, {"grundlage": p.stem}, md, 2)
+        for p in sorted((a.quelle / "bilder").rglob("*")):
+            if p.is_file():
+                dateien[h / "bilder" / p.relative_to(a.quelle / "bilder")] = p.read_bytes()
         liste = ["# Freifunk-Firmware installieren", "",
                  "Anleitungen je Gerät. Ungeprüfte Anleitungen sind aus Quellen "
                  "zusammengestellt und noch nicht am Gerät nachvollzogen.", ""]
@@ -281,8 +299,11 @@ def main():
             DATEN.write_text(json.dumps(roh, ensure_ascii=False, indent=1), encoding="utf-8")
             print(f"{n} Link(s) im Feld anleitung gesetzt; danach erstinstallation.py laufen lassen.")
 
+    def inhalt(t):
+        return t if isinstance(t, bytes) else t.encode("utf-8")
+
     veraltet = [p for p, t in dateien.items()
-                if not p.exists() or p.read_text(encoding="utf-8") != t]
+                if not p.exists() or p.read_bytes() != inhalt(t)]
     if a.check:
         if veraltet:
             sys.exit(f"{len(veraltet)} Datei(en) nicht aktuell, z. B. {veraltet[0]}: "
@@ -290,7 +311,7 @@ def main():
         return
     for p in veraltet:
         p.parent.mkdir(parents=True, exist_ok=True)
-        p.write_text(dateien[p], encoding="utf-8")
+        p.write_bytes(inhalt(dateien[p]))
     print(f"{len(seiten)} Anleitung(en) erzeugt, {len(veraltet)} Datei(en) geschrieben; "
           f"{len(ohne)} Geräte noch ohne Vorlage oder Werte.")
 
