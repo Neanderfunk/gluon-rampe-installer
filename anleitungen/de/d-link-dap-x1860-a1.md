@@ -10,7 +10,7 @@ level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
 grundlagen: [curl, feste-ip]
-daten_stand: 555d2189
+daten_stand: 8a173cbb
 vorlage_stand: 85ca2180
 ---
 

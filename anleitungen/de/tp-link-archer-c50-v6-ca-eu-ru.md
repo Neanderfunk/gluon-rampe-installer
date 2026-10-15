@@ -10,7 +10,7 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: 555d2189
+daten_stand: 8a173cbb
 vorlage_stand: 8ebdf8cb
 ---
 
