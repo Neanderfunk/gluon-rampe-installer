@@ -272,44 +272,44 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [sophos-ap55](#sophos-ap55) | Sophos AP55 | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
 | [sophos-ap55c](#sophos-ap55c) | Sophos AP55C | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
 | [teltonika-rut230-v1](#teltonika-rut230-v1) | Teltonika RUT230 v1 | ath79-generic | K0+ | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
-| [tp-link-archer-a7-v5](#tp-link-archer-a7-v5) | TP-Link Archer A7 v5 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-archer-c2-v3](#tp-link-archer-c2-v3) | TP-Link Archer C2 v3 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-archer-c25-v1](#tp-link-archer-c25-v1) | TP-Link Archer C25 v1 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-archer-c5-v1](#tp-link-archer-c5-v1) | TP-Link Archer C5 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-archer-c58-v1](#tp-link-archer-c58-v1) | TP-Link Archer C58 v1 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-archer-c59-v1](#tp-link-archer-c59-v1) | TP-Link Archer C59 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-archer-c6-v2-eu-ru-jp](#tp-link-archer-c6-v2-eu-ru-jp) | TP-Link Archer C6 v2 (EU/RU/JP) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-a7-v5](#tp-link-archer-a7-v5) | TP-Link Archer A7 v5 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-a7-v5.md) |
+| [tp-link-archer-c2-v3](#tp-link-archer-c2-v3) | TP-Link Archer C2 v3 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c2-v3.md) |
+| [tp-link-archer-c25-v1](#tp-link-archer-c25-v1) | TP-Link Archer C25 v1 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c25-v1.md) |
+| [tp-link-archer-c5-v1](#tp-link-archer-c5-v1) | TP-Link Archer C5 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c5-v1.md) |
+| [tp-link-archer-c58-v1](#tp-link-archer-c58-v1) | TP-Link Archer C58 v1 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c58-v1.md) |
+| [tp-link-archer-c59-v1](#tp-link-archer-c59-v1) | TP-Link Archer C59 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c59-v1.md) |
+| [tp-link-archer-c6-v2-eu-ru-jp](#tp-link-archer-c6-v2-eu-ru-jp) | TP-Link Archer C6 v2 (EU/RU/JP) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c6-v2-eu-ru-jp.md) |
 | [tp-link-archer-c60-v1](#tp-link-archer-c60-v1) | TP-Link Archer C60 v1 | ath79-generic | K2 | [`sonderweg-tp-link-archer-c60-v1`](#familie-sonderweg-tp-link-archer-c60-v1) | webui-upload | nein | nein | teilweise | ja |  |
-| [tp-link-archer-c7-v2](#tp-link-archer-c7-v2) | TP-Link Archer C7 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-archer-c7-v4](#tp-link-archer-c7-v4) | TP-Link Archer C7 v4 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-archer-c7-v5](#tp-link-archer-c7-v5) | TP-Link Archer C7 v5 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c7-v2](#tp-link-archer-c7-v2) | TP-Link Archer C7 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c7-v2.md) |
+| [tp-link-archer-c7-v4](#tp-link-archer-c7-v4) | TP-Link Archer C7 v4 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c7-v4.md) |
+| [tp-link-archer-c7-v5](#tp-link-archer-c7-v5) | TP-Link Archer C7 v5 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c7-v5.md) |
 | [tp-link-archer-d50-v1](#tp-link-archer-d50-v1) | TP-Link Archer D50 v1 (broken) | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja |  |
-| [tp-link-cpe210-v1](#tp-link-cpe210-v1) | TP-Link CPE210 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-cpe210-v2](#tp-link-cpe210-v2) | TP-Link CPE210 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-cpe210-v3](#tp-link-cpe210-v3) | TP-Link CPE210 v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-cpe220-v3](#tp-link-cpe220-v3) | TP-Link CPE220 v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-cpe510-v1](#tp-link-cpe510-v1) | TP-Link CPE510 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-cpe510-v2](#tp-link-cpe510-v2) | TP-Link CPE510 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-cpe510-v3](#tp-link-cpe510-v3) | TP-Link CPE510 v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-cpe710-v1](#tp-link-cpe710-v1) | TP-Link CPE710 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-cpe710-v2](#tp-link-cpe710-v2) | TP-Link CPE710 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-cpe210-v1](#tp-link-cpe210-v1) | TP-Link CPE210 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe210-v1.md) |
+| [tp-link-cpe210-v2](#tp-link-cpe210-v2) | TP-Link CPE210 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe210-v2.md) |
+| [tp-link-cpe210-v3](#tp-link-cpe210-v3) | TP-Link CPE210 v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe210-v3.md) |
+| [tp-link-cpe220-v3](#tp-link-cpe220-v3) | TP-Link CPE220 v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe220-v3.md) |
+| [tp-link-cpe510-v1](#tp-link-cpe510-v1) | TP-Link CPE510 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe510-v1.md) |
+| [tp-link-cpe510-v2](#tp-link-cpe510-v2) | TP-Link CPE510 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe510-v2.md) |
+| [tp-link-cpe510-v3](#tp-link-cpe510-v3) | TP-Link CPE510 v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe510-v3.md) |
+| [tp-link-cpe710-v1](#tp-link-cpe710-v1) | TP-Link CPE710 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe710-v1.md) |
+| [tp-link-cpe710-v2](#tp-link-cpe710-v2) | TP-Link CPE710 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe710-v2.md) |
 | [tp-link-eap225-outdoor-v1](#tp-link-eap225-outdoor-v1) | TP-Link EAP225-Outdoor v1 | ath79-generic | K0+ | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=4f86edf477edbc0f20b5a49a69f658fa82158284 |
 | [tp-link-eap225-outdoor-v3](#tp-link-eap225-outdoor-v3) | TP-Link EAP225-Outdoor v3 | ath79-generic | K0+ | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7e4de89e631aaf56be5375662b7d5ed0f27e26f6 |
 | [tp-link-eap225-wall-v2](#tp-link-eap225-wall-v2) | TP-Link EAP225-Wall v2 | ath79-generic | K0+ | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  |  |
-| [tp-link-tl-wdr3500-v1](#tp-link-tl-wdr3500-v1) | TP-Link TL-WDR3500 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-tl-wdr3600-v1](#tp-link-tl-wdr3600-v1) | TP-Link TL-WDR3600 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-tl-wdr4300-v1](#tp-link-tl-wdr4300-v1) | TP-Link TL-WDR4300 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-tl-wr1043n-v5](#tp-link-tl-wr1043n-v5) | TP-Link TL-WR1043N v5 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-tl-wr1043nd-v2](#tp-link-tl-wr1043nd-v2) | TP-Link TL-WR1043N/ND v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-tl-wr1043nd-v3](#tp-link-tl-wr1043nd-v3) | TP-Link TL-WR1043N/ND v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-tl-wr1043nd-v4](#tp-link-tl-wr1043nd-v4) | TP-Link TL-WR1043N/ND v4 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-tl-wr2543n-nd](#tp-link-tl-wr2543n-nd) | TP-Link TL-WR2543N/ND v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-tl-wr810n-v1](#tp-link-tl-wr810n-v1) | TP-Link TL-WR810N v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-tl-wr842n-v3](#tp-link-tl-wr842n-v3) | TP-Link TL-WR842N v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-tl-wr902ac-v1](#tp-link-tl-wr902ac-v1) | TP-Link TL-WR902AC v1 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-wbs210-v1](#tp-link-wbs210-v1) | TP-Link WBS210 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-wbs210-v2](#tp-link-wbs210-v2) | TP-Link WBS210 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-wbs510-v1](#tp-link-wbs510-v1) | TP-Link WBS510 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-tl-wdr3500-v1](#tp-link-tl-wdr3500-v1) | TP-Link TL-WDR3500 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wdr3500-v1.md) |
+| [tp-link-tl-wdr3600-v1](#tp-link-tl-wdr3600-v1) | TP-Link TL-WDR3600 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wdr3600-v1.md) |
+| [tp-link-tl-wdr4300-v1](#tp-link-tl-wdr4300-v1) | TP-Link TL-WDR4300 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wdr4300-v1.md) |
+| [tp-link-tl-wr1043n-v5](#tp-link-tl-wr1043n-v5) | TP-Link TL-WR1043N v5 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr1043n-v5.md) |
+| [tp-link-tl-wr1043nd-v2](#tp-link-tl-wr1043nd-v2) | TP-Link TL-WR1043N/ND v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr1043nd-v2.md) |
+| [tp-link-tl-wr1043nd-v3](#tp-link-tl-wr1043nd-v3) | TP-Link TL-WR1043N/ND v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr1043nd-v3.md) |
+| [tp-link-tl-wr1043nd-v4](#tp-link-tl-wr1043nd-v4) | TP-Link TL-WR1043N/ND v4 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr1043nd-v4.md) |
+| [tp-link-tl-wr2543n-nd](#tp-link-tl-wr2543n-nd) | TP-Link TL-WR2543N/ND v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr2543n-nd.md) |
+| [tp-link-tl-wr810n-v1](#tp-link-tl-wr810n-v1) | TP-Link TL-WR810N v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr810n-v1.md) |
+| [tp-link-tl-wr842n-v3](#tp-link-tl-wr842n-v3) | TP-Link TL-WR842N v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr842n-v3.md) |
+| [tp-link-tl-wr902ac-v1](#tp-link-tl-wr902ac-v1) | TP-Link TL-WR902AC v1 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr902ac-v1.md) |
+| [tp-link-wbs210-v1](#tp-link-wbs210-v1) | TP-Link WBS210 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-wbs210-v1.md) |
+| [tp-link-wbs210-v2](#tp-link-wbs210-v2) | TP-Link WBS210 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-wbs210-v2.md) |
+| [tp-link-wbs510-v1](#tp-link-wbs510-v1) | TP-Link WBS510 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-wbs510-v1.md) |
 | [ubiquiti-nanobeam-ac-gen1-xc](#ubiquiti-nanobeam-ac-gen1-xc) | Ubiquiti NanoBeam AC Gen1 (XC) | ath79-generic | K0+ | [`sonderweg-ubiquiti-nanobeam-ac-gen1-xc`](#familie-sonderweg-ubiquiti-nanobeam-ac-gen1-xc) | laut | nein | nein | nein |  |  |
 | [ubiquiti-nanostation-loco-m-xw](#ubiquiti-nanostation-loco-m-xw) | Ubiquiti Nanostation Loco M XW | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  |  |
 | [ubiquiti-nanostation-m-xw](#ubiquiti-nanostation-m-xw) | Ubiquiti Nanostation M XW | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  |  |
@@ -386,7 +386,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [aruba-ap-32x](#aruba-ap-32x) | Aruba AP-324/AP-325, Siemens Scalance W1750D | ipq806x-generic | K5 | [`sonderweg-aruba-ap-32x`](#familie-sonderweg-aruba-ap-32x) | tftp-client | ja | nein | teilweise | ja | https://github.com/lukasstockner/ap325-apboot-openwrt |
 | [extreme-networks-ap3935](#extreme-networks-ap3935) | Extreme Networks AP3935i/e | ipq806x-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | - |
 | [netgear-nighthawk-x4s-r7800](#netgear-nighthawk-x4s-r7800) | NETGEAR Nighthawk X4S R7800 | ipq806x-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
-| [tp-link-archer-c2600](#tp-link-archer-c2600) | TP-Link Archer C2600 v1 | ipq806x-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
+| [tp-link-archer-c2600](#tp-link-archer-c2600) | TP-Link Archer C2600 v1 | ipq806x-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c2600.md) |
 | [ubiquiti-unifi-ac-hd](#ubiquiti-unifi-ac-hd) | Ubiquiti UniFi AC HD | ipq806x-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | - |
 | [arcadyan-vgv7510kw22](#arcadyan-vgv7510kw22) | Arcadyan VGV7510KW22 / o2 Box 6431 (NOR-Image) | lantiq-xrx200 | K5 | [`sonderweg-arcadyan-vgv7510kw22`](#familie-sonderweg-arcadyan-vgv7510kw22) | recovery-web | teilweise | nein | nein |  | https://forum.openwrt.org/t/installing-lede-u-boot-via-brnboot-web-interface-without-rs232/9857/6 |
 | [avm-fritz-box-3370-rev-2-hynix-nand](#avm-fritz-box-3370-rev-2-hynix-nand) | AVM FRITZ!Box 3370 Rev. 2, Hynix-NAND (Gluon: broken) | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation |
@@ -442,7 +442,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [xiaomi-redmi-router-ax6s](#xiaomi-redmi-router-ax6s) | Xiaomi Redmi Router AX6S / AX3200 | mediatek-mt7622 | K0+ | [`sonderweg-xiaomi-redmi-router-ax6s`](#familie-sonderweg-xiaomi-redmi-router-ax6s) | webui-upload | nein | nein | nein |  | - |
 | [enterasys-ws-ap3715i](#enterasys-ws-ap3715i) | Enterasys WS-AP3715i | mpc85xx-p1010 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b |
 | [sophos-red-15w-rev.1](#sophos-red-15w-rev.1) | Sophos RED 15w Rev. 1 | mpc85xx-p1010 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja |  |
-| [tp-link-tl-wdr4900-v1](#tp-link-tl-wdr4900-v1) | TP-Link TL-WDR4900 v1 | mpc85xx-p1010 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-tl-wdr4900-v1](#tp-link-tl-wdr4900-v1) | TP-Link TL-WDR4900 v1 | mpc85xx-p1010 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wdr4900-v1.md) |
 | [aerohive-hiveap-330](#aerohive-hiveap-330) | Aerohive HiveAP 330 | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja |  |
 | [enterasys-ws-ap3710i](#enterasys-ws-ap3710i) | Enterasys WS-AP3710i | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=16b01fb1b9c99513c318109bef96a1a3545c57a0 |
 | [extreme-networks-ws-ap3825i](#extreme-networks-ws-ap3825i) | Extreme Networks WS-AP3825i | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923 |
@@ -461,8 +461,8 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [nexx-wt3020-8m](#nexx-wt3020-8m) | Nexx WT3020 8M (Aliase WT3020AD/F/H) | ramips-mt7620 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
 | [tp-link-archer-c2-v1](#tp-link-archer-c2-v1) | TP-Link Archer C2 v1 | ramips-mt7620 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | tftp-client-am-geraet | nein | nein | nein |  |  |
 | [tp-link-archer-c20-v1](#tp-link-archer-c20-v1) | TP-Link Archer C20 v1 | ramips-mt7620 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | tftp-client-am-geraet | nein | nein | nein |  |  |
-| [tp-link-archer-c20i](#tp-link-archer-c20i) | TP-Link Archer C20i | ramips-mt7620 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-archer-c50-v1](#tp-link-archer-c50-v1) | TP-Link Archer C50 v1 | ramips-mt7620 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c20i](#tp-link-archer-c20i) | TP-Link Archer C20i | ramips-mt7620 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c20i.md) |
+| [tp-link-archer-c50-v1](#tp-link-archer-c50-v1) | TP-Link Archer C50 v1 | ramips-mt7620 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c50-v1.md) |
 | [xiaomi-miwifi-mini](#xiaomi-miwifi-mini) | Xiaomi MiWiFi Mini | ramips-mt7620 | K1d | [`ssh-stock`](#familie-ssh-stock) | ssh | nein | nein | nein |  |  |
 | [asus-rt-ac57u-v1](#asus-rt-ac57u-v1) | ASUS RT-AC57U v1 | ramips-mt7621 | K1d | [`asus-firmware-restoration`](#familie-asus-firmware-restoration) | tftp-server-am-geraet | nein | nein | nein |  |  |
 | [asus-rt-ax53u](#asus-rt-ax53u) | ASUS RT-AX53U (RT-AX1800U) | ramips-mt7621 | K1 | [`asus-firmware-restoration`](#familie-asus-firmware-restoration) | tftp-server-am-geraet | nein | nein | ja | ja | https://openwrt.org/toh/asus/rt-ax53u#installation_with_mtd-write |
@@ -490,12 +490,12 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [netgear-wax202](#netgear-wax202) | NETGEAR WAX202 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/netgear/wax202#oem_easy_installation |
 | [netgear-wndr3700-v5](#netgear-wndr3700-v5) | NETGEAR WNDR3700 v5 (Gluon: broken, "untested") | ramips-mt7621 | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | ja | ja |  |
 | [totolink-x5000r](#totolink-x5000r) | TOTOLINK X5000R | ramips-mt7621 | K1d | [`sonderweg-totolink-x5000r`](#familie-sonderweg-totolink-x5000r) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-archer-ax23-v1](#tp-link-archer-ax23-v1) | TP-Link Archer AX23 v1 (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-archer-c6-v3](#tp-link-archer-c6-v3) | TP-Link Archer C6 v3 (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-ax23-v1](#tp-link-archer-ax23-v1) | TP-Link Archer AX23 v1 (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-ax23-v1.md) |
+| [tp-link-archer-c6-v3](#tp-link-archer-c6-v3) | TP-Link Archer C6 v3 (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c6-v3.md) |
 | [tp-link-eap613-v1](#tp-link-eap613-v1) | TP-Link EAP613 v1 | ramips-mt7621 | K0 | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  |  |
 | [tp-link-eap615-wall-v1](#tp-link-eap615-wall-v1) | TP-Link EAP615-Wall v1 | ramips-mt7621 | K0 | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  |  |
-| [tp-link-re500-v1](#tp-link-re500-v1) | TP-Link RE500 v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-re650-v1](#tp-link-re650-v1) | TP-Link RE650 v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-re500-v1](#tp-link-re500-v1) | TP-Link RE500 v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re500-v1.md) |
+| [tp-link-re650-v1](#tp-link-re650-v1) | TP-Link RE650 v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re650-v1.md) |
 | [ubiquiti-edgerouter-x](#ubiquiti-edgerouter-x) | Ubiquiti EdgeRouter X | ramips-mt7621 | K3 | [`ubiquiti-edgerouter`](#familie-ubiquiti-edgerouter) | webui-upload | nein | nein | nein |  | https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp |
 | [ubiquiti-edgerouter-x-sfp](#ubiquiti-edgerouter-x-sfp) | Ubiquiti EdgeRouter X-SFP | ramips-mt7621 | K3 | [`ubiquiti-edgerouter`](#familie-ubiquiti-edgerouter) | webui-upload | nein | nein | nein |  | https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp |
 | [ubiquiti-unifi-6-lite](#ubiquiti-unifi-6-lite) | Ubiquiti UniFi 6 Lite | ramips-mt7621 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://openwrt.org/toh/ubiquiti/unifi6lite#installation |
@@ -525,9 +525,9 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [tp-link-archer-c50-v3](#tp-link-archer-c50-v3) | TP-Link Archer C50 v3 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |  |
 | [tp-link-archer-c50-v4](#tp-link-archer-c50-v4) | TP-Link Archer C50 v4 | ramips-mt76x8 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |  |
 | [tp-link-archer-c50-v6-ca-eu-ru](#tp-link-archer-c50-v6-ca-eu-ru) | TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54) | ramips-mt76x8 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-re200-v2](#tp-link-re200-v2) | TP-Link RE200 v2 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-re200-v3](#tp-link-re200-v3) | TP-Link RE200 v3 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-re200-v4](#tp-link-re200-v4) | TP-Link RE200 v4 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-re200-v2](#tp-link-re200-v2) | TP-Link RE200 v2 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re200-v2.md) |
+| [tp-link-re200-v3](#tp-link-re200-v3) | TP-Link RE200 v3 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re200-v3.md) |
+| [tp-link-re200-v4](#tp-link-re200-v4) | TP-Link RE200 v4 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re200-v4.md) |
 | [tp-link-tl-mr3020-v3](#tp-link-tl-mr3020-v3) | TP-Link TL-MR3020 v3 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |  |
 | [tp-link-tl-mr3420-v5](#tp-link-tl-mr3420-v5) | TP-Link TL-MR3420 v5 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |  |
 | [tp-link-tl-mr6400-v5](#tp-link-tl-mr6400-v5) | TP-Link TL-MR6400 v5 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |  |
@@ -5247,6 +5247,8 @@ TP-Link Archer A7 v5 · ath79-generic · K0
 - **Notweg:** [Notfall] TFTP-Recovery (tftp-client am Gerät) [geprüft]: TFTP-Server 192.168.0.66, Datei ArcherC7v5_tp_recovery.bin; Reset beim Einschalten ca. 5 s, dann ca. 150 s bis fertig [geprüft: Commit 1e4ee63c]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 1e4ee63cc8d1889a78b539a5ed7be8d56e9b976f [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-a7-v5.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zertifikat = False; tls_alt = False; nach_upload = eine Seite „page not found“; tftp_datei = ArcherC7v5_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = etwa 5 Sekunden; tftp_dauer = etwa 150 Sekunden
 
 #### tp-link-archer-c2-v3
 
@@ -5273,6 +5275,8 @@ TP-Link Archer C2 v3 (broken) · ath79-generic · K0
 - **RAM:** 64 MB [Commit]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 9c01273e5e7b3929ad46d974685ec29de207a8de [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c2-v3.md
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False
 
 #### tp-link-archer-c25-v1
 
@@ -5298,6 +5302,8 @@ TP-Link Archer C25 v1 (broken) · ath79-generic · K0
 - **RAM:** 64 MB [Commit]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** fde0abf267033bfaaf08dc2f5cbba2bf2a3ff897 (ohne Anleitung) [abgeleitet]
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c25-v1.md
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False
 
 #### tp-link-archer-c5-v1
 
@@ -5329,6 +5335,8 @@ TP-Link Archer C5 v1 · ath79-generic · K0
 - **Dauer:** während des Schreibens nicht ausschalten [geprüft: Wiki toh:tp-link:archer-c5-c7-wdr7500, Abschnitt TFTP Recovery]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 438605454980ee815a506a9a2a4a3532ab378922 (ohne Anleitung, Wiki-Verweis) [abgeleitet]
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c5-v1.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False; dateiname = factory.bin
 
 #### tp-link-archer-c58-v1
 
@@ -5355,6 +5363,8 @@ TP-Link Archer C58 v1 (broken) · ath79-generic · K0
 - **Notweg:** [Notfall] TFTP-Recovery (tftp-client am Gerät): TFTP-Server mit 192.168.0.66, Datei tp_recovery.bin, ggf. Switch zwischen Router und Rechner, weil der Link sonst zu langsam hochkommt [geprüft: Commit 946ffe47]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 946ffe470d923fdde53db68592437194e0c276fc [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c58-v1.md
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; tftp_datei = tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_hinweis = Steck einen Switch zwischen Router und Rechner, sonst kommt die Verbindung womöglich zu langsam zustande.
 
 #### tp-link-archer-c59-v1
 
@@ -5381,6 +5391,8 @@ TP-Link Archer C59 v1 · ath79-generic · K0
 - **Notweg:** [Notfall] TFTP-Recovery (tftp-client am Gerät): TFTP-Server mit 192.168.0.66, Datei tp_recovery.bin, ggf. Switch zwischen Router und Rechner, weil der Link sonst zu langsam hochkommt [geprüft: Commit 946ffe47]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 946ffe470d923fdde53db68592437194e0c276fc [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c59-v1.md
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; tftp_datei = tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_hinweis = Steck einen Switch zwischen Router und Rechner, sonst kommt die Verbindung womöglich zu langsam zustande.
 
 #### tp-link-archer-c6-v2-eu-ru-jp
 
@@ -5409,6 +5421,8 @@ TP-Link Archer C6 v2 (EU/RU/JP) · ath79-generic · K0
 - **Notweg:** [Notfall] TFTP-Recovery (tftp-client am Gerät) [geprüft]: TFTP-Server 192.168.0.66, Datei ArcherC6v2_tp_recovery.bin; Reset beim Einschalten halten, bis die WPS-LED leuchtet; Dauer ca. 150 s [geprüft: Commit d03aae1a]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** d03aae1a09fce5a5d5747855bc07ee1f54388e03 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c6-v2-eu-ru-jp.md
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; tftp_datei = ArcherC6v2_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = bis die WPS-LED leuchtet; tftp_dauer = etwa 150 Sekunden
 
 #### tp-link-archer-c7-v2
 
@@ -5438,6 +5452,8 @@ TP-Link Archer C7 v2 · ath79-generic · K0
 - **Fehlerbild:** Meldung "Error code: 18005 ... version of the upgraded file was incorrect": die Herstellerfirmware ist zu neu und lehnt fremde Firmware ab (siehe stock_bedingung) [geprüft: archer_c7, Wiki toh:tp-link:archer-c5-c7-wdr7500]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** ba74b45476ab1fe36f8449b18501ba5d2c01cf8c (ohne Anleitung) [abgeleitet]
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c7-v2.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1 oder http://192.168.1.1; zertifikat = False; tls_alt = False; datei_hinweis = mit „-eu“ bzw. „-us“ im Namen, passend zur Region auf dem Aufkleber; dateiname = firmware.bin
 
 #### tp-link-archer-c7-v4
 
@@ -5466,6 +5482,8 @@ TP-Link Archer C7 v4 · ath79-generic · K0
 - **Notweg:** [Notfall] TFTP-Recovery (tftp-client am Gerät) [geprüft]: TFTP-Server 192.168.0.66, Datei ArcherC7v4_tp_recovery.bin; Reset beim Einschalten ca. 15 s, danach ca. 30 s [geprüft: Commit 12310f05]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 12310f05b7b080b016ec515796be437f4cd30b62 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c7-v4.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1 oder http://192.168.1.1; zertifikat = False; tls_alt = False; dateiname = firmware.bin; tftp_datei = ArcherC7v4_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = etwa 15 Sekunden; tftp_dauer = etwa 30 Sekunden
 
 #### tp-link-archer-c7-v5
 
@@ -5495,6 +5513,8 @@ TP-Link Archer C7 v5 · ath79-generic · K0
 - **Notweg:** [Notfall] TFTP-Recovery (tftp-client am Gerät) [geprüft]: TFTP-Server 192.168.0.66, Datei ArcherC7v5_tp_recovery.bin; Reset beim Einschalten ca. 15 s, dann ca. 150 s [geprüft: Commit 8471944b]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 8471944325db80ca37f7c756130070d0add58ff6 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c7-v5.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1 oder http://192.168.1.1; zertifikat = False; tls_alt = False; dateiname = firmware.bin; tftp_datei = ArcherC7v5_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = etwa 15 Sekunden; tftp_dauer = etwa 150 Sekunden
 
 #### tp-link-cpe210-v1
 
@@ -5527,6 +5547,8 @@ TP-Link CPE210 v1 · ath79-generic · K0
 - **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]; Reset dabei ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 08857e69becc214336ba073bca6f626bfaa67781 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-cpe210-v1.md
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
 
 #### tp-link-cpe210-v2
 
@@ -5559,6 +5581,8 @@ TP-Link CPE210 v2 · ath79-generic · K0
 - **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]; Reset dabei ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 141698ce8fbc52d253c9207ef46b3630a0870567 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-cpe210-v2.md
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
 
 #### tp-link-cpe210-v3
 
@@ -5591,6 +5615,8 @@ TP-Link CPE210 v3 · ath79-generic · K0
 - **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]; Reset dabei ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 5ec205d7ac00de89510a6e71055d45aa57b705e1 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-cpe210-v3.md
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
 
 #### tp-link-cpe220-v3
 
@@ -5623,6 +5649,8 @@ TP-Link CPE220 v3 · ath79-generic · K0
 - **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]; Reset dabei ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** bae0d47f2e36376d2876bc4d5557e3e11f80f2fb [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-cpe220-v3.md
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
 
 #### tp-link-cpe510-v1
 
@@ -5655,6 +5683,8 @@ TP-Link CPE510 v1 · ath79-generic · K0
 - **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]; Reset dabei ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 0104eed1e5ca93a1c912e2d9b70e800b8d3099ad [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-cpe510-v1.md
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
 
 #### tp-link-cpe510-v2
 
@@ -5687,6 +5717,8 @@ TP-Link CPE510 v2 · ath79-generic · K0
 - **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]; Reset dabei ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** cad4132e003cecc386d791d552ddba42c182c216 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-cpe510-v2.md
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
 
 #### tp-link-cpe510-v3
 
@@ -5719,6 +5751,8 @@ TP-Link CPE510 v3 · ath79-generic · K0
 - **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]; Reset dabei ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** cad4132e003cecc386d791d552ddba42c182c216 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-cpe510-v3.md
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
 
 #### tp-link-cpe710-v1
 
@@ -5754,6 +5788,8 @@ TP-Link CPE710 v1 · ath79-generic · K0
 - **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]; Reset dabei ca. 30-40 s halten, dann loslassen [geprüft: Commit ac03e246/0b4d8318]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** ac03e246351fbfa98e98f0319cce3a8663f836d3 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-cpe710-v1.md
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
 
 #### tp-link-cpe710-v2
 
@@ -5789,6 +5825,8 @@ TP-Link CPE710 v2 · ath79-generic · K0
 - **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]; Reset dabei ca. 30-40 s halten, dann loslassen [geprüft: Commit ac03e246/0b4d8318]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 0b4d831886689b55e149e276dbca5b780fb6a00e [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-cpe710-v2.md
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
 
 #### tp-link-tl-wdr3500-v1
 
@@ -5815,6 +5853,8 @@ TP-Link TL-WDR3500 v1 · ath79-generic · K0
 - **Notweg:** [Notfall] TFTP-Recovery (tftp-client am Gerät) [geprüft]: TFTP-Server 192.168.0.66, Datei wdr3500v1_tp_recovery.bin; Reset beim Einschalten ca. 15 s, danach ca. 30 s [geprüft: Commit fbbb4eb8]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** fbbb4eb8b41d59b38f41fe382c6e4108a36aa909 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-tl-wdr3500-v1.md
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; tftp_datei = wdr3500v1_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = etwa 15 Sekunden; tftp_dauer = etwa 30 Sekunden
 
 #### tp-link-tl-wdr3600-v1
 
@@ -5848,6 +5888,8 @@ TP-Link TL-WDR3600 v1 · ath79-generic · K0
 - **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** a7e1e919afa9659f66dada5e69d1b162f447ced7 (ohne Anleitung) [abgeleitet]
+- **Detail-Anleitung:** anleitungen/de/tp-link-tl-wdr3600-v1.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False; dateiname = wdr4300v1_en_3_14_3_up_boot(150518).bin; dauer = etwa zwei bis drei Minuten
 
 #### tp-link-tl-wdr4300-v1
 
@@ -5880,6 +5922,8 @@ TP-Link TL-WDR4300 v1 · ath79-generic · K0
 - **Fehlerbild:** Fehlermeldung "firmware path too long": kommt bei zu langen und zu kurzen Dateinamen; Datei wie unter datei benennen [geprüft: tl-wdr3600_v1, Wiki toh:tp-link:tl-wdr4300_v1]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** a7e1e919afa9659f66dada5e69d1b162f447ced7 (ohne Anleitung) [abgeleitet]
+- **Detail-Anleitung:** anleitungen/de/tp-link-tl-wdr4300-v1.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False; dateiname = wdr4300v1_en_3_14_3_up_boot(150518).bin; dauer = etwa zwei bis drei Minuten
 
 #### tp-link-tl-wr1043n-v5
 
@@ -5909,6 +5953,8 @@ TP-Link TL-WR1043N v5 · ath79-generic · K0
 - **Notweg:** [Notfall] TFTP-Recovery (tftp-client am Gerät) [geprüft]: TFTP-Server 192.168.0.66, Datei WR1043v5_tp_recovery.bin, Gerät 192.168.0.86
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** d4b89b7170ab82530cfaf21e5f00bee7088432e2 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-tl-wr1043n-v5.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1 oder http://192.168.1.1; zertifikat = False; tls_alt = False
 
 #### tp-link-tl-wr1043nd-v2
 
@@ -5938,6 +5984,8 @@ TP-Link TL-WR1043N/ND v2 · ath79-generic · K0
 - **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** b1a173d7c396c0a9e6bb0078a1a061eb9fdd0316 (ohne Anleitung) [abgeleitet]
+- **Detail-Anleitung:** anleitungen/de/tp-link-tl-wr1043nd-v2.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zertifikat = False; tls_alt = False
 
 #### tp-link-tl-wr1043nd-v3
 
@@ -5966,6 +6014,8 @@ TP-Link TL-WR1043N/ND v3 · ath79-generic · K0
 - **Fehlerbild:** kommt immer wieder "Please choose a file to upgrade", ist der Dateiname zu lang: z. B. in firmware.bin umbenennen [geprüft: Wiki toh:tp-link:tl-wr1043nd]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** b1a173d7c396c0a9e6bb0078a1a061eb9fdd0316 (ohne Anleitung) [abgeleitet]
+- **Detail-Anleitung:** anleitungen/de/tp-link-tl-wr1043nd-v3.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1 oder http://192.168.1.1; zertifikat = False; tls_alt = False
 
 #### tp-link-tl-wr1043nd-v4
 
@@ -5994,6 +6044,8 @@ TP-Link TL-WR1043N/ND v4 · ath79-generic · K0
 - **Fehlerbild:** kommt immer wieder "Please choose a file to upgrade", ist der Dateiname zu lang: z. B. in firmware.bin umbenennen [geprüft: Wiki toh:tp-link:tl-wr1043nd]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 71ae0792bad1b0eeb476513e15b326409f15ccb0 (ohne Anleitung) [abgeleitet]
+- **Detail-Anleitung:** anleitungen/de/tp-link-tl-wr1043nd-v4.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zertifikat = False; tls_alt = False
 
 #### tp-link-tl-wr2543n-nd
 
@@ -6021,6 +6073,8 @@ TP-Link TL-WR2543N/ND v1 · ath79-generic · K0
 - **Dauer:** ca. zwei Minuten [geprüft: Wiki toh:tp-link:tl-wr2543nd]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 2a7e03af37d1112c2c2f6b6c80283d4d49407889 (ohne Anleitung) [abgeleitet]
+- **Detail-Anleitung:** anleitungen/de/tp-link-tl-wr2543n-nd.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False; dauer = etwa zwei Minuten
 
 #### tp-link-tl-wr810n-v1
 
@@ -6051,6 +6105,8 @@ TP-Link TL-WR810N v1 · ath79-generic · K0
 - **Notweg:** [Notfall] TFTP-Recovery (tftp-client am Gerät) [geprüft über Verweis auf ar71xx-Commit b23b0fb2]: TFTP-Server 192.168.0.66, Datei wr810nv1_tp_recovery.bin
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** cdbf2de77768dfde560b4ea663b4eac0d3a5a581 (Verweis); b23b0fb28b760ce66a8f93d4681c8bd300d75d30 (ar71xx, Anleitung) [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-tl-wr810n-v1.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False
 
 #### tp-link-tl-wr842n-v3
 
@@ -6078,6 +6134,8 @@ TP-Link TL-WR842N v3 · ath79-generic · K0
 - **RAM:** 64 MB [Commit]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** e0d98e120a94b75f63066d7abc6a392996ccb284 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-tl-wr842n-v3.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False; dateiname = firmware.bin
 
 #### tp-link-tl-wr902ac-v1
 
@@ -6106,6 +6164,8 @@ TP-Link TL-WR902AC v1 (broken) · ath79-generic · K0
 - **Rückweg zur Herstellerfirmware:** TFTP-Recovery nimmt laut Commit auch Herstellerfirmware: Rechner 192.168.0.66/24, Datei wr902acv1_un_tp_recovery.bin [geprüft: Commit 60de1fdb]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 60de1fdbb4492b5270edf49d634979c0cfd1e743 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-tl-wr902ac-v1.md
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; dateiname = update.bin; tftp_datei = wr902acv1_un_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = bis die WPS-LED leuchtet
 
 #### tp-link-wbs210-v1
 
@@ -6138,6 +6198,8 @@ TP-Link WBS210 v1 · ath79-generic · K0
 - **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]; Reset dabei ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 866ad466626e6a83831f79e9dd072c31a2b71d66 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-wbs210-v1.md
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
 
 #### tp-link-wbs210-v2
 
@@ -6170,6 +6232,8 @@ TP-Link WBS210 v2 · ath79-generic · K0
 - **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]; Reset dabei ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 3930aab2cb067d04f5c9ebbf1af57744e19355eb [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-wbs210-v2.md
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
 
 #### tp-link-wbs510-v1
 
@@ -6202,6 +6266,8 @@ TP-Link WBS510 v1 · ath79-generic · K0
 - **Rückweg zur Herstellerfirmware:** TFTP-Rescue mit TP-Link-Originalfirmware: Datei recovery.bin, TFTP-Server 192.168.0.100, Gerät 192.168.0.254, Reset beim Einschalten halten [geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg]; Reset dabei ca. 4-5 s halten, dann loslassen [geprüft: OpenWrt-Commit]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 20fdfe37d21f19901eec86ace8da0c083faa7ebc [geprüft]
+- **Detail-Anleitung:** anleitungen/de/tp-link-wbs510-v1.md
+- **Werte für die Anleitung:** stock_url = https://192.168.0.254; zugang = Benutzer `admin`, Passwort `admin`; rechner_ip = 192.168.0.10; zertifikat = True; tls_alt = True; strom = über den PoE-Injektor; anschluss = die LAN-Buchse des PoE-Injektors; dateiname = factory.bin; notweg_keiner = Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
 
 #### netgear-wndr3700-v4
 
@@ -6613,7 +6679,8 @@ TP-Link Archer C2600 v1 · ipq806x-generic · K0
 - **RAM:** ?
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt ef02e8967cac02ebec78fadd063b367e67f8fbc6
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c2600.md
+- **Werte für die Anleitung:** zugang = Benutzer `admin`, Passwort `admin`; zertifikat = False; tls_alt = False
 
 #### netgear-dgn3500b
 
@@ -6784,6 +6851,8 @@ TP-Link TL-WDR4900 v1 · mpc85xx-p1010 · K0
 - **RAM:** 128 MB
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 4305c6cda18051efad9952425a8ce2478adc64b9 (ohne Installationstext)
+- **Detail-Anleitung:** anleitungen/de/tp-link-tl-wdr4900-v1.md
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False
 
 #### linksys-mx5300
 
@@ -6875,6 +6944,8 @@ TP-Link Archer C20i · ramips-mt7620 · K0
 - **Notweg:** [Notfall] TFTP-Recovery laut Wiki: Datei ArcherC20iV1_tp_recovery.bin von TFTP-Server 192.168.0.66 [abgeleitet: Gluon baut factory; Wiki nennt nur TFTP-Recovery mit ArcherC20iV1_tp_recovery.bin von 192.168.0.66]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 48d8bc4f971ad7795e3162134759caa37900138f (ohne Installationstext)
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c20i.md
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False
 
 #### tp-link-archer-c50-v1
 
@@ -6905,6 +6976,8 @@ TP-Link Archer C50 v1 · ramips-mt7620 · K0
 - **Notweg:** [Notfall] TFTP-Recovery wie TL-WDR4300 [abgeleitet: Gluon baut factory; Wiki nennt TFTP-Recovery wie TL-WDR4300]; Einzelheiten sind im Inventar nicht erfasst
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 1c00c09eb6af88a0a96451f8da6108171c46a42d (ohne Installationstext)
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c50-v1.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zertifikat = False; tls_alt = False; datei_hinweis = mit „-eu“ bzw. „-us“ im Namen, passend zur Region auf dem Aufkleber
 
 #### d-link-covr-x1860-a1
 
@@ -7040,6 +7113,8 @@ TP-Link Archer AX23 v1 (Gluon: broken) · ramips-mt7621 · K0
 - **Notweg:** [Notfall] Web-Recovery, nimmt das factory [geprüft]: Reset beim Einschalten gedrückt halten [geprüft: Commit 7dceef5e], bis die orange WAN-LED leuchtet [geprüft: Wiki toh:tp-link:archer_ax23_v1]; Web-Recovery unter 192.168.0.1 [geprüft: Commit 7dceef5e]; Upload alternativ per `curl -F firmware=@<factory.bin> http://192.168.0.1/f2.htm` [geprüft: Wiki toh:tp-link:archer_ax23_v1]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 7dceef5ee554ec4ab5d2dd2ff999f4a60bf2e0f4
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-ax23-v1.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1; zertifikat = False; tls_alt = False
 
 #### tp-link-archer-c6-v3
 
@@ -7066,6 +7141,8 @@ TP-Link Archer C6 v3 (Gluon: broken) · ramips-mt7621 · K0
 - **RAM:** 128 MB
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** d22fb7f4fd833c420bc2ab34384862da0a6688b5
+- **Detail-Anleitung:** anleitungen/de/tp-link-archer-c6-v3.md
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False
 
 #### tp-link-re500-v1
 
@@ -7092,6 +7169,8 @@ TP-Link RE500 v1 · ramips-mt7621 · K0
 - **Rückweg zur Herstellerfirmware:** kein einfacher Rückweg: TFTP nur über serielle Konsole (Gehäuse öffnen), veröffentlichte Herstellerfirmware wird dort nicht angenommen [geprüft: Commit ba0f4f0c/8c51ddef]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** ba0f4f0cfddc6f1152273565ec35f2a0bda1e95d
+- **Detail-Anleitung:** anleitungen/de/tp-link-re500-v1.md
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False
 
 #### tp-link-re650-v1
 
@@ -7121,6 +7200,8 @@ TP-Link RE650 v1 · ramips-mt7621 · K0
 - **Rückweg zur Herstellerfirmware:** kein einfacher Rückweg: TFTP nur über serielle Konsole (Gehäuse öffnen), veröffentlichte Herstellerfirmware wird dort nicht angenommen [geprüft: Commit ba0f4f0c/8c51ddef]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 8c51ddeff0876b439ac35a3f492ab719085bfb9c
+- **Detail-Anleitung:** anleitungen/de/tp-link-re650-v1.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.254; rechner_ip = 192.168.0.10; zertifikat = False; tls_alt = False; dauer = etwa zweieinhalb Minuten
 
 #### zyxel-nwa50ax
 
@@ -7237,6 +7318,8 @@ TP-Link RE200 v2 · ramips-mt76x8 · K0
 - **Dauer:** laut Wiki bis zu 20 Minuten, bis das Gerät wieder erreichbar ist (v4 ca. 10 min); währenddessen nicht ausstecken [nicht ausstecken abgeleitet; geprüft: Wiki toh:tp-link:re200]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 6d6f36ae787c3b339b16c1d345a90faa1d9f4011
+- **Detail-Anleitung:** anleitungen/de/tp-link-re200-v2.md
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; dauer = bis zu 20 Minuten; notweg_keiner = Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses.
 
 #### tp-link-re200-v3
 
@@ -7266,6 +7349,8 @@ TP-Link RE200 v3 · ramips-mt76x8 · K0
 - **Dauer:** laut Wiki bis zu 20 Minuten, bis das Gerät wieder erreichbar ist (v4 ca. 10 min); währenddessen nicht ausstecken [nicht ausstecken abgeleitet; geprüft: Wiki toh:tp-link:re200]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 009e62c92c35142c5be3b375d6c393e63d2d27eb
+- **Detail-Anleitung:** anleitungen/de/tp-link-re200-v3.md
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; dauer = bis zu 20 Minuten; notweg_keiner = Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses.
 
 #### tp-link-re200-v4
 
@@ -7293,6 +7378,8 @@ TP-Link RE200 v4 · ramips-mt76x8 · K0
 - **Dauer:** laut Wiki bis zu 20 Minuten, bis das Gerät wieder erreichbar ist (v4 ca. 10 min); währenddessen nicht ausstecken [nicht ausstecken abgeleitet; geprüft: Wiki toh:tp-link:re200]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 33b76d66d1afa9d888f32587b18d78a930593ca5
+- **Detail-Anleitung:** anleitungen/de/tp-link-re200-v4.md
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; dauer = bis zu 20 Minuten; notweg_keiner = Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses.
 
 ### Familie `mikrotik-netboot`
 
