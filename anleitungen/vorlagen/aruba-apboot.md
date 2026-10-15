@@ -49,8 +49,11 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
                          SHA256 69e45b04…98a5)
     apboot_sha256_url    optional: Prüfsummendatei daneben (nur Dateiname
                          darin, für sha256sum -c)
-    bootm_hinweis        ganzer Satz statt des Standardtexts, wenn "Unknown
-                         command 'bootm'" kommt und es keinen bootm_weg gibt
+    bootm_hinweis        ganze Sätze statt des Standardtexts, wenn "Unknown
+                         command 'bootm'" kommt und es keinen bootm_weg gibt.
+                         Der Standardtext verweist bewusst auf keine andere
+                         Seite: Der Bootloader des AP11 passt nicht auf
+                         AP11D (Plattform AP-303H) und AP17 (AP-365).
     sicherheit, sicherheit_hinweis   siehe _status.md
 -#}
 {%- set w = werte -%}
@@ -281,11 +284,12 @@ werden.
   "Älteren Bootloader aufspielen" weiter unten. **Lies dort zuerst die
   Warnung.**
   {%- elif w.get("bootm_hinweis") %} {{ w.get("bootm_hinweis") }}
-  {%- else %} Dann hat dein Gerät einen neueren Bootloader, aus dem der
-  Hersteller Befehle entfernt hat, die OpenWrt braucht. Für den
-  [Aruba Instant On AP11](aruba-instant-on-ap11.md) gibt es einen Weg
-  über einen älteren Bootloader; für dein Gerät haben wir noch keinen.
-  Bitte probier ihn nicht auf eigene Faust, sondern schreib uns.
+  {%- else %} Dann hat dein Gerät vermutlich einen neueren Bootloader, aus
+  dem der Hersteller Befehle entfernt hat, die OpenWrt braucht. Einen
+  passenden älteren Bootloader für den {{ modell }} haben wir noch nicht.
+  Bitte schreib uns, damit wir es klären können. **Schreib auf keinen Fall
+  den Bootloader eines anderen Modells auf dein Gerät**, auch nicht den von
+  der Seite eines ähnlichen Geräts: Es könnte danach nicht mehr starten.
   {%- endif %}
   Willst du an dieser Stelle aufhören, stell im Bootloader den Start der
   Aruba-Firmware wieder her, wie unter "Zurück zur Aruba-Firmware"
