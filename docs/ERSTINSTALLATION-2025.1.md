@@ -3544,6 +3544,7 @@ D-Link AQUILA PRO AI M30 A1 · mediatek-filogic · K1
 - **Gluon-RAMpe-Rezept:** devices/d-link-aquila-pro-ai-m30-a1.sh: `-recovery.bin` (D-Link-Header DLK6E6110001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, Hardware-Test offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f
 - **Detail-Anleitung:** https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/
+- **Werte für die Anleitung:** recovery_ip = 192.168.200.1; led_recovery = rot blinkt; datei_art = rampe; upload_pfad = /upload.cgi; rampe_ip = 192.168.1.1; rampe_bytes = etwa 52,4 Millionen; led_rampe = blinkt die LED gleichmäßig, etwa einmal pro Sekunde; herstellerseite_gleiche_ip = False; rechner_ip = 192.168.200.10; dauer_neustart = einige Minuten; dauer_lang = über 10 Minuten; dauer_gluon = wenige Minuten; datei_beispiel = gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin; rampe_datei = gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin
 
 #### d-link-aquila-pro-ai-m60-a1
 
@@ -3583,6 +3584,8 @@ D-Link AQUILA PRO AI M60 A1 · mediatek-filogic · K1
 - **Gluon-RAMpe-Rezept:** devices/d-link-aquila-pro-ai-m60-a1.sh: `-recovery.bin` (D-Link-Header DLK6E8202001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, am Gerät erprobt 13.10.2026 (Neanderfunk-sysupgrade geflasht). Gluons eigenes recovery.bin (z. B. Neanderfunk 26100702bro) startet vermutlich wie bei der M30 nicht im Config-Mode [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt 7271ee587cd104d30d6d46dd3c623c9d4602bd0c
 - **Detail-Anleitung:** -
+- **Am Gerät erprobt (für die Anleitung):** am = 2026-10-13; mit = gluon-rampe-20261010; weg = RAMpe über die D-Link-Recovery, dann sysupgrade
+- **Werte für die Anleitung:** recovery_ip = 192.168.200.1; led_recovery = rot blinkt; datei_art = rampe; upload_pfad = /upload.cgi; rampe_ip = 192.168.1.1; rampe_bytes = etwa 52,4 Millionen; led_rampe = blinkt die LED gleichmäßig, etwa einmal pro Sekunde; seitentitel = D-link Router Recovery Mode; herstellerseite_gleiche_ip = True; rechner_ip = 192.168.200.66; dauer_neustart = knapp 2 Minuten; dauer_lang = über 10 Minuten; dauer_gluon = unter 2 Minuten; datei_beispiel = gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin; rampe_datei = gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin; taste_hinweis = Nur die Reset-Taste führt in die Recovery, keine andere.; led_falsch = Dimmt die LED orange hell und dunkel, ist das nicht die Recovery.
 
 #### d-link-dap-1620-b1
 
@@ -3612,6 +3615,7 @@ D-Link DAP-1620 B1 (Gluon: broken) · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** e4c7703d2a62b8914e4723adae3f67c68a57532c
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e4c7703d2a62b8914e4723adae3f67c68a57532c
+- **Werte für die Anleitung:** datei_art = factory; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.50; rechner_ip = 192.168.0.65; upload_pfad = /upload.cgi; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dap-1620-b1-factory.bin
 
 #### d-link-dap-x1860-a1
 
@@ -3643,6 +3647,7 @@ D-Link DAP-X1860 A1 · ramips-mt7621 · K0
 - **Gluon-RAMpe-Rezept:** devices/d-link-dap-x1860-a1.sh: `-initramfs-kernel.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** 3c31f6b521bb5fc49e222a8f2bcd454b73452a0e
 - **Detail-Anleitung:** https://forum.darmstadt.freifunk.net/t/installation-d-link-dap-x1860/987
+- **Werte für die Anleitung:** datei_art = factory; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.50; rechner_ip = 192.168.0.65; led_recovery = rot blinkt; upload_pfad = /upload.cgi; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dap-x1860-a1-factory.bin
 
 #### d-link-dir-878-a1
 
@@ -3675,6 +3680,7 @@ D-Link DIR-878 A1 · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** d7233b0a6a9b8cb9207a74a8cb3d0525170cf504
 - **Detail-Anleitung:** https://openwrt.org/toh/d-link/dir-878_a1#installation
+- **Werte für die Anleitung:** datei_art = factory; anschluss = LAN1; taste_hinweis = Die Reset-Taste sitzt auf der Rückseite; gemeint ist die Power-LED, das dauert etwa 10 Sekunden.; recovery_wartezeit = etwa 30 Sekunden; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.1; rechner_ip = 192.168.0.2; led_recovery = orange blinkt; upload_pfad = /; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dir-878-a1-factory.bin
 
 #### d-link-dir-882-a1
 
@@ -3704,6 +3710,7 @@ D-Link DIR-882 A1 · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 73e8f23579bcb87764dae9ed0aefe28be3183d3e
 - **Detail-Anleitung:** https://openwrt.org/toh/d-link/dir-882_a1#installation
+- **Werte für die Anleitung:** datei_art = factory; taste_hinweis = Gemeint ist die Power-LED.; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.1; rechner_ip = 192.168.0.2; led_recovery = orange blinkt; upload_pfad = /; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dir-882-a1-factory.bin
 
 ### Familie `glinet`
 

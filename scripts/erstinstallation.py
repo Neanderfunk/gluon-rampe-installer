@@ -60,6 +60,8 @@ FELDER = OrderedDict([
     ("rampe_rezept", "Gluon-RAMpe-Rezept"),
     ("quelle", "Quelle (OpenWrt-Commit)"),
     ("anleitung", "Detail-Anleitung"),
+    ("erprobt", "Am Gerät erprobt (für die Anleitung)"),
+    ("werte", "Werte für die Anleitung"),
 ])
 # In den Einzelheiten nicht wiederholt (stehen in der Kopfzeile des Geraets)
 KOPF = {"gluon_name", "modell", "target", "kat", "familie"}
@@ -123,7 +125,10 @@ def einzelheiten(geraete):
             for k, label in FELDER.items():
                 if k in KOPF or not g[k]:
                     continue
-                if isinstance(g[k], list):
+                if isinstance(g[k], dict):
+                    z.append(f"- **{label}:** " + "; ".join(
+                        f"{a} = {b}" for a, b in g[k].items() if b not in ("", None)))
+                elif isinstance(g[k], list):
                     z.append(f"- **{label}:**")
                     z += [f"  {i}. {schritt}" for i, schritt in enumerate(g[k], 1)]
                 else:
@@ -175,6 +180,9 @@ def main():
             sys.exit(f"{g['gluon_name']}: unbekannte Felder: {sorted(set(g) - set(FELDER))}")
         if not isinstance(g["schritte"], list):
             sys.exit(f"{g['gluon_name']}: schritte muss eine Liste sein")
+        for k in ("werte", "erprobt"):
+            if not isinstance(g[k], dict):
+                sys.exit(f"{g['gluon_name']}: {k} muss ein Objekt sein")
     namen = Counter(g["gluon_name"] for g in geraete)
     doppelt = [n for n, k in namen.items() if k > 1]
     if doppelt:

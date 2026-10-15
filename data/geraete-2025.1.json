@@ -41,7 +41,9 @@
    "rampe": "nein: Bootloader nimmt das Gluon-sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "334bbc51987c6694e130af25876f178babf37140 (ath79, ohne Anleitung); 0c6165d21ad274261bf8176828e122964e25c215 (ar71xx, Anleitung) [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "avm-fritz-box-4020",
@@ -87,7 +89,9 @@
    "rampe": "nein: EVA nimmt das Gluon-sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "3f8c5d547677e7f4e450e88379c03448b8f53b1d [geprüft]",
-   "anleitung": "https://fritz-tools.readthedocs.io/"
+   "anleitung": "https://fritz-tools.readthedocs.io/",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "avm-fritz-wlan-repeater-1750e",
@@ -133,7 +137,9 @@
    "rampe": "nein: EVA nimmt das Gluon-sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "8918c038f330a1bb5a898d80c170caf9f42cac89 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "avm-fritz-wlan-repeater-300e",
@@ -179,7 +185,9 @@
    "rampe": "nein: EVA nimmt das Gluon-sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "75ed56a08a4ce978323259a59a8f45ceed511584 (ath79, ohne Anleitung); e7cd6f5d66b827e31cfa7e7bc019ac1b86aac770 (ar71xx, EVA-Anleitung) [geprüft]",
-   "anleitung": "https://fritz-tools.readthedocs.io/"
+   "anleitung": "https://fritz-tools.readthedocs.io/",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "avm-fritz-wlan-repeater-450e",
@@ -225,7 +233,9 @@
    "rampe": "nein: EVA nimmt das Gluon-sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "8d9c1087e4d07d625a9fef61d5dce71d850732ae [geprüft]",
-   "anleitung": "https://fritz-tools.readthedocs.io/"
+   "anleitung": "https://fritz-tools.readthedocs.io/",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "buffalo-wzr-600dhp",
@@ -268,7 +278,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "25f2f66eeaf720e3db154019fe0b32a146c6082f [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "buffalo-wzr-hp-ag300h",
@@ -310,7 +322,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "480bf28273926d7b30be21b7605dd4fefd07fc3a [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "buffalo-wzr-hp-g300nh-rtl8366s",
@@ -352,7 +366,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "bc356de2850f14629cb1301be719772fa1212e72 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "buffalo-wzr-hp-g450h-wzr-450hp",
@@ -394,7 +410,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "1df1ea4d7e8b6ae3351780ed58800ccd9edd4c27 (Anleitung); 53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target) [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "comfast-cf-ew71-v2",
@@ -436,7 +454,9 @@
    "rampe": "nein: Gluon-sysupgrade geht direkt",
    "rampe_rezept": "",
    "quelle": "ee3a6adc6c22b2388eb3901bda335fd145c7355e [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "d-link-dap-1330-a1",
@@ -478,7 +498,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "361c670a468cac8def368ed95487c72cfdb4a3fa [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "d-link-dap-1365-a1",
@@ -520,7 +542,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "361c670a468cac8def368ed95487c72cfdb4a3fa [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "d-link-dap-2660-a1",
@@ -563,7 +587,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "8ec997d0063bbc1ac41d1025f4c94ae6337899fa [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "d-link-dap-2680-a1",
@@ -606,7 +632,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "5b58710fad2137eedad874f0fe8fe22082d1edc6 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5b58710fad2137eedad874f0fe8fe22082d1edc6"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5b58710fad2137eedad874f0fe8fe22082d1edc6",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "d-link-dap-2695-a1",
@@ -648,7 +676,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "cd09f26660b684db541a0f49fc23988df142892c [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "d-link-dir-505",
@@ -691,7 +721,9 @@
    "rampe": "teilweise: RAMpe-initramfs per tftpboot statt OpenWrt-initramfs; seriell bleibt [abgeleitet]",
    "rampe_rezept": "devices/d-link-dir-505.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; UART, IPs und Ladeadresse nicht belegt; 64 MB RAM",
    "quelle": "c9ac7b17296ff29d9df39db8a68c449ef1514bbd [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "d-link-dir825b1",
@@ -736,7 +768,9 @@
    "rampe": "offen: RAMpe-initramfs wird gebaut, um die Größe gegen die 6144k der D-Link-Recovery zu sehen; ob die Recovery es nimmt, ist offen [abgeleitet]",
    "rampe_rezept": "devices/d-link-dir825b1.sh: `-initramfs-kernel.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet",
    "quelle": "97de133368762824ba3d7e9d95f97011a597ec1a (ohne Anleitung); 4309be6bcb3d3cbf8fa5ae7eddb1520737542c6c (factory entfernt) [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "devolo-dlan-pro-1200+-wifi-ac",
@@ -780,7 +814,9 @@
    "rampe": "nein: Recovery nimmt das sysupgrade direkt (für das Gluon-sysupgrade [abgeleitet])",
    "rampe_rezept": "",
    "quelle": "624b85e646328c5f4ff271e6cf0edc5923d40c67 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "devolo-wifi-pro-1200e",
@@ -824,7 +860,9 @@
    "rampe": "nein: Gluon-sysupgrade geht per `sysupgrade -F` direkt",
    "rampe_rezept": "",
    "quelle": "1724d4e9ed7716a5444eca42adf045c2f3afc554 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1724d4e9ed7716a5444eca42adf045c2f3afc554"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1724d4e9ed7716a5444eca42adf045c2f3afc554",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "devolo-wifi-pro-1200i",
@@ -868,7 +906,9 @@
    "rampe": "nein: Gluon-sysupgrade geht per `sysupgrade -F` direkt",
    "rampe_rezept": "",
    "quelle": "c8115167f946be85f812f3c94d6294b67ac8944c [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c8115167f946be85f812f3c94d6294b67ac8944c"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c8115167f946be85f812f3c94d6294b67ac8944c",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "devolo-wifi-pro-1750c",
@@ -912,7 +952,9 @@
    "rampe": "nein: Gluon-sysupgrade geht per `sysupgrade -F` direkt",
    "rampe_rezept": "",
    "quelle": "e67da3443168fa6b6727cd81a35d559be77d6b4c [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e67da3443168fa6b6727cd81a35d559be77d6b4c"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e67da3443168fa6b6727cd81a35d559be77d6b4c",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "devolo-wifi-pro-1750e",
@@ -956,7 +998,9 @@
    "rampe": "nein: Gluon-sysupgrade geht per `sysupgrade -F` direkt",
    "rampe_rezept": "",
    "quelle": "1c2f7b511514d43d8a826b26e09817b2750a2bf4 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1c2f7b511514d43d8a826b26e09817b2750a2bf4"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1c2f7b511514d43d8a826b26e09817b2750a2bf4",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "devolo-wifi-pro-1750i",
@@ -1000,7 +1044,9 @@
    "rampe": "nein: Gluon-sysupgrade geht per `sysupgrade -F` direkt",
    "rampe_rezept": "",
    "quelle": "8d68be8057d6c689025cc236d20b96b77a6ccf30 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=8d68be8057d6c689025cc236d20b96b77a6ccf30"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=8d68be8057d6c689025cc236d20b96b77a6ccf30",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "devolo-wifi-pro-1750x",
@@ -1044,7 +1090,9 @@
    "rampe": "nein: Gluon-sysupgrade geht per `sysupgrade -F` direkt",
    "rampe_rezept": "",
    "quelle": "cb3cd526948af3f69da1af18e035177a0a8f58e3 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=cb3cd526948af3f69da1af18e035177a0a8f58e3"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=cb3cd526948af3f69da1af18e035177a0a8f58e3",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "enterasys-ws-ap3705i",
@@ -1088,7 +1136,9 @@
    "rampe": "teilweise: Gluon-RAMpe als 1401A8C0.img statt OpenWrt-initramfs, Upload-Seite statt scp; seriell bleibt",
    "rampe_rezept": "devices/enterasys-ws-ap3705i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `1401A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell",
    "quelle": "ebddc5f984a240980303aed68524eb615484eef8 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=ebddc5f984a240980303aed68524eb615484eef8"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=ebddc5f984a240980303aed68524eb615484eef8",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "extreme-networks-ws-ap3805i",
@@ -1132,7 +1182,9 @@
    "rampe": "teilweise: Gluon-RAMpe als 1D01A8C0.img statt OpenWrt-initramfs; seriell bleibt",
    "rampe_rezept": "devices/extreme-networks-ws-ap3805i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `1D01A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell",
    "quelle": "f8c87aa2d27ab405f284dd4357377ab5c893a345 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f8c87aa2d27ab405f284dd4357377ab5c893a345"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f8c87aa2d27ab405f284dd4357377ab5c893a345",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl.inet-6416",
@@ -1175,7 +1227,9 @@
    "rampe": "nein: Gluon-sysupgrade geht direkt",
    "rampe_rezept": "",
    "quelle": "b4d3110ac1f1f1962f812ac139c437837a448cff [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl.inet-gl-ar150",
@@ -1220,7 +1274,9 @@
    "rampe": "nein: Gluon-sysupgrade geht direkt [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target, ohne Anleitung) [abgeleitet]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl.inet-gl-ar300m-lite",
@@ -1262,7 +1318,9 @@
    "rampe": "nein: Gluon-sysupgrade geht direkt",
    "rampe_rezept": "",
    "quelle": "fefa34def84561688e6af2feeec2dbb390ba4486 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl.inet-gl-ar300m16",
@@ -1307,7 +1365,9 @@
    "rampe": "nein: Gluon-sysupgrade geht direkt",
    "rampe_rezept": "",
    "quelle": "b591cabd3989b44cfaf15248af9e55a0300a9c0a [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl.inet-gl-ar750",
@@ -1349,7 +1409,9 @@
    "rampe": "nein: Gluon-sysupgrade geht direkt",
    "rampe_rezept": "",
    "quelle": "921675a2d148330a7ec44f10ea4d583b8d7b5a44 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl.inet-gl-usb150",
@@ -1391,7 +1453,9 @@
    "rampe": "nein: Gluon-sysupgrade geht direkt",
    "rampe_rezept": "",
    "quelle": "a1b5a43fc4b0edda5bbbb4eb0130ba9160dc515b [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "joy-it-jt-or750i",
@@ -1434,7 +1498,9 @@
    "rampe": "nein: Gluon-sysupgrade geht direkt",
    "rampe_rezept": "",
    "quelle": "55b4b3655263984b92e4b9fc515a5e6b8003c655 [geprüft]",
-   "anleitung": "https://wiki.freifunk-stuttgart.net/technik:hardware:joy-it_jt-or750i"
+   "anleitung": "https://wiki.freifunk-stuttgart.net/technik:hardware:joy-it_jt-or750i",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "librerouter-v1",
@@ -1476,7 +1542,9 @@
    "rampe": "nein: Gluon-sysupgrade geht direkt",
    "rampe_rezept": "",
    "quelle": "24463d0d9479bf701e3aaa122f539a43cc97402b [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-wndr3700",
@@ -1519,7 +1587,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "4dc7cb792a8e34b6ad97c7b8058c70311a06bd38 [abgeleitet]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-wndr3700-v2",
@@ -1562,7 +1632,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "4dc7cb792a8e34b6ad97c7b8058c70311a06bd38 (ohne Anleitung) [abgeleitet]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-wndr3800",
@@ -1605,7 +1677,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target, ohne Anleitung) [abgeleitet]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-wndr3800ch",
@@ -1648,7 +1722,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "00ed75f47f4726dff17c6d63d6847bc4f7a74970 [abgeleitet]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-wndrmac-v2",
@@ -1690,7 +1766,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "7f297e740bc288d29fab1f7490ed0e2e49e9e6f9 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-wnr2200-16m",
@@ -1733,7 +1811,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "f85d56bb034d8017bdb6b4bb493eb076a21d11b3 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-wnr2200-8m",
@@ -1776,7 +1856,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "f85d56bb034d8017bdb6b4bb493eb076a21d11b3 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ocedo-koala",
@@ -1823,7 +1905,9 @@
    "rampe": "ja: RAMpe-initramfs unter diesem Namen bereitstellen; die Gluon-RAMpe muss zusätzlich `fw_setenv bootcmd run bootcmd_1` setzen (OpenWrt-platform.sh tut es nicht) [geprüft im Baum]",
    "rampe_rezept": "devices/ocedo-koala.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `koala-uImage-initramfs-lzma.bin` per TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`fw_setenv bootcmd run bootcmd_1`)",
    "quelle": "c4931713df8ffb3c4e5c1be7d0b6d4aa96a7dd4c [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ocedo-raccoon",
@@ -1870,7 +1954,9 @@
    "rampe": "ja: RAMpe-initramfs unter diesem Namen bereitstellen; die Gluon-RAMpe muss zusätzlich `fw_setenv bootcmd run bootcmd_1` setzen (OpenWrt-platform.sh tut es nicht) [geprüft im Baum]",
    "rampe_rezept": "devices/ocedo-raccoon.sh (Rezept-Entwurf, nicht gebaut): wie Koala, als `raccoon-uImage-initramfs-lzma.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`fw_setenv`)",
    "quelle": "647614803473757e3b2d93d46938afccd61a5a5d [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "onion-omega",
@@ -1912,7 +1998,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "d98738b5c118fc45068b45f07b8b6938e91f35d2 (Einführung, Anleitung) [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-a40",
@@ -1957,7 +2045,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "9a172797e593c061f6759a37eaeba2956ad8d72f [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-a60",
@@ -2002,7 +2092,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "eaf2e32c12655d7fb58e158086a784393dc6f69a [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-mr1750-v1",
@@ -2047,7 +2139,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "ae7680dc4bf914d640dba32c8f1c36631768a56a [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-mr1750-v2",
@@ -2092,7 +2186,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "0988e03f0e676286f3377d1530ebfb0d819ee629 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-mr600-v1",
@@ -2137,7 +2233,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "4b35999588ee6dbe1fd818760b358b1191ddd0be [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-mr600-v2",
@@ -2182,7 +2280,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "d9a3af46d8a1001223c2a327f449b7048d0fd5f6 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-mr900-v1",
@@ -2227,7 +2327,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "e06c9eec5dc8a3721df768ab952712cf015d4e6f [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-mr900-v2",
@@ -2272,7 +2374,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "31172e53f9d0971204e6fa7e3541c0695d99618a [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-om2p-hs-v1",
@@ -2317,7 +2421,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "a462412977cc25b79a7a3479527e754d85c23fd7 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-om2p-hs-v2",
@@ -2362,7 +2468,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "f096accce26bc46831e859ccd40b3f88e404cc7e [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-om2p-hs-v3",
@@ -2407,7 +2515,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "75900a25ed2acd4201bcd9a5516bdf7cdb9a8e73 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-om2p-hs-v4",
@@ -2452,7 +2562,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "5b37b52e69884c6c843738cc45ed8a1deba0eba3 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-om2p-lc",
@@ -2497,7 +2609,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "eb3a5ddba0d4d0c4ab1f21ccbfbcf9aa0254bce9 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-om2p-v1",
@@ -2542,7 +2656,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "8143709c90c3aa0a84e14cf4a9dfbcb365b0d966 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-om2p-v2",
@@ -2588,7 +2704,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "ff9e48e75c191e0d7e08a14791853559d509ca2e [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-om2p-v4",
@@ -2633,7 +2751,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "dd1d95cb0357278900d09fae3ad20e9e0b2d569a [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-om5p",
@@ -2678,7 +2798,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "80713657b20d58c2fb7fa503e24cbf7db379550f [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-om5p-ac-v1",
@@ -2723,7 +2845,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "97f561725962ddb8823b2e01563a0f37f7930477 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-om5p-ac-v2",
@@ -2768,7 +2892,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "1699c1dc7f26b332f868d338457abfbe716d6ba0 (Einführung, Anleitung) [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-om5p-an",
@@ -2813,7 +2939,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-sysupgrade direkt; im UART-Weg könnte die Gluon-RAMpe das OpenWrt-initramfs ersetzen, spart aber nichts",
    "rampe_rezept": "",
    "quelle": "72ef5945508193228544bcd7fcfe81b32e8dc042 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "plasma-cloud-pa300",
@@ -2858,7 +2986,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-factory direkt",
    "rampe_rezept": "",
    "quelle": "5fc28ef47959c1256f2553d507224bb481b08494 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "plasma-cloud-pa300e",
@@ -2903,7 +3033,9 @@
    "rampe": "nein: ap51-flash schreibt das Gluon-factory direkt",
    "rampe_rezept": "",
    "quelle": "17e592049005f3f7e65429966b21b2d834f9c2f0 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "siemens-ws-ap3610",
@@ -2946,7 +3078,9 @@
    "rampe": "teilweise: Gluon-RAMpe als 1401A8C0.img; Achtung, das initramfs ist hier unkomprimiert (KERNEL_INITRAMFS ... uImage none, OpenWrt 23.7 MB); seriell bleibt",
    "rampe_rezept": "devices/siemens-ws-ap3610.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma statt unkomprimiert wie bei OpenWrt) als `1401A8C0.img` per U-Boot-TFTP",
    "quelle": "d2b8ccb1c04def81224da6f42f644c7d239b9986 [geprüft]",
-   "anleitung": "https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Siemens-AP3610"
+   "anleitung": "https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Siemens-AP3610",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "sophos-ap100",
@@ -2993,7 +3127,9 @@
    "rampe": "nein: beide Wege schreiben das sysupgrade direkt (mtd write bzw. cp.b)",
    "rampe_rezept": "",
    "quelle": "6f1efb28983758116a8ecaf9c93e1d875bb70af7 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "sophos-ap100c",
@@ -3040,7 +3176,9 @@
    "rampe": "nein: beide Wege schreiben das sysupgrade direkt (mtd write bzw. cp.b)",
    "rampe_rezept": "",
    "quelle": "6f1efb28983758116a8ecaf9c93e1d875bb70af7 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "sophos-ap15",
@@ -3083,7 +3221,9 @@
    "rampe": "teilweise: Gluon-RAMpe statt OpenWrt-initramfs; seriell bleibt",
    "rampe_rezept": "devices/sophos-ap15.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-\"broken\"-Gerät gezielt; `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; RAM nicht belegt",
    "quelle": "0dc58214896aacf67a3759495d70e2b4e9c160d8 (Einführung, Anleitung); fc31261c3307458e38c9a676211a25c99c044ece (DTS-Umbenennung) [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0dc58214896aacf67a3759495d70e2b4e9c160d8"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0dc58214896aacf67a3759495d70e2b4e9c160d8",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "sophos-ap15c",
@@ -3130,7 +3270,9 @@
    "rampe": "nein: beide Wege schreiben das sysupgrade direkt (mtd write bzw. cp.b)",
    "rampe_rezept": "",
    "quelle": "2d465fbf570e1f3286210305a26580cd417fec7c [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "sophos-ap55",
@@ -3177,7 +3319,9 @@
    "rampe": "nein: beide Wege schreiben das sysupgrade direkt (mtd write bzw. cp.b)",
    "rampe_rezept": "",
    "quelle": "6f1efb28983758116a8ecaf9c93e1d875bb70af7 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "sophos-ap55c",
@@ -3224,7 +3368,9 @@
    "rampe": "nein: beide Wege schreiben das sysupgrade direkt (mtd write bzw. cp.b)",
    "rampe_rezept": "",
    "quelle": "6f1efb28983758116a8ecaf9c93e1d875bb70af7 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "teltonika-rut230-v1",
@@ -3267,7 +3413,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "6cf1dfd7e1d6b5c6a94b87eb065408bb489574c0 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-a7-v5",
@@ -3311,7 +3459,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "1e4ee63cc8d1889a78b539a5ed7be8d56e9b976f [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c2-v3",
@@ -3354,7 +3504,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "9c01273e5e7b3929ad46d974685ec29de207a8de [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c25-v1",
@@ -3396,7 +3548,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "fde0abf267033bfaaf08dc2f5cbba2bf2a3ff897 (ohne Anleitung) [abgeleitet]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c5-v1",
@@ -3440,7 +3594,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "438605454980ee815a506a9a2a4a3532ab378922 (ohne Anleitung, Wiki-Verweis) [abgeleitet]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c58-v1",
@@ -3482,7 +3638,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "946ffe470d923fdde53db68592437194e0c276fc [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c59-v1",
@@ -3524,7 +3682,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "946ffe470d923fdde53db68592437194e0c276fc [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c6-v2-eu-ru-jp",
@@ -3567,7 +3727,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "d03aae1a09fce5a5d5747855bc07ee1f54388e03 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c60-v1",
@@ -3610,7 +3772,9 @@
    "rampe": "teilweise: nur im UART-Weg, RAMpe-initramfs per TFTP in den RAM statt sysupgrade nach 0x9f020000; 64 MB RAM knapp [abgeleitet]",
    "rampe_rezept": "devices/tp-link-archer-c60-v1.sh: `-initramfs-kernel.bin` für U-Boot/TFTP; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet",
    "quelle": "6d313da6dc5f655d92aa86e2ec42ecfcf763df3d [geprüft]; Gluon c2fc4e5a (factory = false ohne Begründung, PR #3034 hakt \"flashable from vendor firmware\" an)",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c7-v2",
@@ -3653,7 +3817,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "ba74b45476ab1fe36f8449b18501ba5d2c01cf8c (ohne Anleitung) [abgeleitet]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c7-v4",
@@ -3696,7 +3862,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "12310f05b7b080b016ec515796be437f4cd30b62 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c7-v5",
@@ -3739,7 +3907,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "8471944325db80ca37f7c756130070d0add58ff6 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-d50-v1",
@@ -3782,7 +3952,9 @@
    "rampe": "teilweise: RAMpe-initramfs per tftpboot; seriell bleibt",
    "rampe_rezept": "devices/tp-link-archer-d50-v1.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-\"broken\"-Gerät gezielt; `initramfs-kernel.bin` (lzma, TP-Link-Header) per U-Boot-TFTP; 64 MB RAM knapp",
    "quelle": "f5d2c91415a68f554815860d574145644fc31c16 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-cpe210-v1",
@@ -3827,7 +3999,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "08857e69becc214336ba073bca6f626bfaa67781 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-cpe210-v2",
@@ -3872,7 +4046,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "141698ce8fbc52d253c9207ef46b3630a0870567 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-cpe210-v3",
@@ -3917,7 +4093,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "5ec205d7ac00de89510a6e71055d45aa57b705e1 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-cpe220-v3",
@@ -3962,7 +4140,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "bae0d47f2e36376d2876bc4d5557e3e11f80f2fb [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-cpe510-v1",
@@ -4007,7 +4187,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "0104eed1e5ca93a1c912e2d9b70e800b8d3099ad [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-cpe510-v2",
@@ -4052,7 +4234,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "cad4132e003cecc386d791d552ddba42c182c216 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-cpe510-v3",
@@ -4097,7 +4281,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "cad4132e003cecc386d791d552ddba42c182c216 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-cpe710-v1",
@@ -4143,7 +4329,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "ac03e246351fbfa98e98f0319cce3a8663f836d3 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-cpe710-v2",
@@ -4189,7 +4377,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "0b4d831886689b55e149e276dbca5b780fb6a00e [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-eap225-outdoor-v1",
@@ -4234,7 +4424,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "4f86edf477edbc0f20b5a49a69f658fa82158284 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=4f86edf477edbc0f20b5a49a69f658fa82158284"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=4f86edf477edbc0f20b5a49a69f658fa82158284",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-eap225-outdoor-v3",
@@ -4279,7 +4471,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "7e4de89e631aaf56be5375662b7d5ed0f27e26f6 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7e4de89e631aaf56be5375662b7d5ed0f27e26f6"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7e4de89e631aaf56be5375662b7d5ed0f27e26f6",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-eap225-wall-v2",
@@ -4323,7 +4517,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "c9f51a9ad6e8f99ed7adb78d208740b7d351985b [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-tl-wdr3500-v1",
@@ -4365,7 +4561,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "fbbb4eb8b41d59b38f41fe382c6e4108a36aa909 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-tl-wdr3600-v1",
@@ -4409,7 +4607,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "a7e1e919afa9659f66dada5e69d1b162f447ced7 (ohne Anleitung) [abgeleitet]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-tl-wdr4300-v1",
@@ -4453,7 +4653,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "a7e1e919afa9659f66dada5e69d1b162f447ced7 (ohne Anleitung) [abgeleitet]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-tl-wr1043n-v5",
@@ -4496,7 +4698,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "d4b89b7170ab82530cfaf21e5f00bee7088432e2 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-tl-wr1043nd-v2",
@@ -4539,7 +4743,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "b1a173d7c396c0a9e6bb0078a1a061eb9fdd0316 (ohne Anleitung) [abgeleitet]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-tl-wr1043nd-v3",
@@ -4582,7 +4788,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "b1a173d7c396c0a9e6bb0078a1a061eb9fdd0316 (ohne Anleitung) [abgeleitet]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-tl-wr1043nd-v4",
@@ -4625,7 +4833,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "71ae0792bad1b0eeb476513e15b326409f15ccb0 (ohne Anleitung) [abgeleitet]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-tl-wr2543n-nd",
@@ -4667,7 +4877,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "2a7e03af37d1112c2c2f6b6c80283d4d49407889 (ohne Anleitung) [abgeleitet]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-tl-wr810n-v1",
@@ -4710,7 +4922,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "cdbf2de77768dfde560b4ea663b4eac0d3a5a581 (Verweis); b23b0fb28b760ce66a8f93d4681c8bd300d75d30 (ar71xx, Anleitung) [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-tl-wr842n-v3",
@@ -4753,7 +4967,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "e0d98e120a94b75f63066d7abc6a392996ccb284 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-tl-wr902ac-v1",
@@ -4796,7 +5012,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "60de1fdbb4492b5270edf49d634979c0cfd1e743 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-wbs210-v1",
@@ -4841,7 +5059,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "866ad466626e6a83831f79e9dd072c31a2b71d66 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-wbs210-v2",
@@ -4886,7 +5106,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "3930aab2cb067d04f5c9ebbf1af57744e19355eb [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-wbs510-v1",
@@ -4931,7 +5153,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "20fdfe37d21f19901eec86ace8da0c083faa7ebc [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-nanobeam-ac-gen1-xc",
@@ -4974,7 +5198,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "73ea763c0dcdb96c9163790f20edd964399035c0 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-nanostation-loco-m-xw",
@@ -5018,7 +5244,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "633c4304ad42d18d180ba65a264ba668de445d91 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-nanostation-m-xw",
@@ -5062,7 +5290,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "40530c8eb42aa4b98de10621b6c1c89030f00d0a [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-rocket-m-xm",
@@ -5106,7 +5336,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target, ohne Anleitung) [abgeleitet]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-unifi-ac-lite",
@@ -5153,7 +5385,9 @@
    "rampe": "nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben",
    "rampe_rezept": "",
    "quelle": "cad843e1f57790a08dd4804011b6cd3a4796786b (ohne Anleitung); 56fddc2577baf194d1e9a7b37d454d12ff9fb469 (Umbenennung) [abgeleitet]",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-unifi-ac-lr",
@@ -5200,7 +5434,9 @@
    "rampe": "nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben",
    "rampe_rezept": "",
    "quelle": "07c1ddf522dbe6085af664cf03a41f636a70b99c [abgeleitet]",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-unifi-ac-mesh",
@@ -5247,7 +5483,9 @@
    "rampe": "nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben",
    "rampe_rezept": "",
    "quelle": "4456dd4660b4fa4e9c04d73029c72bf7b0f2ba84 [abgeleitet]",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-unifi-ac-mesh-pro",
@@ -5294,7 +5532,9 @@
    "rampe": "nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben",
    "rampe_rezept": "",
    "quelle": "e420b7b5c517d03e1282b5889065e22143f9c4ef [abgeleitet]",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-unifi-ac-pro",
@@ -5341,7 +5581,9 @@
    "rampe": "nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben",
    "rampe_rezept": "",
    "quelle": "7dd3d7e1d3845160c2ef51e6148b452e666bd6f5 [abgeleitet]",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-unifi-ap",
@@ -5384,7 +5626,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target); 50e1f3d84db6fce48dd094f31cb55197db4c0d55 (Umbenennung) [abgeleitet]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-unifi-ap-outdoor+",
@@ -5427,7 +5671,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "51f578efa5012464a21565556eaf2027b3d88ab5 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-unifi-ap-pro",
@@ -5469,7 +5715,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "b7da0d294465d5ab8d923f3b8265ece0a5847ac3 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-unifi-swiss-army-knife-ultra",
@@ -5514,7 +5762,9 @@
    "rampe": "nein: dd schreibt das Gluon-sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "bf94e0a38389b2ce5d33be9c97d104d36dd5ebd6 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5ad05681f2de00c8c6d6449df2b958b0838dbc1a"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5ad05681f2de00c8c6d6449df2b958b0838dbc1a",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "zyxel-nbg6616",
@@ -5559,7 +5809,9 @@
    "rampe": "nein: die Bootloader-Umstellung bleibt; danach nimmt die TFTP-Recovery das Gluon-factory direkt",
    "rampe_rezept": "",
    "quelle": "459c8c9ef816156107e297964d088ddee2b4eef5 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "mikrotik-routerboard-951ui-2nd-hap",
@@ -5604,7 +5856,9 @@
    "rampe": "ja: Gluon liefert hier selbst das initramfs als factory (mikrotik.inc); Gluon-RAMpe wäre die Variante mit Upload-Seite. Prüfen: startet Gluons initramfs-factory überhaupt im Config-Mode (Befund 70_initramfs_test aus NOTIZEN.md)? [abgeleitet]",
    "rampe_rezept": "devices/mikrotik-routerboard-951ui-2nd-hap.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp",
    "quelle": "5ce64e0646fcd5c4f374b4de898b591560c32e18 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "mikrotik-routerboard-mapl-2nd",
@@ -5649,7 +5903,9 @@
    "rampe": "ja: Netboot nimmt ein initramfs. Neanderfunk-Patch setzt factory = false (ohne dokumentierten Grund), obwohl mikrotik.inc sonst das initramfs als factory ausliefert",
    "rampe_rezept": "devices/mikrotik-routerboard-mapl-2nd.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp",
    "quelle": "eb38af788180d624e5b37aa5db1fe3766b138dc8 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "mikrotik-routerboard-wap-g-5hact2hnd",
@@ -5694,7 +5950,9 @@
    "rampe": "ja: Netboot nimmt ein initramfs. Neanderfunk-Patch setzt factory = false (ohne dokumentierten Grund), obwohl mikrotik.inc sonst das initramfs als factory ausliefert",
    "rampe_rezept": "devices/mikrotik-routerboard-wap-g-5hact2hnd.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM mit ath10k am knappsten",
    "quelle": "6aaa5ce2c5138877e0f0504c3bd536b40e9af928 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "mikrotik-routerboard-wapr-2nd",
@@ -5739,7 +5997,9 @@
    "rampe": "ja: Gluon liefert hier selbst das initramfs als factory (mikrotik.inc); Gluon-RAMpe wäre die Variante mit Upload-Seite. Prüfen: startet Gluons initramfs-factory überhaupt im Config-Mode (Befund 70_initramfs_test aus NOTIZEN.md)? [abgeleitet]",
    "rampe_rezept": "devices/mikrotik-routerboard-wapr-2nd.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp",
    "quelle": "817bf0204569ca28121576c13f48186ed7b7c2ae [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "aerohive-hiveap-121",
@@ -5785,7 +6045,9 @@
    "rampe": "teilweise: statt factory per nand write könnte man die Gluon-RAMpe per tftpboot starten; seriell bleibt [abgeleitet]",
    "rampe_rezept": "devices/aerohive-hiveap-121.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; Gluon-factory per `nand write` ist der einfachere Weg",
    "quelle": "62db255543c8fb5d1787caf36c6c7c9c51db71cd [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl.inet-gl-ar300m-nor",
@@ -5830,7 +6092,9 @@
    "rampe": "nein: Gluon-sysupgrade (NOR) geht direkt",
    "rampe_rezept": "",
    "quelle": "55e6c903ae20bd8e694f4626166766e59602f87c (NOR/NAND-Aufteilung, Anleitung); 6e78d546d1197d7a3ec4cbc7aab22286ad49fb0f (Umbenennung) [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl.inet-gl-ar750s-nor",
@@ -5876,7 +6140,9 @@
    "rampe": "nein: Gluon-sysupgrade (NOR) geht direkt",
    "rampe_rezept": "",
    "quelle": "af28d8a539fe64bfc893f798fdbbc49b4e78352a (Einführung, Anleitung); b496a2294c6e663a2dcbf08d714443e758d1269d (NOR/NAND) [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl.inet-gl-e750",
@@ -5921,7 +6187,9 @@
    "rampe": "ja: dauerhafte RAMpe als NAND-factory.img für die U-Boot-Web-Oberfläche statt OpenWrt-Zwischenschritt, danach Config-Mode der RAMpe und sysupgrade [abgeleitet]",
    "rampe_rezept": "devices/gl.inet-gl-e750.sh: `-factory.img` (Kernel + UBI), broken = false für diesen Bau; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet",
    "quelle": "68ac3f2cddab8422d7de0ce1a78d23edf29012e7 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl.inet-gl-xe300",
@@ -5966,7 +6234,9 @@
    "rampe": "ja: dauerhafte RAMpe als NAND-factory.img für die U-Boot-Rescue statt OpenWrt-Zwischenschritt [abgeleitet]",
    "rampe_rezept": "devices/gl.inet-gl-xe300.sh: `-factory.img` (Kernel + UBI); Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet",
    "quelle": "af8a059bb41dd7afee49ce9a5d52e9a8e010bbd8 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-wndr3700-v4",
@@ -6009,7 +6279,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "7e623c312832386d5eb5aa970738288cf96d96c3 [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-wndr4300",
@@ -6052,7 +6324,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "9b6f89c37fc9c2e23cc123bd7b5cf9a1f8dc301a [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "zte-mf281",
@@ -6095,7 +6369,9 @@
    "rampe": "teilweise: Gluon-RAMpe statt OpenWrt-initramfs; die Gluon-RAMpe müsste aber das factory (nicht sysupgrade) per mtd schreiben [abgeleitet]",
    "rampe_rezept": "devices/zte-mf281.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-\"broken\"-Gerät gezielt; `initramfs-kernel.bin` als `speedbox-2.bin` per U-Boot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubiformat`, nicht durch den Commit gedeckt)",
    "quelle": "1e1695f959e678868bb7911d059b847f38fc9cf4 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1e1695f959e678868bb7911d059b847f38fc9cf4"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1e1695f959e678868bb7911d059b847f38fc9cf4",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "zte-mf286r",
@@ -6131,7 +6407,9 @@
    "rampe": "ja (Exploit-Weg): genau der Fall \"initramfs aus der Stock-Shell schreiben\", Gluon-RAMpe statt OpenWrt-initramfs [abgeleitet]; Gluon markiert das Gerät broken mit \"case must be opened\" - laut Commit nicht zwingend",
    "rampe_rezept": "devices/zte-mf286r.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` per `nandwrite` nach dem Exploit (Weg nur für die MF286A belegt)",
    "quelle": "7ac8da00609f42b8aba74b7efc6b0d055b7cef3e [geprüft]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "zyxel-nbg6716",
@@ -6174,7 +6452,9 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "99835e09992bb411519fda1f8d16a6d07df7f598 [abgeleitet]",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "raspberrypi-model-b",
@@ -6219,7 +6499,9 @@
    "rampe": "nein, keine Hersteller-Firmware im Spiel",
    "rampe_rezept": "",
    "quelle": "Gluon targets/bcm27xx-bcm2708",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "raspberrypi-2-model-b",
@@ -6264,7 +6546,9 @@
    "rampe": "nein, keine Hersteller-Firmware im Spiel",
    "rampe_rezept": "",
    "quelle": "Gluon targets/bcm27xx-bcm2709",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "raspberrypi-3-model-b",
@@ -6309,7 +6593,9 @@
    "rampe": "nein, keine Hersteller-Firmware im Spiel",
    "rampe_rezept": "",
    "quelle": "Gluon targets/bcm27xx-bcm2710",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "raspberrypi-4-model-b",
@@ -6354,7 +6640,9 @@
    "rampe": "nein, keine Hersteller-Firmware im Spiel",
    "rampe_rezept": "",
    "quelle": "Gluon targets/bcm27xx-bcm2711",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "google-wifi-gale",
@@ -6390,7 +6678,9 @@
    "rampe": "nein",
    "rampe_rezept": "",
    "quelle": "OpenWrt f1c041e34f9742fcdd0c8c65f69888d3ec580541 (Gluon: broken, unser targets-ipq40xx-chromium.patch)",
-   "anleitung": "https://openwrt.org/inbox/toh/google/google_wifi"
+   "anleitung": "https://openwrt.org/inbox/toh/google/google_wifi",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "8devices-jalapeno",
@@ -6431,7 +6721,9 @@
    "rampe": "nein, nicht nötig",
    "rampe_rezept": "",
    "quelle": "OpenWrt 1e341bb5ef9ba342a56ad2765c2876091fdc66db",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "aruba-ap-303",
@@ -6476,7 +6768,9 @@
    "rampe": "teilweise: RAMpe-initramfs als ipq40xx.ari geht, aber vor dem sysupgrade muss `ubiformat` laufen (fehlt der Gluon-RAMpe) und Gluon baut für ipq40xx-generic kein initramfs; seriell bleibt [abgeleitet]",
    "rampe_rezept": "devices/aruba-ap-303.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `ipq40xx.ari` per APBoot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)",
    "quelle": "OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=102c8c55f217606cdbdc9a449667e034676b3e75"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=102c8c55f217606cdbdc9a449667e034676b3e75",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "aruba-ap-303h",
@@ -6522,7 +6816,9 @@
    "rampe": "teilweise: wie AP-303",
    "rampe_rezept": "devices/aruba-ap-303h.sh (Rezept-Entwurf, nicht gebaut): wie AP-303; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)",
    "quelle": "OpenWrt c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "aruba-ap-365",
@@ -6566,7 +6862,9 @@
    "rampe": "teilweise: wie AP-303",
    "rampe_rezept": "devices/aruba-ap-365.sh (Rezept-Entwurf, nicht gebaut): wie AP-303; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)",
    "quelle": "OpenWrt 300b7fe85a743ab0e039457a5a551819b49450da",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=300b7fe85a743ab0e039457a5a551819b49450da"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=300b7fe85a743ab0e039457a5a551819b49450da",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "aruba-instant-on-ap11",
@@ -6602,7 +6900,9 @@
    "rampe": "teilweise: wie AP-303; der Bootloader-Schritt bleibt seriell",
    "rampe_rezept": "Alias: Image aus devices/aruba-ap-303.sh; apboot gesperrt (K5)",
    "quelle": "Notiz ap11.md (2024); OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "aruba-instant-on-ap11d",
@@ -6645,7 +6945,9 @@
    "rampe": "teilweise: wie AP-303",
    "rampe_rezept": "Alias: Image aus devices/aruba-ap-303h.sh; ob apboot gesperrt ist wie beim AP11: offen",
    "quelle": "OpenWrt c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "aruba-instant-on-ap17",
@@ -6687,7 +6989,9 @@
    "rampe": "teilweise: wie AP-303",
    "rampe_rezept": "Alias: Image aus devices/aruba-ap-365.sh; ob apboot gesperrt ist wie beim AP11: offen",
    "quelle": "OpenWrt 300b7fe85a743ab0e039457a5a551819b49450da",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "asus-lyra-map-ac2200",
@@ -6732,7 +7036,9 @@
    "rampe": "ja: statt des OpenWrt-initramfs das RAMpe-initramfs per mtd-write schreiben; SSH-Schritt bleibt; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
    "rampe_rezept": "devices/asus-lyra-map-ac2200.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` per SSH `mtd-write -d linux`",
    "quelle": "OpenWrt 9ad3967f140bd6d08796f1ec151b753186b3eb44",
-   "anleitung": "https://openwrt.org/toh/asus/lyra_map-ac2200#oem_easy_installation"
+   "anleitung": "https://openwrt.org/toh/asus/lyra_map-ac2200#oem_easy_installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "avm-fritz-box-4040",
@@ -6777,7 +7083,9 @@
    "rampe": "nein, nicht nötig: Gluon baut das EVA-Image selbst (extra_images -bootloader)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 1cb406d019dc84497a8405c470f0b0394d5ff64a + 70e6ea319d3bfdfdb34be540dc7d89aa175b5587",
-   "anleitung": "https://fritz-tools.readthedocs.io/"
+   "anleitung": "https://fritz-tools.readthedocs.io/",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "avm-fritz-box-7520",
@@ -6824,7 +7132,9 @@
    "rampe": "teilweise: wie 7530",
    "rampe_rezept": "Alias: Image aus devices/avm-fritz-box-7530.sh (dort auch `uboot-fritz7520.bin`); TFTP-Dateiname `FRITZ7520.bin` [geprüft: U-Boot-Quelle chunkeey/FritzBox-4040-UBOOT, include/configs/fritz7520.h]",
    "quelle": "OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b",
-   "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7530#installation"
+   "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7530#installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "avm-fritz-box-7530",
@@ -6871,7 +7181,9 @@
    "rampe": "teilweise: das RAMpe-initramfs passt als FRITZ7530.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
    "rampe_rezept": "devices/avm-fritz-box-7530.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `FRITZ7530.bin`, dazu `uboot-fritz7530.bin` für `eva_ramboot.py`; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (U-Boot schreiben, `ubirmvol`); 7520/7530 im System nicht unterscheidbar",
    "quelle": "OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b",
-   "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7530#installation"
+   "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7530#installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "avm-fritz-repeater-1200",
@@ -6918,7 +7230,9 @@
    "rampe": "teilweise: das RAMpe-initramfs passt als FRITZ1200.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
    "rampe_rezept": "devices/avm-fritz-repeater-1200.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `FRITZ1200.bin` + `uboot-fritz1200.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (U-Boot schreiben, `ubirmvol`)",
    "quelle": "OpenWrt 7f187229a8e9b7966248b1e024217e07a9fc3e50",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7f187229a8e9b7966248b1e024217e07a9fc3e50"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7f187229a8e9b7966248b1e024217e07a9fc3e50",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "avm-fritz-repeater-3000",
@@ -6965,7 +7279,9 @@
    "rampe": "teilweise: das RAMpe-initramfs passt als FRITZ3000.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
    "rampe_rezept": "devices/avm-fritz-repeater-3000.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `FRITZ3000.bin` + `uboot-fritz3000.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (U-Boot schreiben, `ubirmvol`)",
    "quelle": "OpenWrt 148d29d47b1d555d0058dcc5dda450b74c4628ec",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "extreme-networks-ws-ap3915i",
@@ -7009,7 +7325,9 @@
    "rampe": "teilweise: Gluon-RAMpe als openwrt-3915.bin, seriell bleibt; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]",
    "rampe_rezept": "devices/extreme-networks-ws-ap3915i.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `openwrt-3915.bin` per U-Boot-TFTP",
    "quelle": "OpenWrt e16a0e7e8876df0a92ec4779fe766de1a943307a",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl.inet-gl-ap1300",
@@ -7053,7 +7371,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt b9389186b012e5bd99ea6523b8220aaee6ca0085",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl.inet-gl-b1300",
@@ -7098,7 +7418,9 @@
    "rampe": "nein, nicht nötig: der Bootloader nimmt das Gluon-sysupgrade",
    "rampe_rezept": "",
    "quelle": "OpenWrt 04d3308b6248ef21a6f0bc3378b342906c2d2865",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "linksys-ea6350v3",
@@ -7141,7 +7463,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt a873b292840848b67addb5be0c762d292bde33a1",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "linksys-ea8300-dallas",
@@ -7185,7 +7509,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 819e7946b0964725dab50c92797f49cf4053d955",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "linksys-mr8300-dallas",
@@ -7228,7 +7554,9 @@
    "rampe": "ja: dauerhafte RAMpe als Linksys-factory.bin für die Linksys-UI statt OpenWrt-Zwischenschritt [abgeleitet]",
    "rampe_rezept": "devices/linksys-mr8300-dallas.sh: `-factory.bin` (linksys-image type=MR8300); Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet",
    "quelle": "OpenWrt a9071d02b5ab11fbd73ea42076a09f2fd8136517",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "linksys-vlp01",
@@ -7271,7 +7599,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt b4184c666c13fdf08ecd3abf340538d593e9084c",
-   "anleitung": "https://openwrt.org/toh/linksys/whw01_v1#installation"
+   "anleitung": "https://openwrt.org/toh/linksys/whw01_v1#installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "linksys-whw01",
@@ -7314,7 +7644,9 @@
    "rampe": "nein, nicht nötig (factory); beide Partitionen beachten",
    "rampe_rezept": "",
    "quelle": "OpenWrt b4184c666c13fdf08ecd3abf340538d593e9084c",
-   "anleitung": "https://openwrt.org/toh/linksys/whw01_v1#installation"
+   "anleitung": "https://openwrt.org/toh/linksys/whw01_v1#installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "linksys-whw03-v2-velop",
@@ -7358,7 +7690,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 9e4ede8344d60d4837e047e9275c21fd2a8f130b",
-   "anleitung": "https://openwrt.org/toh/linksys/whw03_v2#oem_easy_installation"
+   "anleitung": "https://openwrt.org/toh/linksys/whw03_v2#oem_easy_installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "linksys-whw03-velop",
@@ -7402,7 +7736,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt c90487556229ae264dec33305e5c71c4ef7dd1c5",
-   "anleitung": "https://openwrt.org/toh/linksys/whw03_v1#oem_easy_installation"
+   "anleitung": "https://openwrt.org/toh/linksys/whw03_v1#oem_easy_installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "meraki-mr33-access-point",
@@ -7438,7 +7774,9 @@
    "rampe": "nein: der Weg schreibt das Gluon-sysupgrade direkt; das Risiko liegt im Bootloader",
    "rampe_rezept": "",
    "quelle": "OpenWrt 4943afd7818f56053231a5a7ae90e55da44f1f08 (Gluon: broken)",
-   "anleitung": "https://openwrt.org/toh/meraki/mr33"
+   "anleitung": "https://openwrt.org/toh/meraki/mr33",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-ex6100v2",
@@ -7481,7 +7819,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 970f1914be3f299fb302ca74a214589397000858",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-ex6150v2",
@@ -7524,7 +7864,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 970f1914be3f299fb302ca74a214589397000858",
-   "anleitung": "https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-fuer-netgear-wi-fi-range-extender-ex6150-v2/"
+   "anleitung": "https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-fuer-netgear-wi-fi-range-extender-ex6150-v2/",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-rbr50",
@@ -7570,7 +7912,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-rbs50",
@@ -7616,7 +7960,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-srr60",
@@ -7662,7 +8008,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-srs60",
@@ -7708,7 +8056,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-a42",
@@ -7754,7 +8104,9 @@
    "rampe": "nein, nicht nötig (factory über ap51-flash)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 86e18f6706e1f2c881fb6a2b9facf108573416e6",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openmesh-a62",
@@ -7800,7 +8152,9 @@
    "rampe": "nein, nicht nötig (factory über ap51-flash)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 0b204902075157dbb002ea04f41a5b1a4fbe848c",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "plasma-cloud-pa1200",
@@ -7845,7 +8199,9 @@
    "rampe": "nein, nicht nötig (factory über ap51-flash)",
    "rampe_rezept": "",
    "quelle": "OpenWrt ea5bb6bbfee06f44f714aff40c8929505face221",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "plasma-cloud-pa2200",
@@ -7890,7 +8246,9 @@
    "rampe": "nein, nicht nötig (factory über ap51-flash)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 4871fd2616acb03fefe69b068955dba36eb00770",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "zte-mf289f",
@@ -7936,7 +8294,9 @@
    "rampe": "teilweise: Gluon-RAMpe als TFTP-initramfs möglich, aber der `ubirmvol`-Schritt fehlt ihm; seriell bleibt [abgeleitet]",
    "rampe_rezept": "devices/zte-mf289f.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-\"broken\"-Gerät gezielt; `-initramfs-zImage.itb` per U-Boot-TFTP; Vorbereitung (`ubirmvol`) muss schon vor der Imageprüfung laufen, fehlt der RAMpe-Seite noch",
    "quelle": "OpenWrt 0de6a3339f1aadc1de2c9371435e3de239a00645 (Gluon: broken)",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0de6a3339f1aadc1de2c9371435e3de239a00645"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0de6a3339f1aadc1de2c9371435e3de239a00645",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "zyxel-nbg6617",
@@ -7979,7 +8339,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 82618062cf7ed6b40d2c52c6f6b96364888ffda6",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "mikrotik-discg-5acd",
@@ -8024,7 +8386,9 @@
    "rampe": "ja: wie SXTsq",
    "rampe_rezept": "Alias: Image aus devices/mikrotik-sxtsq-5-ac-rbsxtsqg-5acd.sh; RAM des DISC nicht belegt",
    "quelle": "OpenWrt d1f1e5269ed992e6fc30d575b43b0913c9e58ca2 (Gluon-Alias)",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "mikrotik-hap-ac2",
@@ -8069,7 +8433,9 @@
    "rampe": "ja: Netboot nimmt ein initramfs; laut RAMpe-NOTIZEN startet ein Gluon-initramfs nicht im Config-Mode, die Gluon-RAMpe wäre der passende Ersatz für Gluons eigenes initramfs-\"factory\" [abgeleitet]",
    "rampe_rezept": "devices/mikrotik-hap-ac2.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); schaltet Gluons \"factory\" (= Community-initramfs ohne Config-Mode) ab",
    "quelle": "OpenWrt faea7becafc634dc882f0ad8f9388862ccd5bd0d",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "mikrotik-sxtsq-5-ac-rbsxtsqg-5acd",
@@ -8114,7 +8480,9 @@
    "rampe": "ja: wie hAP ac2; heute nur mit OpenWrt-initramfs als Zwischenschritt",
    "rampe_rezept": "devices/mikrotik-sxtsq-5-ac-rbsxtsqg-5acd.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP)",
    "quelle": "OpenWrt d1f1e5269ed992e6fc30d575b43b0913c9e58ca2",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "mikrotik-wap-ac",
@@ -8159,7 +8527,9 @@
    "rampe": "ja: wie hAP ac2",
    "rampe_rezept": "devices/mikrotik-wap-ac.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP)",
    "quelle": "OpenWrt 7f54bf6fe2ac331d018cd273bb1abe04493b5457",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "aruba-ap-32x",
@@ -8205,7 +8575,9 @@
    "rampe": "teilweise: Gluon-RAMpe müsste das Aruba-`.ari`-Format (Vendor-Header) bekommen, Gluon baut für ipq806x kein initramfs; Bootloader-Tausch und UBI-Umbau bleiben seriell. OpenWrt-Artefakte nur als Snapshot (in keinem Release bis 25.12.5) [geprüft]",
    "rampe_rezept": "devices/aruba-ap-32x.sh (Rezept-Entwurf, nicht gebaut): Backport aus gluon-patches-hardware (`RAMPE_HW_PATCHES`); `-initramfs.ari` per APBoot-TFTP; APBoot-Tausch und NAND-Umbau bleiben seriell",
    "quelle": "OpenWrt d2a75029a5f8e54e1fd2f252f73b9a430a030116 (25.12: 65f01eb3576f69233e8b6c67d85ffd38fde47a1a); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]",
-   "anleitung": "https://github.com/lukasstockner/ap325-apboot-openwrt"
+   "anleitung": "https://github.com/lukasstockner/ap325-apboot-openwrt",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "extreme-networks-ap3935",
@@ -8249,7 +8621,9 @@
    "rampe": "teilweise: Gluon-RAMpe als TFTP-initramfs, seriell bleibt; Gluon baut für ipq806x kein initramfs; QCA9990 ohne 802.11s [abgeleitet]",
    "rampe_rezept": "devices/extreme-networks-ap3935.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage` (ohne Endung) per U-Boot-TFTP",
    "quelle": "OpenWrt 3aef61060e3f51aa43fe494d5ff173e81dd43003",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-nighthawk-x4s-r7800",
@@ -8291,7 +8665,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 823242185b56ea518568296f1a5834f736f12076",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c2600",
@@ -8334,7 +8710,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt ef02e8967cac02ebec78fadd063b367e67f8fbc6",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-unifi-ac-hd",
@@ -8379,7 +8757,9 @@
    "rampe": "nein, nicht nötig: der Weg schreibt das Gluon-sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "OpenWrt 4e46beb31342a2b02e32185e91806093f68a77be",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "arcadyan-vgv7510kw22",
@@ -8415,7 +8795,9 @@
    "rampe": "nein: Bootloader-Tausch nötig",
    "rampe_rezept": "",
    "quelle": "ca1db6b5ce5675d88b45b23f576e8c59f7f4fc48 (ohne Installationstext) + Wiki toh:arcadyan:vgv7510kw22",
-   "anleitung": "https://forum.openwrt.org/t/installing-lede-u-boot-via-brnboot-web-interface-without-rs232/9857/6"
+   "anleitung": "https://forum.openwrt.org/t/installing-lede-u-boot-via-brnboot-web-interface-without-rs232/9857/6",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "avm-fritz-box-3370-rev-2-hynix-nand",
@@ -8460,7 +8842,9 @@
    "rampe": "nein, unnötig: Gluon-EVA-Images direkt",
    "rampe_rezept": "",
    "quelle": "0b62fe5ed87ecac52301096b15abb69f96117c8c",
-   "anleitung": "https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation"
+   "anleitung": "https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "avm-fritz-box-3370-rev-2-micron-nand",
@@ -8505,7 +8889,9 @@
    "rampe": "nein, unnötig: Gluon-EVA-Images direkt",
    "rampe_rezept": "",
    "quelle": "0b62fe5ed87ecac52301096b15abb69f96117c8c",
-   "anleitung": "https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation"
+   "anleitung": "https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "avm-fritz-box-3390",
@@ -8549,7 +8935,9 @@
    "rampe": "ja: eva_ramboot.py bootet ein beliebiges initramfs [abgeleitet]",
    "rampe_rezept": "devices/avm-fritz-box-3390.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`",
    "quelle": "73ec21cde2cde1fc27f66b08e8762cdc3c78b61a",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "avm-fritz-box-7360-sl",
@@ -8596,7 +8984,9 @@
    "rampe": "nein, unnötig: sysupgrade direkt per FTP",
    "rampe_rezept": "",
    "quelle": "bf007a480a46a9fa843765a54fc2f8aa32b2683f (ohne Installationstext) + Wiki toh:avm:fritz.box.wlan.7360",
-   "anleitung": "https://fritz-tools.readthedocs.io/"
+   "anleitung": "https://fritz-tools.readthedocs.io/",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "avm-fritz-box-7360-v2",
@@ -8643,7 +9033,9 @@
    "rampe": "nein, unnötig",
    "rampe_rezept": "",
    "quelle": "78bebe680f67e8967c2baad8a5c07035d431f9d5",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "avm-fritz-box-7362-sl",
@@ -8687,7 +9079,9 @@
    "rampe": "ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]",
    "rampe_rezept": "devices/avm-fritz-box-7362-sl.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`",
    "quelle": "eae6cac6a30b95bef04d033ed8a303b7e35a078b",
-   "anleitung": "https://openwrt.org/toh/avm/avm_7362_sl#installation"
+   "anleitung": "https://openwrt.org/toh/avm/avm_7362_sl#installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "avm-fritz-box-7412",
@@ -8732,7 +9126,9 @@
    "rampe": "ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]",
    "rampe_rezept": "devices/avm-fritz-box-7412.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch",
    "quelle": "20f48c8ae334f8502e756282995cc84d89fa81c1",
-   "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7412#installation"
+   "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7412#installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "avm-fritz-box-7430",
@@ -8777,7 +9173,9 @@
    "rampe": "ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]",
    "rampe_rezept": "devices/avm-fritz-box-7430.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch",
    "quelle": "6c85a449a988876fdfd4ce84d6aa5ffe4a2820c1",
-   "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7430#installation"
+   "anleitung": "https://openwrt.org/toh/avm/avm_fritz_box_7430#installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-td-w8970",
@@ -8813,7 +9211,9 @@
    "rampe": "nein",
    "rampe_rezept": "",
    "quelle": "a99042c6a454d1167241ed35068f33ab97612e80 (ohne Installationstext) + Wiki toh:tp-link:td-w8970_v1",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-td-w8980",
@@ -8856,7 +9256,9 @@
    "rampe": "nein",
    "rampe_rezept": "",
    "quelle": "161179f40bd7899516518f3844fea28c6dd86efc (ohne Installationstext)",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "avm-fritz-box-7312",
@@ -8902,7 +9304,9 @@
    "rampe": "nein, unnötig",
    "rampe_rezept": "",
    "quelle": "02d53e6a2113f80ae429664e7990d167fbf44604",
-   "anleitung": "https://fritz-tools.readthedocs.io/"
+   "anleitung": "https://fritz-tools.readthedocs.io/",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-dgn3500b",
@@ -8944,7 +9348,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "575127fe1c82e814da155a15be0a02b4153e1d00",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "asus-rt-ax52",
@@ -8986,7 +9392,9 @@
    "rampe": "ja: Hersteller-UI nimmt ein initramfs im ASUS-TRX; RAMpe-Rezept muss das ARTIFACT `initramfs.trx` einsammeln [abgeleitet]",
    "rampe_rezept": "devices/asus-rt-ax52.sh (Rezept-Entwurf, nicht gebaut): `-initramfs.trx` (OpenWrt-ARTIFACT) für die ASUS-Web-UI",
    "quelle": "OpenWrt 99708cc16dbd7c93db80698fbe5c69f07995a3e6",
-   "anleitung": "https://openwrt.org/toh/asus/rt-ax52#installation"
+   "anleitung": "https://openwrt.org/toh/asus/rt-ax52#installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "asus-rt-ax59u",
@@ -9029,7 +9437,9 @@
    "rampe": "teilweise: OpenWrt baut für die RT-AX59U kein `initramfs.trx` (24.10.8 und 25.12.5 nur initramfs-kernel.bin) [geprüft]; eine Gluon-RAMpe-TRX wie bei der RT-AX52 wäre zu bauen, ob die Stock-UI es nimmt: offen",
    "rampe_rezept": "devices/asus-rt-ax59u.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; nur `initramfs-kernel.bin` für den UART-Weg, für die Web-UI fehlt ein eigenes TRX",
    "quelle": "OpenWrt 782eb050082acac93c2f9b3eb22348234bc93e99; gluon-patches-hardware 8dbae18666543aa9b8b5e7faa1d267024d62071e (Gluon-Zeile)",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "asus-tuf-ax4200",
@@ -9078,7 +9488,9 @@
    "rampe": "teilweise: der SSH-Weg schreibt ein initramfs ins Flash; ob ein Gluon-/RAMpe-initramfs statt des herbetom-Sonderbaus bootet, ist nicht geprüft",
    "rampe_rezept": "devices/asus-tuf-ax4200.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` mit eingebettetem initramfs (`TARGET_ROOTFS_INITRAMFS_SEPARATE` aus) für SSH `mtd-write` oder UART + TFTP; eigener Bau-Lauf",
    "quelle": "OpenWrt e7c399bee677e9bac66e1bea697aefb8d828edfe",
-   "anleitung": "https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-ASUS-TUF-AX4200"
+   "anleitung": "https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-ASUS-TUF-AX4200",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "asus-tuf-ax6000",
@@ -9127,7 +9539,9 @@
    "rampe": "teilweise: wie TUF-AX4200; über die Gehäuselöcher ist auch der TFTP-Weg ohne Öffnen möglich, dort passt die Gluon-RAMpe als initramfs [abgeleitet]",
    "rampe_rezept": "devices/asus-tuf-ax6000.sh (Rezept-Entwurf, nicht gebaut): wie TUF-AX4200; eigener Bau-Lauf",
    "quelle": "OpenWrt d522ccecb28f941aadcaf7a50cd6daa861f468a7",
-   "anleitung": "https://github.com/herbetom/openwrt-asus-filogic-factory/releases/latest"
+   "anleitung": "https://github.com/herbetom/openwrt-asus-filogic-factory/releases/latest",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-ap3000-outdoor-v1",
@@ -9174,7 +9588,9 @@
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
    "quelle": "OpenWrt 19d770d7b91aaca1de18281dea0da8616df34c6c",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-ap3000-v1",
@@ -9220,7 +9636,9 @@
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
    "quelle": "OpenWrt 6dacba30a75b0ac8a65115f78808a97abbb34939",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-ap3000-wall-v1",
@@ -9267,7 +9685,9 @@
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
    "quelle": "OpenWrt afad4c71f8d558ca86b997781ca0236f321cf1e9 (25.12: 45788a48c7); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-m3000-v1",
@@ -9314,7 +9734,9 @@
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
    "quelle": "OpenWrt 20e4a18feb3f766b0f6ebec1afc154b345398a7a",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-m3000-v2-with-motorcomm-yt8821",
@@ -9361,7 +9783,9 @@
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
    "quelle": "OpenWrt 45b51ebaff51d2a49d149e9011717abb1b032683 (25.12: ca825537fb); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-re3000-v1",
@@ -9407,7 +9831,9 @@
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
    "quelle": "OpenWrt e8f75973172749874afa13e4f746acd8cb515de2",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-tr3000-256mb-v1",
@@ -9453,7 +9879,9 @@
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
    "quelle": "OpenWrt 0ec28e59a815bb43c359328c8fd644f399d344da",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-tr3000-v1",
@@ -9497,7 +9925,9 @@
    "rampe": "teilweise: Gluon-RAMpe ersetzt das OpenWrt-initramfs im TFTP-Schritt, der serielle Teil bleibt",
    "rampe_rezept": "devices/cudy-tr3000-v1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per U-Boot-TFTP",
    "quelle": "OpenWrt 63b8d98dd0d2f7797ea5b5f25978590982bbbb5d",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-wr3000-v1",
@@ -9543,7 +9973,9 @@
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
    "quelle": "OpenWrt c9cb6411c1a70516d5922e88c45b338de041baba",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-wr3000e-v1",
@@ -9589,7 +10021,9 @@
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
    "quelle": "OpenWrt f50551dd18318f2255da3ecd5de5cc1078201651",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-wr3000h-v1",
@@ -9635,7 +10069,9 @@
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
    "quelle": "OpenWrt fdbbb8415fd19ae0748a2bbe41b15257054e4077",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-wr3000p-v1",
@@ -9681,7 +10117,9 @@
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
    "quelle": "OpenWrt 51108508f10eb25f99395ec9334f996813bc5a22; gluon-patches-hardware 8dbae18666543aa9b8b5e7faa1d267024d62071e (Gluon-Zeile)",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-wr3000s-v1",
@@ -9727,7 +10165,9 @@
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
    "quelle": "OpenWrt 4779e954fa847c4b376623bc3bdf9651007e8a89",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-wr3000u-v1",
@@ -9773,7 +10213,9 @@
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen; OpenWrt-Images nur als Snapshot (nicht in 25.12.5) [geprüft]",
    "rampe_rezept": "",
    "quelle": "OpenWrt b9d7b448c256bb3860c7965ccf599c29c4847cb4 (25.12: 95dec97d08); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "d-link-aquila-pro-ai-m30-a1",
@@ -9817,7 +10259,29 @@
    "rampe": "ja: RAMpe-Image gebaut, Header wie OpenWrt, Hardware-Test offen [geprüft: gluon-rampe-installer docs/NOTIZEN.md]",
    "rampe_rezept": "devices/d-link-aquila-pro-ai-m30-a1.sh: `-recovery.bin` (D-Link-Header DLK6E6110001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, Hardware-Test offen",
    "quelle": "OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f",
-   "anleitung": "https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/"
+   "anleitung": "https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/",
+   "erprobt": {},
+   "werte": {
+    "recovery_ip": "192.168.200.1",
+    "led_recovery": "rot blinkt",
+    "datei_art": "rampe",
+    "upload_pfad": "/upload.cgi",
+    "rampe_ip": "192.168.1.1",
+    "rampe_bytes": "etwa 52,4 Millionen",
+    "led_rampe": "blinkt die LED gleichmäßig, etwa einmal pro Sekunde",
+    "seitentitel": "",
+    "herstellerseite_gleiche_ip": false,
+    "anschluss": "",
+    "recovery_wartezeit": "",
+    "rechner_ip": "192.168.200.10",
+    "dauer_neustart": "einige Minuten",
+    "dauer_lang": "über 10 Minuten",
+    "dauer_gluon": "wenige Minuten",
+    "datei_beispiel": "gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin",
+    "rampe_datei": "gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin",
+    "taste_hinweis": "",
+    "led_falsch": ""
+   }
   },
   {
    "gluon_name": "d-link-aquila-pro-ai-m60-a1",
@@ -9861,7 +10325,33 @@
    "rampe": "ja: RAMpe-`recovery.bin` am Gerät erprobt (13.10.2026) [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]; Gluons eigenes `-recovery.bin` startet laut RAMpe-NOTIZEN vermutlich wie beim M30 nicht im Config-Mode [abgeleitet]",
    "rampe_rezept": "devices/d-link-aquila-pro-ai-m60-a1.sh: `-recovery.bin` (D-Link-Header DLK6E8202001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, am Gerät erprobt 13.10.2026 (Neanderfunk-sysupgrade geflasht). Gluons eigenes recovery.bin (z. B. Neanderfunk 26100702bro) startet vermutlich wie bei der M30 nicht im Config-Mode [abgeleitet]",
    "quelle": "OpenWrt 7271ee587cd104d30d6d46dd3c623c9d4602bd0c",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {
+    "am": "2026-10-13",
+    "mit": "gluon-rampe-20261010",
+    "weg": "RAMpe über die D-Link-Recovery, dann sysupgrade"
+   },
+   "werte": {
+    "recovery_ip": "192.168.200.1",
+    "led_recovery": "rot blinkt",
+    "datei_art": "rampe",
+    "upload_pfad": "/upload.cgi",
+    "rampe_ip": "192.168.1.1",
+    "rampe_bytes": "etwa 52,4 Millionen",
+    "led_rampe": "blinkt die LED gleichmäßig, etwa einmal pro Sekunde",
+    "seitentitel": "D-link Router Recovery Mode",
+    "herstellerseite_gleiche_ip": true,
+    "anschluss": "",
+    "recovery_wartezeit": "",
+    "rechner_ip": "192.168.200.66",
+    "dauer_neustart": "knapp 2 Minuten",
+    "dauer_lang": "über 10 Minuten",
+    "dauer_gluon": "unter 2 Minuten",
+    "datei_beispiel": "gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin",
+    "rampe_datei": "gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin",
+    "taste_hinweis": "Nur die Reset-Taste führt in die Recovery, keine andere.",
+    "led_falsch": "Dimmt die LED orange hell und dunkel, ist das nicht die Recovery."
+   }
   },
   {
    "gluon_name": "gl.inet-gl-mt2500",
@@ -9903,7 +10393,9 @@
    "rampe": "nein, nicht nötig: Hersteller-UI nimmt das Gluon-sysupgrade",
    "rampe_rezept": "",
    "quelle": "OpenWrt 12396686484a488dff1c4a1ee8b5197c552572fe",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl.inet-gl-mt3000",
@@ -9945,7 +10437,9 @@
    "rampe": "nein, nicht nötig: Hersteller-UI nimmt das Gluon-sysupgrade",
    "rampe_rezept": "",
    "quelle": "OpenWrt 7cbe34170e3d8471c1ebacde33a2372c92433be4",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl.inet-gl-mt6000",
@@ -9987,7 +10481,9 @@
    "rampe": "nein, nicht nötig: Hersteller-UI nimmt das Gluon-sysupgrade",
    "rampe_rezept": "",
    "quelle": "OpenWrt fe10f9743935d6986e80e7cb082469e6bc5a03f0; gluon-patches-hardware 8dbae18666543aa9b8b5e7faa1d267024d62071e (Gluon-Zeile)",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "mercusys-mr80x-v3",
@@ -10031,7 +10527,9 @@
    "rampe": "teilweise: Gluon-RAMpe statt OpenWrt-initramfs im TFTP-Schritt, seriell bleibt; Rezept `devices/mercusys-mr80x-v3.sh`. In Neanderfunk-2025.1 seit gluon-patches-hardware ab19bf1b46d34315a92f61974dd37f8a9ede9604 (10.10.2026), in Gluon v2025.1.3 nicht",
    "rampe_rezept": "devices/mercusys-mr80x-v3.sh (gebaut 10.10.2026 lokal, initramfs etwa 8.1 MB, `91_installer_initramfs` geprüft, Hardware-Test offen): trägt das Gerät in Gluon ein (`ensure_device`); `initramfs-kernel.bin` per UART + TFTP",
    "quelle": "OpenWrt 0ecf136f4d3126d92edc13087ce03db83b7e8223",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "mercusys-mr90x-v1",
@@ -10067,7 +10565,9 @@
    "rampe": "teilweise: das RAMpe-initramfs könnte das OpenWrt-initramfs im kernel-Volume ersetzen; Exploit und fw_setenv bleiben Handarbeit [abgeleitet]. Hinweis: eine ältere Neanderfunk-Notiz beschreibt \"tp_boot_idx 0, dann U-Boot-Web-Recovery nimmt initramfs\" - weder im Commit noch im Wiki-Abschnitt \"Stock bootloader\" so belegt",
    "rampe_rezept": "devices/mercusys-mr90x-v1.sh (gebaut 10.10.2026 lokal, initramfs etwa 8.1 MB, `91_installer_initramfs` geprüft, Hardware-Test offen): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell",
    "quelle": "OpenWrt e4fe3097ef6a961874b66932a0ac4be18070630a",
-   "anleitung": "https://openwrt.org/toh/mercusys/mr90x_v1#installation_stock_bootloader"
+   "anleitung": "https://openwrt.org/toh/mercusys/mr90x_v1#installation_stock_bootloader",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-wax220",
@@ -10109,7 +10609,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 984786a2f7ec622c99e8c9cdada65d0ea0cf4e0b",
-   "anleitung": "https://openwrt.org/toh/netgear/wax220#oem_easy_installation"
+   "anleitung": "https://openwrt.org/toh/netgear/wax220#oem_easy_installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "openwrt-one",
@@ -10151,7 +10653,9 @@
    "rampe": "nein, nicht nötig",
    "rampe_rezept": "",
    "quelle": "OpenWrt 797904b3cb4a5c575641c19e7f3989926e4c7902",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-unifi-6-plus",
@@ -10197,7 +10701,9 @@
    "rampe": "nein, nicht nötig: der Weg schreibt das Gluon-sysupgrade direkt, ohne initramfs-Schritt",
    "rampe_rezept": "",
    "quelle": "OpenWrt 75ee5546e9b7cfa5bbfd6f844ab8c5fffd5bb594",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=75ee5546e9b7cfa5bbfd6f844ab8c5fffd5bb594"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=75ee5546e9b7cfa5bbfd6f844ab8c5fffd5bb594",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "wavlink-wl-wn573hx3",
@@ -10240,7 +10746,9 @@
    "rampe": "nein, nicht nötig: Gluon-sysupgrade geht direkt",
    "rampe_rezept": "",
    "quelle": "OpenWrt ca38f13ea2fd36850edee02fea6d81f0f8b16569",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "xiaomi-mi-router-ax3000t",
@@ -10276,7 +10784,9 @@
    "rampe": "teilweise: Gluon-RAMpe als `initramfs-factory.ubi` (ubinize-kernel) bauen, ersetzt den OpenWrt-Zwischenschritt; der Exploit bleibt [abgeleitet]",
    "rampe_rezept": "devices/xiaomi-mi-router-ax3000t.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt",
    "quelle": "OpenWrt 7dbcc1215a56cc1da68c81bf92d7efa174c5e051",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "xiaomi-mi-router-ax3000t-openwrt-u-boot-layout",
@@ -10312,7 +10822,9 @@
    "rampe": "nein: Bootloader-Tausch braucht eine OpenWrt-Shell mit kmod-mtd-rw, die Gluon-RAMpe kann nur sysupgrade [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "OpenWrt 7dbcc1215a56cc1da68c81bf92d7efa174c5e051",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "zyxel-nwa50ax-pro",
@@ -10357,7 +10869,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt f0445746f6fd96fc7c5394b238153bd2ff22bc5b",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f0445746f6fd96fc7c5394b238153bd2ff22bc5b"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f0445746f6fd96fc7c5394b238153bd2ff22bc5b",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "zyxel-nwa90ax-pro",
@@ -10400,7 +10914,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt e34e874a11f0506ff17365819bc101a455dc503e + 2cc8d3e382c0b8b919cef2e9f1cfec9ec7954150; gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "linksys-e8450-ubi",
@@ -10446,7 +10962,9 @@
    "rampe": "nein: der Bootloader muss getauscht werden; die Web-UI nimmt zwar ein initramfs, aber ohne UBI-Umbau scheitert das Gluon-sysupgrade an DEVICE_COMPAT_VERSION 2.0 [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "OpenWrt 02351861824a13ed158db1ef59aede2db6ba7568",
-   "anleitung": "https://openwrt.org/toh/linksys/e8450#installation"
+   "anleitung": "https://openwrt.org/toh/linksys/e8450#installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-wax206",
@@ -10490,7 +11008,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt f6d2a23cbca61611663efb531c97efeded26e0cd",
-   "anleitung": "https://openwrt.org/toh/netgear/wax206#oem_easy_installation"
+   "anleitung": "https://openwrt.org/toh/netgear/wax206#oem_easy_installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-unifi-6-lr-v1",
@@ -10537,7 +11057,9 @@
    "rampe": "nein, nicht nötig: der Weg schreibt das Gluon-sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "OpenWrt 634c13c186646aff2badb51a43b248825d0fe5a0 (v1-Profil: 15a02471bb854245f8f94398c1e1d9ce29c2c341)",
-   "anleitung": "https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps"
+   "anleitung": "https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-unifi-6-lr-v2",
@@ -10584,7 +11106,9 @@
    "rampe": "nein, nicht nötig: der Weg schreibt das Gluon-sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "OpenWrt 634c13c186646aff2badb51a43b248825d0fe5a0 (v2: 31d86a1a119265393db02aa66e6bc6518ee7b905)",
-   "anleitung": "https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps"
+   "anleitung": "https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-unifi-6-lr-v3",
@@ -10631,7 +11155,9 @@
    "rampe": "nein, nicht nötig: der Weg schreibt das Gluon-sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "OpenWrt 634c13c186646aff2badb51a43b248825d0fe5a0 (v3: a0f4eadf6a25fb54c189bde91425673e11125d35)",
-   "anleitung": "https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps"
+   "anleitung": "https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "xiaomi-redmi-router-ax6s",
@@ -10667,7 +11193,9 @@
    "rampe": "nein, nicht nötig: Gluon baut factory.bin",
    "rampe_rezept": "",
    "quelle": "OpenWrt 9f9477b2751231d57cdd8c227149b88c93491d93",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "enterasys-ws-ap3715i",
@@ -10711,7 +11239,9 @@
    "rampe": "teilweise: nach dem seriellen TFTP-Boot macht die Gluon-RAMpe den sysupgrade-Schritt statt scp; bootcmd/saveenv bleibt seriell",
    "rampe_rezept": "devices/enterasys-ws-ap3715i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `ap3715.bin` per U-Boot-TFTP; entpackt über 11 MB droht Überlappung",
    "quelle": "765f66810a3324cc35fa6471ee8eeee335ba8c2b",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "sophos-red-15w-rev.1",
@@ -10756,7 +11286,9 @@
    "rampe": "teilweise: ubiformat vor dem sysupgrade macht die Gluon-RAMpe nicht",
    "rampe_rezept": "devices/sophos-red-15w-rev.1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (FIT) als `kernel.bin` per U-Boot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubiformat`)",
    "quelle": "97e4311fca73d064d17065e7844699aa777cb157",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-tl-wdr4900-v1",
@@ -10798,7 +11330,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "4305c6cda18051efad9952425a8ce2478adc64b9 (ohne Installationstext)",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "aerohive-hiveap-330",
@@ -10843,7 +11377,9 @@
    "rampe": "teilweise: Gluon-RAMpe statt scp+sysupgrade; der serielle Teil bleibt",
    "rampe_rezept": "devices/aerohive-hiveap-330.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per U-Boot-TFTP; der U-Boot-Patch bleibt Handarbeit (Entwurf in docs/ENTWURF-VORBEREITUNG.md)",
    "quelle": "f2b7d9dc1ca3d33f14961cf2885639f4f9e8965e",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "enterasys-ws-ap3710i",
@@ -10888,7 +11424,9 @@
    "rampe": "teilweise: wie WS-AP3715i",
    "rampe_rezept": "devices/enterasys-ws-ap3710i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` als `01C8A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell",
    "quelle": "16b01fb1b9c99513c318109bef96a1a3545c57a0",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=16b01fb1b9c99513c318109bef96a1a3545c57a0"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=16b01fb1b9c99513c318109bef96a1a3545c57a0",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "extreme-networks-ws-ap3825i",
@@ -10933,7 +11471,9 @@
    "rampe": "teilweise: wie WS-AP3715i",
    "rampe_rezept": "devices/extreme-networks-ws-ap3825i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (FIT) per U-Boot-TFTP; `bootcmd` bleibt seriell",
    "quelle": "7e614820a89208c4e91a3a5f9de07a5402accdaa",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "hewlett-packard-msm460",
@@ -10969,7 +11509,9 @@
    "rampe": "nein: der Weg schreibt ein factory, kein Ramboot-Schritt [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "af329ec38980e2f706411a11b9f344a62eb0dd8f",
-   "anleitung": "https://github.com/blocktrron/msm460-flashing?tab=readme-ov-file"
+   "anleitung": "https://github.com/blocktrron/msm460-flashing?tab=readme-ov-file",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ocedo-panda",
@@ -11016,7 +11558,9 @@
    "rampe": "teilweise: Ramboot passt; ubirmvol und fw_setenv vor dem sysupgrade macht die Gluon-RAMpe nicht",
    "rampe_rezept": "devices/ocedo-panda.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` als `panda-uimage-factory` + DTB als `panda.fdt`; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubirmvol`, `fw_setenv`)",
    "quelle": "b368373fab45f31963cd2bc1c6ab90e0a577e611",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "linksys-mx5300",
@@ -11059,7 +11603,9 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 70fd815e57dc98cef88828faa5ce71717540e99e",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-wax218",
@@ -11101,7 +11647,9 @@
    "rampe": "ja: RAMpe-initramfs in dasselbe Format packen (ARTIFACT web-ui-factory.fit); Gluon baut für qualcommax kein initramfs, Rezept braucht TARGET_ROOTFS_INITRAMFS [abgeleitet]",
    "rampe_rezept": "devices/netgear-wax218.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `-web-ui-factory.fit` (OpenWrt-ARTIFACT) für die Web-UI",
    "quelle": "OpenWrt 7801161c4bb2413817b3dfd01695050e2da27bf3",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-eap620-hd-v1",
@@ -11145,7 +11693,9 @@
    "rampe": "teilweise: web-ui-factory ist ein squashfs-Flash-Image (tplink-image-2022, in 24.10 nicht vorhanden), kein initramfs; Gluon-RAMpe bräuchte dieses Format [abgeleitet]",
    "rampe_rezept": "devices/tp-link-eap620-hd-v1.sh (Rezept-Entwurf, nicht gebaut): Backport aus gluon-patches-hardware (`RAMPE_HW_PATCHES`); `-initramfs-uImage.itb` per U-Boot-TFTP",
    "quelle": "OpenWrt 4b6e7da0f7499acb69feaacca79e0ee826c0b8db; gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "xiaomi-ax3600",
@@ -11181,7 +11731,9 @@
    "rampe": "teilweise: Gluon-RAMpe als `initramfs-factory.ubi` bauen, ersetzt den OpenWrt-Zwischenschritt; Exploit bleibt; Gluon baut für qualcommax kein initramfs [abgeleitet]",
    "rampe_rezept": "devices/xiaomi-ax3600.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt",
    "quelle": "OpenWrt 8364f0816417bfe404f7bded4eaa4f4a60c6d006",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "asus-rt-ac51u",
@@ -11226,7 +11778,9 @@
    "rampe": "nein, unnötig: Recovery nimmt das sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "5f932988c3b65af14bd6e48a05cc2204b7aeb419",
-   "anleitung": "https://openwrt.org/toh/asus/rt-ac51u#installation"
+   "anleitung": "https://openwrt.org/toh/asus/rt-ac51u#installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl-mt300a",
@@ -11266,7 +11820,9 @@
    "rampe": "nein, unnötig: sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "96ee39b184a3863bba1cc42efc5bbd34495d20ff (ohne Installationstext) + Wiki toh:gl.inet",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl-mt300n",
@@ -11307,7 +11863,9 @@
    "rampe": "nein, unnötig: sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "be53e5a154931109dd76a8015583123201c4b602 (ohne Installationstext) + Wiki toh:gl.inet",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl-mt750",
@@ -11347,7 +11905,9 @@
    "rampe": "nein, unnötig: sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "be7962925927ab5cdc7a13fdb24d1b08792f8f23 (ohne Installationstext) + Wiki toh:gl.inet",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-ex3700",
@@ -11392,7 +11952,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "de33a4cef0411f13df397ada2dc3634c5748a457",
-   "anleitung": "https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-wi-fi-range-extender-ex3700/"
+   "anleitung": "https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-wi-fi-range-extender-ex3700/",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-ex6130",
@@ -11437,7 +11999,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "0cbd2c74d0c9f41d07757907226e5cfeaf16e06a",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "nexx-wt3020-8m",
@@ -11480,7 +12044,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "7bac455a4ccd4a55e5db64c7eac224c98be045b6 (ohne Installationstext)",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c2-v1",
@@ -11524,7 +12090,9 @@
    "rampe": "nein: Recovery schreibt Flash, bootet nichts aus dem RAM; das Gluon-sysupgrade lässt sich direkt anhängen",
    "rampe_rezept": "",
    "quelle": "8375623a064037bbdd914bd9e7529eefa7172560",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c20-v1",
@@ -11567,7 +12135,9 @@
    "rampe": "nein: wie Archer C2 v1",
    "rampe_rezept": "",
    "quelle": "161a3be5adb21135eb75da81247fa5e04b6ea676",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c20i",
@@ -11610,7 +12180,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "48d8bc4f971ad7795e3162134759caa37900138f (ohne Installationstext)",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c50-v1",
@@ -11653,7 +12225,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "1c00c09eb6af88a0a96451f8da6108171c46a42d (ohne Installationstext)",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "xiaomi-miwifi-mini",
@@ -11696,7 +12270,9 @@
    "rampe": "nein: Exploit schreibt das sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "70db4e46398c8c82774e6af7f7158f3df22d6afe (ohne Installationstext) + Wiki toh:xiaomi:miwifi_mini",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "asus-rt-ac57u-v1",
@@ -11740,7 +12316,9 @@
    "rampe": "nein, unnötig: sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "14e0e4f138e35c3e2a15cc3a836c939547ee053b",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "asus-rt-ax53u",
@@ -11787,7 +12365,9 @@
    "rampe": "ja: genau der Fall \"erst initramfs, dann sysupgrade\"",
    "rampe_rezept": "devices/asus-rt-ax53u.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per ASUS-Rescue (TFTP put)",
    "quelle": "8c00fd9b4519bf0ef8fb3470a6df421b9f38c03c",
-   "anleitung": "https://openwrt.org/toh/asus/rt-ax53u#installation_with_mtd-write"
+   "anleitung": "https://openwrt.org/toh/asus/rt-ax53u#installation_with_mtd-write",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-ap1300-outdoor-v1",
@@ -11834,7 +12414,9 @@
    "rampe": "nein: Stock und Recovery prüfen Cudys RSA-Signatur",
    "rampe_rezept": "",
    "quelle": "c6e59d06afca02ccb2541631cacc769ae4d6569f",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-m1800",
@@ -11880,7 +12462,9 @@
    "rampe": "nein: Stock und Recovery prüfen Cudys RSA-Signatur",
    "rampe_rezept": "",
    "quelle": "f6d394e9f2fd41547236c092ac914322220eb77c",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-wr1300-v1",
@@ -11926,7 +12510,9 @@
    "rampe": "nein: Stock und Recovery prüfen Cudys RSA-Signatur",
    "rampe_rezept": "",
    "quelle": "cd2b661453a8a2b8260dfb9b9c0dc5297b981331",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-wr2100",
@@ -11972,7 +12558,9 @@
    "rampe": "nein: Stock und Recovery prüfen Cudys RSA-Signatur",
    "rampe_rezept": "",
    "quelle": "3501db9b9b4a71ae52c539b46af817783c327866",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-x6-v1",
@@ -12018,7 +12606,9 @@
    "rampe": "nein: Stock und Recovery prüfen Cudys RSA-Signatur",
    "rampe_rezept": "",
    "quelle": "4a8eaa5c7c9235212c4af022c18b2dfbadfe557f",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-x6-v2",
@@ -12064,7 +12654,9 @@
    "rampe": "nein: Stock und Recovery prüfen Cudys RSA-Signatur",
    "rampe_rezept": "",
    "quelle": "e38de40f8dd350344407fe5a91e81191f6960804",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "d-link-covr-x1860-a1",
@@ -12107,7 +12699,9 @@
    "rampe": "nicht nötig (Gluon hat factory und recovery); steht in GERAETE.md noch als Kandidat",
    "rampe_rezept": "",
    "quelle": "0a18259e4aa361cd9e5848c038be4b9f4e3bfcc6",
-   "anleitung": "https://freifunk-aachen.de/2023/08/03/installationsanleitung-d-link-covr-x1860/"
+   "anleitung": "https://freifunk-aachen.de/2023/08/03/installationsanleitung-d-link-covr-x1860/",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "d-link-dap-1620-b1",
@@ -12149,7 +12743,24 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "e4c7703d2a62b8914e4723adae3f67c68a57532c",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e4c7703d2a62b8914e4723adae3f67c68a57532c"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e4c7703d2a62b8914e4723adae3f67c68a57532c",
+   "erprobt": {},
+   "werte": {
+    "datei_art": "factory",
+    "anschluss": "",
+    "taste_hinweis": "",
+    "led_falsch": "",
+    "recovery_wartezeit": "",
+    "seitentitel": "",
+    "herstellerseite_gleiche_ip": false,
+    "dauer_lang": "",
+    "recovery_ip": "192.168.0.50",
+    "rechner_ip": "192.168.0.65",
+    "led_recovery": "",
+    "upload_pfad": "/upload.cgi",
+    "dauer_neustart": "einige Minuten",
+    "datei_beispiel": "gluon-<community>-<release>-d-link-dap-1620-b1-factory.bin"
+   }
   },
   {
    "gluon_name": "d-link-dap-x1860-a1",
@@ -12191,7 +12802,24 @@
    "rampe": "teilweise: Rückfall, falls das Gluon-factory nicht klappt: RAMpe-initramfs für die Web-Recovery statt OpenWrt-initramfs [abgeleitet]",
    "rampe_rezept": "devices/d-link-dap-x1860-a1.sh: `-initramfs-kernel.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet",
    "quelle": "3c31f6b521bb5fc49e222a8f2bcd454b73452a0e",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-d-link-dap-x1860/987"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-d-link-dap-x1860/987",
+   "erprobt": {},
+   "werte": {
+    "datei_art": "factory",
+    "anschluss": "",
+    "taste_hinweis": "",
+    "led_falsch": "",
+    "recovery_wartezeit": "",
+    "seitentitel": "",
+    "herstellerseite_gleiche_ip": false,
+    "dauer_lang": "",
+    "recovery_ip": "192.168.0.50",
+    "rechner_ip": "192.168.0.65",
+    "led_recovery": "rot blinkt",
+    "upload_pfad": "/upload.cgi",
+    "dauer_neustart": "einige Minuten",
+    "datei_beispiel": "gluon-<community>-<release>-d-link-dap-x1860-a1-factory.bin"
+   }
   },
   {
    "gluon_name": "d-link-dir-860l-b1",
@@ -12233,7 +12861,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "40b740b23234574115225bf8bde7bc679f8034e1 (ohne Installationstext)",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "d-link-dir-878-a1",
@@ -12276,7 +12906,24 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "d7233b0a6a9b8cb9207a74a8cb3d0525170cf504",
-   "anleitung": "https://openwrt.org/toh/d-link/dir-878_a1#installation"
+   "anleitung": "https://openwrt.org/toh/d-link/dir-878_a1#installation",
+   "erprobt": {},
+   "werte": {
+    "datei_art": "factory",
+    "anschluss": "LAN1",
+    "taste_hinweis": "Die Reset-Taste sitzt auf der Rückseite; gemeint ist die Power-LED, das dauert etwa 10 Sekunden.",
+    "led_falsch": "",
+    "recovery_wartezeit": "etwa 30 Sekunden",
+    "seitentitel": "",
+    "herstellerseite_gleiche_ip": false,
+    "dauer_lang": "",
+    "recovery_ip": "192.168.0.1",
+    "rechner_ip": "192.168.0.2",
+    "led_recovery": "orange blinkt",
+    "upload_pfad": "/",
+    "dauer_neustart": "einige Minuten",
+    "datei_beispiel": "gluon-<community>-<release>-d-link-dir-878-a1-factory.bin"
+   }
   },
   {
    "gluon_name": "d-link-dir-882-a1",
@@ -12318,7 +12965,24 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "73e8f23579bcb87764dae9ed0aefe28be3183d3e",
-   "anleitung": "https://openwrt.org/toh/d-link/dir-882_a1#installation"
+   "anleitung": "https://openwrt.org/toh/d-link/dir-882_a1#installation",
+   "erprobt": {},
+   "werte": {
+    "datei_art": "factory",
+    "anschluss": "",
+    "taste_hinweis": "Gemeint ist die Power-LED.",
+    "led_falsch": "",
+    "recovery_wartezeit": "",
+    "seitentitel": "",
+    "herstellerseite_gleiche_ip": false,
+    "dauer_lang": "",
+    "recovery_ip": "192.168.0.1",
+    "rechner_ip": "192.168.0.2",
+    "led_recovery": "orange blinkt",
+    "upload_pfad": "/",
+    "dauer_neustart": "einige Minuten",
+    "datei_beispiel": "gluon-<community>-<release>-d-link-dir-882-a1-factory.bin"
+   }
   },
   {
    "gluon_name": "genexis-pulse-ex400",
@@ -12362,7 +13026,9 @@
    "rampe": "ja: factory.bin = Kette `append-image-stage initramfs-kernel.bin`, `inteno-bootfs`, `inteno-y3-header EX400` (mt7621.mk); Gluon baut es nur nicht, weil das Rezept CONFIG_TARGET_ROOTFS_INITRAMFS braucht. Eine Gluon-RAMpe-Bau ergibt direkt eine Gluon-RAMpe-factory [abgeleitet aus mk]",
    "rampe_rezept": "devices/genexis-pulse-ex400.sh (Rezept-Entwurf, nicht gebaut): `-factory.bin` (initramfs in UBIFS-bootfs, Inteno-Kopf); bootfs höchstens etwa 11.6 MiB",
    "quelle": "dd0c2839a81bb3c5067be99b02ec5c0adff93ac6",
-   "anleitung": "https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400"
+   "anleitung": "https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl.inet-gl-mt1300",
@@ -12407,7 +13073,9 @@
    "rampe": "nein, unnötig: sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "d89a7f0120db42d4fae1656e1860ef49523acabb",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "mercusys-mr70x-v1",
@@ -12449,7 +13117,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "47de2c686291e69afc9f443e27e1dfd11ed5fbe7",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "mikrotik-routerboard-750gr3",
@@ -12494,7 +13164,9 @@
    "rampe": "ja: Netboot lädt ein beliebiges initramfs (ELF); Gluon-RAMpe statt OpenWrt-initramfs [abgeleitet]",
    "rampe_rezept": "devices/mikrotik-routerboard-750gr3.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` (ELF); Netboot (BOOTP/DHCP + TFTP)",
    "quelle": "52f2d7d2a9dc3e142bb957462a30806eb5cebaf4 (+ faf94d926e2810f895f2a98d4a49ee2fe8f673e8: Erstunterstützung mit Bootloader-Tausch, überholt)",
-   "anleitung": "https://openwrt.org/toh/mikrotik/common"
+   "anleitung": "https://openwrt.org/toh/mikrotik/common",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-eax12",
@@ -12539,7 +13211,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "32ea8a9a7e4b1319607ae398e9bf7d8e3c4cd756",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-ex6150",
@@ -12584,7 +13258,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "3f019bf96cdf52668750f67cb139fa1b5c538f0b",
-   "anleitung": "https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-wi-fi-range-extender-ex6150-v2/"
+   "anleitung": "https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-wi-fi-range-extender-ex6150-v2/",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-r6220",
@@ -12628,7 +13304,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "38bee61dab029a7608088f64da71c19cfc8cf267",
-   "anleitung": "https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-r6220/"
+   "anleitung": "https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-r6220/",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-r6260",
@@ -12673,7 +13351,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "6cea9688af4a05f407266ed1de5a739e5c984b8c (ohne Installationstext)",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-wac104",
@@ -12715,7 +13395,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "221d8a1c6086ffd8bc53f81d5074a177d8dd8480",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-wax202",
@@ -12759,7 +13441,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "0f068e7c4a83bcbf20c4e52a5f8a3f1fe2af2246",
-   "anleitung": "https://openwrt.org/toh/netgear/wax202#oem_easy_installation"
+   "anleitung": "https://openwrt.org/toh/netgear/wax202#oem_easy_installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-wndr3700-v5",
@@ -12805,7 +13489,9 @@
    "rampe": "ja: dauerhafte RAMpe als Sercomm-factory.img per nmrpflash statt OpenWrt-Zwischenschritt [abgeleitet]",
    "rampe_rezept": "devices/netgear-wndr3700-v5.sh: `-factory.img` (Sercomm), broken = false für diesen Bau; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet",
    "quelle": "cb049e71cdc08e17f664403a0ef970c480ae5c4a + 2fdd02cc7c3516c2cce2ace2c7b539e0821ecbe8 (factory-Image)",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "totolink-x5000r",
@@ -12847,7 +13533,9 @@
    "rampe": "nein, unnötig: sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "23be410b3d1267c752bf9f6e5c8f5a514dc562c4",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-ax23-v1",
@@ -12889,7 +13577,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "7dceef5ee554ec4ab5d2dd2ff999f4a60bf2e0f4",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c6-v3",
@@ -12932,7 +13622,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "d22fb7f4fd833c420bc2ab34384862da0a6688b5",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-eap613-v1",
@@ -12976,7 +13668,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "11588c52b47c2c3b2cdc7849ce9e4804bfdb8bb5",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-eap615-wall-v1",
@@ -13020,7 +13714,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "a1b8a4d7b3ff3fa671623e2bccafd43a3c141e07",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-re500-v1",
@@ -13062,7 +13758,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "ba0f4f0cfddc6f1152273565ec35f2a0bda1e95d",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-re650-v1",
@@ -13105,7 +13803,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "8c51ddeff0876b439ac35a3f492ab719085bfb9c",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-edgerouter-x",
@@ -13150,7 +13850,9 @@
    "rampe": "nein für 2025.1: EdgeOS schreibt in einen 3-MB-Kernel-Slot; Kernel 6.6 allein hat 3 173 556 Byte (Neanderfunk-Notiz), ein Gluon-initramfs mit Rootfs passt erst recht nicht [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "4e31b2e8697c21f9bd6493bb3d78a4a41c6a9a52",
-   "anleitung": "https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp"
+   "anleitung": "https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-edgerouter-x-sfp",
@@ -13195,7 +13897,9 @@
    "rampe": "nein für 2025.1: EdgeOS schreibt in einen 3-MB-Kernel-Slot; Kernel 6.6 allein hat 3 173 556 Byte (Neanderfunk-Notiz), ein Gluon-initramfs mit Rootfs passt erst recht nicht [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "9715beb04c74a918697945b3e2d23a139bd04b70",
-   "anleitung": "https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp"
+   "anleitung": "https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-unifi-6-lite",
@@ -13242,7 +13946,9 @@
    "rampe": "nein: der SSH-Weg schreibt das sysupgrade direkt; ein Ramboot ginge nur seriell (`fdt rm /signature`, TFTP C0A80114.img)",
    "rampe_rezept": "",
    "quelle": "fb4d7a9680117a00721936c98ce41eeb2dea95c9",
-   "anleitung": "https://openwrt.org/toh/ubiquiti/unifi6lite#installation"
+   "anleitung": "https://openwrt.org/toh/ubiquiti/unifi6lite#installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ubiquiti-unifi-nanohd",
@@ -13288,7 +13994,9 @@
    "rampe": "nein: SSH-Weg schreibt das sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "4c8446bf39de99990847eb4bc7744e25835a34f5",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "wavlink-ws-wn572hp3-4g",
@@ -13331,7 +14039,9 @@
    "rampe": "nein, unnötig: sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "dce66899bf243d78689afcc693340b891bbf4c2d",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6cd1035d8dc001561331ca9e613d7dfc7d0fd7a6"
+   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6cd1035d8dc001561331ca9e613d7dfc7d0fd7a6",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "xiaomi-mi-router-3g",
@@ -13367,7 +14077,9 @@
    "rampe": "ja: dauerhafte RAMpe als kernel1.bin + rootfs0.bin statt der OpenWrt-Images [abgeleitet]",
    "rampe_rezept": "devices/xiaomi-mi-router-3g.sh: `-kernel1.bin` und `-rootfs0.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet",
    "quelle": "6e283cdc0da25928f8148805ebef7f8f2b769ee8",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "xiaomi-mi-router-3g-v2",
@@ -13403,7 +14115,9 @@
    "rampe": "nein",
    "rampe_rezept": "",
    "quelle": "522d5ff42835f7ad01c090b9ea1863f5d56b91d3",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "xiaomi-mi-router-4a-gigabit-edition",
@@ -13439,7 +14153,9 @@
    "rampe": "nein: Exploit schreibt das sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "a51e46e543ef2e923fb97fb092d04355dfca7d7d",
-   "anleitung": "https://github.com/acecilia/OpenWRTInvasion/blob/master/README.md"
+   "anleitung": "https://github.com/acecilia/OpenWRTInvasion/blob/master/README.md",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "xiaomi-mi-router-4a-gigabit-edition-v2",
@@ -13475,7 +14191,9 @@
    "rampe": "nein: Exploit schreibt das sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "39e4f03fd335d5b5d1259d74fc3f00ad09e7796c",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "xiaomi-mi-router-ac2100",
@@ -13511,7 +14229,9 @@
    "rampe": "ja: dauerhafte RAMpe als kernel1.bin + rootfs0.bin statt der OpenWrt-Images [abgeleitet]",
    "rampe_rezept": "devices/xiaomi-mi-router-ac2100.sh: `-kernel1.bin` und `-rootfs0.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet",
    "quelle": "53a1fede1f9856b61092ce4693e7610a515d562b",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "xiaomi-redmi-router-ac2100",
@@ -13547,7 +14267,9 @@
    "rampe": "ja: dauerhafte RAMpe als kernel1.bin + rootfs0.bin statt der OpenWrt-Images [abgeleitet]",
    "rampe_rezept": "devices/xiaomi-redmi-router-ac2100.sh: `-kernel1.bin` und `-rootfs0.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet",
    "quelle": "f3792690c4f0567a8965d82898295b9d50c3bb7e",
-   "anleitung": "https://openwrt.org/toh/xiaomi/xiaomi_redmi_router_ac2100"
+   "anleitung": "https://openwrt.org/toh/xiaomi/xiaomi_redmi_router_ac2100",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "zbtlink-zbt-wg3526-16m",
@@ -13590,7 +14312,9 @@
    "rampe": "nein, unnötig [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "30fbc1a4d146ae0060d02946709fd6d8cc2a2b56 (ohne Installationstext)",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "zbtlink-zbt-wg3526-32m",
@@ -13633,7 +14357,9 @@
    "rampe": "nein, unnötig [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "619d68bfc90e548e3398b26a2a0ca3fccd7d3f38 (ohne Installationstext)",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "zyxel-nwa50ax",
@@ -13676,7 +14402,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "a0b7fef0ffe4cd9cca39a652a37e4f3ce8f0a681",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "zyxel-nwa55axe",
@@ -13719,7 +14447,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "a0b7fef0ffe4cd9cca39a652a37e4f3ce8f0a681",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "zyxel-wsm20",
@@ -13764,7 +14494,9 @@
    "rampe": "ja: der Hersteller-Weg nimmt ein initramfs (KERNEL_INITRAMFS mit znet-Header, mt7621.mk); Cloud-Registrierung bleibt",
    "rampe_rezept": "devices/zyxel-wsm20.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (znet-Header schon drin) für die versteckte Upgrade-Seite",
    "quelle": "28df7f7ff251d8684caa60f07ed0ba0c4a8e71f4",
-   "anleitung": "https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/"
+   "anleitung": "https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-tr1200-v1",
@@ -13810,7 +14542,9 @@
    "rampe": "nein: Signaturprüfung wie bei allen Cudy",
    "rampe_rezept": "",
    "quelle": "f1091ef7ac3596f1e401b918a36273672acbe389",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010"
+   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "cudy-wr1000",
@@ -13852,7 +14586,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "7c91144ae6a45dc8d7ca6b68b3403e166185a498",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl-mt300n-v2",
@@ -13897,7 +14633,9 @@
    "rampe": "nein, unnötig",
    "rampe_rezept": "",
    "quelle": "abbfcc85259a4f6658c61e99dd3d2d3567e3eb3a",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl.inet-microuter-n300",
@@ -13940,7 +14678,9 @@
    "rampe": "nein, unnötig",
    "rampe_rezept": "",
    "quelle": "b30f2281cce6649567e0194d203f06517d173115",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "gl.inet-vixmini",
@@ -13983,7 +14723,9 @@
    "rampe": "nein, unnötig",
    "rampe_rezept": "",
    "quelle": "43e8c37cb4da64a12a3cb88a84b19db7f2fc640c",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-r6020",
@@ -14029,7 +14771,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "edbc8e5512dccc2e0b6925258e34b3f21d66679c",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "netgear-r6120",
@@ -14073,7 +14817,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "5543d63fc84e64be83afaa4241369a07797f041b",
-   "anleitung": "https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-r6120/"
+   "anleitung": "https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-r6120/",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "ravpower-rp-wd009",
@@ -14116,7 +14862,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "e959048c128e4350b78df653be7cd7277787518e",
-   "anleitung": "https://openwrt.org/toh/ravpower/rp-wd009#oem_installation_using_the_tftp_method"
+   "anleitung": "https://openwrt.org/toh/ravpower/rp-wd009#oem_installation_using_the_tftp_method",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c20-v4",
@@ -14160,7 +14908,9 @@
    "rampe": "nein, unnötig: Gluon-Image direkt; Recovery schreibt Flash, bootet nichts aus dem RAM",
    "rampe_rezept": "",
    "quelle": "5bdd238b634a34b038fbea9046893de29a77c000",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c20-v5",
@@ -14202,7 +14952,9 @@
    "rampe": "nein: Gluon-sysupgrade lässt sich direkt anhängen, kein Ramboot-Schritt",
    "rampe_rezept": "",
    "quelle": "86e7353bff2a5de257de8ec62e782f016eed143c",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c50-v3",
@@ -14246,7 +14998,9 @@
    "rampe": "nein, unnötig: Gluon-Image direkt; Recovery schreibt Flash, bootet nichts aus dem RAM",
    "rampe_rezept": "",
    "quelle": "14951e8f8e09ba6e2cff140769189a66155a5345",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c50-v4",
@@ -14288,7 +15042,9 @@
    "rampe": "nein: Gluon-sysupgrade lässt sich direkt anhängen, kein Ramboot-Schritt",
    "rampe_rezept": "",
    "quelle": "01dcd574a24864c10a9c4df4304a3ce0da5c11a9",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-archer-c50-v6-ca-eu-ru",
@@ -14330,7 +15086,9 @@
    "rampe": "nein: Gluon-sysupgrade lässt sich direkt anhängen, kein Ramboot-Schritt",
    "rampe_rezept": "",
    "quelle": "e9ac1b19e0f3d383ab83373c261bfb5527a29521",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-re200-v2",
@@ -14372,7 +15130,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "6d6f36ae787c3b339b16c1d345a90faa1d9f4011",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-re200-v3",
@@ -14415,7 +15175,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "009e62c92c35142c5be3b375d6c393e63d2d27eb",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-re200-v4",
@@ -14457,7 +15219,9 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "33b76d66d1afa9d888f32587b18d78a930593ca5",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-tl-mr3020-v3",
@@ -14501,7 +15265,9 @@
    "rampe": "nein, unnötig: Gluon-Image direkt; Recovery schreibt Flash, bootet nichts aus dem RAM",
    "rampe_rezept": "",
    "quelle": "6bbb2202551be394fead2efd99eb946f846fc63d",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-tl-mr3420-v5",
@@ -14545,7 +15311,9 @@
    "rampe": "nein, unnötig: Gluon-Image direkt; Recovery schreibt Flash, bootet nichts aus dem RAM",
    "rampe_rezept": "",
    "quelle": "39e9bfb18199b046bd3b613002112e4e6dd53658",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-tl-mr6400-v5",
@@ -14589,7 +15357,9 @@
    "rampe": "nein, unnötig: Gluon-Image direkt; Recovery schreibt Flash, bootet nichts aus dem RAM",
    "rampe_rezept": "",
    "quelle": "b641eb6ecfbfc2c6a488483332d4b5a6ee4c736c",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-tl-wa801nd-v5",
@@ -14633,7 +15403,9 @@
    "rampe": "nein, unnötig: Gluon-Image direkt; Recovery schreibt Flash, bootet nichts aus dem RAM",
    "rampe_rezept": "",
    "quelle": "ce31bdc20c3f2eb387a84c277dff76324a8e39c7",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-tl-wr841n-v13",
@@ -14677,7 +15449,9 @@
    "rampe": "nein, unnötig: Gluon-Image direkt; Recovery schreibt Flash, bootet nichts aus dem RAM",
    "rampe_rezept": "",
    "quelle": "24043a0d2e01b9843c0dc529205b3b0bc7ecbbf9",
-   "anleitung": "https://openwrt.org/toh/tp-link/tl-wr841nd#tftp_recovery_via_bootloader_for_v8_v9_v10_v11_v12_v13"
+   "anleitung": "https://openwrt.org/toh/tp-link/tl-wr841nd#tftp_recovery_via_bootloader_for_v8_v9_v10_v11_v12_v13",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-tl-wr902ac-v3",
@@ -14721,7 +15495,9 @@
    "rampe": "nein, unnötig: Gluon-Image direkt; Recovery schreibt Flash, bootet nichts aus dem RAM",
    "rampe_rezept": "",
    "quelle": "d13b05741a4d05a271d26fc3be61e76530025098",
-   "anleitung": "https://openwrt.org/toh/tp-link/tl-wr902ac_v3#installation"
+   "anleitung": "https://openwrt.org/toh/tp-link/tl-wr902ac_v3#installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "tp-link-tl-wr902ac-v4",
@@ -14765,7 +15541,9 @@
    "rampe": "nein, unnötig: Gluon-Image direkt; Recovery schreibt Flash, bootet nichts aus dem RAM",
    "rampe_rezept": "",
    "quelle": "ffa40fcc7fe1aee041775e097bccecb9be83cd21",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "vocore2",
@@ -14807,7 +15585,9 @@
    "rampe": "nein, unnötig: sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "3f31029b190417e12f4d19d9999cd52ec76d0f85",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "xiaomi-mi-ra75",
@@ -14843,7 +15623,9 @@
    "rampe": "nein",
    "rampe_rezept": "",
    "quelle": "f204c812e996d51f36972d5f4414ada3d4588c93",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "xiaomi-mi-router-4a-100m-edition",
@@ -14879,7 +15661,9 @@
    "rampe": "nein: Option 2 flasht das sysupgrade direkt; Option 1 (in SDRAM) könnte ein initramfs booten, 64 MB knapp, Nutzen gering [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "5ff5c9bce6b6e51060c272521528b5afd789e9ab",
-   "anleitung": "https://openwrt.org/toh/xiaomi/mi_router_4a_mir4a_100m#installation"
+   "anleitung": "https://openwrt.org/toh/xiaomi/mi_router_4a_mir4a_100m#installation",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "xiaomi-mi-router-4a-100m-international-edition",
@@ -14915,7 +15699,9 @@
    "rampe": "nein: Exploit schreibt das sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "1a8c74da709190e5157af9f5c2502b600f6273bb (ohne Installationstext)",
-   "anleitung": "https://forum.ffrn.de/t/howto-installation-xiaomi-mi-router-4a-r4ac-100m-international-edition/3536"
+   "anleitung": "https://forum.ffrn.de/t/howto-installation-xiaomi-mi-router-4a-r4ac-100m-international-edition/3536",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "xiaomi-mi-router-4a-100m-international-edition-v2",
@@ -14951,7 +15737,9 @@
    "rampe": "nein",
    "rampe_rezept": "",
    "quelle": "f51cb7447390949feff598b833b764ac1f3ff508",
-   "anleitung": ""
+   "anleitung": "",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "xiaomi-mi-router-4c",
@@ -14987,7 +15775,9 @@
    "rampe": "nein",
    "rampe_rezept": "",
    "quelle": "4287f739894ba2f95aca107e785b41a053c21315",
-   "anleitung": "https://github.com/acecilia/OpenWRTInvasion/blob/master/README.md"
+   "anleitung": "https://github.com/acecilia/OpenWRTInvasion/blob/master/README.md",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "friendlyelec-nanopi-r2c",
@@ -15032,7 +15822,9 @@
    "rampe": "nein, keine Hersteller-Firmware im Spiel",
    "rampe_rezept": "",
    "quelle": "Gluon targets/rockchip-armv8; R2C: gluon-patches-hardware devices/add-nanopi-r2c",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "friendlyelec-nanopi-r2s",
@@ -15077,7 +15869,9 @@
    "rampe": "nein, keine Hersteller-Firmware im Spiel",
    "rampe_rezept": "",
    "quelle": "Gluon targets/rockchip-armv8",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "friendlyelec-nanopi-r3s",
@@ -15122,7 +15916,9 @@
    "rampe": "nein, keine Hersteller-Firmware im Spiel",
    "rampe_rezept": "",
    "quelle": "Gluon targets/rockchip-armv8",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "friendlyelec-nanopi-r4s",
@@ -15167,7 +15963,9 @@
    "rampe": "nein, keine Hersteller-Firmware im Spiel",
    "rampe_rezept": "",
    "quelle": "Gluon targets/rockchip-armv8",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "x86-64",
@@ -15212,7 +16010,9 @@
    "rampe": "nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)",
    "rampe_rezept": "devices/x86-64.sh: Testgerät, in QEMU Ende-zu-Ende geprüft",
    "quelle": "Gluon targets/x86-64",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "x86-generic",
@@ -15257,7 +16057,9 @@
    "rampe": "nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)",
    "rampe_rezept": "",
    "quelle": "Gluon targets/x86-generic",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "x86-geode",
@@ -15302,7 +16104,9 @@
    "rampe": "nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)",
    "rampe_rezept": "",
    "quelle": "Gluon targets/x86-geode",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   },
   {
    "gluon_name": "x86-legacy",
@@ -15347,7 +16151,9 @@
    "rampe": "nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)",
    "rampe_rezept": "",
    "quelle": "Gluon targets/x86-legacy",
-   "anleitung": "-"
+   "anleitung": "-",
+   "erprobt": {},
+   "werte": {}
   }
  ]
 }
