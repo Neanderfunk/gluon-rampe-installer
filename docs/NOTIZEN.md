@@ -277,8 +277,8 @@ Wie die D-Link-Geräte geflasht werden, steht in der Router-Werkstatt unter
 - DIR-825 B1: RAMpe-initramfs 6.257.577 Bytes (6111 KiB), also unter den
   6144k der D-Link-Recovery; das OpenWrt-initramfs 24.10.8 lag mit 6145 KB
   knapp darüber. Ob die Recovery es nimmt, ist weiter offen.
-- Stände ohne Cache-Schutz vom 14.10. liegen in `out/alt-20261014-ohne-cache-schutz/`,
-  der am M60 erprobte Stand vom 10.10. weiter in `out/`.
+- Die Stände ohne Cache-Schutz vom 14.10. sind gelöscht (adorfer, 15.10.2026);
+  der am M60 erprobte Stand vom 10.10. liegt weiter in `out/`.
 
 ## Idee: EdgeRouter X/X-SFP in einem Schritt (15.10.2026, ungeprüft)
 
