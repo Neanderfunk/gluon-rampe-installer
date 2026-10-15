@@ -8088,9 +8088,16 @@
    "rampe": "teilweise: RAMpe-initramfs als ipq40xx.ari geht, aber vor dem sysupgrade muss `ubiformat` laufen (fehlt der Gluon-RAMpe) und Gluon baut für ipq40xx-generic kein initramfs; seriell bleibt [abgeleitet]",
    "rampe_rezept": "devices/aruba-ap-303.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `ipq40xx.ari` per APBoot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)",
    "quelle": "OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=102c8c55f217606cdbdc9a449667e034676b3e75",
+   "anleitung": "anleitungen/de/aruba-ap-303.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=102c8c55f217606cdbdc9a449667e034676b3e75",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "initramfs_datei": "openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb",
+    "initramfs_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb",
+    "initramfs_sha256": "5d65d93c796b5dd10e42a65269dadb7905dca0b42c0fd60251431392b53ac56e",
+    "tty": "ttyMSM1",
+    "mtd": "/dev/mtd1",
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "aruba-ap-303h",
@@ -8138,9 +8145,18 @@
    "rampe": "teilweise: wie AP-303",
    "rampe_rezept": "devices/aruba-ap-303h.sh (Rezept-Entwurf, nicht gebaut): wie AP-303; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)",
    "quelle": "OpenWrt c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0",
+   "anleitung": "anleitungen/de/aruba-ap-303h.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "initramfs_datei": "openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb",
+    "initramfs_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb",
+    "initramfs_sha256": "70aebd60b9d1c666656ed89c7a81f53ead246ed96ecbd94551226a0c8f0a785e",
+    "tty": "ttyMSM0",
+    "mtd": "/dev/mtd16",
+    "tftp_buchse": "E0",
+    "ssh_buchse": "E1, E2 oder E3",
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "aruba-ap-365",
@@ -8186,9 +8202,17 @@
    "rampe": "teilweise: wie AP-303",
    "rampe_rezept": "devices/aruba-ap-365.sh (Rezept-Entwurf, nicht gebaut): wie AP-303; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)",
    "quelle": "OpenWrt 300b7fe85a743ab0e039457a5a551819b49450da",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=300b7fe85a743ab0e039457a5a551819b49450da",
+   "anleitung": "anleitungen/de/aruba-ap-365.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=300b7fe85a743ab0e039457a5a551819b49450da",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "initramfs_datei": "openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb",
+    "initramfs_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb",
+    "initramfs_sha256": "9dbf7ed4b826d75d4d6893c52d3d5e925b2331c91a33b9842a3d1f7c03a12d83",
+    "tty": "ttyMSM1",
+    "mtd": "/dev/mtd1",
+    "konsole": "usb",
+    "sicherheit": "quelle"
+   }
   },
   {
    "gluon_name": "aruba-instant-on-ap11",
@@ -8197,26 +8221,26 @@
    "target": "ipq40xx-generic",
    "gluon_broken": false,
    "kat": "K5",
-   "familie": "sonderweg-aruba-instant-on-ap11",
+   "familie": "aruba-apboot",
    "weg": "apboot-Environment gesperrt: entsperrtes apboot aus einem gepatchten SPI-Dump per dd schneiden (bs=983040 skip=1 count=1), per `netget` laden, `sf protect off; sf erase/write 0xf0000 0xf0000`, reset; danach wie AP-303 [geprüft: Neanderfunk-Notiz zum AP11, 2024]",
    "schritte": [],
    "warnung": "",
    "taste": "Keine Gerätetaste. Enter bei 'Hit <Enter> to stop autoboot' (Countdown ca. 2 s) [geprüft: github Sc4ndium90/aruba-ap11-openwrt, Wiki toh:aruba:ap-303]",
-   "zeichen": "Gesperrtes apboot erkennbar am Bootlog: 'APBoot 2.5.0.2', 'Image is signed; verifying checksum' [abgeleitet: Wiki-Zusammenfassung, im Rohtext toh:aruba:ap-303 nicht gefunden]. Nach dem Laden des `.ari` ist 'Invalid image format version' normal [geprüft: Wiki toh:aruba:ap-303]",
+   "zeichen": "Alter, nutzbarer Bootloader: Bootlog zeigt 'APBoot 2.5.0.2'; der neue, gesperrte ist APBoot 2.6.2.9 und meldet \"Unknown command 'bootm'\" [geprüft: Neanderfunk-Notiz, adorfer 15.10.2026 (Abzüge 2021/2023); Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9); APBoot-Version in ap303-loader-2.5.0.2.bin per strings geprüft]. Nach dem Laden des `.ari` ist 'Invalid image format version' normal [geprüft: Wiki toh:aruba:ap-303]",
    "uebertragung": "tftp-client (netget): Server 192.168.1.66, Gerät 192.168.1.6, Dateien apboot-unlocked.bin und ipq40xx.ari",
    "anschluss": "",
    "adressen": "",
-   "programm": "USB-TTL-Adapter 3,3 V an Micro-USB-Selbstbaukabel, nur GND, RX, TX, nie VCC [geprüft: Sc4ndium90-README]. Baudrate: 9600 laut AP-303-Commit, 115200 laut Sc4ndium90-README (offen). TFTP-Server mit fester IP 192.168.1.66, Gerät 192.168.1.6; Dateien `apboot-unlocked.bin` (sha256 69e45b04...) und `ipq40xx.ari`; danach sysupgrade per scp als `gup.bin` [geprüft: Neanderfunk-Notiz] [noch nicht aufgeteilt]",
+   "programm": "USB-TTL-Adapter 3,3 V an Micro-USB-Selbstbaukabel, nur GND, RX, TX, nie VCC [geprüft: Sc4ndium90-README]. Baudrate 9600 [geprüft: OpenWrt-Commit 102c8c5 (AP-303)]. TFTP-Server; Bootloader per `netget 0x84000000`, `sf probe; sf protect off; sf erase 0xf0000 0xf0000; sf write 0x84000000 0xf0000 0xf0000` [geprüft: Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9); Adressen dort .6/.66, in der Anleitung .105/.75]; ohne Öffnen des Gehäuses [geprüft: Forum t/22653 #29 (blocktrron, 14.06.2024)]; manche FTDI-Kabel treiben die Konsolenleitung zu schwach: Bootmeldungen sind lesbar, APBoot lässt sich aber nicht mit Enter anhalten; ein Kabel, das 3,3 V bei 1 mA schafft, sollte gehen [geprüft: Wiki toh:aruba:ap-303h, Rohtext 15.10.2026]",
    "zugang": "",
    "datei": "",
    "seriell": "ja",
    "gehaeuse": "nein, Konsole außen: Micro-USB als UART-Stecker wie AP-303 [abgeleitet: Alias, gleiche Platine]",
-   "werkzeug": "gepatchter SPI-Dump eines Dritten (AP11-2023-spi-f061c0c4c850.patched-alex.bin, sha256 4ca6d503…)",
+   "werkzeug": "älterer Bootloader APBoot 2.5.0.2 als eigene Datei ap303-loader-2.5.0.2.bin (983.040 Byte, SHA256 69e45b04…98a5) auf firmware.ffnef.de/other/dump/ [geprüft: Datei geladen 15.10.2026, SHA256 gleich der im Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9) für apboot-unlocked.bin]",
    "verwechslung": "Instant-On-Variante des AP-303, Image aruba_ap-303 [geprüft: Gluon-Alias, Wiki toh:aruba:ap-303]. Nicht mit AP11D (Variante des AP-303H) verwechseln [abgeleitet]",
    "stock_bedingung": "Instant-On-apboot bootet nur signierte Images; vor der Installation muss ein entsperrtes apboot per `sf protect off; sf erase/write 0xf0000 0xf0000` geschrieben werden [geprüft: Neanderfunk-Notiz; Sc4ndium90-README]",
    "initramfs": "[24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb)",
    "factory": "-",
-   "stock_teile": "apboot-Teil aus einem fremden, gepatchten Aruba-SPI-Dump (kein Hersteller-Download)",
+   "stock_teile": "APBoot 2.5.0.2 aus adorfers Abzügen eines AP11, als ap303-loader-2.5.0.2.bin von Neanderfunk bereitgestellt [geprüft: Forum t/22653 #28 (adorfer, 03.04.2023, Abzüge)]",
    "ram": "512 MB",
    "dauer": "",
    "fehlerbild": "",
@@ -8226,9 +8250,22 @@
    "rampe": "teilweise: wie AP-303; der Bootloader-Schritt bleibt seriell",
    "rampe_rezept": "Alias: Image aus devices/aruba-ap-303.sh; apboot gesperrt (K5)",
    "quelle": "Notiz ap11.md (2024); OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/aruba-instant-on-ap11.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "initramfs_datei": "openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb",
+    "initramfs_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb",
+    "initramfs_sha256": "5d65d93c796b5dd10e42a65269dadb7905dca0b42c0fd60251431392b53ac56e",
+    "tty": "ttyMSM1",
+    "mtd": "/dev/mtd1",
+    "bootm_weg": "apboot",
+    "apboot_datei": "ap303-loader-2.5.0.2.bin",
+    "apboot_url": "https://firmware.ffnef.de/other/dump/ap303-loader-2.5.0.2.bin",
+    "apboot_sha256": "69e45b047de07ceeeb4a3daec6232ba2902acea8806075af80c2725ea52298a5",
+    "apboot_sha256_url": "https://firmware.ffnef.de/other/dump/ap303-loader-2.5.0.2.bin.sha256",
+    "sicherheit": "quelle",
+    "sicherheit_hinweis": "Den Schritt mit dem älteren Bootloader beschreibt Freifunk Darmstadt; die Datei dafür stellen wir bereit."
+   }
   },
   {
    "gluon_name": "aruba-instant-on-ap11d",
@@ -8273,9 +8310,18 @@
    "rampe": "teilweise: wie AP-303",
    "rampe_rezept": "Alias: Image aus devices/aruba-ap-303h.sh; ob apboot gesperrt ist wie beim AP11: offen",
    "quelle": "OpenWrt c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/aruba-instant-on-ap11d.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "initramfs_datei": "openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb",
+    "initramfs_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb",
+    "initramfs_sha256": "70aebd60b9d1c666656ed89c7a81f53ead246ed96ecbd94551226a0c8f0a785e",
+    "tty": "ttyMSM0",
+    "mtd": "/dev/mtd16",
+    "tftp_buchse": "E0",
+    "ssh_buchse": "E1, E2 oder E3",
+    "sicherheit": "abgeleitet"
+   }
   },
   {
    "gluon_name": "aruba-instant-on-ap17",
@@ -8319,9 +8365,17 @@
    "rampe": "teilweise: wie AP-303",
    "rampe_rezept": "Alias: Image aus devices/aruba-ap-365.sh; ob apboot gesperrt ist wie beim AP11: offen",
    "quelle": "OpenWrt 300b7fe85a743ab0e039457a5a551819b49450da",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/aruba-instant-on-ap17.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "initramfs_datei": "openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb",
+    "initramfs_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb",
+    "initramfs_sha256": "9dbf7ed4b826d75d4d6893c52d3d5e925b2331c91a33b9842a3d1f7c03a12d83",
+    "tty": "ttyMSM1",
+    "mtd": "/dev/mtd1",
+    "konsole": "unklar",
+    "sicherheit": "abgeleitet"
+   }
   },
   {
    "gluon_name": "asus-lyra-map-ac2200",
