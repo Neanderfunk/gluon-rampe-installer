@@ -9,7 +9,7 @@ stufe: mit Werkzeug
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-genexis-pulse-ex400-factory.bin
 grundlagen: [browser-https, feste-ip, ssh-scp]
-daten_stand: ebc2777
+daten_stand: 96d57cf
 vorlage_stand: f922964
 ---
 

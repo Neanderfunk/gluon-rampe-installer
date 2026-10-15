@@ -9,7 +9,7 @@ stufe: fortgeschritten
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-gl.inet-gl-e750-factory.img
 grundlagen: [browser-https, feste-ip]
-daten_stand: ebc2777
+daten_stand: 96d57cf
 vorlage_stand: 393f161
 ---
 
