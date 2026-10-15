@@ -155,6 +155,22 @@ Gluon-RAMpe passt: **ja 35**, teilweise 33, nein/unnötig 285.
 
 Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-951ui-2nd-hap`, `mikrotik-routerboard-mapl-2nd`, `mikrotik-routerboard-wap-g-5hact2hnd`, `mikrotik-routerboard-wapr-2nd`, `gl.inet-gl-e750`, `gl.inet-gl-xe300`, `zte-mf286r`, `asus-lyra-map-ac2200`, `avm-fritz-box-7520`, `avm-fritz-box-7530`, `avm-fritz-repeater-1200`, `avm-fritz-repeater-3000`, `linksys-mr8300-dallas`, `mikrotik-discg-5acd`, `mikrotik-hap-ac2`, `mikrotik-sxtsq-5-ac-rbsxtsqg-5acd`, `mikrotik-wap-ac`, `avm-fritz-box-3390`, `avm-fritz-box-7362-sl`, `avm-fritz-box-7412`, `avm-fritz-box-7430`, `asus-rt-ax52`, `d-link-aquila-pro-ai-m30-a1`, `d-link-aquila-pro-ai-m60-a1`, `netgear-wax218`, `asus-rt-ax53u`, `genexis-pulse-ex400`, `mikrotik-routerboard-750gr3`, `netgear-wndr3700-v5`, `xiaomi-mi-router-3g`, `xiaomi-mi-router-ac2100`, `xiaomi-redmi-router-ac2100`, `zyxel-wsm20`.
 
+| Level | Geräte |
+|---|---:|
+| L0 | 11 |
+| L0.1 | 74 |
+| L1 | 24 |
+| L2 | 1 |
+| L3 | 33 |
+| L4 | 85 |
+| L5 | 69 |
+| L6 | 16 |
+| L7 | 13 |
+| L8 | 1 |
+| offen | 26 |
+
+Risiko: normal 344, bootloader 9, offen 0 (Merkmale und Regeln in `scripts/level.py`).
+
 <!-- END erzeugt:zahlen -->
 
 ## Wichtigste Befunde
@@ -196,361 +212,361 @@ Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-95
 
 Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten des Geräts.
 
-| Gluon-Name | Modell | Target | Kat. | Anleitungsfamilie | Übertragung | seriell nötig | Gehäuse öffnen | Gluon-RAMpe | RAMpe-Rezept | Detail-Anleitung |
-|---|---|---|---|---|---|---|---|---|---|---|
-| [alfa-network-ap121f](#alfa-network-ap121f) | ALFA Network AP121F | ath79-generic | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
-| [avm-fritz-box-4020](#avm-fritz-box-4020) | AVM FRITZ!Box 4020 | ath79-generic | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-4020.md); https://fritz-tools.readthedocs.io/ |
-| [avm-fritz-wlan-repeater-1750e](#avm-fritz-wlan-repeater-1750e) | AVM FRITZ!WLAN Repeater 1750E (broken) | ath79-generic | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-wlan-repeater-1750e.md) |
-| [avm-fritz-wlan-repeater-300e](#avm-fritz-wlan-repeater-300e) | AVM FRITZ!WLAN Repeater 300E | ath79-generic | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-wlan-repeater-300e.md); https://fritz-tools.readthedocs.io/ |
-| [avm-fritz-wlan-repeater-450e](#avm-fritz-wlan-repeater-450e) | AVM FRITZ!WLAN Repeater 450E | ath79-generic | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-wlan-repeater-450e.md); https://fritz-tools.readthedocs.io/ |
-| [buffalo-wzr-600dhp](#buffalo-wzr-600dhp) | Buffalo WZR-600DHP | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/buffalo-wzr-600dhp.md) |
-| [buffalo-wzr-hp-ag300h](#buffalo-wzr-hp-ag300h) | Buffalo WZR-HP-AG300H | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/buffalo-wzr-hp-ag300h.md) |
-| [buffalo-wzr-hp-g300nh-rtl8366s](#buffalo-wzr-hp-g300nh-rtl8366s) | Buffalo WZR-HP-G300NH (RTL8366S switch) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/buffalo-wzr-hp-g300nh-rtl8366s.md) |
-| [buffalo-wzr-hp-g450h-wzr-450hp](#buffalo-wzr-hp-g450h-wzr-450hp) | Buffalo WZR-HP-G450H/WZR-450HP | ath79-generic | K0+ | [`sonderweg-buffalo-wzr-hp-g450h-wzr-450hp`](#familie-sonderweg-buffalo-wzr-hp-g450h-wzr-450hp) | webui-upload | nein | nein | nein |  |  |
-| [comfast-cf-ew71-v2](#comfast-cf-ew71-v2) | COMFAST CF-EW71 v2 | ath79-generic | K1d | [`sonderweg-comfast-cf-ew71-v2`](#familie-sonderweg-comfast-cf-ew71-v2) | webui-upload | nein | nein | nein |  |  |
-| [d-link-dap-1330-a1](#d-link-dap-1330-a1) | D-Link DAP-1330 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-1330-a1.md) |
-| [d-link-dap-1365-a1](#d-link-dap-1365-a1) | D-Link DAP-1365 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-1365-a1.md) |
-| [d-link-dap-2660-a1](#d-link-dap-2660-a1) | D-Link DAP-2660 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-2660-a1.md) |
-| [d-link-dap-2680-a1](#d-link-dap-2680-a1) | D-Link DAP-2680 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-2680-a1.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5b58710fad2137eedad874f0fe8fe22082d1edc6 |
-| [d-link-dap-2695-a1](#d-link-dap-2695-a1) | D-Link DAP-2695 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-2695-a1.md) |
-| [d-link-dir-505](#d-link-dir-505) | D-Link DIR-505 | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ? | teilweise | ja |  |
-| [d-link-dir825b1](#d-link-dir825b1) | D-Link DIR-825 B1 | ath79-generic | offen | [`sonderweg-d-link-dir825b1`](#familie-sonderweg-d-link-dir825b1) | ? | ? | ? | offen | ja |  |
-| [devolo-dlan-pro-1200+-wifi-ac](#devolo-dlan-pro-1200+-wifi-ac) | devolo dLAN pro 1200+ WiFi ac (broken) | ath79-generic | K1d | [`sonderweg-devolo-dlan-pro-1200+-wifi-ac`](#familie-sonderweg-devolo-dlan-pro-1200+-wifi-ac) | tftp-client-am-geraet | nein | nein | nein |  |  |
-| [devolo-wifi-pro-1200e](#devolo-wifi-pro-1200e) | devolo WiFi pro 1200e | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/devolo-wifi-pro-1200e.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1724d4e9ed7716a5444eca42adf045c2f3afc554 |
-| [devolo-wifi-pro-1200i](#devolo-wifi-pro-1200i) | devolo WiFi pro 1200i | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/devolo-wifi-pro-1200i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c8115167f946be85f812f3c94d6294b67ac8944c |
-| [devolo-wifi-pro-1750c](#devolo-wifi-pro-1750c) | devolo WiFi pro 1750c | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/devolo-wifi-pro-1750c.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e67da3443168fa6b6727cd81a35d559be77d6b4c |
-| [devolo-wifi-pro-1750e](#devolo-wifi-pro-1750e) | devolo WiFi pro 1750e | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/devolo-wifi-pro-1750e.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1c2f7b511514d43d8a826b26e09817b2750a2bf4 |
-| [devolo-wifi-pro-1750i](#devolo-wifi-pro-1750i) | devolo WiFi pro 1750i | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/devolo-wifi-pro-1750i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=8d68be8057d6c689025cc236d20b96b77a6ccf30 |
-| [devolo-wifi-pro-1750x](#devolo-wifi-pro-1750x) | devolo WiFi pro 1750x | ath79-generic | K1d | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/devolo-wifi-pro-1750x.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=cb3cd526948af3f69da1af18e035177a0a8f58e3 |
-| [enterasys-ws-ap3705i](#enterasys-ws-ap3705i) | Enterasys WS-AP3705i | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/enterasys-ws-ap3705i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=ebddc5f984a240980303aed68524eb615484eef8 |
-| [extreme-networks-ws-ap3805i](#extreme-networks-ws-ap3805i) | Extreme Networks WS-AP3805i | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | [Anleitung](../anleitungen/de/extreme-networks-ws-ap3805i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f8c87aa2d27ab405f284dd4357377ab5c893a345 |
-| [gl.inet-6416](#gl.inet-6416) | GL.iNet 6416 | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-6416.md) |
-| [gl.inet-gl-ar150](#gl.inet-gl-ar150) | GL.iNet GL-AR150 | ath79-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar150.md) |
-| [gl.inet-gl-ar300m-lite](#gl.inet-gl-ar300m-lite) | GL.iNet GL-AR300M Lite | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar300m-lite.md) |
-| [gl.inet-gl-ar300m16](#gl.inet-gl-ar300m16) | GL.iNet GL-AR300M16 | ath79-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar300m16.md) |
-| [gl.inet-gl-ar750](#gl.inet-gl-ar750) | GL.iNet GL-AR750 | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar750.md) |
-| [gl.inet-gl-usb150](#gl.inet-gl-usb150) | GL.iNET GL-USB150 | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-usb150.md) |
-| [joy-it-jt-or750i](#joy-it-jt-or750i) | Joy-IT JT-OR750i | ath79-generic | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  | https://wiki.freifunk-stuttgart.net/technik:hardware:joy-it_jt-or750i |
-| [librerouter-v1](#librerouter-v1) | Librerouter LibreRouter v1 | ath79-generic | K1d | [`sonderweg-librerouter-v1`](#familie-sonderweg-librerouter-v1) | webui-upload | nein | nein | nein |  |  |
-| [netgear-wndr3700](#netgear-wndr3700) | NETGEAR WNDR3700 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr3700.md) |
-| [netgear-wndr3700-v2](#netgear-wndr3700-v2) | NETGEAR WNDR3700 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr3700-v2.md) |
-| [netgear-wndr3800](#netgear-wndr3800) | NETGEAR WNDR3800 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr3800.md) |
-| [netgear-wndr3800ch](#netgear-wndr3800ch) | NETGEAR WNDR3800CH | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr3800ch.md) |
-| [netgear-wndrmac-v2](#netgear-wndrmac-v2) | NETGEAR WNDRMAC v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndrmac-v2.md) |
-| [netgear-wnr2200-16m](#netgear-wnr2200-16m) | NETGEAR WNR2200 16M | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wnr2200-16m.md) |
-| [netgear-wnr2200-8m](#netgear-wnr2200-8m) | NETGEAR WNR2200 8M | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wnr2200-8m.md) |
-| [ocedo-koala](#ocedo-koala) | Ocedo Koala | ath79-generic | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | ja | ja |  |
-| [ocedo-raccoon](#ocedo-raccoon) | Ocedo Raccoon | ath79-generic | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | ja | ja |  |
-| [onion-omega](#onion-omega) | Onion Omega | ath79-generic | K0 | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
-| [openmesh-a40](#openmesh-a40) | OpenMesh A40 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [openmesh-a60](#openmesh-a60) | OpenMesh A60 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [openmesh-mr1750-v1](#openmesh-mr1750-v1) | OpenMesh MR1750 v1 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [openmesh-mr1750-v2](#openmesh-mr1750-v2) | OpenMesh MR1750 v2 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [openmesh-mr600-v1](#openmesh-mr600-v1) | OpenMesh MR600 v1 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [openmesh-mr600-v2](#openmesh-mr600-v2) | OpenMesh MR600 v2 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [openmesh-mr900-v1](#openmesh-mr900-v1) | OpenMesh MR900 v1 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [openmesh-mr900-v2](#openmesh-mr900-v2) | OpenMesh MR900 v2 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [openmesh-om2p-hs-v1](#openmesh-om2p-hs-v1) | OpenMesh OM2P-HS v1 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [openmesh-om2p-hs-v2](#openmesh-om2p-hs-v2) | OpenMesh OM2P-HS v2 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [openmesh-om2p-hs-v3](#openmesh-om2p-hs-v3) | OpenMesh OM2P-HS v3 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [openmesh-om2p-hs-v4](#openmesh-om2p-hs-v4) | OpenMesh OM2P-HS v4 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [openmesh-om2p-lc](#openmesh-om2p-lc) | OpenMesh OM2P-LC | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [openmesh-om2p-v1](#openmesh-om2p-v1) | OpenMesh OM2P v1 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [openmesh-om2p-v2](#openmesh-om2p-v2) | OpenMesh OM2P v2 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [openmesh-om2p-v4](#openmesh-om2p-v4) | OpenMesh OM2P v4 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [openmesh-om5p](#openmesh-om5p) | OpenMesh OM5P | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [openmesh-om5p-ac-v1](#openmesh-om5p-ac-v1) | OpenMesh OM5P-AC v1 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [openmesh-om5p-ac-v2](#openmesh-om5p-ac-v2) | OpenMesh OM5P-AC v2 | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [openmesh-om5p-an](#openmesh-om5p-an) | OpenMesh OM5P-AN | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [plasma-cloud-pa300](#plasma-cloud-pa300) | Plasma Cloud PA300 | ath79-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [plasma-cloud-pa300e](#plasma-cloud-pa300e) | Plasma Cloud PA300E | ath79-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [siemens-ws-ap3610](#siemens-ws-ap3610) | Siemens WS-AP3610 | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/siemens-ws-ap3610.md); https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Siemens-AP3610 |
-| [sophos-ap100](#sophos-ap100) | Sophos AP100 | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/sophos-ap100.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
-| [sophos-ap100c](#sophos-ap100c) | Sophos AP100C | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/sophos-ap100c.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
-| [sophos-ap15](#sophos-ap15) | Sophos AP15 (broken) | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | [Anleitung](../anleitungen/de/sophos-ap15.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0dc58214896aacf67a3759495d70e2b4e9c160d8 |
-| [sophos-ap15c](#sophos-ap15c) | Sophos AP15C | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/sophos-ap15c.md) |
-| [sophos-ap55](#sophos-ap55) | Sophos AP55 | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/sophos-ap55.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
-| [sophos-ap55c](#sophos-ap55c) | Sophos AP55C | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/sophos-ap55c.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
-| [teltonika-rut230-v1](#teltonika-rut230-v1) | Teltonika RUT230 v1 | ath79-generic | K0+ | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
-| [tp-link-archer-a7-v5](#tp-link-archer-a7-v5) | TP-Link Archer A7 v5 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-a7-v5.md) |
-| [tp-link-archer-c2-v3](#tp-link-archer-c2-v3) | TP-Link Archer C2 v3 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c2-v3.md) |
-| [tp-link-archer-c25-v1](#tp-link-archer-c25-v1) | TP-Link Archer C25 v1 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c25-v1.md) |
-| [tp-link-archer-c5-v1](#tp-link-archer-c5-v1) | TP-Link Archer C5 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c5-v1.md) |
-| [tp-link-archer-c58-v1](#tp-link-archer-c58-v1) | TP-Link Archer C58 v1 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c58-v1.md) |
-| [tp-link-archer-c59-v1](#tp-link-archer-c59-v1) | TP-Link Archer C59 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c59-v1.md) |
-| [tp-link-archer-c6-v2-eu-ru-jp](#tp-link-archer-c6-v2-eu-ru-jp) | TP-Link Archer C6 v2 (EU/RU/JP) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c6-v2-eu-ru-jp.md) |
-| [tp-link-archer-c60-v1](#tp-link-archer-c60-v1) | TP-Link Archer C60 v1 | ath79-generic | K2 | [`sonderweg-tp-link-archer-c60-v1`](#familie-sonderweg-tp-link-archer-c60-v1) | webui-upload | nein | nein | teilweise | ja |  |
-| [tp-link-archer-c7-v2](#tp-link-archer-c7-v2) | TP-Link Archer C7 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c7-v2.md) |
-| [tp-link-archer-c7-v4](#tp-link-archer-c7-v4) | TP-Link Archer C7 v4 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c7-v4.md) |
-| [tp-link-archer-c7-v5](#tp-link-archer-c7-v5) | TP-Link Archer C7 v5 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c7-v5.md) |
-| [tp-link-archer-d50-v1](#tp-link-archer-d50-v1) | TP-Link Archer D50 v1 (broken) | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja |  |
-| [tp-link-cpe210-v1](#tp-link-cpe210-v1) | TP-Link CPE210 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe210-v1.md) |
-| [tp-link-cpe210-v2](#tp-link-cpe210-v2) | TP-Link CPE210 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe210-v2.md) |
-| [tp-link-cpe210-v3](#tp-link-cpe210-v3) | TP-Link CPE210 v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe210-v3.md) |
-| [tp-link-cpe220-v3](#tp-link-cpe220-v3) | TP-Link CPE220 v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe220-v3.md) |
-| [tp-link-cpe510-v1](#tp-link-cpe510-v1) | TP-Link CPE510 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe510-v1.md) |
-| [tp-link-cpe510-v2](#tp-link-cpe510-v2) | TP-Link CPE510 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe510-v2.md) |
-| [tp-link-cpe510-v3](#tp-link-cpe510-v3) | TP-Link CPE510 v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe510-v3.md) |
-| [tp-link-cpe710-v1](#tp-link-cpe710-v1) | TP-Link CPE710 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe710-v1.md) |
-| [tp-link-cpe710-v2](#tp-link-cpe710-v2) | TP-Link CPE710 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe710-v2.md) |
-| [tp-link-eap225-outdoor-v1](#tp-link-eap225-outdoor-v1) | TP-Link EAP225-Outdoor v1 | ath79-generic | K0+ | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-eap225-outdoor-v1.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=4f86edf477edbc0f20b5a49a69f658fa82158284 |
-| [tp-link-eap225-outdoor-v3](#tp-link-eap225-outdoor-v3) | TP-Link EAP225-Outdoor v3 | ath79-generic | K0+ | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-eap225-outdoor-v3.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7e4de89e631aaf56be5375662b7d5ed0f27e26f6 |
-| [tp-link-eap225-wall-v2](#tp-link-eap225-wall-v2) | TP-Link EAP225-Wall v2 | ath79-generic | K0+ | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-eap225-wall-v2.md) |
-| [tp-link-tl-wdr3500-v1](#tp-link-tl-wdr3500-v1) | TP-Link TL-WDR3500 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wdr3500-v1.md) |
-| [tp-link-tl-wdr3600-v1](#tp-link-tl-wdr3600-v1) | TP-Link TL-WDR3600 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wdr3600-v1.md) |
-| [tp-link-tl-wdr4300-v1](#tp-link-tl-wdr4300-v1) | TP-Link TL-WDR4300 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wdr4300-v1.md) |
-| [tp-link-tl-wr1043n-v5](#tp-link-tl-wr1043n-v5) | TP-Link TL-WR1043N v5 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr1043n-v5.md) |
-| [tp-link-tl-wr1043nd-v2](#tp-link-tl-wr1043nd-v2) | TP-Link TL-WR1043N/ND v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr1043nd-v2.md) |
-| [tp-link-tl-wr1043nd-v3](#tp-link-tl-wr1043nd-v3) | TP-Link TL-WR1043N/ND v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr1043nd-v3.md) |
-| [tp-link-tl-wr1043nd-v4](#tp-link-tl-wr1043nd-v4) | TP-Link TL-WR1043N/ND v4 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr1043nd-v4.md) |
-| [tp-link-tl-wr2543n-nd](#tp-link-tl-wr2543n-nd) | TP-Link TL-WR2543N/ND v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr2543n-nd.md) |
-| [tp-link-tl-wr810n-v1](#tp-link-tl-wr810n-v1) | TP-Link TL-WR810N v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr810n-v1.md) |
-| [tp-link-tl-wr842n-v3](#tp-link-tl-wr842n-v3) | TP-Link TL-WR842N v3 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr842n-v3.md) |
-| [tp-link-tl-wr902ac-v1](#tp-link-tl-wr902ac-v1) | TP-Link TL-WR902AC v1 (broken) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr902ac-v1.md) |
-| [tp-link-wbs210-v1](#tp-link-wbs210-v1) | TP-Link WBS210 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-wbs210-v1.md) |
-| [tp-link-wbs210-v2](#tp-link-wbs210-v2) | TP-Link WBS210 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-wbs210-v2.md) |
-| [tp-link-wbs510-v1](#tp-link-wbs510-v1) | TP-Link WBS510 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-wbs510-v1.md) |
-| [ubiquiti-nanobeam-ac-gen1-xc](#ubiquiti-nanobeam-ac-gen1-xc) | Ubiquiti NanoBeam AC Gen1 (XC) | ath79-generic | K0+ | [`sonderweg-ubiquiti-nanobeam-ac-gen1-xc`](#familie-sonderweg-ubiquiti-nanobeam-ac-gen1-xc) | laut | nein | nein | nein |  |  |
-| [ubiquiti-nanobeam-m5-xw](#ubiquiti-nanobeam-m5-xw) | Ubiquiti NanoBeam M5 XW (Alias von ubiquiti-nanostation-loco-m-xw) | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-nanobeam-m5-xw.md) |
-| [ubiquiti-nanostation-loco-m-xw](#ubiquiti-nanostation-loco-m-xw) | Ubiquiti Nanostation Loco M XW | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-nanostation-loco-m-xw.md) |
-| [ubiquiti-nanostation-m-xw](#ubiquiti-nanostation-m-xw) | Ubiquiti Nanostation M XW | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-nanostation-m-xw.md) |
-| [ubiquiti-rocket-m-xm](#ubiquiti-rocket-m-xm) | Ubiquiti Rocket M XM | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | - (keine Anleitung: XM ist Sackgasse, adorfer 15.10.2026) |
-| [ubiquiti-unifi-ac-lite](#ubiquiti-unifi-ac-lite) | Ubiquiti UniFi AC Lite | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-lite.md); https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
-| [ubiquiti-unifi-ac-lr](#ubiquiti-unifi-ac-lr) | Ubiquiti UniFi AC LR | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-lr.md); https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
-| [ubiquiti-unifi-ac-mesh](#ubiquiti-unifi-ac-mesh) | Ubiquiti UniFi AC Mesh | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-mesh.md); https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
-| [ubiquiti-unifi-ac-mesh-pro](#ubiquiti-unifi-ac-mesh-pro) | Ubiquiti UniFi AC Mesh Pro | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-mesh-pro.md); https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
-| [ubiquiti-unifi-ac-pro](#ubiquiti-unifi-ac-pro) | Ubiquiti UniFi AC Pro | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-pro.md); https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
-| [ubiquiti-unifi-ap](#ubiquiti-unifi-ap) | Ubiquiti UniFi AP | ath79-generic | K0+ | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  |  |
-| [ubiquiti-unifi-ap-outdoor+](#ubiquiti-unifi-ap-outdoor+) | Ubiquiti UniFi AP Outdoor+ | ath79-generic | K0+ | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ap-outdoor+.md) |
-| [ubiquiti-unifi-ap-pro](#ubiquiti-unifi-ap-pro) | Ubiquiti UniFi AP Pro | ath79-generic | K0+ | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ap-pro.md) |
-| [ubiquiti-unifi-swiss-army-knife-ultra](#ubiquiti-unifi-swiss-army-knife-ultra) | Ubiquiti UniFi Swiss Army Knife Ultra | ath79-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-swiss-army-knife-ultra.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5ad05681f2de00c8c6d6449df2b958b0838dbc1a |
-| [zyxel-nbg6616](#zyxel-nbg6616) | Zyxel NBG6616 | ath79-generic | K5 | [`sonderweg-zyxel-nbg6616`](#familie-sonderweg-zyxel-nbg6616) | tftp-client-am-geraet | ja | ? | nein |  |  |
-| [mikrotik-routerboard-951ui-2nd-hap](#mikrotik-routerboard-951ui-2nd-hap) | MikroTik RouterBOARD 951Ui-2nD (hAP) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja |  |
-| [mikrotik-routerboard-mapl-2nd](#mikrotik-routerboard-mapl-2nd) | MikroTik RouterBOARD mAPL-2nD (mAP lite) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja |  |
-| [mikrotik-routerboard-wap-g-5hact2hnd](#mikrotik-routerboard-wap-g-5hact2hnd) | MikroTik RouterBOARD wAP G-5HacT2HnD (wAP AC) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja |  |
-| [mikrotik-routerboard-wapr-2nd](#mikrotik-routerboard-wapr-2nd) | MikroTik RouterBOARD wAPR-2nD (wAP R) | ath79-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja |  |
-| [aerohive-hiveap-121](#aerohive-hiveap-121) | Aerohive HiveAP 121 | ath79-nand | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ? | teilweise | ja |  |
-| [gl.inet-gl-ar300m-nor](#gl.inet-gl-ar300m-nor) | GL.iNet GL-AR300M NOR | ath79-nand | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar300m-nor.md) |
-| [gl.inet-gl-ar750s-nor](#gl.inet-gl-ar750s-nor) | GL.iNet GL-AR750S NOR | ath79-nand | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar750s-nor.md) |
-| [gl.inet-gl-e750](#gl.inet-gl-e750) | GL.iNet GL-E750 (broken) | ath79-nand | K2 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | ja | ja | [Anleitung](../anleitungen/de/gl.inet-gl-e750.md) |
-| [gl.inet-gl-xe300](#gl.inet-gl-xe300) | GL.iNet GL-XE300 | ath79-nand | K2 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | ja | ja | [Anleitung](../anleitungen/de/gl.inet-gl-xe300.md) |
-| [netgear-wndr3700-v4](#netgear-wndr3700-v4) | NETGEAR WNDR3700 v4 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr3700-v4.md) |
-| [netgear-wndr4300](#netgear-wndr4300) | NETGEAR WNDR4300 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr4300.md) |
-| [zte-mf281](#zte-mf281) | ZTE MF281 (broken) | ath79-nand | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1e1695f959e678868bb7911d059b847f38fc9cf4 |
-| [zte-mf286r](#zte-mf286r) | ZTE MF286R (broken) | ath79-nand | K1 | [`sonderweg-zte-mf286r`](#familie-sonderweg-zte-mf286r) | Exploit | nein | nein | ja | ja |  |
-| [zyxel-nbg6716](#zyxel-nbg6716) | Zyxel NBG6716 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nbg6716.md) |
-| [raspberrypi-model-b](#raspberrypi-model-b) | Raspberry Pi 1 Model B/B+ | bcm27xx-bcm2708 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/raspberrypi-model-b.md) |
-| [raspberrypi-2-model-b](#raspberrypi-2-model-b) | Raspberry Pi 2 Model B | bcm27xx-bcm2709 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/raspberrypi-2-model-b.md) |
-| [raspberrypi-3-model-b](#raspberrypi-3-model-b) | Raspberry Pi 3 Model B/B+ | bcm27xx-bcm2710 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/raspberrypi-3-model-b.md) |
-| [raspberrypi-4-model-b](#raspberrypi-4-model-b) | Raspberry Pi 4 Model B | bcm27xx-bcm2711 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/raspberrypi-4-model-b.md) |
-| [google-wifi-gale](#google-wifi-gale) | Google WiFi (Gale) | ipq40xx-chromium | K5 | [`sonderweg-google-wifi-gale`](#familie-sonderweg-google-wifi-gale) | usb | nein | ja | nein |  | https://openwrt.org/inbox/toh/google/google_wifi |
-| [8devices-jalapeno](#8devices-jalapeno) | 8devices Jalapeno | ipq40xx-generic | K0 | [`ssh-stock`](#familie-ssh-stock) | ssh | nein | nein | nein |  | - |
-| [aruba-ap-303](#aruba-ap-303) | Aruba AP-303 | ipq40xx-generic | K4 | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/aruba-ap-303.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=102c8c55f217606cdbdc9a449667e034676b3e75 |
-| [aruba-ap-303h](#aruba-ap-303h) | Aruba AP-303H | ipq40xx-generic | K4 | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/aruba-ap-303h.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0 |
-| [aruba-ap-365](#aruba-ap-365) | Aruba AP-365 | ipq40xx-generic | K4 | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/aruba-ap-365.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=300b7fe85a743ab0e039457a5a551819b49450da |
-| [aruba-instant-on-ap11](#aruba-instant-on-ap11) | Aruba Instant On AP11 (Alias von aruba-ap-303) | ipq40xx-generic | K5 | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | nein | teilweise | Alias | [Anleitung](../anleitungen/de/aruba-instant-on-ap11.md) |
-| [aruba-instant-on-ap11d](#aruba-instant-on-ap11d) | Aruba Instant On AP11D (Alias von aruba-ap-303h) | ipq40xx-generic | K4 | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | nein | teilweise | Alias | [Anleitung](../anleitungen/de/aruba-instant-on-ap11d.md) |
-| [aruba-instant-on-ap17](#aruba-instant-on-ap17) | Aruba Instant On AP17 (Alias von aruba-ap-365) | ipq40xx-generic | K4 | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | USB | teilweise | Alias | [Anleitung](../anleitungen/de/aruba-instant-on-ap17.md) |
-| [asus-lyra-map-ac2200](#asus-lyra-map-ac2200) | ASUS Lyra MAP-AC2200 | ipq40xx-generic | K1 | [`sonderweg-asus-lyra-map-ac2200`](#familie-sonderweg-asus-lyra-map-ac2200) | ssh | nein | nein | ja | ja | https://openwrt.org/toh/asus/lyra_map-ac2200#oem_easy_installation |
-| [avm-fritz-box-4040](#avm-fritz-box-4040) | AVM FRITZ!Box 4040 | ipq40xx-generic | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-4040.md); https://fritz-tools.readthedocs.io/ |
-| [avm-fritz-box-7520](#avm-fritz-box-7520) | AVM FRITZ!Box 7520 (Alias von avm-fritz-box-7530) | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | ja | Alias | [Anleitung](../anleitungen/de/avm-fritz-box-7520.md); https://openwrt.org/toh/avm/avm_fritz_box_7530#installation |
-| [avm-fritz-box-7530](#avm-fritz-box-7530) | AVM FRITZ!Box 7530 | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | ja | ja | [Anleitung](../anleitungen/de/avm-fritz-box-7530.md); https://openwrt.org/toh/avm/avm_fritz_box_7530#installation |
-| [avm-fritz-repeater-1200](#avm-fritz-repeater-1200) | AVM FRITZ!Repeater 1200 | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | ja | ja | [Anleitung](../anleitungen/de/avm-fritz-repeater-1200.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7f187229a8e9b7966248b1e024217e07a9fc3e50 |
-| [avm-fritz-repeater-3000](#avm-fritz-repeater-3000) | AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | ja | ja | [Anleitung](../anleitungen/de/avm-fritz-repeater-3000.md) |
-| [extreme-networks-ws-ap3915i](#extreme-networks-ws-ap3915i) | Extreme Networks WS-AP3915i | ipq40xx-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | - |
-| [gl.inet-gl-ap1300](#gl.inet-gl-ap1300) | GL.iNet GL-AP1300 | ipq40xx-generic | K0 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ap1300.md) |
-| [gl.inet-gl-b1300](#gl.inet-gl-b1300) | GL.iNet GL-B1300 | ipq40xx-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-b1300.md) |
-| [linksys-ea6350v3](#linksys-ea6350v3) | Linksys EA6350 v3 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-ea6350v3.md) |
-| [linksys-ea8300-dallas](#linksys-ea8300-dallas) | Linksys EA8300 | ipq40xx-generic | K2 | [`sonderweg-linksys-ea8300`](#familie-sonderweg-linksys-ea8300) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-ea8300-dallas.md) |
-| [linksys-mr8300-dallas](#linksys-mr8300-dallas) | Linksys MR8300 | ipq40xx-generic | K2 | [`sonderweg-linksys-mr8300-dallas`](#familie-sonderweg-linksys-mr8300-dallas) | webui-upload | nein | nein | ja | ja | - |
-| [linksys-vlp01](#linksys-vlp01) | Linksys VLP01 (Alias von linksys-whw01) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-vlp01.md); https://openwrt.org/toh/linksys/whw01_v1#installation |
-| [linksys-whw01](#linksys-whw01) | Linksys WHW01 v1 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-whw01.md); https://openwrt.org/toh/linksys/whw01_v1#installation |
-| [linksys-whw03-v2-velop](#linksys-whw03-v2-velop) | Linksys WHW03 v2 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-whw03-v2-velop.md); https://openwrt.org/toh/linksys/whw03_v2#oem_easy_installation |
-| [linksys-whw03-velop](#linksys-whw03-velop) | Linksys WHW03 v1 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-whw03-velop.md); https://openwrt.org/toh/linksys/whw03_v1#oem_easy_installation |
-| [meraki-mr33-access-point](#meraki-mr33-access-point) | Cisco Meraki MR33 | ipq40xx-generic | K5 | [`sonderweg-meraki-mr33-access-point`](#familie-sonderweg-meraki-mr33-access-point) | tftp-server-am-geraet | ja | ja | nein |  | https://openwrt.org/toh/meraki/mr33 |
-| [netgear-ex6100v2](#netgear-ex6100v2) | NETGEAR EX6100 v2 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-ex6100v2.md) |
-| [netgear-ex6150v2](#netgear-ex6150v2) | NETGEAR EX6150 v2 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-ex6150v2.md); https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-fuer-netgear-wi-fi-range-extender-ex6150-v2/ |
-| [netgear-rbr50](#netgear-rbr50) | NETGEAR Orbi RBR50 v1 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-rbr50.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
-| [netgear-rbs50](#netgear-rbs50) | NETGEAR Orbi RBS50 v1 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-rbs50.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
-| [netgear-srr60](#netgear-srr60) | NETGEAR Orbi Pro SRR60 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-srr60.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
-| [netgear-srs60](#netgear-srs60) | NETGEAR Orbi Pro SRS60 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-srs60.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
-| [openmesh-a42](#openmesh-a42) | OpenMesh A42 | ipq40xx-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  | - |
-| [openmesh-a62](#openmesh-a62) | OpenMesh A62 | ipq40xx-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  | - |
-| [plasma-cloud-pa1200](#plasma-cloud-pa1200) | Plasma Cloud PA1200 | ipq40xx-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  | - |
-| [plasma-cloud-pa2200](#plasma-cloud-pa2200) | Plasma Cloud PA2200 | ipq40xx-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  | - |
-| [zte-mf289f](#zte-mf289f) | ZTE MF289F | ipq40xx-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0de6a3339f1aadc1de2c9371435e3de239a00645 |
-| [zyxel-nbg6617](#zyxel-nbg6617) | Zyxel NBG6617 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nbg6617.md) |
-| [mikrotik-discg-5acd](#mikrotik-discg-5acd) | MikroTik DISC Lite5 ac (Alias von mikrotik-sxtsq-5-ac-rbsxtsqg-5acd) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | Alias | - |
-| [mikrotik-hap-ac2](#mikrotik-hap-ac2) | MikroTik hAP ac2 (RBD52G-5HacD2HnD) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | ja | - |
-| [mikrotik-sxtsq-5-ac-rbsxtsqg-5acd](#mikrotik-sxtsq-5-ac-rbsxtsqg-5acd) | MikroTik SXTsq 5 ac (RBSXTsqG-5acD) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | ja | - |
-| [mikrotik-wap-ac](#mikrotik-wap-ac) | MikroTik wAP ac (RBwAPG-5HacD2HnD, ipq40xx) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | ja | - |
-| [aruba-ap-32x](#aruba-ap-32x) | Aruba AP-324/AP-325, Siemens Scalance W1750D | ipq806x-generic | K5 | [`sonderweg-aruba-ap-32x`](#familie-sonderweg-aruba-ap-32x) | tftp-client | ja | nein | teilweise | ja | https://github.com/lukasstockner/ap325-apboot-openwrt |
-| [extreme-networks-ap3935](#extreme-networks-ap3935) | Extreme Networks AP3935i/e | ipq806x-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | - |
-| [netgear-nighthawk-x4s-r7800](#netgear-nighthawk-x4s-r7800) | NETGEAR Nighthawk X4S R7800 | ipq806x-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-nighthawk-x4s-r7800.md) |
-| [tp-link-archer-c2600](#tp-link-archer-c2600) | TP-Link Archer C2600 v1 | ipq806x-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c2600.md) |
-| [ubiquiti-unifi-ac-hd](#ubiquiti-unifi-ac-hd) | Ubiquiti UniFi AC HD | ipq806x-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-hd.md) |
-| [arcadyan-vgv7510kw22](#arcadyan-vgv7510kw22) | Arcadyan VGV7510KW22 / o2 Box 6431 (NOR-Image) | lantiq-xrx200 | K5 | [`sonderweg-arcadyan-vgv7510kw22`](#familie-sonderweg-arcadyan-vgv7510kw22) | recovery-web | teilweise | nein | nein |  | https://forum.openwrt.org/t/installing-lede-u-boot-via-brnboot-web-interface-without-rs232/9857/6 |
-| [avm-fritz-box-3370-rev-2-hynix-nand](#avm-fritz-box-3370-rev-2-hynix-nand) | AVM FRITZ!Box 3370 Rev. 2, Hynix-NAND (Gluon: broken) | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-3370-rev-2-hynix-nand.md); https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation |
-| [avm-fritz-box-3370-rev-2-micron-nand](#avm-fritz-box-3370-rev-2-micron-nand) | AVM FRITZ!Box 3370 Rev. 2, Micron-NAND (Gluon: broken) | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-3370-rev-2-micron-nand.md); https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation |
-| [avm-fritz-box-3390](#avm-fritz-box-3390) | AVM FRITZ!Box 3390 | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja | ja | [Anleitung](../anleitungen/de/avm-fritz-box-3390.md) |
-| [avm-fritz-box-7360-sl](#avm-fritz-box-7360-sl) | AVM FRITZ!Box 7360 SL (Alias 7360 v1) | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-7360-sl.md); https://fritz-tools.readthedocs.io/ |
-| [avm-fritz-box-7360-v1](#avm-fritz-box-7360-v1) | AVM FRITZ!Box 7360 v1 (Alias von avm-fritz-box-7360-sl) | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-7360-v1.md) |
-| [avm-fritz-box-7360-v2](#avm-fritz-box-7360-v2) | AVM FRITZ!Box 7360 v2 | lantiq-xrx200 | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-7360-v2.md) |
-| [avm-fritz-box-7362-sl](#avm-fritz-box-7362-sl) | AVM FRITZ!Box 7362 SL | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja | ja | [Anleitung](../anleitungen/de/avm-fritz-box-7362-sl.md); https://openwrt.org/toh/avm/avm_7362_sl#installation |
-| [avm-fritz-box-7412](#avm-fritz-box-7412) | AVM FRITZ!Box 7412 | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja | ja | [Anleitung](../anleitungen/de/avm-fritz-box-7412.md); https://openwrt.org/toh/avm/avm_fritz_box_7412#installation |
-| [avm-fritz-box-7430](#avm-fritz-box-7430) | AVM FRITZ!Box 7430 | lantiq-xrx200 | K1 | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja | ja | [Anleitung](../anleitungen/de/avm-fritz-box-7430.md); https://openwrt.org/toh/avm/avm_fritz_box_7430#installation |
-| [tp-link-td-w8970](#tp-link-td-w8970) | TP-Link TD-W8970 v1 | lantiq-xrx200_legacy | K2 | [`sonderweg-tp-link-td-w8970`](#familie-sonderweg-tp-link-td-w8970) | ssh | nein | nein | nein |  |  |
-| [tp-link-td-w8980](#tp-link-td-w8980) | TP-Link TD-W8980 (Alias TD-W9980; Gluon: broken, 5 GHz) | lantiq-xrx200_legacy | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein |  |  |
-| [avm-fritz-box-7312](#avm-fritz-box-7312) | AVM FRITZ!Box 7312 | lantiq-xway | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-7312.md); https://fritz-tools.readthedocs.io/ |
-| [netgear-dgn3500b](#netgear-dgn3500b) | NETGEAR DGN3500B | lantiq-xway | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-dgn3500b.md) |
-| [asus-rt-ax52](#asus-rt-ax52) | ASUS RT-AX52 | mediatek-filogic | K1 | [`sonderweg-asus-rt-ax52`](#familie-sonderweg-asus-rt-ax52) | webui-upload | nein | nein | ja | ja | https://openwrt.org/toh/asus/rt-ax52#installation |
-| [asus-rt-ax59u](#asus-rt-ax59u) | ASUS RT-AX59U | mediatek-filogic | K2 | [`sonderweg-asus-rt-ax59u`](#familie-sonderweg-asus-rt-ax59u) | webui-upload | nein | nein | teilweise | ja | - |
-| [asus-tuf-ax4200](#asus-tuf-ax4200) | ASUS TUF-AX4200 | mediatek-filogic | K2 | [`asus-tuf-herbetom`](#familie-asus-tuf-herbetom) | ssh | nein | nein | teilweise | ja | [Anleitung](../anleitungen/de/asus-tuf-ax4200.md); https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-ASUS-TUF-AX4200 |
-| [asus-tuf-ax6000](#asus-tuf-ax6000) | ASUS TUF-AX6000 | mediatek-filogic | K2 | [`asus-tuf-herbetom`](#familie-asus-tuf-herbetom) | ssh | nein | nein | teilweise | ja | [Anleitung](../anleitungen/de/asus-tuf-ax6000.md); https://github.com/herbetom/openwrt-asus-filogic-factory/releases/latest |
-| [cudy-ap3000-outdoor-v1](#cudy-ap3000-outdoor-v1) | Cudy AP3000 Outdoor v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-ap3000-outdoor-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-ap3000-v1](#cudy-ap3000-v1) | Cudy AP3000 v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-ap3000-v1.md) |
-| [cudy-ap3000-wall-v1](#cudy-ap3000-wall-v1) | Cudy AP3000 Wall v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-ap3000-wall-v1.md) |
-| [cudy-m3000-v1](#cudy-m3000-v1) | Cudy M3000 v1 (RTL8221B) | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-m3000-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-m3000-v2-with-motorcomm-yt8821](#cudy-m3000-v2-with-motorcomm-yt8821) | Cudy M3000 v2 mit Motorcomm YT8821 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-m3000-v2-with-motorcomm-yt8821.md) |
-| [cudy-re3000-v1](#cudy-re3000-v1) | Cudy RE3000 v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-re3000-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-tr3000-256mb-v1](#cudy-tr3000-256mb-v1) | Cudy TR3000 256 MB v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-tr3000-256mb-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-tr3000-v1](#cudy-tr3000-v1) | Cudy TR3000 v1 (128 MB Flash) | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | tftp-client | nein | ja | nein | ja | [Anleitung](../anleitungen/de/cudy-tr3000-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-wr3000-v1](#cudy-wr3000-v1) | Cudy WR3000 v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr3000-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-wr3000e-v1](#cudy-wr3000e-v1) | Cudy WR3000E v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr3000e-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-wr3000h-v1](#cudy-wr3000h-v1) | Cudy WR3000H v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr3000h-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-wr3000p-v1](#cudy-wr3000p-v1) | Cudy WR3000P v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr3000p-v1.md) |
-| [cudy-wr3000s-v1](#cudy-wr3000s-v1) | Cudy WR3000S v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr3000s-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-wr3000u-v1](#cudy-wr3000u-v1) | Cudy WR3000U v1 | mediatek-filogic | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr3000u-v1.md) |
-| [d-link-aquila-pro-ai-m30-a1](#d-link-aquila-pro-ai-m30-a1) | D-Link AQUILA PRO AI M30 A1 | mediatek-filogic | K1 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | ja | ja | [Anleitung](../anleitungen/de/d-link-aquila-pro-ai-m30-a1.md); https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/ |
-| [d-link-aquila-pro-ai-m60-a1](#d-link-aquila-pro-ai-m60-a1) | D-Link AQUILA PRO AI M60 A1 | mediatek-filogic | K1 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | ja | ja | [Anleitung](../anleitungen/de/d-link-aquila-pro-ai-m60-a1.md) |
-| [gl.inet-gl-mt2500](#gl.inet-gl-mt2500) | GL.iNet GL-MT2500 (MaxLinear-PHY) | mediatek-filogic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt2500.md) |
-| [gl.inet-gl-mt3000](#gl.inet-gl-mt3000) | GL.iNet GL-MT3000 | mediatek-filogic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt3000.md) |
-| [gl.inet-gl-mt6000](#gl.inet-gl-mt6000) | GL.iNet GL-MT6000 | mediatek-filogic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt6000.md) |
-| [mercusys-mr80x-v3](#mercusys-mr80x-v3) | Mercusys MR80X v3 | mediatek-filogic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise | ja |  |
-| [mercusys-mr90x-v1](#mercusys-mr90x-v1) | Mercusys MR90X v1 | mediatek-filogic | K2 | [`sonderweg-mercusys-mr90x-v1`](#familie-sonderweg-mercusys-mr90x-v1) | ssh | nein | nein | teilweise | ja | https://openwrt.org/toh/mercusys/mr90x_v1#installation_stock_bootloader |
-| [netgear-wax220](#netgear-wax220) | NETGEAR WAX220 | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wax220.md); https://openwrt.org/toh/netgear/wax220#oem_easy_installation |
-| [openwrt-one](#openwrt-one) | OpenWrt One | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/openwrt-one.md) |
-| [ubiquiti-unifi-6-plus](#ubiquiti-unifi-6-plus) | Ubiquiti UniFi 6+ (U6+) | mediatek-filogic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-plus.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=75ee5546e9b7cfa5bbfd6f844ab8c5fffd5bb594 |
-| [wavlink-wl-wn573hx3](#wavlink-wl-wn573hx3) | WAVLINK WL-WN573HX3 / 7Links WLR-1300 | mediatek-filogic | K1d | [`sonderweg-wavlink-wl-wn573hx3`](#familie-sonderweg-wavlink-wl-wn573hx3) | webui-upload | nein | nein | nein |  | - |
-| [xiaomi-mi-router-ax3000t](#xiaomi-mi-router-ax3000t) | Xiaomi Mi Router AX3000T | mediatek-filogic | K2 | [`sonderweg-xiaomi-mi-router-ax3000t`](#familie-sonderweg-xiaomi-mi-router-ax3000t) | ssh | nein | nein | teilweise | ja | - |
-| [xiaomi-mi-router-ax3000t-openwrt-u-boot-layout](#xiaomi-mi-router-ax3000t-openwrt-u-boot-layout) | Xiaomi Mi Router AX3000T (OpenWrt-U-Boot-Layout) | mediatek-filogic | K3 | [`sonderweg-xiaomi-mi-router-ax3000t-openwrt-u-boot-layout`](#familie-sonderweg-xiaomi-mi-router-ax3000t-openwrt-u-boot-layout) | ssh | nein | nein | nein |  | - |
-| [zyxel-nwa50ax-pro](#zyxel-nwa50ax-pro) | Zyxel NWA50AX Pro | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa50ax-pro.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f0445746f6fd96fc7c5394b238153bd2ff22bc5b |
-| [zyxel-nwa90ax-pro](#zyxel-nwa90ax-pro) | Zyxel NWA90AX Pro (Alias von zyxel-nwa50ax-pro) | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa90ax-pro.md) |
-| [linksys-e8450-ubi](#linksys-e8450-ubi) | Linksys E8450 / Belkin RT3200 (UBI-Layout) | mediatek-mt7622 | K3 | [`sonderweg-linksys-e8450-ubi`](#familie-sonderweg-linksys-e8450-ubi) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/e8450#installation |
-| [netgear-wax206](#netgear-wax206) | NETGEAR WAX206 | mediatek-mt7622 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wax206.md); https://openwrt.org/toh/netgear/wax206#oem_easy_installation |
-| [ubiquiti-unifi-6-lr-v1](#ubiquiti-unifi-6-lr-v1) | Ubiquiti UniFi 6 LR v1 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-lr-v1.md); https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
-| [ubiquiti-unifi-6-lr-v2](#ubiquiti-unifi-6-lr-v2) | Ubiquiti UniFi 6 LR v2 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-lr-v2.md); https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
-| [ubiquiti-unifi-6-lr-v3](#ubiquiti-unifi-6-lr-v3) | Ubiquiti UniFi 6 LR v3 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-lr-v3.md); https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
-| [xiaomi-redmi-router-ax6s](#xiaomi-redmi-router-ax6s) | Xiaomi Redmi Router AX6S / AX3200 | mediatek-mt7622 | K0+ | [`sonderweg-xiaomi-redmi-router-ax6s`](#familie-sonderweg-xiaomi-redmi-router-ax6s) | webui-upload | nein | nein | nein |  | - |
-| [enterasys-ws-ap3715i](#enterasys-ws-ap3715i) | Enterasys WS-AP3715i | mpc85xx-p1010 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/enterasys-ws-ap3715i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b |
-| [sophos-red-15w-rev.1](#sophos-red-15w-rev.1) | Sophos RED 15w Rev. 1 | mpc85xx-p1010 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja |  |
-| [tp-link-tl-wdr4900-v1](#tp-link-tl-wdr4900-v1) | TP-Link TL-WDR4900 v1 | mpc85xx-p1010 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wdr4900-v1.md) |
-| [aerohive-hiveap-330](#aerohive-hiveap-330) | Aerohive HiveAP 330 | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja |  |
-| [enterasys-ws-ap3710i](#enterasys-ws-ap3710i) | Enterasys WS-AP3710i | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/enterasys-ws-ap3710i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=16b01fb1b9c99513c318109bef96a1a3545c57a0 |
-| [extreme-networks-ws-ap3825i](#extreme-networks-ws-ap3825i) | Extreme Networks WS-AP3825i | mpc85xx-p1020 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | vermutlich | ja | [Anleitung](../anleitungen/de/extreme-networks-ws-ap3825i.md); https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923 |
-| [hewlett-packard-msm460](#hewlett-packard-msm460) | HPE MSM460 | mpc85xx-p1020 | K5 | [`sonderweg-hewlett-packard-msm460`](#familie-sonderweg-hewlett-packard-msm460) | tftp-server-am-geraet | nein | nein | nein |  | https://github.com/blocktrron/msm460-flashing?tab=readme-ov-file |
-| [ocedo-panda](#ocedo-panda) | OCEDO Panda | mpc85xx-p1020 | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | teilweise | ja |  |
-| [linksys-mx5300](#linksys-mx5300) | Linksys MX5300 | qualcommax-ipq807x | K0 | [`sonderweg-linksys-mx5300`](#familie-sonderweg-linksys-mx5300) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-mx5300.md) |
-| [netgear-wax218](#netgear-wax218) | NETGEAR WAX218 | qualcommax-ipq807x | K1 | [`sonderweg-netgear-wax218`](#familie-sonderweg-netgear-wax218) | webui-upload | nein | nein | ja | ja | - |
-| [tp-link-eap620-hd-v1](#tp-link-eap620-hd-v1) | TP-Link EAP620 HD v1 | qualcommax-ipq807x | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | - |
-| [xiaomi-ax3600](#xiaomi-ax3600) | Xiaomi AX3600 | qualcommax-ipq807x | K2 | [`sonderweg-xiaomi-ax3600`](#familie-sonderweg-xiaomi-ax3600) | ssh | nein | nein | teilweise | ja | - |
-| [asus-rt-ac51u](#asus-rt-ac51u) | ASUS RT-AC51U | ramips-mt7620 | K1d | [`asus-firmware-restoration`](#familie-asus-firmware-restoration) | tftp-server-am-geraet | nein | nein | nein |  | https://openwrt.org/toh/asus/rt-ac51u#installation |
-| [gl-mt300a](#gl-mt300a) | GL.iNet GL-MT300A | ramips-mt7620 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl-mt300a.md) |
-| [gl-mt300n](#gl-mt300n) | GL.iNet GL-MT300N (v1) | ramips-mt7620 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl-mt300n.md) |
-| [gl-mt750](#gl-mt750) | GL.iNet GL-MT750 | ramips-mt7620 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl-mt750.md) |
-| [netgear-ex3700](#netgear-ex3700) | NETGEAR EX3700/EX3800 (Alias netgear-ex3800) | ramips-mt7620 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-ex3700.md); https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-wi-fi-range-extender-ex3700/ |
-| [netgear-ex6130](#netgear-ex6130) | NETGEAR EX6130 | ramips-mt7620 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-ex6130.md) |
-| [nexx-wt3020-8m](#nexx-wt3020-8m) | Nexx WT3020 8M (Aliase WT3020AD/F/H) | ramips-mt7620 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/nexx-wt3020-8m.md) |
-| [tp-link-archer-c2-v1](#tp-link-archer-c2-v1) | TP-Link Archer C2 v1 | ramips-mt7620 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | tftp-client-am-geraet | nein | nein | nein |  |  |
-| [tp-link-archer-c20-v1](#tp-link-archer-c20-v1) | TP-Link Archer C20 v1 | ramips-mt7620 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | tftp-client-am-geraet | nein | nein | nein |  |  |
-| [tp-link-archer-c20i](#tp-link-archer-c20i) | TP-Link Archer C20i | ramips-mt7620 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c20i.md) |
-| [tp-link-archer-c50-v1](#tp-link-archer-c50-v1) | TP-Link Archer C50 v1 | ramips-mt7620 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c50-v1.md) |
-| [xiaomi-miwifi-mini](#xiaomi-miwifi-mini) | Xiaomi MiWiFi Mini | ramips-mt7620 | K1d | [`ssh-stock`](#familie-ssh-stock) | ssh | nein | nein | nein |  |  |
-| [asus-rt-ac57u-v1](#asus-rt-ac57u-v1) | ASUS RT-AC57U v1 | ramips-mt7621 | K1d | [`asus-firmware-restoration`](#familie-asus-firmware-restoration) | tftp-server-am-geraet | nein | nein | nein |  |  |
-| [asus-rt-ax53u](#asus-rt-ax53u) | ASUS RT-AX53U (RT-AX1800U) | ramips-mt7621 | K1 | [`asus-firmware-restoration`](#familie-asus-firmware-restoration) | tftp-server-am-geraet | nein | nein | ja | ja | https://openwrt.org/toh/asus/rt-ax53u#installation_with_mtd-write |
-| [cudy-ap1300-outdoor-v1](#cudy-ap1300-outdoor-v1) | Cudy AP1300 Outdoor v1 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-ap1300-outdoor-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-m1800](#cudy-m1800) | Cudy M1800 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-m1800.md) |
-| [cudy-wr1300-v1](#cudy-wr1300-v1) | Cudy WR1300 v1 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr1300-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-wr2100](#cudy-wr2100) | Cudy WR2100 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr2100.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-x6-v1](#cudy-x6-v1) | Cudy X6 v1 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-x6-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-x6-v2](#cudy-x6-v2) | Cudy X6 v2 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-x6-v2.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [d-link-covr-x1860-a1](#d-link-covr-x1860-a1) | D-Link COVR-X1860 A1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-covr-x1860-a1.md); https://freifunk-aachen.de/2023/08/03/installationsanleitung-d-link-covr-x1860/ |
-| [d-link-dap-1620-b1](#d-link-dap-1620-b1) | D-Link DAP-1620 B1 (Gluon: broken) | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-1620-b1.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e4c7703d2a62b8914e4723adae3f67c68a57532c |
-| [d-link-dap-x1860-a1](#d-link-dap-x1860-a1) | D-Link DAP-X1860 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | teilweise | ja | [Anleitung](../anleitungen/de/d-link-dap-x1860-a1.md); https://forum.darmstadt.freifunk.net/t/installation-d-link-dap-x1860/987 |
-| [d-link-dir-860l-b1](#d-link-dir-860l-b1) | D-Link DIR-860L B1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dir-860l-b1.md) |
-| [d-link-dir-878-a1](#d-link-dir-878-a1) | D-Link DIR-878 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dir-878-a1.md); https://openwrt.org/toh/d-link/dir-878_a1#installation |
-| [d-link-dir-882-a1](#d-link-dir-882-a1) | D-Link DIR-882 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dir-882-a1.md); https://openwrt.org/toh/d-link/dir-882_a1#installation |
-| [genexis-pulse-ex400](#genexis-pulse-ex400) | Genexis/Inteno Pulse EX400 | ramips-mt7621 | K1 | [`sonderweg-genexis-pulse-ex400`](#familie-sonderweg-genexis-pulse-ex400) | webui-upload | nein | nein | ja | ja | [Anleitung](../anleitungen/de/genexis-pulse-ex400.md); https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400 |
-| [gl.inet-gl-mt1300](#gl.inet-gl-mt1300) | GL.iNet GL-MT1300 (Beryl) | ramips-mt7621 | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt1300.md) |
-| [mercusys-mr70x-v1](#mercusys-mr70x-v1) | Mercusys MR70X v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/mercusys-mr70x-v1.md) |
-| [mikrotik-routerboard-750gr3](#mikrotik-routerboard-750gr3) | MikroTik hEX RB750Gr3 (Alias mikrotik-routerboard-hex-v3) | ramips-mt7621 | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja | https://openwrt.org/toh/mikrotik/common |
-| [netgear-eax12](#netgear-eax12) | NETGEAR EAX12 (Aliase EAX11 v2, EAX15 v2) | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-eax12.md) |
-| [netgear-ex6150](#netgear-ex6150) | NETGEAR EX6150 (v1) | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-ex6150.md); https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-wi-fi-range-extender-ex6150-v2/ |
-| [netgear-r6220](#netgear-r6220) | NETGEAR R6220 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-r6220.md); https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-r6220/ |
-| [netgear-r6260](#netgear-r6260) | NETGEAR R6260 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-r6260.md) |
-| [netgear-wac104](#netgear-wac104) | NETGEAR WAC104 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wac104.md) |
-| [netgear-wax202](#netgear-wax202) | NETGEAR WAX202 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wax202.md); https://openwrt.org/toh/netgear/wax202#oem_easy_installation |
-| [netgear-wndr3700-v5](#netgear-wndr3700-v5) | NETGEAR WNDR3700 v5 (Gluon: broken, "untested") | ramips-mt7621 | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | ja | ja | [Anleitung](../anleitungen/de/netgear-wndr3700-v5.md) |
-| [totolink-x5000r](#totolink-x5000r) | TOTOLINK X5000R | ramips-mt7621 | K1d | [`sonderweg-totolink-x5000r`](#familie-sonderweg-totolink-x5000r) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/totolink-x5000r.md) |
-| [tp-link-archer-ax23-v1](#tp-link-archer-ax23-v1) | TP-Link Archer AX23 v1 (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-ax23-v1.md) |
-| [tp-link-archer-c6-v3](#tp-link-archer-c6-v3) | TP-Link Archer C6 v3 (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c6-v3.md) |
-| [tp-link-eap613-v1](#tp-link-eap613-v1) | TP-Link EAP613 v1 | ramips-mt7621 | K0 | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-eap613-v1.md) |
-| [tp-link-eap615-wall-v1](#tp-link-eap615-wall-v1) | TP-Link EAP615-Wall v1 | ramips-mt7621 | K0 | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-eap615-wall-v1.md) |
-| [tp-link-re500-v1](#tp-link-re500-v1) | TP-Link RE500 v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re500-v1.md) |
-| [tp-link-re650-v1](#tp-link-re650-v1) | TP-Link RE650 v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re650-v1.md) |
-| [ubiquiti-edgerouter-x](#ubiquiti-edgerouter-x) | Ubiquiti EdgeRouter X | ramips-mt7621 | K3 | [`ubiquiti-edgerouter`](#familie-ubiquiti-edgerouter) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-edgerouter-x.md); https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp |
-| [ubiquiti-edgerouter-x-sfp](#ubiquiti-edgerouter-x-sfp) | Ubiquiti EdgeRouter X-SFP | ramips-mt7621 | K3 | [`ubiquiti-edgerouter`](#familie-ubiquiti-edgerouter) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-edgerouter-x-sfp.md); https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp |
-| [ubiquiti-unifi-6-lite](#ubiquiti-unifi-6-lite) | Ubiquiti UniFi 6 Lite | ramips-mt7621 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-lite.md); https://openwrt.org/toh/ubiquiti/unifi6lite#installation |
-| [ubiquiti-unifi-nanohd](#ubiquiti-unifi-nanohd) | Ubiquiti UniFi nanoHD | ramips-mt7621 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-nanohd.md) |
-| [wavlink-ws-wn572hp3-4g](#wavlink-ws-wn572hp3-4g) | Wavlink WS-WN572HP3 4G | ramips-mt7621 | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6cd1035d8dc001561331ca9e613d7dfc7d0fd7a6 |
-| [xiaomi-mi-router-3g](#xiaomi-mi-router-3g) | Xiaomi Mi Router 3G | ramips-mt7621 | K2 | [`sonderweg-xiaomi-mi-router-3g`](#familie-sonderweg-xiaomi-mi-router-3g) | ssh | nein | nein | ja | ja |  |
-| [xiaomi-mi-router-3g-v2](#xiaomi-mi-router-3g-v2) | Xiaomi Mi Router 3G v2 | ramips-mt7621 | K2 | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  |  |
-| [xiaomi-mi-router-4a-gigabit-edition](#xiaomi-mi-router-4a-gigabit-edition) | Xiaomi Mi Router 4A Gigabit | ramips-mt7621 | K1d | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  | https://github.com/acecilia/OpenWRTInvasion/blob/master/README.md |
-| [xiaomi-mi-router-4a-gigabit-edition-v2](#xiaomi-mi-router-4a-gigabit-edition-v2) | Xiaomi Mi Router 4A Gigabit v2 | ramips-mt7621 | K1d | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  |  |
-| [xiaomi-mi-router-ac2100](#xiaomi-mi-router-ac2100) | Xiaomi Mi Router AC2100 (R2100) | ramips-mt7621 | K2 | [`xiaomi-ac2100-pppoe`](#familie-xiaomi-ac2100-pppoe) | ssh | nein | nein | ja | ja |  |
-| [xiaomi-redmi-router-ac2100](#xiaomi-redmi-router-ac2100) | Xiaomi Redmi Router AC2100 (RM2100) | ramips-mt7621 | K2 | [`xiaomi-ac2100-pppoe`](#familie-xiaomi-ac2100-pppoe) | ssh | nein | nein | ja | ja | https://openwrt.org/toh/xiaomi/xiaomi_redmi_router_ac2100 |
-| [zbtlink-zbt-wg3526-16m](#zbtlink-zbt-wg3526-16m) | ZBT WG3526 16M | ramips-mt7621 | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
-| [zbtlink-zbt-wg3526-32m](#zbtlink-zbt-wg3526-32m) | ZBT WG3526 32M | ramips-mt7621 | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
-| [zyxel-nwa50ax](#zyxel-nwa50ax) | ZyXEL NWA50AX (Alias NWA90AX) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa50ax.md); https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964 |
-| [zyxel-nwa55axe](#zyxel-nwa55axe) | ZyXEL NWA55AXE (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa55axe.md); https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964 |
-| [zyxel-wsm20](#zyxel-wsm20) | ZyXEL WSM20 (Multy M1) | ramips-mt7621 | K1 | [`sonderweg-zyxel-wsm20`](#familie-sonderweg-zyxel-wsm20) | webui-upload | nein | nein | ja | ja | [Anleitung](../anleitungen/de/zyxel-wsm20.md); https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/ |
-| [cudy-tr1200-v1](#cudy-tr1200-v1) | Cudy TR1200 v1 | ramips-mt76x8 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-tr1200-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-wr1000](#cudy-wr1000) | Cudy WR1000 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr1000.md) |
-| [gl-mt300n-v2](#gl-mt300n-v2) | GL.iNet GL-MT300N v2 | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl-mt300n-v2.md) |
-| [gl.inet-microuter-n300](#gl.inet-microuter-n300) | GL.iNet microuter-N300 | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-microuter-n300.md) |
-| [gl.inet-vixmini](#gl.inet-vixmini) | GL.iNet VIXMINI | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-vixmini.md) |
-| [netgear-r6020](#netgear-r6020) | NETGEAR R6020 | ramips-mt76x8 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-r6020.md) |
-| [netgear-r6120](#netgear-r6120) | NETGEAR R6120 | ramips-mt76x8 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-r6120.md); https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-r6120/ |
-| [ravpower-rp-wd009](#ravpower-rp-wd009) | RAVPower RP-WD009 | ramips-mt76x8 | K0 | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  | https://openwrt.org/toh/ravpower/rp-wd009#oem_installation_using_the_tftp_method |
-| [tp-link-archer-c20-v4](#tp-link-archer-c20-v4) | TP-Link Archer C20 v4 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c20-v4.md) |
-| [tp-link-archer-c20-v5](#tp-link-archer-c20-v5) | TP-Link Archer C20 v5 | ramips-mt76x8 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-archer-c50-v3](#tp-link-archer-c50-v3) | TP-Link Archer C50 v3 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c50-v3.md) |
-| [tp-link-archer-c50-v4](#tp-link-archer-c50-v4) | TP-Link Archer C50 v4 | ramips-mt76x8 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-archer-c50-v6-ca-eu-ru](#tp-link-archer-c50-v6-ca-eu-ru) | TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54) | ramips-mt76x8 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |  |
-| [tp-link-re200-v2](#tp-link-re200-v2) | TP-Link RE200 v2 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re200-v2.md) |
-| [tp-link-re200-v3](#tp-link-re200-v3) | TP-Link RE200 v3 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re200-v3.md) |
-| [tp-link-re200-v4](#tp-link-re200-v4) | TP-Link RE200 v4 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re200-v4.md) |
-| [tp-link-tl-mr3020-v3](#tp-link-tl-mr3020-v3) | TP-Link TL-MR3020 v3 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-mr3020-v3.md) |
-| [tp-link-tl-mr3420-v5](#tp-link-tl-mr3420-v5) | TP-Link TL-MR3420 v5 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-mr3420-v5.md) |
-| [tp-link-tl-mr6400-v5](#tp-link-tl-mr6400-v5) | TP-Link TL-MR6400 v5 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-mr6400-v5.md) |
-| [tp-link-tl-wa801nd-v5](#tp-link-tl-wa801nd-v5) | TP-Link TL-WA801ND v5 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wa801nd-v5.md) |
-| [tp-link-tl-wr841n-v13](#tp-link-tl-wr841n-v13) | TP-Link TL-WR841N v13 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr841n-v13.md); https://openwrt.org/toh/tp-link/tl-wr841nd#tftp_recovery_via_bootloader_for_v8_v9_v10_v11_v12_v13 |
-| [tp-link-tl-wr902ac-v3](#tp-link-tl-wr902ac-v3) | TP-Link TL-WR902AC v3 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr902ac-v3.md); https://openwrt.org/toh/tp-link/tl-wr902ac_v3#installation |
-| [tp-link-tl-wr902ac-v4](#tp-link-tl-wr902ac-v4) | TP-Link TL-WR902AC v4 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr902ac-v4.md) |
-| [vocore2](#vocore2) | VoCore2 | ramips-mt76x8 | K1d | [`ssh-stock`](#familie-ssh-stock) | ssh | nein | nein | nein |  |  |
-| [xiaomi-mi-ra75](#xiaomi-mi-ra75) | Xiaomi Mi WiFi Range Extender AC1200 RA75 (Gluon: broken, "Only serial flash possible") | ramips-mt76x8 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein |  |  |
-| [xiaomi-mi-router-4a-100m-edition](#xiaomi-mi-router-4a-100m-edition) | Xiaomi Mi Router 4A 100M | ramips-mt76x8 | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein |  | https://openwrt.org/toh/xiaomi/mi_router_4a_mir4a_100m#installation |
-| [xiaomi-mi-router-4a-100m-international-edition](#xiaomi-mi-router-4a-100m-international-edition) | Xiaomi Mi Router 4A 100M International (R4AC) | ramips-mt76x8 | K1d | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  | https://forum.ffrn.de/t/howto-installation-xiaomi-mi-router-4a-r4ac-100m-international-edition/3536 |
-| [xiaomi-mi-router-4a-100m-international-edition-v2](#xiaomi-mi-router-4a-100m-international-edition-v2) | Xiaomi Mi Router 4A 100M International v2 | ramips-mt76x8 | K2 | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  |  |
-| [xiaomi-mi-router-4c](#xiaomi-mi-router-4c) | Xiaomi Mi Router 4C | ramips-mt76x8 | K2 | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  | https://github.com/acecilia/OpenWRTInvasion/blob/master/README.md |
-| [friendlyelec-nanopi-r2c](#friendlyelec-nanopi-r2c) | FriendlyElec NanoPi R2C | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/friendlyelec-nanopi-r2c.md) |
-| [friendlyelec-nanopi-r2s](#friendlyelec-nanopi-r2s) | FriendlyElec NanoPi R2S | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/friendlyelec-nanopi-r2s.md) |
-| [friendlyelec-nanopi-r3s](#friendlyelec-nanopi-r3s) | FriendlyElec NanoPi R3S | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/friendlyelec-nanopi-r3s.md) |
-| [friendlyelec-nanopi-r4s](#friendlyelec-nanopi-r4s) | FriendlyElec NanoPi R4S (4 GB) | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/friendlyelec-nanopi-r4s.md) |
-| [x86-64](#x86-64) | x86 (x86-64) | x86-64 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein | ja | [Anleitung](../anleitungen/de/x86-64.md) |
-| [x86-generic](#x86-generic) | x86 (x86-generic) | x86-generic | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein |  | [Anleitung](../anleitungen/de/x86-generic.md) |
-| [x86-geode](#x86-geode) | x86 (x86-geode) | x86-geode | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein |  | [Anleitung](../anleitungen/de/x86-geode.md) |
-| [x86-legacy](#x86-legacy) | x86 (x86-legacy) | x86-legacy | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein |  | [Anleitung](../anleitungen/de/x86-legacy.md) |
+| Gluon-Name | Modell | Target | Kat. | Level | Risiko | Anleitungsfamilie | Übertragung | seriell nötig | Gehäuse öffnen | Gluon-RAMpe | RAMpe-Rezept | Detail-Anleitung |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| [alfa-network-ap121f](#alfa-network-ap121f) | ALFA Network AP121F | ath79-generic | K1d | L3 | normal | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
+| [avm-fritz-box-4020](#avm-fritz-box-4020) | AVM FRITZ!Box 4020 | ath79-generic | K1d | L5 | normal | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-4020.md); https://fritz-tools.readthedocs.io/ |
+| [avm-fritz-wlan-repeater-1750e](#avm-fritz-wlan-repeater-1750e) | AVM FRITZ!WLAN Repeater 1750E (broken) | ath79-generic | K1d | L5 | normal | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-wlan-repeater-1750e.md) |
+| [avm-fritz-wlan-repeater-300e](#avm-fritz-wlan-repeater-300e) | AVM FRITZ!WLAN Repeater 300E | ath79-generic | K1d | L5 | normal | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-wlan-repeater-300e.md); https://fritz-tools.readthedocs.io/ |
+| [avm-fritz-wlan-repeater-450e](#avm-fritz-wlan-repeater-450e) | AVM FRITZ!WLAN Repeater 450E | ath79-generic | K1d | L5 | normal | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-wlan-repeater-450e.md); https://fritz-tools.readthedocs.io/ |
+| [buffalo-wzr-600dhp](#buffalo-wzr-600dhp) | Buffalo WZR-600DHP | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/buffalo-wzr-600dhp.md) |
+| [buffalo-wzr-hp-ag300h](#buffalo-wzr-hp-ag300h) | Buffalo WZR-HP-AG300H | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/buffalo-wzr-hp-ag300h.md) |
+| [buffalo-wzr-hp-g300nh-rtl8366s](#buffalo-wzr-hp-g300nh-rtl8366s) | Buffalo WZR-HP-G300NH (RTL8366S switch) | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/buffalo-wzr-hp-g300nh-rtl8366s.md) |
+| [buffalo-wzr-hp-g450h-wzr-450hp](#buffalo-wzr-hp-g450h-wzr-450hp) | Buffalo WZR-HP-G450H/WZR-450HP | ath79-generic | K0+ | offen | normal | [`sonderweg-buffalo-wzr-hp-g450h-wzr-450hp`](#familie-sonderweg-buffalo-wzr-hp-g450h-wzr-450hp) | webui-upload | nein | nein | nein |  |  |
+| [comfast-cf-ew71-v2](#comfast-cf-ew71-v2) | COMFAST CF-EW71 v2 | ath79-generic | K1d | offen | normal | [`sonderweg-comfast-cf-ew71-v2`](#familie-sonderweg-comfast-cf-ew71-v2) | webui-upload | nein | nein | nein |  |  |
+| [d-link-dap-1330-a1](#d-link-dap-1330-a1) | D-Link DAP-1330 A1 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-1330-a1.md) |
+| [d-link-dap-1365-a1](#d-link-dap-1365-a1) | D-Link DAP-1365 A1 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-1365-a1.md) |
+| [d-link-dap-2660-a1](#d-link-dap-2660-a1) | D-Link DAP-2660 A1 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-2660-a1.md) |
+| [d-link-dap-2680-a1](#d-link-dap-2680-a1) | D-Link DAP-2680 A1 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-2680-a1.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5b58710fad2137eedad874f0fe8fe22082d1edc6 |
+| [d-link-dap-2695-a1](#d-link-dap-2695-a1) | D-Link DAP-2695 A1 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-2695-a1.md) |
+| [d-link-dir-505](#d-link-dir-505) | D-Link DIR-505 | ath79-generic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ? | teilweise | ja |  |
+| [d-link-dir825b1](#d-link-dir825b1) | D-Link DIR-825 B1 | ath79-generic | offen | offen | normal | [`sonderweg-d-link-dir825b1`](#familie-sonderweg-d-link-dir825b1) | ? | ? | ? | offen | ja |  |
+| [devolo-dlan-pro-1200+-wifi-ac](#devolo-dlan-pro-1200+-wifi-ac) | devolo dLAN pro 1200+ WiFi ac (broken) | ath79-generic | K1d | L4 | normal | [`sonderweg-devolo-dlan-pro-1200+-wifi-ac`](#familie-sonderweg-devolo-dlan-pro-1200+-wifi-ac) | tftp-client-am-geraet | nein | nein | nein |  |  |
+| [devolo-wifi-pro-1200e](#devolo-wifi-pro-1200e) | devolo WiFi pro 1200e | ath79-generic | K1d | L4 | normal | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/devolo-wifi-pro-1200e.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1724d4e9ed7716a5444eca42adf045c2f3afc554 |
+| [devolo-wifi-pro-1200i](#devolo-wifi-pro-1200i) | devolo WiFi pro 1200i | ath79-generic | K1d | L4 | normal | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/devolo-wifi-pro-1200i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c8115167f946be85f812f3c94d6294b67ac8944c |
+| [devolo-wifi-pro-1750c](#devolo-wifi-pro-1750c) | devolo WiFi pro 1750c | ath79-generic | K1d | L4 | normal | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/devolo-wifi-pro-1750c.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e67da3443168fa6b6727cd81a35d559be77d6b4c |
+| [devolo-wifi-pro-1750e](#devolo-wifi-pro-1750e) | devolo WiFi pro 1750e | ath79-generic | K1d | L4 | normal | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/devolo-wifi-pro-1750e.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1c2f7b511514d43d8a826b26e09817b2750a2bf4 |
+| [devolo-wifi-pro-1750i](#devolo-wifi-pro-1750i) | devolo WiFi pro 1750i | ath79-generic | K1d | L4 | normal | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/devolo-wifi-pro-1750i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=8d68be8057d6c689025cc236d20b96b77a6ccf30 |
+| [devolo-wifi-pro-1750x](#devolo-wifi-pro-1750x) | devolo WiFi pro 1750x | ath79-generic | K1d | L4 | normal | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/devolo-wifi-pro-1750x.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=cb3cd526948af3f69da1af18e035177a0a8f58e3 |
+| [enterasys-ws-ap3705i](#enterasys-ws-ap3705i) | Enterasys WS-AP3705i | ath79-generic | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/enterasys-ws-ap3705i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=ebddc5f984a240980303aed68524eb615484eef8 |
+| [extreme-networks-ws-ap3805i](#extreme-networks-ws-ap3805i) | Extreme Networks WS-AP3805i | ath79-generic | K4 | L7 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | [Anleitung](../anleitungen/de/extreme-networks-ws-ap3805i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f8c87aa2d27ab405f284dd4357377ab5c893a345 |
+| [gl.inet-6416](#gl.inet-6416) | GL.iNet 6416 | ath79-generic | K1d | L3 | normal | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-6416.md) |
+| [gl.inet-gl-ar150](#gl.inet-gl-ar150) | GL.iNet GL-AR150 | ath79-generic | K1d | L3 | normal | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar150.md) |
+| [gl.inet-gl-ar300m-lite](#gl.inet-gl-ar300m-lite) | GL.iNet GL-AR300M Lite | ath79-generic | K1d | L0 | normal | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar300m-lite.md) |
+| [gl.inet-gl-ar300m16](#gl.inet-gl-ar300m16) | GL.iNet GL-AR300M16 | ath79-generic | K1d | L3 | normal | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar300m16.md) |
+| [gl.inet-gl-ar750](#gl.inet-gl-ar750) | GL.iNet GL-AR750 | ath79-generic | K1d | L0 | normal | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar750.md) |
+| [gl.inet-gl-usb150](#gl.inet-gl-usb150) | GL.iNET GL-USB150 | ath79-generic | K1d | L0 | normal | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-usb150.md) |
+| [joy-it-jt-or750i](#joy-it-jt-or750i) | Joy-IT JT-OR750i | ath79-generic | K1d | L2 | normal | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  | https://wiki.freifunk-stuttgart.net/technik:hardware:joy-it_jt-or750i |
+| [librerouter-v1](#librerouter-v1) | Librerouter LibreRouter v1 | ath79-generic | K1d | offen | normal | [`sonderweg-librerouter-v1`](#familie-sonderweg-librerouter-v1) | webui-upload | nein | nein | nein |  |  |
+| [netgear-wndr3700](#netgear-wndr3700) | NETGEAR WNDR3700 v1 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr3700.md) |
+| [netgear-wndr3700-v2](#netgear-wndr3700-v2) | NETGEAR WNDR3700 v2 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr3700-v2.md) |
+| [netgear-wndr3800](#netgear-wndr3800) | NETGEAR WNDR3800 | ath79-generic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr3800.md) |
+| [netgear-wndr3800ch](#netgear-wndr3800ch) | NETGEAR WNDR3800CH | ath79-generic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr3800ch.md) |
+| [netgear-wndrmac-v2](#netgear-wndrmac-v2) | NETGEAR WNDRMAC v2 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndrmac-v2.md) |
+| [netgear-wnr2200-16m](#netgear-wnr2200-16m) | NETGEAR WNR2200 16M | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wnr2200-16m.md) |
+| [netgear-wnr2200-8m](#netgear-wnr2200-8m) | NETGEAR WNR2200 8M | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wnr2200-8m.md) |
+| [ocedo-koala](#ocedo-koala) | Ocedo Koala | ath79-generic | K1 | offen | normal | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | ja | ja |  |
+| [ocedo-raccoon](#ocedo-raccoon) | Ocedo Raccoon | ath79-generic | K1 | offen | normal | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | ja | ja |  |
+| [onion-omega](#onion-omega) | Onion Omega | ath79-generic | K0 | offen | normal | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
+| [openmesh-a40](#openmesh-a40) | OpenMesh A40 | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-a60](#openmesh-a60) | OpenMesh A60 | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-mr1750-v1](#openmesh-mr1750-v1) | OpenMesh MR1750 v1 | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-mr1750-v2](#openmesh-mr1750-v2) | OpenMesh MR1750 v2 | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-mr600-v1](#openmesh-mr600-v1) | OpenMesh MR600 v1 | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-mr600-v2](#openmesh-mr600-v2) | OpenMesh MR600 v2 | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-mr900-v1](#openmesh-mr900-v1) | OpenMesh MR900 v1 | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-mr900-v2](#openmesh-mr900-v2) | OpenMesh MR900 v2 | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om2p-hs-v1](#openmesh-om2p-hs-v1) | OpenMesh OM2P-HS v1 | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om2p-hs-v2](#openmesh-om2p-hs-v2) | OpenMesh OM2P-HS v2 | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om2p-hs-v3](#openmesh-om2p-hs-v3) | OpenMesh OM2P-HS v3 | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om2p-hs-v4](#openmesh-om2p-hs-v4) | OpenMesh OM2P-HS v4 | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om2p-lc](#openmesh-om2p-lc) | OpenMesh OM2P-LC | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om2p-v1](#openmesh-om2p-v1) | OpenMesh OM2P v1 | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om2p-v2](#openmesh-om2p-v2) | OpenMesh OM2P v2 | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om2p-v4](#openmesh-om2p-v4) | OpenMesh OM2P v4 | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om5p](#openmesh-om5p) | OpenMesh OM5P | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om5p-ac-v1](#openmesh-om5p-ac-v1) | OpenMesh OM5P-AC v1 | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om5p-ac-v2](#openmesh-om5p-ac-v2) | OpenMesh OM5P-AC v2 | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [openmesh-om5p-an](#openmesh-om5p-an) | OpenMesh OM5P-AN | ath79-generic | K1d | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [plasma-cloud-pa300](#plasma-cloud-pa300) | Plasma Cloud PA300 | ath79-generic | K0+ | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [plasma-cloud-pa300e](#plasma-cloud-pa300e) | Plasma Cloud PA300E | ath79-generic | K0+ | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
+| [siemens-ws-ap3610](#siemens-ws-ap3610) | Siemens WS-AP3610 | ath79-generic | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/siemens-ws-ap3610.md); https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Siemens-AP3610 |
+| [sophos-ap100](#sophos-ap100) | Sophos AP100 | ath79-generic | K1d | L7 | normal | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/sophos-ap100.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
+| [sophos-ap100c](#sophos-ap100c) | Sophos AP100C | ath79-generic | K1d | L7 | normal | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/sophos-ap100c.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
+| [sophos-ap15](#sophos-ap15) | Sophos AP15 (broken) | ath79-generic | K4 | L7 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | [Anleitung](../anleitungen/de/sophos-ap15.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0dc58214896aacf67a3759495d70e2b4e9c160d8 |
+| [sophos-ap15c](#sophos-ap15c) | Sophos AP15C | ath79-generic | K1d | L7 | normal | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/sophos-ap15c.md) |
+| [sophos-ap55](#sophos-ap55) | Sophos AP55 | ath79-generic | K1d | L7 | normal | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/sophos-ap55.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
+| [sophos-ap55c](#sophos-ap55c) | Sophos AP55C | ath79-generic | K1d | L7 | normal | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/sophos-ap55c.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
+| [teltonika-rut230-v1](#teltonika-rut230-v1) | Teltonika RUT230 v1 | ath79-generic | K0+ | L3 | normal | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
+| [tp-link-archer-a7-v5](#tp-link-archer-a7-v5) | TP-Link Archer A7 v5 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-a7-v5.md) |
+| [tp-link-archer-c2-v3](#tp-link-archer-c2-v3) | TP-Link Archer C2 v3 (broken) | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c2-v3.md) |
+| [tp-link-archer-c25-v1](#tp-link-archer-c25-v1) | TP-Link Archer C25 v1 (broken) | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c25-v1.md) |
+| [tp-link-archer-c5-v1](#tp-link-archer-c5-v1) | TP-Link Archer C5 v1 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c5-v1.md) |
+| [tp-link-archer-c58-v1](#tp-link-archer-c58-v1) | TP-Link Archer C58 v1 (broken) | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c58-v1.md) |
+| [tp-link-archer-c59-v1](#tp-link-archer-c59-v1) | TP-Link Archer C59 v1 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c59-v1.md) |
+| [tp-link-archer-c6-v2-eu-ru-jp](#tp-link-archer-c6-v2-eu-ru-jp) | TP-Link Archer C6 v2 (EU/RU/JP) | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c6-v2-eu-ru-jp.md) |
+| [tp-link-archer-c60-v1](#tp-link-archer-c60-v1) | TP-Link Archer C60 v1 | ath79-generic | K2 | offen | normal | [`sonderweg-tp-link-archer-c60-v1`](#familie-sonderweg-tp-link-archer-c60-v1) | webui-upload | nein | nein | teilweise | ja |  |
+| [tp-link-archer-c7-v2](#tp-link-archer-c7-v2) | TP-Link Archer C7 v2 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c7-v2.md) |
+| [tp-link-archer-c7-v4](#tp-link-archer-c7-v4) | TP-Link Archer C7 v4 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c7-v4.md) |
+| [tp-link-archer-c7-v5](#tp-link-archer-c7-v5) | TP-Link Archer C7 v5 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c7-v5.md) |
+| [tp-link-archer-d50-v1](#tp-link-archer-d50-v1) | TP-Link Archer D50 v1 (broken) | ath79-generic | K4 | L7 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja |  |
+| [tp-link-cpe210-v1](#tp-link-cpe210-v1) | TP-Link CPE210 v1 | ath79-generic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe210-v1.md) |
+| [tp-link-cpe210-v2](#tp-link-cpe210-v2) | TP-Link CPE210 v2 | ath79-generic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe210-v2.md) |
+| [tp-link-cpe210-v3](#tp-link-cpe210-v3) | TP-Link CPE210 v3 | ath79-generic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe210-v3.md) |
+| [tp-link-cpe220-v3](#tp-link-cpe220-v3) | TP-Link CPE220 v3 | ath79-generic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe220-v3.md) |
+| [tp-link-cpe510-v1](#tp-link-cpe510-v1) | TP-Link CPE510 v1 | ath79-generic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe510-v1.md) |
+| [tp-link-cpe510-v2](#tp-link-cpe510-v2) | TP-Link CPE510 v2 | ath79-generic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe510-v2.md) |
+| [tp-link-cpe510-v3](#tp-link-cpe510-v3) | TP-Link CPE510 v3 | ath79-generic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe510-v3.md) |
+| [tp-link-cpe710-v1](#tp-link-cpe710-v1) | TP-Link CPE710 v1 | ath79-generic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe710-v1.md) |
+| [tp-link-cpe710-v2](#tp-link-cpe710-v2) | TP-Link CPE710 v2 | ath79-generic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-cpe710-v2.md) |
+| [tp-link-eap225-outdoor-v1](#tp-link-eap225-outdoor-v1) | TP-Link EAP225-Outdoor v1 | ath79-generic | K0+ | L4 | normal | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-eap225-outdoor-v1.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=4f86edf477edbc0f20b5a49a69f658fa82158284 |
+| [tp-link-eap225-outdoor-v3](#tp-link-eap225-outdoor-v3) | TP-Link EAP225-Outdoor v3 | ath79-generic | K0+ | L4 | normal | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-eap225-outdoor-v3.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7e4de89e631aaf56be5375662b7d5ed0f27e26f6 |
+| [tp-link-eap225-wall-v2](#tp-link-eap225-wall-v2) | TP-Link EAP225-Wall v2 | ath79-generic | K0+ | L4 | normal | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-eap225-wall-v2.md) |
+| [tp-link-tl-wdr3500-v1](#tp-link-tl-wdr3500-v1) | TP-Link TL-WDR3500 v1 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wdr3500-v1.md) |
+| [tp-link-tl-wdr3600-v1](#tp-link-tl-wdr3600-v1) | TP-Link TL-WDR3600 v1 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wdr3600-v1.md) |
+| [tp-link-tl-wdr4300-v1](#tp-link-tl-wdr4300-v1) | TP-Link TL-WDR4300 v1 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wdr4300-v1.md) |
+| [tp-link-tl-wr1043n-v5](#tp-link-tl-wr1043n-v5) | TP-Link TL-WR1043N v5 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr1043n-v5.md) |
+| [tp-link-tl-wr1043nd-v2](#tp-link-tl-wr1043nd-v2) | TP-Link TL-WR1043N/ND v2 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr1043nd-v2.md) |
+| [tp-link-tl-wr1043nd-v3](#tp-link-tl-wr1043nd-v3) | TP-Link TL-WR1043N/ND v3 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr1043nd-v3.md) |
+| [tp-link-tl-wr1043nd-v4](#tp-link-tl-wr1043nd-v4) | TP-Link TL-WR1043N/ND v4 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr1043nd-v4.md) |
+| [tp-link-tl-wr2543n-nd](#tp-link-tl-wr2543n-nd) | TP-Link TL-WR2543N/ND v1 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr2543n-nd.md) |
+| [tp-link-tl-wr810n-v1](#tp-link-tl-wr810n-v1) | TP-Link TL-WR810N v1 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr810n-v1.md) |
+| [tp-link-tl-wr842n-v3](#tp-link-tl-wr842n-v3) | TP-Link TL-WR842N v3 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr842n-v3.md) |
+| [tp-link-tl-wr902ac-v1](#tp-link-tl-wr902ac-v1) | TP-Link TL-WR902AC v1 (broken) | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr902ac-v1.md) |
+| [tp-link-wbs210-v1](#tp-link-wbs210-v1) | TP-Link WBS210 v1 | ath79-generic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-wbs210-v1.md) |
+| [tp-link-wbs210-v2](#tp-link-wbs210-v2) | TP-Link WBS210 v2 | ath79-generic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-wbs210-v2.md) |
+| [tp-link-wbs510-v1](#tp-link-wbs510-v1) | TP-Link WBS510 v1 | ath79-generic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-wbs510-v1.md) |
+| [ubiquiti-nanobeam-ac-gen1-xc](#ubiquiti-nanobeam-ac-gen1-xc) | Ubiquiti NanoBeam AC Gen1 (XC) | ath79-generic | K0+ | offen | normal | [`sonderweg-ubiquiti-nanobeam-ac-gen1-xc`](#familie-sonderweg-ubiquiti-nanobeam-ac-gen1-xc) | laut | nein | nein | nein |  |  |
+| [ubiquiti-nanobeam-m5-xw](#ubiquiti-nanobeam-m5-xw) | Ubiquiti NanoBeam M5 XW (Alias von ubiquiti-nanostation-loco-m-xw) | ath79-generic | K0+ | L4 | normal | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-nanobeam-m5-xw.md) |
+| [ubiquiti-nanostation-loco-m-xw](#ubiquiti-nanostation-loco-m-xw) | Ubiquiti Nanostation Loco M XW | ath79-generic | K0+ | L4 | normal | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-nanostation-loco-m-xw.md) |
+| [ubiquiti-nanostation-m-xw](#ubiquiti-nanostation-m-xw) | Ubiquiti Nanostation M XW | ath79-generic | K0+ | L4 | normal | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-nanostation-m-xw.md) |
+| [ubiquiti-rocket-m-xm](#ubiquiti-rocket-m-xm) | Ubiquiti Rocket M XM | ath79-generic | K0+ | L4 | normal | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | - (keine Anleitung: XM ist Sackgasse, adorfer 15.10.2026) |
+| [ubiquiti-unifi-ac-lite](#ubiquiti-unifi-ac-lite) | Ubiquiti UniFi AC Lite | ath79-generic | K1d | L4 | normal | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-lite.md); https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
+| [ubiquiti-unifi-ac-lr](#ubiquiti-unifi-ac-lr) | Ubiquiti UniFi AC LR | ath79-generic | K1d | L4 | normal | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-lr.md); https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
+| [ubiquiti-unifi-ac-mesh](#ubiquiti-unifi-ac-mesh) | Ubiquiti UniFi AC Mesh | ath79-generic | K1d | L4 | normal | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-mesh.md); https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
+| [ubiquiti-unifi-ac-mesh-pro](#ubiquiti-unifi-ac-mesh-pro) | Ubiquiti UniFi AC Mesh Pro | ath79-generic | K1d | L4 | normal | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-mesh-pro.md); https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
+| [ubiquiti-unifi-ac-pro](#ubiquiti-unifi-ac-pro) | Ubiquiti UniFi AC Pro | ath79-generic | K1d | L4 | normal | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-pro.md); https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790 |
+| [ubiquiti-unifi-ap](#ubiquiti-unifi-ap) | Ubiquiti UniFi AP | ath79-generic | K0+ | L4 | normal | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  |  |
+| [ubiquiti-unifi-ap-outdoor+](#ubiquiti-unifi-ap-outdoor+) | Ubiquiti UniFi AP Outdoor+ | ath79-generic | K0+ | L4 | normal | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ap-outdoor+.md) |
+| [ubiquiti-unifi-ap-pro](#ubiquiti-unifi-ap-pro) | Ubiquiti UniFi AP Pro | ath79-generic | K0+ | L4 | normal | [`ubiquiti-tftp`](#familie-ubiquiti-tftp) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ap-pro.md) |
+| [ubiquiti-unifi-swiss-army-knife-ultra](#ubiquiti-unifi-swiss-army-knife-ultra) | Ubiquiti UniFi Swiss Army Knife Ultra | ath79-generic | K1d | L4 | normal | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-swiss-army-knife-ultra.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5ad05681f2de00c8c6d6449df2b958b0838dbc1a |
+| [zyxel-nbg6616](#zyxel-nbg6616) | Zyxel NBG6616 | ath79-generic | K5 | offen | normal | [`sonderweg-zyxel-nbg6616`](#familie-sonderweg-zyxel-nbg6616) | tftp-client-am-geraet | ja | ? | nein |  |  |
+| [mikrotik-routerboard-951ui-2nd-hap](#mikrotik-routerboard-951ui-2nd-hap) | MikroTik RouterBOARD 951Ui-2nD (hAP) | ath79-mikrotik | K1 | L4 | normal | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja |  |
+| [mikrotik-routerboard-mapl-2nd](#mikrotik-routerboard-mapl-2nd) | MikroTik RouterBOARD mAPL-2nD (mAP lite) | ath79-mikrotik | K1 | L4 | normal | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja |  |
+| [mikrotik-routerboard-wap-g-5hact2hnd](#mikrotik-routerboard-wap-g-5hact2hnd) | MikroTik RouterBOARD wAP G-5HacT2HnD (wAP AC) | ath79-mikrotik | K1 | L4 | normal | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja |  |
+| [mikrotik-routerboard-wapr-2nd](#mikrotik-routerboard-wapr-2nd) | MikroTik RouterBOARD wAPR-2nD (wAP R) | ath79-mikrotik | K1 | L4 | normal | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja |  |
+| [aerohive-hiveap-121](#aerohive-hiveap-121) | Aerohive HiveAP 121 | ath79-nand | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ? | teilweise | ja |  |
+| [gl.inet-gl-ar300m-nor](#gl.inet-gl-ar300m-nor) | GL.iNet GL-AR300M NOR | ath79-nand | K1d | L3 | normal | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar300m-nor.md) |
+| [gl.inet-gl-ar750s-nor](#gl.inet-gl-ar750s-nor) | GL.iNet GL-AR750S NOR | ath79-nand | K1d | L3 | normal | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ar750s-nor.md) |
+| [gl.inet-gl-e750](#gl.inet-gl-e750) | GL.iNet GL-E750 (broken) | ath79-nand | K2 | L3 | normal | [`glinet`](#familie-glinet) | recovery-web | nein | nein | ja | ja | [Anleitung](../anleitungen/de/gl.inet-gl-e750.md) |
+| [gl.inet-gl-xe300](#gl.inet-gl-xe300) | GL.iNet GL-XE300 | ath79-nand | K2 | L3 | normal | [`glinet`](#familie-glinet) | recovery-web | nein | nein | ja | ja | [Anleitung](../anleitungen/de/gl.inet-gl-xe300.md) |
+| [netgear-wndr3700-v4](#netgear-wndr3700-v4) | NETGEAR WNDR3700 v4 | ath79-nand | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr3700-v4.md) |
+| [netgear-wndr4300](#netgear-wndr4300) | NETGEAR WNDR4300 | ath79-nand | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr4300.md) |
+| [zte-mf281](#zte-mf281) | ZTE MF281 (broken) | ath79-nand | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1e1695f959e678868bb7911d059b847f38fc9cf4 |
+| [zte-mf286r](#zte-mf286r) | ZTE MF286R (broken) | ath79-nand | K1 | L4 | normal | [`sonderweg-zte-mf286r`](#familie-sonderweg-zte-mf286r) | Exploit | nein | nein | ja | ja |  |
+| [zyxel-nbg6716](#zyxel-nbg6716) | Zyxel NBG6716 | ath79-nand | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nbg6716.md) |
+| [raspberrypi-model-b](#raspberrypi-model-b) | Raspberry Pi 1 Model B/B+ | bcm27xx-bcm2708 | K0 | L4 | normal | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/raspberrypi-model-b.md) |
+| [raspberrypi-2-model-b](#raspberrypi-2-model-b) | Raspberry Pi 2 Model B | bcm27xx-bcm2709 | K0 | L4 | normal | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/raspberrypi-2-model-b.md) |
+| [raspberrypi-3-model-b](#raspberrypi-3-model-b) | Raspberry Pi 3 Model B/B+ | bcm27xx-bcm2710 | K0 | L4 | normal | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/raspberrypi-3-model-b.md) |
+| [raspberrypi-4-model-b](#raspberrypi-4-model-b) | Raspberry Pi 4 Model B | bcm27xx-bcm2711 | K0 | L4 | normal | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/raspberrypi-4-model-b.md) |
+| [google-wifi-gale](#google-wifi-gale) | Google WiFi (Gale) | ipq40xx-chromium | K5 | offen | normal | [`sonderweg-google-wifi-gale`](#familie-sonderweg-google-wifi-gale) | usb | nein | ja | nein |  | https://openwrt.org/inbox/toh/google/google_wifi |
+| [8devices-jalapeno](#8devices-jalapeno) | 8devices Jalapeno | ipq40xx-generic | K0 | L4 | normal | [`ssh-stock`](#familie-ssh-stock) | ssh | nein | nein | nein |  | - |
+| [aruba-ap-303](#aruba-ap-303) | Aruba AP-303 | ipq40xx-generic | K4 | L6 | normal | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/aruba-ap-303.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=102c8c55f217606cdbdc9a449667e034676b3e75 |
+| [aruba-ap-303h](#aruba-ap-303h) | Aruba AP-303H | ipq40xx-generic | K4 | L6 | normal | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/aruba-ap-303h.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0 |
+| [aruba-ap-365](#aruba-ap-365) | Aruba AP-365 | ipq40xx-generic | K4 | L6 | normal | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/aruba-ap-365.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=300b7fe85a743ab0e039457a5a551819b49450da |
+| [aruba-instant-on-ap11](#aruba-instant-on-ap11) | Aruba Instant On AP11 (Alias von aruba-ap-303) | ipq40xx-generic | K5 | L6 | bootloader | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | nein | teilweise | Alias | [Anleitung](../anleitungen/de/aruba-instant-on-ap11.md) |
+| [aruba-instant-on-ap11d](#aruba-instant-on-ap11d) | Aruba Instant On AP11D (Alias von aruba-ap-303h) | ipq40xx-generic | K4 | L6 | normal | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | nein | teilweise | Alias | [Anleitung](../anleitungen/de/aruba-instant-on-ap11d.md) |
+| [aruba-instant-on-ap17](#aruba-instant-on-ap17) | Aruba Instant On AP17 (Alias von aruba-ap-365) | ipq40xx-generic | K4 | L6 | normal | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | USB | teilweise | Alias | [Anleitung](../anleitungen/de/aruba-instant-on-ap17.md) |
+| [asus-lyra-map-ac2200](#asus-lyra-map-ac2200) | ASUS Lyra MAP-AC2200 | ipq40xx-generic | K1 | L4 | normal | [`sonderweg-asus-lyra-map-ac2200`](#familie-sonderweg-asus-lyra-map-ac2200) | ssh | nein | nein | ja | ja | https://openwrt.org/toh/asus/lyra_map-ac2200#oem_easy_installation |
+| [avm-fritz-box-4040](#avm-fritz-box-4040) | AVM FRITZ!Box 4040 | ipq40xx-generic | K1d | L5 | normal | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-4040.md); https://fritz-tools.readthedocs.io/ |
+| [avm-fritz-box-7520](#avm-fritz-box-7520) | AVM FRITZ!Box 7520 (Alias von avm-fritz-box-7530) | ipq40xx-generic | K2 | L5 | normal | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | ja | Alias | [Anleitung](../anleitungen/de/avm-fritz-box-7520.md); https://openwrt.org/toh/avm/avm_fritz_box_7530#installation |
+| [avm-fritz-box-7530](#avm-fritz-box-7530) | AVM FRITZ!Box 7530 | ipq40xx-generic | K2 | L5 | normal | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | ja | ja | [Anleitung](../anleitungen/de/avm-fritz-box-7530.md); https://openwrt.org/toh/avm/avm_fritz_box_7530#installation |
+| [avm-fritz-repeater-1200](#avm-fritz-repeater-1200) | AVM FRITZ!Repeater 1200 | ipq40xx-generic | K2 | L5 | normal | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | ja | ja | [Anleitung](../anleitungen/de/avm-fritz-repeater-1200.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7f187229a8e9b7966248b1e024217e07a9fc3e50 |
+| [avm-fritz-repeater-3000](#avm-fritz-repeater-3000) | AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) | ipq40xx-generic | K2 | L5 | normal | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | ja | ja | [Anleitung](../anleitungen/de/avm-fritz-repeater-3000.md) |
+| [extreme-networks-ws-ap3915i](#extreme-networks-ws-ap3915i) | Extreme Networks WS-AP3915i | ipq40xx-generic | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | - |
+| [gl.inet-gl-ap1300](#gl.inet-gl-ap1300) | GL.iNet GL-AP1300 | ipq40xx-generic | K0 | L3 | normal | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ap1300.md) |
+| [gl.inet-gl-b1300](#gl.inet-gl-b1300) | GL.iNet GL-B1300 | ipq40xx-generic | K1d | L3 | normal | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-b1300.md) |
+| [linksys-ea6350v3](#linksys-ea6350v3) | Linksys EA6350 v3 | ipq40xx-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-ea6350v3.md) |
+| [linksys-ea8300-dallas](#linksys-ea8300-dallas) | Linksys EA8300 | ipq40xx-generic | K2 | L4 | normal | [`sonderweg-linksys-ea8300`](#familie-sonderweg-linksys-ea8300) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-ea8300-dallas.md) |
+| [linksys-mr8300-dallas](#linksys-mr8300-dallas) | Linksys MR8300 | ipq40xx-generic | K2 | offen | normal | [`sonderweg-linksys-mr8300-dallas`](#familie-sonderweg-linksys-mr8300-dallas) | webui-upload | nein | nein | ja | ja | - |
+| [linksys-vlp01](#linksys-vlp01) | Linksys VLP01 (Alias von linksys-whw01) | ipq40xx-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-vlp01.md); https://openwrt.org/toh/linksys/whw01_v1#installation |
+| [linksys-whw01](#linksys-whw01) | Linksys WHW01 v1 (Velop) | ipq40xx-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-whw01.md); https://openwrt.org/toh/linksys/whw01_v1#installation |
+| [linksys-whw03-v2-velop](#linksys-whw03-v2-velop) | Linksys WHW03 v2 (Velop) | ipq40xx-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-whw03-v2-velop.md); https://openwrt.org/toh/linksys/whw03_v2#oem_easy_installation |
+| [linksys-whw03-velop](#linksys-whw03-velop) | Linksys WHW03 v1 (Velop) | ipq40xx-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-whw03-velop.md); https://openwrt.org/toh/linksys/whw03_v1#oem_easy_installation |
+| [meraki-mr33-access-point](#meraki-mr33-access-point) | Cisco Meraki MR33 | ipq40xx-generic | K5 | L7 | bootloader | [`sonderweg-meraki-mr33-access-point`](#familie-sonderweg-meraki-mr33-access-point) | tftp-server-am-geraet | ja | ja | nein |  | https://openwrt.org/toh/meraki/mr33 |
+| [netgear-ex6100v2](#netgear-ex6100v2) | NETGEAR EX6100 v2 | ipq40xx-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-ex6100v2.md) |
+| [netgear-ex6150v2](#netgear-ex6150v2) | NETGEAR EX6150 v2 | ipq40xx-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-ex6150v2.md); https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-fuer-netgear-wi-fi-range-extender-ex6150-v2/ |
+| [netgear-rbr50](#netgear-rbr50) | NETGEAR Orbi RBR50 v1 | ipq40xx-generic | K0+ | L5 | normal | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-rbr50.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
+| [netgear-rbs50](#netgear-rbs50) | NETGEAR Orbi RBS50 v1 | ipq40xx-generic | K0+ | L5 | normal | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-rbs50.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
+| [netgear-srr60](#netgear-srr60) | NETGEAR Orbi Pro SRR60 | ipq40xx-generic | K0+ | L5 | normal | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-srr60.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
+| [netgear-srs60](#netgear-srs60) | NETGEAR Orbi Pro SRS60 | ipq40xx-generic | K0+ | L5 | normal | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-srs60.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
+| [openmesh-a42](#openmesh-a42) | OpenMesh A42 | ipq40xx-generic | K0+ | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  | - |
+| [openmesh-a62](#openmesh-a62) | OpenMesh A62 | ipq40xx-generic | K0+ | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  | - |
+| [plasma-cloud-pa1200](#plasma-cloud-pa1200) | Plasma Cloud PA1200 | ipq40xx-generic | K0+ | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  | - |
+| [plasma-cloud-pa2200](#plasma-cloud-pa2200) | Plasma Cloud PA2200 | ipq40xx-generic | K0+ | L5 | normal | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  | - |
+| [zte-mf289f](#zte-mf289f) | ZTE MF289F | ipq40xx-generic | K4 | L7 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0de6a3339f1aadc1de2c9371435e3de239a00645 |
+| [zyxel-nbg6617](#zyxel-nbg6617) | Zyxel NBG6617 | ipq40xx-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nbg6617.md) |
+| [mikrotik-discg-5acd](#mikrotik-discg-5acd) | MikroTik DISC Lite5 ac (Alias von mikrotik-sxtsq-5-ac-rbsxtsqg-5acd) | ipq40xx-mikrotik | K1 | L4 | normal | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | Alias | - |
+| [mikrotik-hap-ac2](#mikrotik-hap-ac2) | MikroTik hAP ac2 (RBD52G-5HacD2HnD) | ipq40xx-mikrotik | K1 | L4 | normal | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | ja | - |
+| [mikrotik-sxtsq-5-ac-rbsxtsqg-5acd](#mikrotik-sxtsq-5-ac-rbsxtsqg-5acd) | MikroTik SXTsq 5 ac (RBSXTsqG-5acD) | ipq40xx-mikrotik | K1 | L4 | normal | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | ja | - |
+| [mikrotik-wap-ac](#mikrotik-wap-ac) | MikroTik wAP ac (RBwAPG-5HacD2HnD, ipq40xx) | ipq40xx-mikrotik | K1 | L4 | normal | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | ja | - |
+| [aruba-ap-32x](#aruba-ap-32x) | Aruba AP-324/AP-325, Siemens Scalance W1750D | ipq806x-generic | K5 | L6 | bootloader | [`sonderweg-aruba-ap-32x`](#familie-sonderweg-aruba-ap-32x) | tftp-client | ja | nein | teilweise | ja | https://github.com/lukasstockner/ap325-apboot-openwrt |
+| [extreme-networks-ap3935](#extreme-networks-ap3935) | Extreme Networks AP3935i/e | ipq806x-generic | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | - |
+| [netgear-nighthawk-x4s-r7800](#netgear-nighthawk-x4s-r7800) | NETGEAR Nighthawk X4S R7800 | ipq806x-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-nighthawk-x4s-r7800.md) |
+| [tp-link-archer-c2600](#tp-link-archer-c2600) | TP-Link Archer C2600 v1 | ipq806x-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c2600.md) |
+| [ubiquiti-unifi-ac-hd](#ubiquiti-unifi-ac-hd) | Ubiquiti UniFi AC HD | ipq806x-generic | K1d | L4 | normal | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-hd.md) |
+| [arcadyan-vgv7510kw22](#arcadyan-vgv7510kw22) | Arcadyan VGV7510KW22 / o2 Box 6431 (NOR-Image) | lantiq-xrx200 | K5 | L4 | bootloader | [`sonderweg-arcadyan-vgv7510kw22`](#familie-sonderweg-arcadyan-vgv7510kw22) | recovery-web | teilweise | nein | nein |  | https://forum.openwrt.org/t/installing-lede-u-boot-via-brnboot-web-interface-without-rs232/9857/6 |
+| [avm-fritz-box-3370-rev-2-hynix-nand](#avm-fritz-box-3370-rev-2-hynix-nand) | AVM FRITZ!Box 3370 Rev. 2, Hynix-NAND (Gluon: broken) | lantiq-xrx200 | K1d | L5 | normal | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-3370-rev-2-hynix-nand.md); https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation |
+| [avm-fritz-box-3370-rev-2-micron-nand](#avm-fritz-box-3370-rev-2-micron-nand) | AVM FRITZ!Box 3370 Rev. 2, Micron-NAND (Gluon: broken) | lantiq-xrx200 | K1d | L5 | normal | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-3370-rev-2-micron-nand.md); https://openwrt.org/toh/avm/fritz.box.wlan.3370#installation |
+| [avm-fritz-box-3390](#avm-fritz-box-3390) | AVM FRITZ!Box 3390 | lantiq-xrx200 | K1 | L5 | normal | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja | ja | [Anleitung](../anleitungen/de/avm-fritz-box-3390.md) |
+| [avm-fritz-box-7360-sl](#avm-fritz-box-7360-sl) | AVM FRITZ!Box 7360 SL (Alias 7360 v1) | lantiq-xrx200 | K1d | L5 | normal | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-7360-sl.md); https://fritz-tools.readthedocs.io/ |
+| [avm-fritz-box-7360-v1](#avm-fritz-box-7360-v1) | AVM FRITZ!Box 7360 v1 (Alias von avm-fritz-box-7360-sl) | lantiq-xrx200 | K1d | L5 | normal | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-7360-v1.md) |
+| [avm-fritz-box-7360-v2](#avm-fritz-box-7360-v2) | AVM FRITZ!Box 7360 v2 | lantiq-xrx200 | K1d | L5 | normal | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-7360-v2.md) |
+| [avm-fritz-box-7362-sl](#avm-fritz-box-7362-sl) | AVM FRITZ!Box 7362 SL | lantiq-xrx200 | K1 | L5 | normal | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja | ja | [Anleitung](../anleitungen/de/avm-fritz-box-7362-sl.md); https://openwrt.org/toh/avm/avm_7362_sl#installation |
+| [avm-fritz-box-7412](#avm-fritz-box-7412) | AVM FRITZ!Box 7412 | lantiq-xrx200 | K1 | L5 | normal | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja | ja | [Anleitung](../anleitungen/de/avm-fritz-box-7412.md); https://openwrt.org/toh/avm/avm_fritz_box_7412#installation |
+| [avm-fritz-box-7430](#avm-fritz-box-7430) | AVM FRITZ!Box 7430 | lantiq-xrx200 | K1 | L5 | normal | [`avm-eva-ramboot`](#familie-avm-eva-ramboot) | ftp | nein | nein | ja | ja | [Anleitung](../anleitungen/de/avm-fritz-box-7430.md); https://openwrt.org/toh/avm/avm_fritz_box_7430#installation |
+| [tp-link-td-w8970](#tp-link-td-w8970) | TP-Link TD-W8970 v1 | lantiq-xrx200_legacy | K2 | offen | normal | [`sonderweg-tp-link-td-w8970`](#familie-sonderweg-tp-link-td-w8970) | ssh | nein | nein | nein |  |  |
+| [tp-link-td-w8980](#tp-link-td-w8980) | TP-Link TD-W8980 (Alias TD-W9980; Gluon: broken, 5 GHz) | lantiq-xrx200_legacy | K4 | L7 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein |  |  |
+| [avm-fritz-box-7312](#avm-fritz-box-7312) | AVM FRITZ!Box 7312 | lantiq-xway | K1d | L5 | normal | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-7312.md); https://fritz-tools.readthedocs.io/ |
+| [netgear-dgn3500b](#netgear-dgn3500b) | NETGEAR DGN3500B | lantiq-xway | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-dgn3500b.md) |
+| [asus-rt-ax52](#asus-rt-ax52) | ASUS RT-AX52 | mediatek-filogic | K1 | L4 | normal | [`sonderweg-asus-rt-ax52`](#familie-sonderweg-asus-rt-ax52) | webui-upload | nein | nein | ja | ja | https://openwrt.org/toh/asus/rt-ax52#installation |
+| [asus-rt-ax59u](#asus-rt-ax59u) | ASUS RT-AX59U | mediatek-filogic | K2 | offen | normal | [`sonderweg-asus-rt-ax59u`](#familie-sonderweg-asus-rt-ax59u) | webui-upload | nein | nein | teilweise | ja | - |
+| [asus-tuf-ax4200](#asus-tuf-ax4200) | ASUS TUF-AX4200 | mediatek-filogic | K2 | L4 | normal | [`asus-tuf-herbetom`](#familie-asus-tuf-herbetom) | ssh | nein | nein | teilweise | ja | [Anleitung](../anleitungen/de/asus-tuf-ax4200.md); https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-ASUS-TUF-AX4200 |
+| [asus-tuf-ax6000](#asus-tuf-ax6000) | ASUS TUF-AX6000 | mediatek-filogic | K2 | L4 | normal | [`asus-tuf-herbetom`](#familie-asus-tuf-herbetom) | ssh | nein | nein | teilweise | ja | [Anleitung](../anleitungen/de/asus-tuf-ax6000.md); https://github.com/herbetom/openwrt-asus-filogic-factory/releases/latest |
+| [cudy-ap3000-outdoor-v1](#cudy-ap3000-outdoor-v1) | Cudy AP3000 Outdoor v1 | mediatek-filogic | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-ap3000-outdoor-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-ap3000-v1](#cudy-ap3000-v1) | Cudy AP3000 v1 | mediatek-filogic | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-ap3000-v1.md) |
+| [cudy-ap3000-wall-v1](#cudy-ap3000-wall-v1) | Cudy AP3000 Wall v1 | mediatek-filogic | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-ap3000-wall-v1.md) |
+| [cudy-m3000-v1](#cudy-m3000-v1) | Cudy M3000 v1 (RTL8221B) | mediatek-filogic | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-m3000-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-m3000-v2-with-motorcomm-yt8821](#cudy-m3000-v2-with-motorcomm-yt8821) | Cudy M3000 v2 mit Motorcomm YT8821 | mediatek-filogic | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-m3000-v2-with-motorcomm-yt8821.md) |
+| [cudy-re3000-v1](#cudy-re3000-v1) | Cudy RE3000 v1 | mediatek-filogic | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-re3000-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-tr3000-256mb-v1](#cudy-tr3000-256mb-v1) | Cudy TR3000 256 MB v1 | mediatek-filogic | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-tr3000-256mb-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-tr3000-v1](#cudy-tr3000-v1) | Cudy TR3000 v1 (128 MB Flash) | mediatek-filogic | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | tftp-client | nein | ja | nein | ja | [Anleitung](../anleitungen/de/cudy-tr3000-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-wr3000-v1](#cudy-wr3000-v1) | Cudy WR3000 v1 | mediatek-filogic | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr3000-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-wr3000e-v1](#cudy-wr3000e-v1) | Cudy WR3000E v1 | mediatek-filogic | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr3000e-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-wr3000h-v1](#cudy-wr3000h-v1) | Cudy WR3000H v1 | mediatek-filogic | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr3000h-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-wr3000p-v1](#cudy-wr3000p-v1) | Cudy WR3000P v1 | mediatek-filogic | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr3000p-v1.md) |
+| [cudy-wr3000s-v1](#cudy-wr3000s-v1) | Cudy WR3000S v1 | mediatek-filogic | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr3000s-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-wr3000u-v1](#cudy-wr3000u-v1) | Cudy WR3000U v1 | mediatek-filogic | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr3000u-v1.md) |
+| [d-link-aquila-pro-ai-m30-a1](#d-link-aquila-pro-ai-m30-a1) | D-Link AQUILA PRO AI M30 A1 | mediatek-filogic | K1 | L4 | normal | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | ja | ja | [Anleitung](../anleitungen/de/d-link-aquila-pro-ai-m30-a1.md); https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/ |
+| [d-link-aquila-pro-ai-m60-a1](#d-link-aquila-pro-ai-m60-a1) | D-Link AQUILA PRO AI M60 A1 | mediatek-filogic | K1 | L4 | normal | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | ja | ja | [Anleitung](../anleitungen/de/d-link-aquila-pro-ai-m60-a1.md) |
+| [gl.inet-gl-mt2500](#gl.inet-gl-mt2500) | GL.iNet GL-MT2500 (MaxLinear-PHY) | mediatek-filogic | K1d | L0 | normal | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt2500.md) |
+| [gl.inet-gl-mt3000](#gl.inet-gl-mt3000) | GL.iNet GL-MT3000 | mediatek-filogic | K1d | L0 | normal | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt3000.md) |
+| [gl.inet-gl-mt6000](#gl.inet-gl-mt6000) | GL.iNet GL-MT6000 | mediatek-filogic | K1d | L0 | normal | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt6000.md) |
+| [mercusys-mr80x-v3](#mercusys-mr80x-v3) | Mercusys MR80X v3 | mediatek-filogic | K4 | L7 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise | ja |  |
+| [mercusys-mr90x-v1](#mercusys-mr90x-v1) | Mercusys MR90X v1 | mediatek-filogic | K2 | L5 | normal | [`sonderweg-mercusys-mr90x-v1`](#familie-sonderweg-mercusys-mr90x-v1) | ssh | nein | nein | teilweise | ja | https://openwrt.org/toh/mercusys/mr90x_v1#installation_stock_bootloader |
+| [netgear-wax220](#netgear-wax220) | NETGEAR WAX220 | mediatek-filogic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wax220.md); https://openwrt.org/toh/netgear/wax220#oem_easy_installation |
+| [openwrt-one](#openwrt-one) | OpenWrt One | mediatek-filogic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/openwrt-one.md) |
+| [ubiquiti-unifi-6-plus](#ubiquiti-unifi-6-plus) | Ubiquiti UniFi 6+ (U6+) | mediatek-filogic | K1d | L4 | normal | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-plus.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=75ee5546e9b7cfa5bbfd6f844ab8c5fffd5bb594 |
+| [wavlink-wl-wn573hx3](#wavlink-wl-wn573hx3) | WAVLINK WL-WN573HX3 / 7Links WLR-1300 | mediatek-filogic | K1d | offen | normal | [`sonderweg-wavlink-wl-wn573hx3`](#familie-sonderweg-wavlink-wl-wn573hx3) | webui-upload | nein | nein | nein |  | - |
+| [xiaomi-mi-router-ax3000t](#xiaomi-mi-router-ax3000t) | Xiaomi Mi Router AX3000T | mediatek-filogic | K2 | L4 | normal | [`sonderweg-xiaomi-mi-router-ax3000t`](#familie-sonderweg-xiaomi-mi-router-ax3000t) | ssh | nein | nein | teilweise | ja | - |
+| [xiaomi-mi-router-ax3000t-openwrt-u-boot-layout](#xiaomi-mi-router-ax3000t-openwrt-u-boot-layout) | Xiaomi Mi Router AX3000T (OpenWrt-U-Boot-Layout) | mediatek-filogic | K3 | L4 | bootloader | [`sonderweg-xiaomi-mi-router-ax3000t-openwrt-u-boot-layout`](#familie-sonderweg-xiaomi-mi-router-ax3000t-openwrt-u-boot-layout) | ssh | nein | nein | nein |  | - |
+| [zyxel-nwa50ax-pro](#zyxel-nwa50ax-pro) | Zyxel NWA50AX Pro | mediatek-filogic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa50ax-pro.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f0445746f6fd96fc7c5394b238153bd2ff22bc5b |
+| [zyxel-nwa90ax-pro](#zyxel-nwa90ax-pro) | Zyxel NWA90AX Pro (Alias von zyxel-nwa50ax-pro) | mediatek-filogic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa90ax-pro.md) |
+| [linksys-e8450-ubi](#linksys-e8450-ubi) | Linksys E8450 / Belkin RT3200 (UBI-Layout) | mediatek-mt7622 | K3 | L4 | bootloader | [`sonderweg-linksys-e8450-ubi`](#familie-sonderweg-linksys-e8450-ubi) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/e8450#installation |
+| [netgear-wax206](#netgear-wax206) | NETGEAR WAX206 | mediatek-mt7622 | K0 | L0.1 | normal | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wax206.md); https://openwrt.org/toh/netgear/wax206#oem_easy_installation |
+| [ubiquiti-unifi-6-lr-v1](#ubiquiti-unifi-6-lr-v1) | Ubiquiti UniFi 6 LR v1 | mediatek-mt7622 | K1d | L4 | normal | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-lr-v1.md); https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
+| [ubiquiti-unifi-6-lr-v2](#ubiquiti-unifi-6-lr-v2) | Ubiquiti UniFi 6 LR v2 | mediatek-mt7622 | K1d | L4 | normal | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-lr-v2.md); https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
+| [ubiquiti-unifi-6-lr-v3](#ubiquiti-unifi-6-lr-v3) | Ubiquiti UniFi 6 LR v3 | mediatek-mt7622 | K1d | L4 | normal | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-lr-v3.md); https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
+| [xiaomi-redmi-router-ax6s](#xiaomi-redmi-router-ax6s) | Xiaomi Redmi Router AX6S / AX3200 | mediatek-mt7622 | K0+ | offen | normal | [`sonderweg-xiaomi-redmi-router-ax6s`](#familie-sonderweg-xiaomi-redmi-router-ax6s) | webui-upload | nein | nein | nein |  | - |
+| [enterasys-ws-ap3715i](#enterasys-ws-ap3715i) | Enterasys WS-AP3715i | mpc85xx-p1010 | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/enterasys-ws-ap3715i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b |
+| [sophos-red-15w-rev.1](#sophos-red-15w-rev.1) | Sophos RED 15w Rev. 1 | mpc85xx-p1010 | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja |  |
+| [tp-link-tl-wdr4900-v1](#tp-link-tl-wdr4900-v1) | TP-Link TL-WDR4900 v1 | mpc85xx-p1010 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wdr4900-v1.md) |
+| [aerohive-hiveap-330](#aerohive-hiveap-330) | Aerohive HiveAP 330 | mpc85xx-p1020 | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja |  |
+| [enterasys-ws-ap3710i](#enterasys-ws-ap3710i) | Enterasys WS-AP3710i | mpc85xx-p1020 | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/enterasys-ws-ap3710i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=16b01fb1b9c99513c318109bef96a1a3545c57a0 |
+| [extreme-networks-ws-ap3825i](#extreme-networks-ws-ap3825i) | Extreme Networks WS-AP3825i | mpc85xx-p1020 | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | vermutlich | ja | [Anleitung](../anleitungen/de/extreme-networks-ws-ap3825i.md); https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923 |
+| [hewlett-packard-msm460](#hewlett-packard-msm460) | HPE MSM460 | mpc85xx-p1020 | K5 | L4 | bootloader | [`sonderweg-hewlett-packard-msm460`](#familie-sonderweg-hewlett-packard-msm460) | tftp-server-am-geraet | nein | nein | nein |  | https://github.com/blocktrron/msm460-flashing?tab=readme-ov-file |
+| [ocedo-panda](#ocedo-panda) | OCEDO Panda | mpc85xx-p1020 | K1 | offen | normal | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | teilweise | ja |  |
+| [linksys-mx5300](#linksys-mx5300) | Linksys MX5300 | qualcommax-ipq807x | K0 | L0.1 | normal | [`sonderweg-linksys-mx5300`](#familie-sonderweg-linksys-mx5300) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-mx5300.md) |
+| [netgear-wax218](#netgear-wax218) | NETGEAR WAX218 | qualcommax-ipq807x | K1 | offen | normal | [`sonderweg-netgear-wax218`](#familie-sonderweg-netgear-wax218) | webui-upload | nein | nein | ja | ja | - |
+| [tp-link-eap620-hd-v1](#tp-link-eap620-hd-v1) | TP-Link EAP620 HD v1 | qualcommax-ipq807x | K4 | L8 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | - |
+| [xiaomi-ax3600](#xiaomi-ax3600) | Xiaomi AX3600 | qualcommax-ipq807x | K2 | offen | normal | [`sonderweg-xiaomi-ax3600`](#familie-sonderweg-xiaomi-ax3600) | ssh | nein | nein | teilweise | ja | - |
+| [asus-rt-ac51u](#asus-rt-ac51u) | ASUS RT-AC51U | ramips-mt7620 | K1d | L5 | normal | [`asus-firmware-restoration`](#familie-asus-firmware-restoration) | tftp-server-am-geraet | nein | nein | nein |  | https://openwrt.org/toh/asus/rt-ac51u#installation |
+| [gl-mt300a](#gl-mt300a) | GL.iNet GL-MT300A | ramips-mt7620 | K1d | L0 | normal | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl-mt300a.md) |
+| [gl-mt300n](#gl-mt300n) | GL.iNet GL-MT300N (v1) | ramips-mt7620 | K1d | L0 | normal | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl-mt300n.md) |
+| [gl-mt750](#gl-mt750) | GL.iNet GL-MT750 | ramips-mt7620 | K1d | L0 | normal | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl-mt750.md) |
+| [netgear-ex3700](#netgear-ex3700) | NETGEAR EX3700/EX3800 (Alias netgear-ex3800) | ramips-mt7620 | K0 | L0.1 | normal | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-ex3700.md); https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-wi-fi-range-extender-ex3700/ |
+| [netgear-ex6130](#netgear-ex6130) | NETGEAR EX6130 | ramips-mt7620 | K0 | L0.1 | normal | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-ex6130.md) |
+| [nexx-wt3020-8m](#nexx-wt3020-8m) | Nexx WT3020 8M (Aliase WT3020AD/F/H) | ramips-mt7620 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/nexx-wt3020-8m.md) |
+| [tp-link-archer-c2-v1](#tp-link-archer-c2-v1) | TP-Link Archer C2 v1 | ramips-mt7620 | K3 | L5 | bootloader | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | tftp-client-am-geraet | nein | nein | nein |  |  |
+| [tp-link-archer-c20-v1](#tp-link-archer-c20-v1) | TP-Link Archer C20 v1 | ramips-mt7620 | K3 | L5 | bootloader | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | tftp-client-am-geraet | nein | nein | nein |  |  |
+| [tp-link-archer-c20i](#tp-link-archer-c20i) | TP-Link Archer C20i | ramips-mt7620 | K0 | L1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c20i.md) |
+| [tp-link-archer-c50-v1](#tp-link-archer-c50-v1) | TP-Link Archer C50 v1 | ramips-mt7620 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c50-v1.md) |
+| [xiaomi-miwifi-mini](#xiaomi-miwifi-mini) | Xiaomi MiWiFi Mini | ramips-mt7620 | K1d | L4 | normal | [`ssh-stock`](#familie-ssh-stock) | ssh | nein | nein | nein |  |  |
+| [asus-rt-ac57u-v1](#asus-rt-ac57u-v1) | ASUS RT-AC57U v1 | ramips-mt7621 | K1d | L5 | normal | [`asus-firmware-restoration`](#familie-asus-firmware-restoration) | tftp-server-am-geraet | nein | nein | nein |  |  |
+| [asus-rt-ax53u](#asus-rt-ax53u) | ASUS RT-AX53U (RT-AX1800U) | ramips-mt7621 | K1 | L5 | normal | [`asus-firmware-restoration`](#familie-asus-firmware-restoration) | tftp-server-am-geraet | nein | nein | ja | ja | https://openwrt.org/toh/asus/rt-ax53u#installation_with_mtd-write |
+| [cudy-ap1300-outdoor-v1](#cudy-ap1300-outdoor-v1) | Cudy AP1300 Outdoor v1 | ramips-mt7621 | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-ap1300-outdoor-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-m1800](#cudy-m1800) | Cudy M1800 | ramips-mt7621 | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-m1800.md) |
+| [cudy-wr1300-v1](#cudy-wr1300-v1) | Cudy WR1300 v1 | ramips-mt7621 | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr1300-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-wr2100](#cudy-wr2100) | Cudy WR2100 | ramips-mt7621 | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr2100.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-x6-v1](#cudy-x6-v1) | Cudy X6 v1 | ramips-mt7621 | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-x6-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-x6-v2](#cudy-x6-v2) | Cudy X6 v2 | ramips-mt7621 | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-x6-v2.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [d-link-covr-x1860-a1](#d-link-covr-x1860-a1) | D-Link COVR-X1860 A1 | ramips-mt7621 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-covr-x1860-a1.md); https://freifunk-aachen.de/2023/08/03/installationsanleitung-d-link-covr-x1860/ |
+| [d-link-dap-1620-b1](#d-link-dap-1620-b1) | D-Link DAP-1620 B1 (Gluon: broken) | ramips-mt7621 | K0 | L4 | normal | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-1620-b1.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e4c7703d2a62b8914e4723adae3f67c68a57532c |
+| [d-link-dap-x1860-a1](#d-link-dap-x1860-a1) | D-Link DAP-X1860 A1 | ramips-mt7621 | K0 | L4 | normal | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | teilweise | ja | [Anleitung](../anleitungen/de/d-link-dap-x1860-a1.md); https://forum.darmstadt.freifunk.net/t/installation-d-link-dap-x1860/987 |
+| [d-link-dir-860l-b1](#d-link-dir-860l-b1) | D-Link DIR-860L B1 | ramips-mt7621 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dir-860l-b1.md) |
+| [d-link-dir-878-a1](#d-link-dir-878-a1) | D-Link DIR-878 A1 | ramips-mt7621 | K0 | L4 | normal | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dir-878-a1.md); https://openwrt.org/toh/d-link/dir-878_a1#installation |
+| [d-link-dir-882-a1](#d-link-dir-882-a1) | D-Link DIR-882 A1 | ramips-mt7621 | K0 | L4 | normal | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dir-882-a1.md); https://openwrt.org/toh/d-link/dir-882_a1#installation |
+| [genexis-pulse-ex400](#genexis-pulse-ex400) | Genexis/Inteno Pulse EX400 | ramips-mt7621 | K1 | L4 | normal | [`sonderweg-genexis-pulse-ex400`](#familie-sonderweg-genexis-pulse-ex400) | webui-upload | nein | nein | ja | ja | [Anleitung](../anleitungen/de/genexis-pulse-ex400.md); https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400 |
+| [gl.inet-gl-mt1300](#gl.inet-gl-mt1300) | GL.iNet GL-MT1300 (Beryl) | ramips-mt7621 | K1d | L3 | normal | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt1300.md) |
+| [mercusys-mr70x-v1](#mercusys-mr70x-v1) | Mercusys MR70X v1 | ramips-mt7621 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/mercusys-mr70x-v1.md) |
+| [mikrotik-routerboard-750gr3](#mikrotik-routerboard-750gr3) | MikroTik hEX RB750Gr3 (Alias mikrotik-routerboard-hex-v3) | ramips-mt7621 | K1 | L4 | normal | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja | https://openwrt.org/toh/mikrotik/common |
+| [netgear-eax12](#netgear-eax12) | NETGEAR EAX12 (Aliase EAX11 v2, EAX15 v2) | ramips-mt7621 | K0 | L0.1 | normal | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-eax12.md) |
+| [netgear-ex6150](#netgear-ex6150) | NETGEAR EX6150 (v1) | ramips-mt7621 | K0 | L0.1 | normal | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-ex6150.md); https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-wi-fi-range-extender-ex6150-v2/ |
+| [netgear-r6220](#netgear-r6220) | NETGEAR R6220 | ramips-mt7621 | K0 | L0.1 | normal | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-r6220.md); https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-r6220/ |
+| [netgear-r6260](#netgear-r6260) | NETGEAR R6260 | ramips-mt7621 | K0 | L0.1 | normal | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-r6260.md) |
+| [netgear-wac104](#netgear-wac104) | NETGEAR WAC104 | ramips-mt7621 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wac104.md) |
+| [netgear-wax202](#netgear-wax202) | NETGEAR WAX202 | ramips-mt7621 | K0 | L0.1 | normal | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wax202.md); https://openwrt.org/toh/netgear/wax202#oem_easy_installation |
+| [netgear-wndr3700-v5](#netgear-wndr3700-v5) | NETGEAR WNDR3700 v5 (Gluon: broken, "untested") | ramips-mt7621 | K0+ | L5 | normal | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | ja | ja | [Anleitung](../anleitungen/de/netgear-wndr3700-v5.md) |
+| [totolink-x5000r](#totolink-x5000r) | TOTOLINK X5000R | ramips-mt7621 | K1d | L1 | normal | [`sonderweg-totolink-x5000r`](#familie-sonderweg-totolink-x5000r) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/totolink-x5000r.md) |
+| [tp-link-archer-ax23-v1](#tp-link-archer-ax23-v1) | TP-Link Archer AX23 v1 (Gluon: broken) | ramips-mt7621 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-ax23-v1.md) |
+| [tp-link-archer-c6-v3](#tp-link-archer-c6-v3) | TP-Link Archer C6 v3 (Gluon: broken) | ramips-mt7621 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c6-v3.md) |
+| [tp-link-eap613-v1](#tp-link-eap613-v1) | TP-Link EAP613 v1 | ramips-mt7621 | K0 | L4 | normal | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-eap613-v1.md) |
+| [tp-link-eap615-wall-v1](#tp-link-eap615-wall-v1) | TP-Link EAP615-Wall v1 | ramips-mt7621 | K0 | L4 | normal | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-eap615-wall-v1.md) |
+| [tp-link-re500-v1](#tp-link-re500-v1) | TP-Link RE500 v1 | ramips-mt7621 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re500-v1.md) |
+| [tp-link-re650-v1](#tp-link-re650-v1) | TP-Link RE650 v1 | ramips-mt7621 | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re650-v1.md) |
+| [ubiquiti-edgerouter-x](#ubiquiti-edgerouter-x) | Ubiquiti EdgeRouter X | ramips-mt7621 | K3 | L4 | normal | [`ubiquiti-edgerouter`](#familie-ubiquiti-edgerouter) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-edgerouter-x.md); https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp |
+| [ubiquiti-edgerouter-x-sfp](#ubiquiti-edgerouter-x-sfp) | Ubiquiti EdgeRouter X-SFP | ramips-mt7621 | K3 | L4 | normal | [`ubiquiti-edgerouter`](#familie-ubiquiti-edgerouter) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-edgerouter-x-sfp.md); https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp |
+| [ubiquiti-unifi-6-lite](#ubiquiti-unifi-6-lite) | Ubiquiti UniFi 6 Lite | ramips-mt7621 | K1d | L4 | normal | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-lite.md); https://openwrt.org/toh/ubiquiti/unifi6lite#installation |
+| [ubiquiti-unifi-nanohd](#ubiquiti-unifi-nanohd) | Ubiquiti UniFi nanoHD | ramips-mt7621 | K1d | L4 | normal | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-nanohd.md) |
+| [wavlink-ws-wn572hp3-4g](#wavlink-ws-wn572hp3-4g) | Wavlink WS-WN572HP3 4G | ramips-mt7621 | K1d | L3 | normal | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6cd1035d8dc001561331ca9e613d7dfc7d0fd7a6 |
+| [xiaomi-mi-router-3g](#xiaomi-mi-router-3g) | Xiaomi Mi Router 3G | ramips-mt7621 | K2 | offen | normal | [`sonderweg-xiaomi-mi-router-3g`](#familie-sonderweg-xiaomi-mi-router-3g) | ssh | nein | nein | ja | ja |  |
+| [xiaomi-mi-router-3g-v2](#xiaomi-mi-router-3g-v2) | Xiaomi Mi Router 3G v2 | ramips-mt7621 | K2 | L5 | normal | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  |  |
+| [xiaomi-mi-router-4a-gigabit-edition](#xiaomi-mi-router-4a-gigabit-edition) | Xiaomi Mi Router 4A Gigabit | ramips-mt7621 | K1d | L5 | normal | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  | https://github.com/acecilia/OpenWRTInvasion/blob/master/README.md |
+| [xiaomi-mi-router-4a-gigabit-edition-v2](#xiaomi-mi-router-4a-gigabit-edition-v2) | Xiaomi Mi Router 4A Gigabit v2 | ramips-mt7621 | K1d | L5 | normal | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  |  |
+| [xiaomi-mi-router-ac2100](#xiaomi-mi-router-ac2100) | Xiaomi Mi Router AC2100 (R2100) | ramips-mt7621 | K2 | L5 | normal | [`xiaomi-ac2100-pppoe`](#familie-xiaomi-ac2100-pppoe) | ssh | nein | nein | ja | ja |  |
+| [xiaomi-redmi-router-ac2100](#xiaomi-redmi-router-ac2100) | Xiaomi Redmi Router AC2100 (RM2100) | ramips-mt7621 | K2 | L5 | normal | [`xiaomi-ac2100-pppoe`](#familie-xiaomi-ac2100-pppoe) | ssh | nein | nein | ja | ja | https://openwrt.org/toh/xiaomi/xiaomi_redmi_router_ac2100 |
+| [zbtlink-zbt-wg3526-16m](#zbtlink-zbt-wg3526-16m) | ZBT WG3526 16M | ramips-mt7621 | K1d | offen | normal | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
+| [zbtlink-zbt-wg3526-32m](#zbtlink-zbt-wg3526-32m) | ZBT WG3526 32M | ramips-mt7621 | K1d | offen | normal | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
+| [zyxel-nwa50ax](#zyxel-nwa50ax) | ZyXEL NWA50AX (Alias NWA90AX) | ramips-mt7621 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa50ax.md); https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964 |
+| [zyxel-nwa55axe](#zyxel-nwa55axe) | ZyXEL NWA55AXE (Gluon: broken) | ramips-mt7621 | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa55axe.md); https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964 |
+| [zyxel-wsm20](#zyxel-wsm20) | ZyXEL WSM20 (Multy M1) | ramips-mt7621 | K1 | L1 | normal | [`sonderweg-zyxel-wsm20`](#familie-sonderweg-zyxel-wsm20) | webui-upload | nein | nein | ja | ja | [Anleitung](../anleitungen/de/zyxel-wsm20.md); https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/ |
+| [cudy-tr1200-v1](#cudy-tr1200-v1) | Cudy TR1200 v1 | ramips-mt76x8 | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-tr1200-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
+| [cudy-wr1000](#cudy-wr1000) | Cudy WR1000 | ramips-mt76x8 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr1000.md) |
+| [gl-mt300n-v2](#gl-mt300n-v2) | GL.iNet GL-MT300N v2 | ramips-mt76x8 | K1d | L3 | normal | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl-mt300n-v2.md) |
+| [gl.inet-microuter-n300](#gl.inet-microuter-n300) | GL.iNet microuter-N300 | ramips-mt76x8 | K1d | L0 | normal | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-microuter-n300.md) |
+| [gl.inet-vixmini](#gl.inet-vixmini) | GL.iNet VIXMINI | ramips-mt76x8 | K1d | L0 | normal | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-vixmini.md) |
+| [netgear-r6020](#netgear-r6020) | NETGEAR R6020 | ramips-mt76x8 | K0 | L5 | normal | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-r6020.md) |
+| [netgear-r6120](#netgear-r6120) | NETGEAR R6120 | ramips-mt76x8 | K0 | L5 | normal | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-r6120.md); https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-r6120/ |
+| [ravpower-rp-wd009](#ravpower-rp-wd009) | RAVPower RP-WD009 | ramips-mt76x8 | K0 | L3 | normal | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  | https://openwrt.org/toh/ravpower/rp-wd009#oem_installation_using_the_tftp_method |
+| [tp-link-archer-c20-v4](#tp-link-archer-c20-v4) | TP-Link Archer C20 v4 | ramips-mt76x8 | K1d | L4 | normal | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c20-v4.md) |
+| [tp-link-archer-c20-v5](#tp-link-archer-c20-v5) | TP-Link Archer C20 v5 | ramips-mt76x8 | K3 | L5 | normal | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c50-v3](#tp-link-archer-c50-v3) | TP-Link Archer C50 v3 | ramips-mt76x8 | K1d | L4 | normal | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c50-v3.md) |
+| [tp-link-archer-c50-v4](#tp-link-archer-c50-v4) | TP-Link Archer C50 v4 | ramips-mt76x8 | K3 | L5 | normal | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-archer-c50-v6-ca-eu-ru](#tp-link-archer-c50-v6-ca-eu-ru) | TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54) | ramips-mt76x8 | K3 | L5 | normal | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |  |
+| [tp-link-re200-v2](#tp-link-re200-v2) | TP-Link RE200 v2 | ramips-mt76x8 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re200-v2.md) |
+| [tp-link-re200-v3](#tp-link-re200-v3) | TP-Link RE200 v3 | ramips-mt76x8 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re200-v3.md) |
+| [tp-link-re200-v4](#tp-link-re200-v4) | TP-Link RE200 v4 | ramips-mt76x8 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re200-v4.md) |
+| [tp-link-tl-mr3020-v3](#tp-link-tl-mr3020-v3) | TP-Link TL-MR3020 v3 | ramips-mt76x8 | K1d | L4 | normal | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-mr3020-v3.md) |
+| [tp-link-tl-mr3420-v5](#tp-link-tl-mr3420-v5) | TP-Link TL-MR3420 v5 | ramips-mt76x8 | K1d | L4 | normal | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-mr3420-v5.md) |
+| [tp-link-tl-mr6400-v5](#tp-link-tl-mr6400-v5) | TP-Link TL-MR6400 v5 | ramips-mt76x8 | K1d | L4 | normal | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-mr6400-v5.md) |
+| [tp-link-tl-wa801nd-v5](#tp-link-tl-wa801nd-v5) | TP-Link TL-WA801ND v5 | ramips-mt76x8 | K1d | L4 | normal | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wa801nd-v5.md) |
+| [tp-link-tl-wr841n-v13](#tp-link-tl-wr841n-v13) | TP-Link TL-WR841N v13 | ramips-mt76x8 | K1d | L4 | normal | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr841n-v13.md); https://openwrt.org/toh/tp-link/tl-wr841nd#tftp_recovery_via_bootloader_for_v8_v9_v10_v11_v12_v13 |
+| [tp-link-tl-wr902ac-v3](#tp-link-tl-wr902ac-v3) | TP-Link TL-WR902AC v3 | ramips-mt76x8 | K1d | L4 | normal | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr902ac-v3.md); https://openwrt.org/toh/tp-link/tl-wr902ac_v3#installation |
+| [tp-link-tl-wr902ac-v4](#tp-link-tl-wr902ac-v4) | TP-Link TL-WR902AC v4 | ramips-mt76x8 | K1d | L4 | normal | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wr902ac-v4.md) |
+| [vocore2](#vocore2) | VoCore2 | ramips-mt76x8 | K1d | L4 | normal | [`ssh-stock`](#familie-ssh-stock) | ssh | nein | nein | nein |  |  |
+| [xiaomi-mi-ra75](#xiaomi-mi-ra75) | Xiaomi Mi WiFi Range Extender AC1200 RA75 (Gluon: broken, "Only serial flash possible") | ramips-mt76x8 | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein |  |  |
+| [xiaomi-mi-router-4a-100m-edition](#xiaomi-mi-router-4a-100m-edition) | Xiaomi Mi Router 4A 100M | ramips-mt76x8 | K4 | L7 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein |  | https://openwrt.org/toh/xiaomi/mi_router_4a_mir4a_100m#installation |
+| [xiaomi-mi-router-4a-100m-international-edition](#xiaomi-mi-router-4a-100m-international-edition) | Xiaomi Mi Router 4A 100M International (R4AC) | ramips-mt76x8 | K1d | L5 | normal | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  | https://forum.ffrn.de/t/howto-installation-xiaomi-mi-router-4a-r4ac-100m-international-edition/3536 |
+| [xiaomi-mi-router-4a-100m-international-edition-v2](#xiaomi-mi-router-4a-100m-international-edition-v2) | Xiaomi Mi Router 4A 100M International v2 | ramips-mt76x8 | K2 | L5 | normal | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  |  |
+| [xiaomi-mi-router-4c](#xiaomi-mi-router-4c) | Xiaomi Mi Router 4C | ramips-mt76x8 | K2 | L5 | normal | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  | https://github.com/acecilia/OpenWRTInvasion/blob/master/README.md |
+| [friendlyelec-nanopi-r2c](#friendlyelec-nanopi-r2c) | FriendlyElec NanoPi R2C | rockchip-armv8 | K0 | L4 | normal | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/friendlyelec-nanopi-r2c.md) |
+| [friendlyelec-nanopi-r2s](#friendlyelec-nanopi-r2s) | FriendlyElec NanoPi R2S | rockchip-armv8 | K0 | L4 | normal | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/friendlyelec-nanopi-r2s.md) |
+| [friendlyelec-nanopi-r3s](#friendlyelec-nanopi-r3s) | FriendlyElec NanoPi R3S | rockchip-armv8 | K0 | L4 | normal | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/friendlyelec-nanopi-r3s.md) |
+| [friendlyelec-nanopi-r4s](#friendlyelec-nanopi-r4s) | FriendlyElec NanoPi R4S (4 GB) | rockchip-armv8 | K0 | L4 | normal | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/friendlyelec-nanopi-r4s.md) |
+| [x86-64](#x86-64) | x86 (x86-64) | x86-64 | K0 | L4 | normal | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein | ja | [Anleitung](../anleitungen/de/x86-64.md) |
+| [x86-generic](#x86-generic) | x86 (x86-generic) | x86-generic | K0 | L4 | normal | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein |  | [Anleitung](../anleitungen/de/x86-generic.md) |
+| [x86-geode](#x86-geode) | x86 (x86-geode) | x86-geode | K0 | L4 | normal | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein |  | [Anleitung](../anleitungen/de/x86-geode.md) |
+| [x86-legacy](#x86-legacy) | x86 (x86-legacy) | x86-legacy | K0 | L4 | normal | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein |  | [Anleitung](../anleitungen/de/x86-legacy.md) |
 
 <!-- END erzeugt:uebersicht -->
 
@@ -586,6 +602,8 @@ OpenMesh A40 · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ A60 an (A40 und A60); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_a40-initramfs-kernel.bin) (Liste)
@@ -620,6 +638,8 @@ OpenMesh A60 · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ A60 an (A40 und A60); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_a60-initramfs-kernel.bin) (Liste)
@@ -654,6 +674,8 @@ OpenMesh MR1750 v1 · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ MR1750 an (MR1750 v1 und v2); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_mr1750-v1-initramfs-kernel.bin) (Liste)
@@ -688,6 +710,8 @@ OpenMesh MR1750 v2 · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ MR1750 an (MR1750 v1 und v2); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_mr1750-v2-initramfs-kernel.bin) (Liste)
@@ -722,6 +746,8 @@ OpenMesh MR600 v1 · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ MR600 an (MR600 v1 und v2); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_mr600-v1-initramfs-kernel.bin) (Liste)
@@ -756,6 +782,8 @@ OpenMesh MR600 v2 · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ MR600 an (MR600 v1 und v2); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_mr600-v2-initramfs-kernel.bin) (Liste)
@@ -790,6 +818,8 @@ OpenMesh MR900 v1 · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ MR900 an (MR900 v1 und v2); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_mr900-v1-initramfs-kernel.bin) (Liste)
@@ -824,6 +854,8 @@ OpenMesh MR900 v2 · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ MR900 an (MR900 v1 und v2); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_mr900-v2-initramfs-kernel.bin) (Liste)
@@ -858,6 +890,8 @@ OpenMesh OM2P-HS v1 · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM2P an (OM2P v1/v2/v4, OM2P-HS v1-v4, OM2P-LC); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-hs-v1-initramfs-kernel.bin) (Liste)
@@ -893,6 +927,8 @@ OpenMesh OM2P-HS v2 · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM2P an (OM2P v1/v2/v4, OM2P-HS v1-v4, OM2P-LC); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-hs-v2-initramfs-kernel.bin) (Liste)
@@ -928,6 +964,8 @@ OpenMesh OM2P-HS v3 · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM2P an (OM2P v1/v2/v4, OM2P-HS v1-v4, OM2P-LC); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-hs-v3-initramfs-kernel.bin) (Liste)
@@ -963,6 +1001,8 @@ OpenMesh OM2P-HS v4 · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM2P an (OM2P v1/v2/v4, OM2P-HS v1-v4, OM2P-LC); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-hs-v4-initramfs-kernel.bin) (Liste)
@@ -998,6 +1038,8 @@ OpenMesh OM2P-LC · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM2P an (OM2P v1/v2/v4, OM2P-HS v1-v4, OM2P-LC); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-lc-initramfs-kernel.bin) (Liste)
@@ -1033,6 +1075,8 @@ OpenMesh OM2P v1 · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM2P an (OM2P v1/v2/v4, OM2P-HS v1-v4, OM2P-LC); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-v1-initramfs-kernel.bin) (Liste)
@@ -1069,6 +1113,8 @@ OpenMesh OM2P v2 · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM2P an (OM2P v1/v2/v4, OM2P-HS v1-v4, OM2P-LC); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-v2-initramfs-kernel.bin) (Liste)
@@ -1104,6 +1150,8 @@ OpenMesh OM2P v4 · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM2P an (OM2P v1/v2/v4, OM2P-HS v1-v4, OM2P-LC); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om2p-v4-initramfs-kernel.bin) (Liste)
@@ -1139,6 +1187,8 @@ OpenMesh OM5P · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM5P an (OM5P und OM5P-AN); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om5p-initramfs-kernel.bin) (Liste)
@@ -1173,6 +1223,8 @@ OpenMesh OM5P-AC v1 · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM5PAC an (OM5P-AC v1 und v2); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om5p-ac-v1-initramfs-kernel.bin) (Liste)
@@ -1207,6 +1259,8 @@ OpenMesh OM5P-AC v2 · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM5PAC an (OM5P-AC v1 und v2); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om5p-ac-v2-initramfs-kernel.bin) (Liste)
@@ -1241,6 +1295,8 @@ OpenMesh OM5P-AN · ath79-generic · K1d
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein (nur für den seriellen Notweg über TFTP: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, TTL-Pins auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash (github.com/ap51-flash/ap51-flash)
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ OM5P an (OM5P und OM5P-AN); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-openmesh_om5p-an-initramfs-kernel.bin) (Liste)
@@ -1275,6 +1331,8 @@ Plasma Cloud PA300 · ath79-generic · K0+
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ PA300 an (PA300 und PA300E); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-plasmacloud_pa300-initramfs-kernel.bin) (Liste)
@@ -1308,6 +1366,8 @@ Plasma Cloud PA300E · ath79-generic · K0+
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash
 - **Typenschild/Verwechslung:** Der Bootloader nimmt jedes Image mit CE-Typ PA300 an (PA300 und PA300E); ein Image der falschen Variante wird also nicht abgewiesen, Modell und Revision vorher auf dem Typenschild genau ablesen [geprüft: target/linux/*/image/generic.mk am Pin; Schluss abgeleitet]; ap51-flash führt den PA300E nicht eigens in der Testliste, erkennt ihn über den gemeinsamen Typ PA300 [abgeleitet: supported-devices, ce_type=PA300]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-plasmacloud_pa300e-initramfs-kernel.bin) (Liste)
@@ -1342,6 +1402,8 @@ OpenMesh A42 · ipq40xx-generic · K0+
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash
 - **Typenschild/Verwechslung:** eigener CE-Typ A42 [geprüft: ipq40xx generic.mk]; ein Image für ein anderes Modell erkennt ap51-flash und meldet 'no image for' [abgeleitet: ap51-flash-Doku Troubleshooting]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-openmesh_a42-initramfs-uImage.itb)
@@ -1377,6 +1439,8 @@ OpenMesh A62 · ipq40xx-generic · K0+
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash
 - **Typenschild/Verwechslung:** eigener CE-Typ A62 [geprüft: ipq40xx generic.mk]; ein Image für ein anderes Modell erkennt ap51-flash und meldet 'no image for' [abgeleitet: ap51-flash-Doku Troubleshooting]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-openmesh_a62-initramfs-uImage.itb)
@@ -1411,6 +1475,8 @@ Plasma Cloud PA1200 · ipq40xx-generic · K0+
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash
 - **Typenschild/Verwechslung:** eigener CE-Typ PA1200 [geprüft: ipq40xx generic.mk]; ein Image für ein anderes Modell erkennt ap51-flash und meldet 'no image for' [abgeleitet: ap51-flash-Doku Troubleshooting]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-plasmacloud_pa1200-initramfs-uImage.itb)
@@ -1445,6 +1511,8 @@ Plasma Cloud PA2200 · ipq40xx-generic · K0+
 - **Datei:** Gluon-factory (Open-Mesh-CE-Image), nicht sysupgrade [geprüft: ap51-flash-Doku getting-started 'Which image file to use']
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ap51-flash
 - **Typenschild/Verwechslung:** eigener CE-Typ PA2200 [geprüft: ipq40xx generic.mk]; ein Image für ein anderes Modell erkennt ap51-flash und meldet 'no image for' [abgeleitet: ap51-flash-Doku Troubleshooting]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-plasmacloud_pa2200-initramfs-uImage.itb)
@@ -1484,6 +1552,8 @@ Aruba AP-303 · ipq40xx-generic · K4
 - **Datei:** Initramfs genau als `ipq40xx.ari` (netget ohne Dateiangabe, Name daher vermutlich zwingend [abgeleitet]); danach Gluon-sysupgrade nach /tmp [geprüft: Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: Micro-USB-Buchse "Console" als UART-Stecker (kein USB!): D+ = TX, D- = RX, GND = GND, VCC nicht belegt (so im Commit, aus wessen Sicht TX gemeint ist, steht dort nicht); 3,3 V, 9600 8N1, eigener USB-TTL-Adapter [geprüft]
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = nein; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Aruba Instant On AP11 nutzt dasselbe Image, hat aber ein gesperrtes apboot (eigene Familie sonderweg-aruba-instant-on-ap11) [geprüft: Sperre: Neanderfunk-Notiz, Wiki toh:aruba:ap-303]. AP-303H (Hospitality, mehrere Ports, Wandmontage) ist ein anderes Gerät mit eigenem Image [geprüft: Commit c6e972c]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb)
@@ -1522,6 +1592,8 @@ Aruba AP-303H · ipq40xx-generic · K4
 - **Datei:** Initramfs genau als `ipq40xx.ari` [geprüft: Commit; Name zwingend: abgeleitet]; danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: Micro-USB als UART-Stecker wie AP-303 (D+ = TX, D- = RX laut Commit), 9600 8N1 [geprüft]
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = nein; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Instant On AP11D ist die günstige Variante auf derselben Plattform, gleiches Image [geprüft: Wiki toh:aruba:ap-303h]. AP-303 (ohne H, ein Port) ist ein anderes Gerät [geprüft: Commit]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb)
@@ -1558,6 +1630,8 @@ Aruba AP-365 · ipq40xx-generic · K4
 - **Datei:** Initramfs genau als `ipq40xx.ari` [geprüft: Commit; Name zwingend: abgeleitet]; danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: USB-Konsole echt (CP2101 auf der Platine), 9600 8N1 [geprüft]
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = nein; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Instant On AP17 ist die günstige Variante auf derselben Plattform, gleiches Image [geprüft: Wiki toh:aruba:ap-365]. Anders als AP-303/303H ist die USB-Buchse hier echtes USB [geprüft: Commit]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb)
@@ -1582,6 +1656,9 @@ Aruba Instant On AP11 (Alias von aruba-ap-303) · ipq40xx-generic · K5
 - **Programm:** USB-TTL-Adapter 3,3 V an Micro-USB-Selbstbaukabel, nur GND, RX, TX, nie VCC [geprüft: Sc4ndium90-README]. Baudrate 9600 [geprüft: OpenWrt-Commit 102c8c5 (AP-303)]. TFTP-Server; Bootloader per `netget 0x84000000`, `sf probe; sf protect off; sf erase 0xf0000 0xf0000; sf write 0x84000000 0xf0000 0xf0000` [geprüft: Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9); Adressen dort .6/.66, in der Anleitung .105/.75]; ohne Öffnen des Gehäuses [geprüft: Forum t/22653 #29 (blocktrron, 14.06.2024)]; manche FTDI-Kabel treiben die Konsolenleitung zu schwach: Bootmeldungen sind lesbar, APBoot lässt sich aber nicht mit Enter anhalten; ein Kabel, das 3,3 V bei 1 mA schafft, sollte gehen [geprüft: Wiki toh:aruba:ap-303h, Rohtext 15.10.2026]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: Micro-USB als UART-Stecker wie AP-303 [abgeleitet: Alias, gleiche Platine]
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = nein; l8 = nein
+- **Risiko (normal / bootloader / offen):** bootloader
+- **Level: Einzelentscheidung:** APBoot wird ersetzt
 - **Werkzeug/Spezial:** älterer Bootloader APBoot 2.5.0.2 als eigene Datei ap303-loader-2.5.0.2.bin (983.040 Byte, SHA256 69e45b04…98a5) als ZIP ap303-loader-2.5.0.2.zip (mit .md5 und .sha256) auf download.ffnef.de/other/dump/ [geprüft: Datei und ZIP geladen 15.10.2026, SHA256 gleich der im Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9) für apboot-unlocked.bin]
 - **Typenschild/Verwechslung:** Instant-On-Variante des AP-303, Image aruba_ap-303 [geprüft: Gluon-Alias, Wiki toh:aruba:ap-303]. Nicht mit AP11D (Variante des AP-303H) verwechseln [abgeleitet]
 - **Bedingung an die Herstellerfirmware:** Instant-On-apboot bootet nur signierte Images; vor der Installation muss ein entsperrtes apboot per `sf protect off; sf erase/write 0xf0000 0xf0000` geschrieben werden [geprüft: Neanderfunk-Notiz; Sc4ndium90-README]
@@ -1616,6 +1693,8 @@ Aruba Instant On AP11D (Alias von aruba-ap-303h) · ipq40xx-generic · K4
 - **Datei:** Initramfs als `ipq40xx.ari` [abgeleitet: Wiki toh/aruba/ap-303h 'same platform']
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: Micro-USB als UART-Stecker [abgeleitet]
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = nein; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Instant-On-Variante des AP-303H, Image aruba_ap-303h [geprüft: Gluon-Alias, Wiki toh:aruba:ap-303h]. Nicht mit AP11 (ohne D, Variante des AP-303) verwechseln [abgeleitet]
 - **Bedingung an die Herstellerfirmware:** Offen: das Instant-On-apboot des AP11 bootet nur signierte Images ('Image is signed; verifying checksum', APBoot 2.5.0.2) und musste per SPI-Schreiben entsperrt werden; ob AP11D ebenso gesperrt ist, ist nicht belegt [abgeleitet: Wiki-Bootlog AP11, Neanderfunk-Notiz]
@@ -1649,6 +1728,8 @@ Aruba Instant On AP17 (Alias von aruba-ap-365) · ipq40xx-generic · K4
 - **Datei:** Initramfs als `ipq40xx.ari` [abgeleitet: Wiki toh/aruba/ap-365 'same platform']
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** USB, Art ? (AP-365: echt, CP2101) [abgeleitet]
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = nein; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Instant-On-Variante des AP-365 (Outdoor), Image aruba_ap-365 [geprüft: Gluon-Alias, Wiki toh:aruba:ap-365]
 - **Bedingung an die Herstellerfirmware:** Offen: ob das Instant-On-apboot wie beim AP11 nur signierte Images bootet, ist nicht belegt [abgeleitet: Analogie AP11]
@@ -1689,6 +1770,8 @@ ASUS RT-AC51U · ramips-mt7620 · K1d
 - **Datei:** Gluon-sysupgrade-Image direkt [geprüft: Commit 5f93298 nennt das sysupgrade]; beim `tftp put` ist der Dateiname frei [abgeleitet: Bootloader ist TFTP-Server]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ASUS Firmware Restoration (Windows) oder tftp-Client
 - **Typenschild/Verwechslung:** RT-AC51U heißt auch RT-AC750 (gleiches Stock-Image) [abgeleitet: Wiki toh/asus/rt-ac51u]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7620/openwrt-24.10.8-ramips-mt7620-asus_rt-ac51u-initramfs-kernel.bin) (200)
@@ -1725,6 +1808,8 @@ ASUS RT-AC57U v1 · ramips-mt7621 · K1d
 - **Datei:** Gluon-sysupgrade-Image direkt [geprüft: Commit 14e0e4f nennt das sysupgrade]; Dateiname beim `put` frei [abgeleitet: Bootloader ist TFTP-Server]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** tftp-Client
 - **Typenschild/Verwechslung:** nur RT-AC57U v1 (MediaTek MT7621), das ist ein umgelabelter RT-AC1200GU [geprüft: Commit 14e0e4f, Image-Rezept am Pin DEVICE_ALT0 RT-AC1200GU]; RT-AC57U v2 (ab August 2019) hat einen Qualcomm-SoC, v3 (ab März 2020) ebenfalls anders; nicht mit anderen Geräten namens RT-AC1200... verwechseln [abgeleitet: Wiki toh/asus/rt-ac57u]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-asus_rt-ac57u-v1-initramfs-kernel.bin) (200)
@@ -1763,6 +1848,8 @@ ASUS RT-AX53U (RT-AX1800U) · ramips-mt7621 · K1
 - **Datei:** Rettungsmodus: OpenWrt-`initramfs-kernel.bin` (nicht factory) [abgeleitet: Wiki toh/asus/rt-ax53u]; Gluon baut kein initramfs, darum das OpenWrt-24.10.8-initramfs [abgeleitet: Inventar]; Dateiname beim TFTP-Senden frei [abgeleitet: Bootloader ist TFTP-Server]; danach Gluon-sysupgrade
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** tftp-Client oder ASUS Firmware Restoration
 - **Typenschild/Verwechslung:** RT-AX53U = RT-AX1800U [geprüft: Image-Rezept am Pin DEVICE_ALT0]; RT-AX1800 (ohne U) ist ein anderes Gerät [abgeleitet: Wiki toh/asus/rt-ax53u]
 - **Bedingung an die Herstellerfirmware:** Die Weboberfläche der Herstellerfirmware nimmt OpenWrt nicht an [abgeleitet: Wiki toh/asus/rt-ax53u]
@@ -1812,6 +1899,8 @@ ASUS TUF-AX4200 · mediatek-filogic · K2
 - **Datei:** Sonderbau `openwrt-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin` (herbetom filogic-v2, Dezember 2023) auf dem Webserver als `openwrt.bin`, auf dem Router als `/tmp/openwrt.bin` [geprüft: Release-Text herbetom filogic-v2]; das normale OpenWrt-initramfs ist dafür nicht genannt [abgeleitet]; Freifunk Darmstadt verlinkt die ältere Fassung filogic-v1 (blocktrron) [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]; danach Gluon-sysupgrade; Datei geladen 15.10.2026: HEAD 200, 7.929.856 Byte, SHA256 c1e5129065f47774d3b5af3c464e1c9220d3a145ae7f8a47f14b42787e9fdc49 [geprüft]
 - **seriell nötig:** nein (nur für den seriellen Notweg: ja)
 - **Gehäuse öffnen:** nein (Lage der Konsole für den seriellen Notweg nicht belegt: ?)
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Sonderbau herbetom (Dez. 2023)
 - **Typenschild/Verwechslung:** TUF-AX4200 (ein 2.5-GbE-Port) nicht mit TUF-AX4200Q (zwei 2.5-GbE-Ports) verwechseln, eigenes Image [abgeleitet: Wiki toh/asus/tuf-ax4200; geprüft: Commit 237b1c2, Image-Rezept am Pin]; Gluon 2025.1 kennt nur den TUF-AX4200 [geprüft: gluon targets/mediatek-filogic]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin)
@@ -1855,6 +1944,8 @@ ASUS TUF-AX6000 · mediatek-filogic · K2
 - **Datei:** Sonderbau `openwrt-mediatek-filogic-asus_tuf-ax6000-initramfs-kernel.bin` (herbetom filogic-v2, Dezember 2023) auf dem Webserver als `openwrt.bin`, auf dem Router als `/tmp/openwrt.bin` [geprüft: Release-Text herbetom filogic-v2]; das normale OpenWrt-initramfs ist dafür nicht genannt [abgeleitet]; Freifunk Darmstadt verlinkt die ältere Fassung filogic-v1 (blocktrron) [geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext]; danach Gluon-sysupgrade; Datei geladen 15.10.2026: HEAD 200, 7.929.856 Byte, SHA256 c488b6e5107b524bff4da6da034d3dae1511c11e4376a56f28788fd867e2fdc7 [geprüft]
 - **seriell nötig:** nein (nur für den seriellen Notweg: ja)
 - **Gehäuse öffnen:** nein, Konsole außen: drei Löcher im Gehäuse (von unten RX, TX, GND), Stiftleisten-Drähte, 115200 8N1 [geprüft]
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Sonderbau herbetom (Dez. 2023)
 - **Typenschild/Verwechslung:** TUF-AX6000: vier Gigabit-LAN, ein 2.5-GbE-LAN, 2.5-GbE-WAN [abgeleitet: Wiki toh/asus/tuf-ax6000]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-asus_tuf-ax6000-initramfs-kernel.bin)
@@ -1896,6 +1987,8 @@ AVM FRITZ!Box 4020 · ath79-generic · K1d
 - **Programm:** fritzflash.py (Python 3, Windows/macOS/Linux) [geprüft: fritz-tools-Doku] oder Kommandozeilen-ftp mit passive-Modus; das ftp.exe von Windows kann kein passive [abgeleitet: Wiki 4020/3370]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** AVM EVA (FTP); fritz-tools laut Firmware-Selector
 - **Typenschild/Verwechslung:** 4020 und 4040 brauchen verschiedene Images (4040: -bootloader.bin) [geprüft: fritz-tools-Doku]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-avm_fritz4020-initramfs-kernel.bin) (Liste)
@@ -1934,6 +2027,8 @@ AVM FRITZ!WLAN Repeater 1750E (broken) · ath79-generic · K1d
 - **Programm:** fritzflash.py (Python 3, Windows/macOS/Linux) [geprüft: fritz-tools-Doku] oder Kommandozeilen-ftp mit passive-Modus; das ftp.exe von Windows kann kein passive [abgeleitet: Wiki 4020/3370]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** AVM EVA (FTP); fritz-tools laut Firmware-Selector
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-avm_fritz1750e-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -1969,6 +2064,8 @@ AVM FRITZ!WLAN Repeater 300E · ath79-generic · K1d
 - **Programm:** fritzflash.py (Python 3, Windows/macOS/Linux) [geprüft: fritz-tools-Doku] oder Kommandozeilen-ftp mit passive-Modus; das ftp.exe von Windows kann kein passive [abgeleitet: Wiki 4020/3370]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** AVM EVA (FTP); fritz-tools laut Firmware-Selector
 - **Typenschild/Verwechslung:** fritzflash.py erkennt den 300E an HWRevision 173 [abgeleitet: fritzflash.py-Quelltext]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-avm_fritz300e-initramfs-kernel.bin) (Liste)
@@ -2005,6 +2102,8 @@ AVM FRITZ!WLAN Repeater 450E · ath79-generic · K1d
 - **Programm:** fritzflash.py (Python 3, Windows/macOS/Linux) [geprüft: fritz-tools-Doku] oder Kommandozeilen-ftp mit passive-Modus; das ftp.exe von Windows kann kein passive [abgeleitet: Wiki 4020/3370]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** AVM EVA (FTP); fritz-tools laut Firmware-Selector
 - **Typenschild/Verwechslung:** fritzflash.py erkennt den 450E an HWRevision 200 [abgeleitet: fritzflash.py-Quelltext]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-avm_fritz450e-initramfs-kernel.bin) (Liste)
@@ -2041,6 +2140,8 @@ AVM FRITZ!Box 4040 · ipq40xx-generic · K1d
 - **Datei:** Gluon-...-bootloader.bin, nicht sysupgrade [geprüft: fritz-tools-Doku]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** fritz-tools / EVA-Upload
 - **Typenschild/Verwechslung:** 4040 braucht ein eigenes Bootloader-Image, das normale sysupgrade geht hier nicht [geprüft: fritz-tools-Doku]; nicht mit 4020 verwechseln
 - **Bedingung an die Herstellerfirmware:** FRITZ!OS muss einmal im Browser (192.168.178.1) eingerichtet worden sein (Sprache, Land, erstes Login), sonst nimmt der Bootloader kein FTP an [abgeleitet: Wiki 4040]
@@ -2078,6 +2179,8 @@ AVM FRITZ!Box 3370 Rev. 2, Hynix-NAND (Gluon: broken) · lantiq-xrx200 · K1d
 - **Datei:** Gluon-Dateien ...-eva-kernel.bin (nach mtd1) und ...-eva-filesystem.bin (nach mtd0) aus other/ [geprüft: Commit, Feld factory]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein; NAND-Hersteller laut Commit nur nach Öffnen erkennbar
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ftp-Client
 - **Typenschild/Verwechslung:** zwei Images nach NAND-Hersteller (Micron MT29F1G08ABADA oder Hynix HY27UF081G2M), von außen nicht erkennbar, nur nach Öffnen [geprüft: Commit 0b62fe5e]; ST-Micro NAND04GW3B2DN6 (512 MB) läuft mit dem Hynix-Image [abgeleitet: Wiki 3370]; nur ab HW-Revision 2 (`quote GETENV HWSubRevision`) [geprüft: Commit]
 - **Bedingung an die Herstellerfirmware:** Bootloader-Version prüfen per FTP `quote GETENV urlader-version`: bei EVA 2186 startet die Box nach 30 s neu, alles muss in diesen 30 s fertig sein [geprüft: Commit 0b62fe5e]
@@ -2116,6 +2219,8 @@ AVM FRITZ!Box 3370 Rev. 2, Micron-NAND (Gluon: broken) · lantiq-xrx200 · K1d
 - **Datei:** Gluon-Dateien ...-eva-kernel.bin (nach mtd1) und ...-eva-filesystem.bin (nach mtd0) aus other/ [geprüft: Commit, Feld factory]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein; NAND-Hersteller laut Commit nur nach Öffnen erkennbar
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ftp-Client
 - **Typenschild/Verwechslung:** zwei Images nach NAND-Hersteller (Micron MT29F1G08ABADA oder Hynix HY27UF081G2M), von außen nicht erkennbar, nur nach Öffnen [geprüft: Commit 0b62fe5e]; ST-Micro NAND04GW3B2DN6 (512 MB) läuft mit dem Hynix-Image [abgeleitet: Wiki 3370]; nur ab HW-Revision 2 (`quote GETENV HWSubRevision`) [geprüft: Commit]
 - **Bedingung an die Herstellerfirmware:** Bootloader-Version prüfen per FTP `quote GETENV urlader-version`: bei EVA 2186 startet die Box nach 30 s neu, alles muss in diesen 30 s fertig sein [geprüft: Commit 0b62fe5e]
@@ -2156,6 +2261,8 @@ AVM FRITZ!Box 7360 SL (Alias 7360 v1) · lantiq-xrx200 · K1d
 - **Programm:** fritzflash.py (Python 3, Windows/macOS/Linux) [geprüft: fritz-tools-Doku] oder Kommandozeilen-ftp mit passive-Modus; das ftp.exe von Windows kann kein passive [abgeleitet: Wiki 4020/3370]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ftp-Client
 - **Typenschild/Verwechslung:** 7360 gibt es als SL (HWRevision 181), v1 (183) und v2 (196); dieses Image für 181 und 183, für 196 das 7360-v2-Image; prüfen per EVA-FTP `quote GETENV HWRevision` [abgeleitet: Wiki 7360]; in FRITZ!OS: Versionsnummer beginnt bei v1 mit 111, bei v2 mit 124 [abgeleitet: Wiki 7360]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/lantiq/xrx200/openwrt-24.10.8-lantiq-xrx200-avm_fritz7360sl-initramfs-kernel.bin) (200)
@@ -2195,6 +2302,8 @@ AVM FRITZ!Box 7360 v1 (Alias von avm-fritz-box-7360-sl) · lantiq-xrx200 · K1d
 - **Programm:** fritzflash.py (Python 3, Windows/macOS/Linux) [geprüft: fritz-tools-Doku] oder Kommandozeilen-ftp mit passive-Modus; das ftp.exe von Windows kann kein passive [abgeleitet: Wiki 4020/3370]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ftp-Client
 - **Typenschild/Verwechslung:** 7360 gibt es als SL (HWRevision 181), v1 (183) und v2 (196); dieses Image für 181 und 183, für 196 das 7360-v2-Image; prüfen per EVA-FTP `quote GETENV HWRevision` [abgeleitet: Wiki 7360]; in FRITZ!OS: Versionsnummer beginnt bei v1 mit 111, bei v2 mit 124 [abgeleitet: Wiki 7360]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/lantiq/xrx200/openwrt-24.10.8-lantiq-xrx200-avm_fritz7360sl-initramfs-kernel.bin) (200)
@@ -2233,6 +2342,8 @@ AVM FRITZ!Box 7360 v2 · lantiq-xrx200 · K1d
 - **Programm:** fritzflash.py (Python 3, Windows/macOS/Linux) [geprüft: fritz-tools-Doku] oder Kommandozeilen-ftp mit passive-Modus; das ftp.exe von Windows kann kein passive [abgeleitet: Wiki 4020/3370]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ftp-Client
 - **Typenschild/Verwechslung:** nur 7360 v2 (HWRevision 196); auch ohne "v2" auf dem Typenschild kann es eine v2 sein, prüfen per EVA-FTP `quote GETENV HWRevision`; 181/183 = 7360 SL/v1 [abgeleitet: Wiki 7360 v2]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/lantiq/xrx200/openwrt-24.10.8-lantiq-xrx200-avm_fritz7360-v2-initramfs-kernel.bin) (200)
@@ -2270,6 +2381,8 @@ AVM FRITZ!Box 7312 · lantiq-xway · K1d
 - **Programm:** fritzflash.py (Python 3, Windows/macOS/Linux) [geprüft: fritz-tools-Doku] oder Kommandozeilen-ftp mit passive-Modus; das ftp.exe von Windows kann kein passive [abgeleitet: Wiki 4020/3370]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ftp-Client (fritz-tools)
 - **Typenschild/Verwechslung:** 7312 ist auch als "1&1 WLAN-MODEM" verkauft worden; fast wie 7330, aber nur ein Netzwerkanschluss und kein USB [geprüft: Commit 02d53e6a]; fritzflash.py erkennt sie an HWRevision 189 [abgeleitet: fritzflash.py-Quelltext]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/lantiq/xway/openwrt-24.10.8-lantiq-xway-avm_fritz7312-initramfs-kernel.bin) (200)
@@ -2310,6 +2423,8 @@ AVM FRITZ!Box 3390 · lantiq-xrx200 · K1
 - **Datei:** OpenWrt-initramfs muss lzma-komprimiert sein, das ist bei lantiq ab Werk so [geprüft: Commit; config/Config-images.in am Pin]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** eva_ramboot.py (OpenWrt scripts/flashing)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/lantiq/xrx200/openwrt-24.10.8-lantiq-xrx200-avm_fritz3390-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** -
@@ -2346,6 +2461,8 @@ AVM FRITZ!Box 7362 SL · lantiq-xrx200 · K1
 - **Datei:** OpenWrt-initramfs muss lzma-komprimiert sein, das ist bei lantiq ab Werk so [geprüft: Commit; config/Config-images.in am Pin]; ohne lzma hängt der Bootloader [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** eva_ramboot.py
 - **Typenschild/Verwechslung:** fritz-tools/fritzflash.py unterstützt die 7362 SL ausdrücklich nicht, hier eva_ramboot.py [geprüft: fritz-tools-Doku]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/lantiq/xrx200/openwrt-24.10.8-lantiq-xrx200-avm_fritz7362sl-initramfs-kernel.bin) (200)
@@ -2385,6 +2502,8 @@ AVM FRITZ!Box 7412 · lantiq-xrx200 · K1
 - **Datei:** OpenWrt-initramfs muss lzma-komprimiert sein, das ist bei lantiq ab Werk so [geprüft: Commit; config/Config-images.in am Pin]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** eva_ramboot.py
 - **Bedingung an die Herstellerfirmware:** vor sysupgrade prüfen, dass linux_fs_start nicht 1 ist (`fritz_tffs_nand -d /dev/mtd1 -n linux_fs_start`); wenn 1: FRITZ!OS-Update oder Recovery, dann von vorn [geprüft: Commit 20f48c8a]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/lantiq/xrx200/openwrt-24.10.8-lantiq-xrx200-avm_fritz7412-initramfs-kernel.bin) (200)
@@ -2424,6 +2543,8 @@ AVM FRITZ!Box 7430 · lantiq-xrx200 · K1
 - **Datei:** OpenWrt-initramfs muss lzma-komprimiert sein, das ist bei lantiq ab Werk so [geprüft: Commit; config/Config-images.in am Pin]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** eva_ramboot.py
 - **Typenschild/Verwechslung:** HWRevision der 7430 ist 218 (per EVA-FTP `quote GETENV HWRevision`) [abgeleitet: Wiki 7430]
 - **Bedingung an die Herstellerfirmware:** vor sysupgrade prüfen, dass linux_fs_start nicht 1 ist; wenn 1: per FTP auf 0 setzen, FRITZ!OS-Update oder Recovery [geprüft: Commit 6c85a449]
@@ -2469,6 +2590,8 @@ AVM FRITZ!Box 7520 (Alias von avm-fritz-box-7530) · ipq40xx-generic · K2
 - **Datei:** uboot-fritz7520.bin (OpenWrt-Download u-boot-fritz7520/) [geprüft: Commit]; OpenWrt-initramfs auf dem TFTP-Server als FRITZ7520.bin [geprüft: Commit, U-Boot-Quelltext: serverip 192.168.1.70, bootfile FRITZ7520.bin]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** eva_ramboot.py, OpenWrt-U-Boot
 - **Typenschild/Verwechslung:** gleiche Plattform wie 7530, aber eigener U-Boot (uboot-fritz7520.bin) und TFTP-Name FRITZ7520.bin; Gluon-Image ist das der 7530 [geprüft: uboot-fritz4040/Makefile am Pin, U-Boot-Quelltext]; 7520 "Typ B" hat dieselbe Hardware [abgeleitet: Wiki 7520/7530]; 7530 AX ist etwas anderes und geht nicht [abgeleitet: Wiki]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-avm_fritzbox-7530-initramfs-uImage.itb)
@@ -2509,6 +2632,8 @@ AVM FRITZ!Box 7530 · ipq40xx-generic · K2
 - **Datei:** uboot-fritz7530.bin (OpenWrt-Download u-boot-fritz7530/) [geprüft: Commit]; OpenWrt-initramfs auf dem TFTP-Server als FRITZ7530.bin [geprüft: Commit, U-Boot-Quelltext: serverip 192.168.1.70, bootfile FRITZ7530.bin]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** eva_ramboot.py, OpenWrt-U-Boot
 - **Typenschild/Verwechslung:** FRITZ!Box 7530 AX ist ein anderes Gerät (Broadcom) und geht nicht [abgeleitet: Wiki 7530; geprüft: kein avm-Device "7530 ax" am OpenWrt-Pin]; manche 7530 (bekannt: A1-Provider-Gerät) haben einen anderen Flash-Chip, von außen nicht erkennbar [abgeleitet: Wiki 7530]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-avm_fritzbox-7530-initramfs-uImage.itb)
@@ -2549,6 +2674,8 @@ AVM FRITZ!Repeater 1200 · ipq40xx-generic · K2
 - **Datei:** uboot-fritz1200.bin (OpenWrt-Download u-boot-fritz1200/) [geprüft: Commit]; OpenWrt-initramfs auf dem TFTP-Server als FRITZ1200.bin [geprüft: Commit, U-Boot-Quelltext: serverip 192.168.1.70, bootfile FRITZ1200.bin]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** eva_ramboot.py, OpenWrt-U-Boot
 - **Typenschild/Verwechslung:** nur FRITZ!Repeater 1200, nicht 1200 AX (am OpenWrt-Pin kein Gerät dafür) [abgeleitet: Device-Liste am Pin]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-avm_fritzrepeater-1200-initramfs-uImage.itb)
@@ -2590,6 +2717,8 @@ AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) · ipq40xx-gen
 - **Datei:** uboot-fritz3000.bin (OpenWrt-Download u-boot-fritz3000/) [geprüft: Commit]; OpenWrt-initramfs auf dem TFTP-Server als FRITZ3000.bin [geprüft: Commit, U-Boot-Quelltext: serverip 192.168.1.70, bootfile FRITZ3000.bin]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** eva_ramboot.py, OpenWrt-U-Boot
 - **Typenschild/Verwechslung:** nur FRITZ!Repeater 3000, nicht 3000 AX (am OpenWrt-Pin kein Gerät dafür) [abgeleitet: Device-Liste am Pin]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-avm_fritzrepeater-3000-initramfs-uImage.itb)
@@ -2636,6 +2765,8 @@ Cudy AP3000 Outdoor v1 · mediatek-filogic · K2
 - **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner AP3000_Outdoor_1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Typenschild/Verwechslung:** AP3000 Outdoor ist ein anderes Gerät als AP3000 v1 und AP3000 Wall; Zwischenfirmware je Modell [geprüft: Spiegel-Ordner]; Gluon 2025.1 kennt den neuen Flash F50L1G41LC (OpenWrt-Backport 422 F50L1G41LC am Pin) [geprüft: OpenWrt-Pin]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
@@ -2676,6 +2807,8 @@ Cudy AP3000 v1 · mediatek-filogic · K2
 - **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner AP3000_V1.0 (Datei kam vom Cudy-Support) [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Typenschild/Verwechslung:** nicht mit AP3000 Outdoor oder AP3000 Wall verwechseln, je eigene Zwischenfirmware [geprüft: Spiegel-Ordner]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
@@ -2718,6 +2851,8 @@ Cudy AP3000 Wall v1 · mediatek-filogic · K2
 - **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner AP3000_Wall_1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Typenschild/Verwechslung:** AP3000 Wall ist ein anderes Gerät als AP3000 v1/Outdoor [geprüft: Spiegel-Ordner]; erst ab Gluon 2025.1 [geprüft: Neanderfunk-Notiz]; Gluon 2025.1 kennt den neuen Flash F50L1G41LC (OpenWrt-Backport 422 F50L1G41LC am Pin) [geprüft: OpenWrt-Pin]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
@@ -2760,6 +2895,8 @@ Cudy M3000 v1 (RTL8221B) · mediatek-filogic · K2
 - **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner M3000_1.0_2.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Typenschild/Verwechslung:** M3000 gibt es mit WAN-PHY Realtek RTL8221B (dieses Image) oder Motorcomm YT8821 (eigenes Image cudy-m3000-v2-with-motorcomm-yt8821); in der Cudy-Oberfläche unter Diagnose-Werkzeuge > Systemprotokoll nach "rtl8221b" suchen: Treffer = dieses Gerät [geprüft: Commit 45b51eba]; Gluon 2025.1 kennt den neuen Flash F50L1G41LC (OpenWrt-Backport 422 F50L1G41LC am Pin) [geprüft: OpenWrt-Pin]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
@@ -2802,6 +2939,8 @@ Cudy M3000 v2 mit Motorcomm YT8821 · mediatek-filogic · K2
 - **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner M3000_1.0_2.0 (ob sie zur YT8821-Variante passt, ungeklärt) [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, Platine ausbauen)
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Typenschild/Verwechslung:** nur M3000 mit Motorcomm-YT8821-PHY: in der Cudy-Oberfläche unter Diagnose-Werkzeuge > Systemprotokoll suchen; "rtl8221b" gefunden = falsches Image (dann cudy-m3000-v1), "yt8821" gefunden = dieses Image; keins von beiden = Router neu starten und erneut suchen [geprüft: Commit 45b51eba]; Gluon 2025.1 kennt den neuen Flash F50L1G41LC (OpenWrt-Backport 422 F50L1G41LC am Pin) [geprüft: OpenWrt-Pin]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
@@ -2842,6 +2981,8 @@ Cudy RE3000 v1 · mediatek-filogic · K2
 - **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner RE3000_V1 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-cudy_re3000-v1-initramfs-kernel.bin)
@@ -2882,6 +3023,8 @@ Cudy TR3000 256 MB v1 · mediatek-filogic · K2
 - **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner TR3000_256MB_Flash_V1_not_for_TR3000_V1_ [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Typenschild/Verwechslung:** TR3000 256MB v1 (256 MiB Flash, 512 MiB RAM) ist nicht die normale TR3000 v1 (128 MiB Flash); Spiegel-Ordner sagt ausdrücklich "not for TR3000 V1" [geprüft: Commit, Spiegel]; Typenschild "TR3000-256MB" [abgeleitet: Modellname bei Cudy]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
@@ -2920,6 +3063,8 @@ Cudy TR3000 v1 (128 MB Flash) · mediatek-filogic · K2
 - **Datei:** Dateiname per `setenv bootfile` frei, Wiki: Name muss 'initramfs' enthalten; strengster Name `initramfs-kernel.bin` [Zwang: abgeleitet; geprüft: Wiki toh:cudy:tr3000]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** ja (interne Testpunkte)
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = sysupgrade; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** 128-MB- und 256-MB-Flash-Version: Angabe auf Karton/Typenschild; die 256-MB-Version hat ein eigenes Image [geprüft: Wiki toh:cudy:tr3000]. Nicht mit dem 'ubootmod'-Image (OpenWrt-U-Boot-Layout) mischen [abgeleitet: Wiki]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-cudy_tr3000-v1-initramfs-kernel.bin)
@@ -2961,6 +3106,8 @@ Cudy WR3000 v1 · mediatek-filogic · K2
 - **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000+V1_without_recovery_TFTP [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Typenschild/Verwechslung:** WR3000 v2 geht nicht (anderer Chip, kein OpenWrt); im Angebot erkennbar: v1 "1,3 GHz", v2 "1,2 GHz" [geprüft: Neanderfunk-Notiz]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
@@ -3002,6 +3149,8 @@ Cudy WR3000E v1 · mediatek-filogic · K2
 - **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000E_1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Typenschild/Verwechslung:** WR3000E v2 geht nicht (anderer Chip) [geprüft: Neanderfunk-Notiz]; WR3000E und WR3000S haben dieselbe Platine, aber anderen Flash und andere LED-Farben (rot/blau statt weiß) [geprüft: Commit]; Gluon 2025.1 kennt den neuen Flash F50L1G41LC (OpenWrt-Backport 422 F50L1G41LC am Pin) [geprüft: OpenWrt-Pin]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
@@ -3043,6 +3192,8 @@ Cudy WR3000H v1 · mediatek-filogic · K2
 - **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000H_1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Typenschild/Verwechslung:** Nutzerberichte: neuere WR3000H mit F50L1G41LC-Flash und Motorcomm-YT8821-WAN-PHY melden bei der Zwischenfirmware vom 19.11.2025 "File is invalid" [abgeleitet: Kommentar Cudy-FAQ 09.10.2026, unbestätigt]; Gluon 2025.1 kennt den neuen Flash F50L1G41LC (OpenWrt-Backport 422 F50L1G41LC am Pin) [geprüft: OpenWrt-Pin]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
@@ -3084,6 +3235,8 @@ Cudy WR3000P v1 · mediatek-filogic · K2
 - **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000P_1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Typenschild/Verwechslung:** erst ab Gluon 2025.1 [geprüft: Neanderfunk-Notiz]; WR3000P hat PoE am WAN-Port und USB, sonst wie WR3000H [geprüft: Commit]; Gluon 2025.1 kennt den neuen Flash F50L1G41LC (OpenWrt-Backport 422 F50L1G41LC am Pin) [geprüft: OpenWrt-Pin]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
@@ -3125,6 +3278,8 @@ Cudy WR3000S v1 · mediatek-filogic · K2
 - **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000S_1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Typenschild/Verwechslung:** WR3000S und WR3000E haben dieselbe Platine, aber anderen Flash; je eigenes Image und eigene Zwischenfirmware [geprüft: Commit WR3000E, Spiegel]; Gluon 2025.1 kennt den neuen Flash F50L1G41LC (OpenWrt-Backport 422 F50L1G41LC am Pin) [geprüft: OpenWrt-Pin]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
@@ -3166,6 +3321,8 @@ Cudy WR3000U v1 · mediatek-filogic · K2
 - **Datei:** Zwischenfirmware nicht im Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ (Ordner keiner), nur im Cudy-Google-Drive "Cudy Intermediary OpenWrt Firmware" [geprüft: Commit] [geprüft: Neanderfunk-Notiz]; Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ?, laut Commit "Serial console: no need to solder")
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware (nicht im Spiegel, nur Cudy-Drive)
 - **Typenschild/Verwechslung:** WR3000U (256 MiB Flash) ist nicht der russische OEM-Bruder WBR3000UAX (128 MiB Flash) [geprüft: Commit]; Cudy-Download heißt "wr3000u-256mb-1-0" [geprüft: Commit]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
@@ -3207,6 +3364,8 @@ Cudy AP1300 Outdoor v1 · ramips-mt7621 · K2
 - **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner AP1300_Outdoor_V1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-cudy_ap1300-outdoor-v1-initramfs-kernel.bin) (200)
@@ -3246,6 +3405,8 @@ Cudy M1800 · ramips-mt7621 · K2
 - **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner M1800+V2 (ob sie zum Gluon-Image cudy-m1800 passt, ungeprüft) [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Typenschild/Verwechslung:** im Spiegel und bei Cudy nur "M1800 V2"; OpenWrt kennt nur "cudy_m1800" ohne Version [geprüft: Spiegel, Commit]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
@@ -3286,6 +3447,8 @@ Cudy WR1300 v1 · ramips-mt7621 · K2
 - **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR1300+V1 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Typenschild/Verwechslung:** nur WR1300 v1; v2/v3 sind andere Hardware mit eigener Zwischenfirmware (Spiegel-Ordner WR1300_V2_V3) [geprüft: Spiegel]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
@@ -3326,6 +3489,8 @@ Cudy WR2100 · ramips-mt7621 · K2
 - **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR2100+V1 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-cudy_wr2100-initramfs-kernel.bin) (200)
@@ -3365,6 +3530,8 @@ Cudy X6 v1 · ramips-mt7621 · K2
 - **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner X6+V1 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Typenschild/Verwechslung:** X6 v1 hat 32 MB Flash, X6 v2 16 MB; je eigenes Image und eigene Zwischenfirmware [geprüft: Commit X6 v2, Spiegel]; Version steht auf dem Typenschild [geprüft: Neanderfunk-Notiz]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
@@ -3405,6 +3572,8 @@ Cudy X6 v2 · ramips-mt7621 · K2
 - **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner X6+V2 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Typenschild/Verwechslung:** X6 v2 hat 16 MB Flash, X6 v1 32 MB; je eigenes Image und eigene Zwischenfirmware [geprüft: Commit, Spiegel]; Version steht auf dem Typenschild [geprüft: Neanderfunk-Notiz]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
@@ -3445,6 +3614,8 @@ Cudy TR1200 v1 · ramips-mt76x8 · K2
 - **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner TR1200_V1 (Datei TR1200-OpenWRT-Flash.bin; Gerät nicht in Neanderfunk-Notiz, Weg wie die anderen Cudy [abgeleitet]) [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein (mit Zwischenfirmware; nur für den seriellen Weg laut Commit: ja)
 - **Gehäuse öffnen:** nein (mit Zwischenfirmware; nur für den seriellen Weg laut Commit: ja, UART unbestückt)
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-cudy_tr1200-v1-initramfs-kernel.bin) (200)
@@ -3486,6 +3657,8 @@ devolo WiFi pro 1200e · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade nach /tmp, installieren mit `sysupgrade -n -F /tmp/<datei>` [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** SSH auf der Stock-Firmware
 - **Bedingung an die Herstellerfirmware:** root-Passwort muss beim ersten Einrichten der Stock-Firmware gesetzt werden, sonst kein SSH-Login [geprüft: Commits 'Make sure you set a password for the root user as prompted on first setup']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-devolo_dvl1200e-initramfs-kernel.bin) (Liste)
@@ -3520,6 +3693,8 @@ devolo WiFi pro 1200i · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade nach /tmp, installieren mit `sysupgrade -n -F /tmp/<datei>` [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** SSH auf der Stock-Firmware
 - **Bedingung an die Herstellerfirmware:** root-Passwort muss beim ersten Einrichten der Stock-Firmware gesetzt werden, sonst kein SSH-Login [geprüft: Commits 'Make sure you set a password for the root user as prompted on first setup']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-devolo_dvl1200i-initramfs-kernel.bin) (Liste)
@@ -3554,6 +3729,8 @@ devolo WiFi pro 1750c · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade nach /tmp, installieren mit `sysupgrade -n -F /tmp/<datei>` [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** SSH auf der Stock-Firmware
 - **Bedingung an die Herstellerfirmware:** root-Passwort muss beim ersten Einrichten der Stock-Firmware gesetzt werden, sonst kein SSH-Login [geprüft: Commits 'Make sure you set a password for the root user as prompted on first setup']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-devolo_dvl1750c-initramfs-kernel.bin) (Liste)
@@ -3588,6 +3765,8 @@ devolo WiFi pro 1750e · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade nach /tmp, installieren mit `sysupgrade -n -F /tmp/<datei>` [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** SSH auf der Stock-Firmware
 - **Bedingung an die Herstellerfirmware:** root-Passwort muss beim ersten Einrichten der Stock-Firmware gesetzt werden, sonst kein SSH-Login [geprüft: Commits 'Make sure you set a password for the root user as prompted on first setup']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-devolo_dvl1750e-initramfs-kernel.bin) (Liste)
@@ -3622,6 +3801,8 @@ devolo WiFi pro 1750i · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade nach /tmp, installieren mit `sysupgrade -n -F /tmp/<datei>` [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** SSH auf der Stock-Firmware
 - **Bedingung an die Herstellerfirmware:** root-Passwort muss beim ersten Einrichten der Stock-Firmware gesetzt werden, sonst kein SSH-Login [geprüft: Commits 'Make sure you set a password for the root user as prompted on first setup']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-devolo_dvl1750i-initramfs-kernel.bin) (Liste)
@@ -3656,6 +3837,8 @@ devolo WiFi pro 1750x · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade nach /tmp, installieren mit `sysupgrade -n -F /tmp/<datei>` [geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** SSH auf der Stock-Firmware
 - **Bedingung an die Herstellerfirmware:** root-Passwort muss beim ersten Einrichten der Stock-Firmware gesetzt werden, sonst kein SSH-Login [geprüft: Commits 'Make sure you set a password for the root user as prompted on first setup']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-devolo_dvl1750x-initramfs-kernel.bin) (Liste)
@@ -3692,6 +3875,8 @@ D-Link AQUILA PRO AI M30 A1 · mediatek-filogic · K1
 - **Datei:** OpenWrt-squashfs-recovery.bin (initramfs mit D-Link-Header DLK6E6110001; Gluon baut für den M30 bewusst kein Recovery-Image), danach Gluon-sysupgrade [geprüft] [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Geräte aus Mehrfach-Packs (Typenschild 'M60-2' bzw. 'M30/CP') haben die MAC an anderer Stelle in den Werksdaten; erst Gluon-Bauten mit dem Neanderfunk-Odm-Parser lesen sie richtig (M30 laut Notiz seit gluon-patches-hardware 9901905) [geprüft: Neanderfunk-Notiz, am Gerät bestätigt]
 - **Bedingung an die Herstellerfirmware:** Recovery schreibt immer in die gerade aktive Partition, OpenWrt bootet nur aus der ersten; liegt die zweite vorn: entschlüsseltes OEM-Image per Recovery, dann verschlüsseltes OEM-Image über die OEM-Oberfläche, dann erneut OpenWrt per Recovery [geprüft: Commit 29cca6c]
@@ -3732,6 +3917,8 @@ D-Link AQUILA PRO AI M60 A1 · mediatek-filogic · K1
 - **Datei:** OpenWrt-squashfs-recovery.bin (initramfs mit D-Link-Header DLK6E8202001, 50 MB), danach Gluon-sysupgrade mit `sysupgrade -n` [geprüft: Neanderfunk-Notiz] [geprüft, am Gerät 29./30.09.2026 erprobt]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** bei falscher Partition: UBI-Switch-Image (github RolandoMagico, M60-Recovery-UBI-Switch)
 - **Typenschild/Verwechslung:** Geräte aus Mehrfach-Packs (Typenschild 'M60-2' bzw. 'M30/CP') haben die MAC an anderer Stelle in den Werksdaten; erst Gluon-Bauten mit dem Neanderfunk-Odm-Parser lesen sie richtig (M60 ab 26093000bro) [geprüft: Neanderfunk-Notiz, am Gerät bestätigt]
 - **Bedingung an die Herstellerfirmware:** Recovery schreibt in die aktive Partition, OpenWrt bootet nur aus der ersten; sonst vorher das UBI-Switch-Image (github RolandoMagico, M60-Recovery-UBI-Switch) per Recovery und darunter ein sysupgrade [geprüft: Commit 7271ee5]; am Gerät nicht nötig, kein Downgrade nötig [geprüft: Neanderfunk-Notiz]; Flashen über die OEM-Oberfläche geht nicht [geprüft: Commit]
@@ -3771,6 +3958,8 @@ D-Link DAP-1620 B1 (Gluon: broken) · ramips-mt7621 · K0
 - **Datei:** factory.bin hochladen und bestätigen [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-dlink_dap-1620-b1-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
@@ -3801,6 +3990,8 @@ D-Link DAP-X1860 A1 · ramips-mt7621 · K0
 - **Datei:** laut Commit factory.bin [geprüft]; laut Neanderfunk-Notiz (01.10.2026) dagegen OpenWrt-initramfs und danach Gluon-sysupgrade: Widerspruch offen
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-dlink_dap-x1860-a1-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
@@ -3835,6 +4026,8 @@ D-Link DIR-878 A1 · ramips-mt7621 · K0
 - **Datei:** Gluon-factory (`<gluon-factory>.bin`) [geprüft] [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** curl (optional)
 - **Typenschild/Verwechslung:** DIR-878 und DIR-882 (mit USB) sind eng verwandt, DIR-867 ebenso; jeweils eigenes Image [abgeleitet: Commit 73e8f23 nennt DIR-867/882-Unterschiede]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-dlink_dir-878-a1-initramfs-kernel.bin) (200)
@@ -3866,6 +4059,8 @@ D-Link DIR-882 A1 · ramips-mt7621 · K0
 - **Datei:** Gluon-factory (`<gluon-factory>.bin`) [geprüft] [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** curl (optional)
 - **Typenschild/Verwechslung:** DIR-882 (USB 2.0 + 3.0) vs. DIR-867 (ohne USB, nur 3x3-WLAN) und DIR-878: gleiche Plattform, eigene Images [geprüft: Commit 73e8f23]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-dlink_dir-882-a1-initramfs-kernel.bin) (200)
@@ -3902,6 +4097,8 @@ GL.iNet 6416 · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade (gilt für Stock-GUI und U-Boot) [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** GL.iNet-U-Boot-Web nimmt sysupgrade
 - **Typenschild/Verwechslung:** 6408 (8 MB Flash) und 6416 (16 MB) sehen gleich aus, nur Flash-Größe verschieden: richtiges Image wählen; es gibt auch 1-Port-Ausführungen von Drittanbietern [geprüft: Commit b4d3110]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-glinet_6416-initramfs-kernel.bin) (Liste)
@@ -3937,6 +4134,8 @@ GL.iNet GL-AR150 · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade (GL.iNet-U-Boot-Web) [abgeleitet: Commit 53c474a ohne Anleitung, Verfahren wie bei den anderen GL.iNet]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** GL.iNet-U-Boot-Web
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-glinet_gl-ar150-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -3966,6 +4165,8 @@ GL.iNet GL-AR300M Lite · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade, Einstellungen nicht behalten [geprüft: Commit fefa34d]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = sysupgrade; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Stock ist OpenWrt-basiert
 - **Typenschild/Verwechslung:** AR300M-Lite = nur ein Ethernet-Port, nur NOR-Flash; GL-AR300M16 = nur NOR; GL-AR300M ohne Zusatz hat zusätzlich 128 MB NAND [geprüft: Commits fefa34d, b591cab, 55e6c90]
 - **Bedingung an die Herstellerfirmware:** Noch Ende 2024 verkaufte AR300M hatten einen alten U-Boot, der neue Images ablehnen kann (U-Boot-Update über http://192.168.1.1/uboot.html) [abgeleitet: Wiki toh/gl.inet/gl-ar300m]
@@ -4002,6 +4203,8 @@ GL.iNet GL-AR300M16 · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade (GL.iNet-U-Boot-Web) [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** GL.iNet-U-Boot-Web
 - **Typenschild/Verwechslung:** AR300M16 = nur 16 MB NOR, kein NAND; nicht mit GL-AR300M (mit NAND) oder AR300M-Lite (1 Port) verwechseln [geprüft: Commit b591cab]
 - **Bedingung an die Herstellerfirmware:** Noch Ende 2024 verkaufte AR300M hatten einen alten U-Boot, der neue Images ablehnen kann [abgeleitet: Wiki toh/gl.inet/gl-ar300m]
@@ -4033,6 +4236,8 @@ GL.iNet GL-AR750 · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = sysupgrade; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Stock ist OpenWrt-basiert
 - **Typenschild/Verwechslung:** GL-AR750 'Creta' (3 weiße LEDs) nicht mit GL-AR750S 'Slate' verwechseln [abgeleitet: Modellnamen, LED-Angabe aus Commit 921675a]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-glinet_gl-ar750-initramfs-kernel.bin) (Liste)
@@ -4063,6 +4268,8 @@ GL.iNET GL-USB150 · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade, Einstellungen nicht behalten [geprüft: Commit a1b5a43]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = sysupgrade; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Stock ist OpenWrt-basiert
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-glinet_gl-usb150-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -4097,6 +4304,8 @@ GL.iNet GL-AR300M NOR · ath79-nand · K1d
 - **Datei:** Gluon-sysupgrade in den NOR-Bereich (U-Boot nimmt NOR-sysupgrade oder NAND-factory.img) [geprüft: Commit 55e6c90]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** GL.iNet-U-Boot-Web
 - **Typenschild/Verwechslung:** GL-AR300M (mit NAND) / GL-AR300M16 (nur NOR) / GL-AR300M-Lite (nur NOR, 1 Port) haben eigene Gluon-Images [geprüft: Commits 55e6c90, b591cab, fefa34d]; der OEM-U-Boot fällt nach drei misslungenen NAND-Starts auf NOR zurück [geprüft: Commit 55e6c90]
 - **Bedingung an die Herstellerfirmware:** Noch Ende 2024 verkaufte AR300M hatten einen alten U-Boot, der neue Images ablehnen kann (U-Boot-Update über http://192.168.1.1/uboot.html) [abgeleitet: Wiki toh/gl.inet/gl-ar300m]
@@ -4134,6 +4343,8 @@ GL.iNet GL-AR750S NOR · ath79-nand · K1d
 - **Datei:** Gluon-sysupgrade im Abschnitt 'NOR flash' wählen, 'update nor firmware' [geprüft: Commit af28d8a]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** GL.iNet-U-Boot-Web
 - **Typenschild/Verwechslung:** GL-AR750S 'Slate' (auch -EXT) nicht mit GL-AR750 'Creta' verwechseln; Gluon nutzt das NOR-Profil [abgeleitet: Modellnamen; Profil geprüft: Commit b496a22]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-ar750s-nor-initramfs-kernel.bin) (Liste)
@@ -4171,6 +4382,8 @@ GL.iNet GL-E750 (broken) · ath79-nand · K2
 - **Datei:** OpenWrt-factory.img als Zwischenschritt, Gluon baut kein factory.img [abgeleitet]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = ja; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** GL.iNet-U-Boot-Web, OpenWrt-factory.img als Zwischenschritt [abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-e750-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein Gluon-factory; OpenWrt: [squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img)
@@ -4206,6 +4419,8 @@ GL.iNet GL-XE300 · ath79-nand · K2
 - **Datei:** factory-Image auf der Rescue-Seite [geprüft: Commit]; Gluon baut kein factory.img -> OpenWrt-factory.img als Zwischenschritt [abgeleitet]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = ja; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** GL.iNet-U-Boot-Web, OpenWrt-factory.img als Zwischenschritt [abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-xe300-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein Gluon-factory; OpenWrt: [squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img) (HEAD 200)
@@ -4241,6 +4456,8 @@ GL.iNet GL-AP1300 · ipq40xx-generic · K0
 - **Datei:** Gluon-factory (.ubi) [geprüft: Commit, nand-factory.ubi]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-glinet_gl-ap1300-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.ubi](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-glinet_gl-ap1300-squashfs-factory.ubi)
@@ -4276,6 +4493,8 @@ GL.iNet GL-B1300 · ipq40xx-generic · K1d
 - **Datei:** Gluon-sysupgrade, laut Commit (2017) für U-Boot-Web und TFTP umbenannt in genau `lede-gl-b1300.bin`; ob heutige U-Boots den Namen verlangen [abgeleitet: offen]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-glinet_gl-b1300-initramfs-zImage.itb)
 - **Factory-/Stock-Image-Link:** -
@@ -4306,6 +4525,8 @@ GL.iNet GL-MT2500 (MaxLinear-PHY) · mediatek-filogic · K1d
 - **Datei:** Gluon-sysupgrade, Einstellungen NICHT behalten [geprüft: Commit 1239668; Adresse aus GL-Doku]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = sysupgrade; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Neuere Hardware-Revision mit Airoha-PHY statt MaxLinear braucht in OpenWrt ein eigenes Profil (glinet_gl-mt2500-airoha), das Gluon nicht führt [geprüft: vorhandenes Feld weg, OpenWrt-24.10.8-Liste]; GL-Doku nennt GL-MT2500 und GL-MT2500A gemeinsam [geprüft: GL-Doku]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-glinet_gl-mt2500-initramfs-kernel.bin)
@@ -4336,6 +4557,8 @@ GL.iNet GL-MT3000 · mediatek-filogic · K1d
 - **Datei:** Gluon-sysupgrade, Konfiguration NICHT behalten [abgeleitet: Wiki toh/gl.inet/gl-mt3000]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = sysupgrade; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-glinet_gl-mt3000-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** -
@@ -4366,6 +4589,8 @@ GL.iNet GL-MT6000 · mediatek-filogic · K1d
 - **Datei:** Gluon-sysupgrade, 'Do not keep configuration'; immer das sysupgrade-Image nehmen [abgeleitet: Wiki] [abgeleitet: Wiki; OpenWrt-factory nur für OpenWrt-U-Boot geprüft: Commit fe10f97]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = sysupgrade; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-glinet_gl-mt6000-initramfs-kernel.bin)
 - **Factory-/Stock-Image-Link:** -
@@ -4393,6 +4618,8 @@ GL.iNet GL-MT300A · ramips-mt7620 · K1d
 - **Datei:** Gluon-sysupgrade [abgeleitet: Wiki, Commit ohne Installationstext]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = sysupgrade; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7620/openwrt-24.10.8-ramips-mt7620-glinet_gl-mt300a-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
@@ -4420,6 +4647,8 @@ GL.iNet GL-MT300N (v1) · ramips-mt7620 · K1d
 - **Datei:** Gluon-sysupgrade [abgeleitet: Wiki, Commit ohne Installationstext]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = sysupgrade; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** GL-MT300N (v1, MT7620N, 64 MB RAM, dieses Profil) nicht mit GL-MT300N-V2 'Mango' (MT7628AN, 128 MB) verwechseln; auf dem Typenschild auf '-V2' achten [geprüft: Commits be53e5a, abbfcc8; Typenschild-Aufdruck abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7620/openwrt-24.10.8-ramips-mt7620-glinet_gl-mt300n-initramfs-kernel.bin) (200)
@@ -4446,6 +4675,8 @@ GL.iNet GL-MT750 · ramips-mt7620 · K1d
 - **Datei:** Gluon-sysupgrade [abgeleitet: Wiki, Commit ohne Installationstext]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = sysupgrade; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7620/openwrt-24.10.8-ramips-mt7620-glinet_gl-mt750-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
@@ -4480,6 +4711,8 @@ GL.iNet GL-MT1300 (Beryl) · ramips-mt7621 · K1d
 - **Datei:** Gluon-sysupgrade [geprüft: Commit d89a7f0]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-glinet_gl-mt1300-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
@@ -4514,6 +4747,8 @@ GL.iNet GL-MT300N v2 · ramips-mt76x8 · K1d
 - **Datei:** Gluon-sysupgrade [geprüft: Commit 'Install sysupgrade image using web interface on 192.168.1.1']
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** GL-MT300N-V2 'Mango' (MT7628AN, 128 MB) nicht mit GL-MT300N v1 (MT7620N, 64 MB) verwechseln [geprüft: Commits abbfcc8, be53e5a]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-glinet_gl-mt300n-v2-initramfs-kernel.bin) (200)
@@ -4547,6 +4782,8 @@ GL.iNet microuter-N300 · ramips-mt76x8 · K1d
 - **Datei:** Gluon-sysupgrade, Einstellungen nicht behalten [geprüft: Commit b30f228]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = sysupgrade; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** microuter-N300 (intern MT300N-v4, 128 MB RAM, 16 MB Flash) sieht aus wie der VIXMINI (MT300N-v3, 64 MB, 8 MB) [geprüft: Commit b30f228]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-glinet_microuter-n300-initramfs-kernel.bin) (200)
@@ -4579,6 +4816,8 @@ GL.iNet VIXMINI · ramips-mt76x8 · K1d
 - **Datei:** Gluon-sysupgrade, Einstellungen nicht behalten [geprüft: Commit 43e8c37]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = sysupgrade; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** VIXMINI (intern MT300N-v3, 64 MB RAM, 8 MB Flash) sieht aus wie der microuter-N300 (MT300N-v4, 128 MB, 16 MB) [geprüft: Commit b30f228]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-glinet_vixmini-initramfs-kernel.bin) (200)
@@ -4615,6 +4854,8 @@ Raspberry Pi 1 Model B/B+ · bcm27xx-bcm2708 · K0
 - **Datei:** Gluon-factory-Image (`.img.gz`) [geprüft: targets/bcm27xx.inc]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = datentraeger; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Image für Pi 1 Model B, B+ (auch Rev2); das OpenWrt-Image startet zwar auch A/A+/CM/Zero/Zero W, Gluon führt diese aber nicht, der Autoupdater findet für sie vermutlich kein Image [geprüft: Gluon targets/bcm27xx-bcm2708, OpenWrt bcm27xx/image/Makefile; Autoupdater-Folge abgeleitet]
 - **initramfs-Link:** -
@@ -4647,6 +4888,8 @@ Raspberry Pi 2 Model B · bcm27xx-bcm2709 · K0
 - **Datei:** Gluon-factory-Image (`.img.gz`) [geprüft: targets/bcm27xx.inc]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = datentraeger; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Pi 2 Model B (auch v1.2 mit BCM2837); Pi 3/4 starten zwar auch mit diesem 32-Bit-Image, sollen aber ihr eigenes Image bekommen [geprüft: OpenWrt bcm27xx/image/Makefile; Empfehlung abgeleitet]
 - **initramfs-Link:** -
@@ -4679,6 +4922,8 @@ Raspberry Pi 3 Model B/B+ · bcm27xx-bcm2710 · K0
 - **Datei:** Gluon-factory-Image (`.img.gz`) [geprüft: targets/bcm27xx.inc]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = datentraeger; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Pi 3 Model B und B+ (Alias 3-model-b-plus); 3A+, Zero 2 W und CM3 starten laut OpenWrt auch, Gluon führt sie aber nicht (Autoupdater findet vermutlich kein Image) [geprüft: Gluon targets/bcm27xx-bcm2710, OpenWrt Makefile; Autoupdater-Folge abgeleitet]
 - **initramfs-Link:** -
@@ -4711,6 +4956,8 @@ Raspberry Pi 4 Model B · bcm27xx-bcm2711 · K0
 - **Datei:** Gluon-factory-Image (`.img.gz`) [geprüft: targets/bcm27xx.inc]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = datentraeger; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** nur Pi 4 Model B; Pi 400 und CM4 starten laut OpenWrt auch, Gluon führt sie aber nicht; Raspberry Pi 5 (bcm2712) wird nicht unterstützt [geprüft: Gluon targets/bcm27xx-bcm2711, OpenWrt Makefile, kein bcm2712-Target in Gluon]
 - **initramfs-Link:** -
@@ -4744,6 +4991,8 @@ FriendlyElec NanoPi R2C · rockchip-armv8 · K0
 - **Datei:** Gluon-sysupgrade-Image (`.img.gz`); Gluon hat für dieses Gerät `factory = false`, es gibt also kein factory [abgeleitet: targets/rockchip-armv8]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = datentraeger; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** R2C ist ein R2S mit anderem Ethernet-PHY (yt8521s statt rtl8211e): R2S-Image auf R2C (und umgekehrt) nicht verwenden; R2C Plus (mit 8 GB eMMC) ist ein eigenes OpenWrt-Gerät, das Gluon nicht baut [geprüft: OpenWrt-Commits 8f578c15/78226647; Gluon targets/rockchip-armv8]
 - **initramfs-Link:** -
@@ -4778,6 +5027,8 @@ FriendlyElec NanoPi R2S · rockchip-armv8 · K0
 - **Datei:** Gluon-sysupgrade-Image (`.img.gz`); Gluon hat für dieses Gerät `factory = false`, es gibt also kein factory [abgeleitet: targets/rockchip-armv8]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = datentraeger; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** R2C sieht gleich aus, hat aber einen anderen Ethernet-PHY und ein eigenes Image; für R2S Plus gibt es weder OpenWrt- noch Gluon-Image [geprüft: OpenWrt-Commit 8f578c15, armv8.mk]
 - **initramfs-Link:** -
@@ -4813,6 +5064,8 @@ FriendlyElec NanoPi R3S · rockchip-armv8 · K0
 - **Datei:** Gluon-sysupgrade-Image (`.img.gz`); Gluon hat für dieses Gerät `factory = false`, es gibt also kein factory [abgeleitet: targets/rockchip-armv8]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = datentraeger; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** R3S mit 1 GB oder 2 GB RAM und optionalem 32-GB-eMMC; Gluon unterscheidet nicht [geprüft: OpenWrt-Commit 2902b0a6; Wiki-Zusammenfassung: FriendlyElec-Wiki NanoPi_R3S]
 - **Bedingung an die Herstellerfirmware:** Bei vorhandenem eMMC mit Hersteller-System: dass die SD-Karte zuerst startet, ist nicht belegt [abgeleitet: Commit 2902b0a6 lässt von SD starten, FriendlyElec beschreibt Start von SD]
@@ -4849,6 +5102,8 @@ FriendlyElec NanoPi R4S (4 GB) · rockchip-armv8 · K0
 - **Datei:** Gluon-sysupgrade-Image (`.img.gz`); Gluon hat für dieses Gerät `factory = false`, es gibt also kein factory [abgeleitet: targets/rockchip-armv8]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = datentraeger; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** nur die 4-GB-Variante (LPDDR4); die 1-GB-Variante war laut OpenWrt nicht unterstützt (Stand 2020); die Enterprise Edition (R4S mit EEPROM für feste MAC) ist ein eigenes OpenWrt-Gerät, das Gluon nicht baut; ein äußeres Unterscheidungsmerkmal 1 GB/4 GB nennt keine Quelle [geprüft: armv8.mk, OpenWrt-Commits b7215798/afca1236; Wiki-Zusammenfassung: FriendlyElec-Wiki NanoPi_R4S]
 - **initramfs-Link:** -
@@ -4882,6 +5137,8 @@ x86 (x86-64) · x86-64 · K0
 - **Datei:** Gluon-factory `squashfs-combined-efi` (.img.gz), für VMs .vdi/.vmdk [geprüft: targets/x86*]; für VirtualBox/VMware gibt es fertige .vdi/.vmdk [geprüft: Gluon docs/user/x86.rst, targets/x86.inc]; Gluon liefert nur combined-efi; laut Image-Rezept enthält es zusätzlich GRUB für BIOS-Start, sollte also mit UEFI und BIOS starten [geprüft: Gluon targets/x86.inc, OpenWrt x86/image/Makefile; BIOS-Start abgeleitet, nicht getestet]; zu Secure Boot sagen die Quellen nichts [abgeleitet: Wiki openwrt_x86 ohne Angabe]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = datentraeger; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** für die meisten x86-Rechner mit 64-Bit-CPU (ab ca. Anfang der 2000er); 32-Bit-Rechner: x86-generic; AMD Geode (ALIX, net5501): x86-geode; sehr alte i586/Pentium MMX: x86-legacy [geprüft: Gluon docs/user/x86.rst, OpenWrt x86/*/target.mk, Wiki docs:guide-user:installation:openwrt_x86]
 - **initramfs-Link:** -
@@ -4917,6 +5174,8 @@ x86 (x86-generic) · x86-generic · K0
 - **Datei:** Gluon-factory `squashfs-combined-efi` (.img.gz), für VMs .vdi/.vmdk [geprüft: targets/x86*]; für VirtualBox/VMware gibt es fertige .vdi/.vmdk [geprüft: Gluon docs/user/x86.rst, targets/x86.inc]; Gluon liefert nur combined-efi; laut Image-Rezept enthält es zusätzlich GRUB für BIOS-Start, sollte also mit UEFI und BIOS starten [geprüft: Gluon targets/x86.inc, OpenWrt x86/image/Makefile; BIOS-Start abgeleitet, nicht getestet]; zu Secure Boot sagen die Quellen nichts [abgeleitet: Wiki openwrt_x86 ohne Angabe]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = datentraeger; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** 32-Bit-Rechner ohne 64-Bit-Unterstützung, mindestens Pentium 4 (MMX/SSE/SSE2), auch einige ältere Atom [geprüft: OpenWrt x86/generic/target.mk, Gluon docs/user/x86.rst, Wiki docs:guide-user:installation:openwrt_x86]
 - **initramfs-Link:** -
@@ -4950,6 +5209,8 @@ x86 (x86-geode) · x86-geode · K0
 - **Datei:** Gluon `squashfs-combined` (.img.gz) [geprüft: targets/x86*]; Image nur für BIOS-Start (combined ohne EFI) [geprüft: Gluon targets/x86-geode, OpenWrt image/geode.mk]; für VirtualBox/VMware gibt es fertige .vdi/.vmdk [geprüft: Gluon docs/user/x86.rst, targets/x86.inc]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = datentraeger; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** nur AMD-Geode-GX/LX-Boards (z. B. PC Engines ALIX, Soekris net5501, geos) [geprüft: OpenWrt x86/geode/target.mk]
 - **initramfs-Link:** -
@@ -4983,6 +5244,8 @@ x86 (x86-legacy) · x86-legacy · K0
 - **Datei:** Gluon-factory `squashfs-combined-efi` (.img.gz), für VMs .vdi/.vmdk [geprüft: targets/x86*]; für VirtualBox/VMware gibt es fertige .vdi/.vmdk [geprüft: Gluon docs/user/x86.rst, targets/x86.inc]; Gluon liefert nur combined-efi; laut Image-Rezept enthält es zusätzlich GRUB für BIOS-Start, sollte also mit UEFI und BIOS starten [geprüft: Gluon targets/x86.inc, OpenWrt x86/image/Makefile; BIOS-Start abgeleitet, nicht getestet]; zu Secure Boot sagen die Quellen nichts [abgeleitet: Wiki openwrt_x86 ohne Angabe]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = datentraeger; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** sehr alte PC-Hardware (i586/Pentium MMX, z. B. Soekris-Boards) [geprüft: Gluon docs/user/x86.rst, OpenWrt x86/legacy/target.mk]
 - **initramfs-Link:** -
@@ -5018,6 +5281,8 @@ Buffalo WZR-600DHP · ath79-generic · K0
 - **Datei:** Gluon-factory-Image für buffalo-wzr-600dhp (eigenes Image, siehe verwechslung) [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Hardware laut Commit identisch mit WZR-HP-AG300H, aber eigenes Image: Modellname auf dem Typenschild entscheidet [geprüft: Commit 25f2f66e]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-buffalo_wzr-600dhp-initramfs-kernel.bin) (Liste)
@@ -5046,6 +5311,8 @@ Buffalo WZR-HP-AG300H · ath79-generic · K0
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Bedingung an die Herstellerfirmware:** keine Einschränkung bekannt; factory-Installation getestet auf Buffalo-Firmware v1.77 (28.05.2012) und Pro-Firmware v24SP2 r30356 (26.03.2018) [geprüft: Commit 480bf282]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-buffalo_wzr-hp-ag300h-initramfs-kernel.bin) (Liste)
@@ -5075,6 +5342,8 @@ Buffalo WZR-HP-G300NH (RTL8366S switch) · ath79-generic · K0
 - **Datei:** Gluon-factory-Image (nur RTL8366S-Variante) [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** zwei Hardware-Varianten mit verschiedenem Switch-Chip (RTL8366S / RTL8366RB), je eigenes Image; Gluon baut nur die S-Variante. Variante steht nicht auf dem Typenschild, erkennbar im Kernel-Log (dmesg) [geprüft: Commit bc356de2; Gluon targets/ath79-generic]; Modellcode (4-5 Zeichen) oben rechts auf dem Aufkleber mit der SSID; laut Wiki-Tabelle RTL8366S: A0A0, A0A1, A0A3, A0D0, A2F0B, B0B0, B0B0G, B0C0; RTL8366RB: A0F0B, A1A3, A2A0 [geprüft: Wiki toh:buffalo:wzr-hp-g300h]; ein Forenbeitrag ordnet A0D0 und B0C0 der RB-Variante zu (widersprüchlich) [abgeleitet: Suchergebnis]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-buffalo_wzr-hp-g300nh-s-initramfs-kernel.bin) (Liste)
@@ -5105,6 +5374,8 @@ D-Link DAP-1330 A1 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image zum aufgedruckten Modell (DAP-1330) [geprüft: Commit 361c670a]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** DAP-1330 (Steckergehäuse) und DAP-1365 (europäischer Zwischenstecker mit Steckdose) haben dieselbe Herstellerfirmware, die factory-Images unterscheiden sich nur in der Modellkennung: Image zum aufgedruckten Modell nehmen; Hardware-Revision A1 [geprüft: Commit 361c670a; Revision abgeleitet: Gluon-Name]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-dlink_dap-1330-a1-initramfs-kernel.bin) (Liste)
@@ -5136,6 +5407,8 @@ D-Link DAP-1365 A1 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image zum aufgedruckten Modell (DAP-1365) [geprüft: Commit 361c670a]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** DAP-1330 (Steckergehäuse) und DAP-1365 (europäischer Zwischenstecker mit Steckdose) haben dieselbe Herstellerfirmware, die factory-Images unterscheiden sich nur in der Modellkennung: Image zum aufgedruckten Modell nehmen; Hardware-Revision A1 [geprüft: Commit 361c670a; Revision abgeleitet: Gluon-Name]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-dlink_dap-1365-a1-initramfs-kernel.bin) (Liste)
@@ -5168,6 +5441,8 @@ D-Link DAP-2660 A1 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image (factory.bin) [geprüft: Commit 8ec997d0/5b58710f]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-dlink_dap-2660-a1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-dlink_dap-2660-a1-squashfs-factory.img)
@@ -5198,6 +5473,8 @@ D-Link DAP-2680 A1 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image (factory.bin) [geprüft: Commit 8ec997d0/5b58710f]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-dlink_dap-2680-a1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-dlink_dap-2680-a1-squashfs-factory.img)
@@ -5226,6 +5503,8 @@ D-Link DAP-2695 A1 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (auch für den seriellen Notweg: RJ45-RS-232-Konsole außen, 115200 8N1)
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-dlink_dap-2695-a1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-dlink_dap-2695-a1-squashfs-factory.img)
@@ -5255,6 +5534,8 @@ NETGEAR WNDR3700 v1 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image (.img) [abgeleitet: Commit ohne Anleitung]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** WNDR3700 v1, WNDR3700 v2, WNDR3800, WNDR3800CH und WNDRMAC v2 sind dieselbe Gerätefamilie (AR7161), aber je eigenes Image (Board-ID im Image); WNDR3700 v1 = 8 MB Flash, v2 = 16 MB; WNDR3700 v4 ist ein anderes Gerät (NAND, eigenes Image) [geprüft: OpenWrt generic.mk/nand.mk]; v1 und v2 sind am Typenschild oft nicht zu unterscheiden (gleiche EAN); Hinweise: Karton "(WNDR3700v2)" unter "Package Contents", Hardware-Version in der Netgear-Oberfläche (Maintenance/Router Status), Herstellerfirmware v1 = 1.0.4.x und höher, v2 = 1.0.1.x oder niedriger; v3 ist Broadcom (nicht unterstützt), v4 eigenes Image [geprüft: Wiki toh:netgear:wndr3700]; OpenWrt baut für dieses Gerät zusätzlich ein factory-NA.img für nordamerikanische Herstellerfirmware; Gluon baut nur das normale factory.img. Geräte mit NA-Firmware nehmen das Gluon-factory womöglich nicht [geprüft: OpenWrt generic.mk IMAGE/factory-NA.img, Gluon targets/ath79-generic; Folge abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wndr3700-initramfs-kernel.bin) (Liste)
@@ -5284,6 +5565,8 @@ NETGEAR WNDR3700 v2 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image (.img) [abgeleitet: Commit ohne Anleitung]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** WNDR3700 v1, WNDR3700 v2, WNDR3800, WNDR3800CH und WNDRMAC v2 sind dieselbe Gerätefamilie (AR7161), aber je eigenes Image (Board-ID im Image); WNDR3700 v1 = 8 MB Flash, v2 = 16 MB; WNDR3700 v4 ist ein anderes Gerät (NAND, eigenes Image) [geprüft: OpenWrt generic.mk/nand.mk]; v1 und v2 sind am Typenschild oft nicht zu unterscheiden (gleiche EAN); Hinweise: Karton "(WNDR3700v2)" unter "Package Contents", Hardware-Version in der Netgear-Oberfläche (Maintenance/Router Status), Herstellerfirmware v1 = 1.0.4.x und höher, v2 = 1.0.1.x oder niedriger; v3 ist Broadcom (nicht unterstützt), v4 eigenes Image [geprüft: Wiki toh:netgear:wndr3700]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wndr3700-v2-initramfs-kernel.bin) (Liste)
@@ -5314,6 +5597,8 @@ NETGEAR WNDR3800 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image (.img) [abgeleitet: Commit ohne Anleitung]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** WNDR3700 v1, WNDR3700 v2, WNDR3800, WNDR3800CH und WNDRMAC v2 sind dieselbe Gerätefamilie (AR7161), aber je eigenes Image (Board-ID im Image); WNDR3700 v1 = 8 MB Flash, v2 = 16 MB; WNDR3700 v4 ist ein anderes Gerät (NAND, eigenes Image) [geprüft: OpenWrt generic.mk/nand.mk]; Variante WNDR3800-1CHNAS reagiert nicht auf normale WNDR3800-Images [geprüft: Wiki toh:netgear:wndr3800]; ob das die WNDR3800CH ist, offen
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wndr3800-initramfs-kernel.bin) (Liste)
@@ -5345,6 +5630,8 @@ NETGEAR WNDR3800CH · ath79-generic · K0
 - **Datei:** Gluon-factory-Image (.img) [abgeleitet: Commit ohne Anleitung]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** WNDR3700 v1, WNDR3700 v2, WNDR3800, WNDR3800CH und WNDRMAC v2 sind dieselbe Gerätefamilie (AR7161), aber je eigenes Image (Board-ID im Image); WNDR3700 v1 = 8 MB Flash, v2 = 16 MB; WNDR3700 v4 ist ein anderes Gerät (NAND, eigenes Image) [geprüft: OpenWrt generic.mk/nand.mk]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wndr3800ch-initramfs-kernel.bin) (Liste)
@@ -5373,6 +5660,8 @@ NETGEAR WNDRMAC v2 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** WNDR3700 v1, WNDR3700 v2, WNDR3800, WNDR3800CH und WNDRMAC v2 sind dieselbe Gerätefamilie (AR7161), aber je eigenes Image (Board-ID im Image); WNDR3700 v1 = 8 MB Flash, v2 = 16 MB; WNDR3700 v4 ist ein anderes Gerät (NAND, eigenes Image) [geprüft: OpenWrt generic.mk/nand.mk]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wndrmac-v2-initramfs-kernel.bin) (Liste)
@@ -5403,6 +5692,8 @@ NETGEAR WNR2200 16M · ath79-generic · K0
 - **Datei:** Gluon-factory-Image (.img) der 16 MB-Variante [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** zwei Flash-Varianten mit eigenem Image: 8 MB (u. a. EU/US) und 16 MB (Russland/China), sonst gleiche Hardware [geprüft: Commit f85d56bb]; Flash-Größe steht nicht auf dem Typenschild [abgeleitet: Commit nennt kein Merkmal]; Typenschild-Hinweis laut Wiki (nur an wenigen Geräten geprüft): 16-MB-Variante (z. B. WNR2200-100RUS) hat drei Felder (SECURITY PIN, SERIAL, MAC), 8-MB-Variante vier (WiFi Network Name, Network Key, SERIAL, MAC) [geprüft: Wiki toh:netgear:wnr2200]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wnr2200-16m-initramfs-kernel.bin) (Liste)
@@ -5433,6 +5724,8 @@ NETGEAR WNR2200 8M · ath79-generic · K0
 - **Datei:** Gluon-factory-Image (.img) der 8 MB-Variante [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** zwei Flash-Varianten mit eigenem Image: 8 MB (u. a. EU/US) und 16 MB (Russland/China), sonst gleiche Hardware [geprüft: Commit f85d56bb]; Flash-Größe steht nicht auf dem Typenschild [abgeleitet: Commit nennt kein Merkmal]; Typenschild-Hinweis laut Wiki (nur an wenigen Geräten geprüft): 16-MB-Variante (z. B. WNR2200-100RUS) hat drei Felder (SECURITY PIN, SERIAL, MAC), 8-MB-Variante vier (WiFi Network Name, Network Key, SERIAL, MAC) [geprüft: Wiki toh:netgear:wnr2200]; OpenWrt baut für dieses Gerät zusätzlich ein factory-NA.img für nordamerikanische Herstellerfirmware; Gluon baut nur das normale factory.img. Geräte mit NA-Firmware nehmen das Gluon-factory womöglich nicht [geprüft: OpenWrt generic.mk IMAGE/factory-NA.img, Gluon targets/ath79-generic; Folge abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-netgear_wnr2200-8m-initramfs-kernel.bin) (Liste)
@@ -5465,6 +5758,8 @@ TP-Link Archer A7 v5 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image; Umbenennen nicht nötig [geprüft: Wiki toh:tp-link:archer_a7_v5]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Archer A7 v5 und Archer C7 v5 sind fast gleich, aber verschiedenes Flash-Layout und eigenes Image; Image passt laut Supportliste zu "Archer A7" Hardware 5.0 der Regionen CA, EU, JP, RU, TW, US [geprüft: Commit 8471944b; tplink-safeloader ARCHER-A7-V5]
 - **Bedingung an die Herstellerfirmware:** erfolgreich berichtet mit Herstellerfirmware 1.0.4 Build 20180424 bis 1.2.1 Build 20220714; ein Einzelbericht "Invalid File type" mit 1.1.2 Build 20210125 [geprüft: Wiki toh:tp-link:archer_a7_v5]
@@ -5496,6 +5791,8 @@ TP-Link Archer C2 v3 (broken) · ath79-generic · K0
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Archer C2 v3 (AC900, QCA9563) ist ein anderes Gerät als Archer C2 v1 (MediaTek); Supportliste ArcherC2 3.0.0 ohne Region, EU, US [geprüft: Commit 9c01273e; tplink-safeloader ARCHER-C2-V3; Gluon targets/ramips-mt7620]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c2-v3-initramfs-kernel.bin) (Liste)
@@ -5524,6 +5821,8 @@ TP-Link Archer C25 v1 (broken) · ath79-generic · K0
 - **Datei:** Gluon-factory-Image [abgeleitet: Commit ohne Anleitung]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Supportliste ArcherC25 1.0.0 ohne Region, EU, US [geprüft: tplink-safeloader ARCHER-C25-V1]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c25-v1-initramfs-kernel.bin) (Liste)
@@ -5556,6 +5855,8 @@ TP-Link Archer C5 v1 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image, vorher kurz umbenennen, z. B. factory.bin (lange Namen lehnt die Oberfläche ab) [geprüft: Wiki toh:tp-link:archer-c5-c7-wdr7500]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Archer C5 v1.x: 3 interne (2.4 GHz) und 3 externe (5 GHz) Antennen; spätere C5-Versionen sind andere Geräte [Rest abgeleitet; geprüft: Wiki toh:tp-link:archer-c5-c7-wdr7500]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c5-v1-initramfs-kernel.bin) (Liste)
@@ -5585,6 +5886,8 @@ TP-Link Archer C58 v1 (broken) · ath79-generic · K0
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Archer C58 v1 (64 MB RAM, 8 MB Flash) und C59 v1 (128 MB, 16 MB, USB) sehen ähnlich aus, je eigenes Image [geprüft: Commit 946ffe47]; Supportliste: "Archer C58" 1.0.0, Regionen ohne Kennung, EU, US [geprüft: tplink-safeloader ARCHER-C58-V1]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c58-v1-initramfs-kernel.bin) (Liste)
@@ -5613,6 +5916,8 @@ TP-Link Archer C59 v1 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Archer C58 v1 (64 MB RAM, 8 MB Flash) und C59 v1 (128 MB, 16 MB, USB) sehen ähnlich aus, je eigenes Image [geprüft: Commit 946ffe47]; Supportliste: "Archer C59" 1.0.0, Regionen ohne Kennung, CA, EU, RU, US [geprüft: tplink-safeloader ARCHER-C59-V1]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c59-v1-initramfs-kernel.bin) (Liste)
@@ -5642,6 +5947,8 @@ TP-Link Archer C6 v2 (EU/RU/JP) · ath79-generic · K0
 - **Datei:** Gluon-factory-Image (nur EU/RU/JP-Variante) [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** nur Archer C6 v2 (und Archer A6 v2) der Regionen EU, RU, JP; die US-/TW-Variante hat andere GPIOs/Flash-Layout und ein eigenes Image (ARCHER-C6-V2-US), das Gluon nicht baut: Region auf dem Typenschild prüfen [geprüft: tplink-safeloader ARCHER-C6-V2 / -US, Commit d03aae1a; Gluon targets/ath79-generic]
 - **Bedingung an die Herstellerfirmware:** Ob das factory angenommen wird, hängt von der Herstellerfirmware ab (Wiki-Tabelle): 1.2.0 und 1.2.1 lehnen mit "invalid type" ab; 1.3.3 nimmt 24.10.0-rc6, 1.3.7 nimmt 24.10.4; ältere Stände nahmen nur ältere OpenWrt-Versionen [geprüft: Wiki toh:tp-link:archer_c6_v2]; für Gluon auf 24.10 also Stand 1.3.3 oder 1.3.7 am ehesten passend [abgeleitet]
@@ -5673,6 +5980,8 @@ TP-Link Archer C7 v2 · ath79-generic · K0
 - **Datei:** Gluon-factory mit Regionssuffix (GLUON_REGION, OpenWrt: factory-eu/-us) [Makefile geprüft]; Neanderfunk setzt GLUON_REGION=eu, es gibt also nur factory-eu [geprüft: templates/common/site.mk, Gluon targets/ath79-generic; Folge abgeleitet]; lange Dateinamen werden abgelehnt, vorher z. B. in firmware.bin umbenennen [geprüft: Wiki toh:tp-link:archer_c7]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Archer C7 v2, v4, v5 haben je eigenes Image; Hardware-Version steht auf dem Typenschild ("Ver: x.y") [abgeleitet: getrennte Gluon-Geräte]; Der niederländische "Ziggo Wifibooster C7" ist ein umgelabelter Archer C7 v2; v1-v3: 3 externe (5 GHz) + 3 interne Antennen, v4/v5: 3 externe Dual-Band-Antennen [geprüft: Wiki toh:tp-link:archer_c7]; für US-Geräte wäre factory-us nötig, das Neanderfunk nicht baut [geprüft: templates/common/site.mk, Gluon targets/ath79-generic; Folge abgeleitet]; die Oberfläche lehnt zudem ein Image der falschen Region (EU/US) ab [geprüft: archer_c7, Wiki toh:tp-link:archer-c5-c7-wdr7500]
 - **Bedingung an die Herstellerfirmware:** Herstellerfirmware ab ca. Oktober 2015 (3.14.3) lehnt fremde Firmware ab; auch 3.15.3 Build 180114 scheitert; 3.13.34 nimmt an [geprüft: archer_c7, Wiki toh:tp-link:archer-c5-c7-wdr7500]
@@ -5704,6 +6013,8 @@ TP-Link Archer C7 v4 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image; lange Dateinamen werden abgelehnt, vorher z. B. in firmware.bin umbenennen [geprüft: Wiki toh:tp-link:archer_c7]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Supportliste: "Archer C7" 4.0.0, viele Regionen (u. a. EU, US, JP, RU, AU, BR, CA, KR, TW) [geprüft: tplink-safeloader ARCHER-C7-V4]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-c7-v4-initramfs-kernel.bin) (Liste)
@@ -5734,6 +6045,8 @@ TP-Link Archer C7 v5 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image; lange Dateinamen werden abgelehnt, vorher z. B. in firmware.bin umbenennen [geprüft: Wiki toh:tp-link:archer_c7]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Archer C7 v5 ist fast gleich wie Archer A7 v5, aber anderes Flash-Layout, eigenes Image [geprüft: Commit 8471944b]
 - **Bedingung an die Herstellerfirmware:** mit älterer Herstellerfirmware laut Wiki nur per TFTP installierbar (siehe notweg) [geprüft: Wiki toh:tp-link:archer_c7]
@@ -5768,6 +6081,8 @@ TP-Link CPE210 v1 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: cpe510; abgeleitet: Wiki-Zusammenfassung, im Rohtext toh:tp-link:cpe210 nicht gefunden]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Image passt laut Supportliste zu CPE210 Hardware 1.0 und 1.1 (EU/US/UN) und auch zu CPE220 1.1; CPE210 v2 und v3 brauchen eigene Images: "Ver" auf dem Typenschild prüfen [geprüft: tplink-safeloader CPE210]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe210-v1-initramfs-kernel.bin) (Liste)
@@ -5802,6 +6117,8 @@ TP-Link CPE210 v2 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: cpe510; abgeleitet: Wiki-Zusammenfassung, im Rohtext toh:tp-link:cpe210 nicht gefunden, steht in toh:tp-link:cpe510]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Supportliste CPE210 2.0 (EU/US/UN); v1, v3 eigene Images [geprüft: tplink-safeloader CPE210V2]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe210-v2-initramfs-kernel.bin) (Liste)
@@ -5836,6 +6153,8 @@ TP-Link CPE210 v3 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: cpe510, Wiki toh:tp-link:cpe510]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Supportliste CPE210 3.0, 3.1 und 3.20 (EU/US/UN): Typenschild "3.20" nimmt das v3-Image [geprüft: tplink-safeloader CPE210V3]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe210-v3-initramfs-kernel.bin) (Liste)
@@ -5870,6 +6189,8 @@ TP-Link CPE220 v3 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: cpe510; abgeleitet: Wiki-Zusammenfassung, im Rohtext toh:tp-link:cpe210 nicht gefunden]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Supportliste CPE220 3.0 (EU/US/UN); ein CPE220 mit Hardware 1.1 läuft dagegen mit dem CPE210-v1-Image [geprüft: tplink-safeloader CPE220V3/CPE210]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe220-v3-initramfs-kernel.bin) (Liste)
@@ -5904,6 +6225,8 @@ TP-Link CPE510 v1 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: cpe510, Wiki toh:tp-link:cpe510]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Image passt laut Supportliste zu CPE510 Hardware 1.0 und 1.1 (UN/US/CA/EU) und auch zu CPE520 1.1; v2 und v3 eigene Images [geprüft: tplink-safeloader CPE510]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe510-v1-initramfs-kernel.bin) (Liste)
@@ -5938,6 +6261,8 @@ TP-Link CPE510 v2 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: cpe510, Wiki toh:tp-link:cpe510]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Supportliste CPE510 2.0 (EU/US/UN); v1 hat zwei Ethernet-Ports, v2/v3 nur einen [geprüft: tplink-safeloader CPE510V2; Commit cad4132e]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe510-v2-initramfs-kernel.bin) (Liste)
@@ -5972,6 +6297,8 @@ TP-Link CPE510 v3 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: cpe510; abgeleitet: Wiki-Zusammenfassung, im Rohtext toh:tp-link:cpe210 nicht gefunden]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Supportliste CPE510 3.0 und 3.20 (EU/US/UN) [geprüft: tplink-safeloader CPE510V3]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_cpe510-v3-initramfs-kernel.bin) (Liste)
@@ -6008,6 +6335,8 @@ TP-Link CPE710 v1 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: cpe510, Wiki toh:tp-link:cpe510]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Supportliste CPE710 1.0 (EU/US/UN); v2 unterscheidet sich nur in der PHY-Adresse, braucht aber ein eigenes Image [geprüft: tplink-safeloader CPE710V1; Commit 0b4d8318]
 - **Bedingung an die Herstellerfirmware:** Herstellerfirmware muss älter als 1.1.2 (Build 20251113) sein: Gerät nicht auf 1.1.2 oder neuer aktualisieren [für v2 abgeleitet; geprüft: Wiki toh:tp-link:cpe710_v1]
@@ -6045,6 +6374,8 @@ TP-Link CPE710 v2 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: cpe510; abgeleitet: Wiki-Zusammenfassung, im Rohtext toh:tp-link:cpe210 nicht gefunden]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Supportliste CPE710 2.0 (EU/US/UN); v1 eigenes Image [geprüft: tplink-safeloader CPE710V2; Commit 0b4d8318]
 - **Bedingung an die Herstellerfirmware:** Herstellerfirmware muss älter als 1.1.2 (Build 20251113) sein: Gerät nicht auf 1.1.2 oder neuer aktualisieren [für v2 abgeleitet; geprüft: Wiki toh:tp-link:cpe710_v1]
@@ -6075,6 +6406,8 @@ TP-Link TL-WDR3500 v1 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Bedingung an die Herstellerfirmware:** gleiche Baureihe wie TL-WDR3600/4300, dort sperren neuere Herstellerfirmware-Stände (Build 151104) fremde Firmware [abgeleitet: Wiki toh/tp-link/tl-wdr3600_v1, für WDR3500 nicht geprüft]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wdr3500-v1-initramfs-kernel.bin) (Liste)
@@ -6107,6 +6440,8 @@ TP-Link TL-WDR3600 v1 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image; Dateiname: Wiki nennt einen Namen, den die Oberfläche annimmt: wdr4300v1_en_3_14_3_up_boot(150518).bin [geprüft: tl-wdr3600_v1, Wiki toh:tp-link:tl-wdr4300_v1]; ob genau dieser Name zwingend ist [abgeleitet: offen]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** TL-WDR3600 und TL-WDR4300 sehen ähnlich aus und haben je eigenes Image (Hardware-ID 0x36000001 bzw. 0x43000001) [geprüft: OpenWrt generic-tp-link.mk]; Unterversionen v1.1 bis v1.5 [geprüft: Wiki toh:tp-link:tl-wdr3600_v1]
 - **Bedingung an die Herstellerfirmware:** Herstellerfirmware 3.14.3 Build 151104 (mind. US) sperrt fremde Firmware; Wiki empfiehlt vorher Herstellerfirmware 3.13.33 (130617) [geprüft: tl-wdr3600_v1, Wiki toh:tp-link:tl-wdr4300_v1, toh:tp-link:tl-wdr3600_v1]
@@ -6142,6 +6477,8 @@ TP-Link TL-WDR4300 v1 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image; Dateiname: Wiki nennt einen Namen, den die Oberfläche annimmt: wdr4300v1_en_3_14_3_up_boot(150518).bin [geprüft: tl-wdr3600_v1, Wiki toh:tp-link:tl-wdr4300_v1]; ob genau dieser Name zwingend ist [abgeleitet: offen]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Es gibt eine Israel-Variante TL-WDR4300 v1 IL mit eigener Hardware-ID (0x43008001) und eigenem OpenWrt-Image, das Gluon nicht baut [geprüft: OpenWrt generic-tp-link.mk; Gluon targets/ath79-generic]; TL-WDR3600 und TL-WDR4300 sehen ähnlich aus und haben je eigenes Image (Hardware-ID 0x36000001 bzw. 0x43000001) [geprüft: OpenWrt generic-tp-link.mk]; Unterversionen v1.0 bis v1.7 laufen mit dem v1-Image; TL-WDR4310 ist ein ähnliches Gerät [geprüft: Wiki toh:tp-link:tl-wdr4300_v1]
 - **Bedingung an die Herstellerfirmware:** Herstellerfirmware 3.14.3 Build 151104 (mind. US) sperrt fremde Firmware; Wiki empfiehlt vorher Herstellerfirmware 3.13.33 (130617) [geprüft: tl-wdr3600_v1, Wiki toh:tp-link:tl-wdr4300_v1]
@@ -6174,6 +6511,8 @@ TP-Link TL-WR1043N v5 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** TL-WR1043N v5 ähnelt TL-WR1043ND v4, aber ohne USB, feste Antennen und anderes Partitionsschema: eigenes Image; Supportliste nur EU und US [geprüft: Commit d4b89b71; tplink-safeloader TLWR1043NV5]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr1043n-v5-initramfs-kernel.bin) (Liste)
@@ -6205,6 +6544,8 @@ TP-Link TL-WR1043N/ND v2 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image [abgeleitet: Commit ohne Anleitung]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** TL-WR1043N/ND v2, v3, v4 (und N v5) haben je eigenes Image; Hardware-Version auf dem Typenschild [geprüft: OpenWrt generic-tp-link.mk, Hardware-ID 0x10430002/0x10430003]; v2.x und v3.x haben gleiche Hardware (QCA9558), Gluon hat trotzdem getrennte Images; v4 ist neue Hardware (QCA9563); v5 heißt "TL-WR1043N" ohne D [geprüft: Wiki toh:tp-link:tl-wr1043nd]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr1043nd-v2-initramfs-kernel.bin) (Liste)
@@ -6236,6 +6577,8 @@ TP-Link TL-WR1043N/ND v3 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image [abgeleitet: Commit ohne Anleitung]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** TL-WR1043N/ND v2, v3, v4 (und N v5) haben je eigenes Image; Hardware-Version auf dem Typenschild [geprüft: OpenWrt generic-tp-link.mk, Hardware-ID 0x10430002/0x10430003]; v2.x und v3.x haben gleiche Hardware (QCA9558), Gluon hat trotzdem getrennte Images; v4 ist neue Hardware (QCA9563); v5 heißt "TL-WR1043N" ohne D [geprüft: Wiki toh:tp-link:tl-wr1043nd]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr1043nd-v3-initramfs-kernel.bin) (Liste)
@@ -6266,6 +6609,8 @@ TP-Link TL-WR1043N/ND v4 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image [abgeleitet: Commit ohne Anleitung]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** TL-WR1043N/ND v2, v3, v4 (und N v5) haben je eigenes Image; Hardware-Version auf dem Typenschild [geprüft: OpenWrt generic-tp-link.mk, Hardware-ID 0x10430002/0x10430003]; Supportliste des factory-Images enthält nur TL-WR1043ND 4.0.0 mit Regionskennung EU (45550000); Geräte anderer Regionen lehnen das Image vermutlich ab [geprüft: tplink-safeloader TLWR1043NDV4; Folge abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr1043nd-v4-initramfs-kernel.bin) (Liste)
@@ -6296,6 +6641,8 @@ TP-Link TL-WR2543N/ND v1 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image [geprüft: Wiki toh:tp-link:tl-wr2543nd]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr2543-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr2543-v1-squashfs-factory.bin)
@@ -6327,6 +6674,8 @@ TP-Link TL-WR810N v1 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image [geprüft über Verweis auf ar71xx-Commit b23b0fb2]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** TL-WR810N v1 (QCA9531, Hardware-ID 0x8100001) und v2 (QCA9533, 0x8100002) haben verschiedene Images; Gluon baut nur v1 [geprüft: OpenWrt generic-tp-link.mk, Gluon targets/ath79-generic]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr810n-v1-initramfs-kernel.bin) (Liste)
@@ -6358,6 +6707,8 @@ TP-Link TL-WR842N v3 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image, vorher kurz umbenennen, z. B. in firmware.bin [geprüft: Wiki toh:tp-link:tl-wr842nd]; die Herstelleroberfläche nimmt nur Dateinamen bis zu einer gewissen Länge [geprüft: Commit e0d98e12]; daher vor dem Hochladen kurz umbenennen, z. B. factory.bin [abgeleitet]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr842n-v3-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr842n-v3-squashfs-factory.bin)
@@ -6386,6 +6737,8 @@ TP-Link TL-WR902AC v1 (broken) · ath79-generic · K0
 - **Datei:** Gluon-factory-Image, vor dem Hochladen in update.bin umbenennen [geprüft: Wiki toh:tp-link:tl-wr902ac_v1]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Gehäuse fast gleich wie TL-MR3020, anderes Gerät [geprüft: Commit 60de1fdb]; Supportliste nur EU und US [geprüft: tplink-safeloader TL-WR902AC-V1]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_tl-wr902ac-v1-initramfs-kernel.bin) (Liste)
@@ -6420,6 +6773,8 @@ TP-Link WBS210 v1 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: cpe510, Wiki toh:tp-link:cpe510]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Supportliste WBS210 1.20 (EU/US/UN); v2 eigenes Image [geprüft: tplink-safeloader WBS210]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_wbs210-v1-initramfs-kernel.bin) (Liste)
@@ -6454,6 +6809,8 @@ TP-Link WBS210 v2 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: cpe510; abgeleitet: Wiki-Zusammenfassung, im Rohtext toh:tp-link:cpe210 nicht gefunden]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Supportliste WBS210 2.0 (EU/US/UN); Hardware wie CPE220 v2, aber mit Antennenbuchsen [geprüft: tplink-safeloader WBS210V2; Commit 3930aab2]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_wbs210-v2-initramfs-kernel.bin) (Liste)
@@ -6488,6 +6845,8 @@ TP-Link WBS510 v1 · ath79-generic · K0
 - **Datei:** Gluon-factory-Image; Dateiname höchstens 68 Zeichen, am besten factory.bin [geprüft: cpe510; abgeleitet: Wiki-Zusammenfassung, im Rohtext toh:tp-link:cpe210 nicht gefunden, steht in toh:tp-link:cpe510]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Supportliste WBS510 1.20 (EU/US/UN/CA) [geprüft: tplink-safeloader WBS510]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_wbs510-v1-initramfs-kernel.bin) (Liste)
@@ -6520,6 +6879,8 @@ NETGEAR WNDR3700 v4 · ath79-nand · K0
 - **Datei:** Gluon-factory-Image (.img) [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** WNDR3700 v4 und WNDR4300 haben gleiche Plattform (AR9344, 128 MB NAND), aber je eigenes Image; WNDR3700 v4 nicht mit WNDR3700 v1/v2 (eigene Images) verwechseln [geprüft: Commit 7e623c31/9b6f89c3; OpenWrt nand.mk]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-netgear_wndr3700-v4-initramfs-kernel.bin) (Liste)
@@ -6552,6 +6913,8 @@ NETGEAR WNDR4300 · ath79-nand · K0
 - **Datei:** Gluon-factory-Image (.img) [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** WNDR3700 v4 und WNDR4300 haben gleiche Plattform (AR9344, 128 MB NAND), aber je eigenes Image; WNDR3700 v4 nicht mit WNDR3700 v1/v2 (eigene Images) verwechseln [geprüft: Commit 7e623c31/9b6f89c3; OpenWrt nand.mk]; WNDR4300 v2 (Typenschild "WNDR4300v2") ist ein anderes Gerät; Variante "SW" (SureWest) hat gleiche Hardware wie v1 [geprüft: Wiki toh:netgear:wndr4300]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-netgear_wndr4300-initramfs-kernel.bin) (Liste)
@@ -6582,6 +6945,8 @@ Zyxel NBG6716 · ath79-nand · K0
 - **Datei:** Gluon-factory-Image [abgeleitet: Web-UI]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Gerät gibt es mit 128 MB und 256 MB NAND; OpenWrt nutzt nur 128 MB [geprüft: Commit 99835e09]; Flash-Varianten laut Wiki: 16 MB + 256 MB, 8 MB + 128 MB, 16 MB + 128 MB, 4 MB + 128 MB; von außen nicht unterscheidbar; EMG2926 (Videotron) lehnt NBG6716-Images ab [geprüft: Wiki toh:zyxel:nbg6716; "von außen nicht unterscheidbar" im Rohtext nicht gefunden]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-zyxel_nbg6716-initramfs-kernel.bin) (Liste)
@@ -6613,6 +6978,8 @@ Linksys EA6350 v3 · ipq40xx-generic · K0
 - **Datei:** Gluon-factory-Image (factory.bin) [geprüft: Commit a873b292]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** nur Hardware-Version 3; EA6350 v4 hat einen anderen Chip und ist hier nicht enthalten [abgeleitet: Gluon kennt nur v3; Wiki-Seite nennt v4 nicht]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_ea6350v3-initramfs-zImage.itb)
@@ -6642,6 +7009,8 @@ Linksys VLP01 (Alias von linksys-whw01) · ipq40xx-generic · K0
 - **Datei:** Gluon-factory-Image [abgeleitet: Alias]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** -
 - **Factory-/Stock-Image-Link:** -
@@ -6670,6 +7039,8 @@ Linksys WHW01 v1 (Velop) · ipq40xx-generic · K0
 - **Datei:** Gluon-factory-Image [geprüft: Abruf 10.10.2026, Wiki toh:linksys:whw01_v1]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_whw01-initramfs-zImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_whw01-squashfs-factory.bin)
@@ -6702,6 +7073,8 @@ Linksys WHW03 v2 (Velop) · ipq40xx-generic · K0
 - **Datei:** Gluon-factory-Image [geprüft: Commit 9e4ede83]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** WHW03 v2 (NAND) und WHW03 v1 (eMMC) haben je eigenes Image [geprüft: Commit 9e4ede83/c9048755]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_whw03v2-initramfs-zImage.itb)
@@ -6734,6 +7107,8 @@ Linksys WHW03 v1 (Velop) · ipq40xx-generic · K0
 - **Datei:** Gluon-factory-Image [geprüft: Commit c9048755]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** WHW03 v1 (4 GB eMMC) und WHW03 v2 (NAND) haben je eigenes Image [geprüft: Commit c9048755/9e4ede83]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_whw03-initramfs-zImage.itb)
@@ -6764,6 +7139,8 @@ NETGEAR EX6100 v2 · ipq40xx-generic · K0
 - **Datei:** Gluon-factory-Image (`.img`) [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** EX6100 v2 und EX6150 v2 teilen Herstellerfirmware, aber je eigenes Image (EX6100 v2 im Commit ungetestet); EX6150 ohne "v2" ist ein anderes Gerät (MT7621, .chk-Image) [geprüft: Commit 970f1914; Gluon targets/ramips-mt7621]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-netgear_ex6100v2-initramfs-zImage.itb)
@@ -6794,6 +7171,8 @@ NETGEAR EX6150 v2 · ipq40xx-generic · K0
 - **Datei:** Gluon-factory-Image (`.img`) [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** EX6100 v2 und EX6150 v2 teilen Herstellerfirmware, aber je eigenes Image (EX6100 v2 im Commit ungetestet); EX6150 ohne "v2" ist ein anderes Gerät (MT7621, .chk-Image) [geprüft: Commit 970f1914; Gluon targets/ramips-mt7621]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-netgear_ex6150v2-initramfs-zImage.itb)
@@ -6826,6 +7205,8 @@ Zyxel NBG6617 · ipq40xx-generic · K0
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-zyxel_nbg6617-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-zyxel_nbg6617-squashfs-factory.bin)
@@ -6856,6 +7237,8 @@ NETGEAR Nighthawk X4S R7800 · ipq806x-generic · K0
 - **Datei:** Gluon-factory-Image (factory.img) [abgeleitet: Image-Rezept DniImage, Commit ohne Text]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Bedingung an die Herstellerfirmware:** getestet mit Herstellerfirmware V1.0.2.92; abgelehnte Versionen nicht bekannt [geprüft: Wiki toh:netgear:r7800]
 - **initramfs-Link:** [24.10.8: initramfs-uImage](https://downloads.openwrt.org/releases/24.10.8/targets/ipq806x/generic/openwrt-24.10.8-ipq806x-generic-netgear_r7800-initramfs-uImage)
@@ -6886,6 +7269,8 @@ TP-Link Archer C2600 v1 · ipq806x-generic · K0
 - **Datei:** Gluon-factory-Image (safeloader) [abgeleitet: Image-Rezept TpSafeImage, Commit ohne Text]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Supportliste nur "Archer C2600" 1.0.0 ohne Regionskennung [geprüft: tplink-safeloader C2600]
 - **Bedingung an die Herstellerfirmware:** Hardware v1.1: Werks-Zugangsdaten funktionieren laut Wiki nicht, dann nur TFTP (manche v1.1-Geräte melden sich aber als v1.0, dann geht der Web-Upload); Web-Upload auf v1.0 belegt mit Herstellerfirmware Build 20150610 Rel. 32140 [geprüft: Wiki toh:tp-link:archer_c2600_v1, korrigiert]
@@ -6914,6 +7299,8 @@ NETGEAR DGN3500B · lantiq-xway · K0
 - **Datei:** Gluon-factory.img (Kennung "DE") [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** DGN3500B ist die Annex-B-Variante (DE); das Image trägt die Kennung "DE". DGN3500 ohne B (Annex A, WW/NA) hat eigene Images, die Gluon nicht baut [geprüft: OpenWrt lantiq/image/ar9.mk; Commit 575127fe]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/lantiq/xway/openwrt-24.10.8-lantiq-xway-netgear_dgn3500b-initramfs-kernel.bin) (200)
@@ -6944,6 +7331,8 @@ NETGEAR WAX220 · mediatek-filogic · K0
 - **Datei:** Gluon-factory-Image (`.img`, verschlüsselt) [abgeleitet: Image-Rezept "Padding … required by OEM web interface"; Commit nennt nur UART]; das factory ist auf genau 10 MB aufgefüllt, wegen einer Mindestgrößenprüfung der Oberfläche [geprüft: Wiki toh:netgear:wax220]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [24.10.8: initramfs-recovery.itb](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-netgear_wax220-initramfs-recovery.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-netgear_wax220-squashfs-factory.img)
@@ -6973,6 +7362,8 @@ OpenWrt One · mediatek-filogic · K0
 - **Datei:** Gluon-sysupgrade (`.itb`) [abgeleitet: Image-Rezept, Commit ohne Installationsabschnitt]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Bedingung an die Herstellerfirmware:** kommt ab Werk mit OpenWrt und LuCI; keine Herstellerfirmware [geprüft: Wiki toh:openwrt:one]
 - **initramfs-Link:** [24.10.8: initramfs.itb](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-openwrt_one-initramfs.itb)
@@ -7007,6 +7398,8 @@ Zyxel NWA50AX Pro · mediatek-filogic · K0
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** NWA50AX Pro (MT7981) nicht mit NWA50AX (MT7621) verwechseln; NWA90AX Pro nutzt dasselbe Gluon-Gerät als Alias [geprüft: Commit f0445746; Feld modell]
 - **Bedingung an die Herstellerfirmware:** Dual-Image: OpenWrt geht nur in Slot A, vor dem Hochladen muss also Slot B aktiv sein [geprüft: Commit a0b7fef0/f0445746]; laut Wiki scheitert die Installation, wenn die Herstellerfirmware vorher eine ungerade Zahl von Malen aktualisiert wurde; dann einmal Zyxel-Firmware einspielen [geprüft: Wiki toh:zyxel:nwa50ax_pro]; Gebrauchte Geräte können noch in der Zyxel-Nebula-Cloud des Vorbesitzes registriert sein. Dann holt sich das Gerät nach einem Werksreset binnen etwa 30 Minuten wieder die Cloud-Einstellungen, und die Weboberfläche verlangt das Nebula-Passwort ("This device is managed by Nebula") [Forum-Zusammenfassung: community.zyxel.com/en/discussion/29636]. Herauslösen: mit einem anderen Nebula-Konto per Zwangsadoption (force adopt, QR-Code in der Nebula-App) übernehmen und dort wieder abmelden (Unregister); erst danach geht die Installation ohne serielle Konsole [abgeleitet: adorfer, Hörensagen; Ablauf Unregister: mysupport.zyxel.com/hc/en-us/articles/360006459099, nicht gelesen]. In einem Forumsfall half statt dessen: Werksreset und sofort die Nebula-Erkennung (NCC Discovery) mit dem Zyxel-Werkzeug ZON abschalten [Forum-Zusammenfassung: community.zyxel.com/en/discussion/29636]
@@ -7039,6 +7432,8 @@ Zyxel NWA90AX Pro (Alias von zyxel-nwa50ax-pro) · mediatek-filogic · K0
 - **Datei:** Gluon-factory-Image; Factory braucht compat-model 81e1, im Backport enthalten [geprüft: Patch 0003]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Bedingung an die Herstellerfirmware:** Dual-Image wie NWA50AX Pro: vorher muss Slot B aktiv sein ("Current Image num" 1), sonst erst einmal Zyxel-Firmware einspielen [geprüft: Wiki toh:zyxel:nwa50ax_pro; "Slot B" abgeleitet, Wiki nennt nur "Current Image num" 1]; Gebrauchte Geräte können noch in der Zyxel-Nebula-Cloud des Vorbesitzes registriert sein. Dann holt sich das Gerät nach einem Werksreset binnen etwa 30 Minuten wieder die Cloud-Einstellungen, und die Weboberfläche verlangt das Nebula-Passwort ("This device is managed by Nebula") [Forum-Zusammenfassung: community.zyxel.com/en/discussion/29636]. Herauslösen: mit einem anderen Nebula-Konto per Zwangsadoption (force adopt, QR-Code in der Nebula-App) übernehmen und dort wieder abmelden (Unregister); erst danach geht die Installation ohne serielle Konsole [abgeleitet: adorfer, Hörensagen; Ablauf Unregister: mysupport.zyxel.com/hc/en-us/articles/360006459099, nicht gelesen]. In einem Forumsfall half statt dessen: Werksreset und sofort die Nebula-Erkennung (NCC Discovery) mit dem Zyxel-Werkzeug ZON abschalten [Forum-Zusammenfassung: community.zyxel.com/en/discussion/29636]
 - **initramfs-Link:** -
@@ -7066,6 +7461,8 @@ TP-Link TL-WDR4900 v1 · mpc85xx-p1010 · K0
 - **Datei:** Gluon-factory-Image [abgeleitet: ToH "GUI OEM"; Commit ohne Text]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** v1.x: PowerPC (P1014), 3 interne + 3 externe Antennen, weltweit verkauft; v2.x ist völlig andere Hardware (6 externe Antennen, nur China) [geprüft: Wiki toh:tp-link:tl-wdr4900]
 - **initramfs-Link:** kein initramfs in 24.10.8
@@ -7096,6 +7493,8 @@ Nexx WT3020 8M (Aliase WT3020AD/F/H) · ramips-mt7620 · K0
 - **Datei:** Gluon-factory-Image (Poray-Header) als factory.bin [abgeleitet: mk + ToH "GUI OEM"; Wiki beschreibt zusätzlich Breed-U-Boot]; [geprüft: Wiki toh:nexx:wt3020]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** WT3020A: ohne USB, 4 MB Flash (nicht dieses Image); WT3020H/F/AD: mit USB, 8 MB; WT3020H an der MAC 20:28:18:... erkennbar [geprüft: Wiki toh:nexx:wt3020]
 - **Bedingung an die Herstellerfirmware:** einige U-Boot-Versionen gelten als problematisch (Wiki nennt Bootloader BREED als Alternative) [geprüft: Wiki toh:nexx:wt3020]
@@ -7126,6 +7525,9 @@ TP-Link Archer C20i · ramips-mt7620 · K0
 - **Datei:** Gluon-factory-Image [abgeleitet: Gluon baut factory; Wiki nennt nur TFTP-Recovery mit ArcherC20iV1_tp_recovery.bin von 192.168.0.66]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Downgrade auf Build 140709 (adorfer: L1)
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Archer C20i nicht mit Archer C20 v1 (eigenes Gluon-Gerät ohne factory) oder Archer C2 (AC750, Gigabit-Switch) verwechseln [geprüft: Gluon targets/ramips-mt7620, Wiki toh:tp-link:archer_c20i]
 - **Bedingung an die Herstellerfirmware:** vor dem Flashen ältere TP-Link-Firmware Build 140709 einspielen, nicht aus Build 151014 flashen [geprüft: Wiki toh:tp-link:archer_c20i] [geprüft: Neanderfunk-Notiz, adorfer 15.10.2026, am Gerät: aus Build 151014 geflasht -> Startschleife, Rettung nur per TFTP]
@@ -7158,6 +7560,8 @@ TP-Link Archer C50 v1 · ramips-mt7620 · K0
 - **Datei:** Gluon-factory mit Regionssuffix (factory-eu/-us); Neanderfunk setzt GLUON_REGION=eu, es gibt also nur factory-eu [geprüft: templates/common/site.mk, Gluon targets/ramips-mt7620; Folge abgeleitet]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Archer C50 v1 (MT7620) ist ein anderes Gerät als C50 v3/v4/v6 (MT76x8, eigene Images) [geprüft: Gluon targets/ramips-mt7620, ramips-mt76x8]; für US-Geräte wäre factory-us nötig, das Neanderfunk nicht baut [geprüft: templates/common/site.mk, Gluon targets/ramips-mt7620; Folge abgeleitet]
 - **Bedingung an die Herstellerfirmware:** mit Herstellerfirmware 160411 (EU V1) zuerst downgraden [geprüft: Wiki toh:tp-link:archer-c50]
@@ -7189,6 +7593,8 @@ D-Link COVR-X1860 A1 · ramips-mt7621 · K0
 - **Datei:** Gluon-factory-Image [geprüft; Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** COVR-X1860 (zwei Ethernet-Ports, Steckernetzteil) ist ähnlich DAP-X1860 (Steckdosengerät), eigenes Image; Sets COVR-X1862/X1863 enthalten zwei bzw. drei COVR-X1860 [geprüft: Commit 0a18259e]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-dlink_covr-x1860-a1-initramfs-kernel.bin) (200)
@@ -7219,6 +7625,8 @@ D-Link DIR-860L B1 · ramips-mt7621 · K0
 - **Datei:** Gluon-factory-Image (SEAMA) [abgeleitet: ToH "D-Link Recovery GUI"; Commit ohne Text]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** nur Hardware-Revision B1 (MediaTek MT7621); A1 ist Broadcom und nicht unterstützt: "H/W Ver." auf dem Typenschild prüfen [geprüft: Wiki toh:d-link:dir-860l_b1]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-dlink_dir-860l-b1-initramfs-kernel.bin) (200)
@@ -7247,6 +7655,8 @@ Mercusys MR70X v1 · ramips-mt7621 · K0
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Supportliste: "MR70X" und "MR1800X", Hardware 1.0.0, u. a. EU, US, JP, BR [geprüft: tplink-safeloader MR70X]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-mercusys_mr70x-v1-initramfs-kernel.bin) (200)
@@ -7275,6 +7685,8 @@ NETGEAR WAC104 · ramips-mt7621 · K0
 - **Datei:** Gluon-factory.img [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wac104-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
@@ -7304,6 +7716,8 @@ TP-Link Archer AX23 v1 (Gluon: broken) · ramips-mt7621 · K0
 - **Datei:** Gluon-factory-Image (factory.bin) [geprüft: Wiki toh:tp-link:archer_ax23_v1]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Supportliste: "Archer AX23" und "Archer AX1800", Hardware 1.0/1.20, viele Regionen (u. a. EU, US, JP, RU, KR) [geprüft: tplink-safeloader ARCHER-AX23-V1]; Hardware v1.0, v1.2 und v1.20 sind gleich; auch "AX1800 RU HWVER 1.20" läuft; Archer AX23 v2 hat einen ganz anderen Chip und wird nicht unterstützt [geprüft: Wiki toh:tp-link:archer_ax23_v1]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-tplink_archer-ax23-v1-initramfs-kernel.bin) (200)
@@ -7334,6 +7748,8 @@ TP-Link Archer C6 v3 (Gluon: broken) · ramips-mt7621 · K0
 - **Datei:** Gluon-factory-Image (factory.bin) [geprüft: Commit d22fb7f4]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Archer C6 v3 ist baugleich mit Archer A6 v3; Supportliste "Archer C6" 3.0 und 3.20, u. a. EU, US, JP, RU, BR, KR; Archer C6 v2 ist ein anderes Gerät (ath79) [geprüft: Commit d22fb7f4; tplink-safeloader ARCHER-C6-V3]; Der Nachfolger Archer C6 v4 sieht außen gleich aus, wird aber nie unterstützt (andere CPU, zu wenig Flash): Typenschild prüfen [geprüft: Wiki toh:tp-link:archer_c6_v3]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-tplink_archer-c6-v3-initramfs-kernel.bin) (200)
@@ -7361,6 +7777,8 @@ TP-Link RE500 v1 · ramips-mt7621 · K0
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** RE500 v1 und RE650 v1 haben gleiche Hardware, aber je eigenes Image [geprüft: Commit ba0f4f0c/8c51ddef]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-tplink_re500-v1-initramfs-kernel.bin) (200)
@@ -7391,6 +7809,8 @@ TP-Link RE650 v1 · ramips-mt7621 · K0
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** RE500 v1 und RE650 v1 haben gleiche Hardware, aber je eigenes Image [geprüft: Commit ba0f4f0c/8c51ddef]; RE650 v2 hat nur 8 MB Flash (nicht unterstützt); Etikett zeigt "1.0" bzw. "2.0" plus Regionscode [geprüft: Wiki toh:tp-link:re650_v1; "nicht unterstützt" abgeleitet, im Rohtext nicht gefunden]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-tplink_re650-v1-initramfs-kernel.bin) (200)
@@ -7423,6 +7843,8 @@ ZyXEL NWA50AX (Alias NWA90AX) · ramips-mt7621 · K0
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** NWA50AX (MT7621) ist ein anderes Gerät als NWA50AX Pro (MT7981, eigenes Image) [geprüft: Commit a0b7fef0/f0445746]
 - **Bedingung an die Herstellerfirmware:** Dual-Image: OpenWrt geht nur in Slot A, vor dem Hochladen muss also Slot B aktiv sein [geprüft: Commit a0b7fef0/f0445746]; Gebrauchte Geräte können noch in der Zyxel-Nebula-Cloud des Vorbesitzes registriert sein. Dann holt sich das Gerät nach einem Werksreset binnen etwa 30 Minuten wieder die Cloud-Einstellungen, und die Weboberfläche verlangt das Nebula-Passwort ("This device is managed by Nebula") [Forum-Zusammenfassung: community.zyxel.com/en/discussion/29636]. Herauslösen: mit einem anderen Nebula-Konto per Zwangsadoption (force adopt, QR-Code in der Nebula-App) übernehmen und dort wieder abmelden (Unregister); erst danach geht die Installation ohne serielle Konsole [abgeleitet: adorfer, Hörensagen; Ablauf Unregister: mysupport.zyxel.com/hc/en-us/articles/360006459099, nicht gelesen]. In einem Forumsfall half statt dessen: Werksreset und sofort die Nebula-Erkennung (NCC Discovery) mit dem Zyxel-Werkzeug ZON abschalten [Forum-Zusammenfassung: community.zyxel.com/en/discussion/29636]
@@ -7456,6 +7878,8 @@ ZyXEL NWA55AXE (Gluon: broken) · ramips-mt7621 · K0
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** NWA55AXE hat keine Reset-Taste und keine LED wie das NWA50AX [geprüft: Commit a0b7fef0]
 - **Bedingung an die Herstellerfirmware:** Dual-Image: OpenWrt geht nur in Slot A, vor dem Hochladen muss also Slot B aktiv sein [geprüft: Commit a0b7fef0/f0445746]; Gebrauchte Geräte können noch in der Zyxel-Nebula-Cloud des Vorbesitzes registriert sein. Dann holt sich das Gerät nach einem Werksreset binnen etwa 30 Minuten wieder die Cloud-Einstellungen, und die Weboberfläche verlangt das Nebula-Passwort ("This device is managed by Nebula") [Forum-Zusammenfassung: community.zyxel.com/en/discussion/29636]. Herauslösen: mit einem anderen Nebula-Konto per Zwangsadoption (force adopt, QR-Code in der Nebula-App) übernehmen und dort wieder abmelden (Unregister); erst danach geht die Installation ohne serielle Konsole [abgeleitet: adorfer, Hörensagen; Ablauf Unregister: mysupport.zyxel.com/hc/en-us/articles/360006459099, nicht gelesen]. In einem Forumsfall half statt dessen: Werksreset und sofort die Nebula-Erkennung (NCC Discovery) mit dem Zyxel-Werkzeug ZON abschalten [Forum-Zusammenfassung: community.zyxel.com/en/discussion/29636]
@@ -7487,6 +7911,8 @@ Cudy WR1000 · ramips-mt76x8 · K0
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-cudy_wr1000-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
@@ -7515,6 +7941,8 @@ TP-Link RE200 v2 · ramips-mt76x8 · K0
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** RE200 v2, v3, v4 haben je eigenes Image; Hardware-Version auf dem Typenschild [abgeleitet: getrennte Gluon-Geräte; OpenWrt-Commits]; RE200 v5 wird nicht unterstützt (4 MB Flash, VxWorks) [geprüft: Wiki toh:tp-link:re200]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-tplink_re200-v2-initramfs-kernel.bin) (200)
@@ -7545,6 +7973,8 @@ TP-Link RE200 v3 · ramips-mt76x8 · K0
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** RE200 v2, v3, v4 haben je eigenes Image; Hardware-Version auf dem Typenschild [abgeleitet: getrennte Gluon-Geräte; OpenWrt-Commits]; RE200 v5 wird nicht unterstützt (4 MB Flash, VxWorks) [geprüft: Wiki toh:tp-link:re200]
 - **Bedingung an die Herstellerfirmware:** Herstellerfirmware neuer als 1.1.0 lehnt OpenWrt ab: zuerst auf 1.1.0 downgraden (EU-Seite von TP-Link hat sie, US-Seite nicht) [geprüft: Wiki toh:tp-link:re200]
@@ -7575,6 +8005,8 @@ TP-Link RE200 v4 · ramips-mt76x8 · K0
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** RE200 v2, v3, v4 haben je eigenes Image; Hardware-Version auf dem Typenschild [abgeleitet: getrennte Gluon-Geräte; OpenWrt-Commits]; RE200 v5 wird nicht unterstützt (4 MB Flash, VxWorks) [geprüft: Wiki toh:tp-link:re200]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-tplink_re200-v4-initramfs-kernel.bin) (200)
@@ -7614,6 +8046,8 @@ MikroTik RouterBOARD 951Ui-2nD (hAP) · ath79-mikrotik · K1
 - **Datei:** Gluon-factory ist das initramfs zum Netboot [geprüft: Gluon targets/mikrotik.inc]; Dateiname kommt per DHCP/BOOTP, also beliebig [abgeleitet: Wiki toh:mikrotik:common]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** DHCP/BOOTP+TFTP-Server (z. B. dnsmasq); kein netinstall nötig [abgeleitet]
 - **Typenschild/Verwechslung:** Typenschild RB951Ui-2nD (hAP, nur 2.4 GHz, 5x 100 Mbit); nicht hAP lite/hAP ac [abgeleitet: Modellcode im Commit]
 - **Bedingung an die Herstellerfirmware:** RouterBOOT (Bootloader) muss Version 6.x sein: in RouterOS unter System > Routerboard "current firmware" prüfen; bei 7.x erst RouterOS v6 einspielen und mit System > Routerboard "Upgrade" den Bootloader zurückstufen [abgeleitet: Wiki toh:mikrotik:common]; RouterBOOT v7 nimmt auf NOR-Geräten den bisherigen Kernel-Bootweg nicht mehr an [geprüft: OpenWrt-Commit 36834ea3]; RouterOS-Lizenzschlüssel vorher sichern ist optional [abgeleitet: Wiki toh:mikrotik:common]
@@ -7651,6 +8085,8 @@ MikroTik RouterBOARD mAPL-2nD (mAP lite) · ath79-mikrotik · K1
 - **Datei:** Gluon baut hier kein initramfs, das OpenWrt-initramfs nehmen [geprüft: Gluon targets/ath79-mikrotik factory=false]; Dateiname kommt per DHCP/BOOTP, also beliebig [abgeleitet: Wiki toh:mikrotik:common]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** DHCP/BOOTP+TFTP-Server (z. B. dnsmasq); kein netinstall nötig [abgeleitet]
 - **Typenschild/Verwechslung:** Typenschild RBmAPL-2nD (mAP lite, ein Port) [geprüft: Commit]; nicht mit dem größeren mAP (RBmAP2nD) verwechseln [abgeleitet]
 - **Bedingung an die Herstellerfirmware:** RouterBOOT (Bootloader) muss Version 6.x sein: in RouterOS unter System > Routerboard "current firmware" prüfen; bei 7.x erst RouterOS v6 einspielen und mit System > Routerboard "Upgrade" den Bootloader zurückstufen [abgeleitet: Wiki toh:mikrotik:common]; RouterBOOT v7 nimmt auf NOR-Geräten den bisherigen Kernel-Bootweg nicht mehr an [geprüft: OpenWrt-Commit 36834ea3]; RouterOS-Lizenzschlüssel vorher sichern ist optional [abgeleitet: Wiki toh:mikrotik:common]
@@ -7688,6 +8124,8 @@ MikroTik RouterBOARD wAP G-5HacT2HnD (wAP AC) · ath79-mikrotik · K1
 - **Datei:** Gluon baut hier kein initramfs, das OpenWrt-initramfs nehmen [geprüft: Gluon targets/ath79-mikrotik factory=false]; Dateiname kommt per DHCP/BOOTP, also beliebig [abgeleitet: Wiki toh:mikrotik:common]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** DHCP/BOOTP+TFTP-Server (z. B. dnsmasq); kein netinstall nötig [abgeleitet]
 - **Typenschild/Verwechslung:** wAP AC gibt es zweimal: RBwAPG-5HacT2HnD (ältere, ath79, dieses Image) und RBwAPG-5HacD2HnD (neuere, ipq40xx, Image mikrotik-wap-ac); Modellcode auf dem Typenschild entscheidet ("T2HnD" vs. "D2HnD") [geprüft: Commit 7f54bf6f]
 - **Bedingung an die Herstellerfirmware:** RouterBOOT (Bootloader) muss Version 6.x sein: in RouterOS unter System > Routerboard "current firmware" prüfen; bei 7.x erst RouterOS v6 einspielen und mit System > Routerboard "Upgrade" den Bootloader zurückstufen [abgeleitet: Wiki toh:mikrotik:common]; RouterBOOT v7 nimmt auf NOR-Geräten den bisherigen Kernel-Bootweg nicht mehr an [geprüft: OpenWrt-Commit 36834ea3]; RouterOS-Lizenzschlüssel vorher sichern ist optional [abgeleitet: Wiki toh:mikrotik:common]
@@ -7725,6 +8163,8 @@ MikroTik RouterBOARD wAPR-2nD (wAP R) · ath79-mikrotik · K1
 - **Datei:** Gluon-factory ist das initramfs zum Netboot [geprüft: Gluon targets/mikrotik.inc]; Dateiname kommt per DHCP/BOOTP, also beliebig [abgeleitet: Wiki toh:mikrotik:common]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** DHCP/BOOTP+TFTP-Server (z. B. dnsmasq); kein netinstall nötig [abgeleitet]
 - **Typenschild/Verwechslung:** Typenschild RBwAPR-2nD (wAP R, mit miniPCIe- und SIM-Steckplatz) [geprüft: Commit]
 - **Bedingung an die Herstellerfirmware:** RouterBOOT (Bootloader) muss Version 6.x sein: in RouterOS unter System > Routerboard "current firmware" prüfen; bei 7.x erst RouterOS v6 einspielen und mit System > Routerboard "Upgrade" den Bootloader zurückstufen [abgeleitet: Wiki toh:mikrotik:common]; RouterBOOT v7 nimmt auf NOR-Geräten den bisherigen Kernel-Bootweg nicht mehr an [geprüft: OpenWrt-Commit 36834ea3]; RouterOS-Lizenzschlüssel vorher sichern ist optional [abgeleitet: Wiki toh:mikrotik:common]
@@ -7762,6 +8202,8 @@ MikroTik DISC Lite5 ac (Alias von mikrotik-sxtsq-5-ac-rbsxtsqg-5acd) · ipq40xx-
 - **Datei:** Gluon baut hier kein initramfs, das OpenWrt-initramfs des SXTsq 5 ac nehmen [geprüft: Gluon targets/ipq40xx-mikrotik factory=false]; Dateiname kommt per DHCP/BOOTP, also beliebig [abgeleitet: Wiki toh:mikrotik:common]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** DHCP/BOOTP+TFTP-Server
 - **Typenschild/Verwechslung:** DISC Lite5 ac (RBDiscG-5acD) läuft in Gluon mit dem Image des SXTsq 5 ac [abgeleitet: Gluon-Alias]
 - **Bedingung an die Herstellerfirmware:** RouterBOOT (Bootloader) muss Version 6.x sein: in RouterOS unter System > Routerboard "current firmware" prüfen; bei 7.x erst RouterOS v6 einspielen und mit System > Routerboard "Upgrade" den Bootloader zurückstufen [abgeleitet: Wiki toh:mikrotik:common]; RouterBOOT v7 nimmt auf NOR-Geräten den bisherigen Kernel-Bootweg nicht mehr an [geprüft: OpenWrt-Commit 36834ea3]; RouterOS-Lizenzschlüssel vorher sichern ist optional [abgeleitet: Wiki toh:mikrotik:common]
@@ -7800,6 +8242,8 @@ MikroTik hAP ac2 (RBD52G-5HacD2HnD) · ipq40xx-mikrotik · K1
 - **Datei:** Gluon-factory ist hier selbst das initramfs zum Netboot [geprüft: Gluon targets/mikrotik.inc]; Dateiname kommt per DHCP/BOOTP, also beliebig [abgeleitet: Wiki toh:mikrotik:common]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** DHCP/BOOTP+TFTP-Server (z. B. dnsmasq); netinstall nicht nötig [abgeleitet]
 - **Typenschild/Verwechslung:** Typenschild RBD52G-5HacD2HnD (hAP ac², ipq40xx); nicht hAP ac (RB962) oder hAP ac³ [abgeleitet: Modellcode im Commit]
 - **Bedingung an die Herstellerfirmware:** RouterBOOT (Bootloader) muss Version 6.x sein: in RouterOS unter System > Routerboard "current firmware" prüfen; bei 7.x erst RouterOS v6 einspielen und mit System > Routerboard "Upgrade" den Bootloader zurückstufen [abgeleitet: Wiki toh:mikrotik:common]; RouterBOOT v7 nimmt auf NOR-Geräten den bisherigen Kernel-Bootweg nicht mehr an [geprüft: OpenWrt-Commit 36834ea3]; RouterOS-Lizenzschlüssel vorher sichern ist optional [abgeleitet: Wiki toh:mikrotik:common]
@@ -7838,6 +8282,8 @@ MikroTik SXTsq 5 ac (RBSXTsqG-5acD) · ipq40xx-mikrotik · K1
 - **Datei:** Gluon baut hier kein initramfs, das OpenWrt-initramfs nehmen [geprüft: Gluon targets/ipq40xx-mikrotik factory=false]; Dateiname kommt per DHCP/BOOTP, also beliebig [abgeleitet: Wiki toh:mikrotik:common]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** DHCP/BOOTP+TFTP-Server
 - **Typenschild/Verwechslung:** Typenschild RBSXTsqG-5acD [geprüft: Commit]
 - **Bedingung an die Herstellerfirmware:** RouterBOOT (Bootloader) muss Version 6.x sein: in RouterOS unter System > Routerboard "current firmware" prüfen; bei 7.x erst RouterOS v6 einspielen und mit System > Routerboard "Upgrade" den Bootloader zurückstufen [abgeleitet: Wiki toh:mikrotik:common]; RouterBOOT v7 nimmt auf NOR-Geräten den bisherigen Kernel-Bootweg nicht mehr an [geprüft: OpenWrt-Commit 36834ea3]; RouterOS-Lizenzschlüssel vorher sichern ist optional [abgeleitet: Wiki toh:mikrotik:common]
@@ -7876,6 +8322,8 @@ MikroTik wAP ac (RBwAPG-5HacD2HnD, ipq40xx) · ipq40xx-mikrotik · K1
 - **Datei:** Gluon baut hier kein initramfs, das OpenWrt-initramfs nehmen [geprüft: Gluon targets/ipq40xx-mikrotik factory=false]; Dateiname kommt per DHCP/BOOTP, also beliebig [abgeleitet: Wiki toh:mikrotik:common]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** DHCP/BOOTP+TFTP-Server
 - **Typenschild/Verwechslung:** neuer wAP ac RBwAPG-5HacD2HnD (ipq40xx), nicht der ältere RBwAPG-5HacT2HnD (ath79, eigenes Image) [geprüft: Commit 7f54bf6f]
 - **Bedingung an die Herstellerfirmware:** RouterBOOT (Bootloader) muss Version 6.x sein: in RouterOS unter System > Routerboard "current firmware" prüfen; bei 7.x erst RouterOS v6 einspielen und mit System > Routerboard "Upgrade" den Bootloader zurückstufen [abgeleitet: Wiki toh:mikrotik:common]; RouterBOOT v7 nimmt auf NOR-Geräten den bisherigen Kernel-Bootweg nicht mehr an [geprüft: OpenWrt-Commit 36834ea3]; RouterOS-Lizenzschlüssel vorher sichern ist optional [abgeleitet: Wiki toh:mikrotik:common]
@@ -7914,6 +8362,8 @@ MikroTik hEX RB750Gr3 (Alias mikrotik-routerboard-hex-v3) · ramips-mt7621 · K1
 - **Datei:** Gluon baut hier kein initramfs, das OpenWrt-initramfs nehmen [geprüft: Gluon targets/ramips-mt7621 factory=false]; Dateiname kommt per DHCP/BOOTP, also beliebig [abgeleitet: Wiki toh:mikrotik:common]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** DHCP/BOOTP+TFTP-Server (z. B. dnsmasq); Netinstall nur für RouterOS
 - **Typenschild/Verwechslung:** hEX RB750Gr3 (MT7621); nicht hEX lite, hEX S oder hEX refresh [abgeleitet: Modellcode]; Geräte, auf denen früher der Bootloader gegen U-Boot getauscht wurde, passen nicht zu diesem Image [geprüft: Commit 52f2d7d2]
 - **Bedingung an die Herstellerfirmware:** RouterBOOT (Bootloader) muss Version 6.x sein: in RouterOS unter System > Routerboard "current firmware" prüfen; bei 7.x erst RouterOS v6 einspielen und mit System > Routerboard "Upgrade" den Bootloader zurückstufen [abgeleitet: Wiki toh:mikrotik:common]; RouterBOOT v7 nimmt auf NOR-Geräten den bisherigen Kernel-Bootweg nicht mehr an [geprüft: OpenWrt-Commit 36834ea3]; RouterOS-Lizenzschlüssel vorher sichern ist optional [abgeleitet: Wiki toh:mikrotik:common]
@@ -7957,6 +8407,8 @@ NETGEAR Orbi RBR50 v1 · ipq40xx-generic · K0+
 - **Datei:** Gluon-factory (`.img`, Vorlage nennt .img/.chk) [geprüft] [geprüft: Commit 2cb24b3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** nmrpflash
 - **Typenschild/Verwechslung:** RBR50 (Router) und RBS50 (Satellit, Set RBK50) haben eigene Images; nur v1: nmrpflash führt einen RBR50v2 getrennt [geprüft: Commit 2cb24b3; v2-Hinweis abgeleitet: nmrpflash-README, Gluon-Name 'v1']
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-netgear_rbr50-initramfs-zImage.itb)
@@ -7996,6 +8448,8 @@ NETGEAR Orbi RBS50 v1 · ipq40xx-generic · K0+
 - **Datei:** Gluon-factory (`.img`, Vorlage nennt .img/.chk) [geprüft] [geprüft: Commit 2cb24b3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** nmrpflash
 - **Typenschild/Verwechslung:** RBS50 (Satellit) und RBR50 (Router, Set RBK50) haben eigene Images; Commit nur an RBR50/SRS60 getestet [geprüft: Commit 2cb24b3]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-netgear_rbs50-initramfs-zImage.itb)
@@ -8035,6 +8489,8 @@ NETGEAR Orbi Pro SRR60 · ipq40xx-generic · K0+
 - **Datei:** Gluon-factory (`.img`, Vorlage nennt .img/.chk) [geprüft] [geprüft: Commit 2cb24b3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** nmrpflash
 - **Typenschild/Verwechslung:** SRR60 und SRS60 (Set SRK60) sind fast gleich; der SRR60 hat einen mit 'wan' beschrifteten Port, der SRS60 nicht; jeweils eigenes Image [geprüft: Commit 2cb24b3]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-netgear_srr60-initramfs-zImage.itb)
@@ -8074,6 +8530,8 @@ NETGEAR Orbi Pro SRS60 · ipq40xx-generic · K0+
 - **Datei:** Gluon-factory (`.img`, Vorlage nennt .img/.chk) [geprüft] [geprüft: Commit 2cb24b3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** nmrpflash
 - **Typenschild/Verwechslung:** SRS60 und SRR60 (Set SRK60) sind fast gleich; der SRR60 hat einen mit 'wan' beschrifteten Port, der SRS60 nicht; jeweils eigenes Image [geprüft: Commit 2cb24b3]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-netgear_srs60-initramfs-zImage.itb)
@@ -8111,6 +8569,9 @@ NETGEAR WAX206 · mediatek-mt7622 · K0
 - **Datei:** Gluon-factory (.img/.chk) [geprüft] [geprüft: Commit f6d2a23]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Netgear-Oberfläche nimmt das factory-Image; Level nach dem leichtesten Weg (Entscheidung adorfer 15.10.2026)
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [24.10.8: initramfs-recovery.itb](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-netgear_wax206-initramfs-recovery.itb)
 - **Factory-/Stock-Image-Link:** [24.10.8: squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-netgear_wax206-squashfs-factory.img)
@@ -8147,6 +8608,9 @@ NETGEAR EX3700/EX3800 (Alias netgear-ex3800) · ramips-mt7620 · K0
 - **Datei:** Gluon-factory (.img/.chk) [geprüft] [geprüft: Commit de33a4c]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Netgear-Oberfläche nimmt das factory-Image; Level nach dem leichtesten Weg (Entscheidung adorfer 15.10.2026)
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** EX3700 und EX3800 nehmen dasselbe Image [geprüft: mt7620.mk 'EX3700/EX3800']; EX6130 hat dieselbe Platine, aber ein eigenes Image [geprüft: Commit 0cbd2c7]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7620/openwrt-24.10.8-ramips-mt7620-netgear_ex3700-initramfs-kernel.bin) (200)
@@ -8183,6 +8647,9 @@ NETGEAR EX6130 · ramips-mt7620 · K0
 - **Datei:** Gluon-factory (.img/.chk) [geprüft] [geprüft: Commit 0cbd2c7]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Netgear-Oberfläche nimmt das factory-Image; Level nach dem leichtesten Weg (Entscheidung adorfer 15.10.2026)
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** gleiche Basisplatine wie EX3700/EX3800, aber eigenes Image (eigene Board-ID) [geprüft: Commit 0cbd2c7, mt7620.mk]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7620/openwrt-24.10.8-ramips-mt7620-netgear_ex6130-initramfs-kernel.bin) (200)
@@ -8220,6 +8687,9 @@ NETGEAR EAX12 (Aliase EAX11 v2, EAX15 v2) · ramips-mt7621 · K0
 - **Datei:** Gluon-factory (.img/.chk) [geprüft] [geprüft: Commit 32ea8a9]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Netgear-Oberfläche nimmt das factory-Image; Level nach dem leichtesten Weg (Entscheidung adorfer 15.10.2026)
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Dasselbe Image passt für EAX12, EAX11 v2 und EAX15 v2 [geprüft: ramips mt7621.mk, NETGEAR_ENC_MODEL_LIST]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_eax12-initramfs-kernel.bin) (200)
@@ -8257,6 +8727,9 @@ NETGEAR EX6150 (v1) · ramips-mt7621 · K0
 - **Datei:** Gluon-factory (.img/.chk) [geprüft] [geprüft: Commit 3f019bf]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Netgear-Oberfläche nimmt das factory-Image; Level nach dem leichtesten Weg (Entscheidung adorfer 15.10.2026)
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** nur EX6150 v1 (MT7621); nmrpflash führt einen EX6150v2 getrennt, das ist andere Hardware, Typenschild auf 'v2' prüfen [abgeleitet: Gluon-Name '(v1)', nmrpflash-README]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_ex6150-initramfs-kernel.bin) (200)
@@ -8292,6 +8765,9 @@ NETGEAR R6220 · ramips-mt7621 · K0
 - **Datei:** Gluon-factory (.img/.chk) [abgeleitet: ToH "GUI OEM"; Commit beschreibt Telnet-Debug + USB + mtd_write, damals ohne factory] [geprüft: nmrpflash-README]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Netgear-Oberfläche nimmt das factory-Image; Level nach dem leichtesten Weg (Entscheidung adorfer 15.10.2026)
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_r6220-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
@@ -8328,6 +8804,9 @@ NETGEAR R6260 · ramips-mt7621 · K0
 - **Datei:** Gluon-factory (.img/.chk) [abgeleitet: ToH "GUI OEM"; Commit ohne Text] [geprüft: nmrpflash-README]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Netgear-Oberfläche nimmt das factory-Image; Level nach dem leichtesten Weg (Entscheidung adorfer 15.10.2026)
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** R6260, R6350 und R6850 haben dieselbe Platine (Unterschied v. a. Antennen), aber eigene Images: Typenschild prüfen [abgeleitet: Wiki toh/netgear/r6260, Commit 6cea968 'same image for R6260, R6350 & R6850']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_r6260-initramfs-kernel.bin) (200)
@@ -8365,6 +8844,9 @@ NETGEAR WAX202 · ramips-mt7621 · K0
 - **Datei:** Gluon-factory (.img/.chk, verschlüsselt); der Bootloader nimmt verschlüsselte und unverschlüsselte Images [geprüft] [geprüft: Commit 0f068e7, mt7621.mk netgear-encrypted-factory]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Netgear-Oberfläche nimmt das factory-Image; Level nach dem leichtesten Weg (Entscheidung adorfer 15.10.2026)
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wax202-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
@@ -8403,6 +8885,8 @@ NETGEAR WNDR3700 v5 (Gluon: broken, "untested") · ramips-mt7621 · K0+
 - **Datei:** Datei laut Bestand: OpenWrt-factory.img per nmrpflash, danach Gluon-sysupgrade [geprüft: Commit 2fdd02c 'factory image ... can be flashed using nmrpflash']; die allgemeine nmrpflash-Vorlage nennt Gluon-factory (.img/.chk)
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** nmrpflash
 - **Typenschild/Verwechslung:** Nur WNDR3700 v5 (MT7621); WNDR3700 v1 bis v4 sind ganz andere Geräte (anderer Chip) mit eigenen Images: Typenschild auf 'v5' prüfen [abgeleitet: Commit cb049e7 nennt MT7621S für v5]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-initramfs-kernel.bin) (200)
@@ -8440,6 +8924,8 @@ NETGEAR R6020 · ramips-mt76x8 · K0
 - **Datei:** Gluon-factory (.img/.chk) [geprüft] [geprüft: Commit edbc8e5]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** nmrpflash
 - **Typenschild/Verwechslung:** R6020 (AC750) hat dieselbe Hardware wie R6080 (AC1000), aber anderes Flash-Layout: Images nicht tauschen [geprüft: Commit edbc8e5]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-netgear_r6020-initramfs-kernel.bin) (200)
@@ -8475,6 +8961,8 @@ NETGEAR R6120 · ramips-mt76x8 · K0
 - **Datei:** Gluon-factory (.img/.chk) [Commit 5543d63: 'To flash use nmrpflash with the provided factory.img', geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** nmrpflash
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-netgear_r6120-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
@@ -8517,6 +9005,8 @@ Ocedo Koala · ath79-generic · K1
 - **Datei:** OpenWrt-initramfs `openwrt-24.10.8-ath79-generic-ocedo_koala-initramfs-kernel.bin` (uImage lzma) [geprüft: Image-Rezept am Pin, Download-Liste] als `koala-uImage-initramfs-lzma.bin`, je nach Herstellersoftware holt das Gerät `koala-uimage-factory` (gleicher Inhalt) [geprüft: Commit c493171]; Groß-/Kleinschreibung genau so [abgeleitet: better safe than sorry]; danach Gluon-sysupgrade. Laut Commit eded295 muss die Erstinstallation mit einem älteren OpenWrt erfolgen, falls das Image größer als eine OS-Partition (7424 KiB) wird [geprüft: Commit eded295, IMAGE_SIZE früher 7424k]; Neanderfunk-sysupgrade bisher etwa 6977 KiB [abgeleitet: Testbau 26090815sta laut Rezept devices/ocedo-koala.sh]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = offen; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** keins (Hersteller-TFTP-Boot)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ocedo_koala-initramfs-kernel.bin) (HEAD 200)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -8554,6 +9044,8 @@ Ocedo Raccoon · ath79-generic · K1
 - **Datei:** OpenWrt-initramfs `openwrt-24.10.8-ath79-generic-ocedo_raccoon-initramfs-kernel.bin` (uImage lzma) [geprüft: Image-Rezept am Pin, Download-Liste] als `raccoon-uImage-initramfs-lzma.bin`, je nach Herstellersoftware holt das Gerät `raccoon-uimage-factory` (gleicher Inhalt) [geprüft: Commit 6476148]; Groß-/Kleinschreibung genau so [abgeleitet: better safe than sorry]; danach Gluon-sysupgrade. Laut Commit eded295 muss die Erstinstallation mit einem älteren OpenWrt erfolgen, falls das Image größer als eine OS-Partition (7424 KiB) wird [geprüft: Commit eded295, IMAGE_SIZE früher 7424k]; Neanderfunk-sysupgrade bisher etwa 6977 KiB [abgeleitet: Testbau 26090815sta laut Rezept devices/ocedo-raccoon.sh]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = offen; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** keins (Hersteller-TFTP-Boot)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ocedo_raccoon-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -8592,6 +9084,8 @@ OCEDO Panda · mpc85xx-p1020 · K1
 - **Datei:** `openwrt-24.10.8-mpc85xx-p1020-ocedo_panda-initramfs-kernel.bin` als `panda-uimage-factory` und `...-ocedo_panda-squashfs-fdt.bin` als `panda.fdt` [geprüft: Commit b368373, Image-Rezept p1020.mk am Pin]; Namen genau so [abgeleitet: better safe than sorry]; danach Gluon-sysupgrade
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = offen; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** TFTP-Server
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1020/openwrt-24.10.8-mpc85xx-p1020-ocedo_panda-initramfs-kernel.bin) (200) + [squashfs-fdt.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1020/openwrt-24.10.8-mpc85xx-p1020-ocedo_panda-squashfs-fdt.bin) (200)
 - **Factory-/Stock-Image-Link:** -
@@ -8627,6 +9121,8 @@ ALFA Network AP121F · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade (U-Boot-Web nimmt sysupgrade direkt) [geprüft: Commit 0c6165d]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** U-Boot-Web nimmt sysupgrade direkt
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-alfa-network_ap121f-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -8656,6 +9152,8 @@ Joy-IT JT-OR750i · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade (Bootloader-Web nimmt sysupgrade) [geprüft: Commit 55b4b36]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Bootloader-Web nimmt sysupgrade
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-joyit_jt-or750i-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -8685,6 +9183,8 @@ Onion Omega · ath79-generic · K0
 - **Datei:** Gluon-sysupgrade [geprüft: Commit d98738b]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (Gluon-Kommentar: Einrichtung auch über "integrated (USB-)tty"; USB, Art ?)
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = offen; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-onion_omega-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-onion_omega-squashfs-factory.bin)
@@ -8715,6 +9215,8 @@ Teltonika RUT230 v1 · ath79-generic · K0+
 - **Datei:** Gluon-factory [geprüft: Commit 6cf1dfd]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-teltonika_rut230-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-teltonika_rut230-v1-squashfs-factory.bin)
@@ -8743,6 +9245,8 @@ Wavlink WS-WN572HP3 4G · ramips-mt7621 · K1d
 - **Datei:** Gluon-sysupgrade, Prüfsumme bestätigen [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-wavlink_ws-wn572hp3-4g-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
@@ -8776,6 +9280,8 @@ ZBT WG3526 16M · ramips-mt7621 · K1d
 - **Datei:** Gluon-Image für die passende Flash-Größe; Wiki-Nutzer benannte das Image in `eeprom.bin` um, 'evtl. unnötig': sicherheitshalber so benennen [abgeleitet: Wiki wg2626]
 - **seriell nötig:** nein [abgeleitet]
 - **Gehäuse öffnen:** nein [abgeleitet]
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = offen; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** WG3526 gibt es mit 16 MB und 32 MB Flash, eigene Images; Kernel meldet 'ZBT-WG3526 (16M)' [abgeleitet: Commit 619d68b, Wiki-Bootlog]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zbtlink_zbt-wg3526-16m-initramfs-kernel.bin) (200)
@@ -8809,6 +9315,8 @@ ZBT WG3526 32M · ramips-mt7621 · K1d
 - **Datei:** Gluon-Image für die passende Flash-Größe; Wiki-Nutzer benannte das Image in `eeprom.bin` um, 'evtl. unnötig': sicherheitshalber so benennen [abgeleitet: Wiki wg2626]
 - **seriell nötig:** nein [abgeleitet]
 - **Gehäuse öffnen:** nein [abgeleitet]
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = offen; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** WG3526 gibt es mit 16 MB und 32 MB Flash, eigene Images; Commit 619d68b benennt deshalb die 16-MB-Variante eigens [abgeleitet: Commit 619d68b]; woran man sie außen erkennt, nicht belegt
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zbtlink_zbt-wg3526-32m-initramfs-kernel.bin) (200)
@@ -8841,6 +9349,8 @@ RAVPower RP-WD009 · ramips-mt76x8 · K0
 - **Datei:** Gluon-factory [geprüft: Commit e959048]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-ravpower_rp-wd009-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
@@ -8875,6 +9385,8 @@ D-Link DIR-505 · ath79-generic · K4
 - **Datei:** Dateiname im Commit nicht genannt. ath79 baut kein factory (ar71xx hatte eins mit HORNET-Kennung) [geprüft]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ? (UART-Lage im Commit nicht genannt)
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = offen; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** serielle Konsole
 - **Typenschild/Verwechslung:** Hardware A1 und A2 [geprüft: Wiki toh:d-link:dir-505]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-dlink_dir-505-initramfs-kernel.bin) (Liste)
@@ -8910,6 +9422,8 @@ Enterasys WS-AP3705i · ath79-generic · K4
 - **Datei:** OpenWrt-initramfs genau als `1401A8C0.img`: ramboot_openwrt ruft `tftpboot` ohne Dateinamen auf, U-Boot holt dann den Standardnamen aus der Geräte-IP in Hex (1401A8C0 = 192.168.1.20), der Name ist also zwingend [geprüft: Commit; Hex-Deutung abgeleitet]. Danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: Cisco-RJ45 auf der Rückseite, 115200 8N1
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = nein; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** serielle Konsole (Cisco-Konsolenkabel)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-enterasys_ws-ap3705i-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -8947,6 +9461,8 @@ Extreme Networks WS-AP3805i · ath79-generic · K4
 - **Datei:** OpenWrt-initramfs als `1D01A8C0.img` (steht im Befehl; Name so übernehmen) [geprüft: Commit]. Danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (UART-Pins J10 auf der Platine, 3.3 V, 115200 8N1)
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = ja; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** serielle Konsole
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-extreme-networks_ws-ap3805i-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -8983,6 +9499,8 @@ Siemens WS-AP3610 · ath79-generic · K4
 - **Datei:** OpenWrt-initramfs genau als `1401A8C0.img`: `tftpboot` ohne Dateinamen holt den Standardnamen aus der Geräte-IP (1401A8C0 = 192.168.1.20), Name also zwingend [geprüft: Commit; Hex-Deutung abgeleitet]. Danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: Cisco-RJ45, 115200 8N1
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = nein; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** serielle Konsole (Cisco-Konsolenkabel)
 - **Typenschild/Verwechslung:** WS-AP3620 steht auf derselben Wiki-Seite, Gluon baut nur siemens-ws-ap3610 [geprüft: Gluon-Target ath79-generic, Wiki toh:siemens:ws-ap3610_ws-ap3620, Titel]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-siemens_ws-ap3610-initramfs-kernel.bin) (HEAD 200)
@@ -9022,6 +9540,8 @@ Sophos AP15 (broken) · ath79-generic · K4
 - **Datei:** OpenWrt-initramfs, Name frei, z. B. `boot.bin` (steht im Befehl) [geprüft: Commit]; danach Gluon-sysupgrade [geprüft: Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (UART-Header auf der Platine, 115200 8N1)
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = ja; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** serielle Konsole
 - **Typenschild/Verwechslung:** AP15C ist ein anderes Gerät mit eigenem Image (sophos-ap15c) [geprüft: Gluon-Target ath79-generic]. AP55-Images booten laut Commit auch, dann ohne LEDs [geprüft: Commit]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-sophos_ap15-initramfs-kernel.bin) (Liste)
@@ -9058,6 +9578,8 @@ TP-Link Archer D50 v1 (broken) · ath79-generic · K4
 - **Datei:** Gluon-sysupgrade, Dateiname steht im Befehl [geprüft: Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (UART-Header J2 der Qualcomm-CPU)
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = ja; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** serielle Konsole
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_archer-d50-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -9094,6 +9616,8 @@ Aerohive HiveAP 121 · ath79-nand · K4
 - **Datei:** Gluon-factory [geprüft]. Dateiname steht im tftpboot-Befehl, also frei; kurz halten [abgeleitet]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ? (Anschluss im Commit nicht genannt)
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = offen; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** serielle Konsole, 9600 Baud
 - **Typenschild/Verwechslung:** HiveAP 141 (andere externe Antennen) nimmt laut Wiki dasselbe Image [geprüft: Forumsbeleg dort, Wiki toh:aerohive:ap121]
 - **Bedingung an die Herstellerfirmware:** Bootloader ab v1.0.0.33 (bestätigt 33, 43, 4f, 50, 52); v1.0.0.25 bootet OpenWrt nicht. Bootloader-Update nur über ein HiveOS-Update, Images nur auf Anfrage beim Hersteller [geprüft: Wiki toh:aerohive:ap121]. Mit `version` die Bootloader-Version prüfen, unter v1.0.0.33 abbrechen [geprüft: Wiki toh:aerohive:ap121]
@@ -9130,6 +9654,9 @@ ZTE MF281 (broken) · ath79-nand · K4
 - **Datei:** OpenWrt-initramfs per TFTP als `speedbox-2.bin` [geprüft: Commit]; danach factory-Image per `mtd write ... firmware` [geprüft]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (unbestückter Stecker neben dem SIM-Slot; 3V3 nicht anschließen)
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = offen; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** UART-Stecker unbestückt: löten nötig? (L7/L8)
 - **Werkzeug/Spezial:** serielle Konsole
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-zte_mf281-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-zte_mf281-squashfs-factory.bin)
@@ -9162,6 +9689,8 @@ Extreme Networks WS-AP3915i · ipq40xx-generic · K4
 - **Datei:** Initramfs als `openwrt-3915.bin` (steht im Befehl) [geprüft: Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: RJ45 (Cisco-Konsolenkabel), 115200 8N1 [geprüft]
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = nein; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-extreme-networks_ws-ap3915i-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** -
@@ -9198,6 +9727,8 @@ ZTE MF289F · ipq40xx-generic · K4
 - **Datei:** `openwrt-ipq40xx-generic-zte_mf289f-initramfs-fit-zImage.itb` (24.10: `…-initramfs-zImage.itb`), Datei steht im Befehl [geprüft: Commit]; danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (Pins neben "MF289F MIMO-V1.0", 115200 8N1)
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = ja; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Zwei Hardware-Revisionen: AT1 (5 GHz über QCA9984) und AT2 (5 GHz im IPQ4019); vertrieben als Vodafone FWA (IT), GigaCube (Vodafone DE, T-Mobile PL) [geprüft: Commit]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-zte_mf289f-initramfs-zImage.itb)
@@ -9232,6 +9763,8 @@ Extreme Networks AP3935i/e · ipq806x-generic · K4
 - **Datei:** `openwrt-ipq806x-generic-extreme_ap3935-initramfs-uImage`, der Name steht im tftpboot-Befehl [geprüft: Commit]; Wiki nennt kurz `initramfs.bin` [geprüft: Wiki toh:extreme_networks:ws-ap3935i]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: RJ45 (Cisco-Kabel) oder interne 4-Pin-Leiste, 115200 8N1 [geprüft]
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = nein; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** AP3935i und AP3935e nutzen dasselbe Image [geprüft: Commit, Wiki toh:extreme_networks:ws-ap3935i]
 - **initramfs-Link:** [24.10.8: initramfs-uImage](https://downloads.openwrt.org/releases/24.10.8/targets/ipq806x/generic/openwrt-24.10.8-ipq806x-generic-extreme_ap3935-initramfs-uImage)
@@ -9267,6 +9800,8 @@ TP-Link TD-W8980 (Alias TD-W9980; Gluon: broken, 5 GHz) · lantiq-xrx200_legacy 
 - **Datei:** Datei kurz umbenennen, Wiki: `openwrt.bin` [geprüft: Wiki toh:tp-link:td-w8980_v1]; geschrieben wird das sysupgrade [abgeleitet: Wiki]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (UART auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = ja; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** USB-TTL-Adapter, TFTP-Server
 - **Typenschild/Verwechslung:** TD-W9980 ist baugleich (Alias); TD-W8970 ähnlich, aber anderes Image [geprüft: Commit 161179f]
 - **Bedingung an die Herstellerfirmware:** Der serielle Weg geht unabhängig von der Stock-Version (U-Boot prüft die Signatur nicht) [geprüft: Wiki toh:tp-link:td-w8980_v1]
@@ -9301,6 +9836,8 @@ Mercusys MR80X v3 · mediatek-filogic · K4
 - **Datei:** Initramfs als `initramfs-kernel.bin` (steht im Befehl) [geprüft: Commit]; danach Gluon-sysupgrade [geprüft: Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (UART auf der Platine) [abgeleitet]
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = ja; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Commit nennt MR80X(EU) v3; andere Hardware-Versionen nicht abgedeckt [geprüft: Commit]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-mercusys_mr80x-v3-initramfs-kernel.bin)
@@ -9335,6 +9872,8 @@ Enterasys WS-AP3715i · mpc85xx-p1010 · K4
 - **Datei:** Initramfs als `ap3715.bin` (steht im Befehl) [geprüft: Commit]; danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: RJ45, Cisco-Konsolenkabel, 115200 8N1
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = nein; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Konsolenkabel, TFTP-Server
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1010/openwrt-24.10.8-mpc85xx-p1010-enterasys_ws-ap3715i-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** -
@@ -9374,6 +9913,8 @@ Sophos RED 15w Rev. 1 · mpc85xx-p1010 · K4
 - **Datei:** Initramfs als `kernel.bin` (steht im Befehl) [geprüft: Commit]; danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen ("Console port", Bauform im Commit nicht genannt: ?)
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = nein; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Konsolenkabel, TFTP-Server
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1010/openwrt-24.10.8-mpc85xx-p1010-sophos_red-15w-rev1-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** -
@@ -9409,6 +9950,8 @@ Aerohive HiveAP 330 · mpc85xx-p1020 · K4
 - **Datei:** Initramfs (Commit 2017: dazu .fdt), Dateiname frei; danach Gluon-sysupgrade [geprüft: Commit]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: RJ45 "console", Cisco-Konsolenkabel, RS232-Pegel (kein TTL-Adapter!), 9600 8N1
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = nein; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** RS232-Konsolenkabel, TFTP/DHCP-Server
 - **Typenschild/Verwechslung:** HiveAP 350 ist dieselbe Hardware mit externen Antennen und nimmt dasselbe Image [geprüft: Pin p1020.mk DEVICE_ALT0, Wiki toh:aerohive:hiveap-330]
 - **Bedingung an die Herstellerfirmware:** Bestätigte Bootloader-Version v1.0.3.4d (md5 d84b45a2e8aca60d630fbd422efc6b39) [geprüft: Wiki toh:aerohive:hiveap-330]
@@ -9445,6 +9988,8 @@ Enterasys WS-AP3710i · mpc85xx-p1020 · K4
 - **Datei:** Initramfs als `01C8A8C0.img` (steht im tftpboot-Befehl; Name so übernehmen) [geprüft: Commit]; danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: RJ45, Cisco-Konsolenkabel, 115200 8N1
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = nein; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Konsolenkabel, TFTP-Server
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1020/openwrt-24.10.8-mpc85xx-p1020-enterasys_ws-ap3710i-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** -
@@ -9486,6 +10031,8 @@ Extreme Networks WS-AP3825i · mpc85xx-p1020 · K4
 - **Datei:** Dateiname steht im Befehl; Wiki nennt `initramfs.bin` [geprüft: Wiki toh:extreme_networks:ws-ap3825i]; danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: RJ45 Cisco-kompatibel, RS232 (Wiki: "RJ45-RS232"), 115200 8N1
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = nein; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Konsolenkabel, TFTP-Server
 - **Typenschild/Verwechslung:** Gehäuse identisch mit Enterasys WS-AP3725i und Adtran BSAP-2030; ob die dasselbe Image nehmen, ist offen [geprüft: Commit]. Wiki-Seite gilt auch für WS-AP3825E [geprüft: Wiki toh:extreme_networks:ws-ap3825i, Titel]
 - **Bedingung an die Herstellerfirmware:** OpenWrt-initramfs 22.03.0 nehmen, neuere bleiben bei 'ft_fixup_l2cache: FDT_ERR_NOTFOUND' hängen; das sysupgrade darf neuer sein [geprüft: OpenWrt-Issue 17152 (offen): adorfer 29.03.2025 "broken in 24.x and 23, tested with 4 devices … 22.03.0 works", jensgraef 15.05.2025 "sysupgrade of openwrt-24.10 without any problems", jbusuttil 03.09.2026 22.03.0, dann sysupgrade; Datei archive.openwrt.org 22.03.0, SHA256 fc9a27d9… laut sha256sums, 6.879.964 Byte]
@@ -9530,6 +10077,9 @@ TP-Link EAP620 HD v1 · qualcommax-ipq807x · K4
 - **Datei:** `openwrt-qualcommax-ipq807x-tplink_eap620hd-v1-initramfs-uImage.itb`, der Name steht im Befehl [geprüft: Commit 4b6e7da]; danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** ja (Weg mit OpenWrt 24.10; mit OpenWrt 25.12 als Zwischenschritt: nein)
 - **Gehäuse öffnen:** ja (JP1 löten, R58/R62 brücken; mit OpenWrt 25.12 als Zwischenschritt: nein)
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = ja; l8 = ja
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** JP1 löten, R58/R62 brücken (Weg mit 24.10)
 - **Werkzeug/Spezial:** OpenWrt 25.12 als Zwischenschritt
 - **Typenschild/Verwechslung:** EAP620 HD v3 ist ein anderes Gerät [Wiki-Zusammenfassung: ToH]
 - **initramfs-Link:** [25.12.5: initramfs-uImage.itb](https://downloads.openwrt.org/releases/25.12.5/targets/qualcommax/ipq807x/openwrt-25.12.5-qualcommax-ipq807x-tplink_eap620hd-v1-initramfs-uImage.itb)
@@ -9553,6 +10103,9 @@ Xiaomi Mi WiFi Range Extender AC1200 RA75 (Gluon: broken, "Only serial flash pos
 - **Programm:** Gehäuse öffnen (eine Schraube unter dem Barcode-Aufkleber, rechts), UART-Header einlöten (Platine beschriftet), USB-TTL 3,3 V, 115200 8N1 [geprüft: Commit, Wiki inbox:toh:xiaomi:mi_wifi_range_extender_ac1200_model_ra75]. TFTP-Server, IPs im Menü eingeben [geprüft: Commit] [noch nicht aufgeteilt]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (UART-Header unbestückt, beschriftet)
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = offen; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** UART-Header unbestückt: löten nötig? (L7/L8)
 - **Werkzeug/Spezial:** USB-TTL-Adapter, TFTP-Server
 - **Typenschild/Verwechslung:** Variante RC04 hat keine UART-Beschriftung [geprüft: Wiki inbox:toh:xiaomi:mi_wifi_range_extender_ac1200_model_ra75]. Die Firmware der Mi Router 4A 100M (nicht -intl) bootet auch, dann gibt es nur WAN [geprüft: Wiki inbox:toh:xiaomi:mi_wifi_range_extender_ac1200_model_ra75]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-xiaomi_mi-ra75-initramfs-kernel.bin) (200)
@@ -9573,6 +10126,8 @@ Xiaomi Mi Router 4A 100M · ramips-mt76x8 · K4
 - **Programm:** USB-TTL 3,3 V an die beschrifteten UART-Pads: Platinen-TX an Adapter-RX, RX an TX, GND; 3,3 V nicht verbinden [geprüft: Wiki toh:xiaomi:mi_router_4a_mir4a_100m]; 115200 8N1. Rechner an LAN1, feste IP 192.168.1.2/24, TFTP-Server; im Menü Gerät 192.168.1.1, Server 192.168.1.2, Datei `test.bin` (= sysupgrade) [geprüft: Commit] [noch nicht aufgeteilt]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (UART auf der Platine, beschriftet, 115200)
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = ja; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** USB-TTL-Adapter, TFTP-Server
 - **Typenschild/Verwechslung:** Nur chinesische Version: englisches Typenschild + englische Firmware deutet auf die 'International' R4AC mit anderem Flash-Layout und eigenem Image hin; die 4A Gigabit Edition ist ein anderes Gerät [geprüft: Wiki toh:xiaomi:mi_router_4a_mir4a_100m]
 - **Bedingung an die Herstellerfirmware:** Für den seriellen Weg keine. Der Wiki-Weg ohne UART (Xiaomi-TFTP-Recovery mit Stock 2.18.28, dann OpenWRTInvasion) ist nötig, weil Stock 3.xx ein anderes Layout hat [geprüft: Wiki toh:xiaomi:mi_router_4a_mir4a_100m]
@@ -9599,6 +10154,9 @@ Arcadyan VGV7510KW22 / o2 Box 6431 (NOR-Image) · lantiq-xrx200 · K5
 - **Programm:** USB-TTL 3,3 V an die Konsolen-Pins hinter dem zweiten Lüftungsschlitz unter der rechten unteren Ecke des Aufklebers: Pin 1 rechts (Pfeil) = VCC nicht anschließen, 2 TX, 3 RX, 4 GND; 115200 8N1 [geprüft: Wiki toh:arcadyan:vgv7510kw22]. Für U-Boot ins RAM über brnboot: `sx` aus lrzsz [geprüft: Wiki toh:arcadyan:vgv7510kw22]. TFTP-Server für u-boot.bin und sysupgrade; Recovery-Web unter http://192.168.1.1 [geprüft: Wiki toh:arcadyan:vgv7510kw22] [noch nicht aufgeteilt]
 - **seriell nötig:** teilweise: kurzer Weg seriell, langer Weg ohne (brnboot-Web + 16-MB-Vollimage)
 - **Gehäuse öffnen:** nein: Konsolen-Pins durch einen Lüftungsschlitz erreichbar (Wiki), 115200 8N1
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** bootloader
+- **Level: Einzelentscheidung:** brnboot-Recovery-Web, dann OpenWrt-U-Boot und sysupgrade per TFTP
 - **Werkzeug/Spezial:** OpenWrt-U-Boot, TFTP-Server
 - **Typenschild/Verwechslung:** o2 Box 6431 = Arcadyan VGV7510KW22 [geprüft: Commit-Titel]. Ein mit dem brn-Image installiertes Gerät nimmt kein nor-sysupgrade; Gluon braucht das nor-Layout mit OpenWrt-U-Boot [geprüft: Wiki toh:arcadyan:vgv7510kw22]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/lantiq/xrx200/openwrt-24.10.8-lantiq-xrx200-arcadyan_vgv7510kw22-nor-initramfs-kernel.bin) (200)
@@ -9640,6 +10198,9 @@ Aruba AP-324/AP-325, Siemens Scalance W1750D · ipq806x-generic · K5
 - **Datei:** `openwrt-ipq806x-generic-aruba_ap-32x-apboot.mbn` und `...-initramfs.ari` (Namen stehen im Befehl) [geprüft: Commit]; danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** nein, Konsole außen: RJ45 Cisco-Pinout, 9600 (Stock-APBoot) bzw. 115200 (gepatcht) [geprüft]
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = nein; l8 = nein
+- **Risiko (normal / bootloader / offen):** bootloader
+- **Level: Einzelentscheidung:** RJ45-Konsole, gepatchtes APBoot
 - **Werkzeug/Spezial:** gepatchtes APBoot (github lukasstockner/ap325-apboot-openwrt; OpenWrt-Paket apboot-aruba-ipq806x, bei uns nicht gebaut)
 - **Typenschild/Verwechslung:** AP-324 (externe Antennen), AP-325 (interne Antennen) und Siemens Scalance W1750D haben dieselbe Platine und dasselbe Image [geprüft: Commit]
 - **Bedingung an die Herstellerfirmware:** Stock-APBoot prüft Signaturen, darum Bootloader-Tausch Pflicht; gepatchtes APBoot getestet auf 'APBoot 1.5.5.9 (build 58433)' [geprüft: Commit; README lukasstockner/ap325-apboot-openwrt]
@@ -9681,6 +10242,9 @@ ASUS Lyra MAP-AC2200 · ipq40xx-generic · K1
 - **Datei:** OpenWrt-initramfs nach /tmp, danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** SSH + mtd-write
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Lyra Mini (MAP-AC1300) ist ein anderes Gerät [Wiki-Zusammenfassung: ToH]
 - **Bedingung an die Herstellerfirmware:** Vorher auf Werkseinstellungen zurücksetzen, falls schon eingerichtet [geprüft: Wiki toh:asus:lyra_map-ac2200]
@@ -9716,6 +10280,9 @@ ASUS RT-AX52 · mediatek-filogic · K1
 - **Datei:** OpenWrt-`…-initramfs.trx`, danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = ja; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Stock-UI nimmt OpenWrt-initramfs.trx, dann sysupgrade per SSH
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** RT-AX52 Pro steht auf derselben Wiki-Seite; ob es dasselbe Image nimmt, ist nicht belegt [Wiki-Zusammenfassung: ToH]
 - **Bedingung an die Herstellerfirmware:** Nur auf unbenutztem oder zurückgesetztem Gerät [geprüft: Wiki toh:asus:rt-ax52]
@@ -9754,6 +10321,9 @@ ASUS RT-AX59U · mediatek-filogic · K2
 - **Datei:** Transit-TRX eines Dritten (Google-Drive-Ordner im Commit, Herkunft unklar) [geprüft]; laut Wiki 'unofficial image, use with caution' [geprüft: Wiki toh:asus:rt-ax59u]
 - **seriell nötig:** nein (nur für den seriellen TFTP-Weg: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen TFTP-Weg: ja, Pinout auf der Platine) [abgeleitet]
+- **Level-Merkmale (scripts/level.py):** werkzeug = offen; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** fremdes transit-TRX oder UART
 - **Werkzeug/Spezial:** Transit-TRX eines Dritten (Google-Drive-Ordner im Commit, Herkunft unklar)
 - **Bedingung an die Herstellerfirmware:** Vorher auf Werkseinstellungen zurücksetzen [geprüft: Wiki toh:asus:rt-ax59u]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-asus_rt-ax59u-initramfs-kernel.bin)
@@ -9789,6 +10359,9 @@ Buffalo WZR-HP-G450H/WZR-450HP · ath79-generic · K0+
 - **Datei:** Gluon-factory-Image [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = offen; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** versteckte Seite der Stock-UI
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** WZR-450HP ist dieselbe Hardware wie WZR-HP-G450H [geprüft: Commit]. WZR-450HP2 ist ein anderes Gerät mit eigener Wiki-Seite [Wiki-Zusammenfassung: ToH]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-buffalo_wzr-hp-g450h-initramfs-kernel.bin) (Liste)
@@ -9819,6 +10392,9 @@ COMFAST CF-EW71 v2 · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade-Image; Stock und U-Boot-Web nehmen das sysupgrade direkt [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = sysupgrade; zwischenfirmware = nein; dhcp = offen; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Stock ist OpenWrt-basiert, nimmt sysupgrade
 - **Werkzeug/Spezial:** Stock/U-Boot-Web nimmt sysupgrade direkt
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-comfast_cf-ew71-v2-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -9854,6 +10430,9 @@ D-Link DIR-825 B1 · ath79-generic · offen
 - **Datei:** Kein funktionierendes 24.10-factory: Wiki nimmt OpenWrt-23.05.5-factory und dann sysupgrade [geprüft: Wiki toh:d-link:dir-825]. Gluon-factory-Rezept seit 4309be6bcb3d3cbf8fa5ae7eddb1520737542c6c abgeschaltet ("max image sizes too small", FACTORY_SIZE 6144k) [geprüft]; offen, ob die D-Link-Recovery ein initramfs annimmt (OpenWrt-initramfs 24.10.8: 6145 KB, also knapp über 6144k) [geprüft]
 - **seriell nötig:** ?
 - **Gehäuse öffnen:** ?
+- **Level-Merkmale (scripts/level.py):** werkzeug = offen; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Weg ab Werk nicht belegt
 - **Werkzeug/Spezial:** ?
 - **Typenschild/Verwechslung:** B2 unterscheidet sich nur in der Beschriftung von B1 (Firmware meldet B1) [geprüft: Wiki toh:d-link:dir-825]. C1 ist ein anderes Image, D1/E1 laut Wiki nicht unterstützt [geprüft: Wiki toh:d-link:dir-825]
 - **Bedingung an die Herstellerfirmware:** Ab Stock 2.05WW Build 05Beta01 nimmt die normale Update-Seite kein OpenWrt mehr, dann nur Recovery. Mit 2.05EU schwierig, Downgrade auf 2.04EU half. B1 mit 201EUB15 braucht eine angepasste Firmware-Kennung im Image [geprüft: Wiki toh:d-link:dir-825]
@@ -9894,6 +10473,9 @@ devolo dLAN pro 1200+ WiFi ac (broken) · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade, umbenannt in genau `uploadfile` (ohne Endung) [geprüft: Commit, Wiki toh:devolo:dlan_pro_1200_wifi_ac]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** TFTP-Recovery holt die Datei vom Rechner
 - **Werkzeug/Spezial:** Hersteller-TFTP-Recovery nimmt sysupgrade
 - **Typenschild/Verwechslung:** devolo Magic 2 WiFi hat dieselbe Platine ohne den PLC-Teil, eigenes Image [geprüft: Commit]
 - **Bedingung an die Herstellerfirmware:** Für den TFTP-Weg keine [geprüft: Wiki toh:devolo:dlan_pro_1200_wifi_ac]
@@ -9932,6 +10514,9 @@ Genexis/Inteno Pulse EX400 · ramips-mt7621 · K1
 - **Datei:** OpenWrt-factory.bin, enthält ein initramfs; danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = ja; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Recovery mit Taste, OpenWrt-factory, dann scp/ssh
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Inteno Pulse EX400 und Genexis Pulse EX400 sind gleich (Umfirmierung); die DNA-Variante (DNA Valokuitu Plus EX400, LED 'software-update' statt WPS) hat ein eigenes Image [geprüft: Commit]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-genexis_pulse-ex400-initramfs-kernel.bin) (200)
@@ -9963,6 +10548,9 @@ Google WiFi (Gale) · ipq40xx-chromium · K5
 - **Programm:** USB-C-Hub mit Power Delivery (getestet: Orico PW11-6PR, UGREEN CM478; Apple A2119 geht nicht), USB-Stick (eher USB 2.0), OnHub Recovery Utility in Chrome unter Windows/macOS/ChromeOS (nicht Linux) oder dd, Linux-Umgebung (z. B. WSL) für ssh/scp/dd; PH0-Schraubendreher und Hebelwerkzeug zum Öffnen [geprüft: Wiki toh:google:wifi] [noch nicht aufgeteilt]
 - **seriell nötig:** nein (Konsole erst nach Dev-Mode über USB-C mit SuzyQable/CCD)
 - **Gehäuse öffnen:** ja (Developer-Mode) [geprüft: Gluon-Kommentar]
+- **Level-Merkmale (scripts/level.py):** werkzeug = offen; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Developer-Mode mit geöffnetem Gehäuse, Boot von USB; passt in keine Stufe
 - **Werkzeug/Spezial:** Developer-Mode, USB-Stick, ggf. SuzyQable
 - **Typenschild/Verwechslung:** Nicht die Google Nest WiFi (2019) [geprüft: Commit]. Modell GJ2CQ hat keinen USB-C-Port: USB an TP1004-TP1007 anlöten, SW7 fehlt, mittlere Pads brücken [geprüft: Wiki toh:google:wifi]
 - **Bedingung an die Herstellerfirmware:** Vorher die Google-Werkssoftware per Google-Recovery-Modus (Recovery-Stick aus der OnHub Recovery Utility) wiederherstellen; Gerät dabei vom Internet trennen, damit es sich nicht selbst aktualisiert [geprüft: Wiki toh:google:wifi]
@@ -9990,6 +10578,9 @@ HPE MSM460 · mpc85xx-p1020 · K5
 - **Programm:** Feste IP 192.168.1.66/24, TFTP-Server (z. B. dnsmasq) mit `msm460-uboot.bin`, `msm460-factory.bin` (= Gluon-factory) und `commands.tftp` (auf 131072 Byte aufgefüllt); TFTP-Client für `tftp 192.168.1.1 -m binary -c put commands.tftp nflashd.cccc9999` [geprüft: Commit, README] [noch nicht aufgeteilt]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (RJ45-Konsole außen vorhanden, nicht nötig)
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** bootloader
+- **Level: Einzelentscheidung:** tftp put der Befehlsdatei, neuer U-Boot
 - **Werkzeug/Spezial:** blocktrron/msm460-flashing, blocktrron/u-boot-msm
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1020/openwrt-24.10.8-mpc85xx-p1020-hpe_msm460-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community); OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1020/openwrt-24.10.8-mpc85xx-p1020-hpe_msm460-squashfs-factory.bin) (200)
@@ -10019,6 +10610,9 @@ Librerouter LibreRouter v1 · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, UART-Header auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = sysupgrade; zwischenfirmware = nein; dhcp = offen; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** ab Werk OpenWrt/LibreRouterOS
 - **Werkzeug/Spezial:** Stock ist OpenWrt-basiert
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-librerouter_librerouter-v1-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
@@ -10055,6 +10649,9 @@ Linksys E8450 / Belkin RT3200 (UBI-Layout) · mediatek-mt7622 · K3
 - **Datei:** Stock-UI: `initramfs-recovery.itb` [geprüft]; TFTP: genau `openwrt-mediatek-mt7622-linksys_e8450-ubi-initramfs-recovery.itb` (der neue U-Boot holt diesen Namen) [geprüft: Commit 0235186]; Bootloader preloader.bin und bl31-uboot.fip [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = ja; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** bootloader
+- **Level: Einzelentscheidung:** Stock-UI nimmt recovery-itb, neuer Bootloader per mtd write, TFTP
 - **Werkzeug/Spezial:** alternativ der OpenWrt-UBI-Installer (Drittprojekt, laut DEVICE_COMPAT_MESSAGE "UBI installer version 1.1.0+")
 - **Typenschild/Verwechslung:** Belkin RT3200 ist dieselbe Hardware [geprüft: Wiki toh:linksys:e8450]. Nicht das alte non-UBI-Image (`*.bin`) nehmen [geprüft: Wiki toh:linksys:e8450]
 - **Bedingung an die Herstellerfirmware:** Laut owrt-ubi-installer: Stock 1.0.x direkt; unter 1.2.00.273012 das unsignierte, ab 1.2.00.273012 das signierte Installer-Image; wird es abgelehnt, auf 1.0.x downgraden. Nur auf neuem oder frisch zurückgesetztem Gerät, Installer nur einmal ausführen [geprüft: README dangowrt/owrt-ubi-installer]
@@ -10094,6 +10691,9 @@ Linksys EA8300 · ipq40xx-generic · K2
 - **Datei:** nur das factory.bin von OpenWrt 22.03.5/22.03.6 über die Linksys-Oberfläche; Gluon 2025.1 basiert auf OpenWrt 24.10, also erst OpenWrt 22.03.5-factory, dann dort `fw_setenv kernsize 500000` (Kernel-Bereich 5 MB statt 3 MB), erst dann Gluon-sysupgrade [Folge abgeleitet; geprüft: Wiki toh:linksys:ea8300, korrigiert]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = ja; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** OpenWrt 22.03 über die Linksys-UI, dann SSH fw_setenv
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** EA8300 (256 MB RAM) und MR8300 (512 MB RAM, geänderte LED-Leiste oben) sind fast gleich, aber je eigenes Image [geprüft: Commit a9071d02]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_ea8300-initramfs-zImage.itb)
@@ -10129,6 +10729,9 @@ Linksys MR8300 · ipq40xx-generic · K2
 - **Datei:** Linksys-UI nimmt ein factory-Image [geprüft]; Gluon baut keins (`factory = false`, ohne Begründung im Gluon-Commit d04ea647), daher OpenWrt-factory als Zwischenschritt, dann Gluon-sysupgrade [geprüft: Gluon-Commit d04ea647]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = offen; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** OpenWrt-factory über die Linksys-UI, dann Gluon-sysupgrade
 - **Werkzeug/Spezial:** OpenWrt-24.10-factory als Zwischenschritt
 - **Typenschild/Verwechslung:** EA8300 (256 MB RAM) und MR8300 (512 MB RAM, geänderte LED-Leiste oben) sind fast gleich, aber je eigenes Image [geprüft: Commit a9071d02]
 - **initramfs-Link:** [24.10.8: initramfs-zImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-linksys_mr8300-initramfs-zImage.itb)
@@ -10164,6 +10767,9 @@ Linksys MX5300 · qualcommax-ipq807x · K0
 - **Datei:** Gluon-factory-Image, für beide Partitionen dasselbe [geprüft: Commit 70fd815e]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Gluon-factory über die Linksys-UI (Seite: automatisch)
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** MX10600 = 2er-Pack, MX15900 = 3er-Pack MX5300; das schwächere MX55EC wird teils auch als "AX5300" verkauft [geprüft: Wiki toh:linksys:mx5300]
 - **Bedingung an die Herstellerfirmware:** zuletzt geprüft mit Herstellerfirmware 1.1.12.210066 (14.04.2022); spätere Updates könnten den Weg brechen [geprüft: Wiki toh:linksys:mx5300]
@@ -10193,6 +10799,9 @@ Cisco Meraki MR33 · ipq40xx-generic · K5
 - **Programm:** Gehäuse mit Torx T5 öffnen (4 Schrauben unter Gummifüßen); USB-TTL 3,3 V an die niedrige 1x4-Stiftleiste (VCC am Pfeil nicht anschließen), 115200 8N1 [geprüft: Commit, Wiki toh:meraki:mr33]. Python 3 mit ubootwrite (Little-Endian-Variante, github sebastiaanv3/ubootwrite) und mr33-uboot.bin (Google Drive laut Wiki); Rechner fest 192.168.1.2, TFTP-Client im Binärmodus; privates LAN ohne Internet [geprüft: Commit, Wiki toh:meraki:mr33] [noch nicht aufgeteilt]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ja (1x4-Stiftleiste, niedrige Pins; 115200 8N1)
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = ja; l8 = nein
+- **Risiko (normal / bootloader / offen):** bootloader
+- **Level: Einzelentscheidung:** Gehäuse öffnen, UART, modifizierter U-Boot
 - **Werkzeug/Spezial:** ubootwrite.py mit Little-Endian-Patch, mr33-uboot.bin (beides über das OpenWrt-Wiki)
 - **Bedingung an die Herstellerfirmware:** Nur Bootloader U-Boot 2012.07-g97ab7f1; bei 2017.07-RELEASE nur JTAG oder NAND auslöten. Die Geräte aktualisieren sich über die Meraki-Cloud selbst, also ohne Internet betreiben [geprüft: Wiki toh:meraki:mr33]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-meraki_mr33-initramfs-uImage.itb)
@@ -10217,6 +10826,9 @@ Mercusys MR90X v1 · mediatek-filogic · K2
 - **Programm:** SSH-Client (Port 20001, Web-Passwort), Telnet-Client, scp/WinSCP; busybox-arm64 eines Dritten für ubiupdatevol [geprüft: Commit e4fe309]. Kabel an LAN1 [geprüft: Wiki toh:mercusys:mr90x_v1] [noch nicht aufgeteilt]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, R3/R6 bestücken)
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** SSH, telnet-Hintertür, fremdes busybox-arm64
 - **Werkzeug/Spezial:** busybox-arm64 eines Dritten (github xerta555)
 - **Typenschild/Verwechslung:** Hardware v1.0 und v1.2 (Wandmontage möglich) werden beide unterstützt [geprüft: Wiki toh:mercusys:mr90x_v1]
 - **Bedingung an die Herstellerfirmware:** Vorher `fw_printenv | grep tp_boot_idx` prüfen: steht dort 1, erst die Mercusys-Firmware über die Weboberfläche neu einspielen und von vorn beginnen [geprüft: Wiki toh:mercusys:mr90x_v1]
@@ -10253,6 +10865,9 @@ NETGEAR WAX218 · qualcommax-ipq807x · K1
 - **Datei:** `web-ui-factory.fit` (ubinisiertes initramfs mit QSDK-Kopf), danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, Pogo-Pins oder Löten an J2)
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = offen; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Stock-UI nimmt web-ui-factory.fit (initramfs), danach sysupgrade
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [24.10.8: web-ui-factory.fit](https://downloads.openwrt.org/releases/24.10.8/targets/qualcommax/ipq807x/openwrt-24.10.8-qualcommax-ipq807x-netgear_wax218-web-ui-factory.fit)<br>[24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/qualcommax/ipq807x/openwrt-24.10.8-qualcommax-ipq807x-netgear_wax218-initramfs-uImage.itb)
 - **Factory-/Stock-Image-Link:** -
@@ -10284,6 +10899,9 @@ TOTOLINK X5000R · ramips-mt7621 · K1d
 - **Datei:** OpenWrt-sysupgrade, die Stock-Web-UI nimmt es direkt [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = sysupgrade; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Downgrade (adorfer: L1)
 - **Werkzeug/Spezial:** -
 - **Bedingung an die Herstellerfirmware:** Neuere TOTOLINK-Firmware (V9.1.0cu.1929, cu.2089) lehnt das Image mit "Invalid upgrade firmware file" ab; dann erst V9.1.0u.6118_B20201102 über den Notfall-Modus (Reset beim Einstecken, alle LAN-LEDs an, blaue Status-LED blinkt einmal, loslassen; LAN1, 192.168.1.x, http://192.168.1.1; fertig, wenn die blaue LED langsam blinkt) [geprüft: forum.openwrt.org t/113153 #1, #3 (2021-11-28); t/124500 #1, #3 (2022-04-05)]. Datei: Originaldownload von totolink.net (Internet Archive), byte-gleich gespiegelt als download.ffnef.de/other/dump/X5000R_V9.1.0u.6118_B20201102.zip (f468696a985bdf6e544cdcadbc1585ec.zip, 8.993.132 Byte, SHA256 4fdb1bbf…daeb, darin die .web mit SHA256 2acd661c…ade9) [geprüft: geladen und gehasht 15.10.2026]; dass es die Datei der totolink.net-Downloadseite (id/218) ist, zeigt laut Content der Wayback-CDX
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-totolink_x5000r-initramfs-kernel.bin) (200)
@@ -10316,6 +10934,9 @@ TP-Link Archer C60 v1 · ath79-generic · K2
 - **Datei:** Kein Gluon-factory (factory = false); älteres OpenWrt-factory als Zwischenfirmware [abgeleitet], danach Gluon-sysupgrade. Weboberfläche: lange Dateinamen werden abgelehnt, kurz umbenennen [geprüft: Wiki toh:tp-link:archer_c60_v2]
 - **seriell nötig:** nein (nur für den seriellen Weg ohne factory-Image: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Weg: ja, Header auf der Platine)
+- **Level-Merkmale (scripts/level.py):** werkzeug = offen; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** UART oder älteres OpenWrt-factory, Hauptweg nicht entschieden
 - **Werkzeug/Spezial:** OpenWrt-factory älterer Version als Zwischenfirmware [abgeleitet]
 - **Typenschild/Verwechslung:** v2 und v3 haben eigene Images [geprüft: Pin generic-tp-link.mk]
 - **Bedingung an die Herstellerfirmware:** v1 hat seit 2016 kein Hersteller-Update; die Weboberfläche nahm OpenWrt-factory laut Wiki noch 2022 [geprüft: Wiki toh:tp-link:archer_c60_v2]
@@ -10342,6 +10963,9 @@ TP-Link TD-W8970 v1 · lantiq-xrx200_legacy · K2
 - **Programm:** Ohne Öffnen: Browser auf 192.168.1.1, Telnet-Client (Port 1023, admin/1234); für StatPost Java-Tool StatPOSTer oder Python tpconf_bin_xml [geprüft: Wiki toh:tp-link:td-w8970_v1]. Mit Öffnen: USB-TTL 3,3 V, 115200 8N1, TFTP-Server (Gerät 192.168.1.1, Server 192.168.1.2 per setenv) [geprüft: Wiki toh:tp-link:td-w8970_v1] [noch nicht aufgeteilt]
 - **seriell nötig:** nein (nur für den seriellen TFTP-Weg: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen TFTP-Weg: ja)
+- **Level-Merkmale (scripts/level.py):** werkzeug = offen; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Shell per Injection, OpenWrt 15.05 als Zwischenstufe; Einordnung offen
 - **Werkzeug/Spezial:** tpconf_bin_xml.py oder StatPOSTer, telnet
 - **Typenschild/Verwechslung:** TD-W8970B V1: SSID-Injection geht nicht (Builds 141008, 150526, 160808), nur StatPost; TD-W8970 v3 ist ein anderes Gerät [geprüft: Wiki toh:tp-link:td-w8970_v1]
 - **Bedingung an die Herstellerfirmware:** Weboberflächen-Upload nur mit Stock vor 12.10.2013. SSID-Injection auf neueren Builds; StatPost belegt für TD-W8970 V1 140613 und TD-W8970B V1 141008/160808; dafür laut Wiki OpenWrt 15.05 als Zwischenstufe [geprüft: Wiki toh:tp-link:td-w8970_v1]
@@ -10376,6 +11000,9 @@ Ubiquiti NanoBeam AC Gen1 (XC) · ath79-generic · K0+
 - **Datei:** Gluon-factory, geschrieben mit dem gepatchten `fwupdate.real` [geprüft: Wiki toh:ubiquiti:common, toh:ubiquiti:nanobeam_ac]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = offen; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** airOS-XC-Verfahren nur verlinkt
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** NanoBeam AC Gen1 XC = NBE-5AC-19 [geprüft: Commit 73ea763]. Board-Typ steht in airOS unter Settings > System (Firmware 'XC.v8...' = XC, 'WA.v8...' = WA); Gen2 ist ein anderes Gerät [geprüft: Wiki toh:ubiquiti:common, toh:ubiquiti:nanobeam_ac]
 - **Bedingung an die Herstellerfirmware:** Getestet mit airOS XC v8.7.0 und v8.7.4 [geprüft: Wiki toh:ubiquiti:common]
@@ -10409,6 +11036,9 @@ WAVLINK WL-WN573HX3 / 7Links WLR-1300 · mediatek-filogic · K1d
 - **Datei:** `WN573HX3-sysupgrade.bin` [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = sysupgrade; zwischenfirmware = nein; dhcp = offen; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** versteckte Seite der Stock-UI nimmt sysupgrade
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** In Europa auch als 7Links WLR-1300 (ZX-5612) verkauft, dasselbe Gerät [geprüft: Commit]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-wavlink_wl-wn573hx3-initramfs-kernel.bin)
@@ -10432,6 +11062,9 @@ Xiaomi AX3600 · qualcommax-ipq807x · K2
 - **Programm:** Browser (stok aus der URL nach Login), SSH/scp; Rechner per Kabel an LAN [geprüft: Wiki toh:xiaomi:ax3600] [noch nicht aufgeteilt]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = offen; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** SSH per Exploit laut Wiki; Einordnung offen
 - **Werkzeug/Spezial:** SSH-Exploit (openwrt.org/inbox/toh/xiaomi/xiaomi_ax3600)
 - **Typenschild/Verwechslung:** Chinesisches und internationales Modell: der Weg gilt für beide [geprüft: Wiki toh:xiaomi:ax3600]
 - **Bedingung an die Herstellerfirmware:** Für die stok-Exploits (manuell, Bash, JavaScript) auf beiden Modellen auf die chinesische Stock-Firmware 1.0.17 zurückgehen; der 'Patch bdata'-Weg braucht keinen Downgrade [geprüft: Wiki toh:xiaomi:ax3600]
@@ -10458,6 +11091,9 @@ Xiaomi Mi Router 3G · ramips-mt7621 · K2
 - **Programm:** FAT32-USB-Stick, Mi-WiFi-App mit Xiaomi-Konto, Browser für https://d.miwifi.com/rom/ssh (liefert miwifi_ssh.bin und Root-Passwort), SSH-Client [geprüft: Wiki toh:xiaomi:mir3g]. Alternativ OpenWRTInvasion-Exploit [geprüft: Wiki toh:xiaomi:mir3g] [noch nicht aufgeteilt]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = offen; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Shell-Zugang nicht belegt
 - **Werkzeug/Spezial:** mtd auf Stock
 - **Typenschild/Verwechslung:** Gilt nur für R3G (v1); R3G v2 und 4A Gigabit sind andere Geräte mit gesperrtem Bootloader [geprüft: Wiki toh:xiaomi:mir3g]
 - **Bedingung an die Herstellerfirmware:** Für den SSH-Weg zuerst Entwickler-Firmware einspielen (Wiki-Beispiel 2.25.124) und Gerät in der App an ein Xiaomi-Konto binden [geprüft: Wiki toh:xiaomi:mir3g]
@@ -10482,6 +11118,9 @@ Xiaomi Mi Router AX3000T · mediatek-filogic · K2
 - **Programm:** Browser und curl (stok aus der URL), SSH/scp auf 192.168.31.1 [geprüft: Commit 7dbcc12] [noch nicht aufgeteilt]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** curl gegen die API, SSH, ubiformat
 - **Werkzeug/Spezial:** Exploit; Stock-Version 1.0.47
 - **Typenschild/Verwechslung:** RD03 (China) und RD23 (international) sind gleiche Hardware. RD03v2 (Qualcomm; Barcode endet auf 706330, SKU DVB4510CN) wird nicht unterstützt. Innere Varianten: NAND ESMT/Winbond/Foresee, Switch MT7531AE oder Airoha AN8855; Foresee braucht OpenWrt ab 24.10.3, AN8855 ab 24.10.0-rc7 [geprüft: Wiki toh:xiaomi:ax3000t]
 - **Bedingung an die Herstellerfirmware:** Commit: Stock 1.0.47 (API misystem/arn_switch). Laut Wiki gehen auch neuere Versionen über andere API-Lücken (xqsystem/start_binding, xqsystem/get_icon); CN 1.0.106 braucht einen Downgrade (Xiaomi-TFTP-Recovery oder MiWiFi Repair Tool) [geprüft: Commit, Wiki toh:xiaomi:ax3000t]
@@ -10508,6 +11147,9 @@ Xiaomi Mi Router AX3000T (OpenWrt-U-Boot-Layout) · mediatek-filogic · K3
 - **Programm:** Wie AX3000T (Browser, curl, SSH/scp); für kmod-mtd-rw braucht das gebootete OpenWrt Internetzugang (opkg) [geprüft: Commit 7dbcc12; Internet: abgeleitet] [noch nicht aufgeteilt]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** bootloader
+- **Level: Einzelentscheidung:** wie AX3000T, dazu OpenWrt-Bootloader per mtd write
 - **Werkzeug/Spezial:** Exploit; kmod-mtd-rw
 - **Typenschild/Verwechslung:** Wie AX3000T; zusätzlich: Geräte mit Airoha-AN8855-Switch und/oder Foresee-NAND sind erst ab OpenWrt 25.12.0 voll mit dem OpenWrt-U-Boot verträglich [geprüft: Wiki toh:xiaomi:ax3000t]
 - **Bedingung an die Herstellerfirmware:** Wie AX3000T (Exploit je nach Stock-Version) [geprüft: Commit, Wiki toh:xiaomi:ax3000t]
@@ -10534,6 +11176,9 @@ Xiaomi Redmi Router AX6S / AX3200 · mediatek-mt7622 · K0+
 - **Programm:** Browser, Python 3 für den Passwortrechner (unlock_pwd.py mit der Seriennummer) und `python -m http.server` (Port 8000), Telnet-Client auf 192.168.31.1 [geprüft: Commit, Wiki toh:xiaomi:ax3200] [noch nicht aufgeteilt]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = offen; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Beta-Firmware, telnet-Passwort aus der Seriennummer berechnen; Einordnung offen
 - **Werkzeug/Spezial:** Closed-Beta miwifi_rb03_firmware_stable_1.2.7_closedbeta.bin (MD5 5eedf1632ac97bb5a6bb072c08603ed7), telnet-Passwortrechner
 - **Typenschild/Verwechslung:** Redmi AX6S (RB03, China) und Xiaomi AX3200 (RB01, international) sind gleiche Hardware, nur andere Stock-Firmware. AX3200 mit Produktionsdatum nach 12/2023 und gesperrtem Telnet brickt laut Wiki mit dem normalen Image [geprüft: Wiki toh:xiaomi:ax3200]
 - **Bedingung an die Herstellerfirmware:** Telnet muss an sein: ab Werk (prüfen über http://192.168.31.1/cgi-bin/luci/api/xqsystem/fac_info) oder beim RB03 durch die Closed-Beta 1.2.7; beim RB01 ohne Telnet nur Umwege (netmode-4-Mesh-Trick, XMiR-Patcher) [geprüft: Wiki toh:xiaomi:ax3200]
@@ -10561,6 +11206,9 @@ ZTE MF286R (broken) · ath79-nand · K1
 - **Programm:** Browser für den URL-Filter-Exploit (Erweitert > Firewall > URL-Filter, Eintrag mit `&&telnetd&&`), Telnet-Client auf Port 4719 (admin/admin) [geprüft: Commit]. Fehlt telnetd im Stock: TFTP-Server auf 192.168.0.22 mit busybox-mips als `telnetd`, Login dann Port 23 [geprüft: Commit]. USB-Stick (FAT/ext4) für Backup und Image; zur Installation Rechner 192.168.1.22/24 und scp [geprüft: Commit] [noch nicht aufgeteilt]
 - **seriell nötig:** nein (nur für den seriellen Weg, Methode 3 im Commit: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen Weg: ja, Stecker X2 innen)
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Root-Shell per Web-UI-Lücke, telnet, nandwrite
 - **Werkzeug/Spezial:** Web-UI-Exploit; Busybox mit telnetd falls Stock ohne
 - **Typenschild/Verwechslung:** MF286, MF286A, MF286D und MF286R sind verschiedene Geräte; MF286R hat ein Marvell-PXA1826-Modem; weicht `cat /proc/mtd` ab, ist es evtl. eine andere Variante [geprüft: Commit]
 - **Bedingung an die Herstellerfirmware:** Vorher die Stock-Firmware auf den neuesten Stand bringen (Modem-Firmware ist danach nicht mehr aktualisierbar). Exploit-Methode 1 nur, wenn Busybox telnetd enthält (fehlt z. B. bei DNA.fi) [geprüft: Commit]
@@ -10602,6 +11250,9 @@ Zyxel NBG6616 · ath79-generic · K5
 - **Datei:** Gluon-factory als `ras.bin` [geprüft: Commit, Wiki toh:zyxel:nbg6616]
 - **seriell nötig:** ja
 - **Gehäuse öffnen:** ? (Lage der Konsole im Commit nicht genannt)
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = offen; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** seriell, Lage der Konsole nicht belegt
 - **Werkzeug/Spezial:** serielle Konsole + zloader-Passwortrechner (Skript im Commit)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-zyxel_nbg6616-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-zyxel_nbg6616-squashfs-factory.bin)
@@ -10641,6 +11292,9 @@ ZyXEL WSM20 (Multy M1) · ramips-mt7621 · K1
 - **Datei:** OpenWrt-initramfs-kernel.bin, danach Gluon-sysupgrade [geprüft: Freifunk Aachen 04.01.2024]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = sysupgrade; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** versteckte Seite, OpenWrt-initramfs, dann LuCI (erprobt)
 - **Werkzeug/Spezial:** -
 - **Bedingung an die Herstellerfirmware:** Keine Zyxel-Cloud-Registrierung nötig [geprüft: Freifunk Aachen 04.01.2024 + Wiki toh:zyxel:wsm20; Neanderfunk-Notiz, adorfer 15.10.2026: nach dieser Anleitung installiert, läuft als Testknoten in 21_dias (dias-d41ad11183d0, Gluon 2023.2.6, Karte 15.10.2026)]; der Commit 28df7f7 hatte sie noch verlangt [geprüft: Commit]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin) (200)
@@ -10688,6 +11342,8 @@ Sophos AP100 · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade-Image, auf dem AP als `/tmp/openwrt.bin` [geprüft: Commit 6f1efb2]; OpenWrt baut für die Sophos-APs nur sysupgrade, kein factory [geprüft: Image-Rezept am Pin, Inventar]
 - **seriell nötig:** nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen U-Boot-Weg: ja, UART nach Abnehmen des Deckels; die RJ45-Konsole außen ist laut Commit in der Herstellerfirmware abgeschaltet)
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = ja; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Sophos-XG-Appliance (Home-Use-Lizenz, VM) mit `sudo awetool`
 - **Typenschild/Verwechslung:** AP100 und AP55 sind baugleich, der AP55 ist per Kalibrierdaten auf 2x2 begrenzt; trotzdem eigenes Image je Modell [geprüft: Commit 6f1efb2, Image-Rezepte am Pin]; AP100 hat RJ45-Konsole und USB, der AP100C nicht [geprüft: Commit 6f1efb2]; Outdoor-Modell AP100X ist ein anderes Gerät ohne Image [abgeleitet: kein Image am Pin]
 - **Bedingung an die Herstellerfirmware:** Sophos-Konto für die kostenlose Home-Use-Lizenz nötig [geprüft: Commit 6f1efb2]; der AP muss sich mit der XG verwalten lassen: Sophos hat die AP-Serie (AP15/AP15C, AP55/AP55C, AP100/AP100C) zum 31.03.2023 abgekündigt, ab dann lassen sie sich laut Sophos nicht mehr an XG (SFOS), SG UTM oder Sophos Central betreiben [Forum-Zusammenfassung: avanet.com End-of-Sale-Artikel]; laut Websuche später verlängert bis 31.12.2023 und unterstützt von SFOS 15.01.0 bis 19.x, nicht auf XGS-Hardware [Forum-Zusammenfassung: Sophos-Community-Blog "EOL Extension: AP Series", nur über Websuche gelesen]; also eine ältere XG-Version (bis 19.x) als VM verwenden [abgeleitet]
@@ -10730,6 +11386,8 @@ Sophos AP100C · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade-Image, auf dem AP als `/tmp/openwrt.bin` [geprüft: Commit 6f1efb2]; OpenWrt baut für die Sophos-APs nur sysupgrade, kein factory [geprüft: Image-Rezept am Pin, Inventar]
 - **seriell nötig:** nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen U-Boot-Weg: ja, Platine ausbauen, drei Schrauben, 4-Pin-UART)
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = ja; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Sophos-XG-Appliance (Home-Use-Lizenz, VM) mit `sudo awetool`
 - **Typenschild/Verwechslung:** AP100C ohne RJ45-Konsole und ohne USB, AP100 mit [geprüft: Commit 6f1efb2]; AP100C und AP55C baugleich, AP55C auf 2x2 begrenzt, eigenes Image je Modell [geprüft: Commit 6f1efb2, Image-Rezepte am Pin]
 - **Bedingung an die Herstellerfirmware:** Sophos-Konto für die kostenlose Home-Use-Lizenz nötig [geprüft: Commit 6f1efb2]; der AP muss sich mit der XG verwalten lassen: Sophos hat die AP-Serie (AP15/AP15C, AP55/AP55C, AP100/AP100C) zum 31.03.2023 abgekündigt, ab dann lassen sie sich laut Sophos nicht mehr an XG (SFOS), SG UTM oder Sophos Central betreiben [Forum-Zusammenfassung: avanet.com End-of-Sale-Artikel]; laut Websuche später verlängert bis 31.12.2023 und unterstützt von SFOS 15.01.0 bis 19.x, nicht auf XGS-Hardware [Forum-Zusammenfassung: Sophos-Community-Blog "EOL Extension: AP Series", nur über Websuche gelesen]; also eine ältere XG-Version (bis 19.x) als VM verwenden [abgeleitet]
@@ -10772,6 +11430,8 @@ Sophos AP15C · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade-Image, auf dem AP als `/tmp/openwrt.bin` [geprüft: Commit 2d465fb]; OpenWrt baut für die Sophos-APs nur sysupgrade, kein factory [geprüft: Image-Rezept am Pin, Inventar]
 - **seriell nötig:** nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen U-Boot-Weg: ja, laut Commit 4-Pin-UART innen; RJ45-Konsole außen vorhanden, ob im U-Boot nutzbar: ?)
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = ja; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Sophos-XG-Appliance (Home-Use-Lizenz, VM) mit `sudo awetool`
 - **Typenschild/Verwechslung:** AP15C hat dieselbe Hardware wie der AP15, aber zusätzlich Reset-Taste und RJ45-Konsole außen; eigenes Image (sophos-ap15c, nicht sophos-ap15) [geprüft: Commit 2d465fb, Image-Rezepte am Pin]
 - **Bedingung an die Herstellerfirmware:** Sophos-Konto für die kostenlose Home-Use-Lizenz nötig [geprüft: Commit 2d465fb]; der AP muss sich mit der XG verwalten lassen: Sophos hat die AP-Serie (AP15/AP15C, AP55/AP55C, AP100/AP100C) zum 31.03.2023 abgekündigt, ab dann lassen sie sich laut Sophos nicht mehr an XG (SFOS), SG UTM oder Sophos Central betreiben [Forum-Zusammenfassung: avanet.com End-of-Sale-Artikel]; laut Websuche später verlängert bis 31.12.2023 und unterstützt von SFOS 15.01.0 bis 19.x, nicht auf XGS-Hardware [Forum-Zusammenfassung: Sophos-Community-Blog "EOL Extension: AP Series", nur über Websuche gelesen]; also eine ältere XG-Version (bis 19.x) als VM verwenden [abgeleitet]
@@ -10814,6 +11474,8 @@ Sophos AP55 · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade-Image, auf dem AP als `/tmp/openwrt.bin` [geprüft: Commit 6f1efb2]; OpenWrt baut für die Sophos-APs nur sysupgrade, kein factory [geprüft: Image-Rezept am Pin, Inventar]
 - **seriell nötig:** nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen U-Boot-Weg: ja, UART nach Abnehmen des Deckels; die RJ45-Konsole außen ist laut Commit in der Herstellerfirmware abgeschaltet)
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = ja; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Sophos-XG-Appliance (Home-Use-Lizenz, VM) mit `sudo awetool`
 - **Typenschild/Verwechslung:** AP55 ist baugleich mit dem AP100, aber 2x2 (dritter Zweig ohne Kalibrierdaten); nicht das AP100-Image nehmen [geprüft: Commit 6f1efb2; Image-Wahl abgeleitet]; AP55 hat RJ45-Konsole und USB, der AP55C nicht [geprüft: Commit 6f1efb2]
 - **Bedingung an die Herstellerfirmware:** Sophos-Konto für die kostenlose Home-Use-Lizenz nötig [geprüft: Commit 6f1efb2]; der AP muss sich mit der XG verwalten lassen: Sophos hat die AP-Serie (AP15/AP15C, AP55/AP55C, AP100/AP100C) zum 31.03.2023 abgekündigt, ab dann lassen sie sich laut Sophos nicht mehr an XG (SFOS), SG UTM oder Sophos Central betreiben [Forum-Zusammenfassung: avanet.com End-of-Sale-Artikel]; laut Websuche später verlängert bis 31.12.2023 und unterstützt von SFOS 15.01.0 bis 19.x, nicht auf XGS-Hardware [Forum-Zusammenfassung: Sophos-Community-Blog "EOL Extension: AP Series", nur über Websuche gelesen]; also eine ältere XG-Version (bis 19.x) als VM verwenden [abgeleitet]
@@ -10856,6 +11518,8 @@ Sophos AP55C · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade-Image, auf dem AP als `/tmp/openwrt.bin` [geprüft: Commit 6f1efb2]; OpenWrt baut für die Sophos-APs nur sysupgrade, kein factory [geprüft: Image-Rezept am Pin, Inventar]
 - **seriell nötig:** nein (nur für den seriellen U-Boot-Weg ohne XG-Appliance: ja)
 - **Gehäuse öffnen:** nein (nur für den seriellen U-Boot-Weg: ja, Platine ausbauen, drei Schrauben, 4-Pin-UART)
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = ja; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Sophos-XG-Appliance (Home-Use-Lizenz, VM) mit `sudo awetool`
 - **Typenschild/Verwechslung:** AP55C ist baugleich mit dem AP100C, aber 2x2; nicht das AP100C-Image nehmen [geprüft: Commit 6f1efb2; Image-Wahl abgeleitet]; AP55C ohne RJ45-Konsole und USB, AP55 mit [geprüft: Commit 6f1efb2]
 - **Bedingung an die Herstellerfirmware:** Sophos-Konto für die kostenlose Home-Use-Lizenz nötig [geprüft: Commit 6f1efb2]; der AP muss sich mit der XG verwalten lassen: Sophos hat die AP-Serie (AP15/AP15C, AP55/AP55C, AP100/AP100C) zum 31.03.2023 abgekündigt, ab dann lassen sie sich laut Sophos nicht mehr an XG (SFOS), SG UTM oder Sophos Central betreiben [Forum-Zusammenfassung: avanet.com End-of-Sale-Artikel]; laut Websuche später verlängert bis 31.12.2023 und unterstützt von SFOS 15.01.0 bis 19.x, nicht auf XGS-Hardware [Forum-Zusammenfassung: Sophos-Community-Blog "EOL Extension: AP Series", nur über Websuche gelesen]; also eine ältere XG-Version (bis 19.x) als VM verwenden [abgeleitet]
@@ -10892,6 +11556,8 @@ Sophos AP55C · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade nach /tmp, `sysupgrade -n -F <datei>` (Erzwingen nötig) [geprüft: Commit 1e341bb]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Es gab intern v1- und v2-Platinen, verkauft wurden nur v2 [geprüft: Commit 1e341bb]
 - **initramfs-Link:** [24.10.8: initramfs-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-8dev_jalapeno-initramfs-uImage.itb)
@@ -10924,6 +11590,8 @@ Xiaomi MiWiFi Mini · ramips-mt7620 · K1d
 - **Datei:** Gluon-sysupgrade, geschrieben mit `mtd -r write <sysupgrade> OS1` [abgeleitet: Wiki]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Browser/curl, telnet
 - **Bedingung an die Herstellerfirmware:** Exploit dokumentiert für Stock v2.6.17, v2.7.11, v2.8.91, v2.2.105 (und regionale Varianten); sonst per USB-Recovery downgraden [abgeleitet: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7620/openwrt-24.10.8-ramips-mt7620-xiaomi_miwifi-mini-initramfs-kernel.bin) (200)
@@ -10956,6 +11624,8 @@ VoCore2 · ramips-mt76x8 · K1d
 - **Datei:** Gluon-sysupgrade per scp, `sysupgrade -n <datei>` (Einstellungen nicht behalten) [geprüft: Commit 3f31029]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (Konsole am Dock über Micro-USB, UART2: USB, Art ?, Quelle Commit)
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ssh
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-vocore_vocore2-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
@@ -10991,6 +11661,8 @@ TP-Link EAP225-Outdoor v1 · ath79-generic · K0+
 - **Datei:** Gluon-factory, in der Weboberfläche als Firmware-Update hochladen [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** SSH-Zugang zur Stock-Firmware
 - **Typenschild/Verwechslung:** v1 (Ethernet-PHY AR8033) und v3 (RTL8211FS) sehen gleich aus, eigene Images: Hardware-Version auf dem Typenschild lesen [geprüft: Commits 4f86edf, 7e4de89; Typenschild abgeleitet]
 - **Bedingung an die Herstellerfirmware:** Stock-Firmware ab v1.6.0 nötig (getestet mit v1.7.0) [geprüft: Commit 4f86edf]
@@ -11027,6 +11699,8 @@ TP-Link EAP225-Outdoor v3 · ath79-generic · K0+
 - **Datei:** Gluon-factory, in der Weboberfläche als Firmware-Update hochladen [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** SSH-Zugang zur Stock-Firmware
 - **Typenschild/Verwechslung:** v3 (RTL8211FS) und v1 (AR8033) sehen gleich aus, eigene Images: Hardware-Version auf dem Typenschild lesen [geprüft: Commits; Typenschild abgeleitet]
 - **Bedingung an die Herstellerfirmware:** Stock-Firmware ab v1.6.0 nötig [geprüft: Commit 7e4de89]
@@ -11063,6 +11737,8 @@ TP-Link EAP225-Wall v2 · ath79-generic · K0+
 - **Datei:** Gluon-factory, in der Weboberfläche als Firmware-Update hochladen [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** SSH-Zugang zur Stock-Firmware
 - **Bedingung an die Herstellerfirmware:** aktuelle Stock-Firmware nötig (getestet mit 1.20.0) [geprüft: Commit c9f51a9]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-tplink_eap225-wall-v2-initramfs-kernel.bin) (Liste)
@@ -11097,6 +11773,8 @@ TP-Link EAP613 v1 · ramips-mt7621 · K0
 - **Datei:** Gluon-factory, in der Weboberfläche als Firmware-Update hochladen [geprüft: Commits]; Dateinamen evtl. kürzen, z. B. auf `factory.bin` [geprüft: Commit 11588c5]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ssh-Client
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-tplink_eap613-v1-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
@@ -11130,6 +11808,8 @@ TP-Link EAP615-Wall v1 · ramips-mt7621 · K0
 - **Datei:** Gluon-factory, in der Weboberfläche als Firmware-Update hochladen [geprüft: Commits]; Dateinamen evtl. kürzen [abgeleitet: Schwestergerät EAP613, gleiche Stock-Plattform]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ssh-Client
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-tplink_eap615-wall-v1-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
@@ -11168,6 +11848,8 @@ TP-Link Archer C20 v4 · ramips-mt76x8 · K1d
 - **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]; Gluon baut dafür das Sonderimage -bootloader.bin (aus -squashfs-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 v2025.1.3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** TFTP-Server
 - **Typenschild/Verwechslung:** Archer C20 v4 (MT7628, Typenschild "Ver: 4.x"); v5 sieht ähnlich aus, braucht aber einen anderen Weg (U-Boot-Teil aus TP-Link-Firmware) [geprüft: Commits v4/v5]; v1 ist MT7620 und ebenfalls anders [geprüft: Commit v1]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-tplink_archer-c20-v4-initramfs-kernel.bin) (200)
@@ -11204,6 +11886,8 @@ TP-Link Archer C50 v3 · ramips-mt76x8 · K1d
 - **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]; Gluon baut dafür das Sonderimage -bootloader.bin (aus -squashfs-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 v2025.1.3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** TFTP-Server
 - **Typenschild/Verwechslung:** Archer C50 v3 (EU); v4 und v6 sehen gleich aus (gleiche FCC-ID wie v4), brauchen aber den Weg mit U-Boot-Teil; v1 sucht ArcherC50V1_tp_recovery.bin [geprüft: Commit v4; abgeleitet: Wiki C50]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-tplink_archer-c50-v3-initramfs-kernel.bin) (200)
@@ -11239,6 +11923,8 @@ TP-Link TL-MR3020 v3 · ramips-mt76x8 · K1d
 - **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]; Gluon baut dafür das Sonderimage -bootloader.bin (aus -squashfs-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 v2025.1.3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** TFTP-Server
 - **Typenschild/Verwechslung:** TL-MR3020 v3 (MT7628, ein LAN-Port, USB-Stromversorgung); v1 ist anderer Chip mit anderem Weg [abgeleitet: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-tplink_tl-mr3020-v3-initramfs-kernel.bin) (200)
@@ -11274,6 +11960,8 @@ TP-Link TL-MR3420 v5 · ramips-mt76x8 · K1d
 - **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]; Gluon baut dafür das Sonderimage -bootloader.bin (aus -squashfs-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 v2025.1.3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** TFTP-Server
 - **Typenschild/Verwechslung:** TL-MR3420 v5 ist fast baugleich mit TL-WR841N v13, aber eigenes Image und andere Server-IP (.225 statt .66) [geprüft: Commits]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-tplink_tl-mr3420-v5-initramfs-kernel.bin) (200)
@@ -11309,6 +11997,8 @@ TP-Link TL-MR6400 v5 · ramips-mt76x8 · K1d
 - **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]; Gluon baut dafür das Sonderimage -bootloader.bin (aus -squashfs-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 v2025.1.3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** TFTP-Server
 - **Typenschild/Verwechslung:** TL-MR6400 v5 ist kleiner als v4 und hat andere LED-GPIOs/Switch-Anschlüsse, eigenes Image [geprüft: Commit]; Typenschild "v5.0 EU" [abgeleitet: Commit nennt v5.0 EU]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-tplink_tl-mr6400-v5-initramfs-kernel.bin) (200)
@@ -11345,6 +12035,8 @@ TP-Link TL-WA801ND v5 · ramips-mt76x8 · K1d
 - **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]; Gluon baut dafür das Sonderimage -bootloader.bin (aus -squashfs-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 v2025.1.3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** TFTP-Server
 - **Typenschild/Verwechslung:** TL-WA801ND v5 (MT7628); v3/v4 haben anderen Chip und anderen Weg [abgeleitet: Wiki WA801ND]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-tplink_tl-wa801nd-v5-initramfs-kernel.bin) (200)
@@ -11381,6 +12073,8 @@ TP-Link TL-WR841N v13 · ramips-mt76x8 · K1d
 - **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]; Gluon baut dafür das Sonderimage -bootloader.bin (aus -squashfs-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 v2025.1.3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** TFTP-Server
 - **Typenschild/Verwechslung:** TL-WR841N v13 (MT7628, ab 2017); v14 sieht gleich aus, ist aber ein anderes Gerät, für Gluon nicht dieses Image [abgeleitet: Wiki WR841ND]; TL-WR840N v4 ist der Bruder mit weniger LEDs/Knöpfen, eigenes Image [geprüft: Commit]; Version steht auf dem Typenschild [abgeleitet]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-tplink_tl-wr841n-v13-initramfs-kernel.bin) (200)
@@ -11416,6 +12110,8 @@ TP-Link TL-WR902AC v3 · ramips-mt76x8 · K1d
 - **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]; Gluon baut dafür das Sonderimage -bootloader.bin (aus -squashfs-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 v2025.1.3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** TFTP-Server
 - **Typenschild/Verwechslung:** TL-WR902AC v3 (MT7628 + MT7650, 5 GHz geht unter OpenWrt nicht) [geprüft: Commit]; v4 sieht ähnlich aus, eigenes Image; v1 ist anderer Chip [abgeleitet: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-tplink_tl-wr902ac-v3-initramfs-kernel.bin) (200)
@@ -11451,6 +12147,8 @@ TP-Link TL-WR902AC v4 · ramips-mt76x8 · K1d
 - **Datei:** Gluon-Datei other/...-bootloader.bin (= OpenWrt-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 extra_images] genau als tp_recovery.bin UND zusätzlich als tp_recover.bin (Commit schreibt "tp_recover.bin", alle Schwestergeräte "tp_recovery.bin"; welcher Name gilt, ist ungeklärt) [abgeleitet: Commit ffa40fcc vs. Schwestergeräte] ablegen, Groß-/Kleinschreibung wie hier [geprüft: Commit]; dass der Name zwingend genau so sein muss, ist nicht belegt [abgeleitet: Regel strengster Name]; Dateiname im Commit tp_recover.bin, bei den Schwestergeräten tp_recovery.bin; die Anleitung lässt beide ablegen [geprüft: OpenWrt-Commit ffa40fc; Lösung abgeleitet]; Gluon baut dafür das Sonderimage -bootloader.bin (aus -squashfs-tftp-recovery) [geprüft: Gluon targets/ramips-mt76x8 v2025.1.3]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** TFTP-Server
 - **Typenschild/Verwechslung:** TL-WR902AC v4 mit USB-Port, laut Commit sehr ähnlich zu v3; eigenes Image [geprüft: Commit]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-tplink_tl-wr902ac-v4-initramfs-kernel.bin) (200)
@@ -11491,6 +12189,9 @@ TP-Link Archer C2 v1 · ramips-mt7620 · K3
 - **Datei:** TP-Link-Firmware Archer C2 V1 von tp-link.com [geprüft: Commit] als Quelle des U-Boot-Teils; Datei auf dem TFTP-Server genau ArcherC2V1_tp_recovery.bin, "V1" groß [geprüft: Commit; abgeleitet: Wiki C50 zur Schreibweise]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** bootloader
+- **Level: Einzelentscheidung:** TFTP-Recovery schreibt ab Adresse 0 samt Bootloader; falsches Image nur per SPI-Programmer zu retten
 - **Werkzeug/Spezial:** dd, cat, TFTP-Server
 - **Typenschild/Verwechslung:** nur Archer C2 v1/v1.1 (AC750, MT7620A); Version unten am Gerät oder in der TP-Link-Oberfläche unter Status prüfen; andere C2-Versionen (z. B. AC900, v3) haben andere Hardware [abgeleitet: Wiki Archer C2 AC750]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7620/openwrt-24.10.8-ramips-mt7620-tplink_archer-c2-v1-initramfs-kernel.bin) (200)
@@ -11522,6 +12223,9 @@ TP-Link Archer C20 v1 · ramips-mt7620 · K3
 - **Datei:** TP-Link-Firmware Archer C20 v1 (..._up_boot...) [geprüft: Commit] als Quelle des U-Boot-Teils; Datei auf dem TFTP-Server genau ArcherC20V1_tp_recovery.bin [geprüft: Commit]
 - **seriell nötig:** nein (nur für den seriellen Notweg: ja)
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** bootloader
+- **Level: Einzelentscheidung:** TFTP-Recovery schreibt ab Adresse 0 samt Bootloader; falsches Image nur per SPI-Programmer zu retten
 - **Werkzeug/Spezial:** dd, cat, TFTP-Server
 - **Typenschild/Verwechslung:** Archer C20 v1 (MT7620A, mit USB); nicht C20 v4/v5 (MT7628) und nicht C20i [geprüft: Commits; abgeleitet: Wiki]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7620/openwrt-24.10.8-ramips-mt7620-tplink_archer-c20-v1-initramfs-kernel.bin) (200)
@@ -11550,6 +12254,8 @@ TP-Link Archer C20 v5 · ramips-mt76x8 · K3
 - **Datei:** TP-Link-Firmware passend zu Modell, Version und Region von tp-link.com [geprüft: Commit; abgeleitet: Wiki C20 v5 "regional match"]; der U-Boot-Teil muss aus einer TP-Link-Firmware für genau dieses Modell/diese Version stammen (erste 131584 Byte) [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** dd, cat
 - **Typenschild/Verwechslung:** Archer C20 v5 (EU), MT7628; sieht aus wie v4, braucht aber den U-Boot-Teil (Split-U-Boot) [geprüft: Commit]; TP-Link-Firmware der passenden Region (EU) nehmen [abgeleitet: Wiki C20 v5]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-tplink_archer-c20-v5-initramfs-kernel.bin) (200)
@@ -11580,6 +12286,8 @@ TP-Link Archer C50 v4 · ramips-mt76x8 · K3
 - **Datei:** TP-Link-Firmware passend zu Modell, Version und Region von tp-link.com [geprüft: Commit; abgeleitet: Wiki C20 v5 "regional match"]; der U-Boot-Teil muss aus einer TP-Link-Firmware für genau dieses Modell/diese Version stammen (erste 131584 Byte) [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** dd, cat
 - **Typenschild/Verwechslung:** Archer C50 v4: gleiche Hardware und FCC-ID wie v3, aber Split-U-Boot, also anderer Weg [geprüft: Commit]; laut Wiki geht das v4-Image auch auf C50 v5 (US) und Archer A5 v5 [abgeleitet: Wiki C50, Forum]; EU- und BR-Firmware sind identisch [abgeleitet: Wiki C50]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-tplink_archer-c50-v4-initramfs-kernel.bin) (200)
@@ -11610,6 +12318,8 @@ TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54) · ramips-mt76x8 · K3
 - **Datei:** TP-Link-Firmware passend zu Modell, Version und Region von tp-link.com [geprüft: Commit; abgeleitet: Wiki C20 v5 "regional match"]; der U-Boot-Teil muss aus einer TP-Link-Firmware für genau dieses Modell/diese Version stammen (erste 131584 Byte) [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** dd, cat
 - **Typenschild/Verwechslung:** nur Archer C50 v6 CA/EU/RU; die spanische Variante (ES) ist ein umgelabelter Archer C54 und geht nicht [geprüft: Commit e9ac1b19]; TP-Link-Firmware der passenden Variante (CA/EU oder RU) [geprüft: Commit]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-tplink_archer-c50-v6-initramfs-kernel.bin) (200)
@@ -11650,6 +12360,8 @@ Ubiquiti EdgeRouter X · ramips-mt7621 · K3
 - **Datei:** zuerst OpenWrt-initramfs-factory.tar aus Fremdquelle (github stman/..., cyounkins/edgerouter-factory), das OpenWrt heute nicht mehr baut; danach OpenWrt-sysupgrade, dann Umstieg auf das 24.10-Layout, erst dann Gluon [abgeleitet: Wiki; vgl. Bestand werkzeug] [geprüft: Commit, mk, Wiki toh:ubiquiti:edgerouter_x_er-x_ka]
 - **seriell nötig:** nein (nur für den seriellen TFTP-Weg: ja, 57600 Baud)
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Fremd-factory.tar (github stman/..., cyounkins/edgerouter-factory), darkxst/erx-migration, Neanderfunk-Notiz
 - **Typenschild/Verwechslung:** ER-X (PoE-Durchleitung an eth4, Steckernetzteil oder passives PoE) und ER-X-SFP (SFP-Port, 5x PoE-out, 24-V-Netzteil) brauchen eigene Images [geprüft: Commit 9715beb]
 - **Bedingung an die Herstellerfirmware:** Wiki empfiehlt vor OpenWrt die neueste EdgeOS-v2-Firmware und das Bootloader-Update (sicherer Bootloader mit TFTP-Recovery über die Reset-Taste) [abgeleitet: Wiki]
@@ -11688,6 +12400,8 @@ Ubiquiti EdgeRouter X-SFP · ramips-mt7621 · K3
 - **Datei:** zuerst OpenWrt-initramfs-factory.tar aus Fremdquelle (github stman/..., cyounkins/edgerouter-factory), das OpenWrt heute nicht mehr baut; danach OpenWrt-sysupgrade, dann Umstieg auf das 24.10-Layout, erst dann Gluon [abgeleitet: Wiki; vgl. Bestand werkzeug] [geprüft: Commit, mk, Wiki toh:ubiquiti:edgerouter_x_er-x_ka]; ein ER-X-factory läuft auch auf dem ER-X-SFP, dann das SFP-sysupgrade mit `--force` [abgeleitet: Wiki]
 - **seriell nötig:** nein (nur für den seriellen TFTP-Weg: ja, 57600 Baud)
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** Fremd-factory.tar (github stman/..., cyounkins/edgerouter-factory), darkxst/erx-migration, Neanderfunk-Notiz
 - **Typenschild/Verwechslung:** ER-X-SFP (SFP-Port, 5x PoE-out 24 V passiv) nicht mit ER-X verwechseln; eigene Images [geprüft: Commit 9715beb]
 - **Bedingung an die Herstellerfirmware:** Wiki empfiehlt vor OpenWrt die neueste EdgeOS-v2-Firmware und das Bootloader-Update (sicherer Bootloader mit TFTP-Recovery über die Reset-Taste) [abgeleitet: Wiki]
@@ -11730,6 +12444,8 @@ Ubiquiti NanoBeam M5 XW (Alias von ubiquiti-nanostation-loco-m-xw) · ath79-gene
 - **Datei:** Gluon-factory [geprüft]; einen bestimmten Dateinamen verlangt keine Quelle, kurzer Name mit Endung .bin [abgeleitet: better safe than sorry]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** NanoBeam M5 XW: in Gluon ein Alias der NanoStation Loco M XW, gleiches Image [geprüft: Gluon targets/ath79-generic v2025.1.3, aliases]; nicht mit dem NanoBeam AC verwechseln; Bauart XW in der AirOS-Versionsangabe (Settings > System, z. B. 'XW.v6...') [abgeleitet: Wiki toh/ubiquiti/common]
 - **Bedingung an die Herstellerfirmware:** Wiki: XW-Geräte brauchen für die OpenWrt-Installation AirOS 6.0.4 oder älter (ab 6.0.6 nur signierte Firmware; Downgrade über 6.0.6-beta auf 6.0.4); neuere XW-Hardware-Revisionen nur über XW.v6.1.7.32555 + fwupdate.real (github true-systems/ubnt-openwrt-flashing) [abgeleitet: Wiki toh/ubiquiti/common]; ob die Grenze auch für den TFTP-Recovery-Weg gilt, ist offen
@@ -11767,6 +12483,8 @@ Ubiquiti Nanostation Loco M XW · ath79-generic · K0+
 - **Datei:** Gluon-factory [geprüft]; einen bestimmten Dateinamen verlangt keine Quelle, kurzer Name mit Endung .bin [abgeleitet: better safe than sorry]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Loco M XW: ein Ethernet-Port, eingebaute 13-dBi-Antenne; nicht mit der NanoStation M XW (zwei Ports, PoE-Durchleitung) verwechseln [geprüft: Commits 633c430, 40530c8]; Board-Typ steht in der AirOS-Versionsangabe (Settings > System, z. B. 'XW.v6...'); XM-Geräte brauchen ein anderes Image [abgeleitet: Wiki toh/ubiquiti/common]
 - **Bedingung an die Herstellerfirmware:** Wiki: XW-Geräte brauchen für die OpenWrt-Installation AirOS 6.0.4 oder älter (ab 6.0.6 nur signierte Firmware; Downgrade über 6.0.6-beta auf 6.0.4); neuere XW-Hardware-Revisionen nur über XW.v6.1.7.32555 + fwupdate.real (github true-systems/ubnt-openwrt-flashing) [abgeleitet: Wiki toh/ubiquiti/common]; ob die Grenze auch für den TFTP-Recovery-Weg gilt, ist offen
@@ -11804,6 +12522,8 @@ Ubiquiti Nanostation M XW · ath79-generic · K0+
 - **Datei:** Gluon-factory [geprüft]; einen bestimmten Dateinamen verlangt keine Quelle, kurzer Name mit Endung .bin [abgeleitet: better safe than sorry]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** NanoStation M XW: zwei Ethernet-Ports (PoE-in, PoE-out); nicht mit der NanoStation Loco M XW (ein Port) verwechseln [geprüft: Commits 40530c8, 633c430]; Board-Typ steht in der AirOS-Versionsangabe (Settings > System, z. B. 'XW.v6...'); XM-Geräte brauchen ein anderes Image [abgeleitet: Wiki toh/ubiquiti/common]
 - **Bedingung an die Herstellerfirmware:** Wiki: XW-Geräte brauchen für die OpenWrt-Installation AirOS 6.0.4 oder älter (ab 6.0.6 nur signierte Firmware; Downgrade über 6.0.6-beta auf 6.0.4); neuere XW-Hardware-Revisionen nur über XW.v6.1.7.32555 + fwupdate.real (github true-systems/ubnt-openwrt-flashing) [abgeleitet: Wiki toh/ubiquiti/common]; ob die Grenze auch für den TFTP-Recovery-Weg gilt, ist offen
@@ -11842,6 +12562,8 @@ Ubiquiti Rocket M XM · ath79-generic · K0+
 - **Datei:** Gluon-factory [abgeleitet]; einen bestimmten Dateinamen verlangt keine Quelle, kurzer Name mit Endung .bin [abgeleitet: better safe than sorry]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Rocket M gibt es als XM und XW (und TI); Gluon-Image nur für XM; Board-Typ steht in der AirOS-Version (z. B. 'XM.v5.5...') [abgeleitet: Wiki toh/ubiquiti/common]
 - **Bedingung an die Herstellerfirmware:** XM-Geräte mit AirOS 5.6 oder neuer erst auf AirOS 5.5 (z. B. 5.5.11) zurück: Werksreset, 5.6.15-signed, 5.6.15-unsigned per TFTP, dann 5.5.x; das schreibt auch den U-Boot zurück [abgeleitet: Wiki toh/ubiquiti/common]
@@ -11876,6 +12598,8 @@ Ubiquiti UniFi AP Pro · ath79-generic · K0+
 - **Datei:** Gluon-factory [geprüft]; einen bestimmten Dateinamen verlangt keine Quelle, kurzer Name mit Endung .bin [abgeleitet: better safe than sorry]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_unifi-ap-pro-initramfs-kernel.bin) (Liste)
 - **Factory-/Stock-Image-Link:** Gluon-factory; OpenWrt: [squashfs-factory.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_unifi-ap-pro-squashfs-factory.bin)
@@ -11918,6 +12642,8 @@ Ubiquiti UniFi AC Lite · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** SSH + dd auf der Stock-Firmware
 - **Typenschild/Verwechslung:** AC Lite, AC LR und AC Mesh haben dieselbe Hardware, nur andere Antennen (AC LR mit dickerem Gehäuse); jedes hat ein eigenes Gluon-Image (Antennengewinn), Typenschild genau lesen [geprüft: Commits 07c1ddf, 4456dd4]
 - **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; Stock 3.7.58 ist bevorzugt (hat noch `mtd`), ab 6.5.28 geht es nur mit `dd`; Schreibschutz mit `echo 5edfacbf > /proc/ubnthal/.uf` aufheben (scheitert bei manchen Versionen still) [abgeleitet: Wiki toh/ubiquiti/unifiac]; Downgrade in der Stock-Firmware mit `fwupdate.real -m <datei>` oder per TFTP-Recovery [abgeleitet: Wiki]
@@ -11959,6 +12685,8 @@ Ubiquiti UniFi AC LR · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** SSH + dd auf der Stock-Firmware
 - **Typenschild/Verwechslung:** AC Lite, AC LR und AC Mesh haben dieselbe Hardware, nur andere Antennen (AC LR mit dickerem Gehäuse); jedes hat ein eigenes Gluon-Image (Antennengewinn), Typenschild genau lesen [geprüft: Commits 07c1ddf, 4456dd4]
 - **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; Stock 3.7.58 ist bevorzugt (hat noch `mtd`), ab 6.5.28 geht es nur mit `dd`; Schreibschutz mit `echo 5edfacbf > /proc/ubnthal/.uf` aufheben (scheitert bei manchen Versionen still) [abgeleitet: Wiki toh/ubiquiti/unifiac]; Downgrade in der Stock-Firmware mit `fwupdate.real -m <datei>` oder per TFTP-Recovery [abgeleitet: Wiki]
@@ -12000,6 +12728,8 @@ Ubiquiti UniFi AC Mesh · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** SSH + dd auf der Stock-Firmware
 - **Typenschild/Verwechslung:** AC Lite, AC LR und AC Mesh haben dieselbe Hardware, nur andere Antennen (AC LR mit dickerem Gehäuse); jedes hat ein eigenes Gluon-Image (Antennengewinn), Typenschild genau lesen [geprüft: Commits 07c1ddf, 4456dd4]
 - **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; Stock 3.7.58 ist bevorzugt (hat noch `mtd`), ab 6.5.28 geht es nur mit `dd`; Schreibschutz mit `echo 5edfacbf > /proc/ubnthal/.uf` aufheben (scheitert bei manchen Versionen still) [abgeleitet: Wiki toh/ubiquiti/unifiac]; Downgrade in der Stock-Firmware mit `fwupdate.real -m <datei>` oder per TFTP-Recovery [abgeleitet: Wiki]
@@ -12041,6 +12771,8 @@ Ubiquiti UniFi AC Mesh Pro · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** SSH + dd auf der Stock-Firmware
 - **Typenschild/Verwechslung:** AC Pro und AC Mesh Pro sind gleiche Hardware bis auf USB; eigene Images [geprüft: Commit e420b7b]
 - **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; Stock 3.7.58 ist bevorzugt (hat noch `mtd`), ab 6.5.28 geht es nur mit `dd`; Schreibschutz mit `echo 5edfacbf > /proc/ubnthal/.uf` aufheben (scheitert bei manchen Versionen still) [abgeleitet: Wiki toh/ubiquiti/unifiac]; Downgrade in der Stock-Firmware mit `fwupdate.real -m <datei>` oder per TFTP-Recovery [abgeleitet: Wiki]
@@ -12082,6 +12814,8 @@ Ubiquiti UniFi AC Pro · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** SSH + dd auf der Stock-Firmware
 - **Typenschild/Verwechslung:** AC Pro und AC Mesh Pro sind gleiche Hardware bis auf USB; eigene Images [geprüft: Commit e420b7b]
 - **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; Stock 3.7.58 ist bevorzugt (hat noch `mtd`), ab 6.5.28 geht es nur mit `dd`; Schreibschutz mit `echo 5edfacbf > /proc/ubnthal/.uf` aufheben (scheitert bei manchen Versionen still) [abgeleitet: Wiki toh/ubiquiti/unifiac]; Downgrade in der Stock-Firmware mit `fwupdate.real -m <datei>` oder per TFTP-Recovery [abgeleitet: Wiki]
@@ -12118,6 +12852,8 @@ Ubiquiti UniFi AP · ath79-generic · K0+
 - **Datei:** Gluon-sysupgrade [geprüft: Commits] [für dieses Gerät abgeleitet]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** SSH auf der Stock-Firmware [abgeleitet]
 - **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_unifi-ap-initramfs-kernel.bin) (Liste)
@@ -12148,6 +12884,8 @@ Ubiquiti UniFi AP Outdoor+ · ath79-generic · K0+
 - **Datei:** Datei per scp aufs Gerät, dort `fwupdate.real -m <datei> -d` [geprüft: Commit 51f578e]; welches Image (factory oder sysupgrade) nennt der Commit nicht, Bestand sagt factory [abgeleitet]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** SSH auf der Stock-Firmware
 - **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_unifi-ap-outdoor-plus-initramfs-kernel.bin) (Liste)
@@ -12182,6 +12920,8 @@ Ubiquiti UniFi Swiss Army Knife Ultra · ath79-generic · K1d
 - **Datei:** Gluon-sysupgrade [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** SSH + dd auf der Stock-Firmware
 - **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; Schreibschutz aufheben mit `echo "5edfacbf" > /proc/ubnthal/.uf` [geprüft: Commit bf94e0a]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-ubnt_uk-ultra-initramfs-kernel.bin) (Liste)
@@ -12216,6 +12956,8 @@ Ubiquiti UniFi AC HD · ipq806x-generic · K1d
 - **Datei:** Gluon-sysupgrade [geprüft: Commits]; per scp nach /tmp [geprüft: Commit 4e46beb]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']
 - **initramfs-Link:** [24.10.8: initramfs-fit-uImage.itb](https://downloads.openwrt.org/releases/24.10.8/targets/ipq806x/generic/openwrt-24.10.8-ipq806x-generic-ubnt_unifi-ac-hd-initramfs-fit-uImage.itb)
@@ -12252,6 +12994,8 @@ Ubiquiti UniFi 6+ (U6+) · mediatek-filogic · K1d
 - **Datei:** Gluon-sysupgrade per scp nach /tmp/openwrt.bin [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; Wiki: getestet bis Stock 6.6.55, vermutlich auch später; sonst per TFTP-Recovery auf ältere Version [abgeleitet: Wiki toh/ubiquiti/unifi_6_plus]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-ubnt_unifi-6-plus-initramfs-kernel.bin)
@@ -12291,6 +13035,8 @@ Ubiquiti UniFi 6 LR v1 · mediatek-mt7622 · K1d
 - **Datei:** Gluon-sysupgrade [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, Gehäuse verklebt)
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** v1: LED-Leiste mit RGB-Farben; v2: nur zwei einfache LEDs (weiß/blau) statt LED-Leiste; v3: andere Ethernet-PHY (RTL8211FS, nur 1 Gbit statt 2.5 Gbit), sonst wie v2 [geprüft: Commits 15a0247, 31d86a1, a0f4ead]; v3 laut Wiki ab Produktionswoche 2234 (KW 34/2022) [abgeleitet: Wiki]; die frühe 'U6 LR-EA' ist ein MT7621-Gerät und keine dieser Varianten [geprüft: Commit fb4d7a9]; Hardware-Version per `dmesg | grep mtk_sgmii_init` prüfen, v3 meldet 'detect RTL8211_CARD'; v3 ist nicht mit v1/v2-Images kompatibel [geprüft: Wiki toh:ubiquiti:unifi_6_lr, Rohtext 15.10.2026]
 - **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; ab Stock 6.2 vorher Schreibschutz aufheben: `echo 5edfacbf > /proc/ubnthal/.uf` (steht nicht im Commit) [abgeleitet: Wiki toh/ubiquiti/unifi_6_lr]
@@ -12332,6 +13078,8 @@ Ubiquiti UniFi 6 LR v2 · mediatek-mt7622 · K1d
 - **Datei:** Gluon-sysupgrade [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, Gehäuse verklebt)
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** v1: LED-Leiste mit RGB-Farben; v2: nur zwei einfache LEDs (weiß/blau) statt LED-Leiste; v3: andere Ethernet-PHY (RTL8211FS, nur 1 Gbit statt 2.5 Gbit), sonst wie v2 [geprüft: Commits 15a0247, 31d86a1, a0f4ead]; v3 laut Wiki ab Produktionswoche 2234 (KW 34/2022) [abgeleitet: Wiki]; die frühe 'U6 LR-EA' ist ein MT7621-Gerät und keine dieser Varianten [geprüft: Commit fb4d7a9]; Hardware-Version per `dmesg | grep mtk_sgmii_init` prüfen, v3 meldet 'detect RTL8211_CARD'; v3 ist nicht mit v1/v2-Images kompatibel [geprüft: Wiki toh:ubiquiti:unifi_6_lr, Rohtext 15.10.2026]
 - **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; ab Stock 6.2 vorher Schreibschutz aufheben: `echo 5edfacbf > /proc/ubnthal/.uf` (steht nicht im Commit) [abgeleitet: Wiki toh/ubiquiti/unifi_6_lr]
@@ -12373,6 +13121,8 @@ Ubiquiti UniFi 6 LR v3 · mediatek-mt7622 · K1d
 - **Datei:** Gluon-sysupgrade [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, Gehäuse verklebt)
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** v1: LED-Leiste mit RGB-Farben; v2: nur zwei einfache LEDs (weiß/blau) statt LED-Leiste; v3: andere Ethernet-PHY (RTL8211FS, nur 1 Gbit statt 2.5 Gbit), sonst wie v2 [geprüft: Commits 15a0247, 31d86a1, a0f4ead]; v3 laut Wiki ab Produktionswoche 2234 (KW 34/2022) [abgeleitet: Wiki]; die frühe 'U6 LR-EA' ist ein MT7621-Gerät und keine dieser Varianten [geprüft: Commit fb4d7a9]; Hardware-Version per `dmesg | grep mtk_sgmii_init` prüfen, v3 meldet 'detect RTL8211_CARD'; v3 ist nicht mit v1/v2-Images kompatibel [geprüft: Wiki toh:ubiquiti:unifi_6_lr, Rohtext 15.10.2026]
 - **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; ab Stock 6.2 vorher Schreibschutz aufheben: `echo 5edfacbf > /proc/ubnthal/.uf` (steht nicht im Commit) [abgeleitet: Wiki toh/ubiquiti/unifi_6_lr]
@@ -12412,6 +13162,8 @@ Ubiquiti UniFi 6 Lite · ramips-mt7621 · K1d
 - **Datei:** Gluon-sysupgrade [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ssh, dd, fw_setenv
 - **Typenschild/Verwechslung:** U6 Lite teilt die MT7621-Plattform mit U6 IW, U6 Mesh, U6 Extender und der frühen U6 LR-EA, die alle eigene Images brauchen [geprüft: Commit fb4d7a9, FIT-Konfigurationen]
 - **Bedingung an die Herstellerfirmware:** Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; ab Stock 6.5 vorher auf 6.0.14 downgraden [abgeleitet: Wiki toh/ubiquiti/unifi_6_lite]
@@ -12449,6 +13201,8 @@ Ubiquiti UniFi nanoHD · ramips-mt7621 · K1d
 - **Datei:** Gluon-sysupgrade [geprüft: Commits]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** ssh, dd
 - **Bedingung an die Herstellerfirmware:** Anleitung gilt für Stock v3.9.27, bei anderer Version vorher downgraden [geprüft: Commit 4c8446b]; Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-ubnt_unifi-nanohd-initramfs-kernel.bin) (200)
@@ -12473,6 +13227,8 @@ Xiaomi Mi Router AC2100 (R2100) · ramips-mt7621 · K2
 - **Übertragung:** ssh/scp (Reverse-Shell + wget, eigener http-Server nötig)
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** PPPoE-Server + Python/scapy-Exploit, http-Server, netcat
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_mi-router-ac2100-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** [squashfs-kernel1.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_mi-router-ac2100-squashfs-kernel1.bin) (200), [squashfs-rootfs0.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_mi-router-ac2100-squashfs-rootfs0.bin) (200)
@@ -12490,6 +13246,8 @@ Xiaomi Redmi Router AC2100 (RM2100) · ramips-mt7621 · K2
 - **Übertragung:** ssh/scp (Reverse-Shell + wget, eigener http-Server nötig)
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** PPPoE-Server + Python/scapy-Exploit, http-Server, netcat
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_redmi-router-ac2100-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** [squashfs-kernel1.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_redmi-router-ac2100-squashfs-kernel1.bin) (200), [squashfs-rootfs0.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_redmi-router-ac2100-squashfs-rootfs0.bin) (200)
@@ -12512,6 +13270,8 @@ Xiaomi Mi Router 3G v2 · ramips-mt7621 · K2
 - **Übertragung:** ssh/scp (Exploit)
 - **seriell nötig:** nein [abgeleitet]
 - **Gehäuse öffnen:** nein [abgeleitet]
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** OpenWRTInvasion
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_mi-router-3g-v2-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
@@ -12528,6 +13288,8 @@ Xiaomi Mi Router 4A Gigabit · ramips-mt7621 · K1d
 - **Übertragung:** ssh/scp (Shell aus dem Exploit, telnet/ftp)
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** OpenWRTInvasion (Python)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_mi-router-4a-gigabit-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
@@ -12546,6 +13308,8 @@ Xiaomi Mi Router 4A Gigabit v2 · ramips-mt7621 · K1d
 - **Übertragung:** ssh/scp (Shell aus dem Exploit, telnet/ftp)
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** OpenWRTInvasion (Python)
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-xiaomi_mi-router-4a-gigabit-v2-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
@@ -12562,6 +13326,8 @@ Xiaomi Mi Router 4A 100M International (R4AC) · ramips-mt76x8 · K1d
 - **Übertragung:** ssh/scp (Shell aus dem Exploit)
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** OpenWRTInvasion
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-xiaomi_mi-router-4a-100m-intl-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
@@ -12579,6 +13345,8 @@ Xiaomi Mi Router 4A 100M International v2 · ramips-mt76x8 · K2
 - **Übertragung:** ssh/scp (Shell aus dem Exploit, nc)
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** OpenWRTInvasion, netcat
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-xiaomi_mi-router-4a-100m-intl-v2-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
@@ -12595,6 +13363,8 @@ Xiaomi Mi Router 4C · ramips-mt76x8 · K2
 - **Übertragung:** ssh/scp (telnet + ftp, Gerät 192.168.31.1)
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = programm; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** OpenWRTInvasion
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-xiaomi_mi-router-4c-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-sysupgrade direkt
