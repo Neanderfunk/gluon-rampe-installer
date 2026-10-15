@@ -9,7 +9,7 @@ stufe: Werkstatt
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
 daten_stand: 37aa5ed
-vorlage_stand: 9b742b8
+vorlage_stand: 7b06003
 ---
 
 # Aruba Instant On AP17: Freifunk-Firmware installieren
@@ -79,7 +79,7 @@ einer Stunde, ohne das Kabel zu bauen.
 
 ## Schritte
 
-### Teil 1: OpenWrt starten
+### Vorbereitung
 
 1. **Feste Adresse am Rechner.** Stell deinen Rechner auf
    `192.168.1.75`, Netzmaske `255.255.255.0`
@@ -87,7 +87,8 @@ einer Stunde, ohne das Kabel zu bauen.
    Adresse sucht der Access Point den TFTP-Server.
 
 2. **TFTP-Server starten.** Starte den TFTP-Server mit dem Ordner, in dem
-   `ipq40xx.ari` liegt ([TFTP-Server einrichten](grundlagen/tftp-server.md)).
+   `ipq40xx.ari` liegt
+   ([TFTP-Server einrichten](grundlagen/tftp-server.md)).
 
 3. **Kabel anschließen.** Netzwerkkabel vom Rechner an die Netzwerkbuchse des Access Points.
    Das Konsolenkabel an die Konsolenbuchse, das andere Ende an den Rechner.
@@ -105,61 +106,63 @@ einer Stunde, ohne das Kabel zu bauen.
    erscheint die Eingabeaufforderung `apboot>`. Sonst Strom ziehen und noch
    einmal.
 
+### OpenWrt starten
+
 6. **Bootloader einstellen.** Gib diese Befehle ein, jede Zeile einzeln, und
-   warte nach jeder Zeile auf `apboot>`:
+    warte nach jeder Zeile auf `apboot>`:
 
-   ```
-   setenv bootargs_openwrt "setenv bootargs console=ttyMSM1,9600n8"
-   setenv nandboot_openwrt "run bootargs_openwrt; ubi part aos1; ubi read 0x85000000 kernel; set fdt_high 0x87000000; bootm 0x85000000"
-   setenv ramboot_openwrt "run bootargs_openwrt; setenv ipaddr 192.168.1.105; setenv serverip 192.168.1.75; netget; set fdt_high 0x87000000; bootm"
-   setenv bootcmd "run nandboot_openwrt"
-   saveenv
-   ```
+    ```
+    setenv bootargs_openwrt "setenv bootargs console=ttyMSM1,9600n8"
+    setenv nandboot_openwrt "run bootargs_openwrt; ubi part aos1; ubi read 0x85000000 kernel; set fdt_high 0x87000000; bootm 0x85000000"
+    setenv ramboot_openwrt "run bootargs_openwrt; setenv ipaddr 192.168.1.105; setenv serverip 192.168.1.75; netget; set fdt_high 0x87000000; bootm"
+    setenv bootcmd "run nandboot_openwrt"
+    saveenv
+    ```
 
-   **Prüfen:** Gib `printenv ramboot_openwrt` ein. Die Ausgabe muss genau
-   der dritten Zeile oben entsprechen. Sonst diese Zeile noch einmal
-   eingeben und wieder `saveenv`.
+    **Prüfen:** Gib `printenv ramboot_openwrt` ein. Die Ausgabe muss genau
+    der dritten Zeile oben entsprechen. Sonst diese Zeile noch einmal
+    eingeben und wieder `saveenv`.
 
-   Damit startet der Access Point ab jetzt OpenWrt statt der
-   Aruba-Firmware. Die Aruba-Firmware bleibt im Speicher, siehe "Zurück zur
-   Aruba-Firmware".
+    Damit startet der Access Point ab jetzt OpenWrt statt der
+    Aruba-Firmware. Die Aruba-Firmware bleibt im Speicher, siehe "Zurück zur
+    Aruba-Firmware".
 
 7. **OpenWrt laden.** Gib ein:
 
-   ```
-   run ramboot_openwrt
-   ```
+    ```
+    run ramboot_openwrt
+    ```
 
-   Der Access Point holt `ipq40xx.ari` von deinem Rechner. Danach erscheint
-   `Invalid image format version`, das ist normal. Kurz darauf startet
-   OpenWrt, das Terminal zeigt viele Zeilen. Warte, bis
-   `Please press Enter to activate this console.` erscheint.
+    Der Access Point holt `ipq40xx.ari` von deinem Rechner. Danach erscheint
+    `Invalid image format version`, das ist normal. Kurz darauf startet
+    OpenWrt, das Terminal zeigt viele Zeilen. Warte, bis
+    `Please press Enter to activate this console.` erscheint.
 
-   **Kommt stattdessen `Unknown command 'bootm'`**, hat dein Gerät einen
-   neueren Bootloader. Lies dann unter "Wenn etwas schiefgeht" weiter.
+    **Kommt stattdessen `Unknown command 'bootm'`**, lies unter "Wenn etwas
+    schiefgeht" weiter.
 
-### Teil 2: Freifunk-Firmware aufspielen
+### Freifunk-Firmware aufspielen
 
 8. **Anmelden.**
-   Öffne ein zweites Terminal im Ordner mit `gluon.bin` und gib ein:
+    Öffne ein zweites Terminal im Ordner mit `gluon.bin` und gib ein:
 
-   ```
-   scp -O gluon.bin root@192.168.1.1:/tmp/gluon.bin
-   ssh root@192.168.1.1
-   ```
+    ```
+    scp -O gluon.bin root@192.168.1.1:/tmp/gluon.bin
+    ssh root@192.168.1.1
+    ```
 
-   Ein Passwort gibt es nicht. Meldet `ssh` "REMOTE HOST IDENTIFICATION HAS
-   CHANGED", siehe [SSH und scp benutzen](grundlagen/ssh-scp.md).
+    Ein Passwort gibt es nicht. Meldet `ssh` "REMOTE HOST IDENTIFICATION HAS
+    CHANGED", siehe [SSH und scp benutzen](grundlagen/ssh-scp.md).
 
 9. **Speicher prüfen.** Auf dem Access Point:
 
-   ```
-   grep ubi /proc/mtd
-   ```
+    ```
+    grep ubi /proc/mtd
+    ```
 
-   **Prüfen:** Die Ausgabe beginnt mit
-   `mtd1:` und endet mit `"ubi"`. Sonst hier
-   aufhören und uns schreiben.
+    **Prüfen:** Die Ausgabe beginnt mit
+    `mtd1:` und endet mit `"ubi"`. Sonst hier
+    aufhören und uns schreiben.
 
 10. **Speicher vorbereiten und Freifunk-Firmware schreiben.** Gib ein, Zeile
     für Zeile:
@@ -196,9 +199,9 @@ einer Stunde, ohne das Kabel zu bauen.
 - **Text erscheint, aber Enter wirkt nicht.** Der Konsolenanschluss der
   Aruba-Geräte ist wählerisch. Mit manchen Adaptern kann man mitlesen, aber
   nichts eingeben. Versuch einen anderen Adapter.
-- **In Schritt 7 kommt die Datei nicht an** (der Bootloader wiederholt es
-  oder bricht ab). Prüf die feste Adresse `192.168.1.75`, die Firewall
-  deines Rechners und den Dateinamen `ipq40xx.ari`.
+- **Eine Datei kommt nicht an** (der Bootloader wiederholt es oder bricht
+  ab). Prüf die feste Adresse `192.168.1.75`, die Firewall deines Rechners
+  und den Dateinamen.
 - **In Schritt 7 kommt `Unknown command 'bootm'`.** Dann hat dein Gerät vermutlich einen neueren Bootloader, aus
   dem der Hersteller Befehle entfernt hat, die OpenWrt braucht. Einen
   passenden älteren Bootloader für den Aruba Instant On AP17 haben wir noch nicht.
@@ -208,8 +211,8 @@ einer Stunde, ohne das Kabel zu bauen.
   Willst du an dieser Stelle aufhören, stell im Bootloader den Start der
   Aruba-Firmware wieder her, wie unter "Zurück zur Aruba-Firmware"
   beschrieben.
-- **In Schritt 8 antwortet nichts.** Warte noch eine Minute, OpenWrt
-  braucht etwas.
+- **In Schritt 8 antwortet nichts.** Warte noch eine Minute,
+  OpenWrt braucht etwas.
 - **`ubiformat` meldet einen Fehler.** Nicht weitermachen, sondern die
   Ausgabe abschreiben (oder die Mitschrift des Terminals nehmen) und uns
   schreiben.

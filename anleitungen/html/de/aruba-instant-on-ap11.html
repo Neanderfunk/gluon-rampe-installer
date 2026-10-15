@@ -14,7 +14,7 @@
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="feste-ip, serielle-konsole, ssh-scp, tftp-server">
 <meta name="anleitung:daten_stand" content="37aa5ed">
-<meta name="anleitung:vorlage_stand" content="9b742b8">
+<meta name="anleitung:vorlage_stand" content="7b06003">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -34,8 +34,13 @@ Anleitung für alle nach dir besser:</p>
 Weboberfläche an. Der Weg führt über die <strong>serielle Konsole</strong>, also ein
 Kabel, über das du den Bootloader des Geräts (bei Aruba heißt er &quot;APBoot&quot;)
 direkt bedienst. Das Gehäuse musst du dafür nicht öffnen.</p>
-<p>Der Weg hat zwei Etappen:</p>
+<p>Der Weg hat drei Etappen:</p>
 <ol>
+<li><strong>Älteren Bootloader aufspielen.</strong> Praktisch alle Geräte dieses Typs
+haben inzwischen einen Bootloader, aus dem der Hersteller Befehle
+entfernt hat, die OpenWrt braucht. Du ersetzt ihn zuerst durch eine
+ältere Fassung. Das ist der heikelste Teil; lies ihn vorher einmal ganz
+durch.</li>
 <li><strong>OpenWrt starten.</strong> Du stellst den Bootloader so ein, dass er ein
 kleines OpenWrt per TFTP von deinem Rechner holt und startet. Es läuft
 nur im Arbeitsspeicher.</li>
@@ -67,8 +72,7 @@ Leg es in den Ordner deines TFTP-Servers und benenn es dort genau in
 <li>die Freifunk-Firmware deiner Community für den Aruba Instant On AP11, und zwar
 das <strong>sysupgrade</strong>-Image. Benenn es in <code>gluon.bin</code> um, dann passen die
 Befehle unten ohne Änderung.</li>
-<li>nur wenn dein Gerät den neueren Bootloader hat (siehe &quot;Älteren
-Bootloader aufspielen&quot; unten): den älteren Bootloader
+<li>den älteren Bootloader
 <a href="https://firmware.ffnef.de/other/dump/ap303-loader-2.5.0.2.bin">ap303-loader-2.5.0.2.bin</a>, SHA256
 <code>69e45b047de07ceeeb4a3daec6232ba2902acea8806075af80c2725ea52298a5</code>. Leg ihn ebenfalls in den Ordner deines
 TFTP-Servers, unter genau diesem Namen.</li>
@@ -82,10 +86,10 @@ ist für beide dieselbe; manche Communities bieten sie nur unter dem Namen
 AP-303 an.</li>
 <li>Nicht verwechseln mit dem <a href="aruba-instant-on-ap11d.html">Instant On AP11D</a>,
 dem Tischgerät mit mehreren Netzwerkbuchsen. Der braucht andere Dateien.</li>
-<li>Viele AP11 aus den letzten Jahren haben einen neueren Bootloader
-(<code>APBoot 2.6.…</code> in der ersten Zeile von Schritt 5). Dann kommt in Schritt 7
-<code>Unknown command 'bootm'</code>, und du brauchst den Abschnitt &quot;Älteren
-Bootloader aufspielen&quot; unten. Lies ihn vorher einmal ganz durch.</li>
+<li>Praktisch alle AP11 haben inzwischen den neueren Bootloader
+(<code>APBoot 2.6.…</code>). Deshalb beginnt diese Anleitung damit, den älteren
+aufzuspielen. Lies den Teil &quot;Älteren Bootloader aufspielen&quot; vorher einmal
+ganz durch.</li>
 </ul>
 <h2>Das Konsolenkabel bauen</h2>
 <p><strong>Steck nie ein normales USB-Kabel in die Buchse &quot;Console&quot;.</strong> Aruba hat dort
@@ -130,7 +134,7 @@ allen. Erscheint später kein Text im Terminal, tausch grün und weiß. Es gibt
 auch fertige Kabel, die ausdrücklich für Aruba-Access-Points verkauft
 werden.</p>
 <h2>Schritte</h2>
-<h3>Teil 1: OpenWrt starten</h3>
+<h3>Vorbereitung</h3>
 <ol>
 <li>
 <p><strong>Feste Adresse am Rechner.</strong> Stell deinen Rechner auf
@@ -140,7 +144,8 @@ Adresse sucht der Access Point den TFTP-Server.</p>
 </li>
 <li>
 <p><strong>TFTP-Server starten.</strong> Starte den TFTP-Server mit dem Ordner, in dem
-<code>ipq40xx.ari</code> liegt (<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>).</p>
+<code>ipq40xx.ari</code> und <code>ap303-loader-2.5.0.2.bin</code> liegen
+(<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>).</p>
 </li>
 <li>
 <p><strong>Kabel anschließen.</strong> Netzwerkkabel vom Rechner an die Netzwerkbuchse des Access Points.
@@ -160,7 +165,67 @@ erscheint, drück Enter. Das Zeitfenster ist nur etwa zwei Sekunden lang;
 drück am besten schon beim Einschalten immer wieder Enter. <strong>Prüfen:</strong> Es
 erscheint die Eingabeaufforderung <code>apboot&gt;</code>. Sonst Strom ziehen und noch
 einmal.</p>
+<p>Steht in der ersten Zeile schon <code>APBoot 2.5.0.2</code>, ist der ältere
+Bootloader bereits drauf, etwa bei einem Gerät aus zweiter Hand. Dann
+überspring den nächsten Teil und mach mit Schritt 10 weiter.</p>
 </li>
+</ol>
+<h3>Älteren Bootloader aufspielen</h3>
+<blockquote>
+<p><strong>Warnung:</strong> Hier überschreibst du den Bootloader des Geräts. Geht dabei
+etwas schief, zum Beispiel eine falsche Datei, ein Tippfehler in den
+Adressen oder ein Stromausfall mittendrin, startet das Gerät nicht mehr.
+Dann hilft nur noch ein Programmiergerät für den Speicherchip. Mach das
+nur bei dem Gerät, für das diese Anleitung gilt, und halte dich genau an
+die Befehle.</p>
+</blockquote>
+<p>Praktisch alle Geräte dieses Typs haben inzwischen einen neueren Bootloader
+(zum Beispiel <code>APBoot 2.6.2.9</code>), aus dem der Hersteller Befehle entfernt
+hat, die OpenWrt braucht. Du ersetzt ihn durch die ältere Fassung
+<code>APBoot 2.5.0.2</code> aus einem älteren Gerät desselben Typs. Freifunk Darmstadt
+hat diesen Weg ausprobiert. Überschrieben wird nur der Bereich des
+Bootloaders, nicht der Rest des Speichers.</p>
+<ol start="6">
+<li>
+<p><strong>Datei prüfen.</strong> Prüf auf deinem Rechner die SHA256 von
+<code>ap303-loader-2.5.0.2.bin</code> im Ordner des TFTP-Servers: unter Linux
+<code>sha256sum ap303-loader-2.5.0.2.bin</code>, unter macOS
+<code>shasum -a 256 ap303-loader-2.5.0.2.bin</code>, in der Windows-PowerShell
+<code>Get-FileHash ap303-loader-2.5.0.2.bin</code>. Das Ergebnis muss genau so lauten
+(Groß- und Kleinschreibung spielt keine Rolle):</p>
+<pre><code>69e45b047de07ceeeb4a3daec6232ba2902acea8806075af80c2725ea52298a5
+</code></pre>
+<p>Unter Linux geht es auch in einem Schritt: Lade die
+<a href="https://firmware.ffnef.de/other/dump/ap303-loader-2.5.0.2.bin.sha256">Prüfsummendatei</a> in denselben Ordner
+und gib <code>sha256sum -c ap303-loader-2.5.0.2.bin.sha256</code>
+ein. Es muss <code>OK</code> erscheinen.</p>
+<p>Stimmt die Summe nicht, hier aufhören.</p>
+</li>
+<li>
+<p><strong>Datei laden.</strong> Gib im Terminal bei <code>apboot&gt;</code> ein (eine Zeile):</p>
+<pre><code>setenv ipaddr 192.168.1.105; setenv serverip 192.168.1.75; netget 0x84000000 ap303-loader-2.5.0.2.bin
+</code></pre>
+<p><strong>Prüfen:</strong> Es erscheint <code>Bytes transferred = 983040 (f0000 hex)</code>. Die
+Meldung <code>Invalid image format version</code> danach ist hier normal. Steht
+dort eine andere Zahl oder ein Fehler, <strong>hier aufhören</strong> und auf keinen
+Fall Schritt 8 eingeben.</p>
+</li>
+<li>
+<p><strong>Bootloader schreiben.</strong> Gib ein (eine Zeile, genau so):</p>
+<pre><code>sf probe; sf protect off; sf erase 0xf0000 0xf0000; sf write 0x84000000 0xf0000 0xf0000
+</code></pre>
+<p>Strom nicht ziehen. Warte, bis wieder <code>apboot&gt;</code> erscheint. Meldet der
+Bootloader <code>Unknown command 'sf'</code>, gib zuerst <code>diag</code> ein und dann die
+Zeile noch einmal.</p>
+</li>
+<li>
+<p><strong>Neu starten.</strong> Gib <code>reset</code> ein. <strong>Prüfen:</strong> Die erste Zeile lautet
+jetzt <code>APBoot 2.5.0.2</code>. Halt den Bootloader wie in Schritt 5 wieder an,
+bis <code>apboot&gt;</code> erscheint.</p>
+</li>
+</ol>
+<h3>OpenWrt starten</h3>
+<ol start="10">
 <li>
 <p><strong>Bootloader einstellen.</strong> Gib diese Befehle ein, jede Zeile einzeln, und
 warte nach jeder Zeile auf <code>apboot&gt;</code>:</p>
@@ -185,12 +250,12 @@ Aruba-Firmware&quot;.</p>
 <code>Invalid image format version</code>, das ist normal. Kurz darauf startet
 OpenWrt, das Terminal zeigt viele Zeilen. Warte, bis
 <code>Please press Enter to activate this console.</code> erscheint.</p>
-<p><strong>Kommt stattdessen <code>Unknown command 'bootm'</code></strong>, hat dein Gerät einen
-neueren Bootloader. Lies dann unter &quot;Wenn etwas schiefgeht&quot; weiter.</p>
+<p><strong>Kommt stattdessen <code>Unknown command 'bootm'</code></strong>, lies unter &quot;Wenn etwas
+schiefgeht&quot; weiter.</p>
 </li>
 </ol>
-<h3>Teil 2: Freifunk-Firmware aufspielen</h3>
-<ol start="8">
+<h3>Freifunk-Firmware aufspielen</h3>
+<ol start="12">
 <li>
 <p><strong>Anmelden.</strong>
 Öffne ein zweites Terminal im Ordner mit <code>gluon.bin</code> und gib ein:</p>
@@ -230,10 +295,12 @@ nach Community zuerst mit einer Einrichtungsseite unter
 <h2>Woran du erkennst, dass es geklappt hat</h2>
 <ul>
 <li>In Schritt 5 erscheint <code>apboot&gt;</code>.</li>
-<li>In Schritt 7 zeigt der Bootloader, dass er die Datei geholt hat
+<li>In Schritt 7 kommt <code>Bytes transferred = 983040 (f0000 hex)</code>, und nach
+Schritt 9 lautet die erste Zeile <code>APBoot 2.5.0.2</code>.</li>
+<li>In Schritt 11 zeigt der Bootloader, dass er die Datei geholt hat
 (<code>Bytes transferred = …</code>), und OpenWrt startet.</li>
-<li>In Schritt 9 zeigt <code>grep</code> die Partition <code>&quot;ubi&quot;</code>.</li>
-<li>Nach Schritt 11 meldet sich die Freifunk-Firmware.</li>
+<li>In Schritt 13 zeigt <code>grep</code> die Partition <code>&quot;ubi&quot;</code>.</li>
+<li>Nach Schritt 15 meldet sich die Freifunk-Firmware.</li>
 </ul>
 <h2>Wenn etwas schiefgeht</h2>
 <ul>
@@ -243,80 +310,21 @@ Leitungen. TX und RX tauschen
 <li><strong>Text erscheint, aber Enter wirkt nicht.</strong> Der Konsolenanschluss der
 Aruba-Geräte ist wählerisch. Mit manchen Adaptern kann man mitlesen, aber
 nichts eingeben. Versuch einen anderen Adapter.</li>
-<li><strong>In Schritt 7 kommt die Datei nicht an</strong> (der Bootloader wiederholt es
-oder bricht ab). Prüf die feste Adresse <code>192.168.1.75</code>, die Firewall
-deines Rechners und den Dateinamen <code>ipq40xx.ari</code>.</li>
-<li><strong>In Schritt 7 kommt <code>Unknown command 'bootm'</code>.</strong> Dann hat dein Gerät den neueren Bootloader (meist
-<code>APBoot 2.6.…</code> in der ersten Zeile). Weiter geht es nur mit dem Abschnitt
-&quot;Älteren Bootloader aufspielen&quot; weiter unten. <strong>Lies dort zuerst die
-Warnung.</strong>
+<li><strong>Eine Datei kommt nicht an</strong> (der Bootloader wiederholt es oder bricht
+ab). Prüf die feste Adresse <code>192.168.1.75</code>, die Firewall deines Rechners
+und den Dateinamen.</li>
+<li><strong>In Schritt 11 kommt <code>Unknown command 'bootm'</code>.</strong> Dann läuft noch der neuere Bootloader. Prüf beim
+Einschalten die erste Zeile: Sie muss <code>APBoot 2.5.0.2</code> lauten. Sonst den
+Teil &quot;Älteren Bootloader aufspielen&quot; wiederholen.
 Willst du an dieser Stelle aufhören, stell im Bootloader den Start der
 Aruba-Firmware wieder her, wie unter &quot;Zurück zur Aruba-Firmware&quot;
 beschrieben.</li>
-<li><strong>In Schritt 8 antwortet nichts.</strong> Warte noch eine Minute, OpenWrt
-braucht etwas.</li>
+<li><strong>In Schritt 12 antwortet nichts.</strong> Warte noch eine Minute,
+OpenWrt braucht etwas.</li>
 <li><strong><code>ubiformat</code> meldet einen Fehler.</strong> Nicht weitermachen, sondern die
 Ausgabe abschreiben (oder die Mitschrift des Terminals nehmen) und uns
 schreiben.</li>
 </ul>
-<h2>Älteren Bootloader aufspielen</h2>
-<blockquote>
-<p><strong>Warnung:</strong> Hier überschreibst du den Bootloader des Geräts. Geht dabei
-etwas schief, zum Beispiel eine falsche Datei, ein Tippfehler in den
-Adressen oder ein Stromausfall mittendrin, startet das Gerät nicht mehr.
-Dann hilft nur noch ein Programmiergerät für den Speicherchip. Mach das
-nur, wenn in Schritt 7 <code>Unknown command 'bootm'</code> kam, und nur bei dem
-Gerät, für das diese Anleitung gilt.</p>
-</blockquote>
-<p>Neuere Geräte haben einen Bootloader, aus dem der Hersteller Befehle
-entfernt hat (Freifunk Darmstadt hat den Weg mit <code>APBoot 2.6.2.9</code>
-ausprobiert). Du ersetzt ihn durch die ältere Fassung <code>APBoot 2.5.0.2</code> aus
-einem älteren Gerät desselben Typs. Überschrieben wird nur der Bereich des
-Bootloaders, nicht der Rest des Speichers.</p>
-<ol>
-<li>
-<p><strong>Datei holen und prüfen.</strong> Lade
-<a href="https://firmware.ffnef.de/other/dump/ap303-loader-2.5.0.2.bin">ap303-loader-2.5.0.2.bin</a> herunter
-(983.040 Bytes). Prüf die SHA256: unter Linux <code>sha256sum ap303-loader-2.5.0.2.bin</code>,
-unter macOS <code>shasum -a 256 ap303-loader-2.5.0.2.bin</code>, in der Windows-PowerShell
-<code>Get-FileHash ap303-loader-2.5.0.2.bin</code>. Das Ergebnis muss genau so lauten
-(Groß- und Kleinschreibung spielt keine Rolle):</p>
-<pre><code>69e45b047de07ceeeb4a3daec6232ba2902acea8806075af80c2725ea52298a5
-</code></pre>
-<p>Unter Linux geht es auch in einem Schritt: Lade die
-<a href="https://firmware.ffnef.de/other/dump/ap303-loader-2.5.0.2.bin.sha256">Prüfsummendatei</a> in denselben Ordner
-und gib <code>sha256sum -c ap303-loader-2.5.0.2.bin.sha256</code>
-ein. Es muss <code>OK</code> erscheinen.</p>
-<p>Stimmt die Summe nicht, hier aufhören. Leg die Datei in den Ordner des
-TFTP-Servers, neben <code>ipq40xx.ari</code>.</p>
-</li>
-<li>
-<p><strong>Bootloader anhalten.</strong> Strom ziehen und wieder anschließen, wie in
-Schritt 5 bis <code>apboot&gt;</code>.</p>
-</li>
-<li>
-<p><strong>Datei laden.</strong> Gib ein (eine Zeile):</p>
-<pre><code>setenv ipaddr 192.168.1.105; setenv serverip 192.168.1.75; netget 0x84000000 ap303-loader-2.5.0.2.bin
-</code></pre>
-<p><strong>Prüfen:</strong> Es erscheint <code>Bytes transferred = 983040 (f0000 hex)</code>. Die
-Meldung <code>Invalid image format version</code> danach ist auch hier normal.
-Steht dort eine andere Zahl oder ein Fehler, <strong>hier aufhören</strong> und auf
-keinen Fall Schritt 4 eingeben.</p>
-</li>
-<li>
-<p><strong>Bootloader schreiben.</strong> Gib ein (eine Zeile, genau so):</p>
-<pre><code>sf probe; sf protect off; sf erase 0xf0000 0xf0000; sf write 0x84000000 0xf0000 0xf0000
-</code></pre>
-<p>Strom nicht ziehen. Warte, bis wieder <code>apboot&gt;</code> erscheint. Meldet der
-Bootloader <code>Unknown command 'sf'</code>, gib zuerst <code>diag</code> ein und dann die
-Zeile noch einmal.</p>
-</li>
-<li>
-<p><strong>Neu starten.</strong> Gib <code>reset</code> ein. <strong>Prüfen:</strong> Die erste Zeile lautet
-jetzt <code>APBoot 2.5.0.2</code>. Dann weiter mit Schritt 5 oben. Gib dabei auch
-die Befehle aus Schritt 6 noch einmal ein.</p>
-</li>
-</ol>
 <h2>Zurück zur Aruba-Firmware</h2>
 <p>Die Aruba-Firmware bleibt bei diesem Weg im Speicher. Um sie wieder zu
 starten, halt den Bootloader an (Schritt 5) und gib ein:</p>
