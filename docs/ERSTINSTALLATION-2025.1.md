@@ -1494,7 +1494,7 @@ Aruba AP-303 · ipq40xx-generic · K4
 - **Gluon-RAMpe-Rezept:** devices/aruba-ap-303.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `ipq40xx.ari` per APBoot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)
 - **Quelle (OpenWrt-Commit):** OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75
 - **Detail-Anleitung:** anleitungen/de/aruba-ap-303.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=102c8c55f217606cdbdc9a449667e034676b3e75
-- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb; initramfs_sha256 = 5d65d93c796b5dd10e42a65269dadb7905dca0b42c0fd60251431392b53ac56e; tty = ttyMSM1; mtd = /dev/mtd1; sicherheit = quelle
+- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb; initramfs_sha256 = 5d65d93c796b5dd10e42a65269dadb7905dca0b42c0fd60251431392b53ac56e; tty = ttyMSM1; mtd = /dev/mtd1; sicherheit = quelle; bootm_hinweis = Dann hat dein Gerät einen neueren Bootloader, aus dem der Hersteller Befehle entfernt hat, die OpenWrt braucht. Für den baugleichen [Aruba Instant On AP11](aruba-instant-on-ap11.md) gibt es einen Weg über einen älteren Bootloader. Ob er auch für den AP-303 passt, wissen wir noch nicht. Bitte probier ihn nicht auf eigene Faust, sondern schreib uns.
 
 #### aruba-ap-303h
 

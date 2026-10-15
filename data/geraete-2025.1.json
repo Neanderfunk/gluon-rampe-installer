@@ -8144,7 +8144,8 @@
     "initramfs_sha256": "5d65d93c796b5dd10e42a65269dadb7905dca0b42c0fd60251431392b53ac56e",
     "tty": "ttyMSM1",
     "mtd": "/dev/mtd1",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "bootm_hinweis": "Dann hat dein Gerät einen neueren Bootloader, aus dem der Hersteller Befehle entfernt hat, die OpenWrt braucht. Für den baugleichen [Aruba Instant On AP11](aruba-instant-on-ap11.md) gibt es einen Weg über einen älteren Bootloader. Ob er auch für den AP-303 passt, wissen wir noch nicht. Bitte probier ihn nicht auf eigene Faust, sondern schreib uns."
    }
   },
   {
