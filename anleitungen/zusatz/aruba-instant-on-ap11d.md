@@ -6,5 +6,8 @@
 - Nicht verwechseln mit dem [Instant On AP11](aruba-instant-on-ap11.md) ohne
   "D", dem Gerät für Decke oder Wand mit einer Netzwerkbuchse. Der braucht
   andere Dateien.
-- Ob neuere AP11D denselben neueren Bootloader haben wie neuere AP11, wissen
-  wir nicht. Wenn in Schritt 7 `Unknown command 'bootm'` kommt, schreib uns.
+- Wir vermuten, dass neuere AP11D denselben gesperrten Bootloader haben wie
+  neuere Instant On AP11. Rückmeldungen dazu haben wir noch keine. Kommt in
+  Schritt 7 `Unknown command 'bootm'`, schreib uns bitte, damit wir es
+  belegen können. Der ältere Bootloader von der AP11-Seite passt **nicht**
+  zum AP11D.
