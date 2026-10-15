@@ -8,7 +8,7 @@ sprache: de
 stufe: Werkstatt
 status: ungeprüft
 grundlagen: [feste-ip, ssh-scp]
-daten_stand: 8ee56d9
+daten_stand: 95e5f91
 vorlage_stand: 393f161
 ---
 

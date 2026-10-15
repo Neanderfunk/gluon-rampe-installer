@@ -952,6 +952,48 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "sophos-ap100",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/sophos-ap100.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "sophos-ap100c",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/sophos-ap100c.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "sophos-ap15",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/sophos-ap15.html",
+  "status": "ungeprüft",
+  "stufe": "Werkstatt",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "sophos-ap15c",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/sophos-ap15c.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "sophos-ap55",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/sophos-ap55.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "sophos-ap55c",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/sophos-ap55c.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "totolink-x5000r",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/totolink-x5000r.html",
   "status": "ungeprüft",

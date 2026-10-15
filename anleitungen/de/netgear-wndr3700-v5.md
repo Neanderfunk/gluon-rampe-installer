@@ -9,7 +9,7 @@ stufe: mit Werkzeug
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-netgear-wndr3700-v5-factory.img
 grundlagen: [browser-https, nmrpflash]
-daten_stand: 8ee56d9
+daten_stand: 95e5f91
 vorlage_stand: 393f161
 ---
 

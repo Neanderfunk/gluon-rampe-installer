@@ -8,8 +8,8 @@ sprache: de
 stufe: Werkstatt
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 8ee56d9
-vorlage_stand: 00558b3
+daten_stand: 95e5f91
+vorlage_stand: f350b7d
 ---
 
 # Extreme Networks WS-AP3825i: Freifunk-Firmware installieren
@@ -100,9 +100,9 @@ einer Stunde.
    **Prüfen:** Es erscheint die Eingabeaufforderung des Bootloaders `Boot (PRI)->`. Sonst Strom
    ziehen und noch einmal.
 
-6. **Bootloader einstellen und OpenWrt laden.** Gib diese Befehle ein, jede
-   Zeile einzeln. Warte nach jeder Zeile, bis die Eingabeaufforderung
-   wieder erscheint; `saveenv` kann ein paar Sekunden brauchen, dabei
+6. **Bootloader einstellen und OpenWrt laden.** Gib
+   diese Befehle ein, jede Zeile einzeln. Warte nach jeder Zeile, bis die
+   Eingabeaufforderung wieder erscheint; `saveenv` kann ein paar Sekunden brauchen, dabei
    **nicht den Strom ziehen**:
 
    ```
@@ -113,7 +113,7 @@ einer Stunde.
    run ramboot_openwrt
    ```
 
-   Die letzte Zeile holt `ws-ap3825i-initramfs.bin` von deinem Rechner und startet
+   Die Befehle holen `ws-ap3825i-initramfs.bin` von deinem Rechner und starten
    OpenWrt; das Terminal zeigt viele Zeilen. Warte, bis
    `Please press Enter to activate this console.` erscheint.
 

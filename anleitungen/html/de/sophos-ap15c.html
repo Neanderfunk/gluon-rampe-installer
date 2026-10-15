@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sophos AP15C: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="sophos-ap15c">
+<meta name="anleitung:modell" content="Sophos AP15C">
+<meta name="anleitung:anzeige" content="Sophos AP15C">
+<meta name="anleitung:familie" content="sophos-xg-awetool">
+<meta name="anleitung:gluon_broken" content="false">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="mit Werkzeug">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="feste-ip, serielle-konsole, tftp-server">
+<meta name="anleitung:daten_stand" content="95e5f91">
+<meta name="anleitung:vorlage_stand" content="f350b7d">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<h1>Sophos AP15C: Freifunk-Firmware installieren</h1>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> So beschreiben die Entwickler von OpenWrt
+bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
+ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
+klappt.</p>
+<p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+Anleitung für alle nach dir besser:</p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20Sophos%20AP15C">projekt@neanderfunk.de</a></p>
+</blockquote>
+<p>Die Access Points von Sophos nehmen keine fremde Firmware über eine
+Weboberfläche an. Es gibt zwei Wege:</p>
+<ul>
+<li><strong>Über die serielle Konsole</strong> (hier beschrieben): Du öffnest das Gehäuse,
+schließt einen USB-Seriell-Adapter an und schreibst die Freifunk-Firmware
+mit drei Befehlen im Bootloader direkt in den Speicher.</li>
+<li><strong>Über eine Sophos-Firewall</strong> (SG oder XG), wenn du ohnehin eine hast;
+dann musst du das Gehäuse nicht öffnen. Siehe &quot;Anderer Weg&quot; unten.</li>
+</ul>
+<p>Für den ersten Weg brauchst du zwei Werkzeuge, die auf eigenen Seiten
+erklärt sind: <a href="grundlagen/serielle-konsole.html">Serielle Konsole benutzen</a> und
+<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>. Rechne mit einer
+Stunde.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>den Access Point und Strom über PoE (802.3af)
+oder ein 12-V-Netzteil</li>
+<li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
+<li>einen <strong>USB-Seriell-Adapter für 3,3 V</strong> mit drei Steckkabeln und einen
+Schraubendreher</li>
+<li>die Freifunk-Firmware deiner Community für den Sophos AP15C, und zwar das
+<strong>sysupgrade</strong>-Image (ein factory-Image gibt es für dieses Gerät nicht).
+Leg es in den Ordner deines TFTP-Servers und benenn es dort genau in
+<strong><code>uImage_AP15C</code></strong> um, ohne Endung.</li>
+</ul>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Feste Adresse am Rechner.</strong> Stell deinen Rechner auf <code>192.168.99.8</code>,
+Netzmaske <code>255.255.255.0</code>
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>). Unter dieser
+Adresse sucht der Access Point den TFTP-Server.</p>
+</li>
+<li>
+<p><strong>TFTP-Server starten</strong> mit dem Ordner, in dem <code>uImage_AP15C</code> liegt
+(<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>).</p>
+</li>
+<li>
+<p><strong>Gehäuse öffnen und Adapter anschließen.</strong>
+Auf der Platine sitzt eine Stiftleiste mit vier Stiften; Stift 1 ist
+markiert. Von Stift 1 an: <strong>3,3 V, GND, TX, RX</strong>. Verbinde GND mit GND
+des Adapters, TX des Access Points mit RX des Adapters und RX mit TX.
+<strong>Stift 1 (3,3 V) nicht anschließen.</strong></p>
+</li>
+<li>
+<p><strong>Netzwerk und Terminal.</strong> Netzwerkkabel vom Rechner an die
+Netzwerkbuchse des Access Points. Starte das Terminalprogramm mit
+<strong>115200</strong> Baud, 8N1, ohne Flusssteuerung
+(<a href="grundlagen/serielle-konsole.html">Serielle Konsole benutzen</a>).</p>
+</li>
+<li>
+<p><strong>Bootloader anhalten.</strong> Schließ jetzt den Strom an. Sobald im Terminal
+die Aufforderung erscheint, den automatischen Start abzubrechen, drück
+eine Taste. <strong>Prüfen:</strong> Es erscheint eine Eingabeaufforderung des
+Bootloaders. Sonst Strom ziehen und noch einmal.</p>
+</li>
+<li>
+<p><strong>Datei holen.</strong> Gib ein:</p>
+<pre><code>tftpboot
+</code></pre>
+<p><strong>Prüfen:</strong> Der Bootloader zeigt <code>Filename 'uImage_AP15C'</code>, eine
+Reihe <code>#</code> und am Ende <code>done</code> bzw. <code>Bytes transferred</code>. Sucht er einen
+anderen Dateinamen, benenn die Datei auf dem Rechner genau so um und gib
+<code>tftpboot</code> noch einmal ein. Kommt die Datei nicht an, hier aufhören.</p>
+</li>
+<li>
+<p><strong>In den Speicher schreiben.</strong> Gib ein, genau so:</p>
+<pre><code>cp.b $fileaddr 0x9f070000 $filesize
+</code></pre>
+<p>Das dauert eine Weile. <strong>Strom nicht ziehen</strong>, bis die
+Eingabeaufforderung wieder erscheint.</p>
+</li>
+<li>
+<p><strong>Starten.</strong> Gib ein:</p>
+<pre><code>boot
+</code></pre>
+<p>Der Access Point startet mit der Freifunk-Firmware. Der erste Start
+dauert einige Minuten.</p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Strom ziehen, Adapter abnehmen, Gehäuse schließen, wieder
+einschalten. Stell den Rechner wieder auf &quot;automatisch&quot;. Je nach
+Community startet die Freifunk-Firmware zuerst mit einer
+Einrichtungsseite unter <code>http://192.168.1.1</code> oder gleich im Betrieb.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>In Schritt 6 zeigt der Bootloader <code>done</code> bzw. <code>Bytes transferred</code>.</li>
+<li>Nach Schritt 8 zeigt das Terminal den Start von Linux, und die
+Freifunk-Firmware meldet sich.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Im Terminal erscheint nichts oder nur wirre Zeichen.</strong> Prüf die
+Geschwindigkeit (115200), GND und die Leitungen; TX und RX tauschen
+(<a href="grundlagen/serielle-konsole.html">Serielle Konsole benutzen</a>).</li>
+<li><strong>In Schritt 6 kommt die Datei nicht an.</strong> Prüf die feste Adresse
+<code>192.168.99.8</code>, die Firewall deines Rechners und den Dateinamen.</li>
+<li><strong>Schritt 7 meldet einen Fehler.</strong> Nicht <code>boot</code> eingeben, sondern die
+Ausgabe abschreiben (oder die Mitschrift des Terminals nehmen) und uns
+schreiben.</li>
+</ul>
+<h2>Anderer Weg: über eine Sophos-Firewall</h2>
+<p>Hast du eine Sophos-Firewall (SG oder XG), geht es ohne Öffnen des
+Gehäuses. Laut OpenWrt (2021) gab es dafür von Sophos eine kostenlose
+Lizenz für den Hausgebrauch; die Firewall läuft dann auf einem eigenen
+Rechner oder in einer virtuellen Maschine. So beschreiben es die
+Entwickler von OpenWrt:</p>
+<ol>
+<li>
+<p>Firewall einrichten und den SSH-Zugang zu ihrer Konsole einschalten.</p>
+</li>
+<li>
+<p>Den Access Point an die LAN-Schnittstelle der Firewall anschließen, in
+ihrer Weboberfläche freigeben (&quot;Approve&quot;) und warten, bis er als
+&quot;Active&quot; erscheint (3 bis 5 Minuten).</p>
+</li>
+<li>
+<p>Per SSH auf die Firewall, die &quot;Advanced Console&quot; öffnen (Menüpunkt 5,
+dann Menüpunkt 3) und <code>sudo awetool</code> starten. Dort den Menüpunkt wählen,
+mit dem man sich per SSH auf einen Access Point verbindet, und die Frage,
+ob SSH auf dem Access Point eingeschaltet werden soll, mit &quot;Yes&quot;
+beantworten.</p>
+</li>
+<li>
+<p>2 bis 3 Minuten warten und den Access Point im awetool-Menü noch einmal
+wählen. Jetzt bist du als root auf dem Access Point angemeldet.</p>
+</li>
+<li>
+<p>Das sysupgrade-Image als <code>/tmp/openwrt.bin</code> auf den Access Point kopieren
+und dort eingeben:</p>
+<pre><code>mtd -r write /tmp/openwrt.bin astaro_image
+</code></pre>
+<p>Danach startet der Access Point mit der Freifunk-Firmware neu.</p>
+</li>
+</ol>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>Forum-Zusammenfassung: Sophos-Community-Blog &quot;EOL Extension: AP Series&quot;, nur über Websuche gelesen (Bedingung an die Herstellerfirmware)</li>
+<li>Forum-Zusammenfassung: avanet.com End-of-Sale-Artikel (Bedingung an die Herstellerfirmware)</li>
+<li>Wiki-Zusammenfassung: ToH-Datensatz (Anschluss)</li>
+<li>abgeleitet (Anschluss, Adressen, Bedingung an die Herstellerfirmware, Dauer, Notweg)</li>
+<li>abgeleitet: Partitionstabelle im DTS am Pin, Flash ab 0x9f000000 (Warnung)</li>
+<li>abgeleitet: Sophos-EOL-Angaben, siehe stock_bedingung (Fehlerbild)</li>
+<li>abgeleitet: better safe than sorry (Notweg)</li>
+<li>geprüft (Weg ab Werk, Quelle (OpenWrt-Commit))</li>
+<li>geprüft: Commit 2d465fb (Schritte (Normalweg), Warnung, Taste und Zeitpunkt, Sichtbare Zeichen, Anschluss, Adressen, Programm, Zugang, Datei, Bedingung an die Herstellerfirmware, Dauer, Notweg)</li>
+<li>geprüft: Commit 2d465fb, Image-Rezepte am Pin (Typenschild/Verwechslung)</li>
+<li>geprüft: Commit 2d465fb; U-Boot offen (Notweg)</li>
+<li>geprüft: DTS-Aliase am Pin, qca9557_sophos_ap15c.dts (Sichtbare Zeichen)</li>
+<li>geprüft: Image-Rezept am Pin, Inventar (Datei)</li>
+<li>geprüft: OpenWrt-Commit 2d465fbf57, Cherry-Pick von a7abc7ec (Programm)</li>
+<li>Geräteeintrag: 2d465fbf570e1f3286210305a26580cd417fec7c [geprüft]</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

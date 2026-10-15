@@ -8,7 +8,7 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [feste-ip]
-daten_stand: 8ee56d9
+daten_stand: 95e5f91
 vorlage_stand: bfd0482
 ---
 

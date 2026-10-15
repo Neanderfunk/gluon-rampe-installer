@@ -13,8 +13,8 @@
 <meta name="anleitung:stufe" content="Werkstatt">
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="feste-ip, serielle-konsole, ssh-scp, tftp-server">
-<meta name="anleitung:daten_stand" content="8ee56d9">
-<meta name="anleitung:vorlage_stand" content="00558b3">
+<meta name="anleitung:daten_stand" content="95e5f91">
+<meta name="anleitung:vorlage_stand" content="f350b7d">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -112,9 +112,9 @@ Baud, 8N1, ohne Flusssteuerung
 ziehen und noch einmal.</p>
 </li>
 <li>
-<p><strong>Bootloader einstellen und OpenWrt laden.</strong> Gib diese Befehle ein, jede
-Zeile einzeln. Warte nach jeder Zeile, bis die Eingabeaufforderung
-wieder erscheint; <code>saveenv</code> kann ein paar Sekunden brauchen, dabei
+<p><strong>Bootloader einstellen und OpenWrt laden.</strong> Gib
+diese Befehle ein, jede Zeile einzeln. Warte nach jeder Zeile, bis die
+Eingabeaufforderung wieder erscheint; <code>saveenv</code> kann ein paar Sekunden brauchen, dabei
 <strong>nicht den Strom ziehen</strong>:</p>
 <pre><code>setenv ramboot_openwrt &quot;setenv ipaddr 192.168.1.22; setenv serverip 192.168.1.66; tftpboot 0x2000000 ws-ap3825i-initramfs.bin; interrupts off; bootm start 0x2000000; bootm loados; fdt resize; fdt boardsetup; fdt resize; fdt boardsetup; fdt chosen; fdt resize; fdt chosen; bootm prep; bootm go;&quot;
 setenv boot_openwrt &quot;cp.b 0xEC000000 0x2000000 0x2000000; interrupts off; bootm start 0x2000000; bootm loados; fdt resize; fdt boardsetup; fdt resize; fdt boardsetup; fdt chosen; fdt resize; fdt chosen; bootm prep; bootm go;&quot;
@@ -122,7 +122,7 @@ setenv bootcmd &quot;run boot_openwrt&quot;;
 saveenv
 run ramboot_openwrt
 </code></pre>
-<p>Die letzte Zeile holt <code>ws-ap3825i-initramfs.bin</code> von deinem Rechner und startet
+<p>Die Befehle holen <code>ws-ap3825i-initramfs.bin</code> von deinem Rechner und starten
 OpenWrt; das Terminal zeigt viele Zeilen. Warte, bis
 <code>Please press Enter to activate this console.</code> erscheint.</p>
 <p>Ab jetzt startet das Gerät OpenWrt statt der Herstellerfirmware.</p>
