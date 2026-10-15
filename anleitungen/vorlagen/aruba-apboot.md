@@ -119,6 +119,13 @@ einer Stunde, ohne das Kabel zu bauen.
   2. die Freifunk-Firmware deiner Community für den {{ modell }}, und zwar
      das **sysupgrade**-Image. Benenn es in `gluon.bin` um, dann passen die
      Befehle unten ohne Änderung.
+{%- if apboot %}
+  3. nur wenn dein Gerät den neueren Bootloader hat (siehe "Älteren
+     Bootloader aufspielen" unten): den älteren Bootloader
+     [{{ w.apboot_datei }}]({{ w.apboot_url }}), SHA256
+     `{{ w.apboot_sha256 }}`. Leg ihn ebenfalls in den Ordner deines
+     TFTP-Servers, unter genau diesem Namen.
+{%- endif %}
 {%- if zusatz.vorher is defined and zusatz.vorher %}
 
 ## Vorher prüfen
