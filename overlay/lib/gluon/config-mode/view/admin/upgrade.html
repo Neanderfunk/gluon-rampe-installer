@@ -36,6 +36,21 @@ ein Hinweistext.
 	<% if bad_image then %>
 	<p class="error"><%:The provided firmware image is not valid for this device.%></p>
 	<% end %>
+	<% if prepare_failed then %>
+	<p class="error">
+		Die Vorbereitung dieses Geräts ist fehlgeschlagen. Die Freifunk-Firmware
+		wurde nicht aufgespielt. / Preparing this device failed, nothing was
+		flashed.
+	</p>
+	<pre><%| prepare_log %></pre>
+	<% elseif prepare then %>
+	<p>
+		Bei diesem Gerät bereitet die RAMpe den Speicher vor, bevor sie die
+		Freifunk-Firmware aufspielt: Sie schreibt den OpenWrt-Bootloader und
+		entfernt die Herstellerfirmware. Zurück zur Herstellerfirmware geht es
+		danach nur noch mit dem Recovery-Werkzeug des Herstellers.
+	</p>
+	<% end %>
 	<div class="gluon-section-node">
 		<div class="gluon-value gluon-value-last">
 			<label class="gluon-value-title">

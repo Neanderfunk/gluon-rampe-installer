@@ -20,21 +20,16 @@
 # 7520: TFTP-Dateiname laut Inventar offen ([abgeleitet] FRITZ7530.bin, weil
 # derselbe U-Boot-Quelltext; nicht belegt).
 #
-# U-Boot im RAMpe-Image: Paket u-boot-fritz7530 bzw. u-boot-fritz7520
-# (package/boot/uboot-fritz4040, BUILD_DEVICES avm_fritzbox-7530 fuer beide)
-# installiert uboot-fritzXXXX.bin nach / (include/u-boot.mk,
-# Package/u-boot/install/default: $(CP) ... $(1)/) [geprueft]. Dass Gluon
-# das Paket per Geraete-packages ins initramfs nimmt: [abgeleitet], nach dem
-# ersten Bau im cpio pruefen. build.sh kann die .bin fuer eva_ramboot.py
-# zusaetzlich aus staging_dir/target-*/image/ nach out/images/ kopieren
-# (Build/InstallDev legt sie dort ab) [abgeleitet].
+# U-Boot im RAMpe-Image: die u-boot-fritz*-Pakete lassen sich in Gluon nicht
+# je Geraet waehlen ("symbol value 'm' invalid", Bau-Log 15.10.2026; die .bin
+# fehlte im cpio [geprueft]). Deshalb package/gluon-rampe-uboot-fritz: legt
+# uboot-fritz7530.bin und uboot-fritz7520.bin nach /lib/gluon-rampe/uboot/.
 #
-# 7520 oder 7530? Das RAMpe-Image ist fuer beide dasselbe (ein Profil, ein
-# board_name avm,fritzbox-7530). Das Vorbereitungsskript muss den richtigen
-# U-Boot waehlen. Wie man 7520 und 7530 im laufenden System unterscheidet
-# (z. B. fritz_tffs_nand -d <nand-tffs> -n HWRevision; fritz-tffs-nand ist
-# DEVICE_PACKAGE), ist OFFEN; ohne sichere Erkennung darf das Skript keinen
-# U-Boot schreiben, sondern muss abbrechen oder die Seite fragt nach.
+# 7520 oder 7530? Ein Image, ein board_name avm,fritzbox-7530. Das
+# Vorbereitungsskript waehlt den U-Boot nach der HWRevision aus dem TFFS
+# (236 = 7530, 247 = 7520, wie im Devicetree der beiden U-Boots
+# [geprueft: chunkeey/FritzBox-4040-UBOOT @9d89013f]); sonst Abbruch ohne
+# Schreiben.
 #
 # Image: rohes initramfs openwrt-ipq40xx-generic-avm_fritzbox-7530-initramfs-uImage.itb
 # (Device/FitImageLzma) [geprueft: generic.mk am Pin
@@ -43,17 +38,12 @@
 # Groesse: TFTP in den RAM; OpenWrt-24.10.8-initramfs 8274508 Byte
 # [geprueft]. uboot0/uboot1 je 0x400000 [geprueft: DTS]. RAM 256 MB.
 #
-# Vorbereitungsskript (Vorschlag, overlay/lib/gluon-rampe/prepare/avm_fritzbox-7530.sh):
-#   ub=/uboot-fritz7530.bin            # bzw. /uboot-fritz7520.bin, Erkennung offen
-#   [ -s "$ub" ] || exit 1
-#   mtd write "$ub" uboot0
-#   mtd write "$ub" uboot1
-#   ubirmvol /dev/ubi0 --name=avm_filesys_0
-#   ubirmvol /dev/ubi0 --name=avm_filesys_1
+# Vorbereitung vor dem sysupgrade: overlay/lib/gluon-rampe/prepare/
+# avm_fritzbox-7530.sh (mtd write uboot0/uboot1, ubirmvol avm_filesys_0/1 wie
+# im Commit), aufgerufen vom RAMpe-Controller upgrade.lua in Schritt 3.
 # sysupgrade -T hat fuer avm,fritzbox-7530 keine Sonderpruefung, der Lauf
 # direkt vor sysupgrade reicht [geprueft: platform.sh].
-# Ungetestet. Braucht ensure_site_packages (Vorschlag lib.sh/build.sh; additiv,
-# anders als packages im device(), das Gluons merge() ersetzt [geprueft]).
+# Ungetestet am Geraet.
 ensure_target_config ipq40xx-generic TARGET_ROOTFS_INITRAMFS
 ensure_extra_image ipq40xx-generic avm-fritz-box-7530 -initramfs-uImage -initramfs-uImage .itb
-ensure_site_packages avm-fritz-box-7530 u-boot-fritz7530 u-boot-fritz7520
+ensure_site_packages avm-fritz-box-7530 gluon-rampe-uboot-fritz7530

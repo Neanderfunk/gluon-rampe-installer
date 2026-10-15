@@ -13,9 +13,10 @@
 #       ubirmvol /dev/ubi0 --name=avm_filesys_1
 #     -> Vorbereitungsskript, dann Community-sysupgrade.
 #
-# U-Boot im RAMpe-Image: Paket u-boot-fritz1200 (BUILD_DEVICES
-# avm_fritzrepeater-1200) legt /uboot-fritz1200.bin ab [geprueft: Makefile,
-# u-boot.mk]; Uebernahme ins initramfs [abgeleitet], im Bau pruefen.
+# U-Boot im RAMpe-Image: package/gluon-rampe-uboot-fritz (Paket
+# gluon-rampe-uboot-fritz1200) legt uboot-fritz1200.bin nach
+# /lib/gluon-rampe/uboot/; die u-boot-fritz*-Pakete selbst lassen sich in
+# Gluon nicht je Geraet waehlen (Bau-Log 15.10.2026, .bin fehlte im cpio).
 #
 # Image: rohes initramfs openwrt-ipq40xx-generic-avm_fritzrepeater-1200-initramfs-uImage.itb
 # (Device/FitImageLzma) [geprueft: generic.mk am Pin
@@ -23,14 +24,9 @@
 # Target-Configs: TARGET_ROOTFS_INITRAMFS [geprueft: Gluon aus].
 # Groesse: TFTP in den RAM, Vorlage OpenWrt 24.10.8 nicht gemessen. RAM 256 MB.
 #
-# Vorbereitungsskript (Vorschlag, overlay/lib/gluon-rampe/prepare/avm_fritzrepeater-1200.sh):
-#   ub=/uboot-fritz1200.bin
-#   [ -s "$ub" ] || exit 1
-#   mtd write "$ub" uboot0
-#   mtd write "$ub" uboot1
-#   ubirmvol /dev/ubi0 --name=avm_filesys_0
-#   ubirmvol /dev/ubi0 --name=avm_filesys_1
-# Ungetestet. Braucht ensure_site_packages (Vorschlag lib.sh/build.sh).
+# Vorbereitung vor dem sysupgrade: overlay/lib/gluon-rampe/prepare/
+# avm_fritzrepeater-1200.sh (Befehle wie im Commit), aufgerufen vom
+# RAMpe-Controller upgrade.lua in Schritt 3. Ungetestet am Geraet.
 ensure_target_config ipq40xx-generic TARGET_ROOTFS_INITRAMFS
 ensure_extra_image ipq40xx-generic avm-fritz-repeater-1200 -initramfs-uImage -initramfs-uImage .itb
-ensure_site_packages avm-fritz-repeater-1200 u-boot-fritz1200
+ensure_site_packages avm-fritz-repeater-1200 gluon-rampe-uboot-fritz1200

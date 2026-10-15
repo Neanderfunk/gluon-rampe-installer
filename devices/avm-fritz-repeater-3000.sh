@@ -26,22 +26,18 @@
 # dazu (target_config_lib.lua: lib.target_packages + dev.options.packages +
 # site_specific_packages) [geprueft]. Deshalb ensure_site_packages.
 #
-# U-Boot im RAMpe-Image: Paket u-boot-fritz3000 [geprueft: Makefile];
-# Uebernahme ins initramfs [abgeleitet], im Bau pruefen.
+# U-Boot im RAMpe-Image: package/gluon-rampe-uboot-fritz (Paket
+# gluon-rampe-uboot-fritz3000) legt uboot-fritz3000.bin nach
+# /lib/gluon-rampe/uboot/; die u-boot-fritz*-Pakete selbst lassen sich in
+# Gluon nicht je Geraet waehlen (Bau-Log 15.10.2026, .bin fehlte im cpio).
 # Image: rohes initramfs openwrt-ipq40xx-generic-avm_fritzrepeater-3000-initramfs-uImage.itb
 # [geprueft: generic.mk am Pin a1ea57bd050c172fdc2b851824ebd9782aafb055];
 # als extra_images. Target-Configs: TARGET_ROOTFS_INITRAMFS. RAM 256 MB.
 #
-# Vorbereitungsskript (Vorschlag, overlay/lib/gluon-rampe/prepare/avm_fritzrepeater-3000.sh):
-#   ub=/uboot-fritz3000.bin
-#   [ -s "$ub" ] || exit 1
-#   mtd write "$ub" uboot0
-#   mtd write "$ub" uboot1
-#   ubirmvol /dev/ubi0 --name=avm_filesys_0
-#   ubirmvol /dev/ubi0 --name=avm_filesys_1
-# Ungetestet. Braucht ensure_device mit Optionen und ensure_site_packages
-# (Vorschlag lib.sh/build.sh).
+# Vorbereitung vor dem sysupgrade: overlay/lib/gluon-rampe/prepare/
+# avm_fritzrepeater-3000.sh (Befehle wie im Commit), aufgerufen vom
+# RAMpe-Controller upgrade.lua in Schritt 3. Ungetestet am Geraet.
 ensure_device ipq40xx-generic avm-fritz-repeater-3000 avm_fritzrepeater-3000 "packages = ATH10K_PACKAGES_IPQ40XX_QCA9984,"
 ensure_target_config ipq40xx-generic TARGET_ROOTFS_INITRAMFS
 ensure_extra_image ipq40xx-generic avm-fritz-repeater-3000 -initramfs-uImage -initramfs-uImage .itb
-ensure_site_packages avm-fritz-repeater-3000 u-boot-fritz3000
+ensure_site_packages avm-fritz-repeater-3000 gluon-rampe-uboot-fritz3000

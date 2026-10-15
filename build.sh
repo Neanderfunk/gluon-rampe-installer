@@ -66,7 +66,7 @@ fi
 # Die Rezepte aendern targets/ und patches/openwrt - vorher auf den Stand von
 # Gluon zurueck (abgelegte Backport-Patches sind unversioniert: clean).
 git -C "$GLUON_DIR" checkout -q -- targets patches package/gluon-config-mode-theme
-git -C "$GLUON_DIR" clean -fdq -- patches
+git -C "$GLUON_DIR" clean -fdq -- patches package
 
 # Die Rezepte duerfen die Site ergaenzen (ensure_site_*): nur in einer Kopie.
 RAMPE_SITEDIR="$ROOT/.site-build"
@@ -82,6 +82,11 @@ for d in "${DEVICES[@]}"; do
 	# shellcheck source=/dev/null
 	. "$ROOT/devices/$d.sh"
 done
+
+echo "== Eigene Pakete (package/) -> gluon/package"
+# Gluons package/ ist ein src-link-Feed; was hier liegt, nimmt make update mit.
+# Vor jedem Lauf raeumt "git clean" oben die Kopien wieder weg.
+cp -a "$ROOT/package/." "$GLUON_DIR/package/"
 
 echo "== make update"
 make -C "$GLUON_DIR" update GLUON_SITEDIR="$RAMPE_SITEDIR"
