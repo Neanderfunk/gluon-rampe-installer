@@ -75,12 +75,16 @@ def optionale_werte(vorlage_text):
     """Namen der optionalen Werte aus dem Kopfkommentar der Vorlage. Pflicht
     sind die Werte unter einer Abschnittsueberschrift "Pflicht ..." oder
     "bei ..." (bedingt Pflicht, z. B. "bei datei_art = rampe"); alle anderen
-    aufgefuehrten Werte gelten als optional und werden leer vorbelegt."""
+    aufgefuehrten Werte gelten als optional und werden leer vorbelegt. Ohne
+    Abschnitte genuegt "alle optional" in der einleitenden Zeile."""
     kopf = re.match(r"\{#-?(.*?)-?#\}", vorlage_text, re.S)
     if not kopf:
         return []
     namen, drin = [], False
     for zeile in kopf.group(1).splitlines():
+        if re.match(r"^\S", zeile) and "alle optional" in zeile:   # "Werte ..., alle optional:"
+            drin = True
+            continue
         if re.match(r"^\s{2}\S", zeile):          # Abschnittsueberschrift (2 Leerzeichen)
             ueber = zeile.strip()
             drin = not ueber.startswith(("Pflicht", "bei "))
