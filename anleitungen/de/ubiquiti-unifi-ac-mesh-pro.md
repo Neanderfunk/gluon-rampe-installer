@@ -5,9 +5,9 @@ familie: ubiquiti-unifi-ssh
 sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
-grundlagen: [feste-ip, ssh-scp, tftp-client]
-daten_stand: 9d30f6c
-vorlage_stand: af4b08d
+grundlagen: [feste-ip, schreibschutz, ssh-scp, tftp-client]
+daten_stand: 8394a75
+vorlage_stand: a53540a
 ---
 
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
@@ -91,6 +91,12 @@ an der Eingabezeile, zum Beispiel `UAP-AC-Pro-Gen2-BZ.6.5.62#`.
 6. **Firmware schreiben.** Gib diese Befehle **einzeln und genau so** ein,
    jeweils mit Enter. Am besten kopierst du sie Zeile für Zeile.
 
+   **Wichtig ist die Zeile mit `/proc/ubnthal/.uf`.** Sie hebt den
+   Schreibschutz auf, mit dem Ubiquiti den Speicher sperrt. Ohne sie laufen
+   die Schreibbefehle scheinbar fehlerfrei durch, aber es wird nichts
+   geschrieben, und nach dem Neustart ist wieder die Ubiquiti-Firmware da.
+   Mehr dazu unter [Schreibschutz im Flash](grundlagen/schreibschutz.md).
+
    ```
    cat /proc/mtd
    ```
@@ -99,6 +105,13 @@ an der Eingabezeile, zum Beispiel `UAP-AC-Pro-Gen2-BZ.6.5.62#`.
 
    ```
    echo "5edfacbf" > /proc/ubnthal/.uf
+   cat /sys/class/mtd/mtd2/flags
+   cat /sys/class/mtd/mtd3/flags
+   ```
+
+   **Prüfen:** Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800). Sonst hier aufhören.
+
+   ```
    dd if=/tmp/firmware.bin of=/dev/mtdblock2
    dd if=/tmp/firmware.bin of=/dev/mtdblock3
    dd if=/dev/zero bs=1 count=1 of=/dev/mtd4
@@ -141,6 +154,7 @@ an der Eingabezeile, zum Beispiel `UAP-AC-Pro-Gen2-BZ.6.5.62#`.
   Aufheben des Schreibschutzes nicht gegriffen, die Befehle melden das nicht.
   Setz das Gerät auf Werkseinstellungen zurück und mach alles noch einmal;
   im Forum hat genau das geholfen.
+  Siehe [Schreibschutz im Flash](grundlagen/schreibschutz.md).
 
 ## Zurück zur Ubiquiti-Firmware
 
@@ -200,6 +214,7 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - abgeleitet: Ablauf aus UK-Ultra-Commit bf94e0a, gleiche ubnt_unifiac-Basis; Commit des Geräts ohne Anleitung (Weg ab Werk, Schritte (Normalweg))
 - abgeleitet: Commits nennen 'factory defaults' (Schritte (Normalweg), Bedingung an die Herstellerfirmware)
 - abgeleitet: Downgrade-Weg wie bei AC Lite und AC Mesh (forum.freifunk.net/t/13863 #134), Datei aus dem U7PG2-Ordner wie beim AC Lite; kein eigener Bericht zum AC Mesh Pro (Notweg)
+- abgeleitet: Flags 0x800 -> 0xc00 nach dem Aufheben des Schreibschutzes wie beim AC Lite in forum.freifunk.net/t/23422 #10 (Weg ab Werk)
 - abgeleitet: Wiki (Bedingung an die Herstellerfirmware, Dauer)
 - abgeleitet: Wiki toh/ubiquiti/unifiac (Schritte (Normalweg), Sichtbare Zeichen, Bedingung an die Herstellerfirmware, Rückweg zur Herstellerfirmware)
 - abgeleitet: dd-Weg wie bei AC Lite und AC Pro (forum.freifunk.net/t/23422 #10, #25/#26; Neanderfunk-Notiz AC Pro 2025), kein eigener Praxisbericht zum AC Mesh Pro; Partitionsbelegung aus der AC-Lite-Ausgabe übertragen, die Prüfzeile fängt eine Abweichung ab (Weg ab Werk)

@@ -10,9 +10,9 @@
 <meta name="anleitung:sprache" content="de">
 <meta name="anleitung:stufe" content="mit Werkzeug">
 <meta name="anleitung:status" content="ungeprüft">
-<meta name="anleitung:grundlagen" content="feste-ip, ssh-scp, tftp-client">
-<meta name="anleitung:daten_stand" content="9d30f6c">
-<meta name="anleitung:vorlage_stand" content="af4b08d">
+<meta name="anleitung:grundlagen" content="feste-ip, schreibschutz, ssh-scp, tftp-client">
+<meta name="anleitung:daten_stand" content="8394a75">
+<meta name="anleitung:vorlage_stand" content="a53540a">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -74,6 +74,11 @@ vertraust: mit <code>yes</code> bestätigen.</p>
 <li>
 <p><strong>Firmware schreiben.</strong> Gib diese Befehle <strong>einzeln und genau so</strong> ein,
 jeweils mit Enter. Am besten kopierst du sie Zeile für Zeile.</p>
+<p><strong>Wichtig ist die Zeile mit <code>/proc/ubnthal/.uf</code>.</strong> Sie hebt den
+Schreibschutz auf, mit dem Ubiquiti den Speicher sperrt. Ohne sie laufen
+die Schreibbefehle scheinbar fehlerfrei durch, aber es wird nichts
+geschrieben, und nach dem Neustart ist wieder die Ubiquiti-Firmware da.
+Mehr dazu unter <a href="grundlagen/schreibschutz.html">Schreibschutz im Flash</a>.</p>
 <pre><code>echo &quot;5edfacbf&quot; &gt; /proc/ubnthal/.uf
 cat /proc/mtd
 </code></pre>

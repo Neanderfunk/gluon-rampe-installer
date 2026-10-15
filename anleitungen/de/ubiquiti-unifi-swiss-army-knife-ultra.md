@@ -5,9 +5,9 @@ familie: ubiquiti-unifi-ssh
 sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
-grundlagen: [feste-ip, ssh-scp, tftp-client]
-daten_stand: 9d30f6c
-vorlage_stand: af4b08d
+grundlagen: [feste-ip, schreibschutz, ssh-scp, tftp-client]
+daten_stand: 8394a75
+vorlage_stand: a53540a
 ---
 
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
@@ -70,6 +70,12 @@ Werkseinstellungen zurück oder entferne es im Controller.
 
 6. **Firmware schreiben.** Gib diese Befehle **einzeln und genau so** ein,
    jeweils mit Enter. Am besten kopierst du sie Zeile für Zeile.
+
+   **Wichtig ist die Zeile mit `/proc/ubnthal/.uf`.** Sie hebt den
+   Schreibschutz auf, mit dem Ubiquiti den Speicher sperrt. Ohne sie laufen
+   die Schreibbefehle scheinbar fehlerfrei durch, aber es wird nichts
+   geschrieben, und nach dem Neustart ist wieder die Ubiquiti-Firmware da.
+   Mehr dazu unter [Schreibschutz im Flash](grundlagen/schreibschutz.md).
 
    ```
    echo "5edfacbf" > /proc/ubnthal/.uf

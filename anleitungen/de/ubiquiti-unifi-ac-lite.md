@@ -5,9 +5,9 @@ familie: ubiquiti-unifi-ssh
 sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
-grundlagen: [feste-ip, ssh-scp, tftp-client]
-daten_stand: 9d30f6c
-vorlage_stand: af4b08d
+grundlagen: [feste-ip, schreibschutz, ssh-scp, tftp-client]
+daten_stand: 8394a75
+vorlage_stand: a53540a
 ---
 
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
@@ -90,6 +90,12 @@ an der Eingabezeile, zum Beispiel `UAP-AC-Lite-BZ.6.2.35#`.
 6. **Firmware schreiben.** Gib diese Befehle **einzeln und genau so** ein,
    jeweils mit Enter. Am besten kopierst du sie Zeile für Zeile.
 
+   **Wichtig ist die Zeile mit `/proc/ubnthal/.uf`.** Sie hebt den
+   Schreibschutz auf, mit dem Ubiquiti den Speicher sperrt. Ohne sie laufen
+   die Schreibbefehle scheinbar fehlerfrei durch, aber es wird nichts
+   geschrieben, und nach dem Neustart ist wieder die Ubiquiti-Firmware da.
+   Mehr dazu unter [Schreibschutz im Flash](grundlagen/schreibschutz.md).
+
    ```
    cat /proc/mtd
    ```
@@ -98,6 +104,13 @@ an der Eingabezeile, zum Beispiel `UAP-AC-Lite-BZ.6.2.35#`.
 
    ```
    echo "5edfacbf" > /proc/ubnthal/.uf
+   cat /sys/class/mtd/mtd2/flags
+   cat /sys/class/mtd/mtd3/flags
+   ```
+
+   **Prüfen:** Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800). Sonst hier aufhören.
+
+   ```
    dd if=/tmp/firmware.bin of=/dev/mtdblock2
    dd if=/tmp/firmware.bin of=/dev/mtdblock3
    dd if=/dev/zero bs=1 count=1 of=/dev/mtd4
@@ -140,6 +153,7 @@ an der Eingabezeile, zum Beispiel `UAP-AC-Lite-BZ.6.2.35#`.
   Aufheben des Schreibschutzes nicht gegriffen, die Befehle melden das nicht.
   Setz das Gerät auf Werkseinstellungen zurück und mach alles noch einmal;
   im Forum hat genau das geholfen.
+  Siehe [Schreibschutz im Flash](grundlagen/schreibschutz.md).
 
 ## Zurück zur Ubiquiti-Firmware
 
@@ -209,4 +223,5 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24' (Schritte (Normalweg), Taste und Zeitpunkt)
 - geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang)
 - geprüft: dl.ui.com/unifi/firmware/U7PG2/3.7.58.6385/BZ.qca956x.v3.7.58.6385.170508.0957.bin, HTTP 200, 7.764.011 Bytes, SHA256 cfe2e639c430d1a849c2892effb84157e82ea9cb08d174547c1e001d4d4388a8, abgerufen 15.10.2026 (Notweg)
+- geprüft: forum.freifunk.net/t/23422 #10 zeigt für mtd2 und mtd3 die Flags 0x800 vor und 0xc00 nach dem Aufheben des Schreibschutzes (AC Lite 6.2.35) (Weg ab Werk)
 - Geräteeintrag: cad843e1f57790a08dd4804011b6cd3a4796786b (ohne Anleitung); 56fddc2577baf194d1e9a7b37d454d12ff9fb469 (Umbenennung) [abgeleitet]

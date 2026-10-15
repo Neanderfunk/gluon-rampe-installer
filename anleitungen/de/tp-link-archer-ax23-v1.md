@@ -6,7 +6,7 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [curl]
-daten_stand: 9d30f6c
+daten_stand: 8394a75
 vorlage_stand: 7deda71
 ---
 

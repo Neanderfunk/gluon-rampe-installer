@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schreibschutz im Flash</title>
+<meta name="anleitung:grundlage" content="schreibschutz">
+<link rel="stylesheet" href="../../anleitung.css">
+</head>
+<body>
+<hr />
+<h2>thema: schreibschutz
+sprache: de
+status: ungeprüft</h2>
+<blockquote>
+<p><strong>Noch nicht gegengelesen.</strong> Diese Grundlagen-Seite ist ein Entwurf.</p>
+</blockquote>
+<h1>Schreibschutz im Flash</h1>
+<p>Manche Hersteller sperren den Speicher ihrer Geräte gegen Schreiben, damit
+niemand eine andere Firmware aufspielt. Das Tückische daran: Die Sperre
+meldet sich oft nicht. Die Befehle zum Schreiben laufen scheinbar fehlerfrei
+durch, zeigen sogar, wie viel sie geschrieben haben, und nach dem Neustart
+ist trotzdem die alte Firmware da.</p>
+<p><strong>Wenn ein Gerät nach dem Flashen unverändert mit der Hersteller-Firmware
+startet, ist ein Schreibschutz der häufigste Grund.</strong></p>
+<h2>Bei Ubiquiti UniFi</h2>
+<p>Neuere UniFi-Firmware schützt die Bereiche, in denen die Firmware liegt
+(<code>kernel0</code> und <code>kernel1</code>). Ein verstecktes Steuerfeld hebt den Schutz auf,
+wenn man einen festen Wert hineinschreibt:</p>
+<pre><code>echo &quot;5edfacbf&quot; &gt; /proc/ubnthal/.uf
+</code></pre>
+<p>Danach lassen sich die Bereiche beschreiben, bis zum nächsten Neustart. Dieser
+Befehl steht in den Geräteanleitungen immer vor den Schreibbefehlen. Er gibt
+keine Antwort, auch nicht, wenn er gewirkt hat.</p>
+<p>Prüfen kannst du es so: Jeder Speicherbereich hat Kennzeichen (Flags), die
+zeigen, ob er beschreibbar ist. Bei einer UniFi AC Lite sah das im
+Freifunk-Forum so aus, <code>kernel0</code> ist dort <code>mtd2</code>:</p>
+<pre><code>cat /sys/class/mtd/mtd2/flags
+</code></pre>
+<ul>
+<li>vor dem Aufheben: <code>0x800</code> (gesperrt)</li>
+<li>danach: <code>0xc00</code> (beschreibbar)</li>
+</ul>
+<p>Steht nach dem <code>echo</code> noch <code>0x800</code> da, nicht weiterschreiben. Gerät auf
+Werkseinstellungen zurücksetzen und noch einmal von vorn; im Forum hat das in
+einem solchen Fall geholfen.</p>
+<p>Bei älterer UniFi-Firmware gibt es das Steuerfeld noch nicht. Dann meldet
+der <code>echo</code>-Befehl &quot;No such file or directory&quot;, und es gibt auch keinen
+Schreibschutz, der aufgehoben werden müsste.</p>
+<h2>Woher das Wissen stammt</h2>
+<p>Der Wert und die Flags stammen aus dem Freifunk-Forum
+(forum.freifunk.net, Thema &quot;SCP/TFTP Downgrade bei Unifi AC ab Firmware
+4.3.x geht nicht mehr?&quot;, Beitrag von blocktrron vom 15.09.2022). Er hat dort
+auch erklärt, warum es so ist: Ein Kernel-Modul der Ubiquiti-Firmware
+markiert die Bereiche als nur lesbar und hebt das wieder auf, wenn der
+richtige Wert in das versteckte Feld geschrieben wird.</p>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

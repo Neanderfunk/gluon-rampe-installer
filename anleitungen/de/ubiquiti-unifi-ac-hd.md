@@ -6,8 +6,8 @@ sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip, ssh-scp, tftp-client]
-daten_stand: 9d30f6c
-vorlage_stand: af4b08d
+daten_stand: 8394a75
+vorlage_stand: a53540a
 ---
 
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
