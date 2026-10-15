@@ -283,6 +283,21 @@ Wie die D-Link-Geräte geflasht werden, steht in der Router-Werkstatt unter
   knapp darüber. Ob die Recovery es nimmt, ist weiter offen.
 - Die Stände ohne Cache-Schutz vom 14.10. sind gelöscht (adorfer, 15.10.2026);
   der am M60 erprobte Stand vom 10.10. liegt in `out/archiv/`.
+- **Vorbereitung vor dem sysupgrade** (adorfer 15.10.2026: "RAMpe
+  ergänzen", für FRITZ!Box 7520/7530 und FRITZ!Repeater 1200/3000):
+  Controller `overlay/.../controller/admin/upgrade.lua` (Kopie von Gluons
+  upgrade.lua) ruft in Schritt 3 synchron
+  `/lib/gluon-rampe/prepare/<board_name>.sh` auf; scheitert es, wird nicht
+  geflasht und die Seite zeigt das Protokoll. AVM-Skripte schreiben den
+  OpenWrt-U-Boot nach uboot0/uboot1 und entfernen avm_filesys_0/1 (Befehle
+  wie in den Commits). 7520/7530: U-Boot nach HWRevision aus dem TFFS (236 /
+  247), sonst Abbruch ohne Schreiben. Die U-Boot-Datei kommt über
+  `package/gluon-rampe-uboot-fritz` ins Image (die u-boot-fritz*-Pakete
+  lassen sich in Gluon nicht je Gerät wählen). x86-64 in QEMU bestanden
+  (Fehlschlag flasht nicht, Erfolg läuft vor dem sysupgrade); ipq40xx-Images
+  neu gebaut, U-Boot-Dateien darin byteweise gleich den veröffentlichten.
+  **Am Gerät ungetestet.** Offen: eine per HWRevision zur 7530 umgestellte
+  7520 (EVA-Offset im U-Boot unterscheidet sich).
 
 ## Idee: EdgeRouter X/X-SFP in einem Schritt (15.10.2026, ungeprüft)
 

@@ -1,6 +1,11 @@
-# Entwurf: Vorbereitung vor dem sysupgrade (noch nicht übernommen)
+# Entwurf: Vorbereitung vor dem sysupgrade
 
-Stand 10.10.2026, aus der Rezept-Recherche. Nicht gebaut, nicht getestet.
+Stand 10.10.2026, aus der Rezept-Recherche. **Seit 15.10.2026 ist Variante A
+für AVM FRITZ!Box 7520/7530 und FRITZ!Repeater 1200/3000 übernommen**
+(Controller `overlay/lib/gluon/config-mode/controller/admin/upgrade.lua`,
+Skripte `overlay/lib/gluon-rampe/prepare/`, ohne den `.early`-Teil; die
+7520/7530-Wahl nach HWRevision statt per Feld, siehe NOTIZEN). Für alle
+anderen Geräte unten bleibt es Entwurf: nicht gebaut, nicht getestet.
 Für die "teilweise"-Geräte, bei denen der Upload allein nicht reicht: Aruba
 AP-303/303H/365, AVM FRITZ!Box 7530/Repeater 1200/3000, ZTE MF289F (Variante A);
 OCEDO Koala/Raccoon/Panda, Sophos RED 15w, ZTE MF281, AVM 7412/7430 (Variante B).

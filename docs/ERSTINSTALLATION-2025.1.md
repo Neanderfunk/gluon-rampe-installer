@@ -151,9 +151,9 @@ fehlen die Felder noch.
 | offen | 1 |
 | **gesamt** | **351** |
 
-Gluon-RAMpe passt: **ja 31**, teilweise 39, nein/unnötig 281.
+Gluon-RAMpe passt: **ja 35**, teilweise 35, nein/unnötig 281.
 
-Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-951ui-2nd-hap`, `mikrotik-routerboard-mapl-2nd`, `mikrotik-routerboard-wap-g-5hact2hnd`, `mikrotik-routerboard-wapr-2nd`, `gl.inet-gl-e750`, `gl.inet-gl-xe300`, `zte-mf286r`, `asus-lyra-map-ac2200`, `linksys-mr8300-dallas`, `mikrotik-discg-5acd`, `mikrotik-hap-ac2`, `mikrotik-sxtsq-5-ac-rbsxtsqg-5acd`, `mikrotik-wap-ac`, `avm-fritz-box-3390`, `avm-fritz-box-7362-sl`, `avm-fritz-box-7412`, `avm-fritz-box-7430`, `asus-rt-ax52`, `d-link-aquila-pro-ai-m30-a1`, `d-link-aquila-pro-ai-m60-a1`, `netgear-wax218`, `asus-rt-ax53u`, `genexis-pulse-ex400`, `mikrotik-routerboard-750gr3`, `netgear-wndr3700-v5`, `xiaomi-mi-router-3g`, `xiaomi-mi-router-ac2100`, `xiaomi-redmi-router-ac2100`, `zyxel-wsm20`.
+Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-951ui-2nd-hap`, `mikrotik-routerboard-mapl-2nd`, `mikrotik-routerboard-wap-g-5hact2hnd`, `mikrotik-routerboard-wapr-2nd`, `gl.inet-gl-e750`, `gl.inet-gl-xe300`, `zte-mf286r`, `asus-lyra-map-ac2200`, `avm-fritz-box-7520`, `avm-fritz-box-7530`, `avm-fritz-repeater-1200`, `avm-fritz-repeater-3000`, `linksys-mr8300-dallas`, `mikrotik-discg-5acd`, `mikrotik-hap-ac2`, `mikrotik-sxtsq-5-ac-rbsxtsqg-5acd`, `mikrotik-wap-ac`, `avm-fritz-box-3390`, `avm-fritz-box-7362-sl`, `avm-fritz-box-7412`, `avm-fritz-box-7430`, `asus-rt-ax52`, `d-link-aquila-pro-ai-m30-a1`, `d-link-aquila-pro-ai-m60-a1`, `netgear-wax218`, `asus-rt-ax53u`, `genexis-pulse-ex400`, `mikrotik-routerboard-750gr3`, `netgear-wndr3700-v5`, `xiaomi-mi-router-3g`, `xiaomi-mi-router-ac2100`, `xiaomi-redmi-router-ac2100`, `zyxel-wsm20`.
 
 <!-- END erzeugt:zahlen -->
 
@@ -352,10 +352,10 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [aruba-instant-on-ap17](#aruba-instant-on-ap17) | Aruba Instant On AP17 (Alias von aruba-ap-365) | ipq40xx-generic | K4 | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | USB | teilweise | Alias | - |
 | [asus-lyra-map-ac2200](#asus-lyra-map-ac2200) | ASUS Lyra MAP-AC2200 | ipq40xx-generic | K1 | [`sonderweg-asus-lyra-map-ac2200`](#familie-sonderweg-asus-lyra-map-ac2200) | ssh | nein | nein | ja | ja | https://openwrt.org/toh/asus/lyra_map-ac2200#oem_easy_installation |
 | [avm-fritz-box-4040](#avm-fritz-box-4040) | AVM FRITZ!Box 4040 | ipq40xx-generic | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-4040.md); https://fritz-tools.readthedocs.io/ |
-| [avm-fritz-box-7520](#avm-fritz-box-7520) | AVM FRITZ!Box 7520 (Alias von avm-fritz-box-7530) | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | teilweise | Alias | https://openwrt.org/toh/avm/avm_fritz_box_7530#installation |
-| [avm-fritz-box-7530](#avm-fritz-box-7530) | AVM FRITZ!Box 7530 | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | teilweise | ja | https://openwrt.org/toh/avm/avm_fritz_box_7530#installation |
-| [avm-fritz-repeater-1200](#avm-fritz-repeater-1200) | AVM FRITZ!Repeater 1200 | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7f187229a8e9b7966248b1e024217e07a9fc3e50 |
-| [avm-fritz-repeater-3000](#avm-fritz-repeater-3000) | AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | teilweise | ja | - |
+| [avm-fritz-box-7520](#avm-fritz-box-7520) | AVM FRITZ!Box 7520 (Alias von avm-fritz-box-7530) | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | ja | Alias | https://openwrt.org/toh/avm/avm_fritz_box_7530#installation |
+| [avm-fritz-box-7530](#avm-fritz-box-7530) | AVM FRITZ!Box 7530 | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | ja | ja | https://openwrt.org/toh/avm/avm_fritz_box_7530#installation |
+| [avm-fritz-repeater-1200](#avm-fritz-repeater-1200) | AVM FRITZ!Repeater 1200 | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | ja | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7f187229a8e9b7966248b1e024217e07a9fc3e50 |
+| [avm-fritz-repeater-3000](#avm-fritz-repeater-3000) | AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) | ipq40xx-generic | K2 | [`avm-eva-uboot`](#familie-avm-eva-uboot) | ftp | nein | nein | ja | ja | - |
 | [extreme-networks-ws-ap3915i](#extreme-networks-ws-ap3915i) | Extreme Networks WS-AP3915i | ipq40xx-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | - |
 | [gl.inet-gl-ap1300](#gl.inet-gl-ap1300) | GL.iNet GL-AP1300 | ipq40xx-generic | K0 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-ap1300.md) |
 | [gl.inet-gl-b1300](#gl.inet-gl-b1300) | GL.iNet GL-B1300 | ipq40xx-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-b1300.md) |
@@ -2405,7 +2405,7 @@ AVM FRITZ!Box 7520 (Alias von avm-fritz-box-7530) · ipq40xx-generic · K2
 - **Dauer:** Booten aus dem RAM bis 2 Minuten [geprüft: Commit]; danach U-Boot nach uboot0/uboot1 schreiben, AVM-Volumes löschen, sysupgrade -n: währenddessen nicht Strom ziehen [abgeleitet]
 - **Fehlerbild:** klappt das Laden des U-Boot dauerhaft nicht: Box per AVM-Recovery auf FRITZ!OS 7.21 zurücksetzen und neu versuchen [abgeleitet: Wiki 7520/7530, nur als Ausweg]
 - **Rückweg zur Herstellerfirmware:** AVM-Recovery-Tool für genau dieses Modell (Windows-.exe von download.avm.de/<produkt>/.../recover/) [abgeleitet: OpenWrt-Wiki "AVM recovery tool"]; Provider-Geräte (z. B. 1&1) verweigern das evtl., dann vorher per EVA-FTP `quote UNSETENV provider` [abgeleitet: dasselbe Wiki]
-- **Gluon-RAMpe passt:** teilweise: wie 7530
+- **Gluon-RAMpe passt:** ja, mit Vorbereitung: wie 7530 (dasselbe Image, U-Boot nach HWRevision 247)
 - **Gluon-RAMpe-Rezept:** Alias: Image aus devices/avm-fritz-box-7530.sh (dort auch `uboot-fritz7520.bin`); TFTP-Dateiname `FRITZ7520.bin` [geprüft: U-Boot-Quelle chunkeey/FritzBox-4040-UBOOT, include/configs/fritz7520.h]
 - **Quelle (OpenWrt-Commit):** OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b
 - **Detail-Anleitung:** https://openwrt.org/toh/avm/avm_fritz_box_7530#installation
@@ -2444,8 +2444,8 @@ AVM FRITZ!Box 7530 · ipq40xx-generic · K2
 - **Dauer:** Booten aus dem RAM bis 2 Minuten [geprüft: Commit]; danach U-Boot nach uboot0/uboot1 schreiben, AVM-Volumes löschen, sysupgrade -n: währenddessen nicht Strom ziehen [abgeleitet]
 - **Fehlerbild:** `ubirmvol` meldet, /dev/ubi0 fehle: Box hat den anderen Flash-Chip (bekannt: A1-Provider-Gerät) [abgeleitet: Wiki 7530]; klappt das Laden des U-Boot dauerhaft nicht: Box per AVM-Recovery auf FRITZ!OS 7.21 zurücksetzen und neu versuchen [abgeleitet: Wiki 7520/7530, nur als Ausweg]
 - **Rückweg zur Herstellerfirmware:** AVM-Recovery-Tool für genau dieses Modell (Windows-.exe von download.avm.de/<produkt>/.../recover/) [abgeleitet: OpenWrt-Wiki "AVM recovery tool"]; Provider-Geräte (z. B. 1&1) verweigern das evtl., dann vorher per EVA-FTP `quote UNSETENV provider` [abgeleitet: dasselbe Wiki]
-- **Gluon-RAMpe passt:** teilweise: das RAMpe-initramfs passt als FRITZ7530.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7530.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `FRITZ7530.bin`, dazu `uboot-fritz7530.bin` für `eva_ramboot.py`; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (U-Boot schreiben, `ubirmvol`); 7520/7530 im System nicht unterscheidbar
+- **Gluon-RAMpe passt:** ja, mit Vorbereitung: das RAMpe-initramfs als FRITZ7530.bin (7520: FRITZ7520.bin); vor dem sysupgrade schreibt die RAMpe den OpenWrt-U-Boot (nach HWRevision 236/247) und entfernt avm_filesys_0/1 [geprüft: Commit 95b0c07a; Auswahl abgeleitet]; am Gerät ungetestet
+- **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7530.sh (gebaut 15.10.2026): `-initramfs-uImage.itb` als `FRITZ7530.bin`, dazu `uboot-fritz7530.bin`/`uboot-fritz7520.bin` für `eva_ramboot.py`; Vorbereitung vor dem sysupgrade in der RAMpe (overlay/lib/gluon-rampe/prepare/avm_fritzbox-7530.sh, U-Boot aus package/gluon-rampe-uboot-fritz), U-Boot-Wahl nach HWRevision aus dem TFFS; im QEMU-Test geprüft, am Gerät ungetestet
 - **Quelle (OpenWrt-Commit):** OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b
 - **Detail-Anleitung:** https://openwrt.org/toh/avm/avm_fritz_box_7530#installation
 
@@ -2483,8 +2483,8 @@ AVM FRITZ!Repeater 1200 · ipq40xx-generic · K2
 - **Dauer:** Booten aus dem RAM bis 2 Minuten [geprüft: Commit]; danach U-Boot nach uboot0/uboot1 schreiben, AVM-Volumes löschen, sysupgrade -n: währenddessen nicht Strom ziehen [abgeleitet]
 - **Fehlerbild:** klappt das Laden des U-Boot dauerhaft nicht: Box per AVM-Recovery auf FRITZ!OS 7.21 zurücksetzen und neu versuchen [abgeleitet: Wiki 7520/7530, nur als Ausweg]
 - **Rückweg zur Herstellerfirmware:** AVM-Recovery-Tool für genau dieses Modell (Windows-.exe von download.avm.de/<produkt>/.../recover/) [abgeleitet: OpenWrt-Wiki "AVM recovery tool"]; Provider-Geräte (z. B. 1&1) verweigern das evtl., dann vorher per EVA-FTP `quote UNSETENV provider` [abgeleitet: dasselbe Wiki]
-- **Gluon-RAMpe passt:** teilweise: das RAMpe-initramfs passt als FRITZ1200.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/avm-fritz-repeater-1200.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `FRITZ1200.bin` + `uboot-fritz1200.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (U-Boot schreiben, `ubirmvol`)
+- **Gluon-RAMpe passt:** ja, mit Vorbereitung: das RAMpe-initramfs als FRITZ1200.bin; vor dem sysupgrade schreibt die RAMpe den OpenWrt-U-Boot und entfernt avm_filesys_0/1 [geprüft: Commit 7f187229]; am Gerät ungetestet
+- **Gluon-RAMpe-Rezept:** devices/avm-fritz-repeater-1200.sh (gebaut 15.10.2026): `-initramfs-uImage.itb` als `FRITZ1200.bin` + `uboot-fritz1200.bin`; Vorbereitung vor dem sysupgrade in der RAMpe (avm_fritzrepeater-1200.sh); am Gerät ungetestet
 - **Quelle (OpenWrt-Commit):** OpenWrt 7f187229a8e9b7966248b1e024217e07a9fc3e50
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7f187229a8e9b7966248b1e024217e07a9fc3e50
 
@@ -2523,8 +2523,8 @@ AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) · ipq40xx-gen
 - **Dauer:** Booten aus dem RAM bis 2 Minuten [geprüft: Commit]; danach U-Boot nach uboot0/uboot1 schreiben, AVM-Volumes löschen, sysupgrade -n: währenddessen nicht Strom ziehen [abgeleitet]
 - **Fehlerbild:** klappt das Laden des U-Boot dauerhaft nicht: Box per AVM-Recovery auf FRITZ!OS 7.21 zurücksetzen und neu versuchen [abgeleitet: Wiki 7520/7530, nur als Ausweg]
 - **Rückweg zur Herstellerfirmware:** AVM-Recovery-Tool für genau dieses Modell (Windows-.exe von download.avm.de/<produkt>/.../recover/) [abgeleitet: OpenWrt-Wiki "AVM recovery tool"]; Provider-Geräte (z. B. 1&1) verweigern das evtl., dann vorher per EVA-FTP `quote UNSETENV provider` [abgeleitet: dasselbe Wiki]
-- **Gluon-RAMpe passt:** teilweise: das RAMpe-initramfs passt als FRITZ3000.bin, aber U-Boot-Schreiben und `ubirmvol` vor dem sysupgrade fehlen ihm; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/avm-fritz-repeater-3000.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `FRITZ3000.bin` + `uboot-fritz3000.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (U-Boot schreiben, `ubirmvol`)
+- **Gluon-RAMpe passt:** ja, mit Vorbereitung: das RAMpe-initramfs als FRITZ3000.bin; vor dem sysupgrade schreibt die RAMpe den OpenWrt-U-Boot und entfernt avm_filesys_0/1 [geprüft: Commit 148d29d4]; am Gerät ungetestet
+- **Gluon-RAMpe-Rezept:** devices/avm-fritz-repeater-3000.sh (gebaut 15.10.2026): trägt das Gerät in Gluon ein; `FRITZ3000.bin` + `uboot-fritz3000.bin`; Vorbereitung vor dem sysupgrade in der RAMpe (avm_fritzrepeater-3000.sh); am Gerät ungetestet
 - **Quelle (OpenWrt-Commit):** OpenWrt 148d29d47b1d555d0058dcc5dda450b74c4628ec
 - **Detail-Anleitung:** -
 
