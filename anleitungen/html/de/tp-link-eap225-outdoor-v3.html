@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TP-Link EAP225-Outdoor v3: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="tp-link-eap225-outdoor-v3">
+<meta name="anleitung:modell" content="TP-Link EAP225-Outdoor v3">
+<meta name="anleitung:anzeige" content="TP-Link EAP225-Outdoor v3">
+<meta name="anleitung:familie" content="tplink-eap-ssh">
+<meta name="anleitung:gluon_broken" content="false">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="mit Werkzeug">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="feste-ip, ssh-scp">
+<meta name="anleitung:daten_stand" content="5142b69">
+<meta name="anleitung:vorlage_stand" content="568889c">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<h1>TP-Link EAP225-Outdoor v3: Freifunk-Firmware installieren</h1>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> So beschreiben die Entwickler von OpenWrt
+bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
+ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
+klappt.</p>
+<p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+Anleitung für alle nach dir besser:</p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20EAP225-Outdoor%20v3">projekt@neanderfunk.de</a></p>
+</blockquote>
+<p>Die Weboberfläche von TP-Link nimmt die Freifunk-Firmware an, aber erst,
+nachdem du per SSH einen einzigen Befehl auf dem Gerät ausgeführt hast. Der
+Weg hat also drei kurze Teile: SSH einschalten, den Befehl ausführen, die
+Firmware hochladen. Rechne mit einer halben Stunde.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>den Access Point und Strom über PoE, also
+einen PoE-Injektor oder PoE-Switch</li>
+<li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
+<li><code>ssh</code> (<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>)</li>
+<li>die Freifunk-Firmware deiner Community für den TP-Link EAP225-Outdoor v3, und zwar das
+<strong>factory</strong>-Image. Benenn es in <strong><code>factory.bin</code></strong> um. Manche dieser Geräte
+lehnen lange Dateinamen ab.</li>
+</ul>
+<h2>Vorher prüfen</h2>
+<p>Die EAP225-Outdoor gibt es in den Hardware-Versionen v1 und v3. Beide sehen
+gleich aus, brauchen aber verschiedene Freifunk-Firmware. Die Version steht
+auf dem Typenschild (&quot;Ver: 3.0&quot; o. ä.). Steht dort v1, nimm die
+<a href="tp-link-eap225-outdoor-v1.html">Anleitung für die v1</a>.</p>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Rechner anschließen.</strong> Stell deinen Rechner auf die feste Adresse
+<code>192.168.0.10</code>, Netzmaske <code>255.255.255.0</code>
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>). Verbinde ihn
+mit dem Access Point (bei PoE: mit dem LAN-Anschluss des Injektors) und
+schalte den Access Point ein. Warte zwei Minuten.</p>
+</li>
+<li>
+<p><strong>Weboberfläche öffnen.</strong> Öffne <code>http://192.168.0.254</code> und melde dich an.
+Im Werkszustand heißt der Benutzer <code>admin</code> mit Passwort <code>admin</code>; danach
+verlangt das Gerät einen neuen Benutzernamen und ein neues Passwort.
+Merk sie dir.</p>
+<p><strong>Prüfen:</strong> Die TP-Link-Firmware muss mindestens Version
+<strong>1.6.0</strong> sein. Ist sie älter, spiel
+zuerst über dieselbe Oberfläche eine neuere TP-Link-Firmware ein
+(Download bei TP-Link für genau dein Modell und deine Hardware-Version).</p>
+</li>
+<li>
+<p><strong>SSH einschalten.</strong> Such in der Weboberfläche den Punkt für SSH (je nach
+Firmware unter &quot;Management&quot; oder &quot;System&quot;) und schalte SSH ein.
+Speichern.</p>
+</li>
+<li>
+<p><strong>Den Befehl ausführen.</strong> Im Terminal auf deinem Rechner, mit dem
+Benutzernamen aus Schritt 2 statt <code>admin</code>:</p>
+<pre><code>ssh admin@192.168.0.254
+</code></pre>
+<p>Meldet <code>ssh</code> &quot;no matching host key type found&quot; oder etwas Ähnliches,
+siehe <a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>. Auf dem Gerät gibst
+du dann ein:</p>
+<pre><code>cliclientd stopcs
+</code></pre>
+<p>Danach mit <code>exit</code> abmelden. Ohne diesen Befehl lehnt die Weboberfläche
+die Freifunk-Firmware ab.</p>
+</li>
+<li>
+<p><strong>Freifunk-Firmware hochladen.</strong> Geh in der Weboberfläche zum
+Firmware-Update, wähl <code>factory.bin</code> aus und starte das Update. Der Access
+Point schreibt die Freifunk-Firmware und startet neu, einige Minuten.
+<strong>Strom nicht ziehen.</strong></p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Stell den Rechner wieder auf &quot;automatisch&quot;. Danach startet
+die Freifunk-Firmware deiner Community: je nach Community zuerst mit
+einer Einrichtungsseite unter <code>http://192.168.1.1</code> oder gleich im
+Betrieb.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>In Schritt 4 nimmt das Gerät die SSH-Anmeldung an.</li>
+<li>In Schritt 5 nimmt die Weboberfläche <code>factory.bin</code> an und zeigt den
+Fortschritt.</li>
+<li>Nach Schritt 6 meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong><code>http://192.168.0.254</code> antwortet nicht.</strong> Prüf die feste Adresse am
+Rechner und ob der Access Point Strom hat. Wurde er schon einmal in ein
+Netz mit DHCP eingebunden, hat er dort vielleicht eine andere Adresse
+bekommen. Dann setz ihn auf Werkseinstellungen zurück (Reset-Taste, wie
+in der Anleitung von TP-Link beschrieben).</li>
+<li><strong>Die Weboberfläche lehnt <code>factory.bin</code> ab.</strong> Lief Schritt 4 wirklich
+durch? Nach einem Neustart des Geräts musst du ihn vermutlich
+wiederholen. Prüf auch die Version der TP-Link-Firmware
+(Schritt 2).</li>
+<li><strong>Nach dem Update startet nichts mehr.</strong> Zurück geht es bei diesen Geräten
+nur noch über die serielle Konsole im Gehäuse, und dafür muss man löten.
+Schreib uns.</li>
+</ul>
+<h2>Zurück zur TP-Link-Firmware</h2>
+<p>Einen einfachen Weg zurück gibt es nicht. Laut OpenWrt geht es nur über die
+serielle Konsole, für die man im Gehäuse an Lötpunkte muss.</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet: Forum openwrt 'EAP225-outdoor v3 firmware is incompatible', nicht gelesen (Fehlerbild)</li>
+<li>abgeleitet: Forum/Suchergebnis, nicht in Commit (Schritte (Normalweg), Adressen, Programm, Zugang)</li>
+<li>geprüft (Weg ab Werk, Schritte (Normalweg), Quelle (OpenWrt-Commit))</li>
+<li>geprüft: Commit 7e4de89 (Schritte (Normalweg), Bedingung an die Herstellerfirmware)</li>
+<li>geprüft: Commits (Schritte (Normalweg), Taste und Zeitpunkt, Anschluss, Zugang, Datei, Rückweg zur Herstellerfirmware)</li>
+<li>geprüft: Commits; Typenschild abgeleitet (Schritte (Normalweg), Typenschild/Verwechslung)</li>
+<li>Geräteeintrag: 7e4de89e631aaf56be5375662b7d5ed0f27e26f6 [geprüft]</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

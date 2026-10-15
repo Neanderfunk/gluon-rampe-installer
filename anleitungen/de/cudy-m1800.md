@@ -8,7 +8,7 @@ sprache: de
 stufe: fortgeschritten
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: a602f5a
+daten_stand: 5142b69
 vorlage_stand: 393f161
 ---
 
@@ -17,7 +17,7 @@ vorlage_stand: 393f161
 > **Noch nicht am Gerät erprobt.** Einzelne Schritte beruhen nur auf
 > Vermutungen oder auf einem einzelnen Bericht. Probier es nur, wenn du
 > notfalls einen Weg zurück kennst.
-> Die Cudy-Zwischenfirmware, die wir gefunden haben, ist für den „M1800+ V2“ gedacht. Ob dein M1800 sie annimmt, wissen wir nicht.
+> Cudy bietet dieselbe Zwischenfirmware unter „M1800 V2“ und „M1800+ V2“ an. Ob dein M1800 sie annimmt, wissen wir nicht.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die

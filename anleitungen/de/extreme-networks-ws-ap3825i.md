@@ -8,7 +8,7 @@ sprache: de
 stufe: Werkstatt
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: a602f5a
+daten_stand: 5142b69
 vorlage_stand: 00558b3
 ---
 
