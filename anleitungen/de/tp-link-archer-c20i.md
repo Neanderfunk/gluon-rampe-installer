@@ -7,7 +7,7 @@ gluon_broken: false
 sprache: de
 stufe: einfach
 status: ungeprüft
-grundlagen: []
+grundlagen: [feste-ip, tftp-server]
 daten_stand: lokal
 vorlage_stand: 393f161
 ---
@@ -18,12 +18,19 @@ vorlage_stand: 393f161
 > ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
 > aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
 > beschrieben.
+> Die Gefahr aus Build 151014 kennen wir aus eigener Erfahrung; den Weg aus Build 140709 haben wir nicht selbst nachvollzogen.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20Archer%20C20i)
+
+> **Achtung:** Läuft auf dem Router die TP-Link-Firmware **Build 151014** (die neueste),
+> **nicht** direkt die Freifunk-Firmware hochladen. Der Router hängt danach in
+> einer Startschleife und lässt sich nur noch über den TFTP-Notfall-Weg
+> retten. Spiel zuerst die ältere TP-Link-Firmware **Build 140709** ein, erst
+> dann die Freifunk-Firmware. Das wissen wir aus eigener Erfahrung.
 
 Beim TP-Link Archer C20i geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update
@@ -43,10 +50,11 @@ Aufkleber genau mit "TP-Link Archer C20i", bevor du anfängst.
 
 ## Vorher prüfen
 
-**Wichtig:** Aus der neuesten TP-Link-Firmware (Build 151014) heraus macht
-das Flashen den Router laut OpenWrt offenbar unbrauchbar. Spiel vorher über
-dieselbe Oberfläche die ältere TP-Link-Firmware **Build 140709** ein und
-installiere erst dann die Freifunk-Firmware.
+**Firmware-Version nachsehen:** Die TP-Link-Oberfläche zeigt sie auf der
+Statusseite ("Firmware Version", mit "Build …" am Ende). Steht dort
+**151014**: zuerst über dieselbe Seite für das Firmware-Update die
+TP-Link-Firmware **Build 140709** einspielen, den Neustart abwarten und erst
+dann mit Schritt 1 anfangen.
 
 Nicht verwechseln mit dem Archer C20 v1 oder dem Archer C2, das sind andere
 Geräte.
@@ -103,6 +111,14 @@ Geräte.
   Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
 
+## Notfall: TFTP
+
+Hängt der Router in einer Startschleife, holt er sich laut OpenWrt beim
+Einschalten mit gedrückter Reset-Taste eine Datei namens
+`ArcherC20iV1_tp_recovery.bin` von einem TFTP-Server mit der Adresse
+`192.168.0.66` ([TFTP-Server einrichten](grundlagen/tftp-server.md),
+[Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
+
 ## Herkunft der Angaben
 
 Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
@@ -110,5 +126,6 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - abgeleitet (Schritte (Normalweg))
 - abgeleitet: Gluon baut factory; Wiki nennt nur TFTP-Recovery mit ArcherC20iV1_tp_recovery.bin von 192.168.0.66 (Weg ab Werk, Schritte (Normalweg), Programm, Datei, Notweg)
 - geprüft: Gluon targets/ramips-mt7620, Wiki toh:tp-link:archer_c20i (Schritte (Normalweg), Typenschild/Verwechslung)
+- geprüft: Neanderfunk-Notiz, adorfer 15.10.2026, am Gerät: aus Build 151014 geflasht -> Startschleife, Rettung nur per TFTP (Warnung, Bedingung an die Herstellerfirmware)
 - geprüft: Wiki toh:tp-link:archer_c20i (Schritte (Normalweg), Warnung, Bedingung an die Herstellerfirmware)
 - Geräteeintrag: 48d8bc4f971ad7795e3162134759caa37900138f (ohne Installationstext)

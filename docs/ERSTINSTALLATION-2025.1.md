@@ -6978,7 +6978,7 @@ TP-Link Archer C20i · ramips-mt7620 · K0
   4. Rechner mit dem Router verbinden und die Herstelleroberfläche im Browser öffnen [abgeleitet: Gluon baut factory; Wiki nennt nur TFTP-Recovery mit ArcherC20iV1_tp_recovery.bin von 192.168.0.66]
   5. factory-Image über die Firmware-Upgrade-Seite hochladen [abgeleitet: Gluon baut factory; Wiki nennt nur TFTP-Recovery mit ArcherC20iV1_tp_recovery.bin von 192.168.0.66]
   6. Warten, bis der Router mit Gluon neu gestartet ist [abgeleitet]
-- **Warnung:** WICHTIG: Flashen aus der neuesten TP-Link-Firmware (Build 151014) über die Weboberfläche scheint das Gerät unbrauchbar zu machen; vorher ältere Firmware Build 140709 einspielen [geprüft: Wiki toh:tp-link:archer_c20i]
+- **Warnung:** WICHTIG: Flashen aus der neuesten TP-Link-Firmware (Build 151014) über die Weboberfläche führt in eine Startschleife, danach hilft nur noch TFTP-Recovery; vorher ältere Firmware Build 140709 einspielen [geprüft: Wiki toh:tp-link:archer_c20i] [geprüft: Neanderfunk-Notiz, adorfer 15.10.2026, am Gerät: aus Build 151014 geflasht -> Startschleife, Rettung nur per TFTP]
 - **Übertragung:** webui-upload
 - **Programm:** Browser [abgeleitet: Gluon baut factory; Wiki nennt nur TFTP-Recovery mit ArcherC20iV1_tp_recovery.bin von 192.168.0.66]
 - **Datei:** Gluon-factory-Image [abgeleitet: Gluon baut factory; Wiki nennt nur TFTP-Recovery mit ArcherC20iV1_tp_recovery.bin von 192.168.0.66]
@@ -6986,7 +6986,7 @@ TP-Link Archer C20i · ramips-mt7620 · K0
 - **Gehäuse öffnen:** nein
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Archer C20i nicht mit Archer C20 v1 (eigenes Gluon-Gerät ohne factory) oder Archer C2 (AC750, Gigabit-Switch) verwechseln [geprüft: Gluon targets/ramips-mt7620, Wiki toh:tp-link:archer_c20i]
-- **Bedingung an die Herstellerfirmware:** vor dem Flashen ältere TP-Link-Firmware Build 140709 einspielen, nicht aus Build 151014 flashen [geprüft: Wiki toh:tp-link:archer_c20i]
+- **Bedingung an die Herstellerfirmware:** vor dem Flashen ältere TP-Link-Firmware Build 140709 einspielen, nicht aus Build 151014 flashen [geprüft: Wiki toh:tp-link:archer_c20i] [geprüft: Neanderfunk-Notiz, adorfer 15.10.2026, am Gerät: aus Build 151014 geflasht -> Startschleife, Rettung nur per TFTP]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7620/openwrt-24.10.8-ramips-mt7620-tplink_archer-c20i-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
 - **Stock-Teile:** -
@@ -6995,7 +6995,7 @@ TP-Link Archer C20i · ramips-mt7620 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 48d8bc4f971ad7795e3162134759caa37900138f (ohne Installationstext)
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-c20i.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; sicherheit = abgeleitet
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; sicherheit = abgeleitet; sicherheit_hinweis = Die Gefahr aus Build 151014 kennen wir aus eigener Erfahrung; den Weg aus Build 140709 haben wir nicht selbst nachvollzogen.
 
 #### tp-link-archer-c50-v1
 

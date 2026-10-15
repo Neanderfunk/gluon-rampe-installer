@@ -12,7 +12,7 @@
 <meta name="anleitung:sprache" content="de">
 <meta name="anleitung:stufe" content="einfach">
 <meta name="anleitung:status" content="ungeprüft">
-<meta name="anleitung:grundlagen" content="">
+<meta name="anleitung:grundlagen" content="feste-ip, tftp-server">
 <meta name="anleitung:daten_stand" content="lokal">
 <meta name="anleitung:vorlage_stand" content="393f161">
 <link rel="stylesheet" href="../anleitung.css">
@@ -23,11 +23,19 @@
 <p><strong>Noch nicht am Gerät erprobt.</strong> Wichtige Schritte haben wir von
 ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
 aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
-beschrieben.</p>
+beschrieben.
+Die Gefahr aus Build 151014 kennen wir aus eigener Erfahrung; den Weg aus Build 140709 haben wir nicht selbst nachvollzogen.</p>
 <p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
 <p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20Archer%20C20i">projekt@neanderfunk.de</a></p>
+</blockquote>
+<blockquote>
+<p><strong>Achtung:</strong> Läuft auf dem Router die TP-Link-Firmware <strong>Build 151014</strong> (die neueste),
+<strong>nicht</strong> direkt die Freifunk-Firmware hochladen. Der Router hängt danach in
+einer Startschleife und lässt sich nur noch über den TFTP-Notfall-Weg
+retten. Spiel zuerst die ältere TP-Link-Firmware <strong>Build 140709</strong> ein, erst
+dann die Freifunk-Firmware. Das wissen wir aus eigener Erfahrung.</p>
 </blockquote>
 <p>Beim TP-Link Archer C20i geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update
@@ -44,10 +52,11 @@ TP-Link etwa &quot;Ver: 5.0&quot;, bei anderen &quot;H/W Ver.&quot;). Viele Ger�
 mehreren Versionen, und jede braucht ihr eigenes Image. Vergleich den
 Aufkleber genau mit &quot;TP-Link Archer C20i&quot;, bevor du anfängst.</p>
 <h2>Vorher prüfen</h2>
-<p><strong>Wichtig:</strong> Aus der neuesten TP-Link-Firmware (Build 151014) heraus macht
-das Flashen den Router laut OpenWrt offenbar unbrauchbar. Spiel vorher über
-dieselbe Oberfläche die ältere TP-Link-Firmware <strong>Build 140709</strong> ein und
-installiere erst dann die Freifunk-Firmware.</p>
+<p><strong>Firmware-Version nachsehen:</strong> Die TP-Link-Oberfläche zeigt sie auf der
+Statusseite (&quot;Firmware Version&quot;, mit &quot;Build …&quot; am Ende). Steht dort
+<strong>151014</strong>: zuerst über dieselbe Seite für das Firmware-Update die
+TP-Link-Firmware <strong>Build 140709</strong> einspielen, den Neustart abwarten und erst
+dann mit Schritt 1 anfangen.</p>
 <p>Nicht verwechseln mit dem Archer C20 v1 oder dem Archer C2, das sind andere
 Geräte.</p>
 <h2>Schritte</h2>
@@ -110,12 +119,19 @@ Rechner auf &quot;automatisch&quot; und zieh das Kabel kurz ab und wieder an. Je
 Community startet die Firmware auch gleich im Betrieb ohne
 Einrichtungsseite.</li>
 </ul>
+<h2>Notfall: TFTP</h2>
+<p>Hängt der Router in einer Startschleife, holt er sich laut OpenWrt beim
+Einschalten mit gedrückter Reset-Taste eine Datei namens
+<code>ArcherC20iV1_tp_recovery.bin</code> von einem TFTP-Server mit der Adresse
+<code>192.168.0.66</code> (<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>,
+<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).</p>
 <h2>Herkunft der Angaben</h2>
 <p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
 <ul>
 <li>abgeleitet (Schritte (Normalweg))</li>
 <li>abgeleitet: Gluon baut factory; Wiki nennt nur TFTP-Recovery mit ArcherC20iV1_tp_recovery.bin von 192.168.0.66 (Weg ab Werk, Schritte (Normalweg), Programm, Datei, Notweg)</li>
 <li>geprüft: Gluon targets/ramips-mt7620, Wiki toh:tp-link:archer_c20i (Schritte (Normalweg), Typenschild/Verwechslung)</li>
+<li>geprüft: Neanderfunk-Notiz, adorfer 15.10.2026, am Gerät: aus Build 151014 geflasht -&gt; Startschleife, Rettung nur per TFTP (Warnung, Bedingung an die Herstellerfirmware)</li>
 <li>geprüft: Wiki toh:tp-link:archer_c20i (Schritte (Normalweg), Warnung, Bedingung an die Herstellerfirmware)</li>
 <li>Geräteeintrag: 48d8bc4f971ad7795e3162134759caa37900138f (ohne Installationstext)</li>
 </ul>
