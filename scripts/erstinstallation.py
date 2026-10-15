@@ -28,7 +28,9 @@ GERAETE = ROOT / "docs" / "GERAETE.md"
 FELDER = OrderedDict([
     ("gluon_name", "Gluon-Name"),
     ("modell", "Modell"),
+    ("anzeige", "Anzeigename (überschreibt den bereinigten Modellnamen)"),
     ("target", "Target"),
+    ("gluon_broken", "Gluon führt es als broken"),
     ("kat", "Kat."),
     ("familie", "Anleitungsfamilie"),
     ("weg", "Weg ab Werk"),
@@ -136,6 +138,8 @@ def einzelheiten(geraete):
                 if isinstance(g[k], dict):
                     z.append(f"- **{label}:** " + "; ".join(
                         f"{a} = {b}" for a, b in g[k].items() if b not in ("", None)))
+                elif isinstance(g[k], bool):
+                    z.append(f"- **{label}:** ja")
                 elif isinstance(g[k], list):
                     z.append(f"- **{label}:**")
                     z += [f"  {i}. {schritt}" for i, schritt in enumerate(g[k], 1)]
@@ -188,6 +192,8 @@ def main():
             sys.exit(f"{g['gluon_name']}: unbekannte Felder: {sorted(set(g) - set(FELDER))}")
         if not isinstance(g["schritte"], list):
             sys.exit(f"{g['gluon_name']}: schritte muss eine Liste sein")
+        if not isinstance(g["gluon_broken"], bool):
+            sys.exit(f"{g['gluon_name']}: gluon_broken muss true oder false sein")
         for k in ("werte", "erprobt"):
             if not isinstance(g[k], dict):
                 sys.exit(f"{g['gluon_name']}: {k} muss ein Objekt sein")

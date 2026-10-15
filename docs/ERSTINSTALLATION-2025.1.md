@@ -1880,6 +1880,7 @@ AVM FRITZ!Box 4020 · ath79-generic · K1d
 
 AVM FRITZ!WLAN Repeater 1750E (broken) · ath79-generic · K1d
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** AVM-EVA-Bootloader: in den ersten Sekunden nach Strom-an per FTP anmelden und das sysupgrade nach mtd1 schreiben, danach Strom aus/an [geprüft]
 - **Schritte (Normalweg):**
   1. Rechner fest auf 192.168.178.2/24 stellen, WLAN am Rechner aus [geprüft: fritz-tools/fritzflash.py; geprüft: fritz-tools-Doku]
@@ -2019,6 +2020,7 @@ AVM FRITZ!Box 4040 · ipq40xx-generic · K1d
 
 AVM FRITZ!Box 3370 Rev. 2, Hynix-NAND (Gluon: broken) · lantiq-xrx200 · K1d
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** EVA-FTP in den ersten Sekunden nach dem Einschalten: adam2/adam2, `SETENV linux_fs_start 0`, `MEDIA FLSH`, eva-kernel.bin nach mtd1, eva-filesystem.bin nach mtd0; Gluon baut beide (other/). Bei EVA 2186 Reboot nach 30 s [geprüft]
 - **Schritte (Normalweg):**
   1. NAND-Hersteller feststellen (nur nach Öffnen erkennbar) und das hynix-Image wählen [geprüft: Commit 0b62fe5e]
@@ -2055,6 +2057,7 @@ AVM FRITZ!Box 3370 Rev. 2, Hynix-NAND (Gluon: broken) · lantiq-xrx200 · K1d
 
 AVM FRITZ!Box 3370 Rev. 2, Micron-NAND (Gluon: broken) · lantiq-xrx200 · K1d
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** EVA-FTP in den ersten Sekunden nach dem Einschalten: adam2/adam2, `SETENV linux_fs_start 0`, `MEDIA FLSH`, eva-kernel.bin nach mtd1, eva-filesystem.bin nach mtd0; Gluon baut beide (other/). Bei EVA 2186 Reboot nach 30 s [geprüft]
 - **Schritte (Normalweg):**
   1. NAND-Hersteller feststellen (nur nach Öffnen erkennbar) und das micron-Image wählen [geprüft: Commit 0b62fe5e]
@@ -2472,6 +2475,7 @@ AVM FRITZ!Repeater 1200 · ipq40xx-generic · K2
 
 AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) · ipq40xx-generic · K2
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** `eva_ramboot.py` (OpenWrt scripts/flashing) lädt den OpenWrt-U-Boot per EVA-FTP in den RAM; der holt das initramfs per TFTP; im initramfs U-Boot nach uboot0/uboot1 schreiben, `ubirmvol` avm_filesys_0/1, `sysupgrade -n` [geprüft]
 - **Schritte (Normalweg):**
   1. OpenWrt-U-Boot uboot-fritz3000.bin (OpenWrt-Download u-boot-fritz3000/), OpenWrt-initramfs und Gluon-sysupgrade bereitlegen [geprüft: Commit]
@@ -3613,6 +3617,7 @@ D-Link AQUILA PRO AI M60 A1 · mediatek-filogic · K1
 
 D-Link DAP-1620 B1 (Gluon: broken) · ramips-mt7621 · K0
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** Reset beim Einstecken halten, Web-Recovery 192.168.0.50, factory.bin hochladen (Chromium) [geprüft]
 - **Schritte (Normalweg):**
   1. Rechner fest im Netz 192.168.0.0/24 (z. B. 192.168.0.65/24) [Adresse geprüft: Commit e4c7703; Rechner-IP abgeleitet: Schwestergerät]
@@ -4007,6 +4012,7 @@ GL.iNet GL-AR750S NOR · ath79-nand · K1d
 
 GL.iNet GL-E750 (broken) · ath79-nand · K2
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** Mit GL-Firmware 3.100 nur über den U-Boot (GL.iNet-Debrick-Anleitung), weil deren sysupgrade den größeren Kernel zerstört [geprüft]; Gluon baut kein factory.img, OpenWrt schon; Zwischenstufe OpenWrt 24.10.8-factory.img über den U-Boot [geprüft: OpenWrt 24.10.8 ath79/nand, Datei in sha256sums gelistet und per HEAD erreichbar, 15.10.2026]
 - **Schritte (Normalweg):**
   1. Rechner per Kabel an einen LAN-Port anschließen, alle anderen Ports frei lassen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]
@@ -5334,6 +5340,7 @@ TP-Link Archer A7 v5 · ath79-generic · K0
 
 TP-Link Archer C2 v3 (broken) · ath79-generic · K0
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [geprüft]
 - **Schritte (Normalweg):**
   1. Typenschild prüfen: Archer C2 v3 (AC900), nicht Archer C2 v1 [geprüft: Commit 9c01273e; tplink-safeloader ARCHER-C2-V3; Gluon targets/ramips-mt7620]
@@ -5362,6 +5369,7 @@ TP-Link Archer C2 v3 (broken) · ath79-generic · K0
 
 TP-Link Archer C25 v1 (broken) · ath79-generic · K0
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [abgeleitet: Commit ohne Anleitung]
 - **Schritte (Normalweg):**
   1. Typenschild prüfen: Archer C25 v1, Region ohne Kennung, EU oder US [geprüft: tplink-safeloader ARCHER-C25-V1]
@@ -5422,6 +5430,7 @@ TP-Link Archer C5 v1 · ath79-generic · K0
 
 TP-Link Archer C58 v1 (broken) · ath79-generic · K0
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [geprüft]
 - **Schritte (Normalweg):**
   1. Typenschild prüfen: Archer C58 v1 (C58 und C59 sehen ähnlich aus) [geprüft: Commit 946ffe47]
@@ -6221,6 +6230,7 @@ TP-Link TL-WR842N v3 · ath79-generic · K0
 
 TP-Link TL-WR902AC v1 (broken) · ath79-generic · K0
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** factory im Stock-Web-UI hochladen [geprüft]
 - **Schritte (Normalweg):**
   1. Gerät prüfen: TL-WR902AC v1, nicht TL-MR3020 (fast gleiches Gehäuse); nur EU oder US [geprüft: Commit 60de1fdb]; [geprüft: tplink-safeloader TL-WR902AC-V1]
@@ -6719,6 +6729,7 @@ NETGEAR Nighthawk X4S R7800 · ipq806x-generic · K0
 
 TP-Link Archer C2600 v1 · ipq806x-generic · K0
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** Gluon-factory (safeloader) über die TP-Link-Web-UI [abgeleitet: Image-Rezept TpSafeImage, Commit ohne Text]; Gluon: broken
 - **Schritte (Normalweg):**
   1. Typenschild prüfen: Archer C2600 v1 (1.0.0) [geprüft: tplink-safeloader C2600]
@@ -7137,6 +7148,7 @@ NETGEAR WAC104 · ramips-mt7621 · K0
 
 TP-Link Archer AX23 v1 (Gluon: broken) · ramips-mt7621 · K0
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** factory im Stock-Web-UI; Web-Recovery 192.168.0.1 (Reset beim Einschalten) nimmt factory [geprüft]
 - **Schritte (Normalweg):**
   1. Typenschild prüfen: Archer AX23 (oder AX1800) Hardware v1.x, nicht AX23 v2 [geprüft: Wiki toh:tp-link:archer_ax23_v1]
@@ -7166,6 +7178,7 @@ TP-Link Archer AX23 v1 (Gluon: broken) · ramips-mt7621 · K0
 
 TP-Link Archer C6 v3 (Gluon: broken) · ramips-mt7621 · K0
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** factory im Stock-Web-UI [geprüft]
 - **Schritte (Normalweg):**
   1. Typenschild prüfen: Archer C6 (oder A6) v3, nicht v2 oder v4 [geprüft: Commit d22fb7f4; tplink-safeloader ARCHER-C6-V3]; [geprüft: Wiki toh:tp-link:archer_c6_v3]
@@ -7285,6 +7298,7 @@ ZyXEL NWA50AX (Alias NWA90AX) · ramips-mt7621 · K0
 
 ZyXEL NWA55AXE (Gluon: broken) · ramips-mt7621 · K0
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** wie NWA50AX; ohne Reset-Taste, bei unbekanntem Passwort nur seriell (atns-Trick, TFTP owrt.bin, ramboot-factory) [geprüft]
 - **Schritte (Normalweg):**
   1. Gluon-factory-Image bereitlegen; Gluon: broken [geprüft]
@@ -8226,6 +8240,7 @@ NETGEAR WAX202 · ramips-mt7621 · K0
 
 NETGEAR WNDR3700 v5 (Gluon: broken, "untested") · ramips-mt7621 · K0+
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** OpenWrt-factory.img per nmrpflash, danach Gluon-sysupgrade [geprüft]; Zwischenstufe OpenWrt 24.10.8-factory.img per nmrpflash [geprüft: OpenWrt 24.10.8 ramips/mt7621, factory.img in sha256sums gelistet und per HEAD erreichbar, 15.10.2026]
 - **Schritte (Normalweg):**
   1. Typenschild auf 'v5' prüfen, v1 bis v4 sind ganz andere Geräte [abgeleitet: Commit cb049e7 nennt MT7621S für v5]
@@ -8831,6 +8846,7 @@ Siemens WS-AP3610 · ath79-generic · K4
 
 Sophos AP15 (broken) · ath79-generic · K4
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** Gehäuse öffnen, UART, im U-Boot OpenWrt-initramfs per TFTP booten, dann sysupgrade im Web-UI [geprüft]; XG-Weg der AP55/AP100 "sollte auch gehen" [ungeprüft im Commit]
 - **Schritte (Normalweg):**
   1. Gehäuse öffnen, USB-TTL-Adapter (3,3 V laut ToH) an den UART-Header, Terminal 115200 8N1. [geprüft: Commit; Wiki-Zusammenfassung: Pegel laut ToH]
@@ -8865,6 +8881,7 @@ Sophos AP15 (broken) · ath79-generic · K4
 
 TP-Link Archer D50 v1 (broken) · ath79-generic · K4
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** UART (J2), im U-Boot das sysupgrade per TFTP laden und nach 0x9f020000 schreiben; oder initramfs booten [geprüft]
 - **Schritte (Normalweg):**
   1. Gehäuse öffnen, USB-TTL am Header J2 (Qualcomm-CPU) anschließen: TX, RX, GND; VCC (eckiges Pad) nicht anschließen. [geprüft: Commit; VCC frei: abgeleitet]
@@ -8935,6 +8952,7 @@ Aerohive HiveAP 121 · ath79-nand · K4
 
 ZTE MF281 (broken) · ath79-nand · K4
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** UART, U-Boot unterbrechen, OpenWrt-initramfs per TFTP booten, dann factory per `mtd write ... firmware` [geprüft]
 - **Schritte (Normalweg):**
   1. Gehäuse öffnen und USB-TTL-Adapter (3,3 V laut ToH) an den unbestückten Stecker neben dem SIM-Slot anschließen: (SIM) GND - RX - TX - 3V3, 3V3 nicht anschließen. [geprüft: Commit]
@@ -8999,6 +9017,7 @@ Extreme Networks WS-AP3915i · ipq40xx-generic · K4
 
 ZTE MF289F · ipq40xx-generic · K4
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** Gehäuse öffnen, UART, U-Boot (ESC), initramfs per TFTP, Backup mtd16/mtd17, `ubirmvol` ubi_rootfs(_data), `sysupgrade -n` [geprüft]
 - **Schritte (Normalweg):**
   1. Gehäuse öffnen und eine Stiftleiste in die 3 Löcher löten (GND direkt neben dem Aufdruck 'MF289F MIMO-V1.0'). [geprüft: Commit, Wiki toh:zte:mf289f]
@@ -9071,6 +9090,7 @@ Extreme Networks AP3935i/e · ipq806x-generic · K4
 
 TP-Link TD-W8980 (Alias TD-W9980; Gluon: broken, 5 GHz) · lantiq-xrx200_legacy · K4
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** Seriell: `t` beim Booten, TFTP, `sf erase 0x20000 0x7a0000`, sysupgrade schreiben; Web-UI nur bei Stock vor 12.10.2013; Shell-Injection wie TD-W9980 [abgeleitet: Wiki]
 - **Schritte (Normalweg):**
   1. Gehäuse öffnen: 4 Schrauben unten, 6 Rastnasen, Antennenmuttern lösen. [geprüft: Wiki toh:tp-link:td-w8980_v1]
@@ -9387,6 +9407,7 @@ TP-Link EAP620 HD v1 · qualcommax-ipq807x · K4
 
 Xiaomi Mi WiFi Range Extender AC1200 RA75 (Gluon: broken, "Only serial flash possible") · ramips-mt76x8 · K4
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** Kein Web-UI; seriell im U-Boot-Menü Option 2, sysupgrade per TFTP [geprüft]
 - **Taste und Zeitpunkt:** Keine Gerätetaste. Nach dem Einschalten im U-Boot-Menü Option 2 ('Load system code then write to Flash via TFTP') wählen [geprüft: Commit f204c81, Wiki inbox:toh:xiaomi:mi_wifi_range_extender_ac1200_model_ra75]
 - **Übertragung:** tftp-client-am-geraet (IPs im Menü)
@@ -9742,6 +9763,7 @@ D-Link DIR-825 B1 · ath79-generic · offen
 
 devolo dLAN pro 1200+ WiFi ac (broken) · ath79-generic · K1d
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** TFTP-Recovery des Bootloaders: Reset beim Einschalten ~15 s halten, das Gerät holt sich das umbenannte sysupgrade [geprüft]
 - **Schritte (Normalweg):**
   1. Gluon-sysupgrade umbenennen in genau `uploadfile` (ohne Endung). [geprüft: Commit, Wiki toh:devolo:dlan_pro_1200_wifi_ac]
@@ -9820,6 +9842,7 @@ Genexis/Inteno Pulse EX400 · ramips-mt7621 · K1
 
 Google WiFi (Gale) · ipq40xx-chromium · K5
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** Chrome-OS-Developer-Mode (laut Gluon nur mit geöffnetem Gehäuse), Boot von USB-Stick, Gluon-factory (GPT-Abbild) auf die eMMC [geprüft: Commit "requires booting from USB storage", Gluon-Kommentar]
 - **Taste und Zeitpunkt:** Reset (vorne) halten, Strom über den USB-C-Hub anschließen; nach ca. 16 s blinkt die LED orange: loslassen; nach ca. 3 s pulsiert sie orange/amber: internen Taster SW7 drücken; Gerät blinkt lila und startet neu; wenn es wieder lila blinkt, SW7 erneut drücken = Start vom USB-Stick [geprüft: Wiki toh:google:wifi]
 - **Sichtbare Zeichen:** OpenWrt vom Stick: LED blau schnell, dann langsam, dann dauerhaft blau. Lila blinkt weiter nach SW7 = Stick nicht erkannt; LED aus und bleibt aus = Stick falsch beschrieben (dd statt Recovery Utility); blau schnell/langsam und dann zurück zu lila = Google-Firmware passt nicht, erst Google-Recovery [geprüft: Wiki toh:google:wifi]
@@ -10050,6 +10073,7 @@ Linksys MX5300 · qualcommax-ipq807x · K0
 
 Cisco Meraki MR33 · ipq40xx-generic · K5
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** Gehäuse öffnen, UART; `ubootwrite.py` (gepatcht) lädt einen modifizierten U-Boot (mr33-uboot.bin, 250-300 s), dann das sysupgrade per `tftp put` an den U-Boot [geprüft]; laut Gluon-Kommentar bricken neuere Bootloader-Versionen den SoC irreversibel
 - **Sichtbare Zeichen:** Die Bootloader-Version steht sofort beim Einschalten in der Konsole; nur 'U-Boot 2012.07-g97ab7f1 (Oct 06 2016)' erlaubt den Weg. Erscheint 'Secure boot NOT enabled! Blowing fuses... Resetting now', ist das Gerät unbrauchbar [geprüft: Wiki toh:meraki:mr33]
 - **Übertragung:** tftp-server-am-geraet: Gerät 192.168.1.1, `tftp` binary, put sysupgrade.bin
@@ -10414,6 +10438,7 @@ Xiaomi Redmi Router AX6S / AX3200 · mediatek-mt7622 · K0+
 
 ZTE MF286R (broken) · ath79-nand · K1
 
+- **Gluon führt es als broken:** ja
 - **Weg ab Werk:** Root-Shell über Web-UI-Lücke (URL-Filter `&&telnetd&&`, telnet 4719 admin/admin), Backup, OpenWrt-initramfs mit nandwrite in "firmware" schreiben, reboot, sysupgrade; alternativ UART + TFTP [geprüft für MF286A/R, Dateinamen im Commit für MF286A]
 - **Sichtbare Zeichen:** Nur TFTP-Notweg: nach dem Flashen durch U-Boot leuchten alle Switch-Port-LEDs, dann Strom aus/an [geprüft: Commit 7ac8da0]
 - **Übertragung:** Exploit per Web-UI, dann telnet; Images per USB-Stick oder tftp (Busybox) auf das Gerät; UART-Weg: tftp-client am U-Boot, Server 192.168.0.22, Gerät 192.168.0.1

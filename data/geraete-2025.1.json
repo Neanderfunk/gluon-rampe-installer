@@ -4,7 +4,9 @@
   {
    "gluon_name": "alfa-network-ap121f",
    "modell": "ALFA Network AP121F",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "recovery-web",
    "weg": "U-Boot-Web-Recovery: Reset beim Einschalten halten, nach dem ersten Blinken weitere drei Blinks, dann sysupgrade unter http://192.168.1.1 hochladen [geprüft, ar71xx-Commit]",
@@ -48,7 +50,9 @@
   {
    "gluon_name": "avm-fritz-box-4020",
    "modell": "AVM FRITZ!Box 4020",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "avm-eva-ftp",
    "weg": "AVM-EVA-Bootloader: in den ersten Sekunden nach Strom-an per FTP anmelden und das sysupgrade nach mtd1 schreiben, danach Strom aus/an [geprüft]",
@@ -96,7 +100,9 @@
   {
    "gluon_name": "avm-fritz-wlan-repeater-1750e",
    "modell": "AVM FRITZ!WLAN Repeater 1750E (broken)",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": true,
    "kat": "K1d",
    "familie": "avm-eva-ftp",
    "weg": "AVM-EVA-Bootloader: in den ersten Sekunden nach Strom-an per FTP anmelden und das sysupgrade nach mtd1 schreiben, danach Strom aus/an [geprüft]",
@@ -144,7 +150,9 @@
   {
    "gluon_name": "avm-fritz-wlan-repeater-300e",
    "modell": "AVM FRITZ!WLAN Repeater 300E",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "avm-eva-ftp",
    "weg": "AVM-EVA-Bootloader: in den ersten Sekunden nach Strom-an per FTP anmelden und das sysupgrade nach mtd1 schreiben, danach Strom aus/an [geprüft]",
@@ -192,7 +200,9 @@
   {
    "gluon_name": "avm-fritz-wlan-repeater-450e",
    "modell": "AVM FRITZ!WLAN Repeater 450E",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "avm-eva-ftp",
    "weg": "AVM-EVA-Bootloader: in den ersten Sekunden nach Strom-an per FTP anmelden und das sysupgrade nach mtd1 schreiben, danach Strom aus/an [geprüft]",
@@ -240,7 +250,9 @@
   {
    "gluon_name": "buffalo-wzr-600dhp",
    "modell": "Buffalo WZR-600DHP",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI (Administration, Firmware Upgrade) [geprüft]",
@@ -289,7 +301,9 @@
   {
    "gluon_name": "buffalo-wzr-hp-ag300h",
    "modell": "Buffalo WZR-HP-AG300H",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI (Administration, Firmware Upgrade) [geprüft]",
@@ -337,7 +351,9 @@
   {
    "gluon_name": "buffalo-wzr-hp-g300nh-rtl8366s",
    "modell": "Buffalo WZR-HP-G300NH (RTL8366S switch)",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI; alternativ U-Boot-TFTP mit tftp-Image [geprüft]",
@@ -384,7 +400,9 @@
   {
    "gluon_name": "buffalo-wzr-hp-g450h-wzr-450hp",
    "modell": "Buffalo WZR-HP-G450H/WZR-450HP",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "sonderweg-buffalo-wzr-hp-g450h-wzr-450hp",
    "weg": "factory über die versteckte Seite http://192.168.11.1/cgi-bin/cgi?req=frm&frm=py-db/firmup.html (bufpy/otdpopy) [geprüft]",
@@ -428,7 +446,9 @@
   {
    "gluon_name": "comfast-cf-ew71-v2",
    "modell": "COMFAST CF-EW71 v2",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "sonderweg-comfast-cf-ew71-v2",
    "weg": "Stock-Firmware ist OpenWrt-basiert und nimmt das sysupgrade; alternativ U-Boot-Recovery-Web (Reset ~5 s beim Einstecken) [geprüft]",
@@ -472,7 +492,9 @@
   {
    "gluon_name": "d-link-dap-1330-a1",
    "modell": "D-Link DAP-1330 A1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI (ohne Passwort); Recovery-Web bei Reset beim Einschalten, notfalls per curl [geprüft]",
@@ -520,7 +542,9 @@
   {
    "gluon_name": "d-link-dap-1365-a1",
    "modell": "D-Link DAP-1365 A1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI (ohne Passwort); Recovery-Web bei Reset beim Einschalten, notfalls per curl [geprüft]",
@@ -568,7 +592,9 @@
   {
    "gluon_name": "d-link-dap-2660-a1",
    "modell": "D-Link DAP-2660 A1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI (admin, leeres Passwort); Recovery-Web bei Reset beim Einschalten [geprüft]",
@@ -617,7 +643,9 @@
   {
    "gluon_name": "d-link-dap-2680-a1",
    "modell": "D-Link DAP-2680 A1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI (admin, leeres Passwort); Recovery-Web bei Reset beim Einschalten [geprüft]",
@@ -666,7 +694,9 @@
   {
    "gluon_name": "d-link-dap-2695-a1",
    "modell": "D-Link DAP-2695 A1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI; alternativ Emergency-Web-Server des Bootloaders über die Konsole (q drücken) [geprüft]",
@@ -713,7 +743,9 @@
   {
    "gluon_name": "d-link-dir-505",
    "modell": "D-Link DIR-505",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "laut Commit nur per U-Boot-TFTP, modifiziertem U-Boot oder sysupgrade aus älterem OpenWrt; ath79 baut kein factory (ar71xx hatte eins mit HORNET-Kennung) [geprüft]",
@@ -758,7 +790,9 @@
   {
    "gluon_name": "d-link-dir825b1",
    "modell": "D-Link DIR-825 B1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "offen",
    "familie": "sonderweg-d-link-dir825b1",
    "weg": "Weg ab Werk im ath79-Commit nicht beschrieben; factory-Rezept seit 4309be6bcb3d3cbf8fa5ae7eddb1520737542c6c abgeschaltet (\"max image sizes too small\", FACTORY_SIZE 6144k) [geprüft]; zu prüfen, ob die D-Link-Recovery ein initramfs annimmt (OpenWrt-initramfs 24.10.8: 6145 KB, also knapp über 6144k)",
@@ -805,7 +839,9 @@
   {
    "gluon_name": "devolo-dlan-pro-1200+-wifi-ac",
    "modell": "devolo dLAN pro 1200+ WiFi ac (broken)",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": true,
    "kat": "K1d",
    "familie": "sonderweg-devolo-dlan-pro-1200+-wifi-ac",
    "weg": "TFTP-Recovery des Bootloaders: Reset beim Einschalten ~15 s halten, das Gerät holt sich das umbenannte sysupgrade [geprüft]",
@@ -851,7 +887,9 @@
   {
    "gluon_name": "devolo-wifi-pro-1200e",
    "modell": "devolo WiFi pro 1200e",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "devolo-ssh",
    "weg": "Stock ist OpenWrt-basiert: im Web-UI root-Passwort setzen, sysupgrade per scp nach /tmp, `sysupgrade -n -F` [geprüft]",
@@ -897,7 +935,9 @@
   {
    "gluon_name": "devolo-wifi-pro-1200i",
    "modell": "devolo WiFi pro 1200i",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "devolo-ssh",
    "weg": "Stock ist OpenWrt-basiert: im Web-UI root-Passwort setzen, sysupgrade per scp nach /tmp, `sysupgrade -n -F` [geprüft]",
@@ -943,7 +983,9 @@
   {
    "gluon_name": "devolo-wifi-pro-1750c",
    "modell": "devolo WiFi pro 1750c",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "devolo-ssh",
    "weg": "Stock ist OpenWrt-basiert: im Web-UI root-Passwort setzen, sysupgrade per scp nach /tmp, `sysupgrade -n -F` [geprüft]",
@@ -989,7 +1031,9 @@
   {
    "gluon_name": "devolo-wifi-pro-1750e",
    "modell": "devolo WiFi pro 1750e",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "devolo-ssh",
    "weg": "Stock ist OpenWrt-basiert: im Web-UI root-Passwort setzen, sysupgrade per scp nach /tmp, `sysupgrade -n -F` [geprüft]",
@@ -1035,7 +1079,9 @@
   {
    "gluon_name": "devolo-wifi-pro-1750i",
    "modell": "devolo WiFi pro 1750i",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "devolo-ssh",
    "weg": "Stock ist OpenWrt-basiert: im Web-UI root-Passwort setzen, sysupgrade per scp nach /tmp, `sysupgrade -n -F` [geprüft]",
@@ -1081,7 +1127,9 @@
   {
    "gluon_name": "devolo-wifi-pro-1750x",
    "modell": "devolo WiFi pro 1750x",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "devolo-ssh",
    "weg": "Stock ist OpenWrt-basiert: im Web-UI root-Passwort setzen, sysupgrade per scp nach /tmp, `sysupgrade -n -F` [geprüft]",
@@ -1127,7 +1175,9 @@
   {
    "gluon_name": "enterasys-ws-ap3705i",
    "modell": "Enterasys WS-AP3705i",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "Serielle Konsole, U-Boot (Passwort admin/new2day) umstellen und OpenWrt-initramfs per TFTP laden, dann sysupgrade [geprüft]",
@@ -1173,7 +1223,9 @@
   {
    "gluon_name": "extreme-networks-ws-ap3805i",
    "modell": "Extreme Networks WS-AP3805i",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "UART (J10), U-Boot (admin/new2day) umstellen, OpenWrt-initramfs per TFTP laden, dann sysupgrade [geprüft]",
@@ -1219,7 +1271,9 @@
   {
    "gluon_name": "gl.inet-6416",
    "modell": "GL.iNet 6416",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
    "weg": "sysupgrade über die Stock-GUI oder die U-Boot-Weboberfläche [geprüft]",
@@ -1268,7 +1322,9 @@
   {
    "gluon_name": "gl.inet-gl-ar150",
    "modell": "GL.iNet GL-AR150",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
    "weg": "GL.iNet-U-Boot-Weboberfläche bzw. Stock-GUI mit sysupgrade [abgeleitet: Commit 53c474a ohne Anleitung, Verfahren wie bei den anderen GL.iNet]",
@@ -1321,7 +1377,9 @@
   {
    "gluon_name": "gl.inet-gl-ar300m-lite",
    "modell": "GL.iNet GL-AR300M Lite",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
    "weg": "sysupgrade über die OEM-GUI (LuCI, \"Advanced\"), Einstellungen nicht behalten [geprüft]",
@@ -1370,7 +1428,9 @@
   {
    "gluon_name": "gl.inet-gl-ar300m16",
    "modell": "GL.iNet GL-AR300M16",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
    "weg": "OEM-U-Boot (HTTP) oder `sysupgrade --force` aus der NOR-Stock-Firmware [geprüft]",
@@ -1421,7 +1481,9 @@
   {
    "gluon_name": "gl.inet-gl-ar750",
    "modell": "GL.iNet GL-AR750",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
    "weg": "Stock nimmt sysupgrade per Kommandozeile oder LuCI [geprüft]",
@@ -1469,7 +1531,9 @@
   {
    "gluon_name": "gl.inet-gl-usb150",
    "modell": "GL.iNET GL-USB150",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
    "weg": "Stock (OpenWrt-basiert) nimmt das sysupgrade in der GUI oder per sysupgrade, Einstellungen nicht behalten [geprüft]",
@@ -1517,7 +1581,9 @@
   {
    "gluon_name": "joy-it-jt-or750i",
    "modell": "Joy-IT JT-OR750i",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "recovery-web",
    "weg": "Ab Werk nur Bootloader: dessen Weboberfläche (DHCP) nimmt das sysupgrade; alternativ TFTP-Recovery [geprüft]",
@@ -1562,7 +1628,9 @@
   {
    "gluon_name": "librerouter-v1",
    "modell": "Librerouter LibreRouter v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "sonderweg-librerouter-v1",
    "weg": "OpenWrt/LibreRouterOS ab Werk: sysupgrade über die Weboberfläche oder `sysupgrade -n`; seriell nur als Notweg [geprüft]",
@@ -1606,7 +1674,9 @@
   {
    "gluon_name": "netgear-wndr3700",
    "modell": "NETGEAR WNDR3700 v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory (.img) im Stock-Web-UI [abgeleitet: Commit ohne Anleitung]",
@@ -1654,7 +1724,9 @@
   {
    "gluon_name": "netgear-wndr3700-v2",
    "modell": "NETGEAR WNDR3700 v2",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory (.img) im Stock-Web-UI [abgeleitet: Commit ohne Anleitung]",
@@ -1702,7 +1774,9 @@
   {
    "gluon_name": "netgear-wndr3800",
    "modell": "NETGEAR WNDR3800",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory (.img) im Stock-Web-UI [abgeleitet: Commit ohne Anleitung]",
@@ -1752,7 +1826,9 @@
   {
    "gluon_name": "netgear-wndr3800ch",
    "modell": "NETGEAR WNDR3800CH",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory (.img) im Stock-Web-UI [abgeleitet: Commit ohne Anleitung]",
@@ -1802,7 +1878,9 @@
   {
    "gluon_name": "netgear-wndrmac-v2",
    "modell": "NETGEAR WNDRMAC v2",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Upgrade-Web [geprüft]",
@@ -1849,7 +1927,9 @@
   {
    "gluon_name": "netgear-wnr2200-16m",
    "modell": "NETGEAR WNR2200 16M",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory (.img) im Stock-Web-UI; auch TFTP-Recovery [geprüft]",
@@ -1897,7 +1977,9 @@
   {
    "gluon_name": "netgear-wnr2200-8m",
    "modell": "NETGEAR WNR2200 8M",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory (.img) im Stock-Web-UI; auch TFTP-Recovery [geprüft]",
@@ -1945,7 +2027,9 @@
   {
    "gluon_name": "ocedo-koala",
    "modell": "Ocedo Koala",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "ocedo-tftp",
    "weg": "Reset beim Einschalten halten: der Bootloader lädt per TFTP ein initramfs und startet es; danach sysupgrade und `fw_setenv bootcmd run bootcmd_1` (Flip-Flop-Bootloader) [geprüft]",
@@ -1994,7 +2078,9 @@
   {
    "gluon_name": "ocedo-raccoon",
    "modell": "Ocedo Raccoon",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "ocedo-tftp",
    "weg": "Reset beim Einschalten halten: der Bootloader lädt per TFTP ein initramfs und startet es; danach sysupgrade und `fw_setenv bootcmd run bootcmd_1` (Flip-Flop-Bootloader) [geprüft]",
@@ -2043,7 +2129,9 @@
   {
    "gluon_name": "onion-omega",
    "modell": "Onion Omega",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "recovery-web",
    "weg": "Stock (OpenWrt) per sysupgrade oder factory über die U-Boot-Weboberfläche [geprüft]",
@@ -2087,7 +2175,9 @@
   {
    "gluon_name": "openmesh-a40",
    "modell": "OpenMesh A40",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -2134,7 +2224,9 @@
   {
    "gluon_name": "openmesh-a60",
    "modell": "OpenMesh A60",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -2181,7 +2273,9 @@
   {
    "gluon_name": "openmesh-mr1750-v1",
    "modell": "OpenMesh MR1750 v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -2228,7 +2322,9 @@
   {
    "gluon_name": "openmesh-mr1750-v2",
    "modell": "OpenMesh MR1750 v2",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -2275,7 +2371,9 @@
   {
    "gluon_name": "openmesh-mr600-v1",
    "modell": "OpenMesh MR600 v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -2322,7 +2420,9 @@
   {
    "gluon_name": "openmesh-mr600-v2",
    "modell": "OpenMesh MR600 v2",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -2369,7 +2469,9 @@
   {
    "gluon_name": "openmesh-mr900-v1",
    "modell": "OpenMesh MR900 v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -2416,7 +2518,9 @@
   {
    "gluon_name": "openmesh-mr900-v2",
    "modell": "OpenMesh MR900 v2",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -2463,7 +2567,9 @@
   {
    "gluon_name": "openmesh-om2p-hs-v1",
    "modell": "OpenMesh OM2P-HS v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -2510,7 +2616,9 @@
   {
    "gluon_name": "openmesh-om2p-hs-v2",
    "modell": "OpenMesh OM2P-HS v2",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -2557,7 +2665,9 @@
   {
    "gluon_name": "openmesh-om2p-hs-v3",
    "modell": "OpenMesh OM2P-HS v3",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -2604,7 +2714,9 @@
   {
    "gluon_name": "openmesh-om2p-hs-v4",
    "modell": "OpenMesh OM2P-HS v4",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -2651,7 +2763,9 @@
   {
    "gluon_name": "openmesh-om2p-lc",
    "modell": "OpenMesh OM2P-LC",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -2698,7 +2812,9 @@
   {
    "gluon_name": "openmesh-om2p-v1",
    "modell": "OpenMesh OM2P v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -2745,7 +2861,9 @@
   {
    "gluon_name": "openmesh-om2p-v2",
    "modell": "OpenMesh OM2P v2",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -2793,7 +2911,9 @@
   {
    "gluon_name": "openmesh-om2p-v4",
    "modell": "OpenMesh OM2P v4",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -2840,7 +2960,9 @@
   {
    "gluon_name": "openmesh-om5p",
    "modell": "OpenMesh OM5P",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -2887,7 +3009,9 @@
   {
    "gluon_name": "openmesh-om5p-ac-v1",
    "modell": "OpenMesh OM5P-AC v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -2934,7 +3058,9 @@
   {
    "gluon_name": "openmesh-om5p-ac-v2",
    "modell": "OpenMesh OM5P-AC v2",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -2981,7 +3107,9 @@
   {
    "gluon_name": "openmesh-om5p-an",
    "modell": "OpenMesh OM5P-AN",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ap51-flash",
    "weg": "Bootloader nimmt Images per ap51-flash beim Einschalten an; alternativ seriell U-Boot + TFTP-initramfs, dann sysupgrade [geprüft]",
@@ -3028,7 +3156,9 @@
   {
    "gluon_name": "plasma-cloud-pa300",
    "modell": "Plasma Cloud PA300",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "ap51-flash",
    "weg": "factory per ap51-flash an den U-Boot beim Einschalten übertragen [geprüft]",
@@ -3075,7 +3205,9 @@
   {
    "gluon_name": "plasma-cloud-pa300e",
    "modell": "Plasma Cloud PA300E",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "ap51-flash",
    "weg": "factory per ap51-flash an den U-Boot beim Einschalten übertragen [geprüft]",
@@ -3122,7 +3254,9 @@
   {
    "gluon_name": "siemens-ws-ap3610",
    "modell": "Siemens WS-AP3610",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "Serielle Konsole (RJ45), U-Boot-Umgebung setzen, OpenWrt-initramfs per TFTP laden, dann sysupgrade [geprüft]",
@@ -3167,7 +3301,9 @@
   {
    "gluon_name": "sophos-ap100",
    "modell": "Sophos AP100",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "sophos-xg-awetool",
    "weg": "Über eine Sophos-XG-Appliance (awetool) Root-Shell auf dem AP, sysupgrade per `mtd -r write ... astaro_image`; alternativ UART + U-Boot (`tftpboot`, `cp.b` nach 0x9f070000) [geprüft]",
@@ -3216,7 +3352,9 @@
   {
    "gluon_name": "sophos-ap100c",
    "modell": "Sophos AP100C",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "sophos-xg-awetool",
    "weg": "Über eine Sophos-XG-Appliance (awetool) Root-Shell auf dem AP, sysupgrade per `mtd -r write ... astaro_image`; alternativ UART + U-Boot (`tftpboot`, `cp.b` nach 0x9f070000) [geprüft]",
@@ -3265,7 +3403,9 @@
   {
    "gluon_name": "sophos-ap15",
    "modell": "Sophos AP15 (broken)",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": true,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "Gehäuse öffnen, UART, im U-Boot OpenWrt-initramfs per TFTP booten, dann sysupgrade im Web-UI [geprüft]; XG-Weg der AP55/AP100 \"sollte auch gehen\" [ungeprüft im Commit]",
@@ -3310,7 +3450,9 @@
   {
    "gluon_name": "sophos-ap15c",
    "modell": "Sophos AP15C",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "sophos-xg-awetool",
    "weg": "Über eine Sophos-XG-Appliance (awetool) Root-Shell auf dem AP, sysupgrade per `mtd -r write ... astaro_image`; alternativ UART + U-Boot (`tftpboot`, `cp.b` nach 0x9f070000) [geprüft]",
@@ -3359,7 +3501,9 @@
   {
    "gluon_name": "sophos-ap55",
    "modell": "Sophos AP55",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "sophos-xg-awetool",
    "weg": "Über eine Sophos-XG-Appliance (awetool) Root-Shell auf dem AP, sysupgrade per `mtd -r write ... astaro_image`; alternativ UART + U-Boot (`tftpboot`, `cp.b` nach 0x9f070000) [geprüft]",
@@ -3408,7 +3552,9 @@
   {
    "gluon_name": "sophos-ap55c",
    "modell": "Sophos AP55C",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "sophos-xg-awetool",
    "weg": "Über eine Sophos-XG-Appliance (awetool) Root-Shell auf dem AP, sysupgrade per `mtd -r write ... astaro_image`; alternativ UART + U-Boot (`tftpboot`, `cp.b` nach 0x9f070000) [geprüft]",
@@ -3457,7 +3603,9 @@
   {
    "gluon_name": "teltonika-rut230-v1",
    "modell": "Teltonika RUT230 v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "recovery-web",
    "weg": "Bootloader-Recovery-Web: Reset beim Einstecken halten bis die Signal-LEDs 3x blinken, factory unter http://192.168.1.1 hochladen [geprüft]",
@@ -3502,7 +3650,9 @@
   {
    "gluon_name": "tp-link-archer-a7-v5",
    "modell": "TP-Link Archer A7 v5",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [geprüft]",
@@ -3569,7 +3719,9 @@
   {
    "gluon_name": "tp-link-archer-c2-v3",
    "modell": "TP-Link Archer C2 v3 (broken)",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": true,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [geprüft]",
@@ -3635,7 +3787,9 @@
   {
    "gluon_name": "tp-link-archer-c25-v1",
    "modell": "TP-Link Archer C25 v1 (broken)",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": true,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [abgeleitet: Commit ohne Anleitung]",
@@ -3700,7 +3854,9 @@
   {
    "gluon_name": "tp-link-archer-c5-v1",
    "modell": "TP-Link Archer C5 v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [abgeleitet: Commit ohne Anleitung]",
@@ -3767,7 +3923,9 @@
   {
    "gluon_name": "tp-link-archer-c58-v1",
    "modell": "TP-Link Archer C58 v1 (broken)",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": true,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [geprüft]",
@@ -3832,7 +3990,9 @@
   {
    "gluon_name": "tp-link-archer-c59-v1",
    "modell": "TP-Link Archer C59 v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [geprüft]",
@@ -3897,7 +4057,9 @@
   {
    "gluon_name": "tp-link-archer-c6-v2-eu-ru-jp",
    "modell": "TP-Link Archer C6 v2 (EU/RU/JP)",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [geprüft]",
@@ -3964,7 +4126,9 @@
   {
    "gluon_name": "tp-link-archer-c60-v1",
    "modell": "TP-Link Archer C60 v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "sonderweg-tp-link-archer-c60-v1",
    "weg": "OpenWrt-Commit: factory über Stock-Web-UI oder TFTP-Recovery; OpenWrt 24.10.8 liefert aber kein factory (nur initramfs/sysupgrade), Gluon setzt factory = false [geprüft]; bleibt UART + U-Boot (sysupgrade nach 0x9f020000 schreiben) [geprüft] oder ein älteres OpenWrt-factory als Zwischenschritt [abgeleitet]",
@@ -4009,7 +4173,9 @@
   {
    "gluon_name": "tp-link-archer-c7-v2",
    "modell": "TP-Link Archer C7 v2",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [abgeleitet: Commit ohne Anleitung]; Gluon baut das factory mit Regionssuffix (GLUON_REGION, OpenWrt: factory-eu/-us) [Makefile geprüft]",
@@ -4075,7 +4241,9 @@
   {
    "gluon_name": "tp-link-archer-c7-v4",
    "modell": "TP-Link Archer C7 v4",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [geprüft]",
@@ -4141,7 +4309,9 @@
   {
    "gluon_name": "tp-link-archer-c7-v5",
    "modell": "TP-Link Archer C7 v5",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [geprüft]",
@@ -4207,7 +4377,9 @@
   {
    "gluon_name": "tp-link-archer-d50-v1",
    "modell": "TP-Link Archer D50 v1 (broken)",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": true,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "UART (J2), im U-Boot das sysupgrade per TFTP laden und nach 0x9f020000 schreiben; oder initramfs booten [geprüft]",
@@ -4252,7 +4424,9 @@
   {
    "gluon_name": "tp-link-cpe210-v1",
    "modell": "TP-Link CPE210 v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit",
@@ -4320,7 +4494,9 @@
   {
    "gluon_name": "tp-link-cpe210-v2",
    "modell": "TP-Link CPE210 v2",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit",
@@ -4388,7 +4564,9 @@
   {
    "gluon_name": "tp-link-cpe210-v3",
    "modell": "TP-Link CPE210 v3",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit",
@@ -4456,7 +4634,9 @@
   {
    "gluon_name": "tp-link-cpe220-v3",
    "modell": "TP-Link CPE220 v3",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit",
@@ -4524,7 +4704,9 @@
   {
    "gluon_name": "tp-link-cpe510-v1",
    "modell": "TP-Link CPE510 v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit",
@@ -4592,7 +4774,9 @@
   {
    "gluon_name": "tp-link-cpe510-v2",
    "modell": "TP-Link CPE510 v2",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit",
@@ -4660,7 +4844,9 @@
   {
    "gluon_name": "tp-link-cpe510-v3",
    "modell": "TP-Link CPE510 v3",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit",
@@ -4728,7 +4914,9 @@
   {
    "gluon_name": "tp-link-cpe710-v1",
    "modell": "TP-Link CPE710 v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit",
@@ -4797,7 +4985,9 @@
   {
    "gluon_name": "tp-link-cpe710-v2",
    "modell": "TP-Link CPE710 v2",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit",
@@ -4866,7 +5056,9 @@
   {
    "gluon_name": "tp-link-eap225-outdoor-v1",
    "modell": "TP-Link EAP225-Outdoor v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "tplink-eap-ssh",
    "weg": "per SSH auf die Stock-Firmware `cliclientd stopcs` ausführen, dann factory im Web-UI hochladen [geprüft]",
@@ -4913,7 +5105,9 @@
   {
    "gluon_name": "tp-link-eap225-outdoor-v3",
    "modell": "TP-Link EAP225-Outdoor v3",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "tplink-eap-ssh",
    "weg": "per SSH auf die Stock-Firmware `cliclientd stopcs` ausführen, dann factory im Web-UI hochladen [geprüft]",
@@ -4960,7 +5154,9 @@
   {
    "gluon_name": "tp-link-eap225-wall-v2",
    "modell": "TP-Link EAP225-Wall v2",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "tplink-eap-ssh",
    "weg": "per SSH auf die Stock-Firmware `cliclientd stopcs` ausführen, dann factory im Web-UI hochladen [geprüft]",
@@ -5006,7 +5202,9 @@
   {
    "gluon_name": "tp-link-tl-wdr3500-v1",
    "modell": "TP-Link TL-WDR3500 v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [geprüft]",
@@ -5071,7 +5269,9 @@
   {
    "gluon_name": "tp-link-tl-wdr3600-v1",
    "modell": "TP-Link TL-WDR3600 v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [abgeleitet: Commit ohne Anleitung]",
@@ -5138,7 +5338,9 @@
   {
    "gluon_name": "tp-link-tl-wdr4300-v1",
    "modell": "TP-Link TL-WDR4300 v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [abgeleitet: Commit ohne Anleitung]",
@@ -5205,7 +5407,9 @@
   {
    "gluon_name": "tp-link-tl-wr1043n-v5",
    "modell": "TP-Link TL-WR1043N v5",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [geprüft]",
@@ -5271,7 +5475,9 @@
   {
    "gluon_name": "tp-link-tl-wr1043nd-v2",
    "modell": "TP-Link TL-WR1043N/ND v2",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [abgeleitet: Commit ohne Anleitung]",
@@ -5337,7 +5543,9 @@
   {
    "gluon_name": "tp-link-tl-wr1043nd-v3",
    "modell": "TP-Link TL-WR1043N/ND v3",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [abgeleitet: Commit ohne Anleitung]",
@@ -5403,7 +5611,9 @@
   {
    "gluon_name": "tp-link-tl-wr1043nd-v4",
    "modell": "TP-Link TL-WR1043N/ND v4",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [abgeleitet: Commit ohne Anleitung]",
@@ -5469,7 +5679,9 @@
   {
    "gluon_name": "tp-link-tl-wr2543n-nd",
    "modell": "TP-Link TL-WR2543N/ND v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [abgeleitet: Commit ohne Anleitung]",
@@ -5534,7 +5746,9 @@
   {
    "gluon_name": "tp-link-tl-wr810n-v1",
    "modell": "TP-Link TL-WR810N v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI (192.168.0.254, admin/admin) [geprüft über Verweis auf ar71xx-Commit b23b0fb2]",
@@ -5600,7 +5814,9 @@
   {
    "gluon_name": "tp-link-tl-wr842n-v3",
    "modell": "TP-Link TL-WR842N v3",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [geprüft]; Dateiname darf eine gewisse Länge nicht überschreiten",
@@ -5666,7 +5882,9 @@
   {
    "gluon_name": "tp-link-tl-wr902ac-v1",
    "modell": "TP-Link TL-WR902AC v1 (broken)",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": true,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI hochladen [geprüft]",
@@ -5732,7 +5950,9 @@
   {
    "gluon_name": "tp-link-wbs210-v1",
    "modell": "TP-Link WBS210 v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit",
@@ -5800,7 +6020,9 @@
   {
    "gluon_name": "tp-link-wbs210-v2",
    "modell": "TP-Link WBS210 v2",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit",
@@ -5868,7 +6090,9 @@
   {
    "gluon_name": "tp-link-wbs510-v1",
    "modell": "TP-Link WBS510 v1",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Pharos-Web-UI (https://192.168.0.254) hochladen [geprüft]; TFTP-Rescue nimmt laut Neanderfunk-Labortest vom 01.10.2026 nur TP-Link-Firmware (Neanderfunk-Notiz), entgegen dem Commit",
@@ -5936,7 +6160,9 @@
   {
    "gluon_name": "ubiquiti-nanobeam-ac-gen1-xc",
    "modell": "Ubiquiti NanoBeam AC Gen1 (XC)",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "sonderweg-ubiquiti-nanobeam-ac-gen1-xc",
    "weg": "airOS-XC-Verfahren laut OpenWrt-Wiki (openwrt.org/toh/ubiquiti/common), im Commit nur verlinkt [geprüft: Verweis]",
@@ -5981,7 +6207,9 @@
   {
    "gluon_name": "ubiquiti-nanostation-loco-m-xw",
    "modell": "Ubiquiti Nanostation Loco M XW",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "ubiquiti-tftp",
    "weg": "Ubiquiti-TFTP-Recovery: Reset beim Einstecken halten bis die LEDs wechselweise blinken, factory per TFTP an das Gerät [geprüft]",
@@ -6036,7 +6264,9 @@
   {
    "gluon_name": "ubiquiti-nanostation-m-xw",
    "modell": "Ubiquiti Nanostation M XW",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "ubiquiti-tftp",
    "weg": "Ubiquiti-TFTP-Recovery: Reset beim Einstecken halten bis die LEDs wechselweise blinken, factory per TFTP an das Gerät [geprüft]",
@@ -6091,7 +6321,9 @@
   {
    "gluon_name": "ubiquiti-rocket-m-xm",
    "modell": "Ubiquiti Rocket M XM",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "ubiquiti-tftp",
    "weg": "Commit ohne Anleitung; Ubiquiti-TFTP-Recovery wie bei den XW-Geräten [abgeleitet]",
@@ -6146,7 +6378,9 @@
   {
    "gluon_name": "ubiquiti-unifi-ac-lite",
    "modell": "Ubiquiti UniFi AC Lite",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ubiquiti-unifi-ssh",
    "weg": "SSH auf die Stock-Firmware (ubnt/ubnt, 192.168.1.20), Schreibschutz per /proc/ubnthal/.uf aus, sysupgrade nach kernel0/kernel1 schreiben, bootselect setzen [abgeleitet: Ablauf aus UK-Ultra-Commit bf94e0a, gleiche ubnt_unifiac-Basis; Commit des Geräts ohne Anleitung]; Weg mit dd und Schreibschutz-Freigabe [Forum: forum.freifunk.net/t/23422 #10 (blocktrron, 2022, AC Lite 6.2.35, dd-Weg, am 15.10.2026 am Beitrag gegengelesen), #24 (2023: \"funktioniert noch auf aktueller Firmware\"), #26 (nach Werksreset ok); #8/#3: Downgrade unter 4.3.31 scheitert] [geprüft: forum.freifunk.net/t/23422 #10 zeigt für mtd2 und mtd3 die Flags 0x800 vor und 0xc00 nach dem Aufheben des Schreibschutzes (AC Lite 6.2.35)]",
@@ -6217,7 +6451,9 @@
   {
    "gluon_name": "ubiquiti-unifi-ac-lr",
    "modell": "Ubiquiti UniFi AC LR",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ubiquiti-unifi-ssh",
    "weg": "SSH auf die Stock-Firmware (ubnt/ubnt, 192.168.1.20), Schreibschutz per /proc/ubnthal/.uf aus, sysupgrade nach kernel0/kernel1 schreiben, bootselect setzen [abgeleitet: Ablauf aus UK-Ultra-Commit bf94e0a, gleiche ubnt_unifiac-Basis; Commit des Geräts ohne Anleitung]; Weg mit dd und Schreibschutz-Freigabe [Forum: forum.freifunk.net/t/23422 #10 (blocktrron, 2022, AC Lite 6.2.35, dd-Weg, am 15.10.2026 am Beitrag gegengelesen), #24 (2023: \"funktioniert noch auf aktueller Firmware\"), #26 (nach Werksreset ok); #8/#3: Downgrade unter 4.3.31 scheitert] [abgeleitet: Partitionsbelegung mtd2/mtd3/mtd4 aus der AC-Lite-Ausgabe in #10 übertragen; die Prüfzeile fängt eine Abweichung ab] [abgeleitet: Flags 0x800 -> 0xc00 nach dem Aufheben des Schreibschutzes wie beim AC Lite in forum.freifunk.net/t/23422 #10]",
@@ -6288,7 +6524,9 @@
   {
    "gluon_name": "ubiquiti-unifi-ac-mesh",
    "modell": "Ubiquiti UniFi AC Mesh",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ubiquiti-unifi-ssh",
    "weg": "SSH auf die Stock-Firmware (ubnt/ubnt, 192.168.1.20), Schreibschutz per /proc/ubnthal/.uf aus, sysupgrade nach kernel0/kernel1 schreiben, bootselect setzen [abgeleitet: Ablauf aus UK-Ultra-Commit bf94e0a, gleiche ubnt_unifiac-Basis; Commit des Geräts ohne Anleitung]; Weg mit dd und Schreibschutz-Freigabe [Forum: forum.freifunk.net/t/23422 #10 (blocktrron, 2022, AC Lite 6.2.35, dd-Weg, am 15.10.2026 am Beitrag gegengelesen), #24 (2023: \"funktioniert noch auf aktueller Firmware\"), #26 (nach Werksreset ok); #8/#3: Downgrade unter 4.3.31 scheitert] [abgeleitet: Partitionsbelegung mtd2/mtd3/mtd4 aus der AC-Lite-Ausgabe in #10 übertragen; die Prüfzeile fängt eine Abweichung ab] [abgeleitet: Flags 0x800 -> 0xc00 nach dem Aufheben des Schreibschutzes wie beim AC Lite in forum.freifunk.net/t/23422 #10]",
@@ -6359,7 +6597,9 @@
   {
    "gluon_name": "ubiquiti-unifi-ac-mesh-pro",
    "modell": "Ubiquiti UniFi AC Mesh Pro",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ubiquiti-unifi-ssh",
    "weg": "SSH auf die Stock-Firmware (ubnt/ubnt, 192.168.1.20), Schreibschutz per /proc/ubnthal/.uf aus, sysupgrade nach kernel0/kernel1 schreiben, bootselect setzen [abgeleitet: Ablauf aus UK-Ultra-Commit bf94e0a, gleiche ubnt_unifiac-Basis; Commit des Geräts ohne Anleitung]; Weg mit dd und Schreibschutz-Freigabe [abgeleitet: dd-Weg wie bei AC Lite und AC Pro (forum.freifunk.net/t/23422 #10, #25/#26; Neanderfunk-Notiz AC Pro 2025), kein eigener Praxisbericht zum AC Mesh Pro; Partitionsbelegung aus der AC-Lite-Ausgabe übertragen, die Prüfzeile fängt eine Abweichung ab] [abgeleitet: Flags 0x800 -> 0xc00 nach dem Aufheben des Schreibschutzes wie beim AC Lite in forum.freifunk.net/t/23422 #10]",
@@ -6430,7 +6670,9 @@
   {
    "gluon_name": "ubiquiti-unifi-ac-pro",
    "modell": "Ubiquiti UniFi AC Pro",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ubiquiti-unifi-ssh",
    "weg": "SSH auf die Stock-Firmware (ubnt/ubnt, 192.168.1.20), Schreibschutz per /proc/ubnthal/.uf aus, sysupgrade nach kernel0/kernel1 schreiben, bootselect setzen [abgeleitet: Ablauf aus UK-Ultra-Commit bf94e0a, gleiche ubnt_unifiac-Basis; Commit des Geräts ohne Anleitung]; Weg mit dd und Schreibschutz-Freigabe [Neanderfunk-Notiz: adorfer 2025, AC Pro, dd-Weg nach blocktrron, erfolgreich (Angabe adorfer 15.10.2026)] [Forum: forum.freifunk.net/t/23422 #25/#26, AC Pro Gen2 6.5.62, nach Werksreset erfolgreich] [abgeleitet: Partitionsbelegung mtd2/mtd3/mtd4 aus der AC-Lite-Ausgabe in 23422 #10 übertragen; die Prüfzeile fängt eine Abweichung ab] [abgeleitet: Flags 0x800 -> 0xc00 nach dem Aufheben des Schreibschutzes wie beim AC Lite in forum.freifunk.net/t/23422 #10]",
@@ -6501,7 +6743,9 @@
   {
    "gluon_name": "ubiquiti-unifi-ap",
    "modell": "Ubiquiti UniFi AP",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "ubiquiti-unifi-ssh",
    "weg": "Commit ohne Anleitung; vermutlich wie UniFi AP Outdoor+ (gleiche ubnt-bz-Basis): SCP + fwupdate.real [abgeleitet]",
@@ -6546,7 +6790,9 @@
   {
    "gluon_name": "ubiquiti-unifi-ap-outdoor+",
    "modell": "Ubiquiti UniFi AP Outdoor+",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "ubiquiti-unifi-ssh",
    "weg": "factory per SCP auf die Stock-Firmware, dann `fwupdate.real -m <openwrt.bin> -d` [geprüft]",
@@ -6603,7 +6849,9 @@
   {
    "gluon_name": "ubiquiti-unifi-ap-pro",
    "modell": "Ubiquiti UniFi AP Pro",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "ubiquiti-tftp",
    "weg": "Ubiquiti-TFTP-Recovery: Reset 10 s beim Einstecken, factory per TFTP an das Gerät [geprüft]",
@@ -6656,7 +6904,9 @@
   {
    "gluon_name": "ubiquiti-unifi-swiss-army-knife-ultra",
    "modell": "Ubiquiti UniFi Swiss Army Knife Ultra",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ubiquiti-unifi-ssh",
    "weg": "SSH auf die Stock-Firmware (ubnt/ubnt, 192.168.1.20), `echo 5edfacbf > /proc/ubnthal/.uf`, sysupgrade per dd nach mtdblock2 und mtdblock3, bootselect auf kernel0, reboot [geprüft]",
@@ -6721,7 +6971,9 @@
   {
    "gluon_name": "zyxel-nbg6616",
    "modell": "Zyxel NBG6616",
+   "anzeige": "",
    "target": "ath79-generic",
+   "gluon_broken": false,
    "kat": "K5",
    "familie": "sonderweg-zyxel-nbg6616",
    "weg": "Serielle Konsole, ZyXEL-zloader per Passwort-Challenge (ATSE/ATEN) entsperren, U-Boot-bootcmd auf das kombinierte Image umstellen (saveenv), dann factory per TFTP-Recovery mit WPS-Taste [geprüft]",
@@ -6768,7 +7020,9 @@
   {
    "gluon_name": "mikrotik-routerboard-951ui-2nd-hap",
    "modell": "MikroTik RouterBOARD 951Ui-2nD (hAP)",
+   "anzeige": "",
    "target": "ath79-mikrotik",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "mikrotik-netboot",
    "weg": "RouterBOOT-Netboot: initramfs per BOOTP/DHCP+TFTP booten, dann sysupgrade [geprüft: Commit verweist auf openwrt.org/toh/mikrotik/common; Einzelschritte abgeleitet aus dem Wiki]",
@@ -6815,7 +7069,9 @@
   {
    "gluon_name": "mikrotik-routerboard-mapl-2nd",
    "modell": "MikroTik RouterBOARD mAPL-2nD (mAP lite)",
+   "anzeige": "",
    "target": "ath79-mikrotik",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "mikrotik-netboot",
    "weg": "RouterBOOT-Netboot: initramfs per BOOTP/DHCP+TFTP booten, dann sysupgrade [geprüft: Commit verweist auf openwrt.org/toh/mikrotik/common; Einzelschritte abgeleitet aus dem Wiki]",
@@ -6862,7 +7118,9 @@
   {
    "gluon_name": "mikrotik-routerboard-wap-g-5hact2hnd",
    "modell": "MikroTik RouterBOARD wAP G-5HacT2HnD (wAP AC)",
+   "anzeige": "",
    "target": "ath79-mikrotik",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "mikrotik-netboot",
    "weg": "RouterBOOT-Netboot: initramfs per BOOTP/DHCP+TFTP booten, dann sysupgrade [geprüft: Commit verweist auf openwrt.org/toh/mikrotik/common; Einzelschritte abgeleitet aus dem Wiki]",
@@ -6909,7 +7167,9 @@
   {
    "gluon_name": "mikrotik-routerboard-wapr-2nd",
    "modell": "MikroTik RouterBOARD wAPR-2nD (wAP R)",
+   "anzeige": "",
    "target": "ath79-mikrotik",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "mikrotik-netboot",
    "weg": "RouterBOOT-Netboot: initramfs per BOOTP/DHCP+TFTP booten, dann sysupgrade [geprüft: Commit verweist auf openwrt.org/toh/mikrotik/common; Einzelschritte abgeleitet aus dem Wiki]",
@@ -6956,7 +7216,9 @@
   {
    "gluon_name": "aerohive-hiveap-121",
    "modell": "Aerohive HiveAP 121",
+   "anzeige": "",
    "target": "ath79-nand",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "UART (9600 Baud), U-Boot ggf. mit Passwort (administrator oder AhNf?d@ta06), factory per TFTP laden und mit `nand write` schreiben [geprüft]",
@@ -7004,7 +7266,9 @@
   {
    "gluon_name": "gl.inet-gl-ar300m-nor",
    "modell": "GL.iNet GL-AR300M NOR",
+   "anzeige": "",
    "target": "ath79-nand",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
    "weg": "OEM-U-Boot-Weboberfläche nimmt NOR-Firmware (sysupgrade) oder NAND-factory.img; ohne serielle Konsole [geprüft]",
@@ -7055,7 +7319,9 @@
   {
    "gluon_name": "gl.inet-gl-ar750s-nor",
    "modell": "GL.iNet GL-AR750S NOR",
+   "anzeige": "",
    "target": "ath79-nand",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
    "weg": "U-Boot-Recovery: Reset beim Einstecken halten bis 5x Blinken, http://192.168.1.1, sysupgrade im NOR-Bereich hochladen [geprüft]",
@@ -7109,7 +7375,9 @@
   {
    "gluon_name": "gl.inet-gl-e750",
    "modell": "GL.iNet GL-E750 (broken)",
+   "anzeige": "",
    "target": "ath79-nand",
+   "gluon_broken": true,
    "kat": "K2",
    "familie": "glinet",
    "weg": "Mit GL-Firmware 3.100 nur über den U-Boot (GL.iNet-Debrick-Anleitung), weil deren sysupgrade den größeren Kernel zerstört [geprüft]; Gluon baut kein factory.img, OpenWrt schon; Zwischenstufe OpenWrt 24.10.8-factory.img über den U-Boot [geprüft: OpenWrt 24.10.8 ath79/nand, Datei in sha256sums gelistet und per HEAD erreichbar, 15.10.2026]",
@@ -7166,7 +7434,9 @@
   {
    "gluon_name": "gl.inet-gl-xe300",
    "modell": "GL.iNet GL-XE300",
+   "anzeige": "",
    "target": "ath79-nand",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "glinet",
    "weg": "U-Boot-Rescue: Reset und Power gleichzeitig halten bis LAN-LED 5x blinkt, http://192.168.1.1, factory-Image hochladen [geprüft]; Gluon baut kein factory.img -> OpenWrt-factory.img als Zwischenschritt [abgeleitet]; Zwischenstufe OpenWrt 24.10.8-factory.img über den U-Boot [geprüft: OpenWrt 24.10.8 ath79/nand, Datei in sha256sums gelistet und per HEAD erreichbar, 15.10.2026]",
@@ -7223,7 +7493,9 @@
   {
    "gluon_name": "netgear-wndr3700-v4",
    "modell": "NETGEAR WNDR3700 v4",
+   "anzeige": "",
    "target": "ath79-nand",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory (.img) im Stock-Web-UI; auch TFTP-Recovery und U-Boot-TFTP [geprüft]",
@@ -7273,7 +7545,9 @@
   {
    "gluon_name": "netgear-wndr4300",
    "modell": "NETGEAR WNDR4300",
+   "anzeige": "",
    "target": "ath79-nand",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory (.img) im Stock-Web-UI; auch TFTP-Recovery und U-Boot-TFTP [geprüft]",
@@ -7323,7 +7597,9 @@
   {
    "gluon_name": "zte-mf281",
    "modell": "ZTE MF281 (broken)",
+   "anzeige": "",
    "target": "ath79-nand",
+   "gluon_broken": true,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "UART, U-Boot unterbrechen, OpenWrt-initramfs per TFTP booten, dann factory per `mtd write ... firmware` [geprüft]",
@@ -7368,7 +7644,9 @@
   {
    "gluon_name": "zte-mf286r",
    "modell": "ZTE MF286R (broken)",
+   "anzeige": "",
    "target": "ath79-nand",
+   "gluon_broken": true,
    "kat": "K1",
    "familie": "sonderweg-zte-mf286r",
    "weg": "Root-Shell über Web-UI-Lücke (URL-Filter `&&telnetd&&`, telnet 4719 admin/admin), Backup, OpenWrt-initramfs mit nandwrite in \"firmware\" schreiben, reboot, sysupgrade; alternativ UART + TFTP [geprüft für MF286A/R, Dateinamen im Commit für MF286A]",
@@ -7406,7 +7684,9 @@
   {
    "gluon_name": "zyxel-nbg6716",
    "modell": "Zyxel NBG6716",
+   "anzeige": "",
    "target": "ath79-nand",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "Commit beschreibt nur den Wechsel von ar71xx und den zloader-Zugang; Weg aus der Stock-Firmware nicht beschrieben [abgeleitet: Web-UI]",
@@ -7455,7 +7735,9 @@
   {
    "gluon_name": "raspberrypi-model-b",
    "modell": "Raspberry Pi 1 Model B/B+",
+   "anzeige": "",
    "target": "bcm27xx-bcm2708",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "image-auf-datentraeger",
    "weg": "Gluon-factory (`.img.gz`) auf die SD-Karte schreiben [geprüft: targets/bcm27xx.inc]",
@@ -7507,7 +7789,9 @@
   {
    "gluon_name": "raspberrypi-2-model-b",
    "modell": "Raspberry Pi 2 Model B",
+   "anzeige": "",
    "target": "bcm27xx-bcm2709",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "image-auf-datentraeger",
    "weg": "Gluon-factory (`.img.gz`) auf die SD-Karte schreiben [geprüft: targets/bcm27xx.inc]",
@@ -7559,7 +7843,9 @@
   {
    "gluon_name": "raspberrypi-3-model-b",
    "modell": "Raspberry Pi 3 Model B/B+",
+   "anzeige": "",
    "target": "bcm27xx-bcm2710",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "image-auf-datentraeger",
    "weg": "Gluon-factory (`.img.gz`) auf die SD-Karte schreiben [geprüft: targets/bcm27xx.inc]",
@@ -7611,7 +7897,9 @@
   {
    "gluon_name": "raspberrypi-4-model-b",
    "modell": "Raspberry Pi 4 Model B",
+   "anzeige": "",
    "target": "bcm27xx-bcm2711",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "image-auf-datentraeger",
    "weg": "Gluon-factory (`.img.gz`) auf die SD-Karte schreiben [geprüft: targets/bcm27xx.inc]",
@@ -7663,7 +7951,9 @@
   {
    "gluon_name": "google-wifi-gale",
    "modell": "Google WiFi (Gale)",
+   "anzeige": "",
    "target": "ipq40xx-chromium",
+   "gluon_broken": true,
    "kat": "K5",
    "familie": "sonderweg-google-wifi-gale",
    "weg": "Chrome-OS-Developer-Mode (laut Gluon nur mit geöffnetem Gehäuse), Boot von USB-Stick, Gluon-factory (GPT-Abbild) auf die eMMC [geprüft: Commit \"requires booting from USB storage\", Gluon-Kommentar]",
@@ -7701,7 +7991,9 @@
   {
    "gluon_name": "8devices-jalapeno",
    "modell": "8devices Jalapeno",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "ssh-stock",
    "weg": "ab Werk ein altes LEDE: `sysupgrade -n -F` mit dem sysupgrade-Image; Gluon-factory `.ubi` für den U-Boot [geprüft]; alte U-Boots brauchen `bootm …#config@1`",
@@ -7744,7 +8036,9 @@
   {
    "gluon_name": "aruba-ap-303",
    "modell": "Aruba AP-303",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "aruba-apboot",
    "weg": "serielle apboot-Konsole: bootargs/nandboot/ramboot setzen, initramfs als `ipq40xx.ari` per netget booten, `ubidetach/ubiformat /dev/mtd1`, `sysupgrade -n` [geprüft]; bei gesperrtem apboot siehe Instant On AP11",
@@ -7791,7 +8085,9 @@
   {
    "gluon_name": "aruba-ap-303h",
    "modell": "Aruba AP-303H",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "aruba-apboot",
    "weg": "wie AP-303, TFTP nur über Port E0 (WAN), danach `ubiformat /dev/mtd16`, `sysupgrade -n` [geprüft]",
@@ -7839,7 +8135,9 @@
   {
    "gluon_name": "aruba-ap-365",
    "modell": "Aruba AP-365",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "aruba-apboot",
    "weg": "wie AP-303 (apboot, ipq40xx.ari per netget, `ubiformat` der Partition \"ubi\", `sysupgrade -n`) [geprüft]",
@@ -7885,7 +8183,9 @@
   {
    "gluon_name": "aruba-instant-on-ap11",
    "modell": "Aruba Instant On AP11 (Alias von aruba-ap-303)",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K5",
    "familie": "sonderweg-aruba-instant-on-ap11",
    "weg": "apboot-Environment gesperrt: entsperrtes apboot aus einem gepatchten SPI-Dump per dd schneiden (bs=983040 skip=1 count=1), per `netget` laden, `sf protect off; sf erase/write 0xf0000 0xf0000`, reset; danach wie AP-303 [geprüft: Neanderfunk-Notiz zum AP11, 2024]",
@@ -7923,7 +8223,9 @@
   {
    "gluon_name": "aruba-instant-on-ap11d",
    "modell": "Aruba Instant On AP11D (Alias von aruba-ap-303h)",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "aruba-apboot",
    "weg": "wie AP-303H; ob das apboot gesperrt ist wie beim AP11: ? [abgeleitet]",
@@ -7968,7 +8270,9 @@
   {
    "gluon_name": "aruba-instant-on-ap17",
    "modell": "Aruba Instant On AP17 (Alias von aruba-ap-365)",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "aruba-apboot",
    "weg": "wie AP-365; apboot-Sperre wie beim AP11: ? [abgeleitet]",
@@ -8012,7 +8316,9 @@
   {
    "gluon_name": "asus-lyra-map-ac2200",
    "modell": "ASUS Lyra MAP-AC2200",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "sonderweg-asus-lyra-map-ac2200",
    "weg": "SSH in die Stock-Firmware (Zugang wie Web-UI), OpenWrt-initramfs nach /tmp, `mtd-write -d linux -i …`, Neustart, dann sysupgrade [geprüft]",
@@ -8059,7 +8365,9 @@
   {
    "gluon_name": "avm-fritz-box-4040",
    "modell": "AVM FRITZ!Box 4040",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "avm-eva-ftp",
    "weg": "AVM-EVA (FTP im Bootloader) nimmt das Gluon-`-bootloader.bin` (OpenWrt-U-Boot + Gluon, OpenWrt eva.bin) [geprüft: 70e6ea31]",
@@ -8106,7 +8414,9 @@
   {
    "gluon_name": "avm-fritz-box-7520",
    "modell": "AVM FRITZ!Box 7520 (Alias von avm-fritz-box-7530)",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "avm-eva-uboot",
    "weg": "wie 7530, mit eigenem U-Boot uboot-fritz7520.bin [geprüft: Download-Liste 24.10.8]; TFTP-Dateiname: ? [abgeleitet]",
@@ -8155,7 +8465,9 @@
   {
    "gluon_name": "avm-fritz-box-7530",
    "modell": "AVM FRITZ!Box 7530",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "avm-eva-uboot",
    "weg": "`eva_ramboot.py` (OpenWrt scripts/flashing) lädt den OpenWrt-U-Boot per EVA-FTP in den RAM; der holt das initramfs per TFTP; im initramfs U-Boot nach uboot0/uboot1 schreiben, `ubirmvol` avm_filesys_0/1, `sysupgrade -n` [geprüft]",
@@ -8204,7 +8516,9 @@
   {
    "gluon_name": "avm-fritz-repeater-1200",
    "modell": "AVM FRITZ!Repeater 1200",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "avm-eva-uboot",
    "weg": "`eva_ramboot.py` (OpenWrt scripts/flashing) lädt den OpenWrt-U-Boot per EVA-FTP in den RAM; der holt das initramfs per TFTP; im initramfs U-Boot nach uboot0/uboot1 schreiben, `ubirmvol` avm_filesys_0/1, `sysupgrade -n` [geprüft]",
@@ -8253,7 +8567,9 @@
   {
    "gluon_name": "avm-fritz-repeater-3000",
    "modell": "AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet)",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": true,
    "kat": "K2",
    "familie": "avm-eva-uboot",
    "weg": "`eva_ramboot.py` (OpenWrt scripts/flashing) lädt den OpenWrt-U-Boot per EVA-FTP in den RAM; der holt das initramfs per TFTP; im initramfs U-Boot nach uboot0/uboot1 schreiben, `ubirmvol` avm_filesys_0/1, `sysupgrade -n` [geprüft]",
@@ -8302,7 +8618,9 @@
   {
    "gluon_name": "extreme-networks-ws-ap3915i",
    "modell": "Extreme Networks WS-AP3915i",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "Konsole, Autoboot mit \"s\" abbrechen, Login admin/new2day, ramboot/boot_openwrt/bootcmd setzen, initramfs per TFTP, `sysupgrade -n` [geprüft]",
@@ -8348,7 +8666,9 @@
   {
    "gluon_name": "gl.inet-gl-ap1300",
    "modell": "GL.iNet GL-AP1300",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "glinet",
    "weg": "Gluon-factory (`.ubi`) über die U-Boot-Web-Failsafe (Reset 10 s, bis die Power-LED schneller blinkt) oder U-Boot-TFTP `run lf` [geprüft]",
@@ -8400,7 +8720,9 @@
   {
    "gluon_name": "gl.inet-gl-b1300",
    "modell": "GL.iNet GL-B1300",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
    "weg": "GL.iNet-U-Boot-Web (Reset beim Einschalten, bis drei LEDs leuchten) nimmt das sysupgrade, umbenannt in lede-gl-b1300.bin; liegt die Datei auf einem TFTP-Server 192.168.1.2, holt der U-Boot sie selbst [geprüft: Commit von 2017, ob neuere U-Boots denselben Namen erwarten: offen]",
@@ -8453,7 +8775,9 @@
   {
    "gluon_name": "linksys-ea6350v3",
    "modell": "Linksys EA6350 v3",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "Gluon-factory über die Linksys-Smart-WiFi-UI (Connectivity > Manual update) [geprüft]",
@@ -8502,7 +8826,9 @@
   {
    "gluon_name": "linksys-ea8300-dallas",
    "modell": "Linksys EA8300",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "sonderweg-linksys-ea8300",
    "weg": "OpenWrt-22.03.6-factory über die Linksys-UI, dort per SSH `fw_setenv kernsize 500000`, dann Gluon-factory in LuCI mit \"Force upgrade\" [geprüft: Wiki toh:linksys:ea8300; Gluon-Teil abgeleitet]; Gluon-factory direkt über die Linksys-UI macht das Gerät unbrauchbar [geprüft: Wiki toh:linksys:ea8300]",
@@ -8551,7 +8877,9 @@
   {
    "gluon_name": "linksys-mr8300-dallas",
    "modell": "Linksys MR8300",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "sonderweg-linksys-mr8300-dallas",
    "weg": "Linksys-UI (https://192.168.1.1/fwupdate.html) nimmt ein factory-Image [geprüft]; Gluon setzt aber `factory = false` (ohne Begründung im Gluon-Commit d04ea647), also heute OpenWrt-factory als Zwischenschritt, dann Gluon-sysupgrade",
@@ -8596,7 +8924,9 @@
   {
    "gluon_name": "linksys-vlp01",
    "modell": "Linksys VLP01 (Alias von linksys-whw01)",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "wie WHW01 [abgeleitet: Alias]",
@@ -8644,7 +8974,9 @@
   {
    "gluon_name": "linksys-whw01",
    "modell": "Linksys WHW01 v1 (Velop)",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "Gluon-factory über die Linksys-UI im Support-Modus (\"CA\"-Link) [geprüft: Abruf 10.10.2026, Wiki toh:linksys:whw01_v1]; der OpenWrt-Commit kennt nur UART + TFTP (Server 192.168.1.236, Datei nodes-jr.img, `run flashimg`/`flashimg2`) [geprüft]",
@@ -8692,7 +9024,9 @@
   {
    "gluon_name": "linksys-whw03-v2-velop",
    "modell": "Linksys WHW03 v2 (Velop)",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "Gluon-factory über http://192.168.1.1/ca (Support-Modus), Connectivity [geprüft]",
@@ -8743,7 +9077,9 @@
   {
    "gluon_name": "linksys-whw03-velop",
    "modell": "Linksys WHW03 v1 (Velop)",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "Gluon-factory über die Linksys-UI im Support-Modus (Link \"CA\" unten), Connectivity > Choose file [geprüft]",
@@ -8794,7 +9130,9 @@
   {
    "gluon_name": "meraki-mr33-access-point",
    "modell": "Cisco Meraki MR33",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": true,
    "kat": "K5",
    "familie": "sonderweg-meraki-mr33-access-point",
    "weg": "Gehäuse öffnen, UART; `ubootwrite.py` (gepatcht) lädt einen modifizierten U-Boot (mr33-uboot.bin, 250-300 s), dann das sysupgrade per `tftp put` an den U-Boot [geprüft]; laut Gluon-Kommentar bricken neuere Bootloader-Versionen den SoC irreversibel",
@@ -8832,7 +9170,9 @@
   {
    "gluon_name": "netgear-ex6100v2",
    "modell": "NETGEAR EX6100 v2",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "Gluon-factory (`.img`) über die Netgear-Web-UI (ggf. zweite Bestätigung wegen \"älterer\" Version) [geprüft]",
@@ -8880,7 +9220,9 @@
   {
    "gluon_name": "netgear-ex6150v2",
    "modell": "NETGEAR EX6150 v2",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "Gluon-factory (`.img`) über die Netgear-Web-UI (ggf. zweite Bestätigung wegen \"älterer\" Version) [geprüft]",
@@ -8928,7 +9270,9 @@
   {
    "gluon_name": "netgear-rbr50",
    "modell": "NETGEAR Orbi RBR50 v1",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "netgear-nmrp",
    "weg": "Gluon-factory (`.img`) läuft nur auf Boot-Partition 1, die Netgear-UI schreibt immer in die andere: entweder nmrpflash beim Einschalten, oder Telnet über debug.htm einschalten, `artmtd -w boot_part 02`, Neustart, dann Web-UI [geprüft]",
@@ -8980,7 +9324,9 @@
   {
    "gluon_name": "netgear-rbs50",
    "modell": "NETGEAR Orbi RBS50 v1",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "netgear-nmrp",
    "weg": "Gluon-factory (`.img`) läuft nur auf Boot-Partition 1, die Netgear-UI schreibt immer in die andere: entweder nmrpflash beim Einschalten, oder Telnet über debug.htm einschalten, `artmtd -w boot_part 02`, Neustart, dann Web-UI [geprüft]",
@@ -9032,7 +9378,9 @@
   {
    "gluon_name": "netgear-srr60",
    "modell": "NETGEAR Orbi Pro SRR60",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "netgear-nmrp",
    "weg": "Gluon-factory (`.img`) läuft nur auf Boot-Partition 1, die Netgear-UI schreibt immer in die andere: entweder nmrpflash beim Einschalten, oder Telnet über debug.htm einschalten, `artmtd -w boot_part 02`, Neustart, dann Web-UI [geprüft]",
@@ -9084,7 +9432,9 @@
   {
    "gluon_name": "netgear-srs60",
    "modell": "NETGEAR Orbi Pro SRS60",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "netgear-nmrp",
    "weg": "Gluon-factory (`.img`) läuft nur auf Boot-Partition 1, die Netgear-UI schreibt immer in die andere: entweder nmrpflash beim Einschalten, oder Telnet über debug.htm einschalten, `artmtd -w boot_part 02`, Neustart, dann Web-UI [geprüft]",
@@ -9136,7 +9486,9 @@
   {
    "gluon_name": "openmesh-a42",
    "modell": "OpenMesh A42",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "ap51-flash",
    "weg": "ap51-flash schiebt das Gluon-factory beim Einschalten in den U-Boot [geprüft]",
@@ -9184,7 +9536,9 @@
   {
    "gluon_name": "openmesh-a62",
    "modell": "OpenMesh A62",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "ap51-flash",
    "weg": "ap51-flash schiebt das Gluon-factory beim Einschalten in den U-Boot [geprüft]",
@@ -9232,7 +9586,9 @@
   {
    "gluon_name": "plasma-cloud-pa1200",
    "modell": "Plasma Cloud PA1200",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "ap51-flash",
    "weg": "ap51-flash schiebt das Gluon-factory beim Einschalten in den U-Boot [geprüft]",
@@ -9279,7 +9635,9 @@
   {
    "gluon_name": "plasma-cloud-pa2200",
    "modell": "Plasma Cloud PA2200",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "ap51-flash",
    "weg": "ap51-flash schiebt das Gluon-factory beim Einschalten in den U-Boot [geprüft]",
@@ -9326,7 +9684,9 @@
   {
    "gluon_name": "zte-mf289f",
    "modell": "ZTE MF289F",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": true,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "Gehäuse öffnen, UART, U-Boot (ESC), initramfs per TFTP, Backup mtd16/mtd17, `ubirmvol` ubi_rootfs(_data), `sysupgrade -n` [geprüft]",
@@ -9374,7 +9734,9 @@
   {
    "gluon_name": "zyxel-nbg6617",
    "modell": "Zyxel NBG6617",
+   "anzeige": "",
    "target": "ipq40xx-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "Gluon-factory über die Zyxel-Web-UI (Expert Mode > Maintenance > Firmware-Upgrade, Passwort 1234) [geprüft]",
@@ -9424,7 +9786,9 @@
   {
    "gluon_name": "mikrotik-discg-5acd",
    "modell": "MikroTik DISC Lite5 ac (Alias von mikrotik-sxtsq-5-ac-rbsxtsqg-5acd)",
+   "anzeige": "",
    "target": "ipq40xx-mikrotik",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "mikrotik-netboot",
    "weg": "wie SXTsq 5 ac [abgeleitet: Alias]",
@@ -9471,7 +9835,9 @@
   {
    "gluon_name": "mikrotik-hap-ac2",
    "modell": "MikroTik hAP ac2 (RBD52G-5HacD2HnD)",
+   "anzeige": "",
    "target": "ipq40xx-mikrotik",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "mikrotik-netboot",
    "weg": "RouterBOOT-Netboot (BOOTP/DHCP + TFTP) bootet das initramfs, danach sysupgrade; das sysupgrade löscht bei tmpfs-root die Partition `firmware` selbst [geprüft: Commit, platform.sh]; Gluons \"factory\" ist hier selbst ein initramfs (mikrotik.inc)",
@@ -9518,7 +9884,9 @@
   {
    "gluon_name": "mikrotik-sxtsq-5-ac-rbsxtsqg-5acd",
    "modell": "MikroTik SXTsq 5 ac (RBSXTsqG-5acD)",
+   "anzeige": "",
    "target": "ipq40xx-mikrotik",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "mikrotik-netboot",
    "weg": "RouterBOOT-Netboot (BOOTP/DHCP + TFTP) bootet das initramfs, danach sysupgrade; das sysupgrade löscht bei tmpfs-root die Partition `firmware` selbst [geprüft: Commit, platform.sh]; Gluon liefert hier kein initramfs (`factory = false`)",
@@ -9565,7 +9933,9 @@
   {
    "gluon_name": "mikrotik-wap-ac",
    "modell": "MikroTik wAP ac (RBwAPG-5HacD2HnD, ipq40xx)",
+   "anzeige": "",
    "target": "ipq40xx-mikrotik",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "mikrotik-netboot",
    "weg": "RouterBOOT-Netboot (BOOTP/DHCP + TFTP) bootet das initramfs, danach sysupgrade; das sysupgrade löscht bei tmpfs-root die Partition `firmware` selbst [geprüft: Commit, platform.sh]; Gluon liefert hier kein initramfs (`factory = false`)",
@@ -9612,7 +9982,9 @@
   {
    "gluon_name": "aruba-ap-32x",
    "modell": "Aruba AP-324/AP-325, Siemens Scalance W1750D",
+   "anzeige": "",
    "target": "ipq806x-generic",
+   "gluon_broken": false,
    "kat": "K5",
    "familie": "sonderweg-aruba-ap-32x",
    "weg": "Stock-APBoot signiert-prüfend: gepatchtes APBoot (`apboot.mbn`) per `netget` laden, `sf erase/write 0x220000 0x100000`; NAND löschen, UBI `ubifs` (1 LEB) + `rootfs_data` anlegen; initramfs `.ari` per tftpboot; sysupgrade [geprüft]",
@@ -9660,7 +10032,9 @@
   {
    "gluon_name": "extreme-networks-ap3935",
    "modell": "Extreme Networks AP3935i/e",
+   "anzeige": "",
    "target": "ipq806x-generic",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "Konsole, Autoboot abbrechen, Login admin/new2day, serverip/ipaddr setzen, bootcmd \"ping …; run boot_flash\", initramfs per TFTP nach 0x42000000, bootm, sysupgrade nand-sysupgrade [geprüft]",
@@ -9706,7 +10080,9 @@
   {
    "gluon_name": "netgear-nighthawk-x4s-r7800",
    "modell": "NETGEAR Nighthawk X4S R7800",
+   "anzeige": "",
    "target": "ipq806x-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "Gluon-factory (`.img`) über die Netgear-Web-UI [abgeleitet: Image-Rezept DniImage, Commit ohne Text]",
@@ -9753,7 +10129,9 @@
   {
    "gluon_name": "tp-link-archer-c2600",
    "modell": "TP-Link Archer C2600 v1",
+   "anzeige": "",
    "target": "ipq806x-generic",
+   "gluon_broken": true,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "Gluon-factory (safeloader) über die TP-Link-Web-UI [abgeleitet: Image-Rezept TpSafeImage, Commit ohne Text]; Gluon: broken",
@@ -9819,7 +10197,9 @@
   {
    "gluon_name": "ubiquiti-unifi-ac-hd",
    "modell": "Ubiquiti UniFi AC HD",
+   "anzeige": "",
    "target": "ipq806x-generic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ubiquiti-unifi-ssh",
    "weg": "SSH (ubnt/ubnt), Byte 7 von `bootselect` (mtd11) nullen, sysupgrade per dd nach `kernel0` (mtdblock12), Neustart [geprüft]",
@@ -9882,7 +10262,9 @@
   {
    "gluon_name": "arcadyan-vgv7510kw22",
    "modell": "Arcadyan VGV7510KW22 / o2 Box 6431 (NOR-Image)",
+   "anzeige": "",
    "target": "lantiq-xrx200",
+   "gluon_broken": false,
    "kat": "K5",
    "familie": "sonderweg-arcadyan-vgv7510kw22",
    "weg": "Bootloader ersetzen: brnboot-Recovery-Web (Reset beim Einschalten ~5 s, http://192.168.1.1) oder seriell U-Boot in den RAM, dann OpenWrt-U-Boot (u-boot-vgv7510kw22_nor/u-boot.bin) per TFTP in den NOR, dann sysupgrade per TFTP; das nor-Image setzt OpenWrt-U-Boot voraus [abgeleitet: Wiki; Commit ohne Text]",
@@ -9920,7 +10302,9 @@
   {
    "gluon_name": "avm-fritz-box-3370-rev-2-hynix-nand",
    "modell": "AVM FRITZ!Box 3370 Rev. 2, Hynix-NAND (Gluon: broken)",
+   "anzeige": "",
    "target": "lantiq-xrx200",
+   "gluon_broken": true,
    "kat": "K1d",
    "familie": "avm-eva-ftp",
    "weg": "EVA-FTP in den ersten Sekunden nach dem Einschalten: adam2/adam2, `SETENV linux_fs_start 0`, `MEDIA FLSH`, eva-kernel.bin nach mtd1, eva-filesystem.bin nach mtd0; Gluon baut beide (other/). Bei EVA 2186 Reboot nach 30 s [geprüft]",
@@ -9967,7 +10351,9 @@
   {
    "gluon_name": "avm-fritz-box-3370-rev-2-micron-nand",
    "modell": "AVM FRITZ!Box 3370 Rev. 2, Micron-NAND (Gluon: broken)",
+   "anzeige": "",
    "target": "lantiq-xrx200",
+   "gluon_broken": true,
    "kat": "K1d",
    "familie": "avm-eva-ftp",
    "weg": "EVA-FTP in den ersten Sekunden nach dem Einschalten: adam2/adam2, `SETENV linux_fs_start 0`, `MEDIA FLSH`, eva-kernel.bin nach mtd1, eva-filesystem.bin nach mtd0; Gluon baut beide (other/). Bei EVA 2186 Reboot nach 30 s [geprüft]",
@@ -10014,7 +10400,9 @@
   {
    "gluon_name": "avm-fritz-box-3390",
    "modell": "AVM FRITZ!Box 3390",
+   "anzeige": "",
    "target": "lantiq-xrx200",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "avm-eva-ramboot",
    "weg": "EVA-Ramboot: `scripts/flashing/eva_ramboot.py` lädt das initramfs in den RAM, dann sysupgrade per scp [geprüft]",
@@ -10060,7 +10448,9 @@
   {
    "gluon_name": "avm-fritz-box-7360-sl",
    "modell": "AVM FRITZ!Box 7360 SL (Alias 7360 v1)",
+   "anzeige": "",
    "target": "lantiq-xrx200",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "avm-eva-ftp",
    "weg": "ADAM2/EVA-FTP: `quote GETENV HWRevision` (181 = SL, 183 = v1), `bin`, `quote MEDIA FLSH`, sysupgrade nach mtd1 [abgeleitet: Wiki; Commit ohne Text]",
@@ -10109,7 +10499,9 @@
   {
    "gluon_name": "avm-fritz-box-7360-v2",
    "modell": "AVM FRITZ!Box 7360 v2",
+   "anzeige": "",
    "target": "lantiq-xrx200",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "avm-eva-ftp",
    "weg": "ADAM2-FTP in den ersten 5 s: adam2/adam2, passive, binary, `quote MEDIA FLSH`, sysupgrade nach mtd1, warten bis die rote LED aus ist [geprüft]",
@@ -10158,7 +10550,9 @@
   {
    "gluon_name": "avm-fritz-box-7362-sl",
    "modell": "AVM FRITZ!Box 7362 SL",
+   "anzeige": "",
    "target": "lantiq-xrx200",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "avm-eva-ramboot",
    "weg": "EVA-Ramboot: `eva_ramboot.py 192.168.178.1 <initramfs>` kurz nach dem Einschalten; das initramfs muss lzma-komprimiert sein (Bootloader hängt sonst); dann sysupgrade per scp [geprüft]",
@@ -10204,7 +10598,9 @@
   {
    "gluon_name": "avm-fritz-box-7412",
    "modell": "AVM FRITZ!Box 7412",
+   "anzeige": "",
    "target": "lantiq-xrx200",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "avm-eva-ramboot",
    "weg": "EVA-Ramboot: `eva_ramboot.py 192.168.178.1 <initramfs>` kurz nach dem Einschalten; das initramfs muss lzma-komprimiert sein (Bootloader hängt sonst); dann sysupgrade per scp [geprüft]; vor sysupgrade `linux_fs_start` prüfen; Ersatzadresse 169.254.120.1",
@@ -10251,7 +10647,9 @@
   {
    "gluon_name": "avm-fritz-box-7430",
    "modell": "AVM FRITZ!Box 7430",
+   "anzeige": "",
    "target": "lantiq-xrx200",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "avm-eva-ramboot",
    "weg": "EVA-Ramboot: `eva_ramboot.py 192.168.178.1 <initramfs>` kurz nach dem Einschalten; das initramfs muss lzma-komprimiert sein (Bootloader hängt sonst); dann sysupgrade per scp [geprüft]; vor sysupgrade `linux_fs_start` prüfen; Ersatzadresse 169.254.120.1",
@@ -10298,7 +10696,9 @@
   {
    "gluon_name": "tp-link-td-w8970",
    "modell": "TP-Link TD-W8970 v1",
+   "anzeige": "",
    "target": "lantiq-xrx200_legacy",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "sonderweg-tp-link-td-w8970",
    "weg": "Ohne Öffnen: Shell per Injection (SSID `telnetd -p 1023 -l login` oder manipulierte Konfig \"StatPost\"), Image aus der Shell schreiben; Wiki: dafür OpenWrt 15.05 als Zwischenstufe. Mit Öffnen: seriell `t`, TFTP, `sf erase/write` sysupgrade [abgeleitet: Wiki]",
@@ -10336,7 +10736,9 @@
   {
    "gluon_name": "tp-link-td-w8980",
    "modell": "TP-Link TD-W8980 (Alias TD-W9980; Gluon: broken, 5 GHz)",
+   "anzeige": "",
    "target": "lantiq-xrx200_legacy",
+   "gluon_broken": true,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "Seriell: `t` beim Booten, TFTP, `sf erase 0x20000 0x7a0000`, sysupgrade schreiben; Web-UI nur bei Stock vor 12.10.2013; Shell-Injection wie TD-W9980 [abgeleitet: Wiki]",
@@ -10381,7 +10783,9 @@
   {
    "gluon_name": "avm-fritz-box-7312",
    "modell": "AVM FRITZ!Box 7312",
+   "anzeige": "",
    "target": "lantiq-xway",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "avm-eva-ftp",
    "weg": "EVA-FTP in den ersten Sekunden: adam2/adam2, binary, passive, `quote MEDIA FLSH`, sysupgrade nach mtd1, `quote REBOOT` [geprüft]",
@@ -10429,7 +10833,9 @@
   {
    "gluon_name": "netgear-dgn3500b",
    "modell": "NETGEAR DGN3500B",
+   "anzeige": "",
    "target": "lantiq-xway",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory.img im Stock-Web-UI oder im Sercomm-Bootmodus mit Windows-Werkzeug (Upgrade_207_XP) [geprüft]",
@@ -10476,7 +10882,9 @@
   {
    "gluon_name": "asus-rt-ax52",
    "modell": "ASUS RT-AX52",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "sonderweg-asus-rt-ax52",
    "weg": "Stock-Web-UI (Administration > Firmware Upgrade) nimmt das OpenWrt-`initramfs.trx`, danach `sysupgrade -n` [geprüft]",
@@ -10520,7 +10928,9 @@
   {
    "gluon_name": "asus-rt-ax59u",
    "modell": "ASUS RT-AX59U",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "sonderweg-asus-rt-ax59u",
    "weg": "Stock-Web-UI (192.168.50.1) mit einem Fremd-\"transit TRX\" von Google Drive oder UART + TFTP-initramfs [geprüft]",
@@ -10565,7 +10975,9 @@
   {
    "gluon_name": "asus-tuf-ax4200",
    "modell": "ASUS TUF-AX4200",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "asus-tuf-herbetom",
    "weg": "OpenWrt-Commit nennt nur UART + TFTP-initramfs [geprüft]; ohne UART: SSH in die Stock-Firmware, Sonderbau \"factory-initramfs\" (herbetom) per wget holen und mit `mtd-write -d linux` schreiben, dann sysupgrade [geprüft: Release-Text herbetom filogic-v2]",
@@ -10616,7 +11028,9 @@
   {
    "gluon_name": "asus-tuf-ax6000",
    "modell": "ASUS TUF-AX6000",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "asus-tuf-herbetom",
    "weg": "wie TUF-AX4200: SSH + mtd-write des herbetom-Sonderbaus [geprüft: Release-Text], oder UART + TFTP-initramfs [geprüft]",
@@ -10667,7 +11081,9 @@
   {
    "gluon_name": "cudy-ap3000-outdoor-v1",
    "modell": "Cudy AP3000 Outdoor v1",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88",
@@ -10731,7 +11147,9 @@
   {
    "gluon_name": "cudy-ap3000-v1",
    "modell": "Cudy AP3000 v1",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; Zwischenfirmware laut Commit nur per Mail an support@cudy.com, im Spiegel die vom Support erhaltene Datei; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88",
@@ -10794,7 +11212,9 @@
   {
    "gluon_name": "cudy-ap3000-wall-v1",
    "modell": "Cudy AP3000 Wall v1",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]",
@@ -10858,7 +11278,9 @@
   {
    "gluon_name": "cudy-m3000-v1",
    "modell": "Cudy M3000 v1 (RTL8221B)",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; Commit (2024) nennt nur UART, die Zwischenfirmware kam später; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88",
@@ -10922,7 +11344,9 @@
   {
    "gluon_name": "cudy-m3000-v2-with-motorcomm-yt8821",
    "modell": "Cudy M3000 v2 mit Motorcomm YT8821",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; vorher im Cudy-Systemlog nach \"yt8821\" bzw. \"rtl8221b\" suchen, um v1/v2 zu unterscheiden [geprüft]",
@@ -10986,7 +11410,9 @@
   {
    "gluon_name": "cudy-re3000-v1",
    "modell": "Cudy RE3000 v1",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; Commit nennt nur UART (Stecker unter dem Kühlkörper); alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88",
@@ -11049,7 +11475,9 @@
   {
    "gluon_name": "cudy-tr3000-256mb-v1",
    "modell": "Cudy TR3000 256 MB v1",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; Zwischenfirmware laut Commit von Cudy CN; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88",
@@ -11112,7 +11540,9 @@
   {
    "gluon_name": "cudy-tr3000-v1",
    "modell": "Cudy TR3000 v1 (128 MB Flash)",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "UART + TFTP-initramfs (Reset beim Einschalten 5 s halten, U-Boot-Shell), dann sysupgrade [geprüft]; eine Cudy-Zwischenfirmware fehlt im Spiegel und bei Cudy (Stand Neanderfunk-Notiz 08.10.2026), sonst wäre es K2",
@@ -11158,7 +11588,9 @@
   {
    "gluon_name": "cudy-wr3000-v1",
    "modell": "Cudy WR3000 v1",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; Commit (2023) nennt nur UART, TFTP-Server 192.168.1.2, Datei cudy3000.bin; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88",
@@ -11221,7 +11653,9 @@
   {
    "gluon_name": "cudy-wr3000e-v1",
    "modell": "Cudy WR3000E v1",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88",
@@ -11284,7 +11718,9 @@
   {
    "gluon_name": "cudy-wr3000h-v1",
    "modell": "Cudy WR3000H v1",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88",
@@ -11347,7 +11783,9 @@
   {
    "gluon_name": "cudy-wr3000p-v1",
    "modell": "Cudy WR3000P v1",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88",
@@ -11410,7 +11848,9 @@
   {
    "gluon_name": "cudy-wr3000s-v1",
    "modell": "Cudy WR3000S v1",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88",
@@ -11473,7 +11913,9 @@
   {
    "gluon_name": "cudy-wr3000u-v1",
    "modell": "Cudy WR3000U v1",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; alternativ UART + TFTP (192.168.1.88) [geprüft]",
@@ -11536,7 +11978,9 @@
   {
    "gluon_name": "d-link-aquila-pro-ai-m30-a1",
    "modell": "D-Link AQUILA PRO AI M30 A1",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "dlink-recovery-web",
    "weg": "D-Link-Web-Recovery (Reset beim Einschalten halten, bis die LED rot blinkt) nimmt `squashfs-recovery.bin` (initramfs mit D-Link-Header DLK6E6110001); schreibt in die aktive Partition, OpenWrt bootet nur aus der ersten [geprüft]",
@@ -11604,7 +12048,9 @@
   {
    "gluon_name": "d-link-aquila-pro-ai-m60-a1",
    "modell": "D-Link AQUILA PRO AI M60 A1",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "dlink-recovery-web",
    "weg": "D-Link-Web-Recovery nimmt `squashfs-recovery.bin` (initramfs mit Header DLK6E8202001) [geprüft, am Gerät 29./30.09.2026 erprobt]; bei aktiver zweiter Partition vorher das UBI-Switch-Image",
@@ -11675,7 +12121,9 @@
   {
    "gluon_name": "gl.inet-gl-mt2500",
    "modell": "GL.iNet GL-MT2500 (MaxLinear-PHY)",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
    "weg": "GL.iNet-Stock-UI nimmt das OpenWrt-/Gluon-sysupgrade direkt (ohne Einstellungen) [geprüft]; die U-Boot-Recovery nimmt laut Commit keine Images. Neue HW-Revision mit Airoha-PHY hat in OpenWrt ein eigenes Profil `glinet_gl-mt2500-airoha`, das Gluon nicht führt [geprüft: 24.10.8-Liste]",
@@ -11723,7 +12171,9 @@
   {
    "gluon_name": "gl.inet-gl-mt3000",
    "modell": "GL.iNet GL-MT3000",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
    "weg": "GL.iNet-Stock-UI bzw. U-Boot-Web-Failsafe nimmt das sysupgrade direkt [abgeleitet: Commit ohne Installationsabschnitt, gluon-rampe-installer docs/GERAETE.md]",
@@ -11773,7 +12223,9 @@
   {
    "gluon_name": "gl.inet-gl-mt6000",
    "modell": "GL.iNet GL-MT6000",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
    "weg": "GL.iNet-Stock-UI nimmt das sysupgrade direkt [abgeleitet: Commit-Text Patch-Repo 8dbae18]; OpenWrts `squashfs-factory.bin` ist nur für den OpenWrt-U-Boot [geprüft]",
@@ -11824,7 +12276,9 @@
   {
    "gluon_name": "mercusys-mr80x-v3",
    "modell": "Mercusys MR80X v3",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "UART: Boot mit Ctrl-C abbrechen, `setenv tp_boot_idx 0; setenv bootcmd bootm 0x46000000; saveenv` (bootarg ggf. von ubi1 auf ubi0), initramfs per TFTP laden und booten, dann `sysupgrade -n` [geprüft: Commit]; ob der SSH-/Telnet-Weg des MR90X auch hier geht, ist nicht belegt",
@@ -11870,7 +12324,9 @@
   {
    "gluon_name": "mercusys-mr90x-v1",
    "modell": "Mercusys MR90X v1",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "sonderweg-mercusys-mr90x-v1",
    "weg": "SSH in die Stock-Firmware (Port 20001, Web-Passwort), telnet-Hintertür über /etc/hotplug.d/iface/65-iptv + IPTV-Schalter, fremdes busybox-arm64 für `ubiupdatevol`, initramfs ins UBI-Volume `kernel`, `fw_setenv` (u. a. tp_boot_idx 0), Neustart, `sysupgrade -n` [geprüft: Commit, Wiki toh:mercusys:mr90x_v1]",
@@ -11908,7 +12364,9 @@
   {
    "gluon_name": "netgear-wax220",
    "modell": "NETGEAR WAX220",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "Gluon-factory (`.img`, verschlüsselt) über die Stock-Web-UI [abgeleitet: Image-Rezept \"Padding … required by OEM web interface\"; Commit nennt nur UART]",
@@ -11955,7 +12413,9 @@
   {
    "gluon_name": "openwrt-one",
    "modell": "OpenWrt One",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "ab Werk OpenWrt: Gluon-sysupgrade (`.itb`) über LuCI/sysupgrade; Gluon-factory `.ubi` für die Neuinstallation über den NOR-U-Boot (Bootschalter) [abgeleitet: Image-Rezept, Commit ohne Installationsabschnitt]",
@@ -12005,7 +12465,9 @@
   {
    "gluon_name": "ubiquiti-unifi-6-plus",
    "modell": "Ubiquiti UniFi 6+ (U6+)",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ubiquiti-unifi-ssh",
    "weg": "SSH (ubnt/ubnt), Kernel-Partitionen per `/proc/ubnthal/.uf` entsperren, `fw_setenv` boot_openwrt/bootcmd_real, kernel und root aus dem sysupgrade-tar per dd nach mmcblk0p6/p7, Bootflag in mmcblk0p8 [geprüft]",
@@ -12076,7 +12538,9 @@
   {
    "gluon_name": "wavlink-wl-wn573hx3",
    "modell": "WAVLINK WL-WN573HX3 / 7Links WLR-1300",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "sonderweg-wavlink-wl-wn573hx3",
    "weg": "versteckte Seite der Stock-UI (meshUpgrade.html, Einrichtungsassistent überspringen) nimmt das `WN573HX3-sysupgrade.bin`, danach Werkseinstellungen [geprüft]",
@@ -12121,7 +12585,9 @@
   {
    "gluon_name": "xiaomi-mi-router-ax3000t",
    "modell": "Xiaomi Mi Router AX3000T",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "sonderweg-xiaomi-mi-router-ax3000t",
    "weg": "Stock 1.0.47: SSH per Befehlseinschleusung in die API `misystem/arn_switch` (curl mit stok), Backup per nanddump, `initramfs-factory.ubi` per `ubiformat` in die inaktive ubi-Partition + nvram-Flags, Neustart, `sysupgrade -n` [geprüft]",
@@ -12159,7 +12625,9 @@
   {
    "gluon_name": "xiaomi-mi-router-ax3000t-openwrt-u-boot-layout",
    "modell": "Xiaomi Mi Router AX3000T (OpenWrt-U-Boot-Layout)",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K3",
    "familie": "sonderweg-xiaomi-mi-router-ax3000t-openwrt-u-boot-layout",
    "weg": "wie AX3000T bis zum initramfs, dann kmod-mtd-rw, UBI neu anlegen (ubootenv, ubootenv2, optional recovery) und OpenWrt-Bootloader (preloader.bin, bl31-uboot.fip) per `mtd write` nach BL2/FIP [geprüft]",
@@ -12197,7 +12665,9 @@
   {
    "gluon_name": "zyxel-nwa50ax-pro",
    "modell": "Zyxel NWA50AX Pro",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "Gluon-factory über die Zyxel-Web-UI; vorher muss Slot B aktiv sein, sonst bootet OpenWrt nur einmal (dann erst ein Zyxel-Update einspielen) [geprüft]",
@@ -12249,7 +12719,9 @@
   {
    "gluon_name": "zyxel-nwa90ax-pro",
    "modell": "Zyxel NWA90AX Pro (Alias von zyxel-nwa50ax-pro)",
+   "anzeige": "",
    "target": "mediatek-filogic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "wie NWA50AX Pro; Factory braucht compat-model 81e1, im Backport enthalten [geprüft: Patch 0003]",
@@ -12299,7 +12771,9 @@
   {
    "gluon_name": "linksys-e8450-ubi",
    "modell": "Linksys E8450 / Belkin RT3200 (UBI-Layout)",
+   "anzeige": "",
    "target": "mediatek-mt7622",
+   "gluon_broken": false,
    "kat": "K3",
    "familie": "sonderweg-linksys-e8450-ubi",
    "weg": "Stock-Web-UI (Configuration > Administration > Firmware Upgrade) nimmt `initramfs-recovery.itb`; daraus Flash-Backup und neuen Bootloader (preloader.bin, bl31-uboot.fip) per `mtd write`; der neue U-Boot baut UBI auf und holt das recovery-initramfs per TFTP [geprüft]",
@@ -12347,7 +12821,9 @@
   {
    "gluon_name": "netgear-wax206",
    "modell": "NETGEAR WAX206",
+   "anzeige": "",
    "target": "mediatek-mt7622",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "netgear-nmrp",
    "weg": "Gluon-factory (`.img`) über die Stock-Web-UI, oder per NMRP/TFTP an den Bootloader ohne Öffnen [geprüft]",
@@ -12396,7 +12872,9 @@
   {
    "gluon_name": "ubiquiti-unifi-6-lr-v1",
    "modell": "Ubiquiti UniFi 6 LR v1",
+   "anzeige": "",
    "target": "mediatek-mt7622",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ubiquiti-unifi-ssh",
    "weg": "SSH (ubnt/ubnt), bootselect in `bs` nullen, sysupgrade per dd nach kernel0 und kernel1, Neustart [geprüft: 634c13c1]",
@@ -12462,7 +12940,9 @@
   {
    "gluon_name": "ubiquiti-unifi-6-lr-v2",
    "modell": "Ubiquiti UniFi 6 LR v2",
+   "anzeige": "",
    "target": "mediatek-mt7622",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ubiquiti-unifi-ssh",
    "weg": "SSH (ubnt/ubnt), bootselect in `bs` nullen, sysupgrade per dd nach kernel0 und kernel1, Neustart [geprüft: 634c13c1] [für v2 abgeleitet, eigener Commit ohne Installationsabschnitt]",
@@ -12511,7 +12991,9 @@
   {
    "gluon_name": "ubiquiti-unifi-6-lr-v3",
    "modell": "Ubiquiti UniFi 6 LR v3",
+   "anzeige": "",
    "target": "mediatek-mt7622",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ubiquiti-unifi-ssh",
    "weg": "SSH (ubnt/ubnt), bootselect in `bs` nullen, sysupgrade per dd nach kernel0 und kernel1, Neustart [geprüft: 634c13c1] [für v3 abgeleitet, eigener Commit ohne Installationsabschnitt]",
@@ -12560,7 +13042,9 @@
   {
    "gluon_name": "xiaomi-redmi-router-ax6s",
    "modell": "Xiaomi Redmi Router AX6S / AX3200",
+   "anzeige": "",
    "target": "mediatek-mt7622",
+   "gluon_broken": false,
    "kat": "K0+",
    "familie": "sonderweg-xiaomi-redmi-router-ax6s",
    "weg": "Xiaomi-\"closed beta\"-Firmware 1.2.7 einspielen, telnet-Passwort aus der Seriennummer berechnen, nvram-Flags setzen, Gluon-`factory.bin` per wget holen und `mtd -r write … firmware` [geprüft]; Bootflags-Patch beachten (Neanderfunk-Notiz)",
@@ -12598,7 +13082,9 @@
   {
    "gluon_name": "enterasys-ws-ap3715i",
    "modell": "Enterasys WS-AP3715i",
+   "anzeige": "",
    "target": "mpc85xx-p1010",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "Seriell, U-Boot anhalten (admin/new2day), ramboot_openwrt/boot_openwrt/bootcmd setzen + saveenv, initramfs per TFTP booten, dann sysupgrade -n per scp [geprüft]",
@@ -12644,7 +13130,9 @@
   {
    "gluon_name": "sophos-red-15w-rev.1",
    "modell": "Sophos RED 15w Rev. 1",
+   "anzeige": "",
    "target": "mpc85xx-p1010",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "Am \"Console port\" U-Boot anhalten, bootargs_owrt/bootcmd setzen + saveenv, initramfs per TFTP booten, `ubiformat /dev/mtd4 -y`, sysupgrade -n per scp [geprüft]",
@@ -12691,7 +13179,9 @@
   {
    "gluon_name": "tp-link-tl-wdr4900-v1",
    "modell": "TP-Link TL-WDR4900 v1",
+   "anzeige": "",
    "target": "mpc85xx-p1010",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI [abgeleitet: ToH \"GUI OEM\"; Commit ohne Text]",
@@ -12756,7 +13246,9 @@
   {
    "gluon_name": "aerohive-hiveap-330",
    "modell": "Aerohive HiveAP 330",
+   "anzeige": "",
    "target": "mpc85xx-p1020",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "Seriell (9600 8N1), U-Boot-Passwort `AhNf?d@ta06` oder `administrator`, `dhcp`, initramfs (Commit 2017: dazu .fdt) per TFTP laden und booten, dann sysupgrade per scp [geprüft: Commit, Konsole: Wiki toh:aerohive:hiveap-330]",
@@ -12803,7 +13295,9 @@
   {
    "gluon_name": "enterasys-ws-ap3710i",
    "modell": "Enterasys WS-AP3710i",
+   "anzeige": "",
    "target": "mpc85xx-p1020",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "Seriell, U-Boot anhalten (admin/new2day), boot_openwrt/bootcmd setzen + saveenv, initramfs per TFTP booten, dann sysupgrade -n per scp [geprüft]",
@@ -12850,7 +13344,9 @@
   {
    "gluon_name": "extreme-networks-ws-ap3825i",
    "modell": "Extreme Networks WS-AP3825i",
+   "anzeige": "",
    "target": "mpc85xx-p1020",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "Seriell, Autoboot anhalten (admin/new2day), boot_openwrt/bootcmd setzen + saveenv, ipaddr/serverip setzen, initramfs per tftpboot laden und `bootm` von Hand in Einzelschritten (fdt-Relocation umgehen), dann sysupgrade per scp. Nach dem Flashen bis 600 s ohne Ping (Neanderfunk-Notiz) [geprüft]",
@@ -12897,7 +13393,9 @@
   {
    "gluon_name": "hewlett-packard-msm460",
    "modell": "HPE MSM460",
+   "anzeige": "",
    "target": "mpc85xx-p1020",
+   "gluon_broken": false,
    "kat": "K5",
    "familie": "sonderweg-hewlett-packard-msm460",
    "weg": "Bootloader netzseitig ersetzen, ohne Öffnen: Reset beim Verbinden ~15 s halten, `tftp put commands.tftp nflashd.cccc9999` an 192.168.1.1; der Stock-Bootloader führt die Befehlsdatei aus, holt msm460-uboot.bin vom Rechner und schreibt sie in den NAND; danach factory [geprüft]",
@@ -12935,7 +13433,9 @@
   {
    "gluon_name": "ocedo-panda",
    "modell": "OCEDO Panda",
+   "anzeige": "",
    "target": "mpc85xx-p1020",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "ocedo-tftp",
    "weg": "Reset beim Einschalten: der Bootloader holt initramfs und DTB per TFTP und bootet im RAM; dann per SSH Werks-UBI-Volumes löschen (ubirmvol), bootcmd per fw_setenv setzen, sysupgrade -n [geprüft]",
@@ -12984,7 +13484,9 @@
   {
    "gluon_name": "linksys-mx5300",
    "modell": "Linksys MX5300",
+   "anzeige": "",
    "target": "qualcommax-ipq807x",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "sonderweg-linksys-mx5300",
    "weg": "Gluon-factory über die Linksys-UI (manuelles Update); danach laut Commit dasselbe factory per `mtd write` auch in die zweite Partition [geprüft]",
@@ -13032,7 +13534,9 @@
   {
    "gluon_name": "netgear-wax218",
    "modell": "NETGEAR WAX218",
+   "anzeige": "",
    "target": "qualcommax-ipq807x",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "sonderweg-netgear-wax218",
    "weg": "Stock-Web-UI (System Manager > Firmware > Local Firmware Upgrade) nimmt `web-ui-factory.fit` (ubinisiertes initramfs mit QSDK-Kopf), danach sysupgrade [geprüft]",
@@ -13076,7 +13580,9 @@
   {
    "gluon_name": "tp-link-eap620-hd-v1",
    "modell": "TP-Link EAP620 HD v1",
+   "anzeige": "",
    "target": "qualcommax-ipq807x",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "UART (JP1 bestücken, R58 und R62 brücken), U-Boot mit Ctrl+B anhalten, initramfs per TFTP nach 0x44000000, bootm, `sysupgrade -n` [geprüft]; ohne UART: SSH in Stock, `cliclientd stopcs`, OpenWrt-25.12-`web-ui-factory.bin` in der Stock-UI, danach Gluon-sysupgrade [abgeleitet: OpenWrt 8a15a75e9414bbb839ac457701b041454e89bbc4]",
@@ -13122,7 +13628,9 @@
   {
    "gluon_name": "xiaomi-ax3600",
    "modell": "Xiaomi AX3600",
+   "anzeige": "",
    "target": "qualcommax-ipq807x",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "sonderweg-xiaomi-ax3600",
    "weg": "SSH-Zugang per Exploit (Wiki), `initramfs-factory.ubi` per `ubiformat` in die inaktive rootfs-mtd + nvram-Flags, Neustart, `sysupgrade -n` [geprüft]",
@@ -13160,7 +13668,9 @@
   {
    "gluon_name": "asus-rt-ac51u",
    "modell": "ASUS RT-AC51U",
+   "anzeige": "",
    "target": "ramips-mt7620",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "asus-firmware-restoration",
    "weg": "Reset beim Einschalten halten bis die Power-LED langsam blinkt; der Bootloader nimmt das sysupgrade per TFTP oder per ASUS Firmware Restoration [geprüft]",
@@ -13207,7 +13717,9 @@
   {
    "gluon_name": "gl-mt300a",
    "modell": "GL.iNet GL-MT300A",
+   "anzeige": "",
    "target": "ramips-mt7620",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
    "weg": "Stock ist ein GL.iNet-OpenWrt und nimmt das sysupgrade im Web-UI; Notweg U-Boot-Web: Reset beim Einstecken mind. 3 s halten [abgeleitet: Wiki, Commit ohne Installationstext]",
@@ -13253,7 +13765,9 @@
   {
    "gluon_name": "gl-mt300n",
    "modell": "GL.iNet GL-MT300N (v1)",
+   "anzeige": "",
    "target": "ramips-mt7620",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
    "weg": "Stock ist ein GL.iNet-OpenWrt und nimmt das sysupgrade im Web-UI; Notweg U-Boot-Web: Reset beim Einstecken mind. 3 s halten [abgeleitet: Wiki, Commit ohne Installationstext]",
@@ -13300,7 +13814,9 @@
   {
    "gluon_name": "gl-mt750",
    "modell": "GL.iNet GL-MT750",
+   "anzeige": "",
    "target": "ramips-mt7620",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
    "weg": "Stock ist ein GL.iNet-OpenWrt und nimmt das sysupgrade im Web-UI; Notweg U-Boot-Web: Reset beim Einstecken mind. 3 s halten [abgeleitet: Wiki, Commit ohne Installationstext]",
@@ -13346,7 +13862,9 @@
   {
    "gluon_name": "netgear-ex3700",
    "modell": "NETGEAR EX3700/EX3800 (Alias netgear-ex3800)",
+   "anzeige": "",
    "target": "ramips-mt7620",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "netgear-nmrp",
    "weg": "factory.chk im Stock-Web-UI oder per nmrpflash [geprüft]",
@@ -13396,7 +13914,9 @@
   {
    "gluon_name": "netgear-ex6130",
    "modell": "NETGEAR EX6130",
+   "anzeige": "",
    "target": "ramips-mt7620",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "netgear-nmrp",
    "weg": "factory.chk im Stock-Web-UI oder per nmrpflash [geprüft]",
@@ -13446,7 +13966,9 @@
   {
    "gluon_name": "nexx-wt3020-8m",
    "modell": "Nexx WT3020 8M (Aliase WT3020AD/F/H)",
+   "anzeige": "",
    "target": "ramips-mt7620",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory (Poray-Header) im Stock-Web-UI [abgeleitet: mk + ToH \"GUI OEM\"; Wiki beschreibt zusätzlich Breed-U-Boot]",
@@ -13495,7 +14017,9 @@
   {
    "gluon_name": "tp-link-archer-c2-v1",
    "modell": "TP-Link Archer C2 v1",
+   "anzeige": "",
    "target": "ramips-mt7620",
+   "gluon_broken": false,
    "kat": "K3",
    "familie": "tplink-ubootteil-dd",
    "weg": "TFTP-Recovery (WPS/Reset beim Einschalten 10 s halten) mit selbst gebautem Image: U-Boot aus der TP-Link-Firmware + sysupgrade; überschreibt die Bootloader-Partition, Dauer laut Commit bis 20-25 min [geprüft]",
@@ -13541,7 +14065,9 @@
   {
    "gluon_name": "tp-link-archer-c20-v1",
    "modell": "TP-Link Archer C20 v1",
+   "anzeige": "",
    "target": "ramips-mt7620",
+   "gluon_broken": false,
    "kat": "K3",
    "familie": "tplink-ubootteil-dd",
    "weg": "TFTP-Recovery (Reset beim Einschalten 6-7 s) mit U-Boot aus der TP-Link-Firmware vor dem OpenWrt-Image; alternativ seriell (Taste 4, tftp, erase/cp.b). Der Commit nennt das factory, das OpenWrt für dieses Gerät nicht mehr baut; heute analog Archer C2 v1 mit sysupgrade [geprüft für den Weg, abgeleitet für die Image-Wahl]",
@@ -13586,7 +14112,9 @@
   {
    "gluon_name": "tp-link-archer-c20i",
    "modell": "TP-Link Archer C20i",
+   "anzeige": "",
    "target": "ramips-mt7620",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI [abgeleitet: Gluon baut factory; Wiki nennt nur TFTP-Recovery mit ArcherC20iV1_tp_recovery.bin von 192.168.0.66]",
@@ -13652,7 +14180,9 @@
   {
    "gluon_name": "tp-link-archer-c50-v1",
    "modell": "TP-Link Archer C50 v1",
+   "anzeige": "",
    "target": "ramips-mt7620",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory-eu/-us (Gluon: Regionssuffix) im Stock-Web-UI [abgeleitet: Gluon baut factory; Wiki nennt TFTP-Recovery wie TL-WDR4300]",
@@ -13718,7 +14248,9 @@
   {
    "gluon_name": "xiaomi-miwifi-mini",
    "modell": "Xiaomi MiWiFi Mini",
+   "anzeige": "",
    "target": "ramips-mt7620",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ssh-stock",
    "weg": "Exploit: telnetd per Code-Injection in der Stock-Weboberfläche (`set_wifi_ap`), Root-Passwort setzen, dann `mtd -r write <sysupgrade> OS1`; alternativ Xiaomi-Entwickler-Firmware per USB-Stick + SSH-Patch (Xiaomi-Konto) [abgeleitet: Wiki]",
@@ -13763,7 +14295,9 @@
   {
    "gluon_name": "asus-rt-ac57u-v1",
    "modell": "ASUS RT-AC57U v1",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "asus-firmware-restoration",
    "weg": "Reset beim Einschalten 5 s, Bootloader nimmt das sysupgrade per TFTP; alternativ SSH auf Stock + `mtd-write -i owrt.bin -d linux` [geprüft]",
@@ -13809,7 +14343,9 @@
   {
    "gluon_name": "asus-rt-ax53u",
    "modell": "ASUS RT-AX53U (RT-AX1800U)",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "asus-firmware-restoration",
    "weg": "Stock-Web-UI nimmt OpenWrt nicht. Reset beim Einschalten halten bis die Power-LED sehr langsam blinkt, initramfs-kernel per TFTP oder ASUS Firmware Restoration, dann sysupgrade; Alternative: SSH auf Stock + mtd-write mit factory [abgeleitet: Wiki; der Commit nennt nur das serielle U-Boot-Menü mit factory]",
@@ -13858,7 +14394,9 @@
   {
    "gluon_name": "cudy-ap1300-outdoor-v1",
    "modell": "Cudy AP1300 Outdoor v1",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudys signierte OpenWrt-Zwischenfirmware im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne \"Einstellungen behalten\" [geprüft]; Stock 192.168.10.254, Passwort admin [geprüft]",
@@ -13922,7 +14460,9 @@
   {
    "gluon_name": "cudy-m1800",
    "modell": "Cudy M1800",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudys signierte OpenWrt-Zwischenfirmware im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne \"Einstellungen behalten\" [geprüft]; Spiegel hat nur \"M1800+V2\"; ob das zu cudy_m1800 passt, ist ungeprüft",
@@ -13986,7 +14526,9 @@
   {
    "gluon_name": "cudy-wr1300-v1",
    "modell": "Cudy WR1300 v1",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudys signierte OpenWrt-Zwischenfirmware im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne \"Einstellungen behalten\" [geprüft]",
@@ -14049,7 +14591,9 @@
   {
    "gluon_name": "cudy-wr2100",
    "modell": "Cudy WR2100",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudys signierte OpenWrt-Zwischenfirmware im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne \"Einstellungen behalten\" [geprüft]",
@@ -14112,7 +14656,9 @@
   {
    "gluon_name": "cudy-x6-v1",
    "modell": "Cudy X6 v1",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudys signierte OpenWrt-Zwischenfirmware im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne \"Einstellungen behalten\" [geprüft]",
@@ -14175,7 +14721,9 @@
   {
    "gluon_name": "cudy-x6-v2",
    "modell": "Cudy X6 v2",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudys signierte OpenWrt-Zwischenfirmware im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne \"Einstellungen behalten\" [geprüft]",
@@ -14238,7 +14786,9 @@
   {
    "gluon_name": "d-link-covr-x1860-a1",
    "modell": "D-Link COVR-X1860 A1",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI (`/UpdateFirmware_Simple.html`) oder Gluon-recovery.bin (squashfs) in der Web-Recovery [geprüft; Neanderfunk-Notiz]",
@@ -14286,7 +14836,9 @@
   {
    "gluon_name": "d-link-dap-1620-b1",
    "modell": "D-Link DAP-1620 B1 (Gluon: broken)",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": true,
    "kat": "K0",
    "familie": "dlink-recovery-web",
    "weg": "Reset beim Einstecken halten, Web-Recovery 192.168.0.50, factory.bin hochladen (Chromium) [geprüft]",
@@ -14346,7 +14898,9 @@
   {
    "gluon_name": "d-link-dap-x1860-a1",
    "modell": "D-Link DAP-X1860 A1",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "dlink-recovery-web",
    "weg": "Reset beim Einstecken, Web-Recovery 192.168.0.50; laut Commit factory.bin hochladen [geprüft]. Neanderfunk-Notiz (01.10.2026) nennt dagegen OpenWrt-initramfs + sysupgrade: Widerspruch, offen",
@@ -14407,7 +14961,9 @@
   {
    "gluon_name": "d-link-dir-860l-b1",
    "modell": "D-Link DIR-860L B1",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory (SEAMA) über das Stock-Web-UI oder die D-Link-Recovery [abgeleitet: ToH \"D-Link Recovery GUI\"; Commit ohne Text]",
@@ -14454,7 +15010,9 @@
   {
    "gluon_name": "d-link-dir-878-a1",
    "modell": "D-Link DIR-878 A1",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "dlink-recovery-web",
    "weg": "Reset beim Einstecken halten bis die Power-LED orange blinkt, Web-Recovery 192.168.0.1, factory hochladen (oder `curl -F firmware=@...`) [geprüft]. Neanderfunk-Notiz sagt dagegen \"DIR-Reihe über TFTP\": Widerspruch, offen",
@@ -14516,7 +15074,9 @@
   {
    "gluon_name": "d-link-dir-882-a1",
    "modell": "D-Link DIR-882 A1",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "dlink-recovery-web",
    "weg": "Reset beim Einstecken halten bis die Power-LED orange blinkt, Web-Recovery 192.168.0.1, factory hochladen (oder `curl -F firmware=@...`) [geprüft]. Neanderfunk-Notiz sagt dagegen \"DIR-Reihe über TFTP\": Widerspruch, offen",
@@ -14577,7 +15137,9 @@
   {
    "gluon_name": "genexis-pulse-ex400",
    "modell": "Genexis/Inteno Pulse EX400",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "sonderweg-genexis-pulse-ex400",
    "weg": "Stock-Web-UI oder U-Boot-Recovery (Reset beim Einschalten, Update-LED grün, Webserver 192.168.1.1) nimmt das OpenWrt-factory.bin; das enthält ein initramfs; danach sysupgrade [geprüft]",
@@ -14623,7 +15185,9 @@
   {
    "gluon_name": "gl.inet-gl-mt1300",
    "modell": "GL.iNet GL-MT1300 (Beryl)",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
    "weg": "U-Boot-Web: Reset beim Einschalten, nach 5x blauem Blinken loslassen, http://192.168.1.1, sysupgrade hochladen [geprüft]",
@@ -14675,7 +15239,9 @@
   {
    "gluon_name": "mercusys-mr70x-v1",
    "modell": "Mercusys MR70X v1",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI [geprüft]",
@@ -14722,7 +15288,9 @@
   {
    "gluon_name": "mikrotik-routerboard-750gr3",
    "modell": "MikroTik hEX RB750Gr3 (Alias mikrotik-routerboard-hex-v3)",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "mikrotik-netboot",
    "weg": "RouterBOOT-Netboot: RouterOS ggf. auf v6 zurück, Reset beim Einschalten halten, das Gerät holt das initramfs per BOOTP/DHCP + TFTP und bootet es im RAM, dann sysupgrade [geprüft: Commit verweist auf die MikroTik-Methode, Wiki toh:mikrotik:common]",
@@ -14769,7 +15337,9 @@
   {
    "gluon_name": "netgear-eax12",
    "modell": "NETGEAR EAX12 (Aliase EAX11 v2, EAX15 v2)",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "netgear-nmrp",
    "weg": "factory.img im Stock-Web-UI oder per TFTP/NMRP an den Bootloader [geprüft]",
@@ -14819,7 +15389,9 @@
   {
    "gluon_name": "netgear-ex6150",
    "modell": "NETGEAR EX6150 (v1)",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "netgear-nmrp",
    "weg": "factory.chk im Stock-Web-UI (192.168.1.250) oder per nmrpflash [geprüft]",
@@ -14869,7 +15441,9 @@
   {
    "gluon_name": "netgear-r6220",
    "modell": "NETGEAR R6220",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "netgear-nmrp",
    "weg": "factory.img im Stock-Web-UI [abgeleitet: ToH \"GUI OEM\"; Commit beschreibt Telnet-Debug + USB + mtd_write, damals ohne factory]",
@@ -14918,7 +15492,9 @@
   {
    "gluon_name": "netgear-r6260",
    "modell": "NETGEAR R6260",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "netgear-nmrp",
    "weg": "factory.img im Stock-Web-UI [abgeleitet: ToH \"GUI OEM\"; Commit ohne Text]",
@@ -14969,7 +15545,9 @@
   {
    "gluon_name": "netgear-wac104",
    "modell": "NETGEAR WAC104",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory.img im Stock-Web-UI [geprüft]",
@@ -15016,7 +15594,9 @@
   {
    "gluon_name": "netgear-wax202",
    "modell": "NETGEAR WAX202",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "netgear-nmrp",
    "weg": "factory.img (verschlüsselt) im Stock-Web-UI oder per TFTP/NMRP [geprüft]",
@@ -15065,7 +15645,9 @@
   {
    "gluon_name": "netgear-wndr3700-v5",
    "modell": "NETGEAR WNDR3700 v5 (Gluon: broken, \"untested\")",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": true,
    "kat": "K0+",
    "familie": "netgear-nmrp",
    "weg": "OpenWrt-factory.img per nmrpflash, danach Gluon-sysupgrade [geprüft]; Zwischenstufe OpenWrt 24.10.8-factory.img per nmrpflash [geprüft: OpenWrt 24.10.8 ramips/mt7621, factory.img in sha256sums gelistet und per HEAD erreichbar, 15.10.2026]",
@@ -15120,7 +15702,9 @@
   {
    "gluon_name": "totolink-x5000r",
    "modell": "TOTOLINK X5000R",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "sonderweg-totolink-x5000r",
    "weg": "Stock-Web-UI nimmt das OpenWrt-sysupgrade [geprüft]",
@@ -15164,7 +15748,9 @@
   {
    "gluon_name": "tp-link-archer-ax23-v1",
    "modell": "TP-Link Archer AX23 v1 (Gluon: broken)",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": true,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI; Web-Recovery 192.168.0.1 (Reset beim Einschalten) nimmt factory [geprüft]",
@@ -15229,7 +15815,9 @@
   {
    "gluon_name": "tp-link-archer-c6-v3",
    "modell": "TP-Link Archer C6 v3 (Gluon: broken)",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": true,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI [geprüft]",
@@ -15295,7 +15883,9 @@
   {
    "gluon_name": "tp-link-eap613-v1",
    "modell": "TP-Link EAP613 v1",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "tplink-eap-ssh",
    "weg": "SSH im Stock-Web-UI einschalten, per SSH `cliclientd stopcs`, dann factory im Web-UI hochladen (ggf. Dateinamen kürzen) [geprüft]",
@@ -15341,7 +15931,9 @@
   {
    "gluon_name": "tp-link-eap615-wall-v1",
    "modell": "TP-Link EAP615-Wall v1",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "tplink-eap-ssh",
    "weg": "SSH im Stock-Web-UI einschalten, per SSH `cliclientd stopcs`, dann factory im Web-UI hochladen (ggf. Dateinamen kürzen) [geprüft]",
@@ -15387,7 +15979,9 @@
   {
    "gluon_name": "tp-link-re500-v1",
    "modell": "TP-Link RE500 v1",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI [geprüft]",
@@ -15452,7 +16046,9 @@
   {
    "gluon_name": "tp-link-re650-v1",
    "modell": "TP-Link RE650 v1",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI [geprüft]",
@@ -15518,7 +16114,9 @@
   {
    "gluon_name": "ubiquiti-edgerouter-x",
    "modell": "Ubiquiti EdgeRouter X",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K3",
    "familie": "ubiquiti-edgerouter",
    "weg": "EdgeOS nimmt (Web-UI \"System\" oder `add system image`) ein initramfs-factory.tar, das OpenWrt heute nicht mehr baut (nur alte Releases/Fremdquellen); danach Umstieg auf das 24.10-Layout (Kernel 6 MB, compat_version 2.0). Seriell alternativ TFTP im Ralink-Menü [geprüft: Commit, mk, Wiki toh:ubiquiti:edgerouter_x_er-x_ka]; Neuinstallation aus EdgeOS über OpenWrt-22.03-initramfs-factory.tar (stman), darkxst-Umstellung mit OpenWrt 24.10.8 als /tmp/sysupgrade.img, dann Gluon-sysupgrade über LuCI [Wiki-Rohtext: toh:ubiquiti:edgerouter_x_er-x_ka, 15.10.2026] [geprüft: darkxst/erx-migration README und ubnt_erx_migrate.sh, Commit d29f71a: eine vorher abgelegte /tmp/sysupgrade.img überspringt den Download, Board edgerouter-x oder -x-sfp erlaubt] [geprüft: stman OpenWrt-22.03-initramfs-factory.tar, Commit de2ade9, SHA256 gegen sha256sums] [geprüft: OpenWrt 24.10.8 sha256sums für das sysupgrade, am 15.10.2026 abgeglichen]",
@@ -15570,7 +16168,9 @@
   {
    "gluon_name": "ubiquiti-edgerouter-x-sfp",
    "modell": "Ubiquiti EdgeRouter X-SFP",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K3",
    "familie": "ubiquiti-edgerouter",
    "weg": "EdgeOS nimmt (Web-UI \"System\" oder `add system image`) ein initramfs-factory.tar, das OpenWrt heute nicht mehr baut (nur alte Releases/Fremdquellen); danach Umstieg auf das 24.10-Layout (Kernel 6 MB, compat_version 2.0). Seriell alternativ TFTP im Ralink-Menü [geprüft: Commit, mk, Wiki toh:ubiquiti:edgerouter_x_er-x_ka]; Neuinstallation aus EdgeOS über OpenWrt-22.03-initramfs-factory.tar (stman), darkxst-Umstellung mit OpenWrt 24.10.8 als /tmp/sysupgrade.img, dann Gluon-sysupgrade über LuCI [Wiki-Rohtext: toh:ubiquiti:edgerouter_x_er-x_ka, 15.10.2026] [geprüft: darkxst/erx-migration README und ubnt_erx_migrate.sh, Commit d29f71a: eine vorher abgelegte /tmp/sysupgrade.img überspringt den Download, Board edgerouter-x oder -x-sfp erlaubt] [geprüft: stman OpenWrt-22.03-initramfs-factory.tar, Commit de2ade9, SHA256 gegen sha256sums] [geprüft: OpenWrt 24.10.8 sha256sums für das sysupgrade, am 15.10.2026 abgeglichen] [abgeleitet: das ER-X-factory der 22.03-Zwischenstufe läuft laut Wiki auch auf dem X-SFP; für den Weg über darkxst übertragen]",
@@ -15622,7 +16222,9 @@
   {
    "gluon_name": "ubiquiti-unifi-6-lite",
    "modell": "Ubiquiti UniFi 6 Lite",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ubiquiti-unifi-ssh",
    "weg": "SSH auf Stock (ubnt/ubnt, 192.168.1.20): `fw_setenv devmode TRUE`, boot_openwrt/bootcmd setzen, sysupgrade per scp, bs-Flag nullen, sysupgrade per dd in kernel0 und kernel1 [geprüft]",
@@ -15691,7 +16293,9 @@
   {
    "gluon_name": "ubiquiti-unifi-nanohd",
    "modell": "Ubiquiti UniFi nanoHD",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ubiquiti-unifi-ssh",
    "weg": "SSH auf Stock (ubnt/ubnt, 192.168.1.20; Stock v3.9.27, ggf. downgraden): bs-Flag nullen, sysupgrade per dd in kernel0 und kernel1 [geprüft]",
@@ -15756,7 +16360,9 @@
   {
    "gluon_name": "wavlink-ws-wn572hp3-4g",
    "modell": "Wavlink WS-WN572HP3 4G",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "recovery-web",
    "weg": "Reset beim Einschalten 10 s halten, Recovery-Webseite nimmt das sysupgrade (Chromium; Firefox 106 nicht) [geprüft]",
@@ -15801,7 +16407,9 @@
   {
    "gluon_name": "xiaomi-mi-router-3g",
    "modell": "Xiaomi Mi Router 3G",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "sonderweg-xiaomi-mi-router-3g",
    "weg": "Shell auf Stock per Telnet/SSH (wie man sie bekommt, sagt der Commit nicht), OpenWrt-kernel1.bin und rootfs0.bin per mtd schreiben, kernel0 löschen, danach Gluon-sysupgrade [geprüft; Shell-Zugang offen]",
@@ -15839,7 +16447,9 @@
   {
    "gluon_name": "xiaomi-mi-router-3g-v2",
    "modell": "Xiaomi Mi Router 3G v2",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "xiaomi-openwrtinvasion",
    "weg": "Commit: Bootloader seriell erst mit `boot_wait=on`, Stock erst mit `uart_en=1`; beim Port per SPI-Programmer. Laut Commit baugleich mit 4A Gigabit, also OpenWRTInvasion + mtd write OS1 [abgeleitet]",
@@ -15877,7 +16487,9 @@
   {
    "gluon_name": "xiaomi-mi-router-4a-gigabit-edition",
    "modell": "Xiaomi Mi Router 4A Gigabit",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "xiaomi-openwrtinvasion",
    "weg": "OpenWRTInvasion-Exploit gibt eine Shell, dann `mtd -e OS1 -r write <sysupgrade> OS1` [geprüft]",
@@ -15915,7 +16527,9 @@
   {
    "gluon_name": "xiaomi-mi-router-4a-gigabit-edition-v2",
    "modell": "Xiaomi Mi Router 4A Gigabit v2",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "xiaomi-openwrtinvasion",
    "weg": "OpenWRTInvasion-Exploit gibt eine Shell, dann `mtd -e OS1 -r write <sysupgrade> OS1` [geprüft]",
@@ -15953,7 +16567,9 @@
   {
    "gluon_name": "xiaomi-mi-router-ac2100",
    "modell": "Xiaomi Mi Router AC2100 (R2100)",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "xiaomi-ac2100-pppoe",
    "weg": "Exploit CVE-2020-8597 über eine PPPoE-Sitzung am WAN-Port, Reverse-Shell, eigenes busybox per wget nachladen, OpenWrt-kernel1.bin + rootfs0.bin per mtd schreiben, nvram uart_en/bootdelay/flag_try_sys1_failed setzen [geprüft]",
@@ -15991,7 +16607,9 @@
   {
    "gluon_name": "xiaomi-redmi-router-ac2100",
    "modell": "Xiaomi Redmi Router AC2100 (RM2100)",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "xiaomi-ac2100-pppoe",
    "weg": "Exploit CVE-2020-8597 über eine PPPoE-Sitzung am WAN-Port, Reverse-Shell, eigenes busybox per wget nachladen, OpenWrt-kernel1.bin + rootfs0.bin per mtd schreiben, nvram uart_en/bootdelay/flag_try_sys1_failed setzen [geprüft]",
@@ -16029,7 +16647,9 @@
   {
    "gluon_name": "zbtlink-zbt-wg3526-16m",
    "modell": "ZBT WG3526 16M",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "recovery-web",
    "weg": "Stock ist ein angepasstes OpenWrt; Recovery-Modus des Bootloaders mit (chinesischer) Upload-Seite nimmt das Image, wie beim WG2626 [abgeleitet: Wiki toh:zbtlink:zbt_wg3526]",
@@ -16074,7 +16694,9 @@
   {
    "gluon_name": "zbtlink-zbt-wg3526-32m",
    "modell": "ZBT WG3526 32M",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "recovery-web",
    "weg": "Stock ist ein angepasstes OpenWrt; Recovery-Modus des Bootloaders mit (chinesischer) Upload-Seite nimmt das Image, wie beim WG2626 [abgeleitet: Wiki toh:zbtlink:zbt_wg3526]",
@@ -16119,7 +16741,9 @@
   {
    "gluon_name": "zyxel-nwa50ax",
    "modell": "ZyXEL NWA50AX (Alias NWA90AX)",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI; nur wenn das aktive Image auf Slot B liegt, sonst erst ein ZyXEL-Update einspielen [geprüft]",
@@ -16167,7 +16791,9 @@
   {
    "gluon_name": "zyxel-nwa55axe",
    "modell": "ZyXEL NWA55AXE (Gluon: broken)",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": true,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "wie NWA50AX; ohne Reset-Taste, bei unbekanntem Passwort nur seriell (atns-Trick, TFTP owrt.bin, ramboot-factory) [geprüft]",
@@ -16217,7 +16843,9 @@
   {
    "gluon_name": "zyxel-wsm20",
    "modell": "ZyXEL WSM20 (Multy M1)",
+   "anzeige": "",
    "target": "ramips-mt7621",
+   "gluon_broken": false,
    "kat": "K1",
    "familie": "sonderweg-zyxel-wsm20",
    "weg": "Gerät in der Zyxel-Cloud registrieren, im Stock-Web-UI die versteckte Seite /gui/#/main/debug/firmwareupgrade öffnen, initramfs-kernel.bin hochladen, dann sysupgrade [geprüft]",
@@ -16264,7 +16892,9 @@
   {
    "gluon_name": "cudy-tr1200-v1",
    "modell": "Cudy TR1200 v1",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "cudy-zwischenfirmware",
    "weg": "Commit (05/2024): nur seriell (Cudy-Beta-Firmware, UART, TFTP recovery.bin von 192.168.1.88). Inzwischen liegt eine Cudy-Zwischenfirmware TR1200_V1 im Spiegel, damit wie die anderen Cudy [abgeleitet]",
@@ -16327,7 +16957,9 @@
   {
    "gluon_name": "cudy-wr1000",
    "modell": "Cudy WR1000",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI [geprüft]",
@@ -16374,7 +17006,9 @@
   {
    "gluon_name": "gl-mt300n-v2",
    "modell": "GL.iNet GL-MT300N v2",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
    "weg": "Stock (GL.iNet-LEDE) nimmt das sysupgrade in LuCI; U-Boot-Web: Reset beim Einstecken bis die rote LED blinkt, 192.168.1.1 [geprüft]",
@@ -16425,7 +17059,9 @@
   {
    "gluon_name": "gl.inet-microuter-n300",
    "modell": "GL.iNet microuter-N300",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
    "weg": "Stock-Web-UI 192.168.8.1 (per WLAN, der Ethernet-Port ist WAN), \"Local Update\" mit sysupgrade ohne Einstellungen; oder U-Boot-Web: Reset beim Einschalten, 5x Blinken, 192.168.1.1 [geprüft]",
@@ -16477,7 +17113,9 @@
   {
    "gluon_name": "gl.inet-vixmini",
    "modell": "GL.iNet VIXMINI",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
    "weg": "Stock-Web-UI 192.168.8.1 (per WLAN, der Ethernet-Port ist WAN), \"Local Update\" mit sysupgrade ohne Einstellungen; oder U-Boot-Web: Reset beim Einschalten, 5x Blinken, 192.168.1.1 [geprüft]",
@@ -16529,7 +17167,9 @@
   {
    "gluon_name": "netgear-r6020",
    "modell": "NETGEAR R6020",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "netgear-nmrp",
    "weg": "factory.img nur per nmrpflash (LAN1, Gerät aus, nmrpflash starten, einschalten); Web-UI nicht [geprüft]",
@@ -16582,7 +17222,9 @@
   {
    "gluon_name": "netgear-r6120",
    "modell": "NETGEAR R6120",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "netgear-nmrp",
    "weg": "factory.img per nmrpflash; Web-UI laut Commit nicht [geprüft]",
@@ -16631,7 +17273,9 @@
   {
    "gluon_name": "ravpower-rp-wd009",
    "modell": "RAVPower RP-WD009",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "recovery-web",
    "weg": "Reset beim Einschalten 10 s bis die Globus-LED leuchtet, Recovery-Seite 10.10.10.128, factory hochladen [geprüft]",
@@ -16676,7 +17320,9 @@
   {
    "gluon_name": "tp-link-archer-c20-v4",
    "modell": "TP-Link Archer C20 v4",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "tplink-tftp-recovery",
    "weg": "TFTP-Recovery des Bootloaders (Reset 6-7 s beim Einschalten); Gluon liefert dafür `other/...-bootloader.bin` = OpenWrt-tftp-recovery (`pad-extra 128k` + factory, kein Stock-Teil) [geprüft]",
@@ -16722,7 +17368,9 @@
   {
    "gluon_name": "tp-link-archer-c20-v5",
    "modell": "TP-Link Archer C20 v5",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K3",
    "familie": "tplink-ubootteil-dd",
    "weg": "Split-U-Boot: der Weg braucht den U-Boot-Teil aus der TP-Link-Firmware vor dem sysupgrade. boot.bin im Stock-Web-UI oder in der Web-Recovery (aktiviert durch Stromziehen ~3 s nach Start eines Stock-Updates), oder tp_recovery.bin per TFTP mit Reset beim Einschalten [geprüft]",
@@ -16766,7 +17414,9 @@
   {
    "gluon_name": "tp-link-archer-c50-v3",
    "modell": "TP-Link Archer C50 v3",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "tplink-tftp-recovery",
    "weg": "TFTP-Recovery des Bootloaders (Reset 6-7 s beim Einschalten); Gluon liefert dafür `other/...-bootloader.bin` = OpenWrt-tftp-recovery (`pad-extra 128k` + factory, kein Stock-Teil) [geprüft]",
@@ -16812,7 +17462,9 @@
   {
    "gluon_name": "tp-link-archer-c50-v4",
    "modell": "TP-Link Archer C50 v4",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K3",
    "familie": "tplink-ubootteil-dd",
    "weg": "Split-U-Boot: der Weg braucht den U-Boot-Teil aus der TP-Link-Firmware vor dem sysupgrade. boot.bin im Stock-Web-UI oder in der Web-Recovery (aktiviert durch Stromziehen ~3 s nach Start eines Stock-Updates), oder tp_recovery.bin per TFTP mit Reset beim Einschalten [geprüft]",
@@ -16856,7 +17508,9 @@
   {
    "gluon_name": "tp-link-archer-c50-v6-ca-eu-ru",
    "modell": "TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54)",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K3",
    "familie": "tplink-ubootteil-dd",
    "weg": "Split-U-Boot: der Weg braucht den U-Boot-Teil aus der TP-Link-Firmware vor dem sysupgrade. boot.bin im Stock-Web-UI oder in der Web-Recovery (aktiviert durch Stromziehen ~3 s nach Start eines Stock-Updates), oder tp_recovery.bin per TFTP mit Reset beim Einschalten [geprüft] Stock-Image der passenden Variante (CA/EU oder RU) nehmen.",
@@ -16900,7 +17554,9 @@
   {
    "gluon_name": "tp-link-re200-v2",
    "modell": "TP-Link RE200 v2",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI; keine Recovery, im Fehlerfall nur seriell [geprüft]",
@@ -16965,7 +17621,9 @@
   {
    "gluon_name": "tp-link-re200-v3",
    "modell": "TP-Link RE200 v3",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI; keine Recovery, im Fehlerfall nur seriell [geprüft]",
@@ -17031,7 +17689,9 @@
   {
    "gluon_name": "tp-link-re200-v4",
    "modell": "TP-Link RE200 v4",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
    "weg": "factory im Stock-Web-UI; keine Recovery, im Fehlerfall nur seriell [geprüft]",
@@ -17096,7 +17756,9 @@
   {
    "gluon_name": "tp-link-tl-mr3020-v3",
    "modell": "TP-Link TL-MR3020 v3",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "tplink-tftp-recovery",
    "weg": "TFTP-Recovery des Bootloaders (Reset 6-7 s beim Einschalten); Gluon liefert dafür `other/...-bootloader.bin` = OpenWrt-tftp-recovery (`pad-extra 128k` + factory, kein Stock-Teil) [geprüft]",
@@ -17142,7 +17804,9 @@
   {
    "gluon_name": "tp-link-tl-mr3420-v5",
    "modell": "TP-Link TL-MR3420 v5",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "tplink-tftp-recovery",
    "weg": "TFTP-Recovery des Bootloaders (Reset 6-7 s beim Einschalten); Gluon liefert dafür `other/...-bootloader.bin` = OpenWrt-tftp-recovery (`pad-extra 128k` + factory, kein Stock-Teil) [geprüft]",
@@ -17188,7 +17852,9 @@
   {
    "gluon_name": "tp-link-tl-mr6400-v5",
    "modell": "TP-Link TL-MR6400 v5",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "tplink-tftp-recovery",
    "weg": "TFTP-Recovery des Bootloaders (Reset mind. 8 s; Web-UI geht laut Commit nicht beim Einschalten); Gluon liefert dafür `other/...-bootloader.bin` = OpenWrt-tftp-recovery (`pad-extra 128k` + factory, kein Stock-Teil) [geprüft]",
@@ -17234,7 +17900,9 @@
   {
    "gluon_name": "tp-link-tl-wa801nd-v5",
    "modell": "TP-Link TL-WA801ND v5",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "tplink-tftp-recovery",
    "weg": "TFTP-Recovery des Bootloaders (WPS+Reset 10 s beim Einschalten); Gluon liefert dafür `other/...-bootloader.bin` = OpenWrt-tftp-recovery (`pad-extra 128k` + factory, kein Stock-Teil) [geprüft]",
@@ -17280,7 +17948,9 @@
   {
    "gluon_name": "tp-link-tl-wr841n-v13",
    "modell": "TP-Link TL-WR841N v13",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "tplink-tftp-recovery",
    "weg": "TFTP-Recovery des Bootloaders (Reset 6-7 s; das Web-UI zerschießt ein factory (Commit) beim Einschalten); Gluon liefert dafür `other/...-bootloader.bin` = OpenWrt-tftp-recovery (`pad-extra 128k` + factory, kein Stock-Teil) [geprüft]",
@@ -17326,7 +17996,9 @@
   {
    "gluon_name": "tp-link-tl-wr902ac-v3",
    "modell": "TP-Link TL-WR902AC v3",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "tplink-tftp-recovery",
    "weg": "TFTP-Recovery des Bootloaders (Reset 6-7 s beim Einschalten); Gluon liefert dafür `other/...-bootloader.bin` = OpenWrt-tftp-recovery (`pad-extra 128k` + factory, kein Stock-Teil) [geprüft]",
@@ -17372,7 +18044,9 @@
   {
    "gluon_name": "tp-link-tl-wr902ac-v4",
    "modell": "TP-Link TL-WR902AC v4",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "tplink-tftp-recovery",
    "weg": "TFTP-Recovery des Bootloaders (Reset bis LED blinkt beim Einschalten); Gluon liefert dafür `other/...-bootloader.bin` = OpenWrt-tftp-recovery (`pad-extra 128k` + factory, kein Stock-Teil) [geprüft]",
@@ -17418,7 +18092,9 @@
   {
    "gluon_name": "vocore2",
    "modell": "VoCore2",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "ssh-stock",
    "weg": "Stock ist ein OpenWrt-CC-Fork: per Ethernet oder WLAN \"VoCore2\" verbinden, `ssh root@192.168.1.1` (Passwort vocore), sysupgrade hochladen, `sysupgrade -n` [geprüft]",
@@ -17462,7 +18138,9 @@
   {
    "gluon_name": "xiaomi-mi-ra75",
    "modell": "Xiaomi Mi WiFi Range Extender AC1200 RA75 (Gluon: broken, \"Only serial flash possible\")",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": true,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "Kein Web-UI; seriell im U-Boot-Menü Option 2, sysupgrade per TFTP [geprüft]",
@@ -17500,7 +18178,9 @@
   {
    "gluon_name": "xiaomi-mi-router-4a-100m-edition",
    "modell": "Xiaomi Mi Router 4A 100M",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K4",
    "familie": "seriell-tftp",
    "weg": "Seriell: im U-Boot-Menü Option 2 (\"write to Flash via TFTP\"), Gerät 192.168.1.1, Server 192.168.1.2, Datei test.bin = sysupgrade [geprüft]",
@@ -17538,7 +18218,9 @@
   {
    "gluon_name": "xiaomi-mi-router-4a-100m-international-edition",
    "modell": "Xiaomi Mi Router 4A 100M International (R4AC)",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K1d",
    "familie": "xiaomi-openwrtinvasion",
    "weg": "OpenWRTInvasion, `/proc/mtd` prüfen (overlay 2 MiB), sysupgrade nach /tmp, `mtd -r write <img> OS1` [abgeleitet: Wiki inbox:toh:xiaomi:r4ac; Commit ohne Installationstext]",
@@ -17576,7 +18258,9 @@
   {
    "gluon_name": "xiaomi-mi-router-4a-100m-international-edition-v2",
    "modell": "Xiaomi Mi Router 4A 100M International v2",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "xiaomi-openwrtinvasion",
    "weg": "Stock einrichten, OpenWRTInvasion (zweimal), sysupgrade per nc nach /tmp/fw.bin, `mtd -r write /tmp/fw.bin OS1` [geprüft]",
@@ -17614,7 +18298,9 @@
   {
    "gluon_name": "xiaomi-mi-router-4c",
    "modell": "Xiaomi Mi Router 4C",
+   "anzeige": "",
    "target": "ramips-mt76x8",
+   "gluon_broken": false,
    "kat": "K2",
    "familie": "xiaomi-openwrtinvasion",
    "weg": "OpenWRTInvasion gibt telnet/ftp, sysupgrade per ftp nach /tmp, `mtd -r write /tmp/firmware.bin OS1` [geprüft]",
@@ -17652,7 +18338,9 @@
   {
    "gluon_name": "friendlyelec-nanopi-r2c",
    "modell": "FriendlyElec NanoPi R2C",
+   "anzeige": "",
    "target": "rockchip-armv8",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "image-auf-datentraeger",
    "weg": "Gluon-sysupgrade (`.img.gz`, Gluon hat `factory = false`) auf die SD-Karte schreiben [abgeleitet: targets/rockchip-armv8]",
@@ -17706,7 +18394,9 @@
   {
    "gluon_name": "friendlyelec-nanopi-r2s",
    "modell": "FriendlyElec NanoPi R2S",
+   "anzeige": "",
    "target": "rockchip-armv8",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "image-auf-datentraeger",
    "weg": "Gluon-sysupgrade (`.img.gz`, Gluon hat `factory = false`) auf die SD-Karte schreiben [abgeleitet: targets/rockchip-armv8]",
@@ -17760,7 +18450,9 @@
   {
    "gluon_name": "friendlyelec-nanopi-r3s",
    "modell": "FriendlyElec NanoPi R3S",
+   "anzeige": "",
    "target": "rockchip-armv8",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "image-auf-datentraeger",
    "weg": "Gluon-sysupgrade (`.img.gz`, Gluon hat `factory = false`) auf die SD-Karte schreiben [abgeleitet: targets/rockchip-armv8]",
@@ -17814,7 +18506,9 @@
   {
    "gluon_name": "friendlyelec-nanopi-r4s",
    "modell": "FriendlyElec NanoPi R4S (4 GB)",
+   "anzeige": "",
    "target": "rockchip-armv8",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "image-auf-datentraeger",
    "weg": "Gluon-sysupgrade (`.img.gz`, Gluon hat `factory = false`) auf die SD-Karte schreiben [abgeleitet: targets/rockchip-armv8]",
@@ -17868,7 +18562,9 @@
   {
    "gluon_name": "x86-64",
    "modell": "x86 (x86-64)",
+   "anzeige": "",
    "target": "x86-64",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "image-auf-datentraeger",
    "weg": "Gluon-factory (`squashfs-combined-efi`, .img.gz/.vmdk/.vdi) auf Platte/USB schreiben [geprüft: targets/x86*]",
@@ -17921,7 +18617,9 @@
   {
    "gluon_name": "x86-generic",
    "modell": "x86 (x86-generic)",
+   "anzeige": "",
    "target": "x86-generic",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "image-auf-datentraeger",
    "weg": "wie x86-64 [geprüft: targets/x86*]",
@@ -17974,7 +18672,9 @@
   {
    "gluon_name": "x86-geode",
    "modell": "x86 (x86-geode)",
+   "anzeige": "",
    "target": "x86-geode",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "image-auf-datentraeger",
    "weg": "Gluon `squashfs-combined` (.img.gz) [geprüft: targets/x86*]",
@@ -18027,7 +18727,9 @@
   {
    "gluon_name": "x86-legacy",
    "modell": "x86 (x86-legacy)",
+   "anzeige": "",
    "target": "x86-legacy",
+   "gluon_broken": false,
    "kat": "K0",
    "familie": "image-auf-datentraeger",
    "weg": "wie x86-64 [geprüft: targets/x86*]",
