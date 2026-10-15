@@ -16,7 +16,9 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
   Pflicht
     alt_url              Download der älteren Herstellerfirmware V9.1.0u.6118
     alt_datei            Dateiname dieses Downloads
-    alt_sha256           SHA256 dieses Downloads
+    alt_sha256           SHA256 dieses Downloads (gezeigt nur ohne alt_web;
+                         beim ZIP gilt "Auspacken ohne Fehler" als Prüfung,
+                         adorfer 15.10.2026)
 
   optional
     alt_web              Name der .web-Datei im ZIP (wenn der Download ein ZIP ist)
@@ -46,10 +48,9 @@ halben Stunde.
 - die Freifunk-Firmware deiner Community für den {{ modell }}, und zwar das
   **sysupgrade**-Image
 - nur für den Umweg: die ältere TOTOLINK-Firmware
-  [{{ w.alt_datei }}]({{ w.alt_url }}), SHA256 `{{ w.alt_sha256 }}`.
+  [{{ w.alt_datei }}]({{ w.alt_url }}).
   {%- if w.get("alt_hinweis") %} {{ w.get("alt_hinweis") }}{% endif %}
-  {%- if w.get("alt_web") %} Pack das ZIP aus; gebraucht wird die Datei
-  `{{ w.get("alt_web") }}` darin.{% endif %}
+  {%- if not w.get("alt_web") %} SHA256 `{{ w.alt_sha256 }}`.{% endif %}
 {%- if zusatz.vorher is defined and zusatz.vorher %}
 
 ## Vorher prüfen
@@ -87,14 +88,20 @@ Der Router hat einen Notfall-Modus im Bootloader, der jede
 TOTOLINK-Firmware annimmt, auch eine ältere. Danach nimmt die Weboberfläche
 auch wieder die Freifunk-Firmware.
 
+{% if w.get("alt_web") -%}
+1. **ZIP auspacken.** Pack `{{ w.alt_datei }}` aus. Kommt dabei keine
+   Fehlermeldung, ist die Datei heil. Gebraucht wird
+   `{{ w.get("alt_web") }}` darin.
+
+{% else -%}
 1. **Datei prüfen.** Prüf die SHA256 der heruntergeladenen Datei: unter
    Linux `sha256sum {{ w.alt_datei }}`, unter macOS
    `shasum -a 256 {{ w.alt_datei }}`, in der Windows-PowerShell
    `Get-FileHash {{ w.alt_datei }}`. Das Ergebnis muss
    `{{ w.alt_sha256 }}` lauten (Groß- und Kleinschreibung spielt keine
    Rolle).
-   {%- if w.get("alt_web") %} Dann das ZIP auspacken.{% endif %}
 
+{% endif -%}
 2. **Feste Adresse am Rechner.** Stell deinen Rechner auf `192.168.1.10`,
    Netzmaske `255.255.255.0`
    ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
