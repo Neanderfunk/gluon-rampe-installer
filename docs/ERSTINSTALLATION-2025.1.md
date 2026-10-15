@@ -43,7 +43,7 @@ deren Einzelbefunde im Anhang stehen.
 | offen | Weg ab Werk nicht belegt | | ? |
 
 Stufen: K0..K5 bleiben intern; in Anleitungen steht die Stufe in Worten
-(Wunsch Content). "mit Werkzeug" = Taste, Recovery-Seite oder Programm auf dem
+(Wunsch Content). "mit scripts/Netzwerktools" = Taste, Recovery-Seite oder Programm auf dem
 Rechner, Gehäuse bleibt zu; "fortgeschritten" = Zwischenfirmware oder Exploit;
 "Werkstatt" = serielle Konsole oder Teile der Herstellerfirmware. Die Worte
 legt Content fest.
