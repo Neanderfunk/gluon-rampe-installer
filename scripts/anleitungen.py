@@ -198,6 +198,9 @@ def seiten_erzeugen(geraete, quelle, jinja2):
                              undefined=jinja2.StrictUndefined, keep_trailing_newline=True,
                              autoescape=False)
     daten_stand = git_stand(ROOT, DATEN)
+    if daten_stand == "lokal":
+        print(f"Hinweis: {DATEN.name} hat ungesicherte Änderungen, die Seiten bekommen "
+              "daten_stand: lokal. Erst die Daten committen, dann erzeugen.", file=sys.stderr)
     seiten, ohne = {}, []
     for g in geraete:
         vp = quelle / "vorlagen" / f"{g['familie']}.md"
