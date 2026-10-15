@@ -203,16 +203,16 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [avm-fritz-wlan-repeater-1750e](#avm-fritz-wlan-repeater-1750e) | AVM FRITZ!WLAN Repeater 1750E (broken) | ath79-generic | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  |  |
 | [avm-fritz-wlan-repeater-300e](#avm-fritz-wlan-repeater-300e) | AVM FRITZ!WLAN Repeater 300E | ath79-generic | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | https://fritz-tools.readthedocs.io/ |
 | [avm-fritz-wlan-repeater-450e](#avm-fritz-wlan-repeater-450e) | AVM FRITZ!WLAN Repeater 450E | ath79-generic | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | https://fritz-tools.readthedocs.io/ |
-| [buffalo-wzr-600dhp](#buffalo-wzr-600dhp) | Buffalo WZR-600DHP | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [buffalo-wzr-hp-ag300h](#buffalo-wzr-hp-ag300h) | Buffalo WZR-HP-AG300H | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [buffalo-wzr-hp-g300nh-rtl8366s](#buffalo-wzr-hp-g300nh-rtl8366s) | Buffalo WZR-HP-G300NH (RTL8366S switch) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [buffalo-wzr-600dhp](#buffalo-wzr-600dhp) | Buffalo WZR-600DHP | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/buffalo-wzr-600dhp.md) |
+| [buffalo-wzr-hp-ag300h](#buffalo-wzr-hp-ag300h) | Buffalo WZR-HP-AG300H | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/buffalo-wzr-hp-ag300h.md) |
+| [buffalo-wzr-hp-g300nh-rtl8366s](#buffalo-wzr-hp-g300nh-rtl8366s) | Buffalo WZR-HP-G300NH (RTL8366S switch) | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/buffalo-wzr-hp-g300nh-rtl8366s.md) |
 | [buffalo-wzr-hp-g450h-wzr-450hp](#buffalo-wzr-hp-g450h-wzr-450hp) | Buffalo WZR-HP-G450H/WZR-450HP | ath79-generic | K0+ | [`sonderweg-buffalo-wzr-hp-g450h-wzr-450hp`](#familie-sonderweg-buffalo-wzr-hp-g450h-wzr-450hp) | webui-upload | nein | nein | nein |  |  |
 | [comfast-cf-ew71-v2](#comfast-cf-ew71-v2) | COMFAST CF-EW71 v2 | ath79-generic | K1d | [`sonderweg-comfast-cf-ew71-v2`](#familie-sonderweg-comfast-cf-ew71-v2) | webui-upload | nein | nein | nein |  |  |
-| [d-link-dap-1330-a1](#d-link-dap-1330-a1) | D-Link DAP-1330 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [d-link-dap-1365-a1](#d-link-dap-1365-a1) | D-Link DAP-1365 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [d-link-dap-2660-a1](#d-link-dap-2660-a1) | D-Link DAP-2660 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [d-link-dap-2680-a1](#d-link-dap-2680-a1) | D-Link DAP-2680 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5b58710fad2137eedad874f0fe8fe22082d1edc6 |
-| [d-link-dap-2695-a1](#d-link-dap-2695-a1) | D-Link DAP-2695 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [d-link-dap-1330-a1](#d-link-dap-1330-a1) | D-Link DAP-1330 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-1330-a1.md) |
+| [d-link-dap-1365-a1](#d-link-dap-1365-a1) | D-Link DAP-1365 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-1365-a1.md) |
+| [d-link-dap-2660-a1](#d-link-dap-2660-a1) | D-Link DAP-2660 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-2660-a1.md) |
+| [d-link-dap-2680-a1](#d-link-dap-2680-a1) | D-Link DAP-2680 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-2680-a1.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5b58710fad2137eedad874f0fe8fe22082d1edc6 |
+| [d-link-dap-2695-a1](#d-link-dap-2695-a1) | D-Link DAP-2695 A1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-2695-a1.md) |
 | [d-link-dir-505](#d-link-dir-505) | D-Link DIR-505 | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ? | teilweise | ja |  |
 | [d-link-dir825b1](#d-link-dir825b1) | D-Link DIR-825 B1 | ath79-generic | offen | [`sonderweg-d-link-dir825b1`](#familie-sonderweg-d-link-dir825b1) | ? | ? | ? | offen | ja |  |
 | [devolo-dlan-pro-1200+-wifi-ac](#devolo-dlan-pro-1200+-wifi-ac) | devolo dLAN pro 1200+ WiFi ac (broken) | ath79-generic | K1d | [`sonderweg-devolo-dlan-pro-1200+-wifi-ac`](#familie-sonderweg-devolo-dlan-pro-1200+-wifi-ac) | tftp-client-am-geraet | nein | nein | nein |  |  |
@@ -232,13 +232,13 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [gl.inet-gl-usb150](#gl.inet-gl-usb150) | GL.iNET GL-USB150 | ath79-generic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
 | [joy-it-jt-or750i](#joy-it-jt-or750i) | Joy-IT JT-OR750i | ath79-generic | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  | https://wiki.freifunk-stuttgart.net/technik:hardware:joy-it_jt-or750i |
 | [librerouter-v1](#librerouter-v1) | Librerouter LibreRouter v1 | ath79-generic | K1d | [`sonderweg-librerouter-v1`](#familie-sonderweg-librerouter-v1) | webui-upload | nein | nein | nein |  |  |
-| [netgear-wndr3700](#netgear-wndr3700) | NETGEAR WNDR3700 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [netgear-wndr3700-v2](#netgear-wndr3700-v2) | NETGEAR WNDR3700 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [netgear-wndr3800](#netgear-wndr3800) | NETGEAR WNDR3800 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [netgear-wndr3800ch](#netgear-wndr3800ch) | NETGEAR WNDR3800CH | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [netgear-wndrmac-v2](#netgear-wndrmac-v2) | NETGEAR WNDRMAC v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [netgear-wnr2200-16m](#netgear-wnr2200-16m) | NETGEAR WNR2200 16M | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [netgear-wnr2200-8m](#netgear-wnr2200-8m) | NETGEAR WNR2200 8M | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [netgear-wndr3700](#netgear-wndr3700) | NETGEAR WNDR3700 v1 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr3700.md) |
+| [netgear-wndr3700-v2](#netgear-wndr3700-v2) | NETGEAR WNDR3700 v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr3700-v2.md) |
+| [netgear-wndr3800](#netgear-wndr3800) | NETGEAR WNDR3800 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr3800.md) |
+| [netgear-wndr3800ch](#netgear-wndr3800ch) | NETGEAR WNDR3800CH | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr3800ch.md) |
+| [netgear-wndrmac-v2](#netgear-wndrmac-v2) | NETGEAR WNDRMAC v2 | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndrmac-v2.md) |
+| [netgear-wnr2200-16m](#netgear-wnr2200-16m) | NETGEAR WNR2200 16M | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wnr2200-16m.md) |
+| [netgear-wnr2200-8m](#netgear-wnr2200-8m) | NETGEAR WNR2200 8M | ath79-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wnr2200-8m.md) |
 | [ocedo-koala](#ocedo-koala) | Ocedo Koala | ath79-generic | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | ja | ja |  |
 | [ocedo-raccoon](#ocedo-raccoon) | Ocedo Raccoon | ath79-generic | K1 | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | ja | ja |  |
 | [onion-omega](#onion-omega) | Onion Omega | ath79-generic | K0 | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
@@ -333,11 +333,11 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [gl.inet-gl-ar750s-nor](#gl.inet-gl-ar750s-nor) | GL.iNet GL-AR750S NOR | ath79-nand | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
 | [gl.inet-gl-e750](#gl.inet-gl-e750) | GL.iNet GL-E750 (broken) | ath79-nand | K2 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | ja | ja |  |
 | [gl.inet-gl-xe300](#gl.inet-gl-xe300) | GL.iNet GL-XE300 | ath79-nand | K2 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | ja | ja |  |
-| [netgear-wndr3700-v4](#netgear-wndr3700-v4) | NETGEAR WNDR3700 v4 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
-| [netgear-wndr4300](#netgear-wndr4300) | NETGEAR WNDR4300 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [netgear-wndr3700-v4](#netgear-wndr3700-v4) | NETGEAR WNDR3700 v4 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr3700-v4.md) |
+| [netgear-wndr4300](#netgear-wndr4300) | NETGEAR WNDR4300 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wndr4300.md) |
 | [zte-mf281](#zte-mf281) | ZTE MF281 (broken) | ath79-nand | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1e1695f959e678868bb7911d059b847f38fc9cf4 |
 | [zte-mf286r](#zte-mf286r) | ZTE MF286R (broken) | ath79-nand | K1 | [`sonderweg-zte-mf286r`](#familie-sonderweg-zte-mf286r) | Exploit | nein | nein | ja | ja |  |
-| [zyxel-nbg6716](#zyxel-nbg6716) | Zyxel NBG6716 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [zyxel-nbg6716](#zyxel-nbg6716) | Zyxel NBG6716 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nbg6716.md) |
 | [raspberrypi-model-b](#raspberrypi-model-b) | Raspberry Pi 1 Model B/B+ | bcm27xx-bcm2708 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
 | [raspberrypi-2-model-b](#raspberrypi-2-model-b) | Raspberry Pi 2 Model B | bcm27xx-bcm2709 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
 | [raspberrypi-3-model-b](#raspberrypi-3-model-b) | Raspberry Pi 3 Model B/B+ | bcm27xx-bcm2710 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
@@ -359,16 +359,16 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [extreme-networks-ws-ap3915i](#extreme-networks-ws-ap3915i) | Extreme Networks WS-AP3915i | ipq40xx-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | - |
 | [gl.inet-gl-ap1300](#gl.inet-gl-ap1300) | GL.iNet GL-AP1300 | ipq40xx-generic | K0 | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | - |
 | [gl.inet-gl-b1300](#gl.inet-gl-b1300) | GL.iNet GL-B1300 | ipq40xx-generic | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | - |
-| [linksys-ea6350v3](#linksys-ea6350v3) | Linksys EA6350 v3 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
+| [linksys-ea6350v3](#linksys-ea6350v3) | Linksys EA6350 v3 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-ea6350v3.md) |
 | [linksys-ea8300-dallas](#linksys-ea8300-dallas) | Linksys EA8300 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
 | [linksys-mr8300-dallas](#linksys-mr8300-dallas) | Linksys MR8300 | ipq40xx-generic | K2 | [`sonderweg-linksys-mr8300-dallas`](#familie-sonderweg-linksys-mr8300-dallas) | webui-upload | nein | nein | ja | ja | - |
-| [linksys-vlp01](#linksys-vlp01) | Linksys VLP01 (Alias von linksys-whw01) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/whw01_v1#installation |
-| [linksys-whw01](#linksys-whw01) | Linksys WHW01 v1 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/whw01_v1#installation |
-| [linksys-whw03-v2-velop](#linksys-whw03-v2-velop) | Linksys WHW03 v2 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/whw03_v2#oem_easy_installation |
-| [linksys-whw03-velop](#linksys-whw03-velop) | Linksys WHW03 v1 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/whw03_v1#oem_easy_installation |
+| [linksys-vlp01](#linksys-vlp01) | Linksys VLP01 (Alias von linksys-whw01) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-vlp01.md); https://openwrt.org/toh/linksys/whw01_v1#installation |
+| [linksys-whw01](#linksys-whw01) | Linksys WHW01 v1 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-whw01.md); https://openwrt.org/toh/linksys/whw01_v1#installation |
+| [linksys-whw03-v2-velop](#linksys-whw03-v2-velop) | Linksys WHW03 v2 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-whw03-v2-velop.md); https://openwrt.org/toh/linksys/whw03_v2#oem_easy_installation |
+| [linksys-whw03-velop](#linksys-whw03-velop) | Linksys WHW03 v1 (Velop) | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-whw03-velop.md); https://openwrt.org/toh/linksys/whw03_v1#oem_easy_installation |
 | [meraki-mr33-access-point](#meraki-mr33-access-point) | Cisco Meraki MR33 | ipq40xx-generic | K5 | [`sonderweg-meraki-mr33-access-point`](#familie-sonderweg-meraki-mr33-access-point) | tftp-server-am-geraet | ja | ja | nein |  | https://openwrt.org/toh/meraki/mr33 |
-| [netgear-ex6100v2](#netgear-ex6100v2) | NETGEAR EX6100 v2 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
-| [netgear-ex6150v2](#netgear-ex6150v2) | NETGEAR EX6150 v2 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-fuer-netgear-wi-fi-range-extender-ex6150-v2/ |
+| [netgear-ex6100v2](#netgear-ex6100v2) | NETGEAR EX6100 v2 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-ex6100v2.md) |
+| [netgear-ex6150v2](#netgear-ex6150v2) | NETGEAR EX6150 v2 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-ex6150v2.md); https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-fuer-netgear-wi-fi-range-extender-ex6150-v2/ |
 | [netgear-rbr50](#netgear-rbr50) | NETGEAR Orbi RBR50 v1 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
 | [netgear-rbs50](#netgear-rbs50) | NETGEAR Orbi RBS50 v1 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
 | [netgear-srr60](#netgear-srr60) | NETGEAR Orbi Pro SRR60 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
@@ -378,14 +378,14 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [plasma-cloud-pa1200](#plasma-cloud-pa1200) | Plasma Cloud PA1200 | ipq40xx-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  | - |
 | [plasma-cloud-pa2200](#plasma-cloud-pa2200) | Plasma Cloud PA2200 | ipq40xx-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  | - |
 | [zte-mf289f](#zte-mf289f) | ZTE MF289F | ipq40xx-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0de6a3339f1aadc1de2c9371435e3de239a00645 |
-| [zyxel-nbg6617](#zyxel-nbg6617) | Zyxel NBG6617 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
+| [zyxel-nbg6617](#zyxel-nbg6617) | Zyxel NBG6617 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nbg6617.md) |
 | [mikrotik-discg-5acd](#mikrotik-discg-5acd) | MikroTik DISC Lite5 ac (Alias von mikrotik-sxtsq-5-ac-rbsxtsqg-5acd) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | Alias | - |
 | [mikrotik-hap-ac2](#mikrotik-hap-ac2) | MikroTik hAP ac2 (RBD52G-5HacD2HnD) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | ja | - |
 | [mikrotik-sxtsq-5-ac-rbsxtsqg-5acd](#mikrotik-sxtsq-5-ac-rbsxtsqg-5acd) | MikroTik SXTsq 5 ac (RBSXTsqG-5acD) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | ja | - |
 | [mikrotik-wap-ac](#mikrotik-wap-ac) | MikroTik wAP ac (RBwAPG-5HacD2HnD, ipq40xx) | ipq40xx-mikrotik | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client | nein | nein | ja | ja | - |
 | [aruba-ap-32x](#aruba-ap-32x) | Aruba AP-324/AP-325, Siemens Scalance W1750D | ipq806x-generic | K5 | [`sonderweg-aruba-ap-32x`](#familie-sonderweg-aruba-ap-32x) | tftp-client | ja | nein | teilweise | ja | https://github.com/lukasstockner/ap325-apboot-openwrt |
 | [extreme-networks-ap3935](#extreme-networks-ap3935) | Extreme Networks AP3935i/e | ipq806x-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | - |
-| [netgear-nighthawk-x4s-r7800](#netgear-nighthawk-x4s-r7800) | NETGEAR Nighthawk X4S R7800 | ipq806x-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
+| [netgear-nighthawk-x4s-r7800](#netgear-nighthawk-x4s-r7800) | NETGEAR Nighthawk X4S R7800 | ipq806x-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-nighthawk-x4s-r7800.md) |
 | [tp-link-archer-c2600](#tp-link-archer-c2600) | TP-Link Archer C2600 v1 | ipq806x-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c2600.md) |
 | [ubiquiti-unifi-ac-hd](#ubiquiti-unifi-ac-hd) | Ubiquiti UniFi AC HD | ipq806x-generic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-ac-hd.md) |
 | [arcadyan-vgv7510kw22](#arcadyan-vgv7510kw22) | Arcadyan VGV7510KW22 / o2 Box 6431 (NOR-Image) | lantiq-xrx200 | K5 | [`sonderweg-arcadyan-vgv7510kw22`](#familie-sonderweg-arcadyan-vgv7510kw22) | recovery-web | teilweise | nein | nein |  | https://forum.openwrt.org/t/installing-lede-u-boot-via-brnboot-web-interface-without-rs232/9857/6 |
@@ -400,7 +400,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [tp-link-td-w8970](#tp-link-td-w8970) | TP-Link TD-W8970 v1 | lantiq-xrx200_legacy | K2 | [`sonderweg-tp-link-td-w8970`](#familie-sonderweg-tp-link-td-w8970) | ssh | nein | nein | nein |  |  |
 | [tp-link-td-w8980](#tp-link-td-w8980) | TP-Link TD-W8980 (Alias TD-W9980; Gluon: broken, 5 GHz) | lantiq-xrx200_legacy | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein |  |  |
 | [avm-fritz-box-7312](#avm-fritz-box-7312) | AVM FRITZ!Box 7312 | lantiq-xway | K1d | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | https://fritz-tools.readthedocs.io/ |
-| [netgear-dgn3500b](#netgear-dgn3500b) | NETGEAR DGN3500B | lantiq-xway | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [netgear-dgn3500b](#netgear-dgn3500b) | NETGEAR DGN3500B | lantiq-xway | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-dgn3500b.md) |
 | [asus-rt-ax52](#asus-rt-ax52) | ASUS RT-AX52 | mediatek-filogic | K1 | [`sonderweg-asus-rt-ax52`](#familie-sonderweg-asus-rt-ax52) | webui-upload | nein | nein | ja | ja | https://openwrt.org/toh/asus/rt-ax52#installation |
 | [asus-rt-ax59u](#asus-rt-ax59u) | ASUS RT-AX59U | mediatek-filogic | K2 | [`sonderweg-asus-rt-ax59u`](#familie-sonderweg-asus-rt-ax59u) | webui-upload | nein | nein | teilweise | ja | - |
 | [asus-tuf-ax4200](#asus-tuf-ax4200) | ASUS TUF-AX4200 | mediatek-filogic | K2 | [`asus-tuf-herbetom`](#familie-asus-tuf-herbetom) | ssh | nein | nein | teilweise | ja | https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-ASUS-TUF-AX4200 |
@@ -426,14 +426,14 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [gl.inet-gl-mt6000](#gl.inet-gl-mt6000) | GL.iNet GL-MT6000 | mediatek-filogic | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | - |
 | [mercusys-mr80x-v3](#mercusys-mr80x-v3) | Mercusys MR80X v3 | mediatek-filogic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise | ja |  |
 | [mercusys-mr90x-v1](#mercusys-mr90x-v1) | Mercusys MR90X v1 | mediatek-filogic | K2 | [`sonderweg-mercusys-mr90x-v1`](#familie-sonderweg-mercusys-mr90x-v1) | ssh | nein | nein | teilweise | ja | https://openwrt.org/toh/mercusys/mr90x_v1#installation_stock_bootloader |
-| [netgear-wax220](#netgear-wax220) | NETGEAR WAX220 | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/netgear/wax220#oem_easy_installation |
-| [openwrt-one](#openwrt-one) | OpenWrt One | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
+| [netgear-wax220](#netgear-wax220) | NETGEAR WAX220 | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wax220.md); https://openwrt.org/toh/netgear/wax220#oem_easy_installation |
+| [openwrt-one](#openwrt-one) | OpenWrt One | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/openwrt-one.md) |
 | [ubiquiti-unifi-6-plus](#ubiquiti-unifi-6-plus) | Ubiquiti UniFi 6+ (U6+) | mediatek-filogic | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-plus.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=75ee5546e9b7cfa5bbfd6f844ab8c5fffd5bb594 |
 | [wavlink-wl-wn573hx3](#wavlink-wl-wn573hx3) | WAVLINK WL-WN573HX3 / 7Links WLR-1300 | mediatek-filogic | K1d | [`sonderweg-wavlink-wl-wn573hx3`](#familie-sonderweg-wavlink-wl-wn573hx3) | webui-upload | nein | nein | nein |  | - |
 | [xiaomi-mi-router-ax3000t](#xiaomi-mi-router-ax3000t) | Xiaomi Mi Router AX3000T | mediatek-filogic | K2 | [`sonderweg-xiaomi-mi-router-ax3000t`](#familie-sonderweg-xiaomi-mi-router-ax3000t) | ssh | nein | nein | teilweise | ja | - |
 | [xiaomi-mi-router-ax3000t-openwrt-u-boot-layout](#xiaomi-mi-router-ax3000t-openwrt-u-boot-layout) | Xiaomi Mi Router AX3000T (OpenWrt-U-Boot-Layout) | mediatek-filogic | K3 | [`sonderweg-xiaomi-mi-router-ax3000t-openwrt-u-boot-layout`](#familie-sonderweg-xiaomi-mi-router-ax3000t-openwrt-u-boot-layout) | ssh | nein | nein | nein |  | - |
-| [zyxel-nwa50ax-pro](#zyxel-nwa50ax-pro) | Zyxel NWA50AX Pro | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f0445746f6fd96fc7c5394b238153bd2ff22bc5b |
-| [zyxel-nwa90ax-pro](#zyxel-nwa90ax-pro) | Zyxel NWA90AX Pro (Alias von zyxel-nwa50ax-pro) | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | - |
+| [zyxel-nwa50ax-pro](#zyxel-nwa50ax-pro) | Zyxel NWA50AX Pro | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa50ax-pro.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f0445746f6fd96fc7c5394b238153bd2ff22bc5b |
+| [zyxel-nwa90ax-pro](#zyxel-nwa90ax-pro) | Zyxel NWA90AX Pro (Alias von zyxel-nwa50ax-pro) | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa90ax-pro.md) |
 | [linksys-e8450-ubi](#linksys-e8450-ubi) | Linksys E8450 / Belkin RT3200 (UBI-Layout) | mediatek-mt7622 | K3 | [`sonderweg-linksys-e8450-ubi`](#familie-sonderweg-linksys-e8450-ubi) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/e8450#installation |
 | [netgear-wax206](#netgear-wax206) | NETGEAR WAX206 | mediatek-mt7622 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/netgear/wax206#oem_easy_installation |
 | [ubiquiti-unifi-6-lr-v1](#ubiquiti-unifi-6-lr-v1) | Ubiquiti UniFi 6 LR v1 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-lr-v1.md); https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
@@ -458,7 +458,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [gl-mt750](#gl-mt750) | GL.iNet GL-MT750 | ramips-mt7620 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
 | [netgear-ex3700](#netgear-ex3700) | NETGEAR EX3700/EX3800 (Alias netgear-ex3800) | ramips-mt7620 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-wi-fi-range-extender-ex3700/ |
 | [netgear-ex6130](#netgear-ex6130) | NETGEAR EX6130 | ramips-mt7620 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  |  |
-| [nexx-wt3020-8m](#nexx-wt3020-8m) | Nexx WT3020 8M (Aliase WT3020AD/F/H) | ramips-mt7620 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [nexx-wt3020-8m](#nexx-wt3020-8m) | Nexx WT3020 8M (Aliase WT3020AD/F/H) | ramips-mt7620 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/nexx-wt3020-8m.md) |
 | [tp-link-archer-c2-v1](#tp-link-archer-c2-v1) | TP-Link Archer C2 v1 | ramips-mt7620 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | tftp-client-am-geraet | nein | nein | nein |  |  |
 | [tp-link-archer-c20-v1](#tp-link-archer-c20-v1) | TP-Link Archer C20 v1 | ramips-mt7620 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | tftp-client-am-geraet | nein | nein | nein |  |  |
 | [tp-link-archer-c20i](#tp-link-archer-c20i) | TP-Link Archer C20i | ramips-mt7620 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c20i.md) |
@@ -472,21 +472,21 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [cudy-wr2100](#cudy-wr2100) | Cudy WR2100 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr2100.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
 | [cudy-x6-v1](#cudy-x6-v1) | Cudy X6 v1 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-x6-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
 | [cudy-x6-v2](#cudy-x6-v2) | Cudy X6 v2 | ramips-mt7621 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-x6-v2.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [d-link-covr-x1860-a1](#d-link-covr-x1860-a1) | D-Link COVR-X1860 A1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://freifunk-aachen.de/2023/08/03/installationsanleitung-d-link-covr-x1860/ |
+| [d-link-covr-x1860-a1](#d-link-covr-x1860-a1) | D-Link COVR-X1860 A1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-covr-x1860-a1.md); https://freifunk-aachen.de/2023/08/03/installationsanleitung-d-link-covr-x1860/ |
 | [d-link-dap-1620-b1](#d-link-dap-1620-b1) | D-Link DAP-1620 B1 (Gluon: broken) | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-1620-b1.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e4c7703d2a62b8914e4723adae3f67c68a57532c |
 | [d-link-dap-x1860-a1](#d-link-dap-x1860-a1) | D-Link DAP-X1860 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | teilweise | ja | [Anleitung](../anleitungen/de/d-link-dap-x1860-a1.md); https://forum.darmstadt.freifunk.net/t/installation-d-link-dap-x1860/987 |
-| [d-link-dir-860l-b1](#d-link-dir-860l-b1) | D-Link DIR-860L B1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [d-link-dir-860l-b1](#d-link-dir-860l-b1) | D-Link DIR-860L B1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dir-860l-b1.md) |
 | [d-link-dir-878-a1](#d-link-dir-878-a1) | D-Link DIR-878 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dir-878-a1.md); https://openwrt.org/toh/d-link/dir-878_a1#installation |
 | [d-link-dir-882-a1](#d-link-dir-882-a1) | D-Link DIR-882 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dir-882-a1.md); https://openwrt.org/toh/d-link/dir-882_a1#installation |
 | [genexis-pulse-ex400](#genexis-pulse-ex400) | Genexis/Inteno Pulse EX400 | ramips-mt7621 | K1 | [`sonderweg-genexis-pulse-ex400`](#familie-sonderweg-genexis-pulse-ex400) | webui-upload | nein | nein | ja | ja | https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400 |
 | [gl.inet-gl-mt1300](#gl.inet-gl-mt1300) | GL.iNet GL-MT1300 (Beryl) | ramips-mt7621 | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  |  |
-| [mercusys-mr70x-v1](#mercusys-mr70x-v1) | Mercusys MR70X v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [mercusys-mr70x-v1](#mercusys-mr70x-v1) | Mercusys MR70X v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/mercusys-mr70x-v1.md) |
 | [mikrotik-routerboard-750gr3](#mikrotik-routerboard-750gr3) | MikroTik hEX RB750Gr3 (Alias mikrotik-routerboard-hex-v3) | ramips-mt7621 | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja | https://openwrt.org/toh/mikrotik/common |
 | [netgear-eax12](#netgear-eax12) | NETGEAR EAX12 (Aliase EAX11 v2, EAX15 v2) | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  |  |
 | [netgear-ex6150](#netgear-ex6150) | NETGEAR EX6150 (v1) | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-wi-fi-range-extender-ex6150-v2/ |
 | [netgear-r6220](#netgear-r6220) | NETGEAR R6220 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-r6220/ |
 | [netgear-r6260](#netgear-r6260) | NETGEAR R6260 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  |  |
-| [netgear-wac104](#netgear-wac104) | NETGEAR WAC104 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [netgear-wac104](#netgear-wac104) | NETGEAR WAC104 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wac104.md) |
 | [netgear-wax202](#netgear-wax202) | NETGEAR WAX202 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/netgear/wax202#oem_easy_installation |
 | [netgear-wndr3700-v5](#netgear-wndr3700-v5) | NETGEAR WNDR3700 v5 (Gluon: broken, "untested") | ramips-mt7621 | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | ja | ja |  |
 | [totolink-x5000r](#totolink-x5000r) | TOTOLINK X5000R | ramips-mt7621 | K1d | [`sonderweg-totolink-x5000r`](#familie-sonderweg-totolink-x5000r) | webui-upload | nein | nein | nein |  |  |
@@ -509,11 +509,11 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [xiaomi-redmi-router-ac2100](#xiaomi-redmi-router-ac2100) | Xiaomi Redmi Router AC2100 (RM2100) | ramips-mt7621 | K2 | [`xiaomi-ac2100-pppoe`](#familie-xiaomi-ac2100-pppoe) | ssh | nein | nein | ja | ja | https://openwrt.org/toh/xiaomi/xiaomi_redmi_router_ac2100 |
 | [zbtlink-zbt-wg3526-16m](#zbtlink-zbt-wg3526-16m) | ZBT WG3526 16M | ramips-mt7621 | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
 | [zbtlink-zbt-wg3526-32m](#zbtlink-zbt-wg3526-32m) | ZBT WG3526 32M | ramips-mt7621 | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  |  |
-| [zyxel-nwa50ax](#zyxel-nwa50ax) | ZyXEL NWA50AX (Alias NWA90AX) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964 |
-| [zyxel-nwa55axe](#zyxel-nwa55axe) | ZyXEL NWA55AXE (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964 |
+| [zyxel-nwa50ax](#zyxel-nwa50ax) | ZyXEL NWA50AX (Alias NWA90AX) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa50ax.md); https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964 |
+| [zyxel-nwa55axe](#zyxel-nwa55axe) | ZyXEL NWA55AXE (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa55axe.md); https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964 |
 | [zyxel-wsm20](#zyxel-wsm20) | ZyXEL WSM20 (Multy M1) | ramips-mt7621 | K1 | [`sonderweg-zyxel-wsm20`](#familie-sonderweg-zyxel-wsm20) | webui-upload | nein | nein | ja | ja | https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/ |
 | [cudy-tr1200-v1](#cudy-tr1200-v1) | Cudy TR1200 v1 | ramips-mt76x8 | K2 | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-tr1200-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
-| [cudy-wr1000](#cudy-wr1000) | Cudy WR1000 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  |  |
+| [cudy-wr1000](#cudy-wr1000) | Cudy WR1000 | ramips-mt76x8 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr1000.md) |
 | [gl-mt300n-v2](#gl-mt300n-v2) | GL.iNet GL-MT300N v2 | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
 | [gl.inet-microuter-n300](#gl.inet-microuter-n300) | GL.iNet microuter-N300 | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
 | [gl.inet-vixmini](#gl.inet-vixmini) | GL.iNet VIXMINI | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  |  |
@@ -4827,6 +4827,8 @@ Buffalo WZR-600DHP · ath79-generic · K0
 - **RAM:** 128 MB [Commit]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 25f2f66eeaf720e3db154019fe0b32a146c6082f [geprüft]
+- **Detail-Anleitung:** anleitungen/de/buffalo-wzr-600dhp.md
+- **Werte für die Anleitung:** stock_url = http://192.168.11.1; menue = Administration → Firmware Upgrade
 
 #### buffalo-wzr-hp-ag300h
 
@@ -4853,6 +4855,8 @@ Buffalo WZR-HP-AG300H · ath79-generic · K0
 - **RAM:** 128 MB [Commit]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 480bf28273926d7b30be21b7605dd4fefd07fc3a [geprüft]
+- **Detail-Anleitung:** anleitungen/de/buffalo-wzr-hp-ag300h.md
+- **Werte für die Anleitung:** stock_url = http://192.168.11.1; menue = Administration → Firmware Upgrade
 
 #### buffalo-wzr-hp-g300nh-rtl8366s
 
@@ -4881,6 +4885,8 @@ Buffalo WZR-HP-G300NH (RTL8366S switch) · ath79-generic · K0
 - **Notweg:** [Notfall] U-Boot-TFTP mit dem Gluon-tftp-Image [geprüft]: Rechner feste IP 192.168.11.2, `arp -s 192.168.11.1 02:AA:BB:CC:DD:1A`, `curl -T <tftp-Image> tftp://192.168.11.1` vor dem Einschalten starten, Anschluss über Switch am LAN-Port neben WAN [geprüft: Commit bc356de2]; während das Image geschrieben wird, blinkt die Diag-LED eine Weile [geprüft: Commit bc356de2]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** bc356de2850f14629cb1301be719772fa1212e72 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/buffalo-wzr-hp-g300nh-rtl8366s.md
+- **Werte für die Anleitung:** stock_url = http://192.168.11.1
 
 #### d-link-dap-1330-a1
 
@@ -4910,6 +4916,8 @@ D-Link DAP-1330 A1 · ath79-generic · K0
 - **Notweg:** [Notfall] Recovery-Web: Reset beim Einstecken des Stroms gedrückt halten, bis die LED rot blinkt (Recovery erreicht) [geprüft: Commit 361c670a]; Gerät 192.168.0.50 (oder per DHCP), Upload per `curl -F files=@<factory.bin> http://192.168.0.50/cgi/index` [geprüft: Commit 361c670a]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 361c670a468cac8def368ed95487c72cfdb4a3fa [geprüft]
+- **Detail-Anleitung:** anleitungen/de/d-link-dap-1330-a1.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.50; zugang = ab Werk ohne Passwort
 
 #### d-link-dap-1365-a1
 
@@ -4939,6 +4947,8 @@ D-Link DAP-1365 A1 · ath79-generic · K0
 - **Notweg:** [Notfall] Recovery-Web: Reset beim Einstecken des Stroms gedrückt halten, bis die LED rot blinkt (Recovery erreicht) [geprüft: Commit 361c670a]; Gerät 192.168.0.50 (oder per DHCP), Upload per `curl -F files=@<factory.bin> http://192.168.0.50/cgi/index` [geprüft: Commit 361c670a]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 361c670a468cac8def368ed95487c72cfdb4a3fa [geprüft]
+- **Detail-Anleitung:** anleitungen/de/d-link-dap-1365-a1.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.50; zugang = ab Werk ohne Passwort
 
 #### d-link-dap-2660-a1
 
@@ -4967,6 +4977,8 @@ D-Link DAP-2660 A1 · ath79-generic · K0
 - **Notweg:** [Notfall] Recovery-Web: Netzwerkkabel stecken, Reset beim Einschalten gedrückt halten, bis der Upload begonnen hat; Recovery-Seite ebenfalls http://192.168.0.50 [geprüft: Commit 8ec997d0/5b58710f]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 8ec997d0063bbc1ac41d1025f4c94ae6337899fa [geprüft]
+- **Detail-Anleitung:** anleitungen/de/d-link-dap-2660-a1.md
+- **Werte für die Anleitung:** stock_url = http://192.168.0.50; zugang = Benutzer `admin`, Passwort leer lassen
 
 #### d-link-dap-2680-a1
 
@@ -4995,7 +5007,8 @@ D-Link DAP-2680 A1 · ath79-generic · K0
 - **Notweg:** [Notfall] Recovery-Web: Netzwerkkabel stecken, Reset beim Einschalten gedrückt halten, bis der Upload begonnen hat; Recovery-Seite ebenfalls http://192.168.0.50 [geprüft: Commit 8ec997d0/5b58710f]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 5b58710fad2137eedad874f0fe8fe22082d1edc6 [geprüft]
-- **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5b58710fad2137eedad874f0fe8fe22082d1edc6
+- **Detail-Anleitung:** anleitungen/de/d-link-dap-2680-a1.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5b58710fad2137eedad874f0fe8fe22082d1edc6
+- **Werte für die Anleitung:** stock_url = http://192.168.0.50; zugang = Benutzer `admin`, Passwort leer lassen
 
 #### d-link-dap-2695-a1
 
@@ -5022,6 +5035,8 @@ D-Link DAP-2695 A1 · ath79-generic · K0
 - **Notweg:** [Notfall] Emergency Web Server des Bootloaders über die Konsole [geprüft]: Rechner 192.168.0.90 an LAN1 (PoE), serielle Konsole am RJ45-Console-Port (115200 8N1, RS-232), innerhalb 2 s "q" drücken, dann http://192.168.0.50 [geprüft: Commit cd09f266]; Konsole meldet "write image into flash...OK,dest addr=0x9f070000", danach Strom aus und wieder an; Meldungen "checksum bad" ignorieren [geprüft: Commit cd09f266]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** cd09f26660b684db541a0f49fc23988df142892c [geprüft]
+- **Detail-Anleitung:** anleitungen/de/d-link-dap-2695-a1.md
+- **Werte für die Anleitung:** 
 
 #### netgear-wndr3700
 
@@ -5049,6 +5064,8 @@ NETGEAR WNDR3700 v1 · ath79-generic · K0
 - **RAM:** ?
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 4dc7cb792a8e34b6ad97c7b8058c70311a06bd38 [abgeleitet]
+- **Detail-Anleitung:** anleitungen/de/netgear-wndr3700.md
+- **Werte für die Anleitung:** 
 
 #### netgear-wndr3700-v2
 
@@ -5076,6 +5093,8 @@ NETGEAR WNDR3700 v2 · ath79-generic · K0
 - **RAM:** ?
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 4dc7cb792a8e34b6ad97c7b8058c70311a06bd38 (ohne Anleitung) [abgeleitet]
+- **Detail-Anleitung:** anleitungen/de/netgear-wndr3700-v2.md
+- **Werte für die Anleitung:** 
 
 #### netgear-wndr3800
 
@@ -5105,6 +5124,8 @@ NETGEAR WNDR3800 · ath79-generic · K0
 - **Dauer:** bis zu 10 Minuten [geprüft: Wiki toh:netgear:wndr3800]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target, ohne Anleitung) [abgeleitet]
+- **Detail-Anleitung:** anleitungen/de/netgear-wndr3800.md
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; rechner_ip = 192.168.1.10; dauer = bis zu 10 Minuten
 
 #### netgear-wndr3800ch
 
@@ -5134,6 +5155,8 @@ NETGEAR WNDR3800CH · ath79-generic · K0
 - **Dauer:** bis zu 10 Minuten [geprüft: Wiki toh:netgear:wndr3800]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 00ed75f47f4726dff17c6d63d6847bc4f7a74970 [abgeleitet]
+- **Detail-Anleitung:** anleitungen/de/netgear-wndr3800ch.md
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; rechner_ip = 192.168.1.10; dauer = bis zu 10 Minuten
 
 #### netgear-wndrmac-v2
 
@@ -5160,6 +5183,8 @@ NETGEAR WNDRMAC v2 · ath79-generic · K0
 - **Rückweg zur Herstellerfirmware:** TFTP-Recovery wie WNDR3800, siehe https://openwrt.org/toh/netgear/wndr3800#recovery_flash_in_failsafe_mode [geprüft: Commit 7f297e74]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 7f297e740bc288d29fab1f7490ed0e2e49e9e6f9 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/netgear-wndrmac-v2.md
+- **Werte für die Anleitung:** 
 
 #### netgear-wnr2200-16m
 
@@ -5188,6 +5213,8 @@ NETGEAR WNR2200 16M · ath79-generic · K0
 - **Notweg:** [Notfall] auch TFTP-Recovery [geprüft]; Einzelheiten sind im Inventar nicht erfasst
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** f85d56bb034d8017bdb6b4bb493eb076a21d11b3 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/netgear-wnr2200-16m.md
+- **Werte für die Anleitung:** 
 
 #### netgear-wnr2200-8m
 
@@ -5216,6 +5243,8 @@ NETGEAR WNR2200 8M · ath79-generic · K0
 - **Notweg:** [Notfall] auch TFTP-Recovery [geprüft]; Einzelheiten sind im Inventar nicht erfasst
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** f85d56bb034d8017bdb6b4bb493eb076a21d11b3 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/netgear-wnr2200-8m.md
+- **Werte für die Anleitung:** 
 
 #### tp-link-archer-a7-v5
 
@@ -6298,6 +6327,8 @@ NETGEAR WNDR3700 v4 · ath79-nand · K0
 - **Notweg:** [Notfall] TFTP-Recovery und U-Boot-TFTP [geprüft]; Details im Commit nicht genannt
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 7e623c312832386d5eb5aa970738288cf96d96c3 [geprüft]
+- **Detail-Anleitung:** anleitungen/de/netgear-wndr3700-v4.md
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = Benutzer `admin`, Passwort `password`; dauer = einige Minuten
 
 #### netgear-wndr4300
 
@@ -6328,6 +6359,8 @@ NETGEAR WNDR4300 · ath79-nand · K0
 - **Notweg:** [Notfall] TFTP-Recovery und U-Boot-TFTP [geprüft]; Details im Commit nicht genannt
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 9b6f89c37fc9c2e23cc123bd7b5cf9a1f8dc301a [geprüft]
+- **Detail-Anleitung:** anleitungen/de/netgear-wndr4300.md
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = Benutzer `admin`, Passwort `password`; dauer = einige Minuten
 
 #### zyxel-nbg6716
 
@@ -6355,6 +6388,8 @@ Zyxel NBG6716 · ath79-nand · K0
 - **Rückweg zur Herstellerfirmware:** TFTP-Recovery: Server 192.168.1.33, Datei ras.bin, WPS beim Einschalten halten; Schreiben ca. 10 s, danach blinken Power- und Key-LED schnell [geprüft: Wiki toh:zyxel:nbg6716]
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 99835e09992bb411519fda1f8d16a6d07df7f598 [abgeleitet]
+- **Detail-Anleitung:** anleitungen/de/zyxel-nbg6716.md
+- **Werte für die Anleitung:** 
 
 #### linksys-ea6350v3
 
@@ -6384,7 +6419,8 @@ Linksys EA6350 v3 · ipq40xx-generic · K0
 - **Rückweg zur Herstellerfirmware:** Dual-Partition: Gerät einschalten, 15 s warten, ausschalten, 10 s warten; dreimal wiederholen, dann startet die vorherige Firmware [geprüft: Commit a873b292]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt a873b292840848b67addb5be0c762d292bde33a1
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/linksys-ea6350v3.md
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; menue = Connectivity → Manual update
 
 #### linksys-ea8300-dallas
 
@@ -6443,7 +6479,8 @@ Linksys VLP01 (Alias von linksys-whw01) · ipq40xx-generic · K0
 - **Fehlerbild:** kehrt das Gerät nach 3 Fehlstarts zur Herstellerfirmware zurück: es wurden nicht beide Partitionen geflasht (Dual-Partition) [geprüft: Commit b4184c66]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt b4184c666c13fdf08ecd3abf340538d593e9084c
-- **Detail-Anleitung:** https://openwrt.org/toh/linksys/whw01_v1#installation
+- **Detail-Anleitung:** anleitungen/de/linksys-vlp01.md; https://openwrt.org/toh/linksys/whw01_v1#installation
+- **Werte für die Anleitung:** 
 
 #### linksys-whw01
 
@@ -6471,7 +6508,8 @@ Linksys WHW01 v1 (Velop) · ipq40xx-generic · K0
 - **Notweg:** [Notfall] der OpenWrt-Commit kennt nur UART + TFTP [geprüft]: serielle Konsole, tftp-client am Gerät, TFTP-Server 192.168.1.236, Datei nodes-jr.img, dann `run flashimg`/`flashimg2`
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory); beide Partitionen beachten
 - **Quelle (OpenWrt-Commit):** OpenWrt b4184c666c13fdf08ecd3abf340538d593e9084c
-- **Detail-Anleitung:** https://openwrt.org/toh/linksys/whw01_v1#installation
+- **Detail-Anleitung:** anleitungen/de/linksys-whw01.md; https://openwrt.org/toh/linksys/whw01_v1#installation
+- **Werte für die Anleitung:** 
 
 #### linksys-whw03-v2-velop
 
@@ -6502,7 +6540,8 @@ Linksys WHW03 v2 (Velop) · ipq40xx-generic · K0
 - **Rückweg zur Herstellerfirmware:** Dual-Partition: dreimal hintereinander einschalten und nach ca. 2 s wieder ausschalten, dann startet die vorherige Firmware [geprüft: Commit 9e4ede83]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 9e4ede8344d60d4837e047e9275c21fd2a8f130b
-- **Detail-Anleitung:** https://openwrt.org/toh/linksys/whw03_v2#oem_easy_installation
+- **Detail-Anleitung:** anleitungen/de/linksys-whw03-v2-velop.md; https://openwrt.org/toh/linksys/whw03_v2#oem_easy_installation
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1/ca; zugang = mit dem Admin-Passwort (bei nicht eingerichteten Geräten `admin`); menue = Connectivity
 
 #### linksys-whw03-velop
 
@@ -6533,7 +6572,8 @@ Linksys WHW03 v1 (Velop) · ipq40xx-generic · K0
 - **Rückweg zur Herstellerfirmware:** Dual-Firmware: Gerät dreimal hintereinander für ein paar Sekunden einschalten und wieder ausschalten, dann startet die andere Kopie [geprüft: Commit c9048755]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt c90487556229ae264dec33305e5c71c4ef7dd1c5
-- **Detail-Anleitung:** https://openwrt.org/toh/linksys/whw03_v1#oem_easy_installation
+- **Detail-Anleitung:** anleitungen/de/linksys-whw03-velop.md; https://openwrt.org/toh/linksys/whw03_v1#oem_easy_installation
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = mit dem Admin-Passwort vom Aufkleber; menue = Link „CA“ unten → Connectivity → Choose file
 
 #### netgear-ex6100v2
 
@@ -6562,7 +6602,8 @@ NETGEAR EX6100 v2 · ipq40xx-generic · K0
 - **Notweg:** [Notfall] seriell `fw_recovery`: das Gerät ist dann TFTP-Server 192.168.1.1 [geprüft]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 970f1914be3f299fb302ca74a214589397000858
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/netgear-ex6100v2.md
+- **Werte für die Anleitung:** nach_upload = eine zweite Rückfrage, weil die Netgear-Oberfläche die Freifunk-Firmware für eine ältere Version hält; bestätige auch sie
 
 #### netgear-ex6150v2
 
@@ -6591,7 +6632,8 @@ NETGEAR EX6150 v2 · ipq40xx-generic · K0
 - **Notweg:** [Notfall] seriell `fw_recovery`: das Gerät ist dann TFTP-Server 192.168.1.1 [geprüft]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 970f1914be3f299fb302ca74a214589397000858
-- **Detail-Anleitung:** https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-fuer-netgear-wi-fi-range-extender-ex6150-v2/
+- **Detail-Anleitung:** anleitungen/de/netgear-ex6150v2.md; https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-fuer-netgear-wi-fi-range-extender-ex6150-v2/
+- **Werte für die Anleitung:** nach_upload = eine zweite Rückfrage, weil die Netgear-Oberfläche die Freifunk-Firmware für eine ältere Version hält; bestätige auch sie
 
 #### zyxel-nbg6617
 
@@ -6622,7 +6664,8 @@ Zyxel NBG6617 · ipq40xx-generic · K0
 - **Rückweg zur Herstellerfirmware:** TFTP: Rechner 192.168.1.99/24 an LAN, Herstellerfirmware V1.00(ABCT.X).bin als ras.bin, WPS-Taste beim Einschalten 30 s halten, lange warten; fertig, wenn Power-LED langsam und USB- und WPS-LED schnell blinken, dann neu starten [geprüft: Commit 82618062]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 82618062cf7ed6b40d2c52c6f6b96364888ffda6
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/zyxel-nbg6617.md
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = Passwort `1234`; menue = Expert Mode → Maintenance → Firmware Upgrade
 
 #### netgear-nighthawk-x4s-r7800
 
@@ -6650,7 +6693,8 @@ NETGEAR Nighthawk X4S R7800 · ipq806x-generic · K0
 - **RAM:** ?
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 823242185b56ea518568296f1a5834f736f12076
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/netgear-nighthawk-x4s-r7800.md
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1
 
 #### tp-link-archer-c2600
 
@@ -6709,6 +6753,8 @@ NETGEAR DGN3500B · lantiq-xway · K0
 - **Rückweg zur Herstellerfirmware:** Sercomm-Bootmodus mit Upgrade_207_XP und passender Netgear-Firmware [geprüft: Commit 575127fe]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 575127fe1c82e814da155a15be0a02b4153e1d00
+- **Detail-Anleitung:** anleitungen/de/netgear-dgn3500b.md
+- **Werte für die Anleitung:** 
 
 #### netgear-wax220
 
@@ -6735,7 +6781,8 @@ NETGEAR WAX220 · mediatek-filogic · K0
 - **Fehlerbild:** blinkt danach die Power-LED, ist die LAN-LED aus und antwortet nichts: Strom aus und wieder an [geprüft: Wiki toh:netgear:wax220]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 984786a2f7ec622c99e8c9cdada65d0ea0cf4e0b
-- **Detail-Anleitung:** https://openwrt.org/toh/netgear/wax220#oem_easy_installation
+- **Detail-Anleitung:** anleitungen/de/netgear-wax220.md; https://openwrt.org/toh/netgear/wax220#oem_easy_installation
+- **Werte für die Anleitung:** dauer = etwa 20 Sekunden, dazu der Neustart
 
 #### openwrt-one
 
@@ -6764,7 +6811,8 @@ OpenWrt One · mediatek-filogic · K0
 - **Rückweg zur Herstellerfirmware:** USB-Recovery: FAT32-Stick, Reset hinten beim Einschalten halten; NOR-Recovery: Schalter auf NOR, vorderen Taster beim Einschalten halten [geprüft: Wiki toh:openwrt:one]
 - **Gluon-RAMpe passt:** nein, nicht nötig
 - **Quelle (OpenWrt-Commit):** OpenWrt 797904b3cb4a5c575641c19e7f3989926e4c7902
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/openwrt-one.md
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; datei_art = sysupgrade; einstellungen_abwaehlen = True; menue = System → Backup / Flash Firmware
 
 #### zyxel-nwa50ax-pro
 
@@ -6781,7 +6829,7 @@ Zyxel NWA50AX Pro · mediatek-filogic · K0
   7. "Maintenance" > "File Manager" > "Firmware Package" öffnen und das factory-Image hochladen [geprüft: Wiki toh:zyxel:nwa50ax_pro]
   8. Warten, bis das Gerät mit Gluon neu gestartet ist [abgeleitet]
 - **Übertragung:** webui-upload
-- **Adressen:** Gerät per DHCP, sonst 192.168.1.2 [geprüft: Wiki toh:zyxel:nwa50ax_pro]
+- **Adressen:** Gerät per DHCP, sonst 192.168.1.2 [geprüft: Wiki toh:zyxel:nwa50ax_pro]; [abgeleitet: Rechner fest auf 192.168.1.10, wenn kein DHCP; die Quelle nennt nur das Gerät unter 192.168.1.2]
 - **Programm:** Browser [geprüft]
 - **Zugang:** Login admin, Passwort hinten auf dem Gerät oder 1234 [geprüft: Wiki toh:zyxel:nwa50ax_pro]
 - **Datei:** Gluon-factory-Image [geprüft]
@@ -6798,7 +6846,8 @@ Zyxel NWA50AX Pro · mediatek-filogic · K0
 - **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt f0445746f6fd96fc7c5394b238153bd2ff22bc5b
-- **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f0445746f6fd96fc7c5394b238153bd2ff22bc5b
+- **Detail-Anleitung:** anleitungen/de/zyxel-nwa50ax-pro.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f0445746f6fd96fc7c5394b238153bd2ff22bc5b
+- **Werte für die Anleitung:** stock_url = 192.168.1.2; rechner_ip = 192.168.1.10; zugang = Benutzer `admin`, Passwort vom Aufkleber hinten oder `1234`
 
 #### zyxel-nwa90ax-pro
 
@@ -6813,6 +6862,7 @@ Zyxel NWA90AX Pro (Alias von zyxel-nwa50ax-pro) · mediatek-filogic · K0
   5. factory-Image wie beim NWA50AX Pro hochladen [geprüft: Wiki toh:zyxel:nwa50ax_pro]
   6. Warten, bis das Gerät mit Gluon neu gestartet ist [abgeleitet]
 - **Übertragung:** webui-upload
+- **Adressen:** Gerät 192.168.1.2; [abgeleitet: Rechner fest auf 192.168.1.10, wenn kein DHCP; die Quelle nennt nur das Gerät unter 192.168.1.2]
 - **Programm:** Browser; Vorgehen wie NWA50AX Pro: Wiki sagt, die Anleitung gilt unverändert [geprüft: Wiki toh:zyxel:nwa50ax_pro]
 - **Datei:** Gluon-factory-Image; Factory braucht compat-model 81e1, im Backport enthalten [geprüft: Patch 0003]
 - **seriell nötig:** nein
@@ -6825,7 +6875,8 @@ Zyxel NWA90AX Pro (Alias von zyxel-nwa50ax-pro) · mediatek-filogic · K0
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt e34e874a11f0506ff17365819bc101a455dc503e + 2cc8d3e382c0b8b919cef2e9f1cfec9ec7954150; gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/zyxel-nwa90ax-pro.md
+- **Werte für die Anleitung:** stock_url = 192.168.1.2; rechner_ip = 192.168.1.10; zugang = Benutzer `admin`, Passwort vom Aufkleber hinten oder `1234`
 
 #### tp-link-tl-wdr4900-v1
 
@@ -6915,6 +6966,8 @@ Nexx WT3020 8M (Aliase WT3020AD/F/H) · ramips-mt7620 · K0
 - **RAM:** 64 MB
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 7bac455a4ccd4a55e5db64c7eac224c98be045b6 (ohne Installationstext)
+- **Detail-Anleitung:** anleitungen/de/nexx-wt3020-8m.md
+- **Werte für die Anleitung:** stock_url = http://192.168.8.1; zugang = Benutzer `admin`, Passwort `admin`
 
 #### tp-link-archer-c20i
 
@@ -7008,7 +7061,8 @@ D-Link COVR-X1860 A1 · ramips-mt7621 · K0
 - **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** nicht nötig (Gluon hat factory und recovery); steht in GERAETE.md noch als Kandidat
 - **Quelle (OpenWrt-Commit):** 0a18259e4aa361cd9e5848c038be4b9f4e3bfcc6
-- **Detail-Anleitung:** https://freifunk-aachen.de/2023/08/03/installationsanleitung-d-link-covr-x1860/
+- **Detail-Anleitung:** anleitungen/de/d-link-covr-x1860-a1.md; https://freifunk-aachen.de/2023/08/03/installationsanleitung-d-link-covr-x1860/
+- **Werte für die Anleitung:** stock_url = http://192.168.0.1/UpdateFirmware_Simple.html
 
 #### d-link-dir-860l-b1
 
@@ -7035,6 +7089,8 @@ D-Link DIR-860L B1 · ramips-mt7621 · K0
 - **Notweg:** [Notfall] D-Link-Recovery [abgeleitet: ToH "D-Link Recovery GUI"; Commit ohne Text]: Reset gedrückt halten und Strom einstecken, halten, bis die Power-LED blinkt (ca. 10 s); Rechner fest 192.168.0.2/24, Browser http://192.168.0.1, factory hochladen [geprüft: Wiki toh:d-link:dir-860l_b1]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 40b740b23234574115225bf8bde7bc679f8034e1 (ohne Installationstext)
+- **Detail-Anleitung:** anleitungen/de/d-link-dir-860l-b1.md
+- **Werte für die Anleitung:** 
 
 #### mercusys-mr70x-v1
 
@@ -7061,6 +7117,8 @@ Mercusys MR70X v1 · ramips-mt7621 · K0
 - **Rückweg zur Herstellerfirmware:** Web-Recovery: Strom ab, beim Einstecken Reset 5-10 s halten, Rechner fest 192.168.1.x/255.255.255.0, Browser http://192.168.1.1, Herstellerfirmware hochladen [geprüft: Commit 47de2c68]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 47de2c686291e69afc9f443e27e1dfd11ed5fbe7
+- **Detail-Anleitung:** anleitungen/de/mercusys-mr70x-v1.md
+- **Werte für die Anleitung:** 
 
 #### netgear-wac104
 
@@ -7086,6 +7144,8 @@ NETGEAR WAC104 · ramips-mt7621 · K0
 - **Rückweg zur Herstellerfirmware:** nmrpflash mit Herstellerimage [geprüft: Commit 221d8a1c]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 221d8a1c6086ffd8bc53f81d5074a177d8dd8480
+- **Detail-Anleitung:** anleitungen/de/netgear-wac104.md
+- **Werte für die Anleitung:** 
 
 #### tp-link-archer-ax23-v1
 
@@ -7232,7 +7292,8 @@ ZyXEL NWA50AX (Alias NWA90AX) · ramips-mt7621 · K0
 - **Fehlerbild:** Meldung "ULCGI unable to parse CGI query": Dateiname zu lang, kürzen [geprüft: Wiki toh:zyxel:nwa50ax]; startet OpenWrt nur einmal und danach wieder die Zyxel-Firmware (Slot B war nicht aktiv): zuerst ein beliebiges Zyxel-Update einspielen und erneut flashen [geprüft: Commit a0b7fef0/f0445746]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** a0b7fef0ffe4cd9cca39a652a37e4f3ce8f0a681
-- **Detail-Anleitung:** https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964
+- **Detail-Anleitung:** anleitungen/de/zyxel-nwa50ax.md; https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964
+- **Werte für die Anleitung:** zugang = Benutzer `admin`, Passwort `1234`
 
 #### zyxel-nwa55axe
 
@@ -7247,7 +7308,7 @@ ZyXEL NWA55AXE (Gluon: broken) · ramips-mt7621 · K0
   5. "maintenance" > "firmware-package" öffnen und das factory-Image hochladen [geprüft: Wiki toh:zyxel:nwa55axe]
   6. Warten, bis das Gerät mit Gluon neu gestartet ist [abgeleitet]
 - **Übertragung:** webui-upload
-- **Adressen:** Oberfläche 192.168.1.2 [geprüft: Wiki toh:zyxel:nwa55axe]
+- **Adressen:** Oberfläche 192.168.1.2 [geprüft: Wiki toh:zyxel:nwa55axe]; [abgeleitet: Rechner fest auf 192.168.1.10, wenn kein DHCP; die Quelle nennt nur das Gerät unter 192.168.1.2]
 - **Programm:** Browser [geprüft: Wiki toh:zyxel:nwa55axe]
 - **Zugang:** Login admin mit Passwort vom Aufkleber [geprüft: Wiki toh:zyxel:nwa55axe]; bei unbekanntem Passwort nur seriell (Gehäuse öffnen), da keine Reset-Taste [geprüft: Commit a0b7fef0]
 - **Datei:** Gluon-factory-Image [geprüft]
@@ -7265,7 +7326,8 @@ ZyXEL NWA55AXE (Gluon: broken) · ramips-mt7621 · K0
 - **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** a0b7fef0ffe4cd9cca39a652a37e4f3ce8f0a681
-- **Detail-Anleitung:** https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964
+- **Detail-Anleitung:** anleitungen/de/zyxel-nwa55axe.md; https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964
+- **Werte für die Anleitung:** stock_url = 192.168.1.2; rechner_ip = 192.168.1.10; zugang = Benutzer `admin`, Passwort vom Aufkleber
 
 #### cudy-wr1000
 
@@ -7291,6 +7353,8 @@ Cudy WR1000 · ramips-mt76x8 · K0
 - **Rückweg zur Herstellerfirmware:** aufwendig: Herstellerfirmware entschlüsseln (XOR je Region EU/US) und per `sysupgrade -F -n` einspielen, nur für bestimmte Firmware-Stände [geprüft: Commit 7c91144a]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 7c91144ae6a45dc8d7ca6b68b3403e166185a498
+- **Detail-Anleitung:** anleitungen/de/cudy-wr1000.md
+- **Werte für die Anleitung:** 
 
 #### tp-link-re200-v2
 

@@ -71,14 +71,18 @@ def git_stand(repo, pfad):
 
 
 def optionale_werte(vorlage_text):
-    """Namen aus dem Abschnitt 'optional' im Kopfkommentar der Vorlage."""
+    """Namen der optionalen Werte aus dem Kopfkommentar der Vorlage: alle unter
+    einer Abschnittsueberschrift "optional ..." oder, wenn der Kopf "alle
+    optional" sagt, alle aufgefuehrten Werte ausser denen unter "Pflicht"."""
     kopf = re.match(r"\{#-?(.*?)-?#\}", vorlage_text, re.S)
     if not kopf:
         return []
-    namen, drin = [], False
+    alle = "alle optional" in kopf.group(1)
+    namen, drin = [], alle
     for zeile in kopf.group(1).splitlines():
         if re.match(r"^\s{2}\S", zeile):          # Abschnittsueberschrift (2 Leerzeichen)
-            drin = zeile.strip().startswith("optional")
+            ueber = zeile.strip()
+            drin = ueber.startswith("optional") or (alle and not ueber.startswith("Pflicht"))
             continue
         m = re.match(r"^\s{4}([a-z_]+)\s", zeile)
         if drin and m:

@@ -278,9 +278,12 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "25f2f66eeaf720e3db154019fe0b32a146c6082f [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/buffalo-wzr-600dhp.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.11.1",
+    "menue": "Administration → Firmware Upgrade"
+   }
   },
   {
    "gluon_name": "buffalo-wzr-hp-ag300h",
@@ -322,9 +325,12 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "480bf28273926d7b30be21b7605dd4fefd07fc3a [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/buffalo-wzr-hp-ag300h.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.11.1",
+    "menue": "Administration → Firmware Upgrade"
+   }
   },
   {
    "gluon_name": "buffalo-wzr-hp-g300nh-rtl8366s",
@@ -366,9 +372,11 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "bc356de2850f14629cb1301be719772fa1212e72 [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/buffalo-wzr-hp-g300nh-rtl8366s.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.11.1"
+   }
   },
   {
    "gluon_name": "buffalo-wzr-hp-g450h-wzr-450hp",
@@ -498,9 +506,12 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "361c670a468cac8def368ed95487c72cfdb4a3fa [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/d-link-dap-1330-a1.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.0.50",
+    "zugang": "ab Werk ohne Passwort"
+   }
   },
   {
    "gluon_name": "d-link-dap-1365-a1",
@@ -542,9 +553,12 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "361c670a468cac8def368ed95487c72cfdb4a3fa [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/d-link-dap-1365-a1.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.0.50",
+    "zugang": "ab Werk ohne Passwort"
+   }
   },
   {
    "gluon_name": "d-link-dap-2660-a1",
@@ -587,9 +601,12 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "8ec997d0063bbc1ac41d1025f4c94ae6337899fa [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/d-link-dap-2660-a1.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.0.50",
+    "zugang": "Benutzer `admin`, Passwort leer lassen"
+   }
   },
   {
    "gluon_name": "d-link-dap-2680-a1",
@@ -632,9 +649,12 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "5b58710fad2137eedad874f0fe8fe22082d1edc6 [geprüft]",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5b58710fad2137eedad874f0fe8fe22082d1edc6",
+   "anleitung": "anleitungen/de/d-link-dap-2680-a1.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5b58710fad2137eedad874f0fe8fe22082d1edc6",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.0.50",
+    "zugang": "Benutzer `admin`, Passwort leer lassen"
+   }
   },
   {
    "gluon_name": "d-link-dap-2695-a1",
@@ -676,9 +696,11 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "cd09f26660b684db541a0f49fc23988df142892c [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/d-link-dap-2695-a1.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": ""
+   }
   },
   {
    "gluon_name": "d-link-dir-505",
@@ -1587,9 +1609,11 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "4dc7cb792a8e34b6ad97c7b8058c70311a06bd38 [abgeleitet]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/netgear-wndr3700.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": ""
+   }
   },
   {
    "gluon_name": "netgear-wndr3700-v2",
@@ -1632,9 +1656,11 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "4dc7cb792a8e34b6ad97c7b8058c70311a06bd38 (ohne Anleitung) [abgeleitet]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/netgear-wndr3700-v2.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": ""
+   }
   },
   {
    "gluon_name": "netgear-wndr3800",
@@ -1677,9 +1703,13 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target, ohne Anleitung) [abgeleitet]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/netgear-wndr3800.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.1.1",
+    "rechner_ip": "192.168.1.10",
+    "dauer": "bis zu 10 Minuten"
+   }
   },
   {
    "gluon_name": "netgear-wndr3800ch",
@@ -1722,9 +1752,13 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "00ed75f47f4726dff17c6d63d6847bc4f7a74970 [abgeleitet]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/netgear-wndr3800ch.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.1.1",
+    "rechner_ip": "192.168.1.10",
+    "dauer": "bis zu 10 Minuten"
+   }
   },
   {
    "gluon_name": "netgear-wndrmac-v2",
@@ -1766,9 +1800,11 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "7f297e740bc288d29fab1f7490ed0e2e49e9e6f9 [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/netgear-wndrmac-v2.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": ""
+   }
   },
   {
    "gluon_name": "netgear-wnr2200-16m",
@@ -1811,9 +1847,11 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "f85d56bb034d8017bdb6b4bb493eb076a21d11b3 [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/netgear-wnr2200-16m.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": ""
+   }
   },
   {
    "gluon_name": "netgear-wnr2200-8m",
@@ -1856,9 +1894,11 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "f85d56bb034d8017bdb6b4bb493eb076a21d11b3 [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/netgear-wnr2200-8m.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": ""
+   }
   },
   {
    "gluon_name": "ocedo-koala",
@@ -7099,9 +7139,13 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "7e623c312832386d5eb5aa970738288cf96d96c3 [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/netgear-wndr3700-v4.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.1.1",
+    "zugang": "Benutzer `admin`, Passwort `password`",
+    "dauer": "einige Minuten"
+   }
   },
   {
    "gluon_name": "netgear-wndr4300",
@@ -7144,9 +7188,13 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "9b6f89c37fc9c2e23cc123bd7b5cf9a1f8dc301a [geprüft]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/netgear-wndr4300.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.1.1",
+    "zugang": "Benutzer `admin`, Passwort `password`",
+    "dauer": "einige Minuten"
+   }
   },
   {
    "gluon_name": "zte-mf281",
@@ -7272,9 +7320,11 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "99835e09992bb411519fda1f8d16a6d07df7f598 [abgeleitet]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/zyxel-nbg6716.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": ""
+   }
   },
   {
    "gluon_name": "raspberrypi-model-b",
@@ -8283,9 +8333,12 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt a873b292840848b67addb5be0c762d292bde33a1",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/linksys-ea6350v3.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.1.1",
+    "menue": "Connectivity → Manual update"
+   }
   },
   {
    "gluon_name": "linksys-ea8300-dallas",
@@ -8419,9 +8472,11 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt b4184c666c13fdf08ecd3abf340538d593e9084c",
-   "anleitung": "https://openwrt.org/toh/linksys/whw01_v1#installation",
+   "anleitung": "anleitungen/de/linksys-vlp01.md; https://openwrt.org/toh/linksys/whw01_v1#installation",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": ""
+   }
   },
   {
    "gluon_name": "linksys-whw01",
@@ -8464,9 +8519,11 @@
    "rampe": "nein, nicht nötig (factory); beide Partitionen beachten",
    "rampe_rezept": "",
    "quelle": "OpenWrt b4184c666c13fdf08ecd3abf340538d593e9084c",
-   "anleitung": "https://openwrt.org/toh/linksys/whw01_v1#installation",
+   "anleitung": "anleitungen/de/linksys-whw01.md; https://openwrt.org/toh/linksys/whw01_v1#installation",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": ""
+   }
   },
   {
    "gluon_name": "linksys-whw03-v2-velop",
@@ -8510,9 +8567,13 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 9e4ede8344d60d4837e047e9275c21fd2a8f130b",
-   "anleitung": "https://openwrt.org/toh/linksys/whw03_v2#oem_easy_installation",
+   "anleitung": "anleitungen/de/linksys-whw03-v2-velop.md; https://openwrt.org/toh/linksys/whw03_v2#oem_easy_installation",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.1.1/ca",
+    "zugang": "mit dem Admin-Passwort (bei nicht eingerichteten Geräten `admin`)",
+    "menue": "Connectivity"
+   }
   },
   {
    "gluon_name": "linksys-whw03-velop",
@@ -8556,9 +8617,13 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt c90487556229ae264dec33305e5c71c4ef7dd1c5",
-   "anleitung": "https://openwrt.org/toh/linksys/whw03_v1#oem_easy_installation",
+   "anleitung": "anleitungen/de/linksys-whw03-velop.md; https://openwrt.org/toh/linksys/whw03_v1#oem_easy_installation",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.1.1",
+    "zugang": "mit dem Admin-Passwort vom Aufkleber",
+    "menue": "Link „CA“ unten → Connectivity → Choose file"
+   }
   },
   {
    "gluon_name": "meraki-mr33-access-point",
@@ -8639,9 +8704,11 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 970f1914be3f299fb302ca74a214589397000858",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/netgear-ex6100v2.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "nach_upload": "eine zweite Rückfrage, weil die Netgear-Oberfläche die Freifunk-Firmware für eine ältere Version hält; bestätige auch sie"
+   }
   },
   {
    "gluon_name": "netgear-ex6150v2",
@@ -8684,9 +8751,11 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 970f1914be3f299fb302ca74a214589397000858",
-   "anleitung": "https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-fuer-netgear-wi-fi-range-extender-ex6150-v2/",
+   "anleitung": "anleitungen/de/netgear-ex6150v2.md; https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-fuer-netgear-wi-fi-range-extender-ex6150-v2/",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "nach_upload": "eine zweite Rückfrage, weil die Netgear-Oberfläche die Freifunk-Firmware für eine ältere Version hält; bestätige auch sie"
+   }
   },
   {
    "gluon_name": "netgear-rbr50",
@@ -9159,9 +9228,13 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 82618062cf7ed6b40d2c52c6f6b96364888ffda6",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/zyxel-nbg6617.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.1.1",
+    "zugang": "Passwort `1234`",
+    "menue": "Expert Mode → Maintenance → Firmware Upgrade"
+   }
   },
   {
    "gluon_name": "mikrotik-discg-5acd",
@@ -9485,9 +9558,11 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 823242185b56ea518568296f1a5834f736f12076",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/netgear-nighthawk-x4s-r7800.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.1.1"
+   }
   },
   {
    "gluon_name": "tp-link-archer-c2600",
@@ -10203,9 +10278,11 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "575127fe1c82e814da155a15be0a02b4153e1d00",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/netgear-dgn3500b.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": ""
+   }
   },
   {
    "gluon_name": "asus-rt-ax52",
@@ -11646,9 +11723,11 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 984786a2f7ec622c99e8c9cdada65d0ea0cf4e0b",
-   "anleitung": "https://openwrt.org/toh/netgear/wax220#oem_easy_installation",
+   "anleitung": "anleitungen/de/netgear-wax220.md; https://openwrt.org/toh/netgear/wax220#oem_easy_installation",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "dauer": "etwa 20 Sekunden, dazu der Neustart"
+   }
   },
   {
    "gluon_name": "openwrt-one",
@@ -11690,9 +11769,14 @@
    "rampe": "nein, nicht nötig",
    "rampe_rezept": "",
    "quelle": "OpenWrt 797904b3cb4a5c575641c19e7f3989926e4c7902",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/openwrt-one.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.1.1",
+    "datei_art": "sysupgrade",
+    "einstellungen_abwaehlen": true,
+    "menue": "System → Backup / Flash Firmware"
+   }
   },
   {
    "gluon_name": "ubiquiti-unifi-6-plus",
@@ -11907,7 +11991,7 @@
    "zeichen": "",
    "uebertragung": "webui-upload",
    "anschluss": "",
-   "adressen": "Gerät per DHCP, sonst 192.168.1.2 [geprüft: Wiki toh:zyxel:nwa50ax_pro]",
+   "adressen": "Gerät per DHCP, sonst 192.168.1.2 [geprüft: Wiki toh:zyxel:nwa50ax_pro]; [abgeleitet: Rechner fest auf 192.168.1.10, wenn kein DHCP; die Quelle nennt nur das Gerät unter 192.168.1.2]",
    "programm": "Browser [geprüft]",
    "zugang": "Login admin, Passwort hinten auf dem Gerät oder 1234 [geprüft: Wiki toh:zyxel:nwa50ax_pro]",
    "datei": "Gluon-factory-Image [geprüft]",
@@ -11928,9 +12012,13 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt f0445746f6fd96fc7c5394b238153bd2ff22bc5b",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f0445746f6fd96fc7c5394b238153bd2ff22bc5b",
+   "anleitung": "anleitungen/de/zyxel-nwa50ax-pro.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f0445746f6fd96fc7c5394b238153bd2ff22bc5b",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "192.168.1.2",
+    "rechner_ip": "192.168.1.10",
+    "zugang": "Benutzer `admin`, Passwort vom Aufkleber hinten oder `1234`"
+   }
   },
   {
    "gluon_name": "zyxel-nwa90ax-pro",
@@ -11952,7 +12040,7 @@
    "zeichen": "",
    "uebertragung": "webui-upload",
    "anschluss": "",
-   "adressen": "",
+   "adressen": "Gerät 192.168.1.2; [abgeleitet: Rechner fest auf 192.168.1.10, wenn kein DHCP; die Quelle nennt nur das Gerät unter 192.168.1.2]",
    "programm": "Browser; Vorgehen wie NWA50AX Pro: Wiki sagt, die Anleitung gilt unverändert [geprüft: Wiki toh:zyxel:nwa50ax_pro]",
    "zugang": "",
    "datei": "Gluon-factory-Image; Factory braucht compat-model 81e1, im Backport enthalten [geprüft: Patch 0003]",
@@ -11973,9 +12061,13 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt e34e874a11f0506ff17365819bc101a455dc503e + 2cc8d3e382c0b8b919cef2e9f1cfec9ec7954150; gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/zyxel-nwa90ax-pro.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "192.168.1.2",
+    "rechner_ip": "192.168.1.10",
+    "zugang": "Benutzer `admin`, Passwort vom Aufkleber hinten oder `1234`"
+   }
   },
   {
    "gluon_name": "linksys-e8450-ubi",
@@ -13139,9 +13231,12 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "7bac455a4ccd4a55e5db64c7eac224c98be045b6 (ohne Installationstext)",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/nexx-wt3020-8m.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.8.1",
+    "zugang": "Benutzer `admin`, Passwort `admin`"
+   }
   },
   {
    "gluon_name": "tp-link-archer-c2-v1",
@@ -13918,9 +14013,11 @@
    "rampe": "nicht nötig (Gluon hat factory und recovery); steht in GERAETE.md noch als Kandidat",
    "rampe_rezept": "",
    "quelle": "0a18259e4aa361cd9e5848c038be4b9f4e3bfcc6",
-   "anleitung": "https://freifunk-aachen.de/2023/08/03/installationsanleitung-d-link-covr-x1860/",
+   "anleitung": "anleitungen/de/d-link-covr-x1860-a1.md; https://freifunk-aachen.de/2023/08/03/installationsanleitung-d-link-covr-x1860/",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.0.1/UpdateFirmware_Simple.html"
+   }
   },
   {
    "gluon_name": "d-link-dap-1620-b1",
@@ -14080,9 +14177,11 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "40b740b23234574115225bf8bde7bc679f8034e1 (ohne Installationstext)",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/d-link-dir-860l-b1.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": ""
+   }
   },
   {
    "gluon_name": "d-link-dir-878-a1",
@@ -14336,9 +14435,11 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "47de2c686291e69afc9f443e27e1dfd11ed5fbe7",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/mercusys-mr70x-v1.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": ""
+   }
   },
   {
    "gluon_name": "mikrotik-routerboard-750gr3",
@@ -14614,9 +14715,11 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "221d8a1c6086ffd8bc53f81d5074a177d8dd8480",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/netgear-wac104.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": ""
+   }
   },
   {
    "gluon_name": "netgear-wax202",
@@ -15744,9 +15847,11 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "a0b7fef0ffe4cd9cca39a652a37e4f3ce8f0a681",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964",
+   "anleitung": "anleitungen/de/zyxel-nwa50ax.md; https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "zugang": "Benutzer `admin`, Passwort `1234`"
+   }
   },
   {
    "gluon_name": "zyxel-nwa55axe",
@@ -15768,7 +15873,7 @@
    "zeichen": "",
    "uebertragung": "webui-upload",
    "anschluss": "",
-   "adressen": "Oberfläche 192.168.1.2 [geprüft: Wiki toh:zyxel:nwa55axe]",
+   "adressen": "Oberfläche 192.168.1.2 [geprüft: Wiki toh:zyxel:nwa55axe]; [abgeleitet: Rechner fest auf 192.168.1.10, wenn kein DHCP; die Quelle nennt nur das Gerät unter 192.168.1.2]",
    "programm": "Browser [geprüft: Wiki toh:zyxel:nwa55axe]",
    "zugang": "Login admin mit Passwort vom Aufkleber [geprüft: Wiki toh:zyxel:nwa55axe]; bei unbekanntem Passwort nur seriell (Gehäuse öffnen), da keine Reset-Taste [geprüft: Commit a0b7fef0]",
    "datei": "Gluon-factory-Image [geprüft]",
@@ -15789,9 +15894,13 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "a0b7fef0ffe4cd9cca39a652a37e4f3ce8f0a681",
-   "anleitung": "https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964",
+   "anleitung": "anleitungen/de/zyxel-nwa55axe.md; https://forum.darmstadt.freifunk.net/t/installation-nwa50ax-nwa55axe/964",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "192.168.1.2",
+    "rechner_ip": "192.168.1.10",
+    "zugang": "Benutzer `admin`, Passwort vom Aufkleber"
+   }
   },
   {
    "gluon_name": "zyxel-wsm20",
@@ -15942,9 +16051,11 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "7c91144ae6a45dc8d7ca6b68b3403e166185a498",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/cudy-wr1000.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": ""
+   }
   },
   {
    "gluon_name": "gl-mt300n-v2",
