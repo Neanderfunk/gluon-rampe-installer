@@ -32,13 +32,28 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     region               ganzer Satz zur Region, z. B. "Nimm die Firmware für
                          die EU-Variante."
     sicherheit, sicherheit_hinweis   siehe _status.md
+
+  Variante weg = "tftp-voll" (Archer C20 v1, Archer C2 v1; MT7620): Nur die
+  TFTP-Recovery, und die schreibt ab Adresse 0 samt Bootloader. Datei = 131072
+  Byte U-Boot ab Byte 512 der TP-Link-Firmware + Gluon-sysupgrade (Commit
+  8375623 für C2 v1 wörtlich; C20 v1 nach Commit 161a3be mit dem sysupgrade
+  statt des nicht mehr gebauten factory, wie C2 v1; beide Device/tplink-v2).
+  Python-Einzeiler gegen beide dd-Varianten geprüft, byte-gleich.
+    tftp_name            bei tftp-voll nötig: Dateiname, z. B.
+                         "ArcherC2V1_tp_recovery.bin"
+    taste                bei tftp-voll nötig: ganzer Satz zum Starten
+    dauer                ganzer Satz zur Dauer, z. B. "Laut OpenWrt dauert es
+                         bis zu 20 bis 25 Minuten."
+    stock_hinweis        ganzer Satz, welche TP-Link-Datei genau
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
+{%- set tftp_voll = w.get("weg") == "tftp-voll" -%}
 
 # {{ modell }}: Freifunk-Firmware installieren
 
 {% include "_status.md" %}
+{%- if not tftp_voll %}
 
 > **Wichtig: Lade nie die Freifunk-Datei allein über die
 > TP-Link-Oberfläche hoch.** Der Firmware-Selector bietet für dieses Gerät
@@ -182,6 +197,114 @@ Dann den Rechner fest auf `192.168.0.66` stellen, Netzmaske
 einschalten. Laut OpenWrt-Wiki etwa 8 Sekunden halten, bis alle LEDs
 aufhören zu blinken und die WPS-LED angeht. Der Router holt die Datei,
 schreibt sie und startet nach etwa einer Minute neu.
+{%- else %}
+
+> **Wichtig: Nimm nie die Freifunk-Datei allein.** Der Firmware-Selector
+> bietet für dieses Gerät nur den Knopf **Upgrade** an. Lädst du diese Datei
+> über die TP-Link-Oberfläche hoch, ist das Gerät danach nur noch über die
+> serielle Konsole zu retten. Benennst du sie für den Notfall-Modus einfach
+> um, überschreibt der Router damit seinen Bootloader, und dann hilft nur
+> noch ein Flash-Programmer. Die Datei muss vorher mit einem Stück der
+> TP-Link-Firmware zusammengesetzt werden, wie unten beschrieben.
+
+Beim {{ modell }} geht die Freifunk-Firmware nur über den Notfall-Modus des
+Bootloaders auf das Gerät: Beim Einschalten mit gedrückter Taste holt er
+sich eine Datei per TFTP und schreibt sie **ab dem Anfang des Speichers,
+samt Bootloader**. Deshalb muss vorn in dieser Datei der Bootloader aus der
+TP-Link-Firmware stehen, dahinter die Freifunk-Firmware. Rechne mit einer
+Stunde.
+
+## Was du brauchst
+
+- den Router mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
+  Netzwerkkabel
+- einen TFTP-Server auf dem Rechner
+  ([TFTP-Server einrichten](grundlagen/tftp-server.md))
+- die **TP-Link-Firmware** für genau dieses Modell, von der
+  [Download-Seite bei TP-Link]({{ w.stock_url }}).
+  {%- if w.get("stock_hinweis") %} {{ w.get("stock_hinweis") }}{% endif %}
+  {%- if w.get("region") %} {{ w.get("region") }}{% endif %}
+- die Freifunk-Firmware deiner Community für den {{ modell }}: im
+  Firmware-Selector unter "Wähle Deine Installationsart" der Knopf
+  **Upgrade** (die Datei endet auf `-sysupgrade.bin`). **Nicht allein
+  verwenden**, siehe oben.
+- zum Zusammensetzen: unter Linux und macOS die Befehle `dd` und `cat`,
+  unter Windows **Python 3** (<https://www.python.org/downloads/>)
+{%- if zusatz.vorher is defined and zusatz.vorher %}
+
+## Vorher prüfen
+
+{{ zusatz.vorher }}
+{%- endif %}
+
+## Schritte
+
+1. **Dateien bereitlegen.** Leg einen Ordner an. Pack die TP-Link-Firmware
+   (ein ZIP-Archiv) dort aus und benenn die `.bin`-Datei darin in
+   `tpl.bin` um. Leg die Freifunk-Datei daneben und benenn sie in
+   `gluon.bin` um.
+
+2. **Zusammensetzen.** Öffne ein Terminal in dem Ordner und gib ein:
+
+   - Linux und macOS:
+
+     ```
+     dd if=tpl.bin of=uboot.bin bs=512 count=256 skip=1
+     cat uboot.bin gluon.bin > {{ w.tftp_name }}
+     ```
+
+   - Windows (PowerShell oder Eingabeaufforderung), geht auch unter Linux
+     und macOS mit `python3` statt `py`:
+
+     ```
+     py -c "open('{{ w.tftp_name }}','wb').write(open('tpl.bin','rb').read(131584)[512:]+open('gluon.bin','rb').read())"
+     ```
+
+   **Prüfen:** `{{ w.tftp_name }}` ist genau **131.072 Bytes größer** als
+   `gluon.bin` (Größe in Bytes: Windows `dir`, Linux und macOS `ls -l`).
+   **Stimmt das nicht, auf keinen Fall weitermachen**: Mit einer falschen
+   Datei überschreibt der Router seinen Bootloader.
+
+3. **Feste Adresse am Rechner.** Stell deinen Rechner auf `192.168.0.66`,
+   Netzmaske `255.255.255.0`
+   ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
+
+4. **TFTP-Server starten** mit dem Ordner, in dem `{{ w.tftp_name }}`
+   liegt. Groß- und Kleinschreibung des Namens genau so.
+
+5. **Kabel anschließen.** Netzwerkkabel vom Rechner an eine LAN-Buchse des
+   Routers. Strom noch nicht anschließen.
+
+6. **Notfall-Modus starten.** {{ w.taste }} **Prüfen:** Im Protokoll des
+   TFTP-Servers erscheint, dass `{{ w.tftp_name }}` abgeholt wird.
+
+7. **Warten.** Der Router schreibt Bootloader und Freifunk-Firmware und
+   startet von selbst neu.
+   {%- if w.get("dauer") %} {{ w.get("dauer") }}{% endif %}
+   **Auf keinen Fall den Strom ziehen**, solange er schreibt.
+
+8. **Fertig.** Stell den Rechner wieder auf "automatisch". Je nach Community
+   kommt zuerst eine Einrichtungsseite unter `http://192.168.1.1`, oder der
+   Router geht gleich in Betrieb.
+
+## Woran du erkennst, dass es geklappt hat
+
+- In Schritt 2 ist die Datei 131.072 Bytes größer als `gluon.bin`.
+- In Schritt 6 zeigt der TFTP-Server den Abruf.
+- Nach Schritt 7 meldet sich die Freifunk-Firmware.
+
+## Wenn etwas schiefgeht
+
+- **Der Router holt die Datei nicht.** Prüf feste Adresse `192.168.0.66`,
+  Kabel an einer LAN-Buchse, Firewall und den Dateinamen. Windows blendet
+  Dateiendungen gern aus. Dann den Notfall-Modus noch einmal starten.
+- **Er hat die Datei geholt, startet aber nicht.** Warte länger, das
+  Schreiben kann lange dauern. Kommt auch nach einer halben Stunde nichts,
+  schreib uns.
+{%- if zusatz.fehler is defined and zusatz.fehler %}
+{{ zusatz.fehler }}
+{%- endif %}
+{%- endif %}
 
 {{ zusatz.text }}
 
