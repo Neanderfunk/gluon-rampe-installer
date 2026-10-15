@@ -13,8 +13,8 @@
 <meta name="anleitung:stufe" content="Werkstatt">
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="feste-ip, serielle-konsole, ssh-scp, tftp-server">
-<meta name="anleitung:daten_stand" content="4674b01">
-<meta name="anleitung:vorlage_stand" content="f350b7d">
+<meta name="anleitung:daten_stand" content="440a725">
+<meta name="anleitung:vorlage_stand" content="4935d8a">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -116,7 +116,9 @@ OpenWrt; das Terminal zeigt viele Zeilen. Warte, bis
 <h3>Freifunk-Firmware aufspielen</h3>
 <ol start="7">
 <li>
-<p><strong>Freifunk-Firmware kopieren.</strong>
+<p><strong>Freifunk-Firmware kopieren.</strong> OpenWrt antwortet
+unter <code>192.168.1.1</code>. Stell deinen Rechner deshalb jetzt auf die feste
+Adresse <code>192.168.1.10</code> um, Netzmaske <code>255.255.255.0</code>.
 Öffne ein zweites Terminal im Ordner mit <code>gluon.bin</code> und gib ein:</p>
 <pre><code>scp -O gluon.bin root@192.168.1.1:/tmp/gluon.bin
 ssh root@192.168.1.1 &quot;sysupgrade -n /tmp/gluon.bin&quot;

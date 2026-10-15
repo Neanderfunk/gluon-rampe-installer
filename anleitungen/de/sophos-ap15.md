@@ -8,8 +8,8 @@ sprache: de
 stufe: Werkstatt
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 4674b01
-vorlage_stand: f350b7d
+daten_stand: 440a725
+vorlage_stand: 4935d8a
 ---
 
 # Sophos AP15: Freifunk-Firmware installieren
@@ -108,7 +108,9 @@ beides und braucht eine andere Freifunk-Firmware, siehe die
 
 ### Freifunk-Firmware aufspielen
 
-7. **Freifunk-Firmware kopieren.**
+7. **Freifunk-Firmware kopieren.** OpenWrt antwortet
+   unter `192.168.1.1`. Stell deinen Rechner deshalb jetzt auf die feste
+   Adresse `192.168.1.10` um, Netzmaske `255.255.255.0`.
    Öffne ein zweites Terminal im Ordner mit `gluon.bin` und gib ein:
 
    ```

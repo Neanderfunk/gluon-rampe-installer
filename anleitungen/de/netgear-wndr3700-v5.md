@@ -9,7 +9,7 @@ stufe: mit scripts/Netzwerktools
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-netgear-wndr3700-v5-factory.img
 grundlagen: [browser-https, nmrpflash]
-daten_stand: 4674b01
+daten_stand: 440a725
 vorlage_stand: 393f161
 ---
 

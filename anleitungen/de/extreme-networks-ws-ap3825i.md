@@ -8,8 +8,8 @@ sprache: de
 stufe: Werkstatt
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 4674b01
-vorlage_stand: f350b7d
+daten_stand: 440a725
+vorlage_stand: 4935d8a
 ---
 
 # Extreme Networks WS-AP3825i: Freifunk-Firmware installieren

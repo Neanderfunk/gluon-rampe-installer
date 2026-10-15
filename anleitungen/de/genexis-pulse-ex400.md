@@ -9,7 +9,7 @@ stufe: mit scripts/Netzwerktools
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-genexis-pulse-ex400-factory.bin
 grundlagen: [browser-https, feste-ip, ssh-scp]
-daten_stand: 4674b01
+daten_stand: 440a725
 vorlage_stand: f922964
 ---
 
