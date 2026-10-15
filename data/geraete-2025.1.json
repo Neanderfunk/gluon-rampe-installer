@@ -13135,7 +13135,7 @@
    "seriell": "nein",
    "gehaeuse": "nein (nur für den seriellen Notweg: ja, Gehäuse verklebt)",
    "werkzeug": "-",
-   "verwechslung": "v1: LED-Leiste mit RGB-Farben; v2: nur zwei einfache LEDs (weiß/blau) statt LED-Leiste; v3: andere Ethernet-PHY (RTL8211FS, nur 1 Gbit statt 2.5 Gbit), sonst wie v2 [geprüft: Commits 15a0247, 31d86a1, a0f4ead]; v3 laut Wiki ab Produktionswoche 2234 (KW 34/2022) [abgeleitet: Wiki]; die frühe 'U6 LR-EA' ist ein MT7621-Gerät und keine dieser Varianten [geprüft: Commit fb4d7a9]",
+   "verwechslung": "v1: LED-Leiste mit RGB-Farben; v2: nur zwei einfache LEDs (weiß/blau) statt LED-Leiste; v3: andere Ethernet-PHY (RTL8211FS, nur 1 Gbit statt 2.5 Gbit), sonst wie v2 [geprüft: Commits 15a0247, 31d86a1, a0f4ead]; v3 laut Wiki ab Produktionswoche 2234 (KW 34/2022) [abgeleitet: Wiki]; die frühe 'U6 LR-EA' ist ein MT7621-Gerät und keine dieser Varianten [geprüft: Commit fb4d7a9]; Hardware-Version per `dmesg | grep mtk_sgmii_init` prüfen, v3 meldet 'detect RTL8211_CARD'; v3 ist nicht mit v1/v2-Images kompatibel [geprüft: Wiki toh:ubiquiti:unifi_6_lr, Rohtext 15.10.2026]",
    "stock_bedingung": "Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; ab Stock 6.2 vorher Schreibschutz aufheben: `echo 5edfacbf > /proc/ubnthal/.uf` (steht nicht im Commit) [abgeleitet: Wiki toh/ubiquiti/unifi_6_lr]",
    "initramfs": "[24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-ubnt_unifi-6-lr-v1-initramfs-kernel.bin)",
    "factory": "[24.10.8: ubootmod-initramfs-recovery.itb](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-ubnt_unifi-6-lr-v1-ubootmod-initramfs-recovery.itb)",
@@ -13160,6 +13160,8 @@
     "datei_art": "sysupgrade",
     "ziel": "/tmp/openwrt.bin",
     "befehle": [
+     "dmesg | grep mtk_sgmii_init",
+     "# Weiter nur, wenn in der Ausgabe nicht RTL8211 steht. Steht es dort, ist es ein v3; dann gilt die Anleitung für den UniFi 6 LR v3.",
      "cat /proc/mtd",
      "# Weiter nur, wenn in der Ausgabe bs bei mtd6, kernel0 bei mtd8 und kernel1 bei mtd9 steht.",
      "dd if=/dev/zero bs=1 count=1 of=/dev/mtdblock6",
@@ -13203,7 +13205,7 @@
    "seriell": "nein",
    "gehaeuse": "nein (nur für den seriellen Notweg: ja, Gehäuse verklebt)",
    "werkzeug": "-",
-   "verwechslung": "v1: LED-Leiste mit RGB-Farben; v2: nur zwei einfache LEDs (weiß/blau) statt LED-Leiste; v3: andere Ethernet-PHY (RTL8211FS, nur 1 Gbit statt 2.5 Gbit), sonst wie v2 [geprüft: Commits 15a0247, 31d86a1, a0f4ead]; v3 laut Wiki ab Produktionswoche 2234 (KW 34/2022) [abgeleitet: Wiki]; die frühe 'U6 LR-EA' ist ein MT7621-Gerät und keine dieser Varianten [geprüft: Commit fb4d7a9]",
+   "verwechslung": "v1: LED-Leiste mit RGB-Farben; v2: nur zwei einfache LEDs (weiß/blau) statt LED-Leiste; v3: andere Ethernet-PHY (RTL8211FS, nur 1 Gbit statt 2.5 Gbit), sonst wie v2 [geprüft: Commits 15a0247, 31d86a1, a0f4ead]; v3 laut Wiki ab Produktionswoche 2234 (KW 34/2022) [abgeleitet: Wiki]; die frühe 'U6 LR-EA' ist ein MT7621-Gerät und keine dieser Varianten [geprüft: Commit fb4d7a9]; Hardware-Version per `dmesg | grep mtk_sgmii_init` prüfen, v3 meldet 'detect RTL8211_CARD'; v3 ist nicht mit v1/v2-Images kompatibel [geprüft: Wiki toh:ubiquiti:unifi_6_lr, Rohtext 15.10.2026]",
    "stock_bedingung": "Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; ab Stock 6.2 vorher Schreibschutz aufheben: `echo 5edfacbf > /proc/ubnthal/.uf` (steht nicht im Commit) [abgeleitet: Wiki toh/ubiquiti/unifi_6_lr]",
    "initramfs": "[24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-ubnt_unifi-6-lr-v2-initramfs-kernel.bin)",
    "factory": "[24.10.8: ubootmod-initramfs-recovery.itb](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-ubnt_unifi-6-lr-v2-ubootmod-initramfs-recovery.itb)",
@@ -13217,9 +13219,28 @@
    "rampe": "nein, nicht nötig: der Weg schreibt das Gluon-sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "OpenWrt 634c13c186646aff2badb51a43b248825d0fe5a0 (v2: 31d86a1a119265393db02aa66e6bc6518ee7b905)",
-   "anleitung": "https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps",
+   "anleitung": "anleitungen/de/ubiquiti-unifi-6-lr-v2.md; https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "dauer": "etwa 4 Minuten",
+    "ssh_alt": true,
+    "rueckweg_taste": "bis die LED weiß, blau und aus wechselt",
+    "geraet_ip": "192.168.1.20",
+    "rechner_ip": "192.168.1.2",
+    "datei_art": "sysupgrade",
+    "ziel": "/tmp/openwrt.bin",
+    "befehle": [
+     "dmesg | grep mtk_sgmii_init",
+     "# Weiter nur, wenn in der Ausgabe nicht RTL8211 steht. Steht es dort, ist es ein v3 (siehe Vorher prüfen).",
+     "cat /proc/mtd",
+     "# Weiter nur, wenn in der Ausgabe bs bei mtd6, kernel0 bei mtd8 und kernel1 bei mtd9 steht.",
+     "dd if=/dev/zero bs=1 count=1 of=/dev/mtdblock6",
+     "dd if=/tmp/openwrt.bin of=/dev/mtdblock8",
+     "dd if=/tmp/openwrt.bin of=/dev/mtdblock9",
+     "reboot"
+    ],
+    "sicherheit": "abgeleitet"
+   }
   },
   {
    "gluon_name": "ubiquiti-unifi-6-lr-v3",
@@ -13254,7 +13275,7 @@
    "seriell": "nein",
    "gehaeuse": "nein (nur für den seriellen Notweg: ja, Gehäuse verklebt)",
    "werkzeug": "-",
-   "verwechslung": "v1: LED-Leiste mit RGB-Farben; v2: nur zwei einfache LEDs (weiß/blau) statt LED-Leiste; v3: andere Ethernet-PHY (RTL8211FS, nur 1 Gbit statt 2.5 Gbit), sonst wie v2 [geprüft: Commits 15a0247, 31d86a1, a0f4ead]; v3 laut Wiki ab Produktionswoche 2234 (KW 34/2022) [abgeleitet: Wiki]; die frühe 'U6 LR-EA' ist ein MT7621-Gerät und keine dieser Varianten [geprüft: Commit fb4d7a9]",
+   "verwechslung": "v1: LED-Leiste mit RGB-Farben; v2: nur zwei einfache LEDs (weiß/blau) statt LED-Leiste; v3: andere Ethernet-PHY (RTL8211FS, nur 1 Gbit statt 2.5 Gbit), sonst wie v2 [geprüft: Commits 15a0247, 31d86a1, a0f4ead]; v3 laut Wiki ab Produktionswoche 2234 (KW 34/2022) [abgeleitet: Wiki]; die frühe 'U6 LR-EA' ist ein MT7621-Gerät und keine dieser Varianten [geprüft: Commit fb4d7a9]; Hardware-Version per `dmesg | grep mtk_sgmii_init` prüfen, v3 meldet 'detect RTL8211_CARD'; v3 ist nicht mit v1/v2-Images kompatibel [geprüft: Wiki toh:ubiquiti:unifi_6_lr, Rohtext 15.10.2026]",
    "stock_bedingung": "Gerät muss im Werkszustand sein (ubnt/ubnt); in einem UniFi-Controller angemeldete Geräte haben andere Zugangsdaten, vorher zurücksetzen [abgeleitet: Commits nennen 'factory defaults']; ab Stock 6.2 vorher Schreibschutz aufheben: `echo 5edfacbf > /proc/ubnthal/.uf` (steht nicht im Commit) [abgeleitet: Wiki toh/ubiquiti/unifi_6_lr]",
    "initramfs": "[24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-ubnt_unifi-6-lr-v3-initramfs-kernel.bin)",
    "factory": "[24.10.8: ubootmod-initramfs-recovery.itb](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/mt7622/openwrt-24.10.8-mediatek-mt7622-ubnt_unifi-6-lr-v3-ubootmod-initramfs-recovery.itb)",
@@ -13268,9 +13289,28 @@
    "rampe": "nein, nicht nötig: der Weg schreibt das Gluon-sysupgrade direkt",
    "rampe_rezept": "",
    "quelle": "OpenWrt 634c13c186646aff2badb51a43b248825d0fe5a0 (v3: a0f4eadf6a25fb54c189bde91425673e11125d35)",
-   "anleitung": "https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps",
+   "anleitung": "anleitungen/de/ubiquiti-unifi-6-lr-v3.md; https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "dauer": "etwa 4 Minuten",
+    "ssh_alt": true,
+    "rueckweg_taste": "bis die LED weiß, blau und aus wechselt",
+    "geraet_ip": "192.168.1.20",
+    "rechner_ip": "192.168.1.2",
+    "datei_art": "sysupgrade",
+    "ziel": "/tmp/openwrt.bin",
+    "befehle": [
+     "dmesg | grep mtk_sgmii_init",
+     "# Weiter nur, wenn in der Ausgabe RTL8211 steht. Sonst ist es kein v3 (siehe Vorher prüfen).",
+     "cat /proc/mtd",
+     "# Weiter nur, wenn in der Ausgabe bs bei mtd6, kernel0 bei mtd8 und kernel1 bei mtd9 steht.",
+     "dd if=/dev/zero bs=1 count=1 of=/dev/mtdblock6",
+     "dd if=/tmp/openwrt.bin of=/dev/mtdblock8",
+     "dd if=/tmp/openwrt.bin of=/dev/mtdblock9",
+     "reboot"
+    ],
+    "sicherheit": "abgeleitet"
+   }
   },
   {
    "gluon_name": "xiaomi-redmi-router-ax6s",
