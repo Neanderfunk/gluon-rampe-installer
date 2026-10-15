@@ -264,7 +264,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [openmesh-om5p-an](#openmesh-om5p-an) | OpenMesh OM5P-AN | ath79-generic | K1d | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
 | [plasma-cloud-pa300](#plasma-cloud-pa300) | Plasma Cloud PA300 | ath79-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
 | [plasma-cloud-pa300e](#plasma-cloud-pa300e) | Plasma Cloud PA300E | ath79-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  |  |
-| [siemens-ws-ap3610](#siemens-ws-ap3610) | Siemens WS-AP3610 | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Siemens-AP3610 |
+| [siemens-ws-ap3610](#siemens-ws-ap3610) | Siemens WS-AP3610 | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/siemens-ws-ap3610.md); https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Siemens-AP3610 |
 | [sophos-ap100](#sophos-ap100) | Sophos AP100 | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/sophos-ap100.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
 | [sophos-ap100c](#sophos-ap100c) | Sophos AP100C | ath79-generic | K1d | [`sophos-xg-awetool`](#familie-sophos-xg-awetool) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/sophos-ap100c.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6f1efb28983758116a8ecaf9c93e1d875bb70af7 |
 | [sophos-ap15](#sophos-ap15) | Sophos AP15 (broken) | ath79-generic | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | [Anleitung](../anleitungen/de/sophos-ap15.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0dc58214896aacf67a3759495d70e2b4e9c160d8 |
@@ -8977,7 +8977,7 @@ Siemens WS-AP3610 · ath79-generic · K4
 - **Übertragung:** tftp-client am U-Boot: Server 192.168.1.66/24, Datei 1401A8C0.img
 - **Anschluss:** Cisco-Konsolenkabel (RJ45) [geprüft: Commit]; Netzwerkkabel zum TFTP-Server [geprüft]
 - **Adressen:** TFTP-Server mit fester IP 192.168.1.66/24; Geräte-IP 192.168.1.20 (1401A8C0 in Hex) [geprüft: Commit; Hex-Deutung abgeleitet]
-- **Programm:** Serielles Terminal, TFTP-Server [geprüft: Commit]
+- **Programm:** Serielles Terminal, TFTP-Server [geprüft: Commit]; Befehle aus dem OpenWrt-Commit d2b8ccb (1401A8C0.img, 192.168.1.66, bootdelay 1 s, RJ45 115200) [geprüft: Commit]; dort fehlt `setenv bootcmd 'run boot_openwrt'`, Freifunk Darmstadt weist darauf hin ("final rewrite of the default bootcmd variable was missing"), ihre Liste darunter hat die Zeile aber auch nicht, erst ihr Weg ohne initramfs [geprüft: Freifunk-Darmstadt-Wiki Siemens-AP3610, 15.10.2026]; ergänzt wie bei WS-AP3705i/3805i [abgeleitet: Commits ebddc5f, f8c87aa]
 - **Zugang:** 115200 8N1 [geprüft: Commit]. Strom anlegen und sofort bei Aufforderung unterbrechen (bootdelay 1 s) [geprüft: Commit d2b8ccb]
 - **Datei:** OpenWrt-initramfs genau als `1401A8C0.img`: `tftpboot` ohne Dateinamen holt den Standardnamen aus der Geräte-IP (1401A8C0 = 192.168.1.20), Name also zwingend [geprüft: Commit; Hex-Deutung abgeleitet]. Danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** ja
@@ -8991,7 +8991,12 @@ Siemens WS-AP3610 · ath79-generic · K4
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als 1401A8C0.img; Achtung, das initramfs ist hier unkomprimiert (KERNEL_INITRAMFS ... uImage none, OpenWrt 23.7 MB); seriell bleibt
 - **Gluon-RAMpe-Rezept:** devices/siemens-ws-ap3610.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma statt unkomprimiert wie bei OpenWrt) als `1401A8C0.img` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** d2b8ccb1c04def81224da6f42f644c7d239b9986 [geprüft]
-- **Detail-Anleitung:** https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Siemens-AP3610
+- **Detail-Anleitung:** anleitungen/de/siemens-ws-ap3610.md; https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Siemens-AP3610
+- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ath79-generic-siemens_ws-ap3610-initramfs-kernel.bin; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-siemens_ws-ap3610-initramfs-kernel.bin; tftp_name = 1401A8C0.img; server_ip = 192.168.1.66; baud = 115200; konsole = rj45; anhalten = Sobald die Aufforderung erscheint, brich den Start mit Enter ab; dafür ist nur eine Sekunde Zeit, drück am besten schon beim Einschalten immer wieder Enter.; befehle = setenv boot_openwrt 'setenv bootargs; bootm 0xbf080000'
+setenv ramboot_openwrt 'setenv serverip 192.168.1.66; tftpboot; bootm'
+setenv bootcmd 'run boot_openwrt'
+saveenv
+run ramboot_openwrt; sicherheit = abgeleitet; sicherheit_hinweis = Im Weg von OpenWrt fehlt die Zeile, die den Start dauerhaft auf OpenWrt umstellt; wir haben sie nach dem Hinweis von Freifunk Darmstadt ergänzt.
 
 #### sophos-ap15
 
