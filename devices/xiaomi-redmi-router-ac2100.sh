@@ -9,8 +9,10 @@
 # Image: Device/xiaomi_nand_separate (ramips/image/mt7621.mk, Pin 5204715d14207efa956553d9d7079f6fa1aaea40):
 # IMAGES += kernel1.bin rootfs0.bin, IMAGE/kernel1.bin := append-kernel,
 # IMAGE/rootfs0.bin := append-ubi | check-size [geprueft].
-# Dass eine RAMpe aus dem Flash im Config-Mode startet, ist am D-Link M60 A1
-# belegt (13.10.2026, dessen -squashfs-recovery liegt ebenfalls im Flash)
-# [geprueft, adorfer]. Dieses Format selbst ist ungetestet.
+# Config-Mode beim Start: Gluons normales Verhalten fuer ein unkonfiguriertes
+# Geraet; die RAMpe hat keinen Wizard, der "configured" setzt, also nach jedem
+# Neustart wieder [abgeleitet]. Der D-Link M60 belegt das NICHT (dessen
+# recovery.bin enthaelt das initramfs, die RAMpe laeuft dort im RAM).
+# Ungetestet.
 ensure_extra_image ramips-mt7621 xiaomi-redmi-router-ac2100 -squashfs-kernel1 -kernel1 .bin
 ensure_extra_image ramips-mt7621 xiaomi-redmi-router-ac2100 -squashfs-rootfs0 -rootfs0 .bin

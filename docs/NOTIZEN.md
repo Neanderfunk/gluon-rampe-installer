@@ -71,9 +71,11 @@ Entstanden am 11.09.2026 in der Neanderfunk-Firmware-Session. Idee: adorfer
   `gluon-nef-21_dias-26101300bro-d-link-aquila-pro-ai-m60-a1-sysupgrade.bin`
   (SHA256 `8833d7c5…`, 9.790.274 Bytes); Prüfsummenseite und Flash liefen, das
   Gerät läuft mit der Firmware. Das UBI-Switch-Image war nicht nötig.
-  - Die RAMpe des M60 liegt im Flash (`-squashfs-recovery.bin`), nicht im RAM:
-    Sie kommt nach jedem Neustart wieder im Config-Mode mit der Upload-Seite
-    hoch, bis das sysupgrade sie ersetzt (adorfer, 15.10.2026).
+  - Das `-recovery.bin` des M60 enthält das initramfs (OpenWrt 124f61eddb):
+    Die D-Link-Recovery schreibt es in den Flash, U-Boot lädt es bei jedem
+    Start, die RAMpe läuft im RAM. Sie kommt deshalb nach jedem Neustart wieder
+    im Config-Mode mit der Upload-Seite hoch, bis das sysupgrade sie ersetzt
+    (adorfer, 15.10.2026). Für eine squashfs-RAMpe belegt das nichts.
   - Zeiten und LED (zweiter Durchgang gemessen): Datenübertragung etwa 31 s für
     50 MB, curl wartet danach auf die Antwort; LED blinkt rot während Upload und
     Schreiben (wie Commit 7271ee5), Neustart etwa 1:45 min nach Upload-Start,

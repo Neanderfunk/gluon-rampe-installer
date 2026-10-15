@@ -149,15 +149,16 @@ contrib/docker/run.sh ./build.sh ramips-mt7621 netgear-wndr3700-v5 xiaomi-mi-rou
 contrib/docker/run.sh ./build.sh ath79-generic tp-link-archer-c60-v1 d-link-dir825b1
 ```
 
-Eine dauerhaft geflashte RAMpe startet wie jedes unkonfigurierte Gluon im
-Config-Mode (90_setup_mode), dort ist die Upload-Seite. Am D-Link M60 A1 ist
-das belegt: Dessen `-recovery.bin` ist eine squashfs-RAMpe, die die
-D-Link-Recovery in den Flash schreibt; sie kam im Config-Mode hoch
-(13.10.2026, adorfer). Sie bleibt im Flash und kommt nach jedem Neustart
-wieder im Config-Mode mit der Upload-Seite hoch, bis ein sysupgrade sie
-ersetzt (adorfer, 15.10.2026); der Config-Mode-Wizard, der das beenden würde,
-fehlt in der RAMpe [abgeleitet]. Ein Neustart oder Stromausfall in dieser
-Phase ist damit harmlos. Die neuen Formate selbst sind ungetestet.
+Eine dauerhaft geflashte RAMpe mit squashfs (die Hersteller-Formate oben)
+startet wie jedes unkonfigurierte Gluon im Config-Mode (90_setup_mode), dort
+ist die Upload-Seite; weil die RAMpe den Wizard nicht hat, der `configured`
+setzt, nach jedem Neustart wieder [abgeleitet, am Gerät noch nicht belegt].
+Der D-Link M60 belegt das nicht: Sein `-recovery.bin` enthält das initramfs
+(OpenWrt 124f61eddb, im Gluon-v2025.1.3-Pin), die D-Link-Recovery schreibt
+es in den Flash, U-Boot lädt es bei jedem Start, die RAMpe läuft im RAM. Sie
+kommt deshalb nach jedem Neustart wieder mit der Upload-Seite hoch, bis das
+sysupgrade sie ersetzt (adorfer, 13. und 15.10.2026); ein Neustart in dieser
+Phase ist harmlos. Die neuen Formate selbst sind ungetestet.
 
 `ramips-mt7621` lässt sich auch in einem Lauf mit RT-AX53U, EX400 und WSM20
 bauen. Alias-Namen (DISC Lite5 ac zu SXTsq 5 ac) nicht als Gerät angeben,

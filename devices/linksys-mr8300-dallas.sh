@@ -9,7 +9,9 @@
 # Image: IMAGE/factory.bin := append-kernel | pad-to KERNEL_SIZE | append-ubi |
 # linksys-image type=MR8300 (ipq40xx/image/generic.mk, Device/linksys_mr8300,
 # Pin 5204715d14207efa956553d9d7079f6fa1aaea40) [geprueft].
-# Dass eine RAMpe aus dem Flash im Config-Mode startet, ist am D-Link M60 A1
-# belegt (13.10.2026, dessen -squashfs-recovery liegt ebenfalls im Flash)
-# [geprueft, adorfer]. Dieses Format selbst ist ungetestet.
+# Config-Mode beim Start: Gluons normales Verhalten fuer ein unkonfiguriertes
+# Geraet; die RAMpe hat keinen Wizard, der "configured" setzt, also nach jedem
+# Neustart wieder [abgeleitet]. Der D-Link M60 belegt das NICHT (dessen
+# recovery.bin enthaelt das initramfs, die RAMpe laeuft dort im RAM).
+# Ungetestet.
 ensure_extra_image ipq40xx-generic linksys-mr8300-dallas -squashfs-factory -factory .bin
