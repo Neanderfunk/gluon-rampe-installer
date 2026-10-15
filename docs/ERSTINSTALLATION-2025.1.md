@@ -478,7 +478,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [d-link-dir-860l-b1](#d-link-dir-860l-b1) | D-Link DIR-860L B1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dir-860l-b1.md) |
 | [d-link-dir-878-a1](#d-link-dir-878-a1) | D-Link DIR-878 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dir-878-a1.md); https://openwrt.org/toh/d-link/dir-878_a1#installation |
 | [d-link-dir-882-a1](#d-link-dir-882-a1) | D-Link DIR-882 A1 | ramips-mt7621 | K0 | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dir-882-a1.md); https://openwrt.org/toh/d-link/dir-882_a1#installation |
-| [genexis-pulse-ex400](#genexis-pulse-ex400) | Genexis/Inteno Pulse EX400 | ramips-mt7621 | K1 | [`sonderweg-genexis-pulse-ex400`](#familie-sonderweg-genexis-pulse-ex400) | webui-upload | nein | nein | ja | ja | https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400 |
+| [genexis-pulse-ex400](#genexis-pulse-ex400) | Genexis/Inteno Pulse EX400 | ramips-mt7621 | K1 | [`sonderweg-genexis-pulse-ex400`](#familie-sonderweg-genexis-pulse-ex400) | webui-upload | nein | nein | ja | ja | [Anleitung](../anleitungen/de/genexis-pulse-ex400.md); https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400 |
 | [gl.inet-gl-mt1300](#gl.inet-gl-mt1300) | GL.iNet GL-MT1300 (Beryl) | ramips-mt7621 | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt1300.md) |
 | [mercusys-mr70x-v1](#mercusys-mr70x-v1) | Mercusys MR70X v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/mercusys-mr70x-v1.md) |
 | [mikrotik-routerboard-750gr3](#mikrotik-routerboard-750gr3) | MikroTik hEX RB750Gr3 (Alias mikrotik-routerboard-hex-v3) | ramips-mt7621 | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja | https://openwrt.org/toh/mikrotik/common |
@@ -9841,7 +9841,7 @@ Genexis/Inteno Pulse EX400 · ramips-mt7621 · K1
 - **Übertragung:** webui-upload; recovery-web: Gerät 192.168.1.1
 - **Anschluss:** Rechner an LAN [Wiki-Zusammenfassung: Darmstadt-Wiki]
 - **Adressen:** Rechner feste IP im Netz 192.168.1.0/24 (nicht .1), Recovery-Webserver http://192.168.1.1 [Wiki-Zusammenfassung: Darmstadt-Wiki]
-- **Programm:** Browser [Wiki-Zusammenfassung: Darmstadt-Wiki]
+- **Programm:** Browser [Wiki-Zusammenfassung: Darmstadt-Wiki]; alternativ das Skript install-ex400.sh: `curl -F fileID=@<factory> -F submit=upload http://192.168.1.1/firmware_upload`, ssh wiederholen, bis OpenWrt antwortet, dann `scp -O` und `sysupgrade -n` [geprüft: github herbetom/multiflash install-ex400.sh @4afd1dba, nutzt Gluon von Freifunk Darmstadt]
 - **Datei:** OpenWrt-factory.bin, enthält ein initramfs; danach Gluon-sysupgrade [geprüft]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
@@ -9854,10 +9854,11 @@ Genexis/Inteno Pulse EX400 · ramips-mt7621 · K1
 - **Dauer:** OpenWrt-Start nach dem factory ca. 2 min [Wiki-Zusammenfassung: Darmstadt-Wiki]; währenddessen nicht Strom ziehen [abgeleitet]
 - **Notweg:** [einfacher, schlechter belegt] Die Stock-Web-UI nimmt das OpenWrt-factory.bin ebenfalls [geprüft]. Für SSH im Stock muss SSH evtl. erst für LAN freigeschaltet werden (ab Werk nur WAN) [geprüft: Commit]
 - **Rückweg zur Herstellerfirmware:** Im OpenWrt-initramfs UBI-Volumes zurückbauen (rootfs_0/rootfs_1 neu anlegen), dann Hersteller-Firmware über die U-Boot-Recovery [geprüft: Commit]
-- **Gluon-RAMpe passt:** ja: factory.bin = Kette `append-image-stage initramfs-kernel.bin`, `inteno-bootfs`, `inteno-y3-header EX400` (mt7621.mk); Gluon baut es nur nicht, weil das Rezept CONFIG_TARGET_ROOTFS_INITRAMFS braucht. Eine Gluon-RAMpe-Bau ergibt direkt eine Gluon-RAMpe-factory [abgeleitet aus mk]
-- **Gluon-RAMpe-Rezept:** devices/genexis-pulse-ex400.sh (Rezept-Entwurf, nicht gebaut): `-factory.bin` (initramfs in UBIFS-bootfs, Inteno-Kopf); bootfs höchstens etwa 11.6 MiB
+- **Gluon-RAMpe passt:** ja: factory.bin = Kette `append-image-stage initramfs-kernel.bin`, `inteno-bootfs`, `inteno-y3-header EX400` (mt7621.mk), die RAMpe-factory entsteht so direkt [abgeleitet aus mk]; statt scp/ssh dann das Community-sysupgrade auf der RAMpe-Seite; am Gerät ungetestet
+- **Gluon-RAMpe-Rezept:** devices/genexis-pulse-ex400.sh (gebaut 15.10.2026): `-factory.bin` (initramfs in UBIFS-bootfs, Inteno-Kopf), 9.143.328 Byte, unter der bootfs-Grenze von etwa 11.6 MiB; am Gerät ungetestet
 - **Quelle (OpenWrt-Commit):** dd0c2839a81bb3c5067be99b02ec5c0adff93ac6
-- **Detail-Anleitung:** https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400
+- **Detail-Anleitung:** anleitungen/de/genexis-pulse-ex400.md; https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400
+- **Werte für die Anleitung:** openwrt_datei = openwrt-24.10.8-ramips-mt7621-genexis_pulse-ex400-factory.bin; openwrt_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-genexis_pulse-ex400-factory.bin; openwrt_sha256 = 7b9debc8d1c8ed36e2632a2b20835f3d33c628e352e8eceaf555a5ffeaa8764e; sicherheit = quelle; sicherheit_hinweis = Freifunk Darmstadt beschreibt denselben Weg für ihre Freifunk-Firmware.; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-genexis-pulse-ex400-factory.bin; rampe_datei = gluon-rampe-20261015-genexis-pulse-ex400-factory.bin; rampe_weg = Lade in Schritt 5 statt der OpenWrt-Datei die RAMpe hoch.
 
 ### Familie `sonderweg-google-wifi-gale`
 
