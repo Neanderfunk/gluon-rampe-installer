@@ -8,7 +8,7 @@ status: ungeprüft
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m30-a1-recovery.bin
 grundlagen: [browser-https, curl, feste-ip]
 daten_stand: 97041cf
-vorlage_stand: 2ce2f08
+vorlage_stand: 39c7c43
 ---
 
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
