@@ -448,6 +448,48 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "devolo-wifi-pro-1200e",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/devolo-wifi-pro-1200e.html",
+  "status": "ungeprüft",
+  "stufe": "mit scripts/Netzwerktools",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "devolo-wifi-pro-1200i",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/devolo-wifi-pro-1200i.html",
+  "status": "ungeprüft",
+  "stufe": "mit scripts/Netzwerktools",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "devolo-wifi-pro-1750c",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/devolo-wifi-pro-1750c.html",
+  "status": "ungeprüft",
+  "stufe": "mit scripts/Netzwerktools",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "devolo-wifi-pro-1750e",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/devolo-wifi-pro-1750e.html",
+  "status": "ungeprüft",
+  "stufe": "mit scripts/Netzwerktools",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "devolo-wifi-pro-1750i",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/devolo-wifi-pro-1750i.html",
+  "status": "ungeprüft",
+  "stufe": "mit scripts/Netzwerktools",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "devolo-wifi-pro-1750x",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/devolo-wifi-pro-1750x.html",
+  "status": "ungeprüft",
+  "stufe": "mit scripts/Netzwerktools",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "extreme-networks-ws-ap3825i",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/extreme-networks-ws-ap3825i.html",
   "status": "ungeprüft",

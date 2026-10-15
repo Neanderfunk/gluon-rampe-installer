@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>devolo WiFi pro 1200e: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="devolo-wifi-pro-1200e">
+<meta name="anleitung:modell" content="devolo WiFi pro 1200e">
+<meta name="anleitung:anzeige" content="devolo WiFi pro 1200e">
+<meta name="anleitung:familie" content="devolo-ssh">
+<meta name="anleitung:gluon_broken" content="false">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="mit scripts/Netzwerktools">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="ssh-scp">
+<meta name="anleitung:daten_stand" content="4674b01">
+<meta name="anleitung:vorlage_stand" content="99ea201">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<h1>devolo WiFi pro 1200e: Freifunk-Firmware installieren</h1>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> So beschreiben die Entwickler von OpenWrt
+bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
+ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
+klappt.</p>
+<p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+Anleitung für alle nach dir besser:</p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20devolo%20WiFi%20pro%201200e">projekt@neanderfunk.de</a></p>
+</blockquote>
+<p>Auf den Access Points von devolo läuft eine Firmware, die selbst auf OpenWrt
+aufbaut. Deshalb geht der Wechsel recht einfach: Du setzt bei der
+Ersteinrichtung ein Passwort, meldest dich per SSH an und installierst die
+Freifunk-Firmware mit einem Befehl. Wenn SSH neu für dich ist, lies vorher
+<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>. Rechne mit einer halben
+Stunde.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>den Access Point und einen PoE-Injektor oder PoE-Switch</li>
+<li>deinen Router zu Hause (er verteilt per DHCP Adressen), einen Rechner und
+zwei Netzwerkkabel</li>
+<li><code>ssh</code> und <code>scp</code> (<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>)</li>
+<li>die Freifunk-Firmware deiner Community für den devolo WiFi pro 1200e, und zwar das
+<strong>sysupgrade</strong>-Image (ein factory-Image gibt es für dieses Gerät nicht).
+Benenn es in <code>gluon.bin</code> um, dann passen die Befehle unten ohne Änderung.</li>
+</ul>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Anschließen.</strong> Verbinde die Netzwerkbuchse mit PoE des Access Points über den
+PoE-Injektor mit deinem Router zu Hause. Dein Rechner hängt am selben
+Router. Warte nach dem Einschalten drei Minuten.</p>
+</li>
+<li>
+<p><strong>Adresse herausfinden.</strong> Schau in der Geräteliste deines Routers nach,
+welche Adresse der Access Point bekommen hat (meist steht &quot;devolo&quot; im
+Namen), zum Beispiel <code>192.168.178.57</code>. Unten steht sie als <code>&lt;adresse&gt;</code>.</p>
+</li>
+<li>
+<p><strong>Ersteinrichtung und root-Passwort.</strong> Öffne <code>http://&lt;adresse&gt;</code> im
+Browser. Die Ersteinrichtung fragt nach einem Passwort für den Benutzer
+<strong>root</strong>. Setz eines und merk es dir. Ohne dieses Passwort geht es nicht
+weiter.</p>
+</li>
+<li>
+<p><strong>Freifunk-Firmware installieren.</strong> Im Terminal auf deinem Rechner, im
+Ordner mit <code>gluon.bin</code>, mit der Adresse aus Schritt 2:</p>
+<pre><code>scp -O gluon.bin root@&lt;adresse&gt;:/tmp/gluon.bin
+ssh root@&lt;adresse&gt; &quot;sysupgrade -n -F /tmp/gluon.bin&quot;
+</code></pre>
+<p>Beide Male fragt das Gerät nach dem Passwort aus Schritt 3. Das <code>-F</code> ist
+hier nötig: Die devolo-Firmware hält die Freifunk-Firmware sonst für
+unpassend. Danach bricht die Verbindung ab, oft mit einer Meldung wie
+<code>Command failed: … (Connection failed)</code>. Das ist harmlos.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Der Access Point schreibt die Freifunk-Firmware und startet
+neu, einige Minuten. <strong>Strom nicht ziehen.</strong> Danach leuchtet die blaue
+LED.</p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Je nach Community startet die Freifunk-Firmware zuerst mit
+einer Einrichtungsseite. Die erreichst du nicht über deinen Router zu
+Hause: Trenn den Access Point vom Router, verbinde den Rechner direkt
+mit dem PoE-Injektor und öffne <code>http://192.168.1.1</code>.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>In Schritt 3 erscheint die Ersteinrichtung von devolo.</li>
+<li>In Schritt 4 nimmt das Gerät das Passwort an.</li>
+<li>Nach Schritt 5 leuchtet die blaue LED, und die Freifunk-Firmware meldet
+sich.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Der Access Point taucht in der Geräteliste nicht auf.</strong> Warte noch etwas,
+prüf PoE-Injektor und Kabel. Wurde das Gerät schon einmal anders
+eingerichtet, setz es auf Werkseinstellungen zurück (Reset-Taste, wie in
+der Anleitung von devolo beschrieben).</li>
+<li><strong><code>ssh</code> lehnt das Passwort ab.</strong> Das Passwort aus Schritt 3 gilt für den
+Benutzer <code>root</code>. Ist das Gerät nicht im Werkszustand, kennt nur der
+Vorbesitzer das Passwort; dann zuerst auf Werkseinstellungen zurücksetzen.</li>
+<li><strong><code>sysupgrade</code> meldet, das Image passe nicht.</strong> Prüf, ob das <code>-F</code> im Befehl
+steht und ob du die Datei für genau dein Modell genommen hast.</li>
+<li><strong>Die rote LED leuchtet länger.</strong> Das Gerät schreibt noch oder ist im
+Notfall-Modus. Warte zehn Minuten; tut sich dann nichts, schreib uns.</li>
+</ul>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Adressen)</li>
+<li>abgeleitet: Wiki toh/devolo/wifi_pro_1750e, Tabelle der Netzwerk-Grundeinstellung (Adressen)</li>
+<li>geprüft (Weg ab Werk, Schritte (Normalweg), Quelle (OpenWrt-Commit))</li>
+<li>geprüft: Commits 'Make sure you set a password for the root user as prompted on first setup' (Bedingung an die Herstellerfirmware)</li>
+<li>geprüft: Commits, Weg über die laufende Stock-Firmware (Taste und Zeitpunkt)</li>
+<li>geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e (Schritte (Normalweg), Anschluss, Programm, Zugang, Datei)</li>
+<li>geprüft: DTS qca9558_devolo_*.dts, led-running/led-upgrade (Schritte (Normalweg), Sichtbare Zeichen)</li>
+<li>Geräteeintrag: 1724d4e9ed7716a5444eca42adf045c2f3afc554 [geprüft]</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

@@ -8,7 +8,7 @@ sprache: de
 stufe: mit scripts/Netzwerktools
 status: ungeprüft
 grundlagen: [browser-https, feste-ip]
-daten_stand: 95e5f91
+daten_stand: 4674b01
 vorlage_stand: 565e893
 ---
 
