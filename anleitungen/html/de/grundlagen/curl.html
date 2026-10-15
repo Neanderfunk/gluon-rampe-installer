@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dateien mit curl hochladen</title>
+<meta name="anleitung:grundlage" content="curl">
+<link rel="stylesheet" href="../../anleitung.css">
+</head>
+<body>
+<hr />
+<h2>thema: curl
+sprache: de
+status: ungeprüft</h2>
+<blockquote>
+<p><strong>Noch nicht gegengelesen.</strong> Diese Grundlagen-Seite ist ein Entwurf. Die
+Befehle für Windows sind am D-Link M60 benutzt worden.</p>
+</blockquote>
+<h1>Dateien mit curl hochladen</h1>
+<p>Manche Notfallseiten von Routern nehmen Dateien im Browser nicht zuverlässig
+an: Der Upload ist nach einer Sekunde &quot;fertig&quot;, aber nichts ist angekommen.
+Das Kommandozeilenprogramm <strong>curl</strong> lädt die Datei sicher hoch und zeigt am
+Ende, wie viel angekommen ist.</p>
+<p>Den genauen Befehl für dein Gerät findest du in dessen Anleitung. Hier steht,
+wie du ihn ausführst.</p>
+<h2>Windows 10 und 11</h2>
+<p>curl ist eingebaut und heißt <code>curl.exe</code>.</p>
+<ol>
+<li>
+<p>Win + R, <code>cmd</code> eingeben, Enter. Es öffnet sich die Eingabeaufforderung.</p>
+</li>
+<li>
+<p>In den Ordner mit der Datei wechseln, zum Beispiel:</p>
+<pre><code>cd %USERPROFILE%\Downloads
+</code></pre>
+</li>
+<li>
+<p>Befehl aus der Geräteanleitung einfügen (Rechtsklick fügt ein), Enter.</p>
+</li>
+</ol>
+<p><strong>In der PowerShell</strong> (blaues oder schwarzes Fenster mit <code>PS</code> vorn) gelten
+andere Regeln:</p>
+<ul>
+<li><code>curl.exe</code> immer ausschreiben. <code>curl</code> allein ist dort ein anderes Programm.</li>
+<li>Der Ordner heißt <code>$env:USERPROFILE\Downloads</code> statt
+<code>%USERPROFILE%\Downloads</code>.</li>
+<li>Statt <code>-o NUL</code> schreibst du <code>-o antwort.bin</code>. Die Antwort des Routers
+landet dann in dieser Datei; sie ist unwichtig und kann weg.</li>
+</ul>
+<p>Einfacher ist meist, gleich die Eingabeaufforderung &quot;cmd&quot; zu nehmen.</p>
+<p><strong>Nicht aus der WSL</strong> (Linux unter Windows): Von dort kam bei uns keine
+Verbindung zur Recovery zustande, aus Windows selbst schon.</p>
+<h2>Linux und macOS</h2>
+<p>curl ist meist installiert, sonst über die Paketverwaltung (<code>apt install curl</code>). Terminal öffnen, mit <code>cd</code> in den Ordner wechseln, Befehl ausführen.</p>
+<h2>Was die Ausgabe bedeutet</h2>
+<p>Die Geräteanleitungen lassen curl am Ende eine Zeile ausgeben:</p>
+<pre><code>HTTP &lt;Code&gt;, hochgeladen &lt;Anzahl&gt; Bytes
+</code></pre>
+<ul>
+<li><strong>hochgeladen …</strong> ist das, worauf es ankommt. Die Geräteanleitung sagt, wie
+viel es sein muss. Steht dort 0, ist nichts angekommen.</li>
+<li><strong>HTTP 000</strong> heißt: keine Verbindung. Adresse, Kabel und feste IP prüfen.</li>
+<li>Wie lange es gedauert hat, sagt nichts. Manche Recovery schreibt erst und
+antwortet dann, curl wartet so lange still.</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

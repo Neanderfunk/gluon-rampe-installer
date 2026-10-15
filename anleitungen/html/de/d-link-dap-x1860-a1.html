@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D-Link DAP-X1860 A1: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="d-link-dap-x1860-a1">
+<meta name="anleitung:modell" content="D-Link DAP-X1860 A1">
+<meta name="anleitung:familie" content="dlink-recovery-web">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="einfach">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="curl, feste-ip">
+<meta name="anleitung:daten_stand" content="97041cf">
+<meta name="anleitung:vorlage_stand" content="2ce2f08">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Diese Anleitung ist aus Quellen
+zusammengestellt, aber noch niemand hat sie an einem D-Link DAP-X1860 A1 Schritt
+für Schritt nachvollzogen. Wenn du es tust: Schreib uns, ob es geklappt hat.</p>
+</blockquote>
+<h1>D-Link DAP-X1860 A1: Freifunk-Firmware installieren</h1>
+<p>Der D-Link DAP-X1860 A1 hat eine eingebaute Notfall-Seite von D-Link, die
+<strong>Recovery</strong>. Sie nimmt eine Firmware-Datei an und schreibt sie in den
+Speicher, auch wenn sonst nichts mehr geht. Über sie kommt die Freifunk-Firmware direkt auf den Router.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
+<li>eine Büroklammer für die Reset-Taste</li>
+<li>die Freifunk-Firmware deiner Community für den D-Link DAP-X1860 A1, und zwar das
+<strong>factory</strong>-Image</li>
+<li>das Programm <strong>curl</strong> zum Hochladen. Unter Linux und macOS ist es meist
+schon da, unter Windows 10 und 11 heißt es <code>curl.exe</code> und ist eingebaut
+(<a href="grundlagen/curl.html">curl benutzen</a>).</li>
+</ul>
+<p>WLAN am Rechner schaltest du für die Installation am besten aus, damit er
+wirklich über das Kabel spricht.</p>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Dateien bereitlegen.</strong> Lade das factory-Image herunter und leg sie in einen
+Ordner, den du wiederfindest, zum Beispiel &quot;Downloads&quot;.</p>
+</li>
+<li>
+<p><strong>Feste Adresse am Rechner.</strong> Stell den Netzwerkanschluss deines Rechners
+auf die feste Adresse <code>192.168.0.65</code> mit der Netzmaske
+<code>255.255.255.0</code>. Ein Gateway brauchst du nicht. Wie das geht, steht unter
+<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>.</p>
+</li>
+<li>
+<p><strong>Kabel stecken.</strong> Verbinde den Rechner mit dem Router.
+Der Router hat noch keinen Strom.</p>
+</li>
+<li>
+<p><strong>Router in die Recovery bringen.</strong> Drück mit der Büroklammer die
+Reset-Taste und halte sie gedrückt. Steck jetzt den Strom ein und halte
+die Taste weiter, bis die LED <strong>rot blinkt</strong>. Dann loslassen.</p>
+</li>
+<li>
+<p><strong>Prüfen, ob die Recovery da ist.</strong>
+Öffne im Browser <code>http://192.168.0.50</code>. Es erscheint die Recovery-Seite von D-Link.
+<strong>Lade dort nichts hoch.</strong> Ihr Fortschrittsbalken läuft nur nach der Uhr
+und sagt nichts darüber, ob die Datei ankam. Die Seite zeigt dir nur, dass
+die Recovery bereit ist.
+Ein <code>ping</code> hilft hier nicht, die Recovery antwortet nicht darauf.</p>
+</li>
+<li>
+<p><strong>Datei mit curl hochladen.</strong> Öffne ein Terminal (unter Windows die
+Eingabeaufforderung &quot;cmd&quot;), wechsle in den Ordner mit der Datei und gib
+ein:</p>
+<p>Linux und macOS:</p>
+<pre><code class="language-sh">curl -H &quot;Expect:&quot; -w &quot;HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n&quot; -o /dev/null -F &quot;firmware=@gluon-&lt;community&gt;-&lt;release&gt;-d-link-dap-x1860-a1-factory.bin;type=application/octet-stream&quot; http://192.168.0.50/upload.cgi
+</code></pre>
+<p>Windows (cmd):</p>
+<pre><code>curl.exe -H &quot;Expect:&quot; -w &quot;HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n&quot; -o NUL -F &quot;firmware=@gluon-&lt;community&gt;-&lt;release&gt;-d-link-dap-x1860-a1-factory.bin;type=application/octet-stream&quot; http://192.168.0.50/upload.cgi
+</code></pre>
+<p>Den echten Dateinamen statt <code>gluon-&lt;community&gt;-&lt;release&gt;-d-link-dap-x1860-a1-factory.bin</code> einsetzen. Für die
+PowerShell sieht der Befehl etwas anders aus, siehe
+<a href="grundlagen/curl.html">curl benutzen</a>.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> curl überträgt die Datei und wartet dann weiter, während die
+Recovery schreibt. Die LED bleibt dabei wie in Schritt 4. Bis zum
+Neustart vergehen meist einige Minuten.
+<strong>Nicht abbrechen, Strom nicht ziehen.</strong></p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Nach dem Neustart startet die Freifunk-Firmware deiner
+Community: je nach Community zuerst mit einer Einrichtungsseite unter
+<code>http://192.168.1.1</code> oder gleich im Betrieb. Wie es weitergeht, beschreibt
+deine Community.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>Nach dem Neustart meldet sich die Freifunk-Firmware.</li>
+<li>Die Erfolgsmeldung der D-Link-Seite zählt nicht, sie erscheint immer.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>curl meldet &quot;Failed to connect&quot;, HTTP 000 und 0 Bytes.</strong> Die Recovery war
+nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
+Router noch einmal in die Recovery bringen (Schritt 4).</li>
+<li><strong>Nach dem Upload startet wieder die normale D-Link-Firmware.</strong> Die Datei
+ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
+Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.</li>
+<li><strong>Der Browser-Upload war nach einer Sekunde &quot;fertig&quot;.</strong> Dann ist nichts
+übertragen worden. Das passiert auch in Chromium-Browsern. Nimm curl.</li>
+<li><strong>Aus der WSL unter Windows kommt keine Verbindung zustande.</strong> Nimm curl.exe
+direkt in Windows, nicht in der WSL.</li>
+</ul>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Gluon-RAMpe passt)</li>
+<li>abgeleitet: Forum Darmstadt laut Notiz (Sichtbare Zeichen, Fehlerbild)</li>
+<li>geprüft (Weg ab Werk, Schritte (Normalweg), Datei)</li>
+<li>geprüft: Commit 3c31f6b (Sichtbare Zeichen, Rückweg zur Herstellerfirmware)</li>
+<li>geprüft: Commit 3c31f6b (Adresse), Neanderfunk-Notiz (Rechner-IP aus Forum Darmstadt) (Schritte (Normalweg), Adressen)</li>
+<li>geprüft: Commit 3c31f6b; 'rot blinken' laut Forum Darmstadt in Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt)</li>
+<li>geprüft: Commits 'Chromium based'; Firefox abgeleitet: Forum Darmstadt laut Notiz (Programm)</li>
+<li>geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Sichtbare Zeichen, Adressen)</li>
+<li>geprüft: Neanderfunk-Notiz, am M60 erprobt (Programm)</li>
+<li>Geräteeintrag: 3c31f6b521bb5fc49e222a8f2bcd454b73452a0e</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feste IP-Adresse am Rechner einstellen</title>
+<meta name="anleitung:grundlage" content="feste-ip">
+<link rel="stylesheet" href="../../anleitung.css">
+</head>
+<body>
+<hr />
+<h2>thema: feste-ip
+sprache: de
+status: ungeprüft</h2>
+<blockquote>
+<p><strong>Noch nicht gegengelesen.</strong> Diese Grundlagen-Seite ist ein Entwurf.</p>
+</blockquote>
+<h1>Feste IP-Adresse am Rechner einstellen</h1>
+<p>Viele Router-Notfallseiten (Recovery, Bootloader) verteilen keine Adressen.
+Dein Rechner braucht dann für die Installation eine feste Adresse im selben
+Netz. Welche, steht in der Anleitung zu deinem Gerät, zum Beispiel
+<code>192.168.200.66</code> mit der Netzmaske <code>255.255.255.0</code> (auch geschrieben als
+<code>/24</code>). Ein Gateway und DNS brauchst du dafür nicht.</p>
+<p>Danach stellst du den Anschluss wieder auf &quot;automatisch&quot; (DHCP) zurück, sonst
+kommt der Rechner später nicht mehr ins Internet.</p>
+<h2>Windows 10 und 11</h2>
+<ol>
+<li>Netzwerkkabel stecken.</li>
+<li>Win + R drücken, <code>ncpa.cpl</code> eingeben, Enter.</li>
+<li>Rechtsklick auf den Ethernet-Anschluss, &quot;Eigenschaften&quot;.</li>
+<li>&quot;Internetprotokoll, Version 4 (TCP/IPv4)&quot; auswählen, &quot;Eigenschaften&quot;.</li>
+<li>&quot;Folgende IP-Adresse verwenden&quot;: IP-Adresse und Subnetzmaske eintragen,
+Standardgateway leer lassen. &quot;OK&quot;.</li>
+</ol>
+<p>Zurück: dieselben Schritte, &quot;IP-Adresse automatisch beziehen&quot;.</p>
+<h2>Linux</h2>
+<p>Mit NetworkManager in den Einstellungen unter &quot;Netzwerk&quot;, Kabelverbindung,
+IPv4, Methode &quot;Manuell&quot;. Oder im Terminal, wenn der Anschluss <code>eth0</code> heißt
+(Name mit <code>ip link</code> nachsehen):</p>
+<pre><code class="language-sh">sudo ip addr add 192.168.200.66/24 dev eth0
+</code></pre>
+<p>Wieder entfernen:</p>
+<pre><code class="language-sh">sudo ip addr del 192.168.200.66/24 dev eth0
+</code></pre>
+<h2>macOS</h2>
+<p>Systemeinstellungen, &quot;Netzwerk&quot;, Ethernet-Anschluss, &quot;Details&quot;, &quot;TCP/IP&quot;:
+&quot;IPv4 konfigurieren&quot; auf &quot;Manuell&quot;, IP-Adresse und Teilnetzmaske eintragen.
+Zurück: &quot;DHCP&quot;.</p>
+<h2>Prüfen</h2>
+<p>Ob der Router erreichbar ist, prüfst du im Browser mit der Adresse aus der
+Anleitung. Viele Recovery-Seiten antworten nicht auf <code>ping</code>, das ist dort kein
+Fehler.</p>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

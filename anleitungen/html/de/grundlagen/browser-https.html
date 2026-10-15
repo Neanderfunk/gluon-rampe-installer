@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Der Browser macht https daraus</title>
+<meta name="anleitung:grundlage" content="browser-https">
+<link rel="stylesheet" href="../../anleitung.css">
+</head>
+<body>
+<hr />
+<h2>thema: browser-https
+sprache: de
+status: ungeprüft</h2>
+<blockquote>
+<p><strong>Noch nicht gegengelesen.</strong> Diese Grundlagen-Seite ist ein Entwurf. Das
+Verhalten der RAMpe ist bisher nur in einer Testumgebung geprüft.</p>
+</blockquote>
+<h1>Der Browser macht https daraus</h1>
+<p>Router-Seiten während der Installation laufen meist über <code>http://</code>, ohne
+Verschlüsselung. Neuere Browser setzen bei einer eingetippten Adresse wie
+<code>192.168.1.1</code> aber gern von sich aus <code>https://</code> davor. Dann kommt statt der
+Seite eine Fehlermeldung oder eine Warnung.</p>
+<h2>Bei der Gluon-RAMpe</h2>
+<p>Die RAMpe antwortet auch auf <code>https://</code> und schickt den Browser weiter auf
+die <code>http://</code>-Seite. Weil sie dafür nur ein selbst ausgestelltes Zertifikat
+hat, warnt der Browser vorher:</p>
+<ul>
+<li><strong>Chrome, Edge:</strong> &quot;Dies ist keine sichere Verbindung&quot;. Auf &quot;Erweitert&quot;,
+dann auf &quot;Weiter zu 192.168.1.1 (unsicher)&quot;.</li>
+<li><strong>Firefox:</strong> &quot;Warnung: Mögliches Sicherheitsrisiko erkannt&quot;. Auf
+&quot;Erweitert…&quot;, dann auf &quot;Risiko akzeptieren und fortfahren&quot;.</li>
+</ul>
+<p>Danach erscheint die Seite der RAMpe. Das ist hier unbedenklich: Die
+Verbindung geht nur über das Kabel zwischen deinem Rechner und dem Router.</p>
+<h2>Wenn es gar nicht geht</h2>
+<p>Tipp die Adresse vollständig mit <code>http://</code> ein, also <code>http://192.168.1.1</code>,
+oder öffne ein privates Fenster. Bei Seiten ohne https-Weiterleitung (zum
+Beispiel manchen Recovery-Seiten) hilft nur das.</p>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

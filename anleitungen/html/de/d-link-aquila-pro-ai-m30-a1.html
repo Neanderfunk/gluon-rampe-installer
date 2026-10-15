@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D-Link AQUILA PRO AI M30 A1: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="d-link-aquila-pro-ai-m30-a1">
+<meta name="anleitung:modell" content="D-Link AQUILA PRO AI M30 A1">
+<meta name="anleitung:familie" content="dlink-recovery-web">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="mit Werkzeug">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:rampe_image" content="gluon-rampe-*-d-link-aquila-pro-ai-m30-a1-recovery.bin">
+<meta name="anleitung:grundlagen" content="browser-https, curl, feste-ip">
+<meta name="anleitung:daten_stand" content="97041cf">
+<meta name="anleitung:vorlage_stand" content="2ce2f08">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Diese Anleitung ist aus Quellen
+zusammengestellt, aber noch niemand hat sie an einem D-Link AQUILA PRO AI M30 A1 Schritt
+für Schritt nachvollzogen. Wenn du es tust: Schreib uns, ob es geklappt hat.</p>
+</blockquote>
+<h1>D-Link AQUILA PRO AI M30 A1: Freifunk-Firmware installieren</h1>
+<p>Der D-Link AQUILA PRO AI M30 A1 hat eine eingebaute Notfall-Seite von D-Link, die
+<strong>Recovery</strong>. Sie nimmt eine Firmware-Datei an und schreibt sie in den
+Speicher, auch wenn sonst nichts mehr geht. Über sie kommt zuerst die
+<strong>Gluon-RAMpe</strong> auf den Router: eine kleine Seite, die nur eins kann, die
+Freifunk-Firmware deiner Community annehmen. Du brauchst dafür kein SSH und
+kein Passwort.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
+<li>eine Büroklammer für die Reset-Taste</li>
+<li>die RAMpe-Datei für dieses Gerät: <code>gluon-rampe-&lt;Datum&gt;-d-link-aquila-pro-ai-m30-a1-recovery.bin</code></li>
+<li>die Freifunk-Firmware deiner Community für den D-Link AQUILA PRO AI M30 A1, und zwar das
+<strong>sysupgrade</strong>-Image</li>
+<li>das Programm <strong>curl</strong> zum Hochladen. Unter Linux und macOS ist es meist
+schon da, unter Windows 10 und 11 heißt es <code>curl.exe</code> und ist eingebaut
+(<a href="grundlagen/curl.html">curl benutzen</a>).</li>
+</ul>
+<p>WLAN am Rechner schaltest du für die Installation am besten aus, damit er
+wirklich über das Kabel spricht.</p>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Dateien bereitlegen.</strong> Lade die RAMpe-Datei und das sysupgrade-Image herunter und leg sie in einen
+Ordner, den du wiederfindest, zum Beispiel &quot;Downloads&quot;.</p>
+</li>
+<li>
+<p><strong>Feste Adresse am Rechner.</strong> Stell den Netzwerkanschluss deines Rechners
+auf die feste Adresse <code>192.168.200.10</code> mit der Netzmaske
+<code>255.255.255.0</code>. Ein Gateway brauchst du nicht. Wie das geht, steht unter
+<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>.</p>
+</li>
+<li>
+<p><strong>Kabel stecken.</strong> Verbinde den Rechner mit dem Router.
+Der Router hat noch keinen Strom.</p>
+</li>
+<li>
+<p><strong>Router in die Recovery bringen.</strong> Drück mit der Büroklammer die
+Reset-Taste und halte sie gedrückt. Steck jetzt den Strom ein und halte
+die Taste weiter, bis die LED <strong>rot blinkt</strong>. Dann loslassen.</p>
+</li>
+<li>
+<p><strong>Prüfen, ob die Recovery da ist.</strong>
+Öffne im Browser <code>http://192.168.200.1</code>. Es erscheint die Recovery-Seite von D-Link.
+<strong>Lade dort nichts hoch.</strong> Ihr Fortschrittsbalken läuft nur nach der Uhr
+und sagt nichts darüber, ob die Datei ankam. Die Seite zeigt dir nur, dass
+die Recovery bereit ist.
+Ein <code>ping</code> hilft hier nicht, die Recovery antwortet nicht darauf.</p>
+</li>
+<li>
+<p><strong>Datei mit curl hochladen.</strong> Öffne ein Terminal (unter Windows die
+Eingabeaufforderung &quot;cmd&quot;), wechsle in den Ordner mit der Datei und gib
+ein:</p>
+<p>Linux und macOS:</p>
+<pre><code class="language-sh">curl -H &quot;Expect:&quot; -w &quot;HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n&quot; -o /dev/null -F &quot;firmware=@gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin;type=application/octet-stream&quot; http://192.168.200.1/upload.cgi
+</code></pre>
+<p>Windows (cmd):</p>
+<pre><code>curl.exe -H &quot;Expect:&quot; -w &quot;HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n&quot; -o NUL -F &quot;firmware=@gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin;type=application/octet-stream&quot; http://192.168.200.1/upload.cgi
+</code></pre>
+<p>Den echten Dateinamen statt <code>gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin</code> einsetzen. Für die
+PowerShell sieht der Befehl etwas anders aus, siehe
+<a href="grundlagen/curl.html">curl benutzen</a>.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> curl überträgt die Datei und wartet dann weiter, während die
+Recovery schreibt. Die LED bleibt dabei wie in Schritt 4. Bis zum
+Neustart vergehen meist einige Minuten, es kann aber auch über 10 Minuten dauern.
+<strong>Nicht abbrechen, Strom nicht ziehen.</strong>
+Am Ende zeigt curl, wie viel ankam. Geklappt hat es bei
+<strong>etwa 52,4 Millionen Bytes</strong>. Steht da 0, kam nichts an (siehe &quot;Wenn
+etwas schiefgeht&quot;).</p>
+</li>
+<li>
+<p><strong>Die RAMpe.</strong> Nach dem Neustart blinkt die LED gleichmäßig, etwa einmal pro Sekunde. Stell den Rechner
+wieder auf &quot;automatisch&quot; (DHCP) und öffne <code>http://192.168.1.1</code>. Es
+erscheint die Seite &quot;Firmware aktualisieren&quot;.
+Die RAMpe bleibt auf dem Router, bis die Freifunk-Firmware sie ersetzt.
+Startet der Router zwischendurch neu, ist das harmlos: Seite einfach
+wieder aufrufen.
+Zeigt der Browser stattdessen eine Warnung vor einem unsicheren
+Zertifikat, hat er von sich aus <code>https://</code> vor die Adresse gesetzt. Klick
+auf &quot;Erweitert&quot; und &quot;Trotzdem fortfahren&quot; (je nach Browser etwas anders
+benannt), dann kommt die Seite. Mehr dazu unter
+<a href="grundlagen/browser-https.html">Browser macht https daraus</a>.</p>
+</li>
+<li>
+<p><strong>Freifunk-Firmware hochladen.</strong> Wähl das sysupgrade-Image deiner
+Community aus und klick &quot;Datei hochladen&quot;. Die RAMpe zeigt die Prüfsumme
+(SHA256) der Datei. Vergleich sie mit der Prüfsumme, die deine Community
+zur Datei angibt. Stimmt sie, klick &quot;Fortfahren&quot;.</p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Nach wenige Minuten startet die Freifunk-Firmware
+deiner Community: je nach Community zuerst mit einer Einrichtungsseite
+unter <code>http://192.168.1.1</code> oder gleich im Betrieb. Wie es weitergeht,
+beschreibt deine Community.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>curl meldet am Ende <strong>etwa 52,4 Millionen Bytes</strong>. Wie lange das gedauert
+hat, ist egal, es zählt die Menge.</li>
+<li>Nach dem Neustart blinkt die LED gleichmäßig, etwa einmal pro Sekunde, und unter <code>http://192.168.1.1</code>
+steht &quot;Firmware aktualisieren&quot;.</li>
+<li>Die Erfolgsmeldung der D-Link-Seite zählt nicht, sie erscheint immer.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>curl meldet &quot;Failed to connect&quot;, HTTP 000 und 0 Bytes.</strong> Die Recovery war
+nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
+Router noch einmal in die Recovery bringen (Schritt 4).</li>
+<li><strong>Nach dem Upload startet wieder die normale D-Link-Firmware.</strong> Die Datei
+ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
+Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.</li>
+<li><strong>Der Browser-Upload war nach einer Sekunde &quot;fertig&quot;.</strong> Dann ist nichts
+übertragen worden. Das passiert auch in Chromium-Browsern. Nimm curl.</li>
+<li><strong>Aus der WSL unter Windows kommt keine Verbindung zustande.</strong> Nimm curl.exe
+direkt in Windows, nicht in der WSL.</li>
+</ul>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>geprüft (Weg ab Werk, Datei, Stock-Teile)</li>
+<li>geprüft: Commit (Sichtbare Zeichen)</li>
+<li>geprüft: Commit 29cca6c (Schritte (Normalweg), Sichtbare Zeichen, Adressen, Bedingung an die Herstellerfirmware, Fehlerbild, Rückweg zur Herstellerfirmware)</li>
+<li>geprüft: Commits 'Chromium based'; Firefox abgeleitet: Forum Darmstadt laut Notiz (Programm)</li>
+<li>geprüft: Commits 29cca6c, 7271ee5; Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt)</li>
+<li>geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Sichtbare Zeichen, Adressen, Datei)</li>
+<li>geprüft: Neanderfunk-Notiz, M60: 10-11 min gemessen (Schritte (Normalweg), Dauer)</li>
+<li>geprüft: Neanderfunk-Notiz, am Gerät bestätigt (Typenschild/Verwechslung)</li>
+<li>geprüft: Neanderfunk-Notiz, am M60 erprobt (Schritte (Normalweg), Programm)</li>
+<li>geprüft: gluon-rampe-installer docs/NOTIZEN.md (Gluon-RAMpe passt)</li>
+<li>Geräteeintrag: OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>
