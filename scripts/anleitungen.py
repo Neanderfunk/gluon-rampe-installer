@@ -4,7 +4,7 @@
 # data/geraete-2025.1.json und den Vorlagen der Anleitungsfamilien.
 #
 #   scripts/anleitungen.py                    Markdown je Geraet schreiben
-#   scripts/anleitungen.py --html             dazu je Geraet eine HTML-Seite
+#   scripts/anleitungen.py --html             dazu je Geraet eine HTML-Seite (markdown-it-py)
 #   scripts/anleitungen.py --html --basis-url https://host/pfad
 #                                             dazu html/index.json fuer den Selector
 #   scripts/anleitungen.py --check [--html]   nur pruefen, ob alles aktuell ist
@@ -184,7 +184,7 @@ html{background:var(--grund);color:var(--text)}
 body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55;max-width:44rem;margin:0 auto;padding:1.5rem 1rem 4rem}
 h1{font-size:1.6rem;line-height:1.25;text-wrap:balance}h2{font-size:1.2rem;margin-top:2rem;border-bottom:1px solid var(--rand);padding-bottom:.2rem}
 a{color:var(--akzent)}code,pre{font-family:ui-monospace,Consolas,monospace;font-size:.92em;background:var(--code)}
-code{padding:.05em .3em;border-radius:3px}pre{padding:.7rem .8rem;overflow-x:auto;border-radius:4px}pre code{padding:0;background:none}
+code{padding:.05em .3em;border-radius:3px}pre{padding:.7rem .8rem;overflow-x:auto;border-radius:4px;white-space:pre-wrap;overflow-wrap:anywhere}pre code{padding:0;background:none}
 blockquote{margin:1rem 0;padding:.6rem .9rem;background:var(--hinweis);border-left:4px solid #c9962b}
 blockquote p{margin:.2rem 0}ol>li{margin:.5rem 0}.fuss{margin-top:3rem;color:var(--leise);font-size:.85rem}
 table{border-collapse:collapse}td,th{border:1px solid var(--rand);padding:.25rem .5rem;text-align:left}
@@ -192,7 +192,8 @@ table{border-collapse:collapse}td,th{border:1px solid var(--rand);padding:.25rem
 
 
 def html_seite(titel, body_md, meta, md, tiefe):
-    inhalt = md.markdown(body_md, extensions=["fenced_code", "tables", "sane_lists"])
+    """tiefe: Verzeichnisebenen unter html/ (fuer den Pfad zu anleitung.css)."""
+    inhalt = md.render(body_md)
     inhalt = re.sub(r'href="([^":]+)\.md(#[^"]*)?"', r'href="\1.html\2"', inhalt)
     metas = "\n".join(f'<meta name="anleitung:{html.escape(k)}" content="{html.escape(", ".join(v) if isinstance(v, list) else str(v))}">'
                       for k, v in meta.items())
@@ -220,10 +221,14 @@ def main():
         sys.exit("python3-jinja2 fehlt")
     md = None
     if a.html:
+        # CommonMark (markdown-it-py): Code-Bloecke und Absaetze innerhalb
+        # nummerierter Schritte, wie sie die Vorlagen nutzen. python3-markdown
+        # erkennt dort keine Code-Bloecke.
         try:
-            import markdown as md
+            from markdown_it import MarkdownIt
         except ImportError:
-            sys.exit("python3-markdown fehlt (für --html)")
+            sys.exit("python3-markdown-it fehlt (für --html)")
+        md = MarkdownIt("commonmark", {"html": False}).enable("table")
 
     geraete = json.loads(DATEN.read_text(encoding="utf-8"))["geraete"]
     geraete.sort(key=lambda g: g["gluon_name"])
@@ -237,19 +242,19 @@ def main():
         dateien[h / "anleitung.css"] = CSS
         for name, (kopf, body) in seiten.items():
             dateien[h / SPRACHE / f"{name}.html"] = html_seite(
-                f"{kopf['modell']}: Freifunk-Firmware installieren", body, kopf, md, 2)
+                f"{kopf['modell']}: Freifunk-Firmware installieren", body, kopf, md, 1)
         for p in sorted((a.quelle / SPRACHE / "grundlagen").glob("*.md")):
             t = p.read_text(encoding="utf-8")
             titel = (re.search(r"^# (.+)$", t, re.M) or [None, p.stem])[1]
             dateien[h / SPRACHE / "grundlagen" / f"{p.stem}.html"] = html_seite(
-                titel, t, {"grundlage": p.stem}, md, 3)
+                titel, t, {"grundlage": p.stem}, md, 2)
         liste = ["# Freifunk-Firmware installieren", "",
                  "Anleitungen je Gerät. Ungeprüfte Anleitungen sind aus Quellen "
                  "zusammengestellt und noch nicht am Gerät nachvollzogen.", ""]
         liste += [f"- [{k['modell']}]({n}.md): {k['status']}, {k['stufe']}"
                   for n, (k, _) in seiten.items()]
         dateien[h / SPRACHE / "index.html"] = html_seite(
-            "Freifunk-Firmware installieren", "\n".join(liste) + "\n", {"uebersicht": SPRACHE}, md, 2)
+            "Freifunk-Firmware installieren", "\n".join(liste) + "\n", {"uebersicht": SPRACHE}, md, 1)
         if a.basis_url:
             basis = a.basis_url.rstrip("/")
             idx = [{"gluon_name": n, "url": f"{basis}/{SPRACHE}/{n}.html", "status": k["status"],
