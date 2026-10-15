@@ -12309,7 +12309,7 @@ TP-Link Archer C50 v4 · ramips-mt76x8 · K3
 - **Quelle (OpenWrt-Commit):** 01dcd574a24864c10a9c4df4304a3ce0da5c11a9
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-c50-v4.md
 - **Am Gerät erprobt (für die Anleitung):** am = 2026-10-15; mit = Gluon 2023.2.6 (26091920sta), U-Boot-Teil aus Archer C50(EU)_V4_250117
-- **Werte für die Anleitung:** stock_url = https://www.tp-link.com/de/support/download/archer-c50/v4/; sicherheit = quelle
+- **Werte für die Anleitung:** stock_url = https://www.tp-link.com/de/support/download/archer-c50/v4/; sicherheit = quelle; stock_getestet = Archer C50(EU)_V4_250117
 
 #### tp-link-archer-c50-v6-ca-eu-ru
 
