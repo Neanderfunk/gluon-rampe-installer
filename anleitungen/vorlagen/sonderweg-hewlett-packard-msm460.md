@@ -1,6 +1,6 @@
 {#-
-Vorlage sonderweg-hewlett-packard-msm460 (HPE MSM460). ENTWURF Content,
-15.10.2026, zur Durchsicht durch adorfer.
+Vorlage sonderweg-hewlett-packard-msm460 (HPE MSM460). Freigegeben von adorfer
+am 15.10.2026.
 
 Weg: OpenWrt-Commit af329ec und github blocktrron/msm460-flashing
 (@0d1dd58): Reset beim Einstecken halten, bis die LEDs nach etwa 15 s
