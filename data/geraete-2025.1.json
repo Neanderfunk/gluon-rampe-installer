@@ -15112,7 +15112,7 @@
    "target": "ramips-mt7621",
    "kat": "K3",
    "familie": "ubiquiti-edgerouter",
-   "weg": "EdgeOS nimmt (Web-UI \"System\" oder `add system image`) ein initramfs-factory.tar, das OpenWrt heute nicht mehr baut (nur alte Releases/Fremdquellen); danach Umstieg auf das 24.10-Layout (Kernel 6 MB, compat_version 2.0). Seriell alternativ TFTP im Ralink-Menü [geprüft: Commit, mk, Wiki toh:ubiquiti:edgerouter_x_er-x_ka]",
+   "weg": "EdgeOS nimmt (Web-UI \"System\" oder `add system image`) ein initramfs-factory.tar, das OpenWrt heute nicht mehr baut (nur alte Releases/Fremdquellen); danach Umstieg auf das 24.10-Layout (Kernel 6 MB, compat_version 2.0). Seriell alternativ TFTP im Ralink-Menü [geprüft: Commit, mk, Wiki toh:ubiquiti:edgerouter_x_er-x_ka]; Neuinstallation aus EdgeOS über OpenWrt-22.03-initramfs-factory.tar (stman), darkxst-Umstellung mit OpenWrt 24.10.8 als /tmp/sysupgrade.img, dann Gluon-sysupgrade über LuCI [Wiki-Rohtext: toh:ubiquiti:edgerouter_x_er-x_ka, 15.10.2026] [geprüft: darkxst/erx-migration README und ubnt_erx_migrate.sh, Commit d29f71a: eine vorher abgelegte /tmp/sysupgrade.img überspringt den Download, Board edgerouter-x oder -x-sfp erlaubt] [geprüft: stman OpenWrt-22.03-initramfs-factory.tar, Commit de2ade9, SHA256 gegen sha256sums] [geprüft: OpenWrt 24.10.8 sha256sums für das sysupgrade, am 15.10.2026 abgeglichen]",
    "schritte": [
     "Typ prüfen: ER-X (PoE-Durchleitung an eth4), nicht ER-X-SFP (SFP-Port); eigene Images [geprüft: Commit 9715beb]",
     "Vorher neueste EdgeOS-v2-Firmware und das Bootloader-Update einspielen (Empfehlung Wiki) [abgeleitet: Wiki]",
@@ -15149,9 +15149,13 @@
    "rampe": "nein für 2025.1: EdgeOS schreibt in einen 3-MB-Kernel-Slot; Kernel 6.6 allein hat 3 173 556 Byte (Neanderfunk-Notiz), ein Gluon-initramfs mit Rootfs passt erst recht nicht [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "4e31b2e8697c21f9bd6493bb3d78a4a41c6a9a52",
-   "anleitung": "https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp",
+   "anleitung": "anleitungen/de/ubiquiti-edgerouter-x.md; https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "openwrt_datei": "openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-squashfs-sysupgrade.bin",
+    "openwrt_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-squashfs-sysupgrade.bin",
+    "openwrt_sha256": "6c39f0140e06cef4832a4d65cbb48caa7e0b540c45fb1f82598c17d30f3e7026"
+   }
   },
   {
    "gluon_name": "ubiquiti-edgerouter-x-sfp",
@@ -15159,7 +15163,7 @@
    "target": "ramips-mt7621",
    "kat": "K3",
    "familie": "ubiquiti-edgerouter",
-   "weg": "EdgeOS nimmt (Web-UI \"System\" oder `add system image`) ein initramfs-factory.tar, das OpenWrt heute nicht mehr baut (nur alte Releases/Fremdquellen); danach Umstieg auf das 24.10-Layout (Kernel 6 MB, compat_version 2.0). Seriell alternativ TFTP im Ralink-Menü [geprüft: Commit, mk, Wiki toh:ubiquiti:edgerouter_x_er-x_ka]",
+   "weg": "EdgeOS nimmt (Web-UI \"System\" oder `add system image`) ein initramfs-factory.tar, das OpenWrt heute nicht mehr baut (nur alte Releases/Fremdquellen); danach Umstieg auf das 24.10-Layout (Kernel 6 MB, compat_version 2.0). Seriell alternativ TFTP im Ralink-Menü [geprüft: Commit, mk, Wiki toh:ubiquiti:edgerouter_x_er-x_ka]; Neuinstallation aus EdgeOS über OpenWrt-22.03-initramfs-factory.tar (stman), darkxst-Umstellung mit OpenWrt 24.10.8 als /tmp/sysupgrade.img, dann Gluon-sysupgrade über LuCI [Wiki-Rohtext: toh:ubiquiti:edgerouter_x_er-x_ka, 15.10.2026] [geprüft: darkxst/erx-migration README und ubnt_erx_migrate.sh, Commit d29f71a: eine vorher abgelegte /tmp/sysupgrade.img überspringt den Download, Board edgerouter-x oder -x-sfp erlaubt] [geprüft: stman OpenWrt-22.03-initramfs-factory.tar, Commit de2ade9, SHA256 gegen sha256sums] [geprüft: OpenWrt 24.10.8 sha256sums für das sysupgrade, am 15.10.2026 abgeglichen] [abgeleitet: das ER-X-factory der 22.03-Zwischenstufe läuft laut Wiki auch auf dem X-SFP; für den Weg über darkxst übertragen]",
    "schritte": [
     "Typ prüfen: ER-X-SFP (SFP-Port, 5x PoE-out), nicht ER-X; eigene Images [geprüft: Commit 9715beb]",
     "Vorher neueste EdgeOS-v2-Firmware und das Bootloader-Update einspielen (Empfehlung Wiki) [abgeleitet: Wiki]",
@@ -15196,9 +15200,13 @@
    "rampe": "nein für 2025.1: EdgeOS schreibt in einen 3-MB-Kernel-Slot; Kernel 6.6 allein hat 3 173 556 Byte (Neanderfunk-Notiz), ein Gluon-initramfs mit Rootfs passt erst recht nicht [abgeleitet]",
    "rampe_rezept": "",
    "quelle": "9715beb04c74a918697945b3e2d23a139bd04b70",
-   "anleitung": "https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp",
+   "anleitung": "anleitungen/de/ubiquiti-edgerouter-x-sfp.md; https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "openwrt_datei": "openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-sfp-squashfs-sysupgrade.bin",
+    "openwrt_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-sfp-squashfs-sysupgrade.bin",
+    "openwrt_sha256": "6cc7cf45dad3ee1f2dfe6440ed032d8647d782630ed381eb4622fab3ff879e21"
+   }
   },
   {
    "gluon_name": "ubiquiti-unifi-6-lite",

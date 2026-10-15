@@ -496,8 +496,8 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [tp-link-eap615-wall-v1](#tp-link-eap615-wall-v1) | TP-Link EAP615-Wall v1 | ramips-mt7621 | K0 | [`tplink-eap-ssh`](#familie-tplink-eap-ssh) | ssh | nein | nein | nein |  |  |
 | [tp-link-re500-v1](#tp-link-re500-v1) | TP-Link RE500 v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re500-v1.md) |
 | [tp-link-re650-v1](#tp-link-re650-v1) | TP-Link RE650 v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-re650-v1.md) |
-| [ubiquiti-edgerouter-x](#ubiquiti-edgerouter-x) | Ubiquiti EdgeRouter X | ramips-mt7621 | K3 | [`ubiquiti-edgerouter`](#familie-ubiquiti-edgerouter) | webui-upload | nein | nein | nein |  | https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp |
-| [ubiquiti-edgerouter-x-sfp](#ubiquiti-edgerouter-x-sfp) | Ubiquiti EdgeRouter X-SFP | ramips-mt7621 | K3 | [`ubiquiti-edgerouter`](#familie-ubiquiti-edgerouter) | webui-upload | nein | nein | nein |  | https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp |
+| [ubiquiti-edgerouter-x](#ubiquiti-edgerouter-x) | Ubiquiti EdgeRouter X | ramips-mt7621 | K3 | [`ubiquiti-edgerouter`](#familie-ubiquiti-edgerouter) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-edgerouter-x.md); https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp |
+| [ubiquiti-edgerouter-x-sfp](#ubiquiti-edgerouter-x-sfp) | Ubiquiti EdgeRouter X-SFP | ramips-mt7621 | K3 | [`ubiquiti-edgerouter`](#familie-ubiquiti-edgerouter) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-edgerouter-x-sfp.md); https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp |
 | [ubiquiti-unifi-6-lite](#ubiquiti-unifi-6-lite) | Ubiquiti UniFi 6 Lite | ramips-mt7621 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-lite.md); https://openwrt.org/toh/ubiquiti/unifi6lite#installation |
 | [ubiquiti-unifi-nanohd](#ubiquiti-unifi-nanohd) | Ubiquiti UniFi nanoHD | ramips-mt7621 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-nanohd.md) |
 | [wavlink-ws-wn572hp3-4g](#wavlink-ws-wn572hp3-4g) | Wavlink WS-WN572HP3 4G | ramips-mt7621 | K1d | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=6cd1035d8dc001561331ca9e613d7dfc7d0fd7a6 |
@@ -11308,7 +11308,7 @@ TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54) · ramips-mt76x8 · K3
 
 Ubiquiti EdgeRouter X · ramips-mt7621 · K3
 
-- **Weg ab Werk:** EdgeOS nimmt (Web-UI "System" oder `add system image`) ein initramfs-factory.tar, das OpenWrt heute nicht mehr baut (nur alte Releases/Fremdquellen); danach Umstieg auf das 24.10-Layout (Kernel 6 MB, compat_version 2.0). Seriell alternativ TFTP im Ralink-Menü [geprüft: Commit, mk, Wiki toh:ubiquiti:edgerouter_x_er-x_ka]
+- **Weg ab Werk:** EdgeOS nimmt (Web-UI "System" oder `add system image`) ein initramfs-factory.tar, das OpenWrt heute nicht mehr baut (nur alte Releases/Fremdquellen); danach Umstieg auf das 24.10-Layout (Kernel 6 MB, compat_version 2.0). Seriell alternativ TFTP im Ralink-Menü [geprüft: Commit, mk, Wiki toh:ubiquiti:edgerouter_x_er-x_ka]; Neuinstallation aus EdgeOS über OpenWrt-22.03-initramfs-factory.tar (stman), darkxst-Umstellung mit OpenWrt 24.10.8 als /tmp/sysupgrade.img, dann Gluon-sysupgrade über LuCI [Wiki-Rohtext: toh:ubiquiti:edgerouter_x_er-x_ka, 15.10.2026] [geprüft: darkxst/erx-migration README und ubnt_erx_migrate.sh, Commit d29f71a: eine vorher abgelegte /tmp/sysupgrade.img überspringt den Download, Board edgerouter-x oder -x-sfp erlaubt] [geprüft: stman OpenWrt-22.03-initramfs-factory.tar, Commit de2ade9, SHA256 gegen sha256sums] [geprüft: OpenWrt 24.10.8 sha256sums für das sysupgrade, am 15.10.2026 abgeglichen]
 - **Schritte (Normalweg):**
   1. Typ prüfen: ER-X (PoE-Durchleitung an eth4), nicht ER-X-SFP (SFP-Port); eigene Images [geprüft: Commit 9715beb]
   2. Vorher neueste EdgeOS-v2-Firmware und das Bootloader-Update einspielen (Empfehlung Wiki) [abgeleitet: Wiki]
@@ -11339,13 +11339,14 @@ Ubiquiti EdgeRouter X · ramips-mt7621 · K3
 - **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
 - **Gluon-RAMpe passt:** nein für 2025.1: EdgeOS schreibt in einen 3-MB-Kernel-Slot; Kernel 6.6 allein hat 3 173 556 Byte (Neanderfunk-Notiz), ein Gluon-initramfs mit Rootfs passt erst recht nicht [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 4e31b2e8697c21f9bd6493bb3d78a4a41c6a9a52
-- **Detail-Anleitung:** https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp
+- **Detail-Anleitung:** anleitungen/de/ubiquiti-edgerouter-x.md; https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp
+- **Werte für die Anleitung:** openwrt_datei = openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-squashfs-sysupgrade.bin; openwrt_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-squashfs-sysupgrade.bin; openwrt_sha256 = 6c39f0140e06cef4832a4d65cbb48caa7e0b540c45fb1f82598c17d30f3e7026
 
 #### ubiquiti-edgerouter-x-sfp
 
 Ubiquiti EdgeRouter X-SFP · ramips-mt7621 · K3
 
-- **Weg ab Werk:** EdgeOS nimmt (Web-UI "System" oder `add system image`) ein initramfs-factory.tar, das OpenWrt heute nicht mehr baut (nur alte Releases/Fremdquellen); danach Umstieg auf das 24.10-Layout (Kernel 6 MB, compat_version 2.0). Seriell alternativ TFTP im Ralink-Menü [geprüft: Commit, mk, Wiki toh:ubiquiti:edgerouter_x_er-x_ka]
+- **Weg ab Werk:** EdgeOS nimmt (Web-UI "System" oder `add system image`) ein initramfs-factory.tar, das OpenWrt heute nicht mehr baut (nur alte Releases/Fremdquellen); danach Umstieg auf das 24.10-Layout (Kernel 6 MB, compat_version 2.0). Seriell alternativ TFTP im Ralink-Menü [geprüft: Commit, mk, Wiki toh:ubiquiti:edgerouter_x_er-x_ka]; Neuinstallation aus EdgeOS über OpenWrt-22.03-initramfs-factory.tar (stman), darkxst-Umstellung mit OpenWrt 24.10.8 als /tmp/sysupgrade.img, dann Gluon-sysupgrade über LuCI [Wiki-Rohtext: toh:ubiquiti:edgerouter_x_er-x_ka, 15.10.2026] [geprüft: darkxst/erx-migration README und ubnt_erx_migrate.sh, Commit d29f71a: eine vorher abgelegte /tmp/sysupgrade.img überspringt den Download, Board edgerouter-x oder -x-sfp erlaubt] [geprüft: stman OpenWrt-22.03-initramfs-factory.tar, Commit de2ade9, SHA256 gegen sha256sums] [geprüft: OpenWrt 24.10.8 sha256sums für das sysupgrade, am 15.10.2026 abgeglichen] [abgeleitet: das ER-X-factory der 22.03-Zwischenstufe läuft laut Wiki auch auf dem X-SFP; für den Weg über darkxst übertragen]
 - **Schritte (Normalweg):**
   1. Typ prüfen: ER-X-SFP (SFP-Port, 5x PoE-out), nicht ER-X; eigene Images [geprüft: Commit 9715beb]
   2. Vorher neueste EdgeOS-v2-Firmware und das Bootloader-Update einspielen (Empfehlung Wiki) [abgeleitet: Wiki]
@@ -11376,7 +11377,8 @@ Ubiquiti EdgeRouter X-SFP · ramips-mt7621 · K3
 - **Rückweg zur Herstellerfirmware:** EdgeOS nach Ubiquiti-Anleitung help.ui.com/hc/en-us/articles/360019289113 wieder aufspielen [abgeleitet: Wiki]
 - **Gluon-RAMpe passt:** nein für 2025.1: EdgeOS schreibt in einen 3-MB-Kernel-Slot; Kernel 6.6 allein hat 3 173 556 Byte (Neanderfunk-Notiz), ein Gluon-initramfs mit Rootfs passt erst recht nicht [abgeleitet]
 - **Quelle (OpenWrt-Commit):** 9715beb04c74a918697945b3e2d23a139bd04b70
-- **Detail-Anleitung:** https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp
+- **Detail-Anleitung:** anleitungen/de/ubiquiti-edgerouter-x-sfp.md; https://github.com/oszilloskop/UBNT_ERX_Gluon_Factory-Image/blob/master/README.md#gluon-auf-ubnt-edgerouter-x-und-x-sfp
+- **Werte für die Anleitung:** openwrt_datei = openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-sfp-squashfs-sysupgrade.bin; openwrt_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-ubnt_edgerouter-x-sfp-squashfs-sysupgrade.bin; openwrt_sha256 = 6cc7cf45dad3ee1f2dfe6440ed032d8647d782630ed381eb4622fab3ff879e21
 
 ### Familie `ubiquiti-tftp`
 

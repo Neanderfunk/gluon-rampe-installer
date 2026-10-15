@@ -54,7 +54,7 @@ STUFE = {"K0": "einfach", "K0+": "mit Werkzeug", "K1": "mit Werkzeug",
          "K4": "Werkstatt", "K5": "Werkstatt", "offen": "Werkstatt"}
 
 # Belegmarken: [geprueft: ...], [abgeleitet ...], [Wiki-Zusammenfassung: ...] ...
-MARKE = re.compile(r"\[([^\[\]]*(?:geprüft|abgeleitet|Zusammenfassung|ungeprüft|Forum:|Neanderfunk-Notiz:)[^\[\]]*)\]")
+MARKE = re.compile(r"\[([^\[\]]*(?:geprüft|abgeleitet|Zusammenfassung|ungeprüft|Forum:|Neanderfunk-Notiz:|Wiki-Rohtext:)[^\[\]]*)\]")
 
 
 def git_stand(repo, pfad):
