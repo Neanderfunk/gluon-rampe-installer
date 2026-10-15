@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D-Link DAP-1330 A1: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="d-link-dap-1330-a1">
+<meta name="anleitung:modell" content="D-Link DAP-1330 A1">
+<meta name="anleitung:familie" content="k0-webui">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="einfach">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="curl">
+<meta name="anleitung:daten_stand" content="fbe5766">
+<meta name="anleitung:vorlage_stand" content="aa479e3">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Diese Anleitung ist aus Quellen
+zusammengestellt, aber noch niemand hat sie an einem D-Link DAP-1330 A1 Schritt
+für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
+<a href="mailto:projekt@neanderfunk.de">projekt@neanderfunk.de</a>, ob es geklappt hat.</p>
+</blockquote>
+<h1>D-Link DAP-1330 A1: Freifunk-Firmware installieren</h1>
+<p>Beim D-Link DAP-1330 A1 geht die Installation über die normale Weboberfläche des
+Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update
+des Herstellers hinkäme. Du brauchst nur einen Browser.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>das Gerät und sein Netzteil</li>
+<li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
+<li>die Freifunk-Firmware deiner Community für den D-Link DAP-1330 A1, und zwar das
+<strong>factory</strong>-Image für die Erstinstallation, nicht &quot;sysupgrade&quot;</li>
+</ul>
+<p>Auf dem Aufkleber unter dem Gerät stehen Modell und Hardware-Version (bei
+TP-Link etwa &quot;Ver: 5.0&quot;, bei anderen &quot;H/W Ver.&quot;). Viele Geräte gibt es in
+mehreren Versionen, und jede braucht ihr eigenes Image. Vergleich den
+Aufkleber genau mit &quot;D-Link DAP-1330 A1&quot;, bevor du anfängst.</p>
+<h2>Vorher prüfen</h2>
+<p>DAP-1330 (Steckergehäuse) und DAP-1365 (Zwischenstecker mit Steckdose) haben
+dieselbe Herstellerfirmware, aber je ihr eigenes Image. Nimm das Image zu dem
+Modell, das auf dem Gerät steht, hier also <strong>DAP-1330</strong> (nicht
+<a href="d-link-dap-1365-a1.html">DAP-1365</a>). Ab Werk gibt es kein Passwort.</p>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Datei bereitlegen.</strong> Lade das factory-Image herunter.</p>
+</li>
+<li>
+<p><strong>Verbinden.</strong> Versorg das Gerät mit Strom und steck das Kabel vom
+Rechner an eine LAN-Buchse des
+Geräts (nicht WAN oder Internet).
+Der Rechner holt sich seine Adresse automatisch, so wie er normalerweise
+eingestellt ist.</p>
+</li>
+<li>
+<p><strong>Oberfläche öffnen.</strong> Öffne im Browser <code>http://192.168.0.50</code>.
+Melde dich an: ab Werk ohne Passwort.</p>
+</li>
+<li>
+<p><strong>Firmware-Update aufrufen.</strong> Such den Menüpunkt für das Firmware-Update. Er heißt je nach
+Hersteller etwa &quot;Firmware Upgrade&quot;, &quot;Firmware-Update&quot; oder &quot;Firmware
+aktualisieren&quot; und liegt oft unter &quot;System&quot;, &quot;System Tools&quot; oder
+&quot;Verwaltung&quot;.</p>
+</li>
+<li>
+<p><strong>Hochladen.</strong> Wähl das factory-Image aus, starte das Update und
+bestätige die Rückfragen.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Das Gerät schreibt die Firmware und startet neu. Das dauert
+einige Minuten.
+<strong>Nicht ausschalten, Strom nicht ziehen und die Seite nicht neu laden.</strong>
+Manche Geräte löschen zuerst den ganzen Speicher; ein Abbruch in dieser
+Zeit kann sie unbrauchbar machen.</p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Danach startet die Freifunk-Firmware deiner Community: je nach
+Community zuerst mit einer Einrichtungsseite unter <code>http://192.168.1.1</code>
+oder gleich im Betrieb.
+Wie es weitergeht, beschreibt deine Community.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>Das Gerät startet nach einigen Minuten von selbst neu.</li>
+<li>Die Herstelleroberfläche ist weg. Stattdessen meldet sich die
+Freifunk-Firmware, oft zuerst mit der Einrichtungsseite unter
+<code>http://192.168.1.1</code>.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Die Oberfläche lehnt die Datei ab.</strong> Häufige Gründe: Das Image ist für
+eine andere Hardware-Version oder Region (Aufkleber prüfen), der Dateiname
+ist zu lang (kurz umbenennen, z. B. in <code>factory.bin</code>), oder die
+Herstellerfirmware ist zu neu und sperrt fremde Firmware (siehe &quot;Vorher
+prüfen&quot;, falls vorhanden).</li>
+<li><strong>Nach dem Neustart ist unter <code>http://192.168.1.1</code> nichts.</strong> Stell den
+Rechner auf &quot;automatisch&quot; und zieh das Kabel kurz ab und wieder an. Je nach
+Community startet die Firmware auch gleich im Betrieb ohne
+Einrichtungsseite.</li>
+<li><strong>Der Browser macht beim Hochladen Probleme.</strong> Dann geht es über die
+Notfall-Seite (unten) mit curl.</li>
+</ul>
+<h2>Notfall: Web-Recovery</h2>
+<p>Reset-Taste drücken und halten, Strom einstecken, halten, bis die LED rot
+blinkt. Die Notfall-Seite ist dann unter <code>http://192.168.0.50</code> erreichbar
+(oder unter der Adresse, die das Gerät per DHCP vergibt). Hochladen mit curl
+(<a href="grundlagen/curl.html">curl benutzen</a>):</p>
+<pre><code>curl -F files=@factory.bin http://192.168.0.50/cgi/index
+</code></pre>
+<p>Dafür das factory-Image vorher in <code>factory.bin</code> umbenennen.</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Schritte (Normalweg))</li>
+<li>geprüft (Weg ab Werk, Schritte (Normalweg), Quelle (OpenWrt-Commit))</li>
+<li>geprüft: Commit 361c670a (Schritte (Normalweg), Adressen, Programm, Zugang, Datei, Fehlerbild, Notweg)</li>
+<li>geprüft: Commit 361c670a; Revision abgeleitet: Gluon-Name (Schritte (Normalweg), Typenschild/Verwechslung)</li>
+<li>Geräteeintrag: 361c670a468cac8def368ed95487c72cfdb4a3fa [geprüft]</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

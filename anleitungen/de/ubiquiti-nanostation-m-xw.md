@@ -6,7 +6,7 @@ sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip, tftp-client]
-daten_stand: 5e09bfd
+daten_stand: fbe5766
 vorlage_stand: 91b66c0
 ---
 

@@ -1,5 +1,26 @@
 [
  {
+  "gluon_name": "buffalo-wzr-600dhp",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/buffalo-wzr-600dhp.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "buffalo-wzr-hp-ag300h",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/buffalo-wzr-hp-ag300h.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "buffalo-wzr-hp-g300nh-rtl8366s",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/buffalo-wzr-hp-g300nh-rtl8366s.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "cudy-ap1300-outdoor-v1",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-ap1300-outdoor-v1.html",
   "status": "ungeprüft",
@@ -67,6 +88,13 @@
   "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-tr3000-256mb-v1.html",
   "status": "ungeprüft",
   "stufe": "fortgeschritten",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "cudy-wr1000",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-wr1000.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
   "sprache": "de"
  },
  {
@@ -154,6 +182,27 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "d-link-covr-x1860-a1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-covr-x1860-a1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "d-link-dap-1330-a1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dap-1330-a1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "d-link-dap-1365-a1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dap-1365-a1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "d-link-dap-1620-b1",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dap-1620-b1.html",
   "status": "ungeprüft",
@@ -161,8 +210,36 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "d-link-dap-2660-a1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dap-2660-a1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "d-link-dap-2680-a1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dap-2680-a1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "d-link-dap-2695-a1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dap-2695-a1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "d-link-dap-x1860-a1",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dap-x1860-a1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "d-link-dir-860l-b1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dir-860l-b1.html",
   "status": "ungeprüft",
   "stufe": "einfach",
   "sprache": "de"
@@ -177,6 +254,167 @@
  {
   "gluon_name": "d-link-dir-882-a1",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dir-882-a1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "linksys-ea6350v3",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/linksys-ea6350v3.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "linksys-vlp01",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/linksys-vlp01.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "linksys-whw01",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/linksys-whw01.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "linksys-whw03-v2-velop",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/linksys-whw03-v2-velop.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "linksys-whw03-velop",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/linksys-whw03-velop.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "mercusys-mr70x-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/mercusys-mr70x-v1.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-dgn3500b",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-dgn3500b.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-ex6100v2",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-ex6100v2.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-ex6150v2",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-ex6150v2.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-nighthawk-x4s-r7800",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-nighthawk-x4s-r7800.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-wac104",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wac104.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-wax220",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wax220.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-wndr3700",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wndr3700.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-wndr3700-v2",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wndr3700-v2.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-wndr3700-v4",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wndr3700-v4.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-wndr3800",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wndr3800.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-wndr3800ch",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wndr3800ch.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-wndr4300",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wndr4300.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-wndrmac-v2",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wndrmac-v2.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-wnr2200-16m",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wnr2200-16m.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "netgear-wnr2200-8m",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wnr2200-8m.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "nexx-wt3020-8m",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/nexx-wt3020-8m.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "openwrt-one",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/openwrt-one.html",
   "status": "ungeprüft",
   "stufe": "einfach",
   "sprache": "de"
@@ -613,6 +851,48 @@
   "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-swiss-army-knife-ultra.html",
   "status": "ungeprüft",
   "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "zyxel-nbg6617",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/zyxel-nbg6617.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "zyxel-nbg6716",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/zyxel-nbg6716.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "zyxel-nwa50ax",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/zyxel-nwa50ax.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "zyxel-nwa50ax-pro",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/zyxel-nwa50ax-pro.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "zyxel-nwa55axe",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/zyxel-nwa55axe.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "zyxel-nwa90ax-pro",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/zyxel-nwa90ax-pro.html",
+  "status": "ungeprüft",
+  "stufe": "einfach",
   "sprache": "de"
  }
 ]

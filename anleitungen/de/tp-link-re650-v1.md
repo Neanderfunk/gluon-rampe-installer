@@ -6,8 +6,8 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [feste-ip]
-daten_stand: 5e09bfd
-vorlage_stand: 7deda71
+daten_stand: fbe5766
+vorlage_stand: aa479e3
 ---
 
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
