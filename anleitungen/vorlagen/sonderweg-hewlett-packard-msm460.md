@@ -43,9 +43,7 @@ Bootloader gegen einen, den ein Freifunk-Entwickler für genau dieses Gerät
 gebaut hat. Der neue Bootloader holt sich dann die Freifunk-Firmware von
 deinem Rechner und schreibt sie selbst.
 
-> **Achtung:** Bei diesem Weg wird der Bootloader des Geräts überschrieben.
-> Wird dabei der Strom unterbrochen, startet das Gerät womöglich nicht mehr.
-> Einen einfachen Weg zurück zur HP-Firmware gibt es danach nicht.
+Einen einfachen Weg zurück zur HP-Firmware gibt es danach nicht.
 
 Du brauchst einen TFTP-Server und einen TFTP-Client auf deinem Rechner
 ([TFTP-Server einrichten](grundlagen/tftp-server.md),
