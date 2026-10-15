@@ -150,8 +150,10 @@ contrib/docker/run.sh ./build.sh ath79-generic tp-link-archer-c60-v1 d-link-dir8
 ```
 
 Eine dauerhaft geflashte RAMpe startet wie jedes unkonfigurierte Gluon im
-Config-Mode (90_setup_mode), dort ist die Upload-Seite [abgeleitet, am Gerät
-noch nicht erprobt].
+Config-Mode (90_setup_mode), dort ist die Upload-Seite. Am D-Link M60 A1 ist
+das belegt: Dessen `-recovery.bin` ist eine squashfs-RAMpe, die die
+D-Link-Recovery in den Flash schreibt; sie kam im Config-Mode hoch
+(13.10.2026, adorfer). Die neuen Formate selbst sind ungetestet.
 
 `ramips-mt7621` lässt sich auch in einem Lauf mit RT-AX53U, EX400 und WSM20
 bauen. Alias-Namen (DISC Lite5 ac zu SXTsq 5 ac) nicht als Gerät angeben,

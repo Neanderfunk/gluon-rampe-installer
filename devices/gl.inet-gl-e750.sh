@@ -13,6 +13,8 @@
 # 5204715d14207efa956553d9d7079f6fa1aaea40) [geprueft], also openwrt-ath79-nand-glinet_gl-e750-squashfs-factory.img.
 # Gluon v2025.1.3: broken = true ("the display is not showing status and there
 # are no LEDs"), factory = false [geprueft]; fuer die RAMpe ohne Belang.
-# Ungetestet.
+# Dass eine RAMpe aus dem Flash im Config-Mode startet, ist am D-Link M60 A1
+# belegt (13.10.2026, dessen -squashfs-recovery liegt ebenfalls im Flash)
+# [geprueft, adorfer]. Dieses Format selbst ist ungetestet.
 ensure_device_option ath79-nand gl.inet-gl-e750 broken false
 ensure_extra_image ath79-nand gl.inet-gl-e750 -squashfs-factory -factory .img

@@ -7,5 +7,7 @@
 # Danach Config-Mode der RAMpe, Community-sysupgrade hochladen [abgeleitet].
 # Image: IMAGE/factory.img := append-kernel | pad-to KERNEL_SIZE | append-ubi
 # (ath79/image/nand.mk, Device/glinet_gl-xe300, Pin 5204715d14207efa956553d9d7079f6fa1aaea40) [geprueft].
-# Ungetestet.
+# Dass eine RAMpe aus dem Flash im Config-Mode startet, ist am D-Link M60 A1
+# belegt (13.10.2026, dessen -squashfs-recovery liegt ebenfalls im Flash)
+# [geprueft, adorfer]. Dieses Format selbst ist ungetestet.
 ensure_extra_image ath79-nand gl.inet-gl-xe300 -squashfs-factory -factory .img

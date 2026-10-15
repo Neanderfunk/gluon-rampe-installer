@@ -9,6 +9,8 @@
 # Image: Device/netgear_sercomm_nor (ramips/image/Makefile, Pin 5204715d14207efa956553d9d7079f6fa1aaea40):
 # IMAGES += factory.img, pad-extra SERCOMM_PAD | ... | sercom-footer | zip |
 # sercom-seal [geprueft].
-# Ungetestet.
+# Dass eine RAMpe aus dem Flash im Config-Mode startet, ist am D-Link M60 A1
+# belegt (13.10.2026, dessen -squashfs-recovery liegt ebenfalls im Flash)
+# [geprueft, adorfer]. Dieses Format selbst ist ungetestet.
 ensure_device_option ramips-mt7621 netgear-wndr3700-v5 broken false
 ensure_extra_image ramips-mt7621 netgear-wndr3700-v5 -squashfs-factory -factory .img
