@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ubiquiti UniFi AP Pro: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="ubiquiti-unifi-ap-pro">
+<meta name="anleitung:modell" content="Ubiquiti UniFi AP Pro">
+<meta name="anleitung:familie" content="ubiquiti-tftp">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="mit Werkzeug">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="feste-ip, tftp-client">
+<meta name="anleitung:daten_stand" content="685706f">
+<meta name="anleitung:vorlage_stand" content="91b66c0">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Diese Anleitung ist aus Quellen
+zusammengestellt, aber noch niemand hat sie an einem Ubiquiti UniFi AP Pro Schritt
+für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
+<a href="mailto:projekt@neanderfunk.de">projekt@neanderfunk.de</a>, ob es geklappt hat.</p>
+</blockquote>
+<h1>Ubiquiti UniFi AP Pro: Freifunk-Firmware installieren</h1>
+<p>Ubiquiti-Geräte haben einen eingebauten Notfall-Modus: Hält man beim
+Einschalten die Reset-Taste, wartet das Gerät darauf, dass ihm jemand eine
+Firmware per <strong>TFTP</strong> schickt. Genau darüber kommt die Freifunk-Firmware
+drauf. Du brauchst dafür ein kleines Programm auf dem Rechner, den
+TFTP-Client (<a href="grundlagen/tftp-client.html">TFTP-Client benutzen</a>), und eine
+feste Adresse am Rechner.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>das Gerät mit seinem PoE-Netzteil (PoE-Injektor)</li>
+<li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
+<li>eine Büroklammer für die Reset-Taste</li>
+<li>die Freifunk-Firmware deiner Community für den Ubiquiti UniFi AP Pro, und zwar das
+<strong>factory</strong>-Image für die Erstinstallation, nicht &quot;sysupgrade&quot;</li>
+<li>einen TFTP-Client (<a href="grundlagen/tftp-client.html">TFTP-Client benutzen</a>)</li>
+</ul>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Datei bereitlegen.</strong> Lade das factory-Image herunter und benenne es in
+einen kurzen Namen um, zum Beispiel <code>factory.bin</code>. Einen bestimmten Namen
+verlangt das Gerät nicht, ein kurzer erspart aber Tippfehler.</p>
+</li>
+<li>
+<p><strong>Feste Adresse am Rechner.</strong> Stell deinen Rechner auf die feste Adresse
+<code>192.168.1.21</code> mit der Netzmaske <code>255.255.255.0</code>
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>). Nicht
+<code>192.168.1.20</code>, die braucht das Gerät.</p>
+</li>
+<li>
+<p><strong>Verbinden.</strong> Steck das Kabel vom Rechner an die Buchse <strong>LAN</strong> des
+PoE-Injektors. Die Buchse <strong>PoE</strong> des Injektors geht zum Gerät.</p>
+</li>
+<li>
+<p><strong>Gerät in den TFTP-Modus bringen.</strong> Zieh den Injektor aus der Steckdose. Drück mit der Büroklammer
+die Reset-Taste und
+halte sie gedrückt. Steck den Injektor wieder ein.
+Halte die Taste weiter gedrückt: 10 Sekunden. Dann loslassen.</p>
+</li>
+<li>
+<p><strong>Firmware schicken.</strong> Öffne ein Terminal im Ordner mit der Datei und
+schick sie an das Gerät.</p>
+<p>Linux und macOS:</p>
+<pre><code>tftp 192.168.1.20
+binary
+put factory.bin
+quit
+</code></pre>
+<p>Windows (Eingabeaufforderung &quot;cmd&quot;, TFTP-Client muss eingeschaltet sein):</p>
+<pre><code>tftp -i 192.168.1.20 PUT factory.bin
+</code></pre>
+<p>Die Übertragung dauert nur Sekunden.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Das Gerät schreibt die Firmware und startet neu. Das
+dauert etwa 2 Minuten.
+<strong>Strom nicht ziehen, solange die LEDs laufen.</strong></p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Stell den Rechner wieder auf &quot;automatisch&quot;. Danach startet die
+Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
+Einrichtungsseite unter <code>http://192.168.1.1</code> oder gleich im Betrieb. Wie
+es weitergeht, beschreibt deine Community.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>In Schritt 4 zeigen die LEDs, dass der TFTP-Modus erreicht ist.</li>
+<li>Der TFTP-Client meldet die Übertragung ohne Fehler.</li>
+<li>Nach dem Neustart meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Der TFTP-Client meldet eine Zeitüberschreitung.</strong> Das Gerät war nicht im
+TFTP-Modus oder die Adresse am Rechner stimmt nicht. Prüf Schritt 2 und
+bring das Gerät noch einmal in den TFTP-Modus. Unter Windows kann auch die
+Firewall stören.</li>
+<li><strong>Das Gerät nimmt die Datei an, startet aber wieder mit der alten
+Firmware.</strong> Vermutlich passt das Image nicht zur Hardware (siehe &quot;Vorher
+prüfen&quot;), oder die Herstellerfirmware ist zu neu.</li>
+</ul>
+<h2>Zurück zur Ubiquiti-Firmware</h2>
+<p>Derselbe Weg geht auch rückwärts: Gerät wie in Schritt 4 in den TFTP-Modus
+bringen und statt der Freifunk-Firmware die Original-Firmware von Ubiquiti
+schicken, möglichst genau die Version, die vorher drauf war.</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet: ap51-flash-Doku (Notweg)</li>
+<li>abgeleitet: better safe than sorry (Datei)</li>
+<li>geprüft (Weg ab Werk, Datei, Quelle (OpenWrt-Commit))</li>
+<li>geprüft: Commit b7da0d2 (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Dauer)</li>
+<li>geprüft: Commit b7da0d2 für 'factory per TFTP an 192.168.1.20'; Einzelheiten aus XW-Commits abgeleitet (Schritte (Normalweg), Anschluss, Adressen, Programm)</li>
+<li>Geräteeintrag: b7da0d294465d5ab8d923f3b8265ece0a5847ac3 [geprüft]</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

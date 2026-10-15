@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SSH und scp benutzen</title>
+<meta name="anleitung:grundlage" content="ssh-scp">
+<link rel="stylesheet" href="../../anleitung.css">
+</head>
+<body>
+<hr />
+<h2>thema: ssh-scp
+sprache: de
+status: ungeprüft</h2>
+<blockquote>
+<p><strong>Noch nicht gegengelesen.</strong> Diese Grundlagen-Seite ist ein Entwurf.</p>
+</blockquote>
+<h1>SSH und scp benutzen</h1>
+<p>Mit <strong>SSH</strong> meldest du dich über das Netzwerk auf einem Gerät an und tippst
+dort Befehle ein, als säßest du davor. Mit <strong>scp</strong> kopierst du eine Datei
+auf das Gerät. Beides läuft im Terminal.</p>
+<h2>Wo du das Terminal findest</h2>
+<ul>
+<li><strong>Windows 10 und 11:</strong> <code>ssh</code> und <code>scp</code> sind eingebaut. Win + R, <code>cmd</code>
+eingeben, Enter. Mit <code>cd %USERPROFILE%\Downloads</code> wechselst du in den
+Download-Ordner.</li>
+<li><strong>macOS:</strong> Programm &quot;Terminal&quot;. <code>cd ~/Downloads</code>.</li>
+<li><strong>Linux:</strong> ein beliebiges Terminal. <code>cd ~/Downloads</code>.</li>
+</ul>
+<h2>Datei kopieren</h2>
+<pre><code>scp -O firmware.bin ubnt@192.168.1.20:/tmp/firmware.bin
+</code></pre>
+<p>Links steht die Datei auf deinem Rechner, rechts Benutzer, Adresse und Pfad
+auf dem Gerät. Das <code>-O</code> lässt scp das alte Übertragungsverfahren nehmen, das
+viele Router nur kennen. Ohne <code>-O</code> kommt bei ihnen ein Fehler wie
+&quot;subsystem request failed&quot;.</p>
+<h2>Anmelden</h2>
+<pre><code>ssh ubnt@192.168.1.20
+</code></pre>
+<p>Danach stehen die Eingaben auf dem Gerät. Mit <code>exit</code> meldest du dich ab.</p>
+<h2>Was beim ersten Mal kommt</h2>
+<ul>
+<li><strong>&quot;Are you sure you want to continue connecting (yes/no)?&quot;</strong> Beim ersten
+Kontakt mit einem Gerät fragt SSH, ob du ihm vertraust. <code>yes</code> eintippen,
+Enter.</li>
+<li><strong>Das Passwort erscheint beim Tippen nicht.</strong> Weder Zeichen noch Sternchen.
+Einfach tippen und Enter drücken.</li>
+</ul>
+<h2>Typische Fehler</h2>
+<ul>
+<li>
+<p><strong>&quot;no matching host key type found&quot;</strong>: Das Gerät nutzt ein altes
+Verschlüsselungsverfahren, das neuere SSH-Programme abgeschaltet haben.
+Erlaube es für diesen einen Aufruf:</p>
+<pre><code>ssh -o HostKeyAlgorithms=+ssh-rsa ubnt@192.168.1.20
+scp -O -o HostKeyAlgorithms=+ssh-rsa firmware.bin ubnt@192.168.1.20:/tmp/firmware.bin
+</code></pre>
+</li>
+<li>
+<p><strong>&quot;REMOTE HOST IDENTIFICATION HAS CHANGED&quot;</strong>: Unter dieser Adresse war
+vorher ein anderes Gerät, oder dasselbe Gerät mit anderer Firmware. SSH
+schützt dich hier vor einer Verwechslung. Wenn du sicher bist, dass das so
+sein soll, lösch den alten Eintrag und versuch es noch einmal:</p>
+<pre><code>ssh-keygen -R 192.168.1.20
+</code></pre>
+</li>
+<li>
+<p><strong>&quot;Connection refused&quot; oder Zeitüberschreitung</strong>: Das Gerät ist nicht
+erreichbar. Prüf die feste Adresse am Rechner
+(<a href="feste-ip.html">Feste IP-Adresse einstellen</a>), das Kabel und ob das Gerät
+fertig gestartet ist.</p>
+</li>
+<li>
+<p><strong>&quot;Permission denied&quot;</strong>: Benutzer oder Passwort stimmen nicht. Bei vielen
+Geräten heißt das, dass sie nicht im Werkszustand sind.</p>
+</li>
+</ul>
+<h2>Befehle abschreiben</h2>
+<p>Geräteanleitungen enthalten oft Befehle, die direkt in den Speicher des
+Geräts schreiben. Kopier sie Zeile für Zeile, statt sie abzutippen. Im
+Windows-Terminal fügt ein Rechtsklick ein. Achte darauf, dass keine
+Leerzeichen am Anfang oder Ende fehlen oder hinzukommen.</p>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ubiquiti UniFi 6 Lite: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="ubiquiti-unifi-6-lite">
+<meta name="anleitung:modell" content="Ubiquiti UniFi 6 Lite">
+<meta name="anleitung:familie" content="ubiquiti-unifi-ssh">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="mit Werkzeug">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="feste-ip, ssh-scp, tftp-client">
+<meta name="anleitung:daten_stand" content="685706f">
+<meta name="anleitung:vorlage_stand" content="91b66c0">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Diese Anleitung ist aus Quellen
+zusammengestellt, aber noch niemand hat sie an einem Ubiquiti UniFi 6 Lite Schritt
+für Schritt nachvollzogen. Wenn du es tust: Schreib uns an
+<a href="mailto:projekt@neanderfunk.de">projekt@neanderfunk.de</a>, ob es geklappt hat.</p>
+</blockquote>
+<h1>Ubiquiti UniFi 6 Lite: Freifunk-Firmware installieren</h1>
+<p>Die UniFi-Geräte von Ubiquiti haben keine Oberfläche, über die man fremde
+Firmware hochladen kann. Man meldet sich stattdessen per <strong>SSH</strong> auf dem
+Gerät an, kopiert die Freifunk-Firmware hinüber und schreibt sie mit ein paar
+Befehlen selbst in den Speicher. Das ist nicht schwer, aber die Befehle
+müssen genau stimmen. Wenn du noch nie mit SSH gearbeitet hast, lies vorher
+<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>das Gerät mit PoE-Injektor oder einem PoE-Switch</li>
+<li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
+<li>die Freifunk-Firmware deiner Community für den Ubiquiti UniFi 6 Lite, und zwar das
+<strong>sysupgrade</strong>-Image</li>
+<li><code>ssh</code> und <code>scp</code>. Unter Linux, macOS und Windows 10/11 sind sie eingebaut
+(<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>).</li>
+</ul>
+<p>Das Gerät muss im <strong>Werkszustand</strong> sein. Ist es in einem UniFi-Controller
+angemeldet, gelten dort andere Zugangsdaten. Setz es dann vorher auf
+Werkseinstellungen zurück oder entferne es im Controller.</p>
+<h2>Vorher prüfen</h2>
+<ul>
+<li>Nur der <strong>U6 Lite</strong>. U6 IW, U6 Mesh, U6 Extender und die frühe U6 LR-EA
+sind technisch verwandt, brauchen aber eigene Images.</li>
+<li>Ab Ubiquiti-Firmware <strong>6.5</strong> muss das Gerät laut OpenWrt erst auf
+Version <strong>6.0.14</strong> zurück. Das geht per TFTP (siehe unten) oder auf dem
+Gerät mit <code>fwupdate.real -m &lt;Datei&gt;</code>.</li>
+</ul>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Datei bereitlegen.</strong> Lade das sysupgrade-Image herunter und
+benenne es in <code>firmware.bin</code> um. Das erspart Tippfehler in den Befehlen.</p>
+</li>
+<li>
+<p><strong>Feste Adresse am Rechner.</strong> Stell deinen Rechner auf die feste Adresse
+<code>192.168.1.2</code> mit der Netzmaske <code>255.255.255.0</code>
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).</p>
+</li>
+<li>
+<p><strong>Verbinden.</strong> Steck das Kabel vom Rechner an die Buchse <strong>LAN</strong> des
+PoE-Injektors (oder an den PoE-Switch, an dem das Gerät hängt) und warte,
+bis das Gerät gestartet ist. Das dauert etwa eine Minute.</p>
+</li>
+<li>
+<p><strong>Firmware hinüberkopieren.</strong> Öffne ein Terminal im Ordner mit der Datei
+und gib ein:</p>
+<pre><code>scp -O firmware.bin ubnt@192.168.1.20:/tmp/openwrt.bin
+</code></pre>
+<p>Das Passwort ist <code>ubnt</code>. Beim ersten Mal fragt <code>scp</code>, ob du dem Gerät
+vertraust: mit <code>yes</code> bestätigen.</p>
+</li>
+<li>
+<p><strong>Anmelden.</strong></p>
+<pre><code>ssh ubnt@192.168.1.20
+</code></pre>
+<p>Passwort wieder <code>ubnt</code>. Du bist jetzt auf dem Gerät angemeldet.</p>
+</li>
+<li>
+<p><strong>Firmware schreiben.</strong> Gib diese Befehle <strong>einzeln und genau so</strong> ein,
+jeweils mit Enter. Am besten kopierst du sie Zeile für Zeile.</p>
+<pre><code>fw_setenv devmode TRUE
+fw_setenv boot_openwrt &quot;fdt addr \$(fdtcontroladdr); fdt rm /signature; bootubnt&quot;
+fw_setenv bootcmd &quot;run boot_openwrt&quot;
+cat /proc/mtd
+# Weiter nur, wenn in der Ausgabe bs bei mtd4, kernel0 bei mtd6 und kernel1 bei mtd7 steht.
+dd if=/dev/zero bs=1 count=1 of=/dev/mtdblock4
+dd if=/tmp/openwrt.bin of=/dev/mtdblock6
+dd if=/tmp/openwrt.bin of=/dev/mtdblock7
+reboot
+</code></pre>
+<p>Ein Tippfehler an dieser Stelle kann das Gerät unbrauchbar machen. Meldet
+ein Befehl einen Fehler, mach <strong>nicht</strong> weiter, sondern melde dich bei
+deiner Community oder bei uns.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Das Gerät startet mit der Freifunk-Firmware neu. Der erste
+Start dauert einige Minuten.
+<strong>Strom nicht ziehen.</strong></p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Stell den Rechner wieder auf &quot;automatisch&quot;. Danach startet die
+Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
+Einrichtungsseite unter <code>http://192.168.1.1</code> oder gleich im Betrieb. Wie
+es weitergeht, beschreibt deine Community.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li><code>scp</code> kopiert die Datei ohne Fehlermeldung.</li>
+<li>Keiner der Befehle in Schritt 6 meldet einen Fehler.</li>
+<li>Nach dem Neustart meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong><code>ssh</code> oder <code>scp</code> meldet &quot;Connection refused&quot; oder &quot;Permission denied&quot;.</strong>
+Das Gerät ist nicht im Werkszustand, oder es ist noch nicht fertig
+gestartet. Zurücksetzen und noch einmal.</li>
+<li><strong><code>scp</code> meldet einen Fehler wie &quot;subsystem request failed&quot;.</strong> Das <code>-O</code> fehlt
+im Befehl.</li>
+<li><strong>&quot;no matching host key type found&quot;.</strong> Dein SSH ist neuer als das Gerät.
+Häng an <code>ssh</code> und <code>scp</code> noch <code>-o HostKeyAlgorithms=+ssh-rsa</code> an, siehe
+<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>.</li>
+<li><strong>&quot;REMOTE HOST IDENTIFICATION HAS CHANGED&quot;.</strong> Du hast schon einmal ein
+anderes Gerät unter derselben Adresse benutzt. Siehe
+<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>.</li>
+</ul>
+<h2>Zurück zur Ubiquiti-Firmware</h2>
+<p>UniFi-Geräte haben einen TFTP-Notfall-Modus. Strom aus, Reset-Taste drücken
+und halten, Strom ein. Halte sie gedrückt:
+bis die LED ihr Muster
+wechselt. Dann schickst du die Original-Firmware von Ubiquiti per
+TFTP an <code>192.168.1.20</code>, wie unter
+<a href="grundlagen/tftp-client.html">TFTP-Client benutzen</a> beschrieben.</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet: Commits nennen 'factory defaults' (Schritte (Normalweg), Bedingung an die Herstellerfirmware)</li>
+<li>abgeleitet: Wiki toh/ubiquiti/unifi_6_lite (Schritte (Normalweg), Bedingung an die Herstellerfirmware, Rückweg zur Herstellerfirmware)</li>
+<li>geprüft (Weg ab Werk, Schritte (Normalweg))</li>
+<li>geprüft: Commit bf94e0a (Schritte (Normalweg), Programm)</li>
+<li>geprüft: Commit fb4d7a9 (Programm)</li>
+<li>geprüft: Commit fb4d7a9, FIT-Konfigurationen (Schritte (Normalweg), Typenschild/Verwechslung)</li>
+<li>geprüft: Commits (Datei)</li>
+<li>geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24' (Schritte (Normalweg), Taste und Zeitpunkt)</li>
+<li>geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang)</li>
+<li>Geräteeintrag: fb4d7a9680117a00721936c98ce41eeb2dea95c9</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

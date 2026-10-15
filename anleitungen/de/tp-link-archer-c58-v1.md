@@ -6,7 +6,7 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: 0d84d1c
+daten_stand: 685706f
 vorlage_stand: 47c7bb2
 ---
 
