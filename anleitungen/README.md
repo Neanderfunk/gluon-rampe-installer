@@ -90,7 +90,9 @@ Der Statusblock oben auf jeder Seite kommt für alle Vorlagen aus
 `vorlagen/_status.md` (per `{% include %}`; Dateien mit `_` am Anfang sind
 keine Familien). Er sagt sichtbar, ob und womit die Anleitung am Gerät
 erprobt ist und, wenn nicht, wie sicher wir uns sind (Wert `sicherheit`:
-`quelle`, `abgeleitet` oder `unsicher`, dazu optional `sicherheit_hinweis`).
+`praxis`, `quelle`, `abgeleitet` oder `unsicher`, dazu optional `sicherheit_hinweis`;
+`praxis` heißt: bei uns an Geräten dieses Typs schon gemacht, aber Datum und Image
+sind nicht festgehalten, deshalb kein `status: erprobt`).
 Darunter steht immer die Bitte um Rückmeldung mit einem Mail-Link an
 projekt@neanderfunk.de (adorfer 15.10.2026).
 
