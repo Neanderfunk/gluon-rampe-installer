@@ -2,7 +2,9 @@
 Vorlage dlink-recovery-web (D-Link-Web-Recovery: AQUILA PRO AI M30/M60,
 DAP-1620 B1, DAP-X1860, DIR-878, DIR-882). Entwurf Content, 15.10.2026.
 
-Vom Skript: modell, status, erprobt_am, erprobt_mit, erprobt_mit_aelter
+Vom Skript: bilder (Name -> Pfad relativ zur Seite; gesucht in
+bilder/<gluon_name>/<name>.png, dann bilder/allgemein/<name>.png; fehlt ein
+Bild, entfällt es), modell, status, erprobt_am, erprobt_mit, erprobt_mit_aelter
 (true, wenn das aktuelle Image neuer ist als das erprobte), zusatz.fehler und
 zusatz.text (aus zusatz/<gluon_name>.md, sonst leer), herkunft.
 
@@ -39,6 +41,7 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     rampe_url            Download-Ort der RAMpe-Datei (Verzeichnis oder Datei)
 -#}
 {%- set w = werte -%}
+{%- set b = bilder if bilder is defined else {} -%}
 {%- if status == "ungeprüft" %}
 > **Noch nicht am Gerät erprobt.** Diese Anleitung ist aus Quellen
 > zusammengestellt, aber noch niemand hat sie an einem {{ modell }} Schritt
@@ -128,6 +131,10 @@ wirklich über das Kabel spricht.
    Schritt 4.
    {%- endif %}
    Ein `ping` hilft hier nicht, die Recovery antwortet nicht darauf.
+   {%- if b.get("recovery-seite") %}
+
+   ![Die Recovery-Seite im Browser: Überschrift, Feld für die Datei, Knopf "Upgrade". Hier nichts hochladen.]({{ b["recovery-seite"] }})
+   {%- endif %}
 
 6. **Datei mit curl hochladen.** Öffne ein Terminal (unter Windows die
    Eingabeaufforderung "cmd"), wechsle in den Ordner mit der Datei und gib
@@ -172,11 +179,26 @@ wirklich über das Kabel spricht.
    auf "Erweitert" und "Trotzdem fortfahren" (je nach Browser etwas anders
    benannt), dann kommt die Seite. Mehr dazu unter
    [Browser macht https daraus](grundlagen/browser-https.md).
+   {%- if b.get("rampe-seite") %}
+
+   ![Die Seite der RAMpe: "Firmware aktualisieren" mit Feld für die Datei und Knopf "Datei hochladen"]({{ b["rampe-seite"] }})
+   {%- endif %}
 
 9. **Freifunk-Firmware hochladen.** Wähl das sysupgrade-Image deiner
    Community aus und klick "Datei hochladen". Die RAMpe zeigt die Prüfsumme
    (SHA256) der Datei. Vergleich sie mit der Prüfsumme, die deine Community
    zur Datei angibt. Stimmt sie, klick "Fortfahren".
+   {%- if b.get("rampe-pruefsumme") %}
+
+   ![Die RAMpe zeigt Prüfsumme und Größe der Datei, darunter "Abbrechen" und "Fortfahren"]({{ b["rampe-pruefsumme"] }})
+   {%- endif %}
+   {%- if b.get("rampe-flash-laeuft") %}
+
+   Danach erscheint der Hinweis, dass die Firmware jetzt geschrieben wird.
+   Jetzt den Strom nicht unterbrechen.
+
+   ![Hinweis der RAMpe: Die Firmware wird jetzt aktualisiert, Stromversorgung nicht unterbrechen]({{ b["rampe-flash-laeuft"] }})
+   {%- endif %}
 
 10. **Fertig.** Nach {{ w.dauer_gluon }} startet die Freifunk-Firmware
     deiner Community: je nach Community zuerst mit einer Einrichtungsseite
@@ -194,6 +216,10 @@ wirklich über das Kabel spricht.
 {% if w.datei_art == "rampe" %}
 - curl meldet am Ende **{{ w.rampe_bytes }} Bytes**. Wie lange das gedauert
   hat, ist egal, es zählt die Menge.
+  {%- if b.get("curl-ausgabe") %}
+
+  ![curl in der PowerShell: oben ein Fehlversuch mit "Failed to connect" und 0 Bytes, unten ein vollständiger Upload mit 50.00M bei 100 %]({{ b["curl-ausgabe"] }})
+  {%- endif %}
 - Nach dem Neustart {{ w.led_rampe }}, und unter `http://{{ w.rampe_ip }}`
   steht "Firmware aktualisieren".
 {%- else %}

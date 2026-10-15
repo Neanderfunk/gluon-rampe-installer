@@ -14,6 +14,8 @@ anleitungen/
   zusatz/<gluon_name>.md         optional: was nur ein Gerät braucht
   <sprache>/<gluon_name>.md      erzeugt, nicht von Hand ändern
   <sprache>/grundlagen/<thema>.md  von Hand: feste IP, curl, serielle Konsole …
+  bilder/<gluon_name>/<name>.png   Bilder nur für ein Gerät
+  bilder/allgemein/<name>.png      Bilder für alle Geräte (z. B. Seiten der RAMpe)
 ```
 
 `<sprache>` ist `de`, später auch `en` und `fr`; dann gibt es `vorlagen/` und
@@ -117,3 +119,14 @@ der eine URL in einem neuen Tab öffnet. Daraus folgt:
 
 - Seiten mit `status: ungeprüft` verlinkt der Selector vorerst nicht.
 - Innerhalb der Seiten bleiben die Verweise relativ (Grundlagen, Bilder).
+
+## Bilder
+
+Die Vorlage fragt Bilder über feste Namen ab (`recovery-seite`,
+`rampe-seite`, `rampe-pruefsumme`, `rampe-flash-laeuft`, `curl-ausgabe` …).
+Das Skript sucht zuerst `bilder/<gluon_name>/<name>.png`, dann
+`bilder/allgemein/<name>.png`, und gibt der Vorlage `bilder` als
+Name -> Pfad relativ zur erzeugten Seite. Fehlt ein Bild, entfällt es im
+Text. Für die HTML-Ausgabe kopiert das Skript `bilder/` nach `html/bilder/`.
+Screenshots ohne persönliche Angaben (Profilbilder, Namen, Pfade mit
+Benutzernamen) ablegen.
