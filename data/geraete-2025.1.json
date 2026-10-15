@@ -7410,9 +7410,13 @@
    "rampe": "nein, keine Hersteller-Firmware im Spiel",
    "rampe_rezept": "",
    "quelle": "Gluon targets/bcm27xx-bcm2708",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/raspberrypi-model-b.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "datei_art": "factory",
+    "medium": "eine microSD-Karte",
+    "anschluss": "die Netzwerkbuchse"
+   }
   },
   {
    "gluon_name": "raspberrypi-2-model-b",
@@ -7457,9 +7461,13 @@
    "rampe": "nein, keine Hersteller-Firmware im Spiel",
    "rampe_rezept": "",
    "quelle": "Gluon targets/bcm27xx-bcm2709",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/raspberrypi-2-model-b.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "datei_art": "factory",
+    "medium": "eine microSD-Karte",
+    "anschluss": "die Netzwerkbuchse"
+   }
   },
   {
    "gluon_name": "raspberrypi-3-model-b",
@@ -7504,9 +7512,13 @@
    "rampe": "nein, keine Hersteller-Firmware im Spiel",
    "rampe_rezept": "",
    "quelle": "Gluon targets/bcm27xx-bcm2710",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/raspberrypi-3-model-b.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "datei_art": "factory",
+    "medium": "eine microSD-Karte",
+    "anschluss": "die Netzwerkbuchse"
+   }
   },
   {
    "gluon_name": "raspberrypi-4-model-b",
@@ -7551,9 +7563,13 @@
    "rampe": "nein, keine Hersteller-Firmware im Spiel",
    "rampe_rezept": "",
    "quelle": "Gluon targets/bcm27xx-bcm2711",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/raspberrypi-4-model-b.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "datei_art": "factory",
+    "medium": "eine microSD-Karte",
+    "anschluss": "die Netzwerkbuchse"
+   }
   },
   {
    "gluon_name": "google-wifi-gale",
@@ -8852,9 +8868,12 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
+   "anleitung": "anleitungen/de/netgear-rbr50.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "anschluss": "die Buchse nahe der Ein/Aus-Taste",
+    "nach_neustart": "Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten."
+   }
   },
   {
    "gluon_name": "netgear-rbs50",
@@ -8900,9 +8919,12 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
+   "anleitung": "anleitungen/de/netgear-rbs50.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "anschluss": "die Buchse nahe der Ein/Aus-Taste",
+    "nach_neustart": "Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten."
+   }
   },
   {
    "gluon_name": "netgear-srr60",
@@ -8948,9 +8970,12 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
+   "anleitung": "anleitungen/de/netgear-srr60.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "anschluss": "die Buchse nahe der Ein/Aus-Taste",
+    "nach_neustart": "Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten."
+   }
   },
   {
    "gluon_name": "netgear-srs60",
@@ -8996,9 +9021,12 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
-   "anleitung": "https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
+   "anleitung": "anleitungen/de/netgear-srs60.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "anschluss": "die Buchse nahe der Ein/Aus-Taste",
+    "nach_neustart": "Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten."
+   }
   },
   {
    "gluon_name": "openmesh-a42",
@@ -11445,7 +11473,8 @@
     "datei_beispiel": "gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin",
     "rampe_datei": "gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin",
     "taste_hinweis": "",
-    "led_falsch": ""
+    "led_falsch": "",
+    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin"
    }
   },
   {
@@ -11515,7 +11544,8 @@
     "datei_beispiel": "gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin",
     "rampe_datei": "gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin",
     "taste_hinweis": "Nur die Reset-Taste führt in die Recovery, keine der anderen Tasten.",
-    "led_falsch": "Ein orangefarbenes Auf- und Abdimmen ist nicht die Recovery."
+    "led_falsch": "Ein orangefarbenes Auf- und Abdimmen ist nicht die Recovery.",
+    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin"
    }
   },
   {
@@ -12224,9 +12254,11 @@
    "rampe": "nein, nicht nötig (factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt f6d2a23cbca61611663efb531c97efeded26e0cd",
-   "anleitung": "https://openwrt.org/toh/netgear/wax206#oem_easy_installation",
+   "anleitung": "anleitungen/de/netgear-wax206.md; https://openwrt.org/toh/netgear/wax206#oem_easy_installation",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "web_moeglich": true
+   }
   },
   {
    "gluon_name": "ubiquiti-unifi-6-lr-v1",
@@ -13213,9 +13245,11 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "de33a4cef0411f13df397ada2dc3634c5748a457",
-   "anleitung": "https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-wi-fi-range-extender-ex3700/",
+   "anleitung": "anleitungen/de/netgear-ex3700.md; https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-wi-fi-range-extender-ex3700/",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "web_moeglich": true
+   }
   },
   {
    "gluon_name": "netgear-ex6130",
@@ -13260,9 +13294,11 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "0cbd2c74d0c9f41d07757907226e5cfeaf16e06a",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/netgear-ex6130.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "web_moeglich": true
+   }
   },
   {
    "gluon_name": "nexx-wt3020-8m",
@@ -14609,9 +14645,11 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "32ea8a9a7e4b1319607ae398e9bf7d8e3c4cd756",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/netgear-eax12.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "web_moeglich": true
+   }
   },
   {
    "gluon_name": "netgear-ex6150",
@@ -14656,9 +14694,11 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "3f019bf96cdf52668750f67cb139fa1b5c538f0b",
-   "anleitung": "https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-wi-fi-range-extender-ex6150-v2/",
+   "anleitung": "anleitungen/de/netgear-ex6150.md; https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-wi-fi-range-extender-ex6150-v2/",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "web_moeglich": true
+   }
   },
   {
    "gluon_name": "netgear-r6220",
@@ -14702,9 +14742,11 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "38bee61dab029a7608088f64da71c19cfc8cf267",
-   "anleitung": "https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-r6220/",
+   "anleitung": "anleitungen/de/netgear-r6220.md; https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-r6220/",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "web_moeglich": true
+   }
   },
   {
    "gluon_name": "netgear-r6260",
@@ -14749,9 +14791,12 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "6cea9688af4a05f407266ed1de5a739e5c984b8c (ohne Installationstext)",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/netgear-r6260.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "web_moeglich": true,
+    "anschluss": "LAN 1 (die Buchse neben WAN), nicht WAN"
+   }
   },
   {
    "gluon_name": "netgear-wac104",
@@ -14841,9 +14886,11 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "0f068e7c4a83bcbf20c4e52a5f8a3f1fe2af2246",
-   "anleitung": "https://openwrt.org/toh/netgear/wax202#oem_easy_installation",
+   "anleitung": "anleitungen/de/netgear-wax202.md; https://openwrt.org/toh/netgear/wax202#oem_easy_installation",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "web_moeglich": true
+   }
   },
   {
    "gluon_name": "netgear-wndr3700-v5",
@@ -14851,7 +14898,7 @@
    "target": "ramips-mt7621",
    "kat": "K0+",
    "familie": "netgear-nmrp",
-   "weg": "OpenWrt-factory.img per nmrpflash, danach Gluon-sysupgrade [geprüft]",
+   "weg": "OpenWrt-factory.img per nmrpflash, danach Gluon-sysupgrade [geprüft]; Zwischenstufe OpenWrt 24.10.8-factory.img per nmrpflash [geprüft: OpenWrt 24.10.8 ramips/mt7621, factory.img in sha256sums gelistet und per HEAD erreichbar, 15.10.2026]",
    "schritte": [
     "Typenschild auf 'v5' prüfen, v1 bis v4 sind ganz andere Geräte [abgeleitet: Commit cb049e7 nennt MT7621S für v5]",
     "Rechner per LAN-Kabel direkt an den LAN-Port des Geräts (oft blau, bei mehreren den mit '1') [geprüft: nmrpflash-README]",
@@ -14889,9 +14936,12 @@
    "rampe": "ja: dauerhafte RAMpe als Sercomm-factory.img per nmrpflash statt OpenWrt-Zwischenschritt [abgeleitet]",
    "rampe_rezept": "devices/netgear-wndr3700-v5.sh: `-factory.img` (Sercomm), broken = false für diesen Bau; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet",
    "quelle": "cb049e71cdc08e17f664403a0ef970c480ae5c4a + 2fdd02cc7c3516c2cce2ace2c7b539e0821ecbe8 (factory-Image)",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/netgear-wndr3700-v5.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "zwischen_datei": "openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img",
+    "zwischen_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img"
+   }
   },
   {
    "gluon_name": "totolink-x5000r",
@@ -16331,9 +16381,13 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "edbc8e5512dccc2e0b6925258e34b3f21d66679c",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/netgear-r6020.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "anschluss": "die LAN-Buchse 1",
+    "nach_neustart": "Schalte das Gerät einmal aus und wieder ein; dann startet es mit der neuen Firmware.",
+    "web_nicht": true
+   }
   },
   {
    "gluon_name": "netgear-r6120",
@@ -16377,9 +16431,11 @@
    "rampe": "nicht nötig",
    "rampe_rezept": "",
    "quelle": "5543d63fc84e64be83afaa4241369a07797f041b",
-   "anleitung": "https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-r6120/",
+   "anleitung": "anleitungen/de/netgear-r6120.md; https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-r6120/",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "web_nicht": true
+   }
   },
   {
    "gluon_name": "ravpower-rp-wd009",
@@ -17420,7 +17476,7 @@
    "taste": "",
    "zeichen": "SYS-LED (rot) blinkt beim Start schnell (OpenWrt-Startphase); beim ersten Start nach der Installation ist Gluon im Konfigurationsmodus, dann blinkt die SYS-LED langsam (ca. 1 s an, 0,3 s aus) [geprüft: OpenWrt-Patch led-boot/running = sys_led, diag.sh, Gluon gluon-setup-mode S96led]; im Normalbetrieb leuchtet sie dauerhaft [abgeleitet: OpenWrt diag.sh]",
    "uebertragung": "sd-karte (Kartenleser)",
-   "anschluss": "Kartenleser für microSD [abgeleitet]; jede Karte ab ca. 256 MB reicht technisch, der Rest der Karte bleibt ungenutzt (squashfs) [abgeleitet]",
+   "anschluss": "Kartenleser für microSD [abgeleitet]; jede Karte ab ca. 256 MB reicht technisch, der Rest der Karte bleibt ungenutzt (squashfs) [abgeleitet]; [abgeleitet: Gluons Setup-Mode läuft an den LAN-Buchsen, nicht an WAN]",
    "adressen": "",
    "programm": "Schreibprogramm: Raspberry Pi Imager oder balenaEtcher lesen .img.gz direkt [geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts]; dd oder Win32DiskImager brauchen vorher entpackte .img (gzip -d) [geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi, Wiki toh:friendlyarm:nanopi_r2s (dd, gzip -d); Win32DiskImager: Wiki-Zusammenfassung: FriendlyElec-Wiki, nicht lokal]; Linux: `dd if=<image>.img of=/dev/sdX bs=2M conv=fsync` auf das ganze Gerät, nicht auf eine Partition [geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi]",
    "zugang": "",
@@ -17442,9 +17498,15 @@
    "rampe": "nein, keine Hersteller-Firmware im Spiel",
    "rampe_rezept": "",
    "quelle": "Gluon targets/rockchip-armv8; R2C: gluon-patches-hardware devices/add-nanopi-r2c",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/friendlyelec-nanopi-r2c.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "datei_art": "sysupgrade",
+    "medium": "eine microSD-Karte",
+    "anschluss": "die LAN-Buchse (nicht WAN)",
+    "led": "Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).",
+    "karte_bleibt": true
+   }
   },
   {
    "gluon_name": "friendlyelec-nanopi-r2s",
@@ -17467,7 +17529,7 @@
    "taste": "",
    "zeichen": "SYS-LED (rot) blinkt beim Start schnell (OpenWrt-Startphase); beim ersten Start nach der Installation ist Gluon im Konfigurationsmodus, dann blinkt die SYS-LED langsam (ca. 1 s an, 0,3 s aus) [geprüft: OpenWrt-Patch led-boot/running = sys_led, diag.sh, Gluon gluon-setup-mode S96led]; im Normalbetrieb leuchtet sie dauerhaft [abgeleitet: OpenWrt diag.sh]",
    "uebertragung": "sd-karte (Kartenleser)",
-   "anschluss": "Kartenleser für microSD [abgeleitet]; jede Karte ab ca. 256 MB reicht technisch, der Rest der Karte bleibt ungenutzt (squashfs) [abgeleitet]",
+   "anschluss": "Kartenleser für microSD [abgeleitet]; jede Karte ab ca. 256 MB reicht technisch, der Rest der Karte bleibt ungenutzt (squashfs) [abgeleitet]; [abgeleitet: Gluons Setup-Mode läuft an den LAN-Buchsen, nicht an WAN]",
    "adressen": "",
    "programm": "Schreibprogramm: Raspberry Pi Imager oder balenaEtcher lesen .img.gz direkt [geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts]; dd oder Win32DiskImager brauchen vorher entpackte .img (gzip -d) [geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi, toh:friendlyarm:nanopi_r2s (dd, gzip -d); Wiki-Zusammenfassung: FriendlyElec-Wiki (Win32DiskImager)]; Linux: `dd if=<image>.img of=/dev/sdX bs=2M conv=fsync` auf das ganze Gerät, nicht auf eine Partition [geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi]",
    "zugang": "",
@@ -17489,9 +17551,15 @@
    "rampe": "nein, keine Hersteller-Firmware im Spiel",
    "rampe_rezept": "",
    "quelle": "Gluon targets/rockchip-armv8",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/friendlyelec-nanopi-r2s.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "datei_art": "sysupgrade",
+    "medium": "eine microSD-Karte",
+    "anschluss": "die LAN-Buchse (nicht WAN)",
+    "led": "Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).",
+    "karte_bleibt": true
+   }
   },
   {
    "gluon_name": "friendlyelec-nanopi-r3s",
@@ -17514,7 +17582,7 @@
    "taste": "nicht nötig; die MASK-Taste ist nur für den USB-Maskrom-Modus (Flashen per USB), nicht für die Wahl SD statt eMMC [Wiki-Zusammenfassung: FriendlyElec-Wiki NanoPi_R3S]",
    "zeichen": "SYS-LED (rot) blinkt beim Start schnell (OpenWrt-Startphase); beim ersten Start nach der Installation ist Gluon im Konfigurationsmodus, dann blinkt die SYS-LED langsam (ca. 1 s an, 0,3 s aus) [geprüft: OpenWrt-Patch led-boot/running = sys_led, diag.sh, Gluon gluon-setup-mode S96led]; im Normalbetrieb leuchtet sie dauerhaft [abgeleitet: OpenWrt diag.sh]",
    "uebertragung": "sd-karte (Kartenleser)",
-   "anschluss": "Kartenleser für microSD [abgeleitet]; jede Karte ab ca. 256 MB reicht technisch, der Rest der Karte bleibt ungenutzt (squashfs) [abgeleitet]",
+   "anschluss": "Kartenleser für microSD [abgeleitet]; jede Karte ab ca. 256 MB reicht technisch, der Rest der Karte bleibt ungenutzt (squashfs) [abgeleitet]; [abgeleitet: Gluons Setup-Mode läuft an den LAN-Buchsen, nicht an WAN]",
    "adressen": "",
    "programm": "Schreibprogramm: Raspberry Pi Imager oder balenaEtcher lesen .img.gz direkt [geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts]; dd oder Win32DiskImager brauchen vorher entpackte .img (gzip -d) [geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi, toh:friendlyarm:nanopi_r2s; Wiki-Zusammenfassung: FriendlyElec-Wiki]; Linux: `dd if=<image>.img of=/dev/sdX bs=2M conv=fsync` auf das ganze Gerät, nicht auf eine Partition [geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi]",
    "zugang": "",
@@ -17536,9 +17604,15 @@
    "rampe": "nein, keine Hersteller-Firmware im Spiel",
    "rampe_rezept": "",
    "quelle": "Gluon targets/rockchip-armv8",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/friendlyelec-nanopi-r3s.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "datei_art": "sysupgrade",
+    "medium": "eine microSD-Karte",
+    "anschluss": "die LAN-Buchse (nicht WAN)",
+    "led": "Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).",
+    "karte_bleibt": true
+   }
   },
   {
    "gluon_name": "friendlyelec-nanopi-r4s",
@@ -17561,7 +17635,7 @@
    "taste": "",
    "zeichen": "SYS-LED (rot) blinkt beim Start schnell (OpenWrt-Startphase); beim ersten Start nach der Installation ist Gluon im Konfigurationsmodus, dann blinkt die SYS-LED langsam (ca. 1 s an, 0,3 s aus) [geprüft: OpenWrt-Patch led-boot/running = sys_led, diag.sh, Gluon gluon-setup-mode S96led]; im Normalbetrieb leuchtet sie dauerhaft [abgeleitet: OpenWrt diag.sh]",
    "uebertragung": "sd-karte (Kartenleser)",
-   "anschluss": "Kartenleser für microSD [abgeleitet]; jede Karte ab ca. 256 MB reicht technisch, der Rest der Karte bleibt ungenutzt (squashfs) [abgeleitet]",
+   "anschluss": "Kartenleser für microSD [abgeleitet]; jede Karte ab ca. 256 MB reicht technisch, der Rest der Karte bleibt ungenutzt (squashfs) [abgeleitet]; [abgeleitet: Gluons Setup-Mode läuft an den LAN-Buchsen, nicht an WAN]",
    "adressen": "",
    "programm": "Schreibprogramm: Raspberry Pi Imager oder balenaEtcher lesen .img.gz direkt [geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts]; dd oder Win32DiskImager brauchen vorher entpackte .img (gzip -d) [geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi, toh:friendlyarm:nanopi_r2s; Wiki-Zusammenfassung: FriendlyElec-Wiki]; Linux: `dd if=<image>.img of=/dev/sdX bs=2M conv=fsync` auf das ganze Gerät, nicht auf eine Partition [geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi]",
    "zugang": "",
@@ -17583,9 +17657,15 @@
    "rampe": "nein, keine Hersteller-Firmware im Spiel",
    "rampe_rezept": "",
    "quelle": "Gluon targets/rockchip-armv8",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/friendlyelec-nanopi-r4s.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "datei_art": "sysupgrade",
+    "medium": "eine microSD-Karte",
+    "anschluss": "die LAN-Buchse (nicht WAN)",
+    "led": "Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).",
+    "karte_bleibt": true
+   }
   },
   {
    "gluon_name": "x86-64",
@@ -17630,9 +17710,14 @@
    "rampe": "nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)",
    "rampe_rezept": "devices/x86-64.sh: Testgerät, in QEMU Ende-zu-Ende geprüft",
    "quelle": "Gluon targets/x86-64",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/x86-64.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "datei_art": "factory",
+    "medium": "eine Festplatte, eine SSD oder einen USB-Stick",
+    "anschluss": "die erste Netzwerkbuchse",
+    "vm": true
+   }
   },
   {
    "gluon_name": "x86-generic",
@@ -17677,9 +17762,14 @@
    "rampe": "nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)",
    "rampe_rezept": "",
    "quelle": "Gluon targets/x86-generic",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/x86-generic.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "datei_art": "factory",
+    "medium": "eine Festplatte, eine SSD oder einen USB-Stick",
+    "anschluss": "die erste Netzwerkbuchse",
+    "vm": true
+   }
   },
   {
    "gluon_name": "x86-geode",
@@ -17724,9 +17814,14 @@
    "rampe": "nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)",
    "rampe_rezept": "",
    "quelle": "Gluon targets/x86-geode",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/x86-geode.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "datei_art": "factory",
+    "medium": "eine Festplatte, eine SSD oder einen USB-Stick",
+    "anschluss": "die erste Netzwerkbuchse",
+    "vm": true
+   }
   },
   {
    "gluon_name": "x86-legacy",
@@ -17771,9 +17866,14 @@
    "rampe": "nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)",
    "rampe_rezept": "",
    "quelle": "Gluon targets/x86-legacy",
-   "anleitung": "-",
+   "anleitung": "anleitungen/de/x86-legacy.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "datei_art": "factory",
+    "medium": "eine Festplatte, eine SSD oder einen USB-Stick",
+    "anschluss": "die erste Netzwerkbuchse",
+    "vm": true
+   }
   }
  ]
 }

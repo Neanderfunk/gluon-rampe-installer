@@ -37,6 +37,12 @@ Optionen per Umgebung: `GLUON_REF` (Default `v2025.1.3`), `JOBS`,
 `GLUON_DIR`, `GLUON_REPO`. Kein Parallelbetrieb, keine Domain-Schleifen –
 ein RAMpe-Image je Gerät reicht für alle Communities.
 
+## Download
+
+Fertige Images (Stand 20261015, alle Geräte mit Rezept, Liste und Prüfsummen):
+<https://download.ffnef.de/other/Gluon-Installer-RAMpe/>. Am Gerät erprobt ist bisher nur der
+Ablauf am D-Link M60.
+
 ## Geräte
 
 | Gerät | Target | Einspielen | Stand |

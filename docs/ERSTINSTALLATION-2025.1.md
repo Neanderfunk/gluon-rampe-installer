@@ -338,10 +338,10 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [zte-mf281](#zte-mf281) | ZTE MF281 (broken) | ath79-nand | K4 | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1e1695f959e678868bb7911d059b847f38fc9cf4 |
 | [zte-mf286r](#zte-mf286r) | ZTE MF286R (broken) | ath79-nand | K1 | [`sonderweg-zte-mf286r`](#familie-sonderweg-zte-mf286r) | Exploit | nein | nein | ja | ja |  |
 | [zyxel-nbg6716](#zyxel-nbg6716) | Zyxel NBG6716 | ath79-nand | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nbg6716.md) |
-| [raspberrypi-model-b](#raspberrypi-model-b) | Raspberry Pi 1 Model B/B+ | bcm27xx-bcm2708 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
-| [raspberrypi-2-model-b](#raspberrypi-2-model-b) | Raspberry Pi 2 Model B | bcm27xx-bcm2709 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
-| [raspberrypi-3-model-b](#raspberrypi-3-model-b) | Raspberry Pi 3 Model B/B+ | bcm27xx-bcm2710 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
-| [raspberrypi-4-model-b](#raspberrypi-4-model-b) | Raspberry Pi 4 Model B | bcm27xx-bcm2711 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
+| [raspberrypi-model-b](#raspberrypi-model-b) | Raspberry Pi 1 Model B/B+ | bcm27xx-bcm2708 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/raspberrypi-model-b.md) |
+| [raspberrypi-2-model-b](#raspberrypi-2-model-b) | Raspberry Pi 2 Model B | bcm27xx-bcm2709 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/raspberrypi-2-model-b.md) |
+| [raspberrypi-3-model-b](#raspberrypi-3-model-b) | Raspberry Pi 3 Model B/B+ | bcm27xx-bcm2710 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/raspberrypi-3-model-b.md) |
+| [raspberrypi-4-model-b](#raspberrypi-4-model-b) | Raspberry Pi 4 Model B | bcm27xx-bcm2711 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/raspberrypi-4-model-b.md) |
 | [google-wifi-gale](#google-wifi-gale) | Google WiFi (Gale) | ipq40xx-chromium | K5 | [`sonderweg-google-wifi-gale`](#familie-sonderweg-google-wifi-gale) | usb | nein | ja | nein |  | https://openwrt.org/inbox/toh/google/google_wifi |
 | [8devices-jalapeno](#8devices-jalapeno) | 8devices Jalapeno | ipq40xx-generic | K0 | [`ssh-stock`](#familie-ssh-stock) | ssh | nein | nein | nein |  | - |
 | [aruba-ap-303](#aruba-ap-303) | Aruba AP-303 | ipq40xx-generic | K4 | [`aruba-apboot`](#familie-aruba-apboot) | tftp-client | ja | nein | teilweise | ja | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=102c8c55f217606cdbdc9a449667e034676b3e75 |
@@ -369,10 +369,10 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [meraki-mr33-access-point](#meraki-mr33-access-point) | Cisco Meraki MR33 | ipq40xx-generic | K5 | [`sonderweg-meraki-mr33-access-point`](#familie-sonderweg-meraki-mr33-access-point) | tftp-server-am-geraet | ja | ja | nein |  | https://openwrt.org/toh/meraki/mr33 |
 | [netgear-ex6100v2](#netgear-ex6100v2) | NETGEAR EX6100 v2 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-ex6100v2.md) |
 | [netgear-ex6150v2](#netgear-ex6150v2) | NETGEAR EX6150 v2 | ipq40xx-generic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-ex6150v2.md); https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-fuer-netgear-wi-fi-range-extender-ex6150-v2/ |
-| [netgear-rbr50](#netgear-rbr50) | NETGEAR Orbi RBR50 v1 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
-| [netgear-rbs50](#netgear-rbs50) | NETGEAR Orbi RBS50 v1 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
-| [netgear-srr60](#netgear-srr60) | NETGEAR Orbi Pro SRR60 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
-| [netgear-srs60](#netgear-srs60) | NETGEAR Orbi Pro SRS60 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
+| [netgear-rbr50](#netgear-rbr50) | NETGEAR Orbi RBR50 v1 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-rbr50.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
+| [netgear-rbs50](#netgear-rbs50) | NETGEAR Orbi RBS50 v1 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-rbs50.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
+| [netgear-srr60](#netgear-srr60) | NETGEAR Orbi Pro SRR60 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-srr60.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
+| [netgear-srs60](#netgear-srs60) | NETGEAR Orbi Pro SRS60 | ipq40xx-generic | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-srs60.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa |
 | [openmesh-a42](#openmesh-a42) | OpenMesh A42 | ipq40xx-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  | - |
 | [openmesh-a62](#openmesh-a62) | OpenMesh A62 | ipq40xx-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  | - |
 | [plasma-cloud-pa1200](#plasma-cloud-pa1200) | Plasma Cloud PA1200 | ipq40xx-generic | K0+ | [`ap51-flash`](#familie-ap51-flash) | herstellertool | nein | nein | nein |  | - |
@@ -435,7 +435,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [zyxel-nwa50ax-pro](#zyxel-nwa50ax-pro) | Zyxel NWA50AX Pro | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa50ax-pro.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f0445746f6fd96fc7c5394b238153bd2ff22bc5b |
 | [zyxel-nwa90ax-pro](#zyxel-nwa90ax-pro) | Zyxel NWA90AX Pro (Alias von zyxel-nwa50ax-pro) | mediatek-filogic | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa90ax-pro.md) |
 | [linksys-e8450-ubi](#linksys-e8450-ubi) | Linksys E8450 / Belkin RT3200 (UBI-Layout) | mediatek-mt7622 | K3 | [`sonderweg-linksys-e8450-ubi`](#familie-sonderweg-linksys-e8450-ubi) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/e8450#installation |
-| [netgear-wax206](#netgear-wax206) | NETGEAR WAX206 | mediatek-mt7622 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/netgear/wax206#oem_easy_installation |
+| [netgear-wax206](#netgear-wax206) | NETGEAR WAX206 | mediatek-mt7622 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wax206.md); https://openwrt.org/toh/netgear/wax206#oem_easy_installation |
 | [ubiquiti-unifi-6-lr-v1](#ubiquiti-unifi-6-lr-v1) | Ubiquiti UniFi 6 LR v1 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-lr-v1.md); https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
 | [ubiquiti-unifi-6-lr-v2](#ubiquiti-unifi-6-lr-v2) | Ubiquiti UniFi 6 LR v2 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
 | [ubiquiti-unifi-6-lr-v3](#ubiquiti-unifi-6-lr-v3) | Ubiquiti UniFi 6 LR v3 | mediatek-mt7622 | K1d | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
@@ -456,8 +456,8 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [gl-mt300a](#gl-mt300a) | GL.iNet GL-MT300A | ramips-mt7620 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl-mt300a.md) |
 | [gl-mt300n](#gl-mt300n) | GL.iNet GL-MT300N (v1) | ramips-mt7620 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl-mt300n.md) |
 | [gl-mt750](#gl-mt750) | GL.iNet GL-MT750 | ramips-mt7620 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl-mt750.md) |
-| [netgear-ex3700](#netgear-ex3700) | NETGEAR EX3700/EX3800 (Alias netgear-ex3800) | ramips-mt7620 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-wi-fi-range-extender-ex3700/ |
-| [netgear-ex6130](#netgear-ex6130) | NETGEAR EX6130 | ramips-mt7620 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  |  |
+| [netgear-ex3700](#netgear-ex3700) | NETGEAR EX3700/EX3800 (Alias netgear-ex3800) | ramips-mt7620 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-ex3700.md); https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-wi-fi-range-extender-ex3700/ |
+| [netgear-ex6130](#netgear-ex6130) | NETGEAR EX6130 | ramips-mt7620 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-ex6130.md) |
 | [nexx-wt3020-8m](#nexx-wt3020-8m) | Nexx WT3020 8M (Aliase WT3020AD/F/H) | ramips-mt7620 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/nexx-wt3020-8m.md) |
 | [tp-link-archer-c2-v1](#tp-link-archer-c2-v1) | TP-Link Archer C2 v1 | ramips-mt7620 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | tftp-client-am-geraet | nein | nein | nein |  |  |
 | [tp-link-archer-c20-v1](#tp-link-archer-c20-v1) | TP-Link Archer C20 v1 | ramips-mt7620 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | tftp-client-am-geraet | nein | nein | nein |  |  |
@@ -482,13 +482,13 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [gl.inet-gl-mt1300](#gl.inet-gl-mt1300) | GL.iNet GL-MT1300 (Beryl) | ramips-mt7621 | K1d | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt1300.md) |
 | [mercusys-mr70x-v1](#mercusys-mr70x-v1) | Mercusys MR70X v1 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/mercusys-mr70x-v1.md) |
 | [mikrotik-routerboard-750gr3](#mikrotik-routerboard-750gr3) | MikroTik hEX RB750Gr3 (Alias mikrotik-routerboard-hex-v3) | ramips-mt7621 | K1 | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja | https://openwrt.org/toh/mikrotik/common |
-| [netgear-eax12](#netgear-eax12) | NETGEAR EAX12 (Aliase EAX11 v2, EAX15 v2) | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  |  |
-| [netgear-ex6150](#netgear-ex6150) | NETGEAR EX6150 (v1) | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-wi-fi-range-extender-ex6150-v2/ |
-| [netgear-r6220](#netgear-r6220) | NETGEAR R6220 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-r6220/ |
-| [netgear-r6260](#netgear-r6260) | NETGEAR R6260 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  |  |
+| [netgear-eax12](#netgear-eax12) | NETGEAR EAX12 (Aliase EAX11 v2, EAX15 v2) | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-eax12.md) |
+| [netgear-ex6150](#netgear-ex6150) | NETGEAR EX6150 (v1) | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-ex6150.md); https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-wi-fi-range-extender-ex6150-v2/ |
+| [netgear-r6220](#netgear-r6220) | NETGEAR R6220 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-r6220.md); https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-r6220/ |
+| [netgear-r6260](#netgear-r6260) | NETGEAR R6260 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-r6260.md) |
 | [netgear-wac104](#netgear-wac104) | NETGEAR WAC104 | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wac104.md) |
-| [netgear-wax202](#netgear-wax202) | NETGEAR WAX202 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/netgear/wax202#oem_easy_installation |
-| [netgear-wndr3700-v5](#netgear-wndr3700-v5) | NETGEAR WNDR3700 v5 (Gluon: broken, "untested") | ramips-mt7621 | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | ja | ja |  |
+| [netgear-wax202](#netgear-wax202) | NETGEAR WAX202 | ramips-mt7621 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wax202.md); https://openwrt.org/toh/netgear/wax202#oem_easy_installation |
+| [netgear-wndr3700-v5](#netgear-wndr3700-v5) | NETGEAR WNDR3700 v5 (Gluon: broken, "untested") | ramips-mt7621 | K0+ | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | ja | ja | [Anleitung](../anleitungen/de/netgear-wndr3700-v5.md) |
 | [totolink-x5000r](#totolink-x5000r) | TOTOLINK X5000R | ramips-mt7621 | K1d | [`sonderweg-totolink-x5000r`](#familie-sonderweg-totolink-x5000r) | webui-upload | nein | nein | nein |  |  |
 | [tp-link-archer-ax23-v1](#tp-link-archer-ax23-v1) | TP-Link Archer AX23 v1 (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-ax23-v1.md) |
 | [tp-link-archer-c6-v3](#tp-link-archer-c6-v3) | TP-Link Archer C6 v3 (Gluon: broken) | ramips-mt7621 | K0 | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-archer-c6-v3.md) |
@@ -517,8 +517,8 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [gl-mt300n-v2](#gl-mt300n-v2) | GL.iNet GL-MT300N v2 | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl-mt300n-v2.md) |
 | [gl.inet-microuter-n300](#gl.inet-microuter-n300) | GL.iNet microuter-N300 | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-microuter-n300.md) |
 | [gl.inet-vixmini](#gl.inet-vixmini) | GL.iNet VIXMINI | ramips-mt76x8 | K1d | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-vixmini.md) |
-| [netgear-r6020](#netgear-r6020) | NETGEAR R6020 | ramips-mt76x8 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  |  |
-| [netgear-r6120](#netgear-r6120) | NETGEAR R6120 | ramips-mt76x8 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-r6120/ |
+| [netgear-r6020](#netgear-r6020) | NETGEAR R6020 | ramips-mt76x8 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-r6020.md) |
+| [netgear-r6120](#netgear-r6120) | NETGEAR R6120 | ramips-mt76x8 | K0 | [`netgear-nmrp`](#familie-netgear-nmrp) | herstellertool | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-r6120.md); https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-r6120/ |
 | [ravpower-rp-wd009](#ravpower-rp-wd009) | RAVPower RP-WD009 | ramips-mt76x8 | K0 | [`recovery-web`](#familie-recovery-web) | recovery-web | nein | nein | nein |  | https://openwrt.org/toh/ravpower/rp-wd009#oem_installation_using_the_tftp_method |
 | [tp-link-archer-c20-v4](#tp-link-archer-c20-v4) | TP-Link Archer C20 v4 | ramips-mt76x8 | K1d | [`tplink-tftp-recovery`](#familie-tplink-tftp-recovery) | tftp-client-am-geraet | nein | nein | nein |  |  |
 | [tp-link-archer-c20-v5](#tp-link-archer-c20-v5) | TP-Link Archer C20 v5 | ramips-mt76x8 | K3 | [`tplink-ubootteil-dd`](#familie-tplink-ubootteil-dd) | webui-upload | nein | nein | nein |  |  |
@@ -541,14 +541,14 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [xiaomi-mi-router-4a-100m-international-edition](#xiaomi-mi-router-4a-100m-international-edition) | Xiaomi Mi Router 4A 100M International (R4AC) | ramips-mt76x8 | K1d | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  | https://forum.ffrn.de/t/howto-installation-xiaomi-mi-router-4a-r4ac-100m-international-edition/3536 |
 | [xiaomi-mi-router-4a-100m-international-edition-v2](#xiaomi-mi-router-4a-100m-international-edition-v2) | Xiaomi Mi Router 4A 100M International v2 | ramips-mt76x8 | K2 | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  |  |
 | [xiaomi-mi-router-4c](#xiaomi-mi-router-4c) | Xiaomi Mi Router 4C | ramips-mt76x8 | K2 | [`xiaomi-openwrtinvasion`](#familie-xiaomi-openwrtinvasion) | ssh | nein | nein | nein |  | https://github.com/acecilia/OpenWRTInvasion/blob/master/README.md |
-| [friendlyelec-nanopi-r2c](#friendlyelec-nanopi-r2c) | FriendlyElec NanoPi R2C | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
-| [friendlyelec-nanopi-r2s](#friendlyelec-nanopi-r2s) | FriendlyElec NanoPi R2S | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
-| [friendlyelec-nanopi-r3s](#friendlyelec-nanopi-r3s) | FriendlyElec NanoPi R3S | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
-| [friendlyelec-nanopi-r4s](#friendlyelec-nanopi-r4s) | FriendlyElec NanoPi R4S (4 GB) | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | - |
-| [x86-64](#x86-64) | x86 (x86-64) | x86-64 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein | ja | - |
-| [x86-generic](#x86-generic) | x86 (x86-generic) | x86-generic | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein |  | - |
-| [x86-geode](#x86-geode) | x86 (x86-geode) | x86-geode | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein |  | - |
-| [x86-legacy](#x86-legacy) | x86 (x86-legacy) | x86-legacy | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein |  | - |
+| [friendlyelec-nanopi-r2c](#friendlyelec-nanopi-r2c) | FriendlyElec NanoPi R2C | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/friendlyelec-nanopi-r2c.md) |
+| [friendlyelec-nanopi-r2s](#friendlyelec-nanopi-r2s) | FriendlyElec NanoPi R2S | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/friendlyelec-nanopi-r2s.md) |
+| [friendlyelec-nanopi-r3s](#friendlyelec-nanopi-r3s) | FriendlyElec NanoPi R3S | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/friendlyelec-nanopi-r3s.md) |
+| [friendlyelec-nanopi-r4s](#friendlyelec-nanopi-r4s) | FriendlyElec NanoPi R4S (4 GB) | rockchip-armv8 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | sd-karte | nein | nein | nein |  | [Anleitung](../anleitungen/de/friendlyelec-nanopi-r4s.md) |
+| [x86-64](#x86-64) | x86 (x86-64) | x86-64 | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein | ja | [Anleitung](../anleitungen/de/x86-64.md) |
+| [x86-generic](#x86-generic) | x86 (x86-generic) | x86-generic | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein |  | [Anleitung](../anleitungen/de/x86-generic.md) |
+| [x86-geode](#x86-geode) | x86 (x86-geode) | x86-geode | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein |  | [Anleitung](../anleitungen/de/x86-geode.md) |
+| [x86-legacy](#x86-legacy) | x86 (x86-legacy) | x86-legacy | K0 | [`image-auf-datentraeger`](#familie-image-auf-datentraeger) | Datenträger | nein | nein | nein |  | [Anleitung](../anleitungen/de/x86-legacy.md) |
 
 <!-- END erzeugt:uebersicht -->
 
@@ -3565,7 +3565,7 @@ D-Link AQUILA PRO AI M30 A1 · mediatek-filogic · K1
 - **Gluon-RAMpe-Rezept:** devices/d-link-aquila-pro-ai-m30-a1.sh: `-recovery.bin` (D-Link-Header DLK6E6110001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, Hardware-Test offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f
 - **Detail-Anleitung:** anleitungen/de/d-link-aquila-pro-ai-m30-a1.md; https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/
-- **Werte für die Anleitung:** recovery_ip = 192.168.200.1; led_recovery = rot blinkt; datei_art = rampe; upload_pfad = /upload.cgi; rampe_ip = 192.168.1.1; rampe_bytes = etwa 52,4 Millionen; led_rampe = blinkt die LED gleichmäßig, etwa einmal pro Sekunde; herstellerseite_gleiche_ip = False; rechner_ip = 192.168.200.10; dauer_neustart = einige Minuten; dauer_lang = über 10 Minuten; dauer_gluon = wenige Minuten; datei_beispiel = gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin; rampe_datei = gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin
+- **Werte für die Anleitung:** recovery_ip = 192.168.200.1; led_recovery = rot blinkt; datei_art = rampe; upload_pfad = /upload.cgi; rampe_ip = 192.168.1.1; rampe_bytes = etwa 52,4 Millionen; led_rampe = blinkt die LED gleichmäßig, etwa einmal pro Sekunde; herstellerseite_gleiche_ip = False; rechner_ip = 192.168.200.10; dauer_neustart = einige Minuten; dauer_lang = über 10 Minuten; dauer_gluon = wenige Minuten; datei_beispiel = gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin; rampe_datei = gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin
 
 #### d-link-aquila-pro-ai-m60-a1
 
@@ -3607,7 +3607,7 @@ D-Link AQUILA PRO AI M60 A1 · mediatek-filogic · K1
 - **Quelle (OpenWrt-Commit):** OpenWrt 7271ee587cd104d30d6d46dd3c623c9d4602bd0c
 - **Detail-Anleitung:** anleitungen/de/d-link-aquila-pro-ai-m60-a1.md
 - **Am Gerät erprobt (für die Anleitung):** am = 2026-10-13; mit = gluon-rampe-20261010-d-link-aquila-pro-ai-m60-a1-recovery.bin; weg = RAMpe über die D-Link-Recovery, dann sysupgrade
-- **Werte für die Anleitung:** recovery_ip = 192.168.200.1; led_recovery = rot blinkt; datei_art = rampe; upload_pfad = /upload.cgi; rampe_ip = 192.168.1.1; rampe_bytes = etwa 52,4 Millionen; led_rampe = blinkt die LED gleichmäßig, etwa einmal pro Sekunde; seitentitel = D-link Router Recovery Mode; herstellerseite_gleiche_ip = True; anschluss = einer der LAN-Buchsen, nicht mit WAN; rechner_ip = 192.168.200.66; dauer_neustart = knapp 2 Minuten; dauer_lang = über 10 Minuten; dauer_gluon = unter 2 Minuten; datei_beispiel = gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin; rampe_datei = gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin; taste_hinweis = Nur die Reset-Taste führt in die Recovery, keine der anderen Tasten.; led_falsch = Ein orangefarbenes Auf- und Abdimmen ist nicht die Recovery.
+- **Werte für die Anleitung:** recovery_ip = 192.168.200.1; led_recovery = rot blinkt; datei_art = rampe; upload_pfad = /upload.cgi; rampe_ip = 192.168.1.1; rampe_bytes = etwa 52,4 Millionen; led_rampe = blinkt die LED gleichmäßig, etwa einmal pro Sekunde; seitentitel = D-link Router Recovery Mode; herstellerseite_gleiche_ip = True; anschluss = einer der LAN-Buchsen, nicht mit WAN; rechner_ip = 192.168.200.66; dauer_neustart = knapp 2 Minuten; dauer_lang = über 10 Minuten; dauer_gluon = unter 2 Minuten; datei_beispiel = gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin; rampe_datei = gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin; taste_hinweis = Nur die Reset-Taste führt in die Recovery, keine der anderen Tasten.; led_falsch = Ein orangefarbenes Auf- und Abdimmen ist nicht die Recovery.; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin
 
 #### d-link-dap-1620-b1
 
@@ -4480,7 +4480,8 @@ Raspberry Pi 1 Model B/B+ · bcm27xx-bcm2708 · K0
 - **Dauer:** Image nur ca. 170 MB, Schreiben Sekunden bis etwa eine Minute; keine Quelle nennt Zeiten [abgeleitet: Imagegröße aus Config-images.in]
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/bcm27xx-bcm2708
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/raspberrypi-model-b.md
+- **Werte für die Anleitung:** datei_art = factory; medium = eine microSD-Karte; anschluss = die Netzwerkbuchse
 
 #### raspberrypi-2-model-b
 
@@ -4511,7 +4512,8 @@ Raspberry Pi 2 Model B · bcm27xx-bcm2709 · K0
 - **Dauer:** Image nur ca. 170 MB, Schreiben Sekunden bis etwa eine Minute; keine Quelle nennt Zeiten [abgeleitet: Imagegröße aus Config-images.in]
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/bcm27xx-bcm2709
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/raspberrypi-2-model-b.md
+- **Werte für die Anleitung:** datei_art = factory; medium = eine microSD-Karte; anschluss = die Netzwerkbuchse
 
 #### raspberrypi-3-model-b
 
@@ -4542,7 +4544,8 @@ Raspberry Pi 3 Model B/B+ · bcm27xx-bcm2710 · K0
 - **Dauer:** Image nur ca. 170 MB, Schreiben Sekunden bis etwa eine Minute; keine Quelle nennt Zeiten [abgeleitet: Imagegröße aus Config-images.in]
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/bcm27xx-bcm2710
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/raspberrypi-3-model-b.md
+- **Werte für die Anleitung:** datei_art = factory; medium = eine microSD-Karte; anschluss = die Netzwerkbuchse
 
 #### raspberrypi-4-model-b
 
@@ -4573,7 +4576,8 @@ Raspberry Pi 4 Model B · bcm27xx-bcm2711 · K0
 - **Dauer:** Image nur ca. 170 MB, Schreiben Sekunden bis etwa eine Minute; keine Quelle nennt Zeiten [abgeleitet: Imagegröße aus Config-images.in]
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/bcm27xx-bcm2711
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/raspberrypi-4-model-b.md
+- **Werte für die Anleitung:** datei_art = factory; medium = eine microSD-Karte; anschluss = die Netzwerkbuchse
 
 #### friendlyelec-nanopi-r2c
 
@@ -4591,7 +4595,7 @@ FriendlyElec NanoPi R2C · rockchip-armv8 · K0
   8. Strom anschließen; das Gerät startet von der Karte [abgeleitet]
 - **Sichtbare Zeichen:** SYS-LED (rot) blinkt beim Start schnell (OpenWrt-Startphase); beim ersten Start nach der Installation ist Gluon im Konfigurationsmodus, dann blinkt die SYS-LED langsam (ca. 1 s an, 0,3 s aus) [geprüft: OpenWrt-Patch led-boot/running = sys_led, diag.sh, Gluon gluon-setup-mode S96led]; im Normalbetrieb leuchtet sie dauerhaft [abgeleitet: OpenWrt diag.sh]
 - **Übertragung:** sd-karte (Kartenleser)
-- **Anschluss:** Kartenleser für microSD [abgeleitet]; jede Karte ab ca. 256 MB reicht technisch, der Rest der Karte bleibt ungenutzt (squashfs) [abgeleitet]
+- **Anschluss:** Kartenleser für microSD [abgeleitet]; jede Karte ab ca. 256 MB reicht technisch, der Rest der Karte bleibt ungenutzt (squashfs) [abgeleitet]; [abgeleitet: Gluons Setup-Mode läuft an den LAN-Buchsen, nicht an WAN]
 - **Programm:** Schreibprogramm: Raspberry Pi Imager oder balenaEtcher lesen .img.gz direkt [geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts]; dd oder Win32DiskImager brauchen vorher entpackte .img (gzip -d) [geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi, Wiki toh:friendlyarm:nanopi_r2s (dd, gzip -d); Win32DiskImager: Wiki-Zusammenfassung: FriendlyElec-Wiki, nicht lokal]; Linux: `dd if=<image>.img of=/dev/sdX bs=2M conv=fsync` auf das ganze Gerät, nicht auf eine Partition [geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi]
 - **Datei:** Gluon-sysupgrade-Image (`.img.gz`); Gluon hat für dieses Gerät `factory = false`, es gibt also kein factory [abgeleitet: targets/rockchip-armv8]
 - **seriell nötig:** nein
@@ -4606,7 +4610,8 @@ FriendlyElec NanoPi R2C · rockchip-armv8 · K0
 - **Fehlerbild:** gzip meldet beim Entpacken vermutlich "trailing garbage ignored": die Datei ist trotzdem in Ordnung, das sysupgrade-.img.gz hat hinter dem gzip-Strom Metadaten [geprüft: OpenWrt rockchip/image/Makefile append-metadata; gzip-Verhalten abgeleitet]
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/rockchip-armv8; R2C: gluon-patches-hardware devices/add-nanopi-r2c
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/friendlyelec-nanopi-r2c.md
+- **Werte für die Anleitung:** datei_art = sysupgrade; medium = eine microSD-Karte; anschluss = die LAN-Buchse (nicht WAN); led = Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).; karte_bleibt = True
 
 #### friendlyelec-nanopi-r2s
 
@@ -4624,7 +4629,7 @@ FriendlyElec NanoPi R2S · rockchip-armv8 · K0
   8. Strom anschließen; das Gerät startet von der Karte [abgeleitet]
 - **Sichtbare Zeichen:** SYS-LED (rot) blinkt beim Start schnell (OpenWrt-Startphase); beim ersten Start nach der Installation ist Gluon im Konfigurationsmodus, dann blinkt die SYS-LED langsam (ca. 1 s an, 0,3 s aus) [geprüft: OpenWrt-Patch led-boot/running = sys_led, diag.sh, Gluon gluon-setup-mode S96led]; im Normalbetrieb leuchtet sie dauerhaft [abgeleitet: OpenWrt diag.sh]
 - **Übertragung:** sd-karte (Kartenleser)
-- **Anschluss:** Kartenleser für microSD [abgeleitet]; jede Karte ab ca. 256 MB reicht technisch, der Rest der Karte bleibt ungenutzt (squashfs) [abgeleitet]
+- **Anschluss:** Kartenleser für microSD [abgeleitet]; jede Karte ab ca. 256 MB reicht technisch, der Rest der Karte bleibt ungenutzt (squashfs) [abgeleitet]; [abgeleitet: Gluons Setup-Mode läuft an den LAN-Buchsen, nicht an WAN]
 - **Programm:** Schreibprogramm: Raspberry Pi Imager oder balenaEtcher lesen .img.gz direkt [geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts]; dd oder Win32DiskImager brauchen vorher entpackte .img (gzip -d) [geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi, toh:friendlyarm:nanopi_r2s (dd, gzip -d); Wiki-Zusammenfassung: FriendlyElec-Wiki (Win32DiskImager)]; Linux: `dd if=<image>.img of=/dev/sdX bs=2M conv=fsync` auf das ganze Gerät, nicht auf eine Partition [geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi]
 - **Datei:** Gluon-sysupgrade-Image (`.img.gz`); Gluon hat für dieses Gerät `factory = false`, es gibt also kein factory [abgeleitet: targets/rockchip-armv8]
 - **seriell nötig:** nein
@@ -4639,7 +4644,8 @@ FriendlyElec NanoPi R2S · rockchip-armv8 · K0
 - **Fehlerbild:** gzip meldet beim Entpacken vermutlich "trailing garbage ignored": die Datei ist trotzdem in Ordnung, das sysupgrade-.img.gz hat hinter dem gzip-Strom Metadaten [geprüft: OpenWrt rockchip/image/Makefile append-metadata; gzip-Verhalten abgeleitet]
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/rockchip-armv8
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/friendlyelec-nanopi-r2s.md
+- **Werte für die Anleitung:** datei_art = sysupgrade; medium = eine microSD-Karte; anschluss = die LAN-Buchse (nicht WAN); led = Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).; karte_bleibt = True
 
 #### friendlyelec-nanopi-r3s
 
@@ -4658,7 +4664,7 @@ FriendlyElec NanoPi R3S · rockchip-armv8 · K0
 - **Taste und Zeitpunkt:** nicht nötig; die MASK-Taste ist nur für den USB-Maskrom-Modus (Flashen per USB), nicht für die Wahl SD statt eMMC [Wiki-Zusammenfassung: FriendlyElec-Wiki NanoPi_R3S]
 - **Sichtbare Zeichen:** SYS-LED (rot) blinkt beim Start schnell (OpenWrt-Startphase); beim ersten Start nach der Installation ist Gluon im Konfigurationsmodus, dann blinkt die SYS-LED langsam (ca. 1 s an, 0,3 s aus) [geprüft: OpenWrt-Patch led-boot/running = sys_led, diag.sh, Gluon gluon-setup-mode S96led]; im Normalbetrieb leuchtet sie dauerhaft [abgeleitet: OpenWrt diag.sh]
 - **Übertragung:** sd-karte (Kartenleser)
-- **Anschluss:** Kartenleser für microSD [abgeleitet]; jede Karte ab ca. 256 MB reicht technisch, der Rest der Karte bleibt ungenutzt (squashfs) [abgeleitet]
+- **Anschluss:** Kartenleser für microSD [abgeleitet]; jede Karte ab ca. 256 MB reicht technisch, der Rest der Karte bleibt ungenutzt (squashfs) [abgeleitet]; [abgeleitet: Gluons Setup-Mode läuft an den LAN-Buchsen, nicht an WAN]
 - **Programm:** Schreibprogramm: Raspberry Pi Imager oder balenaEtcher lesen .img.gz direkt [geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts]; dd oder Win32DiskImager brauchen vorher entpackte .img (gzip -d) [geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi, toh:friendlyarm:nanopi_r2s; Wiki-Zusammenfassung: FriendlyElec-Wiki]; Linux: `dd if=<image>.img of=/dev/sdX bs=2M conv=fsync` auf das ganze Gerät, nicht auf eine Partition [geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi]
 - **Datei:** Gluon-sysupgrade-Image (`.img.gz`); Gluon hat für dieses Gerät `factory = false`, es gibt also kein factory [abgeleitet: targets/rockchip-armv8]
 - **seriell nötig:** nein
@@ -4675,7 +4681,8 @@ FriendlyElec NanoPi R3S · rockchip-armv8 · K0
 - **Notweg:** [Alternative] Installation ins eMMC: von SD starten, `dd if=<image>.img of=/dev/mmcblk0`, sync, SD-Karte ziehen, neu starten [geprüft: OpenWrt-Commit 2902b0a6]
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/rockchip-armv8
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/friendlyelec-nanopi-r3s.md
+- **Werte für die Anleitung:** datei_art = sysupgrade; medium = eine microSD-Karte; anschluss = die LAN-Buchse (nicht WAN); led = Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).; karte_bleibt = True
 
 #### friendlyelec-nanopi-r4s
 
@@ -4693,7 +4700,7 @@ FriendlyElec NanoPi R4S (4 GB) · rockchip-armv8 · K0
   8. Strom anschließen; das Gerät startet von der Karte [abgeleitet]
 - **Sichtbare Zeichen:** SYS-LED (rot) blinkt beim Start schnell (OpenWrt-Startphase); beim ersten Start nach der Installation ist Gluon im Konfigurationsmodus, dann blinkt die SYS-LED langsam (ca. 1 s an, 0,3 s aus) [geprüft: OpenWrt-Patch led-boot/running = sys_led, diag.sh, Gluon gluon-setup-mode S96led]; im Normalbetrieb leuchtet sie dauerhaft [abgeleitet: OpenWrt diag.sh]
 - **Übertragung:** sd-karte (Kartenleser)
-- **Anschluss:** Kartenleser für microSD [abgeleitet]; jede Karte ab ca. 256 MB reicht technisch, der Rest der Karte bleibt ungenutzt (squashfs) [abgeleitet]
+- **Anschluss:** Kartenleser für microSD [abgeleitet]; jede Karte ab ca. 256 MB reicht technisch, der Rest der Karte bleibt ungenutzt (squashfs) [abgeleitet]; [abgeleitet: Gluons Setup-Mode läuft an den LAN-Buchsen, nicht an WAN]
 - **Programm:** Schreibprogramm: Raspberry Pi Imager oder balenaEtcher lesen .img.gz direkt [geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts]; dd oder Win32DiskImager brauchen vorher entpackte .img (gzip -d) [geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi, toh:friendlyarm:nanopi_r2s; Wiki-Zusammenfassung: FriendlyElec-Wiki]; Linux: `dd if=<image>.img of=/dev/sdX bs=2M conv=fsync` auf das ganze Gerät, nicht auf eine Partition [geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi]
 - **Datei:** Gluon-sysupgrade-Image (`.img.gz`); Gluon hat für dieses Gerät `factory = false`, es gibt also kein factory [abgeleitet: targets/rockchip-armv8]
 - **seriell nötig:** nein
@@ -4708,7 +4715,8 @@ FriendlyElec NanoPi R4S (4 GB) · rockchip-armv8 · K0
 - **Fehlerbild:** gzip meldet beim Entpacken vermutlich "trailing garbage ignored": die Datei ist trotzdem in Ordnung, das sysupgrade-.img.gz hat hinter dem gzip-Strom Metadaten [geprüft: OpenWrt rockchip/image/Makefile append-metadata; gzip-Verhalten abgeleitet]
 - **Gluon-RAMpe passt:** nein, keine Hersteller-Firmware im Spiel
 - **Quelle (OpenWrt-Commit):** Gluon targets/rockchip-armv8
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/friendlyelec-nanopi-r4s.md
+- **Werte für die Anleitung:** datei_art = sysupgrade; medium = eine microSD-Karte; anschluss = die LAN-Buchse (nicht WAN); led = Die rote SYS-LED blinkt erst schnell und beim ersten Start dann langsam (etwa 1 Sekunde an, 0,3 aus).; karte_bleibt = True
 
 #### x86-64
 
@@ -4741,7 +4749,8 @@ x86 (x86-64) · x86-64 · K0
 - **Gluon-RAMpe passt:** nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)
 - **Gluon-RAMpe-Rezept:** devices/x86-64.sh: Testgerät, in QEMU Ende-zu-Ende geprüft
 - **Quelle (OpenWrt-Commit):** Gluon targets/x86-64
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/x86-64.md
+- **Werte für die Anleitung:** datei_art = factory; medium = eine Festplatte, eine SSD oder einen USB-Stick; anschluss = die erste Netzwerkbuchse; vm = True
 
 #### x86-generic
 
@@ -4772,7 +4781,8 @@ x86 (x86-generic) · x86-generic · K0
 - **Fehlerbild:** gzip meldet wegen angehängter Metadaten vermutlich "trailing garbage ignored": die Datei ist trotzdem in Ordnung [geprüft: OpenWrt x86/image/Makefile append-metadata; gzip-Verhalten abgeleitet]
 - **Gluon-RAMpe passt:** nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)
 - **Quelle (OpenWrt-Commit):** Gluon targets/x86-generic
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/x86-generic.md
+- **Werte für die Anleitung:** datei_art = factory; medium = eine Festplatte, eine SSD oder einen USB-Stick; anschluss = die erste Netzwerkbuchse; vm = True
 
 #### x86-geode
 
@@ -4803,7 +4813,8 @@ x86 (x86-geode) · x86-geode · K0
 - **Fehlerbild:** gzip meldet wegen angehängter Metadaten vermutlich "trailing garbage ignored": die Datei ist trotzdem in Ordnung [geprüft: OpenWrt x86/image/Makefile append-metadata; gzip-Verhalten abgeleitet]
 - **Gluon-RAMpe passt:** nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)
 - **Quelle (OpenWrt-Commit):** Gluon targets/x86-geode
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/x86-geode.md
+- **Werte für die Anleitung:** datei_art = factory; medium = eine Festplatte, eine SSD oder einen USB-Stick; anschluss = die erste Netzwerkbuchse; vm = True
 
 #### x86-legacy
 
@@ -4834,7 +4845,8 @@ x86 (x86-legacy) · x86-legacy · K0
 - **Fehlerbild:** gzip meldet wegen angehängter Metadaten vermutlich "trailing garbage ignored": die Datei ist trotzdem in Ordnung [geprüft: OpenWrt x86/image/Makefile append-metadata; gzip-Verhalten abgeleitet]
 - **Gluon-RAMpe passt:** nein; die Gluon-RAMpe-Prototyp wird hier nur in QEMU getestet (x86-64)
 - **Quelle (OpenWrt-Commit):** Gluon targets/x86-legacy
-- **Detail-Anleitung:** -
+- **Detail-Anleitung:** anleitungen/de/x86-legacy.md
+- **Werte für die Anleitung:** datei_art = factory; medium = eine Festplatte, eine SSD oder einen USB-Stick; anschluss = die erste Netzwerkbuchse; vm = True
 
 ### Familie `k0-webui`
 
@@ -7866,7 +7878,8 @@ NETGEAR Orbi RBR50 v1 · ipq40xx-generic · K0+
 - **Rückweg zur Herstellerfirmware:** nmrpflash mit der Netgear-Firmware (z. B. SRS60-V2.2.1.210.img) [geprüft: Commit 2cb24b3]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
-- **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
+- **Detail-Anleitung:** anleitungen/de/netgear-rbr50.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
+- **Werte für die Anleitung:** anschluss = die Buchse nahe der Ein/Aus-Taste; nach_neustart = Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten.
 
 #### netgear-rbs50
 
@@ -7904,7 +7917,8 @@ NETGEAR Orbi RBS50 v1 · ipq40xx-generic · K0+
 - **Rückweg zur Herstellerfirmware:** nmrpflash mit der Netgear-Firmware (z. B. SRS60-V2.2.1.210.img) [geprüft: Commit 2cb24b3]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
-- **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
+- **Detail-Anleitung:** anleitungen/de/netgear-rbs50.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
+- **Werte für die Anleitung:** anschluss = die Buchse nahe der Ein/Aus-Taste; nach_neustart = Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten.
 
 #### netgear-srr60
 
@@ -7942,7 +7956,8 @@ NETGEAR Orbi Pro SRR60 · ipq40xx-generic · K0+
 - **Rückweg zur Herstellerfirmware:** nmrpflash mit der Netgear-Firmware (z. B. SRS60-V2.2.1.210.img) [geprüft: Commit 2cb24b3]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
-- **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
+- **Detail-Anleitung:** anleitungen/de/netgear-srr60.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
+- **Werte für die Anleitung:** anschluss = die Buchse nahe der Ein/Aus-Taste; nach_neustart = Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten.
 
 #### netgear-srs60
 
@@ -7980,7 +7995,8 @@ NETGEAR Orbi Pro SRS60 · ipq40xx-generic · K0+
 - **Rückweg zur Herstellerfirmware:** nmrpflash mit der Netgear-Firmware (z. B. SRS60-V2.2.1.210.img) [geprüft: Commit 2cb24b3]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
-- **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
+- **Detail-Anleitung:** anleitungen/de/netgear-srs60.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=2cb24b3f3cd89692f3c0bd137f3f560ada359bfa
+- **Werte für die Anleitung:** anschluss = die Buchse nahe der Ein/Aus-Taste; nach_neustart = Nach etwa einer Minute startet das Gerät von selbst mit der neuen Firmware; tut es das nicht, einmal aus- und einschalten.
 
 #### netgear-wax206
 
@@ -8014,7 +8030,8 @@ NETGEAR WAX206 · mediatek-mt7622 · K0
 - **Rückweg zur Herstellerfirmware:** Stock-Firmware per TFTP/NMRP an den Bootloader [geprüft: Commit f6d2a23]
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt f6d2a23cbca61611663efb531c97efeded26e0cd
-- **Detail-Anleitung:** https://openwrt.org/toh/netgear/wax206#oem_easy_installation
+- **Detail-Anleitung:** anleitungen/de/netgear-wax206.md; https://openwrt.org/toh/netgear/wax206#oem_easy_installation
+- **Werte für die Anleitung:** web_moeglich = True
 
 #### netgear-ex3700
 
@@ -8049,7 +8066,8 @@ NETGEAR EX3700/EX3800 (Alias netgear-ex3800) · ramips-mt7620 · K0
 - **Notweg:** [einfacher, schlechter belegt] Netgear-Weboberfläche: Firmware-Update mit dem Gluon-factory (.chk) [geprüft: Commit de33a4c]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** de33a4cef0411f13df397ada2dc3634c5748a457
-- **Detail-Anleitung:** https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-wi-fi-range-extender-ex3700/
+- **Detail-Anleitung:** anleitungen/de/netgear-ex3700.md; https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-wi-fi-range-extender-ex3700/
+- **Werte für die Anleitung:** web_moeglich = True
 
 #### netgear-ex6130
 
@@ -8084,6 +8102,8 @@ NETGEAR EX6130 · ramips-mt7620 · K0
 - **Notweg:** [einfacher, schlechter belegt] Netgear-Weboberfläche: Firmware-Update mit dem Gluon-factory (.chk) [geprüft: Commit 0cbd2c7]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 0cbd2c74d0c9f41d07757907226e5cfeaf16e06a
+- **Detail-Anleitung:** anleitungen/de/netgear-ex6130.md
+- **Werte für die Anleitung:** web_moeglich = True
 
 #### netgear-eax12
 
@@ -8120,6 +8140,8 @@ NETGEAR EAX12 (Aliase EAX11 v2, EAX15 v2) · ramips-mt7621 · K0
 - **Rückweg zur Herstellerfirmware:** Stock-Firmware per TFTP/NMRP an den Bootloader [geprüft: Commit 32ea8a9]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 32ea8a9a7e4b1319607ae398e9bf7d8e3c4cd756
+- **Detail-Anleitung:** anleitungen/de/netgear-eax12.md
+- **Werte für die Anleitung:** web_moeglich = True
 
 #### netgear-ex6150
 
@@ -8154,7 +8176,8 @@ NETGEAR EX6150 (v1) · ramips-mt7621 · K0
 - **Notweg:** [einfacher, schlechter belegt] Netgear-Weboberfläche unter 192.168.1.250 mit dem Gluon-factory (.chk) [geprüft: Commit 3f019bf]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 3f019bf96cdf52668750f67cb139fa1b5c538f0b
-- **Detail-Anleitung:** https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-wi-fi-range-extender-ex6150-v2/
+- **Detail-Anleitung:** anleitungen/de/netgear-ex6150.md; https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-wi-fi-range-extender-ex6150-v2/
+- **Werte für die Anleitung:** web_moeglich = True
 
 #### netgear-r6220
 
@@ -8188,7 +8211,8 @@ NETGEAR R6220 · ramips-mt7621 · K0
 - **Rückweg zur Herstellerfirmware:** nmrpflash mit der Netgear-Firmware (.img) [geprüft: Commit 38bee61]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 38bee61dab029a7608088f64da71c19cfc8cf267
-- **Detail-Anleitung:** https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-r6220/
+- **Detail-Anleitung:** anleitungen/de/netgear-r6220.md; https://freifunk-ingolstadt.de/installationsanleitung-für-netgear-r6220/
+- **Werte für die Anleitung:** web_moeglich = True
 
 #### netgear-r6260
 
@@ -8225,6 +8249,8 @@ NETGEAR R6260 · ramips-mt7621 · K0
 - **Rückweg zur Herstellerfirmware:** nmrpflash mit dem Netgear-Image [abgeleitet: Wiki toh/netgear/r6260]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 6cea9688af4a05f407266ed1de5a739e5c984b8c (ohne Installationstext)
+- **Detail-Anleitung:** anleitungen/de/netgear-r6260.md
+- **Werte für die Anleitung:** web_moeglich = True; anschluss = LAN 1 (die Buchse neben WAN), nicht WAN
 
 #### netgear-wax202
 
@@ -8258,13 +8284,14 @@ NETGEAR WAX202 · ramips-mt7621 · K0
 - **Rückweg zur Herstellerfirmware:** Stock-Firmware per TFTP/NMRP an den Bootloader [geprüft: Commit 0f068e7]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 0f068e7c4a83bcbf20c4e52a5f8a3f1fe2af2246
-- **Detail-Anleitung:** https://openwrt.org/toh/netgear/wax202#oem_easy_installation
+- **Detail-Anleitung:** anleitungen/de/netgear-wax202.md; https://openwrt.org/toh/netgear/wax202#oem_easy_installation
+- **Werte für die Anleitung:** web_moeglich = True
 
 #### netgear-wndr3700-v5
 
 NETGEAR WNDR3700 v5 (Gluon: broken, "untested") · ramips-mt7621 · K0+
 
-- **Weg ab Werk:** OpenWrt-factory.img per nmrpflash, danach Gluon-sysupgrade [geprüft]
+- **Weg ab Werk:** OpenWrt-factory.img per nmrpflash, danach Gluon-sysupgrade [geprüft]; Zwischenstufe OpenWrt 24.10.8-factory.img per nmrpflash [geprüft: OpenWrt 24.10.8 ramips/mt7621, factory.img in sha256sums gelistet und per HEAD erreichbar, 15.10.2026]
 - **Schritte (Normalweg):**
   1. Typenschild auf 'v5' prüfen, v1 bis v4 sind ganz andere Geräte [abgeleitet: Commit cb049e7 nennt MT7621S für v5]
   2. Rechner per LAN-Kabel direkt an den LAN-Port des Geräts (oft blau, bei mehreren den mit '1') [geprüft: nmrpflash-README]
@@ -8294,6 +8321,8 @@ NETGEAR WNDR3700 v5 (Gluon: broken, "untested") · ramips-mt7621 · K0+
 - **Gluon-RAMpe passt:** ja: dauerhafte RAMpe als Sercomm-factory.img per nmrpflash statt OpenWrt-Zwischenschritt [abgeleitet]
 - **Gluon-RAMpe-Rezept:** devices/netgear-wndr3700-v5.sh: `-factory.img` (Sercomm), broken = false für diesen Bau; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** cb049e71cdc08e17f664403a0ef970c480ae5c4a + 2fdd02cc7c3516c2cce2ace2c7b539e0821ecbe8 (factory-Image)
+- **Detail-Anleitung:** anleitungen/de/netgear-wndr3700-v5.md
+- **Werte für die Anleitung:** zwischen_datei = openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img
 
 #### netgear-r6020
 
@@ -8329,6 +8358,8 @@ NETGEAR R6020 · ramips-mt76x8 · K0
 - **Notweg:** [Alternative] keiner: die Stock-Weboberfläche nimmt das Image nicht, nmrpflash ist nötig [geprüft: Commit]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** edbc8e5512dccc2e0b6925258e34b3f21d66679c
+- **Detail-Anleitung:** anleitungen/de/netgear-r6020.md
+- **Werte für die Anleitung:** anschluss = die LAN-Buchse 1; nach_neustart = Schalte das Gerät einmal aus und wieder ein; dann startet es mit der neuen Firmware.; web_nicht = True
 
 #### netgear-r6120
 
@@ -8361,7 +8392,8 @@ NETGEAR R6120 · ramips-mt76x8 · K0
 - **Notweg:** [Alternative] keiner: Web-UI laut Commit nicht [geprüft]
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 5543d63fc84e64be83afaa4241369a07797f041b
-- **Detail-Anleitung:** https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-r6120/
+- **Detail-Anleitung:** anleitungen/de/netgear-r6120.md; https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-r6120/
+- **Werte für die Anleitung:** web_nicht = True
 
 ### Familie `ocedo-tftp`
 

@@ -261,6 +261,7 @@ Wie die D-Link-Geräte geflasht werden, steht in der Router-Werkstatt unter
 
 ## Stand 15.10.2026: alle Rezepte gebaut
 
+- **Veröffentlicht** (adorfer, 15.10.2026): https://download.ffnef.de/other/Gluon-Installer-RAMpe/
 - **67 Rezepte, 85 Dateien** `out/gluon-rampe-20261015-*`, alle 14 Bauläufe
   ohne Fehler und ohne "nichts eingesammelt". Liste je Gerät mit Art, Größe
   und SHA256: `out/LISTE-20261015.md` (geht mit den Images auf den
