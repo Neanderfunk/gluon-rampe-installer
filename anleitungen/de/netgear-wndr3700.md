@@ -8,8 +8,8 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: []
-daten_stand: lokal
-vorlage_stand: 393f161
+daten_stand: 154f6f8
+vorlage_stand: bfd0482
 ---
 
 # NETGEAR WNDR3700 v1: Freifunk-Firmware installieren

@@ -8,8 +8,8 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: []
-daten_stand: lokal
-vorlage_stand: 393f161
+daten_stand: 154f6f8
+vorlage_stand: bfd0482
 ---
 
 # Buffalo WZR-HP-G300NH (RTL8366S switch): Freifunk-Firmware installieren

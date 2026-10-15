@@ -8,8 +8,8 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [tftp-server]
-daten_stand: lokal
-vorlage_stand: 393f161
+daten_stand: 154f6f8
+vorlage_stand: bfd0482
 ---
 
 # Zyxel NBG6716: Freifunk-Firmware installieren

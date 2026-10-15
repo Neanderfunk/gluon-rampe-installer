@@ -8,7 +8,7 @@ sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip]
-daten_stand: lokal
+daten_stand: 154f6f8
 vorlage_stand: 393f161
 ---
 

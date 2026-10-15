@@ -8,8 +8,8 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: lokal
-vorlage_stand: 393f161
+daten_stand: 154f6f8
+vorlage_stand: bfd0482
 ---
 
 # TP-Link Archer C58 v1: Freifunk-Firmware installieren
@@ -102,8 +102,9 @@ Image. Der C59 hat einen USB-Anschluss, der C58 nicht.
 
 ## Notfall: Firmware per TFTP
 
-Startet das Gerät nach einem abgebrochenen Update nicht mehr, kann es sich
-eine Firmware selbst von deinem Rechner holen. Dafür brauchst du einen
+Startet das Gerät nicht mehr richtig, etwa nach einem abgebrochenen Update
+oder weil es in einer Startschleife hängt, kann es sich eine Firmware selbst
+von deinem Rechner holen. Dafür brauchst du einen
 TFTP-Server ([TFTP-Server einrichten](grundlagen/tftp-server.md)) und eine
 feste Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
 

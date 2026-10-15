@@ -8,8 +8,8 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: []
-daten_stand: lokal
-vorlage_stand: 393f161
+daten_stand: 154f6f8
+vorlage_stand: bfd0482
 ---
 
 # TP-Link TL-WDR4900 v1: Freifunk-Firmware installieren

@@ -8,7 +8,7 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [nmrpflash]
-daten_stand: lokal
+daten_stand: 154f6f8
 vorlage_stand: 393f161
 ---
 
