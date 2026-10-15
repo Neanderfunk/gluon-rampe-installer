@@ -31,6 +31,8 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
   optional
     region               ganzer Satz zur Region, z. B. "Nimm die Firmware für
                          die EU-Variante."
+    stock_getestet       Name der TP-Link-Firmware, mit der es bei uns lief,
+                         z. B. "Archer C50(EU)_V4_250117"
     sicherheit, sicherheit_hinweis   siehe _status.md
 
   Variante weg = "tftp-voll" (Archer C20 v1, Archer C2 v1; MT7620): Nur die
@@ -76,6 +78,8 @@ mit einer halben Stunde.
 - die **TP-Link-Firmware** für genau dieses Modell und diese Version, von der
   [Download-Seite bei TP-Link]({{ w.stock_url }}).
   {%- if w.get("region") %} {{ w.get("region") }}{% endif %}
+  {%- if w.get("stock_getestet") %} Bei uns hat es mit der TP-Link-Firmware
+  `{{ w.get("stock_getestet") }}` geklappt.{% endif %}
 - die Freifunk-Firmware deiner Community für den {{ modell }}: im
   Firmware-Selector unter "Wähle Deine Installationsart" der Knopf
   **Upgrade** (die Datei endet auf `-sysupgrade.bin`). **Nicht allein
@@ -224,6 +228,8 @@ Stunde.
   [Download-Seite bei TP-Link]({{ w.stock_url }}).
   {%- if w.get("stock_hinweis") %} {{ w.get("stock_hinweis") }}{% endif %}
   {%- if w.get("region") %} {{ w.get("region") }}{% endif %}
+  {%- if w.get("stock_getestet") %} Bei uns hat es mit der TP-Link-Firmware
+  `{{ w.get("stock_getestet") }}` geklappt.{% endif %}
 - die Freifunk-Firmware deiner Community für den {{ modell }}: im
   Firmware-Selector unter "Wähle Deine Installationsart" der Knopf
   **Upgrade** (die Datei endet auf `-sysupgrade.bin`). **Nicht allein
