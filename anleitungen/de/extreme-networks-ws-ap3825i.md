@@ -8,7 +8,7 @@ sprache: de
 stufe: Werkstatt
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 96d57cf
+daten_stand: a638c45
 vorlage_stand: 00558b3
 ---
 
@@ -184,6 +184,7 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Commit 7e61482 (Schritte (Normalweg), Taste und Zeitpunkt, Zugang)
 - geprüft: Commit, Wiki toh:extreme_networks:ws-ap3825i (Schritte (Normalweg), Adressen, Programm)
 - geprüft: Neanderfunk-Notiz (Dauer)
+- geprüft: OpenWrt-Issue 17152 (Gluon-RAMpe passt)
 - geprüft: OpenWrt-Issue 17152 (offen): adorfer 29.03.2025 "broken in 24.x and 23, tested with 4 devices … 22.03.0 works", jensgraef 15.05.2025 "sysupgrade of openwrt-24.10 without any problems", jbusuttil 03.09.2026 22.03.0, dann sysupgrade; Datei archive.openwrt.org 22.03.0, SHA256 fc9a27d9… laut sha256sums, 6.879.964 Byte (Bedingung an die Herstellerfirmware)
 - geprüft: Wiki toh:extreme_networks:ws-ap3825i (Schritte (Normalweg), Anschluss, Datei, Dauer, Fehlerbild)
 - geprüft: Wiki toh:extreme_networks:ws-ap3825i, Titel (Typenschild/Verwechslung)

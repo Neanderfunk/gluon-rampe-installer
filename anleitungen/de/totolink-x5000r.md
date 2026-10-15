@@ -8,7 +8,7 @@ sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [browser-https, feste-ip]
-daten_stand: 96d57cf
+daten_stand: a638c45
 vorlage_stand: 565e893
 ---
 
