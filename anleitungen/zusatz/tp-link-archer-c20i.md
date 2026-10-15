@@ -17,10 +17,17 @@ dann mit Schritt 1 anfangen.
 Nicht verwechseln mit dem Archer C20 v1 oder dem Archer C2, das sind andere
 Geräte.
 
-## Notfall: TFTP
+## Die Rettungsdatei vorbereiten
 
-Hängt der Router in einer Startschleife, holt er sich laut OpenWrt beim
-Einschalten mit gedrückter Reset-Taste eine Datei namens
-`ArcherC20iV1_tp_recovery.bin` von einem TFTP-Server mit der Adresse
-`192.168.0.66` ([TFTP-Server einrichten](grundlagen/tftp-server.md),
-[Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
+Für den TFTP-Notfall-Weg (oben) braucht der C20i die **TP-Link-Firmware ohne
+ihren ersten 512-Byte-Block**, umbenannt in `ArcherC20iV1_tp_recovery.bin`.
+So haben wir unseren C20i aus der Startschleife geholt. Unter Linux oder
+macOS im Ordner mit der TP-Link-Datei:
+
+```sh
+dd if=<TP-Link-Firmware>.bin of=ArcherC20iV1_tp_recovery.bin bs=512 skip=1
+```
+
+Die fertige Datei war bei uns 8.126.464 Bytes groß. Danach läuft wieder die
+TP-Link-Firmware; dann wie oben erst Build 140709, dann die
+Freifunk-Firmware.
