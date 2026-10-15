@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AVM FRITZ!Box 7360 v2: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="avm-fritz-box-7360-v2">
+<meta name="anleitung:modell" content="AVM FRITZ!Box 7360 v2">
+<meta name="anleitung:anzeige" content="AVM FRITZ!Box 7360 v2">
+<meta name="anleitung:familie" content="avm-eva-ftp">
+<meta name="anleitung:gluon_broken" content="false">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="mit Werkzeug">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="avm-eva, feste-ip">
+<meta name="anleitung:daten_stand" content="c45cd1b">
+<meta name="anleitung:vorlage_stand" content="869501c">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<h1>AVM FRITZ!Box 7360 v2: Freifunk-Firmware installieren</h1>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Wichtige Schritte haben wir von
+ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
+aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+beschrieben.</p>
+<p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+Anleitung für alle nach dir besser:</p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20AVM%20FRITZ%21Box%207360%20v2">projekt@neanderfunk.de</a></p>
+</blockquote>
+<p>AVM-Geräte haben einen Bootloader, der in den ersten Sekunden nach dem
+Einschalten Verbindungen per FTP annimmt. Darüber kommt die
+Freifunk-Firmware direkt in den Speicher. Eine Taste brauchst du nicht, nur
+das richtige Timing. Wie der Bootloader funktioniert, steht unter
+<a href="grundlagen/avm-eva.html">Der Bootloader von AVM (EVA)</a>.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>das Gerät mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
+Netzwerkkabel; ein einfacher Switch dazwischen hilft beim Timing</li>
+<li>Python 3 und das Programm
+<a href="https://github.com/freifunk-darmstadt/fritz-tools">fritzflash.py</a></li>
+<li>die Freifunk-Firmware deiner Community für dieses Gerät, und zwar das <strong>sysupgrade</strong>-Image. Das ist hier richtig, auch
+für die erste Installation.</li>
+</ul>
+<h2>Vorher prüfen</h2>
+<p>Die 7360 gibt es als SL, v1 und v2, und auf dem Aufkleber steht das nicht
+immer. Entscheidend ist die Hardware-Kennung: <code>181</code> (SL) und <code>183</code> (v1)
+nehmen das Image für die 7360 SL, <code>196</code> (v2) das für die
+<a href="avm-fritz-box-7360-sl.html">7360 v2</a>. fritzflash.py liest die Kennung selbst und wählt
+passend; von Hand fragst du sie im Bootloader mit <code>quote GETENV HWRevision</code>
+ab (<a href="grundlagen/avm-eva.html">Der Bootloader von AVM (EVA)</a>). Diese Anleitung
+ist für <strong>v2</strong>.</p>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Rechner vorbereiten.</strong> Feste Adresse <code>192.168.178.2</code>, Netzmaske
+<code>255.255.255.0</code>, Gateway <code>192.168.178.1</code>, kein DNS
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>). WLAN am Rechner
+aus.</p>
+</li>
+<li>
+<p><strong>Verbinden.</strong> Kabel vom Rechner an die <strong>gelbe LAN-Buchse</strong> der Box
+(wenn vorhanden über einen einfachen Switch). Die Box bleibt vorerst aus
+bzw. läuft noch, das ist egal.</p>
+</li>
+<li>
+<p><strong>fritzflash.py starten.</strong> Leg das Image in denselben Ordner wie
+fritzflash.py und starte im Terminal:</p>
+<pre><code>python3 fritzflash.py --image &lt;Freifunk-Image&gt;
+</code></pre>
+</li>
+<li>
+<p><strong>Box neu starten, wenn das Programm es sagt.</strong> Enter drücken, dann den
+Strom an der Box ziehen und wieder einstecken. fritzflash.py sucht die Box
+und schreibt die Firmware.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Während des Schreibens leuchtet die rote Info-LED. Das ist
+normal. <strong>Strom nicht ziehen.</strong> Das dauert bis zu 2 Minuten.
+Danach startet die Box neu.</p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Stell den Rechner wieder auf &quot;automatisch&quot;. Nach 2 bis 5
+Minuten startet die Freifunk-Firmware deiner Community: je nach Community
+zuerst mit einer Einrichtungsseite unter <code>http://192.168.1.1</code> oder gleich
+im Betrieb.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>fritzflash.py meldet am Ende, dass das Schreiben geklappt hat.</li>
+<li>Nach dem Neustart meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Die Box antwortet nicht.</strong> Das Zeitfenster ist kurz. Einen einfachen
+Switch zwischen Box und Rechner stecken, WLAN am Rechner aus, und noch
+einmal: Strom ziehen, einstecken, sofort verbinden.</li>
+<li><strong>An LAN 1 klappt die Verbindung nicht.</strong> Laut OpenWrt: LAN 3 versuchen.</li>
+</ul>
+<h2>Zurück zu FRITZ!OS</h2>
+<p>AVM hat für jedes Gerät ein Wiederherstellungs-Programm (für Windows), das
+die Original-Firmware zurückspielt. Es liegt auf dem Download-Server von AVM
+im Ordner des Geräts unter &quot;recover&quot;. Geräte von Providern (zum Beispiel
+1&amp;1) verweigern das eventuell; dann vorher per FTP
+<code>quote UNSETENV provider</code> (<a href="grundlagen/avm-eva.html">Der Bootloader von AVM (EVA)</a>).</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet: OpenWrt-Wiki &quot;AVM recovery tool&quot; (Rückweg zur Herstellerfirmware)</li>
+<li>abgeleitet: Wiki 4020/3370 (Programm)</li>
+<li>abgeleitet: Wiki 7360 v2 (Schritte (Normalweg), Typenschild/Verwechslung, Fehlerbild)</li>
+<li>abgeleitet: dasselbe Wiki (Rückweg zur Herstellerfirmware)</li>
+<li>geprüft (Weg ab Werk, Schritte (Normalweg))</li>
+<li>geprüft: Commit (Schritte (Normalweg), Dauer)</li>
+<li>geprüft: Commit 78bebe68 (Schritte (Normalweg), Sichtbare Zeichen)</li>
+<li>geprüft: Commits, fritz-tools/fritzflash.py (Schritte (Normalweg), Taste und Zeitpunkt)</li>
+<li>geprüft: fritz-tools-Doku (Schritte (Normalweg), Anschluss, Programm)</li>
+<li>geprüft: fritz-tools/fritzflash.py (Adressen, Dauer)</li>
+<li>geprüft: fritz-tools/fritzflash.py, Wiki toh:avm:avm_fritz_wlan_repeater_1750e (Anschluss)</li>
+<li>geprüft: fritz-tools/fritzflash.py; abgeleitet: Wiki (Dauer)</li>
+<li>geprüft: fritz-tools/fritzflash.py; geprüft: fritz-tools-Doku (Schritte (Normalweg))</li>
+<li>Geräteeintrag: 78bebe680f67e8967c2baad8a5c07035d431f9d5</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

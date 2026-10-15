@@ -8,7 +8,7 @@ sprache: de
 stufe: einfach
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: 154f6f8
+daten_stand: c45cd1b
 vorlage_stand: bfd0482
 ---
 

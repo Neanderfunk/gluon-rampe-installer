@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Der Bootloader von AVM (EVA)</title>
+<meta name="anleitung:grundlage" content="avm-eva">
+<link rel="stylesheet" href="../../anleitung.css">
+</head>
+<body>
+<hr />
+<h2>thema: avm-eva
+sprache: de
+status: ungeprüft</h2>
+<blockquote>
+<p><strong>Noch nicht gegengelesen.</strong> Diese Grundlagen-Seite ist ein Entwurf.</p>
+</blockquote>
+<h1>Der Bootloader von AVM (EVA)</h1>
+<p>FRITZ!Boxen und FRITZ!Repeater von AVM haben einen Bootloader namens <strong>EVA</strong>
+(bei älteren Geräten ADAM2). In den ersten Sekunden nach dem Einschalten
+nimmt er Verbindungen per <strong>FTP</strong> an. Darüber lässt sich eine Firmware in den
+Speicher schreiben oder eine Firmware direkt in den Arbeitsspeicher laden.
+Eine Taste braucht es dafür nicht, nur das richtige Timing.</p>
+<h2>Rechner vorbereiten</h2>
+<ul>
+<li><strong>Feste Adresse:</strong> Die Box ist im Bootloader unter <code>192.168.178.1</code>
+erreichbar. Der Rechner bekommt eine feste Adresse im selben Netz, zum
+Beispiel <code>192.168.178.2</code>, Netzmaske <code>255.255.255.0</code>, Gateway
+<code>192.168.178.1</code>, kein DNS (<a href="feste-ip.html">Feste IP-Adresse einstellen</a>).</li>
+<li><strong>WLAN am Rechner aus,</strong> nur das eine Kabel zur Box.</li>
+<li><strong>Ein einfacher Switch</strong> zwischen Box und Rechner hilft: Ohne ihn baut der
+Rechner die Verbindung nach dem Einschalten der Box oft erst auf, wenn das
+Zeitfenster schon vorbei ist.</li>
+</ul>
+<h2>Das Zeitfenster</h2>
+<p>Strom an der Box ziehen, wieder einstecken, und <strong>sofort</strong> verbinden. Das
+Fenster ist nur wenige Sekunden offen; die Angaben schwanken zwischen etwa 4
+und 10 Sekunden. Verpasst? Strom ziehen und noch einmal. Die Programme unten
+probieren es von selbst immer wieder, bis die Box antwortet.</p>
+<h2>Mit fritzflash.py (Freifunk Darmstadt)</h2>
+<p>Für viele Geräte gibt es ein fertiges Programm:
+<a href="https://github.com/freifunk-darmstadt/fritz-tools">fritzflash.py</a> mit
+<a href="https://fritz-tools.readthedocs.io/de/latest/">Anleitung</a>. Es braucht
+Python 3 (Windows, macOS, Linux), sucht die Box, wählt das Image passend zum
+Gerät und schreibt es.</p>
+<pre><code>python3 fritzflash.py --image &lt;Freifunk-Image&gt;
+</code></pre>
+<p>Das Programm sagt dann, was zu tun ist: Enter drücken, Strom an der Box
+ziehen und wieder einstecken. Während des Schreibens leuchtet die rote
+Info-LED. Das ist normal; jetzt nicht den Strom ziehen.</p>
+<h2>Von Hand per FTP (Referenz)</h2>
+<p>Unter Linux oder macOS mit dem Kommandozeilen-<code>ftp</code>, direkt nach dem
+Einschalten:</p>
+<pre><code>ftp 192.168.178.1
+</code></pre>
+<p>Benutzer <code>adam2</code>, Passwort <code>adam2</code>. Danach die Befehle aus der
+Geräteanleitung, zum Beispiel:</p>
+<pre><code>binary
+passive
+quote MEDIA FLSH
+put &lt;Datei&gt; mtd1
+quote REBOOT
+</code></pre>
+<p>Nützliche Abfragen:</p>
+<ul>
+<li><code>quote GETENV HWRevision</code>: die Hardware-Kennung, an der man Varianten
+unterscheidet</li>
+<li><code>quote GETENV urlader-version</code>: die Version des Bootloaders</li>
+<li><code>quote SETENV linux_fs_start 0</code>: welcher der beiden Firmware-Speicher
+beim nächsten Start benutzt wird (siehe Geräteanleitung)</li>
+</ul>
+<p>Das <code>ftp</code> von Windows kann kein &quot;passive&quot; und taugt deshalb nicht zum
+Hochladen; unter Windows nimm fritzflash.py.</p>
+<h2>Einen einzelnen Befehl schicken</h2>
+<p>Wo nur ein Befehl nötig ist, geht es auch mit Python, auf jedem System
+gleich:</p>
+<pre><code>python3 -c &quot;from ftplib import FTP; f=FTP('192.168.178.1','adam2','adam2'); print(f.sendcmd('SETENV linux_fs_start 0'))&quot;
+</code></pre>
+<p>Kommt eine Antwort mit <code>200</code>, hat es geklappt.</p>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

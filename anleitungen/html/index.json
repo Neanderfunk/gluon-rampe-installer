@@ -1,5 +1,103 @@
 [
  {
+  "gluon_name": "avm-fritz-box-3370-rev-2-hynix-nand",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-3370-rev-2-hynix-nand.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "avm-fritz-box-3370-rev-2-micron-nand",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-3370-rev-2-micron-nand.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "avm-fritz-box-3390",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-3390.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "avm-fritz-box-4020",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-4020.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "avm-fritz-box-4040",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-4040.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "avm-fritz-box-7312",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-7312.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "avm-fritz-box-7360-sl",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-7360-sl.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "avm-fritz-box-7360-v2",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-7360-v2.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "avm-fritz-box-7362-sl",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-7362-sl.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "avm-fritz-box-7412",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-7412.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "avm-fritz-box-7430",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-7430.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "avm-fritz-wlan-repeater-1750e",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-wlan-repeater-1750e.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "avm-fritz-wlan-repeater-300e",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-wlan-repeater-300e.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "avm-fritz-wlan-repeater-450e",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-wlan-repeater-450e.html",
+  "status": "ungeprüft",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "buffalo-wzr-600dhp",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/buffalo-wzr-600dhp.html",
   "status": "ungeprüft",

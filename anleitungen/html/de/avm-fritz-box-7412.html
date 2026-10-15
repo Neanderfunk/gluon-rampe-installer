@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AVM FRITZ!Box 7412: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="avm-fritz-box-7412">
+<meta name="anleitung:modell" content="AVM FRITZ!Box 7412">
+<meta name="anleitung:anzeige" content="AVM FRITZ!Box 7412">
+<meta name="anleitung:familie" content="avm-eva-ramboot">
+<meta name="anleitung:gluon_broken" content="false">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="mit Werkzeug">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:rampe_image" content="gluon-rampe-20261015-avm-fritz-box-7412-initramfs-kernel.bin">
+<meta name="anleitung:grundlagen" content="avm-eva, browser-https, feste-ip">
+<meta name="anleitung:daten_stand" content="c45cd1b">
+<meta name="anleitung:vorlage_stand" content="869501c">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<h1>AVM FRITZ!Box 7412: Freifunk-Firmware installieren</h1>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Wichtige Schritte haben wir von
+ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
+aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+beschrieben.</p>
+<p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+Anleitung für alle nach dir besser:</p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20AVM%20FRITZ%21Box%207412">projekt@neanderfunk.de</a></p>
+</blockquote>
+<p>Der Bootloader von AVM nimmt in den ersten Sekunden nach dem Einschalten
+Verbindungen per FTP an (<a href="grundlagen/avm-eva.html">Der Bootloader von AVM (EVA)</a>).
+Darüber kommt zuerst die <strong>Gluon-RAMpe</strong> in den Arbeitsspeicher: eine kleine
+Firmware, die nur eins kann, nämlich die Freifunk-Firmware deiner Community
+annehmen. Die lädst du dann im Browser hoch.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>das Gerät mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
+Netzwerkkabel; ein einfacher Switch dazwischen hilft beim Timing</li>
+<li>Python 3 und das kleine Programm
+<a href="https://raw.githubusercontent.com/openwrt/openwrt/a1ea57bd050c172fdc2b851824ebd9782aafb055/scripts/flashing/eva_ramboot.py">eva_ramboot.py</a> von OpenWrt</li>
+<li>die RAMpe für dieses Gerät:
+<a href="https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7412-initramfs-kernel.bin">gluon-rampe-20261015-avm-fritz-box-7412-initramfs-kernel.bin</a></li>
+<li>die Freifunk-Firmware deiner Community für dieses Gerät, und zwar das
+<strong>sysupgrade</strong>-Image</li>
+</ul>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Rechner vorbereiten.</strong> Feste Adresse <code>192.168.178.10</code>, Netzmaske
+<code>255.255.255.0</code> (<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).
+WLAN am Rechner aus. Leg eva_ramboot.py und die RAMpe in einen Ordner und
+öffne dort ein Terminal.</p>
+</li>
+<li>
+<p><strong>Verbinden.</strong> Kabel vom Rechner an eine LAN-Buchse der Box, wenn
+vorhanden über einen einfachen Switch.</p>
+</li>
+<li>
+<p><strong>Den richtigen Firmware-Speicher wählen.</strong> Die Box hat zwei Speicher für
+die Firmware. Damit die Freifunk-Firmware später auch startet, muss der
+erste gewählt sein. Strom an der Box ziehen, wieder einstecken und
+<strong>sofort</strong>:</p>
+<pre><code>python3 -c &quot;from ftplib import FTP; f=FTP('192.168.178.1','adam2','adam2'); print(f.sendcmd('SETENV linux_fs_start 0'))&quot;
+</code></pre>
+<p>Kommt eine Fehlermeldung, war das Zeitfenster vorbei: Strom ziehen und
+noch einmal. Geklappt hat es, wenn eine Antwort mit <code>200</code> kommt.</p>
+</li>
+<li>
+<p><strong>RAMpe laden.</strong> Strom an der Box noch einmal ziehen, wieder einstecken
+und nach wenigen Sekunden:</p>
+<pre><code>python3 eva_ramboot.py 192.168.178.1 gluon-rampe-20261015-avm-fritz-box-7412-initramfs-kernel.bin
+</code></pre>
+<p>Das Programm zeigt, was es mit der Box bespricht, und endet von selbst.
+Kommt eine Fehlermeldung, Strom ziehen und noch einmal.</p>
+</li>
+<li>
+<p><strong>Die RAMpe.</strong> Die Box startet jetzt die RAMpe aus dem Arbeitsspeicher. Stell den Rechner auf
+&quot;automatisch&quot; und öffne nach etwa einer Minute <code>http://192.168.1.1</code>. Es
+erscheint die Seite &quot;Firmware aktualisieren&quot;.</p>
+<p><img src="../bilder/allgemein/rampe-seite.png" alt="Die Seite der RAMpe: &quot;Firmware aktualisieren&quot; mit Feld für die Datei und Knopf &quot;Datei hochladen&quot;" /></p>
+<p>Die RAMpe läuft nur im Arbeitsspeicher. Geht der Strom aus, ist sie weg:
+dann wieder ab Schritt 4.</p>
+</li>
+<li>
+<p><strong>Freifunk-Firmware hochladen.</strong> Wähl das sysupgrade-Image deiner
+Community und klick &quot;Datei hochladen&quot;. Die RAMpe zeigt die Prüfsumme
+(SHA256); vergleich sie mit der Angabe deiner Community und klick
+&quot;Fortfahren&quot;.</p>
+<p><img src="../bilder/allgemein/rampe-pruefsumme.png" alt="Die RAMpe zeigt Prüfsumme und Größe der Datei, darunter &quot;Abbrechen&quot; und &quot;Fortfahren&quot;" /></p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Die Box schreibt die Firmware und startet neu, <strong>Strom nicht
+ziehen</strong>. Der erste Start kann etwas länger dauern. Danach startet die
+Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
+Einrichtungsseite unter <code>http://192.168.1.1</code> oder gleich im Betrieb.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>Schritt 3 antwortet mit <code>200</code>.</li>
+<li>Nach Schritt 4 erscheint unter <code>http://192.168.1.1</code> die Seite der RAMpe.</li>
+<li>Nach Schritt 7 meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Die Box antwortet nicht.</strong> Das Zeitfenster ist kurz. Einen einfachen
+Switch zwischen Box und Rechner stecken, WLAN am Rechner aus, und noch
+einmal.</li>
+<li><strong>Die Box antwortet nicht unter <code>192.168.178.1</code>.</strong> Nach einem
+Firmware-Update oder einer Wiederherstellung hört sie manchmal auf
+<code>169.254.120.1</code>. Dann diese Adresse in den Befehlen verwenden und den
+Rechner auf eine Adresse im selben Netz stellen.</li>
+<li><strong>Nach Schritt 7 startet wieder FRITZ!OS.</strong> Dann stand der
+Firmware-Speicher noch auf dem zweiten. Schritt 3 wiederholen, dann ab
+Schritt 4 noch einmal.</li>
+<li><strong>Unter <code>http://192.168.1.1</code> kommt eine Zertifikatswarnung.</strong> Siehe
+<a href="grundlagen/browser-https.html">Browser macht https daraus</a>.</li>
+</ul>
+<h2>Zurück zu FRITZ!OS</h2>
+<p>AVM hat für jedes Gerät ein Wiederherstellungs-Programm (für Windows), das
+die Original-Firmware zurückspielt. Es liegt auf dem Download-Server von AVM
+im Ordner des Geräts unter &quot;recover&quot;. Geräte von Providern (zum Beispiel
+1&amp;1) verweigern das eventuell; dann vorher per FTP
+<code>quote UNSETENV provider</code> (<a href="grundlagen/avm-eva.html">Der Bootloader von AVM (EVA)</a>).</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Dauer, Gluon-RAMpe passt)</li>
+<li>abgeleitet: OpenWrt-Wiki &quot;AVM recovery tool&quot; (Rückweg zur Herstellerfirmware)</li>
+<li>abgeleitet: Wiki 7362 SL (Anschluss)</li>
+<li>abgeleitet: Wiki 7412 (Fehlerbild)</li>
+<li>abgeleitet: dasselbe Wiki (Rückweg zur Herstellerfirmware)</li>
+<li>geprüft (Weg ab Werk, Schritte (Normalweg))</li>
+<li>geprüft: Commit (Dauer)</li>
+<li>geprüft: Commit 20f48c8a (Schritte (Normalweg), Bedingung an die Herstellerfirmware)</li>
+<li>geprüft: Commit 7412/7430 (Adressen)</li>
+<li>geprüft: Commit, Skript am Pin (Programm)</li>
+<li>geprüft: Commit; config/Config-images.in am Pin (Datei)</li>
+<li>geprüft: Commits 7412/7430 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)</li>
+<li>geprüft: Commits 7412/7430/7362 SL (Schritte (Normalweg), Taste und Zeitpunkt)</li>
+<li>geprüft: Commits 7412/7430; abgeleitet: Wiki 7362 SL (Schritte (Normalweg), Adressen)</li>
+<li>geprüft; abgeleitet (Schritte (Normalweg))</li>
+<li>geprüft; geprüft: Commit; config/Config-images.in am Pin (Schritte (Normalweg))</li>
+<li>Geräteeintrag: 20f48c8ae334f8502e756282995cc84d89fa81c1</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

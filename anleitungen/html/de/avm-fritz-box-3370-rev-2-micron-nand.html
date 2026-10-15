@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AVM FRITZ!Box 3370 Rev. 2, Micron-NAND: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="avm-fritz-box-3370-rev-2-micron-nand">
+<meta name="anleitung:modell" content="AVM FRITZ!Box 3370 Rev. 2, Micron-NAND (Gluon: broken)">
+<meta name="anleitung:anzeige" content="AVM FRITZ!Box 3370 Rev. 2, Micron-NAND">
+<meta name="anleitung:familie" content="avm-eva-ftp">
+<meta name="anleitung:gluon_broken" content="true">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="mit Werkzeug">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="avm-eva, feste-ip">
+<meta name="anleitung:daten_stand" content="c45cd1b">
+<meta name="anleitung:vorlage_stand" content="869501c">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<h1>AVM FRITZ!Box 3370 Rev. 2, Micron-NAND: Freifunk-Firmware installieren</h1>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Wichtige Schritte haben wir von
+ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
+aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+beschrieben.
+Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
+getestet (&quot;broken&quot;); nicht jede Community bietet sie an.</p>
+<p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+Anleitung für alle nach dir besser:</p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20AVM%20FRITZ%21Box%203370%20Rev.%202%2C%20Micron-NAND">projekt@neanderfunk.de</a></p>
+</blockquote>
+<p>AVM-Geräte haben einen Bootloader, der in den ersten Sekunden nach dem
+Einschalten Verbindungen per FTP annimmt. Darüber kommt die
+Freifunk-Firmware direkt in den Speicher. Eine Taste brauchst du nicht, nur
+das richtige Timing. Wie der Bootloader funktioniert, steht unter
+<a href="grundlagen/avm-eva.html">Der Bootloader von AVM (EVA)</a>.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>das Gerät mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
+Netzwerkkabel; ein einfacher Switch dazwischen hilft beim Timing</li>
+<li>einen Rechner mit Linux oder macOS (für <code>ftp</code>)</li>
+<li>die Freifunk-Firmware deiner Community für dieses Gerät, die Dateien, die in Schritt 4 genannt sind</li>
+</ul>
+<h2>Vorher prüfen</h2>
+<ul>
+<li>Die 3370 Rev. 2 gibt es mit zwei verschiedenen Speicherchips (Hynix und
+Micron), und jede Sorte braucht ihr eigenes Image. <strong>Von außen sieht man
+das nicht</strong>, nur nach dem Öffnen. Wer nicht öffnen will: einfach mit einer
+Sorte anfangen. Startet die Box danach immer wieder neu, war es die
+falsche; dann dasselbe mit der anderen. Laut OpenWrt geht die Box dabei
+nicht kaputt. Ein Chip von ST-Micro (512 MB) läuft mit dem Hynix-Image.</li>
+<li>Nur ab Hardware-Revision 2 (<code>quote GETENV HWSubRevision</code>).</li>
+<li>Bei Bootloader-Version 2186 (<code>quote GETENV urlader-version</code>) startet die
+Box nach 30 Sekunden von selbst neu. Dann muss alles in diesen 30 Sekunden
+erledigt sein; also die Befehle vorher bereitlegen.</li>
+<li>fritzflash.py kann dieses Gerät nicht, hier geht es von Hand.</li>
+</ul>
+<p>Diese Anleitung ist für <strong>Micron</strong>; für Hynix gibt es eine <a href="avm-fritz-box-3370-rev-2-hynix-nand.html">eigene</a>.</p>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Rechner vorbereiten.</strong> Feste Adresse <code>192.168.178.10</code>, Netzmaske
+<code>255.255.255.0</code>, Gateway <code>192.168.178.1</code>, kein DNS
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>). WLAN am Rechner
+aus.</p>
+</li>
+<li>
+<p><strong>Verbinden.</strong> Kabel vom Rechner an die <strong>gelbe LAN-Buchse</strong> der Box
+(wenn vorhanden über einen einfachen Switch). Die Box bleibt vorerst aus
+bzw. läuft noch, das ist egal.</p>
+</li>
+<li>
+<p><strong>Box einschalten und sofort verbinden.</strong> Strom ziehen, wieder einstecken
+und sofort:</p>
+<pre><code>ftp 192.168.178.1
+</code></pre>
+<p>Benutzer <code>adam2</code>, Passwort <code>adam2</code>. Klappt es nicht innerhalb weniger
+Sekunden, Strom ziehen und noch einmal.</p>
+</li>
+<li>
+<p><strong>Befehle eingeben,</strong> einzeln und genau so:</p>
+<pre><code>binary
+debug
+passive
+quote SETENV linux_fs_start 0
+quote MEDIA FLSH
+put gluon-&lt;community&gt;-&lt;release&gt;-avm-fritz-box-3370-rev-2-micron-nand-eva-kernel.bin mtd1
+put gluon-&lt;community&gt;-&lt;release&gt;-avm-fritz-box-3370-rev-2-micron-nand-eva-filesystem.bin mtd0
+</code></pre>
+</li>
+<li>
+<p><strong>Warten,</strong> bis der letzte Befehl durch ist.
+Startet die Box nicht von selbst neu: Strom aus und wieder an.</p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Stell den Rechner wieder auf &quot;automatisch&quot;. Nach 2 bis 5
+Minuten startet die Freifunk-Firmware deiner Community: je nach Community
+zuerst mit einer Einrichtungsseite unter <code>http://192.168.1.1</code> oder gleich
+im Betrieb.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>Die Befehle laufen ohne Fehlermeldung durch.</li>
+<li>Nach dem Neustart meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Die Box antwortet nicht.</strong> Das Zeitfenster ist kurz. Einen einfachen
+Switch zwischen Box und Rechner stecken, WLAN am Rechner aus, und noch
+einmal: Strom ziehen, einstecken, sofort verbinden.</li>
+</ul>
+<h2>Zurück zu FRITZ!OS</h2>
+<p>AVM hat für jedes Gerät ein Wiederherstellungs-Programm (für Windows), das
+die Original-Firmware zurückspielt. Es liegt auf dem Download-Server von AVM
+im Ordner des Geräts unter &quot;recover&quot;. Geräte von Providern (zum Beispiel
+1&amp;1) verweigern das eventuell; dann vorher per FTP
+<code>quote UNSETENV provider</code> (<a href="grundlagen/avm-eva.html">Der Bootloader von AVM (EVA)</a>).</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet: OpenWrt-Wiki &quot;AVM recovery tool&quot; (Rückweg zur Herstellerfirmware)</li>
+<li>abgeleitet: Wiki 3370 (Schritte (Normalweg), Sichtbare Zeichen, Adressen, Programm, Typenschild/Verwechslung, Dauer, Fehlerbild)</li>
+<li>abgeleitet: Wiki 3370, mit 24.10.0 geprüft dort (Schritte (Normalweg), Programm)</li>
+<li>abgeleitet: dasselbe Wiki (Rückweg zur Herstellerfirmware)</li>
+<li>abgeleitet: fritz-tools-Doku, Gerät fehlt in der Liste (Programm)</li>
+<li>geprüft (Weg ab Werk, Schritte (Normalweg))</li>
+<li>geprüft: Commit (Typenschild/Verwechslung, Dauer)</li>
+<li>geprüft: Commit 0b62fe5e (Schritte (Normalweg), Typenschild/Verwechslung, Bedingung an die Herstellerfirmware)</li>
+<li>geprüft: Commit, Feld factory (Schritte (Normalweg), Datei)</li>
+<li>geprüft: Commits, fritz-tools/fritzflash.py (Schritte (Normalweg), Taste und Zeitpunkt)</li>
+<li>Geräteeintrag: 0b62fe5ed87ecac52301096b15abb69f96117c8c</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>
