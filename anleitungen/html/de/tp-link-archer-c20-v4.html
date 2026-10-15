@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TP-Link Archer C20 v4: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="tp-link-archer-c20-v4">
+<meta name="anleitung:modell" content="TP-Link Archer C20 v4">
+<meta name="anleitung:anzeige" content="TP-Link Archer C20 v4">
+<meta name="anleitung:familie" content="tplink-tftp-recovery">
+<meta name="anleitung:gluon_broken" content="false">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="mit scripts/Netzwerktools">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="feste-ip, tftp-server">
+<meta name="anleitung:daten_stand" content="a1d9c99">
+<meta name="anleitung:vorlage_stand" content="cc34fa6">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<h1>TP-Link Archer C20 v4: Freifunk-Firmware installieren</h1>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> So beschreiben die Entwickler von OpenWrt
+bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
+ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
+klappt.</p>
+<p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+Anleitung für alle nach dir besser:</p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20Archer%20C20%20v4">projekt@neanderfunk.de</a></p>
+</blockquote>
+<p>Bei diesem Router nimmt die Weboberfläche von TP-Link die Freifunk-Firmware
+zwar an, beschädigt sie aber beim Schreiben. <strong>Lade sie dort also nicht
+hoch.</strong> Der Weg führt stattdessen über den Notfall-Modus des Bootloaders:
+Beim Einschalten mit gedrückter Reset-Taste holt sich der Router eine Datei
+von deinem Rechner und schreibt sie selbst. Dein Rechner spielt dafür den
+TFTP-Server (<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>). Rechne
+mit einer halben Stunde.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>den Router mit Netzteil</li>
+<li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
+<li>einen TFTP-Server auf dem Rechner
+(<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>)</li>
+<li>die Freifunk-Firmware deiner Community für den TP-Link Archer C20 v4, und zwar das
+Image, das auf <strong><code>-bootloader.bin</code></strong> endet. Im Firmware-Selector wählst du
+dafür unter &quot;Wähle Deine Installationsart&quot; den Knopf
+<strong>Bootloader-Image</strong>. Benenn die Datei in <strong><code>tp_recovery.bin</code></strong> um.</li>
+</ul>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Feste Adresse am Rechner.</strong> Stell deinen Rechner auf
+<code>192.168.0.66</code>, Netzmaske <code>255.255.255.0</code>
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>). Unter dieser
+Adresse sucht der Router den TFTP-Server.</p>
+</li>
+<li>
+<p><strong>TFTP-Server starten</strong> mit dem Ordner, in dem <code>tp_recovery.bin</code> liegt.
+Erlaube ihm in der Firewall den Zugriff.</p>
+</li>
+<li>
+<p><strong>Kabel anschließen.</strong> Netzwerkkabel vom Rechner an eine LAN-Buchse des
+Routers. Strom noch nicht anschließen.</p>
+</li>
+<li>
+<p><strong>Notfall-Modus starten.</strong> Halt die Reset-Taste gedrückt, schalte den Router ein und halt sie noch etwa 7 Sekunden weiter. Laut OpenWrt-Wiki flackert die Power-LED dann etwa 3 Sekunden schnell (Download) und blinkt danach etwa 40 Sekunden gelegentlich (Schreiben); dann startet der Router von selbst neu.
+<strong>Prüfen:</strong> Im Protokoll des TFTP-Servers erscheint, dass
+<code>tp_recovery.bin</code> abgeholt wird.
+Sonst Strom ziehen und noch einmal.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Der Router schreibt die Freifunk-Firmware und startet von
+selbst neu. Das dauert einige Minuten. <strong>Strom nicht ziehen.</strong></p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Stell den Rechner wieder auf &quot;automatisch&quot;. Je nach Community
+kommt zuerst eine Einrichtungsseite unter <code>http://192.168.1.1</code>, oder der
+Router geht gleich in Betrieb.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>In Schritt 4 zeigt der TFTP-Server den Abruf der Datei.</li>
+<li>Nach Schritt 5 meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Der Router holt die Datei nicht.</strong> Prüf der Reihe nach: feste Adresse
+<code>192.168.0.66</code>, Kabel an einer LAN-Buchse (nicht WAN), Firewall,
+Dateiname. Windows blendet Dateiendungen gern aus; heißt die Datei im
+Explorer <code>tp_recovery.bin</code>, kann sie in Wirklichkeit
+<code>tp_recovery.bin.bin</code> heißen. Dann den Notfall-Modus noch einmal starten und
+die Taste diesmal etwas kürzer oder länger halten.</li>
+<li><strong>Du hast die Datei schon über die Weboberfläche hochgeladen</strong> und der
+Router startet nicht mehr richtig: Kein Problem, genau dafür ist dieser
+Weg. Fang bei Schritt 1 an.</li>
+</ul>
+<h2>Zurück zur TP-Link-Firmware</h2>
+<p>Über denselben Notfall-Modus nimmt der Router auch eine TP-Link-Firmware an.
+Je nach Modell muss die Datei dafür vorher angepasst werden; das steht im
+OpenWrt-Wiki zu deinem Gerät.</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Schritte (Normalweg), Anschluss, Programm, Dauer, Rückweg zur Herstellerfirmware)</li>
+<li>abgeleitet: Regel strengster Name (Datei)</li>
+<li>abgeleitet: Wiki (Programm)</li>
+<li>abgeleitet: Wiki C20 v4 (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Dauer)</li>
+<li>abgeleitet: Wiki C50/MR6400 v5 (Rückweg zur Herstellerfirmware)</li>
+<li>abgeleitet: Wiki; abgeleitet (Schritte (Normalweg))</li>
+<li>geprüft (Weg ab Werk)</li>
+<li>geprüft: Commit (Schritte (Normalweg), Taste und Zeitpunkt, Adressen, Datei)</li>
+<li>geprüft: Commit &quot;write it to flash and reboot&quot; (Schritte (Normalweg))</li>
+<li>geprüft: Commit WR841N v13 für factory; abgeleitet: Wiki für sysupgrade (Warnung)</li>
+<li>geprüft: Commit v1 (Typenschild/Verwechslung)</li>
+<li>geprüft: Commits v4/v5 (Typenschild/Verwechslung)</li>
+<li>geprüft: Gluon targets/ramips-mt76x8 extra_images (Datei)</li>
+<li>geprüft: Gluon targets/ramips-mt76x8 extra_images; geprüft: Commit (Schritte (Normalweg))</li>
+<li>geprüft: Gluon targets/ramips-mt76x8 v2025.1.3 (Datei)</li>
+<li>Geräteeintrag: 5bdd238b634a34b038fbea9046893de29a77c000</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

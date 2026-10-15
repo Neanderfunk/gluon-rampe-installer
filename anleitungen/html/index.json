@@ -1106,6 +1106,13 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "tp-link-archer-c20-v4",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c20-v4.html",
+  "status": "ungeprüft",
+  "stufe": "mit scripts/Netzwerktools",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "tp-link-archer-c20i",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c20i.html",
   "status": "ungeprüft",
@@ -1138,6 +1145,13 @@
   "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c50-v1.html",
   "status": "ungeprüft",
   "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-archer-c50-v3",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c50-v3.html",
+  "status": "ungeprüft",
+  "stufe": "mit scripts/Netzwerktools",
   "sprache": "de"
  },
  {
@@ -1323,6 +1337,34 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "tp-link-tl-mr3020-v3",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-mr3020-v3.html",
+  "status": "ungeprüft",
+  "stufe": "mit scripts/Netzwerktools",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-tl-mr3420-v5",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-mr3420-v5.html",
+  "status": "ungeprüft",
+  "stufe": "mit scripts/Netzwerktools",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-tl-mr6400-v5",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-mr6400-v5.html",
+  "status": "ungeprüft",
+  "stufe": "mit scripts/Netzwerktools",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-tl-wa801nd-v5",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wa801nd-v5.html",
+  "status": "ungeprüft",
+  "stufe": "mit scripts/Netzwerktools",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "tp-link-tl-wdr3500-v1",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wdr3500-v1.html",
   "status": "ungeprüft",
@@ -1393,6 +1435,13 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "tp-link-tl-wr841n-v13",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr841n-v13.html",
+  "status": "ungeprüft",
+  "stufe": "mit scripts/Netzwerktools",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "tp-link-tl-wr842n-v3",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr842n-v3.html",
   "status": "ungeprüft",
@@ -1404,6 +1453,20 @@
   "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr902ac-v1.html",
   "status": "ungeprüft",
   "stufe": "einfach",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-tl-wr902ac-v3",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr902ac-v3.html",
+  "status": "ungeprüft",
+  "stufe": "mit scripts/Netzwerktools",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "tp-link-tl-wr902ac-v4",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr902ac-v4.html",
+  "status": "ungeprüft",
+  "stufe": "mit scripts/Netzwerktools",
   "sprache": "de"
  },
  {
