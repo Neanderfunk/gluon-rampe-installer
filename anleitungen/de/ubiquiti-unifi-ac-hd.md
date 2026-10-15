@@ -8,7 +8,7 @@ sprache: de
 stufe: mit scripts/Netzwerktools
 status: ungeprüft
 grundlagen: [feste-ip, ssh-scp, tftp-client]
-daten_stand: b72261f
+daten_stand: b3118aa
 vorlage_stand: 393f161
 ---
 

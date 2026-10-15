@@ -8,7 +8,7 @@ sprache: de
 stufe: mit scripts/Netzwerktools
 status: ungeprüft
 grundlagen: [avm-eva, feste-ip]
-daten_stand: b72261f
+daten_stand: b3118aa
 vorlage_stand: 2a45b69
 ---
 

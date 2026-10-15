@@ -1029,6 +1029,13 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "siemens-ws-ap3610",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/siemens-ws-ap3610.html",
+  "status": "ungeprüft",
+  "stufe": "Werkstatt",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "sophos-ap100",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/sophos-ap100.html",
   "status": "ungeprüft",
