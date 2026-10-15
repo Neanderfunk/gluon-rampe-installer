@@ -12,6 +12,7 @@
 #
 # Quelle (--quelle, Default anleitungen/):
 #   vorlagen/<familie>.md           Jinja2-Vorlage je Anleitungsfamilie (Content)
+#   vorlagen/_<name>.md             gemeinsame Bausteine fuer {% include %}, keine Familie
 #   zusatz/<gluon_name>.md          optional: was nur ein Geraet braucht (Content)
 #   <sprache>/grundlagen/<thema>.md von Hand: feste IP, curl, Konsole ... (Content)
 # Ausgabe (--ausgabe, Default anleitungen/):
@@ -156,13 +157,15 @@ def kopf_yaml(k):
 
 def seiten_erzeugen(geraete, quelle, jinja2):
     """Liefert {gluon_name: (kopf, markdown_body)} fuer alle Geraete mit Vorlage und Werten."""
-    env = jinja2.Environment(undefined=jinja2.StrictUndefined, keep_trailing_newline=True,
+    # Lader fuer {% include "_status.md" %} usw.; Dateien mit "_" sind keine Familien
+    env = jinja2.Environment(loader=jinja2.FileSystemLoader(str(quelle / "vorlagen")),
+                             undefined=jinja2.StrictUndefined, keep_trailing_newline=True,
                              autoescape=False)
     daten_stand = git_stand(ROOT, DATEN)
     seiten, ohne = {}, []
     for g in geraete:
         vp = quelle / "vorlagen" / f"{g['familie']}.md"
-        if not vp.exists() or not g["werte"]:
+        if g["familie"].startswith("_") or not vp.exists() or not g["werte"]:
             ohne.append(g["gluon_name"])
             continue
         vtext = vp.read_text(encoding="utf-8")
