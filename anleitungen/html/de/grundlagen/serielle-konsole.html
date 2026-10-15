@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Serielle Konsole benutzen</title>
+<meta name="anleitung:grundlage" content="serielle-konsole">
+<link rel="stylesheet" href="../../anleitung.css">
+</head>
+<body>
+<hr />
+<h2>thema: serielle-konsole
+sprache: de
+status: ungeprüft</h2>
+<blockquote>
+<p><strong>Noch nicht gegengelesen.</strong> Diese Grundlagen-Seite ist ein Entwurf.</p>
+</blockquote>
+<h1>Serielle Konsole benutzen</h1>
+<p>Viele Router haben einen <strong>seriellen Anschluss</strong>: zwei Datenleitungen und
+Masse, über die das Gerät beim Start alles ausgibt, was es tut. Dort erreichst
+du auch den Bootloader, das kleine Programm, das vor der eigentlichen Firmware
+läuft. Damit kann man ein Gerät oft noch einrichten, wenn nichts anderes geht.</p>
+<p>Am Rechner brauchst du dafür einen <strong>USB-Seriell-Adapter</strong> und ein
+<strong>Terminalprogramm</strong>.</p>
+<h2>Der Adapter</h2>
+<p>Gemeint ist ein kleiner Adapter von USB auf &quot;TTL&quot; oder &quot;UART&quot;, oft mit
+FTDI-, CP2102- oder CH340-Chip. Wichtig:</p>
+<ul>
+<li><strong>3,3 Volt.</strong> Viele Adapter lassen sich mit einem Steckbrücken-Schalter
+zwischen 5 V und 3,3 V umstellen. Stell ihn auf 3,3 V, bevor du ihn an den
+Router anschließt. 5 V können den Router beschädigen.</li>
+<li><strong>Drei Leitungen:</strong> GND an GND, <strong>TX des Adapters an RX des Routers</strong>, <strong>RX
+des Adapters an TX des Routers</strong>. Was der eine sendet (TX), muss der andere
+empfangen (RX).</li>
+<li><strong>VCC (oder 3V3/5V) nie anschließen.</strong> Der Router hat seine eigene
+Stromversorgung.</li>
+</ul>
+<p>Erscheint später kein Text, sind TX und RX oft vertauscht. Tausch die beiden
+Leitungen und versuch es noch einmal.</p>
+<h2>Das Terminalprogramm</h2>
+<p>Die Geräteanleitung nennt die <strong>Geschwindigkeit</strong> (Baudrate), zum Beispiel
+<code>9600</code> oder <code>115200</code>. Der Rest ist fast immer gleich: 8 Datenbits, keine
+Parität, 1 Stoppbit (&quot;8N1&quot;), <strong>keine Flusssteuerung</strong>.</p>
+<ul>
+<li>
+<p><strong>Linux:</strong> Steck den Adapter ein. Er erscheint meist als <code>/dev/ttyUSB0</code>
+(mit <code>ls /dev/ttyUSB* /dev/ttyACM*</code> nachsehen). Dann:</p>
+<pre><code>picocom -b 9600 /dev/ttyUSB0
+</code></pre>
+<p>Beenden mit Strg+A, danach Strg+X. Kommt &quot;Permission denied&quot;, starte es mit
+<code>sudo</code> davor.</p>
+</li>
+<li>
+<p><strong>macOS:</strong> Mit <code>ls /dev/tty.*</code> vor und nach dem Einstecken findest du den
+Namen des Adapters, etwa <code>/dev/tty.usbserial-1410</code>. Dann:</p>
+<pre><code>screen /dev/tty.usbserial-1410 9600
+</code></pre>
+<p>Beenden mit Strg+A, dann K, dann y.</p>
+</li>
+<li>
+<p><strong>Windows:</strong> Im Geräte-Manager unter &quot;Anschlüsse (COM &amp; LPT)&quot; steht, welche
+COM-Nummer der Adapter bekommen hat. In PuTTY als Verbindungsart &quot;Serial&quot;
+wählen, die COM-Nummer und die Geschwindigkeit eintragen. Unter
+&quot;Connection → Serial&quot; die Flusssteuerung (&quot;Flow control&quot;) auf <strong>None</strong>
+stellen.</p>
+</li>
+</ul>
+<h2>Den Bootloader anhalten</h2>
+<p>Schalte den Router erst ein, wenn das Terminal schon läuft. Beim Start zeigt
+der Bootloader einige Sekunden lang so etwas wie
+<code>Hit any key to stop autoboot</code>. Drück dann Enter (oder die Taste, die die
+Geräteanleitung nennt). Bei manchen Geräten ist das Zeitfenster sehr kurz.
+Dann drück schon während des Einschaltens immer wieder Enter. Danach wartet
+der Bootloader auf Befehle, mit einer Eingabeaufforderung wie <code>=&gt;</code> oder
+<code>apboot&gt;</code>.</p>
+<h2>Befehle eingeben</h2>
+<ul>
+<li><strong>Zeile für Zeile.</strong> Kopier jeden Befehl aus der Geräteanleitung einzeln.
+Füg ihn ein und drück Enter. Warte, bis die Eingabeaufforderung wieder
+erscheint, bevor du den nächsten Befehl eingibst.</li>
+<li><strong>Nachsehen, was angekommen ist.</strong> Der Bootloader zeigt jedes Zeichen,
+das er empfangen hat, wieder an. Vergleich die Zeile mit der Anleitung. Bei
+einem Tippfehler die Zeile einfach noch einmal richtig eingeben.</li>
+<li><strong>Mitschreiben.</strong> Lass das Terminal alles in eine Datei schreiben (picocom:
+<code>--logfile konsole.txt</code>, PuTTY: &quot;Session → Logging&quot;). Wenn etwas schiefgeht
+und du Hilfe brauchst, ist diese Datei Gold wert.</li>
+</ul>
+<h2>Typische Fehler</h2>
+<ul>
+<li><strong>Nur wirre Zeichen:</strong> Die Geschwindigkeit stimmt nicht. Prüf die Zahl in
+der Geräteanleitung.</li>
+<li><strong>Gar nichts:</strong> TX und RX tauschen. GND prüfen. Unter Windows die
+COM-Nummer prüfen, unter Linux und macOS den Namen des Adapters.</li>
+<li><strong>Text erscheint, aber Tastendrücke kommen nicht an:</strong> Die Leitung vom TX
+des Adapters zum RX des Routers hat keinen Kontakt, oder der Adapter ist zu
+schwach. Manche Geräte sind da wählerisch, dann hilft nur ein anderer
+Adapter.</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

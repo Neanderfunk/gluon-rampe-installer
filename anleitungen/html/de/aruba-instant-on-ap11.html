@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aruba Instant On AP11: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="aruba-instant-on-ap11">
+<meta name="anleitung:modell" content="Aruba Instant On AP11 (Alias von aruba-ap-303)">
+<meta name="anleitung:anzeige" content="Aruba Instant On AP11">
+<meta name="anleitung:familie" content="aruba-apboot">
+<meta name="anleitung:gluon_broken" content="false">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:stufe" content="Werkstatt">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="feste-ip, serielle-konsole, ssh-scp, tftp-server">
+<meta name="anleitung:daten_stand" content="a7be2dd">
+<meta name="anleitung:vorlage_stand" content="c717a22">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<h1>Aruba Instant On AP11: Freifunk-Firmware installieren</h1>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> So beschreiben die Entwickler von OpenWrt
+bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
+ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
+klappt.
+Den Schritt mit dem älteren Bootloader beschreibt Freifunk Darmstadt; die Datei dafür stellen wir bereit.</p>
+<p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+Anleitung für alle nach dir besser:</p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20Aruba%20Instant%20On%20AP11">projekt@neanderfunk.de</a></p>
+</blockquote>
+<p>Aruba-Access-Points nehmen eine fremde Firmware nicht über ihre
+Weboberfläche an. Der Weg führt über die <strong>serielle Konsole</strong>, also ein
+Kabel, über das du den Bootloader des Geräts (bei Aruba heißt er &quot;APBoot&quot;)
+direkt bedienst. Das Gehäuse musst du dafür nicht öffnen.</p>
+<p>Der Weg hat zwei Etappen:</p>
+<ol>
+<li><strong>OpenWrt starten.</strong> Du stellst den Bootloader so ein, dass er ein
+kleines OpenWrt per TFTP von deinem Rechner holt und startet. Es läuft
+nur im Arbeitsspeicher.</li>
+<li><strong>Die Freifunk-Firmware aufspielen.</strong> Aus diesem OpenWrt heraus bereitest
+du den Speicher vor und installierst die Freifunk-Firmware deiner
+Community.</li>
+</ol>
+<p>Dafür brauchst du drei Werkzeuge, die auf eigenen Seiten erklärt sind:
+<a href="grundlagen/serielle-konsole.html">Serielle Konsole benutzen</a>,
+<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a> und
+<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>. Rechne beim ersten Mal mit
+einer Stunde, ohne das Kabel zu bauen.</p>
+<h2>Was du brauchst</h2>
+<ul>
+<li>den Access Point mit Stromversorgung (Netzteil oder PoE-Injektor), einen
+Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
+<li>einen <strong>USB-Seriell-Adapter für 3,3 V</strong> und ein <strong>selbst gebautes
+Konsolenkabel</strong> (siehe unten). Die Entwickler von OpenWrt berichten, dass
+billige Adapter hier nicht funktioniert haben.</li>
+<li>ein Terminalprogramm, einen TFTP-Server und <code>ssh</code>/<code>scp</code> (siehe die drei
+Seiten oben)</li>
+<li>diese Dateien:
+<ol>
+<li>das OpenWrt-initramfs für dein Gerät:
+<a href="https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb">openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb</a>, SHA256
+<code>5d65d93c796b5dd10e42a65269dadb7905dca0b42c0fd60251431392b53ac56e</code>.
+Leg es in den Ordner deines TFTP-Servers und benenn es dort genau in
+<strong><code>ipq40xx.ari</code></strong> um.</li>
+<li>die Freifunk-Firmware deiner Community für den Aruba Instant On AP11, und zwar
+das <strong>sysupgrade</strong>-Image. Benenn es in <code>gluon.bin</code> um, dann passen die
+Befehle unten ohne Änderung.</li>
+</ol>
+</li>
+</ul>
+<h2>Vorher prüfen</h2>
+<ul>
+<li>Der Instant On AP11 ist technisch ein Aruba AP-303. Die Freifunk-Firmware
+ist für beide dieselbe; manche Communities bieten sie nur unter dem Namen
+AP-303 an.</li>
+<li>Nicht verwechseln mit dem <a href="aruba-instant-on-ap11d.html">Instant On AP11D</a>,
+dem Tischgerät mit mehreren Netzwerkbuchsen. Der braucht andere Dateien.</li>
+<li>Viele AP11 aus den letzten Jahren haben einen neueren Bootloader
+(<code>APBoot 2.6.…</code> in der ersten Zeile von Schritt 5). Dann kommt in Schritt 7
+<code>Unknown command 'bootm'</code>, und du brauchst den Abschnitt &quot;Älteren
+Bootloader aufspielen&quot; unten. Lies ihn vorher einmal ganz durch.</li>
+</ul>
+<h2>Das Konsolenkabel bauen</h2>
+<p><strong>Steck nie ein normales USB-Kabel in die Buchse &quot;Console&quot;.</strong> Aruba hat dort
+keinen USB-Anschluss eingebaut, sondern legt die seriellen Leitungen auf die
+Kontakte der Micro-USB-Buchse. Du baust dir das Kabel aus einem alten
+Micro-USB-Kabel: Schneid das große USB-Ende ab und isolier die vier Adern ab.</p>
+<table>
+<thead>
+<tr>
+<th>Ader im Micro-USB-Kabel</th>
+<th>meist diese Farbe</th>
+<th>an den Adapter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VCC</td>
+<td>rot</td>
+<td><strong>nicht anschließen</strong>, einzeln isolieren</td>
+</tr>
+<tr>
+<td>D+</td>
+<td>grün</td>
+<td>RX</td>
+</tr>
+<tr>
+<td>D−</td>
+<td>weiß</td>
+<td>TX</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>schwarz</td>
+<td>GND</td>
+</tr>
+</tbody>
+</table>
+<p>Laut OpenWrt liegt auf D+ der Sendekontakt (TX) und auf D− der
+Empfangskontakt (RX) des Access Points. Deshalb kommt D+ an RX und D− an TX
+des Adapters. Die Farben stimmen bei den meisten Kabeln, aber nicht bei
+allen. Erscheint später kein Text im Terminal, tausch grün und weiß. Es gibt
+auch fertige Kabel, die ausdrücklich für Aruba-Access-Points verkauft
+werden.</p>
+<h2>Schritte</h2>
+<h3>Teil 1: OpenWrt starten</h3>
+<ol>
+<li>
+<p><strong>Feste Adresse am Rechner.</strong> Stell deinen Rechner auf
+<code>192.168.1.75</code>, Netzmaske <code>255.255.255.0</code>
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>). Unter dieser
+Adresse sucht der Access Point den TFTP-Server.</p>
+</li>
+<li>
+<p><strong>TFTP-Server starten.</strong> Starte den TFTP-Server mit dem Ordner, in dem
+<code>ipq40xx.ari</code> liegt (<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>).</p>
+</li>
+<li>
+<p><strong>Kabel anschließen.</strong> Netzwerkkabel vom Rechner an die Netzwerkbuchse des Access Points.
+Das Konsolenkabel an die Konsolenbuchse, das andere Ende an den Rechner.
+Strom noch nicht anschließen.</p>
+</li>
+<li>
+<p><strong>Terminal öffnen.</strong> Starte das Terminalprogramm mit <strong>9600</strong> Baud, 8N1,
+ohne Flusssteuerung
+(<a href="grundlagen/serielle-konsole.html">Serielle Konsole benutzen</a>).</p>
+</li>
+<li>
+<p><strong>Bootloader anhalten.</strong> Schließ jetzt den Strom an. Im Terminal erscheint
+der Start des Bootloaders. Die erste Zeile beginnt mit <code>APBoot</code> und
+nennt die Version, merk sie dir. Sobald <code>Hit &lt;Enter&gt; to stop autoboot</code>
+erscheint, drück Enter. Das Zeitfenster ist nur etwa zwei Sekunden lang;
+drück am besten schon beim Einschalten immer wieder Enter. <strong>Prüfen:</strong> Es
+erscheint die Eingabeaufforderung <code>apboot&gt;</code>. Sonst Strom ziehen und noch
+einmal.</p>
+</li>
+<li>
+<p><strong>Bootloader einstellen.</strong> Gib diese Befehle ein, jede Zeile einzeln, und
+warte nach jeder Zeile auf <code>apboot&gt;</code>:</p>
+<pre><code>setenv bootargs_openwrt &quot;setenv bootargs console=ttyMSM1,9600n8&quot;
+setenv nandboot_openwrt &quot;run bootargs_openwrt; ubi part aos1; ubi read 0x85000000 kernel; set fdt_high 0x87000000; bootm 0x85000000&quot;
+setenv ramboot_openwrt &quot;run bootargs_openwrt; setenv ipaddr 192.168.1.105; setenv serverip 192.168.1.75; netget; set fdt_high 0x87000000; bootm&quot;
+setenv bootcmd &quot;run nandboot_openwrt&quot;
+saveenv
+</code></pre>
+<p><strong>Prüfen:</strong> Gib <code>printenv ramboot_openwrt</code> ein. Die Ausgabe muss genau
+der dritten Zeile oben entsprechen. Sonst diese Zeile noch einmal
+eingeben und wieder <code>saveenv</code>.</p>
+<p>Damit startet der Access Point ab jetzt OpenWrt statt der
+Aruba-Firmware. Die Aruba-Firmware bleibt im Speicher, siehe &quot;Zurück zur
+Aruba-Firmware&quot;.</p>
+</li>
+<li>
+<p><strong>OpenWrt laden.</strong> Gib ein:</p>
+<pre><code>run ramboot_openwrt
+</code></pre>
+<p>Der Access Point holt <code>ipq40xx.ari</code> von deinem Rechner. Danach erscheint
+<code>Invalid image format version</code>, das ist normal. Kurz darauf startet
+OpenWrt, das Terminal zeigt viele Zeilen. Warte, bis
+<code>Please press Enter to activate this console.</code> erscheint.</p>
+<p><strong>Kommt stattdessen <code>Unknown command 'bootm'</code></strong>, hat dein Gerät einen
+neueren Bootloader. Lies dann unter &quot;Wenn etwas schiefgeht&quot; weiter.</p>
+</li>
+</ol>
+<h3>Teil 2: Freifunk-Firmware aufspielen</h3>
+<ol start="8">
+<li>
+<p><strong>Anmelden.</strong>
+Öffne ein zweites Terminal im Ordner mit <code>gluon.bin</code> und gib ein:</p>
+<pre><code>scp -O gluon.bin root@192.168.1.1:/tmp/gluon.bin
+ssh root@192.168.1.1
+</code></pre>
+<p>Ein Passwort gibt es nicht. Meldet <code>ssh</code> &quot;REMOTE HOST IDENTIFICATION HAS
+CHANGED&quot;, siehe <a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>.</p>
+</li>
+<li>
+<p><strong>Speicher prüfen.</strong> Auf dem Access Point:</p>
+<pre><code>grep ubi /proc/mtd
+</code></pre>
+<p><strong>Prüfen:</strong> Die Ausgabe beginnt mit
+<code>mtd1:</code> und endet mit <code>&quot;ubi&quot;</code>. Sonst hier
+aufhören und uns schreiben.</p>
+</li>
+<li>
+<p><strong>Speicher vorbereiten und Freifunk-Firmware schreiben.</strong> Gib ein, Zeile
+für Zeile:</p>
+<pre><code>ubidetach -p /dev/mtd1
+ubiformat /dev/mtd1
+sysupgrade -n /tmp/gluon.bin
+</code></pre>
+<p>Meldet <code>ubidetach</code> einen Fehler, ist das kein Problem, solange
+<code>ubiformat</code> danach ohne Fehler durchläuft. Fragt <code>ubiformat</code> nach, mit
+<code>y</code> bestätigen. Nach <code>sysupgrade</code> bricht die Verbindung ab.</p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Einige Minuten warten, Strom nicht ziehen. Im
+Konsolen-Terminal siehst du den Neustart. Stell den Rechner wieder auf
+&quot;automatisch&quot;. Danach startet die Freifunk-Firmware deiner Community: je
+nach Community zuerst mit einer Einrichtungsseite unter
+<code>http://192.168.1.1</code> oder gleich im Betrieb.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>In Schritt 5 erscheint <code>apboot&gt;</code>.</li>
+<li>In Schritt 7 zeigt der Bootloader, dass er die Datei geholt hat
+(<code>Bytes transferred = …</code>), und OpenWrt startet.</li>
+<li>In Schritt 9 zeigt <code>grep</code> die Partition <code>&quot;ubi&quot;</code>.</li>
+<li>Nach Schritt 11 meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Im Terminal erscheint nichts.</strong> Prüf Baudrate (9600), GND und die
+Leitungen. TX und RX tauschen
+(<a href="grundlagen/serielle-konsole.html">Serielle Konsole benutzen</a>).</li>
+<li><strong>Text erscheint, aber Enter wirkt nicht.</strong> Der Konsolenanschluss der
+Aruba-Geräte ist wählerisch. Mit manchen Adaptern kann man mitlesen, aber
+nichts eingeben. Versuch einen anderen Adapter.</li>
+<li><strong>In Schritt 7 kommt die Datei nicht an</strong> (der Bootloader wiederholt es
+oder bricht ab). Prüf die feste Adresse <code>192.168.1.75</code>, die Firewall
+deines Rechners und den Dateinamen <code>ipq40xx.ari</code>.</li>
+<li><strong>In Schritt 7 kommt <code>Unknown command 'bootm'</code>.</strong> Dann hat dein Gerät den neueren Bootloader (meist
+<code>APBoot 2.6.…</code> in der ersten Zeile). Weiter geht es nur mit dem Abschnitt
+&quot;Älteren Bootloader aufspielen&quot; weiter unten. <strong>Lies dort zuerst die
+Warnung.</strong>
+Willst du an dieser Stelle aufhören, stell im Bootloader den Start der
+Aruba-Firmware wieder her, wie unter &quot;Zurück zur Aruba-Firmware&quot;
+beschrieben.</li>
+<li><strong>In Schritt 8 antwortet nichts.</strong> Warte noch eine Minute, OpenWrt
+braucht etwas.</li>
+<li><strong><code>ubiformat</code> meldet einen Fehler.</strong> Nicht weitermachen, sondern die
+Ausgabe abschreiben (oder die Mitschrift des Terminals nehmen) und uns
+schreiben.</li>
+</ul>
+<h2>Älteren Bootloader aufspielen</h2>
+<blockquote>
+<p><strong>Warnung:</strong> Hier überschreibst du den Bootloader des Geräts. Geht dabei
+etwas schief, zum Beispiel eine falsche Datei, ein Tippfehler in den
+Adressen oder ein Stromausfall mittendrin, startet das Gerät nicht mehr.
+Dann hilft nur noch ein Programmiergerät für den Speicherchip. Mach das
+nur, wenn in Schritt 7 <code>Unknown command 'bootm'</code> kam, und nur bei dem
+Gerät, für das diese Anleitung gilt.</p>
+</blockquote>
+<p>Neuere Geräte haben einen Bootloader, aus dem der Hersteller Befehle
+entfernt hat (Freifunk Darmstadt hat den Weg mit <code>APBoot 2.6.2.9</code>
+ausprobiert). Du ersetzt ihn durch die ältere Fassung <code>APBoot 2.5.0.2</code> aus
+einem älteren Gerät desselben Typs. Überschrieben wird nur der Bereich des
+Bootloaders, nicht der Rest des Speichers.</p>
+<ol>
+<li>
+<p><strong>Datei holen und prüfen.</strong> Lade
+<a href="https://firmware.ffnef.de/other/dump/ap303-loader-2.5.0.2.bin">ap303-loader-2.5.0.2.bin</a> herunter
+(983.040 Bytes). Prüf die SHA256: unter Linux <code>sha256sum ap303-loader-2.5.0.2.bin</code>,
+unter macOS <code>shasum -a 256 ap303-loader-2.5.0.2.bin</code>, in der Windows-PowerShell
+<code>Get-FileHash ap303-loader-2.5.0.2.bin</code>. Das Ergebnis muss genau so lauten
+(Groß- und Kleinschreibung spielt keine Rolle):</p>
+<pre><code>69e45b047de07ceeeb4a3daec6232ba2902acea8806075af80c2725ea52298a5
+</code></pre>
+<p>Unter Linux geht es auch in einem Schritt: Lade die
+<a href="https://firmware.ffnef.de/other/dump/ap303-loader-2.5.0.2.bin.sha256">Prüfsummendatei</a> in denselben Ordner
+und gib <code>sha256sum -c ap303-loader-2.5.0.2.bin.sha256</code>
+ein. Es muss <code>OK</code> erscheinen.</p>
+<p>Stimmt die Summe nicht, hier aufhören. Leg die Datei in den Ordner des
+TFTP-Servers, neben <code>ipq40xx.ari</code>.</p>
+</li>
+<li>
+<p><strong>Bootloader anhalten.</strong> Strom ziehen und wieder anschließen, wie in
+Schritt 5 bis <code>apboot&gt;</code>.</p>
+</li>
+<li>
+<p><strong>Datei laden.</strong> Gib ein (eine Zeile):</p>
+<pre><code>setenv ipaddr 192.168.1.105; setenv serverip 192.168.1.75; netget 0x84000000 ap303-loader-2.5.0.2.bin
+</code></pre>
+<p><strong>Prüfen:</strong> Es erscheint <code>Bytes transferred = 983040 (f0000 hex)</code>. Die
+Meldung <code>Invalid image format version</code> danach ist auch hier normal.
+Steht dort eine andere Zahl oder ein Fehler, <strong>hier aufhören</strong> und auf
+keinen Fall Schritt 4 eingeben.</p>
+</li>
+<li>
+<p><strong>Bootloader schreiben.</strong> Gib ein (eine Zeile, genau so):</p>
+<pre><code>sf probe; sf protect off; sf erase 0xf0000 0xf0000; sf write 0x84000000 0xf0000 0xf0000
+</code></pre>
+<p>Strom nicht ziehen. Warte, bis wieder <code>apboot&gt;</code> erscheint. Meldet der
+Bootloader <code>Unknown command 'sf'</code>, gib zuerst <code>diag</code> ein und dann die
+Zeile noch einmal.</p>
+</li>
+<li>
+<p><strong>Neu starten.</strong> Gib <code>reset</code> ein. <strong>Prüfen:</strong> Die erste Zeile lautet
+jetzt <code>APBoot 2.5.0.2</code>. Dann weiter mit Schritt 5 oben. Gib dabei auch
+die Befehle aus Schritt 6 noch einmal ein.</p>
+</li>
+</ol>
+<h2>Zurück zur Aruba-Firmware</h2>
+<p>Die Aruba-Firmware bleibt bei diesem Weg im Speicher. Um sie wieder zu
+starten, halt den Bootloader an (Schritt 5) und gib ein:</p>
+<pre><code>setenv bootcmd &quot;boot&quot;
+saveenv
+</code></pre>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Typenschild/Verwechslung)</li>
+<li>abgeleitet: Alias, gleiche Platine (Gehäuse öffnen)</li>
+<li>geprüft: Datei geladen 15.10.2026, SHA256 gleich der im Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9) für apboot-unlocked.bin (Werkzeug/Spezial)</li>
+<li>geprüft: Forum t/22653 #28 (adorfer, 03.04.2023, Abzüge) (Stock-Teile)</li>
+<li>geprüft: Forum t/22653 #29 (blocktrron, 14.06.2024) (Programm)</li>
+<li>geprüft: Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9); Adressen dort .6/.66, in der Anleitung .105/.75 (Programm)</li>
+<li>geprüft: Gluon-Alias, Wiki toh:aruba:ap-303 (Typenschild/Verwechslung)</li>
+<li>geprüft: Neanderfunk-Notiz zum AP11, 2024 (Weg ab Werk)</li>
+<li>geprüft: Neanderfunk-Notiz, adorfer 15.10.2026 (Abzüge 2021/2023); Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9); APBoot-Version in ap303-loader-2.5.0.2.bin per strings geprüft (Sichtbare Zeichen)</li>
+<li>geprüft: Neanderfunk-Notiz; Sc4ndium90-README (Bedingung an die Herstellerfirmware)</li>
+<li>geprüft: OpenWrt-Commit 102c8c5 (AP-303) (Programm)</li>
+<li>geprüft: Sc4ndium90-README (Programm)</li>
+<li>geprüft: Wiki toh:aruba:ap-303 (Sichtbare Zeichen)</li>
+<li>geprüft: Wiki toh:aruba:ap-303h, Rohtext 15.10.2026 (Programm)</li>
+<li>geprüft: github Sc4ndium90/aruba-ap11-openwrt, Wiki toh:aruba:ap-303 (Taste und Zeitpunkt)</li>
+<li>Geräteeintrag: Notiz ap11.md (2024); OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

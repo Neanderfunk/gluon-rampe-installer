@@ -1,5 +1,47 @@
 [
  {
+  "gluon_name": "aruba-ap-303",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/aruba-ap-303.html",
+  "status": "ungeprüft",
+  "stufe": "Werkstatt",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "aruba-ap-303h",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/aruba-ap-303h.html",
+  "status": "ungeprüft",
+  "stufe": "Werkstatt",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "aruba-ap-365",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/aruba-ap-365.html",
+  "status": "ungeprüft",
+  "stufe": "Werkstatt",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "aruba-instant-on-ap11",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/aruba-instant-on-ap11.html",
+  "status": "ungeprüft",
+  "stufe": "Werkstatt",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "aruba-instant-on-ap11d",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/aruba-instant-on-ap11d.html",
+  "status": "ungeprüft",
+  "stufe": "Werkstatt",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "aruba-instant-on-ap17",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/aruba-instant-on-ap17.html",
+  "status": "ungeprüft",
+  "stufe": "Werkstatt",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "avm-fritz-box-3370-rev-2-hynix-nand",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-3370-rev-2-hynix-nand.html",
   "status": "ungeprüft",
