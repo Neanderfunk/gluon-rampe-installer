@@ -1377,5 +1377,12 @@
   "status": "ungeprüft",
   "stufe": "einfach",
   "sprache": "de"
+ },
+ {
+  "gluon_name": "zyxel-wsm20",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/zyxel-wsm20.html",
+  "status": "erprobt",
+  "stufe": "mit Werkzeug",
+  "sprache": "de"
  }
 ]
