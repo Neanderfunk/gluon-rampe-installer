@@ -35,8 +35,10 @@ PARTUUID=$(sfdisk --part-uuid disk.img 2 2>/dev/null | tr 'A-Z' 'a-z')
 [ -n "$PARTUUID" ] || { echo "PARTUUID der Root-Partition nicht lesbar"; exit 1; }
 
 SOCK="$WORK/konsole.sock"
-# Befehl auf der seriellen Konsole; das erste Enter aktiviert die Konsole.
-konsole () { printf '\n%s\n' "$1" | socat -t 2 - "UNIX-CONNECT:$SOCK" >/dev/null 2>&1; }
+# Befehl auf der seriellen Konsole (vorher einmal konsole_an).
+konsole () { printf '%s\n' "$1" | socat -t 2 - "UNIX-CONNECT:$SOCK" >/dev/null 2>&1; }
+# Enter aktiviert die Konsole; erst wenn der Prompt da ist, nimmt sie Befehle.
+konsole_an () { printf '\n' | socat -t 1 - "UNIX-CONNECT:$SOCK" >/dev/null 2>&1; warte_log 'root@.*# *$' 30; }
 # Wartet, bis die Ausgabe (nicht das Echo des Befehls) im Log steht.
 warte_log () { local i; for i in $(seq 1 "$2"); do grep -q "$1" konsole-installer.log && return 0; sleep 1; done; return 1; }
 warte () { local i; for i in $(seq 1 "$1"); do curl -s -m 3 -o /dev/null "$URL/" && return 0; sleep 1; done; return 1; }
@@ -65,6 +67,7 @@ done
 echo | openssl s_client -connect "127.0.0.1:$TLSPORT" 2>/dev/null | openssl x509 -noout -subject 2>/dev/null | sed 's/^/   Zertifikat: /'
 
 echo "== 2a. Vorbereitungshaken: scheitert -> nichts flashen"
+konsole_an || { echo "FEHLER: kein Prompt auf der seriellen Konsole"; ende; exit 1; }
 HAKEN='b=$(sed s/,/_/g /tmp/sysinfo/board_name); mkdir -p /lib/gluon-rampe/prepare; f=/lib/gluon-rampe/prepare/$b.sh'
 konsole "$HAKEN; echo 'echo Testvorbereitung scheitert; exit 1' > \$f; echo HAKEN-\$((1+1))"
 warte_log 'HAKEN-2' 30 || { echo "FEHLER: Konsole nimmt keine Befehle an"; ende; exit 1; }
