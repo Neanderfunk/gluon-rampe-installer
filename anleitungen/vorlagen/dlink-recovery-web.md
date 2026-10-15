@@ -161,12 +161,16 @@ wirklich über das Kabel spricht.
    (SHA256) der Datei. Vergleich sie mit der Prüfsumme, die deine Community
    zur Datei angibt. Stimmt sie, klick "Fortfahren".
 
-10. **Fertig.** Nach {{ w.dauer_gluon }} läuft die Freifunk-Firmware. Weiter
-    geht es mit der Einrichtung, wie deine Community sie beschreibt.
+10. **Fertig.** Nach {{ w.dauer_gluon }} startet die Freifunk-Firmware
+    deiner Community: je nach Community zuerst mit einer Einrichtungsseite
+    unter `http://192.168.1.1` oder gleich im Betrieb. Wie es weitergeht,
+    beschreibt deine Community.
 {%- else %}
 
-8. **Fertig.** Nach dem Neustart läuft die Freifunk-Firmware. Weiter geht es
-   mit der Einrichtung, wie deine Community sie beschreibt.
+8. **Fertig.** Nach dem Neustart startet die Freifunk-Firmware deiner
+   Community: je nach Community zuerst mit einer Einrichtungsseite unter
+   `http://192.168.1.1` oder gleich im Betrieb. Wie es weitergeht, beschreibt
+   deine Community.
 {%- endif %}
 
 ## Woran du erkennst, dass es geklappt hat

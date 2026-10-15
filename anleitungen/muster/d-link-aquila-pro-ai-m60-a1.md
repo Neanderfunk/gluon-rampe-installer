@@ -111,8 +111,10 @@ wirklich über das Kabel spricht.
    (SHA256) der Datei. Vergleich sie mit der Prüfsumme, die deine Community
    zur Datei angibt. Stimmt sie, klick "Fortfahren".
 
-10. **Fertig.** Nach unter 2 Minuten läuft die Freifunk-Firmware. Weiter
-    geht es mit der Einrichtung, wie deine Community sie beschreibt.
+10. **Fertig.** Nach unter 2 Minuten startet die Freifunk-Firmware
+    deiner Community: je nach Community zuerst mit einer Einrichtungsseite
+    unter `http://192.168.1.1` oder gleich im Betrieb. Wie es weitergeht,
+    beschreibt deine Community.
 
 ## Woran du erkennst, dass es geklappt hat
 
