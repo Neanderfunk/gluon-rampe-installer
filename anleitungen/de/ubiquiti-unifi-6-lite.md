@@ -6,7 +6,7 @@ sprache: de
 stufe: mit Werkzeug
 status: ungeprüft
 grundlagen: [feste-ip, ssh-scp, tftp-client]
-daten_stand: f62a84f
+daten_stand: 9d30f6c
 vorlage_stand: af4b08d
 ---
 
