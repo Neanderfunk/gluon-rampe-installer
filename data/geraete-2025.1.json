@@ -14151,7 +14151,7 @@
     "In LuCI das Gluon-sysupgrade hochladen, Einstellungen nicht behalten [geprüft: Commit/Neanderfunk-Notiz]",
     "Einige Minuten warten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]"
    ],
-   "warnung": "Spiegel-Ordner der Zwischenfirmware heißt \"without_recovery_TFTP\": ob danach die Cudy-TFTP-Recovery (Rückweg) noch geht, ungeklärt [abgeleitet: Ordnername]",
+   "warnung": "Spiegel-Ordner der Zwischenfirmware heißt \"without_recovery_TFTP\": ob danach die Cudy-TFTP-Recovery (Rückweg) noch geht, ungeklärt [abgeleitet: Ordnername]; beobachtet 16.10.2026: ein WR3000, auf dem vorher ein fremdes Gluon über eine unbekannte Zwischenfirmware lief, holte recovery.bin per TFTP, Cudy lief danach [geprüft: Testplatz grw]; nach UNSERER Zwischenfirmware aus diesem Ordner ist der Rückweg damit noch nicht getestet",
    "taste": "keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]",
    "zeichen": "nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]",
    "uebertragung": "webui-upload: Stock-UI 192.168.10.1 (Passwort admin), danach LuCI 192.168.1.1",
@@ -14182,13 +14182,18 @@
    "dauer": "Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]",
    "fehlerbild": "antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]",
    "notweg": "",
-   "rueckweg": "allgemein: Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]",
+   "rueckweg": "allgemein: Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]; am WR3000 belegt: U-Boot holte recovery.bin (blksize 1468) als 192.168.1.112, danach lief Cudy 2.4.19 [geprüft: Testplatz grw 16.10.2026]",
    "hw_test": "",
-   "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
+   "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Die Cudy-TFTP-Recovery holt recovery.bin (blksize 1468) von 192.168.1.88 als 192.168.1.112, solange Reset gehalten wird [geprüft: Testplatz grw 16.10.2026]; ob sie fremde Images nimmt: offen, nicht getestet",
    "rampe_rezept": "",
    "quelle": "OpenWrt c9cb6411c1a70516d5922e88c45b338de041baba",
    "anleitung": "anleitungen/de/cudy-wr3000-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
-   "erprobt": {},
+   "erprobt": {
+    "am": "2026-10-16",
+    "mit": "Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.19",
+    "weg": "Rückweg zu Cudy WR3000-R31-2.4.19-20250828 per TFTP-recovery.bin (vorher lief ein fremdes Gluon), dann Zwischenfirmware über die Cudy-Oberfläche, dann Gluon-sysupgrade über LuCI, nach Anleitungsstand 39bb9515",
+    "beleg": "Testplatz grw, router-werkstatt docs/validierung/cudy-wr3000-v1-2026-10-16.md (f4b4c2f)"
+   },
    "werte": {
     "cudy_ip": "192.168.10.1",
     "zwischen_datei": "cudy-wr3000.bin",
