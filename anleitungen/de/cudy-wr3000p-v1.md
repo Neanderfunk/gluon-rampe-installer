@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
 daten_stand: 0a6fad58
-vorlage_stand: 954a07bf
+vorlage_stand: 964b6421
 ---
 
 # Cudy WR3000P v1: Freifunk-Firmware installieren
@@ -69,7 +69,7 @@ genau mit "Cudy WR3000P v1", bevor du anfängst.
    (mindestens 8 Zeichen). Denk dir eins aus und merk es dir. Ältere
    Cudy-Firmware fragt stattdessen nach dem Passwort `admin`. Danach startet
    der Assistent "Schnelleinrichtung": Den kannst du mit **"« Beenden"**
-   überspringen.
+   überspringen (bei manchen Versionen heißt der Knopf "« Ausfahrt").
 
 4. **Zwischenfirmware hochladen.** Geh zum Reiter **"Allgemeine
    Einstellungen"**, klick in der Symbolspalte links ganz unten auf
@@ -88,9 +88,9 @@ genau mit "Cudy WR3000P v1", bevor du anfängst.
    Stimmt sie, klick auf **Fortfahren**.
 
 6. **Warten.** Die Oberfläche zeigt "System - Firmware wird installiert…".
-   Die LEDs zeigen erst ein langsames Lauflicht, dann blinken sie kurz
-   schnell, dann startet der Router neu. Bei uns dauerte das weniger als eine
-   Minute. **Strom nicht ziehen.**
+   Die LEDs zeigen erst ein Lauflicht (bis etwa eine halbe Minute), dann
+   blinken oder flackern sie kurz, dann startet der Router einmal neu. Bei
+   uns dauerte das weniger als eine Minute. **Strom nicht ziehen.**
 
 ### Teil 2: Freifunk-Firmware
 
@@ -98,13 +98,14 @@ genau mit "Cudy WR3000P v1", bevor du anfängst.
    Öffne `http://192.168.1.1`. Es erscheint die Anmeldung von OpenWrt
    ("LuCI"). Das Passwort-Feld bleibt leer, einfach anmelden.
 
-8. **Freifunk-Firmware auswählen.** Geh zu **System → Backup / Firmware
-   Update** (englisch "Backup / Flash Firmware"). Ganz unten unter "Firmware
-   aktualisieren" (englisch "Flash image…") wählst du das sysupgrade-Image
-   deiner Community aus.
+8. **Freifunk-Firmware hochladen.** Geh zu **System → Backup / Firmware
+   Update** (englisch "Backup / Flash Firmware"). Klick ganz unten auf
+   **"Firmware aktualisieren…"** (englisch "Flash image…"). Es erscheint das
+   Fenster "Datei wird hochgeladen…": Wähl dort das sysupgrade-Image deiner
+   Community aus und klick auf **"Hochladen"**.
 
-9. **Einstellungen nicht behalten.** Bevor es losgeht, zeigt OpenWrt ein
-   Fenster. Dort ist der Haken bei **"Einstellungen beibehalten und die
+9. **Einstellungen nicht behalten.** Danach zeigt OpenWrt das Fenster
+   "Image schreiben?" (englisch "Flash image?"). Dort ist der Haken bei **"Einstellungen beibehalten und die
    aktuelle Konfiguration sichern"** (englisch "Keep settings …") schon
    gesetzt. **Entfern diesen Haken.** Die beiden Haken darunter sind schon
    aus. Es darf kein Haken mehr gesetzt sein.
@@ -149,8 +150,8 @@ Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
 1. Lade die Cudy-Firmware für dein Modell von der
    [Download-Seite von Cudy](https://www.cudy.com/pages/download-center/wr3000p-1-0) herunter, und zwar
    die oberste, also neueste Version.
-   Kommt sie als ZIP-Archiv, pack es aus: Darin liegen eine `md5.txt` und
-   eine `.bin`-Datei. Die `.bin`-Datei heißt bei Cudy oft
+   Kommt sie als ZIP-Archiv, pack es aus: Darin liegt die `.bin`-Datei,
+   manchmal zusätzlich eine `md5.txt`. Die `.bin`-Datei heißt bei Cudy oft
    "…-sysupgrade.bin". Das ist trotzdem die Cudy-Firmware, nicht die
    Freifunk-Firmware. Benenn sie in `recovery.bin` um (genau so) und leg sie
    in den Ordner des TFTP-Servers.
@@ -158,13 +159,19 @@ Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
    und starte den TFTP-Server.
 3. Steck das Kabel an eine
    LAN-Buchse. Der Router hat noch keinen Strom.
-4. Drück die Reset-Taste und halte sie gedrückt, steck den Strom ein und halte
+4. Drück die Reset-Taste (versenkt, mit einer Büroklammer) und halte sie
+   gedrückt, steck den Strom ein und halte
    weiter,
    bis **alle LEDs einmal kurz aufleuchten**, etwa eine halbe Sekunde lang.
    Dann loslassen. Hältst du weiter, fängt der Router etwa alle 20 Sekunden
    von vorn an. Im TFTP-Server siehst du, dass `recovery.bin` abgeholt wird.
-5. Der Router ist fertig, wenn die **System-LED ruhig leuchtet** (steckt ein
-   Kabel in der WAN-Buchse, leuchtet zusätzlich "Internet"). Danach den
+   Klappt es mit der Reset-Taste nicht, versuch es genauso mit der
+   WPS-Taste. Bei einem unserer Geräte ging es zuerst nur damit.
+5. Warten: Das Schreiben kann einige Minuten dauern. Die LEDs flackern dabei,
+   und die Netzwerkverbindung geht zwischendurch weg und wieder an. **Strom
+   nicht ziehen.** Der Router ist fertig, wenn die **System-LED ruhig
+   leuchtet** (steckt ein Kabel in der WAN-Buchse, leuchtet zusätzlich
+   "Internet"). Danach den
    Rechner wieder auf "automatisch" stellen; die Cudy-Oberfläche ist unter
    `http://192.168.10.1` erreichbar.
 

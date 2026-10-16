@@ -16,7 +16,7 @@
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="feste-ip, tftp-server">
 <meta name="anleitung:daten_stand" content="0a6fad58">
-<meta name="anleitung:vorlage_stand" content="954a07bf">
+<meta name="anleitung:vorlage_stand" content="964b6421">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -67,7 +67,7 @@ Ab Werk verlangt die Oberfläche zuerst ein <strong>eigenes Admin-Passwort</stro
 (mindestens 8 Zeichen). Denk dir eins aus und merk es dir. Ältere
 Cudy-Firmware fragt stattdessen nach dem Passwort <code>admin</code>. Danach startet
 der Assistent &quot;Schnelleinrichtung&quot;: Den kannst du mit <strong>&quot;« Beenden&quot;</strong>
-überspringen.</p>
+überspringen (bei manchen Versionen heißt der Knopf &quot;« Ausfahrt&quot;).</p>
 </li>
 <li>
 <p><strong>Zwischenfirmware hochladen.</strong> Geh zum Reiter <strong>&quot;Allgemeine
@@ -86,9 +86,9 @@ Fenster &quot;Lokales Update&quot; eine MD5-Prüfsumme und die Größe. Sie muss
 </li>
 <li>
 <p><strong>Warten.</strong> Die Oberfläche zeigt &quot;System - Firmware wird installiert…&quot;.
-Die LEDs zeigen erst ein langsames Lauflicht, dann blinken sie kurz
-schnell, dann startet der Router neu. Bei uns dauerte das weniger als eine
-Minute. <strong>Strom nicht ziehen.</strong></p>
+Die LEDs zeigen erst ein Lauflicht (bis etwa eine halbe Minute), dann
+blinken oder flackern sie kurz, dann startet der Router einmal neu. Bei
+uns dauerte das weniger als eine Minute. <strong>Strom nicht ziehen.</strong></p>
 </li>
 </ol>
 <h3>Teil 2: Freifunk-Firmware</h3>
@@ -99,14 +99,15 @@ Minute. <strong>Strom nicht ziehen.</strong></p>
 (&quot;LuCI&quot;). Das Passwort-Feld bleibt leer, einfach anmelden.</p>
 </li>
 <li>
-<p><strong>Freifunk-Firmware auswählen.</strong> Geh zu <strong>System → Backup / Firmware
-Update</strong> (englisch &quot;Backup / Flash Firmware&quot;). Ganz unten unter &quot;Firmware
-aktualisieren&quot; (englisch &quot;Flash image…&quot;) wählst du das sysupgrade-Image
-deiner Community aus.</p>
+<p><strong>Freifunk-Firmware hochladen.</strong> Geh zu <strong>System → Backup / Firmware
+Update</strong> (englisch &quot;Backup / Flash Firmware&quot;). Klick ganz unten auf
+<strong>&quot;Firmware aktualisieren…&quot;</strong> (englisch &quot;Flash image…&quot;). Es erscheint das
+Fenster &quot;Datei wird hochgeladen…&quot;: Wähl dort das sysupgrade-Image deiner
+Community aus und klick auf <strong>&quot;Hochladen&quot;</strong>.</p>
 </li>
 <li>
-<p><strong>Einstellungen nicht behalten.</strong> Bevor es losgeht, zeigt OpenWrt ein
-Fenster. Dort ist der Haken bei <strong>&quot;Einstellungen beibehalten und die
+<p><strong>Einstellungen nicht behalten.</strong> Danach zeigt OpenWrt das Fenster
+&quot;Image schreiben?&quot; (englisch &quot;Flash image?&quot;). Dort ist der Haken bei <strong>&quot;Einstellungen beibehalten und die
 aktuelle Konfiguration sichern&quot;</strong> (englisch &quot;Keep settings …&quot;) schon
 gesetzt. <strong>Entfern diesen Haken.</strong> Die beiden Haken darunter sind schon
 aus. Es darf kein Haken mehr gesetzt sein.
@@ -152,21 +153,27 @@ Adresse am Rechner (<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstell
 <li>Lade die Cudy-Firmware für dein Modell von der
 <a href="https://www.cudy.com/pages/download-center/tr1200-1-0">Download-Seite von Cudy</a> herunter, und zwar
 die oberste, also neueste Version.
-Kommt sie als ZIP-Archiv, pack es aus: Darin liegen eine <code>md5.txt</code> und
-eine <code>.bin</code>-Datei. Die <code>.bin</code>-Datei heißt bei Cudy oft
+Kommt sie als ZIP-Archiv, pack es aus: Darin liegt die <code>.bin</code>-Datei,
+manchmal zusätzlich eine <code>md5.txt</code>. Die <code>.bin</code>-Datei heißt bei Cudy oft
 &quot;…-sysupgrade.bin&quot;. Das ist trotzdem die Cudy-Firmware, nicht die
 Freifunk-Firmware. Benenn sie in <code>recovery.bin</code> um (genau so) und leg sie
 in den Ordner des TFTP-Servers.</li>
 <li>Stell deinen Rechner fest auf <code>192.168.1.88</code>, Netzmaske <code>255.255.255.0</code>,
 und starte den TFTP-Server.</li>
 <li>Steck das Kabel an die WAN-Buchse. Der Router hat noch keinen Strom.</li>
-<li>Drück die Reset-Taste und halte sie gedrückt, steck den Strom ein und halte
+<li>Drück die Reset-Taste (versenkt, mit einer Büroklammer) und halte sie
+gedrückt, steck den Strom ein und halte
 weiter,
 bis <strong>alle LEDs einmal kurz aufleuchten</strong>, etwa eine halbe Sekunde lang.
 Dann loslassen. Hältst du weiter, fängt der Router etwa alle 20 Sekunden
-von vorn an. Im TFTP-Server siehst du, dass <code>recovery.bin</code> abgeholt wird.</li>
-<li>Der Router ist fertig, wenn die <strong>System-LED ruhig leuchtet</strong> (steckt ein
-Kabel in der WAN-Buchse, leuchtet zusätzlich &quot;Internet&quot;). Danach den
+von vorn an. Im TFTP-Server siehst du, dass <code>recovery.bin</code> abgeholt wird.
+Klappt es mit der Reset-Taste nicht, versuch es genauso mit der
+WPS-Taste. Bei einem unserer Geräte ging es zuerst nur damit.</li>
+<li>Warten: Das Schreiben kann einige Minuten dauern. Die LEDs flackern dabei,
+und die Netzwerkverbindung geht zwischendurch weg und wieder an. <strong>Strom
+nicht ziehen.</strong> Der Router ist fertig, wenn die <strong>System-LED ruhig
+leuchtet</strong> (steckt ein Kabel in der WAN-Buchse, leuchtet zusätzlich
+&quot;Internet&quot;). Danach den
 Rechner wieder auf &quot;automatisch&quot; stellen; die Cudy-Oberfläche ist unter
 <code>http://192.168.10.1</code> erreichbar.</li>
 </ol>
