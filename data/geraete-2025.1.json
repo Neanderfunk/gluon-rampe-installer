@@ -14504,13 +14504,18 @@
    "dauer": "Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]",
    "fehlerbild": "antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]",
    "notweg": "",
-   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]",
+   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]; am WR3000S belegt: Rückweg per TFTP mit Cudy 2.5.30, Ablauf wie beim WR3000H [geprüft: Test Neanderfunk 16.10.2026]",
    "hw_test": "Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen",
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
    "quelle": "OpenWrt 4779e954fa847c4b376623bc3bdf9651007e8a89",
    "anleitung": "anleitungen/de/cudy-wr3000s-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
-   "erprobt": {},
+   "erprobt": {
+    "am": "2026-10-16",
+    "mit": "Gluon 2023.2.6 (26091920sta), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.5.30",
+    "weg": "Rückweg zu Cudy WR3000S-R59-2.5.30-20260825 per TFTP-recovery.bin, dann Zwischenfirmware (meldet sich als OpenWrt 23.05-SNAPSHOT-CUDY) über die Cudy-Oberfläche, dann Gluon-sysupgrade über LuCI; Ablauf wie beim WR3000H; Gerät S/N 2531 (alter Flash)",
+    "beleg": "Testplatz grw, router-werkstatt docs/validierung/cudy-wr3000s-v1-2026-10-16.md (88e1566)"
+   },
    "werte": {
     "cudy_ip": "192.168.10.1",
     "zwischen_datei": "cudy-wr3000s.bin",
