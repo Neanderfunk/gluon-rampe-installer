@@ -23,10 +23,24 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     neuer_flash          true: Modell mit neuem Flash-Chip ab Seriennummer 2543
     strom                wenn nicht das Netzteil, z. B. "über PoE nach 802.3af
                          (37-57 V), also mit einem PoE-Injektor oder PoE-Switch"
+    anschluss            Buchse für Schritt 2, nach "steck den Rechner per Kabel an …",
+                         leer = "eine LAN-Buchse" (bzw. "seine einzige Netzwerkbuchse")
+    eine_buchse          true: Gerät hat nur eine Netzwerkbuchse (Access Point);
+                         dann kein "andere Buchse"-Tipp, und Schritt 10 sagt, dass
+                         sie im Betrieb der Anschluss ans Internet ist
+    led_zwischen         ganzer Satz zu den LEDs beim Schreiben der Zwischenfirmware
+                         (Schritt 6), leer = Lauflicht, dann Blinken/Flackern
     luci_buchse          Buchse für Schritt 7, z. B. "den Port „1Gbps LAN“"
     force_upgrade        true: LuCI braucht laut OpenWrt "Force upgrade"
     rueckweg_buchse      Buchse für die Recovery, leer = "eine LAN-Buchse"
     rueckweg_halten      z. B. "mindestens 8 Sekunden"
+    rueckweg_led         woran man beim Halten der Taste das Loslassen erkennt, nach
+                         "bis …", z. B. "die LED abwechselnd orange und rot blinkt";
+                         leer = "alle LEDs einmal kurz aufleuchten" (WR3000-Bild)
+    rueckweg_fertig      woran man das Ende erkennt, nach "Der Router ist fertig,
+                         wenn …"; leer = System-LED ruhig (bei eine_buchse: Satz entfällt)
+    rueckweg_ab_version  Cudy-Firmware, ab der der Bootloader TFTP kann, z. B. "2.4.7"
+                         (AP3000: ältere U-Boots finden den 2.5G-PHY nicht)
     rueckweg_quelle      woher die Cudy-Firmware kommt, leer = Cudys Download-Seite
     rueckweg_url         Direktlink auf die Download-Seite des Modells bei Cudy, z. B.
                          https://www.cudy.com/pages/download-center/wr3000h-1-0
@@ -37,6 +51,9 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
   falschen Images: cudy-wr3000-v1-geraet2-2026-10-16.md, 432ad4b; red-herrings Fall 11). Menüpfade und
   LED-Zeichen sind dort belegt, für andere Modelle/Versionen vermutet. WPS statt Reset
   beim Rückweg: nur am WR3000 beobachtet [abgeleitet].
+  AP3000 v1 (Test Neanderfunk 17.10.2026, cudy-ap3000-v1-2026-10-17.md): eine Buchse,
+  192.168.10.254, mehrfarbige LED; TFTP erst ab Cudy-Firmware 2.4.7 (OpenWrt-Wiki
+  toh:cudy:ap3000_v1), mit 2.4.4 kein RRQ.
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
@@ -78,11 +95,26 @@ Community ein. Beides geht im Browser, du brauchst kein Zusatzprogramm.
 
 Modell und Version stehen auf dem Aufkleber unter dem Gerät. Vergleich sie
 genau mit "{{ modell }}", bevor du anfängst.
-{%- if zusatz.vorher is defined and zusatz.vorher %}
+{%- set vorher = zusatz.vorher if zusatz.vorher is defined else "" %}
+{%- if vorher or w.get("rueckweg_ab_version") %}
 
 ## Vorher prüfen
+{%- if w.get("rueckweg_ab_version") %}
 
-{{ zusatz.vorher }}
+**Weg zurück offenhalten:** Den Notfall-Weg zurück zur Cudy-Firmware (unten)
+hat der {{ modell }} laut OpenWrt erst ab Cudy-Firmware
+**{{ w.rueckweg_ab_version }}**; ältere Bootloader holen sich keine Datei.
+Welche Version läuft, zeigt die Cudy-Oberfläche. Ist sie älter, spiel
+zuerst die neueste Cudy-Firmware ein (Download wie unten unter "Zurück zur
+Cudy-Firmware"), an derselben Stelle wie in Schritt 4 die Zwischenfirmware.
+Warte den Neustart ab und mach dann mit Schritt 4 weiter. Ob der Notfall-Weg
+danach auch unter der Freifunk-Firmware erhalten bleibt, haben wir noch
+nicht geprüft.
+{%- endif %}
+{%- if vorher %}
+
+{{ vorher }}
+{%- endif %}
 {%- endif %}
 
 ## Schritte
@@ -94,8 +126,11 @@ genau mit "{{ modell }}", bevor du anfängst.
    wiederfindest.
 
 2. **Verbinden.** Versorg den Router mit Strom und steck den Rechner per
-   Kabel an eine **LAN**-Buchse. Der Rechner holt sich seine Adresse
-   automatisch, so wie er normalerweise eingestellt ist.
+   Kabel an
+   {%- if w.get("anschluss") %} {{ w.anschluss }}
+   {%- elif w.get("eine_buchse") %} seine einzige Netzwerkbuchse
+   {%- else %} eine **LAN**-Buchse{% endif %}. Der Rechner holt sich seine
+   Adresse automatisch, so wie er normalerweise eingestellt ist.
 
 3. **Cudy-Oberfläche öffnen.** Öffne im Browser `http://{{ w.cudy_ip }}`.
    Ab Werk verlangt die Oberfläche zuerst ein **eigenes Admin-Passwort**
@@ -107,9 +142,9 @@ genau mit "{{ modell }}", bevor du anfängst.
 4. **Zwischenfirmware hochladen.** Geh zum Reiter **"Allgemeine
    Einstellungen"**, klick in der Symbolspalte links ganz unten auf
    **"Firmware"** und im Abschnitt **"Lokales Update"** auf
-   **"Durchsuchen …"**. Wähl dort die Zwischenfirmware aus. Bei älterer
-   Cudy-Firmware heißt der Weg **Erweiterte Einstellungen → System →
-   Firmware**.
+   **"Durchsuchen …"**. Wähl dort die Zwischenfirmware aus. Gibt es den
+   Reiter nicht, such oben **Erweiterte Einstellungen** und links den
+   Eintrag **Firmware** (bei älterer Cudy-Firmware unter **System**).
    {%- if b.get("cudy-firmware-seite") %}
 
    ![Die Firmware-Seite der Cudy-Oberfläche]({{ b["cudy-firmware-seite"] }})
@@ -129,8 +164,12 @@ genau mit "{{ modell }}", bevor du anfängst.
    {%- endif %}
 
 6. **Warten.** Die Oberfläche zeigt "System - Firmware wird installiert…".
+   {%- if w.get("led_zwischen") %}
+   {{ w.led_zwischen }}
+   {%- else %}
    Die LEDs zeigen erst ein Lauflicht (bis etwa eine halbe Minute), dann
-   blinken oder flackern sie kurz, dann startet der Router einmal neu. Bei
+   blinken oder flackern sie kurz, dann startet der Router einmal neu.
+   {%- endif %} Bei
    uns dauerte das weniger als eine Minute. **Strom nicht ziehen.**
 
 ### Teil 2: Freifunk-Firmware
@@ -166,6 +205,9 @@ genau mit "{{ modell }}", bevor du anfängst.
     Kommt dort "Not Found", siehe [Der Browser zeigt
     "Not Found"](grundlagen/browser-not-found.md). Wie
     es weitergeht, beschreibt deine Community.
+    {%- if w.get("eine_buchse") %} Im Betrieb ist die einzige
+    Netzwerkbuchse des {{ modell }} sein Anschluss ans Internet: Verbinde
+    sie mit deinem Router zu Hause.{% endif %}
 
 ## Woran du erkennst, dass es geklappt hat
 
@@ -193,9 +235,11 @@ genau mit "{{ modell }}", bevor du anfängst.
   {%- else %} Dann ist es das Image für ein anderes Modell. **"Erzwinge
   Upgrade" nie anhaken**, sondern **"Abbrechen"** und das richtige Image
   holen.{% endif %}
+{%- if not w.get("eine_buchse") %}
 - **Nach Schritt 6 antwortet `http://192.168.1.1` nicht.** Steck das Kabel in
   eine andere Buchse. Bei manchen Modellen tauschen LAN und WAN nach dem
   Wechsel auf OpenWrt die Rolle.
+{%- endif %}
 - **Unter `http://{{ w.cudy_ip }}` kommt keine Cudy-Seite, sondern schon
   OpenWrt.** Dann ist die Zwischenfirmware vermutlich schon drauf: weiter bei
   Schritt 7. Läuft dort eine ganz andere Firmware, geht die Zwischenfirmware
@@ -210,6 +254,12 @@ Original-Firmware willst, hat Cudy einen Notfall-Weg. Er braucht etwas
 Werkzeug: einen TFTP-Server auf deinem Rechner
 ([TFTP-Server einrichten](grundlagen/tftp-server.md)) und eine feste
 Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
+{%- if w.get("rueckweg_ab_version") %}
+Beim {{ modell }} geht das nur, wenn vorher mindestens Cudy-Firmware
+{{ w.rueckweg_ab_version }} lief (siehe "Vorher prüfen"). Mit einem älteren
+Bootloader holt er sich keine Datei, dann gibt es keinen einfachen Weg
+zurück.
+{%- endif %}
 
 1. {% if w.get("rueckweg_url") %}Lade die Cudy-Firmware für dein Modell von der
    [Download-Seite von Cudy]({{ w.get("rueckweg_url") }}) herunter, und zwar
@@ -231,16 +281,23 @@ Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
 4. Drück die Reset-Taste (versenkt, mit einer Büroklammer) und halte sie
    gedrückt, steck den Strom ein und halte
    weiter{% if w.rueckweg_halten %} (laut Cudy {{ w.rueckweg_halten }}){% endif %},
+   {%- if w.get("rueckweg_led") %} bis {{ w.rueckweg_led }}. Dann loslassen.
+   {%- else %}
    bis **alle LEDs einmal kurz aufleuchten**, etwa eine halbe Sekunde lang.
    Dann loslassen. Hältst du weiter, fängt der Router etwa alle 20 Sekunden
-   von vorn an. Im TFTP-Server siehst du, dass `recovery.bin` abgeholt wird.
+   von vorn an.{% endif %} Im TFTP-Server siehst du, dass `recovery.bin` abgeholt wird.
+   {%- if not w.get("eine_buchse") %}
    Klappt es mit der Reset-Taste nicht, versuch es genauso mit der
    WPS-Taste. Bei einem unserer Geräte ging es zuerst nur damit.
+   {%- endif %}
 5. Warten: Das Schreiben dauert ein paar Minuten. Die LEDs können dabei
    flackern, und die Netzwerkverbindung geht zwischendurch weg und wieder an.
-   **Strom nicht ziehen.** Der Router ist fertig, wenn die **System-LED ruhig
+   **Strom nicht ziehen.**
+   {%- if w.get("rueckweg_fertig") %} Der Router ist fertig, wenn
+   {{ w.rueckweg_fertig }}.
+   {%- elif not w.get("eine_buchse") %} Der Router ist fertig, wenn die **System-LED ruhig
    leuchtet** (steckt ein Kabel in der WAN-Buchse, leuchtet zusätzlich
-   "Internet"). Danach den
+   "Internet").{% endif %} Danach den
    Rechner wieder auf "automatisch" stellen; die Cudy-Oberfläche ist unter
    `http://{{ w.cudy_ip }}` erreichbar.
 
