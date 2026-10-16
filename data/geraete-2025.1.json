@@ -907,7 +907,7 @@
    "target": "ath79-generic",
    "gluon_broken": false,
    "kat": "K4",
-   "familie": "seriell-tftp",
+   "familie": "sonderweg-d-link-dir-505",
    "weg": "Steiniger Weg über zwei Weboberflächen: D-Link-Oberfläche (192.168.0.1) nimmt ein altes OpenWrt-factory mit HORNET-Kopf, LEDE 17.01.7 lede-17.01.7-ar71xx-generic-dir-505-a1-squashfs-factory.bin (https://archive.openwrt.org/releases/17.01.7/targets/ar71xx/generic/, SHA256 13f357a3…aa5ed) oder das Sackgasse-factory rev-a1/rev-a2 [abgeleitet: Wiki toh:d-link:dir-505; am Gerät nicht geprüft, es lief keine D-Link-Firmware]; danach in dessen Oberfläche (192.168.1.1) das Gluon-2025.1-sysupgrade ohne Revisions-Suffix (passt auch für A2), Einstellungen nicht behalten; der Sprung ar71xx-Gluon 2018.2.1 -> 2025.1 per sysupgrade ging am Gerät [geprüft: Test Neanderfunk 17.10.2026]; ath79 baut selbst kein factory (OpenWrt c9ac7b1729 ohne D-Link-Bootloader nicht getestet) [geprüft: Commit]",
    "schritte": [
     "Moduswahlschalter oben auf Router/AP stellen, nicht auf Repeater [geprüft: Wiki toh:d-link:dir-505]",
@@ -946,15 +946,22 @@
    "ram": "64 MB [Commit]",
    "dauer": "",
    "fehlerbild": "Ethernet nach dem Upgrade nicht erreichbar: Moduswahlschalter oben steht auf Repeater, Router/AP-Stellung nehmen [geprüft: Wiki toh:d-link:dir-505]; D-Link-Recovery (192.168.0.1) an einem DIR-505 A2 mit PCT-Zeichen meldete \"Upgrade successfully!\", schrieb aber weder die D-Link-Datei FW110B02 noch LEDE 17.01.7 noch das Sackgasse-factory (alle mit HORNET-Kopf, Region DEF) [geprüft: Test Neanderfunk 17.10.2026]; aus ar71xx-Gluon (2018.2.1) im Setup-Mode ging ein sysupgrade direkt auf 2025.1 [geprüft: Test Neanderfunk 17.10.2026]; factory gibt es seit ath79 nicht, weil der Port (OpenWrt c9ac7b1729) es mangels D-Link-Bootloader nicht testen konnte, mkcameofw wäre noch da [geprüft: Commit]; nach dem Flash ist der einzige Ethernet-Port Uplink/WAN [geprüft: Test Neanderfunk 17.10.2026]",
-   "notweg": "[Notfall] Weitere Wege laut Commit: modifiziertes U-Boot oder sysupgrade aus älterem OpenWrt [geprüft]. Wiki-Weg (kein ath79-factory): altes ar71xx-factory (OpenWrt 14.07 bis 19.07) über Stock-Web-UI oder D-Link-Recovery, danach sysupgrade auf ath79 (Konfiguration geht verloren) [geprüft: Wiki toh:d-link:dir-505]. D-Link-Recovery: Reset 3-5 s halten, Strom einstecken, Reset weiter halten bis die rote Power-LED blinkt [geprüft: Wiki toh:d-link:dir-505]. Rechner feste IP 192.168.0.5 (nicht .1), http://192.168.0.1; der alte uIP-Stack geht mit modernen Systemen oft nicht: Windows 10 + Firefox oder curl ging, Debian 10/11 nicht [geprüft: Wiki toh:d-link:dir-505]. Recovery erreicht: rote LED blinkt; nach Upload rot dauerhaft, nach ca. 90 s LED aus und Neustart; die 'Success'-Seite kommt immer, auch bei Fehlschlag [geprüft: Wiki toh:d-link:dir-505]. Dauer: Upload, dann ca. 2 min Countdown, Neustart nach ca. 90 s [geprüft: Wiki toh:d-link:dir-505]",
+   "notweg": "[Notfall] Weitere Wege laut Commit: modifiziertes U-Boot oder sysupgrade aus älterem OpenWrt [geprüft]. Wiki-Weg (kein ath79-factory): altes ar71xx-factory (OpenWrt 14.07 bis 19.07) über Stock-Web-UI oder D-Link-Recovery, danach sysupgrade auf ath79 (Konfiguration geht verloren) [geprüft: Wiki toh:d-link:dir-505]. D-Link-Recovery: Reset 3-5 s halten, Strom einstecken, Reset weiter halten bis die rote Power-LED blinkt [geprüft: Wiki toh:d-link:dir-505]. Rechner feste IP 192.168.0.5 (nicht .1), http://192.168.0.1; der alte uIP-Stack geht mit modernen Systemen oft nicht: Windows 10 + Firefox oder curl ging, Debian 10/11 nicht [geprüft: Wiki toh:d-link:dir-505]. Recovery erreicht: rote LED blinkt; nach Upload rot dauerhaft, nach ca. 90 s LED aus und Neustart; die 'Success'-Seite kommt immer, auch bei Fehlschlag [geprüft: Wiki toh:d-link:dir-505]. Dauer: Upload, dann ca. 2 min Countdown, Neustart nach ca. 90 s [geprüft: Wiki toh:d-link:dir-505]; am DIR-505 A2 mit PCT-Zeichen schrieb die D-Link-Recovery nichts, obwohl sie Erfolg meldete [geprüft: Test Neanderfunk 17.10.2026]",
    "rueckweg": "84-Byte-Header von der D-Link-Firmware abschneiden (`dd bs=84 skip=1`), `mtd write ... firmware`; Erfolgsberichte gemischt [geprüft: Wiki toh:d-link:dir-505]",
    "hw_test": "",
-   "rampe": "teilweise: RAMpe-initramfs per tftpboot statt OpenWrt-initramfs; seriell bleibt [abgeleitet]",
+   "rampe": "nicht nötig: der Weg geht über altes OpenWrt in den Weboberflächen; für den seriellen Notweg wäre ein RAMpe-initramfs per tftpboot denkbar (Rezept-Entwurf, nicht gebaut)",
    "rampe_rezept": "devices/d-link-dir-505.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; UART, IPs und Ladeadresse nicht belegt; 64 MB RAM",
    "quelle": "c9ac7b17296ff29d9df39db8a68c449ef1514bbd [geprüft]",
    "anleitung": "",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "zwischen_url": "https://archive.openwrt.org/releases/17.01.7/targets/ar71xx/generic/lede-17.01.7-ar71xx-generic-dir-505-a1-squashfs-factory.bin",
+    "zwischen_datei": "lede-17.01.7-ar71xx-generic-dir-505-a1-squashfs-factory.bin",
+    "zwischen_sha256": "13f357a3ebd73c872a85cf8db592e7d2e313723370513cc56a271d99244aa5ed",
+    "sackgasse_a1_url": "https://firmware.ffnef.de/firmware/sackgasse/21_dias/factory/gluon-nef-21_dias_EOL-24112319sackgasse-d-link-dir-505-rev-a1.bin",
+    "sackgasse_a2_url": "https://firmware.ffnef.de/firmware/sackgasse/21_dias/factory/gluon-nef-21_dias_EOL-24112319sackgasse-d-link-dir-505-rev-a2.bin",
+    "sicherheit": "abgeleitet"
+   }
   },
   {
    "gluon_name": "d-link-dir825b1",
