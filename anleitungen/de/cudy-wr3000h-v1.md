@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.5.30
 grundlagen: [browser-not-found, feste-ip, tftp-server]
-daten_stand: 7c7ec5b9
+daten_stand: 1d8a57e2
 vorlage_stand: 883c350d
 ---
 
@@ -202,6 +202,6 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer, Fehlerbild)
 - geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)
 - geprüft: OpenWrt-Pin (Typenschild/Verwechslung)
-- geprüft: Testplatz grw 16.10.2026 (Gluon-RAMpe passt)
-- geprüft: Testplatz grw 16.10.2026 mit Cudy 2.5.30, router-werkstatt docs/validierung/cudy-wr3000h-v1-2026-10-16.md (Rückweg zur Herstellerfirmware)
+- geprüft: Test Neanderfunk 16.10.2026 (Gluon-RAMpe passt)
+- geprüft: Test Neanderfunk 16.10.2026 mit Cudy 2.5.30 (Rückweg zur Herstellerfirmware)
 - Geräteeintrag: OpenWrt fdbbb8415fd19ae0748a2bbe41b15257054e4077

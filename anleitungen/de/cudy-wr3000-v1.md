@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.19
 grundlagen: [browser-not-found, feste-ip, tftp-server]
-daten_stand: 7c7ec5b9
+daten_stand: 1d8a57e2
 vorlage_stand: 883c350d
 ---
 
@@ -205,6 +205,5 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Cudy-FAQ "OpenWrt Software Download" (Bedingung an die Herstellerfirmware)
 - geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Typenschild/Verwechslung, Dauer, Fehlerbild)
 - geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)
-- geprüft: Testplatz grw (Warnung)
-- geprüft: Testplatz grw 16.10.2026 (Rückweg zur Herstellerfirmware, Gluon-RAMpe passt)
+- geprüft: Test Neanderfunk 16.10.2026 (Warnung, Rückweg zur Herstellerfirmware, Gluon-RAMpe passt)
 - Geräteeintrag: OpenWrt c9cb6411c1a70516d5922e88c45b338de041baba
