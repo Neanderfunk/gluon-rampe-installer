@@ -23,8 +23,10 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
   bei datei_art = "rampe"
     rampe_datei          Dateimuster, z. B. gluon-rampe-<Datum>-…-recovery.bin
     rampe_bytes          vollständige Menge in Worten, z. B. "etwa 52,4 Millionen"
-    rampe_ip             Adresse der RAMpe, z. B. 192.168.1.1
-    led_rampe            z. B. "blinkt gleichmäßig, etwa einmal pro Sekunde"
+    rampe_ip             Adresse der RAMpe, z. B. 192.168.1.1 (die Seite steht
+                         unter /cgi-bin/config, das ergänzt die Vorlage)
+    led_rampe            nach "Nach dem Neustart …", z. B. "blinkt die LED
+                         gleichmäßig, etwa einmal pro Sekunde"
     dauer_gluon          z. B. "unter 2 Minuten"
 
   optional (leer = Satz entfällt)
@@ -34,6 +36,10 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
                          "einer der LAN-Buchsen, nicht mit WAN"
     taste_hinweis        z. B. "Nur die Reset-Taste führt in die Recovery, keine andere."
     led_falsch           was NICHT die Recovery ist
+    led_schreibt         LED, während die Recovery schreibt, nach "dabei …",
+                         z. B. "leuchtet die LED ruhig rot, etwas schwächer"
+    led_start            LED beim Neustart, nach "beim Neustart …",
+                         z. B. "blinkt die LED schnell weiß"
     recovery_wartezeit   Wartezeit, bis die Recovery-Seite bereit ist
     seitentitel          Titel der Recovery-Seite im Browser
     herstellerseite_gleiche_ip   true: die Herstellerfirmware antwortet unter derselben Adresse
@@ -149,21 +155,28 @@ wirklich über das Kabel spricht.
    Antwort des Routers auf und kann danach weg. Mehr unter
    [curl benutzen](grundlagen/curl.md).
 
-7. **Warten.** curl überträgt die Datei und wartet dann weiter, während die
-   Recovery schreibt.{% if w.led_recovery %} Die LED bleibt dabei wie in Schritt 4.{% endif %} Bis zum
-   Neustart vergehen meist {{ w.dauer_neustart }}
+7. **Warten.** curl zeigt beim Hochladen eine Fortschrittsanzeige. Bei 100 %
+   ist die Datei drüben, das dauert meist nur Sekunden. Danach schreibt die
+   Recovery sie in den Speicher{% if w.get("led_schreibt") %}; dabei {{ w.led_schreibt }}{% endif %}.
+   Bis zum Neustart vergehen meist {{ w.dauer_neustart }}
    {%- if w.dauer_lang %}, es kann aber auch {{ w.dauer_lang }} dauern{% endif %}.
-   **Nicht abbrechen, Strom nicht ziehen.**
+   **Strom nicht ziehen.**
+   Oft kommt curl danach nicht von selbst zurück, obwohl alles geklappt hat.
+   Dann beende es mit **Strg+C** (am Mac ctrl+C), aber erst, wenn der Router
+   neu startet{% if w.get("led_start") %} (beim Neustart {{ w.led_start }}){% endif %}.
    {%- if w.datei_art == "rampe" %}
-   Am Ende zeigt curl, wie viel ankam. Geklappt hat es bei
-   **{{ w.rampe_bytes }} Bytes**. Steht da 0, kam nichts an (siehe "Wenn
-   etwas schiefgeht").
+   Kommt curl von selbst zurück, zeigt es in der letzten Zeile, wie viel
+   ankam. Geklappt hat es bei **{{ w.rampe_bytes }} Bytes**. Steht da 0, kam
+   nichts an (siehe "Wenn etwas schiefgeht").
    {%- endif %}
 {%- if w.datei_art == "rampe" %}
 
 8. **Die RAMpe.** Nach dem Neustart {{ w.led_rampe }}. Stell den Rechner
-   wieder auf "automatisch" (DHCP) und öffne `http://{{ w.rampe_ip }}`. Es
-   erscheint die Seite "Firmware aktualisieren".
+   wieder auf "automatisch" (DHCP) und öffne
+   `http://{{ w.rampe_ip }}/cgi-bin/config`. Es erscheint die Seite "Firmware
+   aktualisieren". Kommt "Not Found", hat sich der Browser eine Seite von
+   früher gemerkt: Tipp die Adresse vollständig ein, mit `/cgi-bin/config` am
+   Ende.
    Die RAMpe bleibt auf dem Router, bis die Freifunk-Firmware sie ersetzt.
    Startet der Router zwischendurch neu, ist das harmlos: Seite einfach
    wieder aufrufen.
@@ -207,14 +220,15 @@ wirklich über das Kabel spricht.
 
 ## Woran du erkennst, dass es geklappt hat
 {% if w.datei_art == "rampe" %}
-- curl meldet am Ende **{{ w.rampe_bytes }} Bytes**. Wie lange das gedauert
-  hat, ist egal, es zählt die Menge.
+- curl hat beim Hochladen 100 % erreicht. Kommt es von selbst zurück,
+  meldet es **{{ w.rampe_bytes }} Bytes**. Wie lange das gedauert hat, ist
+  egal, es zählt die Menge.
   {%- if b.get("curl-ausgabe") %}
 
   ![curl in der PowerShell: oben ein Fehlversuch mit "Failed to connect" und 0 Bytes, unten ein vollständiger Upload mit 50.00M bei 100 %]({{ b["curl-ausgabe"] }})
   {%- endif %}
-- Nach dem Neustart {{ w.led_rampe }}, und unter `http://{{ w.rampe_ip }}`
-  steht "Firmware aktualisieren".
+- Nach dem Neustart {{ w.led_rampe }}, und unter
+  `http://{{ w.rampe_ip }}/cgi-bin/config` steht "Firmware aktualisieren".
 {%- else %}
 - Nach dem Neustart meldet sich die Freifunk-Firmware.
 {%- endif %}
@@ -225,6 +239,8 @@ wirklich über das Kabel spricht.
 - **curl meldet "Failed to connect", HTTP 000 und 0 Bytes.** Die Recovery war
   nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
   Router noch einmal in die Recovery bringen (Schritt 4).
+- **curl steht bei 100 % und kommt nicht zurück.** Das ist normal. Sobald
+  der Router neu startet, curl mit Strg+C beenden (Schritt 7).
 - **Nach dem Upload startet wieder die normale D-Link-Firmware.** Die Datei
   ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
   Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.

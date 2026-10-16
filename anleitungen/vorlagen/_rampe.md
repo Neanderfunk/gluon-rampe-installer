@@ -23,8 +23,10 @@ ausprobiert**; die RAMpe selbst läuft auf anderen Geräten.
 1. Lade die RAMpe für den {{ modell }} herunter:
    [{{ wr.get("rampe_datei") or "RAMpe-Datei" }}]({{ wr.get("rampe_url") }}).
 2. {{ wr.get("rampe_weg") or "Spiel sie auf demselben Weg auf wie oben die OpenWrt-Datei." }}
-3. Nach dem Neustart öffne `http://192.168.1.1`. Es erscheint die Seite
-   "Firmware aktualisieren" der RAMpe. Startet der Router zwischendurch neu,
+3. Nach dem Neustart öffne `http://192.168.1.1/cgi-bin/config`. Es erscheint
+   die Seite "Firmware aktualisieren" der RAMpe. Kommt "Not Found", hat sich
+   der Browser eine Seite von früher gemerkt: Tipp die Adresse vollständig
+   ein, mit `/cgi-bin/config` am Ende. Startet der Router zwischendurch neu,
    einfach die Seite wieder aufrufen.
    {%- if br.get("rampe-seite") %}
 
