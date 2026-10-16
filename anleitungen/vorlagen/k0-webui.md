@@ -185,7 +185,8 @@ die Adresse der Oberfläche (sie steht meist auf dem Aufkleber unter dem Gerät)
 ## Wenn etwas schiefgeht
 
 - **Die Oberfläche lehnt die Datei ab.** Häufige Gründe: Das Image ist für
-  eine andere Hardware-Version oder Region (Aufkleber prüfen), der Dateiname
+  eine andere Hardware-Version oder Region (Aufkleber prüfen)
+  {%- if art == "factory" %}, es ist das sysupgrade- statt des factory-Images{% endif %}, der Dateiname
   ist zu lang (kurz umbenennen, z. B. in `factory.bin`), oder die
   Herstellerfirmware ist zu neu und sperrt fremde Firmware (siehe "Vorher
   prüfen", falls vorhanden).
