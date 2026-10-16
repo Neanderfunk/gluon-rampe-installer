@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2025.1 (26100702bro) per TFTP mit dem factory-Image; über die TP-Link-Oberfläche 3.14.3 Build 150518 mit Gluon 2023.2.6 (factory, Originalname)
 grundlagen: [browser-not-found, feste-ip, tftp-server]
-daten_stand: 696209f3
+daten_stand: e53d5fee
 vorlage_stand: dd72aaab
 ---
 
@@ -48,7 +48,10 @@ Aufkleber genau mit "TP-Link TL-WDR3600 v1", bevor du anfängst.
   (Build 150518) das factory-Image direkt angenommen. Laut OpenWrt sperrt
   der spätere Build 151104 fremde Firmware. Lehnt die Oberfläche das Image
   ab, nimm den Weg per TFTP (unten unter "Notfall"): Der WDR3600 holt sich
-  das factory-Image dann selbst, ganz ohne die TP-Link-Oberfläche.
+  das factory-Image dann selbst, ganz ohne die TP-Link-Oberfläche. Den
+  TFTP-Weg hat aber nicht jeder WDR3600: Ein Gerät Ver 1.1 mit PCT-Zeichen
+  (russische Zulassung) und blauen LEDs holte sich bei uns keine Datei, eins
+  mit grünen LEDs schon.
 - **Dateiname:** Nimm die Datei mit ihrem Originalnamen, umbenennen ist
   nicht nötig. Hast du sie mehrfach heruntergeladen und heißt sie jetzt
   `…(1).bin` oder `…[1].bin`, benenne sie zurück. Bei zu langem Namen meldet
@@ -127,7 +130,7 @@ feste Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md))
    zählt.
 2. Stell deinen Rechner fest auf `192.168.0.66`, Netzmaske
    `255.255.255.0`, und starte den TFTP-Server.
-   Am Rechner darf nur diese eine Adresse eingestellt sein, sonst antwortet der TFTP-Server von einer anderen Adresse, und der Router nimmt die Datei nicht.
+   Am Rechner darf nur diese eine Adresse eingestellt sein, sonst antwortet der TFTP-Server von einer anderen Adresse, und der Router nimmt die Datei nicht. Nicht jeder WDR3600 hat diesen Weg, siehe „Vorher prüfen“.
 3. Kabel an eine LAN-Buchse, Strom aus. Drück die Reset-Taste, halte sie
    gedrückt und schalte den Strom ein. Halte sie gedrückt:
    bis der TFTP-Server
@@ -138,7 +141,8 @@ feste Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md))
 ## Zurück zur TP-Link-Firmware
 
 Über den Notfall per TFTP (oben) nimmt der WDR3600 auch die Firmware von
-TP-Link wieder an, allerdings nur ohne ihren Bootloader-Teil am Anfang. So
+TP-Link wieder an, allerdings nur ohne ihren Bootloader-Teil am Anfang und
+nur, wenn er den TFTP-Weg hat (siehe "Vorher prüfen"). So
 bereitest du die Datei vor:
 
 1. Lade
