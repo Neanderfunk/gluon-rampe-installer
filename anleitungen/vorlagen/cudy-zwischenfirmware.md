@@ -33,7 +33,8 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 
   Validierung: WR3000H v1 mit Cudy-Firmware 2.5.30 am Testplatz (adorfer 16.10.2026,
   Protokoll router-werkstatt docs/validierung/cudy-wr3000h-v1-2026-10-16.md, 7253238)
-  und WR3000 v1 mit 2.4.19 (cudy-wr3000-v1-2026-10-16.md, f4b4c2f). Menüpfade und
+  und WR3000 v1 mit 2.4.19 (cudy-wr3000-v1-2026-10-16.md, f4b4c2f; Fehlermeldungen mit
+  falschen Images: cudy-wr3000-v1-geraet2-2026-10-16.md, 432ad4b; red-herrings Fall 11). Menüpfade und
   LED-Zeichen sind dort belegt, für andere Modelle/Versionen vermutet. WPS statt Reset
   beim Rückweg: nur am WR3000 beobachtet [abgeleitet].
 -#}
@@ -153,7 +154,7 @@ genau mit "{{ modell }}", bevor du anfängst.
    {%- if w.force_upgrade %}
    Meldet OpenWrt, dass das Image nicht zum Gerät passt, obwohl du sicher die
    Datei für den {{ modell }} hast, setz zusätzlich den Haken bei
-   "Upgrade erzwingen" (englisch "Force upgrade"). Bei diesem Modell ist das
+   "Erzwinge Upgrade" (englisch "Force upgrade"). Bei diesem Modell ist das
    laut OpenWrt nötig, weil die Zwischenfirmware das Gerät anders benennt.
    {%- endif %}
    Dann **Fortfahren**.
@@ -174,9 +175,22 @@ genau mit "{{ modell }}", bevor du anfängst.
 
 - **Die Prüfsumme stimmt nicht.** Nicht fortfahren. Lad die Datei neu herunter
   und prüf, ob es die für dein Modell und deine Version ist.
-- **Die Cudy-Oberfläche nimmt die Datei nicht an.** Meist ist es die
-  Zwischenfirmware eines anderen Modells oder einer anderen Version. Vergleich
-  noch einmal mit dem Aufkleber.
+- **Die Cudy-Oberfläche meldet "Datei ist nicht verfügbar. Bitte versuchen
+  Sie es erneut."** Die Meldung führt in die Irre: Gemeint ist, dass die
+  Datei nicht von Cudy unterschrieben ist. Es ist also die falsche Datei,
+  etwa schon die Freifunk-Firmware oder die Zwischenfirmware eines anderen
+  Modells. Nicht noch einmal versuchen, sondern die Zwischenfirmware für
+  genau dieses Modell nehmen (Aufkleber vergleichen).
+- **OpenWrt meldet "not supported by this image" oder "Überprüfung der
+  Abbilddatei fehlgeschlagen"** (in Schritt 9, mit einem Haken "Erzwinge
+  Upgrade").
+  {%- if w.force_upgrade %} Bei diesem Modell ist das in Ordnung, wenn unter
+  "Supported devices" dein Modell steht (siehe Schritt 9). Steht dort ein
+  anderes Modell, ist es das falsche Image: **"Abbrechen"** und das richtige
+  holen.
+  {%- else %} Dann ist es das Image für ein anderes Modell. **"Erzwinge
+  Upgrade" nie anhaken**, sondern **"Abbrechen"** und das richtige Image
+  holen.{% endif %}
 - **Nach Schritt 6 antwortet `http://192.168.1.1` nicht.** Steck das Kabel in
   eine andere Buchse. Bei manchen Modellen tauschen LAN und WAN nach dem
   Wechsel auf OpenWrt die Rolle.
