@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, tftp-server]
 daten_stand: 33ff3500
-vorlage_stand: de62336d
+vorlage_stand: d9a95aa5
 ---
 
 # Cudy M3000 v2 mit Motorcomm YT8821: Freifunk-Firmware installieren

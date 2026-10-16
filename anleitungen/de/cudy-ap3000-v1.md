@@ -13,7 +13,7 @@ erprobt_am: 2026-10-17
 erprobt_mit: Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.4
 grundlagen: [browser-not-found, feste-ip, tftp-server]
 daten_stand: 33ff3500
-vorlage_stand: de62336d
+vorlage_stand: d9a95aa5
 ---
 
 # Cudy AP3000 v1: Freifunk-Firmware installieren
@@ -31,6 +31,12 @@ unterschrieben hat. Deshalb geht es in zwei Schritten: Zuerst kommt eine
 **Zwischenfirmware von Cudy** auf den Router, ein OpenWrt, das Cudy
 unterschrieben hat. Darüber spielst du dann die **Freifunk-Firmware** deiner
 Community ein. Beides geht im Browser, du brauchst kein Zusatzprogramm.
+
+> **Nicht ins Heimnetz.** Häng den Cudy AP3000 v1 zum Einrichten direkt an
+> deinen Rechner, nicht an deinen Router zu Hause. Startet nach dem
+> Einspielen die Einrichtungsseite der Freifunk-Firmware, verteilt er selbst
+> Adressen und stört damit deinen Router. Erst wenn die Freifunk-Firmware
+> eingerichtet ist, kommt er an deinen Router.
 
 ## Was du brauchst
 
@@ -132,7 +138,7 @@ nicht öffentlich abgelegt; die Datei bei uns stammt direkt vom Cudy-Support.
     "Not Found"](grundlagen/browser-not-found.md). Wie
     es weitergeht, beschreibt deine Community. Im Betrieb ist die einzige
     Netzwerkbuchse des Cudy AP3000 v1 sein Anschluss ans Internet: Verbinde
-    sie mit deinem Router zu Hause.
+    sie erst nach der Einrichtung mit deinem Router zu Hause.
 
 ## Woran du erkennst, dass es geklappt hat
 
