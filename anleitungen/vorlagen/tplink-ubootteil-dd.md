@@ -98,7 +98,9 @@ mit einer halben Stunde.
 1. **Dateien bereitlegen.** Leg einen Ordner an. Pack die TP-Link-Firmware
    (ein ZIP-Archiv) dort aus und benenn die `.bin`-Datei darin in
    `tpl.bin` um. Leg die Freifunk-Datei daneben und benenn sie in
-   `gluon.bin` um.
+   `gluon.bin` um. Die Namen bei TP-Link enthalten oft Leerzeichen oder
+   eckige Klammern, die im Terminal Ärger machen. Pack und benenn deshalb am
+   besten im Dateimanager, dann musst du die langen Namen nie abtippen.
 
 2. **Zusammensetzen.** Öffne ein Terminal in dem Ordner und gib ein:
 
@@ -248,7 +250,9 @@ Stunde.
 1. **Dateien bereitlegen.** Leg einen Ordner an. Pack die TP-Link-Firmware
    (ein ZIP-Archiv) dort aus und benenn die `.bin`-Datei darin in
    `tpl.bin` um. Leg die Freifunk-Datei daneben und benenn sie in
-   `gluon.bin` um.
+   `gluon.bin` um. Die Namen bei TP-Link enthalten oft Leerzeichen oder
+   eckige Klammern, die im Terminal Ärger machen. Pack und benenn deshalb am
+   besten im Dateimanager, dann musst du die langen Namen nie abtippen.
 
 2. **Zusammensetzen.** Öffne ein Terminal in dem Ordner und gib ein:
 
