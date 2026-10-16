@@ -13637,7 +13637,7 @@
     "In LuCI das Gluon-sysupgrade hochladen, Einstellungen nicht behalten [geprüft: Commit/Neanderfunk-Notiz]",
     "Einige Minuten warten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]"
    ],
-   "warnung": "",
+   "warnung": "Gerät nach dem Flash nicht ins Heimnetz stecken, solange der Gluon-Setup-Mode läuft: Gluon verteilt dann auf der einzigen Buchse selbst DHCP, das kollidiert mit dem DHCP des Heimrouters; erst direkt am eigenen Rechner einrichten, dann ins Netz [abgeleitet: Gluon-Setup-Mode, wie Gluon 2025.1 die einzige Buchse im Setup-Mode belegt, ist am Gerät nicht gemessen]",
    "taste": "keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]",
    "zeichen": "nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; mehrfarbige LED: Reset beim Einschalten orange/rot im Wechsel; beim Schreiben der Zwischenfirmware rot/grün/blau/orange im Wechsel, dann schnelles buntes Blinken, fertig = violett-weiß dauerhaft [geprüft: Test Neanderfunk 17.10.2026]",
    "uebertragung": "webui-upload: Stock-UI 192.168.10.1 (Passwort admin), danach LuCI 192.168.1.1",
