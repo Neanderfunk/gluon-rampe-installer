@@ -13,7 +13,7 @@ erprobt_am: 2026-10-13
 erprobt_mit: gluon-rampe-20261010-d-link-aquila-pro-ai-m60-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m60-a1-recovery.bin
 grundlagen: [browser-https, curl, feste-ip]
-daten_stand: 0a6fad58
+daten_stand: bfed6935
 vorlage_stand: 85ca2180
 ---
 
@@ -103,13 +103,13 @@ wirklich über das Kabel spricht.
 
 7. **Warten.** curl überträgt die Datei und wartet dann weiter, während die
    Recovery schreibt. Die LED bleibt dabei wie in Schritt 4. Bis zum
-   Neustart vergehen meist knapp 2 Minuten, es kann aber auch über 10 Minuten dauern.
+   Neustart vergehen meist wenige Sekunden bis einige Minuten, es kann aber auch über 10 Minuten dauern.
    **Nicht abbrechen, Strom nicht ziehen.**
    Am Ende zeigt curl, wie viel ankam. Geklappt hat es bei
    **etwa 52,4 Millionen Bytes**. Steht da 0, kam nichts an (siehe "Wenn
    etwas schiefgeht").
 
-8. **Die RAMpe.** Nach dem Neustart blinkt die LED gleichmäßig, etwa einmal pro Sekunde. Stell den Rechner
+8. **Die RAMpe.** Nach dem Neustart blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde. Stell den Rechner
    wieder auf "automatisch" (DHCP) und öffne `http://192.168.1.1`. Es
    erscheint die Seite "Firmware aktualisieren".
    Die RAMpe bleibt auf dem Router, bis die Freifunk-Firmware sie ersetzt.
@@ -146,7 +146,7 @@ wirklich über das Kabel spricht.
   hat, ist egal, es zählt die Menge.
 
   ![curl in der PowerShell: oben ein Fehlversuch mit "Failed to connect" und 0 Bytes, unten ein vollständiger Upload mit 50.00M bei 100 %](../bilder/d-link-aquila-pro-ai-m60-a1/curl-ausgabe.png)
-- Nach dem Neustart blinkt die LED gleichmäßig, etwa einmal pro Sekunde, und unter `http://192.168.1.1`
+- Nach dem Neustart blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde, und unter `http://192.168.1.1`
   steht "Firmware aktualisieren".
 - Die Erfolgsmeldung der D-Link-Seite zählt nicht, sie erscheint immer.
 
