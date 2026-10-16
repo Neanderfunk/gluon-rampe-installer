@@ -10,7 +10,7 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, tftp-server]
-daten_stand: 96f06a89
+daten_stand: 9d9d8227
 vorlage_stand: dd72aaab
 ---
 

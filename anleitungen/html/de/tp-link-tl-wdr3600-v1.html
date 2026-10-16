@@ -15,16 +15,16 @@
 <meta name="anleitung:risiko" content="normal">
 <meta name="anleitung:status" content="erprobt">
 <meta name="anleitung:erprobt_am" content="2026-10-16">
-<meta name="anleitung:erprobt_mit" content="Gluon 2023.2.6 (26091920sta), factory-Image mit Originalnamen über die TP-Link-Oberfläche 3.14.3 Build 150518; Gluon 2025.1 erwartet, nicht getestet">
+<meta name="anleitung:erprobt_mit" content="Gluon 2025.1 (26100702bro) per TFTP mit dem factory-Image; über die TP-Link-Oberfläche 3.14.3 Build 150518 mit Gluon 2023.2.6 (factory, Originalname)">
 <meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, tftp-server">
-<meta name="anleitung:daten_stand" content="96f06a89">
+<meta name="anleitung:daten_stand" content="9d9d8227">
 <meta name="anleitung:vorlage_stand" content="dd72aaab">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>TP-Link TL-WDR3600 v1: Freifunk-Firmware installieren</h1>
 <blockquote>
-<p><strong>Am Gerät erprobt</strong> am 16.10.2026 mit <code>Gluon 2023.2.6 (26091920sta), factory-Image mit Originalnamen über die TP-Link-Oberfläche 3.14.3 Build 150518; Gluon 2025.1 erwartet, nicht getestet</code>.</p>
+<p><strong>Am Gerät erprobt</strong> am 16.10.2026 mit <code>Gluon 2025.1 (26100702bro) per TFTP mit dem factory-Image; über die TP-Link-Oberfläche 3.14.3 Build 150518 mit Gluon 2023.2.6 (factory, Originalname)</code>.</p>
 <p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -131,7 +131,7 @@ von deinem Rechner holen. Dafür brauchst du einen
 TFTP-Server (<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>) und eine
 feste Adresse am Rechner (<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).</p>
 <ol>
-<li>Leg die TP-Link-Firmware ohne ihren Bootloader-Teil (wie du sie vorbereitest, steht unten unter „Zurück zur TP-Link-Firmware“) unter dem Namen <code>wdr3600v1_tp_recovery.bin</code> in den
+<li>Leg das factory-Image der Freifunk-Firmware (für den Weg zurück zu TP-Link stattdessen die TP-Link-Firmware ohne ihren Bootloader-Teil, siehe unten unter „Zurück zur TP-Link-Firmware“) unter dem Namen <code>wdr3600v1_tp_recovery.bin</code> in den
 Ordner des TFTP-Servers. Genau dieser Name, Groß- und Kleinschreibung
 zählt.</li>
 <li>Stell deinen Rechner fest auf <code>192.168.0.66</code>, Netzmaske
@@ -141,7 +141,7 @@ Am Rechner darf nur diese eine Adresse eingestellt sein, sonst antwortet der TFT
 gedrückt und schalte den Strom ein. Halte sie gedrückt:
 bis der TFTP-Server
 zeigt, dass die Datei abgeholt wird.</li>
-<li>Warten, etwa 6 Minuten. Das Gerät
+<li>Warten, einige Minuten (mit der TP-Link-Firmware etwa 6 Minuten). Das Gerät
 schreibt die Datei und startet neu.</li>
 </ol>
 <h2>Zurück zur TP-Link-Firmware</h2>

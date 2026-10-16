@@ -10,15 +10,15 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: erprobt
 erprobt_am: 2026-10-16
-erprobt_mit: Gluon 2023.2.6 (26091920sta), factory-Image mit Originalnamen über die TP-Link-Oberfläche 3.14.3 Build 150518; Gluon 2025.1 erwartet, nicht getestet
+erprobt_mit: Gluon 2025.1 (26100702bro) per TFTP mit dem factory-Image; über die TP-Link-Oberfläche 3.14.3 Build 150518 mit Gluon 2023.2.6 (factory, Originalname)
 grundlagen: [browser-not-found, feste-ip, tftp-server]
-daten_stand: 96f06a89
+daten_stand: 9d9d8227
 vorlage_stand: dd72aaab
 ---
 
 # TP-Link TL-WDR3600 v1: Freifunk-Firmware installieren
 
-> **Am Gerät erprobt** am 16.10.2026 mit `Gluon 2023.2.6 (26091920sta), factory-Image mit Originalnamen über die TP-Link-Oberfläche 3.14.3 Build 150518; Gluon 2025.1 erwartet, nicht getestet`.
+> **Am Gerät erprobt** am 16.10.2026 mit `Gluon 2025.1 (26100702bro) per TFTP mit dem factory-Image; über die TP-Link-Oberfläche 3.14.3 Build 150518 mit Gluon 2023.2.6 (factory, Originalname)`.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
@@ -122,7 +122,7 @@ von deinem Rechner holen. Dafür brauchst du einen
 TFTP-Server ([TFTP-Server einrichten](grundlagen/tftp-server.md)) und eine
 feste Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
 
-1. Leg die TP-Link-Firmware ohne ihren Bootloader-Teil (wie du sie vorbereitest, steht unten unter „Zurück zur TP-Link-Firmware“) unter dem Namen `wdr3600v1_tp_recovery.bin` in den
+1. Leg das factory-Image der Freifunk-Firmware (für den Weg zurück zu TP-Link stattdessen die TP-Link-Firmware ohne ihren Bootloader-Teil, siehe unten unter „Zurück zur TP-Link-Firmware“) unter dem Namen `wdr3600v1_tp_recovery.bin` in den
    Ordner des TFTP-Servers. Genau dieser Name, Groß- und Kleinschreibung
    zählt.
 2. Stell deinen Rechner fest auf `192.168.0.66`, Netzmaske
@@ -132,7 +132,7 @@ feste Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md))
    gedrückt und schalte den Strom ein. Halte sie gedrückt:
    bis der TFTP-Server
    zeigt, dass die Datei abgeholt wird.
-4. Warten, etwa 6 Minuten. Das Gerät
+4. Warten, einige Minuten (mit der TP-Link-Firmware etwa 6 Minuten). Das Gerät
    schreibt die Datei und startet neu.
 
 ## Zurück zur TP-Link-Firmware
