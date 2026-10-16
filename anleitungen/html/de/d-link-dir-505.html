@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D-Link DIR-505: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="d-link-dir-505">
+<meta name="anleitung:modell" content="D-Link DIR-505">
+<meta name="anleitung:anzeige" content="D-Link DIR-505">
+<meta name="anleitung:familie" content="sonderweg-d-link-dir-505">
+<meta name="anleitung:gluon_broken" content="false">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:level" content="L1">
+<meta name="anleitung:level_text" content="Zwei Schritte im Browser">
+<meta name="anleitung:risiko" content="normal">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="browser-not-found">
+<meta name="anleitung:daten_stand" content="6c52e41c">
+<meta name="anleitung:vorlage_stand" content="af90855f">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<h1>D-Link DIR-505: Freifunk-Firmware installieren</h1>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Wichtige Schritte haben wir von
+ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
+aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+beschrieben.</p>
+<p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+Anleitung für alle nach dir besser:</p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20D-Link%20DIR-505">projekt@neanderfunk.de</a></p>
+</blockquote>
+<p>Der D-Link DIR-505 ist ein alter Reise-Router. Für die aktuelle
+Freifunk-Firmware gibt es keine Datei, die die D-Link-Oberfläche direkt
+annimmt. Der Weg führt deshalb über ein altes OpenWrt als Zwischenstufe.
+Das ist umständlich und lohnt sich für ein Gerät, das schon da ist. Zum
+Kaufen empfehlen wir den D-Link DIR-505 nicht mehr.</p>
+<blockquote>
+<p><strong>Nicht über die Notfall-Seite von D-Link.</strong> Hält man beim Einstecken die
+Reset-Taste, startet die &quot;D-Link Router Recovery Mode&quot;-Seite. Bei uns hat
+sie jedes Mal &quot;Upgrade successfully!&quot; gemeldet, aber nichts geschrieben,
+egal welche Datei. Nimm den Weg über die normale D-Link-Oberfläche unten.</p>
+</blockquote>
+<h2>Was du brauchst</h2>
+<ul>
+<li>den Router und einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
+<li>als Zwischenstufe das alte OpenWrt (LEDE 17.01.7):
+<a href="https://archive.openwrt.org/releases/17.01.7/targets/ar71xx/generic/lede-17.01.7-ar71xx-generic-dir-505-a1-squashfs-factory.bin">lede-17.01.7-ar71xx-generic-dir-505-a1-squashfs-factory.bin</a>, SHA256
+<code>13f357a3ebd73c872a85cf8db592e7d2e313723370513cc56a271d99244aa5ed</code>. Das &quot;a1&quot; im Namen passt für alle
+D-Link DIR-505 der Revision A, auch für A2.</li>
+<li>die Freifunk-Firmware deiner Community für den D-Link DIR-505, und zwar das
+<strong>sysupgrade</strong>-Image. Sein Name endet auf <code>-d-link-dir-505-sysupgrade.bin</code>,
+ohne &quot;a1&quot; oder &quot;a2&quot;, und passt für beide Revisionen.</li>
+</ul>
+<h2>Schritte</h2>
+<ol>
+<li>
+<p><strong>Schalter auf Router/AP.</strong> Oben auf dem Router ist ein Schiebeschalter.
+Stell ihn auf <strong>Router/AP</strong>. In der Stellung &quot;Repeater&quot; ist die
+Netzwerkbuchse aus.</p>
+</li>
+<li>
+<p><strong>Verbinden.</strong> Steck das Kabel vom Rechner in die Netzwerkbuchse des
+Routers und steck den Router in die Steckdose. Der Rechner bleibt auf
+&quot;automatisch&quot; (DHCP).</p>
+</li>
+<li>
+<p><strong>D-Link-Oberfläche öffnen.</strong> Öffne im Browser <code>http://192.168.0.1</code>.
+Erscheint ein Einrichtungsassistent, brich ihn ab (&quot;Cancel&quot;). Melde dich
+mit dem Benutzer <code>admin</code> an, das Passwort bleibt ab Werk leer.</p>
+</li>
+<li>
+<p><strong>Altes OpenWrt aufspielen.</strong> Geh zu <strong>Maintenance → Firmware</strong>, wähl
+über &quot;Browse&quot; die Datei <code>lede-17.01.7-ar71xx-generic-dir-505-a1-squashfs-factory.bin</code> und klick &quot;Upload&quot;. Der
+Router schreibt sie und startet neu, laut D-Link etwa 150 Sekunden.
+<strong>Strom nicht ziehen.</strong></p>
+</li>
+<li>
+<p><strong>OpenWrt öffnen.</strong> Öffne <code>http://192.168.1.1</code> (neue Adresse). Melde
+dich mit dem Benutzer <code>root</code> an, das Passwort-Feld bleibt leer, und klick
+&quot;Login&quot;. Die Warnung &quot;No password set!&quot; kannst du hier übergehen.</p>
+</li>
+<li>
+<p><strong>Freifunk-Firmware aufspielen.</strong> Geh zu <strong>System → Backup / Flash
+Firmware</strong>. Unten unter &quot;Flash new firmware image&quot; <strong>entfern den Haken
+bei &quot;Keep settings&quot;</strong>, wähl bei &quot;Image&quot; das sysupgrade-Image deiner
+Community und klick <strong>&quot;Flash image...&quot;</strong>. Auf der nächsten Seite steht
+&quot;Note: Configuration files will be erased.&quot; Klick <strong>&quot;Proceed&quot;</strong>.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> Der Router schreibt die Freifunk-Firmware und startet neu,
+einige Minuten. <strong>Strom nicht ziehen.</strong></p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Danach startet die Freifunk-Firmware deiner Community: je nach
+Community zuerst mit einer Einrichtungsseite unter <code>http://192.168.1.1</code>
+oder gleich im Betrieb.
+Kommt dort &quot;Not Found&quot;, siehe <a href="grundlagen/browser-not-found.html">Der Browser zeigt
+&quot;Not Found&quot;</a>.
+Im Betrieb ist die eine Netzwerkbuchse des D-Link DIR-505 sein Anschluss
+ans Internet: Steck sie an deinen Router zu Hause.</p>
+</li>
+</ol>
+<h2>Schon eine ältere Freifunk-Firmware drauf?</h2>
+<p>Läuft auf dem D-Link DIR-505 schon eine alte Freifunk-Firmware, geht es
+kürzer, ganz ohne Zwischenstufe. Bei uns ist ein Router so direkt von einer
+Freifunk-Firmware aus dem Jahr 2018 auf die aktuelle gewechselt.</p>
+<ol>
+<li>Bring den Router in den Konfigurationsmodus: Drück im Betrieb die
+Reset-Taste etwa 10 Sekunden lang. Pass dabei auf, dass der
+Schiebeschalter oben nicht verrutscht.</li>
+<li>Der Rechner bleibt auf &quot;automatisch&quot;. Öffne <code>http://192.168.1.1</code>.</li>
+<li>Geh zu <strong>Erweiterte Einstellungen → Firmware aktualisieren</strong>, wähl das
+sysupgrade-Image, <strong>entfern den Haken bei &quot;Konfiguration behalten&quot;</strong>,
+lade die Datei hoch und bestätige mit <strong>&quot;Fortfahren&quot;</strong>.</li>
+<li>Weiter wie oben ab Schritt 7.</li>
+</ol>
+<p>Statt LEDE kannst du in Schritt 4 auch die alte Freifunk-Firmware
+&quot;Sackgasse&quot; von Neanderfunk als Zwischenstufe nehmen, passend zur Revision
+auf dem Aufkleber: <a href="https://firmware.ffnef.de/firmware/sackgasse/21_dias/factory/gluon-nef-21_dias_EOL-24112319sackgasse-d-link-dir-505-rev-a1.bin">Rev. A1</a> oder
+<a href="https://firmware.ffnef.de/firmware/sackgasse/21_dias/factory/gluon-nef-21_dias_EOL-24112319sackgasse-d-link-dir-505-rev-a2.bin">Rev. A2</a>. Sie startet danach gleich im
+Konfigurationsmodus; weiter ab Punkt 2 dieses Abschnitts.</p>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>Nach Schritt 4 antwortet unter <code>http://192.168.1.1</code> OpenWrt (LEDE).</li>
+<li>Nach Schritt 7 meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>Über das Kabel kommt gar keine Verbindung.</strong> Prüf den Schiebeschalter
+oben: Er muss auf &quot;Router/AP&quot; stehen. Er verrutscht leicht, etwa beim
+Drücken der Reset-Taste.</li>
+<li><strong>Die D-Link-Oberfläche fragt nach einem Passwort, und leer geht nicht.</strong>
+Dann hat jemand eins gesetzt. Setz den Router auf Werkseinstellungen
+zurück (<a href="https://eu.dlink.com/uk/en/support/faq/routers/mobile-routers/dir-series/dir-505/how-do-i-reset-my-dir-505-to-factory-default-settings">so beschreibt es D-Link</a>)
+und fang bei Schritt 3 wieder an.</li>
+<li><strong>OpenWrt meldet &quot;The uploaded image file does not contain a supported
+format&quot;.</strong> Prüf, ob es das sysupgrade-Image für den D-Link DIR-505 ist.</li>
+<li><strong>Nach dem Upload startet wieder die D-Link-Firmware.</strong> Lief der Upload
+über die Notfall-Seite (Reset beim Einstecken), ist das bekannt: Sie
+schreibt nichts. Nimm die normale Oberfläche (Schritt 3).</li>
+</ul>
+<h2>Zurück zur D-Link-Firmware</h2>
+<p>Einen verlässlichen Weg zurück kennen wir nicht. Die Notfall-Seite von D-Link
+hat bei uns auch die eigene Firmware von D-Link nicht geschrieben.</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet: Wiki toh:d-link:dir-505; am Gerät nicht geprüft, es lief keine D-Link-Firmware (Weg ab Werk, Schritte (Normalweg))</li>
+<li>abgeleitet: Wiki-Zusammenfassung, im Rohtext toh:d-link:dir-505 nicht gefunden (Zugang)</li>
+<li>geprüft (Anschluss, Adressen, Programm, Datei, Notweg, Quelle (OpenWrt-Commit))</li>
+<li>geprüft: Commit (Weg ab Werk, Fehlerbild)</li>
+<li>geprüft: Test Neanderfunk 17.10.2026 (Weg ab Werk, Schritte (Normalweg), Warnung, Fehlerbild, Notweg)</li>
+<li>geprüft: Wiki toh:d-link:dir-505 (Schritte (Normalweg), Anschluss, Zugang, Typenschild/Verwechslung, Fehlerbild, Notweg, Rückweg zur Herstellerfirmware)</li>
+<li>geprüft: archive.openwrt.org sha256sums (Schritte (Normalweg))</li>
+<li>Geräteeintrag: c9ac7b17296ff29d9df39db8a68c449ef1514bbd [geprüft]</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>
