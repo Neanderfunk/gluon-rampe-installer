@@ -28,6 +28,12 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     rueckweg_buchse      Buchse für die Recovery, leer = "eine LAN-Buchse"
     rueckweg_halten      z. B. "mindestens 8 Sekunden"
     rueckweg_quelle      woher die Cudy-Firmware kommt, leer = Cudys Download-Seite
+    rueckweg_url         Direktlink auf die Download-Seite des Modells bei Cudy, z. B.
+                         https://www.cudy.com/pages/download-center/wr3000h-1-0
+
+  Validierung: WR3000H v1 mit Cudy-Firmware 2.5.30 am Testplatz (adorfer 16.10.2026,
+  Protokoll router-werkstatt docs/validierung/cudy-wr3000h-v1-2026-10-16.md, 7253238).
+  Menüpfade und LED-Zeichen sind dort belegt, für andere Modelle/Versionen vermutet.
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
@@ -88,21 +94,26 @@ genau mit "{{ modell }}", bevor du anfängst.
    Kabel an eine **LAN**-Buchse. Der Rechner holt sich seine Adresse
    automatisch, so wie er normalerweise eingestellt ist.
 
-3. **Cudy-Oberfläche öffnen.** Öffne im Browser `http://{{ w.cudy_ip }}` und
-   melde dich mit dem Passwort `admin` an. Beim ersten Mal fragt der Router
-   einige Einstellungen ab: alles mit "Weiter" bestätigen, am Ende
-   speichern.
+3. **Cudy-Oberfläche öffnen.** Öffne im Browser `http://{{ w.cudy_ip }}`.
+   Ab Werk verlangt die Oberfläche zuerst ein **eigenes Admin-Passwort**
+   (mindestens 8 Zeichen). Denk dir eins aus und merk es dir. Ältere
+   Cudy-Firmware fragt stattdessen nach dem Passwort `admin`. Danach startet
+   der Assistent "Schnelleinrichtung": Den kannst du mit **"« Beenden"**
+   überspringen.
 
-4. **Zwischenfirmware hochladen.** Geh zu **Erweiterte Einstellungen →
-   System → Firmware** und wähl die Zwischenfirmware aus. Die Bezeichnungen
-   können je nach Modell und Alter der Cudy-Firmware etwas anders heißen.
+4. **Zwischenfirmware hochladen.** Geh zum Reiter **"Allgemeine
+   Einstellungen"**, klick in der Symbolspalte links ganz unten auf
+   **"Firmware"** und im Abschnitt **"Lokales Update"** auf
+   **"Durchsuchen …"**. Wähl dort die Zwischenfirmware aus. Bei älterer
+   Cudy-Firmware heißt der Weg **Erweiterte Einstellungen → System →
+   Firmware**.
    {%- if b.get("cudy-firmware-seite") %}
 
    ![Die Firmware-Seite der Cudy-Oberfläche]({{ b["cudy-firmware-seite"] }})
    {%- endif %}
 
-5. **Prüfsumme vergleichen.** Nach dem Hochladen zeigt der Router eine
-   MD5-Prüfsumme.
+5. **Prüfsumme vergleichen.** Nach dem Hochladen zeigt der Router im
+   Fenster "Lokales Update" eine MD5-Prüfsumme und die Größe.
    {%- if w.zwischen_md5 %} Sie muss genau so aussehen:
 
    ```
@@ -114,8 +125,10 @@ genau mit "{{ modell }}", bevor du anfängst.
    steht. Stimmt sie, klick auf **Fortfahren**.
    {%- endif %}
 
-6. **Warten.** Der Router schreibt die Zwischenfirmware und startet neu. Das
-   dauert einige Minuten. **Strom nicht ziehen.**
+6. **Warten.** Die Oberfläche zeigt "System - Firmware wird installiert…".
+   Die LEDs zeigen erst ein langsames Lauflicht, dann blinken sie kurz
+   schnell, dann startet der Router neu. Bei uns dauerte das weniger als eine
+   Minute. **Strom nicht ziehen.**
 
 ### Teil 2: Freifunk-Firmware
 
@@ -130,9 +143,10 @@ genau mit "{{ modell }}", bevor du anfängst.
    deiner Community aus.
 
 9. **Einstellungen nicht behalten.** Bevor es losgeht, zeigt OpenWrt ein
-   Fenster mit einem Haken bei **"Einstellungen beibehalten"** (englisch
-   "Keep settings"). **Entfern diesen Haken.** Es darf kein Haken mehr
-   gesetzt sein.
+   Fenster. Dort ist der Haken bei **"Einstellungen beibehalten und die
+   aktuelle Konfiguration sichern"** (englisch "Keep settings …") schon
+   gesetzt. **Entfern diesen Haken.** Die beiden Haken darunter sind schon
+   aus. Es darf kein Haken mehr gesetzt sein.
    {%- if w.force_upgrade %}
    Meldet OpenWrt, dass das Image nicht zum Gerät passt, obwohl du sicher die
    Datei für den {{ modell }} hast, setz zusätzlich den Haken bei
@@ -178,21 +192,31 @@ Werkzeug: einen TFTP-Server auf deinem Rechner
 ([TFTP-Server einrichten](grundlagen/tftp-server.md)) und eine feste
 Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
 
-1. Lade die Cudy-Firmware für dein Modell
-   {%- if w.rueckweg_quelle %} {{ w.rueckweg_quelle }}{% else %} von der
-   Download-Seite von Cudy{% endif %} herunter, benenne sie in
-   `recovery.bin` um (genau so) und leg sie in den Ordner des TFTP-Servers.
+1. {% if w.get("rueckweg_url") %}Lade die Cudy-Firmware für dein Modell von der
+   [Download-Seite von Cudy]({{ w.get("rueckweg_url") }}) herunter, und zwar
+   die oberste, also neueste Version.
+   {%- elif w.rueckweg_quelle %}Die Cudy-Firmware für dein Modell bekommst du
+   {{ w.rueckweg_quelle }}.
+   {%- else %}Lade die Cudy-Firmware für dein Modell von der Download-Seite von
+   Cudy herunter, die neueste Version.{% endif %}
+   Kommt sie als ZIP-Archiv, pack es aus: Darin liegen eine `md5.txt` und
+   eine `.bin`-Datei. Die `.bin`-Datei heißt bei Cudy oft
+   "…-sysupgrade.bin". Das ist trotzdem die Cudy-Firmware, nicht die
+   Freifunk-Firmware. Benenn sie in `recovery.bin` um (genau so) und leg sie
+   in den Ordner des TFTP-Servers.
 2. Stell deinen Rechner fest auf `192.168.1.88`, Netzmaske `255.255.255.0`,
    und starte den TFTP-Server.
 3. Steck das Kabel an
    {%- if w.rueckweg_buchse %} {{ w.rueckweg_buchse }}{% else %} eine
    LAN-Buchse{% endif %}. Der Router hat noch keinen Strom.
 4. Drück die Reset-Taste und halte sie gedrückt, steck den Strom ein und halte
-   weiter{% if w.rueckweg_halten %} ({{ w.rueckweg_halten }}){% endif %}, bis
-   alle LEDs schnell blinken oder der TFTP-Server den Download zeigt. Dann
-   loslassen.
-5. Blinken die LEDs langsam, ist der Router fertig. Danach den Rechner wieder
-   auf "automatisch" stellen; die Cudy-Oberfläche ist unter
+   weiter{% if w.rueckweg_halten %} (laut Cudy {{ w.rueckweg_halten }}){% endif %},
+   bis **alle LEDs einmal kurz aufleuchten**, etwa eine halbe Sekunde lang.
+   Dann loslassen. Hältst du weiter, fängt der Router etwa alle 20 Sekunden
+   von vorn an. Im TFTP-Server siehst du, dass `recovery.bin` abgeholt wird.
+5. Der Router ist fertig, wenn die **System-LED ruhig leuchtet** (steckt ein
+   Kabel in der WAN-Buchse, leuchtet zusätzlich "Internet"). Danach den
+   Rechner wieder auf "automatisch" stellen; die Cudy-Oberfläche ist unter
    `http://{{ w.cudy_ip }}` erreichbar.
 
 {{ zusatz.text }}
