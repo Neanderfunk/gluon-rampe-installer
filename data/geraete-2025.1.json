@@ -19198,7 +19198,7 @@
     "am": "2026-10-16",
     "mit": "Gluon 2025.1 (26100702bro), vorher TOTOLINK-Firmware V9.1.0u.6118 über den Notfall-Modus",
     "weg": "Notfall-Modus des Bootloaders (Reset beim Einstecken, LAN1, Rechner 192.168.1.10), ältere Firmware 6118 aus unserem Dump (ZIP fehlerfrei entpackt), dann Gluon-sysupgrade über Advanced → Tools → Upgrade → Local Upgrade",
-    "beleg": "Testplatz grw, router-werkstatt docs/validierung/totolink-x5000r-2026-10-16.md"
+    "beleg": "Testplatz grw, router-werkstatt docs/validierung/totolink-x5000r-2026-10-16.md (cb40898)"
    },
    "werte": {
     "alt_url": "https://download.ffnef.de/other/dump/X5000R_V9.1.0u.6118_B20201102.zip",
