@@ -32,8 +32,10 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
                          https://www.cudy.com/pages/download-center/wr3000h-1-0
 
   Validierung: WR3000H v1 mit Cudy-Firmware 2.5.30 am Testplatz (adorfer 16.10.2026,
-  Protokoll router-werkstatt docs/validierung/cudy-wr3000h-v1-2026-10-16.md, 7253238).
-  Menüpfade und LED-Zeichen sind dort belegt, für andere Modelle/Versionen vermutet.
+  Protokoll router-werkstatt docs/validierung/cudy-wr3000h-v1-2026-10-16.md, 7253238)
+  und WR3000 v1 mit 2.4.19 (cudy-wr3000-v1-2026-10-16.md, f4b4c2f). Menüpfade und
+  LED-Zeichen sind dort belegt, für andere Modelle/Versionen vermutet. WPS statt Reset
+  beim Rückweg: nur am WR3000 beobachtet [abgeleitet].
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
@@ -99,7 +101,7 @@ genau mit "{{ modell }}", bevor du anfängst.
    (mindestens 8 Zeichen). Denk dir eins aus und merk es dir. Ältere
    Cudy-Firmware fragt stattdessen nach dem Passwort `admin`. Danach startet
    der Assistent "Schnelleinrichtung": Den kannst du mit **"« Beenden"**
-   überspringen.
+   überspringen (bei manchen Versionen heißt der Knopf "« Ausfahrt").
 
 4. **Zwischenfirmware hochladen.** Geh zum Reiter **"Allgemeine
    Einstellungen"**, klick in der Symbolspalte links ganz unten auf
@@ -126,9 +128,9 @@ genau mit "{{ modell }}", bevor du anfängst.
    {%- endif %}
 
 6. **Warten.** Die Oberfläche zeigt "System - Firmware wird installiert…".
-   Die LEDs zeigen erst ein langsames Lauflicht, dann blinken sie kurz
-   schnell, dann startet der Router neu. Bei uns dauerte das weniger als eine
-   Minute. **Strom nicht ziehen.**
+   Die LEDs zeigen erst ein Lauflicht (bis etwa eine halbe Minute), dann
+   blinken oder flackern sie kurz, dann startet der Router einmal neu. Bei
+   uns dauerte das weniger als eine Minute. **Strom nicht ziehen.**
 
 ### Teil 2: Freifunk-Firmware
 
@@ -137,13 +139,14 @@ genau mit "{{ modell }}", bevor du anfängst.
    Öffne `http://192.168.1.1`. Es erscheint die Anmeldung von OpenWrt
    ("LuCI"). Das Passwort-Feld bleibt leer, einfach anmelden.
 
-8. **Freifunk-Firmware auswählen.** Geh zu **System → Backup / Firmware
-   Update** (englisch "Backup / Flash Firmware"). Ganz unten unter "Firmware
-   aktualisieren" (englisch "Flash image…") wählst du das sysupgrade-Image
-   deiner Community aus.
+8. **Freifunk-Firmware hochladen.** Geh zu **System → Backup / Firmware
+   Update** (englisch "Backup / Flash Firmware"). Klick ganz unten auf
+   **"Firmware aktualisieren…"** (englisch "Flash image…"). Es erscheint das
+   Fenster "Datei wird hochgeladen…": Wähl dort das sysupgrade-Image deiner
+   Community aus und klick auf **"Hochladen"**.
 
-9. **Einstellungen nicht behalten.** Bevor es losgeht, zeigt OpenWrt ein
-   Fenster. Dort ist der Haken bei **"Einstellungen beibehalten und die
+9. **Einstellungen nicht behalten.** Danach zeigt OpenWrt das Fenster
+   "Image schreiben?" (englisch "Flash image?"). Dort ist der Haken bei **"Einstellungen beibehalten und die
    aktuelle Konfiguration sichern"** (englisch "Keep settings …") schon
    gesetzt. **Entfern diesen Haken.** Die beiden Haken darunter sind schon
    aus. Es darf kein Haken mehr gesetzt sein.
@@ -199,8 +202,8 @@ Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
    {{ w.rueckweg_quelle }}.
    {%- else %}Lade die Cudy-Firmware für dein Modell von der Download-Seite von
    Cudy herunter, die neueste Version.{% endif %}
-   Kommt sie als ZIP-Archiv, pack es aus: Darin liegen eine `md5.txt` und
-   eine `.bin`-Datei. Die `.bin`-Datei heißt bei Cudy oft
+   Kommt sie als ZIP-Archiv, pack es aus: Darin liegt die `.bin`-Datei,
+   manchmal zusätzlich eine `md5.txt`. Die `.bin`-Datei heißt bei Cudy oft
    "…-sysupgrade.bin". Das ist trotzdem die Cudy-Firmware, nicht die
    Freifunk-Firmware. Benenn sie in `recovery.bin` um (genau so) und leg sie
    in den Ordner des TFTP-Servers.
@@ -209,13 +212,19 @@ Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
 3. Steck das Kabel an
    {%- if w.rueckweg_buchse %} {{ w.rueckweg_buchse }}{% else %} eine
    LAN-Buchse{% endif %}. Der Router hat noch keinen Strom.
-4. Drück die Reset-Taste und halte sie gedrückt, steck den Strom ein und halte
+4. Drück die Reset-Taste (versenkt, mit einer Büroklammer) und halte sie
+   gedrückt, steck den Strom ein und halte
    weiter{% if w.rueckweg_halten %} (laut Cudy {{ w.rueckweg_halten }}){% endif %},
    bis **alle LEDs einmal kurz aufleuchten**, etwa eine halbe Sekunde lang.
    Dann loslassen. Hältst du weiter, fängt der Router etwa alle 20 Sekunden
    von vorn an. Im TFTP-Server siehst du, dass `recovery.bin` abgeholt wird.
-5. Der Router ist fertig, wenn die **System-LED ruhig leuchtet** (steckt ein
-   Kabel in der WAN-Buchse, leuchtet zusätzlich "Internet"). Danach den
+   Klappt es mit der Reset-Taste nicht, versuch es genauso mit der
+   WPS-Taste. Bei einem unserer Geräte ging es zuerst nur damit.
+5. Warten: Das Schreiben kann einige Minuten dauern. Die LEDs flackern dabei,
+   und die Netzwerkverbindung geht zwischendurch weg und wieder an. **Strom
+   nicht ziehen.** Der Router ist fertig, wenn die **System-LED ruhig
+   leuchtet** (steckt ein Kabel in der WAN-Buchse, leuchtet zusätzlich
+   "Internet"). Danach den
    Rechner wieder auf "automatisch" stellen; die Cudy-Oberfläche ist unter
    `http://{{ w.cudy_ip }}` erreichbar.
 
