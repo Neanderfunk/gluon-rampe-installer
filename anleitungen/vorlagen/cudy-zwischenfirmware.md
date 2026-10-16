@@ -28,6 +28,14 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     eine_buchse          true: Gerät hat nur eine Netzwerkbuchse (Access Point);
                          dann kein "andere Buchse"-Tipp, und Schritt 10 sagt, dass
                          sie im Betrieb der Anschluss ans Internet ist
+    rechner_ip           feste Adresse für den Rechner in Teil 1 und am Ende des
+                         Rückwegs, wenn das Gerät ab Werk keine Adressen vergibt
+                         (Access Point), z. B. 192.168.10.100; leer = automatisch
+    cudy_warten          Wartezeit, bis das Gerät ohne DHCP auf cudy_ip zurückfällt,
+                         z. B. "etwa eine Minute" (nur mit rechner_ip)
+    luci_rechner_ip      feste Adresse für Teil 2 (OpenWrt unter 192.168.1.1), wenn
+                         unklar ist, ob die Zwischenfirmware Adressen vergibt,
+                         z. B. 192.168.1.100; leer = automatisch
     led_zwischen         ganzer Satz zu den LEDs beim Schreiben der Zwischenfirmware
                          (Schritt 6), leer = Lauflicht, dann Blinken/Flackern
     luci_buchse          Buchse für Schritt 7, z. B. "den Port „1Gbps LAN“"
@@ -53,7 +61,10 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
   beim Rückweg: nur am WR3000 beobachtet [abgeleitet].
   AP3000 v1 (Test Neanderfunk 17.10.2026, cudy-ap3000-v1-2026-10-17.md): eine Buchse,
   192.168.10.254, mehrfarbige LED; TFTP erst ab Cudy-Firmware 2.4.7 (OpenWrt-Wiki
-  toh:cudy:ap3000_v1), mit 2.4.4 kein RRQ.
+  toh:cudy:ap3000_v1), mit 2.4.4 kein RRQ. Ab Werk kein DHCP-Server, nach etwa
+  einer Minute ohne DHCP Ersatzadresse 192.168.10.254 [geprüft: Mitschnitt
+  17.10.2026]; ob die Zwischenfirmware DHCP vergibt, offen (Testplatz hatte
+  192.168.1.88 fest) [abgeleitet: luci_rechner_ip vorsichtshalber].
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
@@ -129,8 +140,15 @@ nicht geprüft.
    Kabel an
    {%- if w.get("anschluss") %} {{ w.anschluss }}
    {%- elif w.get("eine_buchse") %} seine einzige Netzwerkbuchse
-   {%- else %} eine **LAN**-Buchse{% endif %}. Der Rechner holt sich seine
-   Adresse automatisch, so wie er normalerweise eingestellt ist.
+   {%- else %} eine **LAN**-Buchse{% endif %}.
+   {%- if w.get("rechner_ip") %} Der {{ modell }} vergibt selbst keine
+   Adressen. Stell deinen Rechner deshalb fest auf `{{ w.rechner_ip }}`,
+   Netzmaske `255.255.255.0`
+   ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
+   {%- if w.get("cudy_warten") %} Nach dem Einschalten braucht er
+   {{ w.cudy_warten }}, bis er unter seiner Adresse antwortet.{% endif %}
+   {%- else %} Der Rechner holt sich seine
+   Adresse automatisch, so wie er normalerweise eingestellt ist.{% endif %}
 
 3. **Cudy-Oberfläche öffnen.** Öffne im Browser `http://{{ w.cudy_ip }}`.
    Ab Werk verlangt die Oberfläche zuerst ein **eigenes Admin-Passwort**
@@ -176,6 +194,10 @@ nicht geprüft.
 
 7. **OpenWrt-Oberfläche öffnen.**
    {%- if w.luci_buchse %} Steck das Kabel jetzt an {{ w.luci_buchse }}.{% endif %}
+   {%- if w.get("luci_rechner_ip") %} Stell den Rechner jetzt fest auf
+   `{{ w.luci_rechner_ip }}`, Netzmaske `255.255.255.0`.
+   {%- elif w.get("rechner_ip") %} Stell den Rechner jetzt wieder auf
+   "automatisch".{% endif %}
    Öffne `http://192.168.1.1`. Es erscheint die Anmeldung von OpenWrt
    ("LuCI"). Das Passwort-Feld bleibt leer, einfach anmelden.
 
@@ -199,7 +221,9 @@ nicht geprüft.
    Dann **Fortfahren**.
 
 10. **Fertig.** Der Router schreibt die Freifunk-Firmware und startet neu,
-    wieder einige Minuten, Strom nicht ziehen. Danach startet die
+    wieder einige Minuten, Strom nicht ziehen.
+    {%- if w.get("luci_rechner_ip") %} Stell den Rechner wieder auf
+    "automatisch".{% endif %} Danach startet die
     Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
     Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
     Kommt dort "Not Found", siehe [Der Browser zeigt
@@ -276,7 +300,9 @@ zurück.
 2. Stell deinen Rechner fest auf `192.168.1.88`, Netzmaske `255.255.255.0`,
    und starte den TFTP-Server.
 3. Steck das Kabel an
-   {%- if w.rueckweg_buchse %} {{ w.rueckweg_buchse }}{% else %} eine
+   {%- if w.rueckweg_buchse %} {{ w.rueckweg_buchse }}
+   {%- elif w.get("eine_buchse") %} seine einzige Netzwerkbuchse
+   {%- else %} eine
    LAN-Buchse{% endif %}. Der Router hat noch keinen Strom.
 4. Drück die Reset-Taste (versenkt, mit einer Büroklammer) und halte sie
    gedrückt, steck den Strom ein und halte
@@ -297,9 +323,15 @@ zurück.
    {{ w.rueckweg_fertig }}.
    {%- elif not w.get("eine_buchse") %} Der Router ist fertig, wenn die **System-LED ruhig
    leuchtet** (steckt ein Kabel in der WAN-Buchse, leuchtet zusätzlich
-   "Internet").{% endif %} Danach den
+   "Internet").{% endif %}
+   {%- if w.get("rechner_ip") %} Danach den Rechner fest auf
+   `{{ w.rechner_ip }}` stellen wie in Schritt 2; die Cudy-Oberfläche ist
+   unter `http://{{ w.cudy_ip }}` erreichbar
+   {%- if w.get("cudy_warten") %}, nach dem Neustart braucht er dafür wieder
+   {{ w.cudy_warten }}{% endif %}.
+   {%- else %} Danach den
    Rechner wieder auf "automatisch" stellen; die Cudy-Oberfläche ist unter
-   `http://{{ w.cudy_ip }}` erreichbar.
+   `http://{{ w.cudy_ip }}` erreichbar.{% endif %}
 
 {{ zusatz.text }}
 
