@@ -13573,7 +13573,7 @@
    "dauer": "Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]",
    "fehlerbild": "antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]",
    "notweg": "",
-   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ \"How to recovery ... to Cudy official firmware\"]",
+   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]",
    "hw_test": "",
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
@@ -13594,7 +13594,8 @@
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-ap3000-outdoor.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy AP3000 Outdoor v1 aus unserem Spiegel",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/ap3000-outdoor-1-0"
    }
   },
   {
@@ -13648,7 +13649,7 @@
    "dauer": "Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]",
    "fehlerbild": "antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]",
    "notweg": "",
-   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ \"How to recovery ... to Cudy official firmware\"]",
+   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]",
    "hw_test": "",
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
@@ -13669,7 +13670,8 @@
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-ap3000.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy AP3000 v1 aus unserem Spiegel",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/ap3000-1-0"
    }
   },
   {
@@ -13724,7 +13726,7 @@
    "dauer": "Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]",
    "fehlerbild": "antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]",
    "notweg": "",
-   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ \"How to recovery ... to Cudy official firmware\"]; Wall: Reset halten, bis der TFTP-Server recovery.bin ausgeliefert hat, Neustart dauert ein paar Minuten [geprüft: Commit]",
+   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]; Wall: Reset halten, bis der TFTP-Server recovery.bin ausgeliefert hat, Neustart dauert ein paar Minuten [geprüft: Commit]",
    "hw_test": "",
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
@@ -13745,7 +13747,8 @@
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-ap3000-wall.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy AP3000 Wall v1 aus unserem Spiegel",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/ap3000-wall-1-0"
    }
   },
   {
@@ -13800,7 +13803,7 @@
    "dauer": "Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]",
    "fehlerbild": "antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]",
    "notweg": "",
-   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ \"How to recovery ... to Cudy official firmware\"]",
+   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]",
    "hw_test": "",
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
@@ -13821,7 +13824,8 @@
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-m3000.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy M3000 v1 (RTL8221B) aus unserem Spiegel",
-    "sicherheit": "abgeleitet"
+    "sicherheit": "abgeleitet",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/m3000-1-0"
    }
   },
   {
@@ -13876,7 +13880,7 @@
    "dauer": "Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]",
    "fehlerbild": "antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]",
    "notweg": "",
-   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ \"How to recovery ... to Cudy official firmware\"]",
+   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]",
    "hw_test": "",
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
@@ -13897,7 +13901,8 @@
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M3000_1.0_2.0/",
     "zwischen_url_text": "Ordner M3000_1.0_2.0 in unserem Spiegel",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/m3000-2-0"
    }
   },
   {
@@ -13951,7 +13956,7 @@
    "dauer": "Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]",
    "fehlerbild": "antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]",
    "notweg": "",
-   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ \"How to recovery ... to Cudy official firmware\"]",
+   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]",
    "hw_test": "",
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
@@ -13972,7 +13977,8 @@
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-re3000.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy RE3000 v1 aus unserem Spiegel",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/re3000-1-0"
    }
   },
   {
@@ -14026,7 +14032,7 @@
    "dauer": "Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]",
    "fehlerbild": "antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]",
    "notweg": "",
-   "rueckweg": "Cudy-Firmware beim Cudy-CN-Support anfragen, Reset beim Einschalten mindestens 5 s halten, Rechner 192.168.1.88/24, TFTP-Server mit recovery.bin [geprüft: Commit]; allgemein: Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ \"How to recovery ... to Cudy official firmware\"]",
+   "rueckweg": "Cudy-Firmware beim Cudy-CN-Support anfragen, Reset beim Einschalten mindestens 5 s halten, Rechner 192.168.1.88/24, TFTP-Server mit recovery.bin [geprüft: Commit]; allgemein: Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]",
    "hw_test": "",
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
@@ -14047,7 +14053,8 @@
     "rueckweg_quelle": "beim Cudy-Support (China) auf Anfrage",
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-tr3000-256mb.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy TR3000 256 MB v1 aus unserem Spiegel",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/tr3000-256mb-1-0"
    }
   },
   {
@@ -14120,7 +14127,8 @@
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-tr3000.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy TR3000 v1 (128 MB Flash) aus unserem Spiegel",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/tr3000-1-0"
    }
   },
   {
@@ -14174,7 +14182,7 @@
    "dauer": "Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]",
    "fehlerbild": "antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]",
    "notweg": "",
-   "rueckweg": "allgemein: Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ \"How to recovery ... to Cudy official firmware\"]",
+   "rueckweg": "allgemein: Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]",
    "hw_test": "",
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
@@ -14195,7 +14203,8 @@
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy WR3000 v1 aus unserem Spiegel",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/wr3000-1-0"
    }
   },
   {
@@ -14249,7 +14258,7 @@
    "dauer": "Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]",
    "fehlerbild": "antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]",
    "notweg": "",
-   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ \"How to recovery ... to Cudy official firmware\"]; danach Cudy-Oberfläche wieder unter 192.168.10.1 [geprüft: Commit]",
+   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]; danach Cudy-Oberfläche wieder unter 192.168.10.1 [geprüft: Commit]",
    "hw_test": "",
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
@@ -14270,7 +14279,8 @@
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000e.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy WR3000E v1 aus unserem Spiegel",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/wr3000e-1-0"
    }
   },
   {
@@ -14324,13 +14334,18 @@
    "dauer": "Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]",
    "fehlerbild": "antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]",
    "notweg": "",
-   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ \"How to recovery ... to Cudy official firmware\"]",
+   "rueckweg": "Cudy-Firmware von der Cudy-Downloadseite des Modells (ZIP mit md5.txt und .bin, die Datei \"-sysupgrade.bin\" ist die Cudy-Firmware) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an; U-Boot holt recovery.bin (blksize 1468) als 192.168.1.112; loslassen, wenn alle LEDs einmal kurz aufleuchten (~0,5 s), weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [geprüft: Testplatz grw 16.10.2026 mit Cudy 2.5.30, router-werkstatt docs/validierung/cudy-wr3000h-v1-2026-10-16.md]; die Cudy-FAQ (schnelles Blinken, langsames Blinken = fertig) stimmt am WR3000H nicht",
    "hw_test": "",
-   "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
+   "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Die Cudy-TFTP-Recovery holt recovery.bin (blksize 1468) von 192.168.1.88 als 192.168.1.112, solange Reset gehalten wird [geprüft: Testplatz grw 16.10.2026]; ob sie fremde Images nimmt: offen, nicht getestet",
    "rampe_rezept": "",
    "quelle": "OpenWrt fdbbb8415fd19ae0748a2bbe41b15257054e4077",
    "anleitung": "anleitungen/de/cudy-wr3000h-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010",
-   "erprobt": {},
+   "erprobt": {
+    "am": "2026-10-16",
+    "mit": "Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.5.30",
+    "weg": "Rückweg zu Cudy 2.5.30 per TFTP-recovery.bin, dann Zwischenfirmware über die Cudy-Oberfläche, dann Gluon-sysupgrade über LuCI, alles nach Anleitung",
+    "beleg": "Testplatz grw, router-werkstatt docs/validierung/cudy-wr3000h-v1-2026-10-16.md (7253238)"
+   },
    "werte": {
     "cudy_ip": "192.168.10.1",
     "zwischen_datei": "cudy-wr3000h.bin",
@@ -14345,7 +14360,8 @@
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000h.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy WR3000H v1 aus unserem Spiegel",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/wr3000h-1-0"
    }
   },
   {
@@ -14399,7 +14415,7 @@
    "dauer": "Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]",
    "fehlerbild": "antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]",
    "notweg": "",
-   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ \"How to recovery ... to Cudy official firmware\"]",
+   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]",
    "hw_test": "",
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
@@ -14420,7 +14436,8 @@
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000p.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy WR3000P v1 aus unserem Spiegel",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/wr3000p-1-0"
    }
   },
   {
@@ -14474,7 +14491,7 @@
    "dauer": "Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]",
    "fehlerbild": "antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]",
    "notweg": "",
-   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ \"How to recovery ... to Cudy official firmware\"]",
+   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]",
    "hw_test": "Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen",
    "rampe": "nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen",
    "rampe_rezept": "",
@@ -14495,7 +14512,8 @@
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000s.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy WR3000S v1 aus unserem Spiegel",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/wr3000s-1-0"
    }
   },
   {
@@ -14570,7 +14588,8 @@
     "rueckweg_quelle": "von https://www.cudy.com/pages/download-center/wr3000u-256mb-1-0",
     "zwischen_url": "https://www.cudy.com/de-de/blogs/faq/openwrt-software-download",
     "zwischen_url_text": "Cudys Seite „OpenWrt Software Download“",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/wr3000u-256mb-1-0"
    }
   },
   {
@@ -17606,7 +17625,7 @@
    "dauer": "Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]",
    "fehlerbild": "antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]",
    "notweg": "",
-   "rueckweg": "wie alle Cudy [abgeleitet: Cudy-FAQ gilt allgemein, Commit nennt keinen Rückweg]: Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ \"How to recovery ... to Cudy official firmware\"]",
+   "rueckweg": "wie alle Cudy [abgeleitet: Cudy-FAQ gilt allgemein, Commit nennt keinen Rückweg]: Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]",
    "hw_test": "",
    "rampe": "nein: Stock und Recovery prüfen Cudys RSA-Signatur",
    "rampe_rezept": "",
@@ -17627,7 +17646,8 @@
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP1300_Outdoor_V1.0/",
     "zwischen_url_text": "Ordner AP1300_Outdoor_V1.0 in unserem Spiegel",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/ap1300-outdoor-1-0"
    }
   },
   {
@@ -17703,7 +17723,8 @@
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-m1800.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy M1800 aus unserem Spiegel",
     "sicherheit": "unsicher",
-    "sicherheit_hinweis": "Cudy bietet dieselbe Zwischenfirmware unter „M1800 V2“ und „M1800+ V2“ an. Ob dein M1800 sie annimmt, wissen wir nicht."
+    "sicherheit_hinweis": "Cudy bietet dieselbe Zwischenfirmware unter „M1800 V2“ und „M1800+ V2“ an. Ob dein M1800 sie annimmt, wissen wir nicht.",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/m1800-1-0"
    }
   },
   {
@@ -17757,7 +17778,7 @@
    "dauer": "Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]",
    "fehlerbild": "antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]; lehnt LuCI das Gluon-Image wegen anderem Gerätenamen ab: \"Force upgrade\"/Erzwingen setzen [geprüft: Commit]",
    "notweg": "",
-   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ \"How to recovery ... to Cudy official firmware\"]; Reset mindestens 8 s halten [geprüft: Commit]",
+   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]; Reset mindestens 8 s halten [geprüft: Commit]",
    "hw_test": "",
    "rampe": "nein: Stock und Recovery prüfen Cudys RSA-Signatur",
    "rampe_rezept": "",
@@ -17778,7 +17799,8 @@
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr1300.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy WR1300 v1 aus unserem Spiegel",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/wr1300-1-0"
    }
   },
   {
@@ -17832,7 +17854,7 @@
    "dauer": "Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]",
    "fehlerbild": "antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]",
    "notweg": "",
-   "rueckweg": "Reset beim Einschalten halten, Router holt recovery.bin von TFTP-Server 192.168.1.88, nimmt nur von Cudy signierte Images [geprüft: Commit]; Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ \"How to recovery ... to Cudy official firmware\"]",
+   "rueckweg": "Reset beim Einschalten halten, Router holt recovery.bin von TFTP-Server 192.168.1.88, nimmt nur von Cudy signierte Images [geprüft: Commit]; Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]",
    "hw_test": "",
    "rampe": "nein: Stock und Recovery prüfen Cudys RSA-Signatur",
    "rampe_rezept": "",
@@ -17853,7 +17875,8 @@
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr2100.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy WR2100 aus unserem Spiegel",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/wr2100-1-0"
    }
   },
   {
@@ -17907,7 +17930,7 @@
    "dauer": "Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]",
    "fehlerbild": "antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]; lehnt LuCI das Gluon-Image wegen anderem Gerätenamen ab: \"Force upgrade\"/Erzwingen setzen [geprüft: Commit]",
    "notweg": "",
-   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ \"How to recovery ... to Cudy official firmware\"]; Reset mindestens 8 s halten [geprüft: Commit]",
+   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]; Reset mindestens 8 s halten [geprüft: Commit]",
    "hw_test": "",
    "rampe": "nein: Stock und Recovery prüfen Cudys RSA-Signatur",
    "rampe_rezept": "",
@@ -17928,7 +17951,8 @@
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-x6-v1.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy X6 v1 aus unserem Spiegel",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/x6-1-0"
    }
   },
   {
@@ -17982,7 +18006,7 @@
    "dauer": "Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]",
    "fehlerbild": "antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]",
    "notweg": "",
-   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen wenn alle LEDs schnell blinken oder der Download beginnt; langsames Blinken = fertig [geprüft: Cudy-FAQ \"How to recovery ... to Cudy official firmware\"]; Reset mindestens 8 s halten [geprüft: Commit]",
+   "rueckweg": "Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]; Reset mindestens 8 s halten [geprüft: Commit]",
    "hw_test": "",
    "rampe": "nein: Stock und Recovery prüfen Cudys RSA-Signatur",
    "rampe_rezept": "",
@@ -18003,7 +18027,8 @@
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-x6-v2.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy X6 v2 aus unserem Spiegel",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/x6-2-0"
    }
   },
   {
@@ -20618,7 +20643,8 @@
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-tr1200.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy TR1200 v1 aus unserem Spiegel",
-    "sicherheit": "abgeleitet"
+    "sicherheit": "abgeleitet",
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/tr1200-1-0"
    }
   },
   {
