@@ -8,18 +8,17 @@ sprache: de
 level: L1
 level_text: Zwei Schritte im Browser
 risiko: normal
-status: ungeprüft
+status: erprobt
+erprobt_am: 2026-10-16
+erprobt_mit: Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.19
 grundlagen: [feste-ip, tftp-server]
-daten_stand: bff81c17
+daten_stand: 0a6fad58
 vorlage_stand: 954a07bf
 ---
 
 # Cudy WR3000 v1: Freifunk-Firmware installieren
 
-> **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
-> bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
-> ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
-> klappt.
+> **Am Gerät erprobt** am 16.10.2026 mit `Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.19`.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
@@ -186,4 +185,6 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Cudy-FAQ "OpenWrt Software Download" (Bedingung an die Herstellerfirmware)
 - geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Typenschild/Verwechslung, Dauer, Fehlerbild)
 - geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)
+- geprüft: Testplatz grw (Warnung)
+- geprüft: Testplatz grw 16.10.2026 (Rückweg zur Herstellerfirmware, Gluon-RAMpe passt)
 - Geräteeintrag: OpenWrt c9cb6411c1a70516d5922e88c45b338de041baba

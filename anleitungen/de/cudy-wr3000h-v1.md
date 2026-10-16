@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.5.30
 grundlagen: [feste-ip, tftp-server]
-daten_stand: bff81c17
+daten_stand: 0a6fad58
 vorlage_stand: 954a07bf
 ---
 

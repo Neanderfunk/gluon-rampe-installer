@@ -10,7 +10,7 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: bff81c17
+daten_stand: 0a6fad58
 vorlage_stand: 393f1614
 ---
 
