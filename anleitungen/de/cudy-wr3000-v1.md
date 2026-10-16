@@ -177,9 +177,10 @@ Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
 
 Cudys Ordner mit der Zwischenfirmware für dieses Modell heißt
 "without_recovery_TFTP". Bei uns hat der Weg zurück zur Cudy-Firmware (unten)
-an einem WR3000 v1 funktioniert, allerdings von einem Gerät aus, auf dem
-vorher eine andere Zwischenfirmware lief. Ob er auch nach der Zwischenfirmware
-von oben noch funktioniert, ist nicht geklärt.
+an einem WR3000 v1 funktioniert, allerdings an einem Gerät, auf dem vorher
+eine fremde Freifunk-Firmware lief, aufgespielt über eine Zwischenfirmware,
+die wir nicht kennen. Ob er auch nach der Zwischenfirmware von oben noch
+funktioniert, ist nicht geklärt.
 
 ## Herkunft der Angaben
 
