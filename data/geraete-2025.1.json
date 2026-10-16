@@ -13689,13 +13689,17 @@
     "strom": "",
     "luci_buchse": "",
     "force_upgrade": false,
-    "rueckweg_buchse": "die Netzwerkbuchse (er hat nur die eine)",
+    "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-ap3000.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy AP3000 v1 aus unserem Spiegel",
     "sicherheit": "quelle",
-    "rueckweg_url": "https://www.cudy.com/pages/download-center/ap3000-1-0"
+    "rueckweg_url": "https://www.cudy.com/pages/download-center/ap3000-1-0",
+    "eine_buchse": true,
+    "led_zwischen": "Die LED wechselt erst zwischen Rot, Grün, Blau und Orange, blinkt dann schnell in mehreren Farben und leuchtet am Ende dauerhaft violett-weiß.",
+    "rueckweg_ab_version": "2.4.7",
+    "rueckweg_led": "die LED abwechselnd orange und rot blinkt"
    }
   },
   {
