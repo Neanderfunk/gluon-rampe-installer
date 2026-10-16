@@ -234,9 +234,9 @@ Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
    von vorn an. Im TFTP-Server siehst du, dass `recovery.bin` abgeholt wird.
    Klappt es mit der Reset-Taste nicht, versuch es genauso mit der
    WPS-Taste. Bei einem unserer Geräte ging es zuerst nur damit.
-5. Warten: Das Schreiben kann einige Minuten dauern. Die LEDs flackern dabei,
-   und die Netzwerkverbindung geht zwischendurch weg und wieder an. **Strom
-   nicht ziehen.** Der Router ist fertig, wenn die **System-LED ruhig
+5. Warten: Das Schreiben dauert ein paar Minuten. Die LEDs können dabei
+   flackern, und die Netzwerkverbindung geht zwischendurch weg und wieder an.
+   **Strom nicht ziehen.** Der Router ist fertig, wenn die **System-LED ruhig
    leuchtet** (steckt ein Kabel in der WAN-Buchse, leuchtet zusätzlich
    "Internet"). Danach den
    Rechner wieder auf "automatisch" stellen; die Cudy-Oberfläche ist unter
