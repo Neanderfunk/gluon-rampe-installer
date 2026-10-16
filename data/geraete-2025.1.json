@@ -10574,7 +10574,7 @@
    "gluon_broken": false,
    "kat": "K1d",
    "familie": "glinet",
-   "weg": "GL.iNet-U-Boot-Web (Reset beim Einschalten, bis drei LEDs leuchten) nimmt das sysupgrade, umbenannt in lede-gl-b1300.bin; liegt die Datei auf einem TFTP-Server 192.168.1.2, holt der U-Boot sie selbst [geprüft: Commit von 2017, ob neuere U-Boots denselben Namen erwarten: offen]",
+   "weg": "Über die GL-Oberfläche geht es nicht: GL-Firmware 4.3.25 (OpenWrt 21.02.2, swconfig, compat 1.0) prüft immer mit \"Einstellungen behalten\" und lehnt Gluon (compat 1.1) ab (\"Der Test der Firmware mit sysupgrade ist fehlgeschlagen\") [geprüft: Testplatz grw 16.10.2026, router-werkstatt docs/validierung/glinet-gl-b1300-2026-10-16.md (9aea90d)]. Weg nur über den Browser: GL-Oberfläche → SYSTEM → \"Erweiterte Einstellungen\" → LuCI (192.168.8.1/cgi-bin/luci, vorinstalliert) → System → Backup / Flash Firmware → Flash image… → Gluon-sysupgrade; LuCI meldet \"Image check failed: The device is supported, but the config is incompatible to the new image (1.0->1.1) … swconfig to DSA\"; LuCI prüft nach dem Abwählen nicht neu, also \"Keep settings\" aus und \"Force upgrade\" an, dann Continue [geprüft: Testplatz grw 16.10.2026, router-werkstatt docs/validierung/glinet-gl-b1300-2026-10-16.md (9aea90d)]. Force nur bei \"The device is supported\"; \"not supported by this image\" = falsches Image (zweimal mit dem Cudy-WR1300-Image passiert) [geprüft: Testplatz grw 16.10.2026, router-werkstatt docs/validierung/glinet-gl-b1300-2026-10-16.md (9aea90d)]. Alternativ per SSH auf der GL-Firmware: sysupgrade -n <gluon>.bin reicht, ohne -F; --ignore-minor-compat-version gibt es in 21.02.2 nicht [geprüft: Testplatz grw 16.10.2026, router-werkstatt docs/validierung/glinet-gl-b1300-2026-10-16.md (9aea90d)]. Notweg: GL.iNet-U-Boot-Web (Reset beim Einschalten) nimmt laut Commit von 2017 das sysupgrade als lede-gl-b1300.bin [geprüft: Commit; Dateiname, DHCP und TFTP am Gerät nicht geprüft]",
    "schritte": [
     "Gluon-sysupgrade in genau `lede-gl-b1300.bin` umbenennen [geprüft: Commit von 2017, ob neuere U-Boots denselben Namen erwarten: offen]",
     "Rechner per Kabel an einen LAN-Port anschließen, alle anderen Ports frei lassen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]",
@@ -10586,7 +10586,7 @@
     "Beim Schreiben blinkt die WLAN-LED [geprüft: Commit 04d3308]"
    ],
    "warnung": "",
-   "taste": "Reset drücken und einschalten, halten bis die LEDs dauerhaft leuchten [geprüft: Commit 04d3308 'three leds constantly on']; GL-Doku: Power-LED bleibt an, rechte WLAN-LED blinkt 4x, dann leuchtet die mittlere (Mesh-)LED; bei alten B1300 blinken mittlere und rechte LED 5x und bleiben an [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]",
+   "taste": "Reset drücken und einschalten, halten bis die LEDs dauerhaft leuchten [geprüft: Commit 04d3308 'three leds constantly on']; GL-Doku: Power-LED bleibt an, rechte WLAN-LED blinkt 4x, dann leuchtet die mittlere (Mesh-)LED; bei alten B1300 blinken mittlere und rechte LED 5x und bleiben an [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]; am Gerät: Reset = linke Hälfte der Wippe (Kreispfeil); erst alle 3 LEDs kurz grün, dann blinkt die rechte, dann links und Mitte dauerhaft grün; die LEDs zeigen keinen Linkstatus [geprüft: Testplatz grw 16.10.2026, router-werkstatt docs/validierung/glinet-gl-b1300-2026-10-16.md (9aea90d)]",
    "zeichen": "beim Schreiben blinkt die WLAN-LED [geprüft: Commit 04d3308]",
    "uebertragung": "recovery-web: Gerät 192.168.1.1; oder tftp-client: Server 192.168.1.2, Datei lede-gl-b1300.bin",
    "anschluss": "Rechner per Kabel an einen LAN-Port, alle anderen Ports frei [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]",
@@ -10616,7 +10616,7 @@
    "dauer": "etwa 3 Minuten warten, währenddessen nicht Strom ziehen [geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026)]",
    "fehlerbild": "",
    "notweg": "[Notfall] TFTP: liegt die Datei `lede-gl-b1300.bin` auf einem TFTP-Server 192.168.1.2, holt der U-Boot sie selbst [geprüft: Commit]",
-   "rueckweg": "",
+   "rueckweg": "Zur GL-Firmware über die Notfall-Seite \"FIRMWARE UPDATE\" (uboot2.0 version:20.10.14): GL 4.3.25 hochladen, Upload ~2,5 min, gesamt ~9 min, Ladekreis dreht endlos weiter; danach GL unter 192.168.8.1 [geprüft: Testplatz grw 16.10.2026, router-werkstatt docs/validierung/glinet-gl-b1300-2026-10-16.md (9aea90d)]; aus Gluon per sysupgrade -n openwrt-b1300-4.3.25-0331-1743425295.bin [geprüft: Testplatz grw 16.10.2026, router-werkstatt docs/validierung/glinet-gl-b1300-2026-10-16.md (9aea90d)]",
    "hw_test": "",
    "rampe": "nein, nicht nötig: der Bootloader nimmt das Gluon-sysupgrade",
    "rampe_rezept": "",
