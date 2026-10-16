@@ -13,7 +13,7 @@ erprobt_am: 2026-10-16
 erprobt_mit: gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m60-a1-recovery.bin
 grundlagen: [browser-https, browser-not-found, curl, feste-ip]
-daten_stand: f7a2bb89
+daten_stand: cc1cb06c
 vorlage_stand: 883c350d
 ---
 

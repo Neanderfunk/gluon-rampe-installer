@@ -13,19 +13,18 @@
 <meta name="anleitung:level" content="L1">
 <meta name="anleitung:level_text" content="Zwei Schritte im Browser">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:status" content="erprobt">
+<meta name="anleitung:erprobt_am" content="2026-10-17">
+<meta name="anleitung:erprobt_mit" content="Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.4">
 <meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, tftp-server">
-<meta name="anleitung:daten_stand" content="f7a2bb89">
+<meta name="anleitung:daten_stand" content="cc1cb06c">
 <meta name="anleitung:vorlage_stand" content="ae43c7d0">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Cudy AP3000 v1: Freifunk-Firmware installieren</h1>
 <blockquote>
-<p><strong>Noch nicht am Gerät erprobt.</strong> So beschreiben die Entwickler von OpenWrt
-bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
-ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
-klappt.</p>
+<p><strong>Am Gerät erprobt</strong> am 17.10.2026 mit <code>Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.4</code>.</p>
 <p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -66,7 +65,7 @@ Kabel an eine <strong>LAN</strong>-Buchse. Der Rechner holt sich seine Adresse
 automatisch, so wie er normalerweise eingestellt ist.</p>
 </li>
 <li>
-<p><strong>Cudy-Oberfläche öffnen.</strong> Öffne im Browser <code>http://192.168.10.1</code>.
+<p><strong>Cudy-Oberfläche öffnen.</strong> Öffne im Browser <code>http://192.168.10.254</code>.
 Ab Werk verlangt die Oberfläche zuerst ein <strong>eigenes Admin-Passwort</strong>
 (mindestens 8 Zeichen). Denk dir eins aus und merk es dir. Ältere
 Cudy-Firmware fragt stattdessen nach dem Passwort <code>admin</code>. Danach startet
@@ -151,7 +150,7 @@ holen.</li>
 <li><strong>Nach Schritt 6 antwortet <code>http://192.168.1.1</code> nicht.</strong> Steck das Kabel in
 eine andere Buchse. Bei manchen Modellen tauschen LAN und WAN nach dem
 Wechsel auf OpenWrt die Rolle.</li>
-<li><strong>Unter <code>http://192.168.10.1</code> kommt keine Cudy-Seite, sondern schon
+<li><strong>Unter <code>http://192.168.10.254</code> kommt keine Cudy-Seite, sondern schon
 OpenWrt.</strong> Dann ist die Zwischenfirmware vermutlich schon drauf: weiter bei
 Schritt 7. Läuft dort eine ganz andere Firmware, geht die Zwischenfirmware
 nicht mehr. Cudy nimmt sie nur an, solange die Original-Oberfläche läuft.
@@ -174,8 +173,7 @@ Freifunk-Firmware. Benenn sie in <code>recovery.bin</code> um (genau so) und leg
 in den Ordner des TFTP-Servers.</li>
 <li>Stell deinen Rechner fest auf <code>192.168.1.88</code>, Netzmaske <code>255.255.255.0</code>,
 und starte den TFTP-Server.</li>
-<li>Steck das Kabel an eine
-LAN-Buchse. Der Router hat noch keinen Strom.</li>
+<li>Steck das Kabel an die Netzwerkbuchse (er hat nur die eine). Der Router hat noch keinen Strom.</li>
 <li>Drück die Reset-Taste (versenkt, mit einer Büroklammer) und halte sie
 gedrückt, steck den Strom ein und halte
 weiter,
@@ -190,13 +188,12 @@ flackern, und die Netzwerkverbindung geht zwischendurch weg und wieder an.
 leuchtet</strong> (steckt ein Kabel in der WAN-Buchse, leuchtet zusätzlich
 &quot;Internet&quot;). Danach den
 Rechner wieder auf &quot;automatisch&quot; stellen; die Cudy-Oberfläche ist unter
-<code>http://192.168.10.1</code> erreichbar.</li>
+<code>http://192.168.10.254</code> erreichbar.</li>
 </ol>
 <h2>Herkunft der Angaben</h2>
 <p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
 <ul>
-<li>abgeleitet: Router ist in beiden Firmwares DHCP-Server (Schritte (Normalweg), Anschluss, Adressen, Programm)</li>
-<li>abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht (Rückweg zur Herstellerfirmware)</li>
+<li>abgeleitet: Router ist in beiden Firmwares DHCP-Server (Schritte (Normalweg), Programm)</li>
 <li>abgeleitet: sysupgrade schreibt den Flash (Schritte (Normalweg), Dauer)</li>
 <li>geprüft: Commit-Texte (Gluon-RAMpe passt)</li>
 <li>geprüft: Commit/Neanderfunk-Notiz (Weg ab Werk, Schritte (Normalweg))</li>
@@ -204,6 +201,8 @@ Rechner wieder auf &quot;automatisch&quot; stellen; die Cudy-Oberfläche ist unt
 <li>geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer, Fehlerbild)</li>
 <li>geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)</li>
 <li>geprüft: Spiegel-Ordner (Typenschild/Verwechslung)</li>
+<li>geprüft: Test Neanderfunk 17.10.2026 (Sichtbare Zeichen, Anschluss, Adressen, Rückweg zur Herstellerfirmware)</li>
+<li>geprüft: Wiki toh:cudy:ap3000_v1 (Rückweg zur Herstellerfirmware)</li>
 <li>Geräteeintrag: OpenWrt 6dacba30a75b0ac8a65115f78808a97abbb34939</li>
 </ul>
 
