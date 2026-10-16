@@ -5,10 +5,12 @@
 # Wer vorher eine OpenWrt-Oberflaeche unter 192.168.1.1 offen hatte (etwa die
 # Cudy-Zwischenfirmware), landet beim Aufruf von 192.168.1.1 oft auf
 # /cgi-bin/luci/ und bekam dort "Not Found" (Testplatz grw, M60, Firefox,
-# 16.10.2026). Wahrscheinlichste Ursache: Firefox ergaenzt "192.168.1.1" in
-# der Adressleiste aus dem Verlauf zur meistbesuchten Adresse, auch im
-# privaten Fenster (Gegenprobe am X5000R-Bootloader ohne Weiterleitung).
-# Ein alter Meta-Refresh aus dem Browser-Cache wuerde ebenso hier landen.
+# 16.10.2026). Die Ursache ist nicht belegt: weder 304 aus dem Cache noch
+# reine Autovervollstaendigung erklaeren alles (Gegenprobe am X5000R-Bootloader
+# ohne Weiterleitung: half weder Strg+F5 noch privates Fenster noch eine aus
+# der Zwischenablage eingefuegte Adresse, erst ein frisches Firefox-Profil).
+# Verdacht: eine gespeicherte Weiterleitung von / auf /cgi-bin/luci/. Die
+# Umleitung hier hilft unabhaengig davon.
 # Pfade unter /cgi-bin/luci/ kommen per PATH_INFO hier an, wie bei LuCI selbst.
 
 printf 'Status: 302 Found\r\n'

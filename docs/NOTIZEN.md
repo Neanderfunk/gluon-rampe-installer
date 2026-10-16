@@ -370,9 +370,10 @@ Deploy):
 - **`/cgi-bin/luci` leitet auf `/cgi-bin/config`** (Overlay
   `lib/gluon/config-mode/www/cgi-bin/luci`, ab der nächsten RAMpe-Ausgabe).
   Firefox landete nach einer OpenWrt-Oberfläche unter 192.168.1.1 auf
-  `/cgi-bin/luci/` und bekam "Not Found", wahrscheinlich durch die
-  Autovervollständigung der Adressleiste (auch privat, Gegenprobe am
-  X5000R-Bootloader). QEMU-Test prüft drei LuCI-Pfade, bestanden mit einem
+  `/cgi-bin/luci/` und bekam "Not Found". Ursache nicht belegt: Cache (304)
+  und Autovervollständigung erklären die Gegenprobe am X5000R-Bootloader nicht
+  (half erst ein frisches Firefox-Profil), Verdacht ist eine gespeicherte
+  Weiterleitung. Die Umleitung hilft so oder so. QEMU-Test prüft drei LuCI-Pfade, bestanden mit einem
   Testbau `20261016luci` (nicht veröffentlicht).
 - Offen: Die RAMpe auf M30/M60 zeigt beim M60 die alte falsche Knoten-ID
   `0600dceae7af` (Odm 0x81). Der Odm-Parser aus gluon-patches-hardware
