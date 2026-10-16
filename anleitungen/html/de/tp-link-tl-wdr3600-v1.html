@@ -13,19 +13,18 @@
 <meta name="anleitung:level" content="L0.1">
 <meta name="anleitung:level_text" content="Hochladen, richtige Datei wählen">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
-<meta name="anleitung:grundlagen" content="browser-not-found">
-<meta name="anleitung:daten_stand" content="dbf4639c">
+<meta name="anleitung:status" content="erprobt">
+<meta name="anleitung:erprobt_am" content="2026-10-16">
+<meta name="anleitung:erprobt_mit" content="Gluon 2023.2.6 (26091920sta), factory-Image mit Originalnamen über die TP-Link-Oberfläche 3.14.3 Build 150518">
+<meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, tftp-server">
+<meta name="anleitung:daten_stand" content="d754590c">
 <meta name="anleitung:vorlage_stand" content="883c350d">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>TP-Link TL-WDR3600 v1: Freifunk-Firmware installieren</h1>
 <blockquote>
-<p><strong>Noch nicht am Gerät erprobt.</strong> Wichtige Schritte haben wir von
-ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
-aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
-beschrieben.</p>
+<p><strong>Am Gerät erprobt</strong> am 16.10.2026 mit <code>Gluon 2023.2.6 (26091920sta), factory-Image mit Originalnamen über die TP-Link-Oberfläche 3.14.3 Build 150518</code>.</p>
 <p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -39,7 +38,7 @@ des Herstellers hinkäme. Du brauchst nur einen Browser.</p>
 <li>das Gerät und sein Netzteil</li>
 <li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
 <li>die Freifunk-Firmware deiner Community für den TP-Link TL-WDR3600 v1, und zwar das
-<strong>factory</strong>-Image für die Erstinstallation, nicht &quot;sysupgrade&quot;</li>
+<strong>factory</strong>-Image für die Erstinstallation, nicht &quot;sysupgrade&quot; (nicht umbenennen)</li>
 </ul>
 <p>Auf dem Aufkleber unter dem Gerät stehen Modell und Hardware-Version (bei
 TP-Link etwa &quot;Ver: 5.0&quot;, bei anderen &quot;H/W Ver.&quot;). Viele Geräte gibt es in
@@ -59,10 +58,7 @@ Ob es genau dieser sein muss, ist nicht geklärt.</li>
 <h2>Schritte</h2>
 <ol>
 <li>
-<p><strong>Datei bereitlegen.</strong> Lade das factory-Image herunter. Benenne es danach in <code>wdr4300v1_en_3_14_3_up_boot(150518).bin</code> um, genau
-so. Die Oberfläche lehnt den langen Originalnamen sonst ab. Achtung:
-Windows blendet Dateiendungen gern aus; schalte sie im Explorer unter
-&quot;Ansicht&quot; ein, damit nicht <code>wdr4300v1_en_3_14_3_up_boot(150518).bin.bin</code> daraus wird.</p>
+<p><strong>Datei bereitlegen.</strong> Lade das factory-Image herunter.</p>
 </li>
 <li>
 <p><strong>Verbinden.</strong> Versorg das Gerät mit Strom und steck das Kabel vom
@@ -120,18 +116,36 @@ Rechner auf &quot;automatisch&quot; und zieh das Kabel kurz ab und wieder an. Je
 Community startet die Firmware auch gleich im Betrieb ohne
 Einrichtungsseite.</li>
 </ul>
+<h2>Notfall: Firmware per TFTP</h2>
+<p>Startet das Gerät nicht mehr richtig, etwa nach einem abgebrochenen Update
+oder weil es in einer Startschleife hängt, kann es sich eine Firmware selbst
+von deinem Rechner holen. Dafür brauchst du einen
+TFTP-Server (<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>) und eine
+feste Adresse am Rechner (<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).</p>
+<ol>
+<li>Leg die TP-Link-Firmware ohne ihren Bootloader-Teil unter dem Namen <code>wdr3600v1_tp_recovery.bin</code> in den
+Ordner des TFTP-Servers. Genau dieser Name, Groß- und Kleinschreibung
+zählt.</li>
+<li>Stell deinen Rechner fest auf <code>192.168.0.66</code>, Netzmaske
+<code>255.255.255.0</code>, und starte den TFTP-Server.
+Am Rechner darf nur diese eine Adresse eingestellt sein, sonst antwortet der TFTP-Server von einer anderen Adresse, und der Router nimmt die Datei nicht.</li>
+<li>Kabel an eine LAN-Buchse, Strom aus. Drück die Reset-Taste, halte sie
+gedrückt und schalte den Strom ein. Halte sie gedrückt:
+bis der TFTP-Server
+zeigt, dass die Datei abgeholt wird.</li>
+<li>Warten. Das Gerät
+schreibt die Datei und startet neu.</li>
+</ol>
 <h2>Herkunft der Angaben</h2>
 <p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
 <ul>
 <li>abgeleitet (Quelle (OpenWrt-Commit))</li>
-<li>abgeleitet: Commit ohne Anleitung (Weg ab Werk)</li>
 <li>abgeleitet: Wiki-Zusammenfassung, im Rohtext toh:tp-link:tl-wdr4300_v1 nicht gefunden (Schritte (Normalweg), Dauer)</li>
-<li>abgeleitet: offen (Datei)</li>
 <li>geprüft: OpenWrt generic-tp-link.mk (Schritte (Normalweg), Typenschild/Verwechslung)</li>
+<li>geprüft: Test Neanderfunk 16.10.2026 (Weg ab Werk, Schritte (Normalweg), Datei, Bedingung an die Herstellerfirmware, Fehlerbild, Notweg)</li>
 <li>geprüft: WDR3600-Seite verweist darauf, Wiki toh:tp-link:tl-wdr4300_v1 (Schritte (Normalweg), Adressen, Programm, Zugang)</li>
 <li>geprüft: Wiki toh:tp-link:tl-wdr3600_v1 (Typenschild/Verwechslung)</li>
-<li>geprüft: tl-wdr3600_v1, Wiki toh:tp-link:tl-wdr4300_v1 (Schritte (Normalweg), Datei, Fehlerbild)</li>
-<li>geprüft: tl-wdr3600_v1, Wiki toh:tp-link:tl-wdr4300_v1, toh:tp-link:tl-wdr3600_v1 (Bedingung an die Herstellerfirmware)</li>
+<li>geprüft: tl-wdr3600_v1, Wiki toh:tp-link:tl-wdr4300_v1 (Schritte (Normalweg), Fehlerbild)</li>
 <li>Geräteeintrag: a7e1e919afa9659f66dada5e69d1b162f447ced7 (ohne Anleitung) [abgeleitet]</li>
 </ul>
 

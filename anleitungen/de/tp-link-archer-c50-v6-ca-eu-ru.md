@@ -10,7 +10,7 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, tftp-server]
-daten_stand: dbf4639c
+daten_stand: d754590c
 vorlage_stand: 883c350d
 ---
 
