@@ -10,7 +10,7 @@ level_text: Gehäuse öffnen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, serielle-konsole, tftp-server]
-daten_stand: 2da2e5be
+daten_stand: f73c9aa2
 vorlage_stand: 883c350d
 ---
 

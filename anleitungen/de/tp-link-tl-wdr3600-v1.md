@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2025.1 (26100702bro) per TFTP mit dem factory-Image; über die TP-Link-Oberfläche 3.14.3 Build 150518 mit Gluon 2023.2.6 (factory, Originalname)
 grundlagen: [browser-not-found, feste-ip, tftp-server]
-daten_stand: 2da2e5be
+daten_stand: f73c9aa2
 vorlage_stand: dd72aaab
 ---
 

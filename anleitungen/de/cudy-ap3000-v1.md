@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-10-17
 erprobt_mit: Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.4
 grundlagen: [browser-not-found, feste-ip, tftp-server]
-daten_stand: 2da2e5be
+daten_stand: f73c9aa2
 vorlage_stand: de62336d
 ---
 
@@ -198,6 +198,7 @@ zurück.
 
 Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 
+- abgeleitet: Gluon-Setup-Mode, wie Gluon 2025.1 die einzige Buchse im Setup-Mode belegt, ist am Gerät nicht gemessen (Warnung)
 - abgeleitet: Router ist in beiden Firmwares DHCP-Server (Schritte (Normalweg), Programm)
 - abgeleitet: ob die Zwischenfirmware DHCP vergibt, offen; am Testplatz war 192.168.1.88 fest eingestellt (Adressen)
 - abgeleitet: sysupgrade schreibt den Flash (Schritte (Normalweg), Dauer)
