@@ -10,7 +10,7 @@ level_text: Serielles Kabel
 risiko: bootloader
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 9d9d8227
+daten_stand: 696209f3
 vorlage_stand: 883c350d
 ---
 

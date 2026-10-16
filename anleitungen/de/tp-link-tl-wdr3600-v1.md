@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2025.1 (26100702bro) per TFTP mit dem factory-Image; über die TP-Link-Oberfläche 3.14.3 Build 150518 mit Gluon 2023.2.6 (factory, Originalname)
 grundlagen: [browser-not-found, feste-ip, tftp-server]
-daten_stand: 9d9d8227
+daten_stand: 696209f3
 vorlage_stand: dd72aaab
 ---
 
@@ -177,6 +177,7 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - abgeleitet: Wiki-Zusammenfassung, im Rohtext toh:tp-link:tl-wdr4300_v1 nicht gefunden (Schritte (Normalweg), Dauer)
 - geprüft: OpenWrt generic-tp-link.mk (Schritte (Normalweg), Typenschild/Verwechslung)
 - geprüft: Test Neanderfunk 16.10.2026 (Weg ab Werk, Schritte (Normalweg), Datei, Bedingung an die Herstellerfirmware, Fehlerbild, Notweg)
+- geprüft: Test Neanderfunk 16.10.2026, zweites Gerät (Typenschild/Verwechslung, Notweg)
 - geprüft: WDR3600-Seite verweist darauf, Wiki toh:tp-link:tl-wdr4300_v1 (Schritte (Normalweg), Adressen, Programm, Zugang)
 - geprüft: Wiki toh:tp-link:tl-wdr3600_v1 (Typenschild/Verwechslung)
 - geprüft: tl-wdr3600_v1, Wiki toh:tp-link:tl-wdr4300_v1 (Schritte (Normalweg), Fehlerbild)
