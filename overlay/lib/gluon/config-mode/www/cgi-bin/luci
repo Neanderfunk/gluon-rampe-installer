@@ -3,13 +3,13 @@
 # Gluon-RAMpe: /cgi-bin/luci und alles darunter leitet auf /cgi-bin/config.
 #
 # Wer vorher eine OpenWrt-Oberflaeche unter 192.168.1.1 offen hatte (etwa die
-# Cudy-Zwischenfirmware), bekommt beim Aufruf von http://192.168.1.1 sonst
-# "Not Found - /cgi-bin/luci/": Unsere index.html und die von OpenWrt tragen
-# beide Last-Modified 1970 (reproduzierbarer Bau), der Browser fragt mit
-# If-Modified-Since, uhttpd antwortet 304, und der Browser zeigt seine alte
-# OpenWrt-Seite mit dem Meta-Refresh auf /cgi-bin/luci/ (Testplatz grw,
-# M60, Firefox, 16.10.2026). Pfade unter /cgi-bin/luci/ kommen per PATH_INFO
-# hier an, wie bei LuCI selbst.
+# Cudy-Zwischenfirmware), landet beim Aufruf von 192.168.1.1 oft auf
+# /cgi-bin/luci/ und bekam dort "Not Found" (Testplatz grw, M60, Firefox,
+# 16.10.2026). Wahrscheinlichste Ursache: Firefox ergaenzt "192.168.1.1" in
+# der Adressleiste aus dem Verlauf zur meistbesuchten Adresse, auch im
+# privaten Fenster (Gegenprobe am X5000R-Bootloader ohne Weiterleitung).
+# Ein alter Meta-Refresh aus dem Browser-Cache wuerde ebenso hier landen.
+# Pfade unter /cgi-bin/luci/ kommen per PATH_INFO hier an, wie bei LuCI selbst.
 
 printf 'Status: 302 Found\r\n'
 printf 'Location: /cgi-bin/config\r\n'
