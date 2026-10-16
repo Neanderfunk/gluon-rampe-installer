@@ -10,8 +10,8 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, tftp-server]
-daten_stand: cc1cb06c
-vorlage_stand: ae43c7d0
+daten_stand: 18637656
+vorlage_stand: f6b05fc5
 ---
 
 # Cudy M1800: Freifunk-Firmware installieren
@@ -63,8 +63,8 @@ ausprobierst, sag uns bitte Bescheid, ob es geklappt hat.
    wiederfindest.
 
 2. **Verbinden.** Versorg den Router mit Strom und steck den Rechner per
-   Kabel an eine **LAN**-Buchse. Der Rechner holt sich seine Adresse
-   automatisch, so wie er normalerweise eingestellt ist.
+   Kabel an eine **LAN**-Buchse. Der Rechner holt sich seine
+   Adresse automatisch, so wie er normalerweise eingestellt ist.
 
 3. **Cudy-Oberfläche öffnen.** Öffne im Browser `http://192.168.10.1`.
    Ab Werk verlangt die Oberfläche zuerst ein **eigenes Admin-Passwort**
@@ -76,9 +76,9 @@ ausprobierst, sag uns bitte Bescheid, ob es geklappt hat.
 4. **Zwischenfirmware hochladen.** Geh zum Reiter **"Allgemeine
    Einstellungen"**, klick in der Symbolspalte links ganz unten auf
    **"Firmware"** und im Abschnitt **"Lokales Update"** auf
-   **"Durchsuchen …"**. Wähl dort die Zwischenfirmware aus. Bei älterer
-   Cudy-Firmware heißt der Weg **Erweiterte Einstellungen → System →
-   Firmware**.
+   **"Durchsuchen …"**. Wähl dort die Zwischenfirmware aus. Gibt es den
+   Reiter nicht, such oben **Erweiterte Einstellungen** und links den
+   Eintrag **Firmware** (bei älterer Cudy-Firmware unter **System**).
 
 5. **Prüfsumme vergleichen.** Nach dem Hochladen zeigt der Router im
    Fenster "Lokales Update" eine MD5-Prüfsumme und die Größe. Sie muss genau so aussehen:

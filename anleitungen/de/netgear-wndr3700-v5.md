@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-netgear-wndr3700-v5-factory.img
 grundlagen: [browser-https, browser-not-found, nmrpflash]
-daten_stand: cc1cb06c
+daten_stand: 18637656
 vorlage_stand: 883c350d
 ---
 

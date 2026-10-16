@@ -12,8 +12,8 @@ status: erprobt
 erprobt_am: 2026-10-17
 erprobt_mit: Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.4
 grundlagen: [browser-not-found, feste-ip, tftp-server]
-daten_stand: cc1cb06c
-vorlage_stand: ae43c7d0
+daten_stand: 18637656
+vorlage_stand: f6b05fc5
 ---
 
 # Cudy AP3000 v1: Freifunk-Firmware installieren
@@ -47,6 +47,16 @@ genau mit "Cudy AP3000 v1", bevor du anfängst.
 
 ## Vorher prüfen
 
+**Weg zurück offenhalten:** Den Notfall-Weg zurück zur Cudy-Firmware (unten)
+hat der Cudy AP3000 v1 laut OpenWrt erst ab Cudy-Firmware
+**2.4.7**; ältere Bootloader holen sich keine Datei.
+Welche Version läuft, zeigt die Cudy-Oberfläche. Ist sie älter, spiel
+zuerst die neueste Cudy-Firmware ein (Download wie unten unter "Zurück zur
+Cudy-Firmware"), an derselben Stelle wie in Schritt 4 die Zwischenfirmware.
+Warte den Neustart ab und mach dann mit Schritt 4 weiter. Ob der Notfall-Weg
+danach auch unter der Freifunk-Firmware erhalten bleibt, haben wir noch
+nicht geprüft.
+
 Nicht verwechseln mit dem AP3000 Outdoor oder dem AP3000 Wall, die haben je
 ihre eigene Zwischenfirmware. Die Zwischenfirmware für den AP3000 v1 hat Cudy
 nicht öffentlich abgelegt; die Datei bei uns stammt direkt vom Cudy-Support.
@@ -60,8 +70,8 @@ nicht öffentlich abgelegt; die Datei bei uns stammt direkt vom Cudy-Support.
    wiederfindest.
 
 2. **Verbinden.** Versorg den Router mit Strom und steck den Rechner per
-   Kabel an eine **LAN**-Buchse. Der Rechner holt sich seine Adresse
-   automatisch, so wie er normalerweise eingestellt ist.
+   Kabel an seine einzige Netzwerkbuchse. Der Rechner holt sich seine
+   Adresse automatisch, so wie er normalerweise eingestellt ist.
 
 3. **Cudy-Oberfläche öffnen.** Öffne im Browser `http://192.168.10.254`.
    Ab Werk verlangt die Oberfläche zuerst ein **eigenes Admin-Passwort**
@@ -73,9 +83,9 @@ nicht öffentlich abgelegt; die Datei bei uns stammt direkt vom Cudy-Support.
 4. **Zwischenfirmware hochladen.** Geh zum Reiter **"Allgemeine
    Einstellungen"**, klick in der Symbolspalte links ganz unten auf
    **"Firmware"** und im Abschnitt **"Lokales Update"** auf
-   **"Durchsuchen …"**. Wähl dort die Zwischenfirmware aus. Bei älterer
-   Cudy-Firmware heißt der Weg **Erweiterte Einstellungen → System →
-   Firmware**.
+   **"Durchsuchen …"**. Wähl dort die Zwischenfirmware aus. Gibt es den
+   Reiter nicht, such oben **Erweiterte Einstellungen** und links den
+   Eintrag **Firmware** (bei älterer Cudy-Firmware unter **System**).
 
 5. **Prüfsumme vergleichen.** Nach dem Hochladen zeigt der Router im
    Fenster "Lokales Update" eine MD5-Prüfsumme und die Größe. Sie muss genau so aussehen:
@@ -87,8 +97,7 @@ nicht öffentlich abgelegt; die Datei bei uns stammt direkt vom Cudy-Support.
    Stimmt sie, klick auf **Fortfahren**.
 
 6. **Warten.** Die Oberfläche zeigt "System - Firmware wird installiert…".
-   Die LEDs zeigen erst ein Lauflicht (bis etwa eine halbe Minute), dann
-   blinken oder flackern sie kurz, dann startet der Router einmal neu. Bei
+   Die LED wechselt erst zwischen Rot, Grün, Blau und Orange, blinkt dann schnell in mehreren Farben und leuchtet am Ende dauerhaft violett-weiß. Bei
    uns dauerte das weniger als eine Minute. **Strom nicht ziehen.**
 
 ### Teil 2: Freifunk-Firmware
@@ -116,7 +125,9 @@ nicht öffentlich abgelegt; die Datei bei uns stammt direkt vom Cudy-Support.
     Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
     Kommt dort "Not Found", siehe [Der Browser zeigt
     "Not Found"](grundlagen/browser-not-found.md). Wie
-    es weitergeht, beschreibt deine Community.
+    es weitergeht, beschreibt deine Community. Im Betrieb ist die einzige
+    Netzwerkbuchse des Cudy AP3000 v1 sein Anschluss ans Internet: Verbinde
+    sie mit deinem Router zu Hause.
 
 ## Woran du erkennst, dass es geklappt hat
 
@@ -139,9 +150,6 @@ nicht öffentlich abgelegt; die Datei bei uns stammt direkt vom Cudy-Support.
   Upgrade"). Dann ist es das Image für ein anderes Modell. **"Erzwinge
   Upgrade" nie anhaken**, sondern **"Abbrechen"** und das richtige Image
   holen.
-- **Nach Schritt 6 antwortet `http://192.168.1.1` nicht.** Steck das Kabel in
-  eine andere Buchse. Bei manchen Modellen tauschen LAN und WAN nach dem
-  Wechsel auf OpenWrt die Rolle.
 - **Unter `http://192.168.10.254` kommt keine Cudy-Seite, sondern schon
   OpenWrt.** Dann ist die Zwischenfirmware vermutlich schon drauf: weiter bei
   Schritt 7. Läuft dort eine ganz andere Firmware, geht die Zwischenfirmware
@@ -155,6 +163,10 @@ Original-Firmware willst, hat Cudy einen Notfall-Weg. Er braucht etwas
 Werkzeug: einen TFTP-Server auf deinem Rechner
 ([TFTP-Server einrichten](grundlagen/tftp-server.md)) und eine feste
 Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
+Beim Cudy AP3000 v1 geht das nur, wenn vorher mindestens Cudy-Firmware
+2.4.7 lief (siehe "Vorher prüfen"). Mit einem älteren
+Bootloader holt er sich keine Datei, dann gibt es keinen einfachen Weg
+zurück.
 
 1. Lade die Cudy-Firmware für dein Modell von der
    [Download-Seite von Cudy](https://www.cudy.com/pages/download-center/ap3000-1-0) herunter, und zwar
@@ -166,20 +178,14 @@ Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
    in den Ordner des TFTP-Servers.
 2. Stell deinen Rechner fest auf `192.168.1.88`, Netzmaske `255.255.255.0`,
    und starte den TFTP-Server.
-3. Steck das Kabel an die Netzwerkbuchse (er hat nur die eine). Der Router hat noch keinen Strom.
+3. Steck das Kabel an eine
+   LAN-Buchse. Der Router hat noch keinen Strom.
 4. Drück die Reset-Taste (versenkt, mit einer Büroklammer) und halte sie
    gedrückt, steck den Strom ein und halte
-   weiter,
-   bis **alle LEDs einmal kurz aufleuchten**, etwa eine halbe Sekunde lang.
-   Dann loslassen. Hältst du weiter, fängt der Router etwa alle 20 Sekunden
-   von vorn an. Im TFTP-Server siehst du, dass `recovery.bin` abgeholt wird.
-   Klappt es mit der Reset-Taste nicht, versuch es genauso mit der
-   WPS-Taste. Bei einem unserer Geräte ging es zuerst nur damit.
+   weiter, bis die LED abwechselnd orange und rot blinkt. Dann loslassen. Im TFTP-Server siehst du, dass `recovery.bin` abgeholt wird.
 5. Warten: Das Schreiben dauert ein paar Minuten. Die LEDs können dabei
    flackern, und die Netzwerkverbindung geht zwischendurch weg und wieder an.
-   **Strom nicht ziehen.** Der Router ist fertig, wenn die **System-LED ruhig
-   leuchtet** (steckt ein Kabel in der WAN-Buchse, leuchtet zusätzlich
-   "Internet"). Danach den
+   **Strom nicht ziehen.** Danach den
    Rechner wieder auf "automatisch" stellen; die Cudy-Oberfläche ist unter
    `http://192.168.10.254` erreichbar.
 
