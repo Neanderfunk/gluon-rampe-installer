@@ -10622,13 +10622,21 @@
    "rampe_rezept": "",
    "quelle": "OpenWrt 04d3308b6248ef21a6f0bc3378b342906c2d2865",
    "anleitung": "anleitungen/de/gl.inet-gl-b1300.md",
-   "erprobt": {},
+   "erprobt": {
+    "am": "2026-10-16",
+    "mit": "Gluon 2023.2.6 (26091920sta) über LuCI der GL-Firmware 4.3.25; für 2025.1 erwartet gleich (gleiche Metadaten)",
+    "weg": "GL-Oberfläche → SYSTEM → Erweiterte Einstellungen → LuCI → System → Backup / Flash Firmware → Flash image, Keep settings aus, Force upgrade an; Rückweg zu GL 4.3.25 über die Notfall-Seite ebenfalls erprobt",
+    "beleg": "Testplatz grw, router-werkstatt docs/validierung/glinet-gl-b1300-2026-10-16.md (9aea90d)"
+   },
    "werte": {
-    "weg": "uboot",
+    "weg": "gl-luci",
     "dateiname": "lede-gl-b1300.bin",
-    "taste": "Drück die Reset-Taste, steck den Strom ein und halte die Taste, bis die LEDs dauerhaft leuchten. Dann loslassen.",
+    "taste": "Drück die linke Hälfte der Wippe (Kreispfeil), steck den Strom ein und halte weiter, bis die linke und die mittlere LED dauerhaft grün leuchten. Dann loslassen.",
     "led_schreiben": "Beim Schreiben blinkt die WLAN-LED.",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "gl_url": "http://192.168.8.1",
+    "dauer_uboot": "etwa 9 Minuten",
+    "led_uboot": "Erst leuchten alle drei LEDs kurz grün, dann blinkt die rechte, dann leuchten die linke und die mittlere dauerhaft grün."
    }
   },
   {
