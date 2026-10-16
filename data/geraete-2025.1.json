@@ -6415,7 +6415,7 @@
    "anleitung": "anleitungen/de/tp-link-tl-wdr3600-v1.md",
    "erprobt": {
     "am": "2026-10-16",
-    "mit": "Gluon 2023.2.6 (26091920sta), factory-Image mit Originalnamen über die TP-Link-Oberfläche 3.14.3 Build 150518",
+    "mit": "Gluon 2023.2.6 (26091920sta), factory-Image mit Originalnamen über die TP-Link-Oberfläche 3.14.3 Build 150518; Gluon 2025.1 erwartet, nicht getestet",
     "weg": "factory-Image (gluon-nef-21_dias-26091920sta-tp-link-tl-wdr3600-v1.bin, nicht umbenannt) im Stock-Web-UI hochgeladen; Rückweg zu Stock per TFTP ebenfalls erprobt",
     "beleg": "Testplatz grw, router-werkstatt docs/validierung/tp-link-tl-wdr3600-v1-2026-10-16.md (902e78f)"
    },
