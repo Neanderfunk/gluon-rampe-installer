@@ -83,7 +83,7 @@ Gerät zu öffnen:
 5. **Die Seite der RAMpe.** Öffne `http://192.168.1.1/cgi-bin/config` (der
    Rechner kann auf `192.168.1.70` bleiben). Kommt "Not Found", hat sich der
    Browser eine Seite von früher gemerkt: Tipp die Adresse vollständig ein,
-   mit `/cgi-bin/config` am Ende. Die Seite weist darauf hin, dass sie bei diesem
+   mit `/cgi-bin/config` am Ende. Hilft das nicht, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Die Seite weist darauf hin, dass sie bei diesem
    Gerät den Speicher vorbereitet, den neuen Bootloader dauerhaft schreibt
    und die Firmware von AVM entfernt.
    {%- if b.get("rampe-seite") %}
@@ -107,6 +107,8 @@ Gerät zu öffnen:
 8. **Fertig.** Stell den Rechner wieder auf "automatisch". Danach startet die
    Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
    Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md).
 
 Tipp für Linux: Mit `ip addr add` kannst du dem Netzwerkanschluss beide
 Adressen gleichzeitig geben (`192.168.178.10/24` und `192.168.1.70/24`);

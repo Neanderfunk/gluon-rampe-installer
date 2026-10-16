@@ -86,7 +86,7 @@ annehmen. Die lädst du dann im Browser hoch.
    `http://192.168.1.1/cgi-bin/config`. Es erscheint die Seite "Firmware
    aktualisieren". Kommt "Not Found", hat sich der Browser eine Seite von
    früher gemerkt: Tipp die Adresse vollständig ein, mit `/cgi-bin/config` am
-   Ende.
+   Ende. Hilft das nicht, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
    {%- if b.get("rampe-seite") %}
 
    ![Die Seite der RAMpe: "Firmware aktualisieren" mit Feld für die Datei und Knopf "Datei hochladen"]({{ b["rampe-seite"] }})
@@ -108,6 +108,8 @@ annehmen. Die lädst du dann im Browser hoch.
    ziehen**. Der erste Start kann etwas länger dauern. Danach startet die
    Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
    Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md).
 
 ## Woran du erkennst, dass es geklappt hat
 

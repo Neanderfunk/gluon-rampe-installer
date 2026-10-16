@@ -125,6 +125,8 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
 6. **Fertig.** Danach startet die Freifunk-Firmware deiner Community: je nach
    Community zuerst mit einer Einrichtungsseite unter `http://192.168.1.1`
    oder gleich im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md).
    {%- if w.per_wlan %} Für die Einrichtung brauchst du jetzt ein
    Netzwerkkabel, das WLAN des Herstellers gibt es nicht mehr.{% endif %}
 {%- else %}
@@ -169,11 +171,15 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
 8. **Fertig.** Stell den Rechner wieder auf "automatisch". Danach startet die
    Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
    Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md).
 {%- else %}
 
 7. **Fertig.** Stell den Rechner wieder auf "automatisch". Danach startet die
    Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
    Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md).
 {%- endif %}
 {%- endif %}
 

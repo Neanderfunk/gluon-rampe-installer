@@ -26,7 +26,7 @@ ausprobiert**; die RAMpe selbst läuft auf anderen Geräten.
 3. Nach dem Neustart öffne `http://192.168.1.1/cgi-bin/config`. Es erscheint
    die Seite "Firmware aktualisieren" der RAMpe. Kommt "Not Found", hat sich
    der Browser eine Seite von früher gemerkt: Tipp die Adresse vollständig
-   ein, mit `/cgi-bin/config` am Ende. Startet der Router zwischendurch neu,
+   ein, mit `/cgi-bin/config` am Ende. Hilft das nicht, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Startet der Router zwischendurch neu,
    einfach die Seite wieder aufrufen.
    {%- if br.get("rampe-seite") %}
 
