@@ -32,7 +32,7 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
                          https://www.cudy.com/pages/download-center/wr3000h-1-0
 
   Validierung: WR3000H v1 mit Cudy-Firmware 2.5.30 am Testplatz (adorfer 16.10.2026,
-  Protokoll router-werkstatt docs/validierung/cudy-wr3000h-v1-2026-10-16.md, 7253238)
+  Test Neanderfunk, cudy-wr3000h-v1-2026-10-16.md, 7253238)
   und WR3000 v1 mit 2.4.19 (cudy-wr3000-v1-2026-10-16.md, f4b4c2f; Fehlermeldungen mit
   falschen Images: cudy-wr3000-v1-geraet2-2026-10-16.md, 432ad4b; red-herrings Fall 11). Menüpfade und
   LED-Zeichen sind dort belegt, für andere Modelle/Versionen vermutet. WPS statt Reset
