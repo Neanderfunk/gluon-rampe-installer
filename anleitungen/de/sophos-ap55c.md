@@ -10,7 +10,7 @@ level_text: Gehäuse öffnen
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, tftp-server]
-daten_stand: bf1e9ed3
+daten_stand: af10b830
 vorlage_stand: f350b7d3
 ---
 

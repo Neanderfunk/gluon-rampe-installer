@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2025.1 (26100702bro), vorher TOTOLINK-Firmware V9.1.0u.6118 über den Notfall-Modus
 grundlagen: [browser-https, feste-ip]
-daten_stand: bf1e9ed3
+daten_stand: af10b830
 vorlage_stand: 565e8935
 ---
 

@@ -10,7 +10,7 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [tftp-server]
-daten_stand: bf1e9ed3
+daten_stand: af10b830
 vorlage_stand: bfd04827
 ---
 
