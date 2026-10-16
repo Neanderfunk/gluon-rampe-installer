@@ -5,15 +5,15 @@ anzeige: Cudy AP3000 v1
 familie: cudy-zwischenfirmware
 gluon_broken: false
 sprache: de
-level: L1
-level_text: Zwei Schritte im Browser
+level: L3
+level_text: Feste Adresse am Rechner
 risiko: normal
 status: erprobt
 erprobt_am: 2026-10-17
 erprobt_mit: Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.4
 grundlagen: [browser-not-found, feste-ip, tftp-server]
-daten_stand: 18637656
-vorlage_stand: f6b05fc5
+daten_stand: 2da2e5be
+vorlage_stand: de62336d
 ---
 
 # Cudy AP3000 v1: Freifunk-Firmware installieren
@@ -70,8 +70,11 @@ nicht öffentlich abgelegt; die Datei bei uns stammt direkt vom Cudy-Support.
    wiederfindest.
 
 2. **Verbinden.** Versorg den Router mit Strom und steck den Rechner per
-   Kabel an seine einzige Netzwerkbuchse. Der Rechner holt sich seine
-   Adresse automatisch, so wie er normalerweise eingestellt ist.
+   Kabel an seine einzige Netzwerkbuchse. Der Cudy AP3000 v1 vergibt selbst keine
+   Adressen. Stell deinen Rechner deshalb fest auf `192.168.10.100`,
+   Netzmaske `255.255.255.0`
+   ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)). Nach dem Einschalten braucht er
+   etwa eine Minute, bis er unter seiner Adresse antwortet.
 
 3. **Cudy-Oberfläche öffnen.** Öffne im Browser `http://192.168.10.254`.
    Ab Werk verlangt die Oberfläche zuerst ein **eigenes Admin-Passwort**
@@ -102,7 +105,8 @@ nicht öffentlich abgelegt; die Datei bei uns stammt direkt vom Cudy-Support.
 
 ### Teil 2: Freifunk-Firmware
 
-7. **OpenWrt-Oberfläche öffnen.**
+7. **OpenWrt-Oberfläche öffnen.** Stell den Rechner jetzt fest auf
+   `192.168.1.100`, Netzmaske `255.255.255.0`.
    Öffne `http://192.168.1.1`. Es erscheint die Anmeldung von OpenWrt
    ("LuCI"). Das Passwort-Feld bleibt leer, einfach anmelden.
 
@@ -120,7 +124,8 @@ nicht öffentlich abgelegt; die Datei bei uns stammt direkt vom Cudy-Support.
    Dann **Fortfahren**.
 
 10. **Fertig.** Der Router schreibt die Freifunk-Firmware und startet neu,
-    wieder einige Minuten, Strom nicht ziehen. Danach startet die
+    wieder einige Minuten, Strom nicht ziehen. Stell den Rechner wieder auf
+    "automatisch". Danach startet die
     Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
     Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
     Kommt dort "Not Found", siehe [Der Browser zeigt
@@ -178,29 +183,31 @@ zurück.
    in den Ordner des TFTP-Servers.
 2. Stell deinen Rechner fest auf `192.168.1.88`, Netzmaske `255.255.255.0`,
    und starte den TFTP-Server.
-3. Steck das Kabel an eine
-   LAN-Buchse. Der Router hat noch keinen Strom.
+3. Steck das Kabel an seine einzige Netzwerkbuchse. Der Router hat noch keinen Strom.
 4. Drück die Reset-Taste (versenkt, mit einer Büroklammer) und halte sie
    gedrückt, steck den Strom ein und halte
    weiter, bis die LED abwechselnd orange und rot blinkt. Dann loslassen. Im TFTP-Server siehst du, dass `recovery.bin` abgeholt wird.
 5. Warten: Das Schreiben dauert ein paar Minuten. Die LEDs können dabei
    flackern, und die Netzwerkverbindung geht zwischendurch weg und wieder an.
-   **Strom nicht ziehen.** Danach den
-   Rechner wieder auf "automatisch" stellen; die Cudy-Oberfläche ist unter
-   `http://192.168.10.254` erreichbar.
+   **Strom nicht ziehen.** Danach den Rechner fest auf
+   `192.168.10.100` stellen wie in Schritt 2; die Cudy-Oberfläche ist
+   unter `http://192.168.10.254` erreichbar, nach dem Neustart braucht er dafür wieder
+   etwa eine Minute.
 
 ## Herkunft der Angaben
 
 Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 
 - abgeleitet: Router ist in beiden Firmwares DHCP-Server (Schritte (Normalweg), Programm)
+- abgeleitet: ob die Zwischenfirmware DHCP vergibt, offen; am Testplatz war 192.168.1.88 fest eingestellt (Adressen)
 - abgeleitet: sysupgrade schreibt den Flash (Schritte (Normalweg), Dauer)
 - geprüft: Commit-Texte (Gluon-RAMpe passt)
 - geprüft: Commit/Neanderfunk-Notiz (Weg ab Werk, Schritte (Normalweg))
 - geprüft: Cudy-FAQ "OpenWrt Software Download" (Bedingung an die Herstellerfirmware)
+- geprüft: Mitschnitt Test Neanderfunk 17.10.2026 (Adressen)
 - geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer, Fehlerbild)
 - geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)
 - geprüft: Spiegel-Ordner (Typenschild/Verwechslung)
-- geprüft: Test Neanderfunk 17.10.2026 (Sichtbare Zeichen, Anschluss, Adressen, Rückweg zur Herstellerfirmware)
+- geprüft: Test Neanderfunk 17.10.2026 (Sichtbare Zeichen, Anschluss, Rückweg zur Herstellerfirmware)
 - geprüft: Wiki toh:cudy:ap3000_v1 (Rückweg zur Herstellerfirmware)
 - Geräteeintrag: OpenWrt 6dacba30a75b0ac8a65115f78808a97abbb34939

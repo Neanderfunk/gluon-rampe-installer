@@ -10,8 +10,8 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, tftp-server]
-daten_stand: 18637656
-vorlage_stand: f6b05fc5
+daten_stand: 2da2e5be
+vorlage_stand: de62336d
 ---
 
 # Cudy RE3000 v1: Freifunk-Firmware installieren
