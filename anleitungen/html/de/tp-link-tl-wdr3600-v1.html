@@ -17,8 +17,8 @@
 <meta name="anleitung:erprobt_am" content="2026-10-16">
 <meta name="anleitung:erprobt_mit" content="Gluon 2023.2.6 (26091920sta), factory-Image mit Originalnamen über die TP-Link-Oberfläche 3.14.3 Build 150518">
 <meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, tftp-server">
-<meta name="anleitung:daten_stand" content="d754590c">
-<meta name="anleitung:vorlage_stand" content="883c350d">
+<meta name="anleitung:daten_stand" content="b43475bf">
+<meta name="anleitung:vorlage_stand" content="dd72aaab">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -46,13 +46,16 @@ mehreren Versionen, und jede braucht ihr eigenes Image. Vergleich den
 Aufkleber genau mit &quot;TP-Link TL-WDR3600 v1&quot;, bevor du anfängst.</p>
 <h2>Vorher prüfen</h2>
 <ul>
-<li><strong>Herstellerfirmware:</strong> Version 3.14.3 (Build 151104) sperrt fremde
-Firmware. OpenWrt empfiehlt, vorher die TP-Link-Firmware 3.13.33 (130617)
-einzuspielen.</li>
-<li><strong>Dateiname:</strong> Die Oberfläche ist hier besonders wählerisch: Sie meldet
-&quot;firmware path too long&quot; bei zu langen <strong>und</strong> zu kurzen Namen. Laut
-OpenWrt nimmt sie den Namen <code>wdr4300v1_en_3_14_3_up_boot(150518).bin</code> an.
-Ob es genau dieser sein muss, ist nicht geklärt.</li>
+<li><strong>Herstellerfirmware:</strong> Bei uns hat die TP-Link-Firmware 3.14.3
+(Build 150518) das factory-Image direkt angenommen. Laut OpenWrt sperrt
+der spätere Build 151104 fremde Firmware. Lehnt die Oberfläche das Image
+ab, spiel zuerst über TFTP die Version 150518 ein (unten, &quot;Zurück zur
+TP-Link-Firmware&quot;).</li>
+<li><strong>Dateiname:</strong> Nimm die Datei mit ihrem Originalnamen, umbenennen ist
+nicht nötig. Hast du sie mehrfach heruntergeladen und heißt sie jetzt
+<code>…(1).bin</code> oder <code>…[1].bin</code>, benenne sie zurück. Bei zu langem Namen meldet
+die Oberfläche &quot;Please choose a file to upgrade!&quot;. Bei uns ging ein Name
+mit 54 Zeichen, einer mit 68 nicht.</li>
 <li>Der TL-WDR4300 sieht ähnlich aus, braucht aber ein eigenes Image.</li>
 </ul>
 <h2>Schritte</h2>
@@ -107,7 +110,7 @@ Freifunk-Firmware, oft zuerst mit der Einrichtungsseite unter
 <h2>Wenn etwas schiefgeht</h2>
 <ul>
 <li><strong>Die Oberfläche lehnt die Datei ab.</strong> Häufige Gründe: Das Image ist für
-eine andere Hardware-Version oder Region (Aufkleber prüfen), der Dateiname
+eine andere Hardware-Version oder Region (Aufkleber prüfen), es ist das sysupgrade- statt des factory-Images, der Dateiname
 ist zu lang (kurz umbenennen, z. B. in <code>factory.bin</code>), oder die
 Herstellerfirmware ist zu neu und sperrt fremde Firmware (siehe &quot;Vorher
 prüfen&quot;, falls vorhanden).</li>
@@ -115,6 +118,11 @@ prüfen&quot;, falls vorhanden).</li>
 Rechner auf &quot;automatisch&quot; und zieh das Kabel kurz ab und wieder an. Je nach
 Community startet die Firmware auch gleich im Betrieb ohne
 Einrichtungsseite.</li>
+<li><strong>&quot;Error code: 18005 … the version of the upgraded file was
+incorrect&quot;.</strong> Das ist das sysupgrade-Image. Die TP-Link-Oberfläche
+braucht das factory-Image.</li>
+<li><strong>&quot;Please choose a file to upgrade!&quot;</strong> Der Dateiname ist zu lang, siehe
+&quot;Vorher prüfen&quot;.</li>
 </ul>
 <h2>Notfall: Firmware per TFTP</h2>
 <p>Startet das Gerät nicht mehr richtig, etwa nach einem abgebrochenen Update
@@ -123,7 +131,7 @@ von deinem Rechner holen. Dafür brauchst du einen
 TFTP-Server (<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>) und eine
 feste Adresse am Rechner (<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).</p>
 <ol>
-<li>Leg die TP-Link-Firmware ohne ihren Bootloader-Teil unter dem Namen <code>wdr3600v1_tp_recovery.bin</code> in den
+<li>Leg die TP-Link-Firmware ohne ihren Bootloader-Teil (wie du sie vorbereitest, steht unten unter „Zurück zur TP-Link-Firmware“) unter dem Namen <code>wdr3600v1_tp_recovery.bin</code> in den
 Ordner des TFTP-Servers. Genau dieser Name, Groß- und Kleinschreibung
 zählt.</li>
 <li>Stell deinen Rechner fest auf <code>192.168.0.66</code>, Netzmaske
@@ -133,8 +141,46 @@ Am Rechner darf nur diese eine Adresse eingestellt sein, sonst antwortet der TFT
 gedrückt und schalte den Strom ein. Halte sie gedrückt:
 bis der TFTP-Server
 zeigt, dass die Datei abgeholt wird.</li>
-<li>Warten. Das Gerät
+<li>Warten, etwa 6 Minuten. Das Gerät
 schreibt die Datei und startet neu.</li>
+</ol>
+<h2>Zurück zur TP-Link-Firmware</h2>
+<p>Über den Notfall per TFTP (oben) nimmt der WDR3600 auch die Firmware von
+TP-Link wieder an, allerdings nur ohne ihren Bootloader-Teil am Anfang. So
+bereitest du die Datei vor:</p>
+<ol>
+<li>
+<p>Lade
+<a href="https://static.tp-link.com/res/down/soft/TL-WDR3600_V1_150518.zip">TL-WDR3600_V1_150518.zip</a>
+bei TP-Link herunter und pack sie aus. Darin liegt
+<code>wdr3600v1_en_3_14_3_up_boot(150518).bin</code>.</p>
+</li>
+<li>
+<p>Schneide die ersten 131.584 Bytes ab (257 mal 512) und speichere den
+Rest als <code>wdr3600v1_tp_recovery.bin</code>. Öffne dazu ein Terminal in dem
+Ordner:</p>
+<ul>
+<li>
+<p>Linux und macOS:</p>
+<pre><code>dd if='wdr3600v1_en_3_14_3_up_boot(150518).bin' of=wdr3600v1_tp_recovery.bin bs=512 skip=257
+</code></pre>
+</li>
+<li>
+<p>Windows (PowerShell oder Eingabeaufforderung) mit <strong>Python 3</strong>
+(<a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>), geht auch unter Linux und macOS
+mit <code>python3</code> statt <code>py</code>:</p>
+<pre><code>py -c &quot;open('wdr3600v1_tp_recovery.bin','wb').write(open('wdr3600v1_en_3_14_3_up_boot(150518).bin','rb').read()[131584:])&quot;
+</code></pre>
+</li>
+</ul>
+<p><strong>Prüfen:</strong> <code>wdr3600v1_tp_recovery.bin</code> ist genau <strong>8.060.928 Bytes</strong>
+groß.</p>
+</li>
+<li>
+<p>Weiter wie oben unter &quot;Notfall: Firmware per TFTP&quot;. Danach ist die
+TP-Link-Oberfläche unter <code>http://192.168.0.1</code> erreichbar (Benutzer
+<code>admin</code>, Passwort <code>admin</code>).</p>
+</li>
 </ol>
 <h2>Herkunft der Angaben</h2>
 <p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>

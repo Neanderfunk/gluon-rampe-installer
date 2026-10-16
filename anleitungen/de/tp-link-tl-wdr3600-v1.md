@@ -12,8 +12,8 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2023.2.6 (26091920sta), factory-Image mit Originalnamen über die TP-Link-Oberfläche 3.14.3 Build 150518
 grundlagen: [browser-not-found, feste-ip, tftp-server]
-daten_stand: d754590c
-vorlage_stand: 883c350d
+daten_stand: b43475bf
+vorlage_stand: dd72aaab
 ---
 
 # TP-Link TL-WDR3600 v1: Freifunk-Firmware installieren
@@ -44,13 +44,16 @@ Aufkleber genau mit "TP-Link TL-WDR3600 v1", bevor du anfängst.
 
 ## Vorher prüfen
 
-- **Herstellerfirmware:** Version 3.14.3 (Build 151104) sperrt fremde
-  Firmware. OpenWrt empfiehlt, vorher die TP-Link-Firmware 3.13.33 (130617)
-  einzuspielen.
-- **Dateiname:** Die Oberfläche ist hier besonders wählerisch: Sie meldet
-  "firmware path too long" bei zu langen **und** zu kurzen Namen. Laut
-  OpenWrt nimmt sie den Namen `wdr4300v1_en_3_14_3_up_boot(150518).bin` an.
-  Ob es genau dieser sein muss, ist nicht geklärt.
+- **Herstellerfirmware:** Bei uns hat die TP-Link-Firmware 3.14.3
+  (Build 150518) das factory-Image direkt angenommen. Laut OpenWrt sperrt
+  der spätere Build 151104 fremde Firmware. Lehnt die Oberfläche das Image
+  ab, spiel zuerst über TFTP die Version 150518 ein (unten, "Zurück zur
+  TP-Link-Firmware").
+- **Dateiname:** Nimm die Datei mit ihrem Originalnamen, umbenennen ist
+  nicht nötig. Hast du sie mehrfach heruntergeladen und heißt sie jetzt
+  `…(1).bin` oder `…[1].bin`, benenne sie zurück. Bei zu langem Namen meldet
+  die Oberfläche "Please choose a file to upgrade!". Bei uns ging ein Name
+  mit 54 Zeichen, einer mit 68 nicht.
 - Der TL-WDR4300 sieht ähnlich aus, braucht aber ein eigenes Image.
 
 ## Schritte
@@ -97,7 +100,7 @@ Aufkleber genau mit "TP-Link TL-WDR3600 v1", bevor du anfängst.
 ## Wenn etwas schiefgeht
 
 - **Die Oberfläche lehnt die Datei ab.** Häufige Gründe: Das Image ist für
-  eine andere Hardware-Version oder Region (Aufkleber prüfen), der Dateiname
+  eine andere Hardware-Version oder Region (Aufkleber prüfen), es ist das sysupgrade- statt des factory-Images, der Dateiname
   ist zu lang (kurz umbenennen, z. B. in `factory.bin`), oder die
   Herstellerfirmware ist zu neu und sperrt fremde Firmware (siehe "Vorher
   prüfen", falls vorhanden).
@@ -105,6 +108,11 @@ Aufkleber genau mit "TP-Link TL-WDR3600 v1", bevor du anfängst.
   Rechner auf "automatisch" und zieh das Kabel kurz ab und wieder an. Je nach
   Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
+- **"Error code: 18005 … the version of the upgraded file was
+  incorrect".** Das ist das sysupgrade-Image. Die TP-Link-Oberfläche
+  braucht das factory-Image.
+- **"Please choose a file to upgrade!"** Der Dateiname ist zu lang, siehe
+  "Vorher prüfen".
 
 ## Notfall: Firmware per TFTP
 
@@ -114,7 +122,7 @@ von deinem Rechner holen. Dafür brauchst du einen
 TFTP-Server ([TFTP-Server einrichten](grundlagen/tftp-server.md)) und eine
 feste Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
 
-1. Leg die TP-Link-Firmware ohne ihren Bootloader-Teil unter dem Namen `wdr3600v1_tp_recovery.bin` in den
+1. Leg die TP-Link-Firmware ohne ihren Bootloader-Teil (wie du sie vorbereitest, steht unten unter „Zurück zur TP-Link-Firmware“) unter dem Namen `wdr3600v1_tp_recovery.bin` in den
    Ordner des TFTP-Servers. Genau dieser Name, Groß- und Kleinschreibung
    zählt.
 2. Stell deinen Rechner fest auf `192.168.0.66`, Netzmaske
@@ -124,8 +132,42 @@ feste Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md))
    gedrückt und schalte den Strom ein. Halte sie gedrückt:
    bis der TFTP-Server
    zeigt, dass die Datei abgeholt wird.
-4. Warten. Das Gerät
+4. Warten, etwa 6 Minuten. Das Gerät
    schreibt die Datei und startet neu.
+
+## Zurück zur TP-Link-Firmware
+
+Über den Notfall per TFTP (oben) nimmt der WDR3600 auch die Firmware von
+TP-Link wieder an, allerdings nur ohne ihren Bootloader-Teil am Anfang. So
+bereitest du die Datei vor:
+
+1. Lade
+   [TL-WDR3600_V1_150518.zip](https://static.tp-link.com/res/down/soft/TL-WDR3600_V1_150518.zip)
+   bei TP-Link herunter und pack sie aus. Darin liegt
+   `wdr3600v1_en_3_14_3_up_boot(150518).bin`.
+2. Schneide die ersten 131.584 Bytes ab (257 mal 512) und speichere den
+   Rest als `wdr3600v1_tp_recovery.bin`. Öffne dazu ein Terminal in dem
+   Ordner:
+
+   - Linux und macOS:
+
+     ```
+     dd if='wdr3600v1_en_3_14_3_up_boot(150518).bin' of=wdr3600v1_tp_recovery.bin bs=512 skip=257
+     ```
+
+   - Windows (PowerShell oder Eingabeaufforderung) mit **Python 3**
+     (<https://www.python.org/downloads/>), geht auch unter Linux und macOS
+     mit `python3` statt `py`:
+
+     ```
+     py -c "open('wdr3600v1_tp_recovery.bin','wb').write(open('wdr3600v1_en_3_14_3_up_boot(150518).bin','rb').read()[131584:])"
+     ```
+
+   **Prüfen:** `wdr3600v1_tp_recovery.bin` ist genau **8.060.928 Bytes**
+   groß.
+3. Weiter wie oben unter "Notfall: Firmware per TFTP". Danach ist die
+   TP-Link-Oberfläche unter `http://192.168.0.1` erreichbar (Benutzer
+   `admin`, Passwort `admin`).
 
 ## Herkunft der Angaben
 

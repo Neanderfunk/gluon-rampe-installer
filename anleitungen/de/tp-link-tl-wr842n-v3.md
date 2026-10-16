@@ -10,8 +10,8 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found]
-daten_stand: d754590c
-vorlage_stand: 883c350d
+daten_stand: b43475bf
+vorlage_stand: dd72aaab
 ---
 
 # TP-Link TL-WR842N v3: Freifunk-Firmware installieren
@@ -90,7 +90,7 @@ Aufkleber genau mit "TP-Link TL-WR842N v3", bevor du anfängst.
 ## Wenn etwas schiefgeht
 
 - **Die Oberfläche lehnt die Datei ab.** Häufige Gründe: Das Image ist für
-  eine andere Hardware-Version oder Region (Aufkleber prüfen), der Dateiname
+  eine andere Hardware-Version oder Region (Aufkleber prüfen), es ist das sysupgrade- statt des factory-Images, der Dateiname
   ist zu lang (kurz umbenennen, z. B. in `factory.bin`), oder die
   Herstellerfirmware ist zu neu und sperrt fremde Firmware (siehe "Vorher
   prüfen", falls vorhanden).

@@ -10,8 +10,8 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found]
-daten_stand: d754590c
-vorlage_stand: 883c350d
+daten_stand: b43475bf
+vorlage_stand: dd72aaab
 ---
 
 # OpenWrt One: Freifunk-Firmware installieren
