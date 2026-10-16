@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
 daten_stand: 0a6fad58
-vorlage_stand: 964b6421
+vorlage_stand: 17d2bf1f
 ---
 
 # Cudy WR1300 v1: Freifunk-Firmware installieren
@@ -110,7 +110,7 @@ eigener Zwischenfirmware; diese Anleitung gilt nicht für sie.
    aus. Es darf kein Haken mehr gesetzt sein.
    Meldet OpenWrt, dass das Image nicht zum Gerät passt, obwohl du sicher die
    Datei für den Cudy WR1300 v1 hast, setz zusätzlich den Haken bei
-   "Upgrade erzwingen" (englisch "Force upgrade"). Bei diesem Modell ist das
+   "Erzwinge Upgrade" (englisch "Force upgrade"). Bei diesem Modell ist das
    laut OpenWrt nötig, weil die Zwischenfirmware das Gerät anders benennt.
    Dann **Fortfahren**.
 
@@ -130,9 +130,18 @@ eigener Zwischenfirmware; diese Anleitung gilt nicht für sie.
 
 - **Die Prüfsumme stimmt nicht.** Nicht fortfahren. Lad die Datei neu herunter
   und prüf, ob es die für dein Modell und deine Version ist.
-- **Die Cudy-Oberfläche nimmt die Datei nicht an.** Meist ist es die
-  Zwischenfirmware eines anderen Modells oder einer anderen Version. Vergleich
-  noch einmal mit dem Aufkleber.
+- **Die Cudy-Oberfläche meldet "Datei ist nicht verfügbar. Bitte versuchen
+  Sie es erneut."** Die Meldung führt in die Irre: Gemeint ist, dass die
+  Datei nicht von Cudy unterschrieben ist. Es ist also die falsche Datei,
+  etwa schon die Freifunk-Firmware oder die Zwischenfirmware eines anderen
+  Modells. Nicht noch einmal versuchen, sondern die Zwischenfirmware für
+  genau dieses Modell nehmen (Aufkleber vergleichen).
+- **OpenWrt meldet "not supported by this image" oder "Überprüfung der
+  Abbilddatei fehlgeschlagen"** (in Schritt 9, mit einem Haken "Erzwinge
+  Upgrade"). Bei diesem Modell ist das in Ordnung, wenn unter
+  "Supported devices" dein Modell steht (siehe Schritt 9). Steht dort ein
+  anderes Modell, ist es das falsche Image: **"Abbrechen"** und das richtige
+  holen.
 - **Nach Schritt 6 antwortet `http://192.168.1.1` nicht.** Steck das Kabel in
   eine andere Buchse. Bei manchen Modellen tauschen LAN und WAN nach dem
   Wechsel auf OpenWrt die Rolle.
@@ -170,9 +179,9 @@ Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
    von vorn an. Im TFTP-Server siehst du, dass `recovery.bin` abgeholt wird.
    Klappt es mit der Reset-Taste nicht, versuch es genauso mit der
    WPS-Taste. Bei einem unserer Geräte ging es zuerst nur damit.
-5. Warten: Das Schreiben kann einige Minuten dauern. Die LEDs flackern dabei,
-   und die Netzwerkverbindung geht zwischendurch weg und wieder an. **Strom
-   nicht ziehen.** Der Router ist fertig, wenn die **System-LED ruhig
+5. Warten: Das Schreiben dauert ein paar Minuten. Die LEDs können dabei
+   flackern, und die Netzwerkverbindung geht zwischendurch weg und wieder an.
+   **Strom nicht ziehen.** Der Router ist fertig, wenn die **System-LED ruhig
    leuchtet** (steckt ein Kabel in der WAN-Buchse, leuchtet zusätzlich
    "Internet"). Danach den
    Rechner wieder auf "automatisch" stellen; die Cudy-Oberfläche ist unter
