@@ -65,6 +65,9 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
   einer Minute ohne DHCP Ersatzadresse 192.168.10.254 [geprüft: Mitschnitt
   17.10.2026]; ob die Zwischenfirmware DHCP vergibt, offen (Testplatz hatte
   192.168.1.88 fest) [abgeleitet: luci_rechner_ip vorsichtshalber].
+  Warnkasten "Nicht ins Heimnetz" bei eine_buchse: adorfer über Supernode
+  17.10.2026 [abgeleitet: Gluon-Einrichtungsseite vergibt Adressen; am
+  AP3000 mit 2025.1 nicht gemessen].
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
@@ -86,6 +89,14 @@ Community ein. Beides geht im Browser, du brauchst kein Zusatzprogramm.
 > Solche Geräte starten mit einer älteren Zwischenfirmware nicht mehr. Nimm
 > nur die Zwischenfirmware vom 19.11.2025 oder neuer, wie sie unten verlinkt
 > ist, nie eine ältere Datei aus Foren oder alten Downloads.
+{%- endif %}
+{%- if w.get("eine_buchse") %}
+
+> **Nicht ins Heimnetz.** Häng den {{ modell }} zum Einrichten direkt an
+> deinen Rechner, nicht an deinen Router zu Hause. Startet nach dem
+> Einspielen die Einrichtungsseite der Freifunk-Firmware, verteilt er selbst
+> Adressen und stört damit deinen Router. Erst wenn die Freifunk-Firmware
+> eingerichtet ist, kommt er an deinen Router.
 {%- endif %}
 
 ## Was du brauchst
@@ -231,7 +242,7 @@ nicht geprüft.
     es weitergeht, beschreibt deine Community.
     {%- if w.get("eine_buchse") %} Im Betrieb ist die einzige
     Netzwerkbuchse des {{ modell }} sein Anschluss ans Internet: Verbinde
-    sie mit deinem Router zu Hause.{% endif %}
+    sie erst nach der Einrichtung mit deinem Router zu Hause.{% endif %}
 
 ## Woran du erkennst, dass es geklappt hat
 
