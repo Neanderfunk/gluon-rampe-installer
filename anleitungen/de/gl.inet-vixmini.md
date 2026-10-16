@@ -9,9 +9,9 @@ level: L0
 level_text: Einfach hochladen
 risiko: normal
 status: ungeprüft
-grundlagen: [feste-ip]
+grundlagen: [browser-not-found, feste-ip]
 daten_stand: af10b830
-vorlage_stand: 393f1614
+vorlage_stand: 883c350d
 ---
 
 # GL.iNet VIXMINI: Freifunk-Firmware installieren
@@ -67,7 +67,9 @@ Speicher und je ihr eigenes Image (nicht [microuter-N300](gl.inet-microuter-n300
 
 6. **Fertig.** Danach startet die Freifunk-Firmware deiner Community: je nach
    Community zuerst mit einer Einrichtungsseite unter `http://192.168.1.1`
-   oder gleich im Betrieb. Für die Einrichtung brauchst du jetzt ein
+   oder gleich im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md). Für die Einrichtung brauchst du jetzt ein
    Netzwerkkabel, das WLAN des Herstellers gibt es nicht mehr.
 
 ## Woran du erkennst, dass es geklappt hat

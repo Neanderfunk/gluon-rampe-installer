@@ -9,9 +9,9 @@ level: L5
 level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
-grundlagen: [nmrpflash]
+grundlagen: [browser-not-found, nmrpflash]
 daten_stand: af10b830
-vorlage_stand: 02b61429
+vorlage_stand: 883c350d
 ---
 
 # NETGEAR R6020: Freifunk-Firmware installieren
@@ -81,6 +81,8 @@ Speicheraufteilung. Die Images nicht tauschen.
 8. **Fertig.** Danach startet die Freifunk-Firmware deiner Community: je nach
    Community zuerst mit einer Einrichtungsseite unter `http://192.168.1.1`
    oder gleich im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md).
 
 ## Woran du erkennst, dass es geklappt hat
 

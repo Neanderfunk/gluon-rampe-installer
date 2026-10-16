@@ -9,9 +9,9 @@ level: L4
 level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
-grundlagen: [ssh-scp]
+grundlagen: [browser-not-found, ssh-scp]
 daten_stand: af10b830
-vorlage_stand: 0a1a0e7a
+vorlage_stand: 883c350d
 ---
 
 # ASUS TUF-AX6000: Freifunk-Firmware installieren
@@ -159,7 +159,9 @@ und Python 3 auf deinem Rechner. Rechne mit einer Dreiviertelstunde.
 10. **Fertig.** Einige Minuten warten, Strom nicht ziehen. Danach startet
     die Freifunk-Firmware deiner Community: je nach Community zuerst mit
     einer Einrichtungsseite unter `http://192.168.1.1` oder gleich im
-    Betrieb. Den Webserver aus Schritt 1 kannst du mit Strg+C beenden.
+    Betrieb.
+    Kommt dort "Not Found", siehe [Der Browser zeigt
+    "Not Found"](grundlagen/browser-not-found.md). Den Webserver aus Schritt 1 kannst du mit Strg+C beenden.
 
 ## Woran du erkennst, dass es geklappt hat
 

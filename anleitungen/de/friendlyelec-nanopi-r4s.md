@@ -9,9 +9,9 @@ level: L4
 level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
-grundlagen: [image-schreiben]
+grundlagen: [browser-not-found, image-schreiben]
 daten_stand: af10b830
-vorlage_stand: 6eae926f
+vorlage_stand: 883c350d
 ---
 
 # FriendlyElec NanoPi R4S (4 GB): Freifunk-Firmware installieren
@@ -65,6 +65,8 @@ außen unterscheidet, nennt keine unserer Quellen.
 
 5. **Fertig.** Die Freifunk-Firmware startet: je nach Community zuerst mit
    einer Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md).
 
 **Karte nicht tauschen:** Das Gerät leitet seine Netzwerkadresse (MAC) aus
 der Seriennummer der Speicherkarte ab. Mit einer anderen Karte bekommt es eine

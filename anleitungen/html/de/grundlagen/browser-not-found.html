@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Der Browser zeigt &quot;Not Found&quot;</title>
+<meta name="anleitung:grundlage" content="browser-not-found">
+<link rel="stylesheet" href="../../anleitung.css">
+</head>
+<body>
+<hr />
+<h2>thema: browser-not-found
+sprache: de
+status: ungeprüft</h2>
+<blockquote>
+<p><strong>Noch nicht gegengelesen.</strong> Diese Grundlagen-Seite ist ein Entwurf.</p>
+</blockquote>
+<h1>Der Browser zeigt &quot;Not Found&quot;</h1>
+<p>Du öffnest <code>http://192.168.1.1</code>, aber statt der erwarteten Seite kommt
+&quot;Not Found&quot; oder &quot;PAGE NOT FOUND&quot;. In der Adresszeile steht dann meist etwas
+mit <code>cgi-bin/luci</code>.</p>
+<p>Das passiert, wenn du im selben Browser vorher schon eine
+OpenWrt-Oberfläche unter dieser Adresse offen hattest, zum Beispiel eine
+Zwischenfirmware. Der Browser merkt sich die alte Seite und springt von
+selbst dorthin, obwohl auf dem Router jetzt etwas anderes läuft. Am Router
+liegt es nicht.</p>
+<h2>Was hilft</h2>
+<p>Neu laden, Strg+F5 und ein privates Fenster helfen meist <strong>nicht</strong>. Diese
+Wege gehen:</p>
+<ul>
+<li><strong>Gluon-RAMpe und Einrichtungsseite der Freifunk-Firmware:</strong> Tipp die
+Adresse vollständig ein, mit <code>/cgi-bin/config</code> am Ende:
+<code>http://192.168.1.1/cgi-bin/config</code>.</li>
+<li><strong>Notfall-Seite im Bootloader:</strong> Versuch <code>http://192.168.1.1/index.html</code>.
+Beim TOTOLINK X5000R hat das geklappt.</li>
+<li><strong>Immer:</strong> Nimm einen anderen Browser, zum Beispiel Edge unter Windows
+oder Safari am Mac, wenn du sonst Firefox oder Chrome benutzt. Wer nur
+Firefox hat: Unter <code>about:profiles</code> lässt sich ein neues, leeres Profil
+anlegen und starten. Damit ist der Browser wieder frisch.</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

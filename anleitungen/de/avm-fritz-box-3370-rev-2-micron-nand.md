@@ -9,9 +9,9 @@ level: L5
 level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
-grundlagen: [avm-eva, feste-ip]
+grundlagen: [avm-eva, browser-not-found, feste-ip]
 daten_stand: af10b830
-vorlage_stand: 2a45b69b
+vorlage_stand: 883c350d
 ---
 
 # AVM FRITZ!Box 3370 Rev. 2, Micron-NAND: Freifunk-Firmware installieren
@@ -101,6 +101,8 @@ Diese Anleitung ist für **Micron**; für Hynix gibt es eine [eigene](avm-fritz-
    Minuten startet die Freifunk-Firmware deiner Community: je nach Community
    zuerst mit einer Einrichtungsseite unter `http://192.168.1.1` oder gleich
    im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md).
 
 ## Woran du erkennst, dass es geklappt hat
 

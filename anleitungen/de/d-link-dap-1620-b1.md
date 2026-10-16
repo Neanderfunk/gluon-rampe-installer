@@ -9,9 +9,9 @@ level: L4
 level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
-grundlagen: [curl, feste-ip]
+grundlagen: [browser-not-found, curl, feste-ip]
 daten_stand: af10b830
-vorlage_stand: 398ce57c
+vorlage_stand: 883c350d
 ---
 
 # D-Link DAP-1620 B1: Freifunk-Firmware installieren
@@ -107,7 +107,9 @@ wirklich über das Kabel spricht.
 
 8. **Fertig.** Nach dem Neustart startet die Freifunk-Firmware deiner
    Community: je nach Community zuerst mit einer Einrichtungsseite unter
-   `http://192.168.1.1` oder gleich im Betrieb. Wie es weitergeht, beschreibt
+   `http://192.168.1.1` oder gleich im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md). Wie es weitergeht, beschreibt
    deine Community.
 
 ## Woran du erkennst, dass es geklappt hat

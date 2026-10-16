@@ -17,9 +17,9 @@
 <meta name="anleitung:erprobt_am" content="2026-09-19">
 <meta name="anleitung:erprobt_mit" content="Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs">
 <meta name="anleitung:rampe_image" content="gluon-rampe-20261015-zyxel-wsm20-initramfs-kernel.bin">
-<meta name="anleitung:grundlagen" content="browser-https">
+<meta name="anleitung:grundlagen" content="browser-https, browser-not-found">
 <meta name="anleitung:daten_stand" content="af10b830">
-<meta name="anleitung:vorlage_stand" content="79f8a174">
+<meta name="anleitung:vorlage_stand" content="883c350d">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -102,7 +102,9 @@ zwischendurch türkis und blinkt beim Schreiben weiß.</p>
 <li>
 <p><strong>Fertig.</strong> Danach startet die Freifunk-Firmware deiner Community: je nach
 Community zuerst mit einer Einrichtungsseite unter <code>http://192.168.1.1</code>
-(die LED blinkt dann langsam weiß) oder gleich im Betrieb.</p>
+(die LED blinkt dann langsam weiß) oder gleich im Betrieb.
+Kommt dort &quot;Not Found&quot;, siehe <a href="grundlagen/browser-not-found.html">Der Browser zeigt
+&quot;Not Found&quot;</a>.</p>
 </li>
 </ol>
 <h2>Woran du erkennst, dass es geklappt hat</h2>
@@ -137,7 +139,7 @@ ausprobiert</strong>; die RAMpe selbst läuft auf anderen Geräten.</p>
 <p>Nach dem Neustart öffne <code>http://192.168.1.1/cgi-bin/config</code>. Es erscheint
 die Seite &quot;Firmware aktualisieren&quot; der RAMpe. Kommt &quot;Not Found&quot;, hat sich
 der Browser eine Seite von früher gemerkt: Tipp die Adresse vollständig
-ein, mit <code>/cgi-bin/config</code> am Ende. Startet der Router zwischendurch neu,
+ein, mit <code>/cgi-bin/config</code> am Ende. Hilft das nicht, siehe <a href="grundlagen/browser-not-found.html">Der Browser zeigt &quot;Not Found&quot;</a>. Startet der Router zwischendurch neu,
 einfach die Seite wieder aufrufen.</p>
 <p><img src="../bilder/allgemein/rampe-seite.png" alt="Die Seite der RAMpe: &quot;Firmware aktualisieren&quot; mit Feld für die Datei und Knopf &quot;Datei hochladen&quot;" /></p>
 </li>

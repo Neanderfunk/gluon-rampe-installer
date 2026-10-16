@@ -12,9 +12,9 @@ status: erprobt
 erprobt_am: 2026-09-19
 erprobt_mit: Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs
 rampe_image: gluon-rampe-20261015-zyxel-wsm20-initramfs-kernel.bin
-grundlagen: [browser-https]
+grundlagen: [browser-https, browser-not-found]
 daten_stand: af10b830
-vorlage_stand: 79f8a174
+vorlage_stand: 883c350d
 ---
 
 # ZyXEL WSM20 (Multy M1): Freifunk-Firmware installieren
@@ -96,6 +96,8 @@ Ein Konto in der Zyxel-Cloud brauchst du dafür nicht.
 8. **Fertig.** Danach startet die Freifunk-Firmware deiner Community: je nach
    Community zuerst mit einer Einrichtungsseite unter `http://192.168.1.1`
    (die LED blinkt dann langsam weiß) oder gleich im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md).
 
 ## Woran du erkennst, dass es geklappt hat
 
@@ -125,7 +127,7 @@ ausprobiert**; die RAMpe selbst läuft auf anderen Geräten.
 3. Nach dem Neustart öffne `http://192.168.1.1/cgi-bin/config`. Es erscheint
    die Seite "Firmware aktualisieren" der RAMpe. Kommt "Not Found", hat sich
    der Browser eine Seite von früher gemerkt: Tipp die Adresse vollständig
-   ein, mit `/cgi-bin/config` am Ende. Startet der Router zwischendurch neu,
+   ein, mit `/cgi-bin/config` am Ende. Hilft das nicht, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Startet der Router zwischendurch neu,
    einfach die Seite wieder aufrufen.
 
    ![Die Seite der RAMpe: "Firmware aktualisieren" mit Feld für die Datei und Knopf "Datei hochladen"](../bilder/allgemein/rampe-seite.png)

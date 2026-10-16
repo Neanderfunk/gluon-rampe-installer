@@ -9,9 +9,9 @@ level: L4
 level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
-grundlagen: [image-schreiben]
+grundlagen: [browser-not-found, image-schreiben]
 daten_stand: af10b830
-vorlage_stand: 6eae926f
+vorlage_stand: 883c350d
 ---
 
 # Raspberry Pi 3 Model B/B+: Freifunk-Firmware installieren
@@ -68,6 +68,8 @@ zugegriffen wird. Gib ihm nach dem Einschalten ein, zwei Minuten.
 
 5. **Fertig.** Die Freifunk-Firmware startet: je nach Community zuerst mit
    einer Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md).
 
 ## Woran du erkennst, dass es geklappt hat
 

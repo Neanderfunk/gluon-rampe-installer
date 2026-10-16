@@ -10,9 +10,9 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-avm-fritz-repeater-3000-initramfs-uImage.itb
-grundlagen: [avm-eva, feste-ip, tftp-server]
+grundlagen: [avm-eva, browser-not-found, feste-ip, tftp-server]
 daten_stand: af10b830
-vorlage_stand: 578b9af5
+vorlage_stand: 883c350d
 ---
 
 # AVM FRITZ!Repeater 3000: Freifunk-Firmware installieren
@@ -90,7 +90,7 @@ Gerät und geht nicht.
 5. **Die Seite der RAMpe.** Öffne `http://192.168.1.1/cgi-bin/config` (der
    Rechner kann auf `192.168.1.70` bleiben). Kommt "Not Found", hat sich der
    Browser eine Seite von früher gemerkt: Tipp die Adresse vollständig ein,
-   mit `/cgi-bin/config` am Ende. Die Seite weist darauf hin, dass sie bei diesem
+   mit `/cgi-bin/config` am Ende. Hilft das nicht, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Die Seite weist darauf hin, dass sie bei diesem
    Gerät den Speicher vorbereitet, den neuen Bootloader dauerhaft schreibt
    und die Firmware von AVM entfernt.
 
@@ -110,6 +110,8 @@ Gerät und geht nicht.
 8. **Fertig.** Stell den Rechner wieder auf "automatisch". Danach startet die
    Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
    Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md).
 
 Tipp für Linux: Mit `ip addr add` kannst du dem Netzwerkanschluss beide
 Adressen gleichzeitig geben (`192.168.178.10/24` und `192.168.1.70/24`);

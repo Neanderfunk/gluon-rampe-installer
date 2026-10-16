@@ -9,9 +9,9 @@ level: L4
 level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
-grundlagen: [feste-ip, ssh-scp]
+grundlagen: [browser-not-found, feste-ip, ssh-scp]
 daten_stand: af10b830
-vorlage_stand: 568889cf
+vorlage_stand: 883c350d
 ---
 
 # TP-Link EAP225-Wall v2: Freifunk-Firmware installieren
@@ -86,6 +86,8 @@ Firmware hochladen. Rechne mit einer halben Stunde.
    die Freifunk-Firmware deiner Community: je nach Community zuerst mit
    einer Einrichtungsseite unter `http://192.168.1.1` oder gleich im
    Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md).
 
 ## Woran du erkennst, dass es geklappt hat
 

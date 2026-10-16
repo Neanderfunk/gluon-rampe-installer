@@ -9,9 +9,9 @@ level: L3
 level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
-grundlagen: [feste-ip]
+grundlagen: [browser-not-found, feste-ip]
 daten_stand: af10b830
-vorlage_stand: bfd04827
+vorlage_stand: 883c350d
 ---
 
 # TP-Link WBS510 v1: Freifunk-Firmware installieren
@@ -97,7 +97,9 @@ Dieses Image passt zum WBS510 mit Hardware 1.20. Die Hardware-Version steht auf 
 
 7. **Fertig.** Danach startet die Freifunk-Firmware deiner Community: je nach
    Community zuerst mit einer Einrichtungsseite unter `http://192.168.1.1`
-   oder gleich im Betrieb. Stell den Rechner vorher wieder auf "automatisch".
+   oder gleich im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md). Stell den Rechner vorher wieder auf "automatisch".
    Wie es weitergeht, beschreibt deine Community.
 
 ## Woran du erkennst, dass es geklappt hat

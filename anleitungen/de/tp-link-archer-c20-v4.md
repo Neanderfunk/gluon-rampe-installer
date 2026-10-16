@@ -9,9 +9,9 @@ level: L4
 level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
-grundlagen: [feste-ip, tftp-server]
+grundlagen: [browser-not-found, feste-ip, tftp-server]
 daten_stand: af10b830
-vorlage_stand: cc34fa66
+vorlage_stand: 883c350d
 ---
 
 # TP-Link Archer C20 v4: Freifunk-Firmware installieren
@@ -70,6 +70,8 @@ mit einer halben Stunde.
 6. **Fertig.** Stell den Rechner wieder auf "automatisch". Je nach Community
    kommt zuerst eine Einrichtungsseite unter `http://192.168.1.1`, oder der
    Router geht gleich in Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md).
 
 ## Woran du erkennst, dass es geklappt hat
 

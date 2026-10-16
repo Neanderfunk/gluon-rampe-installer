@@ -9,9 +9,9 @@ level: L0.1
 level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
-grundlagen: [nmrpflash]
+grundlagen: [browser-not-found, nmrpflash]
 daten_stand: af10b830
-vorlage_stand: 02b61429
+vorlage_stand: 883c350d
 ---
 
 # NETGEAR WAX206: Freifunk-Firmware installieren
@@ -62,6 +62,8 @@ unten einen zweiten Weg mit dem Programm nmrpflash.
 5. **Fertig.** Danach startet die Freifunk-Firmware deiner Community: je
    nach Community zuerst mit einer Einrichtungsseite unter
    `http://192.168.1.1` oder gleich im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md).
 
 ## Woran du erkennst, dass es geklappt hat
 
@@ -117,6 +119,8 @@ antwortet darauf und schickt die Freifunk-Firmware
 8. **Fertig.** Danach startet die Freifunk-Firmware deiner Community: je nach
    Community zuerst mit einer Einrichtungsseite unter `http://192.168.1.1`
    oder gleich im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md).
 
 Wenn nmrpflash Fehler meldet:
 

@@ -11,9 +11,9 @@ risiko: normal
 status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2025.1 (26100702bro), vorher TOTOLINK-Firmware V9.1.0u.6118 über den Notfall-Modus
-grundlagen: [browser-https, feste-ip]
+grundlagen: [browser-https, browser-not-found, feste-ip]
 daten_stand: af10b830
-vorlage_stand: 565e8935
+vorlage_stand: 883c350d
 ---
 
 # TOTOLINK X5000R: Freifunk-Firmware installieren
@@ -49,12 +49,19 @@ halben Stunde.
    "automatisch" (DHCP).
 
 2. **Weboberfläche öffnen.** Öffne im Browser `http://192.168.0.1` (oder
-   `http://itotolink.net`) und melde dich an.
+   `http://itotolink.net`) und melde dich an. Nennt die Oberfläche das Gerät
+   **X5000RU**, ist das derselbe Router: Die Freifunk-Firmware für den
+   TOTOLINK X5000R passt.
 
 3. **Freifunk-Firmware hochladen.** Such den Menüpunkt für das
-   Firmware-Update (bei neueren Versionen **Tools → Upgrade → Local
-   Upgrade**) und wähl das sysupgrade-Image deiner Community aus. Starte das
-   Update.
+   Firmware-Update. Bei der TOTOLINK-Firmware V9.1.0u.6118 ist das
+   **Advanced**, links **Tools**, oben **Upgrade**, dann **Local Upgrade**.
+   Wähl über "Durchsuchen…" das sysupgrade-Image deiner Community aus. Die
+   Oberfläche lädt die Datei sofort hoch ("Uploading…"), schreibt sie aber
+   noch nicht. Danach erscheint ein Knopf **"Upgrade"**: Erst der Klick
+   darauf startet das Schreiben ("Upgrading…" mit Prozentzahl). Ohne den
+   Klick passiert nichts. Bleibt es bei "Uploading…" und kein Knopf
+   erscheint, lade die Seite neu und wähl die Datei noch einmal aus.
 
    **Meldet die Oberfläche "Invalid upgrade firmware file"** oder etwas
    Ähnliches, ist die TOTOLINK-Firmware zu neu. Dann zuerst den Abschnitt
@@ -62,9 +69,12 @@ halben Stunde.
    noch einmal.
 
 4. **Fertig.** Der Router schreibt die Freifunk-Firmware und startet neu,
-   einige Minuten, Strom nicht ziehen. Danach startet die Freifunk-Firmware
+   einige Minuten, Strom nicht ziehen. Die TOTOLINK-Seite im Browser bleibt
+   dabei stehen oder wird leer, das ist normal. Danach startet die Freifunk-Firmware
    deiner Community: je nach Community zuerst mit einer Einrichtungsseite
    unter `http://192.168.1.1` oder gleich im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md).
 
 ## Umweg: ältere TOTOLINK-Firmware aufspielen
 
@@ -88,24 +98,30 @@ auch wieder die Freifunk-Firmware.
 4. **Kabel an LAN1.** Steck das Kabel vom Rechner in die Buchse **LAN1**.
 
 5. **Notfall-Seite öffnen.** Öffne im Browser `http://192.168.1.1`. Es
-   erscheint eine schlichte Seite zum Aktualisieren der Firmware. Kommt
-   nichts, prüf mit `ping 192.168.1.1`, ob der Router antwortet. Wenn
+   erscheint eine schlichte Seite "FIRMWARE UPDATE". Kommt "PAGE NOT FOUND"
+   und in der Adresszeile steht `cgi-bin/luci`, öffne
+   `http://192.168.1.1/index.html` (mehr unter
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md)). Kommt
+   gar nichts, prüf mit `ping 192.168.1.1`, ob der Router antwortet. Wenn
    nicht, fang bei Schritt 3 wieder an.
 
-6. **Ältere Firmware hochladen.** Wähl `TOTOLINK_C8343R-1C_X5000R_IP04433_MT7621A_SPI_16M256M_V9.1.0u.6118_B20201102_ALL.web` aus und starte das Update. Die Seite
-   zeigt "Update in Progress".
+6. **Ältere Firmware hochladen.** Wähl `TOTOLINK_C8343R-1C_X5000R_IP04433_MT7621A_SPI_16M256M_V9.1.0u.6118_B20201102_ALL.web` aus und klick **"Update firmware"**. Die
+   Seite zeigt "UPDATE IN PROGRESS" mit einem Ladekreis.
 
-7. **Warten.** Der Router schreibt die Firmware und startet von selbst neu.
-   Danach geht das Licht an den LAN-Buchsen aus, bis auf die Buchse mit
-   deinem Kabel, und die blaue Status-LED blinkt langsam. Dann ist er
-   fertig. Strom bis dahin nicht ziehen.
+7. **Warten.** Die Seite bleibt so stehen, der Ladekreis dreht sich endlos
+   weiter. Das ist normal. Der Router schreibt die Firmware und startet von
+   selbst neu, das dauert etwa 3 Minuten. Danach geht das Licht an den
+   LAN-Buchsen aus, bis auf die Buchse mit deinem Kabel, und die blaue
+   Status-LED blinkt langsam. Strom bis dahin nicht ziehen.
 
 8. **Zurück zum Anfang.** Stell den Rechner wieder auf "automatisch" und
-   mach oben mit Schritt 2 weiter.
+   mach oben mit Schritt 2 weiter: Die TOTOLINK-Oberfläche ist wieder unter
+   `http://192.168.0.1` erreichbar.
 
 ## Woran du erkennst, dass es geklappt hat
 
-- In Schritt 3 nimmt die Weboberfläche die Datei an und zeigt den Fortschritt.
+- In Schritt 3 zeigt die Oberfläche nach dem Klick auf "Upgrade"
+  "Upgrading…" mit Prozentzahl.
 - Nach Schritt 4 meldet sich die Freifunk-Firmware.
 - Beim Umweg erscheint in Schritt 5 die Notfall-Seite, und nach Schritt 7
   meldet sich wieder die TOTOLINK-Oberfläche unter `http://192.168.0.1`.
@@ -113,6 +129,9 @@ auch wieder die Freifunk-Firmware.
 ## Wenn etwas schiefgeht
 
 - **Die Weboberfläche lehnt die Datei ab.** Siehe "Umweg" oben.
+- **Nach "Uploading…" passiert nichts, der Router startet nicht neu.** Der
+  Klick auf "Upgrade" fehlt (Schritt 3). Seite neu laden, Datei noch einmal
+  auswählen und dann "Upgrade" klicken.
 - **Die Notfall-Seite erscheint nicht.** Prüf die feste Adresse am Rechner,
   ob das Kabel in LAN1 steckt und ob die Reset-Taste schon vor dem Strom
   gedrückt war. Manche Browser machen aus `http` von selbst `https`, siehe

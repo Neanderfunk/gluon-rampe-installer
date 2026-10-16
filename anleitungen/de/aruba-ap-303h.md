@@ -9,9 +9,9 @@ level: L6
 level_text: Serielles Kabel
 risiko: normal
 status: ungeprüft
-grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
+grundlagen: [browser-not-found, feste-ip, serielle-konsole, ssh-scp, tftp-server]
 daten_stand: af10b830
-vorlage_stand: 565e8935
+vorlage_stand: 883c350d
 ---
 
 # Aruba AP-303H: Freifunk-Firmware installieren
@@ -202,6 +202,8 @@ werden.
     "automatisch". Danach startet die Freifunk-Firmware deiner Community: je
     nach Community zuerst mit einer Einrichtungsseite unter
     `http://192.168.1.1` oder gleich im Betrieb.
+    Kommt dort "Not Found", siehe [Der Browser zeigt
+    "Not Found"](grundlagen/browser-not-found.md).
 
 ## Woran du erkennst, dass es geklappt hat
 
