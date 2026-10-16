@@ -65,6 +65,8 @@ hochlädt. Die Freifunk-Firmware wird als fertiges Abbild direkt auf
 
 5. **Fertig.** Die Freifunk-Firmware startet: je nach Community zuerst mit
    einer Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md).
 {%- if w.karte_bleibt %}
 
 **Karte nicht tauschen:** Das Gerät leitet seine Netzwerkadresse (MAC) aus

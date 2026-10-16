@@ -103,7 +103,9 @@ feste Adresse am Rechner.
 
 7. **Fertig.** Stell den Rechner wieder auf "automatisch". Danach startet die
    Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
-   Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb. Wie
+   Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md). Wie
    es weitergeht, beschreibt deine Community.
 
 ## Woran du erkennst, dass es geklappt hat
