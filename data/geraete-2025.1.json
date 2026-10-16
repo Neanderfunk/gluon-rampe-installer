@@ -6437,7 +6437,7 @@
     "tftp_server_ip": "192.168.0.66",
     "tftp_taste": "",
     "tftp_dauer": "einige Minuten (mit der TP-Link-Firmware etwa 6 Minuten)",
-    "tftp_hinweis": "Am Rechner darf nur diese eine Adresse eingestellt sein, sonst antwortet der TFTP-Server von einer anderen Adresse, und der Router nimmt die Datei nicht.",
+    "tftp_hinweis": "Am Rechner darf nur diese eine Adresse eingestellt sein, sonst antwortet der TFTP-Server von einer anderen Adresse, und der Router nimmt die Datei nicht. Nicht jeder WDR3600 hat diesen Weg, siehe „Vorher prüfen“.",
     "notweg_keiner": "",
     "sicherheit": "abgeleitet"
    }
