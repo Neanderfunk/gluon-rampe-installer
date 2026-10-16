@@ -164,10 +164,12 @@ wirklich über das Kabel spricht.
    Oft kommt curl danach nicht von selbst zurück, obwohl alles geklappt hat.
    Dann beende es mit **Strg+C** (am Mac ctrl+C), aber erst, wenn der Router
    neu startet{% if w.get("led_start") %} (beim Neustart {{ w.led_start }}){% endif %}.
-   {%- if w.datei_art == "rampe" %}
-   Kommt curl von selbst zurück, zeigt es in der letzten Zeile, wie viel
-   ankam. Geklappt hat es bei **{{ w.rampe_bytes }} Bytes**. Steht da 0, kam
-   nichts an (siehe "Wenn etwas schiefgeht").
+   Wartest du stattdessen, kommt curl nach einiger Zeit (bei uns gut 10
+   Minuten) von selbst zurück, meist mit "Recv failure: Connection timed
+   out". Das ist in Ordnung.
+   {%- if w.datei_art == "rampe" %} Entscheidend ist die letzte Zeile, sie
+   zeigt, wie viel ankam. Geklappt hat es bei **{{ w.rampe_bytes }} Bytes**.
+   Steht da 0, kam nichts an (siehe "Wenn etwas schiefgeht").
    {%- endif %}
 {%- if w.datei_art == "rampe" %}
 
@@ -239,8 +241,10 @@ wirklich über das Kabel spricht.
 - **curl meldet "Failed to connect", HTTP 000 und 0 Bytes.** Die Recovery war
   nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
   Router noch einmal in die Recovery bringen (Schritt 4).
-- **curl steht bei 100 % und kommt nicht zurück.** Das ist normal. Sobald
-  der Router neu startet, curl mit Strg+C beenden (Schritt 7).
+- **curl steht bei 100 % und kommt nicht zurück, oder meldet nach langer
+  Zeit "Recv failure: Connection timed out".** Das ist normal: Der Router hat
+  neu gestartet, ohne curl Bescheid zu geben. curl darf mit Strg+C beendet
+  werden, sobald der Router neu startet (Schritt 7).
 - **Nach dem Upload startet wieder die normale D-Link-Firmware.** Die Datei
   ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
   Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.
