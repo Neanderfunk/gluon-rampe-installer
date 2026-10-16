@@ -4,7 +4,10 @@
   (Build 150518) das factory-Image direkt angenommen. Laut OpenWrt sperrt
   der spätere Build 151104 fremde Firmware. Lehnt die Oberfläche das Image
   ab, nimm den Weg per TFTP (unten unter "Notfall"): Der WDR3600 holt sich
-  das factory-Image dann selbst, ganz ohne die TP-Link-Oberfläche.
+  das factory-Image dann selbst, ganz ohne die TP-Link-Oberfläche. Den
+  TFTP-Weg hat aber nicht jeder WDR3600: Ein Gerät Ver 1.1 mit PCT-Zeichen
+  (russische Zulassung) und blauen LEDs holte sich bei uns keine Datei, eins
+  mit grünen LEDs schon.
 - **Dateiname:** Nimm die Datei mit ihrem Originalnamen, umbenennen ist
   nicht nötig. Hast du sie mehrfach heruntergeladen und heißt sie jetzt
   `…(1).bin` oder `…[1].bin`, benenne sie zurück. Bei zu langem Namen meldet
@@ -23,7 +26,8 @@
 ## Zurück zur TP-Link-Firmware
 
 Über den Notfall per TFTP (oben) nimmt der WDR3600 auch die Firmware von
-TP-Link wieder an, allerdings nur ohne ihren Bootloader-Teil am Anfang. So
+TP-Link wieder an, allerdings nur ohne ihren Bootloader-Teil am Anfang und
+nur, wenn er den TFTP-Weg hat (siehe "Vorher prüfen"). So
 bereitest du die Datei vor:
 
 1. Lade
