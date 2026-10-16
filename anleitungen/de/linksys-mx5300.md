@@ -10,7 +10,7 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, ssh-scp]
-daten_stand: d343091b
+daten_stand: dbf4639c
 vorlage_stand: 883c350d
 ---
 

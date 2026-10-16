@@ -10,7 +10,7 @@ level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, ssh-scp]
-daten_stand: d343091b
+daten_stand: dbf4639c
 vorlage_stand: 883c350d
 ---
 

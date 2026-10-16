@@ -10,7 +10,7 @@ level_text: Einfach hochladen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found]
-daten_stand: d343091b
+daten_stand: dbf4639c
 vorlage_stand: 25ed43f7
 ---
 
