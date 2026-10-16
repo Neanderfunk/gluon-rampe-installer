@@ -10,7 +10,7 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, tftp-server]
-daten_stand: af10b830
+daten_stand: 7c7ec5b9
 vorlage_stand: 883c350d
 ---
 
@@ -104,6 +104,8 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Commit (Notweg)
 - geprüft: Commit 04d3308 (Schritte (Normalweg), Sichtbare Zeichen)
 - geprüft: Commit 04d3308 'three leds constantly on' (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Commit von 2017, ob neuere U-Boots denselben Namen erwarten: offen (Weg ab Werk, Schritte (Normalweg))
+- geprüft: Commit von 2017, ob neuere U-Boots denselben Namen erwarten: offen (Schritte (Normalweg))
+- geprüft: Commit; Dateiname, DHCP und TFTP am Gerät nicht geprüft (Weg ab Werk)
 - geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026) (Schritte (Normalweg), Taste und Zeitpunkt, Anschluss, Adressen, Programm, Dauer)
+- geprüft: Testplatz grw 16.10.2026, router-werkstatt docs/validierung/glinet-gl-b1300-2026-10-16.md (9aea90d) (Weg ab Werk, Taste und Zeitpunkt, Rückweg zur Herstellerfirmware)
 - Geräteeintrag: OpenWrt 04d3308b6248ef21a6f0bc3378b342906c2d2865

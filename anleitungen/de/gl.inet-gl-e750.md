@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-gl.inet-gl-e750-factory.img
 grundlagen: [browser-https, browser-not-found, feste-ip]
-daten_stand: af10b830
+daten_stand: 7c7ec5b9
 vorlage_stand: 883c350d
 ---
 
