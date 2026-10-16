@@ -6428,7 +6428,7 @@
     "menue": "",
     "strom": "",
     "anschluss": "",
-    "datei_hinweis": "Benenn die Datei nicht um. Hat der Browser beim zweiten Herunterladen „[1]“ oder „(1)“ angehängt, nimm das wieder heraus: Mit zu langem Namen meldet die Oberfläche „Please choose a file to upgrade!“.",
+    "datei_hinweis": "nicht umbenennen",
     "dateiname": "",
     "nach_upload": "",
     "dauer": "etwa zwei bis drei Minuten",
