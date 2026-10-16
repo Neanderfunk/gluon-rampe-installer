@@ -11,8 +11,8 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-gl.inet-gl-e750-factory.img
 grundlagen: [browser-https, browser-not-found, feste-ip]
-daten_stand: 1d8a57e2
-vorlage_stand: 883c350d
+daten_stand: d343091b
+vorlage_stand: 25ed43f7
 ---
 
 # GL.iNet GL-E750: Freifunk-Firmware installieren
@@ -71,10 +71,12 @@ Den Notfall-Modus zeigt beim E750 das Display an: erst "Booting", dann
 
 5. **Hochladen.** Öffne im Browser `http://192.168.1.1`. Es erscheint die
    schlichte Notfall-Seite. Wähl die OpenWrt-Datei aus und
-   starte das Hochladen ("Update firmware").
+   starte das Hochladen ("Update firmware"). Die Seite zeigt dann
+   "UPDATE IN PROGRESS" mit einem Ladekreis, der sich endlos weiterdreht,
+   auch wenn der Router längst fertig ist. Das ist normal.
 
-6. **Warten.** Der Router schreibt die Firmware, das dauert etwa
-   3 Minuten.
+6. **Warten.** Der Router schreibt die Firmware, das dauert
+   etwa 3 Minuten.
    **Strom nicht ziehen.**
 
 7. **Freifunk-Firmware über OpenWrt.** Nach dem Neustart läuft OpenWrt.
@@ -99,8 +101,8 @@ Den Notfall-Modus zeigt beim E750 das Display an: erst "Booting", dann
 
 - **Unter `http://192.168.1.1` kommt nichts.** Prüf die feste Adresse
   (Schritt 2), schalte VPN-Programme aus und versuch Schritt 4 noch einmal,
-  diesmal genau auf die LEDs achtend. Hilft ein anderer Browser oder ein
-  privates Fenster, lag es am Zwischenspeicher des Browsers.
+  diesmal genau auf die LEDs achtend. Kommt "Not Found" oder "PAGE NOT
+  FOUND", siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 
 ## Anderer Weg: mit der Gluon-RAMpe (ungetestet)
 

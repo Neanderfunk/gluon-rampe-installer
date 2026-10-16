@@ -10,8 +10,8 @@ level_text: Einfach hochladen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found]
-daten_stand: 1d8a57e2
-vorlage_stand: 883c350d
+daten_stand: d343091b
+vorlage_stand: 25ed43f7
 ---
 
 # GL.iNET GL-USB150: Freifunk-Firmware installieren

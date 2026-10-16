@@ -12,8 +12,8 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.19
 grundlagen: [browser-not-found, feste-ip, tftp-server]
-daten_stand: 1d8a57e2
-vorlage_stand: 883c350d
+daten_stand: d343091b
+vorlage_stand: ae43c7d0
 ---
 
 # Cudy WR3000 v1: Freifunk-Firmware installieren

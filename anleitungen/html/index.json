@@ -738,8 +738,8 @@
  {
   "gluon_name": "gl.inet-gl-b1300",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-b1300.html",
-  "status": "ungeprüft",
-  "level": "L3",
+  "status": "erprobt",
+  "level": "L0",
   "risiko": "normal",
   "sprache": "de"
  },

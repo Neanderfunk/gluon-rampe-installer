@@ -16,8 +16,8 @@
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:rampe_image" content="gluon-rampe-20261015-gl.inet-gl-e750-factory.img">
 <meta name="anleitung:grundlagen" content="browser-https, browser-not-found, feste-ip">
-<meta name="anleitung:daten_stand" content="1d8a57e2">
-<meta name="anleitung:vorlage_stand" content="883c350d">
+<meta name="anleitung:daten_stand" content="d343091b">
+<meta name="anleitung:vorlage_stand" content="25ed43f7">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -76,11 +76,13 @@ Alle anderen Buchsen bleiben frei. Der Router hat noch keinen Strom.</p>
 <li>
 <p><strong>Hochladen.</strong> Öffne im Browser <code>http://192.168.1.1</code>. Es erscheint die
 schlichte Notfall-Seite. Wähl die OpenWrt-Datei aus und
-starte das Hochladen (&quot;Update firmware&quot;).</p>
+starte das Hochladen (&quot;Update firmware&quot;). Die Seite zeigt dann
+&quot;UPDATE IN PROGRESS&quot; mit einem Ladekreis, der sich endlos weiterdreht,
+auch wenn der Router längst fertig ist. Das ist normal.</p>
 </li>
 <li>
-<p><strong>Warten.</strong> Der Router schreibt die Firmware, das dauert etwa
-3 Minuten.
+<p><strong>Warten.</strong> Der Router schreibt die Firmware, das dauert
+etwa 3 Minuten.
 <strong>Strom nicht ziehen.</strong></p>
 </li>
 <li>
@@ -108,8 +110,8 @@ unter <code>http://192.168.1.1</code> kommt die Notfall-Seite.</li>
 <ul>
 <li><strong>Unter <code>http://192.168.1.1</code> kommt nichts.</strong> Prüf die feste Adresse
 (Schritt 2), schalte VPN-Programme aus und versuch Schritt 4 noch einmal,
-diesmal genau auf die LEDs achtend. Hilft ein anderer Browser oder ein
-privates Fenster, lag es am Zwischenspeicher des Browsers.</li>
+diesmal genau auf die LEDs achtend. Kommt &quot;Not Found&quot; oder &quot;PAGE NOT
+FOUND&quot;, siehe <a href="grundlagen/browser-not-found.html">Der Browser zeigt &quot;Not Found&quot;</a>.</li>
 </ul>
 <h2>Anderer Weg: mit der Gluon-RAMpe (ungetestet)</h2>
 <p>Statt erst OpenWrt und dann die Freifunk-Firmware aufzuspielen, geht es auch

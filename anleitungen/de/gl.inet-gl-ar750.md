@@ -10,8 +10,8 @@ level_text: Einfach hochladen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip]
-daten_stand: 1d8a57e2
-vorlage_stand: 883c350d
+daten_stand: d343091b
+vorlage_stand: 25ed43f7
 ---
 
 # GL.iNet GL-AR750: Freifunk-Firmware installieren
@@ -94,7 +94,8 @@ mehr, hilft der eingebaute Notfall-Modus:
    alle anderen Buchsen frei.
 2. Drück die Reset-Taste fest, steck den Strom ein und halte die Taste, bis die LED 5-mal geblinkt hat. Dann loslassen.
 3. Im Browser `http://192.168.1.1` öffnen, das sysupgrade-Image auswählen,
-   "Update firmware".
+   "Update firmware". Der Ladekreis auf der Seite dreht sich danach endlos
+   weiter, das ist normal.
 4. Etwa 3 Minuten warten, Strom nicht ziehen.
 
 ## Herkunft der Angaben

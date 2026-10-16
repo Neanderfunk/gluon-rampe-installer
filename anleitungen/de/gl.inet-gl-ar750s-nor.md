@@ -10,8 +10,8 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip]
-daten_stand: 1d8a57e2
-vorlage_stand: 883c350d
+daten_stand: d343091b
+vorlage_stand: 25ed43f7
 ---
 
 # GL.iNet GL-AR750S NOR: Freifunk-Firmware installieren
@@ -61,11 +61,13 @@ NOR-Speicher; auf der Notfall-Seite gibt es dafür einen eigenen Abschnitt.
 
 5. **Hochladen.** Öffne im Browser `http://192.168.1.1`. Es erscheint die
    schlichte Notfall-Seite. Wähl das sysupgrade-Image im Abschnitt „NOR flash“ mit „update nor firmware“ aus und
-   starte das Hochladen ("Update firmware"). Ist die Datei übertragen, zieh das Netzwerkkabel,
+   starte das Hochladen ("Update firmware"). Die Seite zeigt dann
+   "UPDATE IN PROGRESS" mit einem Ladekreis, der sich endlos weiterdreht,
+   auch wenn der Router längst fertig ist. Das ist normal. Ist die Datei übertragen, zieh das Netzwerkkabel,
    bevor der Router neu startet.
 
-6. **Warten.** Der Router schreibt die Firmware, das dauert etwa
-   3 Minuten.
+6. **Warten.** Der Router schreibt die Firmware, das dauert
+   etwa 3 Minuten.
    **Strom nicht ziehen.**
 
 7. **Fertig.** Stell den Rechner wieder auf "automatisch". Danach startet die
@@ -84,8 +86,8 @@ NOR-Speicher; auf der Notfall-Seite gibt es dafür einen eigenen Abschnitt.
 
 - **Unter `http://192.168.1.1` kommt nichts.** Prüf die feste Adresse
   (Schritt 2), schalte VPN-Programme aus und versuch Schritt 4 noch einmal,
-  diesmal genau auf die LEDs achtend. Hilft ein anderer Browser oder ein
-  privates Fenster, lag es am Zwischenspeicher des Browsers.
+  diesmal genau auf die LEDs achtend. Kommt "Not Found" oder "PAGE NOT
+  FOUND", siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 
 ## Herkunft der Angaben
 

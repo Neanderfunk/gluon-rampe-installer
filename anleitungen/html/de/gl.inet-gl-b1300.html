@@ -10,94 +10,138 @@
 <meta name="anleitung:familie" content="glinet">
 <meta name="anleitung:gluon_broken" content="false">
 <meta name="anleitung:sprache" content="de">
-<meta name="anleitung:level" content="L3">
-<meta name="anleitung:level_text" content="Feste Adresse am Rechner">
+<meta name="anleitung:level" content="L0">
+<meta name="anleitung:level_text" content="Einfach hochladen">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:status" content="erprobt">
+<meta name="anleitung:erprobt_am" content="2026-10-16">
+<meta name="anleitung:erprobt_mit" content="Gluon 2023.2.6 (26091920sta) über LuCI der GL-Firmware 4.3.25; für 2025.1 erwartet gleich (gleiche Metadaten)">
 <meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, tftp-server">
-<meta name="anleitung:daten_stand" content="1d8a57e2">
-<meta name="anleitung:vorlage_stand" content="883c350d">
+<meta name="anleitung:daten_stand" content="d343091b">
+<meta name="anleitung:vorlage_stand" content="25ed43f7">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>GL.iNet GL-B1300: Freifunk-Firmware installieren</h1>
 <blockquote>
-<p><strong>Noch nicht am Gerät erprobt.</strong> So beschreiben die Entwickler von OpenWrt
-bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
-ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
-klappt.</p>
+<p><strong>Am Gerät erprobt</strong> am 16.10.2026 mit <code>Gluon 2023.2.6 (26091920sta) über LuCI der GL-Firmware 4.3.25; für 2025.1 erwartet gleich (gleiche Metadaten)</code>.</p>
 <p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
 <p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20GL.iNet%20GL-B1300">projekt@neanderfunk.de</a></p>
 </blockquote>
-<p>GL.iNet-Router haben einen eingebauten Notfall-Modus: Hält man beim
-Einschalten die Reset-Taste, startet statt der Firmware eine schlichte
-Webseite zum Hochladen. Über die kommt die Freifunk-Firmware auf den Router.
-Du brauchst nur einen Browser und eine feste Adresse am Rechner.</p>
+<blockquote>
+<p><strong>Achtung:</strong> Nicht mit dem <strong>Cudy WR1300</strong> verwechseln: Die Dateinamen sehen sich
+ähnlich (<code>…-gl.inet-gl-b1300-sysupgrade.bin</code> und
+<code>…-cudy-wr1300-v1-sysupgrade.bin</code>). Meldet LuCI beim Hochladen &quot;not
+supported by this image&quot;, ist es die falsche Datei.</p>
+</blockquote>
+<p>GL.iNet liefert seine Router mit einer eigenen Variante von OpenWrt aus.
+Deren Update-Seite nimmt die Freifunk-Firmware beim GL.iNet GL-B1300 zwar nicht
+an, die mitgelieferte OpenWrt-Oberfläche <strong>LuCI</strong> aber schon. Du brauchst
+nur einen Browser.</p>
 <h2>Was du brauchst</h2>
 <ul>
 <li>den Router mit Netzteil</li>
 <li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
 <li>die Freifunk-Firmware deiner Community für den GL.iNet GL-B1300, und zwar das
-<strong>sysupgrade</strong>-Image</li>
+<strong>sysupgrade</strong>-Image. Das ist bei GL.iNet richtig, auch wenn es die erste
+Installation ist.</li>
 </ul>
-<h2>Vorher prüfen</h2>
-<p><strong>Dateiname:</strong> Laut OpenWrt (Stand 2017) muss die Datei genau
-<code>lede-gl-b1300.bin</code> heißen. Ob neuere Bootloader das noch verlangen, ist
-nicht geklärt; mit diesem Namen bist du auf der sicheren Seite.</p>
-<p><strong>LEDs im Notfall-Modus:</strong> Laut GL.iNet bleibt die Power-LED an, die rechte
-WLAN-LED blinkt 4-mal, dann leuchtet die mittlere LED. Bei alten B1300
-blinken mittlere und rechte LED 5-mal und bleiben dann an.</p>
 <h2>Schritte</h2>
 <ol>
 <li>
-<p><strong>Datei bereitlegen.</strong> Lade das sysupgrade-Image herunter. Benenne es in <code>lede-gl-b1300.bin</code> um, genau so.</p>
+<p><strong>Datei bereitlegen.</strong> Lade das sysupgrade-Image herunter.</p>
 </li>
 <li>
-<p><strong>Feste Adresse am Rechner.</strong> Stell deinen Rechner auf <code>192.168.1.2</code>,
-Netzmaske <code>255.255.255.0</code>
-(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>). Schalte ein VPN
-am Rechner aus (auch Tailscale oder ZeroTier), das stört sonst.</p>
+<p><strong>Verbinden.</strong> Steck das Kabel vom Rechner in eine LAN-Buchse des Routers und
+schalte ihn ein. Der Rechner holt sich seine Adresse automatisch.</p>
 </li>
 <li>
-<p><strong>Kabel stecken.</strong> Steck das Kabel vom Rechner an eine LAN-Buchse.
-Alle anderen Buchsen bleiben frei. Der Router hat noch keinen Strom.</p>
+<p><strong>Oberfläche öffnen.</strong> Öffne im Browser <code>http://192.168.8.1</code>. Beim ersten Mal
+fragt GL.iNet nach Sprache (wähl <strong>Deutsch</strong>, dann passen die Namen in
+Schritt 4) und einem Passwort für die Verwaltung: Leg eins
+fest, du brauchst es nur für diese Installation.</p>
 </li>
 <li>
-<p><strong>Notfall-Modus starten.</strong> Drück die Reset-Taste, steck den Strom ein und halte die Taste, bis die LEDs dauerhaft leuchten. Dann loslassen.</p>
+<p><strong>Zur OpenWrt-Oberfläche.</strong> Die Update-Seite von GL.iNet
+(&quot;Lokale Aktualisierung&quot;) nimmt die Freifunk-Firmware nicht an, lass sie
+aus. Geh stattdessen zu <strong>SYSTEM → Erweiterte Einstellungen</strong> und klick
+dort auf den Link, der auf <code>/cgi-bin/luci</code> endet. Es öffnet sich LuCI,
+die Oberfläche von OpenWrt. Melde dich mit dem Benutzer <code>root</code> und dem
+Passwort aus Schritt 3 an.</p>
 </li>
 <li>
-<p><strong>Hochladen.</strong> Öffne im Browser <code>http://192.168.1.1</code>. Es erscheint die
-schlichte Notfall-Seite. Wähl das sysupgrade-Image aus und
-starte das Hochladen (&quot;Update firmware&quot;).</p>
+<p><strong>Firmware hochladen.</strong> Geh in LuCI zu <strong>System → Backup / Flash
+Firmware</strong>, klick <strong>&quot;Flash image…&quot;</strong>, wähl das sysupgrade-Image aus und
+klick <strong>&quot;Upload&quot;</strong>.</p>
 </li>
 <li>
-<p><strong>Warten.</strong> Der Router schreibt die Firmware, das dauert etwa
-3 Minuten. Beim Schreiben blinkt die WLAN-LED.
-<strong>Strom nicht ziehen.</strong></p>
+<p><strong>Prüfung übergehen.</strong> Es erscheint das Fenster &quot;Flash image?&quot; mit einer
+roten Meldung &quot;Image check failed: The device is supported, but the
+config is incompatible to the new image …&quot;. Das ist hier normal: Die
+Freifunk-Firmware ist neuer als das OpenWrt von GL.iNet, die alten
+Einstellungen passen nicht dazu. Entfern den Haken bei <strong>&quot;Keep
+settings…&quot;</strong> (die Meldung bleibt trotzdem stehen), setz den Haken bei
+<strong>&quot;Force upgrade&quot;</strong> und klick <strong>&quot;Continue&quot;</strong>.</p>
+<p>Steht dort stattdessen <strong>&quot;not supported by this image&quot;</strong>, ist es das
+Image für ein anderes Gerät. Dann <strong>&quot;Cancel&quot;</strong> und das richtige Image
+holen, hier nie &quot;Force upgrade&quot;.</p>
 </li>
 <li>
-<p><strong>Fertig.</strong> Stell den Rechner wieder auf &quot;automatisch&quot;. Danach startet die
-Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
-Einrichtungsseite unter <code>http://192.168.1.1</code> oder gleich im Betrieb.
+<p><strong>Warten.</strong> Der Router schreibt die Firmware und startet neu, einige
+Minuten. <strong>Strom nicht ziehen.</strong></p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Danach startet die Freifunk-Firmware deiner Community: je nach
+Community zuerst mit einer Einrichtungsseite unter <code>http://192.168.1.1</code>
+oder gleich im Betrieb.
 Kommt dort &quot;Not Found&quot;, siehe <a href="grundlagen/browser-not-found.html">Der Browser zeigt
 &quot;Not Found&quot;</a>.</p>
 </li>
 </ol>
 <h2>Woran du erkennst, dass es geklappt hat</h2>
 <ul>
-<li>In Schritt 4 zeigen die LEDs, dass der Notfall-Modus erreicht ist, und
-unter <code>http://192.168.1.1</code> kommt die Notfall-Seite.</li>
+<li>In Schritt 6 steht in der roten Meldung &quot;The device is supported&quot;.</li>
 <li>Nach dem Neustart meldet sich die Freifunk-Firmware.</li>
 </ul>
 <h2>Wenn etwas schiefgeht</h2>
 <ul>
-<li><strong>Unter <code>http://192.168.1.1</code> kommt nichts.</strong> Prüf die feste Adresse
-(Schritt 2), schalte VPN-Programme aus und versuch Schritt 4 noch einmal,
-diesmal genau auf die LEDs achtend. Hilft ein anderer Browser oder ein
-privates Fenster, lag es am Zwischenspeicher des Browsers.</li>
+<li><strong>Die GL.iNet-Seite &quot;Lokale Aktualisierung&quot; meldet &quot;Der Test der Firmware
+mit sysupgrade ist fehlgeschlagen&quot;.</strong> Diese Seite nimmt die
+Freifunk-Firmware beim GL.iNet GL-B1300 nie an. Nimm den Weg über LuCI
+(Schritt 4).</li>
+<li><strong>LuCI meldet &quot;not supported by this image&quot;.</strong> Das Image ist für ein
+anderes Gerät. &quot;Cancel&quot; und das richtige Image holen (Schritt 6).</li>
+<li>Klappt es gar nicht, hilft der Notfall-Modus (unten).</li>
 </ul>
+<h2>Notfall: U-Boot-Weboberfläche</h2>
+<p>Klappt es über die GL.iNet-Oberfläche nicht, oder startet der Router nicht
+mehr, hilft der eingebaute Notfall-Modus:</p>
+<ol>
+<li>Rechner fest auf <code>192.168.1.2</code>, Netzmaske <code>255.255.255.0</code>
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>), VPN am Rechner
+aus. Kabel an eine LAN-Buchse,
+alle anderen Buchsen frei.</li>
+<li>Drück die linke Hälfte der Wippe (Kreispfeil), steck den Strom ein und halte weiter, bis die linke und die mittlere LED dauerhaft grün leuchten. Dann loslassen. Erst leuchten alle drei LEDs kurz grün, dann blinkt die rechte, dann leuchten die linke und die mittlere dauerhaft grün.</li>
+<li>Im Browser <code>http://192.168.1.1</code> öffnen, das sysupgrade-Image auswählen,
+&quot;Update firmware&quot;. Der Ladekreis auf der Seite dreht sich danach endlos
+weiter, das ist normal.</li>
+<li>Etwa 9 Minuten warten, Strom nicht ziehen.</li>
+</ol>
+<h2>Notfall-Modus: Dateiname und LEDs</h2>
+<p><strong>Dateiname:</strong> Laut OpenWrt (Stand 2017) muss die Datei genau
+<code>lede-gl-b1300.bin</code> heißen. Ob neuere Bootloader das noch verlangen, ist
+nicht geklärt; mit diesem Namen bist du auf der sicheren Seite.</p>
+<p><strong>LEDs:</strong> Bei alten B1300 blinken laut GL.iNet mittlere und rechte LED
+5-mal und bleiben dann an.</p>
+<h2>Zurück zur GL.iNet-Firmware</h2>
+<p>Über den Notfall-Modus nimmt der B1300 auch die Firmware von GL.iNet wieder
+an. Lade sie unter
+<a href="https://dl.gl-inet.com/router/b1300/stable">dl.gl-inet.com/router/b1300/stable</a>
+herunter und spiel sie über die Notfall-Seite auf, wie oben beschrieben.
+Bei uns hat das geklappt: Nach etwa 9 Minuten war die GL.iNet-Oberfläche
+wieder unter <code>http://192.168.8.1</code> erreichbar.</p>
 <h2>Notfall für Erfahrene: TFTP</h2>
 <p>Liegt die Datei <code>lede-gl-b1300.bin</code> auf einem TFTP-Server mit der Adresse
 <code>192.168.1.2</code> (<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>), holt
