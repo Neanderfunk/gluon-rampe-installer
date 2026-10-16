@@ -10,15 +10,15 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: erprobt
 erprobt_am: 2026-10-16
-erprobt_mit: Gluon 2023.2.6 (26091920sta), factory-Image mit Originalnamen über die TP-Link-Oberfläche 3.14.3 Build 150518
+erprobt_mit: Gluon 2023.2.6 (26091920sta), factory-Image mit Originalnamen über die TP-Link-Oberfläche 3.14.3 Build 150518; Gluon 2025.1 erwartet, nicht getestet
 grundlagen: [browser-not-found, feste-ip, tftp-server]
-daten_stand: b43475bf
+daten_stand: 96f06a89
 vorlage_stand: dd72aaab
 ---
 
 # TP-Link TL-WDR3600 v1: Freifunk-Firmware installieren
 
-> **Am Gerät erprobt** am 16.10.2026 mit `Gluon 2023.2.6 (26091920sta), factory-Image mit Originalnamen über die TP-Link-Oberfläche 3.14.3 Build 150518`.
+> **Am Gerät erprobt** am 16.10.2026 mit `Gluon 2023.2.6 (26091920sta), factory-Image mit Originalnamen über die TP-Link-Oberfläche 3.14.3 Build 150518; Gluon 2025.1 erwartet, nicht getestet`.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
