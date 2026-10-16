@@ -2,6 +2,11 @@
 Vorlage glinet (GL.iNet): entweder über die GL.iNet-Oberfläche
 (GL-OpenWrt, meist 192.168.8.1) oder über die U-Boot-Weboberfläche
 (Reset beim Einschalten, 192.168.1.1). Entwurf Content, 15.10.2026.
+Weg "gl-luci" (16.10.2026, Test Neanderfunk GL-B1300 mit GL-Firmware 4.3.25,
+glinet-gl-b1300-2026-10-16.md, 9aea90d): Die GL-Seite "Lokale Aktualisierung"
+lehnt Gluon ab ("Der Test der Firmware mit sysupgrade ist fehlgeschlagen",
+compat 1.0 -> 1.1, swconfig -> DSA); LuCI unter /cgi-bin/luci nimmt es mit
+"Force upgrade" ohne "Keep settings". Notfall-Seite: Ladekreis endlos.
 
 Vom Skript: bilder, modell, status, erprobt_am, erprobt_mit,
 erprobt_mit_aelter, zusatz.vorher, zusatz.fehler, zusatz.text, herkunft.
@@ -9,8 +14,10 @@ erprobt_mit_aelter, zusatz.vorher, zusatz.fehler, zusatz.text, herkunft.
 Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 
   Pflicht
-    weg                  "gl-ui" (GL.iNet-Oberfläche, U-Boot als Notfall)
-                         oder "uboot" (U-Boot-Weboberfläche als Hauptweg)
+    weg                  "gl-ui" (GL.iNet-Oberfläche, U-Boot als Notfall),
+                         "gl-luci" (GL.iNet-Oberfläche → LuCI mit "Force upgrade",
+                         U-Boot als Notfall) oder "uboot" (U-Boot-Weboberfläche
+                         als Hauptweg)
 
   U-Boot (bei weg = uboot nötig; bei gl-ui optional für den Notfall-Abschnitt)
     taste                ganzer Satz, wie man in den U-Boot-Modus kommt, z. B.
@@ -23,6 +30,8 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
                          "im Abschnitt „NOR flash“ mit „update nor firmware“"
     anschluss            optional: welche Buchse, nach "Steck das Kabel an …"
     led_schreiben        optional: was die LEDs beim Schreiben/fertig zeigen, ganzer Satz
+    dauer_uboot          optional: wie lange das Schreiben über die Notfall-Seite
+                         dauert, z. B. "etwa 9 Minuten" (leer = "etwa 3 Minuten")
     kabel_ziehen         optional true: nach dem Hochladen Kabel ziehen, bevor das
                          Gerät neu startet
 
@@ -30,7 +39,7 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     zwischen_datei       Dateiname des OpenWrt-factory-Image
     zwischen_url         Download-Adresse
 
-  GL.iNet-Oberfläche (bei weg = gl-ui)
+  GL.iNet-Oberfläche (bei weg = gl-ui oder gl-luci)
     gl_url               optional: z. B. http://192.168.8.1 (leer = Hinweis auf den Aufkleber)
     gl_menue             optional: z. B. "Upgrade → Local Upgrade" (leer = "meist Upgrade")
     per_wlan             optional true: nur per WLAN erreichbar (Ethernet ist WAN)
@@ -44,6 +53,8 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
 {%- set ud = w.uboot_datei if w.uboot_datei else "sysupgrade" -%}
+{%- set gl = w.weg in ("gl-ui", "gl-luci") -%}
+{%- set du = w.get("dauer_uboot") or "etwa 3 Minuten" -%}
 
 # {{ modell }}: Freifunk-Firmware installieren
 
@@ -53,6 +64,11 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 GL.iNet liefert seine Router mit einer eigenen Variante von OpenWrt aus.
 Die Freifunk-Firmware lädst du deshalb ganz einfach über die Oberfläche von
 GL.iNet hoch, wie ein normales Update. Du brauchst nur einen Browser.
+{%- elif w.weg == "gl-luci" -%}
+GL.iNet liefert seine Router mit einer eigenen Variante von OpenWrt aus.
+Deren Update-Seite nimmt die Freifunk-Firmware beim {{ modell }} zwar nicht
+an, die mitgelieferte OpenWrt-Oberfläche **LuCI** aber schon. Du brauchst
+nur einen Browser.
 {%- else -%}
 GL.iNet-Router haben einen eingebauten Notfall-Modus: Hält man beim
 Einschalten die Reset-Taste, startet statt der Firmware eine schlichte
@@ -91,7 +107,7 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
 {%- endif %}
 
 ## Schritte
-{%- if w.weg == "gl-ui" %}
+{%- if gl %}
 
 1. **Datei bereitlegen.** Lade das sysupgrade-Image herunter.
 
@@ -109,8 +125,44 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
 3. **Oberfläche öffnen.** Öffne im Browser
    {%- if w.gl_url %} `{{ w.gl_url }}`.{% else %} die Oberfläche von GL.iNet;
    die Adresse steht auf dem Aufkleber, meist ist es `http://192.168.8.1`.{% endif %} Beim ersten Mal
-   fragt GL.iNet nach Sprache und einem Passwort für die Verwaltung: Leg eins
+   fragt GL.iNet nach Sprache
+   {%- if w.weg == "gl-luci" %} (wähl **Deutsch**, dann passen die Namen in
+   Schritt 4){% endif %} und einem Passwort für die Verwaltung: Leg eins
    fest, du brauchst es nur für diese Installation.
+{%- if w.weg == "gl-luci" %}
+
+4. **Zur OpenWrt-Oberfläche.** Die Update-Seite von GL.iNet
+   ("Lokale Aktualisierung") nimmt die Freifunk-Firmware nicht an, lass sie
+   aus. Geh stattdessen zu **SYSTEM → Erweiterte Einstellungen** und klick
+   dort auf den Link, der auf `/cgi-bin/luci` endet. Es öffnet sich LuCI,
+   die Oberfläche von OpenWrt. Melde dich mit dem Benutzer `root` und dem
+   Passwort aus Schritt 3 an.
+
+5. **Firmware hochladen.** Geh in LuCI zu **System → Backup / Flash
+   Firmware**, klick **"Flash image…"**, wähl das sysupgrade-Image aus und
+   klick **"Upload"**.
+
+6. **Prüfung übergehen.** Es erscheint das Fenster "Flash image?" mit einer
+   roten Meldung "Image check failed: The device is supported, but the
+   config is incompatible to the new image …". Das ist hier normal: Die
+   Freifunk-Firmware ist neuer als das OpenWrt von GL.iNet, die alten
+   Einstellungen passen nicht dazu. Entfern den Haken bei **"Keep
+   settings…"** (die Meldung bleibt trotzdem stehen), setz den Haken bei
+   **"Force upgrade"** und klick **"Continue"**.
+
+   Steht dort stattdessen **"not supported by this image"**, ist es das
+   Image für ein anderes Gerät. Dann **"Cancel"** und das richtige Image
+   holen, hier nie "Force upgrade".
+
+7. **Warten.** Der Router schreibt die Firmware und startet neu, einige
+   Minuten. **Strom nicht ziehen.**
+
+8. **Fertig.** Danach startet die Freifunk-Firmware deiner Community: je nach
+   Community zuerst mit einer Einrichtungsseite unter `http://192.168.1.1`
+   oder gleich im Betrieb.
+   Kommt dort "Not Found", siehe [Der Browser zeigt
+   "Not Found"](grundlagen/browser-not-found.md).
+{%- else %}
 
 4. **Firmware hochladen.** Geh zu
    {%- if w.gl_menue %} **{{ w.gl_menue }}**{% else %} dem Bereich für
@@ -129,6 +181,7 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
    "Not Found"](grundlagen/browser-not-found.md).
    {%- if w.per_wlan %} Für die Einrichtung brauchst du jetzt ein
    Netzwerkkabel, das WLAN des Herstellers gibt es nicht mehr.{% endif %}
+{%- endif %}
 {%- else %}
 
 1. **Datei bereitlegen.** Lade
@@ -153,12 +206,14 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
    {%- if w.zwischen_datei %} die OpenWrt-Datei
    {%- else %} das {{ ud }}-Image{% endif %}
    {%- if w.uboot_abschnitt %} {{ w.uboot_abschnitt }}{% endif %} aus und
-   starte das Hochladen ("Update firmware").
+   starte das Hochladen ("Update firmware"). Die Seite zeigt dann
+   "UPDATE IN PROGRESS" mit einem Ladekreis, der sich endlos weiterdreht,
+   auch wenn der Router längst fertig ist. Das ist normal.
    {%- if w.kabel_ziehen %} Ist die Datei übertragen, zieh das Netzwerkkabel,
    bevor der Router neu startet.{% endif %}
 
-6. **Warten.** Der Router schreibt die Firmware, das dauert etwa
-   3 Minuten.{% if w.led_schreiben %} {{ w.led_schreiben }}{% endif %}
+6. **Warten.** Der Router schreibt die Firmware, das dauert
+   {{ du }}.{% if w.led_schreiben %} {{ w.led_schreiben }}{% endif %}
    **Strom nicht ziehen.**
 {%- if w.zwischen_datei %}
 
@@ -188,6 +243,8 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
 {% if w.weg == "uboot" -%}
 - In Schritt 4 zeigen die LEDs, dass der Notfall-Modus erreicht ist, und
   unter `http://192.168.1.1` kommt die Notfall-Seite.
+{% elif w.weg == "gl-luci" -%}
+- In Schritt 6 steht in der roten Meldung "The device is supported".
 {% endif -%}
 - Nach dem Neustart meldet sich die Freifunk-Firmware.
 
@@ -196,14 +253,22 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
 {% if w.weg == "uboot" -%}
 - **Unter `http://192.168.1.1` kommt nichts.** Prüf die feste Adresse
   (Schritt 2), schalte VPN-Programme aus und versuch Schritt 4 noch einmal,
-  diesmal genau auf die LEDs achtend. Hilft ein anderer Browser oder ein
-  privates Fenster, lag es am Zwischenspeicher des Browsers.
+  diesmal genau auf die LEDs achtend. Kommt "Not Found" oder "PAGE NOT
+  FOUND", siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
+{% elif w.weg == "gl-luci" -%}
+- **Die GL.iNet-Seite "Lokale Aktualisierung" meldet "Der Test der Firmware
+  mit sysupgrade ist fehlgeschlagen".** Diese Seite nimmt die
+  Freifunk-Firmware beim {{ modell }} nie an. Nimm den Weg über LuCI
+  (Schritt 4).
+- **LuCI meldet "not supported by this image".** Das Image ist für ein
+  anderes Gerät. "Cancel" und das richtige Image holen (Schritt 6).
+- Klappt es gar nicht, hilft der Notfall-Modus (unten).
 {% else -%}
 - **Die Oberfläche lehnt die Datei ab.** Prüf, ob es das sysupgrade-Image für
   genau dieses Modell ist. Sonst hilft der Notfall-Modus (unten).
 {% endif -%}
 {{ zusatz.fehler }}
-{%- if w.weg == "gl-ui" and w.taste %}
+{%- if gl and w.taste %}
 
 ## Notfall: U-Boot-Weboberfläche
 
@@ -217,8 +282,9 @@ mehr, hilft der eingebaute Notfall-Modus:
    alle anderen Buchsen frei.
 2. {{ w.taste }}{% if w.led_uboot %} {{ w.led_uboot }}{% endif %}
 3. Im Browser `http://192.168.1.1` öffnen, das sysupgrade-Image auswählen,
-   "Update firmware".
-4. Etwa 3 Minuten warten, Strom nicht ziehen.
+   "Update firmware". Der Ladekreis auf der Seite dreht sich danach endlos
+   weiter, das ist normal.
+4. {{ du[0]|upper }}{{ du[1:] }} warten, Strom nicht ziehen.
 {%- endif %}
 
 {% include "_rampe.md" %}
