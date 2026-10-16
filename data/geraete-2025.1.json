@@ -14733,9 +14733,10 @@
    "quelle": "OpenWrt 7271ee587cd104d30d6d46dd3c623c9d4602bd0c",
    "anleitung": "anleitungen/de/d-link-aquila-pro-ai-m60-a1.md",
    "erprobt": {
-    "am": "2026-10-13",
-    "mit": "gluon-rampe-20261010-d-link-aquila-pro-ai-m60-a1-recovery.bin",
-    "weg": "RAMpe über die D-Link-Recovery, dann sysupgrade"
+    "am": "2026-10-16",
+    "mit": "gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin",
+    "weg": "Stock-Firmware, D-Link-Recovery, curl-Upload nach Anleitung (zweimal), RAMpe, dann sysupgrade auf Gluon 2025.1 26100702bro; Primary MAC danach korrekt",
+    "beleg": "Testplatz grw (drittes M60), router-werkstatt docs/validierung/d-link-m60-a1-geraet3-rampe-20261015-2026-10-16.md (ae51d18); vorher erprobt 2026-10-13 mit gluon-rampe-20261010"
    },
    "werte": {
     "recovery_ip": "192.168.200.1",
@@ -14757,7 +14758,9 @@
     "rampe_datei": "gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin",
     "taste_hinweis": "Nur die Reset-Taste führt in die Recovery, keine der anderen Tasten.",
     "led_falsch": "Ein orangefarbenes Auf- und Abdimmen ist nicht die Recovery.",
-    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin"
+    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin",
+    "led_schreibt": "leuchtet die LED ruhig rot, etwas schwächer",
+    "led_start": "blinkt die LED schnell weiß"
    }
   },
   {
