@@ -14656,7 +14656,7 @@
     "am": "2026-10-16",
     "mit": "gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin",
     "weg": "D-Link-Recovery (LED rot blinkend), curl-Upload nach Anleitung, RAMpe, dann sysupgrade auf Gluon 2025.1 26100702bro; MAC danach korrekt (Einzelgerät, Odm-Eintrag 0x81)",
-    "beleg": "Testplatz grw (M30 aus dem Dumbrack), router-werkstatt docs/validierung/d-link-m30-a1-rampe-20261015-2026-10-16.md"
+    "beleg": "Testplatz grw (M30 aus dem Dumbrack), router-werkstatt docs/validierung/d-link-m30-a1-rampe-20261015-2026-10-16.md (7cdf1aa)"
    },
    "werte": {
     "recovery_ip": "192.168.200.1",
