@@ -10,7 +10,7 @@ level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
 grundlagen: [image-schreiben]
-daten_stand: 7420361a
+daten_stand: bff81c17
 vorlage_stand: 6eae926f
 ---
 

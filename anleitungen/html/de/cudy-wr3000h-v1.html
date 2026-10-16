@@ -13,19 +13,18 @@
 <meta name="anleitung:level" content="L1">
 <meta name="anleitung:level_text" content="Zwei Schritte im Browser">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:status" content="erprobt">
+<meta name="anleitung:erprobt_am" content="2026-10-16">
+<meta name="anleitung:erprobt_mit" content="Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.5.30">
 <meta name="anleitung:grundlagen" content="feste-ip, tftp-server">
-<meta name="anleitung:daten_stand" content="7420361a">
-<meta name="anleitung:vorlage_stand" content="393f1614">
+<meta name="anleitung:daten_stand" content="bff81c17">
+<meta name="anleitung:vorlage_stand" content="954a07bf">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Cudy WR3000H v1: Freifunk-Firmware installieren</h1>
 <blockquote>
-<p><strong>Noch nicht am Gerät erprobt.</strong> So beschreiben die Entwickler von OpenWrt
-bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
-ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
-klappt.</p>
+<p><strong>Am Gerät erprobt</strong> am 16.10.2026 mit <code>Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.5.30</code>.</p>
 <p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -69,26 +68,33 @@ Kabel an eine <strong>LAN</strong>-Buchse. Der Rechner holt sich seine Adresse
 automatisch, so wie er normalerweise eingestellt ist.</p>
 </li>
 <li>
-<p><strong>Cudy-Oberfläche öffnen.</strong> Öffne im Browser <code>http://192.168.10.1</code> und
-melde dich mit dem Passwort <code>admin</code> an. Beim ersten Mal fragt der Router
-einige Einstellungen ab: alles mit &quot;Weiter&quot; bestätigen, am Ende
-speichern.</p>
+<p><strong>Cudy-Oberfläche öffnen.</strong> Öffne im Browser <code>http://192.168.10.1</code>.
+Ab Werk verlangt die Oberfläche zuerst ein <strong>eigenes Admin-Passwort</strong>
+(mindestens 8 Zeichen). Denk dir eins aus und merk es dir. Ältere
+Cudy-Firmware fragt stattdessen nach dem Passwort <code>admin</code>. Danach startet
+der Assistent &quot;Schnelleinrichtung&quot;: Den kannst du mit <strong>&quot;« Beenden&quot;</strong>
+überspringen.</p>
 </li>
 <li>
-<p><strong>Zwischenfirmware hochladen.</strong> Geh zu <strong>Erweiterte Einstellungen →
-System → Firmware</strong> und wähl die Zwischenfirmware aus. Die Bezeichnungen
-können je nach Modell und Alter der Cudy-Firmware etwas anders heißen.</p>
+<p><strong>Zwischenfirmware hochladen.</strong> Geh zum Reiter <strong>&quot;Allgemeine
+Einstellungen&quot;</strong>, klick in der Symbolspalte links ganz unten auf
+<strong>&quot;Firmware&quot;</strong> und im Abschnitt <strong>&quot;Lokales Update&quot;</strong> auf
+<strong>&quot;Durchsuchen …&quot;</strong>. Wähl dort die Zwischenfirmware aus. Bei älterer
+Cudy-Firmware heißt der Weg <strong>Erweiterte Einstellungen → System →
+Firmware</strong>.</p>
 </li>
 <li>
-<p><strong>Prüfsumme vergleichen.</strong> Nach dem Hochladen zeigt der Router eine
-MD5-Prüfsumme. Sie muss genau so aussehen:</p>
+<p><strong>Prüfsumme vergleichen.</strong> Nach dem Hochladen zeigt der Router im
+Fenster &quot;Lokales Update&quot; eine MD5-Prüfsumme und die Größe. Sie muss genau so aussehen:</p>
 <pre><code>1c9321928f7da093cd2b8631d3554743
 </code></pre>
 <p>Stimmt sie, klick auf <strong>Fortfahren</strong>.</p>
 </li>
 <li>
-<p><strong>Warten.</strong> Der Router schreibt die Zwischenfirmware und startet neu. Das
-dauert einige Minuten. <strong>Strom nicht ziehen.</strong></p>
+<p><strong>Warten.</strong> Die Oberfläche zeigt &quot;System - Firmware wird installiert…&quot;.
+Die LEDs zeigen erst ein langsames Lauflicht, dann blinken sie kurz
+schnell, dann startet der Router neu. Bei uns dauerte das weniger als eine
+Minute. <strong>Strom nicht ziehen.</strong></p>
 </li>
 </ol>
 <h3>Teil 2: Freifunk-Firmware</h3>
@@ -106,9 +112,10 @@ deiner Community aus.</p>
 </li>
 <li>
 <p><strong>Einstellungen nicht behalten.</strong> Bevor es losgeht, zeigt OpenWrt ein
-Fenster mit einem Haken bei <strong>&quot;Einstellungen beibehalten&quot;</strong> (englisch
-&quot;Keep settings&quot;). <strong>Entfern diesen Haken.</strong> Es darf kein Haken mehr
-gesetzt sein.
+Fenster. Dort ist der Haken bei <strong>&quot;Einstellungen beibehalten und die
+aktuelle Konfiguration sichern&quot;</strong> (englisch &quot;Keep settings …&quot;) schon
+gesetzt. <strong>Entfern diesen Haken.</strong> Die beiden Haken darunter sind schon
+aus. Es darf kein Haken mehr gesetzt sein.
 Dann <strong>Fortfahren</strong>.</p>
 </li>
 <li>
@@ -153,18 +160,25 @@ Werkzeug: einen TFTP-Server auf deinem Rechner
 Adresse am Rechner (<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).</p>
 <ol>
 <li>Lade die Cudy-Firmware für dein Modell von der
-Download-Seite von Cudy herunter, benenne sie in
-<code>recovery.bin</code> um (genau so) und leg sie in den Ordner des TFTP-Servers.</li>
+<a href="https://www.cudy.com/pages/download-center/wr3000h-1-0">Download-Seite von Cudy</a> herunter, und zwar
+die oberste, also neueste Version.
+Kommt sie als ZIP-Archiv, pack es aus: Darin liegen eine <code>md5.txt</code> und
+eine <code>.bin</code>-Datei. Die <code>.bin</code>-Datei heißt bei Cudy oft
+&quot;…-sysupgrade.bin&quot;. Das ist trotzdem die Cudy-Firmware, nicht die
+Freifunk-Firmware. Benenn sie in <code>recovery.bin</code> um (genau so) und leg sie
+in den Ordner des TFTP-Servers.</li>
 <li>Stell deinen Rechner fest auf <code>192.168.1.88</code>, Netzmaske <code>255.255.255.0</code>,
 und starte den TFTP-Server.</li>
 <li>Steck das Kabel an eine
 LAN-Buchse. Der Router hat noch keinen Strom.</li>
 <li>Drück die Reset-Taste und halte sie gedrückt, steck den Strom ein und halte
-weiter, bis
-alle LEDs schnell blinken oder der TFTP-Server den Download zeigt. Dann
-loslassen.</li>
-<li>Blinken die LEDs langsam, ist der Router fertig. Danach den Rechner wieder
-auf &quot;automatisch&quot; stellen; die Cudy-Oberfläche ist unter
+weiter,
+bis <strong>alle LEDs einmal kurz aufleuchten</strong>, etwa eine halbe Sekunde lang.
+Dann loslassen. Hältst du weiter, fängt der Router etwa alle 20 Sekunden
+von vorn an. Im TFTP-Server siehst du, dass <code>recovery.bin</code> abgeholt wird.</li>
+<li>Der Router ist fertig, wenn die <strong>System-LED ruhig leuchtet</strong> (steckt ein
+Kabel in der WAN-Buchse, leuchtet zusätzlich &quot;Internet&quot;). Danach den
+Rechner wieder auf &quot;automatisch&quot; stellen; die Cudy-Oberfläche ist unter
 <code>http://192.168.10.1</code> erreichbar.</li>
 </ol>
 <h2>Herkunft der Angaben</h2>
@@ -175,12 +189,13 @@ auf &quot;automatisch&quot; stellen; die Cudy-Oberfläche ist unter
 <li>abgeleitet: sysupgrade schreibt den Flash (Schritte (Normalweg), Dauer)</li>
 <li>geprüft: Commit-Texte (Gluon-RAMpe passt)</li>
 <li>geprüft: Commit/Neanderfunk-Notiz (Weg ab Werk, Schritte (Normalweg))</li>
-<li>geprüft: Cudy-FAQ &quot;How to recovery ... to Cudy official firmware&quot; (Rückweg zur Herstellerfirmware)</li>
 <li>geprüft: Cudy-FAQ &quot;OpenWrt Software Download&quot; (Bedingung an die Herstellerfirmware)</li>
 <li>geprüft: Cudy-FAQ, Hinweis 24.11.2025 (Warnung)</li>
 <li>geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer, Fehlerbild)</li>
 <li>geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)</li>
 <li>geprüft: OpenWrt-Pin (Typenschild/Verwechslung)</li>
+<li>geprüft: Testplatz grw 16.10.2026 (Gluon-RAMpe passt)</li>
+<li>geprüft: Testplatz grw 16.10.2026 mit Cudy 2.5.30, router-werkstatt docs/validierung/cudy-wr3000h-v1-2026-10-16.md (Rückweg zur Herstellerfirmware)</li>
 <li>Geräteeintrag: OpenWrt fdbbb8415fd19ae0748a2bbe41b15257054e4077</li>
 </ul>
 

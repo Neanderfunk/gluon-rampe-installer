@@ -10,7 +10,7 @@ level_text: Besondere Programme
 risiko: bootloader
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
-daten_stand: 7420361a
+daten_stand: bff81c17
 vorlage_stand: 9bdb8a15
 ---
 

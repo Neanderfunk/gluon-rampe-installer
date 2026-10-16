@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-10-15
 erprobt_mit: Gluon 2023.2.6 (26091920sta), boot.bin über die TP-Link-Oberfläche, U-Boot-Teil aus Archer_C50v4_EU_0.9.1_0.2_up_boot.bin
 grundlagen: [feste-ip, tftp-server]
-daten_stand: 7420361a
+daten_stand: bff81c17
 vorlage_stand: 9bdb8a15
 ---
 
