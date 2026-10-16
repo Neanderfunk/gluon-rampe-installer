@@ -6433,10 +6433,10 @@
     "nach_upload": "",
     "dauer": "etwa zwei bis drei Minuten",
     "tftp_datei": "wdr3600v1_tp_recovery.bin",
-    "tftp_inhalt": "die TP-Link-Firmware ohne ihren Bootloader-Teil",
+    "tftp_inhalt": "die TP-Link-Firmware ohne ihren Bootloader-Teil (wie du sie vorbereitest, steht unten unter „Zurück zur TP-Link-Firmware“)",
     "tftp_server_ip": "192.168.0.66",
     "tftp_taste": "",
-    "tftp_dauer": "",
+    "tftp_dauer": "etwa 6 Minuten",
     "tftp_hinweis": "Am Rechner darf nur diese eine Adresse eingestellt sein, sonst antwortet der TFTP-Server von einer anderen Adresse, und der Router nimmt die Datei nicht.",
     "notweg_keiner": "",
     "sicherheit": "abgeleitet"
