@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, tftp-server]
 daten_stand: 7420361a
-vorlage_stand: 8ebdf8cb
+vorlage_stand: 9bdb8a15
 ---
 
 # TP-Link Archer C20 v5: Freifunk-Firmware installieren
@@ -65,7 +65,9 @@ TP-Link-Firmware für die Region auf dem Typenschild (in Europa: EU).
 1. **Dateien bereitlegen.** Leg einen Ordner an. Pack die TP-Link-Firmware
    (ein ZIP-Archiv) dort aus und benenn die `.bin`-Datei darin in
    `tpl.bin` um. Leg die Freifunk-Datei daneben und benenn sie in
-   `gluon.bin` um.
+   `gluon.bin` um. Die Namen bei TP-Link enthalten oft Leerzeichen oder
+   eckige Klammern, die im Terminal Ärger machen. Pack und benenn deshalb am
+   besten im Dateimanager, dann musst du die langen Namen nie abtippen.
 
 2. **Zusammensetzen.** Öffne ein Terminal in dem Ordner und gib ein:
 

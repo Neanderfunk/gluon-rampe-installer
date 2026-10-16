@@ -13,7 +13,7 @@ erprobt_am: 2026-10-15
 erprobt_mit: Gluon 2023.2.6 (26091920sta), boot.bin über die TP-Link-Oberfläche, U-Boot-Teil aus Archer_C50v4_EU_0.9.1_0.2_up_boot.bin
 grundlagen: [feste-ip, tftp-server]
 daten_stand: 7420361a
-vorlage_stand: 8ebdf8cb
+vorlage_stand: 9bdb8a15
 ---
 
 # TP-Link Archer C50 v4: Freifunk-Firmware installieren
@@ -69,7 +69,9 @@ v4-Firmware passt dort auch zum Archer C50 v5 (US) und zum Archer A5 v5.
 1. **Dateien bereitlegen.** Leg einen Ordner an. Pack die TP-Link-Firmware
    (ein ZIP-Archiv) dort aus und benenn die `.bin`-Datei darin in
    `tpl.bin` um. Leg die Freifunk-Datei daneben und benenn sie in
-   `gluon.bin` um.
+   `gluon.bin` um. Die Namen bei TP-Link enthalten oft Leerzeichen oder
+   eckige Klammern, die im Terminal Ärger machen. Pack und benenn deshalb am
+   besten im Dateimanager, dann musst du die langen Namen nie abtippen.
 
 2. **Zusammensetzen.** Öffne ein Terminal in dem Ordner und gib ein:
 
