@@ -14,6 +14,7 @@
 # Kniffe: "/" leitet per meta-refresh weiter - Einstieg ist /cgi-bin/config.
 # gluon-web verlangt bei POST einen Origin-Header, der zum Host passt.
 # Seit 15.10.2026 auch: gluon.css?v= und die Umleitung https (Port 443) -> http,
+# seit 16.10. /cgi-bin/luci -> /cgi-bin/config (alte LuCI-Seite im Browser-Cache),
 # und der Vorbereitungshaken vor dem sysupgrade (/lib/gluon-rampe/prepare/):
 # ein Skript, das scheitert, darf nichts flashen und muss auf der Seite
 # stehen; eines, das klappt, laeuft vor dem sysupgrade. Die Skripte legt der
@@ -58,6 +59,13 @@ grep -q 'name="image"' seite1.html && ! grep -q keepcfg seite1.html && echo "   
 	|| { echo "FEHLER: keine Installer-Upload-Seite"; ende; exit 1; }
 grep -q 'gluon.css?v=' seite1.html && echo "   gluon.css mit Versionsanhang: ja" \
 	|| { echo "FEHLER: gluon.css ohne ?v= (Cache-Schutz fehlt)"; ende; exit 1; }
+# Alte LuCI-Adresse aus dem Browser-Cache (Meta-Refresh einer frueheren
+# OpenWrt-Seite) muss auf den Config-Mode fuehren, nicht auf "Not Found"
+for pfad in /cgi-bin/luci /cgi-bin/luci/ /cgi-bin/luci/admin/status; do
+	loc=$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' "$URL$pfad")
+	echo "   $pfad: $loc"
+	case "$loc" in 302\ */cgi-bin/config) ;; *) echo "FEHLER: $pfad leitet nicht auf /cgi-bin/config"; ende; exit 1 ;; esac
+done
 # Port 443: selbstsigniertes Zertifikat, jede Adresse leitet auf http:// um
 for pfad in / /irgendwas; do
 	curl -sk "https://127.0.0.1:$TLSPORT$pfad" -o seite-https.html -w "   https $pfad: %{http_code}\n"
