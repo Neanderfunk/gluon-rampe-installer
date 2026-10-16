@@ -16,8 +16,8 @@
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:rampe_image" content="gluon-rampe-20261015-avm-fritz-repeater-1200-initramfs-uImage.itb">
 <meta name="anleitung:grundlagen" content="avm-eva, feste-ip, tftp-server">
-<meta name="anleitung:daten_stand" content="bfed6935">
-<meta name="anleitung:vorlage_stand" content="79f8a174">
+<meta name="anleitung:daten_stand" content="9936ce50">
+<meta name="anleitung:vorlage_stand" content="578b9af5">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -90,8 +90,10 @@ TFTP-Server zeigt, wenn die Datei abgeholt wird. Danach startet die RAMpe
 aus dem Arbeitsspeicher. Das dauert bis zu 2 Minuten.</p>
 </li>
 <li>
-<p><strong>Die Seite der RAMpe.</strong> Öffne <code>http://192.168.1.1</code> (der Rechner kann auf
-<code>192.168.1.70</code> bleiben). Die Seite weist darauf hin, dass sie bei diesem
+<p><strong>Die Seite der RAMpe.</strong> Öffne <code>http://192.168.1.1/cgi-bin/config</code> (der
+Rechner kann auf <code>192.168.1.70</code> bleiben). Kommt &quot;Not Found&quot;, hat sich der
+Browser eine Seite von früher gemerkt: Tipp die Adresse vollständig ein,
+mit <code>/cgi-bin/config</code> am Ende. Die Seite weist darauf hin, dass sie bei diesem
 Gerät den Speicher vorbereitet, den neuen Bootloader dauerhaft schreibt
 und die Firmware von AVM entfernt.</p>
 <p><img src="../bilder/allgemein/rampe-seite.png" alt="Die Seite der RAMpe: &quot;Firmware aktualisieren&quot; mit Feld für die Datei und Knopf &quot;Datei hochladen&quot;" /></p>

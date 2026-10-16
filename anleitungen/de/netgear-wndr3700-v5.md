@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-netgear-wndr3700-v5-factory.img
 grundlagen: [browser-https, nmrpflash]
-daten_stand: bfed6935
+daten_stand: 9936ce50
 vorlage_stand: 02b61429
 ---
 
@@ -123,8 +123,10 @@ ausprobiert**; die RAMpe selbst läuft auf anderen Geräten.
 1. Lade die RAMpe für den NETGEAR WNDR3700 v5 herunter:
    [gluon-rampe-20261015-netgear-wndr3700-v5-factory.img](https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-netgear-wndr3700-v5-factory.img).
 2. Benenne die RAMpe in firmware.img um und schick sie in Schritt 4 mit nmrpflash statt der OpenWrt-Datei.
-3. Nach dem Neustart öffne `http://192.168.1.1`. Es erscheint die Seite
-   "Firmware aktualisieren" der RAMpe. Startet der Router zwischendurch neu,
+3. Nach dem Neustart öffne `http://192.168.1.1/cgi-bin/config`. Es erscheint
+   die Seite "Firmware aktualisieren" der RAMpe. Kommt "Not Found", hat sich
+   der Browser eine Seite von früher gemerkt: Tipp die Adresse vollständig
+   ein, mit `/cgi-bin/config` am Ende. Startet der Router zwischendurch neu,
    einfach die Seite wieder aufrufen.
 
    ![Die Seite der RAMpe: "Firmware aktualisieren" mit Feld für die Datei und Knopf "Datei hochladen"](../bilder/allgemein/rampe-seite.png)

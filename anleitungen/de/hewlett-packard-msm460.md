@@ -10,7 +10,7 @@ level_text: Netzwerkwerkzeuge
 risiko: bootloader
 status: ungeprüft
 grundlagen: [feste-ip, tftp-client, tftp-server]
-daten_stand: bfed6935
+daten_stand: 9936ce50
 vorlage_stand: 05fb36b9
 ---
 

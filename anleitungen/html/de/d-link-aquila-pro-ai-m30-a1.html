@@ -16,8 +16,8 @@
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:rampe_image" content="gluon-rampe-*-d-link-aquila-pro-ai-m30-a1-recovery.bin">
 <meta name="anleitung:grundlagen" content="browser-https, curl, feste-ip">
-<meta name="anleitung:daten_stand" content="bfed6935">
-<meta name="anleitung:vorlage_stand" content="85ca2180">
+<meta name="anleitung:daten_stand" content="9936ce50">
+<meta name="anleitung:vorlage_stand" content="578b9af5">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -95,18 +95,25 @@ Antwort des Routers auf und kann danach weg. Mehr unter
 <a href="grundlagen/curl.html">curl benutzen</a>.</p>
 </li>
 <li>
-<p><strong>Warten.</strong> curl überträgt die Datei und wartet dann weiter, während die
-Recovery schreibt. Die LED bleibt dabei wie in Schritt 4. Bis zum
-Neustart vergehen meist einige Minuten, es kann aber auch über 10 Minuten dauern.
-<strong>Nicht abbrechen, Strom nicht ziehen.</strong>
-Am Ende zeigt curl, wie viel ankam. Geklappt hat es bei
-<strong>etwa 52,4 Millionen Bytes</strong>. Steht da 0, kam nichts an (siehe &quot;Wenn
-etwas schiefgeht&quot;).</p>
+<p><strong>Warten.</strong> curl zeigt beim Hochladen eine Fortschrittsanzeige. Bei 100 %
+ist die Datei drüben, das dauert meist nur Sekunden. Danach schreibt die
+Recovery sie in den Speicher.
+Bis zum Neustart vergehen meist einige Minuten, es kann aber auch über 10 Minuten dauern.
+<strong>Strom nicht ziehen.</strong>
+Oft kommt curl danach nicht von selbst zurück, obwohl alles geklappt hat.
+Dann beende es mit <strong>Strg+C</strong> (am Mac ctrl+C), aber erst, wenn der Router
+neu startet.
+Kommt curl von selbst zurück, zeigt es in der letzten Zeile, wie viel
+ankam. Geklappt hat es bei <strong>etwa 52,4 Millionen Bytes</strong>. Steht da 0, kam
+nichts an (siehe &quot;Wenn etwas schiefgeht&quot;).</p>
 </li>
 <li>
 <p><strong>Die RAMpe.</strong> Nach dem Neustart blinkt die LED gleichmäßig, etwa einmal pro Sekunde. Stell den Rechner
-wieder auf &quot;automatisch&quot; (DHCP) und öffne <code>http://192.168.1.1</code>. Es
-erscheint die Seite &quot;Firmware aktualisieren&quot;.
+wieder auf &quot;automatisch&quot; (DHCP) und öffne
+<code>http://192.168.1.1/cgi-bin/config</code>. Es erscheint die Seite &quot;Firmware
+aktualisieren&quot;. Kommt &quot;Not Found&quot;, hat sich der Browser eine Seite von
+früher gemerkt: Tipp die Adresse vollständig ein, mit <code>/cgi-bin/config</code> am
+Ende.
 Die RAMpe bleibt auf dem Router, bis die Freifunk-Firmware sie ersetzt.
 Startet der Router zwischendurch neu, ist das harmlos: Seite einfach
 wieder aufrufen.
@@ -136,10 +143,11 @@ beschreibt deine Community.</p>
 </ol>
 <h2>Woran du erkennst, dass es geklappt hat</h2>
 <ul>
-<li>curl meldet am Ende <strong>etwa 52,4 Millionen Bytes</strong>. Wie lange das gedauert
-hat, ist egal, es zählt die Menge.</li>
-<li>Nach dem Neustart blinkt die LED gleichmäßig, etwa einmal pro Sekunde, und unter <code>http://192.168.1.1</code>
-steht &quot;Firmware aktualisieren&quot;.</li>
+<li>curl hat beim Hochladen 100 % erreicht. Kommt es von selbst zurück,
+meldet es <strong>etwa 52,4 Millionen Bytes</strong>. Wie lange das gedauert hat, ist
+egal, es zählt die Menge.</li>
+<li>Nach dem Neustart blinkt die LED gleichmäßig, etwa einmal pro Sekunde, und unter
+<code>http://192.168.1.1/cgi-bin/config</code> steht &quot;Firmware aktualisieren&quot;.</li>
 <li>Die Erfolgsmeldung der D-Link-Seite zählt nicht, sie erscheint immer.</li>
 </ul>
 <h2>Wenn etwas schiefgeht</h2>
@@ -147,6 +155,8 @@ steht &quot;Firmware aktualisieren&quot;.</li>
 <li><strong>curl meldet &quot;Failed to connect&quot;, HTTP 000 und 0 Bytes.</strong> Die Recovery war
 nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
 Router noch einmal in die Recovery bringen (Schritt 4).</li>
+<li><strong>curl steht bei 100 % und kommt nicht zurück.</strong> Das ist normal. Sobald
+der Router neu startet, curl mit Strg+C beenden (Schritt 7).</li>
 <li><strong>Nach dem Upload startet wieder die normale D-Link-Firmware.</strong> Die Datei
 ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
 Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.</li>

@@ -10,8 +10,8 @@ level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
 grundlagen: [curl, feste-ip]
-daten_stand: bfed6935
-vorlage_stand: 85ca2180
+daten_stand: 9936ce50
+vorlage_stand: 578b9af5
 ---
 
 # D-Link DIR-878 A1: Freifunk-Firmware installieren
@@ -90,10 +90,14 @@ wirklich über das Kabel spricht.
    Antwort des Routers auf und kann danach weg. Mehr unter
    [curl benutzen](grundlagen/curl.md).
 
-7. **Warten.** curl überträgt die Datei und wartet dann weiter, während die
-   Recovery schreibt. Die LED bleibt dabei wie in Schritt 4. Bis zum
-   Neustart vergehen meist einige Minuten.
-   **Nicht abbrechen, Strom nicht ziehen.**
+7. **Warten.** curl zeigt beim Hochladen eine Fortschrittsanzeige. Bei 100 %
+   ist die Datei drüben, das dauert meist nur Sekunden. Danach schreibt die
+   Recovery sie in den Speicher.
+   Bis zum Neustart vergehen meist einige Minuten.
+   **Strom nicht ziehen.**
+   Oft kommt curl danach nicht von selbst zurück, obwohl alles geklappt hat.
+   Dann beende es mit **Strg+C** (am Mac ctrl+C), aber erst, wenn der Router
+   neu startet.
 
 8. **Fertig.** Nach dem Neustart startet die Freifunk-Firmware deiner
    Community: je nach Community zuerst mit einer Einrichtungsseite unter
@@ -110,6 +114,8 @@ wirklich über das Kabel spricht.
 - **curl meldet "Failed to connect", HTTP 000 und 0 Bytes.** Die Recovery war
   nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
   Router noch einmal in die Recovery bringen (Schritt 4).
+- **curl steht bei 100 % und kommt nicht zurück.** Das ist normal. Sobald
+  der Router neu startet, curl mit Strg+C beenden (Schritt 7).
 - **Nach dem Upload startet wieder die normale D-Link-Firmware.** Die Datei
   ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
   Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.

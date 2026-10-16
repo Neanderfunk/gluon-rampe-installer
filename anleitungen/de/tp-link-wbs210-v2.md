@@ -10,7 +10,7 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip]
-daten_stand: bfed6935
+daten_stand: 9936ce50
 vorlage_stand: bfd04827
 ---
 

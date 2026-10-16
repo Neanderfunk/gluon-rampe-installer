@@ -11,8 +11,8 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb
 grundlagen: [avm-eva, feste-ip, tftp-server]
-daten_stand: bfed6935
-vorlage_stand: 79f8a174
+daten_stand: 9936ce50
+vorlage_stand: 578b9af5
 ---
 
 # AVM FRITZ!Box 7520: Freifunk-Firmware installieren
@@ -90,8 +90,10 @@ passt, ist nicht belegt.
    TFTP-Server zeigt, wenn die Datei abgeholt wird. Danach startet die RAMpe
    aus dem Arbeitsspeicher. Das dauert bis zu 2 Minuten.
 
-5. **Die Seite der RAMpe.** Öffne `http://192.168.1.1` (der Rechner kann auf
-   `192.168.1.70` bleiben). Die Seite weist darauf hin, dass sie bei diesem
+5. **Die Seite der RAMpe.** Öffne `http://192.168.1.1/cgi-bin/config` (der
+   Rechner kann auf `192.168.1.70` bleiben). Kommt "Not Found", hat sich der
+   Browser eine Seite von früher gemerkt: Tipp die Adresse vollständig ein,
+   mit `/cgi-bin/config` am Ende. Die Seite weist darauf hin, dass sie bei diesem
    Gerät den Speicher vorbereitet, den neuen Bootloader dauerhaft schreibt
    und die Firmware von AVM entfernt.
 

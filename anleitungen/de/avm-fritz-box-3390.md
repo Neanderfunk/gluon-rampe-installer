@@ -11,8 +11,8 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-avm-fritz-box-3390-initramfs-kernel.bin
 grundlagen: [avm-eva, browser-https, feste-ip]
-daten_stand: bfed6935
-vorlage_stand: 869501ce
+daten_stand: 9936ce50
+vorlage_stand: 578b9af5
 ---
 
 # AVM FRITZ!Box 3390: Freifunk-Firmware installieren
@@ -84,8 +84,11 @@ Image dafür. Frag im Zweifel deine Community.
    Kommt eine Fehlermeldung, Strom ziehen und noch einmal.
 
 5. **Die RAMpe.** Die Box startet jetzt die RAMpe aus dem Arbeitsspeicher. Stell den Rechner auf
-   "automatisch" und öffne nach etwa einer Minute `http://192.168.1.1`. Es
-   erscheint die Seite "Firmware aktualisieren".
+   "automatisch" und öffne nach etwa einer Minute
+   `http://192.168.1.1/cgi-bin/config`. Es erscheint die Seite "Firmware
+   aktualisieren". Kommt "Not Found", hat sich der Browser eine Seite von
+   früher gemerkt: Tipp die Adresse vollständig ein, mit `/cgi-bin/config` am
+   Ende.
 
    ![Die Seite der RAMpe: "Firmware aktualisieren" mit Feld für die Datei und Knopf "Datei hochladen"](../bilder/allgemein/rampe-seite.png)
 

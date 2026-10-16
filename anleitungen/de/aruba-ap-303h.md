@@ -10,7 +10,7 @@ level_text: Serielles Kabel
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: bfed6935
+daten_stand: 9936ce50
 vorlage_stand: 565e8935
 ---
 

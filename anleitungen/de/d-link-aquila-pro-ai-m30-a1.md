@@ -11,8 +11,8 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m30-a1-recovery.bin
 grundlagen: [browser-https, curl, feste-ip]
-daten_stand: bfed6935
-vorlage_stand: 85ca2180
+daten_stand: 9936ce50
+vorlage_stand: 578b9af5
 ---
 
 # D-Link AQUILA PRO AI M30 A1: Freifunk-Firmware installieren
@@ -93,17 +93,24 @@ wirklich über das Kabel spricht.
    Antwort des Routers auf und kann danach weg. Mehr unter
    [curl benutzen](grundlagen/curl.md).
 
-7. **Warten.** curl überträgt die Datei und wartet dann weiter, während die
-   Recovery schreibt. Die LED bleibt dabei wie in Schritt 4. Bis zum
-   Neustart vergehen meist einige Minuten, es kann aber auch über 10 Minuten dauern.
-   **Nicht abbrechen, Strom nicht ziehen.**
-   Am Ende zeigt curl, wie viel ankam. Geklappt hat es bei
-   **etwa 52,4 Millionen Bytes**. Steht da 0, kam nichts an (siehe "Wenn
-   etwas schiefgeht").
+7. **Warten.** curl zeigt beim Hochladen eine Fortschrittsanzeige. Bei 100 %
+   ist die Datei drüben, das dauert meist nur Sekunden. Danach schreibt die
+   Recovery sie in den Speicher.
+   Bis zum Neustart vergehen meist einige Minuten, es kann aber auch über 10 Minuten dauern.
+   **Strom nicht ziehen.**
+   Oft kommt curl danach nicht von selbst zurück, obwohl alles geklappt hat.
+   Dann beende es mit **Strg+C** (am Mac ctrl+C), aber erst, wenn der Router
+   neu startet.
+   Kommt curl von selbst zurück, zeigt es in der letzten Zeile, wie viel
+   ankam. Geklappt hat es bei **etwa 52,4 Millionen Bytes**. Steht da 0, kam
+   nichts an (siehe "Wenn etwas schiefgeht").
 
 8. **Die RAMpe.** Nach dem Neustart blinkt die LED gleichmäßig, etwa einmal pro Sekunde. Stell den Rechner
-   wieder auf "automatisch" (DHCP) und öffne `http://192.168.1.1`. Es
-   erscheint die Seite "Firmware aktualisieren".
+   wieder auf "automatisch" (DHCP) und öffne
+   `http://192.168.1.1/cgi-bin/config`. Es erscheint die Seite "Firmware
+   aktualisieren". Kommt "Not Found", hat sich der Browser eine Seite von
+   früher gemerkt: Tipp die Adresse vollständig ein, mit `/cgi-bin/config` am
+   Ende.
    Die RAMpe bleibt auf dem Router, bis die Freifunk-Firmware sie ersetzt.
    Startet der Router zwischendurch neu, ist das harmlos: Seite einfach
    wieder aufrufen.
@@ -134,10 +141,11 @@ wirklich über das Kabel spricht.
 
 ## Woran du erkennst, dass es geklappt hat
 
-- curl meldet am Ende **etwa 52,4 Millionen Bytes**. Wie lange das gedauert
-  hat, ist egal, es zählt die Menge.
-- Nach dem Neustart blinkt die LED gleichmäßig, etwa einmal pro Sekunde, und unter `http://192.168.1.1`
-  steht "Firmware aktualisieren".
+- curl hat beim Hochladen 100 % erreicht. Kommt es von selbst zurück,
+  meldet es **etwa 52,4 Millionen Bytes**. Wie lange das gedauert hat, ist
+  egal, es zählt die Menge.
+- Nach dem Neustart blinkt die LED gleichmäßig, etwa einmal pro Sekunde, und unter
+  `http://192.168.1.1/cgi-bin/config` steht "Firmware aktualisieren".
 - Die Erfolgsmeldung der D-Link-Seite zählt nicht, sie erscheint immer.
 
 ## Wenn etwas schiefgeht
@@ -145,6 +153,8 @@ wirklich über das Kabel spricht.
 - **curl meldet "Failed to connect", HTTP 000 und 0 Bytes.** Die Recovery war
   nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
   Router noch einmal in die Recovery bringen (Schritt 4).
+- **curl steht bei 100 % und kommt nicht zurück.** Das ist normal. Sobald
+  der Router neu startet, curl mit Strg+C beenden (Schritt 7).
 - **Nach dem Upload startet wieder die normale D-Link-Firmware.** Die Datei
   ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
   Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.

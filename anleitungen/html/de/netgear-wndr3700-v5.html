@@ -16,7 +16,7 @@
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:rampe_image" content="gluon-rampe-20261015-netgear-wndr3700-v5-factory.img">
 <meta name="anleitung:grundlagen" content="browser-https, nmrpflash">
-<meta name="anleitung:daten_stand" content="bfed6935">
+<meta name="anleitung:daten_stand" content="9936ce50">
 <meta name="anleitung:vorlage_stand" content="02b61429">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
@@ -131,8 +131,10 @@ ausprobiert</strong>; die RAMpe selbst läuft auf anderen Geräten.</p>
 <p>Benenne die RAMpe in firmware.img um und schick sie in Schritt 4 mit nmrpflash statt der OpenWrt-Datei.</p>
 </li>
 <li>
-<p>Nach dem Neustart öffne <code>http://192.168.1.1</code>. Es erscheint die Seite
-&quot;Firmware aktualisieren&quot; der RAMpe. Startet der Router zwischendurch neu,
+<p>Nach dem Neustart öffne <code>http://192.168.1.1/cgi-bin/config</code>. Es erscheint
+die Seite &quot;Firmware aktualisieren&quot; der RAMpe. Kommt &quot;Not Found&quot;, hat sich
+der Browser eine Seite von früher gemerkt: Tipp die Adresse vollständig
+ein, mit <code>/cgi-bin/config</code> am Ende. Startet der Router zwischendurch neu,
 einfach die Seite wieder aufrufen.</p>
 <p><img src="../bilder/allgemein/rampe-seite.png" alt="Die Seite der RAMpe: &quot;Firmware aktualisieren&quot; mit Feld für die Datei und Knopf &quot;Datei hochladen&quot;" /></p>
 </li>
