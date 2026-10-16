@@ -8,19 +8,17 @@ sprache: de
 level: L1
 level_text: Zwei Schritte im Browser
 risiko: normal
-status: ungeprüft
+status: erprobt
+erprobt_am: 2026-10-16
+erprobt_mit: Gluon 2025.1 (26100702bro), vorher TOTOLINK-Firmware V9.1.0u.6118 über den Notfall-Modus
 grundlagen: [browser-https, feste-ip]
-daten_stand: 7e377f68
+daten_stand: bf1e9ed3
 vorlage_stand: 565e8935
 ---
 
 # TOTOLINK X5000R: Freifunk-Firmware installieren
 
-> **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
-> bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
-> ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
-> klappt.
-> Den Umweg über die ältere TOTOLINK-Firmware kennen wir nur aus Berichten im OpenWrt-Forum.
+> **Am Gerät erprobt** am 16.10.2026 mit `Gluon 2025.1 (26100702bro), vorher TOTOLINK-Firmware V9.1.0u.6118 über den Notfall-Modus`.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
@@ -136,6 +134,7 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - abgeleitet: webui-upload (Schritte (Normalweg))
 - geprüft (Weg ab Werk, Schritte (Normalweg), Datei)
 - geprüft: Commit 23be410 (Schritte (Normalweg), Programm)
+- geprüft: Testplatz grw 16.10.2026 (Sichtbare Zeichen, Typenschild/Verwechslung, Notweg)
 - geprüft: forum.openwrt.org t/113153 #1, #3 (2021-11-28); t/124500 #1, #3 (2022-04-05) (Bedingung an die Herstellerfirmware)
 - geprüft: geladen und gehasht 15.10.2026 (Bedingung an die Herstellerfirmware)
 - Geräteeintrag: 23be410b3d1267c752bf9f6e5c8f5a514dc562c4
