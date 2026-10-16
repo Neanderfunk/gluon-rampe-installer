@@ -14652,7 +14652,12 @@
    "rampe_rezept": "devices/d-link-aquila-pro-ai-m30-a1.sh: `-recovery.bin` (D-Link-Header DLK6E6110001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, Hardware-Test offen",
    "quelle": "OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f",
    "anleitung": "anleitungen/de/d-link-aquila-pro-ai-m30-a1.md; https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/",
-   "erprobt": {},
+   "erprobt": {
+    "am": "2026-10-16",
+    "mit": "gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin",
+    "weg": "D-Link-Recovery (LED rot blinkend), curl-Upload nach Anleitung, RAMpe, dann sysupgrade auf Gluon 2025.1 26100702bro; MAC danach korrekt (Einzelgerät, Odm-Eintrag 0x81)",
+    "beleg": "Testplatz grw (M30 aus dem Dumbrack), router-werkstatt docs/validierung/d-link-m30-a1-rampe-20261015-2026-10-16.md"
+   },
    "werte": {
     "recovery_ip": "192.168.200.1",
     "led_recovery": "rot blinkt",
@@ -14660,21 +14665,23 @@
     "upload_pfad": "/upload.cgi",
     "rampe_ip": "192.168.1.1",
     "rampe_bytes": "etwa 52,4 Millionen",
-    "led_rampe": "blinkt die LED gleichmäßig, etwa einmal pro Sekunde",
+    "led_rampe": "blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde",
     "seitentitel": "",
     "herstellerseite_gleiche_ip": false,
     "anschluss": "",
     "recovery_wartezeit": "",
     "rechner_ip": "192.168.200.10",
     "dauer_neustart": "einige Minuten",
-    "dauer_lang": "über 10 Minuten",
+    "dauer_lang": "",
     "dauer_gluon": "wenige Minuten",
     "datei_beispiel": "gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin",
     "rampe_datei": "gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin",
     "taste_hinweis": "",
     "led_falsch": "",
     "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "led_schreibt": "leuchtet die LED ruhig rot, etwas schwächer",
+    "led_start": "blinkt die LED schnell weiß"
    }
   },
   {
