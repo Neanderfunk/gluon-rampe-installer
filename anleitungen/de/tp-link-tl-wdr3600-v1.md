@@ -47,8 +47,8 @@ Aufkleber genau mit "TP-Link TL-WDR3600 v1", bevor du anfängst.
 - **Herstellerfirmware:** Bei uns hat die TP-Link-Firmware 3.14.3
   (Build 150518) das factory-Image direkt angenommen. Laut OpenWrt sperrt
   der spätere Build 151104 fremde Firmware. Lehnt die Oberfläche das Image
-  ab, spiel zuerst über TFTP die Version 150518 ein (unten, "Zurück zur
-  TP-Link-Firmware").
+  ab, nimm den Weg per TFTP (unten unter "Notfall"): Der WDR3600 holt sich
+  das factory-Image dann selbst, ganz ohne die TP-Link-Oberfläche.
 - **Dateiname:** Nimm die Datei mit ihrem Originalnamen, umbenennen ist
   nicht nötig. Hast du sie mehrfach heruntergeladen und heißt sie jetzt
   `…(1).bin` oder `…[1].bin`, benenne sie zurück. Bei zu langem Namen meldet
