@@ -10,15 +10,15 @@ level_text: Besondere Programme
 risiko: normal
 status: erprobt
 erprobt_am: 2026-10-15
-erprobt_mit: Gluon 2023.2.6 (26091920sta), U-Boot-Teil aus Archer C50(EU)_V4_250117
+erprobt_mit: Gluon 2023.2.6 (26091920sta), boot.bin über die TP-Link-Oberfläche, U-Boot-Teil aus Archer_C50v4_EU_0.9.1_0.2_up_boot.bin
 grundlagen: [feste-ip, tftp-server]
-daten_stand: c21be24c
+daten_stand: 7420361a
 vorlage_stand: 8ebdf8cb
 ---
 
 # TP-Link Archer C50 v4: Freifunk-Firmware installieren
 
-> **Am Gerät erprobt** am 15.10.2026 mit `Gluon 2023.2.6 (26091920sta), U-Boot-Teil aus Archer C50(EU)_V4_250117`.
+> **Am Gerät erprobt** am 15.10.2026 mit `Gluon 2023.2.6 (26091920sta), boot.bin über die TP-Link-Oberfläche, U-Boot-Teil aus Archer_C50v4_EU_0.9.1_0.2_up_boot.bin`.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
@@ -46,7 +46,7 @@ mit einer halben Stunde.
   Netzwerkkabel
 - die **TP-Link-Firmware** für genau dieses Modell und diese Version, von der
   [Download-Seite bei TP-Link](https://www.tp-link.com/de/support/download/archer-c50/v4/). Bei uns hat es mit der TP-Link-Firmware
-  `Archer C50(EU)_V4_250117` geklappt.
+  `Archer_C50v4_EU_0.9.1_0.2_up_boot.bin (TP-Link-Download vom Januar 2025)` geklappt.
 - die Freifunk-Firmware deiner Community für den TP-Link Archer C50 v4: im
   Firmware-Selector unter "Wähle Deine Installationsart" der Knopf
   **Upgrade** (die Datei endet auf `-sysupgrade.bin`). **Nicht allein

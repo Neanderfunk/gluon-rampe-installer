@@ -10,7 +10,7 @@ level_text: Serielles Kabel
 risiko: normal
 status: ungeprüft
 grundlagen: [feste-ip, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: c21be24c
+daten_stand: 7420361a
 vorlage_stand: 565e8935
 ---
 
