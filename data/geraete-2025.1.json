@@ -913,7 +913,7 @@
     "Moduswahlschalter oben auf Router/AP stellen, nicht auf Repeater [geprüft: Wiki toh:d-link:dir-505]",
     "Altes OpenWrt-factory (LEDE 17.01.7 dir-505-a1-squashfs-factory.bin) und das Gluon-2025.1-sysupgrade herunterladen [geprüft: archive.openwrt.org sha256sums]",
     "Rechner per Kabel an den Ethernet-Port, D-Link-Oberfläche http://192.168.0.1 (admin ohne Passwort), Maintenance → Firmware, LEDE-factory hochladen, etwa 150 s [geprüft: D-Link-FAQ DIR-505 Firmware-Upgrade]; dass die D-Link-Oberfläche das LEDE-factory nimmt [abgeleitet: Wiki toh:d-link:dir-505; am Gerät nicht geprüft, es lief keine D-Link-Firmware]",
-    "Nach dem Neustart LuCI unter http://192.168.1.1, System → Backup / Flash Firmware, \"Keep settings\" aus, \"Flash image...\", \"Proceed\" [geprüft: LuCI-Quelltext lede-17.01]; der Schritt aus LEDE ist am Gerät nicht geprüft [abgeleitet]; aus ar71xx-Gluon [geprüft: Test Neanderfunk 17.10.2026]",
+    "Nach dem Neustart LuCI unter http://192.168.1.1, System → Backup / Flash Firmware, \"Keep settings\" aus, \"Flash image...\", \"Proceed\" [geprüft: LuCI-Quelltext lede-17.01]; aus LEDE [abgeleitet: am Gerät nicht geprüft]; aus ar71xx-Gluon [geprüft: Test Neanderfunk 17.10.2026]",
     "Nach dem Flash ist der einzige Ethernet-Port Uplink/WAN [geprüft: Test Neanderfunk 17.10.2026]"
    ],
    "warnung": "D-Link-Recovery (Notfall-Seite 192.168.0.1) nicht verwenden: an einem A2 mit PCT-Zeichen meldete sie \"Upgrade successfully!\", schrieb aber nichts, getestet mit Sackgasse-factory, LEDE 17.01.7 und D-Link FW110B02 [geprüft: Test Neanderfunk 17.10.2026]",
