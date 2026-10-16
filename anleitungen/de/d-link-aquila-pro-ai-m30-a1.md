@@ -8,19 +8,18 @@ sprache: de
 level: L4
 level_text: Netzwerkwerkzeuge
 risiko: normal
-status: ungeprüft
+status: erprobt
+erprobt_am: 2026-10-16
+erprobt_mit: gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m30-a1-recovery.bin
 grundlagen: [browser-https, curl, feste-ip]
-daten_stand: 9936ce50
+daten_stand: 5e11c671
 vorlage_stand: 398ce57c
 ---
 
 # D-Link AQUILA PRO AI M30 A1: Freifunk-Firmware installieren
 
-> **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
-> bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
-> ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
-> klappt.
+> **Am Gerät erprobt** am 16.10.2026 mit `gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin`.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
@@ -95,19 +94,19 @@ wirklich über das Kabel spricht.
 
 7. **Warten.** curl zeigt beim Hochladen eine Fortschrittsanzeige. Bei 100 %
    ist die Datei drüben, das dauert meist nur Sekunden. Danach schreibt die
-   Recovery sie in den Speicher.
-   Bis zum Neustart vergehen meist einige Minuten, es kann aber auch über 10 Minuten dauern.
+   Recovery sie in den Speicher; dabei leuchtet die LED ruhig rot, etwas schwächer.
+   Bis zum Neustart vergehen meist einige Minuten.
    **Strom nicht ziehen.**
    Oft kommt curl danach nicht von selbst zurück, obwohl alles geklappt hat.
    Dann beende es mit **Strg+C** (am Mac ctrl+C), aber erst, wenn der Router
-   neu startet.
+   neu startet (beim Neustart blinkt die LED schnell weiß).
    Wartest du stattdessen, kommt curl nach einiger Zeit (bei uns gut 10
    Minuten) von selbst zurück, meist mit "Recv failure: Connection timed
    out". Das ist in Ordnung. Entscheidend ist die letzte Zeile, sie
    zeigt, wie viel ankam. Geklappt hat es bei **etwa 52,4 Millionen Bytes**.
    Steht da 0, kam nichts an (siehe "Wenn etwas schiefgeht").
 
-8. **Die RAMpe.** Nach dem Neustart blinkt die LED gleichmäßig, etwa einmal pro Sekunde. Stell den Rechner
+8. **Die RAMpe.** Nach dem Neustart blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde. Stell den Rechner
    wieder auf "automatisch" (DHCP) und öffne
    `http://192.168.1.1/cgi-bin/config`. Es erscheint die Seite "Firmware
    aktualisieren". Kommt "Not Found", hat sich der Browser eine Seite von
@@ -146,7 +145,7 @@ wirklich über das Kabel spricht.
 - curl hat beim Hochladen 100 % erreicht. Kommt es von selbst zurück,
   meldet es **etwa 52,4 Millionen Bytes**. Wie lange das gedauert hat, ist
   egal, es zählt die Menge.
-- Nach dem Neustart blinkt die LED gleichmäßig, etwa einmal pro Sekunde, und unter
+- Nach dem Neustart blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde, und unter
   `http://192.168.1.1/cgi-bin/config` steht "Firmware aktualisieren".
 - Die Erfolgsmeldung der D-Link-Seite zählt nicht, sie erscheint immer.
 

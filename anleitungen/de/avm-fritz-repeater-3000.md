@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-avm-fritz-repeater-3000-initramfs-uImage.itb
 grundlagen: [avm-eva, feste-ip, tftp-server]
-daten_stand: 9936ce50
+daten_stand: 5e11c671
 vorlage_stand: 578b9af5
 ---
 

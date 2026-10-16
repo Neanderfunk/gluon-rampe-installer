@@ -10,7 +10,7 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [nmrpflash]
-daten_stand: 9936ce50
+daten_stand: 5e11c671
 vorlage_stand: 02b61429
 ---
 
