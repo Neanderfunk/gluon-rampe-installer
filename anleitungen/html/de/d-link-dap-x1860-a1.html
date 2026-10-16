@@ -16,7 +16,7 @@
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="curl, feste-ip">
 <meta name="anleitung:daten_stand" content="9936ce50">
-<meta name="anleitung:vorlage_stand" content="578b9af5">
+<meta name="anleitung:vorlage_stand" content="398ce57c">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -98,7 +98,10 @@ Bis zum Neustart vergehen meist einige Minuten.
 <strong>Strom nicht ziehen.</strong>
 Oft kommt curl danach nicht von selbst zurück, obwohl alles geklappt hat.
 Dann beende es mit <strong>Strg+C</strong> (am Mac ctrl+C), aber erst, wenn der Router
-neu startet.</p>
+neu startet.
+Wartest du stattdessen, kommt curl nach einiger Zeit (bei uns gut 10
+Minuten) von selbst zurück, meist mit &quot;Recv failure: Connection timed
+out&quot;. Das ist in Ordnung.</p>
 </li>
 <li>
 <p><strong>Fertig.</strong> Nach dem Neustart startet die Freifunk-Firmware deiner
@@ -117,8 +120,10 @@ deine Community.</p>
 <li><strong>curl meldet &quot;Failed to connect&quot;, HTTP 000 und 0 Bytes.</strong> Die Recovery war
 nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
 Router noch einmal in die Recovery bringen (Schritt 4).</li>
-<li><strong>curl steht bei 100 % und kommt nicht zurück.</strong> Das ist normal. Sobald
-der Router neu startet, curl mit Strg+C beenden (Schritt 7).</li>
+<li><strong>curl steht bei 100 % und kommt nicht zurück, oder meldet nach langer
+Zeit &quot;Recv failure: Connection timed out&quot;.</strong> Das ist normal: Der Router hat
+neu gestartet, ohne curl Bescheid zu geben. curl darf mit Strg+C beendet
+werden, sobald der Router neu startet (Schritt 7).</li>
 <li><strong>Nach dem Upload startet wieder die normale D-Link-Firmware.</strong> Die Datei
 ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
 Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.</li>

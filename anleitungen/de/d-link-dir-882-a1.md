@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 grundlagen: [curl, feste-ip]
 daten_stand: 9936ce50
-vorlage_stand: 578b9af5
+vorlage_stand: 398ce57c
 ---
 
 # D-Link DIR-882 A1: Freifunk-Firmware installieren
@@ -98,6 +98,9 @@ wirklich über das Kabel spricht.
    Oft kommt curl danach nicht von selbst zurück, obwohl alles geklappt hat.
    Dann beende es mit **Strg+C** (am Mac ctrl+C), aber erst, wenn der Router
    neu startet.
+   Wartest du stattdessen, kommt curl nach einiger Zeit (bei uns gut 10
+   Minuten) von selbst zurück, meist mit "Recv failure: Connection timed
+   out". Das ist in Ordnung.
 
 8. **Fertig.** Nach dem Neustart startet die Freifunk-Firmware deiner
    Community: je nach Community zuerst mit einer Einrichtungsseite unter
@@ -114,8 +117,10 @@ wirklich über das Kabel spricht.
 - **curl meldet "Failed to connect", HTTP 000 und 0 Bytes.** Die Recovery war
   nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
   Router noch einmal in die Recovery bringen (Schritt 4).
-- **curl steht bei 100 % und kommt nicht zurück.** Das ist normal. Sobald
-  der Router neu startet, curl mit Strg+C beenden (Schritt 7).
+- **curl steht bei 100 % und kommt nicht zurück, oder meldet nach langer
+  Zeit "Recv failure: Connection timed out".** Das ist normal: Der Router hat
+  neu gestartet, ohne curl Bescheid zu geben. curl darf mit Strg+C beendet
+  werden, sobald der Router neu startet (Schritt 7).
 - **Nach dem Upload startet wieder die normale D-Link-Firmware.** Die Datei
   ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
   Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.

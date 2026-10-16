@@ -14,7 +14,7 @@ erprobt_mit: gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m60-a1-recovery.bin
 grundlagen: [browser-https, curl, feste-ip]
 daten_stand: 9936ce50
-vorlage_stand: 578b9af5
+vorlage_stand: 398ce57c
 ---
 
 # D-Link AQUILA PRO AI M60 A1: Freifunk-Firmware installieren
@@ -108,9 +108,11 @@ wirklich über das Kabel spricht.
    Oft kommt curl danach nicht von selbst zurück, obwohl alles geklappt hat.
    Dann beende es mit **Strg+C** (am Mac ctrl+C), aber erst, wenn der Router
    neu startet (beim Neustart blinkt die LED schnell weiß).
-   Kommt curl von selbst zurück, zeigt es in der letzten Zeile, wie viel
-   ankam. Geklappt hat es bei **etwa 52,4 Millionen Bytes**. Steht da 0, kam
-   nichts an (siehe "Wenn etwas schiefgeht").
+   Wartest du stattdessen, kommt curl nach einiger Zeit (bei uns gut 10
+   Minuten) von selbst zurück, meist mit "Recv failure: Connection timed
+   out". Das ist in Ordnung. Entscheidend ist die letzte Zeile, sie
+   zeigt, wie viel ankam. Geklappt hat es bei **etwa 52,4 Millionen Bytes**.
+   Steht da 0, kam nichts an (siehe "Wenn etwas schiefgeht").
 
 8. **Die RAMpe.** Nach dem Neustart blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde. Stell den Rechner
    wieder auf "automatisch" (DHCP) und öffne
@@ -162,8 +164,10 @@ wirklich über das Kabel spricht.
 - **curl meldet "Failed to connect", HTTP 000 und 0 Bytes.** Die Recovery war
   nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
   Router noch einmal in die Recovery bringen (Schritt 4).
-- **curl steht bei 100 % und kommt nicht zurück.** Das ist normal. Sobald
-  der Router neu startet, curl mit Strg+C beenden (Schritt 7).
+- **curl steht bei 100 % und kommt nicht zurück, oder meldet nach langer
+  Zeit "Recv failure: Connection timed out".** Das ist normal: Der Router hat
+  neu gestartet, ohne curl Bescheid zu geben. curl darf mit Strg+C beendet
+  werden, sobald der Router neu startet (Schritt 7).
 - **Nach dem Upload startet wieder die normale D-Link-Firmware.** Die Datei
   ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
   Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.
