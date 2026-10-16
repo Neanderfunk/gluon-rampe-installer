@@ -357,6 +357,28 @@ Deploy):
 - Langfristig (adorfer 16.10.): alle RAMpe-Bauten als ein Skript im Container
   auf dem Buildhost, dazu ein Strang auf Gluon v2022.1 für den WS-AP3825i
   (Punkt 8 unter "Offen").
+- WS-AP3825i/mpc85xx: Der Loader-Fix ist seit 16.10. als eigener Patch in
+  gluon-patches-hardware (`188dff9`, `kernel/mpc85xx-simpleimage-loader`).
+  Die RAMpe für mpc85xx muss damit neu gebaut werden (über
+  `RAMPE_HW_PATCHES`), der Strang auf v2022.1 ist dann womöglich unnötig.
+- **Am Gerät erprobt (Testplatz grw, adorfer und Supernode-Betrieb,
+  16.10.):** D-Link M60 (drittes Gerät) und M30 mit RAMpe `20261015`, je
+  Recovery, curl-Upload nach Anleitung, RAMpe, Gluon `26100702bro`. Die
+  "~11 Minuten" bis curl zurückkommt sind nur das TCP-Timeout der toten
+  Verbindung (`Recv failure`, rc 56); der M60 startete nach 18 s neu, die
+  RAMpe stand nach ~1 min.
+- **`/cgi-bin/luci` leitet auf `/cgi-bin/config`** (Overlay
+  `lib/gluon/config-mode/www/cgi-bin/luci`, ab der nächsten RAMpe-Ausgabe).
+  Firefox landete nach einer OpenWrt-Oberfläche unter 192.168.1.1 auf
+  `/cgi-bin/luci/` und bekam "Not Found", wahrscheinlich durch die
+  Autovervollständigung der Adressleiste (auch privat, Gegenprobe am
+  X5000R-Bootloader). QEMU-Test prüft drei LuCI-Pfade, bestanden mit einem
+  Testbau `20261016luci` (nicht veröffentlicht).
+- Offen: Die RAMpe auf M30/M60 zeigt beim M60 die alte falsche Knoten-ID
+  `0600dceae7af` (Odm 0x81). Der Odm-Parser aus gluon-patches-hardware
+  (`devices/dlink-aquila-odm-mac`) fehlt im RAMpe-Bau. Folgen hat das nur,
+  wenn mehrere solche RAMpes gleichzeitig am selben Netz hängen (gleiche
+  MAC). Beim Einzel-M30 mit Odm-Eintrag 0x81 stimmt die MAC.
 
 ## Idee: EdgeRouter X/X-SFP in einem Schritt (15.10.2026, ungeprüft)
 
