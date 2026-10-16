@@ -13642,7 +13642,7 @@
    "zeichen": "nach dem Hochladen zeigt die Cudy-Oberfläche eine MD5-Prüfsumme, die muss zur Spiegel-Tabelle passen [geprüft: Neanderfunk-Notiz]; Schritt 1 fertig, wenn http://192.168.1.1 die OpenWrt-Oberfläche (LuCI) zeigt [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]; mehrfarbige LED: Reset beim Einschalten orange/rot im Wechsel; beim Schreiben der Zwischenfirmware rot/grün/blau/orange im Wechsel, dann schnelles buntes Blinken, fertig = violett-weiß dauerhaft [geprüft: Test Neanderfunk 17.10.2026]",
    "uebertragung": "webui-upload: Stock-UI 192.168.10.1 (Passwort admin), danach LuCI 192.168.1.1",
    "anschluss": "nur eine Netzwerkbuchse (2.5G, PoE); unter Gluon ist sie Uplink/WAN, der Knoten holt per DHCP eine Adresse und baut den VPN-Tunnel auf [geprüft: Test Neanderfunk 17.10.2026]",
-   "adressen": "Cudy-Oberfläche http://192.168.10.254 (Management-Adresse laut Typenschild, auch cudyap.net), nicht 192.168.10.1 [geprüft: Test Neanderfunk 17.10.2026]; danach OpenWrt 192.168.1.1",
+   "adressen": "AP3000 vergibt ab Werk keine Adressen, er ist nur DHCP-Client und nimmt nach etwa einer Minute die Ausweichadresse 192.168.10.254 (Management-Adresse laut Typenschild, auch cudyap.net) [geprüft: Mitschnitt Test Neanderfunk 17.10.2026]; Rechner fest 192.168.10.100; danach LuCI der Zwischenfirmware unter 192.168.1.1, Rechner vorsichtshalber fest 192.168.1.100 [abgeleitet: ob die Zwischenfirmware DHCP vergibt, offen; am Testplatz war 192.168.1.88 fest eingestellt]",
    "programm": "Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]",
    "zugang": "LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]",
    "datei": "Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner AP3000_V1.0 (Datei kam vom Cudy-Support) [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]",
@@ -13652,12 +13652,12 @@
     "werkzeug": "browser",
     "image": "factory",
     "zwischenfirmware": "ja",
-    "dhcp": "ja",
+    "dhcp": "nein",
     "gehaeuse_oeffnen": "-",
     "l8": "nein"
    },
    "risiko": "normal",
-   "level_grund": "",
+   "level_grund": "feste Adresse am Rechner nötig: der AP3000 vergibt ab Werk keine Adressen (Mitschnitt Test Neanderfunk 17.10.2026)",
    "werkzeug": "Cudy-Zwischenfirmware",
    "verwechslung": "nicht mit AP3000 Outdoor oder AP3000 Wall verwechseln, je eigene Zwischenfirmware [geprüft: Spiegel-Ordner]",
    "stock_bedingung": "nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ \"OpenWrt Software Download\"]",
@@ -13699,7 +13699,10 @@
     "eine_buchse": true,
     "led_zwischen": "Die LED wechselt erst zwischen Rot, Grün, Blau und Orange, blinkt dann schnell in mehreren Farben und leuchtet am Ende dauerhaft violett-weiß.",
     "rueckweg_ab_version": "2.4.7",
-    "rueckweg_led": "die LED abwechselnd orange und rot blinkt"
+    "rueckweg_led": "die LED abwechselnd orange und rot blinkt",
+    "rechner_ip": "192.168.10.100",
+    "cudy_warten": "etwa eine Minute",
+    "luci_rechner_ip": "192.168.1.100"
    }
   },
   {
