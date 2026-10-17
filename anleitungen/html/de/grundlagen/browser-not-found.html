@@ -24,19 +24,25 @@ OpenWrt-Oberfläche unter dieser Adresse offen hattest, zum Beispiel eine
 Zwischenfirmware. Der Browser merkt sich die alte Seite und springt von
 selbst dorthin, obwohl auf dem Router jetzt etwas anderes läuft. Am Router
 liegt es nicht.</p>
+<h2>Was nicht hilft</h2>
+<p>Bei uns hat in einigen Fällen nichts von dem geholfen, was man sonst bei
+einer veralteten Seite macht: weder mehrfaches Drücken von Strg+F5 noch der
+Knopf &quot;Neu laden&quot;, nicht einmal ein neues privates Fenster. Der Browser
+landete immer wieder auf <code>cgi-bin/luci</code>. Verlier damit keine Zeit.</p>
 <h2>Was hilft</h2>
-<p>Neu laden, Strg+F5 und ein privates Fenster helfen meist <strong>nicht</strong>. Diese
-Wege gehen:</p>
 <ul>
 <li><strong>Gluon-RAMpe und Einrichtungsseite der Freifunk-Firmware:</strong> Tipp die
 Adresse vollständig ein, mit <code>/cgi-bin/config</code> am Ende:
 <code>http://192.168.1.1/cgi-bin/config</code>.</li>
 <li><strong>Notfall-Seite im Bootloader:</strong> Versuch <code>http://192.168.1.1/index.html</code>.
 Beim TOTOLINK X5000R hat das geklappt.</li>
-<li><strong>Immer:</strong> Nimm einen anderen Browser, zum Beispiel Edge unter Windows
-oder Safari am Mac, wenn du sonst Firefox oder Chrome benutzt. Wer nur
-Firefox hat: Unter <code>about:profiles</code> lässt sich ein neues, leeres Profil
-anlegen und starten. Damit ist der Browser wieder frisch.</li>
+<li><strong>Sonst: ein anderer Browser oder ein leeres Browserprofil.</strong> Das ist
+wirklich so gemeint, bei uns hat am Ende nur das geholfen. Nimm einen
+Browser, mit dem du die Router-Seite vorher noch nicht geöffnet hattest,
+zum Beispiel Edge unter Windows oder Safari am Mac, wenn du sonst Firefox
+oder Chrome benutzt. Wer nur Firefox hat, legt ein neues, leeres Profil
+an: <code>about:profiles</code> in die Adresszeile eingeben, ein neues Profil
+anlegen und es starten. Ein privates Fenster ist dafür kein Ersatz.</li>
 </ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
