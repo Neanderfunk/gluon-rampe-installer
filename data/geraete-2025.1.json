@@ -18632,7 +18632,7 @@
    "gluon_broken": false,
    "kat": "K0",
    "familie": "k0-webui",
-   "weg": "factory im Stock-Web-UI [geprüft]",
+   "weg": "factory im Stock-Web-UI [geprüft]; aus echtem Stock 1.0.11 (HW V1.20) über Advanced → System → Firmware Update → Local Update [geprüft: Test Neanderfunk 17.10.2026]",
    "schritte": [
     "Typenschild prüfen: MR70X oder MR1800X, Hardware 1.0.0 [geprüft: tplink-safeloader MR70X]",
     "Gluon-factory-Image bereitlegen [geprüft]",
@@ -18669,7 +18669,7 @@
    "stock_teile": "-",
    "ram": "128 MB",
    "dauer": "",
-   "fehlerbild": "\"factory boot check integer flag is not 1\" auf der Konsole: Byte 0xfe3b09 (extra-para) steht auf 00, U-Boot startet dann nie den Kernel, nur die Recovery [geprüft: Test Neanderfunk 17.10.2026]; wodurch das Flag auf 00 ging, ist offen; nach der Reparatur 8 Kaltstarts mit Gluon 2025.1, Flag blieb 01, einen Boot-Zähler gibt es also nicht [geprüft: Test Neanderfunk 17.10.2026]",
+   "fehlerbild": "\"factory boot check integer flag is not 1\" auf der Konsole: Byte 0xfe3b09 (extra-para) steht auf 00, U-Boot startet dann nie den Kernel, nur die Recovery [geprüft: Test Neanderfunk 17.10.2026]; wodurch das Flag auf 00 ging, ist offen; nach der Reparatur 8 Kaltstarts mit Gluon 2025.1, Flag blieb 01, einen Boot-Zähler gibt es also nicht [geprüft: Test Neanderfunk 17.10.2026]; fragt die Mercusys-Oberfläche nach einem alten Passwort, liegen Einstellungen eines Vorbesitzers drin: Reset 10 s im laufenden Betrieb halten (nicht beim Einstecken), so sagt es die Oberfläche selbst unter \"Forgot Password?\" [geprüft: Test Neanderfunk 17.10.2026]; die Mercusys-Firmware setzt das Boot-Flag nach erfolgreichem Flashen selbst auf 01 (extra-para danach \"01 01\", im Image \"01 00\") [geprüft: Test Neanderfunk 17.10.2026]",
    "notweg": "seriell (Gehäuse auf, UART J1 innen, 115200, 3,3 V nicht anschließen): U-Boot-Shell mit Taste 4, initramfs per tftpboot 0x82000000 …; bootm 0x82000000 (serverip 192.168.1.5), dort sysupgrade -n, dann Sektor 0xfe0000 mit Byte 0x3b09 = 01 neu schreiben: spi erase fe0000 10000 plus 167 x spi write (spi write kann nur 1 -> 0), Werkzeug router-werkstatt werkzeug/uboot-spi-sektor.py [geprüft: Test Neanderfunk 17.10.2026] [Quelle: forum.openwrt.org t/160069 #4]; U-Boot 1.1.3 (21.09.2023) meldet \"flash manufacture id: 20, device id 40 18 / un-recognized chip ID\", liest und schreibt den Flash trotzdem korrekt [geprüft: Test Neanderfunk 17.10.2026]",
    "rueckweg": "Nach einer Installation von OpenWrt oder Gluon per factory gibt es keinen einfachen Weg zurück: Die Web-Recovery (Reset beim Einstecken, 192.168.1.1) nimmt dann keine Herstellerfirmware mehr an, weil soft-version @0xfe0800 im OpenWrt-Format steht (\"the firmware software version dismatched\" bei Stock V1.20 1.1.0 und 1.0.11, \"failed to read soft version from flash\" bei Gluon-factory), meldet dem Browser aber immer {\"success\":true,\"errorcode\":\"0\"} [geprüft: Test Neanderfunk 17.10.2026]; Rückweg seriell (Gehäuse auf, UART J1 innen, also L7): in der U-Boot-Shell Sektor 0xfe0000 mit partition-table, soft-version, support-list und profile aus dem 1.0.11-Image neu schreiben (Flag 01), dann von Gluon aus sysupgrade -F -n mit os-image (bis 0x400000 aufgefüllt) und file-system; Werkzeuge router-werkstatt werkzeug/mr70x-stock-zurueck.py und werkzeug/mr70x-uboot-fangen.py, Doku docs/mercusys-mr70x-boot-flag.md [geprüft: Test Neanderfunk 17.10.2026]; nur 1.0.11 geht so, weil die feste mtdparts-Zeile im U-Boot rootfs auf 0x440000 legt (1.1.0: file-system auf 0x3a0000); danach auf 1.1.0 über das normale Mercusys-Update [abgeleitet]; für ein Gerät ab Werk beschreibt der Commit die Web-Recovery (Reset 5-10 s beim Einstecken, Rechner fest 192.168.1.x) [geprüft: Commit 47de2c68]",
    "hw_test": "",
@@ -18677,10 +18677,17 @@
    "rampe_rezept": "",
    "quelle": "47de2c686291e69afc9f443e27e1dfd11ed5fbe7",
    "anleitung": "anleitungen/de/mercusys-mr70x-v1.md",
-   "erprobt": {},
+   "erprobt": {
+    "am": "2026-10-17",
+    "mit": "Gluon 2025.1 (26100702bro), factory über die Mercusys-Oberfläche 1.0.11 (Hardware V1.20)",
+    "weg": "Mercusys 1.0.11 Build 20230921: Werksreset 10 s, Administrator-Passwort anlegen, Quick Setup per EXIT verlassen, Advanced → System → Firmware Update → Local Update mit dem Gluon-factory; Neustart, Erststart startet nach etwa 70 s einmal neu, Knoten nach 81 s mit Gateway",
+    "beleg": "Testplatz grw, router-werkstatt docs/validierung/mercusys-mr70x-v1-2026-10-17.md (14e12e6, letzter Abschnitt)"
+   },
    "werte": {
     "stock_url": "",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "menue": "Advanced → System → Firmware Update → Local Update",
+    "nach_upload": "Der Router startet neu. Beim ersten Start der Freifunk-Firmware startet er nach etwa 70 Sekunden noch einmal von selbst neu, das ist normal."
    }
   },
   {
