@@ -10,7 +10,7 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: d437b1ec
+daten_stand: c152d51e
 vorlage_stand: 33a38da8
 ---
 
