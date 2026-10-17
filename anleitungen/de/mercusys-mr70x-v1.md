@@ -8,18 +8,17 @@ sprache: de
 level: L0.1
 level_text: Hochladen, richtige Datei wählen
 risiko: normal
-status: ungeprüft
+status: erprobt
+erprobt_am: 2026-10-17
+erprobt_mit: Gluon 2025.1 (26100702bro), factory über die Mercusys-Oberfläche 1.0.11 (Hardware V1.20)
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 188d88d2
+daten_stand: fdaf35ba
 vorlage_stand: 33a38da8
 ---
 
 # Mercusys MR70X v1: Freifunk-Firmware installieren
 
-> **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
-> bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
-> ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
-> klappt.
+> **Am Gerät erprobt** am 17.10.2026 mit `Gluon 2025.1 (26100702bro), factory über die Mercusys-Oberfläche 1.0.11 (Hardware V1.20)`.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
@@ -69,13 +68,11 @@ uns). Für Hardware 2 gilt diese Anleitung nicht.
    Melde dich mit den Zugangsdaten vom Aufkleber an, oder leg beim ersten
    Aufruf ein Passwort fest.
 
-4. **Firmware-Update aufrufen.** Such den Menüpunkt für das Firmware-Update. Er heißt je nach
-   Hersteller etwa "Firmware Upgrade", "Firmware-Update" oder "Firmware
-   aktualisieren" und liegt oft unter "System", "System Tools" oder
-   "Verwaltung".
+4. **Firmware-Update aufrufen.** Geh zu **Advanced → System → Firmware Update → Local Update**.
 
 5. **Hochladen.** Wähl das factory-Image aus, starte das Update und
-   bestätige die Rückfragen.
+   bestätige die Rückfragen. Danach zeigt der Browser Der Router startet neu. Beim ersten Start der Freifunk-Firmware startet er nach etwa 70 Sekunden noch einmal von selbst neu, das ist normal.. Das
+   ist normal.
 
 6. **Warten.** Das Gerät schreibt die Firmware und startet neu. Das dauert
    einige Minuten.
@@ -134,6 +131,6 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - abgeleitet (Schritte (Normalweg), Rückweg zur Herstellerfirmware)
 - geprüft (Weg ab Werk, Schritte (Normalweg), Programm, Datei)
 - geprüft: Commit 47de2c68 (Rückweg zur Herstellerfirmware)
-- geprüft: Test Neanderfunk 17.10.2026 (Typenschild/Verwechslung, Fehlerbild, Notweg, Rückweg zur Herstellerfirmware)
+- geprüft: Test Neanderfunk 17.10.2026 (Weg ab Werk, Typenschild/Verwechslung, Fehlerbild, Notweg, Rückweg zur Herstellerfirmware)
 - geprüft: tplink-safeloader MR70X (Schritte (Normalweg), Typenschild/Verwechslung)
 - Geräteeintrag: 47de2c686291e69afc9f443e27e1dfd11ed5fbe7

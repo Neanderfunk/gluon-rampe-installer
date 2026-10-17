@@ -13,19 +13,18 @@
 <meta name="anleitung:level" content="L0.1">
 <meta name="anleitung:level_text" content="Hochladen, richtige Datei wählen">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:status" content="erprobt">
+<meta name="anleitung:erprobt_am" content="2026-10-17">
+<meta name="anleitung:erprobt_mit" content="Gluon 2025.1 (26100702bro), factory über die Mercusys-Oberfläche 1.0.11 (Hardware V1.20)">
 <meta name="anleitung:grundlagen" content="browser-not-found, router-antwortet-nicht">
-<meta name="anleitung:daten_stand" content="188d88d2">
+<meta name="anleitung:daten_stand" content="fdaf35ba">
 <meta name="anleitung:vorlage_stand" content="33a38da8">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Mercusys MR70X v1: Freifunk-Firmware installieren</h1>
 <blockquote>
-<p><strong>Noch nicht am Gerät erprobt.</strong> So beschreiben die Entwickler von OpenWrt
-bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
-ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
-klappt.</p>
+<p><strong>Am Gerät erprobt</strong> am 17.10.2026 mit <code>Gluon 2025.1 (26100702bro), factory über die Mercusys-Oberfläche 1.0.11 (Hardware V1.20)</code>.</p>
 <p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -74,14 +73,12 @@ Melde dich mit den Zugangsdaten vom Aufkleber an, oder leg beim ersten
 Aufruf ein Passwort fest.</p>
 </li>
 <li>
-<p><strong>Firmware-Update aufrufen.</strong> Such den Menüpunkt für das Firmware-Update. Er heißt je nach
-Hersteller etwa &quot;Firmware Upgrade&quot;, &quot;Firmware-Update&quot; oder &quot;Firmware
-aktualisieren&quot; und liegt oft unter &quot;System&quot;, &quot;System Tools&quot; oder
-&quot;Verwaltung&quot;.</p>
+<p><strong>Firmware-Update aufrufen.</strong> Geh zu <strong>Advanced → System → Firmware Update → Local Update</strong>.</p>
 </li>
 <li>
 <p><strong>Hochladen.</strong> Wähl das factory-Image aus, starte das Update und
-bestätige die Rückfragen.</p>
+bestätige die Rückfragen. Danach zeigt der Browser Der Router startet neu. Beim ersten Start der Freifunk-Firmware startet er nach etwa 70 Sekunden noch einmal von selbst neu, das ist normal.. Das
+ist normal.</p>
 </li>
 <li>
 <p><strong>Warten.</strong> Das Gerät schreibt die Firmware und startet neu. Das dauert
@@ -140,7 +137,7 @@ Endnutzer (Hintergrund im OpenWrt-Forum,
 <li>abgeleitet (Schritte (Normalweg), Rückweg zur Herstellerfirmware)</li>
 <li>geprüft (Weg ab Werk, Schritte (Normalweg), Programm, Datei)</li>
 <li>geprüft: Commit 47de2c68 (Rückweg zur Herstellerfirmware)</li>
-<li>geprüft: Test Neanderfunk 17.10.2026 (Typenschild/Verwechslung, Fehlerbild, Notweg, Rückweg zur Herstellerfirmware)</li>
+<li>geprüft: Test Neanderfunk 17.10.2026 (Weg ab Werk, Typenschild/Verwechslung, Fehlerbild, Notweg, Rückweg zur Herstellerfirmware)</li>
 <li>geprüft: tplink-safeloader MR70X (Schritte (Normalweg), Typenschild/Verwechslung)</li>
 <li>Geräteeintrag: 47de2c686291e69afc9f443e27e1dfd11ed5fbe7</li>
 </ul>
