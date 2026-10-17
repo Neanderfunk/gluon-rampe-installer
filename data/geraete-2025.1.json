@@ -18687,7 +18687,8 @@
     "stock_url": "",
     "sicherheit": "quelle",
     "menue": "Advanced → System → Firmware Update → Local Update",
-    "nach_upload": "Der Router startet neu. Beim ersten Start der Freifunk-Firmware startet er nach etwa 70 Sekunden noch einmal von selbst neu, das ist normal."
+    "nach_upload": "„Uploading...“",
+    "dauer": "einige Minuten; beim ersten Start der Freifunk-Firmware startet der Router nach etwa 70 Sekunden noch einmal von selbst neu"
    }
   },
   {
