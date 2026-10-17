@@ -13,12 +13,14 @@ mehr an. Sie meldet trotzdem jedes Mal Erfolg.
   uns). Die Oberfläche nennt sich dabei "MR70X v1.0", auch bei 1.20 auf dem
   Aufkleber. Für Hardware 2 gilt diese Anleitung nicht.
 - Beim ersten Aufruf verlangt die Oberfläche ein eigenes Passwort ("Create
-  an administrator password"). Den Assistenten "Quick Setup" danach mit
-  "EXIT" verlassen.
-- Fragt die Oberfläche nach einem Passwort, das du nicht kennst, stecken
-  noch Einstellungen eines Vorbesitzers drin. Dann halte die Reset-Taste im
-  laufenden Betrieb etwa 10 Sekunden gedrückt, das setzt ihn zurück. Nicht
-  beim Einstecken drücken, das startet die Notfall-Seite.
+  an administrator password"). Die Schnelleinrichtung danach oben rechts
+  verlassen und mit "EXIT" bestätigen ("Your settings will not be saved").
+- Kommt stattdessen "Log In with Local Password" und du kennst das Passwort
+  nicht, stecken noch Einstellungen eines Vorbesitzers drin. Dann halte die
+  Reset-Taste im laufenden Betrieb etwa 10 Sekunden gedrückt, das setzt ihn
+  zurück. Nicht beim Einstecken drücken, das startet die Notfall-Seite.
+- Meldet die Oberfläche nach dem Anmelden "Firmware Update Available", klick
+  "NOT NOW". Das Update von Mercusys brauchst du nicht.
 
 ## Wenn etwas schiefgeht
 
