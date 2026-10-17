@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2023.2.6 (26091920sta) über LuCI der GL-Firmware 4.3.25; für 2025.1 erwartet gleich (gleiche Metadaten)
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 91051cbb
+daten_stand: d437b1ec
 vorlage_stand: 33a38da8
 ---
 

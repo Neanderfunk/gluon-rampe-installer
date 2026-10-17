@@ -10,7 +10,7 @@ level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
 grundlagen: [ssh-scp]
-daten_stand: 91051cbb
+daten_stand: d437b1ec
 vorlage_stand: 99ea2014
 ---
 

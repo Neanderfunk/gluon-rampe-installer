@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-gl.inet-gl-xe300-factory.img
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 91051cbb
+daten_stand: d437b1ec
 vorlage_stand: 33a38da8
 ---
 
