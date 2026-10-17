@@ -332,14 +332,14 @@ def main():
         liste = ["# Freifunk-Firmware installieren", "",
                  "Anleitungen je Gerät. Ungeprüfte Anleitungen sind aus Quellen "
                  "zusammengestellt und noch nicht am Gerät nachvollzogen.", "",
-                 "| Gerät | Stand | Level |", "|---|---|---|"]
+                 "## Level", "", "| Level | Bedeutung |", "|---|---|"]
+        liste += [f"| {l} {level.KURZ[l]} | {level.LANG[l]} |" for l in level.LEVELS]
+        liste += ["", "## Risiko", "", level.RISIKO_TEXT, "",
+                  "## Geräte", "", "| Gerät | Stand | Level |", "|---|---|---|"]
         liste += [f"| [{k['anzeige'].replace('|', '/')}]({n}.md) | {k['status']} | {k['level']} "
                   f"{k['level_text']}"
                   + (", **Bootloader-Risiko**" if k["risiko"] == "bootloader" else "") + " |"
                   for n, (k, _) in seiten.items()]
-        liste += ["", "## Level", "", "| Level | Bedeutung |", "|---|---|"]
-        liste += [f"| {l} {level.KURZ[l]} | {level.LANG[l]} |" for l in level.LEVELS]
-        liste += ["", "## Risiko", "", level.RISIKO_TEXT]
         dateien[h / SPRACHE / "index.html"] = html_seite(
             "Freifunk-Firmware installieren", "\n".join(liste) + "\n", {"uebersicht": SPRACHE}, md, 1)
         if a.basis_url:
