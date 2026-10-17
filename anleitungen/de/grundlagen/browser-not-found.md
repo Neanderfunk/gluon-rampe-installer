@@ -18,6 +18,9 @@ Zwischenfirmware. Der Browser merkt sich die alte Seite und springt von
 selbst dorthin, obwohl auf dem Router jetzt etwas anderes läuft. Am Router
 liegt es nicht.
 
+Kommt gar keine Seite, und der Browser wartet nur, siehe
+[Die Router-Seite antwortet nicht](router-antwortet-nicht.md).
+
 ## Was nicht hilft
 
 Bei uns hat in einigen Fällen nichts von dem geholfen, was man sonst bei
