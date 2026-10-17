@@ -10,7 +10,7 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 53055667
+daten_stand: 188d88d2
 vorlage_stand: 33a38da8
 ---
 
@@ -129,7 +129,7 @@ ausprobiert.
 
 Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 
-- abgeleitet (Schritte (Normalweg))
+- abgeleitet (Schritte (Normalweg), Rückweg zur Herstellerfirmware)
 - geprüft (Weg ab Werk, Schritte (Normalweg), Programm, Datei)
 - geprüft: Commit 47de2c68 (Rückweg zur Herstellerfirmware)
 - geprüft: Test Neanderfunk 17.10.2026 (Typenschild/Verwechslung, Fehlerbild, Notweg, Rückweg zur Herstellerfirmware)
