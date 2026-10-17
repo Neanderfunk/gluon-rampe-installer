@@ -9,9 +9,9 @@ level: L5
 level_text: Besondere Programme
 risiko: bootloader
 status: ungeprüft
-grundlagen: [browser-not-found, feste-ip, tftp-server]
+grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
 daten_stand: 33ff3500
-vorlage_stand: 883c350d
+vorlage_stand: 33a38da8
 ---
 
 # TP-Link Archer C2 v1: Freifunk-Firmware installieren
@@ -120,8 +120,9 @@ steht unten am Gerät oder in der TP-Link-Oberfläche unter "Status".
 8. **Fertig.** Stell den Rechner wieder auf "automatisch". Je nach Community
    kommt zuerst eine Einrichtungsseite unter `http://192.168.1.1`, oder der
    Router geht gleich in Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md).
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 
 ## Woran du erkennst, dass es geklappt hat
 

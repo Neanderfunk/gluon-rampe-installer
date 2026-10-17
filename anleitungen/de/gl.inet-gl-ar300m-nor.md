@@ -9,9 +9,9 @@ level: L3
 level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
-grundlagen: [browser-not-found, feste-ip]
+grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
 daten_stand: 33ff3500
-vorlage_stand: 25ed43f7
+vorlage_stand: 33a38da8
 ---
 
 # GL.iNet GL-AR300M NOR: Freifunk-Firmware installieren
@@ -78,8 +78,9 @@ drei misslungenen Starts aus dem NAND-Speicher von selbst auf NOR zurück.
 7. **Fertig.** Stell den Rechner wieder auf "automatisch". Danach startet die
    Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
    Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md).
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 
 ## Woran du erkennst, dass es geklappt hat
 
@@ -90,8 +91,9 @@ drei misslungenen Starts aus dem NAND-Speicher von selbst auf NOR zurück.
 ## Wenn etwas schiefgeht
 
 - **Unter `http://192.168.1.1` kommt nichts.** Prüf die feste Adresse
-  (Schritt 2), schalte VPN-Programme aus und versuch Schritt 4 noch einmal,
-  diesmal genau auf die LEDs achtend. Kommt "Not Found" oder "PAGE NOT
+  (Schritt 2), schalte VPN-Programme aus, zieh das Kabel am Rechner einmal
+  kurz ab ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md))
+  und versuch Schritt 4 noch einmal, diesmal genau auf die LEDs achtend. Kommt "Not Found" oder "PAGE NOT
   FOUND", siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 
 ## Herkunft der Angaben

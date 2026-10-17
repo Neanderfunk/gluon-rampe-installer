@@ -12,9 +12,9 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m60-a1-recovery.bin
-grundlagen: [browser-https, browser-not-found, curl, feste-ip]
+grundlagen: [browser-https, browser-not-found, curl, feste-ip, router-antwortet-nicht]
 daten_stand: 33ff3500
-vorlage_stand: 883c350d
+vorlage_stand: 33a38da8
 ---
 
 # D-Link AQUILA PRO AI M60 A1: Freifunk-Firmware installieren
@@ -119,7 +119,7 @@ wirklich über das Kabel spricht.
    `http://192.168.1.1/cgi-bin/config`. Es erscheint die Seite "Firmware
    aktualisieren". Kommt "Not Found", hat sich der Browser eine Seite von
    früher gemerkt: Tipp die Adresse vollständig ein, mit `/cgi-bin/config` am
-   Ende. Hilft das nicht, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
+   Ende. Hilft das nicht, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md).
    Die RAMpe bleibt auf dem Router, bis die Freifunk-Firmware sie ersetzt.
    Startet der Router zwischendurch neu, ist das harmlos: Seite einfach
    wieder aufrufen.
@@ -146,8 +146,9 @@ wirklich über das Kabel spricht.
 10. **Fertig.** Nach unter 2 Minuten startet die Freifunk-Firmware
     deiner Community: je nach Community zuerst mit einer Einrichtungsseite
     unter `http://192.168.1.1` oder gleich im Betrieb.
-    Kommt dort "Not Found", siehe [Der Browser zeigt
-    "Not Found"](grundlagen/browser-not-found.md). Wie es weitergeht,
+    Antwortet dort nichts, siehe [Die Router-Seite antwortet
+    nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+    [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Wie es weitergeht,
     beschreibt deine Community.
 
 ## Woran du erkennst, dass es geklappt hat

@@ -10,9 +10,9 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb
-grundlagen: [avm-eva, browser-not-found, feste-ip, tftp-server]
+grundlagen: [avm-eva, browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
 daten_stand: 33ff3500
-vorlage_stand: 883c350d
+vorlage_stand: 33a38da8
 ---
 
 # AVM FRITZ!Box 7520: Freifunk-Firmware installieren
@@ -93,7 +93,7 @@ passt, ist nicht belegt.
 5. **Die Seite der RAMpe.** Öffne `http://192.168.1.1/cgi-bin/config` (der
    Rechner kann auf `192.168.1.70` bleiben). Kommt "Not Found", hat sich der
    Browser eine Seite von früher gemerkt: Tipp die Adresse vollständig ein,
-   mit `/cgi-bin/config` am Ende. Hilft das nicht, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Die Seite weist darauf hin, dass sie bei diesem
+   mit `/cgi-bin/config` am Ende. Hilft das nicht, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md). Die Seite weist darauf hin, dass sie bei diesem
    Gerät den Speicher vorbereitet, den neuen Bootloader dauerhaft schreibt
    und die Firmware von AVM entfernt.
 
@@ -113,8 +113,9 @@ passt, ist nicht belegt.
 8. **Fertig.** Stell den Rechner wieder auf "automatisch". Danach startet die
    Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
    Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md).
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 
 Tipp für Linux: Mit `ip addr add` kannst du dem Netzwerkanschluss beide
 Adressen gleichzeitig geben (`192.168.178.10/24` und `192.168.1.70/24`);

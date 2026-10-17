@@ -9,9 +9,9 @@ level: L4
 level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
-grundlagen: [browser-not-found, ssh-scp]
+grundlagen: [browser-not-found, router-antwortet-nicht, ssh-scp]
 daten_stand: 33ff3500
-vorlage_stand: 883c350d
+vorlage_stand: 33a38da8
 ---
 
 # ASUS TUF-AX4200: Freifunk-Firmware installieren
@@ -166,8 +166,9 @@ das es keine Freifunk-Firmware gibt. Schau auf das Typenschild.
     die Freifunk-Firmware deiner Community: je nach Community zuerst mit
     einer Einrichtungsseite unter `http://192.168.1.1` oder gleich im
     Betrieb.
-    Kommt dort "Not Found", siehe [Der Browser zeigt
-    "Not Found"](grundlagen/browser-not-found.md). Den Webserver aus Schritt 1 kannst du mit Strg+C beenden.
+    Antwortet dort nichts, siehe [Die Router-Seite antwortet
+    nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+    [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Den Webserver aus Schritt 1 kannst du mit Strg+C beenden.
 
 ## Woran du erkennst, dass es geklappt hat
 

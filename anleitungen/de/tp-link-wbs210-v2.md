@@ -9,9 +9,9 @@ level: L3
 level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
-grundlagen: [browser-not-found, feste-ip]
+grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
 daten_stand: 33ff3500
-vorlage_stand: dd72aaab
+vorlage_stand: 33a38da8
 ---
 
 # TP-Link WBS210 v2: Freifunk-Firmware installieren
@@ -98,8 +98,9 @@ Dieses Image passt zum WBS210 mit Hardware 2.0. Die Hardware-Version steht auf d
 7. **Fertig.** Danach startet die Freifunk-Firmware deiner Community: je nach
    Community zuerst mit einer Einrichtungsseite unter `http://192.168.1.1`
    oder gleich im Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md). Stell den Rechner vorher wieder auf "automatisch".
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Stell den Rechner vorher wieder auf "automatisch".
    Wie es weitergeht, beschreibt deine Community.
 
 ## Woran du erkennst, dass es geklappt hat
@@ -117,8 +118,9 @@ Dieses Image passt zum WBS210 mit Hardware 2.0. Die Hardware-Version steht auf d
   Herstellerfirmware ist zu neu und sperrt fremde Firmware (siehe "Vorher
   prüfen", falls vorhanden).
 - **Nach dem Neustart ist unter `http://192.168.1.1` nichts.** Stell den
-  Rechner auf "automatisch" und zieh das Kabel kurz ab und wieder an. Je nach
-  Community startet die Firmware auch gleich im Betrieb ohne
+  Rechner auf "automatisch" und zieh das Kabel kurz ab und wieder an
+  ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
+  Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
 
 ## Notfall

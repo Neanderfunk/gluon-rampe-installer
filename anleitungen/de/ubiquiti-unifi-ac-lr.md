@@ -9,9 +9,9 @@ level: L4
 level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
-grundlagen: [browser-not-found, feste-ip, schreibschutz, ssh-scp, tftp-client]
+grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, schreibschutz, ssh-scp, tftp-client]
 daten_stand: 33ff3500
-vorlage_stand: 883c350d
+vorlage_stand: 33a38da8
 ---
 
 # Ubiquiti UniFi AC LR: Freifunk-Firmware installieren
@@ -139,8 +139,9 @@ an der Eingabezeile, zum Beispiel `UAP-AC-Lite-BZ.6.2.35#`.
 8. **Fertig.** Stell den Rechner wieder auf "automatisch". Danach startet die
    Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
    Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md). Wie
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Wie
    es weitergeht, beschreibt deine Community.
 
 ## Woran du erkennst, dass es geklappt hat

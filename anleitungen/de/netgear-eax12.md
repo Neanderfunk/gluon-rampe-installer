@@ -9,9 +9,9 @@ level: L0.1
 level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
-grundlagen: [browser-not-found, nmrpflash]
+grundlagen: [browser-not-found, nmrpflash, router-antwortet-nicht]
 daten_stand: 33ff3500
-vorlage_stand: 883c350d
+vorlage_stand: 33a38da8
 ---
 
 # NETGEAR EAX12 / EAX11 v2 / EAX15 v2: Freifunk-Firmware installieren
@@ -67,8 +67,9 @@ EAX15 ohne "v2" sind nicht genannt, also nicht damit flashen.
 5. **Fertig.** Danach startet die Freifunk-Firmware deiner Community: je
    nach Community zuerst mit einer Einrichtungsseite unter
    `http://192.168.1.1` oder gleich im Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md).
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 
 ## Woran du erkennst, dass es geklappt hat
 
@@ -124,8 +125,9 @@ antwortet darauf und schickt die Freifunk-Firmware
 8. **Fertig.** Danach startet die Freifunk-Firmware deiner Community: je nach
    Community zuerst mit einer Einrichtungsseite unter `http://192.168.1.1`
    oder gleich im Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md).
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 
 Wenn nmrpflash Fehler meldet:
 

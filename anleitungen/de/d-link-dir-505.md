@@ -9,9 +9,9 @@ level: L1
 level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
-grundlagen: [browser-not-found]
+grundlagen: [browser-not-found, router-antwortet-nicht]
 daten_stand: 33ff3500
-vorlage_stand: af90855f
+vorlage_stand: 33a38da8
 ---
 
 # D-Link DIR-505: Freifunk-Firmware installieren
@@ -84,8 +84,9 @@ Kaufen empfehlen wir den D-Link DIR-505 nicht mehr.
 8. **Fertig.** Danach startet die Freifunk-Firmware deiner Community: je nach
    Community zuerst mit einer Einrichtungsseite unter `http://192.168.1.1`
    oder gleich im Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md).
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
    Im Betrieb ist die eine Netzwerkbuchse des D-Link DIR-505 sein Anschluss
    ans Internet: Steck sie an deinen Router zu Hause.
 

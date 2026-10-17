@@ -11,9 +11,9 @@ risiko: normal
 status: erprobt
 erprobt_am: 2026-10-17
 erprobt_mit: Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.4
-grundlagen: [browser-not-found, feste-ip, tftp-server]
+grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
 daten_stand: 33ff3500
-vorlage_stand: d9a95aa5
+vorlage_stand: 33a38da8
 ---
 
 # Cudy AP3000 v1: Freifunk-Firmware installieren
@@ -134,8 +134,9 @@ nicht öffentlich abgelegt; die Datei bei uns stammt direkt vom Cudy-Support.
     "automatisch". Danach startet die
     Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
     Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
-    Kommt dort "Not Found", siehe [Der Browser zeigt
-    "Not Found"](grundlagen/browser-not-found.md). Wie
+    Antwortet dort nichts, siehe [Die Router-Seite antwortet
+    nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+    [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Wie
     es weitergeht, beschreibt deine Community. Im Betrieb ist die einzige
     Netzwerkbuchse des Cudy AP3000 v1 sein Anschluss ans Internet: Verbinde
     sie erst nach der Einrichtung mit deinem Router zu Hause.

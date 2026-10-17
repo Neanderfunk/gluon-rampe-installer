@@ -15,9 +15,9 @@
 <meta name="anleitung:risiko" content="normal">
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:rampe_image" content="gluon-rampe-20261015-gl.inet-gl-xe300-factory.img">
-<meta name="anleitung:grundlagen" content="browser-https, browser-not-found, feste-ip">
+<meta name="anleitung:grundlagen" content="browser-https, browser-not-found, feste-ip, router-antwortet-nicht">
 <meta name="anleitung:daten_stand" content="33ff3500">
-<meta name="anleitung:vorlage_stand" content="25ed43f7">
+<meta name="anleitung:vorlage_stand" content="33a38da8">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -88,8 +88,9 @@ klick <strong>Continue</strong>. Wieder einige Minuten warten.</p>
 <p><strong>Fertig.</strong> Stell den Rechner wieder auf &quot;automatisch&quot;. Danach startet die
 Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
 Einrichtungsseite unter <code>http://192.168.1.1</code> oder gleich im Betrieb.
-Kommt dort &quot;Not Found&quot;, siehe <a href="grundlagen/browser-not-found.html">Der Browser zeigt
-&quot;Not Found&quot;</a>.</p>
+Antwortet dort nichts, siehe <a href="grundlagen/router-antwortet-nicht.html">Die Router-Seite antwortet
+nicht</a>; kommt &quot;Not Found&quot;, siehe
+<a href="grundlagen/browser-not-found.html">Der Browser zeigt &quot;Not Found&quot;</a>.</p>
 </li>
 </ol>
 <h2>Woran du erkennst, dass es geklappt hat</h2>
@@ -101,8 +102,9 @@ unter <code>http://192.168.1.1</code> kommt die Notfall-Seite.</li>
 <h2>Wenn etwas schiefgeht</h2>
 <ul>
 <li><strong>Unter <code>http://192.168.1.1</code> kommt nichts.</strong> Prüf die feste Adresse
-(Schritt 2), schalte VPN-Programme aus und versuch Schritt 4 noch einmal,
-diesmal genau auf die LEDs achtend. Kommt &quot;Not Found&quot; oder &quot;PAGE NOT
+(Schritt 2), schalte VPN-Programme aus, zieh das Kabel am Rechner einmal
+kurz ab (<a href="grundlagen/router-antwortet-nicht.html">Die Router-Seite antwortet nicht</a>)
+und versuch Schritt 4 noch einmal, diesmal genau auf die LEDs achtend. Kommt &quot;Not Found&quot; oder &quot;PAGE NOT
 FOUND&quot;, siehe <a href="grundlagen/browser-not-found.html">Der Browser zeigt &quot;Not Found&quot;</a>.</li>
 </ul>
 <h2>Anderer Weg: mit der Gluon-RAMpe (ungetestet)</h2>
@@ -123,7 +125,7 @@ ausprobiert</strong>; die RAMpe selbst läuft auf anderen Geräten.</p>
 <p>Nach dem Neustart öffne <code>http://192.168.1.1/cgi-bin/config</code>. Es erscheint
 die Seite &quot;Firmware aktualisieren&quot; der RAMpe. Kommt &quot;Not Found&quot;, hat sich
 der Browser eine Seite von früher gemerkt: Tipp die Adresse vollständig
-ein, mit <code>/cgi-bin/config</code> am Ende. Hilft das nicht, siehe <a href="grundlagen/browser-not-found.html">Der Browser zeigt &quot;Not Found&quot;</a>. Startet der Router zwischendurch neu,
+ein, mit <code>/cgi-bin/config</code> am Ende. Hilft das nicht, siehe <a href="grundlagen/browser-not-found.html">Der Browser zeigt &quot;Not Found&quot;</a>. Kommt gar nichts, siehe <a href="grundlagen/router-antwortet-nicht.html">Die Router-Seite antwortet nicht</a>. Startet der Router zwischendurch neu,
 einfach die Seite wieder aufrufen.</p>
 <p><img src="../bilder/allgemein/rampe-seite.png" alt="Die Seite der RAMpe: &quot;Firmware aktualisieren&quot; mit Feld für die Datei und Knopf &quot;Datei hochladen&quot;" /></p>
 </li>

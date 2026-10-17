@@ -9,9 +9,9 @@ level: L4
 level_text: Netzwerkwerkzeuge
 risiko: bootloader
 status: ungeprüft
-grundlagen: [browser-not-found, feste-ip, tftp-client, tftp-server]
+grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-client, tftp-server]
 daten_stand: 33ff3500
-vorlage_stand: 883c350d
+vorlage_stand: 33a38da8
 ---
 
 # HPE MSM460: Freifunk-Firmware installieren
@@ -114,8 +114,9 @@ Stunde.
    wieder ein. Jetzt startet die Freifunk-Firmware. Stell den Rechner wieder
    auf "automatisch". Je nach Community kommt zuerst eine Einrichtungsseite
    unter `http://192.168.1.1`, oder der Access Point geht gleich in Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md).
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 
 ## Woran du erkennst, dass es geklappt hat
 

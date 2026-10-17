@@ -10,9 +10,9 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-gl.inet-gl-e750-factory.img
-grundlagen: [browser-https, browser-not-found, feste-ip]
+grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht]
 daten_stand: 33ff3500
-vorlage_stand: 25ed43f7
+vorlage_stand: 33a38da8
 ---
 
 # GL.iNet GL-E750: Freifunk-Firmware installieren
@@ -88,8 +88,9 @@ Den Notfall-Modus zeigt beim E750 das Display an: erst "Booting", dann
 8. **Fertig.** Stell den Rechner wieder auf "automatisch". Danach startet die
    Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
    Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md).
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 
 ## Woran du erkennst, dass es geklappt hat
 
@@ -100,8 +101,9 @@ Den Notfall-Modus zeigt beim E750 das Display an: erst "Booting", dann
 ## Wenn etwas schiefgeht
 
 - **Unter `http://192.168.1.1` kommt nichts.** Prüf die feste Adresse
-  (Schritt 2), schalte VPN-Programme aus und versuch Schritt 4 noch einmal,
-  diesmal genau auf die LEDs achtend. Kommt "Not Found" oder "PAGE NOT
+  (Schritt 2), schalte VPN-Programme aus, zieh das Kabel am Rechner einmal
+  kurz ab ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md))
+  und versuch Schritt 4 noch einmal, diesmal genau auf die LEDs achtend. Kommt "Not Found" oder "PAGE NOT
   FOUND", siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 
 ## Anderer Weg: mit der Gluon-RAMpe (ungetestet)
@@ -118,7 +120,7 @@ ausprobiert**; die RAMpe selbst läuft auf anderen Geräten.
 3. Nach dem Neustart öffne `http://192.168.1.1/cgi-bin/config`. Es erscheint
    die Seite "Firmware aktualisieren" der RAMpe. Kommt "Not Found", hat sich
    der Browser eine Seite von früher gemerkt: Tipp die Adresse vollständig
-   ein, mit `/cgi-bin/config` am Ende. Hilft das nicht, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Startet der Router zwischendurch neu,
+   ein, mit `/cgi-bin/config` am Ende. Hilft das nicht, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md). Startet der Router zwischendurch neu,
    einfach die Seite wieder aufrufen.
 
    ![Die Seite der RAMpe: "Firmware aktualisieren" mit Feld für die Datei und Knopf "Datei hochladen"](../bilder/allgemein/rampe-seite.png)

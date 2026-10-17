@@ -9,9 +9,9 @@ level: L4
 level_text: Netzwerkwerkzeuge
 risiko: normal
 status: ungeprüft
-grundlagen: [browser-not-found, curl, feste-ip]
+grundlagen: [browser-not-found, curl, feste-ip, router-antwortet-nicht]
 daten_stand: 33ff3500
-vorlage_stand: 883c350d
+vorlage_stand: 33a38da8
 ---
 
 # D-Link DIR-882 A1: Freifunk-Firmware installieren
@@ -105,8 +105,9 @@ wirklich über das Kabel spricht.
 8. **Fertig.** Nach dem Neustart startet die Freifunk-Firmware deiner
    Community: je nach Community zuerst mit einer Einrichtungsseite unter
    `http://192.168.1.1` oder gleich im Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md). Wie es weitergeht, beschreibt
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Wie es weitergeht, beschreibt
    deine Community.
 
 ## Woran du erkennst, dass es geklappt hat

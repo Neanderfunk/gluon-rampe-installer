@@ -11,9 +11,9 @@ risiko: normal
 status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2025.1 (26100702bro), vorher TOTOLINK-Firmware V9.1.0u.6118 über den Notfall-Modus
-grundlagen: [browser-https, browser-not-found, feste-ip]
+grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht]
 daten_stand: 33ff3500
-vorlage_stand: 883c350d
+vorlage_stand: 33a38da8
 ---
 
 # TOTOLINK X5000R: Freifunk-Firmware installieren
@@ -73,8 +73,9 @@ halben Stunde.
    dabei stehen oder wird leer, das ist normal. Danach startet die Freifunk-Firmware
    deiner Community: je nach Community zuerst mit einer Einrichtungsseite
    unter `http://192.168.1.1` oder gleich im Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md).
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 
 ## Umweg: ältere TOTOLINK-Firmware aufspielen
 

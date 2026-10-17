@@ -11,9 +11,9 @@ risiko: normal
 status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2025.1 (26100702bro) per TFTP mit dem factory-Image; über die TP-Link-Oberfläche 3.14.3 Build 150518 mit Gluon 2023.2.6 (factory, Originalname)
-grundlagen: [browser-not-found, feste-ip, tftp-server]
+grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
 daten_stand: 33ff3500
-vorlage_stand: dd72aaab
+vorlage_stand: 33a38da8
 ---
 
 # TP-Link TL-WDR3600 v1: Freifunk-Firmware installieren
@@ -89,8 +89,9 @@ Aufkleber genau mit "TP-Link TL-WDR3600 v1", bevor du anfängst.
 7. **Fertig.** Danach startet die Freifunk-Firmware deiner Community: je nach
    Community zuerst mit einer Einrichtungsseite unter `http://192.168.1.1`
    oder gleich im Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md).
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
    Wie es weitergeht, beschreibt deine Community.
 
 ## Woran du erkennst, dass es geklappt hat
@@ -108,8 +109,9 @@ Aufkleber genau mit "TP-Link TL-WDR3600 v1", bevor du anfängst.
   Herstellerfirmware ist zu neu und sperrt fremde Firmware (siehe "Vorher
   prüfen", falls vorhanden).
 - **Nach dem Neustart ist unter `http://192.168.1.1` nichts.** Stell den
-  Rechner auf "automatisch" und zieh das Kabel kurz ab und wieder an. Je nach
-  Community startet die Firmware auch gleich im Betrieb ohne
+  Rechner auf "automatisch" und zieh das Kabel kurz ab und wieder an
+  ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
+  Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
 - **"Error code: 18005 … the version of the upgraded file was
   incorrect".** Das ist das sysupgrade-Image. Die TP-Link-Oberfläche

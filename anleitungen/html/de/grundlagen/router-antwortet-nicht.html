@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Die Router-Seite antwortet nicht</title>
+<meta name="anleitung:grundlage" content="router-antwortet-nicht">
+<link rel="stylesheet" href="../../anleitung.css">
+</head>
+<body>
+<hr />
+<h2>thema: router-antwortet-nicht
+sprache: de
+status: ungeprüft</h2>
+<blockquote>
+<p><strong>Noch nicht gegengelesen.</strong> Diese Grundlagen-Seite ist ein Entwurf.</p>
+</blockquote>
+<h1>Die Router-Seite antwortet nicht</h1>
+<p>Du öffnest <code>http://192.168.1.1</code> (oder die Adresse aus der Anleitung), aber
+der Browser wartet nur und meldet irgendwann, dass die Seite nicht erreichbar
+ist. Das passiert besonders oft direkt nach einem Wechsel der Firmware.</p>
+<h2>Kabel einmal kurz ziehen</h2>
+<p>Dein Rechner merkt sich, welches Gerät hinter einer Adresse steckt, genauer
+seine Hardware-Adresse (MAC). Ein Switch zwischen Rechner und Router merkt
+sich das auch. Bei der Installation wechselt hinter derselben Adresse
+<code>192.168.1.1</code> aber oft das Gerät: Erst antwortet eine Zwischenfirmware oder
+eine Notfall-Seite, nach dem Neustart die Einrichtungsseite der
+Freifunk-Firmware, und die meldet sich mit einer anderen MAC. Rechner oder
+Switch schicken dann noch eine Weile an die alte, und es kommt nichts an.</p>
+<p><strong>Abhilfe:</strong> Zieh das Netzwerkkabel am Rechner einmal kurz ab und steck es
+wieder ein. Hängt ein Switch dazwischen, zieh das Kabel zum Router dort
+ebenso kurz ab. Dann die Seite neu laden. Ohne das geht es oft erst nach
+einigen Minuten von selbst.</p>
+<h2>Ein Ping beweist nichts</h2>
+<p>Die alte Regel &quot;erst mal pingen, dann siehst du, ob er da ist&quot; trägt hier
+nicht. Manche Notfall-Seiten antworten nur dem Browser und überhaupt nicht
+auf ping. Bei den Notfall-Seiten von D-Link ist das so; bei welchen Geräten
+noch, haben wir nicht für jedes geprüft. Bleibt ping stumm, heißt das also
+nicht, dass der Router nicht da ist. Versuch es trotzdem im Browser, und
+mach nicht wegen eines stummen ping etwas anderes als in der Anleitung.</p>
+<h2>Was du sonst prüfen kannst</h2>
+<ul>
+<li><strong>Adresse am Rechner:</strong> Verlangt die Anleitung eine feste Adresse, muss
+sie genau stimmen, ebenso die Netzmaske <code>255.255.255.0</code>
+(<a href="feste-ip.html">Feste IP-Adresse einstellen</a>). Verlangt sie &quot;automatisch&quot;,
+darf keine feste Adresse mehr eingestellt sein.</li>
+<li><strong>WLAN und VPN aus:</strong> Ist der Rechner zugleich per WLAN in einem anderen
+Netz oder läuft ein VPN, landen die Anfragen leicht dort.</li>
+<li><strong>Der Browser macht <code>https://</code> daraus:</strong> siehe
+<a href="browser-https.html">Browser macht https daraus</a>.</li>
+<li><strong>Es kommt &quot;Not Found&quot;:</strong> Dann antwortet der Router, aber der Browser
+springt auf eine alte Seite, siehe
+<a href="browser-not-found.html">Der Browser zeigt &quot;Not Found&quot;</a>.</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>
