@@ -381,6 +381,65 @@ Deploy):
   wenn mehrere solche RAMpes gleichzeitig am selben Netz hängen (gleiche
   MAC). Beim Einzel-M30 mit Odm-Eintrag 0x81 stimmt die MAC.
 
+## Stand 17.10.2026: Abnahmen am Testplatz
+
+Der Testplatz grw liegt seit 16.10. mittags bei Supernode-Betrieb
+(Validierungskampagne, adorfer am Gerät). Ablauf: Supernode meldet Befund und
+Protokoll (router-werkstatt `docs/validierung/`), Buildsystem trägt Werte und
+`erprobt` in `data/geraete-2025.1.json` ein und erzeugt, Content passt die
+Vorlagen an, Supernode verdrahtet den Selector, adorfer deployt.
+
+**Erprobt** (Feld `erprobt`: `am`, `mit`, `weg`, `beleg`):
+- Archer C50 v4 (15.10.), Cudy WR3000H v1 (S/N 2513, alter Flash), WR3000
+  v1, WR3000S v1 (Gluon 2023.2.6), AP3000 v1, TOTOLINK X5000R, D-Link M60
+  und M30 (RAMpe `20261015`), GL-B1300 (LuCI-Weg, Gluon 2023.2.6, 2025.1
+  erwartet), TL-WDR3600 v1 (Oberfläche mit 2023.2.6, 2025.1 per TFTP),
+  Mercusys MR70X v1 (aus Stock 1.0.11, HW V1.20).
+- Nicht erprobt, aber mit Befunden: D-Link DIR-505 (eigene Vorlage
+  `sonderweg-d-link-dir-505`, steiniger Weg über LEDE 17.01.7; die
+  D-Link-Recovery eines A2/PCT schrieb nichts), TL-WDR3600 Ver 1.1 mit
+  PCT-Zeichen und blauen LEDs (keine TFTP-Recovery).
+
+**Regeln, die sich dabei ergeben haben:**
+- `erprobt` steht in der Quelle (JSON), nie nur im erzeugten Kopf. `beleg`
+  (Protokollpfad, Commit) wird nicht ausgegeben.
+- Belegmarken erscheinen öffentlich unter "Herkunft": eigene Tests als
+  `[geprüft: Test Neanderfunk <Datum>]`, keine Testplatz-Namen oder
+  Werkstatt-Pfade (am 16.10. einmal falsch, a85bacac).
+- `erprobt` erst setzen, wenn die Seite den erprobten Weg beschreibt (GL-B1300:
+  erst nach der Vorlagen-Variante `gl-luci`).
+- Werte müssen in den Satz der Vorlage passen (MR70X: `nach_upload` ist ein
+  Satzteil nach "Danach zeigt der Browser …"). Einen Wert leeren kann einen
+  Vorgabesatz zurückholen (AP3000: leeres `rueckweg_buchse` ergab wieder "eine
+  LAN-Buchse").
+- `level_merkmale` folgen dem Hauptweg der Seite: GL-B1300 L0 (vorher L3),
+  AP3000 L3 (vergibt keine Adressen), DIR-505 L1.
+
+**Befunde, die über ein Gerät hinausgehen:**
+- Cudy: Die LED-Angaben der Cudy-FAQ zur TFTP-Recovery stimmten am WR3000H
+  nicht; bei den anderen Cudy stehen die beobachteten als [abgeleitet].
+  `rueckweg_url` je Modell gegen das og:title der Seite geprüft, weil Cudy auch
+  für erfundene Pfade 200 liefert. Cudy-APs (AP3000) vergeben ab Werk keine
+  Adressen und nehmen nach etwa einer Minute 192.168.10.254; AP3000
+  Outdoor/Wall und AP1300 Outdoor sind darauf nicht geprüft.
+- GL.iNet-Firmware 4.x (OpenWrt 21.02) prüft in der eigenen Oberfläche immer
+  mit "Einstellungen behalten" und lehnt deshalb Gluon mit compat 1.1 ab;
+  LuCI mit "Keep settings" aus und "Force upgrade" an geht, `sysupgrade -n`
+  per SSH auch. Eine Flash-RAMpe mit `DEVICE_COMPAT_VERSION 1.0` war
+  vorbereitet und ist verworfen (nicht nötig).
+- DIR-505: Das factory kam beim Umzug nach ath79 nie mit (OpenWrt
+  c9ac7b1729, ohne D-Link-Bootloader nicht testbar); `mkcameofw` ist in
+  firmware-utils von 24.10 noch da, das Flash-Layout ist gleich.
+- "Not Found" unter `/cgi-bin/luci` nach einer OpenWrt-Oberfläche:
+  Ursache im Browser nicht belegt (Cache, Autovervollständigung oder
+  gespeicherte Weiterleitung), half nur ein frisches Profil. Grundlagen
+  `browser-not-found` und `router-antwortet-nicht` (Content).
+
+**Offen für die nächste RAMpe-Ausgabe (Entscheidung adorfer, wann):** die
+Umleitung `/cgi-bin/luci` (im Overlay, QEMU-getestet), der mpc85xx-Loader
+(gluon-patches-hardware `188dff9` über `RAMPE_HW_PATCHES`, AP3825i-initramfs)
+und der Odm-Parser für M30/M60. Danach neu veröffentlichen.
+
 ## Idee: EdgeRouter X/X-SFP in einem Schritt (15.10.2026, ungeprüft)
 
 Auftrag adorfer, nur festgehalten, nicht begonnen. Heute braucht die
