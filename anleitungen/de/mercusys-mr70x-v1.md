@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-10-17
 erprobt_mit: Gluon 2025.1 (26100702bro), factory über die Mercusys-Oberfläche 1.0.11 (Hardware V1.20)
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: fdaf35ba
+daten_stand: 91051cbb
 vorlage_stand: 33a38da8
 ---
 
@@ -71,11 +71,11 @@ uns). Für Hardware 2 gilt diese Anleitung nicht.
 4. **Firmware-Update aufrufen.** Geh zu **Advanced → System → Firmware Update → Local Update**.
 
 5. **Hochladen.** Wähl das factory-Image aus, starte das Update und
-   bestätige die Rückfragen. Danach zeigt der Browser Der Router startet neu. Beim ersten Start der Freifunk-Firmware startet er nach etwa 70 Sekunden noch einmal von selbst neu, das ist normal.. Das
+   bestätige die Rückfragen. Danach zeigt der Browser „Uploading...“. Das
    ist normal.
 
 6. **Warten.** Das Gerät schreibt die Firmware und startet neu. Das dauert
-   einige Minuten.
+   einige Minuten; beim ersten Start der Freifunk-Firmware startet der Router nach etwa 70 Sekunden noch einmal von selbst neu.
    **Nicht ausschalten, Strom nicht ziehen und die Seite nicht neu laden.**
    Manche Geräte löschen zuerst den ganzen Speicher; ein Abbruch in dieser
    Zeit kann sie unbrauchbar machen.

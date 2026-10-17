@@ -10,7 +10,7 @@ level_text: Netzwerkwerkzeuge
 risiko: bootloader
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-client, tftp-server]
-daten_stand: fdaf35ba
+daten_stand: 91051cbb
 vorlage_stand: 33a38da8
 ---
 
