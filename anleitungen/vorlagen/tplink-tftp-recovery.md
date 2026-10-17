@@ -95,8 +95,9 @@ mit einer halben Stunde.
 6. **Fertig.** Stell den Rechner wieder auf "automatisch". Je nach Community
    kommt zuerst eine Einrichtungsseite unter `http://192.168.1.1`, oder der
    Router geht gleich in Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md).
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 
 ## Woran du erkennst, dass es geklappt hat
 
