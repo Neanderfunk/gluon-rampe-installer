@@ -50,9 +50,19 @@ Aufkleber genau mit "Mercusys MR70X v1", bevor du anfängst.
 
 ## Vorher prüfen
 
-Das Image passt zum MR70X und zum baugleichen MR1800X mit Hardware 1 (auf
-dem Aufkleber "1.0" oder "1.20"; mit 1.20 lief die Freifunk-Firmware bei
-uns). Für Hardware 2 gilt diese Anleitung nicht.
+- Das Image passt zum MR70X und zum baugleichen MR1800X mit Hardware 1 (auf
+  dem Aufkleber "1.0" oder "1.20"; mit 1.20 lief die Freifunk-Firmware bei
+  uns). Die Oberfläche nennt sich dabei "MR70X v1.0", auch bei 1.20 auf dem
+  Aufkleber. Für Hardware 2 gilt diese Anleitung nicht.
+- Beim ersten Aufruf verlangt die Oberfläche ein eigenes Passwort ("Create
+  an administrator password"). Die Schnelleinrichtung danach oben rechts
+  verlassen und mit "EXIT" bestätigen ("Your settings will not be saved").
+- Kommt stattdessen "Log In with Local Password" und du kennst das Passwort
+  nicht, stecken noch Einstellungen eines Vorbesitzers drin. Dann halte die
+  Reset-Taste im laufenden Betrieb etwa 10 Sekunden gedrückt, das setzt ihn
+  zurück. Nicht beim Einstecken drücken, das startet die Notfall-Seite.
+- Meldet die Oberfläche nach dem Anmelden "Firmware Update Available", klick
+  "NOT NOW". Das Update von Mercusys brauchst du nicht.
 
 ## Schritte
 
