@@ -262,10 +262,9 @@ Wie die D-Link-Geräte geflasht werden, steht in der Router-Werkstatt unter
   D-Link-Recovery, siehe GERAETE.md), MR80X v3 (erst prüfen, ob die Stock-
   Firmware SSH 20001 und IPTV/Hotplug wie der MR90X hat), dazu die zwölf
   Geräte mit `[einfacher, schlechter belegt]`.
-- **Nicht Gluon-RAMpe, aber verwandt:** Mercusys MR3000X v2.0 (= MR80X v2,
-  IPQ5018, 256 MB) läuft am Testplatz mit OpenWrt main (c127dev-Build, WLAN
-  mit `kmod-ath11k-smallbuffers`); OpenWrt 24.10/25.12 und damit Gluon 2025.1
-  kennen das Gerät nicht. Einzelheiten in einer Neanderfunk-Notiz.
+- ~~Mercusys MR3000X v2.0 nicht in Gluon 2025.1~~ überholt 17.10.2026: als
+  Backport (Target qualcommax-ipq50xx) auf dem Zweig v2025.1.x-next, siehe
+  "Stand 17.10.2026 abends".
 
 ## Stand 15.10.2026: alle Rezepte gebaut
 
@@ -380,6 +379,25 @@ Deploy):
   (`devices/dlink-aquila-odm-mac`) fehlt im RAMpe-Bau. Folgen hat das nur,
   wenn mehrere solche RAMpes gleichzeitig am selben Netz hängen (gleiche
   MAC). Beim Einzel-M30 mit Odm-Eintrag 0x81 stimmt die MAC.
+
+## Stand 17.10.2026 abends: neue Geräte aus dem Zweig v2025.1.x-next
+
+- **33 Geräte neu im Datensatz** (jetzt 386), alle nur auf dem Zweig
+  `v2025.1.x-next` von gluon-patches-hardware/FirmwareConfigs, noch nicht im
+  Release-Stand. Ohne Anleitungsfamilie bzw. ohne `werte`, also noch ohne
+  Seiten (Content):
+  - Mercusys MR80X v2 und Alias MR3000X v2.0 (Target qualcommax-ipq50xx,
+    Backport aus OpenWrt main; am Gerät erprobt, Einzelheiten router-werkstatt
+    `docs/mercusys-mr3000x-v2.md`).
+  - 28 MT7986-Geräte, deren Profil OpenWrt 24.10 schon hat (nur
+    Gluon-Eintrag); Wege aus den OpenWrt-Ursprungscommits, entworfen von
+    einem Hilfsagenten, Struktur geprüft, Wege nicht Satz für Satz.
+  - TP-Link EAP683-LR (+ Alias EAP683-UR) und Zyxel WX5600-T0 im
+    OpenWrt-U-Boot-Layout, Backport aus OpenWrt main; lokal gebaut, kein
+    Gerät vorhanden.
+- Bei Xiaomi-Geräten weiter keine Exploit-Einzelheiten im Datensatz.
+- RAMpe-Rezepte für diese Geräte: noch keine. Für EAP683 und WX5600 nicht
+  nötig (Installation über die Konsole), für MR80X v2 nicht nötig (Gluon-factory).
 
 ## Stand 17.10.2026: Abnahmen am Testplatz
 

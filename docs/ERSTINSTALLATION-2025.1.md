@@ -146,12 +146,12 @@ fehlen die Felder noch.
 | K1d | 101 |
 | K2 | 45 |
 | K3 | 18 |
-| K4 | 38 |
-| K5 | 8 |
+| K4 | 40 |
+| K5 | 9 |
 | offen | 2 |
-| **gesamt** | **383** |
+| **gesamt** | **386** |
 
-Gluon-RAMpe passt: **ja 36**, teilweise 48, nein/unnötig 299.
+Gluon-RAMpe passt: **ja 36**, teilweise 48, nein/unnötig 302.
 
 Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-951ui-2nd-hap`, `mikrotik-routerboard-mapl-2nd`, `mikrotik-routerboard-wap-g-5hact2hnd`, `mikrotik-routerboard-wapr-2nd`, `gl.inet-gl-e750`, `gl.inet-gl-xe300`, `zte-mf286r`, `asus-lyra-map-ac2200`, `avm-fritz-box-7520`, `avm-fritz-box-7530`, `avm-fritz-repeater-1200`, `avm-fritz-repeater-3000`, `linksys-mr8300-dallas`, `mikrotik-discg-5acd`, `mikrotik-hap-ac2`, `mikrotik-sxtsq-5-ac-rbsxtsqg-5acd`, `mikrotik-wap-ac`, `avm-fritz-box-3390`, `avm-fritz-box-7362-sl`, `avm-fritz-box-7412`, `avm-fritz-box-7430`, `asus-rt-ax52`, `asus-tuf-ax4200q`, `d-link-aquila-pro-ai-m30-a1`, `d-link-aquila-pro-ai-m60-a1`, `netgear-wax218`, `asus-rt-ax53u`, `genexis-pulse-ex400`, `mikrotik-routerboard-750gr3`, `netgear-wndr3700-v5`, `xiaomi-mi-router-3g`, `xiaomi-mi-router-ac2100`, `xiaomi-redmi-router-ac2100`, `zyxel-wsm20`.
 
@@ -166,10 +166,10 @@ Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-95
 | L5 | 71 |
 | L6 | 16 |
 | L7 | 15 |
-| L8 | 1 |
-| offen | 38 |
+| L8 | 3 |
+| offen | 39 |
 
-Risiko: normal 363, bootloader 19, offen 1 (Merkmale und Regeln in `scripts/level.py`).
+Risiko: normal 365, bootloader 20, offen 1 (Merkmale und Regeln in `scripts/level.py`).
 
 <!-- END erzeugt:zahlen -->
 
@@ -463,6 +463,8 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [openwrt-one](#openwrt-one) | OpenWrt One | mediatek-filogic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/openwrt-one.md) |
 | [ruijie-rg-x60-pro](#ruijie-rg-x60-pro) | Ruijie RG-X60 Pro | mediatek-filogic | K4 | L7 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | offen |  |  |
 | [tp-link-archer-ax80-v1](#tp-link-archer-ax80-v1) | TP-Link Archer AX80 v1 (US/RU/CA) | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ? | teilweise |  |  |
+| [tp-link-eap683-lr](#tp-link-eap683-lr) | TP-Link EAP683-LR | mediatek-filogic | K4 | L8 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein |  |  |
+| [tp-link-eap683-ur](#tp-link-eap683-ur) | TP-Link EAP683-UR (Alias von tp-link-eap683-lr) | mediatek-filogic | K4 | L8 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein |  |  |
 | [tp-link-re6000xd](#tp-link-re6000xd) | TP-Link RE6000XD | mediatek-filogic | K4 | L7 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise |  |  |
 | [tp-link-tl-xdr4288](#tp-link-tl-xdr4288) | TP-Link TL-XDR4288 | mediatek-filogic | K3 | L4 | bootloader |  | Shell | nein | nein | teilweise |  |  |
 | [tp-link-tl-xdr6086](#tp-link-tl-xdr6086) | TP-Link TL-XDR6086 | mediatek-filogic | K3 | L4 | bootloader |  | Shell | nein | nein | teilweise |  |  |
@@ -480,6 +482,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [zyxel-ex5700-telenor](#zyxel-ex5700-telenor) | Zyxel EX5700 (Telenor) | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | offen | nein |  |  |
 | [zyxel-nwa50ax-pro](#zyxel-nwa50ax-pro) | Zyxel NWA50AX Pro | mediatek-filogic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa50ax-pro.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f0445746f6fd96fc7c5394b238153bd2ff22bc5b |
 | [zyxel-nwa90ax-pro](#zyxel-nwa90ax-pro) | Zyxel NWA90AX Pro (Alias von zyxel-nwa50ax-pro) | mediatek-filogic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa90ax-pro.md) |
+| [zyxel-wx5600-t0-openwrt-u-boot-layout](#zyxel-wx5600-t0-openwrt-u-boot-layout) | Zyxel WX5600-T0 (OpenWrt U-Boot layout) | mediatek-filogic | K5 | offen | bootloader |  | seriell | ja | offen | nein |  |  |
 | [linksys-e8450-ubi](#linksys-e8450-ubi) | Linksys E8450 / Belkin RT3200 (UBI-Layout) | mediatek-mt7622 | K3 | L4 | bootloader | [`sonderweg-linksys-e8450-ubi`](#familie-sonderweg-linksys-e8450-ubi) | webui-upload | nein | nein | nein |  | https://openwrt.org/toh/linksys/e8450#installation |
 | [netgear-wax206](#netgear-wax206) | NETGEAR WAX206 | mediatek-mt7622 | K0 | L0.1 | normal | [`netgear-nmrp`](#familie-netgear-nmrp) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wax206.md); https://openwrt.org/toh/netgear/wax206#oem_easy_installation |
 | [ubiquiti-unifi-6-lr-v1](#ubiquiti-unifi-6-lr-v1) | Ubiquiti UniFi 6 LR v1 | mediatek-mt7622 | K1d | L4 | normal | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-lr-v1.md); https://openwrt.org/toh/ubiquiti/unifi_6_lr#installation_steps |
@@ -9408,7 +9411,7 @@ RAVPower RP-WD009 · ramips-mt76x8 · K0
 
 ### Familie `seriell-tftp`
 
-31 Gerät(e).
+33 Gerät(e).
 
 #### enterasys-ws-ap3705i
 
@@ -10159,6 +10162,73 @@ TP-Link Archer AX80 v1 (US/RU/CA) · mediatek-filogic · K4
 - **Rückweg zur Herstellerfirmware:** Reset beim Einschalten: U-Boot-Web-Recovery http://192.168.1.1, OEM-Firmware hochladen [geprüft: OpenWrt 8b24289]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt OpenWrt-initramfs im TFTP-Schritt; die fw_setenv-Befehle müsste die RAMpe vor dem sysupgrade ausführen [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt 8b24289a5267e486abd9ccbf4b4ad82f14d545ae; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
+
+#### tp-link-eap683-lr
+
+TP-Link EAP683-LR · mediatek-filogic · K4
+
+- **Weg ab Werk:** UART (Lötstellen J255 bzw. TP13-TP15): Boot mit Ctrl+b abbrechen, im Bootmenü U-Boot-Konsole, tp_boot_idx löschen, OpenWrt-initramfs per TFTP laden und booten, dann sysupgrade [geprüft: OpenWrt f174914]; über die Herstellerfirmware nicht möglich [geprüft: OpenWrt f174914]
+- **Schritte (Normalweg):**
+  1. Gehäuse öffnen und an J255 einen JST-Stecker oder an TP13 (TX), TP14 (RX), TP15 (GND) Drähte anlöten; TP16 (VCC) nicht anschließen [geprüft: OpenWrt f174914]
+  2. Beim Start wiederholt Ctrl+b drücken, im Bootmenü die U-Boot-Konsole wählen [geprüft: OpenWrt f174914]
+  3. `setenv tp_boot_idx` und `saveenv`, damit die Variable nicht gesetzt ist [geprüft: OpenWrt f174914]
+  4. OpenWrt-initramfs per `tftpboot openwrt-mediatek-filogic-tplink_eap683-lr-initramfs-kernel.bin` laden und mit `bootm` starten [geprüft: OpenWrt f174914]
+  5. Gluon-sysupgrade nach /tmp kopieren und mit sysupgrade installieren [geprüft: OpenWrt f174914]
+- **Warnung:** Lötarbeit an Testpunkten nötig [geprüft: OpenWrt f174914]; Gerät bei uns ungetestet, Backport aus OpenWrt main [abgeleitet]
+- **Taste und Zeitpunkt:** Seriell: wiederholt Ctrl+b beim Start [geprüft: OpenWrt f174914]
+- **Übertragung:** tftp-client-am-geraet aus der U-Boot-Konsole
+- **Anschluss:** UART J255 bzw. TP13 TX, TP14 RX, TP15 GND, TP16 VCC [geprüft: OpenWrt f174914]
+- **Programm:** Serielles Terminal, TFTP-Server, ssh/scp [abgeleitet]
+- **Datei:** OpenWrt-initramfs (Name wie im Commit), dann Gluon-sysupgrade [geprüft: OpenWrt f174914]
+- **seriell nötig:** ja
+- **Gehäuse öffnen:** ja [geprüft: OpenWrt f174914]
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = ja; l8 = ja
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Löten an Testpunkten, UART, TFTP
+- **Werkzeug/Spezial:** Lötkolben
+- **Typenschild/Verwechslung:** EAP683-UR ist laut OpenWrt baugleich, eigener Eintrag als Alias [geprüft: OpenWrt 708dcca]
+- **Bedingung an die Herstellerfirmware:** tplink-safeloader erkennt die Herstellerfirmware nicht, deshalb kein Weg über die Weboberfläche [geprüft: OpenWrt f174914]
+- **initramfs-Link:** OpenWrt-initramfs aus dem Neanderfunk-Bau (Gerät erst in OpenWrt main) [abgeleitet]
+- **Factory-/Stock-Image-Link:** kein factory für die Herstelleroberfläche [geprüft: OpenWrt f174914]
+- **Stock-Teile:** -
+- **RAM:** 1 GB [geprüft: OpenWrt f174914]
+- **Rückweg zur Herstellerfirmware:** U-Boot-Variable tp_boot_idx auf 1 setzen (Bootloader oder fw_setenv), dann startet die Herstellerfirmware aus ubi1; danach über deren Weboberfläche aktualisieren [geprüft: OpenWrt f174914]
+- **Gluon-RAMpe passt:** nein: Installation über die U-Boot-Konsole [abgeleitet]
+- **Quelle (OpenWrt-Commit):** OpenWrt f1749142ca59c3877ce70b7c97475f4416cf74a8; gluon-patches-hardware Zweig v2025.1.x-next, Backport aus OpenWrt main
+
+#### tp-link-eap683-ur
+
+TP-Link EAP683-UR (Alias von tp-link-eap683-lr) · mediatek-filogic · K4
+
+- **Anzeigename (überschreibt den bereinigten Modellnamen):** TP-Link EAP683-UR
+- **Weg ab Werk:** UART (Lötstellen J255 bzw. TP13-TP15): Boot mit Ctrl+b abbrechen, im Bootmenü U-Boot-Konsole, tp_boot_idx löschen, OpenWrt-initramfs per TFTP laden und booten, dann sysupgrade [geprüft: OpenWrt f174914]; über die Herstellerfirmware nicht möglich [geprüft: OpenWrt f174914]
+- **Schritte (Normalweg):**
+  1. Gehäuse öffnen und an J255 einen JST-Stecker oder an TP13 (TX), TP14 (RX), TP15 (GND) Drähte anlöten; TP16 (VCC) nicht anschließen [geprüft: OpenWrt f174914]
+  2. Beim Start wiederholt Ctrl+b drücken, im Bootmenü die U-Boot-Konsole wählen [geprüft: OpenWrt f174914]
+  3. `setenv tp_boot_idx` und `saveenv`, damit die Variable nicht gesetzt ist [geprüft: OpenWrt f174914]
+  4. OpenWrt-initramfs per `tftpboot openwrt-mediatek-filogic-tplink_eap683-lr-initramfs-kernel.bin` laden und mit `bootm` starten [geprüft: OpenWrt f174914]
+  5. Gluon-sysupgrade nach /tmp kopieren und mit sysupgrade installieren [geprüft: OpenWrt f174914]
+- **Warnung:** Lötarbeit an Testpunkten nötig [geprüft: OpenWrt f174914]; Gerät bei uns ungetestet, Backport aus OpenWrt main [abgeleitet]
+- **Taste und Zeitpunkt:** Seriell: wiederholt Ctrl+b beim Start [geprüft: OpenWrt f174914]
+- **Übertragung:** tftp-client-am-geraet aus der U-Boot-Konsole
+- **Anschluss:** UART J255 bzw. TP13 TX, TP14 RX, TP15 GND, TP16 VCC [geprüft: OpenWrt f174914]
+- **Programm:** Serielles Terminal, TFTP-Server, ssh/scp [abgeleitet]
+- **Datei:** OpenWrt-initramfs (Name wie im Commit), dann Gluon-sysupgrade [geprüft: OpenWrt f174914]
+- **seriell nötig:** ja
+- **Gehäuse öffnen:** ja [geprüft: OpenWrt f174914]
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = ja; l8 = ja
+- **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Löten an Testpunkten, UART, TFTP
+- **Werkzeug/Spezial:** Lötkolben
+- **Typenschild/Verwechslung:** Laut OpenWrt identisch mit dem EAP683-LR, gleiches Image [geprüft: OpenWrt 708dcca]
+- **Bedingung an die Herstellerfirmware:** tplink-safeloader erkennt die Herstellerfirmware nicht, deshalb kein Weg über die Weboberfläche [geprüft: OpenWrt f174914]
+- **initramfs-Link:** OpenWrt-initramfs aus dem Neanderfunk-Bau (Gerät erst in OpenWrt main) [abgeleitet]
+- **Factory-/Stock-Image-Link:** kein factory für die Herstelleroberfläche [geprüft: OpenWrt f174914]
+- **Stock-Teile:** -
+- **RAM:** 1 GB [geprüft: OpenWrt f174914]
+- **Rückweg zur Herstellerfirmware:** U-Boot-Variable tp_boot_idx auf 1 setzen (Bootloader oder fw_setenv), dann startet die Herstellerfirmware aus ubi1; danach über deren Weboberfläche aktualisieren [geprüft: OpenWrt f174914]
+- **Gluon-RAMpe passt:** nein: Installation über die U-Boot-Konsole [abgeleitet]
+- **Quelle (OpenWrt-Commit):** OpenWrt 708dcca80a0b19aacd32e2bd4530b88461f87581; gluon-patches-hardware Zweig v2025.1.x-next, Backport aus OpenWrt main
 
 #### tp-link-re6000xd
 
@@ -13837,7 +13907,7 @@ Xiaomi Mi Router 4C · ramips-mt76x8 · K2
 
 ### Noch ohne Anleitungsfamilie
 
-18 Gerät(e).
+19 Gerät(e).
 
 #### asus-tuf-ax4200q
 
@@ -14343,6 +14413,36 @@ Zyxel EX5601-T0 (OpenWrt U-Boot layout) · mediatek-filogic · K5
 - **RAM:** 1 GB [geprüft: OpenWrt 1c05388]
 - **Gluon-RAMpe passt:** nein: Bootloader-Tausch braucht eine OpenWrt-Shell [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt b5df398a36f153f036c0a5ff9b221abb0f6f240a; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
+
+#### zyxel-wx5600-t0-openwrt-u-boot-layout
+
+Zyxel WX5600-T0 (OpenWrt U-Boot layout) · mediatek-filogic · K5
+
+- **Weg ab Werk:** UART: OpenWrt-U-Boot per mtk_uartboot in den RAM laden, im Bootmenü UBI neu anlegen, dann BL2 und U-Boot sowie Recovery und Produktivsystem schreiben [geprüft: OpenWrt 09a0462]; ersetzt den Bootloader
+- **Schritte (Normalweg):**
+  1. UART anschließen, OpenWrt-U-Boot mit `mtk_uartboot` und einem DDR3-BL2 (mt7986-ram-ddr3-bl2.bin) in den RAM laden [geprüft: OpenWrt 09a0462]
+  2. Gigabit-Ethernet nutzen und im U-Boot nur den LAN2-Port verwenden [geprüft: OpenWrt 09a0462]
+  3. Im Bootmenü 0, dann `mtd erase ubi`, `run ubi_format`, `bootmenu` [geprüft: OpenWrt 09a0462]
+  4. BL2 und U-Boot laden und schreiben (Menüpunkte 8 und 7) [geprüft: OpenWrt 09a0462]
+  5. Recovery und Produktivsystem laden und schreiben (Menüpunkte 6 und 5); für Gluon das Gluon-sysupgrade (.itb) [geprüft: OpenWrt 09a0462; Gluon-Image abgeleitet]
+- **Warnung:** Ersetzt den Bootloader; Sicherung vorher nach der T56-Anleitung [geprüft: OpenWrt 09a0462]. Gerät bei uns ungetestet, Backport aus OpenWrt main samt U-Boot-Anpassung an 2024.10 [abgeleitet]
+- **Übertragung:** seriell (mtk_uartboot) plus tftp aus dem OpenWrt-U-Boot
+- **Anschluss:** UART [geprüft: OpenWrt 09a0462]
+- **Programm:** mtk_uartboot, serielles Terminal, TFTP-Server [geprüft: OpenWrt 09a0462]
+- **Datei:** mt7986-ram-ddr3-bl2.bin, -bl31-uboot.fip, -preloader.bin, -initramfs-recovery.itb, dann Gluon-sysupgrade (.itb) [geprüft: OpenWrt 09a0462; Neanderfunk-Bau 17.10.2026]
+- **seriell nötig:** ja
+- **Gehäuse öffnen:** offen [abgeleitet]
+- **Level-Merkmale (scripts/level.py):** werkzeug = seriell; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = offen; l8 = nein
+- **Risiko (normal / bootloader / offen):** bootloader
+- **Level: Einzelentscheidung:** Bootloader-Tausch über UART mit mtk_uartboot
+- **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Verwandt mit Zyxel T56/EX5600/EX5601, aber DDR3 statt DDR4 und zwei 2.5G-Ports [geprüft: OpenWrt 09a0462]
+- **initramfs-Link:** OpenWrt-initramfs-recovery.itb aus dem Neanderfunk-Bau (Gerät erst in OpenWrt main) [geprüft: Bau 17.10.2026]
+- **Factory-/Stock-Image-Link:** kein factory; Bootloader-Artefakte preloader.bin und bl31-uboot.fip [geprüft: Bau 17.10.2026]
+- **Stock-Teile:** - (Bootloader aus OpenWrt)
+- **RAM:** 512 MB [geprüft: OpenWrt 09a0462]
+- **Gluon-RAMpe passt:** nein: Bootloader-Tausch [abgeleitet]
+- **Quelle (OpenWrt-Commit):** OpenWrt 09a0462ea803deb9775ef66ef3fe5be53f12fd6b; OpenWrt 1dbb2d55ac794b5e0ff0a34f2982be6814d6857a; gluon-patches-hardware Zweig v2025.1.x-next, Backport aus OpenWrt main
 
 #### mercusys-mr3000x-v2
 
