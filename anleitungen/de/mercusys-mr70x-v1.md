@@ -122,8 +122,10 @@ uns). Für Hardware 2 gilt diese Anleitung nicht.
 ## Zurück zur Mercusys-Firmware
 
 Nach der Installation geht das nicht mehr über die Notfall-Seite (siehe
-"Achtung" oben). Ob es mit einer seriellen Konsole geht, haben wir nicht
-ausprobiert.
+"Achtung" oben). Zurück geht es dann nur noch mit einer seriellen Konsole
+bei geöffnetem Gehäuse. Das haben wir ausprobiert, es ist aber nichts für
+Endnutzer (Hintergrund im OpenWrt-Forum,
+[Thema 160069](https://forum.openwrt.org/t/160069)).
 
 ## Herkunft der Angaben
 
