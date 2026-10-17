@@ -15,7 +15,7 @@
 <meta name="anleitung:risiko" content="normal">
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-not-found, router-antwortet-nicht">
-<meta name="anleitung:daten_stand" content="ba734446">
+<meta name="anleitung:daten_stand" content="53055667">
 <meta name="anleitung:vorlage_stand" content="33a38da8">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
@@ -30,6 +30,13 @@ klappt.</p>
 hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
 <p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20Mercusys%20MR70X%20v1">projekt@neanderfunk.de</a></p>
+</blockquote>
+<blockquote>
+<p><strong>Achtung:</strong> Einen einfachen Weg zurück zur Mercusys-Firmware gibt es nach der
+Installation nicht.
+Sobald einmal OpenWrt oder die Freifunk-Firmware auf dem MR70X war, nimmt
+seine Notfall-Seite (Reset-Taste beim Einstecken) keine Mercusys-Firmware
+mehr an. Sie meldet trotzdem jedes Mal Erfolg.</p>
 </blockquote>
 <p>Beim Mercusys MR70X v1 geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update
@@ -46,7 +53,9 @@ TP-Link etwa &quot;Ver: 5.0&quot;, bei anderen &quot;H/W Ver.&quot;). Viele Ger�
 mehreren Versionen, und jede braucht ihr eigenes Image. Vergleich den
 Aufkleber genau mit &quot;Mercusys MR70X v1&quot;, bevor du anfängst.</p>
 <h2>Vorher prüfen</h2>
-<p>Das Image passt zum MR70X und zum baugleichen MR1800X, jeweils Hardware 1.0.</p>
+<p>Das Image passt zum MR70X und zum baugleichen MR1800X mit Hardware 1 (auf
+dem Aufkleber &quot;1.0&quot; oder &quot;1.20&quot;; mit 1.20 lief die Freifunk-Firmware bei
+uns). Für Hardware 2 gilt diese Anleitung nicht.</p>
 <h2>Schritte</h2>
 <ol>
 <li>
@@ -110,11 +119,19 @@ Rechner auf &quot;automatisch&quot; und zieh das Kabel kurz ab und wieder an
 (<a href="grundlagen/router-antwortet-nicht.html">Die Router-Seite antwortet nicht</a>).
 Je nach Community startet die Firmware auch gleich im Betrieb ohne
 Einrichtungsseite.</li>
+<li><strong>Der Router startet nur noch die Notfall-Seite</strong> (&quot;System error. The
+router cannot start up normally …&quot;), auch nach erneutem Hochladen. Dann
+hat der Bootloader im Speicher eine Markierung gelöscht, ohne die er keine
+Firmware mehr startet. Warum, wissen wir nicht. Über die Notfall-Seite
+lässt sich das nicht beheben, ihre Erfolgsmeldung gilt nicht. Es geht nur
+noch mit einer seriellen Konsole bei geöffnetem Gehäuse, also etwas für
+Erfahrene (beschrieben im OpenWrt-Forum,
+<a href="https://forum.openwrt.org/t/160069">Thema 160069</a>).</li>
 </ul>
 <h2>Zurück zur Mercusys-Firmware</h2>
-<p>Strom ab, Reset-Taste beim Einstecken 5 bis 10 Sekunden halten. Rechner fest
-auf <code>192.168.1.10</code>, Netzmaske <code>255.255.255.0</code>, dann <code>http://192.168.1.1</code>
-öffnen und die Mercusys-Firmware hochladen.</p>
+<p>Nach der Installation geht das nicht mehr über die Notfall-Seite (siehe
+&quot;Achtung&quot; oben). Ob es mit einer seriellen Konsole geht, haben wir nicht
+ausprobiert.</p>
 <h2>Herkunft der Angaben</h2>
 <p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
 <ul>

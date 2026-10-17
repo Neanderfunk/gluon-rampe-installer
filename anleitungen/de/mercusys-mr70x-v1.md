@@ -10,7 +10,7 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: ba734446
+daten_stand: 53055667
 vorlage_stand: 33a38da8
 ---
 
@@ -26,6 +26,12 @@ vorlage_stand: 33a38da8
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Mercusys%20MR70X%20v1)
+
+> **Achtung:** Einen einfachen Weg zurück zur Mercusys-Firmware gibt es nach der
+> Installation nicht.
+> Sobald einmal OpenWrt oder die Freifunk-Firmware auf dem MR70X war, nimmt
+> seine Notfall-Seite (Reset-Taste beim Einstecken) keine Mercusys-Firmware
+> mehr an. Sie meldet trotzdem jedes Mal Erfolg.
 
 Beim Mercusys MR70X v1 geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update
@@ -45,7 +51,9 @@ Aufkleber genau mit "Mercusys MR70X v1", bevor du anfängst.
 
 ## Vorher prüfen
 
-Das Image passt zum MR70X und zum baugleichen MR1800X, jeweils Hardware 1.0.
+Das Image passt zum MR70X und zum baugleichen MR1800X mit Hardware 1 (auf
+dem Aufkleber "1.0" oder "1.20"; mit 1.20 lief die Freifunk-Firmware bei
+uns). Für Hardware 2 gilt diese Anleitung nicht.
 
 ## Schritte
 
@@ -102,12 +110,20 @@ Das Image passt zum MR70X und zum baugleichen MR1800X, jeweils Hardware 1.0.
   ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
   Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
+- **Der Router startet nur noch die Notfall-Seite** ("System error. The
+  router cannot start up normally …"), auch nach erneutem Hochladen. Dann
+  hat der Bootloader im Speicher eine Markierung gelöscht, ohne die er keine
+  Firmware mehr startet. Warum, wissen wir nicht. Über die Notfall-Seite
+  lässt sich das nicht beheben, ihre Erfolgsmeldung gilt nicht. Es geht nur
+  noch mit einer seriellen Konsole bei geöffnetem Gehäuse, also etwas für
+  Erfahrene (beschrieben im OpenWrt-Forum,
+  [Thema 160069](https://forum.openwrt.org/t/160069)).
 
 ## Zurück zur Mercusys-Firmware
 
-Strom ab, Reset-Taste beim Einstecken 5 bis 10 Sekunden halten. Rechner fest
-auf `192.168.1.10`, Netzmaske `255.255.255.0`, dann `http://192.168.1.1`
-öffnen und die Mercusys-Firmware hochladen.
+Nach der Installation geht das nicht mehr über die Notfall-Seite (siehe
+"Achtung" oben). Ob es mit einer seriellen Konsole geht, haben wir nicht
+ausprobiert.
 
 ## Herkunft der Angaben
 

@@ -10,7 +10,7 @@ level_text: Besondere Programme
 risiko: bootloader
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: ba734446
+daten_stand: 53055667
 vorlage_stand: 33a38da8
 ---
 
