@@ -10,6 +10,67 @@
 <body class="uebersicht">
 <h1>Freifunk-Firmware installieren</h1>
 <p>Anleitungen je Gerät. Ungeprüfte Anleitungen sind aus Quellen zusammengestellt und noch nicht am Gerät nachvollzogen.</p>
+<h2>Level</h2>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L0 Einfach hochladen</td>
+<td>Die Freifunk-Firmware wird über die Weboberfläche des Geräts hochgeladen; es gibt nur eine passende Datei.</td>
+</tr>
+<tr>
+<td>L0.1 Hochladen, richtige Datei wählen</td>
+<td>Wie L0, aber es gibt zwei Dateien (Erstinstallation und Upgrade), und man muss die richtige nehmen.</td>
+</tr>
+<tr>
+<td>L1 Zwei Schritte im Browser</td>
+<td>Erst eine Zwischenfirmware oder eine ältere Herstellerfirmware, dann die Freifunk-Firmware; alles im Browser.</td>
+</tr>
+<tr>
+<td>L2 Taste beim Einschalten</td>
+<td>Notfall-Modus per Taste, dann Hochladen im Browser; der Rechner bekommt seine Adresse von selbst.</td>
+</tr>
+<tr>
+<td>L3 Feste Adresse am Rechner</td>
+<td>Wie L2 oder ein anderer Weg im Browser, aber die Netzwerkeinstellung des Rechners muss von Hand umgestellt werden.</td>
+</tr>
+<tr>
+<td>L4 Netzwerkwerkzeuge</td>
+<td>TFTP-Server, SSH, curl oder ein Image auf einen Datenträger schreiben; Programme, die es für jedes System gibt.</td>
+</tr>
+<tr>
+<td>L5 Besondere Programme</td>
+<td>Skripte oder Programme außerhalb des Üblichen, oder Dateien vorher selbst zusammenbauen.</td>
+</tr>
+<tr>
+<td>L6 Serielles Kabel</td>
+<td>Ein Konsolenkabel am Gerät, ohne es zu öffnen.</td>
+</tr>
+<tr>
+<td>L7 Gehäuse öffnen</td>
+<td>Für die serielle Konsole muss das Gerät aufgeschraubt werden.</td>
+</tr>
+<tr>
+<td>L8 Löten und Programmer</td>
+<td>Klemmen am Speicherchip, Lötarbeiten oder ein Flash-Programmer.</td>
+</tr>
+</tbody>
+</table>
+<h2>Risiko</h2>
+<blockquote>
+<p><strong>Risiko „normal“:</strong> Der Bootloader des Geräts bleibt unangetastet.
+Solange das so ist, ist der Weg zurück eigentlich immer offen, notfalls
+über den Notfall-Modus per TFTP oder über die serielle Konsole.</p>
+<p><strong>Risiko „Bootloader“:</strong> Hier wird der Bootloader selbst ersetzt oder
+verändert. Geht dabei etwas schief, gibt es ohne Flash-Programmer meist
+kein Zurück.</p>
+</blockquote>
+<h2>Geräte</h2>
 <table>
 <thead>
 <tr>
@@ -1271,66 +1332,6 @@
 </tr>
 </tbody>
 </table>
-<h2>Level</h2>
-<table>
-<thead>
-<tr>
-<th>Level</th>
-<th>Bedeutung</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>L0 Einfach hochladen</td>
-<td>Die Freifunk-Firmware wird über die Weboberfläche des Geräts hochgeladen; es gibt nur eine passende Datei.</td>
-</tr>
-<tr>
-<td>L0.1 Hochladen, richtige Datei wählen</td>
-<td>Wie L0, aber es gibt zwei Dateien (Erstinstallation und Upgrade), und man muss die richtige nehmen.</td>
-</tr>
-<tr>
-<td>L1 Zwei Schritte im Browser</td>
-<td>Erst eine Zwischenfirmware oder eine ältere Herstellerfirmware, dann die Freifunk-Firmware; alles im Browser.</td>
-</tr>
-<tr>
-<td>L2 Taste beim Einschalten</td>
-<td>Notfall-Modus per Taste, dann Hochladen im Browser; der Rechner bekommt seine Adresse von selbst.</td>
-</tr>
-<tr>
-<td>L3 Feste Adresse am Rechner</td>
-<td>Wie L2 oder ein anderer Weg im Browser, aber die Netzwerkeinstellung des Rechners muss von Hand umgestellt werden.</td>
-</tr>
-<tr>
-<td>L4 Netzwerkwerkzeuge</td>
-<td>TFTP-Server, SSH, curl oder ein Image auf einen Datenträger schreiben; Programme, die es für jedes System gibt.</td>
-</tr>
-<tr>
-<td>L5 Besondere Programme</td>
-<td>Skripte oder Programme außerhalb des Üblichen, oder Dateien vorher selbst zusammenbauen.</td>
-</tr>
-<tr>
-<td>L6 Serielles Kabel</td>
-<td>Ein Konsolenkabel am Gerät, ohne es zu öffnen.</td>
-</tr>
-<tr>
-<td>L7 Gehäuse öffnen</td>
-<td>Für die serielle Konsole muss das Gerät aufgeschraubt werden.</td>
-</tr>
-<tr>
-<td>L8 Löten und Programmer</td>
-<td>Klemmen am Speicherchip, Lötarbeiten oder ein Flash-Programmer.</td>
-</tr>
-</tbody>
-</table>
-<h2>Risiko</h2>
-<blockquote>
-<p><strong>Risiko „normal“:</strong> Der Bootloader des Geräts bleibt unangetastet.
-Solange das so ist, ist der Weg zurück eigentlich immer offen, notfalls
-über den Notfall-Modus per TFTP oder über die serielle Konsole.</p>
-<p><strong>Risiko „Bootloader“:</strong> Hier wird der Bootloader selbst ersetzt oder
-verändert. Geht dabei etwas schief, gibt es ohne Flash-Programmer meist
-kein Zurück.</p>
-</blockquote>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>
