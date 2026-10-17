@@ -106,8 +106,9 @@ Kaufen empfehlen wir den {{ modell }} nicht mehr.
 8. **Fertig.** Danach startet die Freifunk-Firmware deiner Community: je nach
    Community zuerst mit einer Einrichtungsseite unter `http://192.168.1.1`
    oder gleich im Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md).
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
    Im Betrieb ist die eine Netzwerkbuchse des {{ modell }} sein Anschluss
    ans Internet: Steck sie an deinen Router zu Hause.
 

@@ -237,8 +237,9 @@ nicht geprüft.
     "automatisch".{% endif %} Danach startet die
     Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
     Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
-    Kommt dort "Not Found", siehe [Der Browser zeigt
-    "Not Found"](grundlagen/browser-not-found.md). Wie
+    Antwortet dort nichts, siehe [Die Router-Seite antwortet
+    nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+    [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Wie
     es weitergeht, beschreibt deine Community.
     {%- if w.get("eine_buchse") %} Im Betrieb ist die einzige
     Netzwerkbuchse des {{ modell }} sein Anschluss ans Internet: Verbinde

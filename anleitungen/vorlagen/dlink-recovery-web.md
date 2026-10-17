@@ -178,7 +178,7 @@ wirklich über das Kabel spricht.
    `http://{{ w.rampe_ip }}/cgi-bin/config`. Es erscheint die Seite "Firmware
    aktualisieren". Kommt "Not Found", hat sich der Browser eine Seite von
    früher gemerkt: Tipp die Adresse vollständig ein, mit `/cgi-bin/config` am
-   Ende. Hilft das nicht, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
+   Ende. Hilft das nicht, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md).
    Die RAMpe bleibt auf dem Router, bis die Freifunk-Firmware sie ersetzt.
    Startet der Router zwischendurch neu, ist das harmlos: Seite einfach
    wieder aufrufen.
@@ -211,16 +211,18 @@ wirklich über das Kabel spricht.
 10. **Fertig.** Nach {{ w.dauer_gluon }} startet die Freifunk-Firmware
     deiner Community: je nach Community zuerst mit einer Einrichtungsseite
     unter `http://192.168.1.1` oder gleich im Betrieb.
-    Kommt dort "Not Found", siehe [Der Browser zeigt
-    "Not Found"](grundlagen/browser-not-found.md). Wie es weitergeht,
+    Antwortet dort nichts, siehe [Die Router-Seite antwortet
+    nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+    [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Wie es weitergeht,
     beschreibt deine Community.
 {%- else %}
 
 8. **Fertig.** Nach dem Neustart startet die Freifunk-Firmware deiner
    Community: je nach Community zuerst mit einer Einrichtungsseite unter
    `http://192.168.1.1` oder gleich im Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md). Wie es weitergeht, beschreibt
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Wie es weitergeht, beschreibt
    deine Community.
 {%- endif %}
 

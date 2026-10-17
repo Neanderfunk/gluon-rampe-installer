@@ -170,8 +170,9 @@ die Adresse der Oberfläche (sie steht meist auf dem Aufkleber unter dem Gerät)
 7. **Fertig.** Danach startet die Freifunk-Firmware deiner Community: je nach
    Community zuerst mit einer Einrichtungsseite unter `http://192.168.1.1`
    oder gleich im Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md).
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
    {%- if w.rechner_ip %} Stell den Rechner vorher wieder auf "automatisch".{% endif %}
    Wie es weitergeht, beschreibt deine Community.
 
@@ -191,8 +192,9 @@ die Adresse der Oberfläche (sie steht meist auf dem Aufkleber unter dem Gerät)
   Herstellerfirmware ist zu neu und sperrt fremde Firmware (siehe "Vorher
   prüfen", falls vorhanden).
 - **Nach dem Neustart ist unter `http://192.168.1.1` nichts.** Stell den
-  Rechner auf "automatisch" und zieh das Kabel kurz ab und wieder an. Je nach
-  Community startet die Firmware auch gleich im Betrieb ohne
+  Rechner auf "automatisch" und zieh das Kabel kurz ab und wieder an
+  ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
+  Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
 {{ zusatz.fehler }}
 {%- if w.tftp_datei %}

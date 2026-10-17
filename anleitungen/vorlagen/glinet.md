@@ -160,8 +160,9 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
 8. **Fertig.** Danach startet die Freifunk-Firmware deiner Community: je nach
    Community zuerst mit einer Einrichtungsseite unter `http://192.168.1.1`
    oder gleich im Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md).
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 {%- else %}
 
 4. **Firmware hochladen.** Geh zu
@@ -177,8 +178,9 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
 6. **Fertig.** Danach startet die Freifunk-Firmware deiner Community: je nach
    Community zuerst mit einer Einrichtungsseite unter `http://192.168.1.1`
    oder gleich im Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md).
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
    {%- if w.per_wlan %} Für die Einrichtung brauchst du jetzt ein
    Netzwerkkabel, das WLAN des Herstellers gibt es nicht mehr.{% endif %}
 {%- endif %}
@@ -226,15 +228,17 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
 8. **Fertig.** Stell den Rechner wieder auf "automatisch". Danach startet die
    Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
    Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md).
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 {%- else %}
 
 7. **Fertig.** Stell den Rechner wieder auf "automatisch". Danach startet die
    Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
    Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
-   Kommt dort "Not Found", siehe [Der Browser zeigt
-   "Not Found"](grundlagen/browser-not-found.md).
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 {%- endif %}
 {%- endif %}
 
@@ -252,8 +256,9 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
 
 {% if w.weg == "uboot" -%}
 - **Unter `http://192.168.1.1` kommt nichts.** Prüf die feste Adresse
-  (Schritt 2), schalte VPN-Programme aus und versuch Schritt 4 noch einmal,
-  diesmal genau auf die LEDs achtend. Kommt "Not Found" oder "PAGE NOT
+  (Schritt 2), schalte VPN-Programme aus, zieh das Kabel am Rechner einmal
+  kurz ab ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md))
+  und versuch Schritt 4 noch einmal, diesmal genau auf die LEDs achtend. Kommt "Not Found" oder "PAGE NOT
   FOUND", siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 {% elif w.weg == "gl-luci" -%}
 - **Die GL.iNet-Seite "Lokale Aktualisierung" meldet "Der Test der Firmware
