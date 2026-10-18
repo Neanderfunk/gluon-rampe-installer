@@ -380,6 +380,19 @@ Deploy):
   wenn mehrere solche RAMpes gleichzeitig am selben Netz hängen (gleiche
   MAC). Beim Einzel-M30 mit Odm-Eintrag 0x81 stimmt die MAC.
 
+## Stand 18.10.2026: GL.iNet GL-AX1800 / GL-AXT1800 (Zweig v2025.1.x-next)
+
+- **2 Geräte neu im Datensatz** (jetzt 388): GL.iNet GL-AXT1800 (Slate AX)
+  und GL-AX1800 (Flint), neues Target `qualcommax-ipq60xx`, Backport des
+  OpenWrt-PR #14950 aus main (gluon-patches-hardware
+  `devices/glinet-axt1800`). Lokal gebaut; ein AXT1800 liegt bei adorfer,
+  am Gerät noch nicht erprobt.
+- Weg laut OpenWrt: factory.bin über die GL.iNet-Oberfläche, Notweg
+  U-Boot-Failsafe mit dem OpenWrt-factory.ubi. Noch ohne Familie und
+  `werte`, also ohne Seite.
+- Verwechslungsfalle: Das Typenschild des AXT1800 trägt groß "AX1800
+  Wireless Router", maßgeblich ist die Zeile Model.
+
 ## Stand 17.10.2026 abends: neue Geräte aus dem Zweig v2025.1.x-next
 
 - **33 Geräte neu im Datensatz** (jetzt 386), alle nur auf dem Zweig

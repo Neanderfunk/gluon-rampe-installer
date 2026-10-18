@@ -140,7 +140,7 @@ fehlen die Felder noch.
 
 | Kat. | Geräte |
 |---|---:|
-| K0 | 119 |
+| K0 | 121 |
 | K0+ | 26 |
 | K1 | 26 |
 | K1d | 101 |
@@ -149,16 +149,16 @@ fehlen die Felder noch.
 | K4 | 40 |
 | K5 | 9 |
 | offen | 2 |
-| **gesamt** | **386** |
+| **gesamt** | **388** |
 
-Gluon-RAMpe passt: **ja 36**, teilweise 48, nein/unnötig 302.
+Gluon-RAMpe passt: **ja 36**, teilweise 48, nein/unnötig 304.
 
 Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-951ui-2nd-hap`, `mikrotik-routerboard-mapl-2nd`, `mikrotik-routerboard-wap-g-5hact2hnd`, `mikrotik-routerboard-wapr-2nd`, `gl.inet-gl-e750`, `gl.inet-gl-xe300`, `zte-mf286r`, `asus-lyra-map-ac2200`, `avm-fritz-box-7520`, `avm-fritz-box-7530`, `avm-fritz-repeater-1200`, `avm-fritz-repeater-3000`, `linksys-mr8300-dallas`, `mikrotik-discg-5acd`, `mikrotik-hap-ac2`, `mikrotik-sxtsq-5-ac-rbsxtsqg-5acd`, `mikrotik-wap-ac`, `avm-fritz-box-3390`, `avm-fritz-box-7362-sl`, `avm-fritz-box-7412`, `avm-fritz-box-7430`, `asus-rt-ax52`, `asus-tuf-ax4200q`, `d-link-aquila-pro-ai-m30-a1`, `d-link-aquila-pro-ai-m60-a1`, `netgear-wax218`, `asus-rt-ax53u`, `genexis-pulse-ex400`, `mikrotik-routerboard-750gr3`, `netgear-wndr3700-v5`, `xiaomi-mi-router-3g`, `xiaomi-mi-router-ac2100`, `xiaomi-redmi-router-ac2100`, `zyxel-wsm20`.
 
 | Level | Geräte |
 |---|---:|
 | L0 | 12 |
-| L0.1 | 76 |
+| L0.1 | 78 |
 | L1 | 24 |
 | L2 | 1 |
 | L3 | 33 |
@@ -169,7 +169,7 @@ Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-95
 | L8 | 3 |
 | offen | 39 |
 
-Risiko: normal 365, bootloader 20, offen 1 (Merkmale und Regeln in `scripts/level.py`).
+Risiko: normal 367, bootloader 20, offen 1 (Merkmale und Regeln in `scripts/level.py`).
 
 <!-- END erzeugt:zahlen -->
 
@@ -499,6 +499,8 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [ocedo-panda](#ocedo-panda) | OCEDO Panda | mpc85xx-p1020 | K1 | offen | normal | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | teilweise | ja |  |
 | [mercusys-mr3000x-v2](#mercusys-mr3000x-v2) | Mercusys MR3000X v2.0 (Alias von mercusys-mr80x-v2) | qualcommax-ipq50xx | K0 | L0.1 | normal |  | webui-upload | nein | nein | nein |  |  |
 | [mercusys-mr80x-v2](#mercusys-mr80x-v2) | Mercusys MR80X v2 | qualcommax-ipq50xx | K0 | L0.1 | normal |  | webui-upload | nein | nein | nein |  |  |
+| [gl.inet-gl-ax1800](#gl.inet-gl-ax1800) | GL.iNet GL-AX1800 | qualcommax-ipq60xx | K0 | L0.1 | normal |  | webui-upload | nein | nein | nein |  |  |
+| [gl.inet-gl-axt1800](#gl.inet-gl-axt1800) | GL.iNet GL-AXT1800 | qualcommax-ipq60xx | K0 | L0.1 | normal |  | webui-upload | nein | nein | nein |  |  |
 | [linksys-mx5300](#linksys-mx5300) | Linksys MX5300 | qualcommax-ipq807x | K0 | L0.1 | normal | [`sonderweg-linksys-mx5300`](#familie-sonderweg-linksys-mx5300) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/linksys-mx5300.md) |
 | [netgear-wax218](#netgear-wax218) | NETGEAR WAX218 | qualcommax-ipq807x | K1 | offen | normal | [`sonderweg-netgear-wax218`](#familie-sonderweg-netgear-wax218) | webui-upload | nein | nein | ja | ja | - |
 | [tp-link-eap620-hd-v1](#tp-link-eap620-hd-v1) | TP-Link EAP620 HD v1 | qualcommax-ipq807x | K4 | L8 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client | ja | ja | teilweise | ja | - |
@@ -13907,7 +13909,7 @@ Xiaomi Mi Router 4C · ramips-mt76x8 · K2
 
 ### Noch ohne Anleitungsfamilie
 
-19 Gerät(e).
+21 Gerät(e).
 
 #### asus-tuf-ax4200q
 
@@ -14514,6 +14516,68 @@ Mercusys MR80X v2 · qualcommax-ipq50xx · K0
 - **Hardware-Test:** 17.10.2026 (Test Neanderfunk, MR3000X v2.0): Testbau 26101706bro-ipq50xx per sysupgrade aus OpenWrt; Start vom Flash, Ethernet (LAN, WAN per DHCP), WLAN 2.4/5 GHz, Mesh und VPN; Client 5 GHz 340/208 Mbit/s; Gluon-factory über die Stock-Oberfläche nicht erprobt
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 938f67a519de64dcec10759b2b7203aca086f97a; gluon-patches-hardware Zweig v2025.1.x-next, devices/mercusys-mr80x-v2
+
+#### gl.inet-gl-ax1800
+
+GL.iNet GL-AX1800 · qualcommax-ipq60xx · K0
+
+- **Weg ab Werk:** factory.bin über die Upgrade-Seite der GL.iNet-Firmware hochladen, Einstellungen nicht behalten [geprüft: OpenWrt c3f2bb7afc]; mit dem Gluon-factory selbst nicht erprobt [abgeleitet]
+- **Schritte (Normalweg):**
+  1. Typenschild prüfen: Model GL-AX1800 [geprüft: OpenWrt c3f2bb7afc]; nicht mit dem GL-AXT1800 (Slate AX) verwechseln (siehe verwechslung)
+  2. Gluon-factory-Image bereitlegen [abgeleitet]
+  3. Rechner per Netzwerkkabel an einen LAN-Port, im Browser die GL.iNet-Oberfläche öffnen (ab Werk vermutlich http://192.168.8.1) [abgeleitet]
+  4. In der Upgrade-Seite das factory-Image hochladen, Einstellungen nicht behalten [geprüft: OpenWrt c3f2bb7afc]
+  5. Warten, bis das Gerät mit Gluon neu gestartet ist [abgeleitet]
+- **Warnung:** Gerät bei uns noch ungetestet, Backport aus OpenWrt main (dort ab 25.12) [abgeleitet]
+- **Übertragung:** webui-upload (Stock-Web-UI)
+- **Adressen:** Stock http://192.168.8.1 [abgeleitet: GL.iNet-Standard, beim AX1800 nicht geprüft]; U-Boot-Failsafe http://192.168.1.1 [geprüft: OpenWrt c3f2bb7afc]
+- **Programm:** Browser
+- **Datei:** Gluon-factory-Image (UBI mit GL.iNet-Metadaten) [geprüft: OpenWrt c3f2bb7afc, Patch 0006]
+- **seriell nötig:** nein
+- **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** GL-AX1800 heißt im Handel Flint, 4 LAN-Ports und WAN [geprüft: OpenWrt c3f2bb7afc]; GL-AXT1800 (Slate AX) ist ein anderes Gerät, dessen Typenschild ebenfalls "AX1800 Wireless Router" trägt, eigener Eintrag [geprüft: Typenschild, Foto adorfer 18.10.2026]
+- **initramfs-Link:** kein OpenWrt-24.10-Image (Gerät erst ab OpenWrt 25.12) [geprüft: OpenWrt c3f2bb7afc nicht in openwrt-24.10]
+- **Factory-/Stock-Image-Link:** Gluon-factory (factory.bin: UBI mit GL.iNet-Metadaten) [geprüft: OpenWrt c3f2bb7afc]
+- **Stock-Teile:** -
+- **RAM:** 512 MB [geprüft: OpenWrt c3f2bb7afc]
+- **Notweg:** [Notfall] U-Boot-Web-Failsafe: Reset 5 Sekunden halten, http://192.168.1.1, dort das OpenWrt-factory.ubi hochladen [geprüft: OpenWrt c3f2bb7afc]; Gluon erzeugt kein factory.ubi, das OpenWrt-factory.ubi liegt nur im Neanderfunk-Bau [abgeleitet]
+- **Rückweg zur Herstellerfirmware:** GL.iNet-Firmware über den U-Boot-Web-Failsafe [abgeleitet, nicht erprobt]
+- **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
+- **Quelle (OpenWrt-Commit):** OpenWrt c3f2bb7afc72a6b6af99ff466bc22d9f123e36ab; gluon-patches-hardware Zweig v2025.1.x-next, devices/glinet-axt1800
+
+#### gl.inet-gl-axt1800
+
+GL.iNet GL-AXT1800 · qualcommax-ipq60xx · K0
+
+- **Weg ab Werk:** factory.bin über die Upgrade-Seite der GL.iNet-Firmware hochladen, Einstellungen nicht behalten [geprüft: OpenWrt c3f2bb7afc]; mit dem Gluon-factory selbst nicht erprobt [abgeleitet]
+- **Schritte (Normalweg):**
+  1. Typenschild prüfen: Model GL-AXT1800 [geprüft: OpenWrt c3f2bb7afc]; nicht mit dem GL-AX1800 (Flint) verwechseln (siehe verwechslung)
+  2. Gluon-factory-Image bereitlegen [abgeleitet]
+  3. Rechner per Netzwerkkabel an einen LAN-Port, im Browser die GL.iNet-Oberfläche öffnen (ab Werk http://192.168.8.1) [abgeleitet: Typenschild GL-AXT1800]
+  4. In der Upgrade-Seite das factory-Image hochladen, Einstellungen nicht behalten [geprüft: OpenWrt c3f2bb7afc]
+  5. Warten, bis das Gerät mit Gluon neu gestartet ist [abgeleitet]
+- **Warnung:** Gerät bei uns noch ungetestet, Backport aus OpenWrt main (dort ab 25.12) [abgeleitet]; Reiserouter mit Lüfter, ob der Lüfter unter Gluon regelt, ist noch nicht geprüft [abgeleitet]
+- **Übertragung:** webui-upload (Stock-Web-UI)
+- **Adressen:** Stock http://192.168.8.1 [abgeleitet: Typenschild GL-AXT1800]; U-Boot-Failsafe http://192.168.1.1 [geprüft: OpenWrt c3f2bb7afc]
+- **Programm:** Browser
+- **Datei:** Gluon-factory-Image (UBI mit GL.iNet-Metadaten) [geprüft: OpenWrt c3f2bb7afc, Patch 0006]
+- **seriell nötig:** nein
+- **Gehäuse öffnen:** nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
+- **Risiko (normal / bootloader / offen):** normal
+- **Werkzeug/Spezial:** -
+- **Typenschild/Verwechslung:** Auf dem Typenschild steht groß "AX1800 Wireless Router", maßgeblich ist die Zeile Model: GL-AXT1800 (Slate AX) [geprüft: Typenschild, Foto adorfer 18.10.2026]; GL-AX1800 (Flint) ist ein anderes Gerät mit 4 LAN-Ports, eigener Eintrag [geprüft: OpenWrt c3f2bb7afc]
+- **initramfs-Link:** kein OpenWrt-24.10-Image (Gerät erst ab OpenWrt 25.12) [geprüft: OpenWrt c3f2bb7afc nicht in openwrt-24.10]
+- **Factory-/Stock-Image-Link:** Gluon-factory (factory.bin: UBI mit GL.iNet-Metadaten) [geprüft: OpenWrt c3f2bb7afc]
+- **Stock-Teile:** -
+- **RAM:** 512 MB [geprüft: OpenWrt c3f2bb7afc]
+- **Notweg:** [Notfall] U-Boot-Web-Failsafe: Reset 5 Sekunden halten, http://192.168.1.1, dort das OpenWrt-factory.ubi hochladen [geprüft: OpenWrt c3f2bb7afc]; Gluon erzeugt kein factory.ubi, das OpenWrt-factory.ubi liegt nur im Neanderfunk-Bau [abgeleitet]
+- **Rückweg zur Herstellerfirmware:** GL.iNet-Firmware über den U-Boot-Web-Failsafe [abgeleitet, nicht erprobt]
+- **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
+- **Quelle (OpenWrt-Commit):** OpenWrt c3f2bb7afc72a6b6af99ff466bc22d9f123e36ab; gluon-patches-hardware Zweig v2025.1.x-next, devices/glinet-axt1800
 
 
 <!-- END erzeugt:einzelheiten -->
