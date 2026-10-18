@@ -14559,7 +14559,7 @@ GL.iNet GL-AXT1800 · qualcommax-ipq60xx · K0
   3. Rechner per Netzwerkkabel an einen LAN-Port, im Browser die GL.iNet-Oberfläche öffnen (ab Werk http://192.168.8.1) [abgeleitet: Typenschild GL-AXT1800]
   4. In der Upgrade-Seite das factory-Image hochladen, Einstellungen nicht behalten [geprüft: OpenWrt c3f2bb7afc]
   5. Warten, bis das Gerät mit Gluon neu gestartet ist [abgeleitet]
-- **Warnung:** Gerät bei uns noch ungetestet, Backport aus OpenWrt main (dort ab 25.12) [abgeleitet]; Reiserouter mit Lüfter, ob der Lüfter unter Gluon regelt, ist noch nicht geprüft [abgeleitet]
+- **Warnung:** Backport aus OpenWrt main (dort ab 25.12), bei uns per sysupgrade erprobt, die Erstinstallation über die GL.iNet-Oberfläche noch nicht [geprüft: Test Neanderfunk 18.10.2026]
 - **Übertragung:** webui-upload (Stock-Web-UI)
 - **Adressen:** Stock http://192.168.8.1 [abgeleitet: Typenschild GL-AXT1800]; U-Boot-Failsafe http://192.168.1.1 [geprüft: OpenWrt c3f2bb7afc]
 - **Programm:** Browser
@@ -14574,8 +14574,10 @@ GL.iNet GL-AXT1800 · qualcommax-ipq60xx · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory (factory.bin: UBI mit GL.iNet-Metadaten) [geprüft: OpenWrt c3f2bb7afc]
 - **Stock-Teile:** -
 - **RAM:** 512 MB [geprüft: OpenWrt c3f2bb7afc]
+- **Fehlerbild:** Das OpenWrt-Image des GL-AX1800 startet auch auf dem AXT1800 (Modell dann "GL.iNet GL-AX1800", Lüfter ungeregelt); sysupgrade auf das richtige Image nur mit -F, ging glatt [geprüft: Test Neanderfunk 18.10.2026]
 - **Notweg:** [Notfall] U-Boot-Web-Failsafe: Reset 5 Sekunden halten, http://192.168.1.1, dort das OpenWrt-factory.ubi hochladen [geprüft: OpenWrt c3f2bb7afc]; Gluon erzeugt kein factory.ubi, das OpenWrt-factory.ubi liegt nur im Neanderfunk-Bau [abgeleitet]
 - **Rückweg zur Herstellerfirmware:** GL.iNet-Firmware über den U-Boot-Web-Failsafe [abgeleitet, nicht erprobt]
+- **Hardware-Test:** 18.10.2026 (Test Neanderfunk): Probebau 26101802bro-probe per sysupgrade -n -F aus OpenWrt 25.12.1; Board erkannt, Mesh auf beiden Bändern, primäre MAC = Aufkleber, Lüfter regelt (pwm-fan), SD-Controller erkannt; Gluon-factory über die GL.iNet-Oberfläche nicht erprobt
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt c3f2bb7afc72a6b6af99ff466bc22d9f123e36ab; gluon-patches-hardware Zweig v2025.1.x-next, devices/glinet-axt1800
 
