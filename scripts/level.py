@@ -42,7 +42,7 @@ KURZ = {
     "L1": "Zwei Schritte im Browser",
     "L2": "Taste beim Einschalten",
     "L3": "Feste Adresse am Rechner",
-    "L4": "Netzwerkwerkzeuge",
+    "L4": "Network-Tools",
     "L5": "Besondere Programme",
     "L6": "Serielles Kabel",
     "L7": "Gehäuse öffnen",
