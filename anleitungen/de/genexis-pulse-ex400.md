@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-genexis-pulse-ex400-factory.bin
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, ssh-scp]
-daten_stand: 25f2bbde
+daten_stand: d44f4bc8
 vorlage_stand: 33a38da8
 ---
 

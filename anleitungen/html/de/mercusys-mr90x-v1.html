@@ -15,8 +15,8 @@
 <meta name="anleitung:risiko" content="normal">
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, router-antwortet-nicht, ssh-scp">
-<meta name="anleitung:daten_stand" content="25f2bbde">
-<meta name="anleitung:vorlage_stand" content="4b47a696">
+<meta name="anleitung:daten_stand" content="d44f4bc8">
+<meta name="anleitung:vorlage_stand" content="fe341eeb">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -51,12 +51,12 @@ Netzwerkkabel</li>
 <li>auf dem Rechner <code>ssh</code>, <code>scp</code> und <code>telnet</code> (unter Windows ist <code>telnet</code>
 ein optionales Feature, alternativ PuTTY)</li>
 <li>das Passwort der Mercusys-Oberfläche (beim ersten Aufruf legst du es fest)</li>
-<li>OpenWrt als Zwischenstufe:
-<a href="https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin">openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin</a></li>
-<li>ein vollständiges busybox für aarch64 (<a href="https://archlinuxarm.org/packages/aarch64/busybox">herunterladen</a>).
-Das busybox der Mercusys-Firmware kann einen nötigen Befehl nicht.
-Das Paket ist ein <code>.tar.xz</code>-Archiv; gebraucht wird darin <code>usr/bin/busybox</code>
-(auspacken mit <code>tar xf …</code> oder 7-Zip).</li>
+<li>die Installationsdateien als ZIP: <a href="https://download.ffnef.de/other/dump/mr90x-v1-installdateien.zip">mr90x-v1-installdateien.zip</a>. Pack sie
+aus. Kommt dabei keine Fehlermeldung, sind die Dateien heil. Darin liegen
+ein vollständiges busybox (<code>busybox-aarch64</code>; das busybox der
+Mercusys-Firmware kann einen nötigen Befehl nicht), OpenWrt als
+Zwischenstufe (<code>openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin</code>), Prüfsummen und Hinweise zu den
+Quelltexten.</li>
 <li>die Freifunk-Firmware deiner Community für den Mercusys MR90X v1, und zwar das
 <strong>sysupgrade</strong>-Image</li>
 </ul>
@@ -132,14 +132,12 @@ Befehle tippst du in diese Telnet-Shell.</p>
 <h3>Teil 3: OpenWrt als Zwischenstufe</h3>
 <ol start="8">
 <li>
-<p><strong>Dateien auf den Router.</strong> Leg <code>busybox</code> (aus <code>usr/bin/</code> im
-ausgepackten Paket) und die OpenWrt-Datei in einen Ordner. Auf deinem
-Rechner, in diesem Ordner:</p>
-<pre><code>scp -O -P 20001 -o HostKeyAlgorithms=+ssh-rsa busybox openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin root@192.168.1.1:/tmp/
+<p><strong>Dateien auf den Router.</strong> Auf deinem Rechner, im ausgepackten Ordner:</p>
+<pre><code>scp -O -P 20001 -o HostKeyAlgorithms=+ssh-rsa busybox-aarch64 openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin root@192.168.1.1:/tmp/
 </code></pre>
 <p>In der Telnet-Shell:</p>
 <pre><code>cd /tmp
-chmod a+x busybox
+chmod a+x busybox-aarch64
 du -h openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin
 </code></pre>
 <p>Die Größe muss kleiner sein als 9MiB.</p>
@@ -150,7 +148,7 @@ Notfall-Modus des Bootloaders bleibt aber erhalten (siehe &quot;Zurück zur
 Mercusys-Firmware&quot;).</p>
 <pre><code>ubirmvol /dev/ubi0 -N kernel
 ubimkvol /dev/ubi0 -n 1 -N kernel -s 9MiB
-./busybox ubiupdatevol /dev/ubi0_1 /tmp/openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin
+./busybox-aarch64 ubiupdatevol /dev/ubi0_1 /tmp/openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin
 reboot
 </code></pre>
 </li>
