@@ -6,7 +6,7 @@ familie: sonderweg-hewlett-packard-msm460
 gluon_broken: false
 sprache: de
 level: L4
-level_text: Netzwerkwerkzeuge
+level_text: Network-Tools
 risiko: bootloader
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-client, tftp-server]

@@ -6,7 +6,7 @@ familie: asus-tuf-herbetom
 gluon_broken: false
 sprache: de
 level: L4
-level_text: Netzwerkwerkzeuge
+level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht, ssh-scp]

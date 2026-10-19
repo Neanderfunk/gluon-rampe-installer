@@ -11330,7 +11330,7 @@ Mercusys MR90X v1 · mediatek-filogic · K2
 - **Gluon-RAMpe-Rezept:** devices/mercusys-mr90x-v1.sh (gebaut 10.10.2026 lokal, initramfs etwa 8.1 MB, `91_installer_initramfs` geprüft, Hardware-Test offen): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell
 - **Quelle (OpenWrt-Commit):** OpenWrt e4fe3097ef6a961874b66932a0ac4be18070630a
 - **Detail-Anleitung:** anleitungen/de/mercusys-mr90x-v1.md
-- **Werte für die Anleitung:** initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin; initramfs_datei = openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin; busybox_url = https://archlinuxarm.org/packages/aarch64/busybox; rueckweg_url = https://www.mercusys.com/de/download/mr90x
+- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin; rueckweg_url = https://www.mercusys.com/de/download/mr90x; zip_url = https://download.ffnef.de/other/dump/mr90x-v1-installdateien.zip
 
 ### Familie `sonderweg-netgear-wax218`
 

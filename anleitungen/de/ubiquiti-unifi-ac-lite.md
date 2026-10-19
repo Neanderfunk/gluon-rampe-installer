@@ -6,7 +6,7 @@ familie: ubiquiti-unifi-ssh
 gluon_broken: false
 sprache: de
 level: L4
-level_text: Netzwerkwerkzeuge
+level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, schreibschutz, ssh-scp, tftp-client]
