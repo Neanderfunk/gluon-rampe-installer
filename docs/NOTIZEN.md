@@ -380,6 +380,57 @@ Deploy):
   wenn mehrere solche RAMpes gleichzeitig am selben Netz hängen (gleiche
   MAC). Beim Einzel-M30 mit Odm-Eintrag 0x81 stimmt die MAC.
 
+## Stand 19.10.2026: Mercusys MR90X v1 eigene Anleitung, Vero W6m zurückgestellt
+
+**MR90X v1** (Auftrag adorfer über Supernode-Betrieb):
+- Vorlage `sonderweg-mercusys-mr90x-v1` von Content (zuletzt fe341eeb), Seite
+  erzeugt, Status ungeprüft, Level L5 (Commits ad6fca98, 905bd4c5, 25f2bbde,
+  c757a43e, 422a965a, d44f4bc8, 22c7225b). In `index.json`, Selector
+  verdrahtet Supernode.
+- Dateien bei uns (Entscheidung adorfer): ZIP
+  https://download.ffnef.de/other/dump/mr90x-v1-installdateien.zip
+  (9 459 780 Bytes, SHA256 69ace003d0b9b7e59064c0732952eaa6b24d10d8d7368ff0adfa627dba65dbd6):
+  `busybox-aarch64` (BusyBox 1.36.1 statisch aus Arch Linux ARM
+  busybox-1.36.1-4, Applets ubiupdatevol/ubimkvol/ubirmvol/telnetd
+  vorhanden), OpenWrt-24.10.8-initramfs (Stock-Aufteilung, nicht `-ubi`),
+  SHA256SUMS, QUELLEN.txt (GPL). Werte: `zip_url`, `initramfs_datei`,
+  `rueckweg_url`. Hochgeladen und per curl gegen die SHA256 geprüft.
+- Stock-Firmwares (EU) für den Rückweg lokal in
+  `~/projekte/freifunk/scratch/2026-10-19-mr90x-v1/stock/`: 1.0.0
+  (20220916), 1.0.1 (20230808, gleiche Datei für v1.0 und v1.2), 1.0.3
+  (20240829). Der Wiki-Weg stammt von 1.0.0 (BusyBox 2022-09-15); ob die
+  SSH/telnet-Hintertür mit 1.0.3 noch geht, ist Prüfpunkt Nr. 1.
+- **Offen: Validierung am Testplatz** (MR90X mit LAN1 an ETH2, dort hängt
+  noch der GL-AXT1800). Ablauf: Zustand feststellen, Backups boot/tp_data,
+  Rückweg zu Stock, dann genau nach der Seite, Befunde ins Protokoll, erst
+  danach `erprobt`. Prüfpunkte von Content: `sed -i '1a telnetd -l
+  /bin/login.sh' /etc/hotplug.d/iface/65-iptv` mit BusyBox 1.19.4; welche
+  ssh/scp-Optionen ein aktuelles OpenSSH braucht (HostKeyAlgorithms,
+  KexAlgorithms, SHA-1); `scp -O` gegen dropbear Port 20001 in beide
+  Richtungen; Größen boot.bin/tp_data.bin; braucht die Web-Recovery eine
+  feste Adresse am Rechner, welche LED; Passwort beim ersten Aufruf, genaue
+  Bezeichnung "IPTV/VLAN Enable"; startet Gluon nach fw_setenv und
+  sysupgrade -n sauber, stimmen MAC und Funk.
+- **Einfachere Wege, am Gerät zu prüfen:**
+  1. Stock-Oberfläche mit Mercusys-fwup-Container: Die MR90X-Stock-Dateien
+     haben das Format des MR80X (`fw-type:Cloud`, SupportList im Klartext,
+     `_nosign_`). Laut `scripts/mercusys-fwup.py` (MR80X-Serie, OpenWrt
+     b5a84a3) prüft der Loader nur bei `fw-type:Cloud` RSA, sonst nur MD5
+     mit festem Salz. Haken: zwei Slots (`tp_boot_idx`) und die
+     fw_setenv-Befehle des Wiki-Wegs.
+  2. RAMpe statt OpenWrt-initramfs (Rezept devices/mercusys-mr90x-v1.sh,
+     Bau 20261015 liegt vor) plus Prepare-Hook
+     `/lib/gluon-rampe/prepare/mercusys_mr90x-v1.sh`, der den
+     fw_setenv-Block ausführt (wie bei 7530/Repeatern). Dann blieben für
+     Nutzer nur Stock-Shell und Upload im Browser.
+  3. U-Boot-Web-Recovery mit anderem als signiertem OEM-Image.
+
+**Acer Connect Vero W6m**: zurückgestellt. Nur in `v2025.1.x-next`;
+Reihenfolge laut adorfer: Rollout v2025.1.x, dann Multi-Domain, dann next.
+Contents Ergänzung `seriell-tftp` (saveenv_folge) und Zusatz sind gemergt
+(c463d27a, a28fb4aa), ohne Werte keine Seite. Vorbehalte: Ort der
+Stiftleiste (W6m ohne USB 3), RAM nur [abgeleitet].
+
 ## Stand 18.10.2026: GL.iNet GL-AX1800 / GL-AXT1800 (Zweig v2025.1.x-next)
 
 - **2 Geräte neu im Datensatz** (jetzt 388): GL.iNet GL-AXT1800 (Slate AX)
