@@ -952,7 +952,7 @@
    "rampe": "nicht nötig: der Weg geht über altes OpenWrt in den Weboberflächen; für den seriellen Notweg wäre ein RAMpe-initramfs per tftpboot denkbar (Rezept-Entwurf, nicht gebaut)",
    "rampe_rezept": "devices/d-link-dir-505.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; UART, IPs und Ladeadresse nicht belegt; 64 MB RAM",
    "quelle": "c9ac7b17296ff29d9df39db8a68c449ef1514bbd [geprüft: Commit]",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/d-link-dir-505.md",
    "erprobt": {},
    "werte": {
     "zwischen_url": "https://archive.openwrt.org/releases/17.01.7/targets/ar71xx/generic/lede-17.01.7-ar71xx-generic-dir-505-a1-squashfs-factory.bin",
@@ -15095,7 +15095,7 @@
    "rampe": "teilweise: das RAMpe-initramfs könnte das OpenWrt-initramfs im kernel-Volume ersetzen; Exploit und fw_setenv bleiben Handarbeit [abgeleitet]. Hinweis: eine ältere Neanderfunk-Notiz beschreibt \"tp_boot_idx 0, dann U-Boot-Web-Recovery nimmt initramfs\" - weder im Commit noch im Wiki-Abschnitt \"Stock bootloader\" so belegt",
    "rampe_rezept": "devices/mercusys-mr90x-v1.sh (gebaut 10.10.2026 lokal, initramfs etwa 8.1 MB, `91_installer_initramfs` geprüft, Hardware-Test offen): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell",
    "quelle": "OpenWrt e4fe3097ef6a961874b66932a0ac4be18070630a",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/mercusys-mr90x-v1.md",
    "erprobt": {},
    "werte": {
     "initramfs_url": "https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin",
