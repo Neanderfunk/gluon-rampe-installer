@@ -43,6 +43,10 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     dauer                ganzer Satz zur Dauer nach dem sysupgrade
     fertig_zeichen       ganzer Satz, woran man das Ende erkennt (z. B. LED)
     rueckweg             ganzer Satz zum Weg zurück zur Herstellerfirmware
+    saveenv_folge        ganzer Satz, was das gespeicherte saveenv bewirkt (leer =
+                         "Ab jetzt startet das Gerät OpenWrt statt der
+                         Herstellerfirmware."; passt nicht, wenn saveenv nur die
+                         Signaturprüfung abschaltet, z. B. Acer)
     sicherheit, sicherheit_hinweis   siehe _status.md
 -#}
 {%- set w = werte -%}
@@ -160,7 +164,7 @@ einer Stunde.
    `Please press Enter to activate this console.` erscheint.
    {%- if saveenv %}
 
-   Ab jetzt startet das Gerät OpenWrt statt der Herstellerfirmware.
+   {{ w.get("saveenv_folge") or "Ab jetzt startet das Gerät OpenWrt statt der Herstellerfirmware." }}
    {%- endif %}
 
 ### Freifunk-Firmware aufspielen
