@@ -15,6 +15,11 @@ Sicherungen boot (mtd0) und tp_data (mtd5) sowie der Ordner /tp_data
 Reiter "Installation U-Boot layout", Schritt 11. Partitionsliste laut Wiki:
 2M(boot),1M(u-boot-env),50M(ubi0),50M(ubi1),8M(userconfig),4M(tp_data).
 scp: Das Wiki schreibt "scp -p 20001", richtig ist -P (großes P).
+Dateien (adorfer, über Buildsystem): busybox und initramfs als eine ZIP auf
+unserem Server (other/dump), Prüfung wie beim AP11 "lässt sich ohne Fehler
+auspacken"; Inhalt busybox-aarch64 (BusyBox 1.36.1 statisch, Arch Linux ARM
+busybox-1.36.1-4), OpenWrt-initramfs 24.10.8 unverändert, SHA256SUMS,
+QUELLEN.txt.
 [abgeleitet, bei der Validierung prüfen]: "nimmt fremde Firmware weder über
 die Oberfläche noch über den Notfall-Modus an" (Wiki nennt nur OEM-Firmware
 für die Web-Recovery); sed-Befehl in Schritt 5 statt
@@ -28,13 +33,14 @@ zusatz.achtung, herkunft.
 Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 
   Pflicht
-    initramfs_url        Download des OpenWrt-initramfs für den MR90X v1
-                         (Stock-Aufteilung, nicht "-ubi-")
-    initramfs_datei      Dateiname dazu
-    busybox_url          Download des vollständigen busybox für aarch64
-                         (Wiki: archlinuxarm.org, Paket busybox)
+    zip_url              Download der Installationsdateien als ZIP von unserem
+                         Server (adorfer: busybox und initramfs liegen bei uns)
+    initramfs_datei      Name des OpenWrt-initramfs in der ZIP (Stock-Aufteilung,
+                         nicht "-ubi-")
 
   optional
+    zip_datei            Name der ZIP (leer = Dateiname aus zip_url)
+    busybox_datei        Name des busybox in der ZIP (leer = busybox-aarch64)
     stock_ip             Adresse der Mercusys-Oberfläche (leer = 192.168.1.1)
     kernel_groesse       Größe des neuen UBI-Volumes (leer = 9MiB)
     rueckweg_url         Download-Seite der Mercusys-Firmware
@@ -45,6 +51,8 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 {%- set b = bilder if bilder is defined else {} -%}
 {%- set ip = w.get("stock_ip") or "192.168.1.1" -%}
 {%- set kg = w.get("kernel_groesse") or "9MiB" -%}
+{%- set zd = w.get("zip_datei") or w.zip_url.rsplit("/", 1)[-1] -%}
+{%- set bb = w.get("busybox_datei") or "busybox-aarch64" -%}
 
 # {{ modell }}: Freifunk-Firmware installieren
 
@@ -73,12 +81,12 @@ die mit SSH, scp und einer Shell umgehen können
 - auf dem Rechner `ssh`, `scp` und `telnet` (unter Windows ist `telnet`
   ein optionales Feature, alternativ PuTTY)
 - das Passwort der Mercusys-Oberfläche (beim ersten Aufruf legst du es fest)
-- OpenWrt als Zwischenstufe:
-  [{{ w.initramfs_datei }}]({{ w.initramfs_url }})
-- ein vollständiges busybox für aarch64 ([herunterladen]({{ w.busybox_url }})).
-  Das busybox der Mercusys-Firmware kann einen nötigen Befehl nicht.
-  Das Paket ist ein `.tar.xz`-Archiv; gebraucht wird darin `usr/bin/busybox`
-  (auspacken mit `tar xf …` oder 7-Zip).
+- die Installationsdateien als ZIP: [{{ zd }}]({{ w.zip_url }}). Pack sie
+  aus. Kommt dabei keine Fehlermeldung, sind die Dateien heil. Darin liegen
+  ein vollständiges busybox (`{{ bb }}`; das busybox der
+  Mercusys-Firmware kann einen nötigen Befehl nicht), OpenWrt als
+  Zwischenstufe (`{{ w.initramfs_datei }}`), Prüfsummen und Hinweise zu den
+  Quelltexten.
 - die Freifunk-Firmware deiner Community für den {{ modell }}, und zwar das
   **sysupgrade**-Image
 {%- if zusatz.vorher is defined and zusatz.vorher %}
@@ -172,19 +180,17 @@ die mit SSH, scp und einer Shell umgehen können
 
 ### Teil 3: OpenWrt als Zwischenstufe
 
-8. **Dateien auf den Router.** Leg `busybox` (aus `usr/bin/` im
-   ausgepackten Paket) und die OpenWrt-Datei in einen Ordner. Auf deinem
-   Rechner, in diesem Ordner:
+8. **Dateien auf den Router.** Auf deinem Rechner, im ausgepackten Ordner:
 
    ```
-   scp -O -P 20001 -o HostKeyAlgorithms=+ssh-rsa busybox {{ w.initramfs_datei }} root@{{ ip }}:/tmp/
+   scp -O -P 20001 -o HostKeyAlgorithms=+ssh-rsa {{ bb }} {{ w.initramfs_datei }} root@{{ ip }}:/tmp/
    ```
 
    In der Telnet-Shell:
 
    ```
    cd /tmp
-   chmod a+x busybox
+   chmod a+x {{ bb }}
    du -h {{ w.initramfs_datei }}
    ```
 
@@ -197,7 +203,7 @@ die mit SSH, scp und einer Shell umgehen können
    ```
    ubirmvol /dev/ubi0 -N kernel
    ubimkvol /dev/ubi0 -n 1 -N kernel -s {{ kg }}
-   ./busybox ubiupdatevol /dev/ubi0_1 /tmp/{{ w.initramfs_datei }}
+   ./{{ bb }} ubiupdatevol /dev/ubi0_1 /tmp/{{ w.initramfs_datei }}
    reboot
    ```
 
