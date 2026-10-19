@@ -15095,9 +15095,14 @@
    "rampe": "teilweise: das RAMpe-initramfs könnte das OpenWrt-initramfs im kernel-Volume ersetzen; Exploit und fw_setenv bleiben Handarbeit [abgeleitet]. Hinweis: eine ältere Neanderfunk-Notiz beschreibt \"tp_boot_idx 0, dann U-Boot-Web-Recovery nimmt initramfs\" - weder im Commit noch im Wiki-Abschnitt \"Stock bootloader\" so belegt",
    "rampe_rezept": "devices/mercusys-mr90x-v1.sh (gebaut 10.10.2026 lokal, initramfs etwa 8.1 MB, `91_installer_initramfs` geprüft, Hardware-Test offen): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell",
    "quelle": "OpenWrt e4fe3097ef6a961874b66932a0ac4be18070630a",
-   "anleitung": "https://openwrt.org/toh/mercusys/mr90x_v1#installation_stock_bootloader",
+   "anleitung": "",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "initramfs_url": "https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin",
+    "initramfs_datei": "openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin",
+    "busybox_url": "https://archlinuxarm.org/packages/aarch64/busybox",
+    "rueckweg_url": "https://www.mercusys.com/de/download/mr90x"
+   }
   },
   {
    "gluon_name": "netgear-wax220",
