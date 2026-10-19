@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
 daten_stand: 25f2bbde
-vorlage_stand: 33a38da8
+vorlage_stand: 33e50477
 ---
 
 # Sophos AP15: Freifunk-Firmware installieren
