@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mercusys MR90X v1: Freifunk-Firmware installieren</title>
+<meta name="anleitung:gluon_name" content="mercusys-mr90x-v1">
+<meta name="anleitung:modell" content="Mercusys MR90X v1">
+<meta name="anleitung:anzeige" content="Mercusys MR90X v1">
+<meta name="anleitung:familie" content="sonderweg-mercusys-mr90x-v1">
+<meta name="anleitung:gluon_broken" content="false">
+<meta name="anleitung:sprache" content="de">
+<meta name="anleitung:level" content="L5">
+<meta name="anleitung:level_text" content="Besondere Programme">
+<meta name="anleitung:risiko" content="normal">
+<meta name="anleitung:status" content="ungeprüft">
+<meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, router-antwortet-nicht, ssh-scp">
+<meta name="anleitung:daten_stand" content="25f2bbde">
+<meta name="anleitung:vorlage_stand" content="4b47a696">
+<link rel="stylesheet" href="../anleitung.css">
+</head>
+<body>
+<h1>Mercusys MR90X v1: Freifunk-Firmware installieren</h1>
+<blockquote>
+<p><strong>Noch nicht am Gerät erprobt.</strong> Die Anleitung ist aus Quellen zusammengestellt. Wie gut jede
+Angabe belegt ist, steht unten unter &quot;Herkunft der Angaben&quot;.</p>
+<p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
+hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+Anleitung für alle nach dir besser:</p>
+<p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20Mercusys%20MR90X%20v1">projekt@neanderfunk.de</a></p>
+</blockquote>
+<p>Der Mercusys MR90X v1 nimmt fremde Firmware weder über seine Oberfläche noch über
+einen einfachen Notfall-Modus an. Der Weg führt über eine Hintertür in der
+Mercusys-Firmware auf die Kommandozeile, von dort kommt ein kleines OpenWrt
+auf den Router und darüber die Freifunk-Firmware. Das ist etwas für Leute,
+die mit SSH, scp und einer Shell umgehen können
+(<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>).</p>
+<blockquote>
+<p><strong>Erst sichern, dann ändern.</strong> Bevor du irgendetwas veränderst, sicherst
+du in Schritt 4 die Bereiche <code>boot</code> und <code>tp_data</code> und den Ordner
+<code>/tp_data</code>. Darin stecken unter anderem die MAC-Adresse und die
+Funk-Kalibrierung des Geräts. Ohne diese Sicherungen gibt es keinen
+Rückweg, wenn etwas schiefgeht. Die serielle Konsole hilft dann auch
+nicht ohne Weiteres: Sie ist erst nutzbar, wenn man auf der Platine
+fehlende Widerstände bestückt oder Lötbrücken setzt.</p>
+</blockquote>
+<h2>Was du brauchst</h2>
+<ul>
+<li>den Router mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
+Netzwerkkabel</li>
+<li>auf dem Rechner <code>ssh</code>, <code>scp</code> und <code>telnet</code> (unter Windows ist <code>telnet</code>
+ein optionales Feature, alternativ PuTTY)</li>
+<li>das Passwort der Mercusys-Oberfläche (beim ersten Aufruf legst du es fest)</li>
+<li>OpenWrt als Zwischenstufe:
+<a href="https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin">openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin</a></li>
+<li>ein vollständiges busybox für aarch64 (<a href="https://archlinuxarm.org/packages/aarch64/busybox">herunterladen</a>).
+Das busybox der Mercusys-Firmware kann einen nötigen Befehl nicht.
+Das Paket ist ein <code>.tar.xz</code>-Archiv; gebraucht wird darin <code>usr/bin/busybox</code>
+(auspacken mit <code>tar xf …</code> oder 7-Zip).</li>
+<li>die Freifunk-Firmware deiner Community für den Mercusys MR90X v1, und zwar das
+<strong>sysupgrade</strong>-Image</li>
+</ul>
+<h2>Schritte</h2>
+<h3>Teil 1: Zugang und Sicherungen</h3>
+<ol>
+<li>
+<p><strong>Verbinden.</strong> Steck das Kabel vom Rechner in die Buchse <strong>LAN1</strong>. Der
+Rechner bleibt auf &quot;automatisch&quot;. Öffne <code>http://192.168.1.1</code> und leg das
+Passwort für die Oberfläche fest, falls noch keins gesetzt ist.</p>
+</li>
+<li>
+<p><strong>Per SSH anmelden.</strong> Benutzer <code>root</code>, Port <code>20001</code>, Passwort wie in
+der Oberfläche:</p>
+<pre><code>ssh -p 20001 -o HostKeyAlgorithms=+ssh-rsa root@192.168.1.1
+</code></pre>
+<p>Es erscheint eine Shell mit <code>root@Akronite</code>.</p>
+</li>
+<li>
+<p><strong>Startbereich prüfen.</strong></p>
+<pre><code>fw_printenv | grep tp_boot_idx
+</code></pre>
+<p>Steht dort <code>tp_boot_idx=1</code>, spiel zuerst über die Oberfläche die
+Mercusys-Firmware noch einmal ein und fang bei Schritt 2 wieder an.
+Sonst weiter.</p>
+</li>
+<li>
+<p><strong>Sichern.</strong> Noch in der SSH-Shell:</p>
+<pre><code>cat /dev/mtd0 &gt; /tmp/boot.bin
+cat /dev/mtd5 &gt; /tmp/tp_data.bin
+chmod 666 /tp_data/MT7986_EEPROM.bin /tp_data/default-mac
+</code></pre>
+<p>Dann auf deinem Rechner, in einem zweiten Terminal:</p>
+<pre><code>mkdir mr90x-sicherung
+scp -O -P 20001 -o HostKeyAlgorithms=+ssh-rsa root@192.168.1.1:/tmp/boot.bin mr90x-sicherung/
+scp -O -P 20001 -o HostKeyAlgorithms=+ssh-rsa root@192.168.1.1:/tmp/tp_data.bin mr90x-sicherung/
+scp -O -P 20001 -o HostKeyAlgorithms=+ssh-rsa -r root@192.168.1.1:/tp_data mr90x-sicherung/
+</code></pre>
+<p>scp fragt jedes Mal nach dem Passwort.</p>
+<p><strong>Prüfen:</strong> <code>boot.bin</code> ist 2 MiB groß (2.097.152 Bytes), <code>tp_data.bin</code>
+4 MiB (4.194.304 Bytes), und im Ordner <code>tp_data</code> liegen
+<code>MT7986_EEPROM.bin</code> und <code>default-mac</code>. Leg die Sicherung an einen
+sicheren Ort. Ohne sie nicht weitermachen.</p>
+</li>
+</ol>
+<h3>Teil 2: Telnet über die IPTV-Einstellung</h3>
+<ol start="5">
+<li>
+<p><strong>Telnet vorbereiten.</strong> Die Datei <code>/etc/hotplug.d/iface/65-iptv</code>
+bekommt direkt nach der ersten Zeile (<code>#!/bin/sh</code>) die Zeile
+<code>telnetd -l /bin/login.sh</code>. In der SSH-Shell:</p>
+<pre><code>sed -i '1a telnetd -l /bin/login.sh' /etc/hotplug.d/iface/65-iptv
+head -n 3 /etc/hotplug.d/iface/65-iptv
+</code></pre>
+<p>Die Ausgabe zeigt oben <code>#!/bin/sh</code>, darunter die neue Zeile. Wer lieber
+mit WinSCP arbeitet, kann die Datei auch dort bearbeiten.</p>
+</li>
+<li>
+<p><strong>Auslösen.</strong> Schalte in der Mercusys-Oberfläche die Einstellung
+<strong>&quot;IPTV/VLAN Enable&quot;</strong> um und speichere. Prüf in der SSH-Shell, ob jetzt
+ein Telnet-Dienst läuft:</p>
+<pre><code>netstat -ltunp | grep 23
+</code></pre>
+</li>
+<li>
+<p><strong>Per Telnet anmelden.</strong> Auf deinem Rechner:</p>
+<pre><code>telnet 192.168.1.1
+</code></pre>
+<p>Ohne Benutzer und Passwort erscheint <code>root@Akronite:/#</code>. Die weiteren
+Befehle tippst du in diese Telnet-Shell.</p>
+</li>
+</ol>
+<h3>Teil 3: OpenWrt als Zwischenstufe</h3>
+<ol start="8">
+<li>
+<p><strong>Dateien auf den Router.</strong> Leg <code>busybox</code> (aus <code>usr/bin/</code> im
+ausgepackten Paket) und die OpenWrt-Datei in einen Ordner. Auf deinem
+Rechner, in diesem Ordner:</p>
+<pre><code>scp -O -P 20001 -o HostKeyAlgorithms=+ssh-rsa busybox openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin root@192.168.1.1:/tmp/
+</code></pre>
+<p>In der Telnet-Shell:</p>
+<pre><code>cd /tmp
+chmod a+x busybox
+du -h openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin
+</code></pre>
+<p>Die Größe muss kleiner sein als 9MiB.</p>
+</li>
+<li>
+<p><strong>OpenWrt schreiben.</strong> Ab hier ist die Mercusys-Firmware weg. Der
+Notfall-Modus des Bootloaders bleibt aber erhalten (siehe &quot;Zurück zur
+Mercusys-Firmware&quot;).</p>
+<pre><code>ubirmvol /dev/ubi0 -N kernel
+ubimkvol /dev/ubi0 -n 1 -N kernel -s 9MiB
+./busybox ubiupdatevol /dev/ubi0_1 /tmp/openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin
+reboot
+</code></pre>
+</li>
+<li>
+<p><strong>OpenWrt-Einstellungen setzen.</strong> Nach dem Neustart läuft OpenWrt unter
+<code>192.168.1.1</code>, der Rechner bleibt auf &quot;automatisch&quot;. Melde dich an,
+jetzt auf dem normalen Port und ohne Passwort:</p>
+<pre><code>ssh root@192.168.1.1
+</code></pre>
+<p>Dann genau diese Befehle:</p>
+<pre><code>fw_setenv baudrate 115200
+fw_setenv bootargs &quot;ubi.mtd=ubi0 console=ttyS0,115200n1 loglevel=8 earlycon=uart8250,mmio32,0x11002000 init=/etc/preinit&quot;
+fw_setenv fdtcontroladdr 5ffc0e70
+fw_setenv ipaddr 192.168.1.1
+fw_setenv loadaddr 0x46000000
+fw_setenv mtdids &quot;spi-nand0=spi-nand0&quot;
+fw_setenv mtdparts &quot;spi-nand0:2M(boot),1M(u-boot-env),50M(ubi0),50M(ubi1),8M(userconfig),4M(tp_data)&quot;
+fw_setenv netmask 255.255.255.0
+fw_setenv serverip 192.168.1.2
+fw_setenv stderr serial@11002000
+fw_setenv stdin serial@11002000
+fw_setenv stdout serial@11002000
+fw_setenv tp_boot_idx 0
+</code></pre>
+</li>
+</ol>
+<h3>Teil 4: Freifunk-Firmware</h3>
+<ol start="11">
+<li>
+<p><strong>Freifunk-Firmware aufspielen.</strong> Auf deinem Rechner:</p>
+<pre><code>scp -O &lt;sysupgrade-image&gt; root@192.168.1.1:/tmp/sysupgrade.bin
+</code></pre>
+<p>Dann auf dem Router:</p>
+<pre><code>sysupgrade -n /tmp/sysupgrade.bin
+</code></pre>
+<p>Der Router schreibt die Firmware und startet neu, einige Minuten.
+<strong>Strom nicht ziehen.</strong></p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Danach startet die Freifunk-Firmware deiner Community: je
+nach Community zuerst mit einer Einrichtungsseite unter
+<code>http://192.168.1.1</code> oder gleich im Betrieb.
+Antwortet dort nichts, siehe <a href="grundlagen/router-antwortet-nicht.html">Die Router-Seite antwortet
+nicht</a>; kommt &quot;Not Found&quot;, siehe
+<a href="grundlagen/browser-not-found.html">Der Browser zeigt &quot;Not Found&quot;</a>.</p>
+</li>
+</ol>
+<h2>Woran du erkennst, dass es geklappt hat</h2>
+<ul>
+<li>Nach Schritt 4 liegen <code>boot.bin</code>, <code>tp_data.bin</code> und der Ordner <code>tp_data</code>
+in der richtigen Größe auf deinem Rechner.</li>
+<li>Nach Schritt 9 meldet sich unter <code>192.168.1.1</code> OpenWrt.</li>
+<li>Nach Schritt 11 meldet sich die Freifunk-Firmware.</li>
+</ul>
+<h2>Wenn etwas schiefgeht</h2>
+<ul>
+<li><strong>ssh meldet &quot;no matching host key type found&quot;.</strong> Der Router kennt nur
+alte Verfahren. Die Option <code>-o HostKeyAlgorithms=+ssh-rsa</code> muss dabei
+sein. Manche Linux-Systeme lehnen zusätzlich SHA-1 ab; dann hilft der
+Hinweis im Abschnitt &quot;Notes&quot; des OpenWrt-Wikis.</li>
+<li><strong>scp meldet &quot;sftp-server: not found&quot; o. ä.</strong> Das <code>-O</code> fehlt.</li>
+<li><strong>Nach dem Umschalten von &quot;IPTV/VLAN Enable&quot; läuft kein Telnet.</strong> Prüf,
+ob die Zeile in <code>65-iptv</code> direkt unter <code>#!/bin/sh</code> steht, und schalte die
+Einstellung noch einmal um.</li>
+<li><strong>Nach Schritt 9 startet der Router nicht.</strong> Über den Notfall-Modus
+zurück zur Mercusys-Firmware (unten) und von vorn.</li>
+</ul>
+<h2>Zurück zur Mercusys-Firmware</h2>
+<p>Der Bootloader von Mercusys bleibt bei diesem Weg unangetastet, sein
+Notfall-Modus also auch:</p>
+<ol>
+<li>Rechner fest auf <code>192.168.1.2</code>, Netzmaske <code>255.255.255.0</code>
+(<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>), Kabel an LAN1.</li>
+<li>Reset-Taste drücken, Strom einstecken, nach etwa 10 Sekunden loslassen.</li>
+<li>Im Browser <code>http://192.168.1.1</code> öffnen und die Mercusys-Firmware
+hochladen (<a href="https://www.mercusys.com/de/download/mr90x">Download bei Mercusys</a>).</li>
+</ol>
+<p>Stimmen danach MAC-Adresse oder Funk nicht, schreibst du <code>tp_data</code> aus
+deiner Sicherung zurück. Wie das geht, beschreibt das OpenWrt-Wiki im
+Abschnitt &quot;Return to stock&quot;.</p>
+<h2>Herkunft der Angaben</h2>
+<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
+<ul>
+<li>abgeleitet (Gluon-RAMpe passt)</li>
+<li>geprüft: Commit e4fe309 (Programm)</li>
+<li>geprüft: Commit, Wiki toh:mercusys:mr90x_v1 (Weg ab Werk, Rückweg zur Herstellerfirmware)</li>
+<li>geprüft: Wiki toh:mercusys:mr90x_v1 (Programm, Typenschild/Verwechslung, Bedingung an die Herstellerfirmware)</li>
+<li>Geräteeintrag: OpenWrt e4fe3097ef6a961874b66932a0ac4be18070630a</li>
+</ul>
+
+<p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
+</body>
+</html>

@@ -229,7 +229,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [d-link-dap-2660-a1](#d-link-dap-2660-a1) | D-Link DAP-2660 A1 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-2660-a1.md) |
 | [d-link-dap-2680-a1](#d-link-dap-2680-a1) | D-Link DAP-2680 A1 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-2680-a1.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=5b58710fad2137eedad874f0fe8fe22082d1edc6 |
 | [d-link-dap-2695-a1](#d-link-dap-2695-a1) | D-Link DAP-2695 A1 | ath79-generic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-2695-a1.md) |
-| [d-link-dir-505](#d-link-dir-505) | D-Link DIR-505 | ath79-generic | K4 | L1 | normal | [`sonderweg-d-link-dir-505`](#familie-sonderweg-d-link-dir-505) | webui-upload | nein | nein | nein | ja |  |
+| [d-link-dir-505](#d-link-dir-505) | D-Link DIR-505 | ath79-generic | K4 | L1 | normal | [`sonderweg-d-link-dir-505`](#familie-sonderweg-d-link-dir-505) | webui-upload | nein | nein | nein | ja | [Anleitung](../anleitungen/de/d-link-dir-505.md) |
 | [d-link-dir825b1](#d-link-dir825b1) | D-Link DIR-825 B1 | ath79-generic | offen | offen | normal | [`sonderweg-d-link-dir825b1`](#familie-sonderweg-d-link-dir825b1) | ? | ? | ? | offen | ja |  |
 | [devolo-dlan-pro-1200+-wifi-ac](#devolo-dlan-pro-1200+-wifi-ac) | devolo dLAN pro 1200+ WiFi ac (broken) | ath79-generic | K1d | L4 | normal | [`sonderweg-devolo-dlan-pro-1200+-wifi-ac`](#familie-sonderweg-devolo-dlan-pro-1200+-wifi-ac) | tftp-client-am-geraet | nein | nein | nein |  |  |
 | [devolo-wifi-pro-1200e](#devolo-wifi-pro-1200e) | devolo WiFi pro 1200e | ath79-generic | K1d | L4 | normal | [`devolo-ssh`](#familie-devolo-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/devolo-wifi-pro-1200e.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1724d4e9ed7716a5444eca42adf045c2f3afc554 |
@@ -456,7 +456,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [iptime-ax7800m-6e](#iptime-ax7800m-6e) | ipTIME AX7800M-6E | mediatek-filogic | K0+ | L5 | normal |  | programm | nein | nein | nein |  |  |
 | [jdcloud-re-cp-03](#jdcloud-re-cp-03) | JDCloud RE-CP-03 | mediatek-filogic | K3 | L4 | bootloader |  | webui-upload | nein | nein | teilweise |  |  |
 | [mercusys-mr80x-v3](#mercusys-mr80x-v3) | Mercusys MR80X v3 | mediatek-filogic | K4 | L7 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise | ja |  |
-| [mercusys-mr90x-v1](#mercusys-mr90x-v1) | Mercusys MR90X v1 | mediatek-filogic | K2 | L5 | normal | [`sonderweg-mercusys-mr90x-v1`](#familie-sonderweg-mercusys-mr90x-v1) | ssh | nein | nein | teilweise | ja | https://openwrt.org/toh/mercusys/mr90x_v1#installation_stock_bootloader |
+| [mercusys-mr90x-v1](#mercusys-mr90x-v1) | Mercusys MR90X v1 | mediatek-filogic | K2 | L5 | normal | [`sonderweg-mercusys-mr90x-v1`](#familie-sonderweg-mercusys-mr90x-v1) | ssh | nein | nein | teilweise | ja | [Anleitung](../anleitungen/de/mercusys-mr90x-v1.md) |
 | [mercusys-mr90x-v1-ubi](#mercusys-mr90x-v1-ubi) | Mercusys MR90X v1 (OpenWrt-U-Boot-Layout) | mediatek-filogic | K3 | L5 | bootloader |  | wie | nein | nein | nein |  |  |
 | [netcore-n60](#netcore-n60) | Netcore N60 | mediatek-filogic | K3 | L4 | bootloader |  | ssh | nein | nein | teilweise |  |  |
 | [netgear-wax220](#netgear-wax220) | NETGEAR WAX220 | mediatek-filogic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wax220.md); https://openwrt.org/toh/netgear/wax220#oem_easy_installation |
@@ -10888,6 +10888,7 @@ D-Link DIR-505 · ath79-generic · K4
 - **Gluon-RAMpe passt:** nicht nötig: der Weg geht über altes OpenWrt in den Weboberflächen; für den seriellen Notweg wäre ein RAMpe-initramfs per tftpboot denkbar (Rezept-Entwurf, nicht gebaut)
 - **Gluon-RAMpe-Rezept:** devices/d-link-dir-505.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; UART, IPs und Ladeadresse nicht belegt; 64 MB RAM
 - **Quelle (OpenWrt-Commit):** c9ac7b17296ff29d9df39db8a68c449ef1514bbd [geprüft: Commit]
+- **Detail-Anleitung:** anleitungen/de/d-link-dir-505.md
 - **Werte für die Anleitung:** zwischen_url = https://archive.openwrt.org/releases/17.01.7/targets/ar71xx/generic/lede-17.01.7-ar71xx-generic-dir-505-a1-squashfs-factory.bin; zwischen_datei = lede-17.01.7-ar71xx-generic-dir-505-a1-squashfs-factory.bin; zwischen_sha256 = 13f357a3ebd73c872a85cf8db592e7d2e313723370513cc56a271d99244aa5ed; sackgasse_a1_url = https://firmware.ffnef.de/firmware/sackgasse/21_dias/factory/gluon-nef-21_dias_EOL-24112319sackgasse-d-link-dir-505-rev-a1.bin; sackgasse_a2_url = https://firmware.ffnef.de/firmware/sackgasse/21_dias/factory/gluon-nef-21_dias_EOL-24112319sackgasse-d-link-dir-505-rev-a2.bin; sicherheit = abgeleitet
 
 ### Familie `sonderweg-d-link-dir825b1`
@@ -11328,7 +11329,8 @@ Mercusys MR90X v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** teilweise: das RAMpe-initramfs könnte das OpenWrt-initramfs im kernel-Volume ersetzen; Exploit und fw_setenv bleiben Handarbeit [abgeleitet]. Hinweis: eine ältere Neanderfunk-Notiz beschreibt "tp_boot_idx 0, dann U-Boot-Web-Recovery nimmt initramfs" - weder im Commit noch im Wiki-Abschnitt "Stock bootloader" so belegt
 - **Gluon-RAMpe-Rezept:** devices/mercusys-mr90x-v1.sh (gebaut 10.10.2026 lokal, initramfs etwa 8.1 MB, `91_installer_initramfs` geprüft, Hardware-Test offen): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell
 - **Quelle (OpenWrt-Commit):** OpenWrt e4fe3097ef6a961874b66932a0ac4be18070630a
-- **Detail-Anleitung:** https://openwrt.org/toh/mercusys/mr90x_v1#installation_stock_bootloader
+- **Detail-Anleitung:** anleitungen/de/mercusys-mr90x-v1.md
+- **Werte für die Anleitung:** initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin; initramfs_datei = openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin; busybox_url = https://archlinuxarm.org/packages/aarch64/busybox; rueckweg_url = https://www.mercusys.com/de/download/mr90x
 
 ### Familie `sonderweg-netgear-wax218`
 

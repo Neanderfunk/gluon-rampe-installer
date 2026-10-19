@@ -896,6 +896,14 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "mercusys-mr90x-v1",
+  "url": "https://routersoftware.ffnef.de/anleitungen/de/mercusys-mr90x-v1.html",
+  "status": "ungeprüft",
+  "level": "L5",
+  "risiko": "normal",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "netgear-dgn3500b",
   "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-dgn3500b.html",
   "status": "ungeprüft",
