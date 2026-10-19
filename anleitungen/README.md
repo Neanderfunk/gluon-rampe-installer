@@ -70,7 +70,7 @@ modell: D-Link AQUILA PRO AI M60 A1
 familie: dlink-recovery-web
 sprache: de
 level: L4                  # L0 | L0.1 | L1 … L8, siehe "Level und Risiko"
-level_text: Netz-Werkzeuge     # Kurzform zum Level
+level_text: Network-Tools      # Kurzform zum Level
 risiko: normal             # normal | bootloader
 status: erprobt            # ungeprüft | erprobt
 erprobt_am: 2026-10-13     # nur bei status: erprobt
@@ -119,7 +119,7 @@ Für Lesende gelten diese Bezeichnungen (Seitenkopf und Übersicht):
 | L1 | Zwei Schritte im Browser | Erst eine Zwischenfirmware oder eine ältere Herstellerfirmware, dann die Freifunk-Firmware; alles im Browser. |
 | L2 | Taste beim Einschalten | Notfall-Modus per Taste, dann Hochladen im Browser; der Rechner bekommt seine Adresse von selbst. |
 | L3 | Feste Adresse am Rechner | Wie L2 oder ein anderer Weg im Browser, aber die Netzwerkeinstellung des Rechners muss von Hand umgestellt werden. |
-| L4 | Netz-Werkzeuge | TFTP-Server, SSH, curl oder ein Image auf einen Datenträger schreiben; Programme, die es für jedes System gibt. |
+| L4 | Network-Tools | TFTP-Server, SSH, curl oder ein Image auf einen Datenträger schreiben; Programme, die es für jedes System gibt. |
 | L5 | Besondere Programme | Skripte oder Programme außerhalb des Üblichen, oder Dateien vorher selbst zusammenbauen. |
 | L6 | Serielles Kabel | Ein Konsolenkabel am Gerät, ohne es zu öffnen. |
 | L7 | Gehäuse öffnen | Für die serielle Konsole muss das Gerät aufgeschraubt werden. |
