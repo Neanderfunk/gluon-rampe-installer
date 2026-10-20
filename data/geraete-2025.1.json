@@ -9755,7 +9755,7 @@
    "taste": "Keine Gerätetaste. Im seriellen Terminal Enter drücken, sobald 'Hit <Enter> to stop autoboot' erscheint [geprüft: Commit c6e972c]",
    "zeichen": "Wie AP-303: nach dem TFTP-Laden 'Invalid image format version' ist normal [abgeleitet: Wiki toh/aruba/ap-303, gleiches apboot]",
    "uebertragung": "tftp-client (apboot `netget`): Server 192.168.1.75, Gerät 192.168.1.105, Datei ipq40xx.ari (Rechner an E0)",
-   "anschluss": "USB-TTL-Adapter 3,3 V an selbstgebautem Micro-USB-Kabel (D+ = TX, D- = RX laut Commit), nie normales USB-Kabel an den Rechner [geprüft: Commit]. Rechner für TFTP an Port E0 (WAN, holt nur dort); für scp/sysupgrade danach Kabel an E1-E3 umstecken [geprüft: Commit]",
+   "anschluss": "USB-TTL-Adapter 3,3 V an selbstgebautem Micro-USB-Kabel (D+ = TX, D- = RX laut Commit), nie normales USB-Kabel an den Rechner [geprüft: Commit]. Rechner für TFTP an Port E0 (WAN, holt nur dort); für scp/sysupgrade danach Kabel an E1-E3 umstecken [geprüft: Commit] E0 sitzt hinten; die Durchreiche PT hat zwei RJ-45, hinten und unten, die untere ist nur deren passives Ende [geprüft: HPE-Datenblatt AP-303H \"Passive pass-through interface (two RJ-45, back and bottom)\", https://web.archive.org/web/20241003121004/https://www.arubanetworks.com/assets/ds/DS_AP303H.pdf]",
    "adressen": "TFTP-Server fest 192.168.1.75/24, Gerät 192.168.1.105 [geprüft: Commit]",
    "programm": "Serielles Terminal, TFTP-Server, scp [geprüft: Commit]",
    "zugang": "Terminal 9600 8N1 [geprüft: Commit]; Autoboot mit Enter anhalten [geprüft: Commit c6e972c]",
@@ -9797,7 +9797,8 @@
     "mtd": "/dev/mtd16",
     "tftp_buchse": "E0",
     "ssh_buchse": "E1, E2 oder E3",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "tftp_buchse_hinweis": "Sie sitzt auf der Rückseite neben „PT“. Die Buchse „E0/PT“ unten ist nur das andere Ende der Durchreiche PT; darüber erreichst du das Gerät nicht."
    }
   },
   {
@@ -9949,7 +9950,7 @@
    "taste": "Wie AP-303H: Enter bei 'Hit <Enter> to stop autoboot' [abgeleitet: gleiche Plattform]",
    "zeichen": "",
    "uebertragung": "tftp-client (apboot `netget`): Server 192.168.1.75, Gerät 192.168.1.105, Datei ipq40xx.ari",
-   "anschluss": "Wie AP-303H: Micro-USB als UART-Stecker, USB-TTL 3,3 V an Micro-USB-Selbstbaukabel; Rechner für TFTP an E0 [abgeleitet: Wiki toh/aruba/ap-303h 'same platform']",
+   "anschluss": "Wie AP-303H: Micro-USB als UART-Stecker, USB-TTL 3,3 V an Micro-USB-Selbstbaukabel; Rechner für TFTP an E0 [abgeleitet: Wiki toh/aruba/ap-303h 'same platform'] E0 (PoE-Eingang) gibt es nur hinten neben PT; die Buchse „E0/PT“ unten ist das passive Ende der Durchreiche PT [geprüft: HPE AP11D Installation Guide, Abb. 2/3 und Abschnitt Ethernet Ports, https://arubanetworking.hpe.com/techdocs/hardware/instantonaps/ap11d/Aruba_AP11D_Installation_Guide_EN.pdf]",
    "adressen": "TFTP-Server 192.168.1.75/24, Gerät 192.168.1.105 [abgeleitet: Wiki toh/aruba/ap-303h 'same platform']",
    "programm": "Serielles Terminal, TFTP-Server [abgeleitet: Wiki toh/aruba/ap-303h 'same platform']",
    "zugang": "9600 8N1 [abgeleitet: Wiki toh/aruba/ap-303h 'same platform']",
