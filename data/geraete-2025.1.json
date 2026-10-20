@@ -9991,7 +9991,8 @@
     "mtd": "/dev/mtd16",
     "tftp_buchse": "E0",
     "ssh_buchse": "E1, E2 oder E3",
-    "sicherheit": "abgeleitet"
+    "sicherheit": "abgeleitet",
+    "tftp_buchse_hinweis": "Sie sitzt auf der Rückseite neben „PT“. Die Buchse „E0/PT“ unten ist nur das andere Ende der Durchreiche PT; darüber erreichst du das Gerät nicht."
    }
   },
   {
