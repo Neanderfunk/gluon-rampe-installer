@@ -1620,7 +1620,7 @@ Aruba AP-303H · ipq40xx-generic · K4
 - **Taste und Zeitpunkt:** Keine Gerätetaste. Im seriellen Terminal Enter drücken, sobald 'Hit <Enter> to stop autoboot' erscheint [geprüft: Commit c6e972c]
 - **Sichtbare Zeichen:** Wie AP-303: nach dem TFTP-Laden 'Invalid image format version' ist normal [abgeleitet: Wiki toh/aruba/ap-303, gleiches apboot]
 - **Übertragung:** tftp-client (apboot `netget`): Server 192.168.1.75, Gerät 192.168.1.105, Datei ipq40xx.ari (Rechner an E0)
-- **Anschluss:** USB-TTL-Adapter 3,3 V an selbstgebautem Micro-USB-Kabel (D+ = TX, D- = RX laut Commit), nie normales USB-Kabel an den Rechner [geprüft: Commit]. Rechner für TFTP an Port E0 (WAN, holt nur dort); für scp/sysupgrade danach Kabel an E1-E3 umstecken [geprüft: Commit]
+- **Anschluss:** USB-TTL-Adapter 3,3 V an selbstgebautem Micro-USB-Kabel (D+ = TX, D- = RX laut Commit), nie normales USB-Kabel an den Rechner [geprüft: Commit]. Rechner für TFTP an Port E0 (WAN, holt nur dort); für scp/sysupgrade danach Kabel an E1-E3 umstecken [geprüft: Commit] E0 sitzt hinten; die Durchreiche PT hat zwei RJ-45, hinten und unten, die untere ist nur deren passives Ende [geprüft: HPE-Datenblatt AP-303H "Passive pass-through interface (two RJ-45, back and bottom)", https://web.archive.org/web/20241003121004/https://www.arubanetworks.com/assets/ds/DS_AP303H.pdf]
 - **Adressen:** TFTP-Server fest 192.168.1.75/24, Gerät 192.168.1.105 [geprüft: Commit]
 - **Programm:** Serielles Terminal, TFTP-Server, scp [geprüft: Commit]
 - **Zugang:** Terminal 9600 8N1 [geprüft: Commit]; Autoboot mit Enter anhalten [geprüft: Commit c6e972c]
@@ -1640,7 +1640,7 @@ Aruba AP-303H · ipq40xx-generic · K4
 - **Gluon-RAMpe-Rezept:** devices/aruba-ap-303h.sh (Rezept-Entwurf, nicht gebaut): wie AP-303; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)
 - **Quelle (OpenWrt-Commit):** OpenWrt c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0
 - **Detail-Anleitung:** anleitungen/de/aruba-ap-303h.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0
-- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb; initramfs_sha256 = 70aebd60b9d1c666656ed89c7a81f53ead246ed96ecbd94551226a0c8f0a785e; tty = ttyMSM0; mtd = /dev/mtd16; tftp_buchse = E0; ssh_buchse = E1, E2 oder E3; sicherheit = quelle
+- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb; initramfs_sha256 = 70aebd60b9d1c666656ed89c7a81f53ead246ed96ecbd94551226a0c8f0a785e; tty = ttyMSM0; mtd = /dev/mtd16; tftp_buchse = E0; ssh_buchse = E1, E2 oder E3; sicherheit = quelle; tftp_buchse_hinweis = Sie sitzt auf der Rückseite neben „PT“. Die Buchse „E0/PT“ unten ist nur das andere Ende der Durchreiche PT; darüber erreichst du das Gerät nicht.
 
 #### aruba-ap-365
 
@@ -1721,7 +1721,7 @@ Aruba Instant On AP11D (Alias von aruba-ap-303h) · ipq40xx-generic · K4
   6. Bootet das apboot nur signierte Images ('Image is signed; verifying checksum'), ist es gesperrt wie beim AP11; dieser Fall ist offen. [abgeleitet: Wiki-Bootlog AP11, Neanderfunk-Notiz]
 - **Taste und Zeitpunkt:** Wie AP-303H: Enter bei 'Hit <Enter> to stop autoboot' [abgeleitet: gleiche Plattform]
 - **Übertragung:** tftp-client (apboot `netget`): Server 192.168.1.75, Gerät 192.168.1.105, Datei ipq40xx.ari
-- **Anschluss:** Wie AP-303H: Micro-USB als UART-Stecker, USB-TTL 3,3 V an Micro-USB-Selbstbaukabel; Rechner für TFTP an E0 [abgeleitet: Wiki toh/aruba/ap-303h 'same platform']
+- **Anschluss:** Wie AP-303H: Micro-USB als UART-Stecker, USB-TTL 3,3 V an Micro-USB-Selbstbaukabel; Rechner für TFTP an E0 [abgeleitet: Wiki toh/aruba/ap-303h 'same platform'] E0 (PoE-Eingang) gibt es nur hinten neben PT; die Buchse „E0/PT“ unten ist das passive Ende der Durchreiche PT [geprüft: HPE AP11D Installation Guide, Abb. 2/3 und Abschnitt Ethernet Ports, https://arubanetworking.hpe.com/techdocs/hardware/instantonaps/ap11d/Aruba_AP11D_Installation_Guide_EN.pdf]
 - **Adressen:** TFTP-Server 192.168.1.75/24, Gerät 192.168.1.105 [abgeleitet: Wiki toh/aruba/ap-303h 'same platform']
 - **Programm:** Serielles Terminal, TFTP-Server [abgeleitet: Wiki toh/aruba/ap-303h 'same platform']
 - **Zugang:** 9600 8N1 [abgeleitet: Wiki toh/aruba/ap-303h 'same platform']
@@ -1741,7 +1741,7 @@ Aruba Instant On AP11D (Alias von aruba-ap-303h) · ipq40xx-generic · K4
 - **Gluon-RAMpe-Rezept:** Alias: Image aus devices/aruba-ap-303h.sh; ob apboot gesperrt ist wie beim AP11: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0
 - **Detail-Anleitung:** anleitungen/de/aruba-instant-on-ap11d.md
-- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb; initramfs_sha256 = 70aebd60b9d1c666656ed89c7a81f53ead246ed96ecbd94551226a0c8f0a785e; tty = ttyMSM0; mtd = /dev/mtd16; tftp_buchse = E0; ssh_buchse = E1, E2 oder E3; sicherheit = abgeleitet
+- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb; initramfs_sha256 = 70aebd60b9d1c666656ed89c7a81f53ead246ed96ecbd94551226a0c8f0a785e; tty = ttyMSM0; mtd = /dev/mtd16; tftp_buchse = E0; ssh_buchse = E1, E2 oder E3; sicherheit = abgeleitet; tftp_buchse_hinweis = Sie sitzt auf der Rückseite neben „PT“. Die Buchse „E0/PT“ unten ist nur das andere Ende der Durchreiche PT; darüber erreichst du das Gerät nicht.
 
 #### aruba-instant-on-ap17
 

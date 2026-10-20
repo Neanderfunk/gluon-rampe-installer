@@ -10,7 +10,7 @@ level_text: Serielles Kabel
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 065f7dc6
+daten_stand: a459f9d4
 vorlage_stand: 92dd447d
 ---
 
@@ -267,4 +267,5 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - abgeleitet: Wiki-Bootlog AP11, Neanderfunk-Notiz (Schritte (Normalweg), Bedingung an die Herstellerfirmware)
 - abgeleitet: gleiche Plattform (Schritte (Normalweg), Taste und Zeitpunkt)
 - geprüft: Gluon-Alias, Wiki toh:aruba:ap-303h (Typenschild/Verwechslung)
+- geprüft: HPE AP11D Installation Guide, Abb. 2/3 und Abschnitt Ethernet Ports, https://arubanetworking.hpe.com/techdocs/hardware/instantonaps/ap11d/Aruba_AP11D_Installation_Guide_EN.pdf (Anschluss)
 - Geräteeintrag: OpenWrt c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0

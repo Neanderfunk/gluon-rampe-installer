@@ -10,7 +10,7 @@ level_text: Serielles Kabel
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 065f7dc6
+daten_stand: a459f9d4
 vorlage_stand: 92dd447d
 ---
 
@@ -108,7 +108,7 @@ werden.
    ([TFTP-Server einrichten](grundlagen/tftp-server.md)).
 
 3. **Kabel anschließen.** Netzwerkkabel vom Rechner an die Buchse **E0** des Access Points.
-   Nur über diese Buchse holt er sich die Dateien.
+   Nur über diese Buchse holt er sich die Dateien. Sie sitzt auf der Rückseite neben „PT“. Die Buchse „E0/PT“ unten ist nur das andere Ende der Durchreiche PT; darüber erreichst du das Gerät nicht.
    Das Konsolenkabel an die Konsolenbuchse, das andere Ende an den Rechner.
    Strom noch nicht anschließen.
 
@@ -260,5 +260,6 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Commit (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang, Typenschild/Verwechslung, Rückweg zur Herstellerfirmware)
 - geprüft: Commit c6e972c (Schritte (Normalweg), Taste und Zeitpunkt, Zugang)
 - geprüft: Commit; Name zwingend: abgeleitet (Schritte (Normalweg), Datei)
+- geprüft: HPE-Datenblatt AP-303H "Passive pass-through interface (two RJ-45, back and bottom)", https://web.archive.org/web/20241003121004/https://www.arubanetworks.com/assets/ds/DS_AP303H.pdf (Anschluss)
 - geprüft: Wiki toh:aruba:ap-303h (Typenschild/Verwechslung, Rückweg zur Herstellerfirmware)
 - Geräteeintrag: OpenWrt c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0
