@@ -10,8 +10,8 @@ level_text: Serielles Kabel
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: d44f4bc8
-vorlage_stand: 33a38da8
+daten_stand: 065f7dc6
+vorlage_stand: 92dd447d
 ---
 
 # Aruba Instant On AP11D: Freifunk-Firmware installieren
@@ -115,7 +115,7 @@ werden.
    ([TFTP-Server einrichten](grundlagen/tftp-server.md)).
 
 3. **Kabel anschließen.** Netzwerkkabel vom Rechner an die Buchse **E0** des Access Points.
-   Nur über diese Buchse holt er sich die Dateien.
+   Nur über diese Buchse holt er sich die Dateien. Sie sitzt auf der Rückseite neben „PT“. Die Buchse „E0/PT“ unten ist nur das andere Ende der Durchreiche PT; darüber erreichst du das Gerät nicht.
    Das Konsolenkabel an die Konsolenbuchse, das andere Ende an den Rechner.
    Strom noch nicht anschließen.
 

@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-10-17
 erprobt_mit: Gluon 2025.1 (26100702bro), factory über die Mercusys-Oberfläche 1.0.11 (Hardware V1.20)
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: d44f4bc8
+daten_stand: 065f7dc6
 vorlage_stand: 33a38da8
 ---
 

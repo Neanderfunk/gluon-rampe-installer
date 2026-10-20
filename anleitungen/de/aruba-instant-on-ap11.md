@@ -10,8 +10,8 @@ level_text: Serielles Kabel
 risiko: bootloader
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: d44f4bc8
-vorlage_stand: 33a38da8
+daten_stand: 065f7dc6
+vorlage_stand: 92dd447d
 ---
 
 # Aruba Instant On AP11: Freifunk-Firmware installieren

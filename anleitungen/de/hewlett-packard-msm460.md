@@ -10,7 +10,7 @@ level_text: Network-Tools
 risiko: bootloader
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-client, tftp-server]
-daten_stand: d44f4bc8
+daten_stand: 065f7dc6
 vorlage_stand: 33a38da8
 ---
 
