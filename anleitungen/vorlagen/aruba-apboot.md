@@ -40,6 +40,8 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
                          (echter USB-Anschluss, AP-365) oder "unklar"
     tftp_buchse          Buchse für TFTP, z. B. "E0" (AP-303H); ohne Wert "die
                          Netzwerkbuchse"
+    tftp_buchse_hinweis  ganzer Satz, wo die TFTP-Buchse sitzt und womit man sie
+                         nicht verwechseln darf (AP11D: E0 hinten, nicht "E0/PT" unten)
     ssh_buchse           Buchse für scp/ssh, wenn sie anders ist, z. B. "E1, E2
                          oder E3" (AP-303H)
     bootm_weg            "apboot": Teil "Älteren Bootloader aufspielen" als
@@ -210,6 +212,7 @@ werden.
 3. **Kabel anschließen.** Netzwerkkabel vom Rechner an
    {%- if tftp_buchse %} die Buchse **{{ tftp_buchse }}** des Access Points.
    Nur über diese Buchse holt er sich die Dateien.
+   {%- if w.get("tftp_buchse_hinweis") %} {{ w.tftp_buchse_hinweis }}{% endif %}
    {%- else %} die Netzwerkbuchse des Access Points.{% endif %}
    Das Konsolenkabel an die Konsolenbuchse, das andere Ende an den Rechner.
    Strom noch nicht anschließen.
