@@ -10,8 +10,8 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 2e1c85fd
-vorlage_stand: 33a38da8
+daten_stand: 367dd1b3
+vorlage_stand: bf452817
 ---
 
 # Cudy TR1200 v1: Freifunk-Firmware installieren
@@ -183,11 +183,12 @@ Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
 
 Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 
-- abgeleitet (Weg ab Werk, Schritte (Normalweg), Datei)
+- abgeleitet (Weg ab Werk, Schritte (Normalweg))
 - abgeleitet: Router ist in beiden Firmwares DHCP-Server (Schritte (Normalweg), Anschluss, Adressen, Programm)
 - abgeleitet: sysupgrade schreibt den Flash (Schritte (Normalweg), Dauer)
 - geprüft: Cudy-FAQ "OpenWrt Software Download" (Bedingung an die Herstellerfirmware)
 - geprüft: Cudy-FAQ Recovery (Rückweg zur Herstellerfirmware)
 - geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer, Fehlerbild)
 - geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)
+- geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft (Datei)
 - Geräteeintrag: f1091ef7ac3596f1e401b918a36273672acbe389

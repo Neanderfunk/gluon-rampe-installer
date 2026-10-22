@@ -15,8 +15,8 @@
 <meta name="anleitung:risiko" content="normal">
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, router-antwortet-nicht, tftp-server">
-<meta name="anleitung:daten_stand" content="2e1c85fd">
-<meta name="anleitung:vorlage_stand" content="33a38da8">
+<meta name="anleitung:daten_stand" content="367dd1b3">
+<meta name="anleitung:vorlage_stand" content="bf452817">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -116,8 +116,8 @@ gesetzt. <strong>Entfern diesen Haken.</strong> Die beiden Haken darunter sind s
 aus. Es darf kein Haken mehr gesetzt sein.
 Meldet OpenWrt, dass das Image nicht zum Gerät passt, obwohl du sicher die
 Datei für den Cudy WR1300 v1 hast, setz zusätzlich den Haken bei
-&quot;Erzwinge Upgrade&quot; (englisch &quot;Force upgrade&quot;). Bei diesem Modell ist das
-laut OpenWrt nötig, weil die Zwischenfirmware das Gerät anders benennt.
+&quot;Erzwinge Upgrade&quot; (englisch &quot;Force upgrade&quot;). Das kommt bei diesem Modell
+vor, weil die Zwischenfirmware das Gerät anders benennt.
 Dann <strong>Fortfahren</strong>.</p>
 </li>
 <li>
@@ -204,11 +204,13 @@ Rechner wieder auf &quot;automatisch&quot; stellen; die Cudy-Oberfläche ist unt
 <li>abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht (Rückweg zur Herstellerfirmware)</li>
 <li>abgeleitet: sysupgrade schreibt den Flash (Schritte (Normalweg), Dauer)</li>
 <li>geprüft (Weg ab Werk, Schritte (Normalweg))</li>
-<li>geprüft: Commit (Fehlerbild, Rückweg zur Herstellerfirmware)</li>
+<li>geprüft: Commit (Rückweg zur Herstellerfirmware)</li>
+<li>geprüft: Commit nennt &quot;force upgrade may need to be checked&quot;; abgeleitet: Grund ist ein anderer Gerätename der Zwischenfirmware (Fehlerbild)</li>
 <li>geprüft: Cudy-FAQ &quot;OpenWrt Software Download&quot; (Bedingung an die Herstellerfirmware)</li>
 <li>geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer, Fehlerbild)</li>
 <li>geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)</li>
 <li>geprüft: Spiegel (Typenschild/Verwechslung)</li>
+<li>geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft (Datei)</li>
 <li>Geräteeintrag: cd2b661453a8a2b8260dfb9b9c0dc5297b981331</li>
 </ul>
 

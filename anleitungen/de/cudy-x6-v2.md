@@ -10,8 +10,8 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 2e1c85fd
-vorlage_stand: 33a38da8
+daten_stand: 367dd1b3
+vorlage_stand: bf452817
 ---
 
 # Cudy X6 v2: Freifunk-Firmware installieren
@@ -200,4 +200,5 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Cudy-FAQ "OpenWrt Software Download" (Bedingung an die Herstellerfirmware)
 - geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Typenschild/Verwechslung, Dauer, Fehlerbild)
 - geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)
+- geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft (Datei)
 - Geräteeintrag: e38de40f8dd350344407fe5a91e81191f6960804

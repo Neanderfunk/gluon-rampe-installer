@@ -10,7 +10,7 @@ level_text: Serielles Kabel
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 2e1c85fd
+daten_stand: 367dd1b3
 vorlage_stand: 92dd447d
 ---
 

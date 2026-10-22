@@ -10,8 +10,8 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 2e1c85fd
-vorlage_stand: 33a38da8
+daten_stand: 367dd1b3
+vorlage_stand: bf452817
 ---
 
 # Cudy M3000 v2 mit Motorcomm YT8821: Freifunk-Firmware installieren
@@ -64,9 +64,10 @@ nach `yt8821` suchen.
   [Cudy M3000 v1](cudy-m3000-v1.md).
 - keins von beiden: Router neu starten und noch einmal suchen.
 
-Ob die Zwischenfirmware aus dem Ordner "M3000_1.0_2.0" auch zu dieser
-Variante passt, ist noch nicht geklärt. Wenn du es ausprobierst, sag uns
-bitte Bescheid, ob es geklappt hat.
+Cudy gibt die Zwischenfirmware für den M3000 in Hardware-Version 1.0 und
+2.0 heraus, und OpenWrt nennt für diese Variante dieselbe Datei. Bei uns
+hat sie an einem M3000 mit YT8821 aber noch niemand ausprobiert. Wenn du es
+tust, sag uns bitte Bescheid, ob es geklappt hat.
 
 ## Schritte
 
@@ -127,8 +128,8 @@ bitte Bescheid, ob es geklappt hat.
    aus. Es darf kein Haken mehr gesetzt sein.
    Meldet OpenWrt, dass das Image nicht zum Gerät passt, obwohl du sicher die
    Datei für den Cudy M3000 v2 mit Motorcomm YT8821 hast, setz zusätzlich den Haken bei
-   "Erzwinge Upgrade" (englisch "Force upgrade"). Bei diesem Modell ist das
-   laut OpenWrt nötig, weil die Zwischenfirmware das Gerät anders benennt.
+   "Erzwinge Upgrade" (englisch "Force upgrade"). Das kommt bei diesem Modell
+   vor, weil die Zwischenfirmware das Gerät anders benennt.
    Dann **Fortfahren**.
 
 10. **Fertig.** Der Router schreibt die Freifunk-Firmware und startet neu,
@@ -227,4 +228,5 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Sichtbare Zeichen, Zugang)
 - geprüft: OpenWrt-Pin (Typenschild/Verwechslung)
 - geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022 (Cudys Drive-Ordner, geholt 22.10.2026; MD5 geprüft) (Schritte (Normalweg))
+- geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft (Datei)
 - Geräteeintrag: OpenWrt 45b51ebaff51d2a49d149e9011717abb1b032683 (25.12: ca825537fb); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]

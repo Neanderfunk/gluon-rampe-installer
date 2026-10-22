@@ -10,8 +10,8 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 2e1c85fd
-vorlage_stand: 33a38da8
+daten_stand: 367dd1b3
+vorlage_stand: bf452817
 ---
 
 # Cudy WR3000E v1: Freifunk-Firmware installieren
@@ -209,4 +209,5 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Typenschild/Verwechslung, Dauer, Fehlerbild)
 - geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)
 - geprüft: OpenWrt-Pin (Typenschild/Verwechslung)
+- geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft (Datei)
 - Geräteeintrag: OpenWrt f50551dd18318f2255da3ecd5de5cc1078201651

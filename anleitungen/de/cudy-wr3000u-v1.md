@@ -10,8 +10,8 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 2e1c85fd
-vorlage_stand: 33a38da8
+daten_stand: 367dd1b3
+vorlage_stand: bf452817
 ---
 
 # Cudy WR3000U v1: Freifunk-Firmware installieren
@@ -193,11 +193,12 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - abgeleitet: Router ist in beiden Firmwares DHCP-Server (Schritte (Normalweg), Anschluss, Adressen, Programm)
 - abgeleitet: sysupgrade schreibt den Flash (Schritte (Normalweg), Dauer)
 - geprüft (Weg ab Werk, Gluon-RAMpe passt)
-- geprüft: Commit (Datei, Typenschild/Verwechslung, Rückweg zur Herstellerfirmware)
+- geprüft: Commit (Typenschild/Verwechslung, Rückweg zur Herstellerfirmware)
 - geprüft: Commit-Texte (Gluon-RAMpe passt)
 - geprüft: Commit/Neanderfunk-Notiz (Weg ab Werk, Schritte (Normalweg))
 - geprüft: Cudy-FAQ "OpenWrt Software Download" (Bedingung an die Herstellerfirmware)
 - geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer, Fehlerbild)
 - geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)
 - geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022 (Cudys Drive-Ordner, geholt 22.10.2026; MD5 geprüft) (Schritte (Normalweg))
+- geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft (Datei)
 - Geräteeintrag: OpenWrt b9d7b448c256bb3860c7965ccf599c29c4847cb4 (25.12: 95dec97d08); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]

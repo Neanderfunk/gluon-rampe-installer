@@ -10,8 +10,8 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 2e1c85fd
-vorlage_stand: 33a38da8
+daten_stand: 367dd1b3
+vorlage_stand: bf452817
 ---
 
 # Cudy WR1300 v1: Freifunk-Firmware installieren
@@ -110,8 +110,8 @@ eigener Zwischenfirmware; diese Anleitung gilt nicht für sie.
    aus. Es darf kein Haken mehr gesetzt sein.
    Meldet OpenWrt, dass das Image nicht zum Gerät passt, obwohl du sicher die
    Datei für den Cudy WR1300 v1 hast, setz zusätzlich den Haken bei
-   "Erzwinge Upgrade" (englisch "Force upgrade"). Bei diesem Modell ist das
-   laut OpenWrt nötig, weil die Zwischenfirmware das Gerät anders benennt.
+   "Erzwinge Upgrade" (englisch "Force upgrade"). Das kommt bei diesem Modell
+   vor, weil die Zwischenfirmware das Gerät anders benennt.
    Dann **Fortfahren**.
 
 10. **Fertig.** Der Router schreibt die Freifunk-Firmware und startet neu,
@@ -198,9 +198,11 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht (Rückweg zur Herstellerfirmware)
 - abgeleitet: sysupgrade schreibt den Flash (Schritte (Normalweg), Dauer)
 - geprüft (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Commit (Fehlerbild, Rückweg zur Herstellerfirmware)
+- geprüft: Commit (Rückweg zur Herstellerfirmware)
+- geprüft: Commit nennt "force upgrade may need to be checked"; abgeleitet: Grund ist ein anderer Gerätename der Zwischenfirmware (Fehlerbild)
 - geprüft: Cudy-FAQ "OpenWrt Software Download" (Bedingung an die Herstellerfirmware)
 - geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer, Fehlerbild)
 - geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)
 - geprüft: Spiegel (Typenschild/Verwechslung)
+- geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft (Datei)
 - Geräteeintrag: cd2b661453a8a2b8260dfb9b9c0dc5297b981331

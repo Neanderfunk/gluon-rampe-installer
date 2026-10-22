@@ -15,8 +15,8 @@
 <meta name="anleitung:risiko" content="normal">
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, router-antwortet-nicht, tftp-server">
-<meta name="anleitung:daten_stand" content="2e1c85fd">
-<meta name="anleitung:vorlage_stand" content="33a38da8">
+<meta name="anleitung:daten_stand" content="367dd1b3">
+<meta name="anleitung:vorlage_stand" content="bf452817">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -66,9 +66,10 @@ nach <code>yt8821</code> suchen.</p>
 <a href="cudy-m3000-v1.html">Cudy M3000 v1</a>.</li>
 <li>keins von beiden: Router neu starten und noch einmal suchen.</li>
 </ul>
-<p>Ob die Zwischenfirmware aus dem Ordner &quot;M3000_1.0_2.0&quot; auch zu dieser
-Variante passt, ist noch nicht geklärt. Wenn du es ausprobierst, sag uns
-bitte Bescheid, ob es geklappt hat.</p>
+<p>Cudy gibt die Zwischenfirmware für den M3000 in Hardware-Version 1.0 und
+2.0 heraus, und OpenWrt nennt für diese Variante dieselbe Datei. Bei uns
+hat sie an einem M3000 mit YT8821 aber noch niemand ausprobiert. Wenn du es
+tust, sag uns bitte Bescheid, ob es geklappt hat.</p>
 <h2>Schritte</h2>
 <h3>Teil 1: Zwischenfirmware von Cudy</h3>
 <ol>
@@ -134,8 +135,8 @@ gesetzt. <strong>Entfern diesen Haken.</strong> Die beiden Haken darunter sind s
 aus. Es darf kein Haken mehr gesetzt sein.
 Meldet OpenWrt, dass das Image nicht zum Gerät passt, obwohl du sicher die
 Datei für den Cudy M3000 v2 mit Motorcomm YT8821 hast, setz zusätzlich den Haken bei
-&quot;Erzwinge Upgrade&quot; (englisch &quot;Force upgrade&quot;). Bei diesem Modell ist das
-laut OpenWrt nötig, weil die Zwischenfirmware das Gerät anders benennt.
+&quot;Erzwinge Upgrade&quot; (englisch &quot;Force upgrade&quot;). Das kommt bei diesem Modell
+vor, weil die Zwischenfirmware das Gerät anders benennt.
 Dann <strong>Fortfahren</strong>.</p>
 </li>
 <li>
@@ -234,6 +235,7 @@ Rechner wieder auf &quot;automatisch&quot; stellen; die Cudy-Oberfläche ist unt
 <li>geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Sichtbare Zeichen, Zugang)</li>
 <li>geprüft: OpenWrt-Pin (Typenschild/Verwechslung)</li>
 <li>geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022 (Cudys Drive-Ordner, geholt 22.10.2026; MD5 geprüft) (Schritte (Normalweg))</li>
+<li>geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft (Datei)</li>
 <li>Geräteeintrag: OpenWrt 45b51ebaff51d2a49d149e9011717abb1b032683 (25.12: ca825537fb); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]</li>
 </ul>
 

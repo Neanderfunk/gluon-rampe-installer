@@ -12,8 +12,8 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2023.2.6 (26091920sta), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.5.30
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 2e1c85fd
-vorlage_stand: 33a38da8
+daten_stand: 367dd1b3
+vorlage_stand: bf452817
 ---
 
 # Cudy WR3000S v1: Freifunk-Firmware installieren
@@ -207,5 +207,6 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer, Fehlerbild)
 - geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)
 - geprüft: OpenWrt-Pin (Typenschild/Verwechslung)
+- geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft (Datei)
 - geprüft: Test Neanderfunk 16.10.2026 (Rückweg zur Herstellerfirmware)
 - Geräteeintrag: OpenWrt 4779e954fa847c4b376623bc3bdf9651007e8a89

@@ -12,8 +12,8 @@ status: erprobt
 erprobt_am: 2026-10-17
 erprobt_mit: Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.4
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 2e1c85fd
-vorlage_stand: 33a38da8
+daten_stand: 367dd1b3
+vorlage_stand: bf452817
 ---
 
 # Cudy AP3000 v1: Freifunk-Firmware installieren
@@ -215,6 +215,7 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Mitschnitt Test Neanderfunk 17.10.2026 (Adressen, Fehlerbild)
 - geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer)
 - geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)
+- geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft (Datei)
 - geprüft: Spiegel-Ordner (Typenschild/Verwechslung)
 - geprüft: Test Neanderfunk 17.10.2026 (Sichtbare Zeichen, Anschluss, Rückweg zur Herstellerfirmware)
 - geprüft: Wiki toh:cudy:ap3000_v1 (Rückweg zur Herstellerfirmware)
