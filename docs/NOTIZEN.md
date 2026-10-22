@@ -321,7 +321,9 @@ Deploy):
   C20 v1.
 - Zurückgezogen: Rocket M XM (XM ist Sackgasse), WS-AP3715i (das
   2025.1-sysupgrade bootet nicht, Gluon #3842, Fix OpenWrt-PR #25541 offen;
-  Werte in `440a725` zum Zurückholen).
+  Werte in `440a725` zum Zurückholen). WS-AP3715i am 22.10.2026 wieder
+  aufgenommen (`c6d8e279`, ungeprüft): stable 26101610sta pinnt
+  gluon-patches-hardware 188dff9 mit dem Loader-Backport.
 - **Levels L0 bis L8 und Risiko** (Einteilung adorfer 15.10.2026) ersetzen
   die vier Stufen: `scripts/level.py` (Definitionen, Bezeichnungen für Lesende
   von Content), je Gerät `level_merkmale` mit festen Werten, `risiko`
