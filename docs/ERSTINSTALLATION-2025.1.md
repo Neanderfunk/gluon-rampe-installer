@@ -2806,7 +2806,7 @@ Cudy AP3000 Outdoor v1 · mediatek-filogic · K2
 - **Typenschild/Verwechslung:** AP3000 Outdoor ist ein anderes Gerät als AP3000 v1 und AP3000 Wall; Zwischenfirmware je Modell [geprüft: Spiegel-Ordner]; Gluon 2025.1 kennt den neuen Flash F50L1G41LC (OpenWrt-Backport 422 F50L1G41LC am Pin) [geprüft: OpenWrt-Pin]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-cudy_ap3000outdoor-v1-initramfs-kernel.bin)
-- **Factory-/Stock-Image-Link:** [Spiegel AP3000_Outdoor_1.0](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_Outdoor_1.0/)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-ap3000-outdoor.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-ap3000-outdoor.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
@@ -2850,7 +2850,7 @@ Cudy AP3000 v1 · mediatek-filogic · K2
 - **Typenschild/Verwechslung:** nicht mit AP3000 Outdoor oder AP3000 Wall verwechseln, je eigene Zwischenfirmware [geprüft: Spiegel-Ordner]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-cudy_ap3000-v1-initramfs-kernel.bin)
-- **Factory-/Stock-Image-Link:** [Spiegel AP3000_V1.0](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_V1.0/)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-ap3000.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-ap3000.bin)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
@@ -2895,7 +2895,7 @@ Cudy AP3000 Wall v1 · mediatek-filogic · K2
 - **Typenschild/Verwechslung:** AP3000 Wall ist ein anderes Gerät als AP3000 v1/Outdoor [geprüft: Spiegel-Ordner]; erst ab Gluon 2025.1 [geprüft: Neanderfunk-Notiz]; Gluon 2025.1 kennt den neuen Flash F50L1G41LC (OpenWrt-Backport 422 F50L1G41LC am Pin) [geprüft: OpenWrt-Pin]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [25.12.5: initramfs-kernel.bin](https://downloads.openwrt.org/releases/25.12.5/targets/mediatek/filogic/openwrt-25.12.5-mediatek-filogic-cudy_ap3000wall-v1-initramfs-kernel.bin)
-- **Factory-/Stock-Image-Link:** [Spiegel AP3000_Wall_1.0](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP3000_Wall_1.0/)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-ap3000-wall.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-ap3000-wall.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
@@ -2939,7 +2939,7 @@ Cudy M3000 v1 (RTL8221B) · mediatek-filogic · K2
 - **Typenschild/Verwechslung:** M3000 gibt es mit WAN-PHY Realtek RTL8221B (dieses Image) oder Motorcomm YT8821 (eigenes Image cudy-m3000-v2-with-motorcomm-yt8821); in der Cudy-Oberfläche unter Diagnose-Werkzeuge > Systemprotokoll nach "rtl8221b" suchen: Treffer = dieses Gerät [geprüft: Commit 45b51eba]; Gluon 2025.1 kennt den neuen Flash F50L1G41LC (OpenWrt-Backport 422 F50L1G41LC am Pin) [geprüft: OpenWrt-Pin]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-cudy_m3000-v1-initramfs-kernel.bin)
-- **Factory-/Stock-Image-Link:** [Spiegel M3000_1.0_2.0](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M3000_1.0_2.0/)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-m3000.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-m3000.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
@@ -2983,7 +2983,7 @@ Cudy M3000 v2 mit Motorcomm YT8821 · mediatek-filogic · K2
 - **Typenschild/Verwechslung:** nur M3000 mit Motorcomm-YT8821-PHY: in der Cudy-Oberfläche unter Diagnose-Werkzeuge > Systemprotokoll suchen; "rtl8221b" gefunden = falsches Image (dann cudy-m3000-v1), "yt8821" gefunden = dieses Image; keins von beiden = Router neu starten und erneut suchen [geprüft: Commit 45b51eba]; Gluon 2025.1 kennt den neuen Flash F50L1G41LC (OpenWrt-Backport 422 F50L1G41LC am Pin) [geprüft: OpenWrt-Pin]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [25.12.5: initramfs-kernel.bin](https://downloads.openwrt.org/releases/25.12.5/targets/mediatek/filogic/openwrt-25.12.5-mediatek-filogic-cudy_m3000-v2-yt8821-initramfs-kernel.bin)
-- **Factory-/Stock-Image-Link:** [Spiegel M3000_1.0_2.0 (ob für YT8821 passend: abgeleitet)](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M3000_1.0_2.0/)<br>[Cudy-Drive](https://drive.google.com/drive/folders/1BKVarlwlNxf7uJUtRhuMGUqeCa5KpMnj)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-m3000.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-m3000.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
@@ -3024,7 +3024,7 @@ Cudy RE3000 v1 · mediatek-filogic · K2
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-cudy_re3000-v1-initramfs-kernel.bin)
-- **Factory-/Stock-Image-Link:** [Spiegel RE3000_V1](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/RE3000_V1/)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-re3000.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-re3000.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
@@ -3067,7 +3067,7 @@ Cudy TR3000 256 MB v1 · mediatek-filogic · K2
 - **Typenschild/Verwechslung:** TR3000 256MB v1 (256 MiB Flash, 512 MiB RAM) ist nicht die normale TR3000 v1 (128 MiB Flash); Spiegel-Ordner sagt ausdrücklich "not for TR3000 V1" [geprüft: Commit, Spiegel]; Typenschild "TR3000-256MB" [abgeleitet: Modellname bei Cudy]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-cudy_tr3000-256mb-v1-initramfs-kernel.bin)
-- **Factory-/Stock-Image-Link:** [Spiegel TR3000_256MB_Flash_V1_not_for_TR3000_V1_](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/TR3000_256MB_Flash_V1_not_for_TR3000_V1_/)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-tr3000-256mb.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-tr3000-256mb.bin)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
@@ -3106,7 +3106,7 @@ Cudy TR3000 v1 (128 MB Flash) · mediatek-filogic · K2
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** 128-MB- und 256-MB-Flash-Version: Angabe auf Karton/Typenschild; die 256-MB-Version hat ein eigenes Image [geprüft: Wiki toh:cudy:tr3000]. Nicht mit dem 'ubootmod'-Image (OpenWrt-U-Boot-Layout) mischen [abgeleitet: Wiki]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-cudy_tr3000-v1-initramfs-kernel.bin)
-- **Factory-/Stock-Image-Link:** -
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-tr3000.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-tr3000.bin)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Dauer:** TFTP-Fenster laut Wiki 10 s [geprüft: Wiki toh:cudy:tr3000]
@@ -3150,7 +3150,7 @@ Cudy WR3000 v1 · mediatek-filogic · K2
 - **Typenschild/Verwechslung:** WR3000 v2 geht nicht (anderer Chip, kein OpenWrt); im Angebot erkennbar: v1 "1,3 GHz", v2 "1,2 GHz" [geprüft: Neanderfunk-Notiz]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-cudy_wr3000-v1-initramfs-kernel.bin)
-- **Factory-/Stock-Image-Link:** [Spiegel WR3000%2BV1_without_recovery_TFTP](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000%2BV1_without_recovery_TFTP/)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-wr3000.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
@@ -3194,7 +3194,7 @@ Cudy WR3000E v1 · mediatek-filogic · K2
 - **Typenschild/Verwechslung:** WR3000E v2 geht nicht (anderer Chip) [geprüft: Neanderfunk-Notiz]; WR3000E und WR3000S haben dieselbe Platine, aber anderen Flash und andere LED-Farben (rot/blau statt weiß) [geprüft: Commit]; Gluon 2025.1 kennt den neuen Flash F50L1G41LC (OpenWrt-Backport 422 F50L1G41LC am Pin) [geprüft: OpenWrt-Pin]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-cudy_wr3000e-v1-initramfs-kernel.bin)
-- **Factory-/Stock-Image-Link:** [Spiegel WR3000E_1.0](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000E_1.0/)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-wr3000e.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000e.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
@@ -3237,7 +3237,7 @@ Cudy WR3000H v1 · mediatek-filogic · K2
 - **Typenschild/Verwechslung:** Nutzerberichte: neuere WR3000H mit F50L1G41LC-Flash und Motorcomm-YT8821-WAN-PHY melden bei der Zwischenfirmware vom 19.11.2025 "File is invalid" [abgeleitet: Kommentar Cudy-FAQ 09.10.2026, unbestätigt]; Gluon 2025.1 kennt den neuen Flash F50L1G41LC (OpenWrt-Backport 422 F50L1G41LC am Pin) [geprüft: OpenWrt-Pin]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-cudy_wr3000h-v1-initramfs-kernel.bin)
-- **Factory-/Stock-Image-Link:** [Spiegel WR3000H_1.0](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000H_1.0/)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-wr3000h.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000h.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
@@ -3281,7 +3281,7 @@ Cudy WR3000P v1 · mediatek-filogic · K2
 - **Typenschild/Verwechslung:** erst ab Gluon 2025.1 [geprüft: Neanderfunk-Notiz]; WR3000P hat PoE am WAN-Port und USB, sonst wie WR3000H [geprüft: Commit]; Gluon 2025.1 kennt den neuen Flash F50L1G41LC (OpenWrt-Backport 422 F50L1G41LC am Pin) [geprüft: OpenWrt-Pin]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-cudy_wr3000p-v1-initramfs-kernel.bin)
-- **Factory-/Stock-Image-Link:** [Spiegel WR3000P_1.0](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000P_1.0/)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-wr3000p.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000p.bin)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
@@ -3324,7 +3324,7 @@ Cudy WR3000S v1 · mediatek-filogic · K2
 - **Typenschild/Verwechslung:** WR3000S und WR3000E haben dieselbe Platine, aber anderen Flash; je eigenes Image und eigene Zwischenfirmware [geprüft: Commit WR3000E, Spiegel]; Gluon 2025.1 kennt den neuen Flash F50L1G41LC (OpenWrt-Backport 422 F50L1G41LC am Pin) [geprüft: OpenWrt-Pin]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [24.10.8: initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-cudy_wr3000s-v1-initramfs-kernel.bin)
-- **Factory-/Stock-Image-Link:** [Spiegel WR3000S_1.0](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR3000S_1.0/)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-wr3000s.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000s.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
@@ -3368,7 +3368,7 @@ Cudy WR3000U v1 · mediatek-filogic · K2
 - **Typenschild/Verwechslung:** WR3000U (256 MiB Flash) ist nicht der russische OEM-Bruder WBR3000UAX (128 MiB Flash) [geprüft: Commit]; Cudy-Download heißt "wr3000u-256mb-1-0" [geprüft: Commit]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [snapshot: initramfs-kernel.bin](https://downloads.openwrt.org/snapshots/targets/mediatek/filogic/openwrt-mediatek-filogic-cudy_wr3000u-v1-initramfs-kernel.bin)
-- **Factory-/Stock-Image-Link:** [Cudy-Drive](https://drive.google.com/drive/folders/1BKVarlwlNxf7uJUtRhuMGUqeCa5KpMnj)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-wr3000u.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000u.bin)
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
@@ -3410,7 +3410,7 @@ Cudy AP1300 Outdoor v1 · ramips-mt7621 · K2
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-cudy_ap1300-outdoor-v1-initramfs-kernel.bin) (200)
-- **Factory-/Stock-Image-Link:** [Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP1300_Outdoor_V1.0) / [Cudy](https://www.cudy.com/blogs/faq/openwrt-software-download)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-ap1300-outdoor.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-ap1300-outdoor.bin)
 - **Stock-Teile:** -
 - **RAM:** 128 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
@@ -3452,7 +3452,7 @@ Cudy M1800 · ramips-mt7621 · K2
 - **Typenschild/Verwechslung:** im Spiegel und bei Cudy nur "M1800 V2"; OpenWrt kennt nur "cudy_m1800" ohne Version [geprüft: Spiegel, Commit]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-cudy_m1800-initramfs-kernel.bin) (200)
-- **Factory-/Stock-Image-Link:** [Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M1800%2BV2) / [Cudy](https://www.cudy.com/blogs/faq/openwrt-software-download)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-m1800.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-m1800.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
@@ -3494,7 +3494,7 @@ Cudy WR1300 v1 · ramips-mt7621 · K2
 - **Typenschild/Verwechslung:** nur WR1300 v1; v2/v3 sind andere Hardware mit eigener Zwischenfirmware (Spiegel-Ordner WR1300_V2_V3) [geprüft: Spiegel]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-cudy_wr1300-v1-initramfs-kernel.bin) (200)
-- **Factory-/Stock-Image-Link:** [Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR1300%2BV1) / [Cudy](https://www.cudy.com/blogs/faq/openwrt-software-download)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-wr1300.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr1300.bin)
 - **Stock-Teile:** -
 - **RAM:** 128 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
@@ -3535,7 +3535,7 @@ Cudy WR2100 · ramips-mt7621 · K2
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-cudy_wr2100-initramfs-kernel.bin) (200)
-- **Factory-/Stock-Image-Link:** [Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/WR2100%2BV1) / [Cudy](https://www.cudy.com/blogs/faq/openwrt-software-download)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-wr2100.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr2100.bin)
 - **Stock-Teile:** -
 - **RAM:** 128 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
@@ -3577,7 +3577,7 @@ Cudy X6 v1 · ramips-mt7621 · K2
 - **Typenschild/Verwechslung:** X6 v1 hat 32 MB Flash, X6 v2 16 MB; je eigenes Image und eigene Zwischenfirmware [geprüft: Commit X6 v2, Spiegel]; Version steht auf dem Typenschild [geprüft: Neanderfunk-Notiz]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-cudy_x6-v1-initramfs-kernel.bin) (200)
-- **Factory-/Stock-Image-Link:** [Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/X6%2BV1) / [Cudy](https://www.cudy.com/blogs/faq/openwrt-software-download)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-x6-v1.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-x6-v1.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
@@ -3619,7 +3619,7 @@ Cudy X6 v2 · ramips-mt7621 · K2
 - **Typenschild/Verwechslung:** X6 v2 hat 16 MB Flash, X6 v1 32 MB; je eigenes Image und eigene Zwischenfirmware [geprüft: Commit, Spiegel]; Version steht auf dem Typenschild [geprüft: Neanderfunk-Notiz]
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-cudy_x6-v2-initramfs-kernel.bin) (200)
-- **Factory-/Stock-Image-Link:** [Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/X6%2BV2) / [Cudy](https://www.cudy.com/blogs/faq/openwrt-software-download)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-x6-v2.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-x6-v2.bin)
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
@@ -3660,7 +3660,7 @@ Cudy TR1200 v1 · ramips-mt76x8 · K2
 - **Werkzeug/Spezial:** Cudy-Zwischenfirmware
 - **Bedingung an die Herstellerfirmware:** nur solange die Cudy-Originaloberfläche läuft; ist schon OpenWrt drauf, erst per TFTP-Recovery zurück zur Cudy-Firmware [geprüft: Cudy-FAQ "OpenWrt Software Download"]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt76x8/openwrt-24.10.8-ramips-mt76x8-cudy_tr1200-v1-initramfs-kernel.bin) (200)
-- **Factory-/Stock-Image-Link:** [Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/TR1200_V1) / [Cudy](https://www.cudy.com/blogs/faq/openwrt-software-download)
+- **Factory-/Stock-Image-Link:** [Spiegel cudy-tr1200.bin](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-tr1200.bin)
 - **Stock-Teile:** -
 - **RAM:** 128 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
