@@ -2779,7 +2779,7 @@ Cudy AP3000 Outdoor v1 · mediatek-filogic · K2
 
 - **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Spiegel (Ordner AP3000_Outdoor_1.0) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-ap3000-outdoor.bin aus unserem Spiegel und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
   2. Gerät über PoE-Injektor oder PoE-Switch versorgen [geprüft: Commit "PoE powered (standalone)"]
   3. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   4. Cudy-Oberfläche http://192.168.10.1 öffnen, Passwort admin [geprüft: Commit/Neanderfunk-Notiz]
@@ -2797,7 +2797,7 @@ Cudy AP3000 Outdoor v1 · mediatek-filogic · K2
 - **Adressen:** Rechner bekommt die IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner AP3000_Outdoor_1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-ap3000-outdoor.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-ap3000-outdoor.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
@@ -2823,7 +2823,7 @@ Cudy AP3000 v1 · mediatek-filogic · K2
 
 - **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; Zwischenfirmware laut Commit nur per Mail an support@cudy.com, im Spiegel die vom Support erhaltene Datei; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Spiegel (Ordner AP3000_V1.0) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-ap3000.bin aus unserem Spiegel und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
   2. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   3. Cudy-Oberfläche http://192.168.10.1 öffnen, Passwort admin [geprüft: Commit/Neanderfunk-Notiz]
   4. Zwischenfirmware (von Cudy signiertes OpenWrt) in der Cudy-Oberfläche hochladen [geprüft: Commit/Neanderfunk-Notiz]
@@ -2840,7 +2840,7 @@ Cudy AP3000 v1 · mediatek-filogic · K2
 - **Adressen:** AP3000 vergibt ab Werk keine Adressen, er ist nur DHCP-Client und nimmt nach etwa einer Minute die Ausweichadresse 192.168.10.254 (Management-Adresse laut Typenschild, auch cudyap.net) [geprüft: Mitschnitt Test Neanderfunk 17.10.2026]; Rechner fest 192.168.10.100; danach LuCI der Zwischenfirmware unter 192.168.1.1, Rechner vorsichtshalber fest 192.168.1.100 [abgeleitet: ob die Zwischenfirmware DHCP vergibt, offen; am Testplatz war 192.168.1.88 fest eingestellt]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner AP3000_V1.0 (Datei kam vom Cudy-Support) [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-ap3000.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-ap3000.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
@@ -2868,7 +2868,7 @@ Cudy AP3000 Wall v1 · mediatek-filogic · K2
 
 - **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Spiegel (Ordner AP3000_Wall_1.0) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-ap3000-wall.bin aus unserem Spiegel und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
   2. Gerät über PoE-Injektor oder PoE-Switch versorgen [geprüft: Commit "PoE powered (standalone)"]
   3. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   4. Cudy-Oberfläche http://192.168.10.1 öffnen, Passwort admin [geprüft: Commit/Neanderfunk-Notiz]
@@ -2886,7 +2886,7 @@ Cudy AP3000 Wall v1 · mediatek-filogic · K2
 - **Adressen:** Rechner bekommt die IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner AP3000_Wall_1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-ap3000-wall.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-ap3000-wall.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
@@ -2912,7 +2912,7 @@ Cudy M3000 v1 (RTL8221B) · mediatek-filogic · K2
 
 - **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; Commit (2024) nennt nur UART, die Zwischenfirmware kam später; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Spiegel (Ordner M3000_1.0_2.0) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-m3000.bin aus unserem Spiegel und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
   2. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   3. Cudy-Oberfläche http://192.168.10.1 öffnen, Passwort admin [geprüft: Commit/Neanderfunk-Notiz]
   4. In der Cudy-Oberfläche unter Diagnose-Werkzeuge > Systemprotokoll nach "rtl8221b" suchen: Treffer = dieses Image [geprüft: Commit 45b51eba]
@@ -2930,7 +2930,7 @@ Cudy M3000 v1 (RTL8221B) · mediatek-filogic · K2
 - **Adressen:** Rechner bekommt die IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner M3000_1.0_2.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-m3000.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-m3000.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
@@ -2974,7 +2974,7 @@ Cudy M3000 v2 mit Motorcomm YT8821 · mediatek-filogic · K2
 - **Adressen:** Rechner bekommt die IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner M3000_1.0_2.0 (ob sie zur YT8821-Variante passt, ungeklärt) [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-m3000.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-m3000.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja, Platine ausbauen)
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
@@ -3000,7 +3000,7 @@ Cudy RE3000 v1 · mediatek-filogic · K2
 
 - **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; Commit nennt nur UART (Stecker unter dem Kühlkörper); alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Spiegel (Ordner RE3000_V1) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-re3000.bin aus unserem Spiegel und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
   2. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   3. Cudy-Oberfläche http://192.168.10.1 öffnen, Passwort admin [geprüft: Commit/Neanderfunk-Notiz]
   4. Zwischenfirmware (von Cudy signiertes OpenWrt) in der Cudy-Oberfläche hochladen [geprüft: Commit/Neanderfunk-Notiz]
@@ -3016,7 +3016,7 @@ Cudy RE3000 v1 · mediatek-filogic · K2
 - **Adressen:** Rechner bekommt die IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner RE3000_V1 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-re3000.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-re3000.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
@@ -3041,7 +3041,7 @@ Cudy TR3000 256 MB v1 · mediatek-filogic · K2
 
 - **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; Zwischenfirmware laut Commit von Cudy CN; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Spiegel (Ordner TR3000_256MB_Flash_V1_not_for_TR3000_V1_) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-tr3000-256mb.bin aus unserem Spiegel und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
   2. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   3. Cudy-Oberfläche http://192.168.10.1 öffnen, Passwort admin [geprüft: Commit/Neanderfunk-Notiz]
   4. Zwischenfirmware (von Cudy signiertes OpenWrt) in der Cudy-Oberfläche hochladen [geprüft: Commit/Neanderfunk-Notiz]
@@ -3058,7 +3058,7 @@ Cudy TR3000 256 MB v1 · mediatek-filogic · K2
 - **Adressen:** Rechner bekommt die IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner TR3000_256MB_Flash_V1_not_for_TR3000_V1_ [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-tr3000-256mb.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-tr3000-256mb.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
@@ -3124,7 +3124,7 @@ Cudy WR3000 v1 · mediatek-filogic · K2
 
 - **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; Commit (2023) nennt nur UART, TFTP-Server 192.168.1.2, Datei cudy3000.bin; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Spiegel (Ordner WR3000+V1_without_recovery_TFTP) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-wr3000.bin aus unserem Spiegel und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
   2. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   3. Cudy-Oberfläche http://192.168.10.1 öffnen, Passwort admin [geprüft: Commit/Neanderfunk-Notiz]
   4. Zwischenfirmware (von Cudy signiertes OpenWrt) in der Cudy-Oberfläche hochladen [geprüft: Commit/Neanderfunk-Notiz]
@@ -3141,7 +3141,7 @@ Cudy WR3000 v1 · mediatek-filogic · K2
 - **Adressen:** Rechner bekommt die IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000+V1_without_recovery_TFTP [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-wr3000.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
@@ -3168,7 +3168,7 @@ Cudy WR3000E v1 · mediatek-filogic · K2
 
 - **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Spiegel (Ordner WR3000E_1.0) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-wr3000e.bin aus unserem Spiegel und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
   2. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   3. Cudy-Oberfläche http://192.168.10.1 öffnen, Passwort admin [geprüft: Commit/Neanderfunk-Notiz]
   4. Zwischenfirmware (von Cudy signiertes OpenWrt) in der Cudy-Oberfläche hochladen [geprüft: Commit/Neanderfunk-Notiz]
@@ -3185,7 +3185,7 @@ Cudy WR3000E v1 · mediatek-filogic · K2
 - **Adressen:** Rechner bekommt die IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000E_1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-wr3000e.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000e.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
@@ -3211,7 +3211,7 @@ Cudy WR3000H v1 · mediatek-filogic · K2
 
 - **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Spiegel (Ordner WR3000H_1.0) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-wr3000h.bin aus unserem Spiegel und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
   2. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   3. Cudy-Oberfläche http://192.168.10.1 öffnen, Passwort admin [geprüft: Commit/Neanderfunk-Notiz]
   4. Zwischenfirmware (von Cudy signiertes OpenWrt) in der Cudy-Oberfläche hochladen [geprüft: Commit/Neanderfunk-Notiz]
@@ -3228,7 +3228,7 @@ Cudy WR3000H v1 · mediatek-filogic · K2
 - **Adressen:** Rechner bekommt die IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000H_1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-wr3000h.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000h.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
@@ -3255,7 +3255,7 @@ Cudy WR3000P v1 · mediatek-filogic · K2
 
 - **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Spiegel (Ordner WR3000P_1.0) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-wr3000p.bin aus unserem Spiegel und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
   2. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   3. Cudy-Oberfläche http://192.168.10.1 öffnen, Passwort admin [geprüft: Commit/Neanderfunk-Notiz]
   4. Zwischenfirmware (von Cudy signiertes OpenWrt) in der Cudy-Oberfläche hochladen [geprüft: Commit/Neanderfunk-Notiz]
@@ -3272,7 +3272,7 @@ Cudy WR3000P v1 · mediatek-filogic · K2
 - **Adressen:** Rechner bekommt die IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000P_1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-wr3000p.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000p.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
@@ -3298,7 +3298,7 @@ Cudy WR3000S v1 · mediatek-filogic · K2
 
 - **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; alternativ seriell: U-Boot, initramfs per TFTP von 192.168.1.88
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Spiegel (Ordner WR3000S_1.0) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-wr3000s.bin aus unserem Spiegel und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
   2. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   3. Cudy-Oberfläche http://192.168.10.1 öffnen, Passwort admin [geprüft: Commit/Neanderfunk-Notiz]
   4. Zwischenfirmware (von Cudy signiertes OpenWrt) in der Cudy-Oberfläche hochladen [geprüft: Commit/Neanderfunk-Notiz]
@@ -3315,7 +3315,7 @@ Cudy WR3000S v1 · mediatek-filogic · K2
 - **Adressen:** Rechner bekommt die IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR3000S_1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-wr3000s.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000s.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ja)
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
@@ -3359,7 +3359,7 @@ Cudy WR3000U v1 · mediatek-filogic · K2
 - **Adressen:** Rechner bekommt die IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware nicht im Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ (Ordner keiner), nur im Cudy-Google-Drive "Cudy Intermediary OpenWrt Firmware" [geprüft: Commit] [geprüft: Neanderfunk-Notiz]; Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-wr3000u.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000u.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein (nur für den seriellen Notweg: ?, laut Commit "Serial console: no need to solder")
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
@@ -3402,7 +3402,7 @@ Cudy AP1300 Outdoor v1 · ramips-mt7621 · K2
 - **Adressen:** Rechner bekommt die IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]; Cudy-Oberfläche unter 192.168.10.254 [geprüft: Commit]; ob der AP in der Cudy-Firmware DHCP macht, ist unbelegt: im Zweifel Rechner fest auf 192.168.10.x/24 (AP hat 192.168.10.254) [abgeleitet: Commit nennt nur die AP-Adresse]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** Cudy-Oberfläche: Passwort admin [geprüft: Commit]; LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner AP1300_Outdoor_V1.0 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-ap1300-outdoor.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-ap1300-outdoor.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
@@ -3427,7 +3427,7 @@ Cudy M1800 · ramips-mt7621 · K2
 
 - **Weg ab Werk:** Cudys signierte OpenWrt-Zwischenfirmware im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne "Einstellungen behalten" [geprüft]; Spiegel hat nur "M1800+V2"; ob das zu cudy_m1800 passt, ist ungeprüft
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Spiegel (Ordner M1800+V2) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-m1800.bin aus unserem Spiegel und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
   2. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   3. Cudy-Oberfläche im Browser öffnen [geprüft]
   4. Zwischenfirmware (von Cudy signiertes OpenWrt) in der Cudy-Oberfläche hochladen [geprüft]
@@ -3443,7 +3443,7 @@ Cudy M1800 · ramips-mt7621 · K2
 - **Adressen:** Rechner bekommt die IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner M1800+V2 (ob sie zum Gluon-Image cudy-m1800 passt, ungeprüft) [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-m1800.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-m1800.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
@@ -3469,7 +3469,7 @@ Cudy WR1300 v1 · ramips-mt7621 · K2
 
 - **Weg ab Werk:** Cudys signierte OpenWrt-Zwischenfirmware im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne "Einstellungen behalten" [geprüft]
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Spiegel (Ordner WR1300+V1) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-wr1300.bin aus unserem Spiegel und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
   2. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   3. Cudy-Oberfläche im Browser öffnen [geprüft]
   4. Zwischenfirmware (von Cudy signiertes OpenWrt) in der Cudy-Oberfläche hochladen [geprüft]
@@ -3485,7 +3485,7 @@ Cudy WR1300 v1 · ramips-mt7621 · K2
 - **Adressen:** Rechner bekommt die IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR1300+V1 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-wr1300.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr1300.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
@@ -3498,7 +3498,7 @@ Cudy WR1300 v1 · ramips-mt7621 · K2
 - **Stock-Teile:** -
 - **RAM:** 128 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
-- **Fehlerbild:** antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]; lehnt LuCI das Gluon-Image wegen anderem Gerätenamen ab: "Force upgrade"/Erzwingen setzen [geprüft: Commit]
+- **Fehlerbild:** antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]; lehnt LuCI das Gluon-Image ab: "Force upgrade"/Erzwingen setzen [geprüft: Commit nennt "force upgrade may need to be checked"; abgeleitet: Grund ist ein anderer Gerätename der Zwischenfirmware]
 - **Rückweg zur Herstellerfirmware:** Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]; Reset mindestens 8 s halten [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** cd2b661453a8a2b8260dfb9b9c0dc5297b981331
@@ -3511,7 +3511,7 @@ Cudy WR2100 · ramips-mt7621 · K2
 
 - **Weg ab Werk:** Cudys signierte OpenWrt-Zwischenfirmware im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne "Einstellungen behalten" [geprüft]
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Spiegel (Ordner WR2100+V1) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-wr2100.bin aus unserem Spiegel und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
   2. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   3. Cudy-Oberfläche im Browser öffnen [geprüft]
   4. Zwischenfirmware (von Cudy signiertes OpenWrt) in der Cudy-Oberfläche hochladen [geprüft]
@@ -3527,7 +3527,7 @@ Cudy WR2100 · ramips-mt7621 · K2
 - **Adressen:** Rechner bekommt die IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner WR2100+V1 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-wr2100.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr2100.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
@@ -3552,7 +3552,7 @@ Cudy X6 v1 · ramips-mt7621 · K2
 
 - **Weg ab Werk:** Cudys signierte OpenWrt-Zwischenfirmware im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne "Einstellungen behalten" [geprüft]
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Spiegel (Ordner X6+V1) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-x6-v1.bin aus unserem Spiegel und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
   2. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   3. Cudy-Oberfläche im Browser öffnen [geprüft]
   4. Zwischenfirmware (von Cudy signiertes OpenWrt) in der Cudy-Oberfläche hochladen [geprüft]
@@ -3568,7 +3568,7 @@ Cudy X6 v1 · ramips-mt7621 · K2
 - **Adressen:** Rechner bekommt die IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner X6+V1 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-x6-v1.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-x6-v1.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
@@ -3581,7 +3581,7 @@ Cudy X6 v1 · ramips-mt7621 · K2
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Dauer:** Zwischenfirmware: einige Minuten bis zum Neustart, währenddessen nicht Strom ziehen [geprüft: Neanderfunk-Notiz]; danach Gluon-sysupgrade, wieder einige Minuten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
-- **Fehlerbild:** antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]; lehnt LuCI das Gluon-Image wegen anderem Gerätenamen ab: "Force upgrade"/Erzwingen setzen [geprüft: Commit]
+- **Fehlerbild:** antwortet http://192.168.1.1 nach Schritt 1 nicht: Kabel in die andere Buchse (LAN/WAN tauschen bei manchen Modellen die Rolle) [geprüft: Neanderfunk-Notiz]; lehnt LuCI das Gluon-Image ab: "Force upgrade"/Erzwingen setzen [geprüft: Commit nennt "force upgrade may need to be checked"; abgeleitet: Grund ist ein anderer Gerätename der Zwischenfirmware]
 - **Rückweg zur Herstellerfirmware:** Cudy-Firmware (Cudy-Downloadseite) als recovery.bin auf TFTP-Server, Rechner fest 192.168.1.88, Kabel an LAN, Reset gedrückt halten, Strom an, loslassen, wenn alle LEDs einmal kurz aufleuchten, weiter halten = Schleife alle ~20 s; fertig = System-LED leuchtet ruhig [abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht]; Reset mindestens 8 s halten [geprüft: Commit]
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** 4a8eaa5c7c9235212c4af022c18b2dfbadfe557f
@@ -3594,7 +3594,7 @@ Cudy X6 v2 · ramips-mt7621 · K2
 
 - **Weg ab Werk:** Cudys signierte OpenWrt-Zwischenfirmware im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne "Einstellungen behalten" [geprüft]
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Spiegel (Ordner X6+V2) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-x6-v2.bin aus unserem Spiegel und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
   2. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   3. Cudy-Oberfläche im Browser öffnen [geprüft]
   4. Zwischenfirmware (von Cudy signiertes OpenWrt) in der Cudy-Oberfläche hochladen [geprüft]
@@ -3610,7 +3610,7 @@ Cudy X6 v2 · ramips-mt7621 · K2
 - **Adressen:** Rechner bekommt die IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner X6+V2 [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-x6-v2.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-x6-v2.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
@@ -3636,7 +3636,7 @@ Cudy TR1200 v1 · ramips-mt76x8 · K2
 
 - **Weg ab Werk:** Commit (05/2024): nur seriell (Cudy-Beta-Firmware, UART, TFTP recovery.bin von 192.168.1.88). Inzwischen liegt eine Cudy-Zwischenfirmware TR1200_V1 im Spiegel, damit wie die anderen Cudy [abgeleitet]
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Spiegel (Ordner TR1200_V1) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-tr1200.bin aus unserem Spiegel und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
   2. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   3. Cudy-Oberfläche im Browser öffnen [abgeleitet]
   4. Zwischenfirmware (von Cudy signiertes OpenWrt) in der Cudy-Oberfläche hochladen [abgeleitet]
@@ -3652,7 +3652,7 @@ Cudy TR1200 v1 · ramips-mt76x8 · K2
 - **Adressen:** Rechner bekommt die IP per DHCP vom Router (erst Cudy 192.168.10.x, danach OpenWrt 192.168.1.x) [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Programm:** Browser [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
 - **Zugang:** LuCI nach der Zwischenfirmware: Anmeldung mit leerem Passwort [geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-- **Datei:** Zwischenfirmware aus dem Spiegel https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/ Ordner TR1200_V1 (Datei TR1200-OpenWRT-Flash.bin; Gerät nicht in Neanderfunk-Notiz, Weg wie die anderen Cudy [abgeleitet]) [geprüft: Neanderfunk-Notiz] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
+- **Datei:** Zwischenfirmware cudy-tr1200.bin aus dem Spiegel https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-tr1200.bin [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft] und Gluon-sysupgrade (nicht factory) [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein (mit Zwischenfirmware; nur für den seriellen Weg laut Commit: ja)
 - **Gehäuse öffnen:** nein (mit Zwischenfirmware; nur für den seriellen Weg laut Commit: ja, UART unbestückt)
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = ja; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
