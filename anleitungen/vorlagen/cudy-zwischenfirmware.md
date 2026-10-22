@@ -226,9 +226,8 @@ nicht geprüft.
    {%- if w.force_upgrade %}
    Meldet OpenWrt, dass das Image nicht zum Gerät passt, obwohl du sicher die
    Datei für den {{ modell }} hast, setz zusätzlich den Haken bei
-   "Erzwinge Upgrade" (englisch "Force upgrade"). Bei diesem Modell kann LuCI
-   das Image sonst ablehnen, weil die Zwischenfirmware das Gerät anders
-   benennt.
+   "Erzwinge Upgrade" (englisch "Force upgrade"). Das kommt bei diesem Modell
+   vor, weil die Zwischenfirmware das Gerät anders benennt.
    {%- endif %}
    Dann **Fortfahren**.
 
