@@ -15,7 +15,7 @@
 <meta name="anleitung:risiko" content="normal">
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, router-antwortet-nicht, tftp-server">
-<meta name="anleitung:daten_stand" content="c6d8e279">
+<meta name="anleitung:daten_stand" content="e599e9d0">
 <meta name="anleitung:vorlage_stand" content="33a38da8">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
@@ -41,9 +41,7 @@ Community ein. Beides geht im Browser, du brauchst kein Zusatzprogramm.</p>
 <li>den Router und sein Netzteil</li>
 <li>einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel</li>
 <li>die <strong>Zwischenfirmware von Cudy</strong> für genau dieses Modell:
-<a href="https://www.cudy.com/de-de/blogs/faq/openwrt-software-download">Cudys Seite „OpenWrt Software Download“</a>. Sie liegt nicht bei uns, sondern nur in
-Cudys eigener Ablage (ein Google-Drive-Ordner mit einem Eintrag je Modell,
-meist als ZIP-Datei mit der <code>.bin</code>-Datei darin)</li>
+<a href="https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000u.bin">Zwischenfirmware für den Cudy WR3000U v1 (256 MB) aus unserem Spiegel</a>, Datei <code>cudy-wr3000u.bin</code></li>
 <li>die Freifunk-Firmware deiner Community für den Cudy WR3000U v1, und zwar das
 <strong>sysupgrade</strong>-Image, nicht &quot;factory&quot;. Das ist bei Cudy richtig, auch wenn
 es die erste Installation ist.</li>
@@ -85,8 +83,10 @@ Eintrag <strong>Firmware</strong> (bei älterer Cudy-Firmware unter <strong>Syst
 </li>
 <li>
 <p><strong>Prüfsumme vergleichen.</strong> Nach dem Hochladen zeigt der Router im
-Fenster &quot;Lokales Update&quot; eine MD5-Prüfsumme und die Größe. Vergleich sie mit der Prüfsumme, die an der Download-Stelle
-steht. Stimmt sie, klick auf <strong>Fortfahren</strong>.</p>
+Fenster &quot;Lokales Update&quot; eine MD5-Prüfsumme und die Größe. Sie muss genau so aussehen:</p>
+<pre><code>7ebc4832738eed0f9bc55efd546e453d
+</code></pre>
+<p>Stimmt sie, klick auf <strong>Fortfahren</strong>.</p>
 </li>
 <li>
 <p><strong>Warten.</strong> Die Oberfläche zeigt &quot;System - Firmware wird installiert…&quot;.
@@ -202,10 +202,10 @@ Rechner wieder auf &quot;automatisch&quot; stellen; die Cudy-Oberfläche ist unt
 <li>geprüft: Commit (Datei, Typenschild/Verwechslung, Rückweg zur Herstellerfirmware)</li>
 <li>geprüft: Commit-Texte (Gluon-RAMpe passt)</li>
 <li>geprüft: Commit/Neanderfunk-Notiz (Weg ab Werk, Schritte (Normalweg))</li>
-<li>geprüft: Commit; geprüft: Neanderfunk-Notiz (Schritte (Normalweg))</li>
 <li>geprüft: Cudy-FAQ &quot;OpenWrt Software Download&quot; (Bedingung an die Herstellerfirmware)</li>
 <li>geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer, Fehlerbild)</li>
 <li>geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)</li>
+<li>geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022 (Cudys Drive-Ordner, geholt 22.10.2026; MD5 geprüft) (Schritte (Normalweg))</li>
 <li>Geräteeintrag: OpenWrt b9d7b448c256bb3860c7965ccf599c29c4847cb4 (25.12: 95dec97d08); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]</li>
 </ul>
 

@@ -10,7 +10,7 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: c6d8e279
+daten_stand: e599e9d0
 vorlage_stand: 33a38da8
 ---
 
@@ -38,7 +38,7 @@ Community ein. Beides geht im Browser, du brauchst kein Zusatzprogramm.
 - den Router und Strom über PoE nach 802.3af (37-57 V), also mit einem PoE-Injektor oder PoE-Switch
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - die **Zwischenfirmware von Cudy** für genau dieses Modell:
-  [Ordner AP1300_Outdoor_V1.0 in unserem Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP1300_Outdoor_V1.0/), Datei `openwrt-ramips-mt7621-cudy_ap1300-outdoor-squashfs-flash.bin`
+  [Zwischenfirmware für den Cudy AP1300 Outdoor v1 aus unserem Spiegel](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-ap1300-outdoor.bin), Datei `cudy-ap1300-outdoor.bin`
 - die Freifunk-Firmware deiner Community für den Cudy AP1300 Outdoor v1, und zwar das
   **sysupgrade**-Image, nicht "factory". Das ist bei Cudy richtig, auch wenn
   es die erste Installation ist.
@@ -194,5 +194,6 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Cudy-FAQ "OpenWrt Software Download" (Bedingung an die Herstellerfirmware)
 - geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer, Fehlerbild)
 - geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)
+- geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022 (Cudys Drive-Ordner, geholt 22.10.2026; MD5 geprüft) (Schritte (Normalweg))
 - geprüft; geprüft: Commit (Schritte (Normalweg))
 - Geräteeintrag: c6e59d06afca02ccb2541631cacc769ae4d6569f

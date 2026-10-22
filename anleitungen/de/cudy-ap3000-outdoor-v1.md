@@ -10,7 +10,7 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: c6d8e279
+daten_stand: e599e9d0
 vorlage_stand: 33a38da8
 ---
 
@@ -44,7 +44,7 @@ Community ein. Beides geht im Browser, du brauchst kein Zusatzprogramm.
 - den Router und Strom über PoE, also mit einem PoE-Injektor oder PoE-Switch
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - die **Zwischenfirmware von Cudy** für genau dieses Modell:
-  [Zwischenfirmware für den Cudy AP3000 Outdoor v1 aus unserem Spiegel](https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-ap3000-outdoor.bin), Datei `cudy-ap3000-outdoor.bin`
+  [Zwischenfirmware für den Cudy AP3000 Outdoor v1 aus unserem Spiegel](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-ap3000-outdoor.bin), Datei `cudy-ap3000-outdoor.bin`
 - die Freifunk-Firmware deiner Community für den Cudy AP3000 Outdoor v1, und zwar das
   **sysupgrade**-Image, nicht "factory". Das ist bei Cudy richtig, auch wenn
   es die erste Installation ist.

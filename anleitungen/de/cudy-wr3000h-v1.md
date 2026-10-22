@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.5.30
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: c6d8e279
+daten_stand: e599e9d0
 vorlage_stand: 33a38da8
 ---
 
@@ -43,7 +43,7 @@ Community ein. Beides geht im Browser, du brauchst kein Zusatzprogramm.
 - den Router und sein Netzteil
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - die **Zwischenfirmware von Cudy** für genau dieses Modell:
-  [Zwischenfirmware für den Cudy WR3000H v1 aus unserem Spiegel](https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000h.bin), Datei `cudy-wr3000h.bin`
+  [Zwischenfirmware für den Cudy WR3000H v1 aus unserem Spiegel](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000h.bin), Datei `cudy-wr3000h.bin`
 - die Freifunk-Firmware deiner Community für den Cudy WR3000H v1, und zwar das
   **sysupgrade**-Image, nicht "factory". Das ist bei Cudy richtig, auch wenn
   es die erste Installation ist.

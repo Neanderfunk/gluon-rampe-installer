@@ -10,7 +10,7 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: c6d8e279
+daten_stand: e599e9d0
 vorlage_stand: 33a38da8
 ---
 
@@ -44,7 +44,7 @@ Community ein. Beides geht im Browser, du brauchst kein Zusatzprogramm.
 - den Router und sein Netzteil
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - die **Zwischenfirmware von Cudy** für genau dieses Modell:
-  [Ordner M3000_1.0_2.0 in unserem Spiegel](https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M3000_1.0_2.0/)
+  [Zwischenfirmware für den Cudy M3000 (Hardware 1.0 und 2.0) aus unserem Spiegel](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-m3000.bin), Datei `cudy-m3000.bin`
 - die Freifunk-Firmware deiner Community für den Cudy M3000 v2 mit Motorcomm YT8821, und zwar das
   **sysupgrade**-Image, nicht "factory". Das ist bei Cudy richtig, auch wenn
   es die erste Installation ist.
@@ -95,8 +95,13 @@ bitte Bescheid, ob es geklappt hat.
    Eintrag **Firmware** (bei älterer Cudy-Firmware unter **System**).
 
 5. **Prüfsumme vergleichen.** Nach dem Hochladen zeigt der Router im
-   Fenster "Lokales Update" eine MD5-Prüfsumme und die Größe. Vergleich sie mit der Prüfsumme, die an der Download-Stelle
-   steht. Stimmt sie, klick auf **Fortfahren**.
+   Fenster "Lokales Update" eine MD5-Prüfsumme und die Größe. Sie muss genau so aussehen:
+
+   ```
+   2bcdf420444309bdef463dd278d15ba4
+   ```
+
+   Stimmt sie, klick auf **Fortfahren**.
 
 6. **Warten.** Die Oberfläche zeigt "System - Firmware wird installiert…".
    Die LEDs zeigen erst ein Lauflicht (bis etwa eine halbe Minute), dann
@@ -120,6 +125,10 @@ bitte Bescheid, ob es geklappt hat.
    aktuelle Konfiguration sichern"** (englisch "Keep settings …") schon
    gesetzt. **Entfern diesen Haken.** Die beiden Haken darunter sind schon
    aus. Es darf kein Haken mehr gesetzt sein.
+   Meldet OpenWrt, dass das Image nicht zum Gerät passt, obwohl du sicher die
+   Datei für den Cudy M3000 v2 mit Motorcomm YT8821 hast, setz zusätzlich den Haken bei
+   "Erzwinge Upgrade" (englisch "Force upgrade"). Bei diesem Modell ist das
+   laut OpenWrt nötig, weil die Zwischenfirmware das Gerät anders benennt.
    Dann **Fortfahren**.
 
 10. **Fertig.** Der Router schreibt die Freifunk-Firmware und startet neu,
@@ -149,8 +158,9 @@ bitte Bescheid, ob es geklappt hat.
   genau dieses Modell nehmen (Aufkleber vergleichen).
 - **OpenWrt meldet "not supported by this image" oder "Überprüfung der
   Abbilddatei fehlgeschlagen"** (in Schritt 9, mit einem Haken "Erzwinge
-  Upgrade"). Dann ist es das Image für ein anderes Modell. **"Erzwinge
-  Upgrade" nie anhaken**, sondern **"Abbrechen"** und das richtige Image
+  Upgrade"). Bei diesem Modell ist das in Ordnung, wenn unter
+  "Supported devices" dein Modell steht (siehe Schritt 9). Steht dort ein
+  anderes Modell, ist es das falsche Image: **"Abbrechen"** und das richtige
   holen.
 - **Nach Schritt 6 antwortet `http://192.168.1.1` nicht.** Steck das Kabel in
   eine andere Buchse. Bei manchen Modellen tauschen LAN und WAN nach dem
@@ -203,10 +213,12 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 
 - Spiegel M3000_1.0_2.0 (ob für YT8821 passend: abgeleitet) (Factory-/Stock-Image-Link)
 - abgeleitet: Router ist in beiden Firmwares DHCP-Server (Schritte (Normalweg), Anschluss, Adressen, Programm)
+- abgeleitet: die Zwischenfirmware meldet sich als cudy,m3000-v1 (Device Tree und Metadaten der Datei), das Gluon-Image kennt nur cudy,m3000-v2-yt8821 und R37 (Schritte (Normalweg))
 - abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht (Rückweg zur Herstellerfirmware)
 - abgeleitet: sysupgrade schreibt den Flash (Schritte (Normalweg), Dauer)
 - geprüft (Weg ab Werk)
 - geprüft: Commit 45b51eba (Schritte (Normalweg), Anschluss, Typenschild/Verwechslung)
+- geprüft: Commit 45b51eba nennt für YT8821 dieselbe Cudy-Ablage (Schritte (Normalweg))
 - geprüft: Commit 45b51eba; geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg))
 - geprüft: Commit-Texte (Gluon-RAMpe passt)
 - geprüft: Commit/Neanderfunk-Notiz (Weg ab Werk, Schritte (Normalweg))
@@ -215,4 +227,5 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer, Fehlerbild)
 - geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Sichtbare Zeichen, Zugang)
 - geprüft: OpenWrt-Pin (Typenschild/Verwechslung)
+- geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022 (Cudys Drive-Ordner, geholt 22.10.2026; MD5 geprüft) (Schritte (Normalweg))
 - Geräteeintrag: OpenWrt 45b51ebaff51d2a49d149e9011717abb1b032683 (25.12: ca825537fb); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]

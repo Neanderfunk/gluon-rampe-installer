@@ -10,7 +10,7 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: c6d8e279
+daten_stand: e599e9d0
 vorlage_stand: 33a38da8
 ---
 
@@ -38,9 +38,7 @@ Community ein. Beides geht im Browser, du brauchst kein Zusatzprogramm.
 - den Router und sein Netzteil
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - die **Zwischenfirmware von Cudy** für genau dieses Modell:
-  [Cudys Seite „OpenWrt Software Download“](https://www.cudy.com/de-de/blogs/faq/openwrt-software-download). Sie liegt nicht bei uns, sondern nur in
-  Cudys eigener Ablage (ein Google-Drive-Ordner mit einem Eintrag je Modell,
-  meist als ZIP-Datei mit der `.bin`-Datei darin)
+  [Zwischenfirmware für den Cudy WR3000U v1 (256 MB) aus unserem Spiegel](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000u.bin), Datei `cudy-wr3000u.bin`
 - die Freifunk-Firmware deiner Community für den Cudy WR3000U v1, und zwar das
   **sysupgrade**-Image, nicht "factory". Das ist bei Cudy richtig, auch wenn
   es die erste Installation ist.
@@ -81,8 +79,13 @@ der Download für dein Gerät "wr3000u-256mb-1-0".
    Eintrag **Firmware** (bei älterer Cudy-Firmware unter **System**).
 
 5. **Prüfsumme vergleichen.** Nach dem Hochladen zeigt der Router im
-   Fenster "Lokales Update" eine MD5-Prüfsumme und die Größe. Vergleich sie mit der Prüfsumme, die an der Download-Stelle
-   steht. Stimmt sie, klick auf **Fortfahren**.
+   Fenster "Lokales Update" eine MD5-Prüfsumme und die Größe. Sie muss genau so aussehen:
+
+   ```
+   7ebc4832738eed0f9bc55efd546e453d
+   ```
+
+   Stimmt sie, klick auf **Fortfahren**.
 
 6. **Warten.** Die Oberfläche zeigt "System - Firmware wird installiert…".
    Die LEDs zeigen erst ein Lauflicht (bis etwa eine halbe Minute), dann
@@ -193,8 +196,8 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Commit (Datei, Typenschild/Verwechslung, Rückweg zur Herstellerfirmware)
 - geprüft: Commit-Texte (Gluon-RAMpe passt)
 - geprüft: Commit/Neanderfunk-Notiz (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Commit; geprüft: Neanderfunk-Notiz (Schritte (Normalweg))
 - geprüft: Cudy-FAQ "OpenWrt Software Download" (Bedingung an die Herstellerfirmware)
 - geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer, Fehlerbild)
 - geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)
+- geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022 (Cudys Drive-Ordner, geholt 22.10.2026; MD5 geprüft) (Schritte (Normalweg))
 - Geräteeintrag: OpenWrt b9d7b448c256bb3860c7965ccf599c29c4847cb4 (25.12: 95dec97d08); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
