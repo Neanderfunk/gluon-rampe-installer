@@ -10,6 +10,7 @@ nach `yt8821` suchen.
   [Cudy M3000 v1](cudy-m3000-v1.md).
 - keins von beiden: Router neu starten und noch einmal suchen.
 
-Ob die Zwischenfirmware aus dem Ordner "M3000_1.0_2.0" auch zu dieser
-Variante passt, ist noch nicht geklärt. Wenn du es ausprobierst, sag uns
-bitte Bescheid, ob es geklappt hat.
+Cudy gibt die Zwischenfirmware für den M3000 in Hardware-Version 1.0 und
+2.0 heraus, und OpenWrt nennt für diese Variante dieselbe Datei. Bei uns
+hat sie an einem M3000 mit YT8821 aber noch niemand ausprobiert. Wenn du es
+tust, sag uns bitte Bescheid, ob es geklappt hat.

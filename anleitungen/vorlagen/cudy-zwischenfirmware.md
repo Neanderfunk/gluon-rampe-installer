@@ -39,7 +39,7 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     led_zwischen         ganzer Satz zu den LEDs beim Schreiben der Zwischenfirmware
                          (Schritt 6), leer = Lauflicht, dann Blinken/Flackern
     luci_buchse          Buchse für Schritt 7, z. B. "den Port „1Gbps LAN“"
-    force_upgrade        true: LuCI braucht laut OpenWrt "Force upgrade"
+    force_upgrade        true: LuCI braucht "Force upgrade" (Gerätename weicht ab)
     rueckweg_buchse      Buchse für die Recovery, leer = "eine LAN-Buchse"
     rueckweg_halten      z. B. "mindestens 8 Sekunden"
     rueckweg_led         woran man beim Halten der Taste das Loslassen erkennt, nach
@@ -226,8 +226,9 @@ nicht geprüft.
    {%- if w.force_upgrade %}
    Meldet OpenWrt, dass das Image nicht zum Gerät passt, obwohl du sicher die
    Datei für den {{ modell }} hast, setz zusätzlich den Haken bei
-   "Erzwinge Upgrade" (englisch "Force upgrade"). Bei diesem Modell ist das
-   laut OpenWrt nötig, weil die Zwischenfirmware das Gerät anders benennt.
+   "Erzwinge Upgrade" (englisch "Force upgrade"). Bei diesem Modell kann LuCI
+   das Image sonst ablehnen, weil die Zwischenfirmware das Gerät anders
+   benennt.
    {%- endif %}
    Dann **Fortfahren**.
 
