@@ -13613,7 +13613,7 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-ap3000-outdoor.bin",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-ap3000-outdoor.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy AP3000 Outdoor v1 aus unserem Spiegel",
     "sicherheit": "quelle",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/ap3000-outdoor-1-0"
@@ -13694,7 +13694,7 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-ap3000.bin",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-ap3000.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy AP3000 v1 aus unserem Spiegel",
     "sicherheit": "quelle",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/ap3000-1-0",
@@ -13778,7 +13778,7 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-ap3000-wall.bin",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-ap3000-wall.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy AP3000 Wall v1 aus unserem Spiegel",
     "sicherheit": "quelle",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/ap3000-wall-1-0"
@@ -13855,7 +13855,7 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-m3000.bin",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-m3000.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy M3000 v1 (RTL8221B) aus unserem Spiegel",
     "sicherheit": "abgeleitet",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/m3000-1-0"
@@ -13871,7 +13871,7 @@
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; vorher im Cudy-Systemlog nach \"yt8821\" bzw. \"rtl8221b\" suchen, um v1/v2 zu unterscheiden [geprüft]",
    "schritte": [
-    "Zwischenfirmware aus dem Spiegel (Ordner M3000_1.0_2.0) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]",
+    "Zwischenfirmware cudy-m3000.bin aus unserem Spiegel (bei Cudy \"M3000 1.0_2.0.zip\", cudy_m3000-v1-sysupgrade_20251119.bin, für Hardware 1.0 und 2.0) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022 (Cudys Drive-Ordner, geholt 22.10.2026; MD5 geprüft)] [geprüft: Commit 45b51eba nennt für YT8821 dieselbe Cudy-Ablage]",
     "Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]",
     "Cudy-Oberfläche http://192.168.10.1 öffnen, Passwort admin [geprüft: Commit/Neanderfunk-Notiz]",
     "In der Cudy-Oberfläche unter Diagnose-Werkzeuge > Systemprotokoll nach \"yt8821\" bzw. \"rtl8221b\" suchen: nur bei \"yt8821\" dieses Image [geprüft: Commit 45b51eba]",
@@ -13879,7 +13879,7 @@
     "Angezeigte MD5-Prüfsumme mit der Spiegel-Tabelle vergleichen, sie muss passen [geprüft: Neanderfunk-Notiz]",
     "Einige Minuten bis zum Neustart warten, nicht Strom ziehen [geprüft: Neanderfunk-Notiz]",
     "Rechner an den Port \"1Gbps LAN\", http://192.168.1.1 öffnen (LuCI), Anmeldung mit leerem Passwort [geprüft: Commit 45b51eba; geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]",
-    "In LuCI das Gluon-sysupgrade hochladen, Einstellungen nicht behalten [geprüft: Commit/Neanderfunk-Notiz]",
+    "In LuCI das Gluon-sysupgrade hochladen, Einstellungen nicht behalten, \"Erzwinge Upgrade\" anhaken [abgeleitet: die Zwischenfirmware meldet sich als cudy,m3000-v1 (Device Tree und Metadaten der Datei), das Gluon-Image kennt nur cudy,m3000-v2-yt8821 und R37]",
     "Einige Minuten warten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]"
    ],
    "warnung": "Seriennummer ab 2543 (neuer Flash F50L1G41LC, ab Nov. 2025): nur die Zwischenfirmware vom 19.11.2025 oder neuer nehmen, ältere startet nicht mehr [geprüft: Cudy-FAQ, Hinweis 24.11.2025]",
@@ -13922,18 +13922,18 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.1",
-    "zwischen_datei": "",
-    "zwischen_md5": "",
+    "zwischen_datei": "cudy-m3000.bin",
+    "zwischen_md5": "2bcdf420444309bdef463dd278d15ba4",
     "zwischen_nur_cudy": false,
     "neuer_flash": true,
     "strom": "",
     "luci_buchse": "den Port „1Gbps LAN“",
-    "force_upgrade": false,
+    "force_upgrade": true,
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M3000_1.0_2.0/",
-    "zwischen_url_text": "Ordner M3000_1.0_2.0 in unserem Spiegel",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-m3000.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy M3000 (Hardware 1.0 und 2.0) aus unserem Spiegel",
     "sicherheit": "quelle",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/m3000-2-0"
    }
@@ -14008,7 +14008,7 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-re3000.bin",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-re3000.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy RE3000 v1 aus unserem Spiegel",
     "sicherheit": "quelle",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/re3000-1-0"
@@ -14084,7 +14084,7 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "mindestens 5 Sekunden",
     "rueckweg_quelle": "beim Cudy-Support (China) auf Anfrage",
-    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-tr3000-256mb.bin",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-tr3000-256mb.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy TR3000 256 MB v1 aus unserem Spiegel",
     "sicherheit": "quelle",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/tr3000-256mb-1-0"
@@ -14158,7 +14158,7 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "mindestens 5 Sekunden",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-tr3000.bin",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-tr3000.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy TR3000 v1 (128 MB Flash) aus unserem Spiegel",
     "sicherheit": "quelle",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/tr3000-1-0"
@@ -14239,7 +14239,7 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000.bin",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy WR3000 v1 aus unserem Spiegel",
     "sicherheit": "quelle",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/wr3000-1-0"
@@ -14315,7 +14315,7 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000e.bin",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000e.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy WR3000E v1 aus unserem Spiegel",
     "sicherheit": "quelle",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/wr3000e-1-0"
@@ -14396,7 +14396,7 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000h.bin",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000h.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy WR3000H v1 aus unserem Spiegel",
     "sicherheit": "quelle",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/wr3000h-1-0"
@@ -14472,7 +14472,7 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000p.bin",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000p.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy WR3000P v1 aus unserem Spiegel",
     "sicherheit": "quelle",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/wr3000p-1-0"
@@ -14553,7 +14553,7 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000s.bin",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000s.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy WR3000S v1 aus unserem Spiegel",
     "sicherheit": "quelle",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/wr3000s-1-0"
@@ -14569,7 +14569,7 @@
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; alternativ UART + TFTP (192.168.1.88) [geprüft]",
    "schritte": [
-    "Zwischenfirmware aus dem Cudy-Google-Drive \"Cudy Intermediary OpenWrt Firmware\" (nicht im Spiegel) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Commit; geprüft: Neanderfunk-Notiz]",
+    "Zwischenfirmware cudy-wr3000u.bin aus unserem Spiegel (bei Cudy \"WR3000U-256MB V1.0.zip\", cudy_wr3000u-256-v1-sysupgrade.bin, supported_devices cudy,wr3000u-v1) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022 (Cudys Drive-Ordner, geholt 22.10.2026; MD5 geprüft)]",
     "Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]",
     "Cudy-Oberfläche http://192.168.10.1 öffnen, Passwort admin [geprüft: Commit/Neanderfunk-Notiz]",
     "Zwischenfirmware (von Cudy signiertes OpenWrt) in der Cudy-Oberfläche hochladen [geprüft: Commit/Neanderfunk-Notiz]",
@@ -14619,9 +14619,9 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.1",
-    "zwischen_datei": "",
-    "zwischen_md5": "",
-    "zwischen_nur_cudy": true,
+    "zwischen_datei": "cudy-wr3000u.bin",
+    "zwischen_md5": "7ebc4832738eed0f9bc55efd546e453d",
+    "zwischen_nur_cudy": false,
     "neuer_flash": false,
     "strom": "",
     "luci_buchse": "",
@@ -14629,8 +14629,8 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "mindestens 5 Sekunden",
     "rueckweg_quelle": "von https://www.cudy.com/pages/download-center/wr3000u-256mb-1-0",
-    "zwischen_url": "https://www.cudy.com/de-de/blogs/faq/openwrt-software-download",
-    "zwischen_url_text": "Cudys Seite „OpenWrt Software Download“",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000u.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy WR3000U v1 (256 MB) aus unserem Spiegel",
     "sicherheit": "quelle",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/wr3000u-256mb-1-0"
    }
@@ -19620,7 +19620,7 @@
    "familie": "cudy-zwischenfirmware",
    "weg": "Cudys signierte OpenWrt-Zwischenfirmware im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne \"Einstellungen behalten\" [geprüft]; Stock 192.168.10.254, Passwort admin [geprüft]",
    "schritte": [
-    "Zwischenfirmware aus dem Spiegel (Ordner AP1300_Outdoor_V1.0) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]",
+    "Zwischenfirmware cudy-ap1300-outdoor.bin aus unserem Spiegel (bei Cudy \"AP1300 Outdoor V1.0.zip\", openwrt-ramips-mt7621-cudy_ap1300-outdoor-squashfs-flash.bin) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022 (Cudys Drive-Ordner, geholt 22.10.2026; MD5 geprüft)]",
     "Gerät über PoE-Injektor oder PoE-Switch versorgen [geprüft: Commit]",
     "Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]",
     "Cudy-Oberfläche http://192.168.10.254 öffnen, Passwort admin [geprüft; geprüft: Commit]",
@@ -19671,7 +19671,7 @@
    "erprobt": {},
    "werte": {
     "cudy_ip": "192.168.10.254",
-    "zwischen_datei": "openwrt-ramips-mt7621-cudy_ap1300-outdoor-squashfs-flash.bin",
+    "zwischen_datei": "cudy-ap1300-outdoor.bin",
     "zwischen_md5": "22012cf6803c8c084a1fd9e88c998711",
     "zwischen_nur_cudy": false,
     "neuer_flash": false,
@@ -19681,8 +19681,8 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP1300_Outdoor_V1.0/",
-    "zwischen_url_text": "Ordner AP1300_Outdoor_V1.0 in unserem Spiegel",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-ap1300-outdoor.bin",
+    "zwischen_url_text": "Zwischenfirmware für den Cudy AP1300 Outdoor v1 aus unserem Spiegel",
     "sicherheit": "quelle",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/ap1300-outdoor-1-0"
    }
@@ -19757,7 +19757,7 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-m1800.bin",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-m1800.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy M1800 aus unserem Spiegel",
     "sicherheit": "unsicher",
     "sicherheit_hinweis": "Cudy bietet dieselbe Zwischenfirmware unter „M1800 V2“ und „M1800+ V2“ an. Ob dein M1800 sie annimmt, wissen wir nicht.",
@@ -19834,7 +19834,7 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr1300.bin",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr1300.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy WR1300 v1 aus unserem Spiegel",
     "sicherheit": "quelle",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/wr1300-1-0"
@@ -19910,7 +19910,7 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr2100.bin",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr2100.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy WR2100 aus unserem Spiegel",
     "sicherheit": "quelle",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/wr2100-1-0"
@@ -19986,7 +19986,7 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "mindestens 8 Sekunden",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-x6-v1.bin",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-x6-v1.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy X6 v1 aus unserem Spiegel",
     "sicherheit": "quelle",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/x6-1-0"
@@ -20062,7 +20062,7 @@
     "rueckweg_buchse": "",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-x6-v2.bin",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-x6-v2.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy X6 v2 aus unserem Spiegel",
     "sicherheit": "quelle",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/x6-2-0"
@@ -22691,7 +22691,7 @@
     "rueckweg_buchse": "die WAN-Buchse",
     "rueckweg_halten": "",
     "rueckweg_quelle": "",
-    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-tr1200.bin",
+    "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-tr1200.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy TR1200 v1 aus unserem Spiegel",
     "sicherheit": "abgeleitet",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/tr1200-1-0"

@@ -2815,7 +2815,7 @@ Cudy AP3000 Outdoor v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 19d770d7b91aaca1de18281dea0da8616df34c6c
 - **Detail-Anleitung:** anleitungen/de/cudy-ap3000-outdoor-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-ap3000-outdoor.bin; zwischen_md5 = a2817017a7cfd1229ba5f6b592726a88; zwischen_nur_cudy = False; neuer_flash = True; strom = über PoE, also mit einem PoE-Injektor oder PoE-Switch; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-ap3000-outdoor.bin; zwischen_url_text = Zwischenfirmware für den Cudy AP3000 Outdoor v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/ap3000-outdoor-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-ap3000-outdoor.bin; zwischen_md5 = a2817017a7cfd1229ba5f6b592726a88; zwischen_nur_cudy = False; neuer_flash = True; strom = über PoE, also mit einem PoE-Injektor oder PoE-Switch; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-ap3000-outdoor.bin; zwischen_url_text = Zwischenfirmware für den Cudy AP3000 Outdoor v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/ap3000-outdoor-1-0
 
 #### cudy-ap3000-v1
 
@@ -2860,7 +2860,7 @@ Cudy AP3000 v1 · mediatek-filogic · K2
 - **Quelle (OpenWrt-Commit):** OpenWrt 6dacba30a75b0ac8a65115f78808a97abbb34939
 - **Detail-Anleitung:** anleitungen/de/cudy-ap3000-v1.md
 - **Am Gerät erprobt (für die Anleitung):** am = 2026-10-17; mit = Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.4; weg = Cudy-Oberfläche unter 192.168.10.254 (Admin-Passwort anlegen, Assistent mit „« Ausfahrt“ verlassen), Zwischenfirmware cudy-ap3000.bin (MD5 7023a3bd… = Anleitung), dann Gluon-sysupgrade über LuCI; Gerät S/N 2535; beleg = Testplatz grw, router-werkstatt docs/validierung/cudy-ap3000-v1-2026-10-17.md
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.254; zwischen_datei = cudy-ap3000.bin; zwischen_md5 = 7023a3bd44e4ae0bf09de4ed9cb44335; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-ap3000.bin; zwischen_url_text = Zwischenfirmware für den Cudy AP3000 v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/ap3000-1-0; eine_buchse = True; led_zwischen = Die LED wechselt erst zwischen Rot, Grün, Blau und Orange, blinkt dann schnell in mehreren Farben und leuchtet am Ende dauerhaft violett-weiß.; rueckweg_ab_version = 2.4.7; rueckweg_led = die LED abwechselnd orange und rot blinkt; rechner_ip = 192.168.10.100; cudy_warten = etwa eine Minute; luci_rechner_ip = 192.168.1.100
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.254; zwischen_datei = cudy-ap3000.bin; zwischen_md5 = 7023a3bd44e4ae0bf09de4ed9cb44335; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-ap3000.bin; zwischen_url_text = Zwischenfirmware für den Cudy AP3000 v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/ap3000-1-0; eine_buchse = True; led_zwischen = Die LED wechselt erst zwischen Rot, Grün, Blau und Orange, blinkt dann schnell in mehreren Farben und leuchtet am Ende dauerhaft violett-weiß.; rueckweg_ab_version = 2.4.7; rueckweg_led = die LED abwechselnd orange und rot blinkt; rechner_ip = 192.168.10.100; cudy_warten = etwa eine Minute; luci_rechner_ip = 192.168.1.100
 
 #### cudy-ap3000-wall-v1
 
@@ -2904,7 +2904,7 @@ Cudy AP3000 Wall v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt afad4c71f8d558ca86b997781ca0236f321cf1e9 (25.12: 45788a48c7); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
 - **Detail-Anleitung:** anleitungen/de/cudy-ap3000-wall-v1.md
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-ap3000-wall.bin; zwischen_md5 = 376d404fd1535cc51168e365e2374427; zwischen_nur_cudy = False; neuer_flash = True; strom = über PoE, also mit einem PoE-Injektor oder PoE-Switch; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-ap3000-wall.bin; zwischen_url_text = Zwischenfirmware für den Cudy AP3000 Wall v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/ap3000-wall-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-ap3000-wall.bin; zwischen_md5 = 376d404fd1535cc51168e365e2374427; zwischen_nur_cudy = False; neuer_flash = True; strom = über PoE, also mit einem PoE-Injektor oder PoE-Switch; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-ap3000-wall.bin; zwischen_url_text = Zwischenfirmware für den Cudy AP3000 Wall v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/ap3000-wall-1-0
 
 #### cudy-m3000-v1
 
@@ -2948,7 +2948,7 @@ Cudy M3000 v1 (RTL8221B) · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 20e4a18feb3f766b0f6ebec1afc154b345398a7a
 - **Detail-Anleitung:** anleitungen/de/cudy-m3000-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-m3000.bin; zwischen_md5 = 2bcdf420444309bdef463dd278d15ba4; zwischen_nur_cudy = False; neuer_flash = True; luci_buchse = den schwarzen 1-Gbps-Port; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-m3000.bin; zwischen_url_text = Zwischenfirmware für den Cudy M3000 v1 (RTL8221B) aus unserem Spiegel; sicherheit = abgeleitet; rueckweg_url = https://www.cudy.com/pages/download-center/m3000-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-m3000.bin; zwischen_md5 = 2bcdf420444309bdef463dd278d15ba4; zwischen_nur_cudy = False; neuer_flash = True; luci_buchse = den schwarzen 1-Gbps-Port; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-m3000.bin; zwischen_url_text = Zwischenfirmware für den Cudy M3000 v1 (RTL8221B) aus unserem Spiegel; sicherheit = abgeleitet; rueckweg_url = https://www.cudy.com/pages/download-center/m3000-1-0
 
 #### cudy-m3000-v2-with-motorcomm-yt8821
 
@@ -2956,7 +2956,7 @@ Cudy M3000 v2 mit Motorcomm YT8821 · mediatek-filogic · K2
 
 - **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; vorher im Cudy-Systemlog nach "yt8821" bzw. "rtl8221b" suchen, um v1/v2 zu unterscheiden [geprüft]
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Spiegel (Ordner M3000_1.0_2.0) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-m3000.bin aus unserem Spiegel (bei Cudy "M3000 1.0_2.0.zip", cudy_m3000-v1-sysupgrade_20251119.bin, für Hardware 1.0 und 2.0) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022 (Cudys Drive-Ordner, geholt 22.10.2026; MD5 geprüft)] [geprüft: Commit 45b51eba nennt für YT8821 dieselbe Cudy-Ablage]
   2. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   3. Cudy-Oberfläche http://192.168.10.1 öffnen, Passwort admin [geprüft: Commit/Neanderfunk-Notiz]
   4. In der Cudy-Oberfläche unter Diagnose-Werkzeuge > Systemprotokoll nach "yt8821" bzw. "rtl8221b" suchen: nur bei "yt8821" dieses Image [geprüft: Commit 45b51eba]
@@ -2964,7 +2964,7 @@ Cudy M3000 v2 mit Motorcomm YT8821 · mediatek-filogic · K2
   6. Angezeigte MD5-Prüfsumme mit der Spiegel-Tabelle vergleichen, sie muss passen [geprüft: Neanderfunk-Notiz]
   7. Einige Minuten bis zum Neustart warten, nicht Strom ziehen [geprüft: Neanderfunk-Notiz]
   8. Rechner an den Port "1Gbps LAN", http://192.168.1.1 öffnen (LuCI), Anmeldung mit leerem Passwort [geprüft: Commit 45b51eba; geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2]
-  9. In LuCI das Gluon-sysupgrade hochladen, Einstellungen nicht behalten [geprüft: Commit/Neanderfunk-Notiz]
+  9. In LuCI das Gluon-sysupgrade hochladen, Einstellungen nicht behalten, "Erzwinge Upgrade" anhaken [abgeleitet: die Zwischenfirmware meldet sich als cudy,m3000-v1 (Device Tree und Metadaten der Datei), das Gluon-Image kennt nur cudy,m3000-v2-yt8821 und R37]
   10. Einige Minuten warten, nicht Strom ziehen [abgeleitet: sysupgrade schreibt den Flash]
 - **Warnung:** Seriennummer ab 2543 (neuer Flash F50L1G41LC, ab Nov. 2025): nur die Zwischenfirmware vom 19.11.2025 oder neuer nehmen, ältere startet nicht mehr [geprüft: Cudy-FAQ, Hinweis 24.11.2025]
 - **Taste und Zeitpunkt:** keine Taste nötig, Weg über die Cudy-Weboberfläche [geprüft: Neanderfunk-Notiz]
@@ -2992,7 +2992,7 @@ Cudy M3000 v2 mit Motorcomm YT8821 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 45b51ebaff51d2a49d149e9011717abb1b032683 (25.12: ca825537fb); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
 - **Detail-Anleitung:** anleitungen/de/cudy-m3000-v2-with-motorcomm-yt8821.md
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_nur_cudy = False; neuer_flash = True; luci_buchse = den Port „1Gbps LAN“; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/M3000_1.0_2.0/; zwischen_url_text = Ordner M3000_1.0_2.0 in unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/m3000-2-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-m3000.bin; zwischen_md5 = 2bcdf420444309bdef463dd278d15ba4; zwischen_nur_cudy = False; neuer_flash = True; luci_buchse = den Port „1Gbps LAN“; force_upgrade = True; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-m3000.bin; zwischen_url_text = Zwischenfirmware für den Cudy M3000 (Hardware 1.0 und 2.0) aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/m3000-2-0
 
 #### cudy-re3000-v1
 
@@ -3033,7 +3033,7 @@ Cudy RE3000 v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt e8f75973172749874afa13e4f746acd8cb515de2
 - **Detail-Anleitung:** anleitungen/de/cudy-re3000-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-re3000.bin; zwischen_md5 = d350aa4ec09cd51ce5727958f6712c62; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-re3000.bin; zwischen_url_text = Zwischenfirmware für den Cudy RE3000 v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/re3000-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-re3000.bin; zwischen_md5 = d350aa4ec09cd51ce5727958f6712c62; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-re3000.bin; zwischen_url_text = Zwischenfirmware für den Cudy RE3000 v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/re3000-1-0
 
 #### cudy-tr3000-256mb-v1
 
@@ -3076,7 +3076,7 @@ Cudy TR3000 256 MB v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 0ec28e59a815bb43c359328c8fd644f399d344da
 - **Detail-Anleitung:** anleitungen/de/cudy-tr3000-256mb-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-tr3000-256mb.bin; zwischen_md5 = 93615f1c40cdd64179753aee5a32aa06; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; rueckweg_halten = mindestens 5 Sekunden; rueckweg_quelle = beim Cudy-Support (China) auf Anfrage; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-tr3000-256mb.bin; zwischen_url_text = Zwischenfirmware für den Cudy TR3000 256 MB v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/tr3000-256mb-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-tr3000-256mb.bin; zwischen_md5 = 93615f1c40cdd64179753aee5a32aa06; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; rueckweg_halten = mindestens 5 Sekunden; rueckweg_quelle = beim Cudy-Support (China) auf Anfrage; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-tr3000-256mb.bin; zwischen_url_text = Zwischenfirmware für den Cudy TR3000 256 MB v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/tr3000-256mb-1-0
 
 #### cudy-tr3000-v1
 
@@ -3116,7 +3116,7 @@ Cudy TR3000 v1 (128 MB Flash) · mediatek-filogic · K2
 - **Gluon-RAMpe-Rezept:** devices/cudy-tr3000-v1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 63b8d98dd0d2f7797ea5b5f25978590982bbbb5d
 - **Detail-Anleitung:** anleitungen/de/cudy-tr3000-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-tr3000.bin; zwischen_md5 = 4551e961e22c0dafab13f5251d64d042; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; rueckweg_halten = mindestens 5 Sekunden; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-tr3000.bin; zwischen_url_text = Zwischenfirmware für den Cudy TR3000 v1 (128 MB Flash) aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/tr3000-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-tr3000.bin; zwischen_md5 = 4551e961e22c0dafab13f5251d64d042; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; rueckweg_halten = mindestens 5 Sekunden; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-tr3000.bin; zwischen_url_text = Zwischenfirmware für den Cudy TR3000 v1 (128 MB Flash) aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/tr3000-1-0
 
 #### cudy-wr3000-v1
 
@@ -3160,7 +3160,7 @@ Cudy WR3000 v1 · mediatek-filogic · K2
 - **Quelle (OpenWrt-Commit):** OpenWrt c9cb6411c1a70516d5922e88c45b338de041baba
 - **Detail-Anleitung:** anleitungen/de/cudy-wr3000-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
 - **Am Gerät erprobt (für die Anleitung):** am = 2026-10-16; mit = Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.19; weg = Rückweg zu Cudy WR3000-R31-2.4.19-20250828 per TFTP-recovery.bin (vorher lief ein fremdes Gluon), dann Zwischenfirmware über die Cudy-Oberfläche, dann Gluon-sysupgrade über LuCI, nach Anleitungsstand 39bb9515; beleg = Testplatz grw, router-werkstatt docs/validierung/cudy-wr3000-v1-2026-10-16.md (f4b4c2f)
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr3000.bin; zwischen_md5 = 6d29a32db9453ee62a071b344476e9c2; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR3000 v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/wr3000-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr3000.bin; zwischen_md5 = 6d29a32db9453ee62a071b344476e9c2; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR3000 v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/wr3000-1-0
 
 #### cudy-wr3000e-v1
 
@@ -3203,7 +3203,7 @@ Cudy WR3000E v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt f50551dd18318f2255da3ecd5de5cc1078201651
 - **Detail-Anleitung:** anleitungen/de/cudy-wr3000e-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr3000e.bin; zwischen_md5 = 249c150e7676facc9f33d79e634ec4a3; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000e.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR3000E v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/wr3000e-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr3000e.bin; zwischen_md5 = 249c150e7676facc9f33d79e634ec4a3; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000e.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR3000E v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/wr3000e-1-0
 
 #### cudy-wr3000h-v1
 
@@ -3247,7 +3247,7 @@ Cudy WR3000H v1 · mediatek-filogic · K2
 - **Quelle (OpenWrt-Commit):** OpenWrt fdbbb8415fd19ae0748a2bbe41b15257054e4077
 - **Detail-Anleitung:** anleitungen/de/cudy-wr3000h-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
 - **Am Gerät erprobt (für die Anleitung):** am = 2026-10-16; mit = Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.5.30; weg = Rückweg zu Cudy 2.5.30 per TFTP-recovery.bin, dann Zwischenfirmware über die Cudy-Oberfläche, dann Gluon-sysupgrade über LuCI, alles nach Anleitung; beleg = Testplatz grw, router-werkstatt docs/validierung/cudy-wr3000h-v1-2026-10-16.md (7253238)
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr3000h.bin; zwischen_md5 = 1c9321928f7da093cd2b8631d3554743; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000h.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR3000H v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/wr3000h-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr3000h.bin; zwischen_md5 = 1c9321928f7da093cd2b8631d3554743; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000h.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR3000H v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/wr3000h-1-0
 
 #### cudy-wr3000p-v1
 
@@ -3290,7 +3290,7 @@ Cudy WR3000P v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 51108508f10eb25f99395ec9334f996813bc5a22; gluon-patches-hardware 8dbae18666543aa9b8b5e7faa1d267024d62071e (Gluon-Zeile)
 - **Detail-Anleitung:** anleitungen/de/cudy-wr3000p-v1.md
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr3000p.bin; zwischen_md5 = cd87fc98daf8755b8190cc63f0083f38; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000p.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR3000P v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/wr3000p-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr3000p.bin; zwischen_md5 = cd87fc98daf8755b8190cc63f0083f38; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000p.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR3000P v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/wr3000p-1-0
 
 #### cudy-wr3000s-v1
 
@@ -3335,7 +3335,7 @@ Cudy WR3000S v1 · mediatek-filogic · K2
 - **Quelle (OpenWrt-Commit):** OpenWrt 4779e954fa847c4b376623bc3bdf9651007e8a89
 - **Detail-Anleitung:** anleitungen/de/cudy-wr3000s-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
 - **Am Gerät erprobt (für die Anleitung):** am = 2026-10-16; mit = Gluon 2023.2.6 (26091920sta), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.5.30; weg = Rückweg zu Cudy WR3000S-R59-2.5.30-20260825 per TFTP-recovery.bin, dann Zwischenfirmware (meldet sich als OpenWrt 23.05-SNAPSHOT-CUDY) über die Cudy-Oberfläche, dann Gluon-sysupgrade über LuCI; Ablauf wie beim WR3000H; Gerät S/N 2531 (alter Flash); beleg = Testplatz grw, router-werkstatt docs/validierung/cudy-wr3000s-v1-2026-10-16.md (88e1566)
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr3000s.bin; zwischen_md5 = 403e276f74fd29917fd4260294d1a137; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr3000s.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR3000S v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/wr3000s-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr3000s.bin; zwischen_md5 = 403e276f74fd29917fd4260294d1a137; zwischen_nur_cudy = False; neuer_flash = True; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000s.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR3000S v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/wr3000s-1-0
 
 #### cudy-wr3000u-v1
 
@@ -3343,7 +3343,7 @@ Cudy WR3000U v1 · mediatek-filogic · K2
 
 - **Weg ab Werk:** Cudy-Zwischenfirmware (von Cudy signiertes OpenWrt) über die Stock-Web-UI, danach Gluon-sysupgrade ohne Einstellungen über LuCI [geprüft: Commit/Neanderfunk-Notiz]; alternativ UART + TFTP (192.168.1.88) [geprüft]
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Cudy-Google-Drive "Cudy Intermediary OpenWrt Firmware" (nicht im Spiegel) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Commit; geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-wr3000u.bin aus unserem Spiegel (bei Cudy "WR3000U-256MB V1.0.zip", cudy_wr3000u-256-v1-sysupgrade.bin, supported_devices cudy,wr3000u-v1) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022 (Cudys Drive-Ordner, geholt 22.10.2026; MD5 geprüft)]
   2. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   3. Cudy-Oberfläche http://192.168.10.1 öffnen, Passwort admin [geprüft: Commit/Neanderfunk-Notiz]
   4. Zwischenfirmware (von Cudy signiertes OpenWrt) in der Cudy-Oberfläche hochladen [geprüft: Commit/Neanderfunk-Notiz]
@@ -3377,7 +3377,7 @@ Cudy WR3000U v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen; OpenWrt-Images nur als Snapshot (nicht in 25.12.5) [geprüft]
 - **Quelle (OpenWrt-Commit):** OpenWrt b9d7b448c256bb3860c7965ccf599c29c4847cb4 (25.12: 95dec97d08); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
 - **Detail-Anleitung:** anleitungen/de/cudy-wr3000u-v1.md
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_nur_cudy = True; neuer_flash = False; force_upgrade = False; rueckweg_halten = mindestens 5 Sekunden; rueckweg_quelle = von https://www.cudy.com/pages/download-center/wr3000u-256mb-1-0; zwischen_url = https://www.cudy.com/de-de/blogs/faq/openwrt-software-download; zwischen_url_text = Cudys Seite „OpenWrt Software Download“; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/wr3000u-256mb-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr3000u.bin; zwischen_md5 = 7ebc4832738eed0f9bc55efd546e453d; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; rueckweg_halten = mindestens 5 Sekunden; rueckweg_quelle = von https://www.cudy.com/pages/download-center/wr3000u-256mb-1-0; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr3000u.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR3000U v1 (256 MB) aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/wr3000u-256mb-1-0
 
 #### cudy-ap1300-outdoor-v1
 
@@ -3385,7 +3385,7 @@ Cudy AP1300 Outdoor v1 · ramips-mt7621 · K2
 
 - **Weg ab Werk:** Cudys signierte OpenWrt-Zwischenfirmware im Stock-Web-UI einspielen, danach Gluon-sysupgrade in LuCI ohne "Einstellungen behalten" [geprüft]; Stock 192.168.10.254, Passwort admin [geprüft]
 - **Schritte (Normalweg):**
-  1. Zwischenfirmware aus dem Spiegel (Ordner AP1300_Outdoor_V1.0) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Neanderfunk-Notiz]
+  1. Zwischenfirmware cudy-ap1300-outdoor.bin aus unserem Spiegel (bei Cudy "AP1300 Outdoor V1.0.zip", openwrt-ramips-mt7621-cudy_ap1300-outdoor-squashfs-flash.bin) und Gluon-sysupgrade (nicht factory) herunterladen [geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022 (Cudys Drive-Ordner, geholt 22.10.2026; MD5 geprüft)]
   2. Gerät über PoE-Injektor oder PoE-Switch versorgen [geprüft: Commit]
   3. Rechner per Kabel an eine LAN-Buchse, IP per DHCP vom Router [abgeleitet: Router ist in beiden Firmwares DHCP-Server]
   4. Cudy-Oberfläche http://192.168.10.254 öffnen, Passwort admin [geprüft; geprüft: Commit]
@@ -3419,7 +3419,7 @@ Cudy AP1300 Outdoor v1 · ramips-mt7621 · K2
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** c6e59d06afca02ccb2541631cacc769ae4d6569f
 - **Detail-Anleitung:** anleitungen/de/cudy-ap1300-outdoor-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.254; zwischen_datei = openwrt-ramips-mt7621-cudy_ap1300-outdoor-squashfs-flash.bin; zwischen_md5 = 22012cf6803c8c084a1fd9e88c998711; zwischen_nur_cudy = False; neuer_flash = False; strom = über PoE nach 802.3af (37-57 V), also mit einem PoE-Injektor oder PoE-Switch; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/Cudy_Intermediary_OpenWRT_Firmware-20251124/AP1300_Outdoor_V1.0/; zwischen_url_text = Ordner AP1300_Outdoor_V1.0 in unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/ap1300-outdoor-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.254; zwischen_datei = cudy-ap1300-outdoor.bin; zwischen_md5 = 22012cf6803c8c084a1fd9e88c998711; zwischen_nur_cudy = False; neuer_flash = False; strom = über PoE nach 802.3af (37-57 V), also mit einem PoE-Injektor oder PoE-Switch; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-ap1300-outdoor.bin; zwischen_url_text = Zwischenfirmware für den Cudy AP1300 Outdoor v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/ap1300-outdoor-1-0
 
 #### cudy-m1800
 
@@ -3461,7 +3461,7 @@ Cudy M1800 · ramips-mt7621 · K2
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** f6d394e9f2fd41547236c092ac914322220eb77c
 - **Detail-Anleitung:** anleitungen/de/cudy-m1800.md
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-m1800.bin; zwischen_md5 = 0c19a13f261fc7b3b0fade2b263203d5; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-m1800.bin; zwischen_url_text = Zwischenfirmware für den Cudy M1800 aus unserem Spiegel; sicherheit = unsicher; sicherheit_hinweis = Cudy bietet dieselbe Zwischenfirmware unter „M1800 V2“ und „M1800+ V2“ an. Ob dein M1800 sie annimmt, wissen wir nicht.; rueckweg_url = https://www.cudy.com/pages/download-center/m1800-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-m1800.bin; zwischen_md5 = 0c19a13f261fc7b3b0fade2b263203d5; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-m1800.bin; zwischen_url_text = Zwischenfirmware für den Cudy M1800 aus unserem Spiegel; sicherheit = unsicher; sicherheit_hinweis = Cudy bietet dieselbe Zwischenfirmware unter „M1800 V2“ und „M1800+ V2“ an. Ob dein M1800 sie annimmt, wissen wir nicht.; rueckweg_url = https://www.cudy.com/pages/download-center/m1800-1-0
 
 #### cudy-wr1300-v1
 
@@ -3503,7 +3503,7 @@ Cudy WR1300 v1 · ramips-mt7621 · K2
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** cd2b661453a8a2b8260dfb9b9c0dc5297b981331
 - **Detail-Anleitung:** anleitungen/de/cudy-wr1300-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr1300.bin; zwischen_md5 = 34f1ecdcd756fdae90abf3c76def2d43; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = True; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr1300.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR1300 v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/wr1300-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr1300.bin; zwischen_md5 = 34f1ecdcd756fdae90abf3c76def2d43; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = True; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr1300.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR1300 v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/wr1300-1-0
 
 #### cudy-wr2100
 
@@ -3544,7 +3544,7 @@ Cudy WR2100 · ramips-mt7621 · K2
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** 3501db9b9b4a71ae52c539b46af817783c327866
 - **Detail-Anleitung:** anleitungen/de/cudy-wr2100.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr2100.bin; zwischen_md5 = 002345fcc699c7b5a99b8fdb99dd6719; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-wr2100.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR2100 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/wr2100-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-wr2100.bin; zwischen_md5 = 002345fcc699c7b5a99b8fdb99dd6719; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-wr2100.bin; zwischen_url_text = Zwischenfirmware für den Cudy WR2100 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/wr2100-1-0
 
 #### cudy-x6-v1
 
@@ -3586,7 +3586,7 @@ Cudy X6 v1 · ramips-mt7621 · K2
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** 4a8eaa5c7c9235212c4af022c18b2dfbadfe557f
 - **Detail-Anleitung:** anleitungen/de/cudy-x6-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-x6-v1.bin; zwischen_md5 = f321fc7c41731875faa3cdc9ee8d583f; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = True; rueckweg_halten = mindestens 8 Sekunden; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-x6-v1.bin; zwischen_url_text = Zwischenfirmware für den Cudy X6 v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/x6-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-x6-v1.bin; zwischen_md5 = f321fc7c41731875faa3cdc9ee8d583f; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = True; rueckweg_halten = mindestens 8 Sekunden; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-x6-v1.bin; zwischen_url_text = Zwischenfirmware für den Cudy X6 v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/x6-1-0
 
 #### cudy-x6-v2
 
@@ -3628,7 +3628,7 @@ Cudy X6 v2 · ramips-mt7621 · K2
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** e38de40f8dd350344407fe5a91e81191f6960804
 - **Detail-Anleitung:** anleitungen/de/cudy-x6-v2.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-x6-v2.bin; zwischen_md5 = 89c000214e74b6ad89f5b9951fe0f226; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-x6-v2.bin; zwischen_url_text = Zwischenfirmware für den Cudy X6 v2 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/x6-2-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-x6-v2.bin; zwischen_md5 = 89c000214e74b6ad89f5b9951fe0f226; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-x6-v2.bin; zwischen_url_text = Zwischenfirmware für den Cudy X6 v2 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/x6-2-0
 
 #### cudy-tr1200-v1
 
@@ -3669,7 +3669,7 @@ Cudy TR1200 v1 · ramips-mt76x8 · K2
 - **Gluon-RAMpe passt:** nein: Signaturprüfung wie bei allen Cudy
 - **Quelle (OpenWrt-Commit):** f1091ef7ac3596f1e401b918a36273672acbe389
 - **Detail-Anleitung:** anleitungen/de/cudy-tr1200-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-tr1200.bin; zwischen_md5 = 62180e158bb123193a5eb8878adff942; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; rueckweg_buchse = die WAN-Buchse; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261015/zwischenfirmware/cudy-tr1200.bin; zwischen_url_text = Zwischenfirmware für den Cudy TR1200 v1 aus unserem Spiegel; sicherheit = abgeleitet; rueckweg_url = https://www.cudy.com/pages/download-center/tr1200-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-tr1200.bin; zwischen_md5 = 62180e158bb123193a5eb8878adff942; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; rueckweg_buchse = die WAN-Buchse; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-tr1200.bin; zwischen_url_text = Zwischenfirmware für den Cudy TR1200 v1 aus unserem Spiegel; sicherheit = abgeleitet; rueckweg_url = https://www.cudy.com/pages/download-center/tr1200-1-0
 
 ### Familie `devolo-ssh`
 
