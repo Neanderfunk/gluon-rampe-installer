@@ -10,7 +10,7 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, ssh-scp]
-daten_stand: e599e9d0
+daten_stand: 2e1c85fd
 vorlage_stand: fe341eeb
 ---
 

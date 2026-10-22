@@ -10,7 +10,7 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: e599e9d0
+daten_stand: 2e1c85fd
 vorlage_stand: 33a38da8
 ---
 
@@ -211,7 +211,6 @@ Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
 
 Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 
-- Spiegel M3000_1.0_2.0 (ob für YT8821 passend: abgeleitet) (Factory-/Stock-Image-Link)
 - abgeleitet: Router ist in beiden Firmwares DHCP-Server (Schritte (Normalweg), Anschluss, Adressen, Programm)
 - abgeleitet: die Zwischenfirmware meldet sich als cudy,m3000-v1 (Device Tree und Metadaten der Datei), das Gluon-Image kennt nur cudy,m3000-v2-yt8821 und R37 (Schritte (Normalweg))
 - abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht (Rückweg zur Herstellerfirmware)
