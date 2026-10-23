@@ -8,4 +8,5 @@ code{padding:.05em .3em;border-radius:3px}pre{padding:.7rem .8rem;overflow-x:aut
 blockquote{margin:1rem 0;padding:.6rem .9rem;background:var(--hinweis);border-left:4px solid #c9962b}
 blockquote p{margin:.2rem 0}ol>li{margin:.5rem 0}.fuss{margin-top:3rem;color:var(--leise);font-size:.85rem}
 table{border-collapse:collapse}td,th{border:1px solid var(--rand);padding:.25rem .5rem;text-align:left}
+.geraetebild{display:block;max-width:100%;height:auto;margin:.5em 0 1em}
 .uebersicht table{width:100%}.uebersicht td,.uebersicht th{overflow-wrap:break-word;hyphens:auto;vertical-align:top}

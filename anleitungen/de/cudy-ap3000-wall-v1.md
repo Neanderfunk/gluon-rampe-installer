@@ -10,8 +10,8 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 367dd1b3
-vorlage_stand: bf452817
+daten_stand: adb37d3f
+vorlage_stand: 04db92a2
 ---
 
 # Cudy AP3000 Wall v1: Freifunk-Firmware installieren
