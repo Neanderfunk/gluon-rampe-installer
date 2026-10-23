@@ -19,6 +19,8 @@
 #   <sprache>/<gluon_name>.md       erzeugt, nicht von Hand aendern
 #   html/<sprache>/<gluon_name>.html, html/<sprache>/grundlagen/<thema>.html,
 #   html/<sprache>/index.html, html/anleitung.css, html/index.json
+#   Geraeteseiten zeigen oben ../../pictures/<gluon_name>.svg (Bilder pflegt
+#   der Selector, nicht dieses Repo; fehlt eins, blendet onerror es aus)
 #
 # Format und Regeln: anleitungen/README.md. Kurz:
 # - Eine Seite entsteht fuer jedes Geraet, dessen Familie eine Vorlage hat und
@@ -258,13 +260,20 @@ code{padding:.05em .3em;border-radius:3px}pre{padding:.7rem .8rem;overflow-x:aut
 blockquote{margin:1rem 0;padding:.6rem .9rem;background:var(--hinweis);border-left:4px solid #c9962b}
 blockquote p{margin:.2rem 0}ol>li{margin:.5rem 0}.fuss{margin-top:3rem;color:var(--leise);font-size:.85rem}
 table{border-collapse:collapse}td,th{border:1px solid var(--rand);padding:.25rem .5rem;text-align:left}
+.geraetebild{display:block;max-width:100%;height:auto;margin:.5em 0 1em}
 .uebersicht table{width:100%}.uebersicht td,.uebersicht th{overflow-wrap:break-word;hyphens:auto;vertical-align:top}
 """
 
 
-def html_seite(titel, body_md, meta, md, tiefe):
-    """tiefe: Verzeichnisebenen unter html/ (fuer den Pfad zu anleitung.css)."""
+def html_seite(titel, body_md, meta, md, tiefe, bild=None):
+    """tiefe: Verzeichnisebenen unter html/ (fuer den Pfad zu anleitung.css).
+    bild: Gluon-Name; dann steht unter der Hauptueberschrift das Geraetebild
+    aus /pictures/ des Selectors (derselbe Host). Fehlt es, etwa offline in
+    der RAMpe, entfernt onerror das Element."""
     inhalt = md.render(body_md)
+    if bild:
+        inhalt = inhalt.replace("</h1>\n", f'</h1>\n<img class="geraetebild" src="{"../" * (tiefe + 1)}pictures/{html.escape(bild)}.svg" '
+                                'alt="" width="320" onerror="this.remove()">\n', 1)
     inhalt = re.sub(r'href="([^":]+)\.md(#[^"]*)?"', r'href="\1.html\2"', inhalt)
     metas = "\n".join(f'<meta name="anleitung:{html.escape(k)}" content="{html.escape(", ".join(v) if isinstance(v, list) else yaml_wert(v) if isinstance(v, bool) else str(v))}">'
                       for k, v in meta.items())
@@ -320,7 +329,7 @@ def main():
         dateien[h / "anleitung.css"] = CSS
         for name, (kopf, body) in seiten.items():
             dateien[h / SPRACHE / f"{name}.html"] = html_seite(
-                f"{kopf['anzeige']}: Freifunk-Firmware installieren", body, kopf, md, 1)
+                f"{kopf['anzeige']}: Freifunk-Firmware installieren", body, kopf, md, 1, bild=name)
         for p in sorted((a.quelle / SPRACHE / "grundlagen").glob("*.md")):
             t = p.read_text(encoding="utf-8")
             titel = (re.search(r"^# (.+)$", t, re.M) or [None, p.stem])[1]
