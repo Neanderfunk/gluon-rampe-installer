@@ -3033,7 +3033,7 @@ Cudy RE3000 v1 · mediatek-filogic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig: die Zwischenfirmware ist schon ein OpenWrt mit Upload; die Stock-UI nimmt nur Cudy-signierte Images [geprüft: Commit-Texte]. Ob die Cudy-TFTP-Recovery (recovery.bin von 192.168.1.88) fremde Images nimmt: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt e8f75973172749874afa13e4f746acd8cb515de2
 - **Detail-Anleitung:** anleitungen/de/cudy-re3000-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-re3000.bin; zwischen_md5 = d350aa4ec09cd51ce5727958f6712c62; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-re3000.bin; zwischen_url_text = Zwischenfirmware für den Cudy RE3000 v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/re3000-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-re3000.bin; zwischen_md5 = d350aa4ec09cd51ce5727958f6712c62; zwischen_nur_cudy = False; neuer_flash = False; strom = aus der Steckdose (das Netzteil ist eingebaut); force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-re3000.bin; zwischen_url_text = Zwischenfirmware für den Cudy RE3000 v1 aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/re3000-1-0
 
 #### cudy-tr3000-256mb-v1
 
@@ -5432,7 +5432,7 @@ D-Link DAP-1330 A1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 361c670a468cac8def368ed95487c72cfdb4a3fa [geprüft]
 - **Detail-Anleitung:** anleitungen/de/d-link-dap-1330-a1.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.50; zugang = ab Werk ohne Passwort; sicherheit = quelle
+- **Werte für die Anleitung:** stock_url = http://192.168.0.50; zugang = ab Werk ohne Passwort; sicherheit = quelle; strom = aus der Steckdose (das Netzteil ist eingebaut)
 
 #### d-link-dap-1365-a1
 
@@ -5465,7 +5465,7 @@ D-Link DAP-1365 A1 · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 361c670a468cac8def368ed95487c72cfdb4a3fa [geprüft]
 - **Detail-Anleitung:** anleitungen/de/d-link-dap-1365-a1.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.50; zugang = ab Werk ohne Passwort; sicherheit = quelle
+- **Werte für die Anleitung:** stock_url = http://192.168.0.50; zugang = ab Werk ohne Passwort; sicherheit = quelle; strom = aus der Steckdose (das Netzteil ist eingebaut)
 
 #### d-link-dap-2660-a1
 
@@ -7198,7 +7198,7 @@ NETGEAR EX6100 v2 · ipq40xx-generic · K0
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 970f1914be3f299fb302ca74a214589397000858
 - **Detail-Anleitung:** anleitungen/de/netgear-ex6100v2.md
-- **Werte für die Anleitung:** nach_upload = eine zweite Rückfrage, weil die Netgear-Oberfläche die Freifunk-Firmware für eine ältere Version hält; bestätige auch sie; sicherheit = quelle
+- **Werte für die Anleitung:** nach_upload = eine zweite Rückfrage, weil die Netgear-Oberfläche die Freifunk-Firmware für eine ältere Version hält; bestätige auch sie; sicherheit = quelle; strom = aus der Steckdose (das Netzteil ist eingebaut)
 
 #### netgear-ex6150v2
 
@@ -7230,7 +7230,7 @@ NETGEAR EX6150 v2 · ipq40xx-generic · K0
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 970f1914be3f299fb302ca74a214589397000858
 - **Detail-Anleitung:** anleitungen/de/netgear-ex6150v2.md; https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-fuer-netgear-wi-fi-range-extender-ex6150-v2/
-- **Werte für die Anleitung:** nach_upload = eine zweite Rückfrage, weil die Netgear-Oberfläche die Freifunk-Firmware für eine ältere Version hält; bestätige auch sie; sicherheit = quelle
+- **Werte für die Anleitung:** nach_upload = eine zweite Rückfrage, weil die Netgear-Oberfläche die Freifunk-Firmware für eine ältere Version hält; bestätige auch sie; sicherheit = quelle; strom = aus der Steckdose (das Netzteil ist eingebaut)
 
 #### zyxel-nbg6617
 
@@ -7839,7 +7839,7 @@ TP-Link RE500 v1 · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** ba0f4f0cfddc6f1152273565ec35f2a0bda1e95d
 - **Detail-Anleitung:** anleitungen/de/tp-link-re500-v1.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; sicherheit = quelle
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; strom = aus der Steckdose (das Netzteil ist eingebaut); sicherheit = quelle
 
 #### tp-link-re650-v1
 
@@ -7872,7 +7872,7 @@ TP-Link RE650 v1 · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 8c51ddeff0876b439ac35a3f492ab719085bfb9c
 - **Detail-Anleitung:** anleitungen/de/tp-link-re650-v1.md
-- **Werte für die Anleitung:** stock_url = http://192.168.0.254; rechner_ip = 192.168.0.10; zertifikat = False; tls_alt = False; dauer = etwa zweieinhalb Minuten; sicherheit = quelle
+- **Werte für die Anleitung:** stock_url = http://192.168.0.254; rechner_ip = 192.168.0.10; zertifikat = False; tls_alt = False; strom = aus der Steckdose (das Netzteil ist eingebaut); dauer = etwa zweieinhalb Minuten; sicherheit = quelle
 
 #### zyxel-nwa50ax
 
@@ -8003,7 +8003,7 @@ TP-Link RE200 v2 · ramips-mt76x8 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 6d6f36ae787c3b339b16c1d345a90faa1d9f4011
 - **Detail-Anleitung:** anleitungen/de/tp-link-re200-v2.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; dauer = bis zu 20 Minuten; notweg_keiner = Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses.; sicherheit = quelle
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; strom = aus der Steckdose (das Netzteil ist eingebaut); dauer = bis zu 20 Minuten; notweg_keiner = Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses.; sicherheit = quelle
 
 #### tp-link-re200-v3
 
@@ -8036,7 +8036,7 @@ TP-Link RE200 v3 · ramips-mt76x8 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 009e62c92c35142c5be3b375d6c393e63d2d27eb
 - **Detail-Anleitung:** anleitungen/de/tp-link-re200-v3.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; dauer = bis zu 20 Minuten; notweg_keiner = Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses.; sicherheit = quelle
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; strom = aus der Steckdose (das Netzteil ist eingebaut); dauer = bis zu 20 Minuten; notweg_keiner = Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses.; sicherheit = quelle
 
 #### tp-link-re200-v4
 
@@ -8067,7 +8067,7 @@ TP-Link RE200 v4 · ramips-mt76x8 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 33b76d66d1afa9d888f32587b18d78a930593ca5
 - **Detail-Anleitung:** anleitungen/de/tp-link-re200-v4.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; dauer = bis zu 20 Minuten; notweg_keiner = Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses.; sicherheit = quelle
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; strom = aus der Steckdose (das Netzteil ist eingebaut); dauer = bis zu 20 Minuten; notweg_keiner = Der RE200 hat keinen Notfall-Weg ohne Öffnen des Gehäuses.; sicherheit = quelle
 
 ### Familie `mikrotik-netboot`
 
@@ -8711,7 +8711,7 @@ NETGEAR EX6130 · ramips-mt7620 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 0cbd2c74d0c9f41d07757907226e5cfeaf16e06a
 - **Detail-Anleitung:** anleitungen/de/netgear-ex6130.md
-- **Werte für die Anleitung:** web_moeglich = True; sicherheit = quelle
+- **Werte für die Anleitung:** web_moeglich = True; sicherheit = quelle; strom = aus der Steckdose (das Netzteil ist eingebaut)
 
 #### netgear-eax12
 
@@ -8752,7 +8752,7 @@ NETGEAR EAX12 (Aliase EAX11 v2, EAX15 v2) · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 32ea8a9a7e4b1319607ae398e9bf7d8e3c4cd756
 - **Detail-Anleitung:** anleitungen/de/netgear-eax12.md
-- **Werte für die Anleitung:** web_moeglich = True; sicherheit = quelle
+- **Werte für die Anleitung:** web_moeglich = True; sicherheit = quelle; strom = aus der Steckdose (das Netzteil ist eingebaut)
 
 #### netgear-ex6150
 
@@ -8791,7 +8791,7 @@ NETGEAR EX6150 (v1) · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 3f019bf96cdf52668750f67cb139fa1b5c538f0b
 - **Detail-Anleitung:** anleitungen/de/netgear-ex6150.md; https://freifunk-ingolstadt.de/eigener-freifunk-hotspot/anleitung/installationsanleitung-für-netgear-wi-fi-range-extender-ex6150-v2/
-- **Werte für die Anleitung:** web_moeglich = True; sicherheit = quelle
+- **Werte für die Anleitung:** web_moeglich = True; sicherheit = quelle; strom = aus der Steckdose (das Netzteil ist eingebaut)
 
 #### netgear-r6220
 

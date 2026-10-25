@@ -656,7 +656,8 @@
    "werte": {
     "stock_url": "http://192.168.0.50",
     "zugang": "ab Werk ohne Passwort",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "strom": "aus der Steckdose (das Netzteil ist eingebaut)"
    }
   },
   {
@@ -716,7 +717,8 @@
    "werte": {
     "stock_url": "http://192.168.0.50",
     "zugang": "ab Werk ohne Passwort",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "strom": "aus der Steckdose (das Netzteil ist eingebaut)"
    }
   },
   {
@@ -11184,7 +11186,8 @@
    "erprobt": {},
    "werte": {
     "nach_upload": "eine zweite Rückfrage, weil die Netgear-Oberfläche die Freifunk-Firmware für eine ältere Version hält; bestätige auch sie",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "strom": "aus der Steckdose (das Netzteil ist eingebaut)"
    }
   },
   {
@@ -11244,7 +11247,8 @@
    "erprobt": {},
    "werte": {
     "nach_upload": "eine zweite Rückfrage, weil die Netgear-Oberfläche die Freifunk-Firmware für eine ältere Version hält; bestätige auch sie",
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "strom": "aus der Steckdose (das Netzteil ist eingebaut)"
    }
   },
   {
@@ -14002,7 +14006,7 @@
     "zwischen_md5": "d350aa4ec09cd51ce5727958f6712c62",
     "zwischen_nur_cudy": false,
     "neuer_flash": false,
-    "strom": "",
+    "strom": "aus der Steckdose (das Netzteil ist eingebaut)",
     "luci_buchse": "",
     "force_upgrade": false,
     "rueckweg_buchse": "",
@@ -19083,7 +19087,8 @@
    "erprobt": {},
    "werte": {
     "web_moeglich": true,
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "strom": "aus der Steckdose (das Netzteil ist eingebaut)"
    }
   },
   {
@@ -20795,7 +20800,8 @@
    "erprobt": {},
    "werte": {
     "web_moeglich": true,
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "strom": "aus der Steckdose (das Netzteil ist eingebaut)"
    }
   },
   {
@@ -20857,7 +20863,8 @@
    "erprobt": {},
    "werte": {
     "web_moeglich": true,
-    "sicherheit": "quelle"
+    "sicherheit": "quelle",
+    "strom": "aus der Steckdose (das Netzteil ist eingebaut)"
    }
   },
   {
@@ -21577,7 +21584,7 @@
     "zertifikat": false,
     "tls_alt": false,
     "menue": "",
-    "strom": "",
+    "strom": "aus der Steckdose (das Netzteil ist eingebaut)",
     "anschluss": "",
     "datei_hinweis": "",
     "dateiname": "",
@@ -21655,7 +21662,7 @@
     "zertifikat": false,
     "tls_alt": false,
     "menue": "",
-    "strom": "",
+    "strom": "aus der Steckdose (das Netzteil ist eingebaut)",
     "anschluss": "",
     "datei_hinweis": "",
     "dateiname": "",
@@ -23500,7 +23507,7 @@
     "zertifikat": false,
     "tls_alt": false,
     "menue": "",
-    "strom": "",
+    "strom": "aus der Steckdose (das Netzteil ist eingebaut)",
     "anschluss": "",
     "datei_hinweis": "",
     "dateiname": "",
@@ -23578,7 +23585,7 @@
     "zertifikat": false,
     "tls_alt": false,
     "menue": "",
-    "strom": "",
+    "strom": "aus der Steckdose (das Netzteil ist eingebaut)",
     "anschluss": "",
     "datei_hinweis": "",
     "dateiname": "",
@@ -23655,7 +23662,7 @@
     "zertifikat": false,
     "tls_alt": false,
     "menue": "",
-    "strom": "",
+    "strom": "aus der Steckdose (das Netzteil ist eingebaut)",
     "anschluss": "",
     "datei_hinweis": "",
     "dateiname": "",
