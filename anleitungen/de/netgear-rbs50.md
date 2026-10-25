@@ -10,7 +10,7 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, nmrpflash, router-antwortet-nicht]
-daten_stand: adb37d3f
+daten_stand: e9343f57
 vorlage_stand: 33a38da8
 ---
 

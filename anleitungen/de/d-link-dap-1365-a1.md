@@ -10,7 +10,7 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, curl, router-antwortet-nicht]
-daten_stand: adb37d3f
+daten_stand: e9343f57
 vorlage_stand: 33a38da8
 ---
 
@@ -33,7 +33,7 @@ des Herstellers hinkäme. Du brauchst nur einen Browser.
 
 ## Was du brauchst
 
-- das Gerät und sein Netzteil
+- das Gerät und Strom aus der Steckdose (das Netzteil ist eingebaut)
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - die Freifunk-Firmware deiner Community für den D-Link DAP-1365 A1, und zwar das
   **factory**-Image für die Erstinstallation, nicht "sysupgrade"

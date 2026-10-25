@@ -10,7 +10,7 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht, ssh-scp]
-daten_stand: adb37d3f
+daten_stand: e9343f57
 vorlage_stand: 33a38da8
 ---
 

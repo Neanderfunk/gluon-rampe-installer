@@ -10,7 +10,7 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: adb37d3f
+daten_stand: e9343f57
 vorlage_stand: 04db92a2
 ---
 
@@ -35,7 +35,7 @@ Community ein. Beides geht im Browser, du brauchst kein Zusatzprogramm.
 
 ## Was du brauchst
 
-- den Router und sein Netzteil
+- den Router und Strom aus der Steckdose (das Netzteil ist eingebaut)
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - die **Zwischenfirmware von Cudy** für genau dieses Modell:
   [Zwischenfirmware für den Cudy RE3000 v1 aus unserem Spiegel](https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-re3000.bin), Datei `cudy-re3000.bin`
