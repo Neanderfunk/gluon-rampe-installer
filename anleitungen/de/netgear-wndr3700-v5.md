@@ -12,7 +12,7 @@ status: ungeprüft
 rampe_image: gluon-rampe-20261015-netgear-wndr3700-v5-factory.img
 grundlagen: [browser-https, browser-not-found, nmrpflash, router-antwortet-nicht]
 daten_stand: e9343f57
-vorlage_stand: 33a38da8
+vorlage_stand: 181a050f
 ---
 
 # NETGEAR WNDR3700 v5: Freifunk-Firmware installieren
@@ -37,8 +37,8 @@ dann, wenn die Netgear-Oberfläche fremde Firmware nicht annimmt.
 
 ## Was du brauchst
 
-- das Gerät mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
-  Netzwerkkabel
+- das Gerät mit Netzteil, einen
+  Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - das Programm nmrpflash ([nmrpflash benutzen](grundlagen/nmrpflash.md))
 - OpenWrt für den NETGEAR WNDR3700 v5:
   [openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img). Die Freifunk-Firmware
