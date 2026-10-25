@@ -12,6 +12,8 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 
   Optional (leer = allgemeiner Satz)
     anschluss            Buchse, nach "Steck das Kabel an …", z. B. "die LAN-Buchse 1"
+    strom                wenn nicht das Netzteil, nach "das Gerät und Strom …",
+                         z. B. "aus der Steckdose (das Netzteil ist eingebaut)"
     nach_neustart        was nach "Reboot your device now." zu tun ist, ganzer Satz
     web_moeglich         true: die Netgear-Oberfläche nimmt das factory-Image auch;
                          dann ist sie der Hauptweg und nmrpflash der andere Weg
@@ -108,8 +110,9 @@ unten einen zweiten Weg mit dem Programm nmrpflash.
 
 ## Was du brauchst
 
-- das Gerät mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
-  Netzwerkkabel
+- das Gerät
+  {%- if w.strom %} und Strom {{ w.strom }}{% else %} mit Netzteil{% endif %}, einen
+  Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - die Freifunk-Firmware deiner Community für den {{ modell }}, und zwar das
   **factory**-Image (im Firmware-Selector unter "Wähle Deine
   Installationsart" der Knopf **Erstinstallation**)
@@ -180,8 +183,9 @@ dann, wenn die Netgear-Oberfläche fremde Firmware nicht annimmt.
 
 ## Was du brauchst
 
-- das Gerät mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
-  Netzwerkkabel
+- das Gerät
+  {%- if w.strom %} und Strom {{ w.strom }}{% else %} mit Netzteil{% endif %}, einen
+  Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - das Programm nmrpflash ([nmrpflash benutzen](grundlagen/nmrpflash.md))
 {%- if w.zwischen_datei %}
 - OpenWrt für den {{ modell }}:
