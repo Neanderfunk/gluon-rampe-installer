@@ -16,7 +16,7 @@
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, router-antwortet-nicht, tftp-server">
 <meta name="anleitung:daten_stand" content="e9343f57">
-<meta name="anleitung:vorlage_stand" content="04db92a2">
+<meta name="anleitung:vorlage_stand" content="cf484e50">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -58,15 +58,9 @@ es die erste Installation ist.</li>
 genau mit &quot;Cudy M3000 v1 (RTL8221B)&quot;, bevor du anfängst.</p>
 <h2>Vorher prüfen</h2>
 <p>Den M3000 gibt es mit zwei verschiedenen Netzwerkchips am WAN-Anschluss, und
-jede Sorte braucht ihre eigene Freifunk-Firmware. Welche du hast, zeigt die
-Cudy-Oberfläche: Nach Schritt 3 unter <strong>Diagnose-Werkzeuge → Systemprotokoll</strong>
-nach <code>rtl8221b</code> suchen.</p>
-<ul>
-<li><code>rtl8221b</code> gefunden: Diese Anleitung passt.</li>
-<li><code>yt8821</code> gefunden: Nimm die Anleitung und die Firmware für den
-<a href="cudy-m3000-v2-with-motorcomm-yt8821.html">Cudy M3000 v2 mit Motorcomm YT8821</a>.</li>
-<li>keins von beiden: Router neu starten und noch einmal suchen.</li>
-</ul>
+jede Sorte braucht ihre eigene Freifunk-Firmware. Welcher in deinem Gerät
+steckt, siehst du erst in der Cudy-Oberfläche, das kommt in Schritt 4. Die
+Zwischenfirmware ist für beide Sorten dieselbe Datei.</p>
 <h2>Schritte</h2>
 <h3>Teil 1: Zwischenfirmware von Cudy</h3>
 <ol>
@@ -87,6 +81,16 @@ Ab Werk verlangt die Oberfläche zuerst ein <strong>eigenes Admin-Passwort</stro
 Cudy-Firmware fragt stattdessen nach dem Passwort <code>admin</code>. Danach startet
 der Assistent &quot;Schnelleinrichtung&quot;: Den kannst du mit <strong>&quot;« Beenden&quot;</strong>
 überspringen (bei manchen Versionen heißt der Knopf &quot;« Ausfahrt&quot;).</p>
+</li>
+<li>
+<p><strong>Gerät prüfen.</strong> Geh zu <strong>Diagnose-Werkzeuge → Systemprotokoll</strong> und such dort nach <code>rtl8221b</code>.</p>
+<ul>
+<li><code>rtl8221b</code> gefunden: Diese Anleitung passt, weiter mit dem nächsten Schritt.</li>
+<li><code>yt8821</code> gefunden: Hier aufhören und mit der Anleitung und der Firmware
+für den <a href="cudy-m3000-v2-with-motorcomm-yt8821.html">Cudy M3000 v2 mit Motorcomm YT8821</a>
+weitermachen.</li>
+<li>keins von beiden: Router neu starten und noch einmal suchen.</li>
+</ul>
 </li>
 <li>
 <p><strong>Zwischenfirmware hochladen.</strong> Geh zum Reiter <strong>&quot;Allgemeine
@@ -111,7 +115,7 @@ uns dauerte das weniger als eine Minute. <strong>Strom nicht ziehen.</strong></p
 </li>
 </ol>
 <h3>Teil 2: Freifunk-Firmware</h3>
-<ol start="7">
+<ol start="8">
 <li>
 <p><strong>OpenWrt-Oberfläche öffnen.</strong> Steck das Kabel jetzt an den schwarzen 1-Gbps-Port.
 Öffne <code>http://192.168.1.1</code>. Es erscheint die Anmeldung von OpenWrt
@@ -145,9 +149,9 @@ es weitergeht, beschreibt deine Community.</p>
 </ol>
 <h2>Woran du erkennst, dass es geklappt hat</h2>
 <ul>
-<li>Nach Schritt 5 stimmt die Prüfsumme genau.</li>
-<li>Nach Schritt 6 zeigt <code>http://192.168.1.1</code> die Anmeldung von OpenWrt.</li>
-<li>Nach Schritt 10 meldet sich die Freifunk-Firmware.</li>
+<li>Nach Schritt 6 stimmt die Prüfsumme genau.</li>
+<li>Nach Schritt 7 zeigt <code>http://192.168.1.1</code> die Anmeldung von OpenWrt.</li>
+<li>Nach Schritt 11 meldet sich die Freifunk-Firmware.</li>
 </ul>
 <h2>Wenn etwas schiefgeht</h2>
 <ul>
@@ -160,16 +164,16 @@ etwa schon die Freifunk-Firmware oder die Zwischenfirmware eines anderen
 Modells. Nicht noch einmal versuchen, sondern die Zwischenfirmware für
 genau dieses Modell nehmen (Aufkleber vergleichen).</li>
 <li><strong>OpenWrt meldet &quot;not supported by this image&quot; oder &quot;Überprüfung der
-Abbilddatei fehlgeschlagen&quot;</strong> (in Schritt 9, mit einem Haken &quot;Erzwinge
+Abbilddatei fehlgeschlagen&quot;</strong> (in Schritt 10, mit einem Haken &quot;Erzwinge
 Upgrade&quot;). Dann ist es das Image für ein anderes Modell. <strong>&quot;Erzwinge
 Upgrade&quot; nie anhaken</strong>, sondern <strong>&quot;Abbrechen&quot;</strong> und das richtige Image
 holen.</li>
-<li><strong>Nach Schritt 6 antwortet <code>http://192.168.1.1</code> nicht.</strong> Steck das Kabel in
+<li><strong>Nach Schritt 7 antwortet <code>http://192.168.1.1</code> nicht.</strong> Steck das Kabel in
 eine andere Buchse. Bei manchen Modellen tauschen LAN und WAN nach dem
 Wechsel auf OpenWrt die Rolle.</li>
 <li><strong>Unter <code>http://192.168.10.1</code> kommt keine Cudy-Seite, sondern schon
 OpenWrt.</strong> Dann ist die Zwischenfirmware vermutlich schon drauf: weiter bei
-Schritt 7. Läuft dort eine ganz andere Firmware, geht die Zwischenfirmware
+Schritt 8. Läuft dort eine ganz andere Firmware, geht die Zwischenfirmware
 nicht mehr. Cudy nimmt sie nur an, solange die Original-Oberfläche läuft.
 Dann zuerst zurück zur Cudy-Firmware (unten).</li>
 </ul>

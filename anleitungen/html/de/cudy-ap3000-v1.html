@@ -18,7 +18,7 @@
 <meta name="anleitung:erprobt_mit" content="Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.4">
 <meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, router-antwortet-nicht, tftp-server">
 <meta name="anleitung:daten_stand" content="e9343f57">
-<meta name="anleitung:vorlage_stand" content="04db92a2">
+<meta name="anleitung:vorlage_stand" content="cf484e50">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -56,15 +56,6 @@ es die erste Installation ist.</li>
 <p>Modell und Version stehen auf dem Aufkleber unter dem Gerät. Vergleich sie
 genau mit &quot;Cudy AP3000 v1&quot;, bevor du anfängst.</p>
 <h2>Vorher prüfen</h2>
-<p><strong>Weg zurück offenhalten:</strong> Den Notfall-Weg zurück zur Cudy-Firmware (unten)
-hat der Cudy AP3000 v1 laut OpenWrt erst ab Cudy-Firmware
-<strong>2.4.7</strong>; ältere Bootloader holen sich keine Datei.
-Welche Version läuft, zeigt die Cudy-Oberfläche. Ist sie älter, spiel
-zuerst die neueste Cudy-Firmware ein (Download wie unten unter &quot;Zurück zur
-Cudy-Firmware&quot;), an derselben Stelle wie in Schritt 4 die Zwischenfirmware.
-Warte den Neustart ab und mach dann mit Schritt 4 weiter. Ob der Notfall-Weg
-danach auch unter der Freifunk-Firmware erhalten bleibt, haben wir noch
-nicht geprüft.</p>
 <p>Nicht verwechseln mit dem AP3000 Outdoor oder dem AP3000 Wall, die haben je
 ihre eigene Zwischenfirmware. Die Zwischenfirmware für den AP3000 v1 hat Cudy
 nicht öffentlich abgelegt; die Datei bei uns stammt direkt vom Cudy-Support.</p>
@@ -93,6 +84,17 @@ der Assistent &quot;Schnelleinrichtung&quot;: Den kannst du mit <strong>&quot;«
 überspringen (bei manchen Versionen heißt der Knopf &quot;« Ausfahrt&quot;).</p>
 </li>
 <li>
+<p><strong>Cudy-Version prüfen.</strong> Den Notfall-Weg zurück zur
+Cudy-Firmware (unten) hat der Cudy AP3000 v1 laut OpenWrt erst ab
+Cudy-Firmware <strong>2.4.7</strong>; ältere Bootloader holen
+sich keine Datei. Welche Version läuft, zeigt die Cudy-Oberfläche. Ist sie
+älter, spiel zuerst die neueste Cudy-Firmware ein (Download wie unten
+unter &quot;Zurück zur Cudy-Firmware&quot;), an derselben Stelle wie im nächsten
+Schritt die Zwischenfirmware. Warte den Neustart ab und mach dann mit
+Schritt 5 weiter. Ob der Notfall-Weg danach auch unter der
+Freifunk-Firmware erhalten bleibt, haben wir noch nicht geprüft.</p>
+</li>
+<li>
 <p><strong>Zwischenfirmware hochladen.</strong> Geh zum Reiter <strong>&quot;Allgemeine
 Einstellungen&quot;</strong>, klick in der Symbolspalte links ganz unten auf
 <strong>&quot;Firmware&quot;</strong> und im Abschnitt <strong>&quot;Lokales Update&quot;</strong> auf
@@ -114,7 +116,7 @@ uns dauerte das weniger als eine Minute. <strong>Strom nicht ziehen.</strong></p
 </li>
 </ol>
 <h3>Teil 2: Freifunk-Firmware</h3>
-<ol start="7">
+<ol start="8">
 <li>
 <p><strong>OpenWrt-Oberfläche öffnen.</strong> Stell den Rechner jetzt fest auf
 <code>192.168.1.100</code>, Netzmaske <code>255.255.255.0</code>.
@@ -152,9 +154,9 @@ sie erst nach der Einrichtung mit deinem Router zu Hause.</p>
 </ol>
 <h2>Woran du erkennst, dass es geklappt hat</h2>
 <ul>
-<li>Nach Schritt 5 stimmt die Prüfsumme genau.</li>
-<li>Nach Schritt 6 zeigt <code>http://192.168.1.1</code> die Anmeldung von OpenWrt.</li>
-<li>Nach Schritt 10 meldet sich die Freifunk-Firmware.</li>
+<li>Nach Schritt 6 stimmt die Prüfsumme genau.</li>
+<li>Nach Schritt 7 zeigt <code>http://192.168.1.1</code> die Anmeldung von OpenWrt.</li>
+<li>Nach Schritt 11 meldet sich die Freifunk-Firmware.</li>
 </ul>
 <h2>Wenn etwas schiefgeht</h2>
 <ul>
@@ -167,13 +169,13 @@ etwa schon die Freifunk-Firmware oder die Zwischenfirmware eines anderen
 Modells. Nicht noch einmal versuchen, sondern die Zwischenfirmware für
 genau dieses Modell nehmen (Aufkleber vergleichen).</li>
 <li><strong>OpenWrt meldet &quot;not supported by this image&quot; oder &quot;Überprüfung der
-Abbilddatei fehlgeschlagen&quot;</strong> (in Schritt 9, mit einem Haken &quot;Erzwinge
+Abbilddatei fehlgeschlagen&quot;</strong> (in Schritt 10, mit einem Haken &quot;Erzwinge
 Upgrade&quot;). Dann ist es das Image für ein anderes Modell. <strong>&quot;Erzwinge
 Upgrade&quot; nie anhaken</strong>, sondern <strong>&quot;Abbrechen&quot;</strong> und das richtige Image
 holen.</li>
 <li><strong>Unter <code>http://192.168.10.254</code> kommt keine Cudy-Seite, sondern schon
 OpenWrt.</strong> Dann ist die Zwischenfirmware vermutlich schon drauf: weiter bei
-Schritt 7. Läuft dort eine ganz andere Firmware, geht die Zwischenfirmware
+Schritt 8. Läuft dort eine ganz andere Firmware, geht die Zwischenfirmware
 nicht mehr. Cudy nimmt sie nur an, solange die Original-Oberfläche läuft.
 Dann zuerst zurück zur Cudy-Firmware (unten).</li>
 </ul>
@@ -184,7 +186,7 @@ Werkzeug: einen TFTP-Server auf deinem Rechner
 (<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>) und eine feste
 Adresse am Rechner (<a href="grundlagen/feste-ip.html">Feste IP-Adresse einstellen</a>).
 Beim Cudy AP3000 v1 geht das nur, wenn vorher mindestens Cudy-Firmware
-2.4.7 lief (siehe &quot;Vorher prüfen&quot;). Mit einem älteren
+2.4.7 lief (siehe Schritt 4). Mit einem älteren
 Bootloader holt er sich keine Datei, dann gibt es keinen einfachen Weg
 zurück.</p>
 <ol>

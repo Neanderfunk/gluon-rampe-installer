@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
 daten_stand: e9343f57
-vorlage_stand: 04db92a2
+vorlage_stand: cf484e50
 ---
 
 # Cudy M3000 v2 mit Motorcomm YT8821: Freifunk-Firmware installieren
@@ -55,14 +55,9 @@ genau mit "Cudy M3000 v2 mit Motorcomm YT8821", bevor du anfängst.
 ## Vorher prüfen
 
 Den M3000 gibt es mit zwei verschiedenen Netzwerkchips am WAN-Anschluss, und
-jede Sorte braucht ihre eigene Freifunk-Firmware. Welche du hast, zeigt die
-Cudy-Oberfläche: Nach Schritt 3 unter **Diagnose-Werkzeuge → Systemprotokoll**
-nach `yt8821` suchen.
-
-- `yt8821` gefunden: Diese Anleitung passt.
-- `rtl8221b` gefunden: Nimm die Anleitung und die Firmware für den
-  [Cudy M3000 v1](cudy-m3000-v1.md).
-- keins von beiden: Router neu starten und noch einmal suchen.
+jede Sorte braucht ihre eigene Freifunk-Firmware. Welcher in deinem Gerät
+steckt, siehst du erst in der Cudy-Oberfläche, das kommt in Schritt 4. Die
+Zwischenfirmware ist für beide Sorten dieselbe Datei.
 
 Cudy gibt die Zwischenfirmware für den M3000 in Hardware-Version 1.0 und
 2.0 heraus, und OpenWrt nennt für diese Variante dieselbe Datei. Bei uns
@@ -88,14 +83,21 @@ tust, sag uns bitte Bescheid, ob es geklappt hat.
    der Assistent "Schnelleinrichtung": Den kannst du mit **"« Beenden"**
    überspringen (bei manchen Versionen heißt der Knopf "« Ausfahrt").
 
-4. **Zwischenfirmware hochladen.** Geh zum Reiter **"Allgemeine
+4. **Gerät prüfen.** Geh zu **Diagnose-Werkzeuge → Systemprotokoll** und such dort nach `yt8821`.
+
+   - `yt8821` gefunden: Diese Anleitung passt, weiter mit dem nächsten Schritt.
+   - `rtl8221b` gefunden: Hier aufhören und mit der Anleitung und der Firmware
+     für den [Cudy M3000 v1](cudy-m3000-v1.md) weitermachen.
+   - keins von beiden: Router neu starten und noch einmal suchen.
+
+5. **Zwischenfirmware hochladen.** Geh zum Reiter **"Allgemeine
    Einstellungen"**, klick in der Symbolspalte links ganz unten auf
    **"Firmware"** und im Abschnitt **"Lokales Update"** auf
    **"Durchsuchen …"**. Wähl dort die Zwischenfirmware aus. Gibt es den
    Reiter nicht, such oben **Erweiterte Einstellungen** und links den
    Eintrag **Firmware** (bei älterer Cudy-Firmware unter **System**).
 
-5. **Prüfsumme vergleichen.** Nach dem Hochladen zeigt der Router im
+6. **Prüfsumme vergleichen.** Nach dem Hochladen zeigt der Router im
    Fenster "Lokales Update" eine MD5-Prüfsumme und die Größe. Sie muss genau so aussehen:
 
    ```
@@ -104,24 +106,24 @@ tust, sag uns bitte Bescheid, ob es geklappt hat.
 
    Stimmt sie, klick auf **Fortfahren**.
 
-6. **Warten.** Die Oberfläche zeigt "System - Firmware wird installiert…".
+7. **Warten.** Die Oberfläche zeigt "System - Firmware wird installiert…".
    Die LEDs zeigen erst ein Lauflicht (bis etwa eine halbe Minute), dann
    blinken oder flackern sie kurz, dann startet der Router einmal neu. Bei
    uns dauerte das weniger als eine Minute. **Strom nicht ziehen.**
 
 ### Teil 2: Freifunk-Firmware
 
-7. **OpenWrt-Oberfläche öffnen.** Steck das Kabel jetzt an den Port „1Gbps LAN“.
+8. **OpenWrt-Oberfläche öffnen.** Steck das Kabel jetzt an den Port „1Gbps LAN“.
    Öffne `http://192.168.1.1`. Es erscheint die Anmeldung von OpenWrt
    ("LuCI"). Das Passwort-Feld bleibt leer, einfach anmelden.
 
-8. **Freifunk-Firmware hochladen.** Geh zu **System → Backup / Firmware
+9. **Freifunk-Firmware hochladen.** Geh zu **System → Backup / Firmware
    Update** (englisch "Backup / Flash Firmware"). Klick ganz unten auf
    **"Firmware aktualisieren…"** (englisch "Flash image…"). Es erscheint das
    Fenster "Datei wird hochgeladen…": Wähl dort das sysupgrade-Image deiner
    Community aus und klick auf **"Hochladen"**.
 
-9. **Einstellungen nicht behalten.** Danach zeigt OpenWrt das Fenster
+10. **Einstellungen nicht behalten.** Danach zeigt OpenWrt das Fenster
    "Image schreiben?" (englisch "Flash image?"). Dort ist der Haken bei **"Einstellungen beibehalten und die
    aktuelle Konfiguration sichern"** (englisch "Keep settings …") schon
    gesetzt. **Entfern diesen Haken.** Die beiden Haken darunter sind schon
@@ -132,7 +134,7 @@ tust, sag uns bitte Bescheid, ob es geklappt hat.
    vor, weil die Zwischenfirmware das Gerät anders benennt.
    Dann **Fortfahren**.
 
-10. **Fertig.** Der Router schreibt die Freifunk-Firmware und startet neu,
+11. **Fertig.** Der Router schreibt die Freifunk-Firmware und startet neu,
     wieder einige Minuten, Strom nicht ziehen. Danach startet die
     Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
     Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
@@ -143,9 +145,9 @@ tust, sag uns bitte Bescheid, ob es geklappt hat.
 
 ## Woran du erkennst, dass es geklappt hat
 
-- Nach Schritt 5 stimmt die Prüfsumme genau.
-- Nach Schritt 6 zeigt `http://192.168.1.1` die Anmeldung von OpenWrt.
-- Nach Schritt 10 meldet sich die Freifunk-Firmware.
+- Nach Schritt 6 stimmt die Prüfsumme genau.
+- Nach Schritt 7 zeigt `http://192.168.1.1` die Anmeldung von OpenWrt.
+- Nach Schritt 11 meldet sich die Freifunk-Firmware.
 
 ## Wenn etwas schiefgeht
 
@@ -158,17 +160,17 @@ tust, sag uns bitte Bescheid, ob es geklappt hat.
   Modells. Nicht noch einmal versuchen, sondern die Zwischenfirmware für
   genau dieses Modell nehmen (Aufkleber vergleichen).
 - **OpenWrt meldet "not supported by this image" oder "Überprüfung der
-  Abbilddatei fehlgeschlagen"** (in Schritt 9, mit einem Haken "Erzwinge
+  Abbilddatei fehlgeschlagen"** (in Schritt 10, mit einem Haken "Erzwinge
   Upgrade"). Bei diesem Modell ist das in Ordnung, wenn unter
-  "Supported devices" dein Modell steht (siehe Schritt 9). Steht dort ein
+  "Supported devices" dein Modell steht (siehe Schritt 10). Steht dort ein
   anderes Modell, ist es das falsche Image: **"Abbrechen"** und das richtige
   holen.
-- **Nach Schritt 6 antwortet `http://192.168.1.1` nicht.** Steck das Kabel in
+- **Nach Schritt 7 antwortet `http://192.168.1.1` nicht.** Steck das Kabel in
   eine andere Buchse. Bei manchen Modellen tauschen LAN und WAN nach dem
   Wechsel auf OpenWrt die Rolle.
 - **Unter `http://192.168.10.1` kommt keine Cudy-Seite, sondern schon
   OpenWrt.** Dann ist die Zwischenfirmware vermutlich schon drauf: weiter bei
-  Schritt 7. Läuft dort eine ganz andere Firmware, geht die Zwischenfirmware
+  Schritt 8. Läuft dort eine ganz andere Firmware, geht die Zwischenfirmware
   nicht mehr. Cudy nimmt sie nur an, solange die Original-Oberfläche läuft.
   Dann zuerst zurück zur Cudy-Firmware (unten).
 
