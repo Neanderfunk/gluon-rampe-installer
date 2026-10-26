@@ -26,7 +26,7 @@
 # - Eine Seite entsteht fuer jedes Geraet, dessen Familie eine Vorlage hat und
 #   dessen Block "werte" gefuellt ist. Die Vorlage bekommt die Felder des
 #   Geraets, "werte", dazu status, erprobt_am, erprobt_mit,
-#   erprobt_mit_aelter, zusatz.fehler, zusatz.vorher, zusatz.text, bilder
+#   erprobt_mit_aelter, zusatz.fehler, zusatz.vorher, zusatz.anmeldung, zusatz.text, bilder
 #   (Name -> relativer Pfad) und herkunft. bilder/ wird nach html/bilder kopiert.
 # - StrictUndefined: ein fehlender Wert laesst die Erzeugung scheitern, statt
 #   eine Luecke in den Text zu schreiben. Werte, die eine Vorlage in ihrem Kopf
@@ -118,15 +118,16 @@ def herkunft(g):
 
 def zusatz(quelle, name):
     """zusatz/<name>.md aufteilen: Abschnitt '## Wenn etwas schiefgeht' -> fehler,
-    '## Vorher prüfen' -> vorher, '## Achtung' -> achtung (Warnkasten oben, jeweils ohne
-    Ueberschrift), alles andere -> text."""
-    leer = {"fehler": "", "vorher": "", "achtung": "", "text": ""}
+    '## Vorher prüfen' -> vorher, '## Nach dem Anmelden prüfen' -> anmeldung (was man
+    erst in der Herstelleroberflaeche sieht), '## Achtung' -> achtung (Warnkasten oben,
+    jeweils ohne Ueberschrift), alles andere -> text."""
+    leer = {"fehler": "", "vorher": "", "anmeldung": "", "achtung": "", "text": ""}
     p = quelle / "zusatz" / f"{name}.md"
     if not p.exists():
         return leer
     teile, teil = {k: [] for k in leer}, "text"
     eigene = {"## Wenn etwas schiefgeht": "fehler", "## Vorher prüfen": "vorher",
-              "## Achtung": "achtung"}
+              "## Nach dem Anmelden prüfen": "anmeldung", "## Achtung": "achtung"}
     for zeile in p.read_text(encoding="utf-8").splitlines():
         if zeile.startswith("## "):
             teil = eigene.get(zeile.strip(), "text")
