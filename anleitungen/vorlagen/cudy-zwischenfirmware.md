@@ -6,7 +6,11 @@ LuCI). Entwurf Content, 15.10.2026.
 Vom Skript: bilder, modell, status, erprobt_am, erprobt_mit,
 erprobt_mit_aelter, zusatz.fehler, zusatz.text, herkunft (wie bei
 dlink-recovery-web), dazu zusatz.vorher (Abschnitt "## Vorher prüfen" der
-Zusatzdatei; fehlt er, entfällt der Abschnitt).
+Zusatzdatei; fehlt er, entfällt der Abschnitt) und zusatz.anmeldung (Abschnitt
+"## Nach dem Anmelden prüfen": alles, was man erst in der Cudy-Oberfläche
+sehen kann, z. B. den WAN-Chip beim M3000). Gibt es zusatz.anmeldung oder
+rueckweg_ab_version, kommt nach Schritt 3 ein eigener Schritt "Gerät prüfen",
+und alle folgenden Schritte rücken um eins weiter (Verweise über n).
 
 Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 
@@ -118,25 +122,14 @@ Community ein. Beides geht im Browser, du brauchst kein Zusatzprogramm.
 Modell und Version stehen auf dem Aufkleber unter dem Gerät. Vergleich sie
 genau mit "{{ modell }}", bevor du anfängst.
 {%- set vorher = zusatz.vorher if zusatz.vorher is defined else "" %}
-{%- if vorher or w.get("rueckweg_ab_version") %}
-
-## Vorher prüfen
-{%- if w.get("rueckweg_ab_version") %}
-
-**Weg zurück offenhalten:** Den Notfall-Weg zurück zur Cudy-Firmware (unten)
-hat der {{ modell }} laut OpenWrt erst ab Cudy-Firmware
-**{{ w.rueckweg_ab_version }}**; ältere Bootloader holen sich keine Datei.
-Welche Version läuft, zeigt die Cudy-Oberfläche. Ist sie älter, spiel
-zuerst die neueste Cudy-Firmware ein (Download wie unten unter "Zurück zur
-Cudy-Firmware"), an derselben Stelle wie in Schritt 4 die Zwischenfirmware.
-Warte den Neustart ab und mach dann mit Schritt 4 weiter. Ob der Notfall-Weg
-danach auch unter der Freifunk-Firmware erhalten bleibt, haben wir noch
-nicht geprüft.
-{%- endif %}
+{%- set anmeldung = zusatz.anmeldung if zusatz.anmeldung is defined else "" %}
+{%- set pruef = 1 if (anmeldung or w.get("rueckweg_ab_version")) else 0 %}
+{%- set n = 4 + pruef %}
 {%- if vorher %}
 
+## Vorher prüfen
+
 {{ vorher }}
-{%- endif %}
 {%- endif %}
 
 ## Schritte
@@ -167,8 +160,26 @@ nicht geprüft.
    Cudy-Firmware fragt stattdessen nach dem Passwort `admin`. Danach startet
    der Assistent "Schnelleinrichtung": Den kannst du mit **"« Beenden"**
    überspringen (bei manchen Versionen heißt der Knopf "« Ausfahrt").
+{%- if pruef %}
 
-4. **Zwischenfirmware hochladen.** Geh zum Reiter **"Allgemeine
+4. **{{ "Gerät prüfen" if anmeldung else "Cudy-Version prüfen" }}.**
+   {%- if anmeldung %} {{ anmeldung | indent(3) }}{% endif %}
+   {%- if w.get("rueckweg_ab_version") %}
+   {%- if anmeldung %}
+
+   **Weg zurück offenhalten:**{% endif %} Den Notfall-Weg zurück zur
+   Cudy-Firmware (unten) hat der {{ modell }} laut OpenWrt erst ab
+   Cudy-Firmware **{{ w.rueckweg_ab_version }}**; ältere Bootloader holen
+   sich keine Datei. Welche Version läuft, zeigt die Cudy-Oberfläche. Ist sie
+   älter, spiel zuerst die neueste Cudy-Firmware ein (Download wie unten
+   unter "Zurück zur Cudy-Firmware"), an derselben Stelle wie im nächsten
+   Schritt die Zwischenfirmware. Warte den Neustart ab und mach dann mit
+   Schritt {{ n }} weiter. Ob der Notfall-Weg danach auch unter der
+   Freifunk-Firmware erhalten bleibt, haben wir noch nicht geprüft.
+   {%- endif %}
+{%- endif %}
+
+{{ n }}. **Zwischenfirmware hochladen.** Geh zum Reiter **"Allgemeine
    Einstellungen"**, klick in der Symbolspalte links ganz unten auf
    **"Firmware"** und im Abschnitt **"Lokales Update"** auf
    **"Durchsuchen …"**. Wähl dort die Zwischenfirmware aus. Gibt es den
@@ -179,7 +190,7 @@ nicht geprüft.
    ![Die Firmware-Seite der Cudy-Oberfläche]({{ b["cudy-firmware-seite"] }})
    {%- endif %}
 
-5. **Prüfsumme vergleichen.** Nach dem Hochladen zeigt der Router im
+{{ n + 1 }}. **Prüfsumme vergleichen.** Nach dem Hochladen zeigt der Router im
    Fenster "Lokales Update" eine MD5-Prüfsumme und die Größe.
    {%- if w.zwischen_md5 %} Sie muss genau so aussehen:
 
@@ -192,7 +203,7 @@ nicht geprüft.
    steht. Stimmt sie, klick auf **Fortfahren**.
    {%- endif %}
 
-6. **Warten.** Die Oberfläche zeigt "System - Firmware wird installiert…".
+{{ n + 2 }}. **Warten.** Die Oberfläche zeigt "System - Firmware wird installiert…".
    {%- if w.get("led_zwischen") %}
    {{ w.led_zwischen }}
    {%- else %}
@@ -203,7 +214,7 @@ nicht geprüft.
 
 ### Teil 2: Freifunk-Firmware
 
-7. **OpenWrt-Oberfläche öffnen.**
+{{ n + 3 }}. **OpenWrt-Oberfläche öffnen.**
    {%- if w.luci_buchse %} Steck das Kabel jetzt an {{ w.luci_buchse }}.{% endif %}
    {%- if w.get("luci_rechner_ip") %} Stell den Rechner jetzt fest auf
    `{{ w.luci_rechner_ip }}`, Netzmaske `255.255.255.0`.
@@ -212,13 +223,13 @@ nicht geprüft.
    Öffne `http://192.168.1.1`. Es erscheint die Anmeldung von OpenWrt
    ("LuCI"). Das Passwort-Feld bleibt leer, einfach anmelden.
 
-8. **Freifunk-Firmware hochladen.** Geh zu **System → Backup / Firmware
+{{ n + 4 }}. **Freifunk-Firmware hochladen.** Geh zu **System → Backup / Firmware
    Update** (englisch "Backup / Flash Firmware"). Klick ganz unten auf
    **"Firmware aktualisieren…"** (englisch "Flash image…"). Es erscheint das
    Fenster "Datei wird hochgeladen…": Wähl dort das sysupgrade-Image deiner
    Community aus und klick auf **"Hochladen"**.
 
-9. **Einstellungen nicht behalten.** Danach zeigt OpenWrt das Fenster
+{{ n + 5 }}. **Einstellungen nicht behalten.** Danach zeigt OpenWrt das Fenster
    "Image schreiben?" (englisch "Flash image?"). Dort ist der Haken bei **"Einstellungen beibehalten und die
    aktuelle Konfiguration sichern"** (englisch "Keep settings …") schon
    gesetzt. **Entfern diesen Haken.** Die beiden Haken darunter sind schon
@@ -231,7 +242,7 @@ nicht geprüft.
    {%- endif %}
    Dann **Fortfahren**.
 
-10. **Fertig.** Der Router schreibt die Freifunk-Firmware und startet neu,
+{{ n + 6 }}. **Fertig.** Der Router schreibt die Freifunk-Firmware und startet neu,
     wieder einige Minuten, Strom nicht ziehen.
     {%- if w.get("luci_rechner_ip") %} Stell den Rechner wieder auf
     "automatisch".{% endif %} Danach startet die
@@ -247,9 +258,9 @@ nicht geprüft.
 
 ## Woran du erkennst, dass es geklappt hat
 
-- Nach Schritt 5 stimmt die Prüfsumme genau.
-- Nach Schritt 6 zeigt `http://192.168.1.1` die Anmeldung von OpenWrt.
-- Nach Schritt 10 meldet sich die Freifunk-Firmware.
+- Nach Schritt {{ n + 1 }} stimmt die Prüfsumme genau.
+- Nach Schritt {{ n + 2 }} zeigt `http://192.168.1.1` die Anmeldung von OpenWrt.
+- Nach Schritt {{ n + 6 }} meldet sich die Freifunk-Firmware.
 
 ## Wenn etwas schiefgeht
 
@@ -262,23 +273,23 @@ nicht geprüft.
   Modells. Nicht noch einmal versuchen, sondern die Zwischenfirmware für
   genau dieses Modell nehmen (Aufkleber vergleichen).
 - **OpenWrt meldet "not supported by this image" oder "Überprüfung der
-  Abbilddatei fehlgeschlagen"** (in Schritt 9, mit einem Haken "Erzwinge
+  Abbilddatei fehlgeschlagen"** (in Schritt {{ n + 5 }}, mit einem Haken "Erzwinge
   Upgrade").
   {%- if w.force_upgrade %} Bei diesem Modell ist das in Ordnung, wenn unter
-  "Supported devices" dein Modell steht (siehe Schritt 9). Steht dort ein
+  "Supported devices" dein Modell steht (siehe Schritt {{ n + 5 }}). Steht dort ein
   anderes Modell, ist es das falsche Image: **"Abbrechen"** und das richtige
   holen.
   {%- else %} Dann ist es das Image für ein anderes Modell. **"Erzwinge
   Upgrade" nie anhaken**, sondern **"Abbrechen"** und das richtige Image
   holen.{% endif %}
 {%- if not w.get("eine_buchse") %}
-- **Nach Schritt 6 antwortet `http://192.168.1.1` nicht.** Steck das Kabel in
+- **Nach Schritt {{ n + 2 }} antwortet `http://192.168.1.1` nicht.** Steck das Kabel in
   eine andere Buchse. Bei manchen Modellen tauschen LAN und WAN nach dem
   Wechsel auf OpenWrt die Rolle.
 {%- endif %}
 - **Unter `http://{{ w.cudy_ip }}` kommt keine Cudy-Seite, sondern schon
   OpenWrt.** Dann ist die Zwischenfirmware vermutlich schon drauf: weiter bei
-  Schritt 7. Läuft dort eine ganz andere Firmware, geht die Zwischenfirmware
+  Schritt {{ n + 3 }}. Läuft dort eine ganz andere Firmware, geht die Zwischenfirmware
   nicht mehr. Cudy nimmt sie nur an, solange die Original-Oberfläche läuft.
   Dann zuerst zurück zur Cudy-Firmware (unten).
 {{ zusatz.fehler }}
@@ -292,7 +303,7 @@ Werkzeug: einen TFTP-Server auf deinem Rechner
 Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
 {%- if w.get("rueckweg_ab_version") %}
 Beim {{ modell }} geht das nur, wenn vorher mindestens Cudy-Firmware
-{{ w.rueckweg_ab_version }} lief (siehe "Vorher prüfen"). Mit einem älteren
+{{ w.rueckweg_ab_version }} lief (siehe Schritt 4). Mit einem älteren
 Bootloader holt er sich keine Datei, dann gibt es keinen einfachen Weg
 zurück.
 {%- endif %}
