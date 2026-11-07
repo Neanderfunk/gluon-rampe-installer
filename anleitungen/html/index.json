@@ -1,7 +1,7 @@
 [
  {
   "gluon_name": "aruba-ap-303",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/aruba-ap-303.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/aruba-ap-303.html",
   "status": "ungeprüft",
   "level": "L6",
   "risiko": "normal",
@@ -9,7 +9,7 @@
  },
  {
   "gluon_name": "aruba-ap-303h",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/aruba-ap-303h.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/aruba-ap-303h.html",
   "status": "ungeprüft",
   "level": "L6",
   "risiko": "normal",
@@ -17,7 +17,7 @@
  },
  {
   "gluon_name": "aruba-ap-365",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/aruba-ap-365.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/aruba-ap-365.html",
   "status": "ungeprüft",
   "level": "L6",
   "risiko": "normal",
@@ -25,7 +25,7 @@
  },
  {
   "gluon_name": "aruba-instant-on-ap11",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/aruba-instant-on-ap11.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/aruba-instant-on-ap11.html",
   "status": "ungeprüft",
   "level": "L6",
   "risiko": "bootloader",
@@ -33,7 +33,7 @@
  },
  {
   "gluon_name": "aruba-instant-on-ap11d",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/aruba-instant-on-ap11d.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/aruba-instant-on-ap11d.html",
   "status": "ungeprüft",
   "level": "L6",
   "risiko": "normal",
@@ -41,7 +41,7 @@
  },
  {
   "gluon_name": "aruba-instant-on-ap17",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/aruba-instant-on-ap17.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/aruba-instant-on-ap17.html",
   "status": "ungeprüft",
   "level": "L6",
   "risiko": "normal",
@@ -49,7 +49,7 @@
  },
  {
   "gluon_name": "asus-tuf-ax4200",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/asus-tuf-ax4200.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/asus-tuf-ax4200.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -57,7 +57,7 @@
  },
  {
   "gluon_name": "asus-tuf-ax6000",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/asus-tuf-ax6000.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/asus-tuf-ax6000.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -65,7 +65,7 @@
  },
  {
   "gluon_name": "avm-fritz-box-3370-rev-2-hynix-nand",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-3370-rev-2-hynix-nand.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/avm-fritz-box-3370-rev-2-hynix-nand.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -73,7 +73,7 @@
  },
  {
   "gluon_name": "avm-fritz-box-3370-rev-2-micron-nand",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-3370-rev-2-micron-nand.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/avm-fritz-box-3370-rev-2-micron-nand.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -81,7 +81,7 @@
  },
  {
   "gluon_name": "avm-fritz-box-3390",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-3390.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/avm-fritz-box-3390.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -89,7 +89,7 @@
  },
  {
   "gluon_name": "avm-fritz-box-4020",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-4020.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/avm-fritz-box-4020.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -97,7 +97,7 @@
  },
  {
   "gluon_name": "avm-fritz-box-4040",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-4040.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/avm-fritz-box-4040.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -105,7 +105,7 @@
  },
  {
   "gluon_name": "avm-fritz-box-7312",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-7312.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/avm-fritz-box-7312.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -113,7 +113,7 @@
  },
  {
   "gluon_name": "avm-fritz-box-7360-sl",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-7360-sl.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/avm-fritz-box-7360-sl.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -121,7 +121,7 @@
  },
  {
   "gluon_name": "avm-fritz-box-7360-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-7360-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/avm-fritz-box-7360-v1.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -129,7 +129,7 @@
  },
  {
   "gluon_name": "avm-fritz-box-7360-v2",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-7360-v2.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/avm-fritz-box-7360-v2.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -137,7 +137,7 @@
  },
  {
   "gluon_name": "avm-fritz-box-7362-sl",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-7362-sl.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/avm-fritz-box-7362-sl.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -145,7 +145,7 @@
  },
  {
   "gluon_name": "avm-fritz-box-7412",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-7412.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/avm-fritz-box-7412.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -153,7 +153,7 @@
  },
  {
   "gluon_name": "avm-fritz-box-7430",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-7430.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/avm-fritz-box-7430.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -161,7 +161,7 @@
  },
  {
   "gluon_name": "avm-fritz-box-7520",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-7520.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/avm-fritz-box-7520.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -169,7 +169,7 @@
  },
  {
   "gluon_name": "avm-fritz-box-7530",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-box-7530.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/avm-fritz-box-7530.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -177,7 +177,7 @@
  },
  {
   "gluon_name": "avm-fritz-repeater-1200",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-repeater-1200.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/avm-fritz-repeater-1200.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -185,7 +185,7 @@
  },
  {
   "gluon_name": "avm-fritz-repeater-3000",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-repeater-3000.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/avm-fritz-repeater-3000.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -193,7 +193,7 @@
  },
  {
   "gluon_name": "avm-fritz-wlan-repeater-1750e",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-wlan-repeater-1750e.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/avm-fritz-wlan-repeater-1750e.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -201,7 +201,7 @@
  },
  {
   "gluon_name": "avm-fritz-wlan-repeater-300e",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-wlan-repeater-300e.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/avm-fritz-wlan-repeater-300e.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -209,7 +209,7 @@
  },
  {
   "gluon_name": "avm-fritz-wlan-repeater-450e",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/avm-fritz-wlan-repeater-450e.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/avm-fritz-wlan-repeater-450e.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -217,7 +217,7 @@
  },
  {
   "gluon_name": "buffalo-wzr-600dhp",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/buffalo-wzr-600dhp.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/buffalo-wzr-600dhp.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -225,7 +225,7 @@
  },
  {
   "gluon_name": "buffalo-wzr-hp-ag300h",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/buffalo-wzr-hp-ag300h.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/buffalo-wzr-hp-ag300h.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -233,7 +233,7 @@
  },
  {
   "gluon_name": "buffalo-wzr-hp-g300nh-rtl8366s",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/buffalo-wzr-hp-g300nh-rtl8366s.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/buffalo-wzr-hp-g300nh-rtl8366s.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -241,7 +241,7 @@
  },
  {
   "gluon_name": "cudy-ap1300-outdoor-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-ap1300-outdoor-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-ap1300-outdoor-v1.html",
   "status": "ungeprüft",
   "level": "L1",
   "risiko": "normal",
@@ -249,7 +249,7 @@
  },
  {
   "gluon_name": "cudy-ap3000-outdoor-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-ap3000-outdoor-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-ap3000-outdoor-v1.html",
   "status": "ungeprüft",
   "level": "L1",
   "risiko": "normal",
@@ -257,7 +257,7 @@
  },
  {
   "gluon_name": "cudy-ap3000-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-ap3000-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-ap3000-v1.html",
   "status": "erprobt",
   "level": "L3",
   "risiko": "normal",
@@ -265,7 +265,7 @@
  },
  {
   "gluon_name": "cudy-ap3000-wall-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-ap3000-wall-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-ap3000-wall-v1.html",
   "status": "ungeprüft",
   "level": "L1",
   "risiko": "normal",
@@ -273,7 +273,7 @@
  },
  {
   "gluon_name": "cudy-m1800",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-m1800.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-m1800.html",
   "status": "ungeprüft",
   "level": "L1",
   "risiko": "normal",
@@ -281,7 +281,7 @@
  },
  {
   "gluon_name": "cudy-m3000-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-m3000-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-m3000-v1.html",
   "status": "ungeprüft",
   "level": "L1",
   "risiko": "normal",
@@ -289,7 +289,7 @@
  },
  {
   "gluon_name": "cudy-m3000-v2-with-motorcomm-yt8821",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-m3000-v2-with-motorcomm-yt8821.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-m3000-v2-with-motorcomm-yt8821.html",
   "status": "ungeprüft",
   "level": "L1",
   "risiko": "normal",
@@ -297,7 +297,7 @@
  },
  {
   "gluon_name": "cudy-re3000-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-re3000-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-re3000-v1.html",
   "status": "ungeprüft",
   "level": "L1",
   "risiko": "normal",
@@ -305,7 +305,7 @@
  },
  {
   "gluon_name": "cudy-tr1200-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-tr1200-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-tr1200-v1.html",
   "status": "ungeprüft",
   "level": "L1",
   "risiko": "normal",
@@ -313,7 +313,7 @@
  },
  {
   "gluon_name": "cudy-tr3000-256mb-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-tr3000-256mb-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-tr3000-256mb-v1.html",
   "status": "ungeprüft",
   "level": "L1",
   "risiko": "normal",
@@ -321,7 +321,7 @@
  },
  {
   "gluon_name": "cudy-tr3000-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-tr3000-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-tr3000-v1.html",
   "status": "ungeprüft",
   "level": "L1",
   "risiko": "normal",
@@ -329,7 +329,7 @@
  },
  {
   "gluon_name": "cudy-wr1000",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-wr1000.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-wr1000.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -337,7 +337,7 @@
  },
  {
   "gluon_name": "cudy-wr1300-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-wr1300-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-wr1300-v1.html",
   "status": "ungeprüft",
   "level": "L1",
   "risiko": "normal",
@@ -345,7 +345,7 @@
  },
  {
   "gluon_name": "cudy-wr2100",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-wr2100.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-wr2100.html",
   "status": "ungeprüft",
   "level": "L1",
   "risiko": "normal",
@@ -353,7 +353,7 @@
  },
  {
   "gluon_name": "cudy-wr3000-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-wr3000-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-wr3000-v1.html",
   "status": "erprobt",
   "level": "L1",
   "risiko": "normal",
@@ -361,7 +361,7 @@
  },
  {
   "gluon_name": "cudy-wr3000e-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-wr3000e-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-wr3000e-v1.html",
   "status": "ungeprüft",
   "level": "L1",
   "risiko": "normal",
@@ -369,7 +369,7 @@
  },
  {
   "gluon_name": "cudy-wr3000h-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-wr3000h-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-wr3000h-v1.html",
   "status": "erprobt",
   "level": "L1",
   "risiko": "normal",
@@ -377,7 +377,7 @@
  },
  {
   "gluon_name": "cudy-wr3000p-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-wr3000p-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-wr3000p-v1.html",
   "status": "ungeprüft",
   "level": "L1",
   "risiko": "normal",
@@ -385,7 +385,7 @@
  },
  {
   "gluon_name": "cudy-wr3000s-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-wr3000s-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-wr3000s-v1.html",
   "status": "erprobt",
   "level": "L1",
   "risiko": "normal",
@@ -393,7 +393,7 @@
  },
  {
   "gluon_name": "cudy-wr3000u-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-wr3000u-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-wr3000u-v1.html",
   "status": "ungeprüft",
   "level": "L1",
   "risiko": "normal",
@@ -401,7 +401,7 @@
  },
  {
   "gluon_name": "cudy-x6-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-x6-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-x6-v1.html",
   "status": "ungeprüft",
   "level": "L1",
   "risiko": "normal",
@@ -409,7 +409,7 @@
  },
  {
   "gluon_name": "cudy-x6-v2",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/cudy-x6-v2.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/cudy-x6-v2.html",
   "status": "ungeprüft",
   "level": "L1",
   "risiko": "normal",
@@ -417,7 +417,7 @@
  },
  {
   "gluon_name": "d-link-aquila-pro-ai-m30-a1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-aquila-pro-ai-m30-a1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-aquila-pro-ai-m30-a1.html",
   "status": "erprobt",
   "level": "L4",
   "risiko": "normal",
@@ -425,7 +425,7 @@
  },
  {
   "gluon_name": "d-link-aquila-pro-ai-m60-a1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-aquila-pro-ai-m60-a1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-aquila-pro-ai-m60-a1.html",
   "status": "erprobt",
   "level": "L4",
   "risiko": "normal",
@@ -433,7 +433,7 @@
  },
  {
   "gluon_name": "d-link-covr-x1860-a1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-covr-x1860-a1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-covr-x1860-a1.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -441,7 +441,7 @@
  },
  {
   "gluon_name": "d-link-dap-1330-a1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dap-1330-a1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-dap-1330-a1.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -449,7 +449,7 @@
  },
  {
   "gluon_name": "d-link-dap-1365-a1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dap-1365-a1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-dap-1365-a1.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -457,7 +457,7 @@
  },
  {
   "gluon_name": "d-link-dap-1620-b1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dap-1620-b1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-dap-1620-b1.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -465,7 +465,7 @@
  },
  {
   "gluon_name": "d-link-dap-2660-a1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dap-2660-a1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-dap-2660-a1.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -473,7 +473,7 @@
  },
  {
   "gluon_name": "d-link-dap-2680-a1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dap-2680-a1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-dap-2680-a1.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -481,7 +481,7 @@
  },
  {
   "gluon_name": "d-link-dap-2695-a1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dap-2695-a1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-dap-2695-a1.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -489,7 +489,7 @@
  },
  {
   "gluon_name": "d-link-dap-x1860-a1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dap-x1860-a1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-dap-x1860-a1.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -497,7 +497,7 @@
  },
  {
   "gluon_name": "d-link-dir-505",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dir-505.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-dir-505.html",
   "status": "ungeprüft",
   "level": "L1",
   "risiko": "normal",
@@ -505,7 +505,7 @@
  },
  {
   "gluon_name": "d-link-dir-860l-b1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dir-860l-b1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-dir-860l-b1.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -513,7 +513,7 @@
  },
  {
   "gluon_name": "d-link-dir-878-a1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dir-878-a1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-dir-878-a1.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -521,7 +521,7 @@
  },
  {
   "gluon_name": "d-link-dir-882-a1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/d-link-dir-882-a1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-dir-882-a1.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -529,7 +529,7 @@
  },
  {
   "gluon_name": "devolo-wifi-pro-1200e",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/devolo-wifi-pro-1200e.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/devolo-wifi-pro-1200e.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -537,7 +537,7 @@
  },
  {
   "gluon_name": "devolo-wifi-pro-1200i",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/devolo-wifi-pro-1200i.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/devolo-wifi-pro-1200i.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -545,7 +545,7 @@
  },
  {
   "gluon_name": "devolo-wifi-pro-1750c",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/devolo-wifi-pro-1750c.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/devolo-wifi-pro-1750c.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -553,7 +553,7 @@
  },
  {
   "gluon_name": "devolo-wifi-pro-1750e",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/devolo-wifi-pro-1750e.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/devolo-wifi-pro-1750e.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -561,7 +561,7 @@
  },
  {
   "gluon_name": "devolo-wifi-pro-1750i",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/devolo-wifi-pro-1750i.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/devolo-wifi-pro-1750i.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -569,7 +569,7 @@
  },
  {
   "gluon_name": "devolo-wifi-pro-1750x",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/devolo-wifi-pro-1750x.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/devolo-wifi-pro-1750x.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -577,7 +577,7 @@
  },
  {
   "gluon_name": "enterasys-ws-ap3705i",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/enterasys-ws-ap3705i.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/enterasys-ws-ap3705i.html",
   "status": "ungeprüft",
   "level": "L6",
   "risiko": "normal",
@@ -585,7 +585,7 @@
  },
  {
   "gluon_name": "enterasys-ws-ap3710i",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/enterasys-ws-ap3710i.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/enterasys-ws-ap3710i.html",
   "status": "ungeprüft",
   "level": "L6",
   "risiko": "normal",
@@ -593,7 +593,7 @@
  },
  {
   "gluon_name": "enterasys-ws-ap3715i",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/enterasys-ws-ap3715i.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/enterasys-ws-ap3715i.html",
   "status": "ungeprüft",
   "level": "L6",
   "risiko": "normal",
@@ -601,7 +601,7 @@
  },
  {
   "gluon_name": "extreme-networks-ws-ap3805i",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/extreme-networks-ws-ap3805i.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/extreme-networks-ws-ap3805i.html",
   "status": "ungeprüft",
   "level": "L7",
   "risiko": "normal",
@@ -609,7 +609,7 @@
  },
  {
   "gluon_name": "extreme-networks-ws-ap3825i",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/extreme-networks-ws-ap3825i.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/extreme-networks-ws-ap3825i.html",
   "status": "ungeprüft",
   "level": "L6",
   "risiko": "normal",
@@ -617,7 +617,7 @@
  },
  {
   "gluon_name": "friendlyelec-nanopi-r2c",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/friendlyelec-nanopi-r2c.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/friendlyelec-nanopi-r2c.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -625,7 +625,7 @@
  },
  {
   "gluon_name": "friendlyelec-nanopi-r2s",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/friendlyelec-nanopi-r2s.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/friendlyelec-nanopi-r2s.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -633,7 +633,7 @@
  },
  {
   "gluon_name": "friendlyelec-nanopi-r3s",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/friendlyelec-nanopi-r3s.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/friendlyelec-nanopi-r3s.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -641,7 +641,7 @@
  },
  {
   "gluon_name": "friendlyelec-nanopi-r4s",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/friendlyelec-nanopi-r4s.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/friendlyelec-nanopi-r4s.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -649,7 +649,7 @@
  },
  {
   "gluon_name": "genexis-pulse-ex400",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/genexis-pulse-ex400.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/genexis-pulse-ex400.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -657,7 +657,7 @@
  },
  {
   "gluon_name": "gl-mt300a",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl-mt300a.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl-mt300a.html",
   "status": "ungeprüft",
   "level": "L0",
   "risiko": "normal",
@@ -665,7 +665,7 @@
  },
  {
   "gluon_name": "gl-mt300n",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl-mt300n.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl-mt300n.html",
   "status": "ungeprüft",
   "level": "L0",
   "risiko": "normal",
@@ -673,7 +673,7 @@
  },
  {
   "gluon_name": "gl-mt300n-v2",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl-mt300n-v2.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl-mt300n-v2.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -681,7 +681,7 @@
  },
  {
   "gluon_name": "gl-mt750",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl-mt750.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl-mt750.html",
   "status": "ungeprüft",
   "level": "L0",
   "risiko": "normal",
@@ -689,7 +689,7 @@
  },
  {
   "gluon_name": "gl.inet-6416",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-6416.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl.inet-6416.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -697,7 +697,7 @@
  },
  {
   "gluon_name": "gl.inet-gl-ap1300",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-ap1300.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl.inet-gl-ap1300.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -705,7 +705,7 @@
  },
  {
   "gluon_name": "gl.inet-gl-ar150",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-ar150.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl.inet-gl-ar150.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -713,7 +713,7 @@
  },
  {
   "gluon_name": "gl.inet-gl-ar300m-lite",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-ar300m-lite.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl.inet-gl-ar300m-lite.html",
   "status": "ungeprüft",
   "level": "L0",
   "risiko": "normal",
@@ -721,7 +721,7 @@
  },
  {
   "gluon_name": "gl.inet-gl-ar300m-nor",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-ar300m-nor.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl.inet-gl-ar300m-nor.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -729,7 +729,7 @@
  },
  {
   "gluon_name": "gl.inet-gl-ar300m16",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-ar300m16.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl.inet-gl-ar300m16.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -737,7 +737,7 @@
  },
  {
   "gluon_name": "gl.inet-gl-ar750",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-ar750.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl.inet-gl-ar750.html",
   "status": "ungeprüft",
   "level": "L0",
   "risiko": "normal",
@@ -745,7 +745,7 @@
  },
  {
   "gluon_name": "gl.inet-gl-ar750s-nor",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-ar750s-nor.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl.inet-gl-ar750s-nor.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -753,7 +753,7 @@
  },
  {
   "gluon_name": "gl.inet-gl-b1300",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-b1300.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl.inet-gl-b1300.html",
   "status": "erprobt",
   "level": "L0",
   "risiko": "normal",
@@ -761,7 +761,7 @@
  },
  {
   "gluon_name": "gl.inet-gl-e750",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-e750.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl.inet-gl-e750.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -769,7 +769,7 @@
  },
  {
   "gluon_name": "gl.inet-gl-mt1300",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-mt1300.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl.inet-gl-mt1300.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -777,7 +777,7 @@
  },
  {
   "gluon_name": "gl.inet-gl-mt2500",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-mt2500.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl.inet-gl-mt2500.html",
   "status": "ungeprüft",
   "level": "L0",
   "risiko": "normal",
@@ -785,7 +785,7 @@
  },
  {
   "gluon_name": "gl.inet-gl-mt3000",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-mt3000.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl.inet-gl-mt3000.html",
   "status": "ungeprüft",
   "level": "L0",
   "risiko": "normal",
@@ -793,7 +793,7 @@
  },
  {
   "gluon_name": "gl.inet-gl-mt6000",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-mt6000.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl.inet-gl-mt6000.html",
   "status": "ungeprüft",
   "level": "L0",
   "risiko": "normal",
@@ -801,7 +801,7 @@
  },
  {
   "gluon_name": "gl.inet-gl-usb150",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-usb150.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl.inet-gl-usb150.html",
   "status": "ungeprüft",
   "level": "L0",
   "risiko": "normal",
@@ -809,7 +809,7 @@
  },
  {
   "gluon_name": "gl.inet-gl-xe300",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-gl-xe300.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl.inet-gl-xe300.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -817,7 +817,7 @@
  },
  {
   "gluon_name": "gl.inet-microuter-n300",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-microuter-n300.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl.inet-microuter-n300.html",
   "status": "ungeprüft",
   "level": "L0",
   "risiko": "normal",
@@ -825,7 +825,7 @@
  },
  {
   "gluon_name": "gl.inet-vixmini",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/gl.inet-vixmini.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/gl.inet-vixmini.html",
   "status": "ungeprüft",
   "level": "L0",
   "risiko": "normal",
@@ -833,7 +833,7 @@
  },
  {
   "gluon_name": "hewlett-packard-msm460",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/hewlett-packard-msm460.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/hewlett-packard-msm460.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "bootloader",
@@ -841,7 +841,7 @@
  },
  {
   "gluon_name": "linksys-ea6350v3",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/linksys-ea6350v3.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/linksys-ea6350v3.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -849,7 +849,7 @@
  },
  {
   "gluon_name": "linksys-ea8300-dallas",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/linksys-ea8300-dallas.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/linksys-ea8300-dallas.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -857,7 +857,7 @@
  },
  {
   "gluon_name": "linksys-mx5300",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/linksys-mx5300.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/linksys-mx5300.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -865,7 +865,7 @@
  },
  {
   "gluon_name": "linksys-vlp01",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/linksys-vlp01.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/linksys-vlp01.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -873,7 +873,7 @@
  },
  {
   "gluon_name": "linksys-whw01",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/linksys-whw01.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/linksys-whw01.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -881,7 +881,7 @@
  },
  {
   "gluon_name": "linksys-whw03-v2-velop",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/linksys-whw03-v2-velop.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/linksys-whw03-v2-velop.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -889,7 +889,7 @@
  },
  {
   "gluon_name": "linksys-whw03-velop",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/linksys-whw03-velop.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/linksys-whw03-velop.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -897,7 +897,7 @@
  },
  {
   "gluon_name": "mercusys-mr70x-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/mercusys-mr70x-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/mercusys-mr70x-v1.html",
   "status": "erprobt",
   "level": "L0.1",
   "risiko": "normal",
@@ -905,7 +905,7 @@
  },
  {
   "gluon_name": "mercusys-mr90x-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/mercusys-mr90x-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/mercusys-mr90x-v1.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -913,7 +913,7 @@
  },
  {
   "gluon_name": "netgear-dgn3500b",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-dgn3500b.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-dgn3500b.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -921,7 +921,7 @@
  },
  {
   "gluon_name": "netgear-eax12",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-eax12.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-eax12.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -929,7 +929,7 @@
  },
  {
   "gluon_name": "netgear-ex3700",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-ex3700.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-ex3700.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -937,7 +937,7 @@
  },
  {
   "gluon_name": "netgear-ex6100v2",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-ex6100v2.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-ex6100v2.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -945,7 +945,7 @@
  },
  {
   "gluon_name": "netgear-ex6130",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-ex6130.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-ex6130.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -953,7 +953,7 @@
  },
  {
   "gluon_name": "netgear-ex6150",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-ex6150.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-ex6150.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -961,7 +961,7 @@
  },
  {
   "gluon_name": "netgear-ex6150v2",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-ex6150v2.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-ex6150v2.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -969,7 +969,7 @@
  },
  {
   "gluon_name": "netgear-nighthawk-x4s-r7800",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-nighthawk-x4s-r7800.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-nighthawk-x4s-r7800.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -977,7 +977,7 @@
  },
  {
   "gluon_name": "netgear-r6020",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-r6020.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-r6020.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -985,7 +985,7 @@
  },
  {
   "gluon_name": "netgear-r6120",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-r6120.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-r6120.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -993,7 +993,7 @@
  },
  {
   "gluon_name": "netgear-r6220",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-r6220.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-r6220.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1001,7 +1001,7 @@
  },
  {
   "gluon_name": "netgear-r6260",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-r6260.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-r6260.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1009,7 +1009,7 @@
  },
  {
   "gluon_name": "netgear-rbr50",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-rbr50.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-rbr50.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -1017,7 +1017,7 @@
  },
  {
   "gluon_name": "netgear-rbs50",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-rbs50.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-rbs50.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -1025,7 +1025,7 @@
  },
  {
   "gluon_name": "netgear-srr60",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-srr60.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-srr60.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -1033,7 +1033,7 @@
  },
  {
   "gluon_name": "netgear-srs60",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-srs60.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-srs60.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -1041,7 +1041,7 @@
  },
  {
   "gluon_name": "netgear-wac104",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wac104.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-wac104.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1049,7 +1049,7 @@
  },
  {
   "gluon_name": "netgear-wax202",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wax202.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-wax202.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1057,7 +1057,7 @@
  },
  {
   "gluon_name": "netgear-wax206",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wax206.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-wax206.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1065,7 +1065,7 @@
  },
  {
   "gluon_name": "netgear-wax220",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wax220.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-wax220.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1073,7 +1073,7 @@
  },
  {
   "gluon_name": "netgear-wndr3700",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wndr3700.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-wndr3700.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1081,7 +1081,7 @@
  },
  {
   "gluon_name": "netgear-wndr3700-v2",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wndr3700-v2.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-wndr3700-v2.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1089,7 +1089,7 @@
  },
  {
   "gluon_name": "netgear-wndr3700-v4",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wndr3700-v4.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-wndr3700-v4.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1097,7 +1097,7 @@
  },
  {
   "gluon_name": "netgear-wndr3700-v5",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wndr3700-v5.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-wndr3700-v5.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -1105,7 +1105,7 @@
  },
  {
   "gluon_name": "netgear-wndr3800",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wndr3800.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-wndr3800.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -1113,7 +1113,7 @@
  },
  {
   "gluon_name": "netgear-wndr3800ch",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wndr3800ch.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-wndr3800ch.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -1121,7 +1121,7 @@
  },
  {
   "gluon_name": "netgear-wndr4300",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wndr4300.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-wndr4300.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1129,7 +1129,7 @@
  },
  {
   "gluon_name": "netgear-wndrmac-v2",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wndrmac-v2.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-wndrmac-v2.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1137,7 +1137,7 @@
  },
  {
   "gluon_name": "netgear-wnr2200-16m",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wnr2200-16m.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-wnr2200-16m.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1145,7 +1145,7 @@
  },
  {
   "gluon_name": "netgear-wnr2200-8m",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/netgear-wnr2200-8m.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/netgear-wnr2200-8m.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1153,7 +1153,7 @@
  },
  {
   "gluon_name": "nexx-wt3020-8m",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/nexx-wt3020-8m.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/nexx-wt3020-8m.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1161,7 +1161,7 @@
  },
  {
   "gluon_name": "openwrt-one",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/openwrt-one.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/openwrt-one.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1169,7 +1169,7 @@
  },
  {
   "gluon_name": "raspberrypi-2-model-b",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/raspberrypi-2-model-b.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/raspberrypi-2-model-b.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1177,7 +1177,7 @@
  },
  {
   "gluon_name": "raspberrypi-3-model-b",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/raspberrypi-3-model-b.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/raspberrypi-3-model-b.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1185,7 +1185,7 @@
  },
  {
   "gluon_name": "raspberrypi-4-model-b",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/raspberrypi-4-model-b.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/raspberrypi-4-model-b.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1193,7 +1193,7 @@
  },
  {
   "gluon_name": "raspberrypi-model-b",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/raspberrypi-model-b.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/raspberrypi-model-b.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1201,7 +1201,7 @@
  },
  {
   "gluon_name": "siemens-ws-ap3610",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/siemens-ws-ap3610.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/siemens-ws-ap3610.html",
   "status": "ungeprüft",
   "level": "L6",
   "risiko": "normal",
@@ -1209,7 +1209,7 @@
  },
  {
   "gluon_name": "sophos-ap100",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/sophos-ap100.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/sophos-ap100.html",
   "status": "ungeprüft",
   "level": "L7",
   "risiko": "normal",
@@ -1217,7 +1217,7 @@
  },
  {
   "gluon_name": "sophos-ap100c",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/sophos-ap100c.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/sophos-ap100c.html",
   "status": "ungeprüft",
   "level": "L7",
   "risiko": "normal",
@@ -1225,7 +1225,7 @@
  },
  {
   "gluon_name": "sophos-ap15",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/sophos-ap15.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/sophos-ap15.html",
   "status": "ungeprüft",
   "level": "L7",
   "risiko": "normal",
@@ -1233,7 +1233,7 @@
  },
  {
   "gluon_name": "sophos-ap15c",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/sophos-ap15c.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/sophos-ap15c.html",
   "status": "ungeprüft",
   "level": "L7",
   "risiko": "normal",
@@ -1241,7 +1241,7 @@
  },
  {
   "gluon_name": "sophos-ap55",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/sophos-ap55.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/sophos-ap55.html",
   "status": "ungeprüft",
   "level": "L7",
   "risiko": "normal",
@@ -1249,7 +1249,7 @@
  },
  {
   "gluon_name": "sophos-ap55c",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/sophos-ap55c.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/sophos-ap55c.html",
   "status": "ungeprüft",
   "level": "L7",
   "risiko": "normal",
@@ -1257,7 +1257,7 @@
  },
  {
   "gluon_name": "totolink-x5000r",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/totolink-x5000r.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/totolink-x5000r.html",
   "status": "erprobt",
   "level": "L1",
   "risiko": "normal",
@@ -1265,7 +1265,7 @@
  },
  {
   "gluon_name": "tp-link-archer-a7-v5",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-a7-v5.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-a7-v5.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1273,7 +1273,7 @@
  },
  {
   "gluon_name": "tp-link-archer-ax23-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-ax23-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-ax23-v1.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1281,7 +1281,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c2-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c2-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c2-v1.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "bootloader",
@@ -1289,7 +1289,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c2-v3",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c2-v3.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c2-v3.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1297,7 +1297,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c20-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c20-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c20-v1.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "bootloader",
@@ -1305,7 +1305,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c20-v4",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c20-v4.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c20-v4.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1313,7 +1313,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c20-v5",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c20-v5.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c20-v5.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -1321,7 +1321,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c20i",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c20i.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c20i.html",
   "status": "ungeprüft",
   "level": "L1",
   "risiko": "normal",
@@ -1329,7 +1329,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c25-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c25-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c25-v1.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1337,7 +1337,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c2600",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c2600.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c2600.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1345,7 +1345,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c5-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c5-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c5-v1.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1353,7 +1353,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c50-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c50-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c50-v1.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1361,7 +1361,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c50-v3",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c50-v3.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c50-v3.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1369,7 +1369,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c50-v4",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c50-v4.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c50-v4.html",
   "status": "erprobt",
   "level": "L5",
   "risiko": "normal",
@@ -1377,7 +1377,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c50-v6-ca-eu-ru",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c50-v6-ca-eu-ru.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c50-v6-ca-eu-ru.html",
   "status": "ungeprüft",
   "level": "L5",
   "risiko": "normal",
@@ -1385,7 +1385,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c58-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c58-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c58-v1.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1393,7 +1393,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c59-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c59-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c59-v1.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1401,7 +1401,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c6-v2-eu-ru-jp",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c6-v2-eu-ru-jp.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c6-v2-eu-ru-jp.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1409,7 +1409,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c6-v3",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c6-v3.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c6-v3.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1417,7 +1417,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c7-v2",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c7-v2.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c7-v2.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1425,7 +1425,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c7-v4",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c7-v4.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c7-v4.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1433,7 +1433,7 @@
  },
  {
   "gluon_name": "tp-link-archer-c7-v5",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-archer-c7-v5.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-archer-c7-v5.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1441,7 +1441,7 @@
  },
  {
   "gluon_name": "tp-link-cpe210-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-cpe210-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-cpe210-v1.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -1449,7 +1449,7 @@
  },
  {
   "gluon_name": "tp-link-cpe210-v2",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-cpe210-v2.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-cpe210-v2.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -1457,7 +1457,7 @@
  },
  {
   "gluon_name": "tp-link-cpe210-v3",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-cpe210-v3.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-cpe210-v3.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -1465,7 +1465,7 @@
  },
  {
   "gluon_name": "tp-link-cpe220-v3",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-cpe220-v3.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-cpe220-v3.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -1473,7 +1473,7 @@
  },
  {
   "gluon_name": "tp-link-cpe510-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-cpe510-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-cpe510-v1.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -1481,7 +1481,7 @@
  },
  {
   "gluon_name": "tp-link-cpe510-v2",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-cpe510-v2.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-cpe510-v2.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -1489,7 +1489,7 @@
  },
  {
   "gluon_name": "tp-link-cpe510-v3",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-cpe510-v3.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-cpe510-v3.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -1497,7 +1497,7 @@
  },
  {
   "gluon_name": "tp-link-cpe710-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-cpe710-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-cpe710-v1.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -1505,7 +1505,7 @@
  },
  {
   "gluon_name": "tp-link-cpe710-v2",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-cpe710-v2.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-cpe710-v2.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -1513,7 +1513,7 @@
  },
  {
   "gluon_name": "tp-link-eap225-outdoor-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-eap225-outdoor-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-eap225-outdoor-v1.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1521,7 +1521,7 @@
  },
  {
   "gluon_name": "tp-link-eap225-outdoor-v3",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-eap225-outdoor-v3.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-eap225-outdoor-v3.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1529,7 +1529,7 @@
  },
  {
   "gluon_name": "tp-link-eap225-wall-v2",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-eap225-wall-v2.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-eap225-wall-v2.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1537,7 +1537,7 @@
  },
  {
   "gluon_name": "tp-link-eap613-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-eap613-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-eap613-v1.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1545,7 +1545,7 @@
  },
  {
   "gluon_name": "tp-link-eap615-wall-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-eap615-wall-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-eap615-wall-v1.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1553,7 +1553,7 @@
  },
  {
   "gluon_name": "tp-link-re200-v2",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-re200-v2.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-re200-v2.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1561,7 +1561,7 @@
  },
  {
   "gluon_name": "tp-link-re200-v3",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-re200-v3.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-re200-v3.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1569,7 +1569,7 @@
  },
  {
   "gluon_name": "tp-link-re200-v4",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-re200-v4.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-re200-v4.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1577,7 +1577,7 @@
  },
  {
   "gluon_name": "tp-link-re500-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-re500-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-re500-v1.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1585,7 +1585,7 @@
  },
  {
   "gluon_name": "tp-link-re650-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-re650-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-re650-v1.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -1593,7 +1593,7 @@
  },
  {
   "gluon_name": "tp-link-tl-mr3020-v3",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-mr3020-v3.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-tl-mr3020-v3.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1601,7 +1601,7 @@
  },
  {
   "gluon_name": "tp-link-tl-mr3420-v5",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-mr3420-v5.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-tl-mr3420-v5.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1609,7 +1609,7 @@
  },
  {
   "gluon_name": "tp-link-tl-mr6400-v5",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-mr6400-v5.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-tl-mr6400-v5.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1617,7 +1617,7 @@
  },
  {
   "gluon_name": "tp-link-tl-wa801nd-v5",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wa801nd-v5.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-tl-wa801nd-v5.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1625,7 +1625,7 @@
  },
  {
   "gluon_name": "tp-link-tl-wdr3500-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wdr3500-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-tl-wdr3500-v1.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1633,7 +1633,7 @@
  },
  {
   "gluon_name": "tp-link-tl-wdr3600-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wdr3600-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-tl-wdr3600-v1.html",
   "status": "erprobt",
   "level": "L0.1",
   "risiko": "normal",
@@ -1641,7 +1641,7 @@
  },
  {
   "gluon_name": "tp-link-tl-wdr4300-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wdr4300-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-tl-wdr4300-v1.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1649,7 +1649,7 @@
  },
  {
   "gluon_name": "tp-link-tl-wdr4900-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wdr4900-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-tl-wdr4900-v1.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1657,7 +1657,7 @@
  },
  {
   "gluon_name": "tp-link-tl-wr1043n-v5",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr1043n-v5.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-tl-wr1043n-v5.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1665,7 +1665,7 @@
  },
  {
   "gluon_name": "tp-link-tl-wr1043nd-v2",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr1043nd-v2.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-tl-wr1043nd-v2.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1673,7 +1673,7 @@
  },
  {
   "gluon_name": "tp-link-tl-wr1043nd-v3",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr1043nd-v3.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-tl-wr1043nd-v3.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1681,7 +1681,7 @@
  },
  {
   "gluon_name": "tp-link-tl-wr1043nd-v4",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr1043nd-v4.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-tl-wr1043nd-v4.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1689,7 +1689,7 @@
  },
  {
   "gluon_name": "tp-link-tl-wr2543n-nd",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr2543n-nd.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-tl-wr2543n-nd.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1697,7 +1697,7 @@
  },
  {
   "gluon_name": "tp-link-tl-wr810n-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr810n-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-tl-wr810n-v1.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1705,7 +1705,7 @@
  },
  {
   "gluon_name": "tp-link-tl-wr841n-v13",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr841n-v13.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-tl-wr841n-v13.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1713,7 +1713,7 @@
  },
  {
   "gluon_name": "tp-link-tl-wr842n-v3",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr842n-v3.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-tl-wr842n-v3.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1721,7 +1721,7 @@
  },
  {
   "gluon_name": "tp-link-tl-wr902ac-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr902ac-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-tl-wr902ac-v1.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1729,7 +1729,7 @@
  },
  {
   "gluon_name": "tp-link-tl-wr902ac-v3",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr902ac-v3.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-tl-wr902ac-v3.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1737,7 +1737,7 @@
  },
  {
   "gluon_name": "tp-link-tl-wr902ac-v4",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-tl-wr902ac-v4.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-tl-wr902ac-v4.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1745,7 +1745,7 @@
  },
  {
   "gluon_name": "tp-link-wbs210-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-wbs210-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-wbs210-v1.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -1753,7 +1753,7 @@
  },
  {
   "gluon_name": "tp-link-wbs210-v2",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-wbs210-v2.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-wbs210-v2.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -1761,7 +1761,7 @@
  },
  {
   "gluon_name": "tp-link-wbs510-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/tp-link-wbs510-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/tp-link-wbs510-v1.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -1769,7 +1769,7 @@
  },
  {
   "gluon_name": "ubiquiti-edgerouter-x",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-edgerouter-x.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-edgerouter-x.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1777,7 +1777,7 @@
  },
  {
   "gluon_name": "ubiquiti-edgerouter-x-sfp",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-edgerouter-x-sfp.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-edgerouter-x-sfp.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1785,7 +1785,7 @@
  },
  {
   "gluon_name": "ubiquiti-nanobeam-m5-xw",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-nanobeam-m5-xw.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-nanobeam-m5-xw.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1793,7 +1793,7 @@
  },
  {
   "gluon_name": "ubiquiti-nanostation-loco-m-xw",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-nanostation-loco-m-xw.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-nanostation-loco-m-xw.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1801,7 +1801,7 @@
  },
  {
   "gluon_name": "ubiquiti-nanostation-m-xw",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-nanostation-m-xw.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-nanostation-m-xw.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1809,7 +1809,7 @@
  },
  {
   "gluon_name": "ubiquiti-unifi-6-lite",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-6-lite.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-unifi-6-lite.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1817,7 +1817,7 @@
  },
  {
   "gluon_name": "ubiquiti-unifi-6-lr-v1",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-6-lr-v1.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-unifi-6-lr-v1.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1825,7 +1825,7 @@
  },
  {
   "gluon_name": "ubiquiti-unifi-6-lr-v2",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-6-lr-v2.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-unifi-6-lr-v2.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1833,7 +1833,7 @@
  },
  {
   "gluon_name": "ubiquiti-unifi-6-lr-v3",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-6-lr-v3.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-unifi-6-lr-v3.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1841,7 +1841,7 @@
  },
  {
   "gluon_name": "ubiquiti-unifi-6-plus",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-6-plus.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-unifi-6-plus.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1849,7 +1849,7 @@
  },
  {
   "gluon_name": "ubiquiti-unifi-ac-hd",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-ac-hd.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-unifi-ac-hd.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1857,7 +1857,7 @@
  },
  {
   "gluon_name": "ubiquiti-unifi-ac-lite",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-ac-lite.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-unifi-ac-lite.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1865,7 +1865,7 @@
  },
  {
   "gluon_name": "ubiquiti-unifi-ac-lr",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-ac-lr.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-unifi-ac-lr.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1873,7 +1873,7 @@
  },
  {
   "gluon_name": "ubiquiti-unifi-ac-mesh",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-ac-mesh.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-unifi-ac-mesh.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1881,7 +1881,7 @@
  },
  {
   "gluon_name": "ubiquiti-unifi-ac-mesh-pro",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-ac-mesh-pro.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-unifi-ac-mesh-pro.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1889,7 +1889,7 @@
  },
  {
   "gluon_name": "ubiquiti-unifi-ac-pro",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-ac-pro.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-unifi-ac-pro.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1897,7 +1897,7 @@
  },
  {
   "gluon_name": "ubiquiti-unifi-ap-outdoor+",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-ap-outdoor+.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-unifi-ap-outdoor+.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1905,7 +1905,7 @@
  },
  {
   "gluon_name": "ubiquiti-unifi-ap-pro",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-ap-pro.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-unifi-ap-pro.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1913,7 +1913,7 @@
  },
  {
   "gluon_name": "ubiquiti-unifi-nanohd",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-nanohd.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-unifi-nanohd.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1921,7 +1921,7 @@
  },
  {
   "gluon_name": "ubiquiti-unifi-swiss-army-knife-ultra",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/ubiquiti-unifi-swiss-army-knife-ultra.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/ubiquiti-unifi-swiss-army-knife-ultra.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1929,7 +1929,7 @@
  },
  {
   "gluon_name": "x86-64",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/x86-64.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/x86-64.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1937,7 +1937,7 @@
  },
  {
   "gluon_name": "x86-generic",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/x86-generic.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/x86-generic.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1945,7 +1945,7 @@
  },
  {
   "gluon_name": "x86-geode",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/x86-geode.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/x86-geode.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1953,7 +1953,7 @@
  },
  {
   "gluon_name": "x86-legacy",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/x86-legacy.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/x86-legacy.html",
   "status": "ungeprüft",
   "level": "L4",
   "risiko": "normal",
@@ -1961,7 +1961,7 @@
  },
  {
   "gluon_name": "zyxel-nbg6617",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/zyxel-nbg6617.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/zyxel-nbg6617.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1969,7 +1969,7 @@
  },
  {
   "gluon_name": "zyxel-nbg6716",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/zyxel-nbg6716.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/zyxel-nbg6716.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1977,7 +1977,7 @@
  },
  {
   "gluon_name": "zyxel-nwa50ax",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/zyxel-nwa50ax.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/zyxel-nwa50ax.html",
   "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
@@ -1985,7 +1985,7 @@
  },
  {
   "gluon_name": "zyxel-nwa50ax-pro",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/zyxel-nwa50ax-pro.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/zyxel-nwa50ax-pro.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -1993,7 +1993,7 @@
  },
  {
   "gluon_name": "zyxel-nwa55axe",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/zyxel-nwa55axe.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/zyxel-nwa55axe.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -2001,7 +2001,7 @@
  },
  {
   "gluon_name": "zyxel-nwa90ax-pro",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/zyxel-nwa90ax-pro.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/zyxel-nwa90ax-pro.html",
   "status": "ungeprüft",
   "level": "L3",
   "risiko": "normal",
@@ -2009,7 +2009,7 @@
  },
  {
   "gluon_name": "zyxel-wsm20",
-  "url": "https://routersoftware.ffnef.de/anleitungen/de/zyxel-wsm20.html",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/zyxel-wsm20.html",
   "status": "erprobt",
   "level": "L1",
   "risiko": "normal",
