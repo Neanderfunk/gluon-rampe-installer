@@ -23,8 +23,8 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
   bei datei_art = "rampe"
     rampe_datei          Dateimuster, z. B. gluon-rampe-<Datum>-…-recovery.bin
     rampe_bytes          vollständige Menge in Worten, z. B. "etwa 52,4 Millionen"
-    rampe_ip             Adresse der RAMpe, z. B. 192.168.1.1 (die Seite steht
-                         unter /cgi-bin/config, das ergänzt die Vorlage)
+    rampe_ip             Adresse der RAMpe, z. B. 192.168.1.1 (die RAMpe leitet
+                         selbst auf /cgi-bin/config weiter, adorfer 12.11.2026)
     led_rampe            nach "Nach dem Neustart …", z. B. "blinkt die LED
                          gleichmäßig, etwa einmal pro Sekunde"
     dauer_gluon          z. B. "unter 2 Minuten"
@@ -175,10 +175,8 @@ wirklich über das Kabel spricht.
 
 8. **Die RAMpe.** Nach dem Neustart {{ w.led_rampe }}. Stell den Rechner
    wieder auf "automatisch" (DHCP) und öffne
-   `http://{{ w.rampe_ip }}/cgi-bin/config`. Es erscheint die Seite "Firmware
-   aktualisieren". Kommt "Not Found", hat sich der Browser eine Seite von
-   früher gemerkt: Tipp die Adresse vollständig ein, mit `/cgi-bin/config` am
-   Ende. Hilft das nicht, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md).
+   `http://{{ w.rampe_ip }}`. Die RAMpe leitet von selbst auf ihre Seite
+   "Firmware aktualisieren" weiter. Kommt stattdessen "Not Found", hat sich der Browser eine Weiterleitung von früher gemerkt, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md).
    Die RAMpe bleibt auf dem Router, bis die Freifunk-Firmware sie ersetzt.
    Startet der Router zwischendurch neu, ist das harmlos: Seite einfach
    wieder aufrufen.
@@ -235,8 +233,8 @@ wirklich über das Kabel spricht.
 
   ![curl in der PowerShell: oben ein Fehlversuch mit "Failed to connect" und 0 Bytes, unten ein vollständiger Upload mit 50.00M bei 100 %]({{ b["curl-ausgabe"] }})
   {%- endif %}
-- Nach dem Neustart {{ w.led_rampe }}, und unter
-  `http://{{ w.rampe_ip }}/cgi-bin/config` steht "Firmware aktualisieren".
+- Nach dem Neustart {{ w.led_rampe }}, und `http://{{ w.rampe_ip }}` zeigt
+  die Seite "Firmware aktualisieren".
 {%- else %}
 - Nach dem Neustart meldet sich die Freifunk-Firmware.
 {%- endif %}

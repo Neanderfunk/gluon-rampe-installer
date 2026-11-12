@@ -83,10 +83,8 @@ annehmen. Die lädst du dann im Browser hoch.
 5. **Die RAMpe.** Die Box startet jetzt die RAMpe aus dem Arbeitsspeicher.
    {%- if w.led_rampe %} {{ w.led_rampe }}{% endif %} Stell den Rechner auf
    "automatisch" und öffne nach etwa einer Minute
-   `http://192.168.1.1/cgi-bin/config`. Es erscheint die Seite "Firmware
-   aktualisieren". Kommt "Not Found", hat sich der Browser eine Seite von
-   früher gemerkt: Tipp die Adresse vollständig ein, mit `/cgi-bin/config` am
-   Ende. Hilft das nicht, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md).
+   `http://192.168.1.1`. Die RAMpe leitet von selbst auf ihre Seite "Firmware
+   aktualisieren" weiter. Kommt stattdessen "Not Found", hat sich der Browser eine Weiterleitung von früher gemerkt, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md).
    {%- if b.get("rampe-seite") %}
 
    ![Die Seite der RAMpe: "Firmware aktualisieren" mit Feld für die Datei und Knopf "Datei hochladen"]({{ b["rampe-seite"] }})
