@@ -115,10 +115,8 @@ Ein Terminal brauchst du nicht. Rechne mit einer Viertelstunde.
 
 ### Teil 2: Freifunk-Firmware aufspielen
 
-7. **Seite der RAMpe öffnen.** Öffne `http://192.168.1.1/cgi-bin/config`.
-   Es erscheint die Seite "Firmware aktualisieren". Kommt "Not Found", hat
-   sich der Browser eine Seite von früher gemerkt: Tipp die Adresse
-   vollständig ein, mit `/cgi-bin/config` am Ende.
+7. **Seite der RAMpe öffnen.** Öffne `http://192.168.1.1`. Die RAMpe leitet
+   von selbst auf ihre Seite "Firmware aktualisieren" weiter. Kommt stattdessen "Not Found", hat sich der Browser eine Weiterleitung von früher gemerkt, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
    {%- if b.get("rampe-seite") %}
 
    ![Die Seite der RAMpe: "Firmware aktualisieren" mit Feld für die Datei und Knopf "Datei hochladen"]({{ b["rampe-seite"] }})

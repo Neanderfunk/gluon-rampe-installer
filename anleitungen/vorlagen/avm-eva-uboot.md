@@ -80,10 +80,9 @@ Gerät zu öffnen:
    TFTP-Server zeigt, wenn die Datei abgeholt wird. Danach startet die RAMpe
    aus dem Arbeitsspeicher. Das dauert bis zu 2 Minuten.
 
-5. **Die Seite der RAMpe.** Öffne `http://192.168.1.1/cgi-bin/config` (der
-   Rechner kann auf `192.168.1.70` bleiben). Kommt "Not Found", hat sich der
-   Browser eine Seite von früher gemerkt: Tipp die Adresse vollständig ein,
-   mit `/cgi-bin/config` am Ende. Hilft das nicht, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md). Die Seite weist darauf hin, dass sie bei diesem
+5. **Die Seite der RAMpe.** Öffne `http://192.168.1.1` (der Rechner kann
+   auf `192.168.1.70` bleiben). Die RAMpe leitet von selbst auf ihre Seite
+   weiter. Kommt stattdessen "Not Found", hat sich der Browser eine Weiterleitung von früher gemerkt, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md). Die Seite weist darauf hin, dass sie bei diesem
    Gerät den Speicher vorbereitet, den neuen Bootloader dauerhaft schreibt
    und die Firmware von AVM entfernt.
    {%- if b.get("rampe-seite") %}
