@@ -8939,7 +8939,7 @@
     "zwischen_datei": "openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img",
     "zwischen_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img",
     "sicherheit": "quelle",
-    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-gl.inet-gl-e750-factory.img",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-gl.inet-gl-e750-factory.img",
     "rampe_datei": "gluon-rampe-20261015-gl.inet-gl-e750-factory.img",
     "rampe_weg": "Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch."
    }
@@ -9008,7 +9008,7 @@
     "zwischen_datei": "openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img",
     "zwischen_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img",
     "sicherheit": "quelle",
-    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-gl.inet-gl-xe300-factory.img",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-gl.inet-gl-xe300-factory.img",
     "rampe_datei": "gluon-rampe-20261015-gl.inet-gl-xe300-factory.img",
     "rampe_weg": "Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch."
    }
@@ -10246,7 +10246,7 @@
     "uboot_datei": "uboot-fritz7520.bin",
     "uboot_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/uboot-fritz7520.bin",
     "tftp_name": "FRITZ7520.bin",
-    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb",
     "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb",
     "sicherheit": "abgeleitet",
     "sicherheit_hinweis": "Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht."
@@ -10315,7 +10315,7 @@
     "uboot_datei": "uboot-fritz7530.bin",
     "uboot_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/uboot-fritz7530.bin",
     "tftp_name": "FRITZ7530.bin",
-    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb",
     "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb",
     "sicherheit": "abgeleitet",
     "sicherheit_hinweis": "Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht."
@@ -10384,7 +10384,7 @@
     "uboot_datei": "uboot-fritz1200.bin",
     "uboot_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/uboot-fritz1200.bin",
     "tftp_name": "FRITZ1200.bin",
-    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-repeater-1200-initramfs-uImage.itb",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-repeater-1200-initramfs-uImage.itb",
     "rampe_datei": "gluon-rampe-20261015-avm-fritz-repeater-1200-initramfs-uImage.itb",
     "sicherheit": "abgeleitet",
     "sicherheit_hinweis": "Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht."
@@ -10453,7 +10453,7 @@
     "uboot_datei": "uboot-fritz3000.bin",
     "uboot_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/uboot-fritz3000.bin",
     "tftp_name": "FRITZ3000.bin",
-    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-repeater-3000-initramfs-uImage.itb",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-repeater-3000-initramfs-uImage.itb",
     "rampe_datei": "gluon-rampe-20261015-avm-fritz-repeater-3000-initramfs-uImage.itb",
     "sicherheit": "abgeleitet",
     "sicherheit_hinweis": "Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht."
@@ -12682,7 +12682,7 @@
    "anleitung": "anleitungen/de/avm-fritz-box-3390.md",
    "erprobt": {},
    "werte": {
-    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-3390-initramfs-kernel.bin",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-3390-initramfs-kernel.bin",
     "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-3390-initramfs-kernel.bin",
     "sicherheit": "abgeleitet"
    }
@@ -12934,7 +12934,7 @@
    "erprobt": {},
    "werte": {
     "led_rampe": "Die Power-LED blinkt dann rot.",
-    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7362-sl-initramfs-kernel.bin",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7362-sl-initramfs-kernel.bin",
     "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-7362-sl-initramfs-kernel.bin",
     "sicherheit": "abgeleitet"
    }
@@ -12998,7 +12998,7 @@
    "erprobt": {},
    "werte": {
     "ersatz_ip": "169.254.120.1",
-    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7412-initramfs-kernel.bin",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7412-initramfs-kernel.bin",
     "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-7412-initramfs-kernel.bin",
     "sicherheit": "abgeleitet"
    }
@@ -13062,7 +13062,7 @@
    "erprobt": {},
    "werte": {
     "ersatz_ip": "169.254.120.1",
-    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7430-initramfs-kernel.bin",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7430-initramfs-kernel.bin",
     "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-7430-initramfs-kernel.bin",
     "sicherheit": "abgeleitet"
    }
@@ -14720,7 +14720,7 @@
     "rampe_datei": "gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin",
     "taste_hinweis": "",
     "led_falsch": "",
-    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin",
     "sicherheit": "quelle",
     "led_schreibt": "leuchtet die LED ruhig rot, etwas schwächer",
     "led_start": "blinkt die LED schnell weiß"
@@ -14807,7 +14807,7 @@
     "rampe_datei": "gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin",
     "taste_hinweis": "Nur die Reset-Taste führt in die Recovery, keine der anderen Tasten.",
     "led_falsch": "Ein orangefarbenes Auf- und Abdimmen ist nicht die Recovery.",
-    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin",
     "led_schreibt": "leuchtet die LED ruhig rot, etwas schwächer",
     "led_start": "blinkt die LED schnell weiß"
    }
@@ -20492,37 +20492,36 @@
    "gluon_broken": false,
    "kat": "K1",
    "familie": "sonderweg-genexis-pulse-ex400",
-   "weg": "Stock-Web-UI oder U-Boot-Recovery (Reset beim Einschalten, Update-LED grün, Webserver 192.168.1.1) nimmt das OpenWrt-factory.bin; das enthält ein initramfs; danach sysupgrade [geprüft]",
+   "weg": "U-Boot-Recovery (Reset beim Einschalten, Webserver 192.168.1.1) nimmt die RAMpe als factory.bin; nach dem Neustart blinkt der Router im 1-Hz-Takt, dann das Community-sysupgrade auf der RAMpe-Seite; ohne ssh [erprobt adorfer 11.11.2026, 10 Geräte]",
    "schritte": [
-    "OpenWrt-factory.bin bereitlegen, es enthält ein initramfs. [geprüft]",
-    "Rechner an LAN, feste IP im Netz 192.168.1.0/24 (nicht .1). [Wiki-Zusammenfassung: Darmstadt-Wiki]",
-    "Reset gedrückt halten und dabei einschalten (U-Boot-Recovery). [geprüft: Commit dd0c283]",
-    "Warten, bis Status-LED orange und WPS-LED grün sind (DNA-Variante: 'Update'-LED dauerhaft grün). [Wiki-Zusammenfassung: Freifunk-Darmstadt-Wiki Genexis-EX400; geprüft: Commit]",
-    "Im Browser http://192.168.1.1 öffnen und das factory.bin hochladen; eine Bestätigungsseite erscheint. [Wiki-Zusammenfassung: Darmstadt-Wiki]",
-    "Ca. 2 min warten, bis OpenWrt läuft, währenddessen nicht Strom ziehen. [Wiki-Zusammenfassung: Darmstadt-Wiki; 'nicht Strom ziehen' abgeleitet]",
-    "Gluon per sysupgrade installieren; die Meldung 'Command failed: ubus call system sysupgrade ... Connection failed' kann ignoriert werden. [geprüft; Wiki-Zusammenfassung: Darmstadt-Wiki]"
+    "RAMpe-factory.bin bereitlegen (gluon-rampe-<Datum>-genexis-pulse-ex400-factory.bin). [erprobt adorfer 11.11.2026]",
+    "Rechner an LAN, feste IP im Netz 192.168.1.0/24 (nicht .1). [erprobt adorfer 11.11.2026]",
+    "Reset gedrückt halten und dabei einschalten (U-Boot-Recovery). [geprüft: Commit dd0c283; erprobt adorfer 11.11.2026]",
+    "Im Browser http://192.168.1.1 öffnen und die RAMpe-factory.bin hochladen. [erprobt adorfer 11.11.2026]",
+    "Neustart abwarten, bis der Router im 1-Hz-Takt blinkt (RAMpe läuft). [erprobt adorfer 11.11.2026]",
+    "Auf der RAMpe-Seite das Community-sysupgrade hochladen. [erprobt adorfer 11.11.2026]"
    ],
    "warnung": "",
    "taste": "U-Boot-Recovery: Reset beim Einschalten gedrückt halten [geprüft: Commit dd0c283]; warten, bis Status-LED orange und WPS-LED grün sind [Wiki-Zusammenfassung: Freifunk-Darmstadt-Wiki Genexis-EX400]",
    "zeichen": "Recovery bereit: laut Commit 'Update'-LED dauerhaft grün (DNA-Variante), bei Genexis/Inteno Status orange + WPS grün [geprüft: Commit; Wiki-Zusammenfassung: Darmstadt-Wiki]. Nach dem Upload erscheint eine Bestätigungsseite [Wiki-Zusammenfassung: Darmstadt-Wiki]. Meldung 'Command failed: ubus call system sysupgrade ... Connection failed' beim sysupgrade kann ignoriert werden [Wiki-Zusammenfassung: Darmstadt-Wiki]",
-   "uebertragung": "webui-upload; recovery-web: Gerät 192.168.1.1",
+   "uebertragung": "webui-upload; recovery-web: Gerät 192.168.1.1, danach Upload auf der RAMpe-Seite",
    "anschluss": "Rechner an LAN [Wiki-Zusammenfassung: Darmstadt-Wiki]",
    "adressen": "Rechner feste IP im Netz 192.168.1.0/24 (nicht .1), Recovery-Webserver http://192.168.1.1 [Wiki-Zusammenfassung: Darmstadt-Wiki]",
-   "programm": "Browser [Wiki-Zusammenfassung: Darmstadt-Wiki]; alternativ das Skript install-ex400.sh: `curl -F fileID=@<factory> -F submit=upload http://192.168.1.1/firmware_upload`, ssh wiederholen, bis OpenWrt antwortet, dann `scp -O` und `sysupgrade -n` [geprüft: github herbetom/multiflash install-ex400.sh @4afd1dba, nutzt Gluon von Freifunk Darmstadt]",
+   "programm": "Browser [erprobt adorfer 11.11.2026]",
    "zugang": "",
-   "datei": "OpenWrt-factory.bin, enthält ein initramfs; danach Gluon-sysupgrade [geprüft]",
+   "datei": "RAMpe-factory.bin (gluon-rampe-<Datum>-genexis-pulse-ex400-factory.bin), danach das Community-sysupgrade [erprobt adorfer 11.11.2026]",
    "seriell": "nein",
    "gehaeuse": "nein",
    "level_merkmale": {
-    "werkzeug": "netztools",
+    "werkzeug": "taste-web",
     "image": "-",
-    "zwischenfirmware": "ja",
-    "dhcp": "-",
+    "zwischenfirmware": "nein",
+    "dhcp": "nein",
     "gehaeuse_oeffnen": "-",
     "l8": "nein"
    },
    "risiko": "normal",
-   "level_grund": "Recovery mit Taste, OpenWrt-factory, dann scp/ssh",
+   "level_grund": "Recovery mit Taste und Browser, feste IP am Rechner; RAMpe statt Zwischenfirmware, kein ssh/scp",
    "werkzeug": "-",
    "verwechslung": "Inteno Pulse EX400 und Genexis Pulse EX400 sind gleich (Umfirmierung); die DNA-Variante (DNA Valokuitu Plus EX400, LED 'software-update' statt WPS) hat ein eigenes Image [geprüft: Commit]",
    "stock_bedingung": "",
@@ -20535,20 +20534,20 @@
    "notweg": "[einfacher, schlechter belegt] Die Stock-Web-UI nimmt das OpenWrt-factory.bin ebenfalls [geprüft]. Für SSH im Stock muss SSH evtl. erst für LAN freigeschaltet werden (ab Werk nur WAN) [geprüft: Commit]",
    "rueckweg": "Im OpenWrt-initramfs UBI-Volumes zurückbauen (rootfs_0/rootfs_1 neu anlegen), dann Hersteller-Firmware über die U-Boot-Recovery [geprüft: Commit]",
    "hw_test": "",
-   "rampe": "ja: factory.bin = Kette `append-image-stage initramfs-kernel.bin`, `inteno-bootfs`, `inteno-y3-header EX400` (mt7621.mk), die RAMpe-factory entsteht so direkt [abgeleitet aus mk]; statt scp/ssh dann das Community-sysupgrade auf der RAMpe-Seite; am Gerät ungetestet",
-   "rampe_rezept": "devices/genexis-pulse-ex400.sh (gebaut 15.10.2026): `-factory.bin` (initramfs in UBIFS-bootfs, Inteno-Kopf), 9.143.328 Byte, unter der bootfs-Grenze von etwa 11.6 MiB; am Gerät ungetestet",
+   "rampe": "ja: factory.bin = Kette `append-image-stage initramfs-kernel.bin`, `inteno-bootfs`, `inteno-y3-header EX400` (mt7621.mk); Hauptweg, am Gerät erprobt (adorfer 11.11.2026, 10 Geräte)",
+   "rampe_rezept": "devices/genexis-pulse-ex400.sh (gebaut 15.10.2026): `-factory.bin` (initramfs in UBIFS-bootfs, Inteno-Kopf), 9.143.328 Byte, unter der bootfs-Grenze von etwa 11.6 MiB; am Gerät erprobt 11.11.2026",
    "quelle": "dd0c2839a81bb3c5067be99b02ec5c0adff93ac6",
    "anleitung": "anleitungen/de/genexis-pulse-ex400.md; https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400",
-   "erprobt": {},
+   "erprobt": {
+    "am": "2026-11-11",
+    "mit": "gluon-rampe-20261015-genexis-pulse-ex400-factory.bin",
+    "weg": "U-Boot-Recovery (Reset beim Einschalten), RAMpe-factory per Browser auf 192.168.1.1, nach Neustart Blinken 1 Hz, Community-sysupgrade auf der RAMpe-Seite; 10 Geräte",
+    "beleg": "adorfer 11.11.2026"
+   },
    "werte": {
-    "openwrt_datei": "openwrt-24.10.8-ramips-mt7621-genexis_pulse-ex400-factory.bin",
-    "openwrt_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-genexis_pulse-ex400-factory.bin",
-    "openwrt_sha256": "7b9debc8d1c8ed36e2632a2b20835f3d33c628e352e8eceaf555a5ffeaa8764e",
-    "sicherheit": "quelle",
-    "sicherheit_hinweis": "Freifunk Darmstadt beschreibt denselben Weg für ihre Freifunk-Firmware.",
-    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-genexis-pulse-ex400-factory.bin",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-genexis-pulse-ex400-factory.bin",
     "rampe_datei": "gluon-rampe-20261015-genexis-pulse-ex400-factory.bin",
-    "rampe_weg": "Lade in Schritt 5 statt der OpenWrt-Datei die RAMpe hoch."
+    "rampe_sha256": "9e87a7fee71e0ef74afe956515c348b1b854f9af9f2a4d6e26c714cb249795a4"
    }
   },
   {
@@ -21173,7 +21172,7 @@
     "zwischen_datei": "openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img",
     "zwischen_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img",
     "sicherheit": "quelle",
-    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-netgear-wndr3700-v5-factory.img",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-netgear-wndr3700-v5-factory.img",
     "rampe_datei": "gluon-rampe-20261015-netgear-wndr3700-v5-factory.img",
     "rampe_weg": "Benenne die RAMpe in firmware.img um und schick sie in Schritt 4 mit nmrpflash statt der OpenWrt-Datei."
    }
@@ -22621,7 +22620,7 @@
    "werte": {
     "openwrt_datei": "openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin",
     "openwrt_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin",
-    "rampe_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-zyxel-wsm20-initramfs-kernel.bin",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-zyxel-wsm20-initramfs-kernel.bin",
     "rampe_datei": "gluon-rampe-20261015-zyxel-wsm20-initramfs-kernel.bin",
     "rampe_weg": "Lade in Schritt 4 statt der OpenWrt-Datei die RAMpe hoch; Teil 2 entfällt dann.",
     "sicherheit": "quelle",
