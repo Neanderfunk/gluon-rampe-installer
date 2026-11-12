@@ -9925,7 +9925,7 @@
     "mtd": "/dev/mtd1",
     "bootm_weg": "apboot",
     "apboot_datei": "ap303-loader-2.5.0.2.bin",
-    "apboot_url": "https://download.ffnef.de/other/dump/ap303-loader-2.5.0.2.zip",
+    "apboot_url": "https://firmware.neanderfunk.de/other/dump/ap303-loader-2.5.0.2.zip",
     "apboot_sha256": "69e45b047de07ceeeb4a3daec6232ba2902acea8806075af80c2725ea52298a5",
     "sicherheit": "quelle",
     "sicherheit_hinweis": "Den Schritt mit dem älteren Bootloader beschreibt Freifunk Darmstadt; die Datei dafür stellen wir bereit."
@@ -10244,7 +10244,7 @@
    "erprobt": {},
    "werte": {
     "uboot_datei": "uboot-fritz7520.bin",
-    "uboot_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/uboot-fritz7520.bin",
+    "uboot_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz7520.bin",
     "tftp_name": "FRITZ7520.bin",
     "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb",
     "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb",
@@ -10313,7 +10313,7 @@
    "erprobt": {},
    "werte": {
     "uboot_datei": "uboot-fritz7530.bin",
-    "uboot_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/uboot-fritz7530.bin",
+    "uboot_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz7530.bin",
     "tftp_name": "FRITZ7530.bin",
     "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb",
     "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb",
@@ -10382,7 +10382,7 @@
    "erprobt": {},
    "werte": {
     "uboot_datei": "uboot-fritz1200.bin",
-    "uboot_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/uboot-fritz1200.bin",
+    "uboot_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz1200.bin",
     "tftp_name": "FRITZ1200.bin",
     "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-repeater-1200-initramfs-uImage.itb",
     "rampe_datei": "gluon-rampe-20261015-avm-fritz-repeater-1200-initramfs-uImage.itb",
@@ -10451,7 +10451,7 @@
    "erprobt": {},
    "werte": {
     "uboot_datei": "uboot-fritz3000.bin",
-    "uboot_url": "https://download.ffnef.de/other/Gluon-Installer-RAMpe/uboot-fritz3000.bin",
+    "uboot_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz3000.bin",
     "tftp_name": "FRITZ3000.bin",
     "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-repeater-3000-initramfs-uImage.itb",
     "rampe_datei": "gluon-rampe-20261015-avm-fritz-repeater-3000-initramfs-uImage.itb",
@@ -15106,7 +15106,7 @@
    "werte": {
     "initramfs_datei": "openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin",
     "rueckweg_url": "https://www.mercusys.com/de/download/mr90x",
-    "zip_url": "https://download.ffnef.de/other/dump/mr90x-v1-installdateien.zip"
+    "zip_url": "https://firmware.neanderfunk.de/other/dump/mr90x-v1-installdateien.zip"
    }
   },
   {
@@ -21237,7 +21237,7 @@
     "beleg": "Testplatz grw, router-werkstatt docs/validierung/totolink-x5000r-2026-10-16.md (cb40898)"
    },
    "werte": {
-    "alt_url": "https://download.ffnef.de/other/dump/X5000R_V9.1.0u.6118_B20201102.zip",
+    "alt_url": "https://firmware.neanderfunk.de/other/dump/X5000R_V9.1.0u.6118_B20201102.zip",
     "alt_datei": "X5000R_V9.1.0u.6118_B20201102.zip",
     "alt_sha256": "4fdb1bbf1773a3e7bb3d2f36953411e93a7da52277ee8e79e1dd54909e74daeb",
     "alt_web": "TOTOLINK_C8343R-1C_X5000R_IP04433_MT7621A_SPI_16M256M_V9.1.0u.6118_B20201102_ALL.web",
