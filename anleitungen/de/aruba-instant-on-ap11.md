@@ -10,8 +10,8 @@ level_text: Serielles Kabel
 risiko: bootloader
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: e9343f57
-vorlage_stand: 92dd447d
+daten_stand: 3f406a80
+vorlage_stand: 92dd447d3
 ---
 
 # Aruba Instant On AP11: Freifunk-Firmware installieren
@@ -79,7 +79,7 @@ einer Stunde, ohne das Kabel zu bauen.
      das **sysupgrade**-Image. Benenn es in `gluon.bin` um, dann passen die
      Befehle unten ohne Änderung.
   3. den älteren Bootloader als ZIP-Archiv:
-     [ap303-loader-2.5.0.2.zip](https://download.ffnef.de/other/dump/ap303-loader-2.5.0.2.zip). Pack es aus. Kommt dabei
+     [ap303-loader-2.5.0.2.zip](https://firmware.neanderfunk.de/other/dump/ap303-loader-2.5.0.2.zip). Pack es aus. Kommt dabei
      keine Fehlermeldung, ist die Datei heil. Leg `ap303-loader-2.5.0.2.bin` aus
      dem Archiv ebenfalls in den Ordner deines TFTP-Servers, unter genau
      diesem Namen.

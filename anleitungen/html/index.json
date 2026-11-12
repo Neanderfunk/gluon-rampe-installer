@@ -650,8 +650,8 @@
  {
   "gluon_name": "genexis-pulse-ex400",
   "url": "https://routersoftware.neanderfunk.de/anleitungen/de/genexis-pulse-ex400.html",
-  "status": "ungeprüft",
-  "level": "L4",
+  "status": "erprobt",
+  "level": "L3",
   "risiko": "normal",
   "sprache": "de"
  },

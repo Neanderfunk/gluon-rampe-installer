@@ -10,8 +10,8 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, ssh-scp, tftp-client]
-daten_stand: e9343f57
-vorlage_stand: 33a38da8
+daten_stand: 3f406a80
+vorlage_stand: 33a38da83
 ---
 
 # Ubiquiti UniFi AC HD: Freifunk-Firmware installieren

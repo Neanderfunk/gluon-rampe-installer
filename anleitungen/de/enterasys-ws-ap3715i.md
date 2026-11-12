@@ -10,8 +10,8 @@ level_text: Serielles Kabel
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: e9343f57
-vorlage_stand: 33e50477
+daten_stand: 3f406a80
+vorlage_stand: 33e50477e
 ---
 
 # Enterasys WS-AP3715i: Freifunk-Firmware installieren

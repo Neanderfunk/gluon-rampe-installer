@@ -11,8 +11,8 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-avm-fritz-box-7362-sl-initramfs-kernel.bin
 grundlagen: [avm-eva, browser-https, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: e9343f57
-vorlage_stand: 33a38da8
+daten_stand: 3f406a80
+vorlage_stand: 23b89e67b
 ---
 
 # AVM FRITZ!Box 7362 SL: Freifunk-Firmware installieren
@@ -41,7 +41,7 @@ annehmen. Die lädst du dann im Browser hoch.
 - Python 3 und das kleine Programm
   [eva_ramboot.py](https://raw.githubusercontent.com/openwrt/openwrt/a1ea57bd050c172fdc2b851824ebd9782aafb055/scripts/flashing/eva_ramboot.py) von OpenWrt
 - die RAMpe für dieses Gerät:
-  [gluon-rampe-20261015-avm-fritz-box-7362-sl-initramfs-kernel.bin](https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7362-sl-initramfs-kernel.bin)
+  [gluon-rampe-20261015-avm-fritz-box-7362-sl-initramfs-kernel.bin](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7362-sl-initramfs-kernel.bin)
 - die Freifunk-Firmware deiner Community für dieses Gerät, und zwar das
   **sysupgrade**-Image
 
@@ -84,10 +84,8 @@ einfacher Switch zwischen Box und Rechner hilft.
 
 5. **Die RAMpe.** Die Box startet jetzt die RAMpe aus dem Arbeitsspeicher. Die Power-LED blinkt dann rot. Stell den Rechner auf
    "automatisch" und öffne nach etwa einer Minute
-   `http://192.168.1.1/cgi-bin/config`. Es erscheint die Seite "Firmware
-   aktualisieren". Kommt "Not Found", hat sich der Browser eine Seite von
-   früher gemerkt: Tipp die Adresse vollständig ein, mit `/cgi-bin/config` am
-   Ende. Hilft das nicht, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md).
+   `http://192.168.1.1`. Die RAMpe leitet von selbst auf ihre Seite "Firmware
+   aktualisieren" weiter. Kommt stattdessen "Not Found", hat sich der Browser eine Weiterleitung von früher gemerkt, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md).
 
    ![Die Seite der RAMpe: "Firmware aktualisieren" mit Feld für die Datei und Knopf "Datei hochladen"](../bilder/allgemein/rampe-seite.png)
 

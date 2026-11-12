@@ -10,8 +10,8 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, ssh-scp]
-daten_stand: e9343f57
-vorlage_stand: fe341eeb
+daten_stand: 3f406a80
+vorlage_stand: fe341eeb6
 ---
 
 # Mercusys MR90X v1: Freifunk-Firmware installieren
@@ -47,7 +47,7 @@ die mit SSH, scp und einer Shell umgehen können
 - auf dem Rechner `ssh`, `scp` und `telnet` (unter Windows ist `telnet`
   ein optionales Feature, alternativ PuTTY)
 - das Passwort der Mercusys-Oberfläche (beim ersten Aufruf legst du es fest)
-- die Installationsdateien als ZIP: [mr90x-v1-installdateien.zip](https://download.ffnef.de/other/dump/mr90x-v1-installdateien.zip). Pack sie
+- die Installationsdateien als ZIP: [mr90x-v1-installdateien.zip](https://firmware.neanderfunk.de/other/dump/mr90x-v1-installdateien.zip). Pack sie
   aus. Kommt dabei keine Fehlermeldung, sind die Dateien heil. Darin liegen
   ein vollständiges busybox (`busybox-aarch64`; das busybox der
   Mercusys-Firmware kann einen nötigen Befehl nicht), OpenWrt als

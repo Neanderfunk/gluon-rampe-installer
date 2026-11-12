@@ -13,8 +13,8 @@ erprobt_am: 2026-10-16
 erprobt_mit: gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m30-a1-recovery.bin
 grundlagen: [browser-https, browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: e9343f57
-vorlage_stand: 33a38da8
+daten_stand: 3f406a80
+vorlage_stand: 23b89e67b
 ---
 
 # D-Link AQUILA PRO AI M30 A1: Freifunk-Firmware installieren
@@ -38,7 +38,7 @@ kein Passwort.
 
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - eine Büroklammer für die Reset-Taste
-- die RAMpe-Datei für dieses Gerät: `gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin` ([herunterladen](https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin))
+- die RAMpe-Datei für dieses Gerät: `gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin` ([herunterladen](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin))
 - die Freifunk-Firmware deiner Community für den D-Link AQUILA PRO AI M30 A1, und zwar das
   **sysupgrade**-Image
 - das Programm **curl** zum Hochladen. Unter Linux und macOS ist es meist
@@ -108,10 +108,8 @@ wirklich über das Kabel spricht.
 
 8. **Die RAMpe.** Nach dem Neustart blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde. Stell den Rechner
    wieder auf "automatisch" (DHCP) und öffne
-   `http://192.168.1.1/cgi-bin/config`. Es erscheint die Seite "Firmware
-   aktualisieren". Kommt "Not Found", hat sich der Browser eine Seite von
-   früher gemerkt: Tipp die Adresse vollständig ein, mit `/cgi-bin/config` am
-   Ende. Hilft das nicht, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md).
+   `http://192.168.1.1`. Die RAMpe leitet von selbst auf ihre Seite
+   "Firmware aktualisieren" weiter. Kommt stattdessen "Not Found", hat sich der Browser eine Weiterleitung von früher gemerkt, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md).
    Die RAMpe bleibt auf dem Router, bis die Freifunk-Firmware sie ersetzt.
    Startet der Router zwischendurch neu, ist das harmlos: Seite einfach
    wieder aufrufen.
@@ -148,8 +146,8 @@ wirklich über das Kabel spricht.
 - curl hat beim Hochladen 100 % erreicht. Kommt es von selbst zurück,
   meldet es **etwa 52,4 Millionen Bytes**. Wie lange das gedauert hat, ist
   egal, es zählt die Menge.
-- Nach dem Neustart blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde, und unter
-  `http://192.168.1.1/cgi-bin/config` steht "Firmware aktualisieren".
+- Nach dem Neustart blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde, und `http://192.168.1.1` zeigt
+  die Seite "Firmware aktualisieren".
 - Die Erfolgsmeldung der D-Link-Seite zählt nicht, sie erscheint immer.
 
 ## Wenn etwas schiefgeht

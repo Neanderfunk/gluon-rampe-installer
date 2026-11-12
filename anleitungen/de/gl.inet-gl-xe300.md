@@ -11,8 +11,8 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261015-gl.inet-gl-xe300-factory.img
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: e9343f57
-vorlage_stand: 33a38da8
+daten_stand: 3f406a80
+vorlage_stand: 33a38da83
 ---
 
 # GL.iNet GL-XE300: Freifunk-Firmware installieren
@@ -104,12 +104,10 @@ OpenWrt-Etappe. Für den GL.iNet GL-XE300 ist dieser Weg **noch von niemandem
 ausprobiert**; die RAMpe selbst läuft auf anderen Geräten.
 
 1. Lade die RAMpe für den GL.iNet GL-XE300 herunter:
-   [gluon-rampe-20261015-gl.inet-gl-xe300-factory.img](https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-gl.inet-gl-xe300-factory.img).
+   [gluon-rampe-20261015-gl.inet-gl-xe300-factory.img](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-gl.inet-gl-xe300-factory.img).
 2. Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch.
-3. Nach dem Neustart öffne `http://192.168.1.1/cgi-bin/config`. Es erscheint
-   die Seite "Firmware aktualisieren" der RAMpe. Kommt "Not Found", hat sich
-   der Browser eine Seite von früher gemerkt: Tipp die Adresse vollständig
-   ein, mit `/cgi-bin/config` am Ende. Hilft das nicht, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md). Startet der Router zwischendurch neu,
+3. Nach dem Neustart öffne `http://192.168.1.1`. Die RAMpe leitet von selbst
+   auf ihre Seite "Firmware aktualisieren" weiter. Kommt stattdessen "Not Found", hat sich der Browser eine Weiterleitung von früher gemerkt, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md). Startet der Router zwischendurch neu,
    einfach die Seite wieder aufrufen.
 
    ![Die Seite der RAMpe: "Firmware aktualisieren" mit Feld für die Datei und Knopf "Datei hochladen"](../bilder/allgemein/rampe-seite.png)

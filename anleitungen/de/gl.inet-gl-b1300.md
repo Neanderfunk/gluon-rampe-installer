@@ -12,8 +12,8 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2023.2.6 (26091920sta) über LuCI der GL-Firmware 4.3.25; für 2025.1 erwartet gleich (gleiche Metadaten)
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: e9343f57
-vorlage_stand: 33a38da8
+daten_stand: 3f406a80
+vorlage_stand: 33a38da83
 ---
 
 # GL.iNet GL-B1300: Freifunk-Firmware installieren

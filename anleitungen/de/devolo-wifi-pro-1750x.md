@@ -10,8 +10,8 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [ssh-scp]
-daten_stand: e9343f57
-vorlage_stand: 99ea2014
+daten_stand: 3f406a80
+vorlage_stand: 99ea2014f
 ---
 
 # devolo WiFi pro 1750x: Freifunk-Firmware installieren

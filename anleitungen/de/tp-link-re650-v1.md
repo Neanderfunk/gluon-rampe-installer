@@ -10,8 +10,8 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: e9343f57
-vorlage_stand: 33a38da8
+daten_stand: 3f406a80
+vorlage_stand: 33a38da83
 ---
 
 # TP-Link RE650 v1: Freifunk-Firmware installieren

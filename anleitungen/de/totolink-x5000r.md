@@ -12,8 +12,8 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2025.1 (26100702bro), vorher TOTOLINK-Firmware V9.1.0u.6118 über den Notfall-Modus
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: e9343f57
-vorlage_stand: 33a38da8
+daten_stand: 3f406a80
+vorlage_stand: 33a38da83
 ---
 
 # TOTOLINK X5000R: Freifunk-Firmware installieren
@@ -40,7 +40,7 @@ halben Stunde.
 - die Freifunk-Firmware deiner Community für den TOTOLINK X5000R, und zwar das
   **sysupgrade**-Image
 - nur für den Umweg: die ältere TOTOLINK-Firmware
-  [X5000R_V9.1.0u.6118_B20201102.zip](https://download.ffnef.de/other/dump/X5000R_V9.1.0u.6118_B20201102.zip). TOTOLINK bietet sie nicht mehr an; wir stellen die Originaldatei bereit.
+  [X5000R_V9.1.0u.6118_B20201102.zip](https://firmware.neanderfunk.de/other/dump/X5000R_V9.1.0u.6118_B20201102.zip). TOTOLINK bietet sie nicht mehr an; wir stellen die Originaldatei bereit.
 
 ## Schritte
 
