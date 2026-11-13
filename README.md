@@ -40,15 +40,17 @@ ein RAMpe-Image je Gerät reicht für alle Communities.
 ## Download
 
 Fertige Images (Stand 20261015, alle Geräte mit Rezept, Liste und Prüfsummen):
-<https://download.ffnef.de/other/Gluon-Installer-RAMpe/>. Am Gerät erprobt ist bisher nur der
-Ablauf am D-Link M60.
+<https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/>. Am Gerät erprobt
+sind bisher D-Link M60 A1 und M30 A1 und Genexis/Inteno Pulse EX400, alle
+anderen Images sind ungetestet.
 
 ## Geräte
 
 | Gerät | Target | Einspielen | Stand |
 |---|---|---|---|
-| D-Link AQUILA PRO AI M30 A1 | mediatek-filogic | `…-recovery.bin` über die D-Link-Recovery (192.168.200.1) | gebaut, **auf Hardware ungetestet** |
+| D-Link AQUILA PRO AI M30 A1 | mediatek-filogic | `…-recovery.bin` über die D-Link-Recovery (192.168.200.1) | **am Gerät erprobt** (16.10.2026, router-werkstatt `docs/validierung/d-link-m30-a1-rampe-20261015-2026-10-16.md`) |
 | D-Link AQUILA PRO AI M60 A1 | mediatek-filogic | `…-recovery.bin` über die D-Link-Recovery (192.168.200.1), per `curl` | **am Gerät erprobt** (13.10.2026, Gluon-sysupgrade geflasht; `docs/NOTIZEN.md`, "Getestet") |
+| Genexis/Inteno Pulse EX400 | ramips-mt7621 | `…-factory.bin` über die U-Boot-Recovery (Reset beim Einschalten, 192.168.1.1) im Browser | **am Gerät erprobt** (11.11.2026, adorfer, 10 Geräte) |
 | x86-64 | x86-64 | `…-initramfs-kernel.bin` per QEMU `-kernel` | Ende-zu-Ende getestet (`test/qemu-x86-64.sh`) |
 
 Weitere Kandidaten und wie man ein Gerät ergänzt: `docs/GERAETE.md`.

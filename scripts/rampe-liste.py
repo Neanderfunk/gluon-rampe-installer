@@ -70,7 +70,7 @@ def main():
     kopf = ["# Gluon-RAMpe-Images", "",
             f"Stand: {', '.join(sorted(stände)) or '-'}. Gebaut mit "
             "[gluon-rampe-installer](https://github.com/Neanderfunk/gluon-rampe-installer). "
-            "Am Gerät erprobt ist bisher nur der Ablauf am D-Link M60; alles andere ist ungetestet.",
+            "Am Gerät erprobt sind bisher D-Link M60 A1 und M30 A1 und Genexis/Inteno Pulse EX400; alles andere ist ungetestet.",
             "", "| Gerät | Datei | Art | Größe (Byte) | SHA256 |", "|---|---|---|---:|---|"]
     fuss = []
     fritz = [p.name for p in dateien if p.name.startswith("uboot-fritz")]
