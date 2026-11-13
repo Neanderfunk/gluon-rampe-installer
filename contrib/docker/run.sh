@@ -23,6 +23,7 @@ exec docker run --rm -i \
 	-w "$ROOT" \
 	-e HOME=/tmp \
 	${GLUON_REF:+-e GLUON_REF="$GLUON_REF"} \
+	${GLUON_RELEASE:+-e GLUON_RELEASE="$GLUON_RELEASE"} \
 	${JOBS:+-e JOBS="$JOBS"} \
 	${RAMPE_HW_PATCHES:+-e RAMPE_HW_PATCHES="$RAMPE_HW_PATCHES" -v "$RAMPE_HW_PATCHES:$RAMPE_HW_PATCHES:ro"} \
 	"$IMAGE" "$@"
