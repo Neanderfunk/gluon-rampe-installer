@@ -8939,8 +8939,8 @@
     "zwischen_datei": "openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img",
     "zwischen_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img",
     "sicherheit": "quelle",
-    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-gl.inet-gl-e750-factory.img",
-    "rampe_datei": "gluon-rampe-20261015-gl.inet-gl-e750-factory.img",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-gl.inet-gl-e750-factory.img",
+    "rampe_datei": "gluon-rampe-20261114-gl.inet-gl-e750-factory.img",
     "rampe_weg": "Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch."
    }
   },
@@ -9008,8 +9008,8 @@
     "zwischen_datei": "openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img",
     "zwischen_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img",
     "sicherheit": "quelle",
-    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-gl.inet-gl-xe300-factory.img",
-    "rampe_datei": "gluon-rampe-20261015-gl.inet-gl-xe300-factory.img",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-gl.inet-gl-xe300-factory.img",
+    "rampe_datei": "gluon-rampe-20261114-gl.inet-gl-xe300-factory.img",
     "rampe_weg": "Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch."
    }
   },
@@ -10246,8 +10246,8 @@
     "uboot_datei": "uboot-fritz7520.bin",
     "uboot_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz7520.bin",
     "tftp_name": "FRITZ7520.bin",
-    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb",
-    "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-box-7530-initramfs-uImage.itb",
+    "rampe_datei": "gluon-rampe-20261114-avm-fritz-box-7530-initramfs-uImage.itb",
     "sicherheit": "abgeleitet",
     "sicherheit_hinweis": "Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht."
    }
@@ -10315,8 +10315,8 @@
     "uboot_datei": "uboot-fritz7530.bin",
     "uboot_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz7530.bin",
     "tftp_name": "FRITZ7530.bin",
-    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb",
-    "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-box-7530-initramfs-uImage.itb",
+    "rampe_datei": "gluon-rampe-20261114-avm-fritz-box-7530-initramfs-uImage.itb",
     "sicherheit": "abgeleitet",
     "sicherheit_hinweis": "Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht."
    }
@@ -10384,8 +10384,8 @@
     "uboot_datei": "uboot-fritz1200.bin",
     "uboot_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz1200.bin",
     "tftp_name": "FRITZ1200.bin",
-    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-repeater-1200-initramfs-uImage.itb",
-    "rampe_datei": "gluon-rampe-20261015-avm-fritz-repeater-1200-initramfs-uImage.itb",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-repeater-1200-initramfs-uImage.itb",
+    "rampe_datei": "gluon-rampe-20261114-avm-fritz-repeater-1200-initramfs-uImage.itb",
     "sicherheit": "abgeleitet",
     "sicherheit_hinweis": "Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht."
    }
@@ -10453,8 +10453,8 @@
     "uboot_datei": "uboot-fritz3000.bin",
     "uboot_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz3000.bin",
     "tftp_name": "FRITZ3000.bin",
-    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-repeater-3000-initramfs-uImage.itb",
-    "rampe_datei": "gluon-rampe-20261015-avm-fritz-repeater-3000-initramfs-uImage.itb",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-repeater-3000-initramfs-uImage.itb",
+    "rampe_datei": "gluon-rampe-20261114-avm-fritz-repeater-3000-initramfs-uImage.itb",
     "sicherheit": "abgeleitet",
     "sicherheit_hinweis": "Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht."
    }
@@ -12682,8 +12682,8 @@
    "anleitung": "anleitungen/de/avm-fritz-box-3390.md",
    "erprobt": {},
    "werte": {
-    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-3390-initramfs-kernel.bin",
-    "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-3390-initramfs-kernel.bin",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-box-3390-initramfs-kernel.bin",
+    "rampe_datei": "gluon-rampe-20261114-avm-fritz-box-3390-initramfs-kernel.bin",
     "sicherheit": "abgeleitet"
    }
   },
@@ -12934,8 +12934,8 @@
    "erprobt": {},
    "werte": {
     "led_rampe": "Die Power-LED blinkt dann rot.",
-    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7362-sl-initramfs-kernel.bin",
-    "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-7362-sl-initramfs-kernel.bin",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-box-7362-sl-initramfs-kernel.bin",
+    "rampe_datei": "gluon-rampe-20261114-avm-fritz-box-7362-sl-initramfs-kernel.bin",
     "sicherheit": "abgeleitet"
    }
   },
@@ -12998,8 +12998,8 @@
    "erprobt": {},
    "werte": {
     "ersatz_ip": "169.254.120.1",
-    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7412-initramfs-kernel.bin",
-    "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-7412-initramfs-kernel.bin",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-box-7412-initramfs-kernel.bin",
+    "rampe_datei": "gluon-rampe-20261114-avm-fritz-box-7412-initramfs-kernel.bin",
     "sicherheit": "abgeleitet"
    }
   },
@@ -13062,8 +13062,8 @@
    "erprobt": {},
    "werte": {
     "ersatz_ip": "169.254.120.1",
-    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7430-initramfs-kernel.bin",
-    "rampe_datei": "gluon-rampe-20261015-avm-fritz-box-7430-initramfs-kernel.bin",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-box-7430-initramfs-kernel.bin",
+    "rampe_datei": "gluon-rampe-20261114-avm-fritz-box-7430-initramfs-kernel.bin",
     "sicherheit": "abgeleitet"
    }
   },
@@ -14716,11 +14716,11 @@
     "dauer_neustart": "einige Minuten",
     "dauer_lang": "",
     "dauer_gluon": "wenige Minuten",
-    "datei_beispiel": "gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin",
+    "datei_beispiel": "gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin",
     "rampe_datei": "gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin",
     "taste_hinweis": "",
     "led_falsch": "",
-    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin",
     "sicherheit": "quelle",
     "led_schreibt": "leuchtet die LED ruhig rot, etwas schwächer",
     "led_start": "blinkt die LED schnell weiß"
@@ -14803,11 +14803,11 @@
     "dauer_neustart": "weniger als eine halbe Minute bis gut 2 Minuten",
     "dauer_lang": "",
     "dauer_gluon": "unter 2 Minuten",
-    "datei_beispiel": "gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin",
+    "datei_beispiel": "gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin",
     "rampe_datei": "gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin",
     "taste_hinweis": "Nur die Reset-Taste führt in die Recovery, keine der anderen Tasten.",
     "led_falsch": "Ein orangefarbenes Auf- und Abdimmen ist nicht die Recovery.",
-    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin",
     "led_schreibt": "leuchtet die LED ruhig rot, etwas schwächer",
     "led_start": "blinkt die LED schnell weiß"
    }
@@ -20545,9 +20545,9 @@
     "beleg": "adorfer 11.11.2026"
    },
    "werte": {
-    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-genexis-pulse-ex400-factory.bin",
-    "rampe_datei": "gluon-rampe-20261015-genexis-pulse-ex400-factory.bin",
-    "rampe_sha256": "9e87a7fee71e0ef74afe956515c348b1b854f9af9f2a4d6e26c714cb249795a4"
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-genexis-pulse-ex400-factory.bin",
+    "rampe_datei": "gluon-rampe-20261114-genexis-pulse-ex400-factory.bin",
+    "rampe_sha256": "d50f3e886d82806b7c6480b395b07bc0770e48a0c40f8d7300ffd694903ebf0c"
    }
   },
   {
@@ -21172,8 +21172,8 @@
     "zwischen_datei": "openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img",
     "zwischen_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img",
     "sicherheit": "quelle",
-    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-netgear-wndr3700-v5-factory.img",
-    "rampe_datei": "gluon-rampe-20261015-netgear-wndr3700-v5-factory.img",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-netgear-wndr3700-v5-factory.img",
+    "rampe_datei": "gluon-rampe-20261114-netgear-wndr3700-v5-factory.img",
     "rampe_weg": "Benenne die RAMpe in firmware.img um und schick sie in Schritt 4 mit nmrpflash statt der OpenWrt-Datei."
    }
   },
@@ -22620,8 +22620,8 @@
    "werte": {
     "openwrt_datei": "openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin",
     "openwrt_url": "https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin",
-    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-zyxel-wsm20-initramfs-kernel.bin",
-    "rampe_datei": "gluon-rampe-20261015-zyxel-wsm20-initramfs-kernel.bin",
+    "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-zyxel-wsm20-initramfs-kernel.bin",
+    "rampe_datei": "gluon-rampe-20261114-zyxel-wsm20-initramfs-kernel.bin",
     "rampe_weg": "Lade in Schritt 4 statt der OpenWrt-Datei die RAMpe hoch; Teil 2 entfällt dann.",
     "sicherheit": "quelle",
     "sicherheit_hinweis": "Freifunk Aachen beschreibt den Weg so, und bei uns ist er an einem Gerät gelaufen; mit der RAMpe hat ihn noch niemand ausprobiert."
