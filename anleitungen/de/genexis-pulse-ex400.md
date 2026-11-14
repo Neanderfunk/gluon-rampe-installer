@@ -11,15 +11,16 @@ risiko: normal
 status: erprobt
 erprobt_am: 2026-11-11
 erprobt_mit: gluon-rampe-20261015-genexis-pulse-ex400-factory.bin
-rampe_image: gluon-rampe-20261015-genexis-pulse-ex400-factory.bin
+rampe_image: gluon-rampe-20261114-genexis-pulse-ex400-factory.bin
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3f406a80
+daten_stand: 2c43ca23b
 vorlage_stand: 23b89e67b
 ---
 
 # Genexis/Inteno Pulse EX400: Freifunk-Firmware installieren
 
-> **Am Gerät erprobt** am 11.11.2026 mit `gluon-rampe-20261015-genexis-pulse-ex400-factory.bin`.
+> **Am Gerät erprobt** am 11.11.2026 mit `gluon-rampe-20261015-genexis-pulse-ex400-factory.bin`. Das aktuelle Image ist neuer und in dieser Form
+> noch nicht am Gerät gelaufen.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
@@ -46,7 +47,7 @@ Ein Terminal brauchst du nicht. Rechne mit einer Viertelstunde.
   Netzwerkkabel
 - diese zwei Dateien:
   1. die RAMpe für den EX400:
-     [gluon-rampe-20261015-genexis-pulse-ex400-factory.bin](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-genexis-pulse-ex400-factory.bin), SHA256 `9e87a7fee71e0ef74afe956515c348b1b854f9af9f2a4d6e26c714cb249795a4`.
+     [gluon-rampe-20261114-genexis-pulse-ex400-factory.bin](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-genexis-pulse-ex400-factory.bin), SHA256 `d50f3e886d82806b7c6480b395b07bc0770e48a0c40f8d7300ffd694903ebf0c`.
      Nimm genau diese Datei (sie endet auf `-factory.bin`), nicht die
      RAMpe mit `initramfs` im Namen.
   2. die Freifunk-Firmware deiner Community für den Genexis/Inteno Pulse EX400, und zwar
@@ -82,7 +83,7 @@ Ein Terminal brauchst du nicht. Rechne mit einer Viertelstunde.
    erscheint eine schlichte Seite mit einem Feld zum Hochladen einer
    Firmware. Je nach Version des Bootloaders sieht sie etwas anders aus.
 
-5. **RAMpe hochladen.** Wähl `gluon-rampe-20261015-genexis-pulse-ex400-factory.bin` aus und lad sie hoch.
+5. **RAMpe hochladen.** Wähl `gluon-rampe-20261114-genexis-pulse-ex400-factory.bin` aus und lad sie hoch.
    Warte, bis eine Bestätigungsseite erscheint.
 
 6. **Neustart abwarten.** Der Router schreibt die RAMpe und startet neu.

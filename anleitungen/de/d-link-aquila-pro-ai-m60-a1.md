@@ -13,13 +13,14 @@ erprobt_am: 2026-10-16
 erprobt_mit: gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m60-a1-recovery.bin
 grundlagen: [browser-https, browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: 3f406a80
+daten_stand: 2c43ca23b
 vorlage_stand: 23b89e67b
 ---
 
 # D-Link AQUILA PRO AI M60 A1: Freifunk-Firmware installieren
 
-> **Am Gerät erprobt** am 16.10.2026 mit `gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin`.
+> **Am Gerät erprobt** am 16.10.2026 mit `gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin`. Das aktuelle Image ist neuer und in dieser Form
+> noch nicht am Gerät gelaufen.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
@@ -38,7 +39,7 @@ kein Passwort.
 
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - eine Büroklammer für die Reset-Taste
-- die RAMpe-Datei für dieses Gerät: `gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin` ([herunterladen](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin))
+- die RAMpe-Datei für dieses Gerät: `gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin` ([herunterladen](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin))
 - die Freifunk-Firmware deiner Community für den D-Link AQUILA PRO AI M60 A1, und zwar das
   **sysupgrade**-Image
 - das Programm **curl** zum Hochladen. Unter Linux und macOS ist es meist
@@ -86,16 +87,16 @@ wirklich über das Kabel spricht.
    Linux und macOS:
 
    ```sh
-   curl -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o /dev/null -F "firmware=@gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin;type=application/octet-stream" http://192.168.200.1/upload.cgi
+   curl -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o /dev/null -F "firmware=@gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin;type=application/octet-stream" http://192.168.200.1/upload.cgi
    ```
 
    Windows (PowerShell):
 
    ```
-   curl.exe -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o antwort.bin -F "firmware=@gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin;type=application/octet-stream" http://192.168.200.1/upload.cgi
+   curl.exe -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o antwort.bin -F "firmware=@gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin;type=application/octet-stream" http://192.168.200.1/upload.cgi
    ```
 
-   Den echten Dateinamen statt `gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin` einsetzen. Unter
+   Den echten Dateinamen statt `gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin` einsetzen. Unter
    Windows `curl.exe` genau so ausschreiben; `antwort.bin` nimmt nur die
    Antwort des Routers auf und kann danach weg. Mehr unter
    [curl benutzen](grundlagen/curl.md).

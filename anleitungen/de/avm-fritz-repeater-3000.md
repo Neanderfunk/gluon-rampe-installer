@@ -9,9 +9,9 @@ level: L5
 level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
-rampe_image: gluon-rampe-20261015-avm-fritz-repeater-3000-initramfs-uImage.itb
+rampe_image: gluon-rampe-20261114-avm-fritz-repeater-3000-initramfs-uImage.itb
 grundlagen: [avm-eva, browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3f406a80
+daten_stand: 2c43ca23b
 vorlage_stand: 23b89e67b
 ---
 
@@ -52,7 +52,7 @@ Gerät zu öffnen:
 - Python 3 und das kleine Programm [eva_ramboot.py](https://raw.githubusercontent.com/openwrt/openwrt/a1ea57bd050c172fdc2b851824ebd9782aafb055/scripts/flashing/eva_ramboot.py) von OpenWrt
 - einen TFTP-Server auf dem Rechner ([TFTP-Server einrichten](grundlagen/tftp-server.md))
 - den Bootloader für dieses Gerät: [uboot-fritz3000.bin](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz3000.bin)
-- die RAMpe für dieses Gerät: [gluon-rampe-20261015-avm-fritz-repeater-3000-initramfs-uImage.itb](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-repeater-3000-initramfs-uImage.itb)
+- die RAMpe für dieses Gerät: [gluon-rampe-20261114-avm-fritz-repeater-3000-initramfs-uImage.itb](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-repeater-3000-initramfs-uImage.itb)
 - die Freifunk-Firmware deiner Community für dieses Gerät, und zwar das
   **sysupgrade**-Image
 

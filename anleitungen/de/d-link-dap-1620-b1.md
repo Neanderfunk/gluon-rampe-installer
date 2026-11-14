@@ -10,7 +10,7 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: 3f406a80
+daten_stand: 2c43ca23b
 vorlage_stand: 23b89e67b
 ---
 

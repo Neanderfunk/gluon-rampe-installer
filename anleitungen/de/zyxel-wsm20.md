@@ -11,15 +11,16 @@ risiko: normal
 status: erprobt
 erprobt_am: 2026-09-19
 erprobt_mit: Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs
-rampe_image: gluon-rampe-20261015-zyxel-wsm20-initramfs-kernel.bin
+rampe_image: gluon-rampe-20261114-zyxel-wsm20-initramfs-kernel.bin
 grundlagen: [browser-https, browser-not-found, router-antwortet-nicht]
-daten_stand: 3f406a80
+daten_stand: 2c43ca23b
 vorlage_stand: 33a38da83
 ---
 
 # ZyXEL WSM20 (Multy M1): Freifunk-Firmware installieren
 
-> **Am Gerät erprobt** am 19.09.2026 mit `Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs`.
+> **Am Gerät erprobt** am 19.09.2026 mit `Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs`. Das aktuelle Image ist neuer und in dieser Form
+> noch nicht am Gerät gelaufen.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
@@ -123,7 +124,7 @@ OpenWrt-Etappe. Für den ZyXEL WSM20 (Multy M1) ist dieser Weg **noch von nieman
 ausprobiert**; die RAMpe selbst läuft auf anderen Geräten.
 
 1. Lade die RAMpe für den ZyXEL WSM20 (Multy M1) herunter:
-   [gluon-rampe-20261015-zyxel-wsm20-initramfs-kernel.bin](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-zyxel-wsm20-initramfs-kernel.bin).
+   [gluon-rampe-20261114-zyxel-wsm20-initramfs-kernel.bin](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-zyxel-wsm20-initramfs-kernel.bin).
 2. Lade in Schritt 4 statt der OpenWrt-Datei die RAMpe hoch; Teil 2 entfällt dann.
 3. Nach dem Neustart öffne `http://192.168.1.1`. Die RAMpe leitet von selbst
    auf ihre Seite "Firmware aktualisieren" weiter. Kommt stattdessen "Not Found", hat sich der Browser eine Weiterleitung von früher gemerkt, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md). Startet der Router zwischendurch neu,

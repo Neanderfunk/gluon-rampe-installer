@@ -9,9 +9,9 @@ level: L5
 level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
-rampe_image: gluon-rampe-20261015-netgear-wndr3700-v5-factory.img
+rampe_image: gluon-rampe-20261114-netgear-wndr3700-v5-factory.img
 grundlagen: [browser-https, browser-not-found, nmrpflash, router-antwortet-nicht]
-daten_stand: 3f406a80
+daten_stand: 2c43ca23b
 vorlage_stand: 181a050f7
 ---
 
@@ -124,7 +124,7 @@ OpenWrt-Etappe. Für den NETGEAR WNDR3700 v5 ist dieser Weg **noch von niemandem
 ausprobiert**; die RAMpe selbst läuft auf anderen Geräten.
 
 1. Lade die RAMpe für den NETGEAR WNDR3700 v5 herunter:
-   [gluon-rampe-20261015-netgear-wndr3700-v5-factory.img](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-netgear-wndr3700-v5-factory.img).
+   [gluon-rampe-20261114-netgear-wndr3700-v5-factory.img](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-netgear-wndr3700-v5-factory.img).
 2. Benenne die RAMpe in firmware.img um und schick sie in Schritt 4 mit nmrpflash statt der OpenWrt-Datei.
 3. Nach dem Neustart öffne `http://192.168.1.1`. Die RAMpe leitet von selbst
    auf ihre Seite "Firmware aktualisieren" weiter. Kommt stattdessen "Not Found", hat sich der Browser eine Weiterleitung von früher gemerkt, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md). Startet der Router zwischendurch neu,

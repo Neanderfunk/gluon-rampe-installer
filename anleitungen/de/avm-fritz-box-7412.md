@@ -9,9 +9,9 @@ level: L5
 level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
-rampe_image: gluon-rampe-20261015-avm-fritz-box-7412-initramfs-kernel.bin
+rampe_image: gluon-rampe-20261114-avm-fritz-box-7412-initramfs-kernel.bin
 grundlagen: [avm-eva, browser-https, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3f406a80
+daten_stand: 2c43ca23b
 vorlage_stand: 23b89e67b
 ---
 
@@ -41,7 +41,7 @@ annehmen. Die lädst du dann im Browser hoch.
 - Python 3 und das kleine Programm
   [eva_ramboot.py](https://raw.githubusercontent.com/openwrt/openwrt/a1ea57bd050c172fdc2b851824ebd9782aafb055/scripts/flashing/eva_ramboot.py) von OpenWrt
 - die RAMpe für dieses Gerät:
-  [gluon-rampe-20261015-avm-fritz-box-7412-initramfs-kernel.bin](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7412-initramfs-kernel.bin)
+  [gluon-rampe-20261114-avm-fritz-box-7412-initramfs-kernel.bin](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-box-7412-initramfs-kernel.bin)
 - die Freifunk-Firmware deiner Community für dieses Gerät, und zwar das
   **sysupgrade**-Image
 
@@ -71,7 +71,7 @@ annehmen. Die lädst du dann im Browser hoch.
    und nach wenigen Sekunden:
 
    ```
-   python3 eva_ramboot.py 192.168.178.1 gluon-rampe-20261015-avm-fritz-box-7412-initramfs-kernel.bin
+   python3 eva_ramboot.py 192.168.178.1 gluon-rampe-20261114-avm-fritz-box-7412-initramfs-kernel.bin
    ```
 
    Das Programm zeigt, was es mit der Box bespricht, und endet von selbst.
