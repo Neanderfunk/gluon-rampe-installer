@@ -17,6 +17,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from anleitungen import anzeige  # noqa: E402  (Modellname ohne Gluon-Interna)
+
 ROOT = Path(__file__).resolve().parent.parent
 DATEN = ROOT / "data" / "geraete-2025.1.json"
 EIGENE = {"SHA256SUMS", "LISTE.md", "LISTE.txt"}
@@ -50,7 +53,9 @@ def main():
     geraete = json.loads(DATEN.read_text(encoding="utf-8"))["geraete"]
     # laengste Namen zuerst, damit aruba-ap-303h nicht als aruba-ap-303 gilt
     namen = sorted((g["gluon_name"] for g in geraete), key=len, reverse=True)
-    modell = {g["gluon_name"]: g["modell"] for g in geraete}
+    # wie in den Anleitungen: "(broken)", "(Gluon: broken, ...)" und Gluon-Aliase
+    # fallen weg, sie sagen ueber die RAMpe nichts
+    modell = {g["gluon_name"]: anzeige(g) for g in geraete}
 
     dateien = sorted(p for p in ziel.iterdir() if p.is_file() and p.name not in EIGENE)
     summen = {p.name: sha256(p) for p in dateien}
