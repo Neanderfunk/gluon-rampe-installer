@@ -39,10 +39,8 @@ ein RAMpe-Image je Gerät reicht für alle Communities.
 
 ## Download
 
-Fertige Images (Stand 20261015, alle Geräte mit Rezept, Liste und Prüfsummen):
-<https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/>. Am Gerät erprobt
-sind bisher D-Link M60 A1 und M30 A1 und Genexis/Inteno Pulse EX400, alle
-anderen Images sind ungetestet.
+Fertige Images (alle Geräte mit Rezept, Liste und Prüfsummen):
+<https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/>.
 
 ## Geräte
 
