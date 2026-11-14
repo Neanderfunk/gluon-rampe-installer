@@ -59,12 +59,14 @@ MARKE = re.compile(r"\[([^\[\]]*(?:geprüft|abgeleitet|Zusammenfassung|ungeprüf
 
 
 def git_stand(repo, pfad):
-    """Kurzer Commit, der pfad zuletzt geaendert hat; 'lokal' bei Aenderungen."""
+    """Kurzer Commit, der pfad zuletzt geaendert hat; 'lokal' bei Aenderungen.
+    Feste Laenge 9: ohne --abbrev waehlt git die Laenge nach der Objektzahl,
+    die wechselte am 14.11.2026 zwischen zwei Laeufen von 9 auf 8 Zeichen."""
     try:
         if subprocess.run(["git", "-C", str(repo), "diff", "--quiet", "HEAD", "--", str(pfad)],
                           capture_output=True).returncode != 0:
             return "lokal"
-        r = subprocess.run(["git", "-C", str(repo), "log", "-1", "--format=%h", "--", str(pfad)],
+        r = subprocess.run(["git", "-C", str(repo), "log", "-1", "--abbrev=9", "--format=%h", "--", str(pfad)],
                            capture_output=True, text=True)
         return r.stdout.strip() or "lokal"
     except OSError:
