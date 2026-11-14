@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 #
-# rampe-liste.py - schreibt SHA256SUMS und LISTE.md fuer das Veroeffentlichungs-
+# rampe-liste.py - schreibt SHA256SUMS, LISTE.md und LISTE.txt fuer das Veroeffentlichungs-
 # verzeichnis der Gluon-RAMpe (Default out/images).
 #
 #   scripts/rampe-liste.py [verzeichnis]
 #
 # Das Verzeichnis enthaelt nur, was auf den Download-Server gehoert (Images,
-# uboot-fritz*.bin, SHA256SUMS, LISTE.md) und wird "as is" gespiegelt. build.sh
+# uboot-fritz*.bin, SHA256SUMS, LISTE.md, LISTE.txt) und wird "as is" gespiegelt. build.sh
 # ruft das Skript am Ende jedes Laufs auf.
 #
 # SPDX-License-Identifier: BSD-3-Clause
@@ -19,7 +19,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATEN = ROOT / "data" / "geraete-2025.1.json"
-EIGENE = {"SHA256SUMS", "LISTE.md"}
+EIGENE = {"SHA256SUMS", "LISTE.md", "LISTE.txt"}
 BILD = re.compile(r"^gluon-rampe-(\d{8})-(.+)$")
 
 
@@ -56,7 +56,7 @@ def main():
     summen = {p.name: sha256(p) for p in dateien}
     (ziel / "SHA256SUMS").write_text("".join(f"{h}  {n}\n" for n, h in summen.items()))
 
-    zeilen, stände = [], set()
+    zeilen, stände, eintraege = [], set(), []
     for p in dateien:
         m = BILD.match(p.name)
         if not m:
@@ -67,6 +67,8 @@ def main():
         groesse = f"{p.stat().st_size:,}".replace(",", ".")
         zeilen.append(f"| {modell.get(geraet, geraet or '?')} | `{p.name}` | {art(rest)} | "
                       f"{groesse} | `{summen[p.name]}` |")
+        eintraege.append((modell.get(geraet, geraet or "?"), p.name, art(rest), groesse,
+                          summen[p.name]))
     kopf = ["# Gluon-RAMpe-Images", "",
             f"Stand: {', '.join(sorted(stände)) or '-'}. Gebaut mit "
             "[gluon-rampe-installer](https://github.com/Neanderfunk/gluon-rampe-installer).",
@@ -78,7 +80,22 @@ def main():
                 + ", ".join(f"`{n}`" for n in fritz) + "."]
     fuss += ["", "Prüfsummen aller Dateien: `SHA256SUMS`.", ""]
     (ziel / "LISTE.md").write_text("\n".join(kopf + zeilen + fuss), encoding="utf-8")
-    print(f"{ziel}: {len(dateien)} Datei(en), LISTE.md und SHA256SUMS geschrieben")
+
+    # LISTE.txt: dasselbe als Klartext, je Datei ein Block. Die Markdown-Tabelle
+    # ist im Browser (Firmware-Server liefert text/plain) kaum lesbar.
+    txt = ["Gluon-RAMpe-Images", "",
+           f"Stand: {', '.join(sorted(stände)) or '-'}",
+           "Gebaut mit gluon-rampe-installer: https://github.com/Neanderfunk/gluon-rampe-installer",
+           ""]
+    for geraet, name, bildart, groesse, summe in eintraege:
+        txt += [geraet, f"  Datei:   {name}", f"  Art:     {bildart}",
+                f"  Größe:   {groesse} Byte", f"  SHA256:  {summe}", ""]
+    if fritz:
+        txt += ["Dazu für die AVM-ipq40xx-Geräte (eva_ramboot.py):"]
+        txt += [f"  {n}" for n in fritz] + [""]
+    txt += ["Prüfsummen aller Dateien: SHA256SUMS", ""]
+    (ziel / "LISTE.txt").write_text("\n".join(txt), encoding="utf-8")
+    print(f"{ziel}: {len(dateien)} Datei(en), LISTE.md, LISTE.txt und SHA256SUMS geschrieben")
 
 
 if __name__ == "__main__":

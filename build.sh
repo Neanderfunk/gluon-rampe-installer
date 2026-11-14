@@ -199,6 +199,6 @@ for u in "$GLUON_DIR"/openwrt/staging_dir/target-*/image/uboot-fritz*.bin; do
 	[ -f "$u" ] || continue
 	cp -v "$u" "$IMAGES/"
 done
-# SHA256SUMS und LISTE.md (Geraet, Datei, Art, Groesse, SHA256) fuer images/
+# SHA256SUMS, LISTE.md und LISTE.txt (Geraet, Datei, Art, Groesse, SHA256) fuer images/
 python3 "$ROOT/scripts/rampe-liste.py" "$IMAGES"
 ls -la "$IMAGES"
