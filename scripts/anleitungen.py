@@ -219,7 +219,9 @@ def seiten_erzeugen(geraete, quelle, jinja2):
         werte.update(g["werte"])
         erprobt = g["erprobt"]
         status = "erprobt" if erprobt.get("am") else "ungeprüft"
-        aktuell = datum8(werte.get("datei_beispiel", ""))
+        # Stand des aktuellen Images: datei_beispiel (D-Link-Recovery) oder
+        # rampe_datei (z. B. EX400); sonst fehlte der Hinweis "aktuelles Image neuer".
+        aktuell = datum8(werte.get("datei_beispiel") or werte.get("rampe_datei", ""))
         ctx = dict(g)
         am = erprobt.get("am", "")
         am_de = ".".join(reversed(am.split("-"))) if re.fullmatch(r"\d{4}-\d\d-\d\d", am) else am
