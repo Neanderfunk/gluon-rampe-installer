@@ -53,6 +53,9 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
                          "Device is upgrading the firmware"
     meldung_fertig       Erfolgsmeldung der Seite, z. B. "Upgrade successfully!"
     upload_langsam       true: das Hochladen im Browser dauert spürbar
+    led_herstellerfirmware  LED, wenn statt Gluon/RAMpe die D-Link-Firmware
+                         startet, in Klammern, z. B. "die LED dimmt langsam
+                         orange auf und ab" (adorfer 15.11.2026, M30/M60)
 
 Hochladen im Browser ist bei allen Geräten der Familie der Weg, curl nur der
 Notweg (adorfer 15.11.2026: DAP-1620/DAP-X1860 gehen mit Chromium schon
@@ -181,7 +184,7 @@ wirklich über das Kabel spricht.
    Ein `ping` hilft hier nicht, die Recovery antwortet nicht darauf.
    {%- if b.get("recovery-seite") %}
 
-   ![Die Recovery-Seite im Browser: Überschrift, Feld für die Datei, Knopf zum Hochladen]({{ b["recovery-seite"] }})
+   ![Die Recovery-Seite im Browser: Überschrift, Feld für die Datei, Knopf {% if w.upload_knopf %}"{{ w.upload_knopf }}"{% else %}zum Hochladen{% endif %}]({{ b["recovery-seite"] }})
    {%- endif %}
 
 6. **Datei im Browser hochladen.** Klick auf "Datei auswählen", wähl
@@ -190,7 +193,7 @@ wirklich über das Kabel spricht.
    {%- if w.upload_knopf %} "{{ w.upload_knopf }}"{% else %} den Knopf daneben{% endif %}.
    {%- if b.get("recovery-datei-gewaehlt") %}
 
-   ![Die Recovery-Seite mit gewählter Datei, daneben der Knopf zum Hochladen]({{ b["recovery-datei-gewaehlt"] }})
+   ![Die Recovery-Seite mit gewählter Datei, daneben der Knopf {% if w.upload_knopf %}"{{ w.upload_knopf }}"{% else %}zum Hochladen{% endif %}]({{ b["recovery-datei-gewaehlt"] }})
    {% endif %}
    Die Seite zeigt jetzt
    {%- if w.meldung_laeuft %} "{{ w.meldung_laeuft }}" mit einer Prozentzahl{% else %} den Fortschritt in Prozent{% endif %}.
@@ -205,13 +208,21 @@ wirklich über das Kabel spricht.
    {%- if w.get("led_schreibt") %}; dabei {{ w.led_schreibt }}{% endif %}, und
    der Router startet neu{% if w.get("led_start") %} (beim Neustart {{ w.led_start }}){% endif %}.
    **Strom nicht ziehen.** Die Erfolgsmeldung allein heißt noch nicht,
-   dass es geklappt hat. Das zeigt erst der nächste Schritt.
+   dass es geklappt hat.
    {%- if b.get("recovery-fertig") %}
 
    ![Die Recovery-Seite nach dem Hochladen, mit Erfolgsmeldung]({{ b["recovery-fertig"] }})
    {% endif %}
-   Klappt das Hochladen im Browser nicht, nimm den Notweg weiter unten
-   ("Notweg: Hochladen mit curl").
+   Nicht geklappt hat es, wenn
+
+   - gar nichts passiert: Der Router bleibt in der Recovery, die LED blinkt
+     weiter wie in Schritt 4, oder
+   - der Router mit der normalen D-Link-Firmware startet
+     {%- if w.led_herstellerfirmware %} ({{ w.led_herstellerfirmware }}){% endif %}.
+
+   Dann ist die Datei nicht angekommen. Das ist harmlos: noch einmal ab
+   Schritt 4 mit {{ browser }}. Klappt es auch dann nicht, nimm den Notweg
+   weiter unten ("Notweg: Hochladen mit curl").
 {%- if w.datei_art == "rampe" %}
 
 8. **Die RAMpe.** Nach dem Neustart {{ w.led_rampe }}. Stell den Rechner
@@ -276,11 +287,14 @@ wirklich über das Kabel spricht.
 
 ## Wenn etwas schiefgeht
 
-- **Der Browser-Upload war nach einer Sekunde "fertig", oder danach startet
-  wieder die normale D-Link-Firmware.** Dann ist die Datei nicht angekommen.
+- **Der Router bleibt in der Recovery (die LED blinkt weiter wie in
+  Schritt 4), oder er startet mit der normalen D-Link-Firmware
+  {%- if w.led_herstellerfirmware %} ({{ w.led_herstellerfirmware }}){% endif %}.**
+  Dann ist die Datei nicht angekommen.
   {%- if w.browser_nicht %} Mit {{ w.browser_nicht }} passiert das immer.{% endif %}
-  Noch einmal ab Schritt 4 mit {{ browser }}, sonst den Notweg mit
-  curl (unten).
+  Noch einmal ab Schritt 4 mit {{ browser }}, sonst den Notweg mit curl
+  (unten). Im Notweg ist die häufigste Ursache ein Tippfehler im
+  Dateinamen.
 - **Im Notweg: curl meldet "Failed to connect", HTTP 000 und 0 Bytes.** Die Recovery war
   nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
   Router noch einmal in die Recovery bringen (Schritt 4).
@@ -288,9 +302,6 @@ wirklich über das Kabel spricht.
   Zeit "Recv failure: Connection timed out".** Das ist normal: Der Router hat
   neu gestartet, ohne curl Bescheid zu geben. curl darf mit Strg+C beendet
   werden, sobald der Router neu startet.
-- **Nach dem Upload startet wieder die normale D-Link-Firmware.** Die Datei
-  ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
-  Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.
 - **Im Notweg: Aus der WSL unter Windows kommt keine Verbindung zustande.** Nimm curl.exe
   direkt in Windows, nicht in der WSL.
 {{ zusatz.fehler }}
