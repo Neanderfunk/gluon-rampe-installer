@@ -10,8 +10,8 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, nmrpflash, router-antwortet-nicht]
-daten_stand: cb556339c
-vorlage_stand: 181a050f7
+daten_stand: 612d99dd7
+vorlage_stand: 15ae34432
 ---
 
 # NETGEAR EAX12 / EAX11 v2 / EAX15 v2: Freifunk-Firmware installieren

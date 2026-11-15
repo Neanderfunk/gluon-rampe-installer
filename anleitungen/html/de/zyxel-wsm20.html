@@ -16,10 +16,10 @@
 <meta name="anleitung:status" content="erprobt">
 <meta name="anleitung:erprobt_am" content="2026-09-19">
 <meta name="anleitung:erprobt_mit" content="Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs">
-<meta name="anleitung:rampe_image" content="gluon-rampe-20261114-zyxel-wsm20-initramfs-kernel.bin">
+<meta name="anleitung:rampe_image" content="gluon-rampe-20261115-zyxel-wsm20-initramfs-kernel.bin">
 <meta name="anleitung:grundlagen" content="browser-https, browser-not-found, router-antwortet-nicht">
-<meta name="anleitung:daten_stand" content="cb556339c">
-<meta name="anleitung:vorlage_stand" content="33a38da83">
+<meta name="anleitung:daten_stand" content="612d99dd7">
+<meta name="anleitung:vorlage_stand" content="ae198bf8f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -34,8 +34,9 @@ Anleitung für alle nach dir besser:</p>
 <p><a href="mailto:projekt@neanderfunk.de?subject=Anleitung%20ZyXEL%20WSM20%20%28Multy%20M1%29">projekt@neanderfunk.de</a></p>
 </blockquote>
 <p>Die Firmware von Zyxel hat eine versteckte Seite, über die sich eine andere
-Firmware hochladen lässt. Darüber kommt zuerst OpenWrt in den
-Arbeitsspeicher, und von dort aus spielst du die Freifunk-Firmware ein. Du
+Firmware hochladen lässt. Darüber kommt zuerst die <strong>Gluon-RAMpe</strong> in den Arbeitsspeicher: eine kleine
+Firmware, die nur eins kann, die Freifunk-Firmware deiner Community
+annehmen. Du
 brauchst nur einen Browser, aber etwas Geduld: Die versteckte Seite ist
 manchmal zickig.</p>
 <p>Ein Konto in der Zyxel-Cloud brauchst du dafür nicht.</p>
@@ -43,13 +44,13 @@ manchmal zickig.</p>
 <ul>
 <li>den Multy M1 mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
 Netzwerkkabel</li>
-<li>OpenWrt für den WSM20 (nur für den Arbeitsspeicher):
-<a href="https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin">openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin</a></li>
+<li>die RAMpe für den WSM20 (nur für den Arbeitsspeicher):
+<a href="https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-zyxel-wsm20-initramfs-kernel.bin">gluon-rampe-20261115-zyxel-wsm20-initramfs-kernel.bin</a></li>
 <li>die Freifunk-Firmware deiner Community für dieses Gerät, und zwar das
 <strong>sysupgrade</strong>-Image</li>
 </ul>
 <h2>Schritte</h2>
-<h3>Teil 1: OpenWrt in den Arbeitsspeicher</h3>
+<h3>Teil 1: Die RAMpe in den Arbeitsspeicher</h3>
 <ol>
 <li>
 <p><strong>Verbinden.</strong> Steck das Kabel vom Rechner in die Buchse <strong>LAN1</strong> des
@@ -78,28 +79,38 @@ springen oder die Adresse in einem neuen Tab öffnen, bis die Upgrade-Seite
 kommt.</p>
 </li>
 <li>
-<p><strong>OpenWrt hochladen.</strong> Die OpenWrt-Datei wählen und mit &quot;OK&quot; bestätigen.
+<p><strong>RAMpe hochladen.</strong> Die RAMpe-Datei wählen und mit &quot;OK&quot; bestätigen.
 Die Seite zeigt erst den Fortschritt in Prozent und zählt dann 150
-Sekunden herunter. Leuchtet die LED danach <strong>dauerhaft weiß</strong>, läuft
-OpenWrt im Arbeitsspeicher.</p>
+Sekunden herunter. Danach startet die RAMpe im Arbeitsspeicher.</p>
 </li>
 </ol>
 <h3>Teil 2: Freifunk-Firmware</h3>
 <ol start="5">
 <li>
-<p><strong>OpenWrt-Oberfläche öffnen.</strong> <code>http://192.168.1.1</code>. Kommt nichts, das
-Kabel kurz ziehen und wieder stecken, damit der Rechner eine neue Adresse
-bekommt. Auf &quot;Login&quot; klicken, ein Passwort gibt es noch nicht.</p>
+<p><strong>Die RAMpe-Seite öffnen.</strong> Öffne <code>http://192.168.1.1</code>. Die RAMpe
+leitet von selbst auf ihre Seite &quot;Firmware aktualisieren&quot; weiter. Kommt
+stattdessen &quot;Not Found&quot;, hat sich der Browser eine Weiterleitung von
+früher gemerkt, siehe <a href="grundlagen/browser-not-found.html">Der Browser zeigt &quot;Not Found&quot;</a>.
+Kommt gar nichts, siehe <a href="grundlagen/router-antwortet-nicht.html">Die Router-Seite antwortet nicht</a>.
+Zeigt der Browser eine Warnung vor einem unsicheren Zertifikat, hat er
+von sich aus <code>https://</code> vor die Adresse gesetzt, siehe
+<a href="grundlagen/browser-https.html">Browser macht https daraus</a>.
+Die RAMpe läuft nur im Arbeitsspeicher. Startet das Gerät zwischendurch
+neu oder fehlt der Strom, ist sie weg: dann noch einmal ab Schritt 2.</p>
+<p><img src="../bilder/allgemein/rampe-seite.png" alt="Die Seite der RAMpe: &quot;Firmware aktualisieren&quot; mit Feld für die Datei und Knopf &quot;Datei hochladen&quot;" /></p>
 </li>
 <li>
-<p><strong>Hochladen.</strong> <strong>System → Backup / Flash Firmware</strong>, ganz unten &quot;Flash
-image…&quot;, das sysupgrade-Image deiner Community wählen, &quot;Upload&quot;. Den Haken
-bei <strong>&quot;Keep settings and retain the current configuration&quot; entfernen</strong>.
-Das ist wichtig. Dann <strong>&quot;Continue&quot;</strong>.</p>
+<p><strong>Freifunk-Firmware hochladen.</strong> Wähl das <strong>sysupgrade</strong>-Image
+deiner Community aus und klick &quot;Datei hochladen&quot;. Die RAMpe zeigt die
+Prüfsumme (SHA256) der Datei. Vergleich sie mit der Prüfsumme, die deine
+Community zur Datei angibt. Stimmt sie, klick &quot;Fortfahren&quot;.</p>
+<p><img src="../bilder/allgemein/rampe-pruefsumme.png" alt="Die RAMpe zeigt Prüfsumme und Größe der Datei, darunter &quot;Abbrechen&quot; und &quot;Fortfahren&quot;" /></p>
+<p>Danach erscheint der Hinweis, dass die Firmware jetzt geschrieben wird.
+Jetzt den Strom nicht unterbrechen.</p>
+<p><img src="../bilder/allgemein/rampe-flash-laeuft.png" alt="Hinweis der RAMpe: Die Firmware wird jetzt aktualisiert, Stromversorgung nicht unterbrechen" /></p>
 </li>
 <li>
-<p><strong>Warten,</strong> etwa 2 Minuten, Strom nicht ziehen. Die LED leuchtet
-zwischendurch türkis und blinkt beim Schreiben weiß.</p>
+<p><strong>Warten,</strong> etwa 2 Minuten, Strom nicht ziehen.</p>
 </li>
 <li>
 <p><strong>Fertig.</strong> Danach startet die Freifunk-Firmware deiner Community: je nach
@@ -112,8 +123,8 @@ nicht</a>; kommt &quot;Not Found&quot;, siehe
 </ol>
 <h2>Woran du erkennst, dass es geklappt hat</h2>
 <ul>
-<li>Nach Teil 1 leuchtet die LED dauerhaft weiß, und unter
-<code>http://192.168.1.1</code> meldet sich OpenWrt.</li>
+<li>Nach Teil 1 zeigt <code>http://192.168.1.1</code> die RAMpe-Seite &quot;Firmware
+aktualisieren&quot;.</li>
 <li>Nach Teil 2 meldet sich die Freifunk-Firmware.</li>
 </ul>
 <h2>Wenn etwas schiefgeht</h2>
@@ -124,37 +135,14 @@ normal.</li>
 springen oder die Adresse in einem neuen Tab öffnen.</li>
 <li><strong>Die LED leuchtet dauerhaft rot.</strong> Werkseinstellungen wie in Schritt 2.</li>
 </ul>
-<h2>Anderer Weg: mit der Gluon-RAMpe (ungetestet)</h2>
-<p>Statt erst OpenWrt und dann die Freifunk-Firmware aufzuspielen, geht es auch
-mit der <strong>Gluon-RAMpe</strong>: einer kleinen Firmware, die nur eins kann, nämlich
-die Freifunk-Firmware deiner Community annehmen. Das spart die
-OpenWrt-Etappe. Für den ZyXEL WSM20 (Multy M1) ist dieser Weg <strong>noch von niemandem
-ausprobiert</strong>; die RAMpe selbst läuft auf anderen Geräten.</p>
-<ol>
-<li>
-<p>Lade die RAMpe für den ZyXEL WSM20 (Multy M1) herunter:
-<a href="https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-zyxel-wsm20-initramfs-kernel.bin">gluon-rampe-20261114-zyxel-wsm20-initramfs-kernel.bin</a>.</p>
-</li>
-<li>
-<p>Lade in Schritt 4 statt der OpenWrt-Datei die RAMpe hoch; Teil 2 entfällt dann.</p>
-</li>
-<li>
-<p>Nach dem Neustart öffne <code>http://192.168.1.1</code>. Die RAMpe leitet von selbst
-auf ihre Seite &quot;Firmware aktualisieren&quot; weiter. Kommt stattdessen &quot;Not Found&quot;, hat sich der Browser eine Weiterleitung von früher gemerkt, siehe <a href="grundlagen/browser-not-found.html">Der Browser zeigt &quot;Not Found&quot;</a>. Kommt gar nichts, siehe <a href="grundlagen/router-antwortet-nicht.html">Die Router-Seite antwortet nicht</a>. Startet der Router zwischendurch neu,
-einfach die Seite wieder aufrufen.</p>
-<p><img src="../bilder/allgemein/rampe-seite.png" alt="Die Seite der RAMpe: &quot;Firmware aktualisieren&quot; mit Feld für die Datei und Knopf &quot;Datei hochladen&quot;" /></p>
-</li>
-<li>
-<p>Wähl das <strong>sysupgrade</strong>-Image deiner Community und klick &quot;Datei
-hochladen&quot;. Die RAMpe zeigt die Prüfsumme (SHA256); vergleich sie mit der
-Angabe deiner Community und klick &quot;Fortfahren&quot;.</p>
-</li>
-<li>
-<p>Nach wenigen Minuten startet die Freifunk-Firmware.</p>
-</li>
-</ol>
-<p>Zeigt der Browser beim Aufruf eine Warnung vor dem Zertifikat, siehe
-<a href="grundlagen/browser-https.html">Browser macht https daraus</a>.</p>
+<h2>Anderer Weg: über OpenWrt</h2>
+<p>Statt der RAMpe nimmt die versteckte Seite in Schritt 4 auch OpenWrt für den
+Arbeitsspeicher:
+<a href="https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin">openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin</a>. Danach unter
+<code>http://192.168.1.1</code> bei &quot;Login&quot; klicken (ein Passwort gibt es noch nicht),
+<strong>System → Backup / Flash Firmware</strong>, ganz unten &quot;Flash image…&quot;, das
+sysupgrade-Image wählen, &quot;Upload&quot;, den Haken bei <strong>&quot;Keep settings and retain
+the current configuration&quot; entfernen</strong> und <strong>&quot;Continue&quot;</strong>.</p>
 <h2>Herkunft der Angaben</h2>
 <p>Diese Anleitung folgt in weiten Teilen der
 <a href="https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/">Anleitung von Freifunk Aachen</a>

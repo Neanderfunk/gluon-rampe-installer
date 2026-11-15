@@ -10,8 +10,8 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: cb556339c
-vorlage_stand: 33a38da83
+daten_stand: 612d99dd7
+vorlage_stand: 9560ae8ed
 ---
 
 # GL.iNet GL-MT1300 (Beryl): Freifunk-Firmware installieren

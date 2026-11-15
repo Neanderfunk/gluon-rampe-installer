@@ -14,9 +14,10 @@
 <meta name="anleitung:level_text" content="Serielles Kabel">
 <meta name="anleitung:risiko" content="normal">
 <meta name="anleitung:status" content="ungeprüft">
-<meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server">
-<meta name="anleitung:daten_stand" content="cb556339c">
-<meta name="anleitung:vorlage_stand" content="92dd447d3">
+<meta name="anleitung:rampe_image" content="gluon-rampe-20261115-aruba-ap-365-initramfs-uImage.itb">
+<meta name="anleitung:grundlagen" content="browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server">
+<meta name="anleitung:daten_stand" content="612d99dd7">
+<meta name="anleitung:vorlage_stand" content="84f780274">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -38,18 +39,17 @@ Kabel, über das du den Bootloader des Geräts (bei Aruba heißt er &quot;APBoot
 direkt bedienst. Das Gehäuse musst du dafür nicht öffnen.</p>
 <p>Der Weg hat zwei Etappen:</p>
 <ol>
-<li><strong>OpenWrt starten.</strong> Du stellst den Bootloader so ein, dass er ein
-kleines OpenWrt per TFTP von deinem Rechner holt und startet. Es läuft
-nur im Arbeitsspeicher.</li>
-<li><strong>Die Freifunk-Firmware aufspielen.</strong> Aus diesem OpenWrt heraus bereitest
-du den Speicher vor und installierst die Freifunk-Firmware deiner
-Community.</li>
+<li><strong>Die RAMpe starten.</strong> Du stellst den Bootloader so ein, dass er die
+<strong>Gluon-RAMpe</strong> per TFTP von deinem Rechner holt und startet: eine kleine
+Firmware, die nur eins kann, die Freifunk-Firmware deiner Community
+annehmen. Sie läuft nur im Arbeitsspeicher.</li>
+<li><strong>Die Freifunk-Firmware aufspielen.</strong> Auf der Seite der RAMpe lädst du
+sie im Browser hoch. Den Speicher bereitet die RAMpe dabei selbst vor.</li>
 </ol>
-<p>Dafür brauchst du drei Werkzeuge, die auf eigenen Seiten erklärt sind:
-<a href="grundlagen/serielle-konsole.html">Serielle Konsole benutzen</a>,
-<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a> und
-<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>. Rechne beim ersten Mal mit
-einer Stunde, ohne das Kabel zu bauen.</p>
+<p>Dafür brauchst du zwei Werkzeuge, die auf eigenen Seiten erklärt sind:
+<a href="grundlagen/serielle-konsole.html">Serielle Konsole benutzen</a> und
+<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>. Rechne beim ersten Mal
+mit einer Stunde, ohne das Kabel zu bauen.</p>
 <h2>Was du brauchst</h2>
 <ul>
 <li>den Access Point mit Stromversorgung (Netzteil oder PoE-Injektor), einen
@@ -59,18 +59,15 @@ USB-Buchse des Aruba Instant On AP17 ein echter USB-Anschluss ist (wie beim
 Aruba AP-365) oder nur die seriellen Leitungen trägt (wie beim AP-303).
 Steck kein normales USB-Kabel ein, solange das nicht geklärt ist, und
 schreib uns vorher. Wir finden es mit dir heraus.</li>
-<li>ein Terminalprogramm, einen TFTP-Server und <code>ssh</code>/<code>scp</code> (siehe die drei
-Seiten oben)</li>
+<li>ein Terminalprogramm und einen TFTP-Server (siehe die zwei Seiten oben)</li>
 <li>diese Dateien:
 <ol>
-<li>das OpenWrt-initramfs für dein Gerät:
-<a href="https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb">openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb</a>, SHA256
-<code>9dbf7ed4b826d75d4d6893c52d3d5e925b2331c91a33b9842a3d1f7c03a12d83</code>.
-Leg es in den Ordner deines TFTP-Servers und benenn es dort genau in
+<li>die RAMpe für dein Gerät:
+<a href="https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-aruba-ap-365-initramfs-uImage.itb">gluon-rampe-20261115-aruba-ap-365-initramfs-uImage.itb</a>.
+Leg sie in den Ordner deines TFTP-Servers und benenn sie dort genau in
 <strong><code>ipq40xx.ari</code></strong> um.</li>
 <li>die Freifunk-Firmware deiner Community für den Aruba Instant On AP17, und zwar
-das <strong>sysupgrade</strong>-Image. Benenn es in <code>gluon.bin</code> um, dann passen die
-Befehle unten ohne Änderung.</li>
+das <strong>sysupgrade</strong>-Image.</li>
 </ol>
 </li>
 </ul>
@@ -119,7 +116,7 @@ erscheint die Eingabeaufforderung <code>apboot&gt;</code>. Sonst Strom ziehen un
 einmal.</p>
 </li>
 </ol>
-<h3>OpenWrt starten</h3>
+<h3>Die RAMpe starten</h3>
 <ol start="6">
 <li>
 <p><strong>Bootloader einstellen.</strong> Gib diese Befehle ein, jede Zeile einzeln, und
@@ -133,17 +130,17 @@ saveenv
 <p><strong>Prüfen:</strong> Gib <code>printenv ramboot_openwrt</code> ein. Die Ausgabe muss genau
 der dritten Zeile oben entsprechen. Sonst diese Zeile noch einmal
 eingeben und wieder <code>saveenv</code>.</p>
-<p>Damit startet der Access Point ab jetzt OpenWrt statt der
+<p>Damit startet der Access Point ab jetzt nicht mehr die
 Aruba-Firmware. Die Aruba-Firmware bleibt im Speicher, siehe &quot;Zurück zur
 Aruba-Firmware&quot;.</p>
 </li>
 <li>
-<p><strong>OpenWrt laden.</strong> Gib ein:</p>
+<p><strong>Die RAMpe laden.</strong> Gib ein:</p>
 <pre><code>run ramboot_openwrt
 </code></pre>
 <p>Der Access Point holt <code>ipq40xx.ari</code> von deinem Rechner. Danach erscheint
 <code>Invalid image format version</code>, das ist normal. Kurz darauf startet
-OpenWrt, das Terminal zeigt viele Zeilen. Warte, bis
+die RAMpe, das Terminal zeigt viele Zeilen. Warte, bis
 <code>Please press Enter to activate this console.</code> erscheint.</p>
 <p><strong>Kommt stattdessen <code>Unknown command 'bootm'</code></strong>, lies unter &quot;Wenn etwas
 schiefgeht&quot; weiter.</p>
@@ -152,32 +149,34 @@ schiefgeht&quot; weiter.</p>
 <h3>Freifunk-Firmware aufspielen</h3>
 <ol start="8">
 <li>
-<p><strong>Anmelden.</strong>
-Öffne ein zweites Terminal im Ordner mit <code>gluon.bin</code> und gib ein:</p>
-<pre><code>scp -O gluon.bin root@192.168.1.1:/tmp/gluon.bin
-ssh root@192.168.1.1
-</code></pre>
-<p>Ein Passwort gibt es nicht. Meldet <code>ssh</code> &quot;REMOTE HOST IDENTIFICATION HAS
-CHANGED&quot;, siehe <a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>.</p>
+<p><strong>Rechner vorbereiten.</strong> Die feste Adresse
+<code>192.168.1.75</code> passt auch für die RAMpe unter <code>192.168.1.1</code>.</p>
 </li>
 <li>
-<p><strong>Speicher prüfen.</strong> Auf dem Access Point:</p>
-<pre><code>grep ubi /proc/mtd
-</code></pre>
-<p><strong>Prüfen:</strong> Die Ausgabe beginnt mit
-<code>mtd1:</code> und endet mit <code>&quot;ubi&quot;</code>. Sonst hier
-aufhören und uns schreiben.</p>
+<p><strong>Die RAMpe-Seite öffnen.</strong> Öffne <code>http://192.168.1.1</code>. Die RAMpe
+leitet von selbst auf ihre Seite &quot;Firmware aktualisieren&quot; weiter. Kommt
+stattdessen &quot;Not Found&quot;, hat sich der Browser eine Weiterleitung von
+früher gemerkt, siehe <a href="grundlagen/browser-not-found.html">Der Browser zeigt &quot;Not Found&quot;</a>.
+Kommt gar nichts, siehe <a href="grundlagen/router-antwortet-nicht.html">Die Router-Seite antwortet nicht</a>.
+Zeigt der Browser eine Warnung vor einem unsicheren Zertifikat, hat er
+von sich aus <code>https://</code> vor die Adresse gesetzt, siehe
+<a href="grundlagen/browser-https.html">Browser macht https daraus</a>.
+Die RAMpe läuft nur im Arbeitsspeicher. Startet das Gerät zwischendurch
+neu oder fehlt der Strom, ist sie weg: dann noch einmal ab Schritt 5.</p>
+<p><img src="../bilder/allgemein/rampe-seite.png" alt="Die Seite der RAMpe: &quot;Firmware aktualisieren&quot; mit Feld für die Datei und Knopf &quot;Datei hochladen&quot;" /></p>
 </li>
 <li>
-<p><strong>Speicher vorbereiten und Freifunk-Firmware schreiben.</strong> Gib ein, Zeile
-für Zeile:</p>
-<pre><code>ubidetach -p /dev/mtd1
-ubiformat /dev/mtd1
-sysupgrade -n /tmp/gluon.bin
-</code></pre>
-<p>Meldet <code>ubidetach</code> einen Fehler, ist das kein Problem, solange
-<code>ubiformat</code> danach ohne Fehler durchläuft. Fragt <code>ubiformat</code> nach, mit
-<code>y</code> bestätigen. Nach <code>sysupgrade</code> bricht die Verbindung ab.</p>
+<p><strong>Freifunk-Firmware hochladen.</strong> Wähl das <strong>sysupgrade</strong>-Image
+deiner Community aus und klick &quot;Datei hochladen&quot;. Die RAMpe zeigt die
+Prüfsumme (SHA256) der Datei. Vergleich sie mit der Prüfsumme, die deine
+Community zur Datei angibt. Stimmt sie, klick &quot;Fortfahren&quot;.</p>
+<p><img src="../bilder/allgemein/rampe-pruefsumme.png" alt="Die RAMpe zeigt Prüfsumme und Größe der Datei, darunter &quot;Abbrechen&quot; und &quot;Fortfahren&quot;" /></p>
+<p>Danach erscheint der Hinweis, dass die Firmware jetzt geschrieben wird.
+Jetzt den Strom nicht unterbrechen.</p>
+<p><img src="../bilder/allgemein/rampe-flash-laeuft.png" alt="Hinweis der RAMpe: Die Firmware wird jetzt aktualisiert, Stromversorgung nicht unterbrechen" /></p>
+<p>Vor dem Schreiben bereitet die RAMpe den Speicher vor. Klappt das nicht,
+schreibt sie nichts und zeigt ein Protokoll an, siehe &quot;Wenn etwas
+schiefgeht&quot;.</p>
 </li>
 <li>
 <p><strong>Fertig.</strong> Einige Minuten warten, Strom nicht ziehen. Im
@@ -194,8 +193,9 @@ nicht</a>; kommt &quot;Not Found&quot;, siehe
 <ul>
 <li>In Schritt 5 erscheint <code>apboot&gt;</code>.</li>
 <li>In Schritt 7 zeigt der Bootloader, dass er die Datei geholt hat
-(<code>Bytes transferred = …</code>), und OpenWrt startet.</li>
-<li>In Schritt 9 zeigt <code>grep</code> die Partition <code>&quot;ubi&quot;</code>.</li>
+(<code>Bytes transferred = …</code>), und die RAMpe startet.</li>
+<li>In Schritt 9 zeigt <code>http://192.168.1.1</code> die RAMpe-Seite
+&quot;Firmware aktualisieren&quot;.</li>
 <li>Nach Schritt 11 meldet sich die Freifunk-Firmware.</li>
 </ul>
 <h2>Wenn etwas schiefgeht</h2>
@@ -218,12 +218,30 @@ der Seite eines ähnlichen Geräts: Es könnte danach nicht mehr starten.
 Willst du an dieser Stelle aufhören, stell im Bootloader den Start der
 Aruba-Firmware wieder her, wie unter &quot;Zurück zur Aruba-Firmware&quot;
 beschrieben.</li>
-<li><strong>In Schritt 8 antwortet nichts.</strong> Warte noch eine Minute,
-OpenWrt braucht etwas.</li>
-<li><strong><code>ubiformat</code> meldet einen Fehler.</strong> Nicht weitermachen, sondern die
-Ausgabe abschreiben (oder die Mitschrift des Terminals nehmen) und uns
-schreiben.</li>
+<li><strong>In Schritt 9 antwortet nichts.</strong> Warte noch eine Minute,
+die RAMpe braucht etwas.</li>
+<li><strong>Die RAMpe meldet beim Vorbereiten des Speichers einen Fehler</strong> und
+zeigt ein Protokoll. Dann hat sie nichts geschrieben. Nicht weitermachen,
+sondern das Protokoll abschreiben (oder die Mitschrift des Terminals
+nehmen) und uns schreiben.</li>
 </ul>
+<h2>Anderer Weg: über OpenWrt</h2>
+<p>Statt der RAMpe startet der Bootloader in Schritt 7 auch OpenWrt:
+<a href="https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb">openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb</a>, SHA256 <code>9dbf7ed4b826d75d4d6893c52d3d5e925b2331c91a33b9842a3d1f7c03a12d83</code>,
+ebenfalls als <code>ipq40xx.ari</code> in den TFTP-Ordner. Den Speicher bereitest du
+dann selbst vor (<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>): das
+sysupgrade-Image in <code>gluon.bin</code> umbenennen, Rechner wie in Schritt
+8 vorbereiten, dann</p>
+<pre><code>scp -O gluon.bin root@192.168.1.1:/tmp/gluon.bin
+ssh root@192.168.1.1
+</code></pre>
+<p>und auf dem Access Point, Zeile für Zeile (prüf vorher mit
+<code>grep ubi /proc/mtd</code>, dass die Ausgabe mit
+<code>mtd1:</code> beginnt und auf <code>&quot;ubi&quot;</code> endet):</p>
+<pre><code>ubidetach -p /dev/mtd1
+ubiformat /dev/mtd1
+sysupgrade -n /tmp/gluon.bin
+</code></pre>
 <h2>Zurück zur Aruba-Firmware</h2>
 <p>Die Aruba-Firmware bleibt bei diesem Weg im Speicher. Um sie wieder zu
 starten, halt den Bootloader an (Schritt 5) und gib ein:</p>

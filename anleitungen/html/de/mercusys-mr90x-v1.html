@@ -14,9 +14,10 @@
 <meta name="anleitung:level_text" content="Besondere Programme">
 <meta name="anleitung:risiko" content="normal">
 <meta name="anleitung:status" content="ungeprüft">
-<meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, router-antwortet-nicht, ssh-scp">
-<meta name="anleitung:daten_stand" content="cb556339c">
-<meta name="anleitung:vorlage_stand" content="fe341eeb6">
+<meta name="anleitung:rampe_image" content="gluon-rampe-20261115-mercusys-mr90x-v1-initramfs-kernel.bin">
+<meta name="anleitung:grundlagen" content="browser-https, browser-not-found, feste-ip, router-antwortet-nicht, ssh-scp">
+<meta name="anleitung:daten_stand" content="612d99dd7">
+<meta name="anleitung:vorlage_stand" content="f20399f13">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -32,8 +33,9 @@ Anleitung für alle nach dir besser:</p>
 </blockquote>
 <p>Der Mercusys MR90X v1 nimmt fremde Firmware weder über seine Oberfläche noch über
 einen einfachen Notfall-Modus an. Der Weg führt über eine Hintertür in der
-Mercusys-Firmware auf die Kommandozeile, von dort kommt ein kleines OpenWrt
-auf den Router und darüber die Freifunk-Firmware. Das ist etwas für Leute,
+Mercusys-Firmware auf die Kommandozeile, von dort kommt die <strong>Gluon-RAMpe</strong> auf den Router, eine kleine Firmware, die
+nur eins kann: die Freifunk-Firmware deiner Community annehmen. Die lädst du
+dann im Browser hoch. Das ist etwas für Leute,
 die mit SSH, scp und einer Shell umgehen können
 (<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>).</p>
 <blockquote>
@@ -57,7 +59,9 @@ aus. Kommt dabei keine Fehlermeldung, sind die Dateien heil. Darin liegen
 ein vollständiges busybox (<code>busybox-aarch64</code>; das busybox der
 Mercusys-Firmware kann einen nötigen Befehl nicht), OpenWrt als
 Zwischenstufe (<code>openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin</code>), Prüfsummen und Hinweise zu den
-Quelltexten.</li>
+Quelltexten. Gebraucht wird daraus nur das busybox.</li>
+<li>die RAMpe für den Mercusys MR90X v1:
+<a href="https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-mercusys-mr90x-v1-initramfs-kernel.bin">gluon-rampe-20261115-mercusys-mr90x-v1-initramfs-kernel.bin</a>. Leg sie in denselben Ordner.</li>
 <li>die Freifunk-Firmware deiner Community für den Mercusys MR90X v1, und zwar das
 <strong>sysupgrade</strong>-Image</li>
 </ul>
@@ -130,68 +134,64 @@ ein Telnet-Dienst läuft:</p>
 Befehle tippst du in diese Telnet-Shell.</p>
 </li>
 </ol>
-<h3>Teil 3: OpenWrt als Zwischenstufe</h3>
+<h3>Teil 3: Die RAMpe als Zwischenstufe</h3>
 <ol start="8">
 <li>
 <p><strong>Dateien auf den Router.</strong> Auf deinem Rechner, im ausgepackten Ordner:</p>
-<pre><code>scp -O -P 20001 -o HostKeyAlgorithms=+ssh-rsa busybox-aarch64 openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin root@192.168.1.1:/tmp/
+<pre><code>scp -O -P 20001 -o HostKeyAlgorithms=+ssh-rsa busybox-aarch64 gluon-rampe-20261115-mercusys-mr90x-v1-initramfs-kernel.bin root@192.168.1.1:/tmp/
 </code></pre>
 <p>In der Telnet-Shell:</p>
 <pre><code>cd /tmp
 chmod a+x busybox-aarch64
-du -h openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin
+du -h gluon-rampe-20261115-mercusys-mr90x-v1-initramfs-kernel.bin
 </code></pre>
 <p>Die Größe muss kleiner sein als 9MiB.</p>
 </li>
 <li>
-<p><strong>OpenWrt schreiben.</strong> Ab hier ist die Mercusys-Firmware weg. Der
+<p><strong>Die RAMpe schreiben.</strong> Ab hier ist die Mercusys-Firmware weg. Der
 Notfall-Modus des Bootloaders bleibt aber erhalten (siehe &quot;Zurück zur
 Mercusys-Firmware&quot;).</p>
 <pre><code>ubirmvol /dev/ubi0 -N kernel
 ubimkvol /dev/ubi0 -n 1 -N kernel -s 9MiB
-./busybox-aarch64 ubiupdatevol /dev/ubi0_1 /tmp/openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin
+./busybox-aarch64 ubiupdatevol /dev/ubi0_1 /tmp/gluon-rampe-20261115-mercusys-mr90x-v1-initramfs-kernel.bin
 reboot
-</code></pre>
-</li>
-<li>
-<p><strong>OpenWrt-Einstellungen setzen.</strong> Nach dem Neustart läuft OpenWrt unter
-<code>192.168.1.1</code>, der Rechner bleibt auf &quot;automatisch&quot;. Melde dich an,
-jetzt auf dem normalen Port und ohne Passwort:</p>
-<pre><code>ssh root@192.168.1.1
-</code></pre>
-<p>Dann genau diese Befehle:</p>
-<pre><code>fw_setenv baudrate 115200
-fw_setenv bootargs &quot;ubi.mtd=ubi0 console=ttyS0,115200n1 loglevel=8 earlycon=uart8250,mmio32,0x11002000 init=/etc/preinit&quot;
-fw_setenv fdtcontroladdr 5ffc0e70
-fw_setenv ipaddr 192.168.1.1
-fw_setenv loadaddr 0x46000000
-fw_setenv mtdids &quot;spi-nand0=spi-nand0&quot;
-fw_setenv mtdparts &quot;spi-nand0:2M(boot),1M(u-boot-env),50M(ubi0),50M(ubi1),8M(userconfig),4M(tp_data)&quot;
-fw_setenv netmask 255.255.255.0
-fw_setenv serverip 192.168.1.2
-fw_setenv stderr serial@11002000
-fw_setenv stdin serial@11002000
-fw_setenv stdout serial@11002000
-fw_setenv tp_boot_idx 0
 </code></pre>
 </li>
 </ol>
 <h3>Teil 4: Freifunk-Firmware</h3>
-<ol start="11">
+<p>Nach dem Neustart läuft die RAMpe unter <code>192.168.1.1</code>, der Rechner bleibt
+auf &quot;automatisch&quot;. Die Einstellungen des Bootloaders, die OpenWrt sonst
+braucht, setzt die RAMpe vor dem Schreiben selbst.</p>
+<ol start="10">
 <li>
-<p><strong>Freifunk-Firmware aufspielen.</strong> Auf deinem Rechner:</p>
-<pre><code>scp -O &lt;sysupgrade-image&gt; root@192.168.1.1:/tmp/sysupgrade.bin
-</code></pre>
-<p>Dann auf dem Router:</p>
-<pre><code>sysupgrade -n /tmp/sysupgrade.bin
-</code></pre>
-<p>Der Router schreibt die Firmware und startet neu, einige Minuten.
-<strong>Strom nicht ziehen.</strong></p>
+<p><strong>Die RAMpe-Seite öffnen.</strong> Öffne <code>http://192.168.1.1</code>. Die RAMpe
+leitet von selbst auf ihre Seite &quot;Firmware aktualisieren&quot; weiter. Kommt
+stattdessen &quot;Not Found&quot;, hat sich der Browser eine Weiterleitung von
+früher gemerkt, siehe <a href="grundlagen/browser-not-found.html">Der Browser zeigt &quot;Not Found&quot;</a>.
+Kommt gar nichts, siehe <a href="grundlagen/router-antwortet-nicht.html">Die Router-Seite antwortet nicht</a>.
+Zeigt der Browser eine Warnung vor einem unsicheren Zertifikat, hat er
+von sich aus <code>https://</code> vor die Adresse gesetzt, siehe
+<a href="grundlagen/browser-https.html">Browser macht https daraus</a>.
+Die RAMpe bleibt auf dem Router, bis die Freifunk-Firmware sie ersetzt.
+Startet der Router zwischendurch neu, ist das harmlos: Seite einfach
+wieder aufrufen.</p>
+<p><img src="../bilder/allgemein/rampe-seite.png" alt="Die Seite der RAMpe: &quot;Firmware aktualisieren&quot; mit Feld für die Datei und Knopf &quot;Datei hochladen&quot;" /></p>
 </li>
 <li>
-<p><strong>Fertig.</strong> Danach startet die Freifunk-Firmware deiner Community: je
-nach Community zuerst mit einer Einrichtungsseite unter
-<code>http://192.168.1.1</code> oder gleich im Betrieb.
+<p><strong>Freifunk-Firmware hochladen.</strong> Wähl das <strong>sysupgrade</strong>-Image
+deiner Community aus und klick &quot;Datei hochladen&quot;. Die RAMpe zeigt die
+Prüfsumme (SHA256) der Datei. Vergleich sie mit der Prüfsumme, die deine
+Community zur Datei angibt. Stimmt sie, klick &quot;Fortfahren&quot;.</p>
+<p><img src="../bilder/allgemein/rampe-pruefsumme.png" alt="Die RAMpe zeigt Prüfsumme und Größe der Datei, darunter &quot;Abbrechen&quot; und &quot;Fortfahren&quot;" /></p>
+<p>Danach erscheint der Hinweis, dass die Firmware jetzt geschrieben wird.
+Jetzt den Strom nicht unterbrechen.</p>
+<p><img src="../bilder/allgemein/rampe-flash-laeuft.png" alt="Hinweis der RAMpe: Die Firmware wird jetzt aktualisiert, Stromversorgung nicht unterbrechen" /></p>
+</li>
+<li>
+<p><strong>Fertig.</strong> Der Router schreibt die Firmware und startet neu, einige
+Minuten. <strong>Strom nicht ziehen.</strong> Danach startet die Freifunk-Firmware
+deiner Community: je nach Community zuerst mit einer Einrichtungsseite
+unter <code>http://192.168.1.1</code> oder gleich im Betrieb.
 Antwortet dort nichts, siehe <a href="grundlagen/router-antwortet-nicht.html">Die Router-Seite antwortet
 nicht</a>; kommt &quot;Not Found&quot;, siehe
 <a href="grundlagen/browser-not-found.html">Der Browser zeigt &quot;Not Found&quot;</a>.</p>
@@ -201,8 +201,9 @@ nicht</a>; kommt &quot;Not Found&quot;, siehe
 <ul>
 <li>Nach Schritt 4 liegen <code>boot.bin</code>, <code>tp_data.bin</code> und der Ordner <code>tp_data</code>
 in der richtigen Größe auf deinem Rechner.</li>
-<li>Nach Schritt 9 meldet sich unter <code>192.168.1.1</code> OpenWrt.</li>
-<li>Nach Schritt 11 meldet sich die Freifunk-Firmware.</li>
+<li>Nach Schritt 9 zeigt <code>http://192.168.1.1</code> die RAMpe-Seite &quot;Firmware
+aktualisieren&quot;.</li>
+<li>Nach Schritt 12 meldet sich die Freifunk-Firmware.</li>
 </ul>
 <h2>Wenn etwas schiefgeht</h2>
 <ul>
@@ -217,6 +218,28 @@ Einstellung noch einmal um.</li>
 <li><strong>Nach Schritt 9 startet der Router nicht.</strong> Über den Notfall-Modus
 zurück zur Mercusys-Firmware (unten) und von vorn.</li>
 </ul>
+<h2>Anderer Weg: über OpenWrt</h2>
+<p>Statt der RAMpe geht in Schritt 8 und 9 auch das OpenWrt aus der ZIP
+(<code>openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin</code>), mit denselben Befehlen und diesem Dateinamen.
+Nach dem Neustart läuft OpenWrt unter <code>192.168.1.1</code>. Dann setzt du die
+Einstellungen des Bootloaders selbst: <code>ssh root@192.168.1.1</code> (normaler
+Port, kein Passwort) und genau diese Befehle:</p>
+<pre><code>fw_setenv baudrate 115200
+fw_setenv bootargs &quot;ubi.mtd=ubi0 console=ttyS0,115200n1 loglevel=8 earlycon=uart8250,mmio32,0x11002000 init=/etc/preinit&quot;
+fw_setenv fdtcontroladdr 5ffc0e70
+fw_setenv ipaddr 192.168.1.1
+fw_setenv loadaddr 0x46000000
+fw_setenv mtdids &quot;spi-nand0=spi-nand0&quot;
+fw_setenv mtdparts &quot;spi-nand0:2M(boot),1M(u-boot-env),50M(ubi0),50M(ubi1),8M(userconfig),4M(tp_data)&quot;
+fw_setenv netmask 255.255.255.0
+fw_setenv serverip 192.168.1.2
+fw_setenv stderr serial@11002000
+fw_setenv stdin serial@11002000
+fw_setenv stdout serial@11002000
+fw_setenv tp_boot_idx 0
+</code></pre>
+<p>Danach das sysupgrade-Image mit <code>scp -O &lt;sysupgrade-image&gt; root@192.168.1.1:/tmp/sysupgrade.bin</code> kopieren und auf dem Router
+<code>sysupgrade -n /tmp/sysupgrade.bin</code> eingeben.</p>
 <h2>Zurück zur Mercusys-Firmware</h2>
 <p>Der Bootloader von Mercusys bleibt bei diesem Weg unangetastet, sein
 Notfall-Modus also auch:</p>
@@ -233,7 +256,7 @@ Abschnitt &quot;Return to stock&quot;.</p>
 <h2>Herkunft der Angaben</h2>
 <p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
 <ul>
-<li>abgeleitet (Gluon-RAMpe passt)</li>
+<li>geprüft: Code, fw_setenv im Image 20261114, Skript im Image 20261115 (8.472.100 Byte); am Gerät ungetestet (Gluon-RAMpe passt)</li>
 <li>geprüft: Commit e4fe309 (Programm)</li>
 <li>geprüft: Commit, Wiki toh:mercusys:mr90x_v1 (Weg ab Werk, Rückweg zur Herstellerfirmware)</li>
 <li>geprüft: Wiki toh:mercusys:mr90x_v1 (Programm, Typenschild/Verwechslung, Bedingung an die Herstellerfirmware)</li>

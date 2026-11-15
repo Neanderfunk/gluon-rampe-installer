@@ -9,10 +9,10 @@ level: L3
 level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
-rampe_image: gluon-rampe-20261114-gl.inet-gl-xe300-factory.img
+rampe_image: gluon-rampe-20261115-gl.inet-gl-xe300-factory.img
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: cb556339c
-vorlage_stand: 33a38da83
+daten_stand: 612d99dd7
+vorlage_stand: 9560ae8ed
 ---
 
 # GL.iNet GL-XE300: Freifunk-Firmware installieren
@@ -37,16 +37,17 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
 
 - den Router mit Netzteil
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
-- OpenWrt für den GL.iNet GL-XE300:
-  [openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img). Die Freifunk-Firmware
-  gibt es nicht in der Form, die der Notfall-Modus annimmt; deshalb kommt
-  erst OpenWrt drauf und darüber die Freifunk-Firmware.
+- die RAMpe für den GL.iNet GL-XE300:
+  [gluon-rampe-20261115-gl.inet-gl-xe300-factory.img](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-gl.inet-gl-xe300-factory.img). Die
+  Freifunk-Firmware gibt es nicht in der Form, die der Notfall-Modus annimmt;
+  deshalb kommt erst die **Gluon-RAMpe** drauf, eine kleine Firmware, die nur
+  eins kann: die Freifunk-Firmware deiner Community annehmen.
 - die Freifunk-Firmware deiner Community für den GL.iNet GL-XE300, und zwar das
   **sysupgrade**-Image
 
 ## Schritte
 
-1. **Datei bereitlegen.** Lade OpenWrt und das Freifunk-sysupgrade-Image herunter.
+1. **Datei bereitlegen.** Lade die RAMpe und das Freifunk-sysupgrade-Image herunter.
 
 2. **Feste Adresse am Rechner.** Stell deinen Rechner auf `192.168.1.2`,
    Netzmaske `255.255.255.0`
@@ -59,7 +60,7 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
 4. **Notfall-Modus starten.** Drück die Reset-Taste und die Power-Taste gleichzeitig und halte beide, bis die LAN-LED 5-mal geblinkt hat. Dann beide loslassen. Bleibt die WLAN-LED an, ist der Notfall-Modus erreicht.
 
 5. **Hochladen.** Öffne im Browser `http://192.168.1.1`. Es erscheint die
-   schlichte Notfall-Seite. Wähl die OpenWrt-Datei aus und
+   schlichte Notfall-Seite. Wähl die RAMpe-Datei aus und
    starte das Hochladen ("Update firmware"). Die Seite zeigt dann
    "UPDATE IN PROGRESS" mit einem Ladekreis, der sich endlos weiterdreht,
    auch wenn der Router längst fertig ist. Das ist normal.
@@ -68,18 +69,41 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
    etwa 3 Minuten.
    **Strom nicht ziehen.**
 
-7. **Freifunk-Firmware über OpenWrt.** Nach dem Neustart läuft OpenWrt.
-   Öffne `http://192.168.1.1`, melde dich an (Passwort-Feld leer), geh zu
-   **System → Backup / Flash Firmware**, "Flash image…", wähl das
-   Freifunk-sysupgrade-Image, **entfern den Haken bei "Keep settings"** und
-   klick **Continue**. Wieder einige Minuten warten.
+7. **Rechner umstellen.** Nach dem Neustart läuft die RAMpe. Stell den
+   Rechner wieder auf "automatisch".
 
-8. **Fertig.** Stell den Rechner wieder auf "automatisch". Danach startet die
-   Freifunk-Firmware deiner Community: je nach Community zuerst mit einer
-   Einrichtungsseite unter `http://192.168.1.1` oder gleich im Betrieb.
-   Antwortet dort nichts, siehe [Die Router-Seite antwortet
-   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
-   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
+8. **Die RAMpe-Seite öffnen.** Öffne `http://192.168.1.1`. Die RAMpe
+    leitet von selbst auf ihre Seite "Firmware aktualisieren" weiter. Kommt
+    stattdessen "Not Found", hat sich der Browser eine Weiterleitung von
+    früher gemerkt, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
+    Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md).
+    Zeigt der Browser eine Warnung vor einem unsicheren Zertifikat, hat er
+    von sich aus `https://` vor die Adresse gesetzt, siehe
+    [Browser macht https daraus](grundlagen/browser-https.md).
+    Die RAMpe bleibt auf dem Router, bis die Freifunk-Firmware sie ersetzt.
+    Startet der Router zwischendurch neu, ist das harmlos: Seite einfach
+    wieder aufrufen.
+
+    ![Die Seite der RAMpe: "Firmware aktualisieren" mit Feld für die Datei und Knopf "Datei hochladen"](../bilder/allgemein/rampe-seite.png)
+
+9. **Freifunk-Firmware hochladen.** Wähl das **sysupgrade**-Image
+    deiner Community aus und klick "Datei hochladen". Die RAMpe zeigt die
+    Prüfsumme (SHA256) der Datei. Vergleich sie mit der Prüfsumme, die deine
+    Community zur Datei angibt. Stimmt sie, klick "Fortfahren".
+
+    ![Die RAMpe zeigt Prüfsumme und Größe der Datei, darunter "Abbrechen" und "Fortfahren"](../bilder/allgemein/rampe-pruefsumme.png)
+
+    Danach erscheint der Hinweis, dass die Firmware jetzt geschrieben wird.
+    Jetzt den Strom nicht unterbrechen.
+
+    ![Hinweis der RAMpe: Die Firmware wird jetzt aktualisiert, Stromversorgung nicht unterbrechen](../bilder/allgemein/rampe-flash-laeuft.png)
+
+10. **Fertig.** Nach einigen Minuten startet die Freifunk-Firmware deiner
+    Community: je nach Community zuerst mit einer Einrichtungsseite unter
+    `http://192.168.1.1` oder gleich im Betrieb.
+    Antwortet dort nichts, siehe [Die Router-Seite antwortet
+    nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+    [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 
 ## Woran du erkennst, dass es geklappt hat
 
@@ -95,29 +119,14 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
   und versuch Schritt 4 noch einmal, diesmal genau auf die LEDs achtend. Kommt "Not Found" oder "PAGE NOT
   FOUND", siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 
-## Anderer Weg: mit der Gluon-RAMpe (ungetestet)
+## Anderer Weg: über OpenWrt
 
-Statt erst OpenWrt und dann die Freifunk-Firmware aufzuspielen, geht es auch
-mit der **Gluon-RAMpe**: einer kleinen Firmware, die nur eins kann, nämlich
-die Freifunk-Firmware deiner Community annehmen. Das spart die
-OpenWrt-Etappe. Für den GL.iNet GL-XE300 ist dieser Weg **noch von niemandem
-ausprobiert**; die RAMpe selbst läuft auf anderen Geräten.
-
-1. Lade die RAMpe für den GL.iNet GL-XE300 herunter:
-   [gluon-rampe-20261114-gl.inet-gl-xe300-factory.img](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-gl.inet-gl-xe300-factory.img).
-2. Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch.
-3. Nach dem Neustart öffne `http://192.168.1.1`. Die RAMpe leitet von selbst
-   auf ihre Seite "Firmware aktualisieren" weiter. Kommt stattdessen "Not Found", hat sich der Browser eine Weiterleitung von früher gemerkt, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md). Startet der Router zwischendurch neu,
-   einfach die Seite wieder aufrufen.
-
-   ![Die Seite der RAMpe: "Firmware aktualisieren" mit Feld für die Datei und Knopf "Datei hochladen"](../bilder/allgemein/rampe-seite.png)
-4. Wähl das **sysupgrade**-Image deiner Community und klick "Datei
-   hochladen". Die RAMpe zeigt die Prüfsumme (SHA256); vergleich sie mit der
-   Angabe deiner Community und klick "Fortfahren".
-5. Nach wenigen Minuten startet die Freifunk-Firmware.
-
-Zeigt der Browser beim Aufruf eine Warnung vor dem Zertifikat, siehe
-[Browser macht https daraus](grundlagen/browser-https.md).
+Statt der RAMpe nimmt der Notfall-Modus in Schritt 5 auch OpenWrt:
+[openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img](https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img).
+Nach dem Neustart läuft OpenWrt. Öffne `http://192.168.1.1`, melde dich an
+(Passwort-Feld leer), geh zu **System → Backup / Flash Firmware**, "Flash
+image…", wähl das Freifunk-sysupgrade-Image, **entfern den Haken bei "Keep
+settings"** und klick **Continue**.
 
 ## Zurück zur GL.iNet-Firmware
 

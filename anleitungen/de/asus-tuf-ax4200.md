@@ -9,17 +9,18 @@ level: L4
 level_text: Network-Tools
 risiko: normal
 status: ungeprüft
-grundlagen: [browser-not-found, router-antwortet-nicht, ssh-scp]
-daten_stand: cb556339c
-vorlage_stand: 33a38da83
+rampe_image: gluon-rampe-20261115-asus-tuf-ax4200-initramfs-kernel.bin
+grundlagen: [browser-https, browser-not-found, router-antwortet-nicht, ssh-scp]
+daten_stand: 612d99dd7
+vorlage_stand: d134995cb
 ---
 
 # ASUS TUF-AX4200: Freifunk-Firmware installieren
 
-> **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
-> bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
-> ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
-> klappt.
+> **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
+> ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
+> aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 > Freifunk Darmstadt beschreibt denselben Weg für ihre Freifunk-Firmware.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
@@ -32,30 +33,30 @@ Die ASUS-Firmware nimmt keine fremde Firmware über ihre Weboberfläche an.
 Der Weg führt über SSH, also die Anmeldung im Terminal, und hat drei
 Etappen:
 
-1. **Ein kleines OpenWrt in den Speicher schreiben.** Du meldest dich per
-   SSH an der ASUS-Firmware an. Der Router holt sich eine OpenWrt-Datei von
-   deinem Rechner und schreibt sie anstelle der ASUS-Firmware in den
-   Speicher.
-2. **OpenWrt starten.** Nach einem Neustart läuft dieses kleine OpenWrt.
-3. **Die Freifunk-Firmware aufspielen.** Aus OpenWrt heraus installierst du
-   die Freifunk-Firmware deiner Community.
+1. **Die RAMpe in den Speicher schreiben.** Du meldest dich per SSH an der
+   ASUS-Firmware an. Der Router holt sich die **Gluon-RAMpe** von deinem
+   Rechner und schreibt sie anstelle der ASUS-Firmware in den Speicher. Die
+   RAMpe ist eine kleine Firmware, die nur eins kann: die Freifunk-Firmware
+   deiner Community annehmen.
+2. **Die RAMpe starten.** Nach einem Neustart läuft sie.
+3. **Die Freifunk-Firmware aufspielen.** Auf der Seite der RAMpe lädst du
+   sie im Browser hoch.
 
-Du brauchst dafür SSH und scp ([SSH und scp benutzen](grundlagen/ssh-scp.md))
+Du brauchst dafür SSH ([SSH und scp benutzen](grundlagen/ssh-scp.md))
 und Python 3 auf deinem Rechner. Rechne mit einer Dreiviertelstunde.
 
 ## Was du brauchst
 
 - den Router mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
   Netzwerkkabel
-- `ssh` und `scp` ([SSH und scp benutzen](grundlagen/ssh-scp.md))
+- `ssh` ([SSH und scp benutzen](grundlagen/ssh-scp.md))
 - **Python 3**. Unter Linux und macOS ist es meist schon da, unter Windows
   bekommst du es bei <https://www.python.org/downloads/>.
 - diese zwei Dateien:
-  1. das OpenWrt-"factory-initramfs" für den ASUS TUF-AX4200:
-     [openwrt-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin](https://github.com/herbetom/openwrt-asus-filogic-factory/releases/download/filogic-v2/openwrt-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin). Die Datei hat ein Freifunk-Entwickler für genau diesen Zweck gebaut (Dezember 2023); eine offizielle Datei von OpenWrt dafür gibt es nicht.
+  1. die RAMpe für den ASUS TUF-AX4200:
+     [gluon-rampe-20261115-asus-tuf-ax4200-initramfs-kernel.bin](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-asus-tuf-ax4200-initramfs-kernel.bin).
   2. die Freifunk-Firmware deiner Community für den ASUS TUF-AX4200, und zwar
-     das **sysupgrade**-Image. Benenn es in `gluon.bin` um, dann passen die
-     Befehle unten ohne Änderung.
+     das **sysupgrade**-Image.
 
 ## Vorher prüfen
 
@@ -65,15 +66,15 @@ das es keine Freifunk-Firmware gibt. Schau auf das Typenschild.
 
 ## Schritte
 
-### OpenWrt in den Speicher schreiben
+### Die RAMpe in den Speicher schreiben
 
-1. **Webserver auf dem Rechner starten.** Leg einen Ordner `openwrt-webroot`
-   an, kopier die OpenWrt-Datei hinein und benenn sie dort in `openwrt.bin`
-   um. Öffne ein Terminal in dem Ordner, **in dem** `openwrt-webroot` liegt,
+1. **Webserver auf dem Rechner starten.** Leg einen Ordner `rampe-webroot`
+   an, kopier die RAMpe-Datei hinein und benenn sie dort in `rampe.bin`
+   um. Öffne ein Terminal in dem Ordner, **in dem** `rampe-webroot` liegt,
    und starte:
 
    ```
-   python3 -m http.server -d openwrt-webroot 8080
+   python3 -m http.server -d rampe-webroot 8080
    ```
 
    Unter Windows heißt der Befehl `py` statt `python3`. Erlaube der
@@ -114,55 +115,69 @@ das es keine Freifunk-Firmware gibt. Schau auf das Typenschild.
    echo "192.168.50.123 openwrtimage.lan" >> /etc/hosts
    ```
 
-6. **OpenWrt holen.** Auf dem Router:
+6. **Die RAMpe holen.** Auf dem Router:
 
    ```
-   wget -O /tmp/openwrt.bin http://openwrtimage.lan:8080/openwrt.bin
+   wget -O /tmp/rampe.bin http://openwrtimage.lan:8080/rampe.bin
    ```
 
    **Prüfen:** `wget` meldet keinen Fehler, und im Terminal mit dem
-   Webserver erscheint eine Zeile mit `GET /openwrt.bin` und `200`. Sonst
+   Webserver erscheint eine Zeile mit `GET /rampe.bin` und `200`. Sonst
    hier aufhören und Schritt 1 und 5 prüfen.
 
 7. **Schreiben.** Jetzt wird die ASUS-Firmware überschrieben.
 
    > **Ab dem ersten Befehl, bis `mtd-write` fertig ist, auf keinen Fall den
    > Strom ziehen.** In dieser Zeit ist die ASUS-Firmware schon gelöscht und
-   > OpenWrt noch nicht vollständig geschrieben. Dann hilft nur noch die
+   > die RAMpe noch nicht vollständig geschrieben. Dann hilft nur noch die
    > serielle Konsole.
 
    Gib die beiden Befehle nacheinander ein, genau so:
 
    ```
    mtd-erase -d linux
-   mtd-write -i /tmp/openwrt.bin -d linux
+   mtd-write -i /tmp/rampe.bin -d linux
    ```
 
    Beide Befehle zeigen keinen Fortschritt. Warte, bis die Eingabe wieder
    erscheint.
 
-### OpenWrt starten
+### Die RAMpe starten
 
 8. **Neu starten.** Zieh den Stecker des Netzteils, warte ein paar Sekunden
-   und steck ihn wieder ein. Nach etwa einer Minute läuft OpenWrt unter
+   und steck ihn wieder ein. Nach etwa einer Minute läuft die RAMpe unter
    `192.168.1.1`. Damit dein Rechner eine passende Adresse bekommt, zieh das
    Netzwerkkabel am Rechner kurz ab und steck es wieder ein.
 
 ### Freifunk-Firmware aufspielen
 
-9. **Freifunk-Firmware kopieren und installieren.** Im Terminal auf deinem
-   Rechner, im Ordner mit `gluon.bin`:
+9. **Die RAMpe-Seite öffnen.** Öffne `http://192.168.1.1`. Die RAMpe
+    leitet von selbst auf ihre Seite "Firmware aktualisieren" weiter. Kommt
+    stattdessen "Not Found", hat sich der Browser eine Weiterleitung von
+    früher gemerkt, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
+    Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md).
+    Zeigt der Browser eine Warnung vor einem unsicheren Zertifikat, hat er
+    von sich aus `https://` vor die Adresse gesetzt, siehe
+    [Browser macht https daraus](grundlagen/browser-https.md).
+    Die RAMpe bleibt auf dem Router, bis die Freifunk-Firmware sie ersetzt.
+    Startet der Router zwischendurch neu, ist das harmlos: Seite einfach
+    wieder aufrufen.
 
-   ```
-   scp -O gluon.bin root@192.168.1.1:/tmp/gluon.bin
-   ssh root@192.168.1.1 "sysupgrade -n /tmp/gluon.bin"
-   ```
+    ![Die Seite der RAMpe: "Firmware aktualisieren" mit Feld für die Datei und Knopf "Datei hochladen"](../bilder/allgemein/rampe-seite.png)
 
-   Ein Passwort gibt es nicht. Nach dem zweiten Befehl bricht die Verbindung
-   ab, oft mit einer Meldung wie `Command failed: … (Connection failed)`.
-   Das ist harmlos.
+10. **Freifunk-Firmware hochladen.** Wähl das **sysupgrade**-Image
+    deiner Community aus und klick "Datei hochladen". Die RAMpe zeigt die
+    Prüfsumme (SHA256) der Datei. Vergleich sie mit der Prüfsumme, die deine
+    Community zur Datei angibt. Stimmt sie, klick "Fortfahren".
 
-10. **Fertig.** Einige Minuten warten, Strom nicht ziehen. Danach startet
+    ![Die RAMpe zeigt Prüfsumme und Größe der Datei, darunter "Abbrechen" und "Fortfahren"](../bilder/allgemein/rampe-pruefsumme.png)
+
+    Danach erscheint der Hinweis, dass die Firmware jetzt geschrieben wird.
+    Jetzt den Strom nicht unterbrechen.
+
+    ![Hinweis der RAMpe: Die Firmware wird jetzt aktualisiert, Stromversorgung nicht unterbrechen](../bilder/allgemein/rampe-flash-laeuft.png)
+
+11. **Fertig.** Einige Minuten warten, Strom nicht ziehen. Danach startet
     die Freifunk-Firmware deiner Community: je nach Community zuerst mit
     einer Einrichtungsseite unter `http://192.168.1.1` oder gleich im
     Betrieb.
@@ -173,9 +188,10 @@ das es keine Freifunk-Firmware gibt. Schau auf das Typenschild.
 ## Woran du erkennst, dass es geklappt hat
 
 - In Schritt 5 steht eine Adresse vor `openwrtimage.lan`.
-- In Schritt 6 zeigt der Webserver `GET /openwrt.bin` mit `200`.
-- Nach Schritt 8 antwortet OpenWrt unter `192.168.1.1`.
-- Nach Schritt 10 meldet sich die Freifunk-Firmware.
+- In Schritt 6 zeigt der Webserver `GET /rampe.bin` mit `200`.
+- Nach Schritt 8 zeigt `http://192.168.1.1` die RAMpe-Seite "Firmware
+  aktualisieren".
+- Nach Schritt 11 meldet sich die Freifunk-Firmware.
 
 ## Wenn etwas schiefgeht
 
@@ -184,14 +200,32 @@ das es keine Freifunk-Firmware gibt. Schau auf das Typenschild.
   Assistenten selbst vergeben.
 - **`wget` meldet einen Fehler.** Läuft der Webserver noch? Lässt die
   Firewall deines Rechners Port 8080 durch? Stimmt die Adresse in
-  `/etc/hosts` (Schritt 5)? Liegt `openwrt.bin` wirklich im Ordner
-  `openwrt-webroot`?
+  `/etc/hosts` (Schritt 5)? Liegt `rampe.bin` wirklich im Ordner
+  `rampe-webroot`?
 - **Nach Schritt 8 antwortet nichts unter `192.168.1.1`.** Warte noch etwas
   und steck das Netzwerkkabel am Rechner neu ein. Kommt auch nach fünf
   Minuten nichts, schreib uns. Weiter geht es dann nur über die serielle
   Konsole im Router.
 - **Meldet `ssh` "REMOTE HOST IDENTIFICATION HAS CHANGED"**, siehe
   [SSH und scp benutzen](grundlagen/ssh-scp.md).
+
+## Anderer Weg: über OpenWrt
+
+Statt der RAMpe lässt sich in Schritt 1 bis 7 auch das OpenWrt-"factory-initramfs"
+schreiben: [openwrt-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin](https://github.com/herbetom/openwrt-asus-filogic-factory/releases/download/filogic-v2/openwrt-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin). Die Datei hat ein Freifunk-Entwickler für genau diesen Zweck gebaut (Dezember 2023); eine offizielle Datei von OpenWrt dafür gibt es nicht.
+Benenn es im Webserver-Ordner in `rampe.bin` um, dann passen die Befehle
+oben. Nach dem Neustart läuft OpenWrt unter `192.168.1.1`; die
+Freifunk-Firmware kommt dann per scp und ssh
+([SSH und scp benutzen](grundlagen/ssh-scp.md)): das sysupgrade-Image in
+`gluon.bin` umbenennen und
+
+```
+scp -O gluon.bin root@192.168.1.1:/tmp/gluon.bin
+ssh root@192.168.1.1 "sysupgrade -n /tmp/gluon.bin"
+```
+
+Ein Passwort gibt es nicht. Nach dem zweiten Befehl bricht die Verbindung
+ab, das ist harmlos.
 
 ## Zurück zur ASUS-Firmware
 

@@ -14,9 +14,10 @@
 <meta name="anleitung:level_text" content="Serielles Kabel">
 <meta name="anleitung:risiko" content="normal">
 <meta name="anleitung:status" content="ungeprüft">
-<meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server">
-<meta name="anleitung:daten_stand" content="cb556339c">
-<meta name="anleitung:vorlage_stand" content="33e50477e">
+<meta name="anleitung:rampe_image" content="gluon-rampe-20261115-extreme-networks-ws-ap3825i-initramfs-kernel.bin">
+<meta name="anleitung:grundlagen" content="browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server">
+<meta name="anleitung:daten_stand" content="612d99dd7">
+<meta name="anleitung:vorlage_stand" content="9a02820db">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -44,17 +45,17 @@ scheinbar nichts passiert.</p>
 Weg führt über die <strong>serielle Konsole</strong>, also ein Kabel, über das du den
 Bootloader des Geräts direkt bedienst. Er hat zwei Etappen:</p>
 <ol>
-<li><strong>OpenWrt starten.</strong> Du stellst den Bootloader so ein, dass er ein
-kleines OpenWrt per TFTP von deinem Rechner holt und startet. Es läuft
-nur im Arbeitsspeicher.</li>
-<li><strong>Die Freifunk-Firmware aufspielen.</strong> Aus diesem OpenWrt heraus
-installierst du die Freifunk-Firmware deiner Community.</li>
+<li><strong>Die RAMpe starten.</strong> Du stellst den Bootloader so ein, dass er die
+<strong>Gluon-RAMpe</strong> per TFTP von deinem Rechner holt und startet: eine kleine
+Firmware, die nur eins kann, die Freifunk-Firmware deiner Community
+annehmen. Sie läuft nur im Arbeitsspeicher.</li>
+<li><strong>Die Freifunk-Firmware aufspielen.</strong> Auf der Seite der RAMpe lädst du
+im Browser die Freifunk-Firmware deiner Community hoch.</li>
 </ol>
-<p>Dafür brauchst du drei Werkzeuge, die auf eigenen Seiten erklärt sind:
-<a href="grundlagen/serielle-konsole.html">Serielle Konsole benutzen</a>,
-<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a> und
-<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>. Rechne beim ersten Mal mit
-einer Stunde.</p>
+<p>Dafür brauchst du zwei Werkzeuge, die auf eigenen Seiten erklärt sind:
+<a href="grundlagen/serielle-konsole.html">Serielle Konsole benutzen</a> und
+<a href="grundlagen/tftp-server.html">TFTP-Server einrichten</a>. Rechne beim ersten Mal
+mit einer Stunde.</p>
 <h2>Was du brauchst</h2>
 <ul>
 <li>das Gerät mit Stromversorgung (Netzteil oder PoE-Injektor), einen Rechner
@@ -64,17 +65,15 @@ die alte 9-polige serielle Buchse plus USB-Adapter) auf der anderen. Die
 Konsolenbuchse sitzt neben der Buchse für das 12-V-Netzteil. Ein einfacher USB-Seriell-Adapter für 3,3 V
 passt hier <strong>nicht</strong>: Die Buchse arbeitet mit den höheren Spannungen der
 alten seriellen Schnittstelle (RS-232).</li>
-<li>ein Terminalprogramm, einen TFTP-Server und <code>ssh</code>/<code>scp</code> (siehe die drei
-Seiten oben)</li>
+<li>ein Terminalprogramm und einen TFTP-Server (siehe die zwei Seiten oben)</li>
 <li>diese Dateien:
 <ol>
-<li>das OpenWrt-initramfs:
-<a href="https://archive.openwrt.org/releases/22.03.0/targets/mpc85xx/p1020/openwrt-22.03.0-mpc85xx-p1020-extreme-networks_ws-ap3825i-initramfs-kernel.bin">openwrt-22.03.0-mpc85xx-p1020-extreme-networks_ws-ap3825i-initramfs-kernel.bin</a>. Bewusst die alte Version 22.03.0: Mit neueren bleibt das Gerät beim Start mit der Meldung <code>ft_fixup_l2cache: FDT_ERR_NOTFOUND</code> hängen. Die Freifunk-Firmware, die du danach aufspielst, ist trotzdem aktuell.
-Leg es in den Ordner deines TFTP-Servers und benenn es dort genau in
+<li>die RAMpe für den Extreme Networks WS-AP3825i:
+<a href="https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-extreme-networks-ws-ap3825i-initramfs-kernel.bin">gluon-rampe-20261115-extreme-networks-ws-ap3825i-initramfs-kernel.bin</a>.
+Leg sie in den Ordner deines TFTP-Servers und benenn sie dort genau in
 <strong><code>ws-ap3825i-initramfs.bin</code></strong> um.</li>
 <li>die Freifunk-Firmware deiner Community für den Extreme Networks WS-AP3825i, und zwar
-das <strong>sysupgrade</strong>-Image. Benenn es in <code>gluon.bin</code> um, dann passen die
-Befehle unten ohne Änderung.</li>
+das <strong>sysupgrade</strong>-Image.</li>
 </ol>
 </li>
 </ul>
@@ -85,7 +84,7 @@ Adtran BSAP-2030. Ob die dieselbe Firmware vertragen, ist nicht geklärt.
 Nimm diese Anleitung nur für eine WS-AP3825i (Typenschild).</li>
 </ul>
 <h2>Schritte</h2>
-<h3>OpenWrt starten</h3>
+<h3>Die RAMpe starten</h3>
 <ol>
 <li>
 <p><strong>Feste Adresse am Rechner.</strong> Stell deinen Rechner auf
@@ -115,7 +114,7 @@ Baud, 8N1, ohne Flusssteuerung
 ziehen und noch einmal.</p>
 </li>
 <li>
-<p><strong>Bootloader einstellen und OpenWrt laden.</strong> Gib
+<p><strong>Bootloader einstellen und die RAMpe laden.</strong> Gib
 diese Befehle ein, jede Zeile einzeln. Warte nach jeder Zeile, bis die
 Eingabeaufforderung wieder erscheint; <code>saveenv</code> kann ein paar Sekunden brauchen, dabei
 <strong>nicht den Strom ziehen</strong>:</p>
@@ -126,24 +125,40 @@ saveenv
 run ramboot_openwrt
 </code></pre>
 <p>Die Befehle holen <code>ws-ap3825i-initramfs.bin</code> von deinem Rechner und starten
-OpenWrt; das Terminal zeigt viele Zeilen. Warte, bis
+die RAMpe; das Terminal zeigt viele Zeilen. Warte, bis
 <code>Please press Enter to activate this console.</code> erscheint.</p>
-<p>Ab jetzt startet das Gerät OpenWrt statt der Herstellerfirmware.</p>
+<p>Ab jetzt startet das Gerät nicht mehr die Herstellerfirmware.</p>
 </li>
 </ol>
 <h3>Freifunk-Firmware aufspielen</h3>
 <ol start="7">
 <li>
-<p><strong>Freifunk-Firmware kopieren.</strong> Steck das Netzwerkkabel jetzt in die Buchse
-<strong>LAN1</strong>.
-Öffne ein zweites Terminal im Ordner mit <code>gluon.bin</code> und gib ein:</p>
-<pre><code>scp -O gluon.bin root@192.168.1.1:/tmp/gluon.bin
-ssh root@192.168.1.1 &quot;sysupgrade -n /tmp/gluon.bin&quot;
-</code></pre>
-<p>Ein Passwort gibt es nicht. Meldet <code>ssh</code> &quot;REMOTE HOST IDENTIFICATION HAS
-CHANGED&quot;, siehe <a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>. Nach dem
-zweiten Befehl bricht die Verbindung ab, oft mit einer Meldung wie
-<code>Command failed: … (Connection failed)</code>. Das ist harmlos.</p>
+<p><strong>Rechner vorbereiten.</strong> Steck das Netzwerkkabel jetzt in die Buchse
+<strong>LAN1</strong>. Die feste Adresse <code>192.168.1.66</code> passt auch für die
+RAMpe unter <code>192.168.1.1</code>.</p>
+</li>
+<li>
+<p><strong>Die RAMpe-Seite öffnen.</strong> Öffne <code>http://192.168.1.1</code>. Die RAMpe
+leitet von selbst auf ihre Seite &quot;Firmware aktualisieren&quot; weiter. Kommt
+stattdessen &quot;Not Found&quot;, hat sich der Browser eine Weiterleitung von
+früher gemerkt, siehe <a href="grundlagen/browser-not-found.html">Der Browser zeigt &quot;Not Found&quot;</a>.
+Kommt gar nichts, siehe <a href="grundlagen/router-antwortet-nicht.html">Die Router-Seite antwortet nicht</a>.
+Zeigt der Browser eine Warnung vor einem unsicheren Zertifikat, hat er
+von sich aus <code>https://</code> vor die Adresse gesetzt, siehe
+<a href="grundlagen/browser-https.html">Browser macht https daraus</a>.
+Die RAMpe läuft nur im Arbeitsspeicher. Startet das Gerät zwischendurch
+neu oder fehlt der Strom, ist sie weg: dann noch einmal ab Schritt 5.</p>
+<p><img src="../bilder/allgemein/rampe-seite.png" alt="Die Seite der RAMpe: &quot;Firmware aktualisieren&quot; mit Feld für die Datei und Knopf &quot;Datei hochladen&quot;" /></p>
+</li>
+<li>
+<p><strong>Freifunk-Firmware hochladen.</strong> Wähl das <strong>sysupgrade</strong>-Image
+deiner Community aus und klick &quot;Datei hochladen&quot;. Die RAMpe zeigt die
+Prüfsumme (SHA256) der Datei. Vergleich sie mit der Prüfsumme, die deine
+Community zur Datei angibt. Stimmt sie, klick &quot;Fortfahren&quot;.</p>
+<p><img src="../bilder/allgemein/rampe-pruefsumme.png" alt="Die RAMpe zeigt Prüfsumme und Größe der Datei, darunter &quot;Abbrechen&quot; und &quot;Fortfahren&quot;" /></p>
+<p>Danach erscheint der Hinweis, dass die Firmware jetzt geschrieben wird.
+Jetzt den Strom nicht unterbrechen.</p>
+<p><img src="../bilder/allgemein/rampe-flash-laeuft.png" alt="Hinweis der RAMpe: Die Firmware wird jetzt aktualisiert, Stromversorgung nicht unterbrechen" /></p>
 </li>
 <li>
 <p><strong>Warten.</strong> Das Gerät schreibt die Freifunk-Firmware und startet neu. Das dauert bei diesem Gerät sehr lange, oft zehn Minuten und mehr, und die Konsole bleibt dabei lange stumm (siehe Achtung oben).
@@ -162,8 +177,10 @@ nicht</a>; kommt &quot;Not Found&quot;, siehe
 <h2>Woran du erkennst, dass es geklappt hat</h2>
 <ul>
 <li>In Schritt 5 erscheint die Eingabeaufforderung des Bootloaders.</li>
-<li>In Schritt 6 holt der Bootloader die Datei, und OpenWrt startet.</li>
-<li>Nach Schritt 8 meldet sich die Freifunk-Firmware.</li>
+<li>In Schritt 6 holt der Bootloader die Datei, und die RAMpe startet.</li>
+<li>In Schritt 8 zeigt <code>http://192.168.1.1</code> die RAMpe-Seite &quot;Firmware
+aktualisieren&quot;.</li>
+<li>Nach Schritt 10 meldet sich die Freifunk-Firmware.</li>
 </ul>
 <h2>Wenn etwas schiefgeht</h2>
 <ul>
@@ -173,10 +190,10 @@ Geschwindigkeit (115200) und das Kabel
 <li><strong>In Schritt 6 kommt die Datei nicht an.</strong> Prüf die feste Adresse
 <code>192.168.1.66</code>, die Firewall deines Rechners und den Dateinamen
 <code>ws-ap3825i-initramfs.bin</code>, und ob das Kabel in LAN2 steckt.</li>
-<li><strong>In Schritt 7 antwortet nichts.</strong> Warte noch eine Minute, OpenWrt
+<li><strong>In Schritt 8 antwortet nichts.</strong> Warte noch eine Minute, die RAMpe
 braucht etwas. Prüf, ob das Kabel jetzt in LAN1
 steckt.</li>
-<li><strong>Nach Schritt 8 meldet sich lange nichts.</strong> Weiter warten und nicht den
+<li><strong>Nach Schritt 10 meldet sich lange nichts.</strong> Weiter warten und nicht den
 Strom ziehen. Erst wenn nach einer halben Stunde noch nichts kommt, schreib
 uns, am besten mit der Mitschrift des Terminals.</li>
 <li><strong>Statt <code>Boot (PRI)-&gt;</code> erscheint eine Eingabe wie <code>/flash/home/admin</code>,
@@ -186,6 +203,18 @@ Enter drücken, sobald <code>Scanning JFFS2 FS:</code> erscheint.</li>
 <li><strong>Der Start bleibt mit <code>ft_fixup_l2cache: FDT_ERR_NOTFOUND</code> stehen.</strong> Das
 OpenWrt-initramfs ist zu neu. Nimm genau die Version 22.03.0 von oben.</li>
 </ul>
+<h2>Anderer Weg: über OpenWrt</h2>
+<p>Statt der RAMpe startet der Bootloader in Schritt 6 auch OpenWrt:
+<a href="https://archive.openwrt.org/releases/22.03.0/targets/mpc85xx/p1020/openwrt-22.03.0-mpc85xx-p1020-extreme-networks_ws-ap3825i-initramfs-kernel.bin">openwrt-22.03.0-mpc85xx-p1020-extreme-networks_ws-ap3825i-initramfs-kernel.bin</a>, ebenfalls unter dem Namen
+<code>ws-ap3825i-initramfs.bin</code> in den TFTP-Ordner. Bewusst die alte Version 22.03.0: Mit neueren bleibt das Gerät beim Start mit der Meldung <code>ft_fixup_l2cache: FDT_ERR_NOTFOUND</code> hängen. Die Freifunk-Firmware, die du danach aufspielst, ist trotzdem aktuell.
+Danach kommt die Freifunk-Firmware per scp und ssh statt über den Browser
+(<a href="grundlagen/ssh-scp.html">SSH und scp benutzen</a>): das sysupgrade-Image in
+<code>gluon.bin</code> umbenennen, Rechner wie in Schritt 7 vorbereiten, dann</p>
+<pre><code>scp -O gluon.bin root@192.168.1.1:/tmp/gluon.bin
+ssh root@192.168.1.1 &quot;sysupgrade -n /tmp/gluon.bin&quot;
+</code></pre>
+<p>Ein Passwort gibt es nicht. Nach dem zweiten Befehl bricht die Verbindung
+ab, das ist harmlos.</p>
 <h2>Zurück zur Herstellerfirmware</h2>
 <p>Zurück zur Herstellerfirmware geht nur mit einer Sicherung der Partition &quot;firmware&quot;, die du vor Schritt 7 aus OpenWrt heraus gemacht hast. Das beschreiben wir hier nicht.</p>
 <h2>Herkunft der Angaben</h2>
@@ -193,9 +222,11 @@ OpenWrt-initramfs ist zu neu. Nimm genau die Version 22.03.0 von oben.</li>
 <ul>
 <li>geprüft (Weg ab Werk, Schritte (Normalweg), Programm, Datei, Dauer)</li>
 <li>geprüft, Wiki toh:extreme_networks:ws-ap3825i (Schritte (Normalweg))</li>
+<li>geprüft: Code Gluon v2025.1.3 320-setup-ifname/020-interfaces, OpenWrt 5204715d 02_network (Gluon-RAMpe passt)</li>
 <li>geprüft: Commit (Schritte (Normalweg), Anschluss, Zugang, Typenschild/Verwechslung, Rückweg zur Herstellerfirmware)</li>
 <li>geprüft: Commit 7e61482 (Schritte (Normalweg), Taste und Zeitpunkt, Zugang)</li>
 <li>geprüft: Commit, Wiki toh:extreme_networks:ws-ap3825i (Schritte (Normalweg), Adressen, Programm)</li>
+<li>geprüft: GitHub (Gluon-RAMpe passt)</li>
 <li>geprüft: Neanderfunk-Notiz (Dauer)</li>
 <li>geprüft: OpenWrt-Issue 17152 (Gluon-RAMpe passt)</li>
 <li>geprüft: OpenWrt-Issue 17152 (offen): adorfer 29.03.2025 &quot;broken in 24.x and 23, tested with 4 devices … 22.03.0 works&quot;, jensgraef 15.05.2025 &quot;sysupgrade of openwrt-24.10 without any problems&quot;, jbusuttil 03.09.2026 22.03.0, dann sysupgrade; Datei archive.openwrt.org 22.03.0, SHA256 fc9a27d9… laut sha256sums, 6.879.964 Byte (Bedingung an die Herstellerfirmware)</li>
@@ -206,6 +237,7 @@ OpenWrt-initramfs ist zu neu. Nimm genau die Version 22.03.0 von oben.</li>
 <li>geprüft: forum.darmstadt.freifunk.net t/923 #4, #7 (Notweg)</li>
 <li>geprüft: forum.darmstadt.freifunk.net t/923 #8 (Notweg)</li>
 <li>geprüft: laut Commit sind die LEDs unter OpenWrt sonst ohne Funktion, Wiki toh:extreme_networks:ws-ap3825i (Sichtbare Zeichen)</li>
+<li>geprüft: scripts/mpc85xx-ladeadresse.py am Image 20261115 (Gluon-RAMpe passt)</li>
 <li>Geräteeintrag: 7e614820a89208c4e91a3a5f9de07a5402accdaa</li>
 </ul>
 

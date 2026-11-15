@@ -13,7 +13,7 @@ erprobt_am: 2026-11-15
 erprobt_mit: gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m30-a1-recovery.bin
 grundlagen: [browser-https, browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: cb556339c
+daten_stand: 612d99dd7
 vorlage_stand: 90388c1ca
 ---
 
@@ -38,7 +38,7 @@ kein Passwort.
 
 - einen Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - eine Büroklammer für die Reset-Taste
-- die RAMpe-Datei für dieses Gerät: `gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin` ([herunterladen](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin))
+- die RAMpe-Datei für dieses Gerät: `gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin` ([herunterladen](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-d-link-aquila-pro-ai-m30-a1-recovery.bin))
 - die Freifunk-Firmware deiner Community für den D-Link AQUILA PRO AI M30 A1, und zwar das
   **sysupgrade**-Image
 - zum Hochladen den Browser **Chrome oder Chromium** (Firefox geht hier nicht)

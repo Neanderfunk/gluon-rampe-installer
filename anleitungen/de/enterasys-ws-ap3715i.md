@@ -9,9 +9,10 @@ level: L6
 level_text: Serielles Kabel
 risiko: normal
 status: ungeprüft
-grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: cb556339c
-vorlage_stand: 33e50477e
+rampe_image: gluon-rampe-20261115-enterasys-ws-ap3715i-initramfs-kernel.bin
+grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
+daten_stand: 612d99dd7
+vorlage_stand: 9a02820db
 ---
 
 # Enterasys WS-AP3715i: Freifunk-Firmware installieren
@@ -31,17 +32,17 @@ Dieses Gerät nimmt keine fremde Firmware über seine Weboberfläche an. Der
 Weg führt über die **serielle Konsole**, also ein Kabel, über das du den
 Bootloader des Geräts direkt bedienst. Er hat zwei Etappen:
 
-1. **OpenWrt starten.** Du stellst den Bootloader so ein, dass er ein
-   kleines OpenWrt per TFTP von deinem Rechner holt und startet. Es läuft
-   nur im Arbeitsspeicher.
-2. **Die Freifunk-Firmware aufspielen.** Aus diesem OpenWrt heraus
-   installierst du die Freifunk-Firmware deiner Community.
+1. **Die RAMpe starten.** Du stellst den Bootloader so ein, dass er die
+   **Gluon-RAMpe** per TFTP von deinem Rechner holt und startet: eine kleine
+   Firmware, die nur eins kann, die Freifunk-Firmware deiner Community
+   annehmen. Sie läuft nur im Arbeitsspeicher.
+2. **Die Freifunk-Firmware aufspielen.** Auf der Seite der RAMpe lädst du
+   im Browser die Freifunk-Firmware deiner Community hoch.
 
-Dafür brauchst du drei Werkzeuge, die auf eigenen Seiten erklärt sind:
-[Serielle Konsole benutzen](grundlagen/serielle-konsole.md),
-[TFTP-Server einrichten](grundlagen/tftp-server.md) und
-[SSH und scp benutzen](grundlagen/ssh-scp.md). Rechne beim ersten Mal mit
-einer Stunde.
+Dafür brauchst du zwei Werkzeuge, die auf eigenen Seiten erklärt sind:
+[Serielle Konsole benutzen](grundlagen/serielle-konsole.md) und
+[TFTP-Server einrichten](grundlagen/tftp-server.md). Rechne beim ersten Mal
+mit einer Stunde.
 
 ## Was du brauchst
 
@@ -53,20 +54,18 @@ einer Stunde.
   eine RJ45-Buchse. Ein einfacher USB-Seriell-Adapter für 3,3 V
   passt hier **nicht**: Die Buchse arbeitet mit den höheren Spannungen der
   alten seriellen Schnittstelle (RS-232).
-- ein Terminalprogramm, einen TFTP-Server und `ssh`/`scp` (siehe die drei
-  Seiten oben)
+- ein Terminalprogramm und einen TFTP-Server (siehe die zwei Seiten oben)
 - diese Dateien:
-  1. das OpenWrt-initramfs:
-     [openwrt-24.10.8-mpc85xx-p1010-enterasys_ws-ap3715i-initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1010/openwrt-24.10.8-mpc85xx-p1010-enterasys_ws-ap3715i-initramfs-kernel.bin).
-     Leg es in den Ordner deines TFTP-Servers und benenn es dort genau in
+  1. die RAMpe für den Enterasys WS-AP3715i:
+     [gluon-rampe-20261115-enterasys-ws-ap3715i-initramfs-kernel.bin](https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-enterasys-ws-ap3715i-initramfs-kernel.bin).
+     Leg sie in den Ordner deines TFTP-Servers und benenn sie dort genau in
      **`ap3715.bin`** um.
   2. die Freifunk-Firmware deiner Community für den Enterasys WS-AP3715i, und zwar
-     das **sysupgrade**-Image. Benenn es in `gluon.bin` um, dann passen die
-     Befehle unten ohne Änderung.
+     das **sysupgrade**-Image.
 
 ## Schritte
 
-### OpenWrt starten
+### Die RAMpe starten
 
 1. **Feste Adresse am Rechner.** Stell deinen Rechner auf
    `192.168.1.66`, Netzmaske `255.255.255.0`
@@ -90,7 +89,7 @@ einer Stunde.
    **Prüfen:** Es erscheint die Eingabeaufforderung des Bootloaders. Sonst Strom
    ziehen und noch einmal.
 
-6. **Bootloader einstellen und OpenWrt laden.** Gib
+6. **Bootloader einstellen und die RAMpe laden.** Gib
    diese Befehle ein, jede Zeile einzeln. Warte nach jeder Zeile, bis die
    Eingabeaufforderung wieder erscheint; `saveenv` kann ein paar Sekunden brauchen, dabei
    **nicht den Strom ziehen**:
@@ -104,42 +103,59 @@ einer Stunde.
    ```
 
    Die Befehle holen `ap3715.bin` von deinem Rechner und starten
-   OpenWrt; das Terminal zeigt viele Zeilen. Warte, bis
+   die RAMpe; das Terminal zeigt viele Zeilen. Warte, bis
    `Please press Enter to activate this console.` erscheint.
 
-   Ab jetzt startet das Gerät OpenWrt statt der Herstellerfirmware.
+   Ab jetzt startet das Gerät nicht mehr die Herstellerfirmware.
 
 ### Freifunk-Firmware aufspielen
 
-7. **Freifunk-Firmware kopieren.**
-   Öffne ein zweites Terminal im Ordner mit `gluon.bin` und gib ein:
+7. **Rechner vorbereiten.** Die feste Adresse `192.168.1.66` passt auch für die
+   RAMpe unter `192.168.1.1`.
 
-   ```
-   scp -O gluon.bin root@192.168.1.1:/tmp/gluon.bin
-   ssh root@192.168.1.1 "sysupgrade -n /tmp/gluon.bin"
-   ```
+8. **Die RAMpe-Seite öffnen.** Öffne `http://192.168.1.1`. Die RAMpe
+    leitet von selbst auf ihre Seite "Firmware aktualisieren" weiter. Kommt
+    stattdessen "Not Found", hat sich der Browser eine Weiterleitung von
+    früher gemerkt, siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
+    Kommt gar nichts, siehe [Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md).
+    Zeigt der Browser eine Warnung vor einem unsicheren Zertifikat, hat er
+    von sich aus `https://` vor die Adresse gesetzt, siehe
+    [Browser macht https daraus](grundlagen/browser-https.md).
+    Die RAMpe läuft nur im Arbeitsspeicher. Startet das Gerät zwischendurch
+    neu oder fehlt der Strom, ist sie weg: dann noch einmal ab Schritt 5.
 
-   Ein Passwort gibt es nicht. Meldet `ssh` "REMOTE HOST IDENTIFICATION HAS
-   CHANGED", siehe [SSH und scp benutzen](grundlagen/ssh-scp.md). Nach dem
-   zweiten Befehl bricht die Verbindung ab, oft mit einer Meldung wie
-   `Command failed: … (Connection failed)`. Das ist harmlos.
+    ![Die Seite der RAMpe: "Firmware aktualisieren" mit Feld für die Datei und Knopf "Datei hochladen"](../bilder/allgemein/rampe-seite.png)
 
-8. **Warten.** Das Gerät schreibt die Freifunk-Firmware und startet neu.
-   **Strom nicht ziehen.**
+9. **Freifunk-Firmware hochladen.** Wähl das **sysupgrade**-Image
+    deiner Community aus und klick "Datei hochladen". Die RAMpe zeigt die
+    Prüfsumme (SHA256) der Datei. Vergleich sie mit der Prüfsumme, die deine
+    Community zur Datei angibt. Stimmt sie, klick "Fortfahren".
 
-9. **Fertig.** Stell den Rechner wieder auf "automatisch". Danach startet
-   die Freifunk-Firmware deiner Community: je nach Community zuerst mit
-   einer Einrichtungsseite unter `http://192.168.1.1` oder gleich im
-   Betrieb.
-   Antwortet dort nichts, siehe [Die Router-Seite antwortet
-   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
-   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
+    ![Die RAMpe zeigt Prüfsumme und Größe der Datei, darunter "Abbrechen" und "Fortfahren"](../bilder/allgemein/rampe-pruefsumme.png)
+
+    Danach erscheint der Hinweis, dass die Firmware jetzt geschrieben wird.
+    Jetzt den Strom nicht unterbrechen.
+
+    ![Hinweis der RAMpe: Die Firmware wird jetzt aktualisiert, Stromversorgung nicht unterbrechen](../bilder/allgemein/rampe-flash-laeuft.png)
+
+10. **Warten.** Das Gerät schreibt die Freifunk-Firmware und startet neu.
+    **Strom nicht ziehen.**
+
+11. **Fertig.** Stell den Rechner wieder auf "automatisch". Danach startet
+    die Freifunk-Firmware deiner Community: je nach Community zuerst mit
+    einer Einrichtungsseite unter `http://192.168.1.1` oder gleich im
+    Betrieb.
+    Antwortet dort nichts, siehe [Die Router-Seite antwortet
+    nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+    [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
 
 ## Woran du erkennst, dass es geklappt hat
 
 - In Schritt 5 erscheint die Eingabeaufforderung des Bootloaders.
-- In Schritt 6 holt der Bootloader die Datei, und OpenWrt startet.
-- Nach Schritt 8 meldet sich die Freifunk-Firmware.
+- In Schritt 6 holt der Bootloader die Datei, und die RAMpe startet.
+- In Schritt 8 zeigt `http://192.168.1.1` die RAMpe-Seite "Firmware
+  aktualisieren".
+- Nach Schritt 10 meldet sich die Freifunk-Firmware.
 
 ## Wenn etwas schiefgeht
 
@@ -149,11 +165,28 @@ einer Stunde.
 - **In Schritt 6 kommt die Datei nicht an.** Prüf die feste Adresse
   `192.168.1.66`, die Firewall deines Rechners und den Dateinamen
   `ap3715.bin`.
-- **In Schritt 7 antwortet nichts.** Warte noch eine Minute, OpenWrt
+- **In Schritt 8 antwortet nichts.** Warte noch eine Minute, die RAMpe
   braucht etwas.
-- **Nach Schritt 8 meldet sich lange nichts.** Weiter warten und nicht den
+- **Nach Schritt 10 meldet sich lange nichts.** Weiter warten und nicht den
   Strom ziehen. Erst wenn nach einer halben Stunde noch nichts kommt, schreib
   uns, am besten mit der Mitschrift des Terminals.
+
+## Anderer Weg: über OpenWrt
+
+Statt der RAMpe startet der Bootloader in Schritt 6 auch OpenWrt:
+[openwrt-24.10.8-mpc85xx-p1010-enterasys_ws-ap3715i-initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1010/openwrt-24.10.8-mpc85xx-p1010-enterasys_ws-ap3715i-initramfs-kernel.bin), ebenfalls unter dem Namen
+`ap3715.bin` in den TFTP-Ordner.
+Danach kommt die Freifunk-Firmware per scp und ssh statt über den Browser
+([SSH und scp benutzen](grundlagen/ssh-scp.md)): das sysupgrade-Image in
+`gluon.bin` umbenennen, Rechner wie in Schritt 7 vorbereiten, dann
+
+```
+scp -O gluon.bin root@192.168.1.1:/tmp/gluon.bin
+ssh root@192.168.1.1 "sysupgrade -n /tmp/gluon.bin"
+```
+
+Ein Passwort gibt es nicht. Nach dem zweiten Befehl bricht die Verbindung
+ab, das ist harmlos.
 
 ## Herkunft der Angaben
 
