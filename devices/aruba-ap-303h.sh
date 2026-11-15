@@ -27,7 +27,7 @@
 # a1ea57bd050c172fdc2b851824ebd9782aafb055]. Configs, Kompression, Groesse
 # wie aruba-ap-303.sh. RAM 512 MB [Inventar].
 #
-# Vorbereitungsskript (Vorschlag, overlay/lib/gluon-rampe/prepare/aruba_ap-303h.sh):
+# Vorbereitungsskript overlay/lib/gluon-rampe/prepare/aruba_ap-303h.sh (ab der Ausgabe nach 20261114, ueber aruba-ubi.sh, Partition per Label):
 #   mtd=$(find_mtd_index ubi)
 #   ubidetach -p /dev/mtd$mtd || true
 #   ubiformat /dev/mtd$mtd -y
