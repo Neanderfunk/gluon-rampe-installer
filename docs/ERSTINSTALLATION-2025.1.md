@@ -1897,7 +1897,7 @@ ASUS RT-AX53U (RT-AX1800U) · ramips-mt7621 · K1
 - **Notweg:** [Alternative] SSH in die Herstellerfirmware: in der Weboberfläche (http://192.168.50.1/) unter Administration -> System -> Service SSH einschalten, ggf. Router neu starten; Login wie Weboberfläche (meist admin); Gluon-factory-Image auf den Router holen (wget oder `cat <datei> | ssh admin@<router> "cat > /root/<datei>"`), `mtd-write -i <factory.bin> -d Kernel`, dann `reboot`; `-r` kennen nicht alle ASUS-Versionen [abgeleitet: Wiki toh/asus/rt-ax53u]; hängt der Neustart (Kernel-Panic), Strom aus/an [abgeleitet: Wiki]; [Notfall] seriell (J2, Gehäuse öffnen, Stiftleiste einlöten): 115200 8N1, beliebige Taste unterbricht U-Boot (etwa 3 s Zeitfenster), Menü 2 "Upgrade firmware", Enter bei "Run firmware after upgrading? (Y/n)", 0 = TFTP client, U-Boot 192.168.1.1, TFTP-Server 192.168.1.2, Netzmaske 255.255.255.0, Dateiname `openwrt-ramips-mt7621-asus_rt-ax53u-squashfs-factory.bin`, nach "Firmware upgrade completed!" neu starten [geprüft: Commit 8c00fd9; J2, Zeitfenster und Einlöten: abgeleitet: Wiki]
 - **Rückweg zur Herstellerfirmware:** ASUS-Firmware (.trx aus dem entpackten Download) im Rettungsmodus per TFTP oder ASUS Firmware Restoration aufspielen [abgeleitet: Wiki toh/asus/rt-ax53u]; riskanter aus OpenWrt: `mtd -r write asus.trx firmware` (ab OpenWrt 22.03.4) [abgeleitet: Wiki]
 - **Gluon-RAMpe passt:** ja: genau der Fall "erst initramfs, dann sysupgrade"
-- **Gluon-RAMpe-Rezept:** devices/asus-rt-ax53u.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per ASUS-Rescue (TFTP put)
+- **Gluon-RAMpe-Rezept:** devices/asus-rt-ax53u.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` per ASUS-Rescue (TFTP put)
 - **Quelle (OpenWrt-Commit):** 8c00fd9b4519bf0ef8fb3470a6df421b9f38c03c
 - **Detail-Anleitung:** https://openwrt.org/toh/asus/rt-ax53u#installation_with_mtd-write
 
@@ -2469,7 +2469,7 @@ AVM FRITZ!Box 3390 · lantiq-xrx200 · K1
 - **Fehlerbild:** bootet nach sysupgrade wieder FRITZ!OS unter 192.168.178.1, steht linux_fs_start auf 1: per EVA-FTP `quote SETENV linux_fs_start 0`, `quote REBOOT`, von vorn [abgeleitet: Wiki 7412]
 - **Rückweg zur Herstellerfirmware:** AVM-Recovery-Tool für genau dieses Modell (Windows-.exe von download.avm.de/<produkt>/.../recover/) [abgeleitet: OpenWrt-Wiki "AVM recovery tool"]; Provider-Geräte (z. B. 1&1) verweigern das evtl., dann vorher per EVA-FTP `quote UNSETENV provider` [abgeleitet: dasselbe Wiki]
 - **Gluon-RAMpe passt:** ja: eva_ramboot.py bootet ein beliebiges initramfs [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-3390.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`
+- **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-3390.sh (gebaut, RAMpe 20261115): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`
 - **Quelle (OpenWrt-Commit):** 73ec21cde2cde1fc27f66b08e8762cdc3c78b61a
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-box-3390.md
 - **Werte für die Anleitung:** rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-box-3390-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-avm-fritz-box-3390-initramfs-kernel.bin; sicherheit = abgeleitet
@@ -2508,7 +2508,7 @@ AVM FRITZ!Box 7362 SL · lantiq-xrx200 · K1
 - **Fehlerbild:** LED blinkt statt rot wie bei FRITZ!OS grün (es gibt Berichte): einfach ssh auf 192.168.1.1 versuchen [abgeleitet: Wiki 7362 SL]; antwortet die Box nicht unter 192.168.178.1: 192.168.1.1 versuchen [abgeleitet: Wiki 7362 SL]
 - **Rückweg zur Herstellerfirmware:** AVM-Recovery-Image für das Modell, läuft unter Windows und unter Linux mit Wine [abgeleitet: Wiki 7362 SL]; AVM-Recovery-Tool für genau dieses Modell (Windows-.exe von download.avm.de/<produkt>/.../recover/) [abgeleitet: OpenWrt-Wiki "AVM recovery tool"]; Provider-Geräte (z. B. 1&1) verweigern das evtl., dann vorher per EVA-FTP `quote UNSETENV provider` [abgeleitet: dasselbe Wiki]
 - **Gluon-RAMpe passt:** ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7362-sl.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`
+- **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7362-sl.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`
 - **Quelle (OpenWrt-Commit):** eae6cac6a30b95bef04d033ed8a303b7e35a078b
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-box-7362-sl.md; https://openwrt.org/toh/avm/avm_7362_sl#installation
 - **Werte für die Anleitung:** led_rampe = Die Power-LED blinkt dann rot.; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-box-7362-sl-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-avm-fritz-box-7362-sl-initramfs-kernel.bin; sicherheit = abgeleitet
@@ -2549,7 +2549,7 @@ AVM FRITZ!Box 7412 · lantiq-xrx200 · K1
 - **Fehlerbild:** bootet nach sysupgrade wieder FRITZ!OS unter 192.168.178.1, steht linux_fs_start auf 1: per EVA-FTP `quote SETENV linux_fs_start 0`, `quote REBOOT`, von vorn [abgeleitet: Wiki 7412]
 - **Rückweg zur Herstellerfirmware:** AVM-Recovery-Tool für genau dieses Modell (Windows-.exe von download.avm.de/<produkt>/.../recover/) [abgeleitet: OpenWrt-Wiki "AVM recovery tool"]; Provider-Geräte (z. B. 1&1) verweigern das evtl., dann vorher per EVA-FTP `quote UNSETENV provider` [abgeleitet: dasselbe Wiki]
 - **Gluon-RAMpe passt:** ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7412.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch
+- **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7412.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch
 - **Quelle (OpenWrt-Commit):** 20f48c8ae334f8502e756282995cc84d89fa81c1
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-box-7412.md; https://openwrt.org/toh/avm/avm_fritz_box_7412#installation
 - **Werte für die Anleitung:** ersatz_ip = 169.254.120.1; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-box-7412-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-avm-fritz-box-7412-initramfs-kernel.bin; sicherheit = abgeleitet
@@ -2591,7 +2591,7 @@ AVM FRITZ!Box 7430 · lantiq-xrx200 · K1
 - **Fehlerbild:** bootet nach sysupgrade wieder FRITZ!OS unter 192.168.178.1, steht linux_fs_start auf 1: per EVA-FTP `quote SETENV linux_fs_start 0`, `quote REBOOT`, von vorn [abgeleitet: Wiki 7412]
 - **Rückweg zur Herstellerfirmware:** AVM-Recovery-Tool für genau dieses Modell (Windows-.exe von download.avm.de/<produkt>/.../recover/) [abgeleitet: OpenWrt-Wiki "AVM recovery tool"]; Provider-Geräte (z. B. 1&1) verweigern das evtl., dann vorher per EVA-FTP `quote UNSETENV provider` [abgeleitet: dasselbe Wiki]
 - **Gluon-RAMpe passt:** ja: eva_ramboot.py bootet das RAMpe-initramfs statt des OpenWrt-initramfs; Bedingung: lzma-komprimiert [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7430.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch
+- **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7430.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch
 - **Quelle (OpenWrt-Commit):** 6c85a449a988876fdfd4ce84d6aa5ffe4a2820c1
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-box-7430.md; https://openwrt.org/toh/avm/avm_fritz_box_7430#installation
 - **Werte für die Anleitung:** ersatz_ip = 169.254.120.1; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-box-7430-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-avm-fritz-box-7430-initramfs-kernel.bin; sicherheit = abgeleitet
@@ -3113,7 +3113,7 @@ Cudy TR3000 v1 (128 MB Flash) · mediatek-filogic · K2
 - **Notweg:** [Notfall] seriell: Gehäuse öffnen und USB-TTL 3,3 V an zwei Testpunkte unten auf der Platine (Ports links, LEDs rechts: links RX, rechts TX) plus GND anschließen. [geprüft: Wiki toh:cudy:tr3000] / Terminal mit 115200 8N1 öffnen. [geprüft: Commit] / Rechner an LAN, feste IP 192.168.1.88/24, TFTP-Server mit dem initramfs als `initramfs-kernel.bin` starten. [geprüft: Commit; Zwang: abgeleitet] / Reset gedrückt halten, Strom einschalten, Reset mindestens 5 s weiter halten. [geprüft: Commit 63b8d98, Wiki toh:cudy:tr3000] / Warten, bis die OEM-TFTP-Recovery nach ca. 5 s scheitert und sich die U-Boot-Shell öffnet. [geprüft: Commit 63b8d98, Wiki toh:cudy:tr3000] / Mit `setenv bootfile` den Dateinamen setzen und das initramfs per TFTP (Gerät 192.168.1.1) booten. [geprüft] / Gluon per sysupgrade installieren. [geprüft]
 - **Rückweg zur Herstellerfirmware:** Reset beim Einschalten startet die Cudy-TFTP-Recovery, die nur signierte Cudy-Firmware annimmt [geprüft: Wiki toh:cudy:tr3000]
 - **Gluon-RAMpe passt:** nicht nötig (Cudy-Zwischenfirmware); seriell wäre die RAMpe im TFTP-Schritt möglich
-- **Gluon-RAMpe-Rezept:** devices/cudy-tr3000-v1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per U-Boot-TFTP
+- **Gluon-RAMpe-Rezept:** devices/cudy-tr3000-v1.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 63b8d98dd0d2f7797ea5b5f25978590982bbbb5d
 - **Detail-Anleitung:** anleitungen/de/cudy-tr3000-v1.md; https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010
 - **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-tr3000.bin; zwischen_md5 = 4551e961e22c0dafab13f5251d64d042; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; rueckweg_halten = mindestens 5 Sekunden; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-tr3000.bin; zwischen_url_text = Zwischenfirmware für den Cudy TR3000 v1 (128 MB Flash) aus unserem Spiegel; sicherheit = quelle; rueckweg_url = https://www.cudy.com/pages/download-center/tr3000-1-0
@@ -8115,7 +8115,7 @@ MikroTik RouterBOARD 951Ui-2nD (hAP) · ath79-mikrotik · K1
 - **Fehlerbild:** startet stattdessen das alte RouterOS: initramfs evtl. zu groß, RouterBOOT nimmt per TFTP nur etwa 7 MiB [abgeleitet: Wiki toh:mikrotik:common]; landet das Gerät nach dem Flashen bei jedem Start wieder im Netboot: RouterBOOT v7, Bootloader auf 6.x zurückstufen (siehe stock_bedingung) [abgeleitet: Wiki toh:mikrotik:common]
 - **Rückweg zur Herstellerfirmware:** RouterOS mit MikroTik Netinstall wieder einspielen (Reset beim Einschalten halten bis LED aus) [abgeleitet: Wiki toh:mikrotik:common; MikroTik-Doku "Reset Button"]
 - **Gluon-RAMpe passt:** ja: Gluon liefert hier selbst das initramfs als factory (mikrotik.inc); Gluon-RAMpe wäre die Variante mit Upload-Seite. Prüfen: startet Gluons initramfs-factory überhaupt im Config-Mode (Befund 70_initramfs_test aus NOTIZEN.md)? [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/mikrotik-routerboard-951ui-2nd-hap.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp
+- **Gluon-RAMpe-Rezept:** devices/mikrotik-routerboard-951ui-2nd-hap.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp
 - **Quelle (OpenWrt-Commit):** 5ce64e0646fcd5c4f374b4de898b591560c32e18 [geprüft]
 
 #### mikrotik-routerboard-mapl-2nd
@@ -8154,7 +8154,7 @@ MikroTik RouterBOARD mAPL-2nD (mAP lite) · ath79-mikrotik · K1
 - **Fehlerbild:** startet stattdessen das alte RouterOS: initramfs evtl. zu groß, RouterBOOT nimmt per TFTP nur etwa 7 MiB [abgeleitet: Wiki toh:mikrotik:common]; landet das Gerät nach dem Flashen bei jedem Start wieder im Netboot: RouterBOOT v7, Bootloader auf 6.x zurückstufen (siehe stock_bedingung) [abgeleitet: Wiki toh:mikrotik:common]
 - **Rückweg zur Herstellerfirmware:** RouterOS mit MikroTik Netinstall wieder einspielen (Reset beim Einschalten halten bis LED aus) [abgeleitet: Wiki toh:mikrotik:common; MikroTik-Doku "Reset Button"]
 - **Gluon-RAMpe passt:** ja: Netboot nimmt ein initramfs. Neanderfunk-Patch setzt factory = false (ohne dokumentierten Grund), obwohl mikrotik.inc sonst das initramfs als factory ausliefert
-- **Gluon-RAMpe-Rezept:** devices/mikrotik-routerboard-mapl-2nd.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp
+- **Gluon-RAMpe-Rezept:** devices/mikrotik-routerboard-mapl-2nd.sh (gebaut, RAMpe 20261115): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp
 - **Quelle (OpenWrt-Commit):** eb38af788180d624e5b37aa5db1fe3766b138dc8 [geprüft]
 
 #### mikrotik-routerboard-wap-g-5hact2hnd
@@ -8193,7 +8193,7 @@ MikroTik RouterBOARD wAP G-5HacT2HnD (wAP AC) · ath79-mikrotik · K1
 - **Fehlerbild:** startet stattdessen das alte RouterOS: initramfs evtl. zu groß, RouterBOOT nimmt per TFTP nur etwa 7 MiB [abgeleitet: Wiki toh:mikrotik:common]; landet das Gerät nach dem Flashen bei jedem Start wieder im Netboot: RouterBOOT v7, Bootloader auf 6.x zurückstufen (siehe stock_bedingung) [abgeleitet: Wiki toh:mikrotik:common]
 - **Rückweg zur Herstellerfirmware:** RouterOS mit MikroTik Netinstall wieder einspielen (Reset beim Einschalten halten bis LED aus) [abgeleitet: Wiki toh:mikrotik:common; MikroTik-Doku "Reset Button"]
 - **Gluon-RAMpe passt:** ja: Netboot nimmt ein initramfs. Neanderfunk-Patch setzt factory = false (ohne dokumentierten Grund), obwohl mikrotik.inc sonst das initramfs als factory ausliefert
-- **Gluon-RAMpe-Rezept:** devices/mikrotik-routerboard-wap-g-5hact2hnd.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM mit ath10k am knappsten
+- **Gluon-RAMpe-Rezept:** devices/mikrotik-routerboard-wap-g-5hact2hnd.sh (gebaut, RAMpe 20261115): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM mit ath10k am knappsten
 - **Quelle (OpenWrt-Commit):** 6aaa5ce2c5138877e0f0504c3bd536b40e9af928 [geprüft]
 
 #### mikrotik-routerboard-wapr-2nd
@@ -8232,7 +8232,7 @@ MikroTik RouterBOARD wAPR-2nD (wAP R) · ath79-mikrotik · K1
 - **Fehlerbild:** startet stattdessen das alte RouterOS: initramfs evtl. zu groß, RouterBOOT nimmt per TFTP nur etwa 7 MiB [abgeleitet: Wiki toh:mikrotik:common]; landet das Gerät nach dem Flashen bei jedem Start wieder im Netboot: RouterBOOT v7, Bootloader auf 6.x zurückstufen (siehe stock_bedingung) [abgeleitet: Wiki toh:mikrotik:common]
 - **Rückweg zur Herstellerfirmware:** RouterOS mit MikroTik Netinstall wieder einspielen (Reset beim Einschalten halten bis LED aus) [abgeleitet: Wiki toh:mikrotik:common; MikroTik-Doku "Reset Button"]
 - **Gluon-RAMpe passt:** ja: Gluon liefert hier selbst das initramfs als factory (mikrotik.inc); Gluon-RAMpe wäre die Variante mit Upload-Seite. Prüfen: startet Gluons initramfs-factory überhaupt im Config-Mode (Befund 70_initramfs_test aus NOTIZEN.md)? [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/mikrotik-routerboard-wapr-2nd.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp
+- **Gluon-RAMpe-Rezept:** devices/mikrotik-routerboard-wapr-2nd.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); 64 MB RAM knapp
 - **Quelle (OpenWrt-Commit):** 817bf0204569ca28121576c13f48186ed7b7c2ae [geprüft]
 
 #### mikrotik-discg-5acd
@@ -8311,7 +8311,7 @@ MikroTik hAP ac2 (RBD52G-5HacD2HnD) · ipq40xx-mikrotik · K1
 - **Fehlerbild:** startet stattdessen das alte RouterOS: initramfs evtl. zu groß, RouterBOOT nimmt per TFTP nur etwa 7 MiB [abgeleitet: Wiki toh:mikrotik:common]; landet das Gerät nach dem Flashen bei jedem Start wieder im Netboot: RouterBOOT v7, Bootloader auf 6.x zurückstufen (siehe stock_bedingung) [abgeleitet: Wiki toh:mikrotik:common]
 - **Rückweg zur Herstellerfirmware:** RouterOS mit MikroTik Netinstall wieder einspielen (Reset beim Einschalten halten bis LED aus) [abgeleitet: Wiki toh:mikrotik:common; MikroTik-Doku "Reset Button"]
 - **Gluon-RAMpe passt:** ja: Netboot nimmt ein initramfs; laut RAMpe-NOTIZEN startet ein Gluon-initramfs nicht im Config-Mode, die Gluon-RAMpe wäre der passende Ersatz für Gluons eigenes initramfs-"factory" [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/mikrotik-hap-ac2.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); schaltet Gluons "factory" (= Community-initramfs ohne Config-Mode) ab
+- **Gluon-RAMpe-Rezept:** devices/mikrotik-hap-ac2.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP); schaltet Gluons "factory" (= Community-initramfs ohne Config-Mode) ab
 - **Quelle (OpenWrt-Commit):** OpenWrt faea7becafc634dc882f0ad8f9388862ccd5bd0d
 - **Detail-Anleitung:** -
 
@@ -8351,7 +8351,7 @@ MikroTik SXTsq 5 ac (RBSXTsqG-5acD) · ipq40xx-mikrotik · K1
 - **Fehlerbild:** startet stattdessen das alte RouterOS: initramfs evtl. zu groß, RouterBOOT nimmt per TFTP nur etwa 7 MiB [abgeleitet: Wiki toh:mikrotik:common]; landet das Gerät nach dem Flashen bei jedem Start wieder im Netboot: RouterBOOT v7, Bootloader auf 6.x zurückstufen (siehe stock_bedingung) [abgeleitet: Wiki toh:mikrotik:common]
 - **Rückweg zur Herstellerfirmware:** RouterOS mit MikroTik Netinstall wieder einspielen (Reset beim Einschalten halten bis LED aus) [abgeleitet: Wiki toh:mikrotik:common; MikroTik-Doku "Reset Button"]
 - **Gluon-RAMpe passt:** ja: wie hAP ac2; heute nur mit OpenWrt-initramfs als Zwischenschritt
-- **Gluon-RAMpe-Rezept:** devices/mikrotik-sxtsq-5-ac-rbsxtsqg-5acd.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP)
+- **Gluon-RAMpe-Rezept:** devices/mikrotik-sxtsq-5-ac-rbsxtsqg-5acd.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP)
 - **Quelle (OpenWrt-Commit):** OpenWrt d1f1e5269ed992e6fc30d575b43b0913c9e58ca2
 - **Detail-Anleitung:** -
 
@@ -8391,7 +8391,7 @@ MikroTik wAP ac (RBwAPG-5HacD2HnD, ipq40xx) · ipq40xx-mikrotik · K1
 - **Fehlerbild:** startet stattdessen das alte RouterOS: initramfs evtl. zu groß, RouterBOOT nimmt per TFTP nur etwa 7 MiB [abgeleitet: Wiki toh:mikrotik:common]; landet das Gerät nach dem Flashen bei jedem Start wieder im Netboot: RouterBOOT v7, Bootloader auf 6.x zurückstufen (siehe stock_bedingung) [abgeleitet: Wiki toh:mikrotik:common]
 - **Rückweg zur Herstellerfirmware:** RouterOS mit MikroTik Netinstall wieder einspielen (Reset beim Einschalten halten bis LED aus) [abgeleitet: Wiki toh:mikrotik:common; MikroTik-Doku "Reset Button"]
 - **Gluon-RAMpe passt:** ja: wie hAP ac2
-- **Gluon-RAMpe-Rezept:** devices/mikrotik-wap-ac.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP)
+- **Gluon-RAMpe-Rezept:** devices/mikrotik-wap-ac.sh (gebaut, RAMpe 20261115): trägt das Gerät in Gluon ein; `initramfs-kernel.bin`; Netboot (BOOTP/DHCP + TFTP)
 - **Quelle (OpenWrt-Commit):** OpenWrt 7f54bf6fe2ac331d018cd273bb1abe04493b5457
 - **Detail-Anleitung:** -
 
@@ -8431,7 +8431,7 @@ MikroTik hEX RB750Gr3 (Alias mikrotik-routerboard-hex-v3) · ramips-mt7621 · K1
 - **Fehlerbild:** startet stattdessen das alte RouterOS: initramfs evtl. zu groß, RouterBOOT nimmt per TFTP nur etwa 7 MiB [abgeleitet: Wiki toh:mikrotik:common]; landet das Gerät nach dem Flashen bei jedem Start wieder im Netboot: RouterBOOT v7, Bootloader auf 6.x zurückstufen (siehe stock_bedingung) [abgeleitet: Wiki toh:mikrotik:common]
 - **Rückweg zur Herstellerfirmware:** RouterOS mit MikroTik Netinstall wieder einspielen (Reset beim Einschalten halten bis LED aus) [abgeleitet: Wiki toh:mikrotik:common; MikroTik-Doku "Reset Button"]
 - **Gluon-RAMpe passt:** ja: Netboot lädt ein beliebiges initramfs (ELF); Gluon-RAMpe statt OpenWrt-initramfs [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/mikrotik-routerboard-750gr3.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` (ELF); Netboot (BOOTP/DHCP + TFTP)
+- **Gluon-RAMpe-Rezept:** devices/mikrotik-routerboard-750gr3.sh (gebaut, RAMpe 20261115): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` (ELF); Netboot (BOOTP/DHCP + TFTP)
 - **Quelle (OpenWrt-Commit):** 52f2d7d2a9dc3e142bb957462a30806eb5cebaf4 (+ faf94d926e2810f895f2a98d4a49ee2fe8f673e8: Erstunterstützung mit Bootloader-Tausch, überholt)
 - **Detail-Anleitung:** https://openwrt.org/toh/mikrotik/common
 
@@ -9071,7 +9071,7 @@ Ocedo Koala · ath79-generic · K1
 - **Fehlerbild:** Nach dem sysupgrade startet weder OpenWrt/Gluon noch die Herstellerfirmware: `fw_setenv bootcmd run bootcmd_1` fehlte; erneut per Reset-Taste das initramfs per TFTP laden, fw_setenv setzen, sysupgrade wiederholen [abgeleitet: Commit c493171 Flip-Flop-Bootloader; TFTP-Weg liegt im unberührten Bootloader]
 - **Notweg:** [Notfall] serielle Konsole: Stiftleiste neben dem schwarzen Metallschirm, Belegung 3.3V - GND - TX - RX (Pad mit Pfeil = 3.3V, nicht anschließen), 115200 8N1 [geprüft: Commit c493171]; [Alternative] statt sysupgrade aus dem initramfs mit `mtd` schreiben [geprüft: Commit c493171]
 - **Gluon-RAMpe passt:** ja: RAMpe-initramfs unter diesem Namen bereitstellen; die Gluon-RAMpe muss zusätzlich `fw_setenv bootcmd run bootcmd_1` setzen (OpenWrt-platform.sh tut es nicht) [geprüft im Baum]
-- **Gluon-RAMpe-Rezept:** devices/ocedo-koala.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `koala-uImage-initramfs-lzma.bin` per TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`fw_setenv bootcmd run bootcmd_1`)
+- **Gluon-RAMpe-Rezept:** devices/ocedo-koala.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` (lzma) als `koala-uImage-initramfs-lzma.bin` per TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`fw_setenv bootcmd run bootcmd_1`)
 - **Quelle (OpenWrt-Commit):** c4931713df8ffb3c4e5c1be7d0b6d4aa96a7dd4c [geprüft]
 
 #### ocedo-raccoon
@@ -9110,7 +9110,7 @@ Ocedo Raccoon · ath79-generic · K1
 - **Fehlerbild:** Nach dem sysupgrade startet weder OpenWrt/Gluon noch die Herstellerfirmware: `fw_setenv bootcmd run bootcmd_1` fehlte; erneut per Reset-Taste das initramfs per TFTP laden, fw_setenv setzen, sysupgrade wiederholen [abgeleitet: Commit 6476148 Flip-Flop-Bootloader; TFTP-Weg liegt im unberührten Bootloader]
 - **Notweg:** [Notfall] serielle Konsole: Stiftleiste neben dem schwarzen Metallschirm, Belegung 3.3V - GND - TX - RX (Pad mit Pfeil = 3.3V, nicht anschließen), 115200 8N1 [geprüft: Commit 6476148]; U-Boot startet nicht mit angeschlossener Konsole: ohne Konsole einschalten, nach 3 Sekunden anstecken [geprüft: Commit 6476148]; [Alternative] statt sysupgrade aus dem initramfs mit `mtd` schreiben [geprüft: Commit 6476148]
 - **Gluon-RAMpe passt:** ja: RAMpe-initramfs unter diesem Namen bereitstellen; die Gluon-RAMpe muss zusätzlich `fw_setenv bootcmd run bootcmd_1` setzen (OpenWrt-platform.sh tut es nicht) [geprüft im Baum]
-- **Gluon-RAMpe-Rezept:** devices/ocedo-raccoon.sh (Rezept-Entwurf, nicht gebaut): wie Koala, als `raccoon-uImage-initramfs-lzma.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`fw_setenv`)
+- **Gluon-RAMpe-Rezept:** devices/ocedo-raccoon.sh (gebaut, RAMpe 20261115): wie Koala, als `raccoon-uImage-initramfs-lzma.bin`; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`fw_setenv`)
 - **Quelle (OpenWrt-Commit):** 647614803473757e3b2d93d46938afccd61a5a5d [geprüft]
 
 #### ocedo-panda
@@ -9150,7 +9150,7 @@ OCEDO Panda · mpc85xx-p1020 · K1
 - **Fehlerbild:** Nach dem sysupgrade startet wieder die Herstellerfirmware bzw. das neue UBI passt nicht: ubirmvol- und fw_setenv-Schritte fehlten, erneut per Reset-Taste das initramfs laden und nachholen [abgeleitet: Commit b368373 Schritte 6 und 7, Rezept devices/ocedo-panda.sh]
 - **Rückweg zur Herstellerfirmware:** Volumes `kernel2`, `devicetree2`, `rootfs2`, `storage` stehen lassen, dann bleibt ein Rückweg möglich; der Weg selbst ist nicht beschrieben [geprüft: Commit b368373]
 - **Gluon-RAMpe passt:** teilweise: Ramboot passt; ubirmvol und fw_setenv vor dem sysupgrade macht die Gluon-RAMpe nicht
-- **Gluon-RAMpe-Rezept:** devices/ocedo-panda.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` als `panda-uimage-factory` + DTB als `panda.fdt`; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubirmvol`, `fw_setenv`)
+- **Gluon-RAMpe-Rezept:** devices/ocedo-panda.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` als `panda-uimage-factory` + DTB als `panda.fdt`; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubirmvol`, `fw_setenv`)
 - **Quelle (OpenWrt-Commit):** b368373fab45f31963cd2bc1c6ab90e0a577e611
 
 ### Familie `recovery-web`
@@ -9609,7 +9609,7 @@ TP-Link Archer D50 v1 (broken) · ath79-generic · K4
 - **Notweg:** [Notfall] Statt das sysupgrade zu schreiben, im U-Boot ein initramfs booten [geprüft]
 - **Rückweg zur Herstellerfirmware:** TP-Link-Firmware herunterladen, mit `dd skip=257 bs=512 count=15616` zuschneiden (muss 7995392 Bytes ergeben), über OpenWrt-Web ohne Einstellungen flashen oder per U-Boot an 0x9f020000 [geprüft: Commit]
 - **Gluon-RAMpe passt:** teilweise: RAMpe-initramfs per tftpboot; seriell bleibt
-- **Gluon-RAMpe-Rezept:** devices/tp-link-archer-d50-v1.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-"broken"-Gerät gezielt; `initramfs-kernel.bin` (lzma, TP-Link-Header) per U-Boot-TFTP; 64 MB RAM knapp
+- **Gluon-RAMpe-Rezept:** devices/tp-link-archer-d50-v1.sh (gebaut, RAMpe 20261115): baut das Gluon-"broken"-Gerät gezielt; `initramfs-kernel.bin` (lzma, TP-Link-Header) per U-Boot-TFTP; 64 MB RAM knapp
 - **Quelle (OpenWrt-Commit):** f5d2c91415a68f554815860d574145644fc31c16 [geprüft]
 
 #### aerohive-hiveap-121
@@ -9649,7 +9649,7 @@ Aerohive HiveAP 121 · ath79-nand · K4
 - **Dauer:** Erster OpenWrt-Start ca. 90 s [geprüft: Wiki toh:aerohive:ap121], währenddessen nicht Strom ziehen [abgeleitet]
 - **Fehlerbild:** Nach `reset` kommt 'Bad Magic Number' (offset 0xd00000) mit Neustart: nicht eingreifen, nach drei Fehlversuchen bootet er dauerhaft vom ersten Kernel [geprüft: Wiki toh:aerohive:ap121]
 - **Gluon-RAMpe passt:** teilweise: statt factory per nand write könnte man die Gluon-RAMpe per tftpboot starten; seriell bleibt [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/aerohive-hiveap-121.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; Gluon-factory per `nand write` ist der einfachere Weg
+- **Gluon-RAMpe-Rezept:** devices/aerohive-hiveap-121.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; Gluon-factory per `nand write` ist der einfachere Weg
 - **Quelle (OpenWrt-Commit):** 62db255543c8fb5d1787caf36c6c7c9c51db71cd [geprüft]
 
 #### zte-mf281
@@ -9684,7 +9684,7 @@ ZTE MF281 (broken) · ath79-nand · K4
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt OpenWrt-initramfs; die Gluon-RAMpe müsste aber das factory (nicht sysupgrade) per mtd schreiben [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/zte-mf281.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-"broken"-Gerät gezielt; `initramfs-kernel.bin` als `speedbox-2.bin` per U-Boot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubiformat`, nicht durch den Commit gedeckt)
+- **Gluon-RAMpe-Rezept:** devices/zte-mf281.sh (gebaut, RAMpe 20261115): baut das Gluon-"broken"-Gerät gezielt; `initramfs-kernel.bin` als `speedbox-2.bin` per U-Boot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubiformat`, nicht durch den Commit gedeckt)
 - **Quelle (OpenWrt-Commit):** 1e1695f959e678868bb7911d059b847f38fc9cf4 [geprüft]
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=1e1695f959e678868bb7911d059b847f38fc9cf4
 
@@ -9718,7 +9718,7 @@ Extreme Networks WS-AP3915i · ipq40xx-generic · K4
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als openwrt-3915.bin, seriell bleibt; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/extreme-networks-ws-ap3915i.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `openwrt-3915.bin` per U-Boot-TFTP
+- **Gluon-RAMpe-Rezept:** devices/extreme-networks-ws-ap3915i.sh (gebaut, RAMpe 20261115): `-initramfs-uImage.itb` als `openwrt-3915.bin` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt e16a0e7e8876df0a92ec4779fe766de1a943307a
 - **Detail-Anleitung:** -
 
@@ -9758,7 +9758,7 @@ ZTE MF289F · ipq40xx-generic · K4
 - **RAM:** 256 MB
 - **Rückweg zur Herstellerfirmware:** Nur mit eigenem Backup von mtd16 (web) und mtd17 (rootfs) aus dem initramfs; Rückspielen per U-Boot-TFTP, danach Reset 5 s [geprüft: Commit]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als TFTP-initramfs möglich, aber der `ubirmvol`-Schritt fehlt ihm; seriell bleibt [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/zte-mf289f.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-"broken"-Gerät gezielt; `-initramfs-zImage.itb` per U-Boot-TFTP; Vorbereitung (`ubirmvol`) muss schon vor der Imageprüfung laufen, fehlt der RAMpe-Seite noch
+- **Gluon-RAMpe-Rezept:** devices/zte-mf289f.sh (gebaut, RAMpe 20261115): baut das Gluon-"broken"-Gerät gezielt; `-initramfs-zImage.itb` per U-Boot-TFTP; Vorbereitung (`ubirmvol`) muss schon vor der Imageprüfung laufen, fehlt der RAMpe-Seite noch
 - **Quelle (OpenWrt-Commit):** OpenWrt 0de6a3339f1aadc1de2c9371435e3de239a00645 (Gluon: broken)
 - **Detail-Anleitung:** https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0de6a3339f1aadc1de2c9371435e3de239a00645
 
@@ -9795,7 +9795,7 @@ Extreme Networks AP3935i/e · ipq806x-generic · K4
 - **Fehlerbild:** Login admin/new2day klappt nach 2-3 Versuchen nicht: Reset 10-20 s halten und nach dem Booten erneut [geprüft: Commit 3aef610, Wiki toh:extreme_networks:ws-ap3935i]; wird der AP mehrmals neu gestartet, lädt der Watchdog das zweite Stock-Image (SecImg), das sich über PriImg kopiert und OpenWrt zerstört, das Wiki löscht deshalb PriImg und SecImg vorher [geprüft: Wiki toh:extreme_networks:ws-ap3935i]
 - **Notweg:** [Notfall] Konsole statt über das Cisco-Kabel per USB-TTL 3,3 V an der internen 4-Pin-Leiste (3.3 | GND | RX | TX), 115200 8N1 [geprüft: Commit; abgeleitet: Wiki-Zusammenfassung, im Rohtext toh:extreme_networks:ws-ap3935i nicht gefunden]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als TFTP-initramfs, seriell bleibt; Gluon baut für ipq806x kein initramfs; QCA9990 ohne 802.11s [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/extreme-networks-ap3935.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage` (ohne Endung) per U-Boot-TFTP
+- **Gluon-RAMpe-Rezept:** devices/extreme-networks-ap3935.sh (gebaut, RAMpe 20261115): `-initramfs-uImage` (ohne Endung) per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 3aef61060e3f51aa43fe494d5ff173e81dd43003
 - **Detail-Anleitung:** -
 
@@ -10379,7 +10379,7 @@ Sophos RED 15w Rev. 1 · mpc85xx-p1010 · K4
 - **Fehlerbild:** Ist bootdelay 0, laut Wiki zuerst im Stock-Failsafe ('Press the [f] key and hit [enter]') `fw_setenv bootdelay=3` setzen [geprüft: Wiki toh:sophos_red_15w_rev_1]; Bootloop oder Absturz des initramfs: laut Wiki älteres initramfs (OpenWrt 23.05.2) nehmen [geprüft: Wiki toh:sophos_red_15w_rev_1]
 - **Rückweg zur Herstellerfirmware:** Stock-bootcmd steht im Commit; dazu vorher sophos-os1, sophos-os2, sophos-data sichern und nach dem Zurückstellen per mtd zurückschreiben [geprüft: Commit]
 - **Gluon-RAMpe passt:** teilweise: ubiformat vor dem sysupgrade macht die Gluon-RAMpe nicht
-- **Gluon-RAMpe-Rezept:** devices/sophos-red-15w-rev.1.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (FIT) als `kernel.bin` per U-Boot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubiformat`)
+- **Gluon-RAMpe-Rezept:** devices/sophos-red-15w-rev.1.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` (FIT) als `kernel.bin` per U-Boot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubiformat`)
 - **Quelle (OpenWrt-Commit):** 97e4311fca73d064d17065e7844699aa777cb157
 
 #### aerohive-hiveap-330
@@ -10418,7 +10418,7 @@ Aerohive HiveAP 330 · mpc85xx-p1020 · K4
 - **Fehlerbild:** Geht keins der U-Boot-Passwörter: im laufenden Stock den Reset-Knopf (Nadel) gedrückt halten = Werksreset [geprüft: Wiki toh:aerohive:hiveap-330]
 - **Notweg:** [Notfall] Wiki-Weg mit U-Boot-Patch: dafür braucht das gebootete initramfs Internet (opkg kmod-mtd-rw) [geprüft: Wiki toh:aerohive:hiveap-330]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt scp+sysupgrade; der serielle Teil bleibt
-- **Gluon-RAMpe-Rezept:** devices/aerohive-hiveap-330.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` per U-Boot-TFTP; der U-Boot-Patch bleibt Handarbeit (Entwurf in docs/ENTWURF-VORBEREITUNG.md)
+- **Gluon-RAMpe-Rezept:** devices/aerohive-hiveap-330.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` per U-Boot-TFTP; der U-Boot-Patch bleibt Handarbeit (Entwurf in docs/ENTWURF-VORBEREITUNG.md)
 - **Quelle (OpenWrt-Commit):** f2b7d9dc1ca3d33f14961cf2885639f4f9e8965e
 
 #### enterasys-ws-ap3710i
@@ -10544,7 +10544,7 @@ TP-Link EAP620 HD v1 · qualcommax-ipq807x · K4
 - **RAM:** 1 GB
 - **Notweg:** [einfacher, schlechter belegt] Ohne UART mit OpenWrt 25.12 als Zwischenschritt: Gerät erst in der Hersteller-Weboberfläche einrichten und unter Management > SSH 'SSH Login' aktivieren, per SSH `cliclientd stopcs` ausführen, dann System > Firmware Update [geprüft: Commit 8a15a75]. SSH-Client mit `-o hostkeyalgorithms=ssh-rsa`; das OpenWrt-25.12-`web-ui-factory.bin` auf unter 63 Zeichen mit Endung .bin umbenennen [geprüft: Commit 8a15a75 (GitHub)]. Danach Gluon-sysupgrade [abgeleitet: OpenWrt 8a15a75e9414bbb839ac457701b041454e89bbc4]
 - **Gluon-RAMpe passt:** teilweise: web-ui-factory ist ein squashfs-Flash-Image (tplink-image-2022, in 24.10 nicht vorhanden), kein initramfs; Gluon-RAMpe bräuchte dieses Format [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/tp-link-eap620-hd-v1.sh (Rezept-Entwurf, nicht gebaut): Backport aus gluon-patches-hardware (`RAMPE_HW_PATCHES`); `-initramfs-uImage.itb` per U-Boot-TFTP
+- **Gluon-RAMpe-Rezept:** devices/tp-link-eap620-hd-v1.sh (gebaut, RAMpe 20261115): Backport aus gluon-patches-hardware (`RAMPE_HW_PATCHES`); `-initramfs-uImage.itb` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 4b6e7da0f7499acb69feaacca79e0ee826c0b8db; gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
 - **Detail-Anleitung:** -
 
@@ -10667,7 +10667,7 @@ Aruba AP-324/AP-325, Siemens Scalance W1750D · ipq806x-generic · K5
 - **Notweg:** [Notfall] ap325-flashtool statt Handarbeit: Python 3.11+, pyserial, root bzw. CAP_NET_ADMIN, eingebauter TFTP-Server, erkennt Baudrate und unterbricht selbst; Beispiel Host-IP 192.168.1.1/24 [geprüft: github maurerle/ap325-flashtool]
 - **Rückweg zur Herstellerfirmware:** Gepatchtes APBoot bleibt stock-kompatibel: NAND löschen, APBoot legt die Partitionen neu an, Backup von aos0/aos1 zurückspielen [geprüft: Commit]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe müsste das Aruba-`.ari`-Format (Vendor-Header) bekommen, Gluon baut für ipq806x kein initramfs; Bootloader-Tausch und UBI-Umbau bleiben seriell. OpenWrt-Artefakte nur als Snapshot (in keinem Release bis 25.12.5) [geprüft]
-- **Gluon-RAMpe-Rezept:** devices/aruba-ap-32x.sh (Rezept-Entwurf, nicht gebaut): Backport aus gluon-patches-hardware (`RAMPE_HW_PATCHES`); `-initramfs.ari` per APBoot-TFTP; APBoot-Tausch und NAND-Umbau bleiben seriell
+- **Gluon-RAMpe-Rezept:** devices/aruba-ap-32x.sh (gebaut, RAMpe 20261115): Backport aus gluon-patches-hardware (`RAMPE_HW_PATCHES`); `-initramfs.ari` per APBoot-TFTP; APBoot-Tausch und NAND-Umbau bleiben seriell
 - **Quelle (OpenWrt-Commit):** OpenWrt d2a75029a5f8e54e1fd2f252f73b9a430a030116 (25.12: 65f01eb3576f69233e8b6c67d85ffd38fde47a1a); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]
 - **Detail-Anleitung:** https://github.com/lukasstockner/ap325-apboot-openwrt
 
@@ -10709,7 +10709,7 @@ ASUS Lyra MAP-AC2200 · ipq40xx-generic · K1
 - **Stock-Teile:** -
 - **RAM:** 256 MB
 - **Gluon-RAMpe passt:** ja: statt des OpenWrt-initramfs das RAMpe-initramfs per mtd-write schreiben; SSH-Schritt bleibt; Gluon baut für ipq40xx-generic kein initramfs [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/asus-lyra-map-ac2200.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` per SSH `mtd-write -d linux`
+- **Gluon-RAMpe-Rezept:** devices/asus-lyra-map-ac2200.sh (gebaut, RAMpe 20261115): `-initramfs-uImage.itb` per SSH `mtd-write -d linux`
 - **Quelle (OpenWrt-Commit):** OpenWrt 9ad3967f140bd6d08796f1ec151b753186b3eb44
 - **Detail-Anleitung:** https://openwrt.org/toh/asus/lyra_map-ac2200#oem_easy_installation
 
@@ -10750,7 +10750,7 @@ ASUS RT-AX52 · mediatek-filogic · K1
 - **Notweg:** [Notfall] Downgrade per ASUS Firmware Restoration: Reset beim Einschalten halten, bis die LED langsam blinkt [geprüft: Wiki toh:asus:rt-ax52]; ASUS-Restoration-Tool (Windows) oder unter Linux Nachbau per socat/atftp (Rechner 192.168.1.10, Ziel 192.168.1.49, Name ASUSSPACELINK) [geprüft: Wiki toh:asus:rt-ax52]. Seriell (Rückweg/Notfall): '4' drücken, wenn zur Unterbrechung aufgefordert; TFTP-Server 192.168.1.70, Datei `rtax52.bin` [geprüft: Commit 99708cc]
 - **Rückweg zur Herstellerfirmware:** Paket facinstall unter OpenWrt und ASUS-TRX flashen, oder seriell per TFTP (RT-AX52.trx, Menüpunkt 2) [geprüft: Commit, Wiki toh:asus:rt-ax52]
 - **Gluon-RAMpe passt:** ja: Hersteller-UI nimmt ein initramfs im ASUS-TRX; RAMpe-Rezept muss das ARTIFACT `initramfs.trx` einsammeln [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/asus-rt-ax52.sh (Rezept-Entwurf, nicht gebaut): `-initramfs.trx` (OpenWrt-ARTIFACT) für die ASUS-Web-UI
+- **Gluon-RAMpe-Rezept:** devices/asus-rt-ax52.sh (gebaut, RAMpe 20261115): `-initramfs.trx` (OpenWrt-ARTIFACT) für die ASUS-Web-UI
 - **Quelle (OpenWrt-Commit):** OpenWrt 99708cc16dbd7c93db80698fbe5c69f07995a3e6
 - **Detail-Anleitung:** https://openwrt.org/toh/asus/rt-ax52#installation
 
@@ -10788,7 +10788,7 @@ ASUS RT-AX59U · mediatek-filogic · K2
 - **RAM:** 512 MB
 - **Notweg:** [Notfall] Seriell + TFTP-initramfs: Gehäuse öffnen, Pinout auf der Platine [abgeleitet]; USB-TTL 3,3 V (VCC nicht anschließen), 115200 8N1, Rechner fest 192.168.1.70/24, Gerät 192.168.1.1, TFTP-Datei `rtax59u.bin` [geprüft: Commit]; '4' drücken, wenn zur Unterbrechung aufgefordert [geprüft: Commit 782eb05]
 - **Gluon-RAMpe passt:** teilweise: OpenWrt baut für die RT-AX59U kein `initramfs.trx` (24.10.8 und 25.12.5 nur initramfs-kernel.bin) [geprüft]; eine Gluon-RAMpe-TRX wie bei der RT-AX52 wäre zu bauen, ob die Stock-UI es nimmt: offen
-- **Gluon-RAMpe-Rezept:** devices/asus-rt-ax59u.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; nur `initramfs-kernel.bin` für den UART-Weg, für die Web-UI fehlt ein eigenes TRX
+- **Gluon-RAMpe-Rezept:** devices/asus-rt-ax59u.sh (gebaut, RAMpe 20261115): trägt das Gerät in Gluon ein; nur `initramfs-kernel.bin` für den UART-Weg, für die Web-UI fehlt ein eigenes TRX
 - **Quelle (OpenWrt-Commit):** OpenWrt 782eb050082acac93c2f9b3eb22348234bc93e99; gluon-patches-hardware 8dbae18666543aa9b8b5e7faa1d267024d62071e (Gluon-Zeile)
 - **Detail-Anleitung:** -
 
@@ -10896,8 +10896,8 @@ D-Link DIR-505 · ath79-generic · K4
 - **Fehlerbild:** Ethernet nach dem Upgrade nicht erreichbar: Moduswahlschalter oben steht auf Repeater, Router/AP-Stellung nehmen [geprüft: Wiki toh:d-link:dir-505]; D-Link-Recovery (192.168.0.1) an einem DIR-505 A2 mit PCT-Zeichen meldete "Upgrade successfully!", schrieb aber weder die D-Link-Datei FW110B02 noch LEDE 17.01.7 noch das Sackgasse-factory (alle mit HORNET-Kopf, Region DEF) [geprüft: Test Neanderfunk 17.10.2026]; aus ar71xx-Gluon (2018.2.1) im Setup-Mode ging ein sysupgrade direkt auf 2025.1 [geprüft: Test Neanderfunk 17.10.2026]; factory gibt es seit ath79 nicht, weil der Port (OpenWrt c9ac7b1729) es mangels D-Link-Bootloader nicht testen konnte, mkcameofw wäre noch da [geprüft: Commit]; nach dem Flash ist der einzige Ethernet-Port Uplink/WAN [geprüft: Test Neanderfunk 17.10.2026]
 - **Notweg:** [Notfall] Weitere Wege laut Commit: modifiziertes U-Boot oder sysupgrade aus älterem OpenWrt [geprüft: Commit]. Wiki-Weg (kein ath79-factory): altes ar71xx-factory (OpenWrt 14.07 bis 19.07) über Stock-Web-UI oder D-Link-Recovery, danach sysupgrade auf ath79 (Konfiguration geht verloren) [geprüft: Wiki toh:d-link:dir-505]. D-Link-Recovery: Reset 3-5 s halten, Strom einstecken, Reset weiter halten bis die rote Power-LED blinkt [geprüft: Wiki toh:d-link:dir-505]. Rechner feste IP 192.168.0.5 (nicht .1), http://192.168.0.1; der alte uIP-Stack geht mit modernen Systemen oft nicht: Windows 10 + Firefox oder curl ging, Debian 10/11 nicht [geprüft: Wiki toh:d-link:dir-505]. Recovery erreicht: rote LED blinkt; nach Upload rot dauerhaft, nach ca. 90 s LED aus und Neustart; die 'Success'-Seite kommt immer, auch bei Fehlschlag [geprüft: Wiki toh:d-link:dir-505]. Dauer: Upload, dann ca. 2 min Countdown, Neustart nach ca. 90 s [geprüft: Wiki toh:d-link:dir-505]; am DIR-505 A2 mit PCT-Zeichen schrieb die D-Link-Recovery nichts, obwohl sie Erfolg meldete [geprüft: Test Neanderfunk 17.10.2026]; seriell: USB-TTL 3,3 V, 115200 8N1 [geprüft: Wiki toh:d-link:dir-505], UART-Lage, Unterbrechungstaste und TFTP-Adressen im Commit nicht genannt
 - **Rückweg zur Herstellerfirmware:** 84-Byte-Header von der D-Link-Firmware abschneiden (`dd bs=84 skip=1`), `mtd write ... firmware`; Erfolgsberichte gemischt [geprüft: Wiki toh:d-link:dir-505]
-- **Gluon-RAMpe passt:** nicht nötig: der Weg geht über altes OpenWrt in den Weboberflächen; für den seriellen Notweg wäre ein RAMpe-initramfs per tftpboot denkbar (Rezept-Entwurf, nicht gebaut)
-- **Gluon-RAMpe-Rezept:** devices/d-link-dir-505.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; UART, IPs und Ladeadresse nicht belegt; 64 MB RAM
+- **Gluon-RAMpe passt:** nicht nötig: der Weg geht über altes OpenWrt in den Weboberflächen; die D-Link-Oberfläche nimmt nur ein factory mit HORNET-Kopf, das ath79 nicht baut, also auch keins für die RAMpe; für den seriellen Notweg ist das RAMpe-initramfs per tftpboot gebaut (RAMpe 20261115), UART, IPs und Ladeadresse sind aber nicht belegt, deshalb keine rampe_url
+- **Gluon-RAMpe-Rezept:** devices/d-link-dir-505.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; UART, IPs und Ladeadresse nicht belegt; 64 MB RAM
 - **Quelle (OpenWrt-Commit):** c9ac7b17296ff29d9df39db8a68c449ef1514bbd [geprüft: Commit]
 - **Detail-Anleitung:** anleitungen/de/d-link-dir-505.md
 - **Werte für die Anleitung:** zwischen_url = https://archive.openwrt.org/releases/17.01.7/targets/ar71xx/generic/lede-17.01.7-ar71xx-generic-dir-505-a1-squashfs-factory.bin; zwischen_datei = lede-17.01.7-ar71xx-generic-dir-505-a1-squashfs-factory.bin; zwischen_sha256 = 13f357a3ebd73c872a85cf8db592e7d2e313723370513cc56a271d99244aa5ed; sackgasse_a1_url = https://firmware.ffnef.de/firmware/sackgasse/21_dias/factory/gluon-nef-21_dias_EOL-24112319sackgasse-d-link-dir-505-rev-a1.bin; sackgasse_a2_url = https://firmware.ffnef.de/firmware/sackgasse/21_dias/factory/gluon-nef-21_dias_EOL-24112319sackgasse-d-link-dir-505-rev-a2.bin; sicherheit = abgeleitet
@@ -11375,7 +11375,7 @@ NETGEAR WAX218 · qualcommax-ipq807x · K1
 - **RAM:** 366 MB nutzbar (laut Commit)
 - **Notweg:** [Alternative] SSH-Alternative braucht ältere Algorithmen (`-o kexalgorithms=diffie-hellman-group14-sha1 -o hostkeyalgorithms=ssh-rsa`) [geprüft: Commit]
 - **Gluon-RAMpe passt:** ja: RAMpe-initramfs in dasselbe Format packen (ARTIFACT web-ui-factory.fit); Gluon baut für qualcommax kein initramfs, Rezept braucht TARGET_ROOTFS_INITRAMFS [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/netgear-wax218.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `-web-ui-factory.fit` (OpenWrt-ARTIFACT) für die Web-UI
+- **Gluon-RAMpe-Rezept:** devices/netgear-wax218.sh (gebaut, RAMpe 20261115): trägt das Gerät in Gluon ein; `-web-ui-factory.fit` (OpenWrt-ARTIFACT) für die Web-UI
 - **Quelle (OpenWrt-Commit):** OpenWrt 7801161c4bb2413817b3dfd01695050e2da27bf3
 - **Detail-Anleitung:** -
 
@@ -11577,7 +11577,7 @@ Xiaomi AX3600 · qualcommax-ipq807x · K2
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als `initramfs-factory.ubi` bauen, ersetzt den OpenWrt-Zwischenschritt; Exploit bleibt; Gluon baut für qualcommax kein initramfs [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/xiaomi-ax3600.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt
+- **Gluon-RAMpe-Rezept:** devices/xiaomi-ax3600.sh (gebaut, RAMpe 20261115): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt
 - **Quelle (OpenWrt-Commit):** OpenWrt 8364f0816417bfe404f7bded4eaa4f4a60c6d006
 - **Detail-Anleitung:** -
 
@@ -11634,7 +11634,7 @@ Xiaomi Mi Router AX3000T · mediatek-filogic · K2
 - **RAM:** 256 MB
 - **Rückweg zur Herstellerfirmware:** Backups (BL2, Nvram, Bdata, Factory, FIP, ubi, KF) aufheben; Stock per Xiaomi-TFTP-Recovery (Datei = IP in Hex, z. B. C0A81F02.img) [geprüft: Commit, Wiki toh:xiaomi:ax3000t]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als `initramfs-factory.ubi` (ubinize-kernel) bauen, ersetzt den OpenWrt-Zwischenschritt; der Exploit bleibt [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/xiaomi-mi-router-ax3000t.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt
+- **Gluon-RAMpe-Rezept:** devices/xiaomi-mi-router-ax3000t.sh (gebaut, RAMpe 20261115): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt
 - **Quelle (OpenWrt-Commit):** OpenWrt 7dbcc1215a56cc1da68c81bf92d7efa174c5e051
 - **Detail-Anleitung:** -
 
@@ -11722,7 +11722,7 @@ ZTE MF286R (broken) · ath79-nand · K1
 - **RAM:** 128 MB [Commit]
 - **Rückweg zur Herstellerfirmware:** Nur mit eigenem Backup aller mtd-Partitionen (Stock-Firmware providerspezifisch und nicht öffentlich) [geprüft: Commit]
 - **Gluon-RAMpe passt:** ja (Exploit-Weg): genau der Fall "initramfs aus der Stock-Shell schreiben", Gluon-RAMpe statt OpenWrt-initramfs [abgeleitet]; Gluon markiert das Gerät broken mit "case must be opened" - laut Commit nicht zwingend
-- **Gluon-RAMpe-Rezept:** devices/zte-mf286r.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` per `nandwrite` nach dem Exploit (Weg nur für die MF286A belegt)
+- **Gluon-RAMpe-Rezept:** devices/zte-mf286r.sh (gebaut, RAMpe 20261115): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` per `nandwrite` nach dem Exploit (Weg nur für die MF286A belegt)
 - **Quelle (OpenWrt-Commit):** 7ac8da00609f42b8aba74b7efc6b0d055b7cef3e [geprüft]
 
 ### Familie `sonderweg-zyxel-nbg6616`

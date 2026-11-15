@@ -10,7 +10,7 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: 612d99dd7
+daten_stand: a5c52587d
 vorlage_stand: 90388c1ca
 ---
 

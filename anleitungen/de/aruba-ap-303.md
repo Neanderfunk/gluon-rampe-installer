@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-aruba-ap-303-initramfs-uImage.itb
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 612d99dd7
+daten_stand: a5c52587d
 vorlage_stand: 84f780274
 ---
 
