@@ -62,6 +62,15 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
                          Seite: Der Bootloader des AP11 passt nicht auf
                          AP11D (Plattform AP-303H) und AP17 (AP-365).
     sicherheit, sicherheit_hinweis   siehe _status.md
+    rampe_url, rampe_datei
+                         RAMpe-initramfs (…-aruba-ap-303/303h/365-initramfs-
+                         uImage.itb). Gesetzt: Sie ersetzt das OpenWrt-initramfs
+                         (ebenfalls als ipq40xx.ari), die Freifunk-Firmware kommt
+                         über die RAMpe-Seite im Browser. ubidetach/ubiformat
+                         macht die RAMpe selbst (prepare-Skript aruba_ap-*.sh,
+                         ab dem Bau nach 20261114, Buildsystem 15.11.2026).
+                         OpenWrt steht dann unter "Anderer Weg" (adorfer
+                         15.11.2026: "bitte alles auf RAMpe umstellen").
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
@@ -71,6 +80,9 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 {%- set apboot = w.get("bootm_weg") == "apboot" and w.get("apboot_url") -%}
 {%- set apboot_zip = apboot and w.apboot_url.endswith(".zip") -%}
 {%- set apboot_download = w.apboot_url.split("/")[-1] if apboot else "" -%}
+{%- set rampe = w.get("rampe_url") -%}
+{%- set zw = "die RAMpe" if rampe else "OpenWrt" -%}
+{%- import "_rampe_schritte.md" as rs with context -%}
 
 # {{ modell }}: Freifunk-Firmware installieren
 
@@ -88,27 +100,52 @@ Der Weg hat drei Etappen:
    entfernt hat, die OpenWrt braucht. Du ersetzt ihn zuerst durch eine
    ältere Fassung. Das ist der heikelste Teil; lies ihn vorher einmal ganz
    durch.
+{%- if rampe %}
+2. **Die RAMpe starten.** Du stellst den Bootloader so ein, dass er die
+   **Gluon-RAMpe** per TFTP von deinem Rechner holt und startet: eine kleine
+   Firmware, die nur eins kann, die Freifunk-Firmware deiner Community
+   annehmen. Sie läuft nur im Arbeitsspeicher.
+3. **Die Freifunk-Firmware aufspielen.** Auf der Seite der RAMpe lädst du
+   sie im Browser hoch. Den Speicher bereitet die RAMpe dabei selbst vor.
+{%- else %}
 2. **OpenWrt starten.** Du stellst den Bootloader so ein, dass er ein
    kleines OpenWrt per TFTP von deinem Rechner holt und startet. Es läuft
    nur im Arbeitsspeicher.
 3. **Die Freifunk-Firmware aufspielen.** Aus diesem OpenWrt heraus bereitest
    du den Speicher vor und installierst die Freifunk-Firmware deiner
    Community.
+{%- endif %}
 {% else %}
 Der Weg hat zwei Etappen:
 
+{% if rampe -%}
+1. **Die RAMpe starten.** Du stellst den Bootloader so ein, dass er die
+   **Gluon-RAMpe** per TFTP von deinem Rechner holt und startet: eine kleine
+   Firmware, die nur eins kann, die Freifunk-Firmware deiner Community
+   annehmen. Sie läuft nur im Arbeitsspeicher.
+2. **Die Freifunk-Firmware aufspielen.** Auf der Seite der RAMpe lädst du
+   sie im Browser hoch. Den Speicher bereitet die RAMpe dabei selbst vor.
+{%- else %}
 1. **OpenWrt starten.** Du stellst den Bootloader so ein, dass er ein
    kleines OpenWrt per TFTP von deinem Rechner holt und startet. Es läuft
    nur im Arbeitsspeicher.
 2. **Die Freifunk-Firmware aufspielen.** Aus diesem OpenWrt heraus bereitest
    du den Speicher vor und installierst die Freifunk-Firmware deiner
    Community.
+{%- endif %}
 {% endif %}
+{% if rampe -%}
+Dafür brauchst du zwei Werkzeuge, die auf eigenen Seiten erklärt sind:
+[Serielle Konsole benutzen](grundlagen/serielle-konsole.md) und
+[TFTP-Server einrichten](grundlagen/tftp-server.md). Rechne beim ersten Mal
+mit einer Stunde, ohne das Kabel zu bauen.
+{%- else -%}
 Dafür brauchst du drei Werkzeuge, die auf eigenen Seiten erklärt sind:
 [Serielle Konsole benutzen](grundlagen/serielle-konsole.md),
 [TFTP-Server einrichten](grundlagen/tftp-server.md) und
 [SSH und scp benutzen](grundlagen/ssh-scp.md). Rechne beim ersten Mal mit
 einer Stunde, ohne das Kabel zu bauen.
+{%- endif %}
 
 ## Was du brauchst
 
@@ -130,6 +167,16 @@ einer Stunde, ohne das Kabel zu bauen.
   Konsolenkabel** (siehe unten). Die Entwickler von OpenWrt berichten, dass
   billige Adapter hier nicht funktioniert haben.
 {%- endif %}
+{%- if rampe %}
+- ein Terminalprogramm und einen TFTP-Server (siehe die zwei Seiten oben)
+- diese Dateien:
+  1. die RAMpe für dein Gerät:
+     [{{ w.get("rampe_datei") or "RAMpe-Datei" }}]({{ w.rampe_url }}).
+     Leg sie in den Ordner deines TFTP-Servers und benenn sie dort genau in
+     **`ipq40xx.ari`** um.
+  2. die Freifunk-Firmware deiner Community für den {{ modell }}, und zwar
+     das **sysupgrade**-Image.
+{%- else %}
 - ein Terminalprogramm, einen TFTP-Server und `ssh`/`scp` (siehe die drei
   Seiten oben)
 - diese Dateien:
@@ -142,6 +189,7 @@ einer Stunde, ohne das Kabel zu bauen.
   2. die Freifunk-Firmware deiner Community für den {{ modell }}, und zwar
      das **sysupgrade**-Image. Benenn es in `gluon.bin` um, dann passen die
      Befehle unten ohne Änderung.
+{%- endif %}
 {%- if apboot_zip %}
   3. den älteren Bootloader als ZIP-Archiv:
      [{{ apboot_download }}]({{ w.apboot_url }}). Pack es aus. Kommt dabei
@@ -293,7 +341,7 @@ Bootloaders, nicht der Rest des Speichers.
    bis `apboot>` erscheint.
 {%- endif %}
 
-### OpenWrt starten
+### {% if rampe %}Die RAMpe{% else %}OpenWrt{% endif %} starten
 
 {{ s_env }}. **Bootloader einstellen.** Gib diese Befehle ein, jede Zeile einzeln, und
     warte nach jeder Zeile auf `apboot>`:
@@ -310,11 +358,12 @@ Bootloaders, nicht der Rest des Speichers.
     der dritten Zeile oben entsprechen. Sonst diese Zeile noch einmal
     eingeben und wieder `saveenv`.
 
-    Damit startet der Access Point ab jetzt OpenWrt statt der
-    Aruba-Firmware. Die Aruba-Firmware bleibt im Speicher, siehe "Zurück zur
+    Damit startet der Access Point ab jetzt {% if rampe %}nicht mehr die
+    Aruba-Firmware{% else %}OpenWrt statt der
+    Aruba-Firmware{% endif %}. Die Aruba-Firmware bleibt im Speicher, siehe "Zurück zur
     Aruba-Firmware".
 
-{{ s_ram }}. **OpenWrt laden.** Gib ein:
+{{ s_ram }}. **{% if rampe %}Die RAMpe{% else %}OpenWrt{% endif %} laden.** Gib ein:
 
     ```
     run ramboot_openwrt
@@ -322,13 +371,36 @@ Bootloaders, nicht der Rest des Speichers.
 
     Der Access Point holt `ipq40xx.ari` von deinem Rechner. Danach erscheint
     `Invalid image format version`, das ist normal. Kurz darauf startet
-    OpenWrt, das Terminal zeigt viele Zeilen. Warte, bis
+    {{ zw }}, das Terminal zeigt viele Zeilen. Warte, bis
     `Please press Enter to activate this console.` erscheint.
 
     **Kommt stattdessen `Unknown command 'bootm'`**, lies unter "Wenn etwas
     schiefgeht" weiter.
 
 ### Freifunk-Firmware aufspielen
+{%- if rampe %}
+
+{{ s_login }}. **Rechner vorbereiten.**
+    {%- if ssh_buchse %} Steck das Netzwerkkabel jetzt in die Buchse
+    **{{ ssh_buchse }}**. Unter der RAMpe ist {{ tftp_buchse or "die bisherige Buchse" }}
+    der Internet-Anschluss und nicht erreichbar.{% endif %} Die feste Adresse
+    `192.168.1.75` passt auch für die RAMpe unter `192.168.1.1`.
+
+{{ rs.seite(s_mtd, ram=5) }}
+
+    Vor dem Schreiben bereitet die RAMpe den Speicher vor. Klappt das nicht,
+    schreibt sie nichts und zeigt ein Protokoll an, siehe "Wenn etwas
+    schiefgeht".
+
+{{ s_done }}. **Fertig.** Einige Minuten warten, Strom nicht ziehen. Im
+    Konsolen-Terminal siehst du den Neustart. Stell den Rechner wieder auf
+    "automatisch". Danach startet die Freifunk-Firmware deiner Community: je
+    nach Community zuerst mit einer Einrichtungsseite unter
+    `http://192.168.1.1` oder gleich im Betrieb.
+    Antwortet dort nichts, siehe [Die Router-Seite antwortet
+    nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+    [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
+{%- else %}
 
 {{ s_login }}. **Anmelden.**
     {%- if ssh_buchse %} Steck das Netzwerkkabel jetzt in die Buchse
@@ -375,6 +447,7 @@ Bootloaders, nicht der Rest des Speichers.
     Antwortet dort nichts, siehe [Die Router-Seite antwortet
     nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
     [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
+{%- endif %}
 
 ## Woran du erkennst, dass es geklappt hat
 
@@ -384,8 +457,13 @@ Bootloaders, nicht der Rest des Speichers.
   Schritt {{ s_reset }} lautet die erste Zeile `APBoot 2.5.0.2`.
 {%- endif %}
 - In Schritt {{ s_ram }} zeigt der Bootloader, dass er die Datei geholt hat
-  (`Bytes transferred = …`), und OpenWrt startet.
+  (`Bytes transferred = …`), und {{ zw }} startet.
+{%- if rampe %}
+- In Schritt {{ s_mtd }} zeigt `http://192.168.1.1` die RAMpe-Seite
+  "Firmware aktualisieren".
+{%- else %}
 - In Schritt {{ s_mtd }} zeigt `grep` die Partition `"ubi"`.
+{%- endif %}
 - Nach Schritt {{ s_done }} meldet sich die Freifunk-Firmware.
 
 ## Wenn etwas schiefgeht
@@ -415,15 +493,50 @@ Bootloaders, nicht der Rest des Speichers.
   Willst du an dieser Stelle aufhören, stell im Bootloader den Start der
   Aruba-Firmware wieder her, wie unter "Zurück zur Aruba-Firmware"
   beschrieben.
-- **In Schritt {{ s_login }} antwortet nichts.** Warte noch eine Minute,
-  OpenWrt braucht etwas.
+- **In Schritt {{ s_mtd if rampe else s_login }} antwortet nichts.** Warte noch eine Minute,
+  {{ zw }} braucht etwas.
   {%- if ssh_buchse %} Prüf, ob das Kabel jetzt in {{ ssh_buchse }}
   steckt.{% endif %}
+{%- if rampe %}
+- **Die RAMpe meldet beim Vorbereiten des Speichers einen Fehler** und
+  zeigt ein Protokoll. Dann hat sie nichts geschrieben. Nicht weitermachen,
+  sondern das Protokoll abschreiben (oder die Mitschrift des Terminals
+  nehmen) und uns schreiben.
+{%- else %}
 - **`ubiformat` meldet einen Fehler.** Nicht weitermachen, sondern die
   Ausgabe abschreiben (oder die Mitschrift des Terminals nehmen) und uns
   schreiben.
+{%- endif %}
 {%- if zusatz.fehler is defined and zusatz.fehler %}
 {{ zusatz.fehler }}
+{%- endif %}
+
+{%- if rampe %}
+
+## Anderer Weg: über OpenWrt
+
+Statt der RAMpe startet der Bootloader in Schritt {{ s_ram }} auch OpenWrt:
+[{{ w.initramfs_datei }}]({{ w.initramfs_url }})
+{%- if w.get("initramfs_sha256") %}, SHA256 `{{ w.initramfs_sha256 }}`{% endif %},
+ebenfalls als `ipq40xx.ari` in den TFTP-Ordner. Den Speicher bereitest du
+dann selbst vor ([SSH und scp benutzen](grundlagen/ssh-scp.md)): das
+sysupgrade-Image in `gluon.bin` umbenennen, Rechner wie in Schritt
+{{ s_login }} vorbereiten, dann
+
+```
+scp -O gluon.bin root@192.168.1.1:/tmp/gluon.bin
+ssh root@192.168.1.1
+```
+
+und auf dem Access Point, Zeile für Zeile (prüf vorher mit
+`grep ubi /proc/mtd`, dass die Ausgabe mit
+`{{ w.mtd | replace("/dev/", "") }}:` beginnt und auf `"ubi"` endet):
+
+```
+ubidetach -p {{ w.mtd }}
+ubiformat {{ w.mtd }}
+sysupgrade -n /tmp/gluon.bin
+```
 {%- endif %}
 
 ## Zurück zur Aruba-Firmware
