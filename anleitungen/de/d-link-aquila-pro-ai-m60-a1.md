@@ -9,18 +9,17 @@ level: L4
 level_text: Network-Tools
 risiko: normal
 status: erprobt
-erprobt_am: 2026-10-16
-erprobt_mit: gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin
+erprobt_am: 2026-11-15
+erprobt_mit: gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m60-a1-recovery.bin
 grundlagen: [browser-https, browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: 2c43ca23b
+daten_stand: 16e365e2f
 vorlage_stand: 23b89e67b
 ---
 
 # D-Link AQUILA PRO AI M60 A1: Freifunk-Firmware installieren
 
-> **Am Gerät erprobt** am 16.10.2026 mit `gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin`. Das aktuelle Image ist neuer und in dieser Form
-> noch nicht am Gerät gelaufen.
+> **Am Gerät erprobt** am 15.11.2026 mit `gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin`.
 >
 > Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 > hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
