@@ -22,19 +22,24 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     zwischen_datei       OpenWrt-factory als Zwischenschritt (wenn Gluon keins baut)
     zwischen_url         Download-Adresse dazu
 
-  RAMpe als zweiter Weg (siehe _rampe.md, alles optional)
+  RAMpe (optional). Mit zwischen_datei UND rampe_url ersetzt die RAMpe
+  (factory-Image für nmrpflash) die OpenWrt-Zwischenstufe, OpenWrt steht nur
+  noch unter "Anderer Weg" (adorfer 15.11.2026: "bitte alles auf RAMpe
+  umstellen").
     rampe_url            Direktlink auf die RAMpe-Datei für dieses Gerät
     rampe_datei          Dateiname dazu
-    rampe_weg            ganzer Satz, wie die RAMpe statt OpenWrt aufs Gerät kommt
+    rampe_weg            ungenutzt, nur noch für _rampe.md
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
+{%- set rz = w.zwischen_datei and w.get("rampe_url") -%}
+{%- import "_rampe_schritte.md" as rs with context -%}
 
 {%- macro nmrp_schritte() %}
 1. **nmrpflash bereitlegen.** Lade nmrpflash herunter und richte es ein, wie
    unter [nmrpflash benutzen](grundlagen/nmrpflash.md) beschrieben. Leg
-   {%- if w.zwischen_datei %} die OpenWrt-Datei{% else %} das factory-Image{% endif %}
-   in denselben Ordner und benenne es in `firmware.img` um.
+   {%- if rz %} die RAMpe-Datei{% elif w.zwischen_datei %} die OpenWrt-Datei{% else %} das factory-Image{% endif %}
+   in denselben Ordner und benenne {% if rz or w.zwischen_datei %}sie{% else %}es{% endif %} in `firmware.img` um.
 
 2. **Verbinden.** Das Gerät ist **aus**. Steck das Kabel vom Rechner an
    {%- if w.anschluss %} {{ w.anschluss }}{% else %} die LAN-Buchse (bei
@@ -66,7 +71,20 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 7. **Neu starten.**
    {%- if w.nach_neustart %} {{ w.nach_neustart }}
    {%- else %} Schalte das Gerät aus und wieder ein.{% endif %}
-{%- if w.zwischen_datei %}
+{%- if rz %}
+
+8. **Rechner umstellen.** Nach dem Neustart läuft die RAMpe. Stell den
+   Rechner auf "automatisch".
+
+{{ rs.seite(9) }}
+
+11. **Fertig.** Nach einigen Minuten startet die Freifunk-Firmware deiner
+    Community: je nach Community zuerst mit einer Einrichtungsseite unter
+    `http://192.168.1.1` oder gleich im Betrieb.
+    Antwortet dort nichts, siehe [Die Router-Seite antwortet
+    nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+    [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
+{%- elif w.zwischen_datei %}
 
 8. **Freifunk-Firmware über OpenWrt.** Stell den Rechner auf
    "automatisch", öffne `http://192.168.1.1` und melde dich an
@@ -187,7 +205,16 @@ dann, wenn die Netgear-Oberfläche fremde Firmware nicht annimmt.
   {%- if w.strom %} und Strom {{ w.strom }}{% else %} mit Netzteil{% endif %}, einen
   Rechner mit Netzwerkanschluss und ein Netzwerkkabel
 - das Programm nmrpflash ([nmrpflash benutzen](grundlagen/nmrpflash.md))
-{%- if w.zwischen_datei %}
+{%- if rz %}
+- die RAMpe für den {{ modell }}:
+  [{{ w.get("rampe_datei") or "RAMpe-Datei" }}]({{ w.rampe_url }}). Die
+  Freifunk-Firmware gibt es für dieses Gerät nicht in der Form, die nmrpflash
+  schickt; deshalb kommt erst die **Gluon-RAMpe** drauf, eine kleine
+  Firmware, die nur eins kann: die Freifunk-Firmware deiner Community
+  annehmen.
+- die Freifunk-Firmware deiner Community für den {{ modell }}, und zwar das
+  **sysupgrade**-Image
+{%- elif w.zwischen_datei %}
 - OpenWrt für den {{ modell }}:
   [{{ w.zwischen_datei }}]({{ w.zwischen_url }}). Die Freifunk-Firmware
   gibt es für dieses Gerät nicht in der Form, die nmrpflash schickt; deshalb
@@ -225,7 +252,19 @@ an. nmrpflash ist der Weg.
 {%- endif %}
 {%- endif %}
 
+{%- if rz %}
+
+## Anderer Weg: über OpenWrt
+
+Statt der RAMpe schickt nmrpflash auch OpenWrt:
+[{{ w.zwischen_datei }}]({{ w.zwischen_url }}), ebenfalls in `firmware.img`
+umbenennen. Nach dem Neustart läuft OpenWrt: Rechner auf "automatisch",
+`http://192.168.1.1` öffnen, anmelden (Passwort-Feld leer), **System →
+Backup / Flash Firmware**, "Flash image…", das Freifunk-sysupgrade-Image
+wählen, **den Haken bei "Keep settings" entfernen** und **Continue**.
+{%- else %}
 {% include "_rampe.md" %}
+{%- endif %}
 
 {{ zusatz.text }}
 
