@@ -419,7 +419,7 @@
   "gluon_name": "d-link-aquila-pro-ai-m30-a1",
   "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-aquila-pro-ai-m30-a1.html",
   "status": "erprobt",
-  "level": "L4",
+  "level": "L3",
   "risiko": "normal",
   "sprache": "de"
  },
@@ -427,7 +427,7 @@
   "gluon_name": "d-link-aquila-pro-ai-m60-a1",
   "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-aquila-pro-ai-m60-a1.html",
   "status": "erprobt",
-  "level": "L4",
+  "level": "L3",
   "risiko": "normal",
   "sprache": "de"
  },
@@ -459,7 +459,7 @@
   "gluon_name": "d-link-dap-1620-b1",
   "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-dap-1620-b1.html",
   "status": "ungeprüft",
-  "level": "L4",
+  "level": "L3",
   "risiko": "normal",
   "sprache": "de"
  },
@@ -491,7 +491,7 @@
   "gluon_name": "d-link-dap-x1860-a1",
   "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-dap-x1860-a1.html",
   "status": "ungeprüft",
-  "level": "L4",
+  "level": "L3",
   "risiko": "normal",
   "sprache": "de"
  },
@@ -515,7 +515,7 @@
   "gluon_name": "d-link-dir-878-a1",
   "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-dir-878-a1.html",
   "status": "ungeprüft",
-  "level": "L4",
+  "level": "L3",
   "risiko": "normal",
   "sprache": "de"
  },
@@ -523,7 +523,7 @@
   "gluon_name": "d-link-dir-882-a1",
   "url": "https://routersoftware.neanderfunk.de/anleitungen/de/d-link-dir-882-a1.html",
   "status": "ungeprüft",
-  "level": "L4",
+  "level": "L3",
   "risiko": "normal",
   "sprache": "de"
  },

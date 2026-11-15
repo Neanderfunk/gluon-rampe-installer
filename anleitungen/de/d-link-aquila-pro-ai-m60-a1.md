@@ -5,15 +5,15 @@ anzeige: D-Link AQUILA PRO AI M60 A1
 familie: dlink-recovery-web
 gluon_broken: false
 sprache: de
-level: L4
-level_text: Network-Tools
+level: L3
+level_text: Feste Adresse am Rechner
 risiko: normal
 status: erprobt
 erprobt_am: 2026-11-15
 erprobt_mit: gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m60-a1-recovery.bin
 grundlagen: [browser-https, browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: 5b0ede697
+daten_stand: cb556339c
 vorlage_stand: 90388c1ca
 ---
 

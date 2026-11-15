@@ -5,12 +5,12 @@ anzeige: D-Link DIR-878 A1
 familie: dlink-recovery-web
 gluon_broken: false
 sprache: de
-level: L4
-level_text: Network-Tools
+level: L3
+level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: 5b0ede697
+daten_stand: cb556339c
 vorlage_stand: 90388c1ca
 ---
 
