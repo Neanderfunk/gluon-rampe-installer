@@ -14782,10 +14782,10 @@
    "quelle": "OpenWrt 7271ee587cd104d30d6d46dd3c623c9d4602bd0c",
    "anleitung": "anleitungen/de/d-link-aquila-pro-ai-m60-a1.md",
    "erprobt": {
-    "am": "2026-10-16",
-    "mit": "gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin",
-    "weg": "Stock-Firmware, D-Link-Recovery, curl-Upload nach Anleitung (zweimal), RAMpe, dann sysupgrade auf Gluon 2025.1 26100702bro; Primary MAC danach korrekt",
-    "beleg": "Testplatz grw (drittes M60), router-werkstatt docs/validierung/d-link-m60-a1-geraet3-rampe-20261015-2026-10-16.md (ae51d18); vorher erprobt 2026-10-13 mit gluon-rampe-20261010"
+    "am": "2026-11-15",
+    "mit": "gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin",
+    "weg": "D-Link-Recovery auf 192.168.200.1 bis „Upgrade successfully!“, RAMpe auf 192.168.1.1 (Information: Release 20261114, Modell D-Link AQUILA PRO AI M60 A1, Switch dsa), dann Gluon-sysupgrade 2025.1 26101610sta (21_dias, sha256 69916c5d…) hochgeladen; danach Gluon-Setup auf 192.168.1.1, Release 26101610sta",
+    "beleg": "Testplatz grw, adorfer; vorher erprobt 2026-10-16 mit gluon-rampe-20261015 (router-werkstatt docs/validierung/d-link-m60-a1-geraet3-rampe-20261015-2026-10-16.md, ae51d18) und 2026-10-13 mit gluon-rampe-20261010"
    },
    "werte": {
     "recovery_ip": "192.168.200.1",
