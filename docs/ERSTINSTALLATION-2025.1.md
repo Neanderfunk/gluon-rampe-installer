@@ -151,9 +151,9 @@ fehlen die Felder noch.
 | offen | 2 |
 | **gesamt** | **388** |
 
-Gluon-RAMpe passt: **ja 36**, teilweise 48, nein/unnötig 304.
+Gluon-RAMpe passt: **ja 37**, teilweise 48, nein/unnötig 303.
 
-Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-951ui-2nd-hap`, `mikrotik-routerboard-mapl-2nd`, `mikrotik-routerboard-wap-g-5hact2hnd`, `mikrotik-routerboard-wapr-2nd`, `gl.inet-gl-e750`, `gl.inet-gl-xe300`, `zte-mf286r`, `asus-lyra-map-ac2200`, `avm-fritz-box-7520`, `avm-fritz-box-7530`, `avm-fritz-repeater-1200`, `avm-fritz-repeater-3000`, `linksys-mr8300-dallas`, `mikrotik-discg-5acd`, `mikrotik-hap-ac2`, `mikrotik-sxtsq-5-ac-rbsxtsqg-5acd`, `mikrotik-wap-ac`, `avm-fritz-box-3390`, `avm-fritz-box-7362-sl`, `avm-fritz-box-7412`, `avm-fritz-box-7430`, `asus-rt-ax52`, `asus-tuf-ax4200q`, `d-link-aquila-pro-ai-m30-a1`, `d-link-aquila-pro-ai-m60-a1`, `netgear-wax218`, `asus-rt-ax53u`, `genexis-pulse-ex400`, `mikrotik-routerboard-750gr3`, `netgear-wndr3700-v5`, `xiaomi-mi-router-3g`, `xiaomi-mi-router-ac2100`, `xiaomi-redmi-router-ac2100`, `zyxel-wsm20`.
+Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-951ui-2nd-hap`, `mikrotik-routerboard-mapl-2nd`, `mikrotik-routerboard-wap-g-5hact2hnd`, `mikrotik-routerboard-wapr-2nd`, `gl.inet-gl-e750`, `gl.inet-gl-xe300`, `zte-mf286r`, `asus-lyra-map-ac2200`, `avm-fritz-box-7520`, `avm-fritz-box-7530`, `avm-fritz-repeater-1200`, `avm-fritz-repeater-3000`, `linksys-mr8300-dallas`, `mikrotik-discg-5acd`, `mikrotik-hap-ac2`, `mikrotik-sxtsq-5-ac-rbsxtsqg-5acd`, `mikrotik-wap-ac`, `avm-fritz-box-3390`, `avm-fritz-box-7362-sl`, `avm-fritz-box-7412`, `avm-fritz-box-7430`, `asus-rt-ax52`, `asus-tuf-ax4200q`, `d-link-aquila-pro-ai-m30-a1`, `d-link-aquila-pro-ai-m60-a1`, `extreme-networks-ws-ap3825i`, `netgear-wax218`, `asus-rt-ax53u`, `genexis-pulse-ex400`, `mikrotik-routerboard-750gr3`, `netgear-wndr3700-v5`, `xiaomi-mi-router-3g`, `xiaomi-mi-router-ac2100`, `xiaomi-redmi-router-ac2100`, `zyxel-wsm20`.
 
 | Level | Geräte |
 |---|---:|
@@ -494,7 +494,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [tp-link-tl-wdr4900-v1](#tp-link-tl-wdr4900-v1) | TP-Link TL-WDR4900 v1 | mpc85xx-p1010 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/tp-link-tl-wdr4900-v1.md) |
 | [aerohive-hiveap-330](#aerohive-hiveap-330) | Aerohive HiveAP 330 | mpc85xx-p1020 | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja |  |
 | [enterasys-ws-ap3710i](#enterasys-ws-ap3710i) | Enterasys WS-AP3710i | mpc85xx-p1020 | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | teilweise | ja | [Anleitung](../anleitungen/de/enterasys-ws-ap3710i.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=16b01fb1b9c99513c318109bef96a1a3545c57a0 |
-| [extreme-networks-ws-ap3825i](#extreme-networks-ws-ap3825i) | Extreme Networks WS-AP3825i | mpc85xx-p1020 | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | bis | ja | [Anleitung](../anleitungen/de/extreme-networks-ws-ap3825i.md); https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923 |
+| [extreme-networks-ws-ap3825i](#extreme-networks-ws-ap3825i) | Extreme Networks WS-AP3825i | mpc85xx-p1020 | K4 | L6 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | nein | ja | ja | [Anleitung](../anleitungen/de/extreme-networks-ws-ap3825i.md); https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923 |
 | [hewlett-packard-msm460](#hewlett-packard-msm460) | HPE MSM460 | mpc85xx-p1020 | K5 | L4 | bootloader | [`sonderweg-hewlett-packard-msm460`](#familie-sonderweg-hewlett-packard-msm460) | tftp-server-am-geraet | nein | nein | nein |  | [Anleitung](../anleitungen/de/hewlett-packard-msm460.md); https://github.com/blocktrron/msm460-flashing?tab=readme-ov-file |
 | [ocedo-panda](#ocedo-panda) | OCEDO Panda | mpc85xx-p1020 | K1 | offen | normal | [`ocedo-tftp`](#familie-ocedo-tftp) | tftp-client-am-geraet | nein | nein | teilweise | ja |  |
 | [mercusys-mr3000x-v2](#mercusys-mr3000x-v2) | Mercusys MR3000X v2.0 (Alias von mercusys-mr80x-v2) | qualcommax-ipq50xx | K0 | L0.1 | normal |  | webui-upload | nein | nein | nein |  |  |
@@ -1596,11 +1596,11 @@ Aruba AP-303 · ipq40xx-generic · K4
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Rückweg zur Herstellerfirmware:** Im apboot `setenv bootcmd "boot"; saveenv` (Stock bleibt in aos0) [geprüft: Commit; aos0: abgeleitet aus nandboot_openwrt = aos1]
-- **Gluon-RAMpe passt:** teilweise: RAMpe-initramfs (`-initramfs-uImage.itb`) als ipq40xx.ari per netget [geprüft: Commit 102c8c55]; das `ubidetach`/`ubiformat` vor dem sysupgrade übernimmt ab der Ausgabe nach 20261114 das Vorbereitungsskript der RAMpe (overlay/lib/gluon-rampe/prepare/aruba_ap-303.sh, Partition per Label "ubi") [geprüft: Code; am Gerät ungetestet]; 20261114 hat es noch nicht; seriell bleibt
-- **Gluon-RAMpe-Rezept:** devices/aruba-ap-303.sh: `-initramfs-uImage.itb` als `ipq40xx.ari` per APBoot-TFTP; Vorbereitung vor dem sysupgrade (`ubiformat`) im Overlay ab der Ausgabe nach 20261114
+- **Gluon-RAMpe passt:** teilweise: RAMpe-initramfs (`-initramfs-uImage.itb`) als ipq40xx.ari per netget [geprüft: Commit 102c8c55]; das `ubidetach`/`ubiformat` vor dem sysupgrade übernimmt ab 20261115 das Vorbereitungsskript der RAMpe (overlay/lib/gluon-rampe/prepare/aruba_ap-303.sh, Partition per Label "ubi") [geprüft: Code, Skript, ubiformat und ubidetach im Image 20261115; am Gerät ungetestet]; seriell bleibt
+- **Gluon-RAMpe-Rezept:** devices/aruba-ap-303.sh: `-initramfs-uImage.itb` als `ipq40xx.ari` per APBoot-TFTP; Vorbereitung vor dem sysupgrade (`ubiformat`) im Overlay ab 20261115
 - **Quelle (OpenWrt-Commit):** OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75
 - **Detail-Anleitung:** anleitungen/de/aruba-ap-303.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=102c8c55f217606cdbdc9a449667e034676b3e75
-- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb; initramfs_sha256 = 5d65d93c796b5dd10e42a65269dadb7905dca0b42c0fd60251431392b53ac56e; tty = ttyMSM1; mtd = /dev/mtd1; sicherheit = quelle; bootm_hinweis = Dann hat dein Gerät einen neueren Bootloader, aus dem der Hersteller Befehle entfernt hat, die OpenWrt braucht. Für den baugleichen [Aruba Instant On AP11](aruba-instant-on-ap11.md) gibt es einen Weg über einen älteren Bootloader. Ob er auch für den AP-303 passt, wissen wir noch nicht. Bitte probier ihn nicht auf eigene Faust, sondern schreib uns.
+- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb; initramfs_sha256 = 5d65d93c796b5dd10e42a65269dadb7905dca0b42c0fd60251431392b53ac56e; tty = ttyMSM1; mtd = /dev/mtd1; sicherheit = quelle; bootm_hinweis = Dann hat dein Gerät einen neueren Bootloader, aus dem der Hersteller Befehle entfernt hat, die OpenWrt braucht. Für den baugleichen [Aruba Instant On AP11](aruba-instant-on-ap11.md) gibt es einen Weg über einen älteren Bootloader. Ob er auch für den AP-303 passt, wissen wir noch nicht. Bitte probier ihn nicht auf eigene Faust, sondern schreib uns.; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-aruba-ap-303-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261115-aruba-ap-303-initramfs-uImage.itb
 
 #### aruba-ap-303h
 
@@ -1637,10 +1637,10 @@ Aruba AP-303H · ipq40xx-generic · K4
 - **RAM:** 512 MB
 - **Rückweg zur Herstellerfirmware:** Im apboot `setenv bootcmd "boot"; saveenv; boot` [geprüft: Commit]; bei UBIFS-Fehler Stock per `upgrade os 1 192.168.1.75:ArubaInstant_Ursa_8.7.1.6_81786` aus TFTP, danach `factory_reset`; Werkszugang admin/Seriennummer [geprüft: Wiki toh:aruba:ap-303h]
 - **Gluon-RAMpe passt:** teilweise: wie AP-303
-- **Gluon-RAMpe-Rezept:** devices/aruba-ap-303h.sh: wie AP-303; Vorbereitung vor dem sysupgrade (`ubiformat`) im Overlay ab der Ausgabe nach 20261114 (overlay/lib/gluon-rampe/prepare/aruba_ap-303h.sh)
+- **Gluon-RAMpe-Rezept:** devices/aruba-ap-303h.sh: wie AP-303; Vorbereitung vor dem sysupgrade (`ubiformat`) im Overlay ab 20261115 (overlay/lib/gluon-rampe/prepare/aruba_ap-303h.sh)
 - **Quelle (OpenWrt-Commit):** OpenWrt c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0
 - **Detail-Anleitung:** anleitungen/de/aruba-ap-303h.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0
-- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb; initramfs_sha256 = 70aebd60b9d1c666656ed89c7a81f53ead246ed96ecbd94551226a0c8f0a785e; tty = ttyMSM0; mtd = /dev/mtd16; tftp_buchse = E0; ssh_buchse = E1, E2 oder E3; sicherheit = quelle; tftp_buchse_hinweis = Sie sitzt auf der Rückseite neben „PT“. Die Buchse „E0/PT“ unten ist nur das andere Ende der Durchreiche PT; darüber erreichst du das Gerät nicht.
+- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb; initramfs_sha256 = 70aebd60b9d1c666656ed89c7a81f53ead246ed96ecbd94551226a0c8f0a785e; tty = ttyMSM0; mtd = /dev/mtd16; tftp_buchse = E0; ssh_buchse = E1, E2 oder E3; sicherheit = quelle; tftp_buchse_hinweis = Sie sitzt auf der Rückseite neben „PT“. Die Buchse „E0/PT“ unten ist nur das andere Ende der Durchreiche PT; darüber erreichst du das Gerät nicht.; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-aruba-ap-303h-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261115-aruba-ap-303h-initramfs-uImage.itb
 
 #### aruba-ap-365
 
@@ -1675,10 +1675,10 @@ Aruba AP-365 · ipq40xx-generic · K4
 - **RAM:** 512 MB
 - **Rückweg zur Herstellerfirmware:** Im apboot `setenv bootcmd "boot"; saveenv` [geprüft: Commit]
 - **Gluon-RAMpe passt:** teilweise: wie AP-303
-- **Gluon-RAMpe-Rezept:** devices/aruba-ap-365.sh: wie AP-303; Vorbereitung vor dem sysupgrade (`ubiformat`) im Overlay ab der Ausgabe nach 20261114 (overlay/lib/gluon-rampe/prepare/aruba_ap-365.sh)
+- **Gluon-RAMpe-Rezept:** devices/aruba-ap-365.sh: wie AP-303; Vorbereitung vor dem sysupgrade (`ubiformat`) im Overlay ab 20261115 (overlay/lib/gluon-rampe/prepare/aruba_ap-365.sh)
 - **Quelle (OpenWrt-Commit):** OpenWrt 300b7fe85a743ab0e039457a5a551819b49450da
 - **Detail-Anleitung:** anleitungen/de/aruba-ap-365.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=300b7fe85a743ab0e039457a5a551819b49450da
-- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb; initramfs_sha256 = 9dbf7ed4b826d75d4d6893c52d3d5e925b2331c91a33b9842a3d1f7c03a12d83; tty = ttyMSM1; mtd = /dev/mtd1; konsole = usb; sicherheit = quelle
+- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb; initramfs_sha256 = 9dbf7ed4b826d75d4d6893c52d3d5e925b2331c91a33b9842a3d1f7c03a12d83; tty = ttyMSM1; mtd = /dev/mtd1; konsole = usb; sicherheit = quelle; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-aruba-ap-365-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261115-aruba-ap-365-initramfs-uImage.itb
 
 #### aruba-instant-on-ap11
 
@@ -1705,7 +1705,7 @@ Aruba Instant On AP11 (Alias von aruba-ap-303) · ipq40xx-generic · K5
 - **Gluon-RAMpe-Rezept:** Alias: Image aus devices/aruba-ap-303.sh; apboot gesperrt (K5)
 - **Quelle (OpenWrt-Commit):** Notiz ap11.md (2024); OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75
 - **Detail-Anleitung:** anleitungen/de/aruba-instant-on-ap11.md
-- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb; initramfs_sha256 = 5d65d93c796b5dd10e42a65269dadb7905dca0b42c0fd60251431392b53ac56e; tty = ttyMSM1; mtd = /dev/mtd1; bootm_weg = apboot; apboot_datei = ap303-loader-2.5.0.2.bin; apboot_url = https://firmware.neanderfunk.de/other/dump/ap303-loader-2.5.0.2.zip; apboot_sha256 = 69e45b047de07ceeeb4a3daec6232ba2902acea8806075af80c2725ea52298a5; sicherheit = quelle; sicherheit_hinweis = Den Schritt mit dem älteren Bootloader beschreibt Freifunk Darmstadt; die Datei dafür stellen wir bereit.
+- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb; initramfs_sha256 = 5d65d93c796b5dd10e42a65269dadb7905dca0b42c0fd60251431392b53ac56e; tty = ttyMSM1; mtd = /dev/mtd1; bootm_weg = apboot; apboot_datei = ap303-loader-2.5.0.2.bin; apboot_url = https://firmware.neanderfunk.de/other/dump/ap303-loader-2.5.0.2.zip; apboot_sha256 = 69e45b047de07ceeeb4a3daec6232ba2902acea8806075af80c2725ea52298a5; sicherheit = quelle; sicherheit_hinweis = Den Schritt mit dem älteren Bootloader beschreibt Freifunk Darmstadt; die Datei dafür stellen wir bereit.; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-aruba-ap-303-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261115-aruba-ap-303-initramfs-uImage.itb
 
 #### aruba-instant-on-ap11d
 
@@ -1741,7 +1741,7 @@ Aruba Instant On AP11D (Alias von aruba-ap-303h) · ipq40xx-generic · K4
 - **Gluon-RAMpe-Rezept:** Alias: Image aus devices/aruba-ap-303h.sh; ob apboot gesperrt ist wie beim AP11: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0
 - **Detail-Anleitung:** anleitungen/de/aruba-instant-on-ap11d.md
-- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb; initramfs_sha256 = 70aebd60b9d1c666656ed89c7a81f53ead246ed96ecbd94551226a0c8f0a785e; tty = ttyMSM0; mtd = /dev/mtd16; tftp_buchse = E0; ssh_buchse = E1, E2 oder E3; sicherheit = abgeleitet; tftp_buchse_hinweis = Sie sitzt auf der Rückseite neben „PT“. Die Buchse „E0/PT“ unten ist nur das andere Ende der Durchreiche PT; darüber erreichst du das Gerät nicht.
+- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb; initramfs_sha256 = 70aebd60b9d1c666656ed89c7a81f53ead246ed96ecbd94551226a0c8f0a785e; tty = ttyMSM0; mtd = /dev/mtd16; tftp_buchse = E0; ssh_buchse = E1, E2 oder E3; sicherheit = abgeleitet; tftp_buchse_hinweis = Sie sitzt auf der Rückseite neben „PT“. Die Buchse „E0/PT“ unten ist nur das andere Ende der Durchreiche PT; darüber erreichst du das Gerät nicht.; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-aruba-ap-303h-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261115-aruba-ap-303h-initramfs-uImage.itb
 
 #### aruba-instant-on-ap17
 
@@ -1776,7 +1776,7 @@ Aruba Instant On AP17 (Alias von aruba-ap-365) · ipq40xx-generic · K4
 - **Gluon-RAMpe-Rezept:** Alias: Image aus devices/aruba-ap-365.sh; ob apboot gesperrt ist wie beim AP11: offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 300b7fe85a743ab0e039457a5a551819b49450da
 - **Detail-Anleitung:** anleitungen/de/aruba-instant-on-ap17.md
-- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb; initramfs_sha256 = 9dbf7ed4b826d75d4d6893c52d3d5e925b2331c91a33b9842a3d1f7c03a12d83; tty = ttyMSM1; mtd = /dev/mtd1; konsole = unklar; sicherheit = abgeleitet
+- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb; initramfs_sha256 = 9dbf7ed4b826d75d4d6893c52d3d5e925b2331c91a33b9842a3d1f7c03a12d83; tty = ttyMSM1; mtd = /dev/mtd1; konsole = unklar; sicherheit = abgeleitet; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-aruba-ap-365-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261115-aruba-ap-365-initramfs-uImage.itb
 
 ### Familie `asus-firmware-restoration`
 
@@ -1944,11 +1944,11 @@ ASUS TUF-AX4200 · mediatek-filogic · K2
 - **RAM:** 512 MB
 - **Notweg:** [Notfall] seriell + TFTP: Gehäuse öffnen (4 Gummifüße ab, 4 Schrauben darunter, Deckel abziehen), Konsole unten rechts auf der Hauptplatine [abgeleitet: Wiki toh/asus/tuf-ax4200]; 3.3 V, 115200 8N1, Belegung aufgedruckt, VCC nicht anschließen [geprüft: Commit e7c399b]; OpenWrt-initramfs als `tufax4200.bin` auf TFTP-Server 192.168.1.66/24 [geprüft: Commit e7c399b], Kabel z. B. an LAN 1 [abgeleitet: Wiki]; beim Hinweis `4` drücken, dann `setenv ipaddr 192.168.1.1`, `setenv serverip 192.168.1.66`, `tftpboot 0x46000000 tufax4200.bin`, `bootm 0x46000000`; im OpenWrt Gluon-sysupgrade per scp und `sysupgrade -n` [geprüft: Commit e7c399b]; [einfacher, schlechter belegt] inoffizielles `openwrt-24_tuf-ax4200-initramfs.trx` (Google Drive oder github.com/openwrt-xiaomi/builder) über die Weboberfläche der Herstellerfirmware einspielen, Router startet OpenWrt-initramfs auf http://192.168.1.1, dann sysupgrade ohne "Einstellungen behalten" [abgeleitet: Wiki toh/asus/tuf-ax4200; ToH: "unofficial tested method with trx image"]
 - **Rückweg zur Herstellerfirmware:** laut Wiki könnte ASUS Firmware Restoration (Rettungsmodus) helfen [abgeleitet: Wiki toh/asus/tuf-ax4200, Abschnitt Debricking]
-- **Gluon-RAMpe passt:** teilweise: der SSH-Weg schreibt ein initramfs ins Flash; ob ein Gluon-/RAMpe-initramfs statt des herbetom-Sonderbaus bootet, ist nicht geprüft
-- **Gluon-RAMpe-Rezept:** devices/asus-tuf-ax4200.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` mit eingebettetem initramfs (`TARGET_ROOTFS_INITRAMFS_SEPARATE` aus) für SSH `mtd-write` oder UART + TFTP; eigener Bau-Lauf
+- **Gluon-RAMpe passt:** teilweise: der SSH-Weg schreibt ein initramfs ins Flash; die RAMpe (gleiches FIT-Format) ersetzt den herbetom-Sonderbau, ob sie bootet, ist am Gerät nicht geprüft
+- **Gluon-RAMpe-Rezept:** devices/asus-tuf-ax4200.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` mit eingebettetem initramfs (`TARGET_ROOTFS_INITRAMFS_SEPARATE` aus) für SSH `mtd-write` oder UART + TFTP; eigener Bau-Lauf
 - **Quelle (OpenWrt-Commit):** OpenWrt e7c399bee677e9bac66e1bea697aefb8d828edfe
 - **Detail-Anleitung:** anleitungen/de/asus-tuf-ax4200.md; https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-ASUS-TUF-AX4200
-- **Werte für die Anleitung:** factory_datei = openwrt-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin; factory_url = https://github.com/herbetom/openwrt-asus-filogic-factory/releases/download/filogic-v2/openwrt-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin; factory_hinweis = Die Datei hat ein Freifunk-Entwickler für genau diesen Zweck gebaut (Dezember 2023); eine offizielle Datei von OpenWrt dafür gibt es nicht.; sicherheit = quelle; sicherheit_hinweis = Freifunk Darmstadt beschreibt denselben Weg für ihre Freifunk-Firmware.
+- **Werte für die Anleitung:** factory_datei = openwrt-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin; factory_url = https://github.com/herbetom/openwrt-asus-filogic-factory/releases/download/filogic-v2/openwrt-mediatek-filogic-asus_tuf-ax4200-initramfs-kernel.bin; factory_hinweis = Die Datei hat ein Freifunk-Entwickler für genau diesen Zweck gebaut (Dezember 2023); eine offizielle Datei von OpenWrt dafür gibt es nicht.; sicherheit = abgeleitet; sicherheit_hinweis = Freifunk Darmstadt beschreibt denselben Weg für ihre Freifunk-Firmware.; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-asus-tuf-ax4200-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-asus-tuf-ax4200-initramfs-kernel.bin
 
 #### asus-tuf-ax6000
 
@@ -1990,10 +1990,10 @@ ASUS TUF-AX6000 · mediatek-filogic · K2
 - **Notweg:** [Notfall] seriell + TFTP ohne Öffnen: drei Löcher im Gehäuse, von unten RX, TX, GND (teilweise verdeckt), drei Stiftleisten-Drähte (Plastikhülse ab) hineinstecken [geprüft: Commit d522cce]; 3.3 V, 115200 8N1, VCC nicht anschließen [geprüft: Commit d522cce]; OpenWrt-initramfs als `TUF-AX6000.bin` auf TFTP-Server 192.168.1.70/24 [geprüft: Commit d522cce] (Wiki: `tufax6000.bin`, Kabel z. B. an LAN 1 [abgeleitet: Wiki toh/asus/tuf-ax6000]); beim Hinweis `4`: `setenv ipaddr 192.168.1.1`, `setenv serverip 192.168.1.70`, `tftpboot 0x46000000 TUF-AX6000.bin`, `bootm 0x46000000`; oder `1` und im Assistenten Geräte-IP 192.168.1.1, Server-IP 192.168.1.70 und Dateiname eingeben (Vorgabe dort `TUF-AX6000.trx`, durch den tatsächlichen Namen ersetzen); im OpenWrt Gluon-sysupgrade per scp und `sysupgrade -n` [geprüft: Commit d522cce; Ersetzen abgeleitet]; [einfacher, schlechter belegt] inoffizielles `openwrt-24_tuf-ax6000-initramfs.trx` (Google Drive oder github.com/openwrt-xiaomi/builder) über die Weboberfläche der Herstellerfirmware, dann sysupgrade ohne "Einstellungen behalten" [abgeleitet: Wiki toh/asus/tuf-ax6000]
 - **Rückweg zur Herstellerfirmware:** laut Wiki über das Paket facinstall (openwrt-xiaomi) die ASUS-TRX in LuCI einspielen, dann Rechner auf 192.168.50.10 und 70-120 Sekunden warten [abgeleitet: Wiki toh/asus/tuf-ax6000]; sonst ASUS Firmware Restoration [abgeleitet: dasselbe Wiki, Debricking]
 - **Gluon-RAMpe passt:** teilweise: wie TUF-AX4200; über die Gehäuselöcher ist auch der TFTP-Weg ohne Öffnen möglich, dort passt die Gluon-RAMpe als initramfs [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/asus-tuf-ax6000.sh (Rezept-Entwurf, nicht gebaut): wie TUF-AX4200; eigener Bau-Lauf
+- **Gluon-RAMpe-Rezept:** devices/asus-tuf-ax6000.sh (gebaut, RAMpe 20261115): wie TUF-AX4200; eigener Bau-Lauf
 - **Quelle (OpenWrt-Commit):** OpenWrt d522ccecb28f941aadcaf7a50cd6daa861f468a7
 - **Detail-Anleitung:** anleitungen/de/asus-tuf-ax6000.md; https://github.com/herbetom/openwrt-asus-filogic-factory/releases/latest
-- **Werte für die Anleitung:** factory_datei = openwrt-mediatek-filogic-asus_tuf-ax6000-initramfs-kernel.bin; factory_url = https://github.com/herbetom/openwrt-asus-filogic-factory/releases/download/filogic-v2/openwrt-mediatek-filogic-asus_tuf-ax6000-initramfs-kernel.bin; factory_hinweis = Die Datei hat ein Freifunk-Entwickler für genau diesen Zweck gebaut (Dezember 2023); eine offizielle Datei von OpenWrt dafür gibt es nicht.; sicherheit = quelle; sicherheit_hinweis = Freifunk Darmstadt beschreibt denselben Weg für ihre Freifunk-Firmware.
+- **Werte für die Anleitung:** factory_datei = openwrt-mediatek-filogic-asus_tuf-ax6000-initramfs-kernel.bin; factory_url = https://github.com/herbetom/openwrt-asus-filogic-factory/releases/download/filogic-v2/openwrt-mediatek-filogic-asus_tuf-ax6000-initramfs-kernel.bin; factory_hinweis = Die Datei hat ein Freifunk-Entwickler für genau diesen Zweck gebaut (Dezember 2023); eine offizielle Datei von OpenWrt dafür gibt es nicht.; sicherheit = abgeleitet; sicherheit_hinweis = Freifunk Darmstadt beschreibt denselben Weg für ihre Freifunk-Firmware.; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-asus-tuf-ax6000-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-asus-tuf-ax6000-initramfs-kernel.bin
 
 ### Familie `avm-eva-ftp`
 
@@ -2472,7 +2472,7 @@ AVM FRITZ!Box 3390 · lantiq-xrx200 · K1
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-3390.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`
 - **Quelle (OpenWrt-Commit):** 73ec21cde2cde1fc27f66b08e8762cdc3c78b61a
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-box-3390.md
-- **Werte für die Anleitung:** rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-box-3390-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261114-avm-fritz-box-3390-initramfs-kernel.bin; sicherheit = abgeleitet
+- **Werte für die Anleitung:** rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-box-3390-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-avm-fritz-box-3390-initramfs-kernel.bin; sicherheit = abgeleitet
 
 #### avm-fritz-box-7362-sl
 
@@ -2511,7 +2511,7 @@ AVM FRITZ!Box 7362 SL · lantiq-xrx200 · K1
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7362-sl.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`
 - **Quelle (OpenWrt-Commit):** eae6cac6a30b95bef04d033ed8a303b7e35a078b
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-box-7362-sl.md; https://openwrt.org/toh/avm/avm_7362_sl#installation
-- **Werte für die Anleitung:** led_rampe = Die Power-LED blinkt dann rot.; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-box-7362-sl-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261114-avm-fritz-box-7362-sl-initramfs-kernel.bin; sicherheit = abgeleitet
+- **Werte für die Anleitung:** led_rampe = Die Power-LED blinkt dann rot.; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-box-7362-sl-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-avm-fritz-box-7362-sl-initramfs-kernel.bin; sicherheit = abgeleitet
 
 #### avm-fritz-box-7412
 
@@ -2552,7 +2552,7 @@ AVM FRITZ!Box 7412 · lantiq-xrx200 · K1
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7412.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch
 - **Quelle (OpenWrt-Commit):** 20f48c8ae334f8502e756282995cc84d89fa81c1
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-box-7412.md; https://openwrt.org/toh/avm/avm_fritz_box_7412#installation
-- **Werte für die Anleitung:** ersatz_ip = 169.254.120.1; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-box-7412-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261114-avm-fritz-box-7412-initramfs-kernel.bin; sicherheit = abgeleitet
+- **Werte für die Anleitung:** ersatz_ip = 169.254.120.1; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-box-7412-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-avm-fritz-box-7412-initramfs-kernel.bin; sicherheit = abgeleitet
 
 #### avm-fritz-box-7430
 
@@ -2594,7 +2594,7 @@ AVM FRITZ!Box 7430 · lantiq-xrx200 · K1
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7430.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch
 - **Quelle (OpenWrt-Commit):** 6c85a449a988876fdfd4ce84d6aa5ffe4a2820c1
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-box-7430.md; https://openwrt.org/toh/avm/avm_fritz_box_7430#installation
-- **Werte für die Anleitung:** ersatz_ip = 169.254.120.1; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-box-7430-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261114-avm-fritz-box-7430-initramfs-kernel.bin; sicherheit = abgeleitet
+- **Werte für die Anleitung:** ersatz_ip = 169.254.120.1; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-box-7430-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-avm-fritz-box-7430-initramfs-kernel.bin; sicherheit = abgeleitet
 
 ### Familie `avm-eva-uboot`
 
@@ -2640,7 +2640,7 @@ AVM FRITZ!Box 7520 (Alias von avm-fritz-box-7530) · ipq40xx-generic · K2
 - **Gluon-RAMpe-Rezept:** Alias: Image aus devices/avm-fritz-box-7530.sh (dort auch `uboot-fritz7520.bin`); TFTP-Dateiname `FRITZ7520.bin` [geprüft: U-Boot-Quelle chunkeey/FritzBox-4040-UBOOT, include/configs/fritz7520.h]
 - **Quelle (OpenWrt-Commit):** OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-box-7520.md; https://openwrt.org/toh/avm/avm_fritz_box_7530#installation
-- **Werte für die Anleitung:** uboot_datei = uboot-fritz7520.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz7520.bin; tftp_name = FRITZ7520.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-box-7530-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261114-avm-fritz-box-7530-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
+- **Werte für die Anleitung:** uboot_datei = uboot-fritz7520.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz7520.bin; tftp_name = FRITZ7520.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-box-7530-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261115-avm-fritz-box-7530-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
 
 #### avm-fritz-box-7530
 
@@ -2682,7 +2682,7 @@ AVM FRITZ!Box 7530 · ipq40xx-generic · K2
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7530.sh (gebaut 15.10.2026): `-initramfs-uImage.itb` als `FRITZ7530.bin`, dazu `uboot-fritz7530.bin`/`uboot-fritz7520.bin` für `eva_ramboot.py`; Vorbereitung vor dem sysupgrade in der RAMpe (overlay/lib/gluon-rampe/prepare/avm_fritzbox-7530.sh, U-Boot aus package/gluon-rampe-uboot-fritz), U-Boot-Wahl nach HWRevision aus dem TFFS; im QEMU-Test geprüft, am Gerät ungetestet
 - **Quelle (OpenWrt-Commit):** OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-box-7530.md; https://openwrt.org/toh/avm/avm_fritz_box_7530#installation
-- **Werte für die Anleitung:** uboot_datei = uboot-fritz7530.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz7530.bin; tftp_name = FRITZ7530.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-box-7530-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261114-avm-fritz-box-7530-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
+- **Werte für die Anleitung:** uboot_datei = uboot-fritz7530.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz7530.bin; tftp_name = FRITZ7530.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-box-7530-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261115-avm-fritz-box-7530-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
 
 #### avm-fritz-repeater-1200
 
@@ -2724,7 +2724,7 @@ AVM FRITZ!Repeater 1200 · ipq40xx-generic · K2
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-repeater-1200.sh (gebaut 15.10.2026): `-initramfs-uImage.itb` als `FRITZ1200.bin` + `uboot-fritz1200.bin`; Vorbereitung vor dem sysupgrade in der RAMpe (avm_fritzrepeater-1200.sh); am Gerät ungetestet
 - **Quelle (OpenWrt-Commit):** OpenWrt 7f187229a8e9b7966248b1e024217e07a9fc3e50
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-repeater-1200.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7f187229a8e9b7966248b1e024217e07a9fc3e50
-- **Werte für die Anleitung:** uboot_datei = uboot-fritz1200.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz1200.bin; tftp_name = FRITZ1200.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-repeater-1200-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261114-avm-fritz-repeater-1200-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
+- **Werte für die Anleitung:** uboot_datei = uboot-fritz1200.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz1200.bin; tftp_name = FRITZ1200.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-repeater-1200-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261115-avm-fritz-repeater-1200-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
 
 #### avm-fritz-repeater-3000
 
@@ -2767,7 +2767,7 @@ AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) · ipq40xx-gen
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-repeater-3000.sh (gebaut 15.10.2026): trägt das Gerät in Gluon ein; `FRITZ3000.bin` + `uboot-fritz3000.bin`; Vorbereitung vor dem sysupgrade in der RAMpe (avm_fritzrepeater-3000.sh); am Gerät ungetestet
 - **Quelle (OpenWrt-Commit):** OpenWrt 148d29d47b1d555d0058dcc5dda450b74c4628ec
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-repeater-3000.md
-- **Werte für die Anleitung:** uboot_datei = uboot-fritz3000.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz3000.bin; tftp_name = FRITZ3000.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-repeater-3000-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261114-avm-fritz-repeater-3000-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
+- **Werte für die Anleitung:** uboot_datei = uboot-fritz3000.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz3000.bin; tftp_name = FRITZ3000.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-repeater-3000-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261115-avm-fritz-repeater-3000-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
 
 ### Familie `cudy-zwischenfirmware`
 
@@ -3935,7 +3935,7 @@ D-Link AQUILA PRO AI M30 A1 · mediatek-filogic · K1
 - **Quelle (OpenWrt-Commit):** OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f
 - **Detail-Anleitung:** anleitungen/de/d-link-aquila-pro-ai-m30-a1.md; https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/
 - **Am Gerät erprobt (für die Anleitung):** am = 2026-11-15; mit = gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin; weg = D-Link-Recovery, Hochladen im Browser (Chrome/Chromium, lief langsam), RAMpe startete sauber, dann Gluon-sysupgrade; Firefox ging nicht; beleg = Testplatz grw, adorfer 15.11.2026 ("D30" = M30 A1, von adorfer bestätigt); vorher erprobt 2026-10-16 mit gluon-rampe-20261015 (Testplatz grw (M30 aus dem Dumbrack), router-werkstatt docs/validierung/d-link-m30-a1-rampe-20261015-2026-10-16.md (7cdf1aa))
-- **Werte für die Anleitung:** recovery_ip = 192.168.200.1; led_recovery = rot blinkt, etwa zweimal pro Sekunde; datei_art = rampe; upload_pfad = /upload.cgi; rampe_ip = 192.168.1.1; rampe_bytes = etwa 52,4 Millionen; led_rampe = blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde; herstellerseite_gleiche_ip = False; rechner_ip = 192.168.200.10; dauer_neustart = einige Minuten; dauer_gluon = wenige Minuten; datei_beispiel = gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin; rampe_datei = gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin; led_falsch = Ein orangefarbenes Auf- und Abdimmen ist nicht die Recovery.; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin; sicherheit = quelle; led_schreibt = leuchtet die LED ruhig rot, etwas schwächer; led_start = flackert die LED schnell weiß; browser_upload = Chrome oder Chromium; browser_nicht = Firefox; upload_knopf = Upgrade; meldung_laeuft = Device is upgrading the firmware; meldung_fertig = Upgrade successfully!; upload_langsam = True; led_herstellerfirmware = die LED dimmt langsam orange auf und ab
+- **Werte für die Anleitung:** recovery_ip = 192.168.200.1; led_recovery = rot blinkt, etwa zweimal pro Sekunde; datei_art = rampe; upload_pfad = /upload.cgi; rampe_ip = 192.168.1.1; rampe_bytes = etwa 52,4 Millionen; led_rampe = blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde; herstellerseite_gleiche_ip = False; rechner_ip = 192.168.200.10; dauer_neustart = einige Minuten; dauer_gluon = wenige Minuten; datei_beispiel = gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin; rampe_datei = gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin; led_falsch = Ein orangefarbenes Auf- und Abdimmen ist nicht die Recovery.; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-d-link-aquila-pro-ai-m30-a1-recovery.bin; sicherheit = quelle; led_schreibt = leuchtet die LED ruhig rot, etwas schwächer; led_start = flackert die LED schnell weiß; browser_upload = Chrome oder Chromium; browser_nicht = Firefox; upload_knopf = Upgrade; meldung_laeuft = Device is upgrading the firmware; meldung_fertig = Upgrade successfully!; upload_langsam = True; led_herstellerfirmware = die LED dimmt langsam orange auf und ab
 
 #### d-link-aquila-pro-ai-m60-a1
 
@@ -3980,7 +3980,7 @@ D-Link AQUILA PRO AI M60 A1 · mediatek-filogic · K1
 - **Quelle (OpenWrt-Commit):** OpenWrt 7271ee587cd104d30d6d46dd3c623c9d4602bd0c
 - **Detail-Anleitung:** anleitungen/de/d-link-aquila-pro-ai-m60-a1.md
 - **Am Gerät erprobt (für die Anleitung):** am = 2026-11-15; mit = gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin; weg = D-Link-Recovery auf 192.168.200.1 bis „Upgrade successfully!“, RAMpe auf 192.168.1.1 (Information: Release 20261114, Modell D-Link AQUILA PRO AI M60 A1, Switch dsa), dann Gluon-sysupgrade 2025.1 26101610sta (21_dias, sha256 69916c5d…) hochgeladen; danach Gluon-Setup auf 192.168.1.1, Release 26101610sta; beleg = Testplatz grw, adorfer; vorher erprobt 2026-10-16 mit gluon-rampe-20261015 (router-werkstatt docs/validierung/d-link-m60-a1-geraet3-rampe-20261015-2026-10-16.md, ae51d18) und 2026-10-13 mit gluon-rampe-20261010; davor 29./30.09.2026 an zwei Geräten mit OpenWrt-recovery.bin per curl, dann sysupgrade auf Gluon 2025.1 (26093000bro, Gerät 2 fabrikneu), router-werkstatt docs/dlink-m60-flashen.md (783ad24)
-- **Werte für die Anleitung:** recovery_ip = 192.168.200.1; led_recovery = rot blinkt, etwa zweimal pro Sekunde; datei_art = rampe; upload_pfad = /upload.cgi; rampe_ip = 192.168.1.1; rampe_bytes = etwa 52,4 Millionen; led_rampe = blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde; seitentitel = D-link Router Recovery Mode; herstellerseite_gleiche_ip = True; anschluss = einer der LAN-Buchsen, nicht mit WAN; rechner_ip = 192.168.200.66; dauer_neustart = weniger als eine halbe Minute bis gut 2 Minuten; dauer_gluon = unter 2 Minuten; datei_beispiel = gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin; rampe_datei = gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin; taste_hinweis = Nur die Reset-Taste führt in die Recovery, keine der anderen Tasten.; led_falsch = Ein orangefarbenes Auf- und Abdimmen ist nicht die Recovery.; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin; led_schreibt = leuchtet die LED ruhig rot, etwas schwächer; led_start = flackert die LED schnell weiß; browser_upload = Chrome oder Chromium; browser_nicht = Firefox; upload_knopf = Upgrade; meldung_laeuft = Device is upgrading the firmware; meldung_fertig = Upgrade successfully!; upload_langsam = True; led_herstellerfirmware = die LED dimmt langsam orange auf und ab
+- **Werte für die Anleitung:** recovery_ip = 192.168.200.1; led_recovery = rot blinkt, etwa zweimal pro Sekunde; datei_art = rampe; upload_pfad = /upload.cgi; rampe_ip = 192.168.1.1; rampe_bytes = etwa 52,4 Millionen; led_rampe = blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde; seitentitel = D-link Router Recovery Mode; herstellerseite_gleiche_ip = True; anschluss = einer der LAN-Buchsen, nicht mit WAN; rechner_ip = 192.168.200.66; dauer_neustart = weniger als eine halbe Minute bis gut 2 Minuten; dauer_gluon = unter 2 Minuten; datei_beispiel = gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin; rampe_datei = gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin; taste_hinweis = Nur die Reset-Taste führt in die Recovery, keine der anderen Tasten.; led_falsch = Ein orangefarbenes Auf- und Abdimmen ist nicht die Recovery.; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-d-link-aquila-pro-ai-m60-a1-recovery.bin; led_schreibt = leuchtet die LED ruhig rot, etwas schwächer; led_start = flackert die LED schnell weiß; browser_upload = Chrome oder Chromium; browser_nicht = Firefox; upload_knopf = Upgrade; meldung_laeuft = Device is upgrading the firmware; meldung_fertig = Upgrade successfully!; upload_langsam = True; led_herstellerfirmware = die LED dimmt langsam orange auf und ab
 
 #### d-link-dap-1620-b1
 
@@ -4442,7 +4442,7 @@ GL.iNet GL-E750 (broken) · ath79-nand · K2
 - **Gluon-RAMpe-Rezept:** devices/gl.inet-gl-e750.sh: `-factory.img` (Kernel + UBI), broken = false für diesen Bau; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** 68ac3f2cddab8422d7de0ce1a78d23edf29012e7 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/gl.inet-gl-e750.md
-- **Werte für die Anleitung:** weg = uboot; taste = Halte die Reset-Taste gedrückt und schalte den Router ein.; led_uboot = Auf dem Display steht erst „Booting“, dann „Reset Counting 1 to 4“, dann „Please Open Web 192.168.1.1“: Jetzt loslassen.; zwischen_datei = openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img; sicherheit = quelle; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-gl.inet-gl-e750-factory.img; rampe_datei = gluon-rampe-20261114-gl.inet-gl-e750-factory.img; rampe_weg = Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch.
+- **Werte für die Anleitung:** weg = uboot; taste = Halte die Reset-Taste gedrückt und schalte den Router ein.; led_uboot = Auf dem Display steht erst „Booting“, dann „Reset Counting 1 to 4“, dann „Please Open Web 192.168.1.1“: Jetzt loslassen.; zwischen_datei = openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img; sicherheit = quelle; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-gl.inet-gl-e750-factory.img; rampe_datei = gluon-rampe-20261115-gl.inet-gl-e750-factory.img; rampe_weg = Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch.
 
 #### gl.inet-gl-xe300
 
@@ -4480,7 +4480,7 @@ GL.iNet GL-XE300 · ath79-nand · K2
 - **Gluon-RAMpe-Rezept:** devices/gl.inet-gl-xe300.sh: `-factory.img` (Kernel + UBI); Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** af8a059bb41dd7afee49ce9a5d52e9a8e010bbd8 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/gl.inet-gl-xe300.md
-- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste und die Power-Taste gleichzeitig und halte beide, bis die LAN-LED 5-mal geblinkt hat. Dann beide loslassen.; led_uboot = Bleibt die WLAN-LED an, ist der Notfall-Modus erreicht.; zwischen_datei = openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img; sicherheit = quelle; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-gl.inet-gl-xe300-factory.img; rampe_datei = gluon-rampe-20261114-gl.inet-gl-xe300-factory.img; rampe_weg = Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch.
+- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste und die Power-Taste gleichzeitig und halte beide, bis die LAN-LED 5-mal geblinkt hat. Dann beide loslassen.; led_uboot = Bleibt die WLAN-LED an, ist der Notfall-Modus erreicht.; zwischen_datei = openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img; sicherheit = quelle; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-gl.inet-gl-xe300-factory.img; rampe_datei = gluon-rampe-20261115-gl.inet-gl-xe300-factory.img; rampe_weg = Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch.
 
 #### gl.inet-gl-ap1300
 
@@ -8954,7 +8954,7 @@ NETGEAR WNDR3700 v5 (Gluon: broken, "untested") · ramips-mt7621 · K0+
 - **Gluon-RAMpe-Rezept:** devices/netgear-wndr3700-v5.sh: `-factory.img` (Sercomm), broken = false für diesen Bau; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** cb049e71cdc08e17f664403a0ef970c480ae5c4a + 2fdd02cc7c3516c2cce2ace2c7b539e0821ecbe8 (factory-Image)
 - **Detail-Anleitung:** anleitungen/de/netgear-wndr3700-v5.md
-- **Werte für die Anleitung:** zwischen_datei = openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img; sicherheit = quelle; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-netgear-wndr3700-v5-factory.img; rampe_datei = gluon-rampe-20261114-netgear-wndr3700-v5-factory.img; rampe_weg = Benenne die RAMpe in firmware.img um und schick sie in Schritt 4 mit nmrpflash statt der OpenWrt-Datei.
+- **Werte für die Anleitung:** zwischen_datei = openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img; sicherheit = quelle; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-netgear-wndr3700-v5-factory.img; rampe_datei = gluon-rampe-20261115-netgear-wndr3700-v5-factory.img; rampe_weg = Benenne die RAMpe in firmware.img um und schick sie in Schritt 4 mit nmrpflash statt der OpenWrt-Datei.
 
 #### netgear-r6020
 
@@ -9451,14 +9451,14 @@ Enterasys WS-AP3705i · ath79-generic · K4
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als 1401A8C0.img statt OpenWrt-initramfs, Upload-Seite statt scp; seriell bleibt
-- **Gluon-RAMpe-Rezept:** devices/enterasys-ws-ap3705i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `1401A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell
+- **Gluon-RAMpe-Rezept:** devices/enterasys-ws-ap3705i.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` (lzma) als `1401A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell
 - **Quelle (OpenWrt-Commit):** ebddc5f984a240980303aed68524eb615484eef8 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/enterasys-ws-ap3705i.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=ebddc5f984a240980303aed68524eb615484eef8
 - **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ath79-generic-enterasys_ws-ap3705i-initramfs-kernel.bin; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-enterasys_ws-ap3705i-initramfs-kernel.bin; tftp_name = 1401A8C0.img; server_ip = 192.168.1.66; konsole = rj45; anhalten = Sobald die Aufforderung erscheint, brich den Start mit Enter ab; dafür ist nur eine Sekunde Zeit, drück am besten schon beim Einschalten immer wieder Enter.; befehle = setenv boot_openwrt 'setenv bootargs; bootm 0xbf230000'
 setenv ramboot_openwrt 'setenv serverip 192.168.1.66; tftpboot 0x85000000; bootm'
 setenv bootcmd 'run boot_openwrt'
 saveenv
-run ramboot_openwrt; baud = 115200; login = admin / new2day; sicherheit = quelle
+run ramboot_openwrt; baud = 115200; login = admin / new2day; sicherheit = quelle; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-enterasys-ws-ap3705i-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-enterasys-ws-ap3705i-initramfs-kernel.bin
 
 #### extreme-networks-ws-ap3805i
 
@@ -9490,14 +9490,14 @@ Extreme Networks WS-AP3805i · ath79-generic · K4
 - **Stock-Teile:** keine
 - **RAM:** 256 MB [Commit]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als 1D01A8C0.img statt OpenWrt-initramfs; seriell bleibt
-- **Gluon-RAMpe-Rezept:** devices/extreme-networks-ws-ap3805i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `1D01A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell
+- **Gluon-RAMpe-Rezept:** devices/extreme-networks-ws-ap3805i.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` (lzma) als `1D01A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell
 - **Quelle (OpenWrt-Commit):** f8c87aa2d27ab405f284dd4357377ab5c893a345 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/extreme-networks-ws-ap3805i.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f8c87aa2d27ab405f284dd4357377ab5c893a345
 - **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ath79-generic-extreme-networks_ws-ap3805i-initramfs-kernel.bin; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-extreme-networks_ws-ap3805i-initramfs-kernel.bin; tftp_name = 1D01A8C0.img; server_ip = 192.168.1.66; konsole = uart; konsole_ort = Stiftleiste J10 auf der Platine; Belegung 3,3 V, GND, TX, RX, den 3,3-V-Stift nicht anschließen; anhalten = Sobald die Aufforderung erscheint, brich den Start mit Enter ab.; befehle = setenv boot_openwrt 'setenv bootargs; bootm 0xa1280000'
 setenv ramboot_openwrt 'setenv serverip 192.168.1.66; tftpboot 0x89000000 1D01A8C0.img; bootm'
 setenv bootcmd 'run boot_openwrt'
 saveenv
-run ramboot_openwrt; baud = 115200; login = admin / new2day; sicherheit = quelle
+run ramboot_openwrt; baud = 115200; login = admin / new2day; sicherheit = quelle; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-extreme-networks-ws-ap3805i-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-extreme-networks-ws-ap3805i-initramfs-kernel.bin
 
 #### siemens-ws-ap3610
 
@@ -9529,14 +9529,14 @@ Siemens WS-AP3610 · ath79-generic · K4
 - **Stock-Teile:** keine
 - **RAM:** 128 MB [Commit: 2x 64M DDR1]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als 1401A8C0.img; Achtung, das initramfs ist hier unkomprimiert (KERNEL_INITRAMFS ... uImage none, OpenWrt 23.7 MB); seriell bleibt
-- **Gluon-RAMpe-Rezept:** devices/siemens-ws-ap3610.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma statt unkomprimiert wie bei OpenWrt) als `1401A8C0.img` per U-Boot-TFTP
+- **Gluon-RAMpe-Rezept:** devices/siemens-ws-ap3610.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` (lzma statt unkomprimiert wie bei OpenWrt) als `1401A8C0.img` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** d2b8ccb1c04def81224da6f42f644c7d239b9986 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/siemens-ws-ap3610.md; https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Siemens-AP3610
 - **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ath79-generic-siemens_ws-ap3610-initramfs-kernel.bin; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-siemens_ws-ap3610-initramfs-kernel.bin; tftp_name = 1401A8C0.img; server_ip = 192.168.1.66; baud = 115200; konsole = rj45; anhalten = Sobald die Aufforderung erscheint, brich den Start mit Enter ab; dafür ist nur eine Sekunde Zeit, drück am besten schon beim Einschalten immer wieder Enter.; befehle = setenv boot_openwrt 'setenv bootargs; bootm 0xbf080000'
 setenv ramboot_openwrt 'setenv serverip 192.168.1.66; tftpboot; bootm'
 setenv bootcmd 'run boot_openwrt'
 saveenv
-run ramboot_openwrt; sicherheit = abgeleitet; sicherheit_hinweis = Im Weg von OpenWrt fehlt die Zeile, die den Start dauerhaft auf OpenWrt umstellt; wir haben sie nach dem Hinweis von Freifunk Darmstadt ergänzt.
+run ramboot_openwrt; sicherheit = abgeleitet; sicherheit_hinweis = Im Weg von OpenWrt fehlt die Zeile, die den Start dauerhaft auf OpenWrt umstellt; wir haben sie nach dem Hinweis von Freifunk Darmstadt ergänzt.; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-siemens-ws-ap3610-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-siemens-ws-ap3610-initramfs-kernel.bin
 
 #### sophos-ap15
 
@@ -9571,11 +9571,11 @@ Sophos AP15 (broken) · ath79-generic · K4
 - **RAM:** ?
 - **Notweg:** [Alternative] XG-Weg der AP55/AP100 "sollte auch gehen" [ungeprüft im Commit]
 - **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt OpenWrt-initramfs; seriell bleibt
-- **Gluon-RAMpe-Rezept:** devices/sophos-ap15.sh (Rezept-Entwurf, nicht gebaut): baut das Gluon-"broken"-Gerät gezielt; `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; RAM nicht belegt
+- **Gluon-RAMpe-Rezept:** devices/sophos-ap15.sh (gebaut, RAMpe 20261115): baut das Gluon-"broken"-Gerät gezielt; `initramfs-kernel.bin` (lzma) per U-Boot-TFTP; RAM nicht belegt
 - **Quelle (OpenWrt-Commit):** 0dc58214896aacf67a3759495d70e2b4e9c160d8 (Einführung, Anleitung); fc31261c3307458e38c9a676211a25c99c044ece (DTS-Umbenennung) [geprüft]
 - **Detail-Anleitung:** anleitungen/de/sophos-ap15.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=0dc58214896aacf67a3759495d70e2b4e9c160d8
 - **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ath79-generic-sophos_ap15-initramfs-kernel.bin; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/generic/openwrt-24.10.8-ath79-generic-sophos_ap15-initramfs-kernel.bin; tftp_name = boot.bin; server_ip = 192.168.99.8; baud = 115200; anhalten = Sobald die Aufforderung erscheint, den automatischen Start abzubrechen, drück eine Taste.; prompt = ath>; konsole = uart; konsole_ort = auf der Platine (Gehäuse öffnen); befehle = tftpboot 0x81000000 boot.bin
-bootm 0x81000000; sicherheit = quelle; sicherheit_hinweis = Laut OpenWrt an zwei Geräten ausprobiert.
+bootm 0x81000000; sicherheit = quelle; sicherheit_hinweis = Laut OpenWrt an zwei Geräten ausprobiert.; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-sophos-ap15-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-sophos-ap15-initramfs-kernel.bin
 
 #### tp-link-archer-d50-v1
 
@@ -10337,14 +10337,14 @@ Enterasys WS-AP3715i · mpc85xx-p1010 · K4
 - **RAM:** 256 MB
 - **Rückweg zur Herstellerfirmware:** Hersteller bietet kein flashbares Image; nur über ein eigenes Voll-Backup aller mtd-Partitionen [geprüft: Wiki toh:enterasys:ws-ap3715i]
 - **Gluon-RAMpe passt:** teilweise: nach dem seriellen TFTP-Boot macht die Gluon-RAMpe den sysupgrade-Schritt statt scp; bootcmd/saveenv bleibt seriell
-- **Gluon-RAMpe-Rezept:** devices/enterasys-ws-ap3715i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) als `ap3715.bin` per U-Boot-TFTP; entpackt über 11 MB droht Überlappung
+- **Gluon-RAMpe-Rezept:** devices/enterasys-ws-ap3715i.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` (lzma) als `ap3715.bin` per U-Boot-TFTP; entpackt über 11 MB droht Überlappung
 - **Quelle (OpenWrt-Commit):** 765f66810a3324cc35fa6471ee8eeee335ba8c2b
 - **Detail-Anleitung:** anleitungen/de/enterasys-ws-ap3715i.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=765f66810a3324cc35fa6471ee8eeee335ba8c2b
 - **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-mpc85xx-p1010-enterasys_ws-ap3715i-initramfs-kernel.bin; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1010/openwrt-24.10.8-mpc85xx-p1010-enterasys_ws-ap3715i-initramfs-kernel.bin; tftp_name = ap3715.bin; server_ip = 192.168.1.66; konsole = rj45; anhalten = Drück Enter, sobald die Aufforderung erscheint, den automatischen Start abzubrechen.; befehle = setenv ramboot_openwrt "setenv ipaddr 192.168.1.1; setenv serverip 192.168.1.66; tftpboot 0x2000000 ap3715.bin; bootm"
 setenv boot_openwrt "sf probe 0; sf read 0x2000000 0x140000 0x1000000; bootm 0x2000000"
 setenv bootcmd "run boot_openwrt"
 saveenv
-run ramboot_openwrt; baud = 115200; login = admin / new2day; sicherheit = quelle
+run ramboot_openwrt; baud = 115200; login = admin / new2day; sicherheit = quelle; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-enterasys-ws-ap3715i-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-enterasys-ws-ap3715i-initramfs-kernel.bin
 
 #### sophos-red-15w-rev.1
 
@@ -10455,13 +10455,13 @@ Enterasys WS-AP3710i · mpc85xx-p1020 · K4
 - **Notweg:** [Notfall] Werkzeug extremeflash (Python, pipx; USB-Seriell-Adapter, Rechner-IP z. B. 192.168.1.70/24) erledigt Konsole und TFTP automatisch [geprüft: github grische/extremeflash, Wiki toh:enterasys:ws-ap3710i]
 - **Rückweg zur Herstellerfirmware:** Stock-bootcmd steht in der Variable boot_flash; vorher Backup der Partition "firmware" ziehen [geprüft: Commit]
 - **Gluon-RAMpe passt:** teilweise: wie WS-AP3715i
-- **Gluon-RAMpe-Rezept:** devices/enterasys-ws-ap3710i.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` als `01C8A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell
+- **Gluon-RAMpe-Rezept:** devices/enterasys-ws-ap3710i.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` als `01C8A8C0.img` per U-Boot-TFTP; `bootcmd` bleibt seriell
 - **Quelle (OpenWrt-Commit):** 16b01fb1b9c99513c318109bef96a1a3545c57a0
 - **Detail-Anleitung:** anleitungen/de/enterasys-ws-ap3710i.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=16b01fb1b9c99513c318109bef96a1a3545c57a0
 - **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-mpc85xx-p1020-enterasys_ws-ap3710i-initramfs-kernel.bin; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/mpc85xx/p1020/openwrt-24.10.8-mpc85xx-p1020-enterasys_ws-ap3710i-initramfs-kernel.bin; tftp_name = 01C8A8C0.img; server_ip = 192.168.200.200; konsole = rj45; konsole_ort = neben der Netzwerkbuchse; anhalten = Drück Enter, sobald die Aufforderung erscheint, den automatischen Start abzubrechen.; befehle = setenv boot_openwrt "setenv bootargs; cp.b 0xee000000 0x1000000 0x1000000; bootm 0x1000000"
 setenv bootcmd "run boot_openwrt"
 saveenv
-tftpboot 0x1000000 192.168.200.200:01C8A8C0.img; bootm; rueckweg = Zurück zur Herstellerfirmware geht nur mit einer Sicherung der Partition "firmware", die du vor Schritt 7 aus OpenWrt heraus gemacht hast; der alte Startbefehl steht im Bootloader in der Variable boot_flash. Das beschreiben wir hier nicht.; baud = 115200; login = admin / new2day; sicherheit = quelle
+tftpboot 0x1000000 192.168.200.200:01C8A8C0.img; bootm; rueckweg = Zurück zur Herstellerfirmware geht nur mit einer Sicherung der Partition "firmware", die du vor Schritt 7 aus OpenWrt heraus gemacht hast; der alte Startbefehl steht im Bootloader in der Variable boot_flash. Das beschreiben wir hier nicht.; baud = 115200; login = admin / new2day; sicherheit = quelle; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-enterasys-ws-ap3710i-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-enterasys-ws-ap3710i-initramfs-kernel.bin
 
 #### extreme-networks-ws-ap3825i
 
@@ -10501,15 +10501,15 @@ Extreme Networks WS-AP3825i · mpc85xx-p1020 · K4
 - **Notweg:** [Notfall] Falsche Shell (/flash/home/admin, setenv unbekannt): zuerst den Bootloader anhalten, Prompt 'Boot (PRI)->' [geprüft: forum.darmstadt.freifunk.net t/923 #4, #7]; hängt saveenv, NICHT den Strom ziehen: im Forum war das Gerät danach tot [geprüft: forum.darmstadt.freifunk.net t/923 #8]
 - **Rückweg zur Herstellerfirmware:** Stock-bootcmd in Variable boot_flash; vorher Backup der Partition "firmware" [geprüft: Commit]
 - **Hardware-Test:** adorfer: rund zwölf WS-AP3825i auf diesem Weg umgestellt, Datum und Image nicht festgehalten (Angabe 15.10.2026) -> sicherheit praxis statt erprobt; Testgerät bei Neanderfunk vorhanden
-- **Gluon-RAMpe passt:** bis 20261114 vermutlich nein: gebaut (gluon-rampe-20261015-…-initramfs-kernel.bin, 7.966.936 Byte, Kernel 6.6), aber jedes OpenWrt-initramfs ab 23.05 bleibt bei 'ft_fixup_l2cache: FDT_ERR_NOTFOUND' hängen, nur 22.03.0 (6.879.964 Byte, Kernel 5.10) startet [geprüft: OpenWrt-Issue 17152]; Ursache: ist das Image größer, linkt der powerpc-Bootwrapper den Loader an eine andere Adresse, als im uImage-Kopf steht, und U-Boot springt falsch [geprüft: OpenWrt-Issue 25302, Tabelle: WS-AP3825i-initramfs 24.10.8 ❌]; Fix OpenWrt-PR 25541, am 27.10.2026 in openwrt-24.10 übernommen, nach dem OpenWrt-Stand von Gluon v2025.1.3 [geprüft: GitHub]; die RAMpe bekommt ihn ab der Ausgabe nach 20261114 als Backport aus gluon-patches-hardware (kernel/mpc85xx-simpleimage-loader, wie die Community-Firmware): Loader und Header bei 0x3000000 [geprüft: Patches auf Gluon v2025.1.3 angewendet, 15.11.2026]; am Gerät ungetestet
-- **Gluon-RAMpe-Rezept:** devices/extreme-networks-ws-ap3825i.sh (gebaut 15.10.2026): `initramfs-kernel.bin` (FIT) per U-Boot-TFTP; `bootcmd` bleibt seriell; startet vermutlich nicht (Issue 17152), deshalb nicht in der Anleitung
+- **Gluon-RAMpe passt:** ja ab 20261115 (bis 20261114 vermutlich nein): gebaut (gluon-rampe-20261015-…-initramfs-kernel.bin, 7.966.936 Byte, Kernel 6.6), aber jedes OpenWrt-initramfs ab 23.05 bleibt bei 'ft_fixup_l2cache: FDT_ERR_NOTFOUND' hängen, nur 22.03.0 (6.879.964 Byte, Kernel 5.10) startet [geprüft: OpenWrt-Issue 17152]; Ursache: ist das Image größer, linkt der powerpc-Bootwrapper den Loader an eine andere Adresse, als im uImage-Kopf steht, und U-Boot springt falsch [geprüft: OpenWrt-Issue 25302, Tabelle: WS-AP3825i-initramfs 24.10.8 ❌]; Fix OpenWrt-PR 25541, am 27.10.2026 in openwrt-24.10 übernommen, nach dem OpenWrt-Stand von Gluon v2025.1.3 [geprüft: GitHub]; die RAMpe hat ihn ab 20261115 als Backport aus gluon-patches-hardware (kernel/mpc85xx-simpleimage-loader, wie die Community-Firmware): Loader und Header bei 0x3000000 [geprüft: scripts/mpc85xx-ladeadresse.py am Image 20261115]; RAMpe-Seite an LAN1 (Gluon-Setup-Mode auf lan_ifname eth0, wie OpenWrt-LAN) [geprüft: Code Gluon v2025.1.3 320-setup-ifname/020-interfaces, OpenWrt 5204715d 02_network]; am Gerät ungetestet
+- **Gluon-RAMpe-Rezept:** devices/extreme-networks-ws-ap3825i.sh (gebaut 15.10.2026): `initramfs-kernel.bin` (FIT) per U-Boot-TFTP; `bootcmd` bleibt seriell; bis 20261114 startete es nicht (Issue 17152), ab 20261115 mit Loader-Fix in der Anleitung
 - **Quelle (OpenWrt-Commit):** 7e614820a89208c4e91a3a5f9de07a5402accdaa
 - **Detail-Anleitung:** anleitungen/de/extreme-networks-ws-ap3825i.md; https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923
 - **Werte für die Anleitung:** initramfs_datei = openwrt-22.03.0-mpc85xx-p1020-extreme-networks_ws-ap3825i-initramfs-kernel.bin; initramfs_url = https://archive.openwrt.org/releases/22.03.0/targets/mpc85xx/p1020/openwrt-22.03.0-mpc85xx-p1020-extreme-networks_ws-ap3825i-initramfs-kernel.bin; initramfs_hinweis = Bewusst die alte Version 22.03.0: Mit neueren bleibt das Gerät beim Start mit der Meldung `ft_fixup_l2cache: FDT_ERR_NOTFOUND` hängen. Die Freifunk-Firmware, die du danach aufspielst, ist trotzdem aktuell.; tftp_name = ws-ap3825i-initramfs.bin; server_ip = 192.168.1.66; baud = 115200; anhalten = Sobald im Terminal `Scanning JFFS2 FS:` erscheint, drück einmal Enter und warte, bis der Bootloader nach den Zugangsdaten fragt.; login = admin / new2day; login_hinweis = Gehen sie nicht, lass das Gerät normal starten und halt dann die Reset-Taste mindestens 5 Sekunden gedrückt; das setzt die Herstellerfirmware auf Werkseinstellungen zurück.; prompt = Boot (PRI)->; konsole = rj45; konsole_ort = neben der Buchse für das 12-V-Netzteil; tftp_buchse = LAN2; ssh_buchse = LAN1; dauer = Das dauert bei diesem Gerät sehr lange, oft zehn Minuten und mehr, und die Konsole bleibt dabei lange stumm (siehe Achtung oben).; fertig_zeichen = Laut OpenWrt-Wiki blinkt die Power-LED, solange er beschäftigt ist, und leuchtet dauerhaft, wenn er fertig ist.; rueckweg = Zurück zur Herstellerfirmware geht nur mit einer Sicherung der Partition "firmware", die du vor Schritt 7 aus OpenWrt heraus gemacht hast. Das beschreiben wir hier nicht.; sicherheit = praxis; sicherheit_hinweis = Wir haben rund ein Dutzend dieser Geräte auf diesem Weg umgestellt.; befehle = setenv ramboot_openwrt "setenv ipaddr 192.168.1.22; setenv serverip 192.168.1.66; tftpboot 0x2000000 ws-ap3825i-initramfs.bin; interrupts off; bootm start 0x2000000; bootm loados; fdt resize; fdt boardsetup; fdt resize; fdt boardsetup; fdt chosen; fdt resize; fdt chosen; bootm prep; bootm go;"
 setenv boot_openwrt "cp.b 0xEC000000 0x2000000 0x2000000; interrupts off; bootm start 0x2000000; bootm loados; fdt resize; fdt boardsetup; fdt resize; fdt boardsetup; fdt chosen; fdt resize; fdt chosen; bootm prep; bootm go;"
 setenv bootcmd "run boot_openwrt";
 saveenv
-run ramboot_openwrt
+run ramboot_openwrt; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-extreme-networks-ws-ap3825i-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-extreme-networks-ws-ap3825i-initramfs-kernel.bin; rampe_buchse = LAN1
 
 #### tp-link-eap620-hd-v1
 
@@ -11028,7 +11028,7 @@ Genexis/Inteno Pulse EX400 · ramips-mt7621 · K1
 - **Quelle (OpenWrt-Commit):** dd0c2839a81bb3c5067be99b02ec5c0adff93ac6
 - **Detail-Anleitung:** anleitungen/de/genexis-pulse-ex400.md; https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400
 - **Am Gerät erprobt (für die Anleitung):** am = 2026-11-11; mit = gluon-rampe-20261015-genexis-pulse-ex400-factory.bin; weg = U-Boot-Recovery (Reset beim Einschalten), RAMpe-factory per Browser auf 192.168.1.1, nach Neustart Blinken 1 Hz, Community-sysupgrade auf der RAMpe-Seite; 10 Geräte; beleg = adorfer 11.11.2026; Vorlage sonderweg-genexis-pulse-ex400.md (Branch anleitungen 23b89e67)
-- **Werte für die Anleitung:** rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-genexis-pulse-ex400-factory.bin; rampe_datei = gluon-rampe-20261114-genexis-pulse-ex400-factory.bin; rampe_sha256 = d50f3e886d82806b7c6480b395b07bc0770e48a0c40f8d7300ffd694903ebf0c
+- **Werte für die Anleitung:** rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-genexis-pulse-ex400-factory.bin; rampe_datei = gluon-rampe-20261115-genexis-pulse-ex400-factory.bin; rampe_sha256 = 369d524c5c117321aeffed15b4a9ed3ce47dc7e589e8dde2ceff206064b50201
 
 ### Familie `sonderweg-google-wifi-gale`
 
@@ -11337,11 +11337,11 @@ Mercusys MR90X v1 · mediatek-filogic · K2
 - **RAM:** 512 MB
 - **Rückweg zur Herstellerfirmware:** Backups von boot und tp_data nötig; Reset beim Einschalten startet die U-Boot-Web-Recovery auf http://192.168.1.1 für die OEM-Firmware [geprüft: Commit, Wiki toh:mercusys:mr90x_v1]
 - **Hardware-Test:** Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen
-- **Gluon-RAMpe passt:** teilweise: das RAMpe-initramfs ersetzt das OpenWrt-initramfs im kernel-Volume, der Exploit (SSH/Telnet, busybox, ubiupdatevol) bleibt Handarbeit; die fw_setenv-Werte aus Commit e4fe3097 (Schritt 4/13) setzt ab der Ausgabe nach 20261114 das Vorbereitungsskript der RAMpe vor dem Flashen (overlay/lib/gluon-rampe/prepare/mercusys_mr90x-v1.sh, gegengelesen, sonst kein Flashen) [geprüft: Code, fw_setenv im Image 20261114; am Gerät ungetestet]. Hinweis: eine ältere Neanderfunk-Notiz beschreibt "tp_boot_idx 0, dann U-Boot-Web-Recovery nimmt initramfs" - weder im Commit noch im Wiki-Abschnitt "Stock bootloader" so belegt
+- **Gluon-RAMpe passt:** teilweise: das RAMpe-initramfs ersetzt das OpenWrt-initramfs im kernel-Volume, der Exploit (SSH/Telnet, busybox, ubiupdatevol) bleibt Handarbeit; die fw_setenv-Werte aus Commit e4fe3097 (Schritt 4/13) setzt ab 20261115 das Vorbereitungsskript der RAMpe vor dem Flashen (overlay/lib/gluon-rampe/prepare/mercusys_mr90x-v1.sh, gegengelesen, sonst kein Flashen) [geprüft: Code, fw_setenv im Image 20261114, Skript im Image 20261115 (8.472.100 Byte); am Gerät ungetestet]. Hinweis: eine ältere Neanderfunk-Notiz beschreibt "tp_boot_idx 0, dann U-Boot-Web-Recovery nimmt initramfs" - weder im Commit noch im Wiki-Abschnitt "Stock bootloader" so belegt
 - **Gluon-RAMpe-Rezept:** devices/mercusys-mr90x-v1.sh (gebaut 10.10.2026 lokal, initramfs etwa 8.1 MB, `91_installer_initramfs` geprüft, Hardware-Test offen): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell
 - **Quelle (OpenWrt-Commit):** OpenWrt e4fe3097ef6a961874b66932a0ac4be18070630a
 - **Detail-Anleitung:** anleitungen/de/mercusys-mr90x-v1.md
-- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin; rueckweg_url = https://www.mercusys.com/de/download/mr90x; zip_url = https://firmware.neanderfunk.de/other/dump/mr90x-v1-installdateien.zip
+- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin; rueckweg_url = https://www.mercusys.com/de/download/mr90x; zip_url = https://firmware.neanderfunk.de/other/dump/mr90x-v1-installdateien.zip; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-mercusys-mr90x-v1-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-mercusys-mr90x-v1-initramfs-kernel.bin
 
 ### Familie `sonderweg-netgear-wax218`
 
@@ -11813,7 +11813,7 @@ ZyXEL WSM20 (Multy M1) · ramips-mt7621 · K1
 - **Quelle (OpenWrt-Commit):** 28df7f7ff251d8684caa60f07ed0ba0c4a8e71f4
 - **Detail-Anleitung:** anleitungen/de/zyxel-wsm20.md; https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/
 - **Am Gerät erprobt (für die Anleitung):** am = 2026-09-19; mit = Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs; beleg = adorfer, Testknoten in 21_dias, installer docs/ANLEITUNGSFAMILIEN.md (0304fefc)
-- **Werte für die Anleitung:** openwrt_datei = openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin; openwrt_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-zyxel-wsm20-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261114-zyxel-wsm20-initramfs-kernel.bin; rampe_weg = Lade in Schritt 4 statt der OpenWrt-Datei die RAMpe hoch; Teil 2 entfällt dann.; sicherheit = quelle; sicherheit_hinweis = Freifunk Aachen beschreibt den Weg so, und bei uns ist er an einem Gerät gelaufen; mit der RAMpe hat ihn noch niemand ausprobiert.
+- **Werte für die Anleitung:** openwrt_datei = openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin; openwrt_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-zyxel-wsm20-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-zyxel-wsm20-initramfs-kernel.bin; rampe_weg = Lade in Schritt 4 statt der OpenWrt-Datei die RAMpe hoch; Teil 2 entfällt dann.; sicherheit = quelle; sicherheit_hinweis = Freifunk Aachen beschreibt den Weg so, und bei uns ist er an einem Gerät gelaufen; mit der RAMpe hat ihn noch niemand ausprobiert.
 
 ### Familie `sophos-xg-awetool`
 
