@@ -10,8 +10,8 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: d4d317900
-vorlage_stand: 3bf875fd8
+daten_stand: cb45cf838
+vorlage_stand: e2b91daeb
 ---
 
 # D-Link DAP-X1860 A1: Freifunk-Firmware installieren
@@ -38,16 +38,14 @@ Speicher, auch wenn sonst nichts mehr geht. Über sie kommt die Freifunk-Firmwar
 - eine Büroklammer für die Reset-Taste
 - die Freifunk-Firmware deiner Community für den D-Link DAP-X1860 A1, und zwar das
   **factory**-Image
-- das Programm **curl** zum Hochladen. Unter Linux und macOS ist es meist
-  schon da, unter Windows 10 und 11 heißt es `curl.exe` und ist eingebaut
-  ([curl benutzen](grundlagen/curl.md)).
+- zum Hochladen den Browser **Chrome oder Chromium**
 
 WLAN am Rechner schaltest du für die Installation am besten aus, damit er
 wirklich über das Kabel spricht.
 
 ## Schritte
 
-1. **Dateien bereitlegen.** Lade das factory-Image herunter und leg sie in einen
+1. **Dateien bereitlegen.** Lade das factory-Image herunter und leg es in einen
    Ordner, den du wiederfindest, zum Beispiel "Downloads".
 
 2. **Feste Adresse am Rechner.** Stell den Netzwerkanschluss deines Rechners
@@ -62,14 +60,63 @@ wirklich über das Kabel spricht.
    Reset-Taste und halte sie gedrückt. Steck jetzt den Strom ein und halte
    die Taste weiter, bis die LED **rot blinkt**. Dann loslassen.
 
-5. **Prüfen, ob die Recovery da ist.**
-   Öffne im Browser `http://192.168.0.50`. Es erscheint die Recovery-Seite von D-Link.
-   **Lade dort nichts hoch.** Ihr Fortschrittsbalken läuft nur nach der Uhr
-   und sagt nichts darüber, ob die Datei ankam. Die Seite zeigt dir nur, dass
-   die Recovery bereit ist.
+5. **Recovery-Seite öffnen.**
+   Öffne in Chrome oder Chromium `http://192.168.0.50`. Es erscheint die Recovery-Seite von D-Link.
    Ein `ping` hilft hier nicht, die Recovery antwortet nicht darauf.
 
-6. **Datei mit curl hochladen.** Öffne ein Terminal (unter Windows die
+6. **Datei im Browser hochladen.** Klick auf "Datei auswählen", wähl das factory-Image und klick den Knopf daneben.
+   Die Seite zeigt jetzt den Fortschritt in Prozent. Lass die Seite in Ruhe, bis die Erfolgsmeldung erscheint.
+
+7. **Warten.** Danach schreibt die Recovery die Datei in den Speicher, und
+   der Router startet neu.
+   **Strom nicht ziehen.** Die Erfolgsmeldung allein heißt noch nicht,
+   dass es geklappt hat. Das zeigt erst der nächste Schritt.
+   Klappt das Hochladen im Browser nicht, nimm den Notweg weiter unten
+   ("Notweg: Hochladen mit curl").
+
+8. **Fertig.** Nach dem Neustart startet die Freifunk-Firmware deiner
+   Community: je nach Community zuerst mit einer Einrichtungsseite unter
+   `http://192.168.1.1` oder gleich im Betrieb.
+   Antwortet dort nichts, siehe [Die Router-Seite antwortet
+   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Wie es weitergeht, beschreibt
+   deine Community.
+
+## Woran du erkennst, dass es geklappt hat
+
+- Nach dem Neustart meldet sich die Freifunk-Firmware.
+- Die Erfolgsmeldung der D-Link-Seite zählt nicht, sie erscheint immer.
+
+## Wenn etwas schiefgeht
+
+- **Der Browser-Upload war nach einer Sekunde "fertig", oder danach startet
+  wieder die normale D-Link-Firmware.** Dann ist die Datei nicht angekommen.
+  Noch einmal ab Schritt 4 mit Chrome oder Chromium, sonst den Notweg mit
+  curl (unten).
+- **Im Notweg: curl meldet "Failed to connect", HTTP 000 und 0 Bytes.** Die Recovery war
+  nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
+  Router noch einmal in die Recovery bringen (Schritt 4).
+- **Im Notweg: curl steht bei 100 % und kommt nicht zurück, oder meldet nach langer
+  Zeit "Recv failure: Connection timed out".** Das ist normal: Der Router hat
+  neu gestartet, ohne curl Bescheid zu geben. curl darf mit Strg+C beendet
+  werden, sobald der Router neu startet.
+- **Nach dem Upload startet wieder die normale D-Link-Firmware.** Die Datei
+  ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
+  Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.
+- **Im Notweg: Aus der WSL unter Windows kommt keine Verbindung zustande.** Nimm curl.exe
+  direkt in Windows, nicht in der WSL.
+
+## Notweg: Hochladen mit curl
+
+Nur wenn das Hochladen im Browser nicht klappt. Du brauchst dafür das
+Programm **curl**. Unter Linux und macOS ist es meist schon da, unter
+Windows 10 und 11 heißt es `curl.exe` und ist eingebaut
+([curl benutzen](grundlagen/curl.md)).
+
+1. **Router wieder in die Recovery bringen** wie in Schritt 4 und 5, aber
+   dort nichts hochladen.
+
+2. **Datei mit curl hochladen.** Öffne ein Terminal (unter Windows die
    **PowerShell**), wechsle in den Ordner mit der Datei und gib ein:
 
    Linux und macOS:
@@ -89,7 +136,7 @@ wirklich über das Kabel spricht.
    Antwort des Routers auf und kann danach weg. Mehr unter
    [curl benutzen](grundlagen/curl.md).
 
-7. **Warten.** curl zeigt beim Hochladen eine Fortschrittsanzeige. Bei 100 %
+3. **Warten.** curl zeigt beim Hochladen eine Fortschrittsanzeige. Bei 100 %
    ist die Datei drüben, das dauert meist nur Sekunden. Danach schreibt die
    Recovery sie in den Speicher.
    Bis zum Neustart vergehen meist einige Minuten.
@@ -101,35 +148,7 @@ wirklich über das Kabel spricht.
    Minuten) von selbst zurück, meist mit "Recv failure: Connection timed
    out". Das ist in Ordnung.
 
-8. **Fertig.** Nach dem Neustart startet die Freifunk-Firmware deiner
-   Community: je nach Community zuerst mit einer Einrichtungsseite unter
-   `http://192.168.1.1` oder gleich im Betrieb.
-   Antwortet dort nichts, siehe [Die Router-Seite antwortet
-   nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
-   [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Wie es weitergeht, beschreibt
-   deine Community.
-
-## Woran du erkennst, dass es geklappt hat
-
-- Nach dem Neustart meldet sich die Freifunk-Firmware.
-- Die Erfolgsmeldung der D-Link-Seite zählt nicht, sie erscheint immer.
-
-## Wenn etwas schiefgeht
-
-- **curl meldet "Failed to connect", HTTP 000 und 0 Bytes.** Die Recovery war
-  nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
-  Router noch einmal in die Recovery bringen (Schritt 4).
-- **curl steht bei 100 % und kommt nicht zurück, oder meldet nach langer
-  Zeit "Recv failure: Connection timed out".** Das ist normal: Der Router hat
-  neu gestartet, ohne curl Bescheid zu geben. curl darf mit Strg+C beendet
-  werden, sobald der Router neu startet (Schritt 7).
-- **Nach dem Upload startet wieder die normale D-Link-Firmware.** Die Datei
-  ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
-  Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.
-- **Der Browser-Upload war nach einer Sekunde "fertig".** Dann ist nichts
-  übertragen worden. Das passiert auch in Chromium-Browsern. Nimm curl.
-- **Aus der WSL unter Windows kommt keine Verbindung zustande.** Nimm curl.exe
-  direkt in Windows, nicht in der WSL.
+Danach weiter mit Schritt 8 ("Fertig") oben.
 
 ## Herkunft der Angaben
 
@@ -137,12 +156,12 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 
 - abgeleitet (Gluon-RAMpe passt)
 - abgeleitet: Forum Darmstadt laut Notiz (Sichtbare Zeichen, Fehlerbild)
-- abgeleitet: am M60 ging Firefox nicht, Chrome/Chromium schon (Test adorfer 15.11.2026) (Programm)
 - geprüft (Weg ab Werk, Schritte (Normalweg), Datei)
 - geprüft: Commit 3c31f6b (Sichtbare Zeichen, Rückweg zur Herstellerfirmware)
 - geprüft: Commit 3c31f6b (Adresse), Neanderfunk-Notiz (Rechner-IP aus Forum Darmstadt) (Schritte (Normalweg), Adressen)
 - geprüft: Commit 3c31f6b; 'rot blinken' laut Forum Darmstadt in Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt)
 - geprüft: Commits 'Chromium based' (Programm)
 - geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Sichtbare Zeichen, Adressen)
-- geprüft: Neanderfunk-Notiz, am M60 erprobt; am M60 seit 15.11.2026 nur noch Notweg, Weg ist dort Chrome/Chromium (Programm)
+- geprüft: Neanderfunk-Notiz, am M60 erprobt (Programm)
+- geprüft: adorfer 15.11.2026 (Programm)
 - Geräteeintrag: 3c31f6b521bb5fc49e222a8f2bcd454b73452a0e

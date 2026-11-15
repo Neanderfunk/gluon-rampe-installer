@@ -13,8 +13,8 @@ erprobt_am: 2026-11-15
 erprobt_mit: gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m60-a1-recovery.bin
 grundlagen: [browser-https, browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: d4d317900
-vorlage_stand: 3bf875fd8
+daten_stand: cb45cf838
+vorlage_stand: e2b91daeb
 ---
 
 # D-Link AQUILA PRO AI M60 A1: Freifunk-Firmware installieren
@@ -73,24 +73,23 @@ wirklich über das Kabel spricht.
    Schritt 4.
    Ein `ping` hilft hier nicht, die Recovery antwortet nicht darauf.
 
-   ![Die Recovery-Seite im Browser: Überschrift, Feld für die Datei, Knopf "Upgrade"](../bilder/d-link-aquila-pro-ai-m60-a1/recovery-seite.png)
+   ![Die Recovery-Seite im Browser: Überschrift, Feld für die Datei, Knopf zum Hochladen](../bilder/d-link-aquila-pro-ai-m60-a1/recovery-seite.png)
 
 6. **Datei im Browser hochladen.** Klick auf "Datei auswählen", wähl die RAMpe-Datei `gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin` und klick "Upgrade".
 
-   ![Die Recovery-Seite mit gewählter Datei, daneben der Knopf "Upgrade"](../bilder/d-link-aquila-pro-ai-m60-a1/recovery-datei-gewaehlt.png)
+   ![Die Recovery-Seite mit gewählter Datei, daneben der Knopf zum Hochladen](../bilder/d-link-aquila-pro-ai-m60-a1/recovery-datei-gewaehlt.png)
    
-   Die Seite zeigt jetzt "Device is upgrading the firmware" mit einer
-   Prozentzahl. Das Hochladen geht langsam, lass die Seite in Ruhe, bis
-   "Upgrade successfully!" erscheint.
+   Die Seite zeigt jetzt "Device is upgrading the firmware" mit einer Prozentzahl. Das Hochladen geht langsam. Lass die Seite in Ruhe, bis "Upgrade successfully!" erscheint.
 
-   ![Die Recovery-Seite während des Hochladens: "Device is upgrading the firmware .... 68%"](../bilder/d-link-aquila-pro-ai-m60-a1/recovery-upload.png)
+   ![Die Recovery-Seite während des Hochladens, mit Prozentanzeige](../bilder/d-link-aquila-pro-ai-m60-a1/recovery-upload.png)
 
 7. **Warten.** Danach schreibt die Recovery die Datei in den Speicher; dabei leuchtet die LED ruhig rot, etwas schwächer, und
    der Router startet neu (beim Neustart blinkt die LED schnell weiß).
-   **Strom nicht ziehen.** "Upgrade successfully!" allein heißt noch nicht,
+   **Strom nicht ziehen.** Die Erfolgsmeldung allein heißt noch nicht,
    dass es geklappt hat. Das zeigt erst der nächste Schritt.
 
-   ![Die Recovery-Seite nach dem Hochladen: "Upgrade successfully!"](../bilder/d-link-aquila-pro-ai-m60-a1/recovery-fertig.png)
+   ![Die Recovery-Seite nach dem Hochladen, mit Erfolgsmeldung](../bilder/d-link-aquila-pro-ai-m60-a1/recovery-fertig.png)
+   
    Klappt das Hochladen im Browser nicht, nimm den Notweg weiter unten
    ("Notweg: Hochladen mit curl").
 
@@ -141,17 +140,17 @@ wirklich über das Kabel spricht.
   wieder die normale D-Link-Firmware.** Dann ist die Datei nicht angekommen. Mit Firefox passiert das immer.
   Noch einmal ab Schritt 4 mit Chrome oder Chromium, sonst den Notweg mit
   curl (unten).
-- **curl meldet "Failed to connect", HTTP 000 und 0 Bytes.** Die Recovery war
+- **Im Notweg: curl meldet "Failed to connect", HTTP 000 und 0 Bytes.** Die Recovery war
   nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
   Router noch einmal in die Recovery bringen (Schritt 4).
-- **curl steht bei 100 % und kommt nicht zurück, oder meldet nach langer
+- **Im Notweg: curl steht bei 100 % und kommt nicht zurück, oder meldet nach langer
   Zeit "Recv failure: Connection timed out".** Das ist normal: Der Router hat
   neu gestartet, ohne curl Bescheid zu geben. curl darf mit Strg+C beendet
-  werden, sobald der Router neu startet (Schritt 7).
+  werden, sobald der Router neu startet.
 - **Nach dem Upload startet wieder die normale D-Link-Firmware.** Die Datei
   ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
   Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.
-- **Aus der WSL unter Windows kommt keine Verbindung zustande.** Nimm curl.exe
+- **Im Notweg: Aus der WSL unter Windows kommt keine Verbindung zustande.** Nimm curl.exe
   direkt in Windows, nicht in der WSL.
 - **Die LED bleibt nach dem Upload rot, oder der Router hängt beim Start.**
   Der M60 hat zwei Speicherbereiche für die Firmware. Die Recovery schreibt in
@@ -207,6 +206,8 @@ Windows 10 und 11 heißt es `curl.exe` und ist eingebaut
 
 Danach weiter mit Schritt 8 oben.
 
+![curl in der PowerShell: oben ein Fehlversuch mit "Failed to connect" und 0 Bytes, unten ein vollständiger Upload mit 50.00M bei 100 %](../bilder/d-link-aquila-pro-ai-m60-a1/curl-ausgabe.png)
+
 ## Gut zu wissen
 
 - **Mehrfach-Packs:** Geräte aus Mehrfach-Packs (auf dem Typenschild "M60-2")
@@ -234,6 +235,7 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Neanderfunk-Notiz 15.10.2026, am Gerät (Anschluss, Notweg)
 - geprüft: Neanderfunk-Notiz, am Gerät bestätigt (Typenschild/Verwechslung)
 - geprüft: Neanderfunk-Notiz, am M60 erprobt (Programm)
+- geprüft: Screenshots und Aussage adorfer 15.11.2026 (Programm)
 - geprüft: Test adorfer 15.11.2026 am M60 (Programm)
 - geprüft: adorfer 15.11.2026 (Programm)
 - Geräteeintrag: OpenWrt 7271ee587cd104d30d6d46dd3c623c9d4602bd0c
