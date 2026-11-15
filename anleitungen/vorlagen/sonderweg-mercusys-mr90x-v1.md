@@ -46,6 +46,15 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     rueckweg_url         Download-Seite der Mercusys-Firmware
     dauer                Zeitbedarf, z. B. "etwa eine Stunde"
     sicherheit, sicherheit_hinweis   siehe _status.md
+    rampe_url, rampe_datei
+                         RAMpe-initramfs (8,1 MB, passt in kernel_groesse).
+                         Gesetzt: Sie kommt statt OpenWrt ins UBI-Volume
+                         "kernel", die Freifunk-Firmware über die RAMpe-Seite.
+                         VORAUSSETZUNG: Die RAMpe setzt die fw_setenv-Liste aus
+                         Schritt 10 selbst (prepare-Skript, beim Buildsystem
+                         am 15.11.2026 angefragt). Erst dann rampe_url setzen.
+                         OpenWrt steht unter "Anderer Weg" (adorfer 15.11.2026:
+                         "bitte alles auf RAMpe umstellen")
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
@@ -53,6 +62,26 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 {%- set kg = w.get("kernel_groesse") or "9MiB" -%}
 {%- set zd = w.get("zip_datei") or w.zip_url.rsplit("/", 1)[-1] -%}
 {%- set bb = w.get("busybox_datei") or "busybox-aarch64" -%}
+{%- set rampe = w.get("rampe_url") -%}
+{%- set kd = w.get("rampe_datei") if rampe else w.initramfs_datei -%}
+{%- import "_rampe_schritte.md" as rs with context -%}
+{%- macro setenv() %}
+```
+fw_setenv baudrate 115200
+fw_setenv bootargs "ubi.mtd=ubi0 console=ttyS0,115200n1 loglevel=8 earlycon=uart8250,mmio32,0x11002000 init=/etc/preinit"
+fw_setenv fdtcontroladdr 5ffc0e70
+fw_setenv ipaddr 192.168.1.1
+fw_setenv loadaddr 0x46000000
+fw_setenv mtdids "spi-nand0=spi-nand0"
+fw_setenv mtdparts "spi-nand0:2M(boot),1M(u-boot-env),50M(ubi0),50M(ubi1),8M(userconfig),4M(tp_data)"
+fw_setenv netmask 255.255.255.0
+fw_setenv serverip 192.168.1.2
+fw_setenv stderr serial@11002000
+fw_setenv stdin serial@11002000
+fw_setenv stdout serial@11002000
+fw_setenv tp_boot_idx 0
+```
+{%- endmacro %}
 
 # {{ modell }}: Freifunk-Firmware installieren
 
@@ -60,8 +89,11 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 
 Der {{ modell }} nimmt fremde Firmware weder über seine Oberfläche noch über
 einen einfachen Notfall-Modus an. Der Weg führt über eine Hintertür in der
-Mercusys-Firmware auf die Kommandozeile, von dort kommt ein kleines OpenWrt
-auf den Router und darüber die Freifunk-Firmware. Das ist etwas für Leute,
+Mercusys-Firmware auf die Kommandozeile, von dort kommt
+{%- if rampe %} die **Gluon-RAMpe** auf den Router, eine kleine Firmware, die
+nur eins kann: die Freifunk-Firmware deiner Community annehmen. Die lädst du
+dann im Browser hoch.{% else %} ein kleines OpenWrt
+auf den Router und darüber die Freifunk-Firmware.{% endif %} Das ist etwas für Leute,
 die mit SSH, scp und einer Shell umgehen können
 ([SSH und scp benutzen](grundlagen/ssh-scp.md)).
 {%- if w.get("dauer") %} Rechne mit {{ w.dauer }}.{% endif %}
@@ -87,6 +119,10 @@ die mit SSH, scp und einer Shell umgehen können
   Mercusys-Firmware kann einen nötigen Befehl nicht), OpenWrt als
   Zwischenstufe (`{{ w.initramfs_datei }}`), Prüfsummen und Hinweise zu den
   Quelltexten.
+{%- if rampe %} Gebraucht wird daraus nur das busybox.
+- die RAMpe für den {{ modell }}:
+  [{{ kd }}]({{ w.rampe_url }}). Leg sie in denselben Ordner.
+{%- endif %}
 - die Freifunk-Firmware deiner Community für den {{ modell }}, und zwar das
   **sysupgrade**-Image
 {%- if zusatz.vorher is defined and zusatz.vorher %}
@@ -178,12 +214,12 @@ die mit SSH, scp und einer Shell umgehen können
    Ohne Benutzer und Passwort erscheint `root@Akronite:/#`. Die weiteren
    Befehle tippst du in diese Telnet-Shell.
 
-### Teil 3: OpenWrt als Zwischenstufe
+### Teil 3: {% if rampe %}Die RAMpe als Zwischenstufe{% else %}OpenWrt als Zwischenstufe{% endif %}
 
 8. **Dateien auf den Router.** Auf deinem Rechner, im ausgepackten Ordner:
 
    ```
-   scp -O -P 20001 -o HostKeyAlgorithms=+ssh-rsa {{ bb }} {{ w.initramfs_datei }} root@{{ ip }}:/tmp/
+   scp -O -P 20001 -o HostKeyAlgorithms=+ssh-rsa {{ bb }} {{ kd }} root@{{ ip }}:/tmp/
    ```
 
    In der Telnet-Shell:
@@ -191,21 +227,40 @@ die mit SSH, scp und einer Shell umgehen können
    ```
    cd /tmp
    chmod a+x {{ bb }}
-   du -h {{ w.initramfs_datei }}
+   du -h {{ kd }}
    ```
 
    Die Größe muss kleiner sein als {{ kg }}.
 
-9. **OpenWrt schreiben.** Ab hier ist die Mercusys-Firmware weg. Der
+9. **{% if rampe %}Die RAMpe{% else %}OpenWrt{% endif %} schreiben.** Ab hier ist die Mercusys-Firmware weg. Der
    Notfall-Modus des Bootloaders bleibt aber erhalten (siehe "Zurück zur
    Mercusys-Firmware").
 
    ```
    ubirmvol /dev/ubi0 -N kernel
    ubimkvol /dev/ubi0 -n 1 -N kernel -s {{ kg }}
-   ./{{ bb }} ubiupdatevol /dev/ubi0_1 /tmp/{{ w.initramfs_datei }}
+   ./{{ bb }} ubiupdatevol /dev/ubi0_1 /tmp/{{ kd }}
    reboot
    ```
+
+{%- if rampe %}
+
+### Teil 4: Freifunk-Firmware
+
+Nach dem Neustart läuft die RAMpe unter `192.168.1.1`, der Rechner bleibt
+auf "automatisch". Die Einstellungen des Bootloaders, die OpenWrt sonst
+braucht, setzt die RAMpe vor dem Schreiben selbst.
+
+{{ rs.seite(10) }}
+
+12. **Fertig.** Der Router schreibt die Firmware und startet neu, einige
+    Minuten. **Strom nicht ziehen.** Danach startet die Freifunk-Firmware
+    deiner Community: je nach Community zuerst mit einer Einrichtungsseite
+    unter `http://192.168.1.1` oder gleich im Betrieb.
+    Antwortet dort nichts, siehe [Die Router-Seite antwortet
+    nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+    [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
+{%- else %}
 
 10. **OpenWrt-Einstellungen setzen.** Nach dem Neustart läuft OpenWrt unter
     `192.168.1.1`, der Rechner bleibt auf "automatisch". Melde dich an,
@@ -216,22 +271,7 @@ die mit SSH, scp und einer Shell umgehen können
     ```
 
     Dann genau diese Befehle:
-
-    ```
-    fw_setenv baudrate 115200
-    fw_setenv bootargs "ubi.mtd=ubi0 console=ttyS0,115200n1 loglevel=8 earlycon=uart8250,mmio32,0x11002000 init=/etc/preinit"
-    fw_setenv fdtcontroladdr 5ffc0e70
-    fw_setenv ipaddr 192.168.1.1
-    fw_setenv loadaddr 0x46000000
-    fw_setenv mtdids "spi-nand0=spi-nand0"
-    fw_setenv mtdparts "spi-nand0:2M(boot),1M(u-boot-env),50M(ubi0),50M(ubi1),8M(userconfig),4M(tp_data)"
-    fw_setenv netmask 255.255.255.0
-    fw_setenv serverip 192.168.1.2
-    fw_setenv stderr serial@11002000
-    fw_setenv stdin serial@11002000
-    fw_setenv stdout serial@11002000
-    fw_setenv tp_boot_idx 0
-    ```
+{{ setenv() | indent(4) }}
 
 ### Teil 4: Freifunk-Firmware
 
@@ -256,13 +296,20 @@ die mit SSH, scp und einer Shell umgehen können
     Antwortet dort nichts, siehe [Die Router-Seite antwortet
     nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
     [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
+{%- endif %}
 
 ## Woran du erkennst, dass es geklappt hat
 
 - Nach Schritt 4 liegen `boot.bin`, `tp_data.bin` und der Ordner `tp_data`
   in der richtigen Größe auf deinem Rechner.
+{%- if rampe %}
+- Nach Schritt 9 zeigt `http://192.168.1.1` die RAMpe-Seite "Firmware
+  aktualisieren".
+- Nach Schritt 12 meldet sich die Freifunk-Firmware.
+{%- else %}
 - Nach Schritt 9 meldet sich unter `192.168.1.1` OpenWrt.
 - Nach Schritt 11 meldet sich die Freifunk-Firmware.
+{%- endif %}
 
 ## Wenn etwas schiefgeht
 
@@ -278,6 +325,22 @@ die mit SSH, scp und einer Shell umgehen können
   zurück zur Mercusys-Firmware (unten) und von vorn.
 {%- if zusatz.fehler is defined and zusatz.fehler %}
 {{ zusatz.fehler }}
+{%- endif %}
+
+{%- if rampe %}
+
+## Anderer Weg: über OpenWrt
+
+Statt der RAMpe geht in Schritt 8 und 9 auch das OpenWrt aus der ZIP
+(`{{ w.initramfs_datei }}`), mit denselben Befehlen und diesem Dateinamen.
+Nach dem Neustart läuft OpenWrt unter `192.168.1.1`. Dann setzt du die
+Einstellungen des Bootloaders selbst: `ssh root@192.168.1.1` (normaler
+Port, kein Passwort) und genau diese Befehle:
+{{ setenv() }}
+
+Danach das sysupgrade-Image mit `scp -O <sysupgrade-image>
+root@192.168.1.1:/tmp/sysupgrade.bin` kopieren und auf dem Router
+`sysupgrade -n /tmp/sysupgrade.bin` eingeben.
 {%- endif %}
 
 ## Zurück zur Mercusys-Firmware
