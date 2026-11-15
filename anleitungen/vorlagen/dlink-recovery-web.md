@@ -191,13 +191,16 @@ wirklich über das Kabel spricht.
    {%- endif %}
 {%- if w.browser_upload %}
 
-6. **Datei im Browser hochladen.** Klick auf "Durchsuchen" (in manchen
-   Browsern "Datei auswählen"), wähl
+6. **Datei im Browser hochladen.** Klick auf "Datei auswählen", wähl
    {%- if w.datei_art == "rampe" %} die RAMpe-Datei `{{ w.rampe_datei }}`
-   {%- else %} das factory-Image{% endif %} und klick "Upgrade". Die Seite
-   zeigt jetzt "Device is upgrading the firmware" mit einer Prozentzahl. Das
-   Hochladen geht langsam, lass die Seite in Ruhe, bis "Upgrade
-   successfully!" erscheint.
+   {%- else %} das factory-Image{% endif %} und klick "Upgrade".
+   {%- if b.get("recovery-datei-gewaehlt") %}
+
+   ![Die Recovery-Seite mit gewählter Datei, daneben der Knopf "Upgrade"]({{ b["recovery-datei-gewaehlt"] }})
+   {% endif %}
+   Die Seite zeigt jetzt "Device is upgrading the firmware" mit einer
+   Prozentzahl. Das Hochladen geht langsam, lass die Seite in Ruhe, bis
+   "Upgrade successfully!" erscheint.
    {%- if b.get("recovery-upload") %}
 
    ![Die Recovery-Seite während des Hochladens: "Device is upgrading the firmware .... 68%"]({{ b["recovery-upload"] }})
