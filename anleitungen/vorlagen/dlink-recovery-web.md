@@ -45,16 +45,20 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     herstellerseite_gleiche_ip   true: die Herstellerfirmware antwortet unter derselben Adresse
     dauer_lang           längste beobachtete Dauer, z. B. "über 10 Minuten"
     rampe_url            Download-Ort der RAMpe-Datei (Verzeichnis oder Datei)
-    browser_upload       Browser, mit dem das Hochladen auf der Recovery-Seite
-                         am Gerät geklappt hat, nach "Öffne in …", z. B.
-                         "Chrome oder Chromium". Gesetzt: Hochladen im Browser
-                         ist der Weg, curl nur noch der Notweg. Leer: curl
-                         ist der Weg (adorfer 15.11.2026: M30/M60 mit Chrome
-                         gut, mit Firefox nicht)
+    browser_upload       Browser für das Hochladen, nach "Öffne in …";
+                         leer = "Chrome oder Chromium"
     browser_nicht        Browser, mit dem es NICHT geht, z. B. "Firefox"
+    upload_knopf         Beschriftung des Knopfs zum Hochladen, z. B. "Upgrade"
+    meldung_laeuft       Text der Seite beim Hochladen, z. B.
+                         "Device is upgrading the firmware"
+    meldung_fertig       Erfolgsmeldung der Seite, z. B. "Upgrade successfully!"
+    upload_langsam       true: das Hochladen im Browser dauert spürbar
 
-Die curl-Schritte stehen einmal im Makro curl_schritte und kommen je nach
-browser_upload als Schritt 6/7 oder im Abschnitt "Notweg" vor.
+Hochladen im Browser ist bei allen Geräten der Familie der Weg, curl nur der
+Notweg (adorfer 15.11.2026: DAP-1620/DAP-X1860 gehen mit Chromium schon
+immer, M30/M60 mit Chrome; DIR-878/882 laut OpenWrt-Commits d7233b0/73e8f23
+Browser, curl nur als Alternative). Die curl-Schritte stehen im Makro
+curl_schritte, gebraucht im Abschnitt "Notweg".
 -#}
 {%- macro curl_schritte(n) %}
 {{ n }}. **Datei mit curl hochladen.** Öffne ein Terminal (unter Windows die
@@ -95,6 +99,7 @@ browser_upload als Schritt 6/7 oder im Abschnitt "Notweg" vor.
    {%- endif %}
 {%- endmacro %}
 {%- set w = werte -%}
+{%- set browser = w.browser_upload or "Chrome oder Chromium" -%}
 {%- set b = bilder if bilder is defined else {} -%}
 
 # {{ modell }}: Freifunk-Firmware installieren
@@ -124,14 +129,8 @@ kein Passwort.
 - die Freifunk-Firmware deiner Community für den {{ modell }}, und zwar das
   **factory**-Image
 {%- endif %}
-{%- if w.browser_upload %}
-- zum Hochladen den Browser **{{ w.browser_upload }}**
+- zum Hochladen den Browser **{{ browser }}**
   {%- if w.browser_nicht %} ({{ w.browser_nicht }} geht hier nicht){% endif %}
-{%- else %}
-- das Programm **curl** zum Hochladen. Unter Linux und macOS ist es meist
-  schon da, unter Windows 10 und 11 heißt es `curl.exe` und ist eingebaut
-  ([curl benutzen](grundlagen/curl.md)).
-{%- endif %}
 
 WLAN am Rechner schaltest du für die Installation am besten aus, damit er
 wirklich über das Kabel spricht.
@@ -140,7 +139,7 @@ wirklich über das Kabel spricht.
 
 1. **Dateien bereitlegen.** Lade
    {%- if w.datei_art == "rampe" %} die RAMpe-Datei und das sysupgrade-Image
-   {%- else %} das factory-Image{% endif %} herunter und leg sie in einen
+   {%- else %} das factory-Image{% endif %} herunter und leg {% if w.datei_art == "rampe" %}sie{% else %}es{% endif %} in einen
    Ordner, den du wiederfindest, zum Beispiel "Downloads".
 
 2. **Feste Adresse am Rechner.** Stell den Netzwerkanschluss deines Rechners
@@ -169,16 +168,11 @@ wirklich über das Kabel spricht.
    {{ w.led_falsch }} Dann Strom ab und noch einmal.
    {%- endif %}
 
-5. **{% if w.browser_upload %}Recovery-Seite öffnen.{% else %}Prüfen, ob die Recovery da ist.{% endif %}**
+5. **Recovery-Seite öffnen.**
    {%- if w.recovery_wartezeit %} Warte {{ w.recovery_wartezeit }}.{% endif %}
-   Öffne {% if w.browser_upload %}in {{ w.browser_upload }}{% else %}im Browser{% endif %} `http://{{ w.recovery_ip }}`.
+   Öffne in {{ browser }} `http://{{ w.recovery_ip }}`.
    {%- if w.seitentitel %} Es erscheint eine schlichte Seite
    "{{ w.seitentitel }}".{% else %} Es erscheint die Recovery-Seite von D-Link.{% endif %}
-   {%- if not w.browser_upload %}
-   **Lade dort nichts hoch.** Ihr Fortschrittsbalken läuft nur nach der Uhr
-   und sagt nichts darüber, ob die Datei ankam. Die Seite zeigt dir nur, dass
-   die Recovery bereit ist.
-   {%- endif %}
    {%- if w.herstellerseite_gleiche_ip %}
    Kommt stattdessen eine aufwendigere Seite, die nach einem Passwort fragt,
    ist das die normale D-Link-Firmware, nicht die Recovery: zurück zu
@@ -187,39 +181,37 @@ wirklich über das Kabel spricht.
    Ein `ping` hilft hier nicht, die Recovery antwortet nicht darauf.
    {%- if b.get("recovery-seite") %}
 
-   ![Die Recovery-Seite im Browser: Überschrift, Feld für die Datei, Knopf "Upgrade"{% if not w.browser_upload %}. Hier nichts hochladen.{% endif %}]({{ b["recovery-seite"] }})
+   ![Die Recovery-Seite im Browser: Überschrift, Feld für die Datei, Knopf zum Hochladen]({{ b["recovery-seite"] }})
    {%- endif %}
-{%- if w.browser_upload %}
 
 6. **Datei im Browser hochladen.** Klick auf "Datei auswählen", wähl
    {%- if w.datei_art == "rampe" %} die RAMpe-Datei `{{ w.rampe_datei }}`
-   {%- else %} das factory-Image{% endif %} und klick "Upgrade".
+   {%- else %} das factory-Image{% endif %} und klick
+   {%- if w.upload_knopf %} "{{ w.upload_knopf }}"{% else %} den Knopf daneben{% endif %}.
    {%- if b.get("recovery-datei-gewaehlt") %}
 
-   ![Die Recovery-Seite mit gewählter Datei, daneben der Knopf "Upgrade"]({{ b["recovery-datei-gewaehlt"] }})
+   ![Die Recovery-Seite mit gewählter Datei, daneben der Knopf zum Hochladen]({{ b["recovery-datei-gewaehlt"] }})
    {% endif %}
-   Die Seite zeigt jetzt "Device is upgrading the firmware" mit einer
-   Prozentzahl. Das Hochladen geht langsam, lass die Seite in Ruhe, bis
-   "Upgrade successfully!" erscheint.
+   Die Seite zeigt jetzt
+   {%- if w.meldung_laeuft %} "{{ w.meldung_laeuft }}" mit einer Prozentzahl{% else %} den Fortschritt in Prozent{% endif %}.
+   {%- if w.upload_langsam %} Das Hochladen geht langsam.{% endif %} Lass die Seite in Ruhe, bis
+   {%- if w.meldung_fertig %} "{{ w.meldung_fertig }}"{% else %} die Erfolgsmeldung{% endif %} erscheint.
    {%- if b.get("recovery-upload") %}
 
-   ![Die Recovery-Seite während des Hochladens: "Device is upgrading the firmware .... 68%"]({{ b["recovery-upload"] }})
+   ![Die Recovery-Seite während des Hochladens, mit Prozentanzeige]({{ b["recovery-upload"] }})
    {%- endif %}
 
 7. **Warten.** Danach schreibt die Recovery die Datei in den Speicher
    {%- if w.get("led_schreibt") %}; dabei {{ w.led_schreibt }}{% endif %}, und
    der Router startet neu{% if w.get("led_start") %} (beim Neustart {{ w.led_start }}){% endif %}.
-   **Strom nicht ziehen.** "Upgrade successfully!" allein heißt noch nicht,
+   **Strom nicht ziehen.** Die Erfolgsmeldung allein heißt noch nicht,
    dass es geklappt hat. Das zeigt erst der nächste Schritt.
    {%- if b.get("recovery-fertig") %}
 
-   ![Die Recovery-Seite nach dem Hochladen: "Upgrade successfully!"]({{ b["recovery-fertig"] }})
-   {%- endif %}
+   ![Die Recovery-Seite nach dem Hochladen, mit Erfolgsmeldung]({{ b["recovery-fertig"] }})
+   {% endif %}
    Klappt das Hochladen im Browser nicht, nimm den Notweg weiter unten
    ("Notweg: Hochladen mit curl").
-{%- else %}
-{{ curl_schritte(6) }}
-{%- endif %}
 {%- if w.datei_art == "rampe" %}
 
 8. **Die RAMpe.** Nach dem Neustart {{ w.led_rampe }}. Stell den Rechner
@@ -275,15 +267,6 @@ wirklich über das Kabel spricht.
 
 ## Woran du erkennst, dass es geklappt hat
 {% if w.datei_art == "rampe" %}
-{%- if not w.browser_upload %}
-- curl hat beim Hochladen 100 % erreicht. Kommt es von selbst zurück,
-  meldet es **{{ w.rampe_bytes }} Bytes**. Wie lange das gedauert hat, ist
-  egal, es zählt die Menge.
-  {%- if b.get("curl-ausgabe") %}
-
-  ![curl in der PowerShell: oben ein Fehlversuch mit "Failed to connect" und 0 Bytes, unten ein vollständiger Upload mit 50.00M bei 100 %]({{ b["curl-ausgabe"] }})
-  {%- endif %}
-{%- endif %}
 - Nach dem Neustart {{ w.led_rampe }}, und `http://{{ w.rampe_ip }}` zeigt
   die Seite "Firmware aktualisieren".
 {%- else %}
@@ -292,31 +275,25 @@ wirklich über das Kabel spricht.
 - Die Erfolgsmeldung der D-Link-Seite zählt nicht, sie erscheint immer.
 
 ## Wenn etwas schiefgeht
-{% if w.browser_upload %}
+
 - **Der Browser-Upload war nach einer Sekunde "fertig", oder danach startet
   wieder die normale D-Link-Firmware.** Dann ist die Datei nicht angekommen.
   {%- if w.browser_nicht %} Mit {{ w.browser_nicht }} passiert das immer.{% endif %}
-  Noch einmal ab Schritt 4 mit {{ w.browser_upload }}, sonst den Notweg mit
+  Noch einmal ab Schritt 4 mit {{ browser }}, sonst den Notweg mit
   curl (unten).
-{%- endif %}
-- **curl meldet "Failed to connect", HTTP 000 und 0 Bytes.** Die Recovery war
+- **Im Notweg: curl meldet "Failed to connect", HTTP 000 und 0 Bytes.** Die Recovery war
   nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
   Router noch einmal in die Recovery bringen (Schritt 4).
-- **curl steht bei 100 % und kommt nicht zurück, oder meldet nach langer
+- **Im Notweg: curl steht bei 100 % und kommt nicht zurück, oder meldet nach langer
   Zeit "Recv failure: Connection timed out".** Das ist normal: Der Router hat
   neu gestartet, ohne curl Bescheid zu geben. curl darf mit Strg+C beendet
-  werden, sobald der Router neu startet (Schritt 7).
+  werden, sobald der Router neu startet.
 - **Nach dem Upload startet wieder die normale D-Link-Firmware.** Die Datei
   ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
   Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.
-{%- if not w.browser_upload %}
-- **Der Browser-Upload war nach einer Sekunde "fertig".** Dann ist nichts
-  übertragen worden. Das passiert auch in Chromium-Browsern. Nimm curl.
-{%- endif %}
-- **Aus der WSL unter Windows kommt keine Verbindung zustande.** Nimm curl.exe
+- **Im Notweg: Aus der WSL unter Windows kommt keine Verbindung zustande.** Nimm curl.exe
   direkt in Windows, nicht in der WSL.
 {{ zusatz.fehler }}
-{%- if w.browser_upload %}
 
 ## Notweg: Hochladen mit curl
 
@@ -329,8 +306,11 @@ Windows 10 und 11 heißt es `curl.exe` und ist eingebaut
    dort nichts hochladen.
 {{ curl_schritte(2) }}
 
-Danach weiter mit Schritt 8 oben.
-{%- endif %}
+Danach weiter mit Schritt {% if w.datei_art == "rampe" %}8{% else %}8 ("Fertig"){% endif %} oben.
+  {%- if b.get("curl-ausgabe") %}
+
+![curl in der PowerShell: oben ein Fehlversuch mit "Failed to connect" und 0 Bytes, unten ein vollständiger Upload mit 50.00M bei 100 %]({{ b["curl-ausgabe"] }})
+  {%- endif %}
 
 {{ zusatz.text }}
 
