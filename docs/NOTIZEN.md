@@ -532,6 +532,10 @@ RAMpe treffen: mpc85xx-Loader, ag71xx-RX-Ring, MT7530-EEE, RTL8221B-MMD30
 (Liste und Begründung in `build.sh`, `HW_PRE_UPDATE`/`HW_POST_UPDATE`).
 Der Odm-Parser bleibt draußen: Die MAC der RAMpe überlebt `sysupgrade -n`
 nicht, und M30/M60 sind mit 20261114 ohne ihn am Gerät erprobt.
+Nach jedem Bau: `python3 -I scripts/mpc85xx-ladeadresse.py` über die
+mpc85xx-Images, alle müssen OK melden. Gegenprobe an 20261114: AP3825i
+FALSCH (Kopf 0x1500000, Loader 0x1600000), AP3710i, AP3715i und
+HiveAP-330 OK bei 0x1500000.
 
 ## Idee: EdgeRouter X/X-SFP in einem Schritt (15.10.2026, ungeprüft)
 
