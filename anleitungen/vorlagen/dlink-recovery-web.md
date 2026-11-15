@@ -19,6 +19,7 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     dauer_neustart       Zeit vom Upload-Start bis zum Neustart, z. B. "gut 2 Minuten"
     upload_pfad          Pfad für den Upload, z. B. "/upload.cgi" oder "/"
     datei_beispiel       Dateiname im curl-Befehl, z. B. gluon-rampe-20261015-…-recovery.bin
+                         (zeigt rampe_url auf eine Datei, gilt deren Name)
 
   bei datei_art = "rampe"
     rampe_datei          Dateimuster, z. B. gluon-rampe-<Datum>-…-recovery.bin
@@ -64,22 +65,28 @@ Browser, curl nur als Alternative). Die curl-Schritte stehen im Makro
 curl_schritte, gebraucht im Abschnitt "Notweg".
 -#}
 {%- macro curl_schritte(n) %}
+{#- Dateiname im curl-Befehl: der echte Name aus rampe_url, wenn sie auf eine
+    Datei zeigt (sonst stünde nach jedem RAMpe-Neubau das alte Datum drin),
+    sonst datei_beispiel. #}
+{%- set ru = werte.get("rampe_url") or "" -%}
+{%- set rd = ru.rsplit("/", 1)[-1] -%}
+{%- set db = rd if "." in rd else werte.datei_beispiel -%}
 {{ n }}. **Datei mit curl hochladen.** Öffne ein Terminal (unter Windows die
    **PowerShell**), wechsle in den Ordner mit der Datei und gib ein:
 
    Linux und macOS:
 
    ```sh
-   curl -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o /dev/null -F "firmware=@{{ werte.datei_beispiel }};type=application/octet-stream" http://{{ werte.recovery_ip }}{{ werte.upload_pfad }}
+   curl -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o /dev/null -F "firmware=@{{ db }};type=application/octet-stream" http://{{ werte.recovery_ip }}{{ werte.upload_pfad }}
    ```
 
    Windows (PowerShell):
 
    ```
-   curl.exe -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o antwort.bin -F "firmware=@{{ werte.datei_beispiel }};type=application/octet-stream" http://{{ werte.recovery_ip }}{{ werte.upload_pfad }}
+   curl.exe -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o antwort.bin -F "firmware=@{{ db }};type=application/octet-stream" http://{{ werte.recovery_ip }}{{ werte.upload_pfad }}
    ```
 
-   Den echten Dateinamen statt `{{ werte.datei_beispiel }}` einsetzen. Unter
+   Den echten Dateinamen statt `{{ db }}` einsetzen. Unter
    Windows `curl.exe` genau so ausschreiben; `antwort.bin` nimmt nur die
    Antwort des Routers auf und kann danach weg. Mehr unter
    [curl benutzen](grundlagen/curl.md).
