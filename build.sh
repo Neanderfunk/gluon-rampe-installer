@@ -11,13 +11,17 @@
 # Am einfachsten im Container, der alle Werkzeuge mitbringt:
 #     contrib/docker/run.sh ./build.sh mediatek-filogic d-link-aquila-pro-ai-m30-a1
 #
-# Umgebung (alles optional):
+# Umgebung:
 #   GLUON_REF   Gluon-Version, Default v2025.1.3
 #   GLUON_REPO  Default https://github.com/freifunk-gluon/gluon.git
 #   GLUON_DIR   Gluon-Baum, Default ./gluon (wird angelegt)
 #   JOBS        make -j, Default: Zahl der Kerne
-#   RAMPE_HW_PATCHES  Checkout von gluon-patches-hardware (Branch v2025.1.x),
-#               nur fuer Rezepte mit ensure_openwrt_backport (AP-32x, EAP620 HD)
+#   RAMPE_HW_PATCHES  Pflicht: Checkout von gluon-patches-hardware
+#               (https://github.com/Neanderfunk/gluon-patches-hardware,
+#               Branch v2025.1.x). Daraus kommen die Kernel-Fixes, die auch
+#               die Community-Firmware hat (HW_PRE_UPDATE/HW_POST_UPDATE
+#               unten), und die Backports der Rezepte mit
+#               ensure_openwrt_backport (AP-32x, EAP620 HD).
 #
 # Ablauf: Gluon holen, die Geraete-Rezepte (devices/) einspielen, "make
 # update", das Overlay (overlay/ -> openwrt/files) einspielen, bauen, die RAMpe-Images
@@ -73,6 +77,33 @@ RAMPE_SITEDIR="$ROOT/.site-build"
 rm -rf "$RAMPE_SITEDIR"
 cp -a "$ROOT/site" "$RAMPE_SITEDIR"
 
+# Kernel-Fixes aus gluon-patches-hardware, die die Community-Firmware ebenso
+# bekommt und die auch eine RAMpe trifft (Booten, Ethernet, Upload unter
+# RAM-Druck). Gilt fuer jeden Lauf, egal welches Target: Einige Patches liegen
+# in generic/ und aendern jeden Kernel. Nicht uebernommen: neue Geraete (die
+# Rezepte tragen sie selbst ein), WLAN- und TEST-Patches, Primaer-MAC und
+# Port-Rollen (die RAMpe flasht mit -n, danach rechnet das echte Gluon selbst),
+# das Entfernen des M30-recovery-Images (genau das braucht die RAMpe).
+HW_PRE_UPDATE=(
+	kernel/mpc85xx-simpleimage-loader/openwrt.sh # Loader an der Header-Adresse: WS-AP3825i-initramfs, WS-AP3715i, HiveAP-330, BR200-WP
+)
+HW_POST_UPDATE=(
+	kernel/ag71xx-rx-ring-no-bug.sh     # ath79: keine Kernel-Panik, wenn der RX-Ring unter RAM-Druck leerlaeuft
+	kernel/mt7530-phy-disable-eee.sh    # MT7621-Switch: EEE aus (sonst Link-Schleifen an 2-Paar-Kabeln, 100 Mbit/s instabil)
+	kernel/rtl8221b-skip-mmd30.sh       # RTL8221B: PHY beim Scan nicht lahmlegen (Kabel beim Booten gesteckt)
+)
+: "${RAMPE_HW_PATCHES:?RAMPE_HW_PATCHES setzen: Checkout von https://github.com/Neanderfunk/gluon-patches-hardware, Branch v2025.1.x}"
+hw_patches () {
+	local s
+	for s in "$@"; do
+		[ -x "$RAMPE_HW_PATCHES/$s" ] || { echo "$RAMPE_HW_PATCHES/$s fehlt oder ist nicht ausfuehrbar." >&2; exit 1; }
+		echo "  $s"
+		( cd "$GLUON_DIR" && "$RAMPE_HW_PATCHES/$s" ) || { echo "$s fehlgeschlagen." >&2; exit 1; }
+	done
+}
+echo "== Kernel-Fixes aus gluon-patches-hardware (vor make update)"
+hw_patches "${HW_PRE_UPDATE[@]}"
+
 echo "== Geraete-Rezepte (vor make update, wegen ensure_openwrt_backport)"
 export GLUON_DIR RAMPE_SITEDIR
 # shellcheck source=devices/lib.sh
@@ -90,6 +121,9 @@ cp -a "$ROOT/package/." "$GLUON_DIR/package/"
 
 echo "== make update"
 make -C "$GLUON_DIR" update GLUON_SITEDIR="$RAMPE_SITEDIR"
+
+echo "== Kernel-Fixes aus gluon-patches-hardware (nach make update)"
+hw_patches "${HW_POST_UPDATE[@]}"
 
 echo "== Overlay -> openwrt/files"
 # openwrt/files gehoert in diesem Baum allein der Gluon-RAMpe.

@@ -525,6 +525,13 @@ Vorlagen an, Supernode verdrahtet den Selector, adorfer deployt.
 Umleitung `/cgi-bin/luci` (im Overlay, QEMU-getestet), der mpc85xx-Loader
 (gluon-patches-hardware `188dff9` über `RAMPE_HW_PATCHES`, AP3825i-initramfs)
 und der Odm-Parser für M30/M60. Danach neu veröffentlichen.
+Stand 15.11.2026: Die Umleitung kam mit 20261114, der mpc85xx-Loader nicht
+(Fund Content). Seitdem wendet `build.sh` in jedem Lauf die Kernel-Fixes aus
+gluon-patches-hardware an, die auch die Community-Firmware hat und die eine
+RAMpe treffen: mpc85xx-Loader, ag71xx-RX-Ring, MT7530-EEE, RTL8221B-MMD30
+(Liste und Begründung in `build.sh`, `HW_PRE_UPDATE`/`HW_POST_UPDATE`).
+Der Odm-Parser bleibt draußen: Die MAC der RAMpe überlebt `sysupgrade -n`
+nicht, und M30/M60 sind mit 20261114 ohne ihn am Gerät erprobt.
 
 ## Idee: EdgeRouter X/X-SFP in einem Schritt (15.10.2026, ungeprüft)
 

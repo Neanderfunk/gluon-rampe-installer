@@ -8,7 +8,8 @@
 #
 # Umgebung:
 #   RAMPE_HW_PATCHES  Pflicht: Checkout von gluon-patches-hardware, Branch
-#                     v2025.1.x (Backports fuer AP-32x und EAP620 HD)
+#                     v2025.1.x (Kernel-Fixes fuer alle Laeufe, siehe build.sh,
+#                     und Backports fuer AP-32x und EAP620 HD)
 #   GLUON_RELEASE     Kennung im Dateinamen, Default: Datum beim Start.
 #                     Bleibt ueber alle Laeufe gleich, auch ueber Mitternacht.
 #   BUILD             Default "./build.sh"; im Container
