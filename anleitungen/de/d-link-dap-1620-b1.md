@@ -10,8 +10,8 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: cb45cf838
-vorlage_stand: e2b91daeb
+daten_stand: 5b0ede697
+vorlage_stand: 90388c1ca
 ---
 
 # D-Link DAP-1620 B1: Freifunk-Firmware installieren
@@ -74,9 +74,16 @@ wirklich über das Kabel spricht.
 7. **Warten.** Danach schreibt die Recovery die Datei in den Speicher, und
    der Router startet neu.
    **Strom nicht ziehen.** Die Erfolgsmeldung allein heißt noch nicht,
-   dass es geklappt hat. Das zeigt erst der nächste Schritt.
-   Klappt das Hochladen im Browser nicht, nimm den Notweg weiter unten
-   ("Notweg: Hochladen mit curl").
+   dass es geklappt hat.
+   Nicht geklappt hat es, wenn
+
+   - gar nichts passiert: Der Router bleibt in der Recovery, die LED blinkt
+     weiter wie in Schritt 4, oder
+   - der Router mit der normalen D-Link-Firmware startet.
+
+   Dann ist die Datei nicht angekommen. Das ist harmlos: noch einmal ab
+   Schritt 4 mit Chrome oder Chromium. Klappt es auch dann nicht, nimm den Notweg
+   weiter unten ("Notweg: Hochladen mit curl").
 
 8. **Fertig.** Nach dem Neustart startet die Freifunk-Firmware deiner
    Community: je nach Community zuerst mit einer Einrichtungsseite unter
@@ -93,10 +100,12 @@ wirklich über das Kabel spricht.
 
 ## Wenn etwas schiefgeht
 
-- **Der Browser-Upload war nach einer Sekunde "fertig", oder danach startet
-  wieder die normale D-Link-Firmware.** Dann ist die Datei nicht angekommen.
-  Noch einmal ab Schritt 4 mit Chrome oder Chromium, sonst den Notweg mit
-  curl (unten).
+- **Der Router bleibt in der Recovery (die LED blinkt weiter wie in
+  Schritt 4), oder er startet mit der normalen D-Link-Firmware.**
+  Dann ist die Datei nicht angekommen.
+  Noch einmal ab Schritt 4 mit Chrome oder Chromium, sonst den Notweg mit curl
+  (unten). Im Notweg ist die häufigste Ursache ein Tippfehler im
+  Dateinamen.
 - **Im Notweg: curl meldet "Failed to connect", HTTP 000 und 0 Bytes.** Die Recovery war
   nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
   Router noch einmal in die Recovery bringen (Schritt 4).
@@ -104,9 +113,6 @@ wirklich über das Kabel spricht.
   Zeit "Recv failure: Connection timed out".** Das ist normal: Der Router hat
   neu gestartet, ohne curl Bescheid zu geben. curl darf mit Strg+C beendet
   werden, sobald der Router neu startet.
-- **Nach dem Upload startet wieder die normale D-Link-Firmware.** Die Datei
-  ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
-  Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.
 - **Im Notweg: Aus der WSL unter Windows kommt keine Verbindung zustande.** Nimm curl.exe
   direkt in Windows, nicht in der WSL.
 

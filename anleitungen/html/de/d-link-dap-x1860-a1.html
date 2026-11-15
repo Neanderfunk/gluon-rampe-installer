@@ -15,8 +15,8 @@
 <meta name="anleitung:risiko" content="normal">
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-not-found, curl, feste-ip, router-antwortet-nicht">
-<meta name="anleitung:daten_stand" content="cb45cf838">
-<meta name="anleitung:vorlage_stand" content="e2b91daeb">
+<meta name="anleitung:daten_stand" content="5b0ede697">
+<meta name="anleitung:vorlage_stand" content="90388c1ca">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -80,9 +80,16 @@ Die Seite zeigt jetzt den Fortschritt in Prozent. Lass die Seite in Ruhe, bis di
 <p><strong>Warten.</strong> Danach schreibt die Recovery die Datei in den Speicher, und
 der Router startet neu.
 <strong>Strom nicht ziehen.</strong> Die Erfolgsmeldung allein heißt noch nicht,
-dass es geklappt hat. Das zeigt erst der nächste Schritt.
-Klappt das Hochladen im Browser nicht, nimm den Notweg weiter unten
-(&quot;Notweg: Hochladen mit curl&quot;).</p>
+dass es geklappt hat.
+Nicht geklappt hat es, wenn</p>
+<ul>
+<li>gar nichts passiert: Der Router bleibt in der Recovery, die LED blinkt
+weiter wie in Schritt 4, oder</li>
+<li>der Router mit der normalen D-Link-Firmware startet.</li>
+</ul>
+<p>Dann ist die Datei nicht angekommen. Das ist harmlos: noch einmal ab
+Schritt 4 mit Chrome oder Chromium. Klappt es auch dann nicht, nimm den Notweg
+weiter unten (&quot;Notweg: Hochladen mit curl&quot;).</p>
 </li>
 <li>
 <p><strong>Fertig.</strong> Nach dem Neustart startet die Freifunk-Firmware deiner
@@ -101,10 +108,12 @@ deine Community.</p>
 </ul>
 <h2>Wenn etwas schiefgeht</h2>
 <ul>
-<li><strong>Der Browser-Upload war nach einer Sekunde &quot;fertig&quot;, oder danach startet
-wieder die normale D-Link-Firmware.</strong> Dann ist die Datei nicht angekommen.
-Noch einmal ab Schritt 4 mit Chrome oder Chromium, sonst den Notweg mit
-curl (unten).</li>
+<li><strong>Der Router bleibt in der Recovery (die LED blinkt weiter wie in
+Schritt 4), oder er startet mit der normalen D-Link-Firmware.</strong>
+Dann ist die Datei nicht angekommen.
+Noch einmal ab Schritt 4 mit Chrome oder Chromium, sonst den Notweg mit curl
+(unten). Im Notweg ist die häufigste Ursache ein Tippfehler im
+Dateinamen.</li>
 <li><strong>Im Notweg: curl meldet &quot;Failed to connect&quot;, HTTP 000 und 0 Bytes.</strong> Die Recovery war
 nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
 Router noch einmal in die Recovery bringen (Schritt 4).</li>
@@ -112,9 +121,6 @@ Router noch einmal in die Recovery bringen (Schritt 4).</li>
 Zeit &quot;Recv failure: Connection timed out&quot;.</strong> Das ist normal: Der Router hat
 neu gestartet, ohne curl Bescheid zu geben. curl darf mit Strg+C beendet
 werden, sobald der Router neu startet.</li>
-<li><strong>Nach dem Upload startet wieder die normale D-Link-Firmware.</strong> Die Datei
-ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
-Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.</li>
 <li><strong>Im Notweg: Aus der WSL unter Windows kommt keine Verbindung zustande.</strong> Nimm curl.exe
 direkt in Windows, nicht in der WSL.</li>
 </ul>

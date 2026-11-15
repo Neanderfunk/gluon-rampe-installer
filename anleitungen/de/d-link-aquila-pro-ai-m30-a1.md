@@ -13,8 +13,8 @@ erprobt_am: 2026-11-15
 erprobt_mit: gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m30-a1-recovery.bin
 grundlagen: [browser-https, browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: cb45cf838
-vorlage_stand: e2b91daeb
+daten_stand: 5b0ede697
+vorlage_stand: 90388c1ca
 ---
 
 # D-Link AQUILA PRO AI M30 A1: Freifunk-Firmware installieren
@@ -61,31 +61,39 @@ wirklich über das Kabel spricht.
 
 4. **Router in die Recovery bringen.** Drück mit der Büroklammer die
    Reset-Taste und halte sie gedrückt. Steck jetzt den Strom ein und halte
-   die Taste weiter, bis die LED **rot blinkt**. Dann loslassen.
+   die Taste weiter, bis die LED **rot blinkt, etwa zweimal pro Sekunde**. Dann loslassen.
+   Ein orangefarbenes Auf- und Abdimmen ist nicht die Recovery. Dann Strom ab und noch einmal.
 
 5. **Recovery-Seite öffnen.**
    Öffne in Chrome oder Chromium `http://192.168.200.1`. Es erscheint die Recovery-Seite von D-Link.
    Ein `ping` hilft hier nicht, die Recovery antwortet nicht darauf.
 
-   ![Die Recovery-Seite im Browser: Überschrift, Feld für die Datei, Knopf zum Hochladen](../bilder/d-link-aquila-pro-ai-m30-a1/recovery-seite.png)
+   ![Die Recovery-Seite im Browser: Überschrift, Feld für die Datei, Knopf "Upgrade"](../bilder/d-link-aquila-pro-ai-m30-a1/recovery-seite.png)
 
 6. **Datei im Browser hochladen.** Klick auf "Datei auswählen", wähl die RAMpe-Datei `gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin` und klick "Upgrade".
 
-   ![Die Recovery-Seite mit gewählter Datei, daneben der Knopf zum Hochladen](../bilder/d-link-aquila-pro-ai-m30-a1/recovery-datei-gewaehlt.png)
+   ![Die Recovery-Seite mit gewählter Datei, daneben der Knopf "Upgrade"](../bilder/d-link-aquila-pro-ai-m30-a1/recovery-datei-gewaehlt.png)
    
    Die Seite zeigt jetzt "Device is upgrading the firmware" mit einer Prozentzahl. Das Hochladen geht langsam. Lass die Seite in Ruhe, bis "Upgrade successfully!" erscheint.
 
    ![Die Recovery-Seite während des Hochladens, mit Prozentanzeige](../bilder/d-link-aquila-pro-ai-m30-a1/recovery-upload.png)
 
 7. **Warten.** Danach schreibt die Recovery die Datei in den Speicher; dabei leuchtet die LED ruhig rot, etwas schwächer, und
-   der Router startet neu (beim Neustart blinkt die LED schnell weiß).
+   der Router startet neu (beim Neustart flackert die LED schnell weiß).
    **Strom nicht ziehen.** Die Erfolgsmeldung allein heißt noch nicht,
-   dass es geklappt hat. Das zeigt erst der nächste Schritt.
+   dass es geklappt hat.
 
    ![Die Recovery-Seite nach dem Hochladen, mit Erfolgsmeldung](../bilder/d-link-aquila-pro-ai-m30-a1/recovery-fertig.png)
    
-   Klappt das Hochladen im Browser nicht, nimm den Notweg weiter unten
-   ("Notweg: Hochladen mit curl").
+   Nicht geklappt hat es, wenn
+
+   - gar nichts passiert: Der Router bleibt in der Recovery, die LED blinkt
+     weiter wie in Schritt 4, oder
+   - der Router mit der normalen D-Link-Firmware startet (die LED dimmt langsam orange auf und ab).
+
+   Dann ist die Datei nicht angekommen. Das ist harmlos: noch einmal ab
+   Schritt 4 mit Chrome oder Chromium. Klappt es auch dann nicht, nimm den Notweg
+   weiter unten ("Notweg: Hochladen mit curl").
 
 8. **Die RAMpe.** Nach dem Neustart blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde. Stell den Rechner
    wieder auf "automatisch" (DHCP) und öffne
@@ -130,10 +138,12 @@ wirklich über das Kabel spricht.
 
 ## Wenn etwas schiefgeht
 
-- **Der Browser-Upload war nach einer Sekunde "fertig", oder danach startet
-  wieder die normale D-Link-Firmware.** Dann ist die Datei nicht angekommen. Mit Firefox passiert das immer.
-  Noch einmal ab Schritt 4 mit Chrome oder Chromium, sonst den Notweg mit
-  curl (unten).
+- **Der Router bleibt in der Recovery (die LED blinkt weiter wie in
+  Schritt 4), oder er startet mit der normalen D-Link-Firmware (die LED dimmt langsam orange auf und ab).**
+  Dann ist die Datei nicht angekommen. Mit Firefox passiert das immer.
+  Noch einmal ab Schritt 4 mit Chrome oder Chromium, sonst den Notweg mit curl
+  (unten). Im Notweg ist die häufigste Ursache ein Tippfehler im
+  Dateinamen.
 - **Im Notweg: curl meldet "Failed to connect", HTTP 000 und 0 Bytes.** Die Recovery war
   nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
   Router noch einmal in die Recovery bringen (Schritt 4).
@@ -141,9 +151,6 @@ wirklich über das Kabel spricht.
   Zeit "Recv failure: Connection timed out".** Das ist normal: Der Router hat
   neu gestartet, ohne curl Bescheid zu geben. curl darf mit Strg+C beendet
   werden, sobald der Router neu startet.
-- **Nach dem Upload startet wieder die normale D-Link-Firmware.** Die Datei
-  ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
-  Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.
 - **Im Notweg: Aus der WSL unter Windows kommt keine Verbindung zustande.** Nimm curl.exe
   direkt in Windows, nicht in der WSL.
 
@@ -184,7 +191,7 @@ Windows 10 und 11 heißt es `curl.exe` und ist eingebaut
    **Strom nicht ziehen.**
    Oft kommt curl danach nicht von selbst zurück, obwohl alles geklappt hat.
    Dann beende es mit **Strg+C** (am Mac ctrl+C), aber erst, wenn der Router
-   neu startet (beim Neustart blinkt die LED schnell weiß).
+   neu startet (beim Neustart flackert die LED schnell weiß).
    Wartest du stattdessen, kommt curl nach einiger Zeit (bei uns gut 10
    Minuten) von selbst zurück, meist mit "Recv failure: Connection timed
    out". Das ist in Ordnung. Entscheidend ist die letzte Zeile, sie
@@ -208,6 +215,6 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Neanderfunk-Notiz, am M60 erprobt (Schritte (Normalweg), Programm)
 - geprüft: Screenshots und Aussage adorfer 15.11.2026 (Programm)
 - geprüft: Test adorfer 15.11.2026 am M30 (Programm)
-- geprüft: adorfer 15.11.2026 (Programm)
+- geprüft: adorfer 15.11.2026 (Sichtbare Zeichen, Programm)
 - geprüft: gluon-rampe-installer docs/NOTIZEN.md (Gluon-RAMpe passt)
 - Geräteeintrag: OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f
