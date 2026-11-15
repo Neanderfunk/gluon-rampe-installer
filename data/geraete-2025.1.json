@@ -15112,7 +15112,7 @@
    "notweg": "",
    "rueckweg": "Backups von boot und tp_data nötig; Reset beim Einschalten startet die U-Boot-Web-Recovery auf http://192.168.1.1 für die OEM-Firmware [geprüft: Commit, Wiki toh:mercusys:mr90x_v1]",
    "hw_test": "Testgerät bei Neanderfunk vorhanden (Stand 09/2026); die Erstinstallation nach dieser Tabelle ist damit noch nicht nachvollzogen",
-   "rampe": "teilweise: das RAMpe-initramfs könnte das OpenWrt-initramfs im kernel-Volume ersetzen; Exploit und fw_setenv bleiben Handarbeit [abgeleitet]. Hinweis: eine ältere Neanderfunk-Notiz beschreibt \"tp_boot_idx 0, dann U-Boot-Web-Recovery nimmt initramfs\" - weder im Commit noch im Wiki-Abschnitt \"Stock bootloader\" so belegt",
+   "rampe": "teilweise: das RAMpe-initramfs ersetzt das OpenWrt-initramfs im kernel-Volume, der Exploit (SSH/Telnet, busybox, ubiupdatevol) bleibt Handarbeit; die fw_setenv-Werte aus Commit e4fe3097 (Schritt 4/13) setzt ab der Ausgabe nach 20261114 das Vorbereitungsskript der RAMpe vor dem Flashen (overlay/lib/gluon-rampe/prepare/mercusys_mr90x-v1.sh, gegengelesen, sonst kein Flashen) [geprüft: Code, fw_setenv im Image 20261114; am Gerät ungetestet]. Hinweis: eine ältere Neanderfunk-Notiz beschreibt \"tp_boot_idx 0, dann U-Boot-Web-Recovery nimmt initramfs\" - weder im Commit noch im Wiki-Abschnitt \"Stock bootloader\" so belegt",
    "rampe_rezept": "devices/mercusys-mr90x-v1.sh (gebaut 10.10.2026 lokal, initramfs etwa 8.1 MB, `91_installer_initramfs` geprüft, Hardware-Test offen): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell",
    "quelle": "OpenWrt e4fe3097ef6a961874b66932a0ac4be18070630a",
    "anleitung": "anleitungen/de/mercusys-mr90x-v1.md",

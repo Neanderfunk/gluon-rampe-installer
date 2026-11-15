@@ -7,6 +7,9 @@
 # das initramfs; hier die Gluon-RAMpe statt des OpenWrt-initramfs, die das
 # Community-sysupgrade per Upload einspielt (sonst scp + sysupgrade -n).
 # Gebraucht wird der rohe initramfs-Kernel (out/images/gluon-rampe-<Datum>-<geraet>-initramfs-kernel.bin).
+# Vorbereitungsskript overlay/lib/gluon-rampe/prepare/mercusys_mr90x-v1.sh (ab der
+# Ausgabe nach 20261114): setzt vor dem sysupgrade die 13 fw_setenv-Werte
+# aus dem Commit (ein Schreibvorgang, gegengelesen), sonst kein Flashen.
 # Ungetestet. Nicht verwechseln mit dem OpenWrt-Profil mercusys_mr90x-v1-ubi
 # (OpenWrt-U-Boot-Layout), das Gluon nicht baut.
 ensure_target_config mediatek-filogic TARGET_ROOTFS_INITRAMFS
