@@ -45,16 +45,20 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     per_wlan             optional true: nur per WLAN erreichbar (Ethernet ist WAN)
     usb                  optional true: das Gerät steckt im USB-Port des Rechners
 
-  RAMpe als zweiter Weg (siehe _rampe.md, alles optional)
+  RAMpe (optional). Mit zwischen_datei UND rampe_url ersetzt die RAMpe die
+  OpenWrt-Zwischenstufe, OpenWrt steht nur noch unter "Anderer Weg"
+  (adorfer 15.11.2026: "bitte alles auf RAMpe umstellen").
     rampe_url            Direktlink auf die RAMpe-Datei für dieses Gerät
     rampe_datei          Dateiname dazu
-    rampe_weg            ganzer Satz, wie die RAMpe statt OpenWrt aufs Gerät kommt
+    rampe_weg            ungenutzt, nur noch für _rampe.md
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
 {%- set ud = w.uboot_datei if w.uboot_datei else "sysupgrade" -%}
 {%- set gl = w.weg in ("gl-ui", "gl-luci") -%}
 {%- set du = w.get("dauer_uboot") or "etwa 3 Minuten" -%}
+{%- set rz = w.zwischen_datei and w.get("rampe_url") -%}
+{%- import "_rampe_schritte.md" as rs with context -%}
 
 # {{ modell }}: Freifunk-Firmware installieren
 
@@ -84,7 +88,15 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
 {%- elif w.per_wlan %}
 - einen Rechner oder Laptop mit WLAN
 {%- endif %}
-{%- if w.zwischen_datei %}
+{%- if rz %}
+- die RAMpe für den {{ modell }}:
+  [{{ w.get("rampe_datei") or "RAMpe-Datei" }}]({{ w.rampe_url }}). Die
+  Freifunk-Firmware gibt es nicht in der Form, die der Notfall-Modus annimmt;
+  deshalb kommt erst die **Gluon-RAMpe** drauf, eine kleine Firmware, die nur
+  eins kann: die Freifunk-Firmware deiner Community annehmen.
+- die Freifunk-Firmware deiner Community für den {{ modell }}, und zwar das
+  **sysupgrade**-Image
+{%- elif w.zwischen_datei %}
 - OpenWrt für den {{ modell }}:
   [{{ w.zwischen_datei }}]({{ w.zwischen_url }}). Die Freifunk-Firmware
   gibt es nicht in der Form, die der Notfall-Modus annimmt; deshalb kommt
@@ -187,9 +199,10 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
 {%- else %}
 
 1. **Datei bereitlegen.** Lade
-   {%- if w.zwischen_datei %} OpenWrt und das Freifunk-sysupgrade-Image
+   {%- if rz %} die RAMpe und das Freifunk-sysupgrade-Image
+   {%- elif w.zwischen_datei %} OpenWrt und das Freifunk-sysupgrade-Image
    {%- else %} das {{ ud }}-Image{% endif %} herunter.
-   {%- if w.dateiname %} Benenne {% if w.zwischen_datei %}OpenWrt{% else %}es{% endif %} in `{{ w.dateiname }}` um, genau so.{% endif %}
+   {%- if w.dateiname %} Benenne {% if rz %}die RAMpe{% elif w.zwischen_datei %}OpenWrt{% else %}es{% endif %} in `{{ w.dateiname }}` um, genau so.{% endif %}
 
 2. **Feste Adresse am Rechner.** Stell deinen Rechner auf `192.168.1.2`,
    Netzmaske `255.255.255.0`
@@ -205,7 +218,8 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
 
 5. **Hochladen.** Öffne im Browser `http://192.168.1.1`. Es erscheint die
    schlichte Notfall-Seite. Wähl
-   {%- if w.zwischen_datei %} die OpenWrt-Datei
+   {%- if rz %} die RAMpe-Datei
+   {%- elif w.zwischen_datei %} die OpenWrt-Datei
    {%- else %} das {{ ud }}-Image{% endif %}
    {%- if w.uboot_abschnitt %} {{ w.uboot_abschnitt }}{% endif %} aus und
    starte das Hochladen ("Update firmware"). Die Seite zeigt dann
@@ -217,7 +231,20 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
 6. **Warten.** Der Router schreibt die Firmware, das dauert
    {{ du }}.{% if w.led_schreiben %} {{ w.led_schreiben }}{% endif %}
    **Strom nicht ziehen.**
-{%- if w.zwischen_datei %}
+{%- if rz %}
+
+7. **Rechner umstellen.** Nach dem Neustart läuft die RAMpe. Stell den
+   Rechner wieder auf "automatisch".
+
+{{ rs.seite(8) }}
+
+10. **Fertig.** Nach einigen Minuten startet die Freifunk-Firmware deiner
+    Community: je nach Community zuerst mit einer Einrichtungsseite unter
+    `http://192.168.1.1` oder gleich im Betrieb.
+    Antwortet dort nichts, siehe [Die Router-Seite antwortet
+    nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+    [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
+{%- elif w.zwischen_datei %}
 
 7. **Freifunk-Firmware über OpenWrt.** Nach dem Neustart läuft OpenWrt.
    Öffne `http://192.168.1.1`, melde dich an (Passwort-Feld leer), geh zu
@@ -292,7 +319,20 @@ mehr, hilft der eingebaute Notfall-Modus:
 4. {{ du[0]|upper }}{{ du[1:] }} warten, Strom nicht ziehen.
 {%- endif %}
 
+{%- if rz %}
+
+## Anderer Weg: über OpenWrt
+
+Statt der RAMpe nimmt der Notfall-Modus in Schritt 5 auch OpenWrt:
+[{{ w.zwischen_datei }}]({{ w.zwischen_url }})
+{%- if w.dateiname %} (ebenfalls in `{{ w.dateiname }}` umbenennen){% endif %}.
+Nach dem Neustart läuft OpenWrt. Öffne `http://192.168.1.1`, melde dich an
+(Passwort-Feld leer), geh zu **System → Backup / Flash Firmware**, "Flash
+image…", wähl das Freifunk-sysupgrade-Image, **entfern den Haken bei "Keep
+settings"** und klick **Continue**.
+{%- else %}
 {% include "_rampe.md" %}
+{%- endif %}
 
 {{ zusatz.text }}
 

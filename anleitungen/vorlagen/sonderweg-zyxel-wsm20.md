@@ -14,20 +14,26 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
     openwrt_datei        Dateiname des OpenWrt-initramfs-kernel für den WSM20
     openwrt_url          Download-Adresse dazu
 
-  RAMpe als zweiter Weg (siehe _rampe.md, alles optional)
-    rampe_url            Direktlink auf die RAMpe
+  RAMpe (optional; gesetzt = die RAMpe ist der Weg, OpenWrt nur noch
+  "Anderer Weg"; adorfer 15.11.2026: "bitte alles auf RAMpe umstellen")
+    rampe_url            Direktlink auf die RAMpe (initramfs)
     rampe_datei          Dateiname dazu
-    rampe_weg            ganzer Satz, wie die RAMpe statt OpenWrt aufs Gerät kommt
+    rampe_weg            ungenutzt, nur noch für _rampe.md
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
+{%- set rampe = w.get("rampe_url") -%}
+{%- import "_rampe_schritte.md" as rs with context -%}
 # {{ modell }}: Freifunk-Firmware installieren
 
 {% include "_status.md" %}
 
 Die Firmware von Zyxel hat eine versteckte Seite, über die sich eine andere
-Firmware hochladen lässt. Darüber kommt zuerst OpenWrt in den
-Arbeitsspeicher, und von dort aus spielst du die Freifunk-Firmware ein. Du
+Firmware hochladen lässt. Darüber kommt zuerst
+{%- if rampe %} die **Gluon-RAMpe** in den Arbeitsspeicher: eine kleine
+Firmware, die nur eins kann, die Freifunk-Firmware deiner Community
+annehmen.{% else %} OpenWrt in den
+Arbeitsspeicher, und von dort aus spielst du die Freifunk-Firmware ein.{% endif %} Du
 brauchst nur einen Browser, aber etwas Geduld: Die versteckte Seite ist
 manchmal zickig.
 
@@ -37,8 +43,13 @@ Ein Konto in der Zyxel-Cloud brauchst du dafür nicht.
 
 - den Multy M1 mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
   Netzwerkkabel
+{%- if rampe %}
+- die RAMpe für den WSM20 (nur für den Arbeitsspeicher):
+  [{{ w.get("rampe_datei") or "RAMpe-Datei" }}]({{ w.rampe_url }})
+{%- else %}
 - OpenWrt für den WSM20 (nur für den Arbeitsspeicher):
   [{{ w.openwrt_datei }}]({{ w.openwrt_url }})
+{%- endif %}
 - die Freifunk-Firmware deiner Community für dieses Gerät, und zwar das
   **sysupgrade**-Image
 {%- if zusatz.vorher is defined and zusatz.vorher %}
@@ -50,7 +61,7 @@ Ein Konto in der Zyxel-Cloud brauchst du dafür nicht.
 
 ## Schritte
 
-### Teil 1: OpenWrt in den Arbeitsspeicher
+### Teil 1: {% if rampe %}Die RAMpe{% else %}OpenWrt{% endif %} in den Arbeitsspeicher
 
 1. **Verbinden.** Steck das Kabel vom Rechner in die Buchse **LAN1** des
    WSM20. Kein Internet-Anschluss, nur der Rechner. Der Rechner holt sich
@@ -78,6 +89,17 @@ Ein Konto in der Zyxel-Cloud brauchst du dafür nicht.
    springen oder die Adresse in einem neuen Tab öffnen, bis die Upgrade-Seite
    kommt.
 
+{% if rampe -%}
+4. **RAMpe hochladen.** Die RAMpe-Datei wählen und mit "OK" bestätigen.
+   Die Seite zeigt erst den Fortschritt in Prozent und zählt dann 150
+   Sekunden herunter. Danach startet die RAMpe im Arbeitsspeicher.
+
+### Teil 2: Freifunk-Firmware
+
+{{ rs.seite(5, ram=2) }}
+
+7. **Warten,** etwa 2 Minuten, Strom nicht ziehen.
+{%- else %}
 4. **OpenWrt hochladen.** Die OpenWrt-Datei wählen und mit "OK" bestätigen.
    Die Seite zeigt erst den Fortschritt in Prozent und zählt dann 150
    Sekunden herunter. Leuchtet die LED danach **dauerhaft weiß**, läuft
@@ -96,6 +118,7 @@ Ein Konto in der Zyxel-Cloud brauchst du dafür nicht.
 
 7. **Warten,** etwa 2 Minuten, Strom nicht ziehen. Die LED leuchtet
    zwischendurch türkis und blinkt beim Schreiben weiß.
+{%- endif %}
 
 8. **Fertig.** Danach startet die Freifunk-Firmware deiner Community: je nach
    Community zuerst mit einer Einrichtungsseite unter `http://192.168.1.1`
@@ -106,8 +129,13 @@ Ein Konto in der Zyxel-Cloud brauchst du dafür nicht.
 
 ## Woran du erkennst, dass es geklappt hat
 
+{% if rampe -%}
+- Nach Teil 1 zeigt `http://192.168.1.1` die RAMpe-Seite "Firmware
+  aktualisieren".
+{%- else %}
 - Nach Teil 1 leuchtet die LED dauerhaft weiß, und unter
   `http://192.168.1.1` meldet sich OpenWrt.
+{%- endif %}
 - Nach Teil 2 meldet sich die Freifunk-Firmware.
 
 ## Wenn etwas schiefgeht
@@ -119,7 +147,20 @@ Ein Konto in der Zyxel-Cloud brauchst du dafür nicht.
 - **Die LED leuchtet dauerhaft rot.** Werkseinstellungen wie in Schritt 2.
 {{ zusatz.fehler }}
 
+{%- if rampe %}
+
+## Anderer Weg: über OpenWrt
+
+Statt der RAMpe nimmt die versteckte Seite in Schritt 4 auch OpenWrt für den
+Arbeitsspeicher:
+[{{ w.openwrt_datei }}]({{ w.openwrt_url }}). Danach unter
+`http://192.168.1.1` bei "Login" klicken (ein Passwort gibt es noch nicht),
+**System → Backup / Flash Firmware**, ganz unten "Flash image…", das
+sysupgrade-Image wählen, "Upload", den Haken bei **"Keep settings and retain
+the current configuration" entfernen** und **"Continue"**.
+{%- else %}
 {% include "_rampe.md" %}
+{%- endif %}
 
 {{ zusatz.text }}
 

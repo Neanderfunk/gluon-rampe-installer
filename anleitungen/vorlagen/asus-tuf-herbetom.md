@@ -26,9 +26,22 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
   optional
     factory_hinweis      ganzer Satz zur Herkunft der Datei
     sicherheit, sicherheit_hinweis   siehe _status.md
+    rampe_url, rampe_datei
+                         RAMpe (…-asus-tuf-ax4200/ax6000-initramfs-kernel.bin),
+                         gleiches FIT-Format wie herbetom (Buildsystem
+                         15.11.2026, beide Images zerlegt). Gesetzt: Sie wird
+                         statt des herbetom-Image geschrieben, die
+                         Freifunk-Firmware kommt über die RAMpe-Seite; herbetom
+                         steht unter "Anderer Weg" (adorfer 15.11.2026:
+                         "bitte alles auf RAMpe umstellen")
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
+{%- set rampe = w.get("rampe_url") -%}
+{%- set dn = "rampe.bin" if rampe else "openwrt.bin" -%}
+{%- set wr = "rampe-webroot" if rampe else "openwrt-webroot" -%}
+{%- set zw = "die RAMpe" if rampe else "OpenWrt" -%}
+{%- import "_rampe_schritte.md" as rs with context -%}
 
 # {{ modell }}: Freifunk-Firmware installieren
 
@@ -38,6 +51,19 @@ Die ASUS-Firmware nimmt keine fremde Firmware über ihre Weboberfläche an.
 Der Weg führt über SSH, also die Anmeldung im Terminal, und hat drei
 Etappen:
 
+{% if rampe -%}
+1. **Die RAMpe in den Speicher schreiben.** Du meldest dich per SSH an der
+   ASUS-Firmware an. Der Router holt sich die **Gluon-RAMpe** von deinem
+   Rechner und schreibt sie anstelle der ASUS-Firmware in den Speicher. Die
+   RAMpe ist eine kleine Firmware, die nur eins kann: die Freifunk-Firmware
+   deiner Community annehmen.
+2. **Die RAMpe starten.** Nach einem Neustart läuft sie.
+3. **Die Freifunk-Firmware aufspielen.** Auf der Seite der RAMpe lädst du
+   sie im Browser hoch.
+
+Du brauchst dafür SSH ([SSH und scp benutzen](grundlagen/ssh-scp.md))
+und Python 3 auf deinem Rechner.
+{%- else -%}
 1. **Ein kleines OpenWrt in den Speicher schreiben.** Du meldest dich per
    SSH an der ASUS-Firmware an. Der Router holt sich eine OpenWrt-Datei von
    deinem Rechner und schreibt sie anstelle der ASUS-Firmware in den
@@ -47,22 +73,30 @@ Etappen:
    die Freifunk-Firmware deiner Community.
 
 Du brauchst dafür SSH und scp ([SSH und scp benutzen](grundlagen/ssh-scp.md))
-und Python 3 auf deinem Rechner. Rechne mit einer Dreiviertelstunde.
+und Python 3 auf deinem Rechner.
+{%- endif %} Rechne mit einer Dreiviertelstunde.
 
 ## Was du brauchst
 
 - den Router mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
   Netzwerkkabel
-- `ssh` und `scp` ([SSH und scp benutzen](grundlagen/ssh-scp.md))
+- `ssh`{% if not rampe %} und `scp`{% endif %} ([SSH und scp benutzen](grundlagen/ssh-scp.md))
 - **Python 3**. Unter Linux und macOS ist es meist schon da, unter Windows
   bekommst du es bei <https://www.python.org/downloads/>.
 - diese zwei Dateien:
+{%- if rampe %}
+  1. die RAMpe für den {{ modell }}:
+     [{{ w.get("rampe_datei") or "RAMpe-Datei" }}]({{ w.rampe_url }}).
+  2. die Freifunk-Firmware deiner Community für den {{ modell }}, und zwar
+     das **sysupgrade**-Image.
+{%- else %}
   1. das OpenWrt-"factory-initramfs" für den {{ modell }}:
      [{{ w.factory_datei }}]({{ w.factory_url }}).
      {%- if w.get("factory_hinweis") %} {{ w.get("factory_hinweis") }}{% endif %}
   2. die Freifunk-Firmware deiner Community für den {{ modell }}, und zwar
      das **sysupgrade**-Image. Benenn es in `gluon.bin` um, dann passen die
      Befehle unten ohne Änderung.
+{%- endif %}
 {%- if zusatz.vorher is defined and zusatz.vorher %}
 
 ## Vorher prüfen
@@ -72,15 +106,15 @@ und Python 3 auf deinem Rechner. Rechne mit einer Dreiviertelstunde.
 
 ## Schritte
 
-### OpenWrt in den Speicher schreiben
+### {% if rampe %}Die RAMpe{% else %}OpenWrt{% endif %} in den Speicher schreiben
 
-1. **Webserver auf dem Rechner starten.** Leg einen Ordner `openwrt-webroot`
-   an, kopier die OpenWrt-Datei hinein und benenn sie dort in `openwrt.bin`
-   um. Öffne ein Terminal in dem Ordner, **in dem** `openwrt-webroot` liegt,
+1. **Webserver auf dem Rechner starten.** Leg einen Ordner `{{ wr }}`
+   an, kopier die {% if rampe %}RAMpe-Datei{% else %}OpenWrt-Datei{% endif %} hinein und benenn sie dort in `{{ dn }}`
+   um. Öffne ein Terminal in dem Ordner, **in dem** `{{ wr }}` liegt,
    und starte:
 
    ```
-   python3 -m http.server -d openwrt-webroot 8080
+   python3 -m http.server -d {{ wr }} 8080
    ```
 
    Unter Windows heißt der Befehl `py` statt `python3`. Erlaube der
@@ -121,41 +155,53 @@ und Python 3 auf deinem Rechner. Rechne mit einer Dreiviertelstunde.
    echo "192.168.50.123 openwrtimage.lan" >> /etc/hosts
    ```
 
-6. **OpenWrt holen.** Auf dem Router:
+6. **{% if rampe %}Die RAMpe{% else %}OpenWrt{% endif %} holen.** Auf dem Router:
 
    ```
-   wget -O /tmp/openwrt.bin http://openwrtimage.lan:8080/openwrt.bin
+   wget -O /tmp/{{ dn }} http://openwrtimage.lan:8080/{{ dn }}
    ```
 
    **Prüfen:** `wget` meldet keinen Fehler, und im Terminal mit dem
-   Webserver erscheint eine Zeile mit `GET /openwrt.bin` und `200`. Sonst
+   Webserver erscheint eine Zeile mit `GET /{{ dn }}` und `200`. Sonst
    hier aufhören und Schritt 1 und 5 prüfen.
 
 7. **Schreiben.** Jetzt wird die ASUS-Firmware überschrieben.
 
    > **Ab dem ersten Befehl, bis `mtd-write` fertig ist, auf keinen Fall den
    > Strom ziehen.** In dieser Zeit ist die ASUS-Firmware schon gelöscht und
-   > OpenWrt noch nicht vollständig geschrieben. Dann hilft nur noch die
+   > {% if rampe %}die RAMpe{% else %}OpenWrt{% endif %} noch nicht vollständig geschrieben. Dann hilft nur noch die
    > serielle Konsole.
 
    Gib die beiden Befehle nacheinander ein, genau so:
 
    ```
    mtd-erase -d linux
-   mtd-write -i /tmp/openwrt.bin -d linux
+   mtd-write -i /tmp/{{ dn }} -d linux
    ```
 
    Beide Befehle zeigen keinen Fortschritt. Warte, bis die Eingabe wieder
    erscheint.
 
-### OpenWrt starten
+### {% if rampe %}Die RAMpe{% else %}OpenWrt{% endif %} starten
 
 8. **Neu starten.** Zieh den Stecker des Netzteils, warte ein paar Sekunden
-   und steck ihn wieder ein. Nach etwa einer Minute läuft OpenWrt unter
+   und steck ihn wieder ein. Nach etwa einer Minute läuft {{ zw }} unter
    `192.168.1.1`. Damit dein Rechner eine passende Adresse bekommt, zieh das
    Netzwerkkabel am Rechner kurz ab und steck es wieder ein.
 
 ### Freifunk-Firmware aufspielen
+{%- if rampe %}
+
+{{ rs.seite(9) }}
+
+11. **Fertig.** Einige Minuten warten, Strom nicht ziehen. Danach startet
+    die Freifunk-Firmware deiner Community: je nach Community zuerst mit
+    einer Einrichtungsseite unter `http://192.168.1.1` oder gleich im
+    Betrieb.
+    Antwortet dort nichts, siehe [Die Router-Seite antwortet
+    nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+    [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Den Webserver aus Schritt 1 kannst du mit Strg+C beenden.
+{%- else %}
 
 9. **Freifunk-Firmware kopieren und installieren.** Im Terminal auf deinem
    Rechner, im Ordner mit `gluon.bin`:
@@ -176,13 +222,20 @@ und Python 3 auf deinem Rechner. Rechne mit einer Dreiviertelstunde.
     Antwortet dort nichts, siehe [Die Router-Seite antwortet
     nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
     [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md). Den Webserver aus Schritt 1 kannst du mit Strg+C beenden.
+{%- endif %}
 
 ## Woran du erkennst, dass es geklappt hat
 
 - In Schritt 5 steht eine Adresse vor `openwrtimage.lan`.
-- In Schritt 6 zeigt der Webserver `GET /openwrt.bin` mit `200`.
+- In Schritt 6 zeigt der Webserver `GET /{{ dn }}` mit `200`.
+{%- if rampe %}
+- Nach Schritt 8 zeigt `http://192.168.1.1` die RAMpe-Seite "Firmware
+  aktualisieren".
+- Nach Schritt 11 meldet sich die Freifunk-Firmware.
+{%- else %}
 - Nach Schritt 8 antwortet OpenWrt unter `192.168.1.1`.
 - Nach Schritt 10 meldet sich die Freifunk-Firmware.
+{%- endif %}
 
 ## Wenn etwas schiefgeht
 
@@ -191,8 +244,8 @@ und Python 3 auf deinem Rechner. Rechne mit einer Dreiviertelstunde.
   Assistenten selbst vergeben.
 - **`wget` meldet einen Fehler.** Läuft der Webserver noch? Lässt die
   Firewall deines Rechners Port 8080 durch? Stimmt die Adresse in
-  `/etc/hosts` (Schritt 5)? Liegt `openwrt.bin` wirklich im Ordner
-  `openwrt-webroot`?
+  `/etc/hosts` (Schritt 5)? Liegt `{{ dn }}` wirklich im Ordner
+  `{{ wr }}`?
 - **Nach Schritt 8 antwortet nichts unter `192.168.1.1`.** Warte noch etwas
   und steck das Netzwerkkabel am Rechner neu ein. Kommt auch nach fünf
   Minuten nichts, schreib uns. Weiter geht es dann nur über die serielle
@@ -201,6 +254,28 @@ und Python 3 auf deinem Rechner. Rechne mit einer Dreiviertelstunde.
   [SSH und scp benutzen](grundlagen/ssh-scp.md).
 {%- if zusatz.fehler is defined and zusatz.fehler %}
 {{ zusatz.fehler }}
+{%- endif %}
+
+{%- if rampe %}
+
+## Anderer Weg: über OpenWrt
+
+Statt der RAMpe lässt sich in Schritt 1 bis 7 auch das OpenWrt-"factory-initramfs"
+schreiben: [{{ w.factory_datei }}]({{ w.factory_url }}).
+{%- if w.get("factory_hinweis") %} {{ w.get("factory_hinweis") }}{% endif %}
+Benenn es im Webserver-Ordner in `rampe.bin` um, dann passen die Befehle
+oben. Nach dem Neustart läuft OpenWrt unter `192.168.1.1`; die
+Freifunk-Firmware kommt dann per scp und ssh
+([SSH und scp benutzen](grundlagen/ssh-scp.md)): das sysupgrade-Image in
+`gluon.bin` umbenennen und
+
+```
+scp -O gluon.bin root@192.168.1.1:/tmp/gluon.bin
+ssh root@192.168.1.1 "sysupgrade -n /tmp/gluon.bin"
+```
+
+Ein Passwort gibt es nicht. Nach dem zweiten Befehl bricht die Verbindung
+ab, das ist harmlos.
 {%- endif %}
 
 ## Zurück zur ASUS-Firmware

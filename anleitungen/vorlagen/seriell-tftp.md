@@ -48,6 +48,18 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
                          Herstellerfirmware."; passt nicht, wenn saveenv nur die
                          Signaturprüfung abschaltet, z. B. Acer)
     sicherheit, sicherheit_hinweis   siehe _status.md
+    rampe_url            Direktlink auf die RAMpe (initramfs). Gesetzt: Die RAMpe
+                         ersetzt das OpenWrt-initramfs (gleicher tftp_name,
+                         gleiche Befehle), die Freifunk-Firmware kommt über
+                         die RAMpe-Seite im Browser statt per scp/ssh;
+                         OpenWrt steht nur noch unter "Anderer Weg"
+                         (adorfer 15.11.2026: "bitte alles auf RAMpe umstellen")
+    rampe_datei          Dateiname dazu
+    rampe_buchse         Buchse, an der die RAMpe-Seite antwortet, wenn sie
+                         nicht ssh_buchse ist. Die RAMpe-Seite liegt an den
+                         Ports des Gluon-Konfigurationsmodus: LAN, bei einem
+                         Port der eine, bei Outdoor-Geräten WAN (Buildsystem
+                         15.11.2026, gluon-setup-mode 320-setup-ifname)
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
@@ -55,6 +67,10 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 {%- set tftp_buchse = w.get("tftp_buchse") -%}
 {%- set ssh_buchse = w.get("ssh_buchse") -%}
 {%- set saveenv = "saveenv" in w.befehle -%}
+{%- set rampe = w.get("rampe_url") -%}
+{%- set rampe_buchse = w.get("rampe_buchse") or ssh_buchse -%}
+{%- set zw = "die RAMpe" if rampe else "OpenWrt" -%}
+{%- import "_rampe_schritte.md" as rs with context -%}
 
 # {{ modell }}: Freifunk-Firmware installieren
 
@@ -64,6 +80,19 @@ Dieses Gerät nimmt keine fremde Firmware über seine Weboberfläche an. Der
 Weg führt über die **serielle Konsole**, also ein Kabel, über das du den
 Bootloader des Geräts direkt bedienst. Er hat zwei Etappen:
 
+{% if rampe -%}
+1. **Die RAMpe starten.** Du stellst den Bootloader so ein, dass er die
+   **Gluon-RAMpe** per TFTP von deinem Rechner holt und startet: eine kleine
+   Firmware, die nur eins kann, die Freifunk-Firmware deiner Community
+   annehmen. Sie läuft nur im Arbeitsspeicher.
+2. **Die Freifunk-Firmware aufspielen.** Auf der Seite der RAMpe lädst du
+   im Browser die Freifunk-Firmware deiner Community hoch.
+
+Dafür brauchst du zwei Werkzeuge, die auf eigenen Seiten erklärt sind:
+[Serielle Konsole benutzen](grundlagen/serielle-konsole.md) und
+[TFTP-Server einrichten](grundlagen/tftp-server.md). Rechne beim ersten Mal
+mit einer Stunde.
+{%- else %}
 1. **OpenWrt starten.** Du stellst den Bootloader so ein, dass er ein
    kleines OpenWrt per TFTP von deinem Rechner holt und startet. Es läuft
    nur im Arbeitsspeicher.
@@ -75,6 +104,7 @@ Dafür brauchst du drei Werkzeuge, die auf eigenen Seiten erklärt sind:
 [TFTP-Server einrichten](grundlagen/tftp-server.md) und
 [SSH und scp benutzen](grundlagen/ssh-scp.md). Rechne beim ersten Mal mit
 einer Stunde.
+{%- endif %}
 
 ## Was du brauchst
 
@@ -97,6 +127,16 @@ einer Stunde.
   passt hier **nicht**: Die Buchse arbeitet mit den höheren Spannungen der
   alten seriellen Schnittstelle (RS-232).
 {%- endif %}
+{%- if rampe %}
+- ein Terminalprogramm und einen TFTP-Server (siehe die zwei Seiten oben)
+- diese Dateien:
+  1. die RAMpe für den {{ modell }}:
+     [{{ w.get("rampe_datei") or "RAMpe-Datei" }}]({{ w.rampe_url }}).
+     Leg sie in den Ordner deines TFTP-Servers und benenn sie dort genau in
+     **`{{ w.tftp_name }}`** um.
+  2. die Freifunk-Firmware deiner Community für den {{ modell }}, und zwar
+     das **sysupgrade**-Image.
+{%- else %}
 - ein Terminalprogramm, einen TFTP-Server und `ssh`/`scp` (siehe die drei
   Seiten oben)
 - diese Dateien:
@@ -108,6 +148,7 @@ einer Stunde.
   2. die Freifunk-Firmware deiner Community für den {{ modell }}, und zwar
      das **sysupgrade**-Image. Benenn es in `gluon.bin` um, dann passen die
      Befehle unten ohne Änderung.
+{%- endif %}
 {%- if zusatz.vorher is defined and zusatz.vorher %}
 
 ## Vorher prüfen
@@ -117,7 +158,7 @@ einer Stunde.
 
 ## Schritte
 
-### OpenWrt starten
+### {% if rampe %}Die RAMpe{% else %}OpenWrt{% endif %} starten
 
 1. **Feste Adresse am Rechner.** Stell deinen Rechner auf
    `{{ w.server_ip }}`, Netzmaske `255.255.255.0`
@@ -147,7 +188,7 @@ einer Stunde.
    {%- if w.get("prompt") %} `{{ w.get("prompt") }}`{% endif %}. Sonst Strom
    ziehen und noch einmal.
 
-6. **{% if saveenv %}Bootloader einstellen und {% endif %}OpenWrt laden.** Gib
+6. **{% if saveenv %}Bootloader einstellen und {% endif %}{% if rampe %}die RAMpe{% else %}OpenWrt{% endif %} laden.** Gib
    diese Befehle ein, jede Zeile einzeln. Warte nach jeder Zeile, bis die
    Eingabeaufforderung wieder erscheint
    {%- if saveenv %}; `saveenv` kann ein paar Sekunden brauchen, dabei
@@ -160,14 +201,40 @@ einer Stunde.
    ```
 
    Die Befehle holen `{{ w.tftp_name }}` von deinem Rechner und starten
-   OpenWrt; das Terminal zeigt viele Zeilen. Warte, bis
+   {{ zw }}; das Terminal zeigt viele Zeilen. Warte, bis
    `Please press Enter to activate this console.` erscheint.
    {%- if saveenv %}
 
-   {{ w.get("saveenv_folge") or "Ab jetzt startet das Gerät OpenWrt statt der Herstellerfirmware." }}
+   {{ w.get("saveenv_folge") or ("Ab jetzt startet das Gerät nicht mehr die Herstellerfirmware." if rampe else "Ab jetzt startet das Gerät OpenWrt statt der Herstellerfirmware.") }}
    {%- endif %}
 
 ### Freifunk-Firmware aufspielen
+{%- if rampe %}
+
+7. **Rechner vorbereiten.**
+   {%- if rampe_buchse %} Steck das Netzwerkkabel jetzt in die Buchse
+   **{{ rampe_buchse }}**.{% endif %}
+   {%- if not w.server_ip.startswith("192.168.1.") %} Die RAMpe antwortet
+   unter `192.168.1.1`. Stell deinen Rechner deshalb jetzt auf die feste
+   Adresse `192.168.1.10` um, Netzmaske `255.255.255.0`.
+   {%- else %} Die feste Adresse `{{ w.server_ip }}` passt auch für die
+   RAMpe unter `192.168.1.1`.{% endif %}
+
+{{ rs.seite(8, ram=5) }}
+
+10. **Warten.** Das Gerät schreibt die Freifunk-Firmware und startet neu.
+    {%- if w.get("dauer") %} {{ w.get("dauer") }}{% endif %}
+    **Strom nicht ziehen.**
+    {%- if w.get("fertig_zeichen") %} {{ w.get("fertig_zeichen") }}{% endif %}
+
+11. **Fertig.** Stell den Rechner wieder auf "automatisch". Danach startet
+    die Freifunk-Firmware deiner Community: je nach Community zuerst mit
+    einer Einrichtungsseite unter `http://192.168.1.1` oder gleich im
+    Betrieb.
+    Antwortet dort nichts, siehe [Die Router-Seite antwortet
+    nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
+    [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
+{%- else %}
 
 7. **Freifunk-Firmware kopieren.**
    {%- if ssh_buchse %} Steck das Netzwerkkabel jetzt in die Buchse
@@ -199,12 +266,17 @@ einer Stunde.
    Antwortet dort nichts, siehe [Die Router-Seite antwortet
    nicht](grundlagen/router-antwortet-nicht.md); kommt "Not Found", siehe
    [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
+{%- endif %}
 
 ## Woran du erkennst, dass es geklappt hat
 
 - In Schritt 5 erscheint die Eingabeaufforderung des Bootloaders.
-- In Schritt 6 holt der Bootloader die Datei, und OpenWrt startet.
-- Nach Schritt 8 meldet sich die Freifunk-Firmware.
+- In Schritt 6 holt der Bootloader die Datei, und {{ zw }} startet.
+{%- if rampe %}
+- In Schritt 8 zeigt `http://192.168.1.1` die RAMpe-Seite "Firmware
+  aktualisieren".
+{%- endif %}
+- Nach Schritt {% if rampe %}10{% else %}8{% endif %} meldet sich die Freifunk-Firmware.
 
 ## Wenn etwas schiefgeht
 
@@ -215,15 +287,35 @@ einer Stunde.
   `{{ w.server_ip }}`, die Firewall deines Rechners und den Dateinamen
   `{{ w.tftp_name }}`
   {%- if tftp_buchse %}, und ob das Kabel in {{ tftp_buchse }} steckt{% endif %}.
-- **In Schritt 7 antwortet nichts.** Warte noch eine Minute, OpenWrt
+- **In Schritt {% if rampe %}8{% else %}7{% endif %} antwortet nichts.** Warte noch eine Minute, {{ zw }}
   braucht etwas.
   {%- if ssh_buchse %} Prüf, ob das Kabel jetzt in {{ ssh_buchse }}
   steckt.{% endif %}
-- **Nach Schritt 8 meldet sich lange nichts.** Weiter warten und nicht den
+- **Nach Schritt {% if rampe %}10{% else %}8{% endif %} meldet sich lange nichts.** Weiter warten und nicht den
   Strom ziehen. Erst wenn nach einer halben Stunde noch nichts kommt, schreib
   uns, am besten mit der Mitschrift des Terminals.
 {%- if zusatz.fehler is defined and zusatz.fehler %}
 {{ zusatz.fehler }}
+{%- endif %}
+{%- if rampe %}
+
+## Anderer Weg: über OpenWrt
+
+Statt der RAMpe startet der Bootloader in Schritt 6 auch OpenWrt:
+[{{ w.initramfs_datei }}]({{ w.initramfs_url }}), ebenfalls unter dem Namen
+`{{ w.tftp_name }}` in den TFTP-Ordner.
+{%- if w.get("initramfs_hinweis") %} {{ w.get("initramfs_hinweis") }}{% endif %}
+Danach kommt die Freifunk-Firmware per scp und ssh statt über den Browser
+([SSH und scp benutzen](grundlagen/ssh-scp.md)): das sysupgrade-Image in
+`gluon.bin` umbenennen, Rechner wie in Schritt 7 vorbereiten, dann
+
+```
+scp -O gluon.bin root@192.168.1.1:/tmp/gluon.bin
+ssh root@192.168.1.1 "sysupgrade -n /tmp/gluon.bin"
+```
+
+Ein Passwort gibt es nicht. Nach dem zweiten Befehl bricht die Verbindung
+ab, das ist harmlos.
 {%- endif %}
 {%- if w.get("rueckweg") %}
 
