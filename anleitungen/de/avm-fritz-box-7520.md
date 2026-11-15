@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261114-avm-fritz-box-7530-initramfs-uImage.itb
 grundlagen: [avm-eva, browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 16e365e2f
+daten_stand: d4d317900
 vorlage_stand: 23b89e67b
 ---
 

@@ -10,8 +10,8 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: 16e365e2f
-vorlage_stand: 23b89e67b
+daten_stand: d4d317900
+vorlage_stand: 3bf875fd8
 ---
 
 # D-Link DAP-X1860 A1: Freifunk-Firmware installieren
@@ -137,11 +137,12 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 
 - abgeleitet (Gluon-RAMpe passt)
 - abgeleitet: Forum Darmstadt laut Notiz (Sichtbare Zeichen, Fehlerbild)
+- abgeleitet: am M60 ging Firefox nicht, Chrome/Chromium schon (Test adorfer 15.11.2026) (Programm)
 - geprüft (Weg ab Werk, Schritte (Normalweg), Datei)
 - geprüft: Commit 3c31f6b (Sichtbare Zeichen, Rückweg zur Herstellerfirmware)
 - geprüft: Commit 3c31f6b (Adresse), Neanderfunk-Notiz (Rechner-IP aus Forum Darmstadt) (Schritte (Normalweg), Adressen)
 - geprüft: Commit 3c31f6b; 'rot blinken' laut Forum Darmstadt in Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Commits 'Chromium based'; Firefox abgeleitet: Forum Darmstadt laut Notiz (Programm)
+- geprüft: Commits 'Chromium based' (Programm)
 - geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Sichtbare Zeichen, Adressen)
-- geprüft: Neanderfunk-Notiz, am M60 erprobt (Programm)
+- geprüft: Neanderfunk-Notiz, am M60 erprobt; am M60 seit 15.11.2026 nur noch Notweg, Weg ist dort Chrome/Chromium (Programm)
 - Geräteeintrag: 3c31f6b521bb5fc49e222a8f2bcd454b73452a0e

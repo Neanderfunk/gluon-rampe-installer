@@ -10,8 +10,8 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: 16e365e2f
-vorlage_stand: 23b89e67b
+daten_stand: d4d317900
+vorlage_stand: 3bf875fd8
 ---
 
 # D-Link DIR-878 A1: Freifunk-Firmware installieren

@@ -10,8 +10,8 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: 16e365e2f
-vorlage_stand: 23b89e67b
+daten_stand: d4d317900
+vorlage_stand: 3bf875fd8
 ---
 
 # D-Link DAP-1620 B1: Freifunk-Firmware installieren
@@ -140,11 +140,12 @@ wirklich über das Kabel spricht.
 Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 
 - Adresse geprüft: Commit e4c7703; Rechner-IP abgeleitet: Schwestergerät (Schritte (Normalweg), Adressen)
+- abgeleitet: am M60 ging Firefox nicht, Chrome/Chromium schon (Test adorfer 15.11.2026) (Programm)
 - für dieses Gerät abgeleitet: gleiche D-Link-Recovery (Schritte (Normalweg), Sichtbare Zeichen)
 - geprüft (Weg ab Werk)
 - geprüft: Commit (Schritte (Normalweg), Programm, Datei)
 - geprüft: Commit e4c7703 (Schritte (Normalweg), Taste und Zeitpunkt, Rückweg zur Herstellerfirmware)
-- geprüft: Commits 'Chromium based'; Firefox abgeleitet: Forum Darmstadt laut Notiz (Programm)
+- geprüft: Commits 'Chromium based' (Programm)
 - geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Sichtbare Zeichen, Adressen)
-- geprüft: Neanderfunk-Notiz, am M60 erprobt (Programm)
+- geprüft: Neanderfunk-Notiz, am M60 erprobt; am M60 seit 15.11.2026 nur noch Notweg, Weg ist dort Chrome/Chromium (Programm)
 - Geräteeintrag: e4c7703d2a62b8914e4723adae3f67c68a57532c

@@ -14,20 +14,19 @@
 <meta name="anleitung:level_text" content="Network-Tools">
 <meta name="anleitung:risiko" content="normal">
 <meta name="anleitung:status" content="erprobt">
-<meta name="anleitung:erprobt_am" content="2026-10-16">
-<meta name="anleitung:erprobt_mit" content="gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin">
+<meta name="anleitung:erprobt_am" content="2026-11-15">
+<meta name="anleitung:erprobt_mit" content="gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin">
 <meta name="anleitung:rampe_image" content="gluon-rampe-*-d-link-aquila-pro-ai-m30-a1-recovery.bin">
 <meta name="anleitung:grundlagen" content="browser-https, browser-not-found, curl, feste-ip, router-antwortet-nicht">
-<meta name="anleitung:daten_stand" content="16e365e2f">
-<meta name="anleitung:vorlage_stand" content="23b89e67b">
+<meta name="anleitung:daten_stand" content="d4d317900">
+<meta name="anleitung:vorlage_stand" content="3bf875fd8">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>D-Link AQUILA PRO AI M30 A1: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/d-link-aquila-pro-ai-m30-a1.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p><strong>Am Gerät erprobt</strong> am 16.10.2026 mit <code>gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin</code>. Das aktuelle Image ist neuer und in dieser Form
-noch nicht am Gerät gelaufen.</p>
+<p><strong>Am Gerät erprobt</strong> am 15.11.2026 mit <code>gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin</code>.</p>
 <p>Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
 hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -46,9 +45,7 @@ kein Passwort.</p>
 <li>die RAMpe-Datei für dieses Gerät: <code>gluon-rampe-&lt;Datum&gt;-d-link-aquila-pro-ai-m30-a1-recovery.bin</code> (<a href="https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin">herunterladen</a>)</li>
 <li>die Freifunk-Firmware deiner Community für den D-Link AQUILA PRO AI M30 A1, und zwar das
 <strong>sysupgrade</strong>-Image</li>
-<li>das Programm <strong>curl</strong> zum Hochladen. Unter Linux und macOS ist es meist
-schon da, unter Windows 10 und 11 heißt es <code>curl.exe</code> und ist eingebaut
-(<a href="grundlagen/curl.html">curl benutzen</a>).</li>
+<li>zum Hochladen den Browser <strong>Chrome oder Chromium</strong> (Firefox geht hier nicht)</li>
 </ul>
 <p>WLAN am Rechner schaltest du für die Installation am besten aus, damit er
 wirklich über das Kabel spricht.</p>
@@ -74,41 +71,27 @@ Reset-Taste und halte sie gedrückt. Steck jetzt den Strom ein und halte
 die Taste weiter, bis die LED <strong>rot blinkt</strong>. Dann loslassen.</p>
 </li>
 <li>
-<p><strong>Prüfen, ob die Recovery da ist.</strong>
-Öffne im Browser <code>http://192.168.200.1</code>. Es erscheint die Recovery-Seite von D-Link.
-<strong>Lade dort nichts hoch.</strong> Ihr Fortschrittsbalken läuft nur nach der Uhr
-und sagt nichts darüber, ob die Datei ankam. Die Seite zeigt dir nur, dass
-die Recovery bereit ist.
+<p><strong>Recovery-Seite öffnen.</strong>
+Öffne in Chrome oder Chromium <code>http://192.168.200.1</code>. Es erscheint die Recovery-Seite von D-Link.
 Ein <code>ping</code> hilft hier nicht, die Recovery antwortet nicht darauf.</p>
+<p><img src="../bilder/d-link-aquila-pro-ai-m30-a1/recovery-seite.png" alt="Die Recovery-Seite im Browser: Überschrift, Feld für die Datei, Knopf &quot;Upgrade&quot;" /></p>
 </li>
 <li>
-<p><strong>Datei mit curl hochladen.</strong> Öffne ein Terminal (unter Windows die
-<strong>PowerShell</strong>), wechsle in den Ordner mit der Datei und gib ein:</p>
-<p>Linux und macOS:</p>
-<pre><code class="language-sh">curl -H &quot;Expect:&quot; -w &quot;HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n&quot; -o /dev/null -F &quot;firmware=@gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin;type=application/octet-stream&quot; http://192.168.200.1/upload.cgi
-</code></pre>
-<p>Windows (PowerShell):</p>
-<pre><code>curl.exe -H &quot;Expect:&quot; -w &quot;HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n&quot; -o antwort.bin -F &quot;firmware=@gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin;type=application/octet-stream&quot; http://192.168.200.1/upload.cgi
-</code></pre>
-<p>Den echten Dateinamen statt <code>gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin</code> einsetzen. Unter
-Windows <code>curl.exe</code> genau so ausschreiben; <code>antwort.bin</code> nimmt nur die
-Antwort des Routers auf und kann danach weg. Mehr unter
-<a href="grundlagen/curl.html">curl benutzen</a>.</p>
+<p><strong>Datei im Browser hochladen.</strong> Klick auf &quot;Datei auswählen&quot;, wähl die RAMpe-Datei <code>gluon-rampe-&lt;Datum&gt;-d-link-aquila-pro-ai-m30-a1-recovery.bin</code> und klick &quot;Upgrade&quot;.</p>
+<p><img src="../bilder/d-link-aquila-pro-ai-m30-a1/recovery-datei-gewaehlt.png" alt="Die Recovery-Seite mit gewählter Datei, daneben der Knopf &quot;Upgrade&quot;" /></p>
+<p>Die Seite zeigt jetzt &quot;Device is upgrading the firmware&quot; mit einer
+Prozentzahl. Das Hochladen geht langsam, lass die Seite in Ruhe, bis
+&quot;Upgrade successfully!&quot; erscheint.</p>
+<p><img src="../bilder/d-link-aquila-pro-ai-m30-a1/recovery-upload.png" alt="Die Recovery-Seite während des Hochladens: &quot;Device is upgrading the firmware .... 68%&quot;" /></p>
 </li>
 <li>
-<p><strong>Warten.</strong> curl zeigt beim Hochladen eine Fortschrittsanzeige. Bei 100 %
-ist die Datei drüben, das dauert meist nur Sekunden. Danach schreibt die
-Recovery sie in den Speicher; dabei leuchtet die LED ruhig rot, etwas schwächer.
-Bis zum Neustart vergehen meist einige Minuten.
-<strong>Strom nicht ziehen.</strong>
-Oft kommt curl danach nicht von selbst zurück, obwohl alles geklappt hat.
-Dann beende es mit <strong>Strg+C</strong> (am Mac ctrl+C), aber erst, wenn der Router
-neu startet (beim Neustart blinkt die LED schnell weiß).
-Wartest du stattdessen, kommt curl nach einiger Zeit (bei uns gut 10
-Minuten) von selbst zurück, meist mit &quot;Recv failure: Connection timed
-out&quot;. Das ist in Ordnung. Entscheidend ist die letzte Zeile, sie
-zeigt, wie viel ankam. Geklappt hat es bei <strong>etwa 52,4 Millionen Bytes</strong>.
-Steht da 0, kam nichts an (siehe &quot;Wenn etwas schiefgeht&quot;).</p>
+<p><strong>Warten.</strong> Danach schreibt die Recovery die Datei in den Speicher; dabei leuchtet die LED ruhig rot, etwas schwächer, und
+der Router startet neu (beim Neustart blinkt die LED schnell weiß).
+<strong>Strom nicht ziehen.</strong> &quot;Upgrade successfully!&quot; allein heißt noch nicht,
+dass es geklappt hat. Das zeigt erst der nächste Schritt.</p>
+<p><img src="../bilder/d-link-aquila-pro-ai-m30-a1/recovery-fertig.png" alt="Die Recovery-Seite nach dem Hochladen: &quot;Upgrade successfully!&quot;" />
+Klappt das Hochladen im Browser nicht, nimm den Notweg weiter unten
+(&quot;Notweg: Hochladen mit curl&quot;).</p>
 </li>
 <li>
 <p><strong>Die RAMpe.</strong> Nach dem Neustart blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde. Stell den Rechner
@@ -147,15 +130,16 @@ beschreibt deine Community.</p>
 </ol>
 <h2>Woran du erkennst, dass es geklappt hat</h2>
 <ul>
-<li>curl hat beim Hochladen 100 % erreicht. Kommt es von selbst zurück,
-meldet es <strong>etwa 52,4 Millionen Bytes</strong>. Wie lange das gedauert hat, ist
-egal, es zählt die Menge.</li>
 <li>Nach dem Neustart blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde, und <code>http://192.168.1.1</code> zeigt
 die Seite &quot;Firmware aktualisieren&quot;.</li>
 <li>Die Erfolgsmeldung der D-Link-Seite zählt nicht, sie erscheint immer.</li>
 </ul>
 <h2>Wenn etwas schiefgeht</h2>
 <ul>
+<li><strong>Der Browser-Upload war nach einer Sekunde &quot;fertig&quot;, oder danach startet
+wieder die normale D-Link-Firmware.</strong> Dann ist die Datei nicht angekommen. Mit Firefox passiert das immer.
+Noch einmal ab Schritt 4 mit Chrome oder Chromium, sonst den Notweg mit
+curl (unten).</li>
 <li><strong>curl meldet &quot;Failed to connect&quot;, HTTP 000 und 0 Bytes.</strong> Die Recovery war
 nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
 Router noch einmal in die Recovery bringen (Schritt 4).</li>
@@ -166,23 +150,64 @@ werden, sobald der Router neu startet (Schritt 7).</li>
 <li><strong>Nach dem Upload startet wieder die normale D-Link-Firmware.</strong> Die Datei
 ist nicht vollständig angekommen, zum Beispiel wegen eines Tippfehlers im
 Dateinamen. Das ist harmlos: noch einmal ab Schritt 4.</li>
-<li><strong>Der Browser-Upload war nach einer Sekunde &quot;fertig&quot;.</strong> Dann ist nichts
-übertragen worden. Das passiert auch in Chromium-Browsern. Nimm curl.</li>
 <li><strong>Aus der WSL unter Windows kommt keine Verbindung zustande.</strong> Nimm curl.exe
 direkt in Windows, nicht in der WSL.</li>
 </ul>
+<h2>Notweg: Hochladen mit curl</h2>
+<p>Nur wenn das Hochladen im Browser nicht klappt. Du brauchst dafür das
+Programm <strong>curl</strong>. Unter Linux und macOS ist es meist schon da, unter
+Windows 10 und 11 heißt es <code>curl.exe</code> und ist eingebaut
+(<a href="grundlagen/curl.html">curl benutzen</a>).</p>
+<ol>
+<li>
+<p><strong>Router wieder in die Recovery bringen</strong> wie in Schritt 4 und 5, aber
+dort nichts hochladen.</p>
+</li>
+<li>
+<p><strong>Datei mit curl hochladen.</strong> Öffne ein Terminal (unter Windows die
+<strong>PowerShell</strong>), wechsle in den Ordner mit der Datei und gib ein:</p>
+<p>Linux und macOS:</p>
+<pre><code class="language-sh">curl -H &quot;Expect:&quot; -w &quot;HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n&quot; -o /dev/null -F &quot;firmware=@gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin;type=application/octet-stream&quot; http://192.168.200.1/upload.cgi
+</code></pre>
+<p>Windows (PowerShell):</p>
+<pre><code>curl.exe -H &quot;Expect:&quot; -w &quot;HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n&quot; -o antwort.bin -F &quot;firmware=@gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin;type=application/octet-stream&quot; http://192.168.200.1/upload.cgi
+</code></pre>
+<p>Den echten Dateinamen statt <code>gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin</code> einsetzen. Unter
+Windows <code>curl.exe</code> genau so ausschreiben; <code>antwort.bin</code> nimmt nur die
+Antwort des Routers auf und kann danach weg. Mehr unter
+<a href="grundlagen/curl.html">curl benutzen</a>.</p>
+</li>
+<li>
+<p><strong>Warten.</strong> curl zeigt beim Hochladen eine Fortschrittsanzeige. Bei 100 %
+ist die Datei drüben, das dauert meist nur Sekunden. Danach schreibt die
+Recovery sie in den Speicher; dabei leuchtet die LED ruhig rot, etwas schwächer.
+Bis zum Neustart vergehen meist einige Minuten.
+<strong>Strom nicht ziehen.</strong>
+Oft kommt curl danach nicht von selbst zurück, obwohl alles geklappt hat.
+Dann beende es mit <strong>Strg+C</strong> (am Mac ctrl+C), aber erst, wenn der Router
+neu startet (beim Neustart blinkt die LED schnell weiß).
+Wartest du stattdessen, kommt curl nach einiger Zeit (bei uns gut 10
+Minuten) von selbst zurück, meist mit &quot;Recv failure: Connection timed
+out&quot;. Das ist in Ordnung. Entscheidend ist die letzte Zeile, sie
+zeigt, wie viel ankam. Geklappt hat es bei <strong>etwa 52,4 Millionen Bytes</strong>.
+Steht da 0, kam nichts an (siehe &quot;Wenn etwas schiefgeht&quot;).</p>
+</li>
+</ol>
+<p>Danach weiter mit Schritt 8 oben.</p>
 <h2>Herkunft der Angaben</h2>
 <p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
 <ul>
 <li>geprüft (Weg ab Werk, Datei, Stock-Teile)</li>
 <li>geprüft: Commit (Sichtbare Zeichen)</li>
 <li>geprüft: Commit 29cca6c (Schritte (Normalweg), Sichtbare Zeichen, Adressen, Bedingung an die Herstellerfirmware, Fehlerbild, Rückweg zur Herstellerfirmware)</li>
-<li>geprüft: Commits 'Chromium based'; Firefox abgeleitet: Forum Darmstadt laut Notiz (Programm)</li>
+<li>geprüft: Commits 'Chromium based' (Programm)</li>
 <li>geprüft: Commits 29cca6c, 7271ee5; Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt)</li>
 <li>geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Sichtbare Zeichen, Adressen, Datei)</li>
 <li>geprüft: Neanderfunk-Notiz, M60: 10-11 min gemessen (Schritte (Normalweg), Dauer)</li>
 <li>geprüft: Neanderfunk-Notiz, am Gerät bestätigt (Typenschild/Verwechslung)</li>
 <li>geprüft: Neanderfunk-Notiz, am M60 erprobt (Schritte (Normalweg), Programm)</li>
+<li>geprüft: Test adorfer 15.11.2026 am M30 (Programm)</li>
+<li>geprüft: adorfer 15.11.2026 (Programm)</li>
 <li>geprüft: gluon-rampe-installer docs/NOTIZEN.md (Gluon-RAMpe passt)</li>
 <li>Geräteeintrag: OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f</li>
 </ul>
