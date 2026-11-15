@@ -1596,8 +1596,8 @@ Aruba AP-303 · ipq40xx-generic · K4
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Rückweg zur Herstellerfirmware:** Im apboot `setenv bootcmd "boot"; saveenv` (Stock bleibt in aos0) [geprüft: Commit; aos0: abgeleitet aus nandboot_openwrt = aos1]
-- **Gluon-RAMpe passt:** teilweise: RAMpe-initramfs als ipq40xx.ari geht, aber vor dem sysupgrade muss `ubiformat` laufen (fehlt der Gluon-RAMpe) und Gluon baut für ipq40xx-generic kein initramfs; seriell bleibt [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/aruba-ap-303.sh (Rezept-Entwurf, nicht gebaut): `-initramfs-uImage.itb` als `ipq40xx.ari` per APBoot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)
+- **Gluon-RAMpe passt:** teilweise: RAMpe-initramfs (`-initramfs-uImage.itb`) als ipq40xx.ari per netget [geprüft: Commit 102c8c55]; das `ubidetach`/`ubiformat` vor dem sysupgrade übernimmt ab der Ausgabe nach 20261114 das Vorbereitungsskript der RAMpe (overlay/lib/gluon-rampe/prepare/aruba_ap-303.sh, Partition per Label "ubi") [geprüft: Code; am Gerät ungetestet]; 20261114 hat es noch nicht; seriell bleibt
+- **Gluon-RAMpe-Rezept:** devices/aruba-ap-303.sh: `-initramfs-uImage.itb` als `ipq40xx.ari` per APBoot-TFTP; Vorbereitung vor dem sysupgrade (`ubiformat`) im Overlay ab der Ausgabe nach 20261114
 - **Quelle (OpenWrt-Commit):** OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75
 - **Detail-Anleitung:** anleitungen/de/aruba-ap-303.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=102c8c55f217606cdbdc9a449667e034676b3e75
 - **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb; initramfs_sha256 = 5d65d93c796b5dd10e42a65269dadb7905dca0b42c0fd60251431392b53ac56e; tty = ttyMSM1; mtd = /dev/mtd1; sicherheit = quelle; bootm_hinweis = Dann hat dein Gerät einen neueren Bootloader, aus dem der Hersteller Befehle entfernt hat, die OpenWrt braucht. Für den baugleichen [Aruba Instant On AP11](aruba-instant-on-ap11.md) gibt es einen Weg über einen älteren Bootloader. Ob er auch für den AP-303 passt, wissen wir noch nicht. Bitte probier ihn nicht auf eigene Faust, sondern schreib uns.
@@ -1637,7 +1637,7 @@ Aruba AP-303H · ipq40xx-generic · K4
 - **RAM:** 512 MB
 - **Rückweg zur Herstellerfirmware:** Im apboot `setenv bootcmd "boot"; saveenv; boot` [geprüft: Commit]; bei UBIFS-Fehler Stock per `upgrade os 1 192.168.1.75:ArubaInstant_Ursa_8.7.1.6_81786` aus TFTP, danach `factory_reset`; Werkszugang admin/Seriennummer [geprüft: Wiki toh:aruba:ap-303h]
 - **Gluon-RAMpe passt:** teilweise: wie AP-303
-- **Gluon-RAMpe-Rezept:** devices/aruba-ap-303h.sh (Rezept-Entwurf, nicht gebaut): wie AP-303; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)
+- **Gluon-RAMpe-Rezept:** devices/aruba-ap-303h.sh: wie AP-303; Vorbereitung vor dem sysupgrade (`ubiformat`) im Overlay ab der Ausgabe nach 20261114 (overlay/lib/gluon-rampe/prepare/aruba_ap-303h.sh)
 - **Quelle (OpenWrt-Commit):** OpenWrt c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0
 - **Detail-Anleitung:** anleitungen/de/aruba-ap-303h.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0
 - **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303h-initramfs-uImage.itb; initramfs_sha256 = 70aebd60b9d1c666656ed89c7a81f53ead246ed96ecbd94551226a0c8f0a785e; tty = ttyMSM0; mtd = /dev/mtd16; tftp_buchse = E0; ssh_buchse = E1, E2 oder E3; sicherheit = quelle; tftp_buchse_hinweis = Sie sitzt auf der Rückseite neben „PT“. Die Buchse „E0/PT“ unten ist nur das andere Ende der Durchreiche PT; darüber erreichst du das Gerät nicht.
@@ -1675,7 +1675,7 @@ Aruba AP-365 · ipq40xx-generic · K4
 - **RAM:** 512 MB
 - **Rückweg zur Herstellerfirmware:** Im apboot `setenv bootcmd "boot"; saveenv` [geprüft: Commit]
 - **Gluon-RAMpe passt:** teilweise: wie AP-303
-- **Gluon-RAMpe-Rezept:** devices/aruba-ap-365.sh (Rezept-Entwurf, nicht gebaut): wie AP-303; Vorbereitung vor dem sysupgrade fehlt der RAMpe-Seite noch (`ubiformat`)
+- **Gluon-RAMpe-Rezept:** devices/aruba-ap-365.sh: wie AP-303; Vorbereitung vor dem sysupgrade (`ubiformat`) im Overlay ab der Ausgabe nach 20261114 (overlay/lib/gluon-rampe/prepare/aruba_ap-365.sh)
 - **Quelle (OpenWrt-Commit):** OpenWrt 300b7fe85a743ab0e039457a5a551819b49450da
 - **Detail-Anleitung:** anleitungen/de/aruba-ap-365.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=300b7fe85a743ab0e039457a5a551819b49450da
 - **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-365-initramfs-uImage.itb; initramfs_sha256 = 9dbf7ed4b826d75d4d6893c52d3d5e925b2331c91a33b9842a3d1f7c03a12d83; tty = ttyMSM1; mtd = /dev/mtd1; konsole = usb; sicherheit = quelle
