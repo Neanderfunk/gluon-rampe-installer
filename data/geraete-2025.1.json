@@ -14663,7 +14663,7 @@
    "uebertragung": "recovery-web: Gerät 192.168.200.1, Rechner 192.168.200.10/24, POST /upload.cgi (curl oder Chromium), kein Ping",
    "anschluss": "",
    "adressen": "Rechner fest 192.168.200.10, Netzmaske 255.255.255.0; Recovery http://192.168.200.1 [geprüft: Commit 29cca6c]; Erreichbarkeit per HTTP prüfen, nie per Ping (Recovery antwortet nicht auf ICMP) [geprüft: Neanderfunk-Notiz]; danach OpenWrt unter 192.168.1.1 [geprüft: Neanderfunk-Notiz]",
-   "programm": "curl: `curl -H \"Expect:\" -F \"firmware=@<image>;type=application/octet-stream\" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt]; seit 15.11.2026 nur noch Notweg [geprüft: adorfer 15.11.2026]; im Browser nur Chromium-basiert [geprüft: Commits 'Chromium based']; Firefox geht nicht, Chrome/Chromium ist der Weg [geprüft: Test adorfer 15.11.2026 am M30]",
+   "programm": "curl: `curl -H \"Expect:\" -F \"firmware=@<image>;type=application/octet-stream\" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt]; seit 15.11.2026 nur noch Notweg [geprüft: adorfer 15.11.2026]; im Browser nur Chromium-basiert [geprüft: Commits 'Chromium based']; Firefox geht nicht, Chrome/Chromium ist der Weg [geprüft: Test adorfer 15.11.2026 am M30]; Seitentexte der Recovery: Knopf \"Upgrade\", beim Hochladen \"Device is upgrading the firmware\" mit Prozentzahl, danach \"Upgrade successfully!\"; das Hochladen läuft langsam [geprüft: Screenshots und Aussage adorfer 15.11.2026]",
    "zugang": "",
    "datei": "OpenWrt-squashfs-recovery.bin (initramfs mit D-Link-Header DLK6E6110001; Gluon baut für den M30 bewusst kein Recovery-Image), danach Gluon-sysupgrade [geprüft] [geprüft: Neanderfunk-Notiz]",
    "seriell": "nein",
@@ -14725,7 +14725,11 @@
     "led_schreibt": "leuchtet die LED ruhig rot, etwas schwächer",
     "led_start": "blinkt die LED schnell weiß",
     "browser_upload": "Chrome oder Chromium",
-    "browser_nicht": "Firefox"
+    "browser_nicht": "Firefox",
+    "upload_knopf": "Upgrade",
+    "meldung_laeuft": "Device is upgrading the firmware",
+    "meldung_fertig": "Upgrade successfully!",
+    "upload_langsam": true
    }
   },
   {
@@ -14752,7 +14756,7 @@
    "uebertragung": "recovery-web: Gerät 192.168.200.1, Rechner z. B. 192.168.200.66/24, POST /upload.cgi (Chrome/Chromium, Notweg curl), 10-11 min",
    "anschluss": "eine beliebige LAN-Buchse, nicht WAN [geprüft: Neanderfunk-Notiz 15.10.2026, am Gerät]",
    "adressen": "Rechner fest im Netz 192.168.200.0/24 (bewährt: 192.168.200.66/24), Recovery http://192.168.200.1 [geprüft: Commit 7271ee5, am Gerät]; Erreichbarkeit per HTTP prüfen, nie per Ping (Recovery antwortet nicht auf ICMP) [geprüft: Neanderfunk-Notiz]; danach OpenWrt unter 192.168.1.1 [geprüft: Neanderfunk-Notiz]; auch die Herstellerfirmware antwortet mit ihrem Admin-Login unter http://192.168.200.1 (aufwendigeres Layout mit Passwortabfrage statt der schlichten Recovery-Seite) [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]",
-   "programm": "Browser: Chrome oder Chromium ist der Weg, das Hochladen der RAMpe 20261114 lief langsam, danach startete die RAMpe sauber; Firefox ging nicht [geprüft: Test adorfer 15.11.2026 am M60]; im Browser nur Chromium-basiert [geprüft: Commits 'Chromium based']; früher war der Browser-Upload in Chromium bei zwei Nutzern nach unter 1 s \"fertig\", ohne dass etwas übertragen war [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]; curl nur noch Notweg, falls es im Browser nicht geht [geprüft: adorfer 15.11.2026]: `curl -H \"Expect:\" -F \"firmware=@<image>;type=application/octet-stream\" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt]; Eigenheiten des Rechners, gleich für jedes Image: unter Windows ist `curl.exe` eingebaut (in PowerShell `curl.exe` ausschreiben, `curl` allein ist dort Invoke-WebRequest; Pfadvariable in cmd `%USERPROFILE%`, in PowerShell `$env:USERPROFILE`); aus WSL2 im Mirrored-Modus kam keine Verbindung zu 192.168.200.1 zustande, aus Windows schon [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]; mit `-w \"HTTP %{http_code}, hochgeladen %{size_upload} Bytes, Dauer %{time_total} s\\n\"` zeigt curl am Ende, ob alles ankam [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]",
+   "programm": "Browser: Chrome oder Chromium ist der Weg, das Hochladen der RAMpe 20261114 lief langsam, danach startete die RAMpe sauber; Firefox ging nicht [geprüft: Test adorfer 15.11.2026 am M60]; im Browser nur Chromium-basiert [geprüft: Commits 'Chromium based']; früher war der Browser-Upload in Chromium bei zwei Nutzern nach unter 1 s \"fertig\", ohne dass etwas übertragen war [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]; curl nur noch Notweg, falls es im Browser nicht geht [geprüft: adorfer 15.11.2026]: `curl -H \"Expect:\" -F \"firmware=@<image>;type=application/octet-stream\" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt]; Eigenheiten des Rechners, gleich für jedes Image: unter Windows ist `curl.exe` eingebaut (in PowerShell `curl.exe` ausschreiben, `curl` allein ist dort Invoke-WebRequest; Pfadvariable in cmd `%USERPROFILE%`, in PowerShell `$env:USERPROFILE`); aus WSL2 im Mirrored-Modus kam keine Verbindung zu 192.168.200.1 zustande, aus Windows schon [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]; mit `-w \"HTTP %{http_code}, hochgeladen %{size_upload} Bytes, Dauer %{time_total} s\\n\"` zeigt curl am Ende, ob alles ankam [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]; Seitentexte der Recovery: Knopf \"Upgrade\", beim Hochladen \"Device is upgrading the firmware\" mit Prozentzahl, danach \"Upgrade successfully!\"; das Hochladen läuft langsam [geprüft: Screenshots und Aussage adorfer 15.11.2026]",
    "zugang": "nach der Recovery: ssh root@192.168.1.1 [geprüft: Neanderfunk-Notiz]",
    "datei": "OpenWrt-squashfs-recovery.bin (initramfs mit D-Link-Header DLK6E8202001, 50 MB), danach Gluon-sysupgrade mit `sysupgrade -n` [geprüft: Neanderfunk-Notiz] [geprüft, am Gerät 29./30.09.2026 erprobt]",
    "seriell": "nein",
@@ -14813,7 +14817,11 @@
     "led_schreibt": "leuchtet die LED ruhig rot, etwas schwächer",
     "led_start": "blinkt die LED schnell weiß",
     "browser_upload": "Chrome oder Chromium",
-    "browser_nicht": "Firefox"
+    "browser_nicht": "Firefox",
+    "upload_knopf": "Upgrade",
+    "meldung_laeuft": "Device is upgrading the firmware",
+    "meldung_fertig": "Upgrade successfully!",
+    "upload_langsam": true
    }
   },
   {
@@ -20159,7 +20167,7 @@
    "uebertragung": "recovery-web: Gerät 192.168.0.50",
    "anschluss": "",
    "adressen": "Recovery http://192.168.0.50 (D-Link Web Recovery Updater); Rechner fest im Netz 192.168.0.0/24, z. B. 192.168.0.65/24 wie beim DAP-X1860 [Adresse geprüft: Commit e4c7703; Rechner-IP abgeleitet: Schwestergerät]; Erreichbarkeit per HTTP prüfen, nie per Ping (Recovery antwortet nicht auf ICMP) [geprüft: Neanderfunk-Notiz]",
-   "programm": "am besten Chromium [geprüft: Commit]; curl: `curl -H \"Expect:\" -F \"firmware=@<image>;type=application/octet-stream\" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt; am M60 seit 15.11.2026 nur noch Notweg, Weg ist dort Chrome/Chromium]; im Browser nur Chromium-basiert [geprüft: Commits 'Chromium based']; Firefox geht nicht [abgeleitet: am M60 ging Firefox nicht, Chrome/Chromium schon (Test adorfer 15.11.2026)]",
+   "programm": "am besten Chromium [geprüft: Commit]; curl: `curl -H \"Expect:\" -F \"firmware=@<image>;type=application/octet-stream\" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt]; nur noch Notweg [geprüft: adorfer 15.11.2026]; im Browser nur Chromium-basiert [geprüft: Commits 'Chromium based']; Hochladen im Browser mit Chromium geht, schon immer [geprüft: adorfer 15.11.2026]; zu Firefox keine eigene Erfahrung",
    "zugang": "",
    "datei": "factory.bin hochladen und bestätigen [geprüft: Commit]",
    "seriell": "nein",
@@ -20231,7 +20239,7 @@
    "uebertragung": "recovery-web: Gerät 192.168.0.50, Rechner 192.168.0.65/24",
    "anschluss": "",
    "adressen": "Recovery http://192.168.0.50 (nicht .1), Rechner 192.168.0.65/24 [geprüft: Commit 3c31f6b (Adresse), Neanderfunk-Notiz (Rechner-IP aus Forum Darmstadt)]; Erreichbarkeit per HTTP prüfen, nie per Ping (Recovery antwortet nicht auf ICMP) [geprüft: Neanderfunk-Notiz]",
-   "programm": "curl: `curl -H \"Expect:\" -F \"firmware=@<image>;type=application/octet-stream\" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt; am M60 seit 15.11.2026 nur noch Notweg, Weg ist dort Chrome/Chromium]; im Browser nur Chromium-basiert [geprüft: Commits 'Chromium based']; Firefox geht nicht [abgeleitet: am M60 ging Firefox nicht, Chrome/Chromium schon (Test adorfer 15.11.2026)]",
+   "programm": "curl: `curl -H \"Expect:\" -F \"firmware=@<image>;type=application/octet-stream\" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt]; nur noch Notweg [geprüft: adorfer 15.11.2026]; im Browser nur Chromium-basiert [geprüft: Commits 'Chromium based']; Hochladen im Browser mit Chromium geht, schon immer [geprüft: adorfer 15.11.2026]; zu Firefox keine eigene Erfahrung",
    "zugang": "",
    "datei": "laut Commit factory.bin [geprüft]; laut Neanderfunk-Notiz (01.10.2026) dagegen OpenWrt-initramfs und danach Gluon-sysupgrade: Widerspruch offen",
    "seriell": "nein",
