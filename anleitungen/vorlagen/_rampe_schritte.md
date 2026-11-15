@@ -5,7 +5,10 @@ für Vorlagen, in denen die RAMpe die frühere OpenWrt-Zwischenstufe ersetzt
 
 Einbinden mit
   {%- import "_rampe_schritte.md" as rs with context %}
-und aufrufen als {{ rs.seite(5) }} (erzeugt Schritt 5 und 6).
+und aufrufen als {{ rs.seite(5) }} (erzeugt Schritt 5 und 6). Läuft die
+RAMpe nur im Arbeitsspeicher (initramfs), mit {{ rs.seite(8, ram=5) }}: Dann
+steht statt "bleibt auf dem Router" der Hinweis, dass sie nach einem
+Neustart weg ist und es ab Schritt 5 (dem Laden der RAMpe) neu losgeht.
 
 Nutzt aus dem Kontext: bilder (rampe-seite, rampe-pruefsumme,
 rampe-flash-laeuft, gesucht wie üblich je Gerät, dann allgemein).
@@ -15,7 +18,7 @@ selbst (fest oder automatisch).
 Die RAMpe leitet von http://192.168.1.1 selbst auf ihre Seite weiter
 (adorfer 12.11.2026).
 -#}
-{%- macro seite(n) -%}
+{%- macro seite(n, ram=none) -%}
 {%- set br = bilder if bilder is defined else {} -%}
 {{ n }}. **Die RAMpe-Seite öffnen.** Öffne `http://192.168.1.1`. Die RAMpe
    leitet von selbst auf ihre Seite "Firmware aktualisieren" weiter. Kommt
@@ -25,9 +28,14 @@ Die RAMpe leitet von http://192.168.1.1 selbst auf ihre Seite weiter
    Zeigt der Browser eine Warnung vor einem unsicheren Zertifikat, hat er
    von sich aus `https://` vor die Adresse gesetzt, siehe
    [Browser macht https daraus](grundlagen/browser-https.md).
+   {%- if ram %}
+   Die RAMpe läuft nur im Arbeitsspeicher. Startet das Gerät zwischendurch
+   neu oder fehlt der Strom, ist sie weg: dann noch einmal ab Schritt {{ ram }}.
+   {%- else %}
    Die RAMpe bleibt auf dem Router, bis die Freifunk-Firmware sie ersetzt.
    Startet der Router zwischendurch neu, ist das harmlos: Seite einfach
    wieder aufrufen.
+   {%- endif %}
    {%- if br.get("rampe-seite") %}
 
    ![Die Seite der RAMpe: "Firmware aktualisieren" mit Feld für die Datei und Knopf "Datei hochladen"]({{ br["rampe-seite"] }})

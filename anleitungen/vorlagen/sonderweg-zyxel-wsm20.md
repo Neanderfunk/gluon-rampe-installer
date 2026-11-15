@@ -96,7 +96,7 @@ Ein Konto in der Zyxel-Cloud brauchst du dafür nicht.
 
 ### Teil 2: Freifunk-Firmware
 
-{{ rs.seite(5) }}
+{{ rs.seite(5, ram=2) }}
 
 7. **Warten,** etwa 2 Minuten, Strom nicht ziehen.
 {%- else %}
