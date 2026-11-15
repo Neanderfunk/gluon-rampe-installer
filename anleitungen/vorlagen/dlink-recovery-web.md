@@ -181,7 +181,7 @@ wirklich über das Kabel spricht.
    Ein `ping` hilft hier nicht, die Recovery antwortet nicht darauf.
    {%- if b.get("recovery-seite") %}
 
-   ![Die Recovery-Seite im Browser: Überschrift, Feld für die Datei, Knopf zum Hochladen]({{ b["recovery-seite"] }})
+   ![Die Recovery-Seite im Browser: Überschrift, Feld für die Datei, Knopf {% if w.upload_knopf %}"{{ w.upload_knopf }}"{% else %}zum Hochladen{% endif %}]({{ b["recovery-seite"] }})
    {%- endif %}
 
 6. **Datei im Browser hochladen.** Klick auf "Datei auswählen", wähl
@@ -190,7 +190,7 @@ wirklich über das Kabel spricht.
    {%- if w.upload_knopf %} "{{ w.upload_knopf }}"{% else %} den Knopf daneben{% endif %}.
    {%- if b.get("recovery-datei-gewaehlt") %}
 
-   ![Die Recovery-Seite mit gewählter Datei, daneben der Knopf zum Hochladen]({{ b["recovery-datei-gewaehlt"] }})
+   ![Die Recovery-Seite mit gewählter Datei, daneben der Knopf {% if w.upload_knopf %}"{{ w.upload_knopf }}"{% else %}zum Hochladen{% endif %}]({{ b["recovery-datei-gewaehlt"] }})
    {% endif %}
    Die Seite zeigt jetzt
    {%- if w.meldung_laeuft %} "{{ w.meldung_laeuft }}" mit einer Prozentzahl{% else %} den Fortschritt in Prozent{% endif %}.
