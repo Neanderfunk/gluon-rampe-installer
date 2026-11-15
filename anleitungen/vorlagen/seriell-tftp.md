@@ -55,6 +55,11 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
                          OpenWrt steht nur noch unter "Anderer Weg"
                          (adorfer 15.11.2026: "bitte alles auf RAMpe umstellen")
     rampe_datei          Dateiname dazu
+    rampe_buchse         Buchse, an der die RAMpe-Seite antwortet, wenn sie
+                         nicht ssh_buchse ist. Die RAMpe-Seite liegt an den
+                         Ports des Gluon-Konfigurationsmodus: LAN, bei einem
+                         Port der eine, bei Outdoor-Geräten WAN (Buildsystem
+                         15.11.2026, gluon-setup-mode 320-setup-ifname)
 -#}
 {%- set w = werte -%}
 {%- set b = bilder if bilder is defined else {} -%}
@@ -63,6 +68,7 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
 {%- set ssh_buchse = w.get("ssh_buchse") -%}
 {%- set saveenv = "saveenv" in w.befehle -%}
 {%- set rampe = w.get("rampe_url") -%}
+{%- set rampe_buchse = w.get("rampe_buchse") or ssh_buchse -%}
 {%- set zw = "die RAMpe" if rampe else "OpenWrt" -%}
 {%- import "_rampe_schritte.md" as rs with context -%}
 
@@ -206,8 +212,8 @@ einer Stunde.
 {%- if rampe %}
 
 7. **Rechner vorbereiten.**
-   {%- if ssh_buchse %} Steck das Netzwerkkabel jetzt in die Buchse
-   **{{ ssh_buchse }}**.{% endif %}
+   {%- if rampe_buchse %} Steck das Netzwerkkabel jetzt in die Buchse
+   **{{ rampe_buchse }}**.{% endif %}
    {%- if not w.server_ip.startswith("192.168.1.") %} Die RAMpe antwortet
    unter `192.168.1.1`. Stell deinen Rechner deshalb jetzt auf die feste
    Adresse `192.168.1.10` um, Netzmaske `255.255.255.0`.
