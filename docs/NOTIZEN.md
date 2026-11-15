@@ -498,6 +498,8 @@ Vorlagen an, Supernode verdrahtet den Selector, adorfer deployt.
   LAN-Buchse").
 - `level_merkmale` folgen dem Hauptweg der Seite: GL-B1300 L0 (vorher L3),
   AP3000 L3 (vergibt keine Adressen), DIR-505 L1.
+  D-Link-Recovery-Familie (M30, M60, DAP-1620, DAP-X1860, DIR-878, DIR-882)
+  seit 15.11.2026 L3 statt L4: Hochladen im Browser ist der Weg, curl nur Notweg.
 
 **Befunde, die über ein Gerät hinausgehen:**
 - Cudy: Die LED-Angaben der Cudy-FAQ zur TFTP-Recovery stimmten am WR3000H

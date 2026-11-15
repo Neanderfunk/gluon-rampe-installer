@@ -161,8 +161,8 @@ Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-95
 | L0.1 | 78 |
 | L1 | 24 |
 | L2 | 1 |
-| L3 | 33 |
-| L4 | 96 |
+| L3 | 40 |
+| L4 | 89 |
 | L5 | 71 |
 | L6 | 16 |
 | L7 | 15 |
@@ -448,8 +448,8 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [cudy-wr3000p-v1](#cudy-wr3000p-v1) | Cudy WR3000P v1 | mediatek-filogic | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr3000p-v1.md) |
 | [cudy-wr3000s-v1](#cudy-wr3000s-v1) | Cudy WR3000S v1 | mediatek-filogic | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr3000s-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
 | [cudy-wr3000u-v1](#cudy-wr3000u-v1) | Cudy WR3000U v1 | mediatek-filogic | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-wr3000u-v1.md) |
-| [d-link-aquila-pro-ai-m30-a1](#d-link-aquila-pro-ai-m30-a1) | D-Link AQUILA PRO AI M30 A1 | mediatek-filogic | K1 | L4 | normal | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | ja | ja | [Anleitung](../anleitungen/de/d-link-aquila-pro-ai-m30-a1.md); https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/ |
-| [d-link-aquila-pro-ai-m60-a1](#d-link-aquila-pro-ai-m60-a1) | D-Link AQUILA PRO AI M60 A1 | mediatek-filogic | K1 | L4 | normal | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | ja | ja | [Anleitung](../anleitungen/de/d-link-aquila-pro-ai-m60-a1.md) |
+| [d-link-aquila-pro-ai-m30-a1](#d-link-aquila-pro-ai-m30-a1) | D-Link AQUILA PRO AI M30 A1 | mediatek-filogic | K1 | L3 | normal | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | ja | ja | [Anleitung](../anleitungen/de/d-link-aquila-pro-ai-m30-a1.md); https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/ |
+| [d-link-aquila-pro-ai-m60-a1](#d-link-aquila-pro-ai-m60-a1) | D-Link AQUILA PRO AI M60 A1 | mediatek-filogic | K1 | L3 | normal | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | ja | ja | [Anleitung](../anleitungen/de/d-link-aquila-pro-ai-m60-a1.md) |
 | [gl.inet-gl-mt2500](#gl.inet-gl-mt2500) | GL.iNet GL-MT2500 (MaxLinear-PHY) | mediatek-filogic | K1d | L0 | normal | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt2500.md) |
 | [gl.inet-gl-mt3000](#gl.inet-gl-mt3000) | GL.iNet GL-MT3000 | mediatek-filogic | K1d | L0 | normal | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt3000.md) |
 | [gl.inet-gl-mt6000](#gl.inet-gl-mt6000) | GL.iNet GL-MT6000 | mediatek-filogic | K1d | L0 | normal | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt6000.md) |
@@ -526,12 +526,12 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [cudy-x6-v1](#cudy-x6-v1) | Cudy X6 v1 | ramips-mt7621 | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-x6-v1.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
 | [cudy-x6-v2](#cudy-x6-v2) | Cudy X6 v2 | ramips-mt7621 | K2 | L1 | normal | [`cudy-zwischenfirmware`](#familie-cudy-zwischenfirmware) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/cudy-x6-v2.md); https://forum.darmstadt.freifunk.net/t/installation-cudy-tr3000/1010 |
 | [d-link-covr-x1860-a1](#d-link-covr-x1860-a1) | D-Link COVR-X1860 A1 | ramips-mt7621 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-covr-x1860-a1.md); https://freifunk-aachen.de/2023/08/03/installationsanleitung-d-link-covr-x1860/ |
-| [d-link-dap-1620-b1](#d-link-dap-1620-b1) | D-Link DAP-1620 B1 (Gluon: broken) | ramips-mt7621 | K0 | L4 | normal | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-1620-b1.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e4c7703d2a62b8914e4723adae3f67c68a57532c |
-| [d-link-dap-x1860-a1](#d-link-dap-x1860-a1) | D-Link DAP-X1860 A1 | ramips-mt7621 | K0 | L4 | normal | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | teilweise | ja | [Anleitung](../anleitungen/de/d-link-dap-x1860-a1.md); https://forum.darmstadt.freifunk.net/t/installation-d-link-dap-x1860/987 |
+| [d-link-dap-1620-b1](#d-link-dap-1620-b1) | D-Link DAP-1620 B1 (Gluon: broken) | ramips-mt7621 | K0 | L3 | normal | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dap-1620-b1.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=e4c7703d2a62b8914e4723adae3f67c68a57532c |
+| [d-link-dap-x1860-a1](#d-link-dap-x1860-a1) | D-Link DAP-X1860 A1 | ramips-mt7621 | K0 | L3 | normal | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | teilweise | ja | [Anleitung](../anleitungen/de/d-link-dap-x1860-a1.md); https://forum.darmstadt.freifunk.net/t/installation-d-link-dap-x1860/987 |
 | [d-link-dir-860l-b1](#d-link-dir-860l-b1) | D-Link DIR-860L B1 | ramips-mt7621 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dir-860l-b1.md) |
-| [d-link-dir-878-a1](#d-link-dir-878-a1) | D-Link DIR-878 A1 | ramips-mt7621 | K0 | L4 | normal | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dir-878-a1.md); https://openwrt.org/toh/d-link/dir-878_a1#installation |
-| [d-link-dir-882-a1](#d-link-dir-882-a1) | D-Link DIR-882 A1 | ramips-mt7621 | K0 | L4 | normal | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dir-882-a1.md); https://openwrt.org/toh/d-link/dir-882_a1#installation |
-| [genexis-pulse-ex400](#genexis-pulse-ex400) | Genexis/Inteno Pulse EX400 | ramips-mt7621 | K1 | L4 | normal | [`sonderweg-genexis-pulse-ex400`](#familie-sonderweg-genexis-pulse-ex400) | webui-upload | nein | nein | ja | ja | [Anleitung](../anleitungen/de/genexis-pulse-ex400.md); https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400 |
+| [d-link-dir-878-a1](#d-link-dir-878-a1) | D-Link DIR-878 A1 | ramips-mt7621 | K0 | L3 | normal | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dir-878-a1.md); https://openwrt.org/toh/d-link/dir-878_a1#installation |
+| [d-link-dir-882-a1](#d-link-dir-882-a1) | D-Link DIR-882 A1 | ramips-mt7621 | K0 | L3 | normal | [`dlink-recovery-web`](#familie-dlink-recovery-web) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/d-link-dir-882-a1.md); https://openwrt.org/toh/d-link/dir-882_a1#installation |
+| [genexis-pulse-ex400](#genexis-pulse-ex400) | Genexis/Inteno Pulse EX400 | ramips-mt7621 | K1 | L3 | normal | [`sonderweg-genexis-pulse-ex400`](#familie-sonderweg-genexis-pulse-ex400) | webui-upload | nein | nein | ja | ja | [Anleitung](../anleitungen/de/genexis-pulse-ex400.md); https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400 |
 | [gl.inet-gl-mt1300](#gl.inet-gl-mt1300) | GL.iNet GL-MT1300 (Beryl) | ramips-mt7621 | K1d | L3 | normal | [`glinet`](#familie-glinet) | recovery-web | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt1300.md) |
 | [mercusys-mr70x-v1](#mercusys-mr70x-v1) | Mercusys MR70X v1 | ramips-mt7621 | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/mercusys-mr70x-v1.md) |
 | [mikrotik-routerboard-750gr3](#mikrotik-routerboard-750gr3) | MikroTik hEX RB750Gr3 (Alias mikrotik-routerboard-hex-v3) | ramips-mt7621 | K1 | L4 | normal | [`mikrotik-netboot`](#familie-mikrotik-netboot) | tftp-client-am-geraet | nein | nein | ja | ja | https://openwrt.org/toh/mikrotik/common |
@@ -1705,7 +1705,7 @@ Aruba Instant On AP11 (Alias von aruba-ap-303) · ipq40xx-generic · K5
 - **Gluon-RAMpe-Rezept:** Alias: Image aus devices/aruba-ap-303.sh; apboot gesperrt (K5)
 - **Quelle (OpenWrt-Commit):** Notiz ap11.md (2024); OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75
 - **Detail-Anleitung:** anleitungen/de/aruba-instant-on-ap11.md
-- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb; initramfs_sha256 = 5d65d93c796b5dd10e42a65269dadb7905dca0b42c0fd60251431392b53ac56e; tty = ttyMSM1; mtd = /dev/mtd1; bootm_weg = apboot; apboot_datei = ap303-loader-2.5.0.2.bin; apboot_url = https://download.ffnef.de/other/dump/ap303-loader-2.5.0.2.zip; apboot_sha256 = 69e45b047de07ceeeb4a3daec6232ba2902acea8806075af80c2725ea52298a5; sicherheit = quelle; sicherheit_hinweis = Den Schritt mit dem älteren Bootloader beschreibt Freifunk Darmstadt; die Datei dafür stellen wir bereit.
+- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb; initramfs_url = https://downloads.openwrt.org/releases/24.10.8/targets/ipq40xx/generic/openwrt-24.10.8-ipq40xx-generic-aruba_ap-303-initramfs-uImage.itb; initramfs_sha256 = 5d65d93c796b5dd10e42a65269dadb7905dca0b42c0fd60251431392b53ac56e; tty = ttyMSM1; mtd = /dev/mtd1; bootm_weg = apboot; apboot_datei = ap303-loader-2.5.0.2.bin; apboot_url = https://firmware.neanderfunk.de/other/dump/ap303-loader-2.5.0.2.zip; apboot_sha256 = 69e45b047de07ceeeb4a3daec6232ba2902acea8806075af80c2725ea52298a5; sicherheit = quelle; sicherheit_hinweis = Den Schritt mit dem älteren Bootloader beschreibt Freifunk Darmstadt; die Datei dafür stellen wir bereit.
 
 #### aruba-instant-on-ap11d
 
@@ -2472,7 +2472,7 @@ AVM FRITZ!Box 3390 · lantiq-xrx200 · K1
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-3390.sh (Rezept-Entwurf, nicht gebaut): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`
 - **Quelle (OpenWrt-Commit):** 73ec21cde2cde1fc27f66b08e8762cdc3c78b61a
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-box-3390.md
-- **Werte für die Anleitung:** rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-3390-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261015-avm-fritz-box-3390-initramfs-kernel.bin; sicherheit = abgeleitet
+- **Werte für die Anleitung:** rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-box-3390-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261114-avm-fritz-box-3390-initramfs-kernel.bin; sicherheit = abgeleitet
 
 #### avm-fritz-box-7362-sl
 
@@ -2511,7 +2511,7 @@ AVM FRITZ!Box 7362 SL · lantiq-xrx200 · K1
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7362-sl.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`
 - **Quelle (OpenWrt-Commit):** eae6cac6a30b95bef04d033ed8a303b7e35a078b
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-box-7362-sl.md; https://openwrt.org/toh/avm/avm_7362_sl#installation
-- **Werte für die Anleitung:** led_rampe = Die Power-LED blinkt dann rot.; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7362-sl-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261015-avm-fritz-box-7362-sl-initramfs-kernel.bin; sicherheit = abgeleitet
+- **Werte für die Anleitung:** led_rampe = Die Power-LED blinkt dann rot.; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-box-7362-sl-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261114-avm-fritz-box-7362-sl-initramfs-kernel.bin; sicherheit = abgeleitet
 
 #### avm-fritz-box-7412
 
@@ -2552,7 +2552,7 @@ AVM FRITZ!Box 7412 · lantiq-xrx200 · K1
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7412.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch
 - **Quelle (OpenWrt-Commit):** 20f48c8ae334f8502e756282995cc84d89fa81c1
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-box-7412.md; https://openwrt.org/toh/avm/avm_fritz_box_7412#installation
-- **Werte für die Anleitung:** ersatz_ip = 169.254.120.1; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7412-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261015-avm-fritz-box-7412-initramfs-kernel.bin; sicherheit = abgeleitet
+- **Werte für die Anleitung:** ersatz_ip = 169.254.120.1; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-box-7412-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261114-avm-fritz-box-7412-initramfs-kernel.bin; sicherheit = abgeleitet
 
 #### avm-fritz-box-7430
 
@@ -2594,7 +2594,7 @@ AVM FRITZ!Box 7430 · lantiq-xrx200 · K1
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7430.sh (Rezept-Entwurf, nicht gebaut): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch
 - **Quelle (OpenWrt-Commit):** 6c85a449a988876fdfd4ce84d6aa5ffe4a2820c1
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-box-7430.md; https://openwrt.org/toh/avm/avm_fritz_box_7430#installation
-- **Werte für die Anleitung:** ersatz_ip = 169.254.120.1; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7430-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261015-avm-fritz-box-7430-initramfs-kernel.bin; sicherheit = abgeleitet
+- **Werte für die Anleitung:** ersatz_ip = 169.254.120.1; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-box-7430-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261114-avm-fritz-box-7430-initramfs-kernel.bin; sicherheit = abgeleitet
 
 ### Familie `avm-eva-uboot`
 
@@ -2640,7 +2640,7 @@ AVM FRITZ!Box 7520 (Alias von avm-fritz-box-7530) · ipq40xx-generic · K2
 - **Gluon-RAMpe-Rezept:** Alias: Image aus devices/avm-fritz-box-7530.sh (dort auch `uboot-fritz7520.bin`); TFTP-Dateiname `FRITZ7520.bin` [geprüft: U-Boot-Quelle chunkeey/FritzBox-4040-UBOOT, include/configs/fritz7520.h]
 - **Quelle (OpenWrt-Commit):** OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-box-7520.md; https://openwrt.org/toh/avm/avm_fritz_box_7530#installation
-- **Werte für die Anleitung:** uboot_datei = uboot-fritz7520.bin; uboot_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/uboot-fritz7520.bin; tftp_name = FRITZ7520.bin; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
+- **Werte für die Anleitung:** uboot_datei = uboot-fritz7520.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz7520.bin; tftp_name = FRITZ7520.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-box-7530-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261114-avm-fritz-box-7530-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
 
 #### avm-fritz-box-7530
 
@@ -2682,7 +2682,7 @@ AVM FRITZ!Box 7530 · ipq40xx-generic · K2
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7530.sh (gebaut 15.10.2026): `-initramfs-uImage.itb` als `FRITZ7530.bin`, dazu `uboot-fritz7530.bin`/`uboot-fritz7520.bin` für `eva_ramboot.py`; Vorbereitung vor dem sysupgrade in der RAMpe (overlay/lib/gluon-rampe/prepare/avm_fritzbox-7530.sh, U-Boot aus package/gluon-rampe-uboot-fritz), U-Boot-Wahl nach HWRevision aus dem TFFS; im QEMU-Test geprüft, am Gerät ungetestet
 - **Quelle (OpenWrt-Commit):** OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-box-7530.md; https://openwrt.org/toh/avm/avm_fritz_box_7530#installation
-- **Werte für die Anleitung:** uboot_datei = uboot-fritz7530.bin; uboot_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/uboot-fritz7530.bin; tftp_name = FRITZ7530.bin; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261015-avm-fritz-box-7530-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
+- **Werte für die Anleitung:** uboot_datei = uboot-fritz7530.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz7530.bin; tftp_name = FRITZ7530.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-box-7530-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261114-avm-fritz-box-7530-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
 
 #### avm-fritz-repeater-1200
 
@@ -2724,7 +2724,7 @@ AVM FRITZ!Repeater 1200 · ipq40xx-generic · K2
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-repeater-1200.sh (gebaut 15.10.2026): `-initramfs-uImage.itb` als `FRITZ1200.bin` + `uboot-fritz1200.bin`; Vorbereitung vor dem sysupgrade in der RAMpe (avm_fritzrepeater-1200.sh); am Gerät ungetestet
 - **Quelle (OpenWrt-Commit):** OpenWrt 7f187229a8e9b7966248b1e024217e07a9fc3e50
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-repeater-1200.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7f187229a8e9b7966248b1e024217e07a9fc3e50
-- **Werte für die Anleitung:** uboot_datei = uboot-fritz1200.bin; uboot_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/uboot-fritz1200.bin; tftp_name = FRITZ1200.bin; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-repeater-1200-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261015-avm-fritz-repeater-1200-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
+- **Werte für die Anleitung:** uboot_datei = uboot-fritz1200.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz1200.bin; tftp_name = FRITZ1200.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-repeater-1200-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261114-avm-fritz-repeater-1200-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
 
 #### avm-fritz-repeater-3000
 
@@ -2767,7 +2767,7 @@ AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) · ipq40xx-gen
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-repeater-3000.sh (gebaut 15.10.2026): trägt das Gerät in Gluon ein; `FRITZ3000.bin` + `uboot-fritz3000.bin`; Vorbereitung vor dem sysupgrade in der RAMpe (avm_fritzrepeater-3000.sh); am Gerät ungetestet
 - **Quelle (OpenWrt-Commit):** OpenWrt 148d29d47b1d555d0058dcc5dda450b74c4628ec
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-repeater-3000.md
-- **Werte für die Anleitung:** uboot_datei = uboot-fritz3000.bin; uboot_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/uboot-fritz3000.bin; tftp_name = FRITZ3000.bin; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-avm-fritz-repeater-3000-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261015-avm-fritz-repeater-3000-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
+- **Werte für die Anleitung:** uboot_datei = uboot-fritz3000.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz3000.bin; tftp_name = FRITZ3000.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-avm-fritz-repeater-3000-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261114-avm-fritz-repeater-3000-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
 
 ### Familie `cudy-zwischenfirmware`
 
@@ -3909,15 +3909,16 @@ D-Link AQUILA PRO AI M30 A1 · mediatek-filogic · K1
   6. Status-LED blinkt weiß und bleibt weiß = OpenWrt läuft [geprüft: Commit 29cca6c]
   7. Danach Gluon-sysupgrade über 192.168.1.1 einspielen [geprüft: Neanderfunk-Notiz]
 - **Taste und Zeitpunkt:** Reset-Taste mit Büroklammer gedrückt halten, Strom einstecken, halten bis die LED rot blinkt [geprüft: Commits 29cca6c, 7271ee5; Neanderfunk-Notiz]
-- **Sichtbare Zeichen:** LED blinkt rot = Recovery erreicht; nach dem Flash: Status-LED blinkt weiß und bleibt weiß = OpenWrt läuft (erste Partition) [geprüft: Commit 29cca6c]; die Recovery-Seite meldet immer Erfolg, auch wenn es scheitert, und leitet auf 192.168.0.1 um [geprüft: Commit]; Erfolgsmeldung und Fortschrittsbalken der Recovery-Seite sind ein JavaScript-Timer (80 s) und sagen nichts; fertig ist es erst, wenn die neue Firmware bootet [geprüft: Neanderfunk-Notiz]
+- **Sichtbare Zeichen:** LED blinkt rot = Recovery erreicht; nach dem Flash: Status-LED blinkt weiß und bleibt weiß = OpenWrt läuft (erste Partition) [geprüft: Commit 29cca6c]; die Recovery-Seite meldet immer Erfolg, auch wenn es scheitert, und leitet auf 192.168.0.1 um [geprüft: Commit]; Erfolgsmeldung und Fortschrittsbalken der Recovery-Seite sind ein JavaScript-Timer (80 s) und sagen nichts; fertig ist es erst, wenn die neue Firmware bootet [geprüft: Neanderfunk-Notiz]; LED-Zeichen: Recovery rot blinkend etwa 2 Hz, RAMpe-Start erst schnelles weißes Flackern, dann weiß 1 Hz, Herstellerfirmware langsam orange auf- und abschwellend [geprüft: adorfer 15.11.2026]
 - **Übertragung:** recovery-web: Gerät 192.168.200.1, Rechner 192.168.200.10/24, POST /upload.cgi (curl oder Chromium), kein Ping
 - **Adressen:** Rechner fest 192.168.200.10, Netzmaske 255.255.255.0; Recovery http://192.168.200.1 [geprüft: Commit 29cca6c]; Erreichbarkeit per HTTP prüfen, nie per Ping (Recovery antwortet nicht auf ICMP) [geprüft: Neanderfunk-Notiz]; danach OpenWrt unter 192.168.1.1 [geprüft: Neanderfunk-Notiz]
-- **Programm:** curl: `curl -H "Expect:" -F "firmware=@<image>;type=application/octet-stream" http://<recovery-ip>/upload.cgi` (Hochladen am besten so) [geprüft: Neanderfunk-Notiz, am M60 erprobt]; im Browser nur Chromium-basiert, Firefox geht nicht [geprüft: Commits 'Chromium based'; Firefox abgeleitet: Forum Darmstadt laut Notiz]
+- **Programm:** curl: `curl -H "Expect:" -F "firmware=@<image>;type=application/octet-stream" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt]; seit 15.11.2026 nur noch Notweg [geprüft: adorfer 15.11.2026]; im Browser nur Chromium-basiert [geprüft: Commits 'Chromium based']; Firefox geht nicht, Chrome/Chromium ist der Weg [geprüft: Test adorfer 15.11.2026 am M30]; Seitentexte der Recovery: Knopf "Upgrade", beim Hochladen "Device is upgrading the firmware" mit Prozentzahl, danach "Upgrade successfully!"; das Hochladen läuft langsam [geprüft: Screenshots und Aussage adorfer 15.11.2026]
 - **Datei:** OpenWrt-squashfs-recovery.bin (initramfs mit D-Link-Header DLK6E6110001; Gluon baut für den M30 bewusst kein Recovery-Image), danach Gluon-sysupgrade [geprüft] [geprüft: Neanderfunk-Notiz]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
-- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
 - **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Recovery per Taste beim Einschalten, Hochladen im Browser, feste Adresse am Rechner; curl nur Notweg (adorfer 15.11.2026), daher L3 statt L4
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Geräte aus Mehrfach-Packs (Typenschild 'M60-2' bzw. 'M30/CP') haben die MAC an anderer Stelle in den Werksdaten; erst Gluon-Bauten mit dem Neanderfunk-Odm-Parser lesen sie richtig (M30 laut Notiz seit gluon-patches-hardware 9901905) [geprüft: Neanderfunk-Notiz, am Gerät bestätigt]
 - **Bedingung an die Herstellerfirmware:** Recovery schreibt immer in die gerade aktive Partition, OpenWrt bootet nur aus der ersten; liegt die zweite vorn: entschlüsseltes OEM-Image per Recovery, dann verschlüsseltes OEM-Image über die OEM-Oberfläche, dann erneut OpenWrt per Recovery [geprüft: Commit 29cca6c]
@@ -3933,8 +3934,8 @@ D-Link AQUILA PRO AI M30 A1 · mediatek-filogic · K1
 - **Gluon-RAMpe-Rezept:** devices/d-link-aquila-pro-ai-m30-a1.sh: `-recovery.bin` (D-Link-Header DLK6E6110001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, Hardware-Test offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f
 - **Detail-Anleitung:** anleitungen/de/d-link-aquila-pro-ai-m30-a1.md; https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/
-- **Am Gerät erprobt (für die Anleitung):** am = 2026-10-16; mit = gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin; weg = D-Link-Recovery (LED rot blinkend), curl-Upload nach Anleitung, RAMpe, dann sysupgrade auf Gluon 2025.1 26100702bro; MAC danach korrekt (Einzelgerät, Odm-Eintrag 0x81); beleg = Testplatz grw (M30 aus dem Dumbrack), router-werkstatt docs/validierung/d-link-m30-a1-rampe-20261015-2026-10-16.md (7cdf1aa)
-- **Werte für die Anleitung:** recovery_ip = 192.168.200.1; led_recovery = rot blinkt; datei_art = rampe; upload_pfad = /upload.cgi; rampe_ip = 192.168.1.1; rampe_bytes = etwa 52,4 Millionen; led_rampe = blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde; herstellerseite_gleiche_ip = False; rechner_ip = 192.168.200.10; dauer_neustart = einige Minuten; dauer_gluon = wenige Minuten; datei_beispiel = gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin; rampe_datei = gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin; sicherheit = quelle; led_schreibt = leuchtet die LED ruhig rot, etwas schwächer; led_start = blinkt die LED schnell weiß
+- **Am Gerät erprobt (für die Anleitung):** am = 2026-11-15; mit = gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin; weg = D-Link-Recovery, Hochladen im Browser (Chrome/Chromium, lief langsam), RAMpe startete sauber, dann Gluon-sysupgrade; Firefox ging nicht; beleg = Testplatz grw, adorfer 15.11.2026 ("D30" = M30 A1, von adorfer bestätigt); vorher erprobt 2026-10-16 mit gluon-rampe-20261015 (Testplatz grw (M30 aus dem Dumbrack), router-werkstatt docs/validierung/d-link-m30-a1-rampe-20261015-2026-10-16.md (7cdf1aa))
+- **Werte für die Anleitung:** recovery_ip = 192.168.200.1; led_recovery = rot blinkt, etwa zweimal pro Sekunde; datei_art = rampe; upload_pfad = /upload.cgi; rampe_ip = 192.168.1.1; rampe_bytes = etwa 52,4 Millionen; led_rampe = blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde; herstellerseite_gleiche_ip = False; rechner_ip = 192.168.200.10; dauer_neustart = einige Minuten; dauer_gluon = wenige Minuten; datei_beispiel = gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin; rampe_datei = gluon-rampe-<Datum>-d-link-aquila-pro-ai-m30-a1-recovery.bin; led_falsch = Ein orangefarbenes Auf- und Abdimmen ist nicht die Recovery.; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin; sicherheit = quelle; led_schreibt = leuchtet die LED ruhig rot, etwas schwächer; led_start = flackert die LED schnell weiß; browser_upload = Chrome oder Chromium; browser_nicht = Firefox; upload_knopf = Upgrade; meldung_laeuft = Device is upgrading the firmware; meldung_fertig = Upgrade successfully!; upload_langsam = True; led_herstellerfirmware = die LED dimmt langsam orange auf und ab
 
 #### d-link-aquila-pro-ai-m60-a1
 
@@ -3950,17 +3951,18 @@ D-Link AQUILA PRO AI M60 A1 · mediatek-filogic · K1
   6. Danach ist OpenWrt unter 192.168.1.1 erreichbar [geprüft: Commit]
   7. Gluon-sysupgrade per ssh root@192.168.1.1 und `sysupgrade -n` einspielen [geprüft: Neanderfunk-Notiz]
 - **Taste und Zeitpunkt:** Reset-Taste mit Büroklammer gedrückt halten, Strom einstecken, halten bis die LED rot blinkt [geprüft: Commits 29cca6c, 7271ee5; Neanderfunk-Notiz]; nur die Reset-Taste führt in die Recovery, keine andere Taste [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]
-- **Sichtbare Zeichen:** LED blinkt rot = Recovery erreicht, blinkt auch während des Schreibens weiter rot [geprüft: Commit 7271ee5]; danach OpenWrt unter 192.168.1.1 [geprüft: Commit]; Erfolgsmeldung und Fortschrittsbalken der Recovery-Seite sind ein JavaScript-Timer (80 s) und sagen nichts; fertig ist es erst, wenn die neue Firmware bootet [geprüft: Neanderfunk-Notiz]; Recovery = LED blinkt klar rot, ein orangefarbenes Hell-Dunkel-Dimmen ist NICHT die Recovery; rotes Blinken auch während Upload und Schreiben, danach Neustart [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät] (passt zu Commit 7271ee5); welche Farbe die LED in den rund 30 s Neustart zeigt, ist nicht notiert
-- **Übertragung:** recovery-web: Gerät 192.168.200.1, Rechner z. B. 192.168.200.66/24, POST /upload.cgi, 10-11 min
+- **Sichtbare Zeichen:** LED blinkt rot = Recovery erreicht, blinkt auch während des Schreibens weiter rot [geprüft: Commit 7271ee5]; danach OpenWrt unter 192.168.1.1 [geprüft: Commit]; Erfolgsmeldung und Fortschrittsbalken der Recovery-Seite sind ein JavaScript-Timer (80 s) und sagen nichts; fertig ist es erst, wenn die neue Firmware bootet [geprüft: Neanderfunk-Notiz]; Recovery = LED blinkt klar rot, ein orangefarbenes Hell-Dunkel-Dimmen ist NICHT die Recovery; rotes Blinken auch während Upload und Schreiben, danach Neustart [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät] (passt zu Commit 7271ee5); welche Farbe die LED in den rund 30 s Neustart zeigt, ist nicht notiert; LED-Zeichen: Recovery rot blinkend etwa 2 Hz, RAMpe-Start erst schnelles weißes Flackern, dann weiß 1 Hz, Herstellerfirmware langsam orange auf- und abschwellend [geprüft: adorfer 15.11.2026]
+- **Übertragung:** recovery-web: Gerät 192.168.200.1, Rechner z. B. 192.168.200.66/24, POST /upload.cgi (Chrome/Chromium, Notweg curl), 10-11 min
 - **Anschluss:** eine beliebige LAN-Buchse, nicht WAN [geprüft: Neanderfunk-Notiz 15.10.2026, am Gerät]
 - **Adressen:** Rechner fest im Netz 192.168.200.0/24 (bewährt: 192.168.200.66/24), Recovery http://192.168.200.1 [geprüft: Commit 7271ee5, am Gerät]; Erreichbarkeit per HTTP prüfen, nie per Ping (Recovery antwortet nicht auf ICMP) [geprüft: Neanderfunk-Notiz]; danach OpenWrt unter 192.168.1.1 [geprüft: Neanderfunk-Notiz]; auch die Herstellerfirmware antwortet mit ihrem Admin-Login unter http://192.168.200.1 (aufwendigeres Layout mit Passwortabfrage statt der schlichten Recovery-Seite) [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]
-- **Programm:** curl: `curl -H "Expect:" -F "firmware=@<image>;type=application/octet-stream" http://<recovery-ip>/upload.cgi` (Hochladen am besten so) [geprüft: Neanderfunk-Notiz, am M60 erprobt]; im Browser nur Chromium-basiert, Firefox geht nicht [geprüft: Commits 'Chromium based'; Firefox abgeleitet: Forum Darmstadt laut Notiz]; aber auch in Chromium war der Browser-Upload bei zwei Nutzern nach unter 1 s "fertig", ohne dass etwas übertragen war: curl ist der Weg [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]; Eigenheiten des Rechners, gleich für jedes Image: unter Windows ist `curl.exe` eingebaut (in PowerShell `curl.exe` ausschreiben, `curl` allein ist dort Invoke-WebRequest; Pfadvariable in cmd `%USERPROFILE%`, in PowerShell `$env:USERPROFILE`); aus WSL2 im Mirrored-Modus kam keine Verbindung zu 192.168.200.1 zustande, aus Windows schon [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]; mit `-w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes, Dauer %{time_total} s\n"` zeigt curl am Ende, ob alles ankam [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]
+- **Programm:** Browser: Chrome oder Chromium ist der Weg, das Hochladen der RAMpe 20261114 lief langsam, danach startete die RAMpe sauber; Firefox ging nicht [geprüft: Test adorfer 15.11.2026 am M60]; im Browser nur Chromium-basiert [geprüft: Commits 'Chromium based']; früher war der Browser-Upload in Chromium bei zwei Nutzern nach unter 1 s "fertig", ohne dass etwas übertragen war [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]; curl nur noch Notweg, falls es im Browser nicht geht [geprüft: adorfer 15.11.2026]: `curl -H "Expect:" -F "firmware=@<image>;type=application/octet-stream" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt]; Eigenheiten des Rechners, gleich für jedes Image: unter Windows ist `curl.exe` eingebaut (in PowerShell `curl.exe` ausschreiben, `curl` allein ist dort Invoke-WebRequest; Pfadvariable in cmd `%USERPROFILE%`, in PowerShell `$env:USERPROFILE`); aus WSL2 im Mirrored-Modus kam keine Verbindung zu 192.168.200.1 zustande, aus Windows schon [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]; mit `-w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes, Dauer %{time_total} s\n"` zeigt curl am Ende, ob alles ankam [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]; Seitentexte der Recovery: Knopf "Upgrade", beim Hochladen "Device is upgrading the firmware" mit Prozentzahl, danach "Upgrade successfully!"; das Hochladen läuft langsam [geprüft: Screenshots und Aussage adorfer 15.11.2026]
 - **Zugang:** nach der Recovery: ssh root@192.168.1.1 [geprüft: Neanderfunk-Notiz]
 - **Datei:** OpenWrt-squashfs-recovery.bin (initramfs mit D-Link-Header DLK6E8202001, 50 MB), danach Gluon-sysupgrade mit `sysupgrade -n` [geprüft: Neanderfunk-Notiz] [geprüft, am Gerät 29./30.09.2026 erprobt]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
-- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
 - **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Recovery per Taste beim Einschalten, Hochladen im Browser, feste Adresse am Rechner; curl nur Notweg (adorfer 15.11.2026), daher L3 statt L4
 - **Werkzeug/Spezial:** bei falscher Partition: UBI-Switch-Image (github RolandoMagico, M60-Recovery-UBI-Switch)
 - **Typenschild/Verwechslung:** Geräte aus Mehrfach-Packs (Typenschild 'M60-2' bzw. 'M30/CP') haben die MAC an anderer Stelle in den Werksdaten; erst Gluon-Bauten mit dem Neanderfunk-Odm-Parser lesen sie richtig (M60 ab 26093000bro) [geprüft: Neanderfunk-Notiz, am Gerät bestätigt]
 - **Bedingung an die Herstellerfirmware:** Recovery schreibt in die aktive Partition, OpenWrt bootet nur aus der ersten; sonst vorher das UBI-Switch-Image (github RolandoMagico, M60-Recovery-UBI-Switch) per Recovery und darunter ein sysupgrade [geprüft: Commit 7271ee5]; am Gerät nicht nötig, kein Downgrade nötig [geprüft: Neanderfunk-Notiz]; Flashen über die OEM-Oberfläche geht nicht [geprüft: Commit]
@@ -3977,8 +3979,8 @@ D-Link AQUILA PRO AI M60 A1 · mediatek-filogic · K1
 - **Gluon-RAMpe-Rezept:** devices/d-link-aquila-pro-ai-m60-a1.sh: `-recovery.bin` (D-Link-Header DLK6E8202001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, am Gerät erprobt 13.10.2026 (Neanderfunk-sysupgrade geflasht). Gluons eigenes recovery.bin (z. B. Neanderfunk 26100702bro) startet vermutlich wie bei der M30 nicht im Config-Mode [abgeleitet]
 - **Quelle (OpenWrt-Commit):** OpenWrt 7271ee587cd104d30d6d46dd3c623c9d4602bd0c
 - **Detail-Anleitung:** anleitungen/de/d-link-aquila-pro-ai-m60-a1.md
-- **Am Gerät erprobt (für die Anleitung):** am = 2026-10-16; mit = gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin; weg = Stock-Firmware, D-Link-Recovery, curl-Upload nach Anleitung (zweimal), RAMpe, dann sysupgrade auf Gluon 2025.1 26100702bro; Primary MAC danach korrekt; beleg = Testplatz grw (drittes M60), router-werkstatt docs/validierung/d-link-m60-a1-geraet3-rampe-20261015-2026-10-16.md (ae51d18); vorher erprobt 2026-10-13 mit gluon-rampe-20261010
-- **Werte für die Anleitung:** recovery_ip = 192.168.200.1; led_recovery = rot blinkt; datei_art = rampe; upload_pfad = /upload.cgi; rampe_ip = 192.168.1.1; rampe_bytes = etwa 52,4 Millionen; led_rampe = blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde; seitentitel = D-link Router Recovery Mode; herstellerseite_gleiche_ip = True; anschluss = einer der LAN-Buchsen, nicht mit WAN; rechner_ip = 192.168.200.66; dauer_neustart = weniger als eine halbe Minute bis gut 2 Minuten; dauer_gluon = unter 2 Minuten; datei_beispiel = gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin; rampe_datei = gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin; taste_hinweis = Nur die Reset-Taste führt in die Recovery, keine der anderen Tasten.; led_falsch = Ein orangefarbenes Auf- und Abdimmen ist nicht die Recovery.; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-d-link-aquila-pro-ai-m60-a1-recovery.bin; led_schreibt = leuchtet die LED ruhig rot, etwas schwächer; led_start = blinkt die LED schnell weiß
+- **Am Gerät erprobt (für die Anleitung):** am = 2026-11-15; mit = gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin; weg = D-Link-Recovery auf 192.168.200.1 bis „Upgrade successfully!“, RAMpe auf 192.168.1.1 (Information: Release 20261114, Modell D-Link AQUILA PRO AI M60 A1, Switch dsa), dann Gluon-sysupgrade 2025.1 26101610sta (21_dias, sha256 69916c5d…) hochgeladen; danach Gluon-Setup auf 192.168.1.1, Release 26101610sta; beleg = Testplatz grw, adorfer; vorher erprobt 2026-10-16 mit gluon-rampe-20261015 (router-werkstatt docs/validierung/d-link-m60-a1-geraet3-rampe-20261015-2026-10-16.md, ae51d18) und 2026-10-13 mit gluon-rampe-20261010
+- **Werte für die Anleitung:** recovery_ip = 192.168.200.1; led_recovery = rot blinkt, etwa zweimal pro Sekunde; datei_art = rampe; upload_pfad = /upload.cgi; rampe_ip = 192.168.1.1; rampe_bytes = etwa 52,4 Millionen; led_rampe = blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde; seitentitel = D-link Router Recovery Mode; herstellerseite_gleiche_ip = True; anschluss = einer der LAN-Buchsen, nicht mit WAN; rechner_ip = 192.168.200.66; dauer_neustart = weniger als eine halbe Minute bis gut 2 Minuten; dauer_gluon = unter 2 Minuten; datei_beispiel = gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin; rampe_datei = gluon-rampe-<Datum>-d-link-aquila-pro-ai-m60-a1-recovery.bin; taste_hinweis = Nur die Reset-Taste führt in die Recovery, keine der anderen Tasten.; led_falsch = Ein orangefarbenes Auf- und Abdimmen ist nicht die Recovery.; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin; led_schreibt = leuchtet die LED ruhig rot, etwas schwächer; led_start = flackert die LED schnell weiß; browser_upload = Chrome oder Chromium; browser_nicht = Firefox; upload_knopf = Upgrade; meldung_laeuft = Device is upgrading the firmware; meldung_fertig = Upgrade successfully!; upload_langsam = True; led_herstellerfirmware = die LED dimmt langsam orange auf und ab
 
 #### d-link-dap-1620-b1
 
@@ -3996,12 +3998,13 @@ D-Link DAP-1620 B1 (Gluon: broken) · ramips-mt7621 · K0
 - **Sichtbare Zeichen:** Erfolgsmeldung und Fortschrittsbalken der Recovery-Seite sind ein JavaScript-Timer (80 s) und sagen nichts; fertig ist es erst, wenn die neue Firmware bootet [geprüft: Neanderfunk-Notiz] [für dieses Gerät abgeleitet: gleiche D-Link-Recovery]
 - **Übertragung:** recovery-web: Gerät 192.168.0.50
 - **Adressen:** Recovery http://192.168.0.50 (D-Link Web Recovery Updater); Rechner fest im Netz 192.168.0.0/24, z. B. 192.168.0.65/24 wie beim DAP-X1860 [Adresse geprüft: Commit e4c7703; Rechner-IP abgeleitet: Schwestergerät]; Erreichbarkeit per HTTP prüfen, nie per Ping (Recovery antwortet nicht auf ICMP) [geprüft: Neanderfunk-Notiz]
-- **Programm:** am besten Chromium [geprüft: Commit]; curl: `curl -H "Expect:" -F "firmware=@<image>;type=application/octet-stream" http://<recovery-ip>/upload.cgi` (Hochladen am besten so) [geprüft: Neanderfunk-Notiz, am M60 erprobt]; im Browser nur Chromium-basiert, Firefox geht nicht [geprüft: Commits 'Chromium based'; Firefox abgeleitet: Forum Darmstadt laut Notiz]
+- **Programm:** am besten Chromium [geprüft: Commit]; curl: `curl -H "Expect:" -F "firmware=@<image>;type=application/octet-stream" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt]; nur noch Notweg [geprüft: adorfer 15.11.2026]; im Browser nur Chromium-basiert [geprüft: Commits 'Chromium based']; Hochladen im Browser mit Chromium geht, schon immer [geprüft: adorfer 15.11.2026]; zu Firefox keine eigene Erfahrung
 - **Datei:** factory.bin hochladen und bestätigen [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
-- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
 - **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Recovery per Taste beim Einschalten, Hochladen im Browser, feste Adresse am Rechner; curl nur Notweg (adorfer 15.11.2026), daher L3 statt L4
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-dlink_dap-1620-b1-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
@@ -4028,12 +4031,13 @@ D-Link DAP-X1860 A1 · ramips-mt7621 · K0
 - **Sichtbare Zeichen:** LED blinkt rot = Recovery erreicht [abgeleitet: Forum Darmstadt laut Notiz]; Status- und RSSI-LEDs sind ab Werk rot/orange statt rot/grün bestückt [geprüft: Commit 3c31f6b]; Erfolgsmeldung und Fortschrittsbalken der Recovery-Seite sind ein JavaScript-Timer (80 s) und sagen nichts; fertig ist es erst, wenn die neue Firmware bootet [geprüft: Neanderfunk-Notiz]
 - **Übertragung:** recovery-web: Gerät 192.168.0.50, Rechner 192.168.0.65/24
 - **Adressen:** Recovery http://192.168.0.50 (nicht .1), Rechner 192.168.0.65/24 [geprüft: Commit 3c31f6b (Adresse), Neanderfunk-Notiz (Rechner-IP aus Forum Darmstadt)]; Erreichbarkeit per HTTP prüfen, nie per Ping (Recovery antwortet nicht auf ICMP) [geprüft: Neanderfunk-Notiz]
-- **Programm:** curl: `curl -H "Expect:" -F "firmware=@<image>;type=application/octet-stream" http://<recovery-ip>/upload.cgi` (Hochladen am besten so) [geprüft: Neanderfunk-Notiz, am M60 erprobt]; im Browser nur Chromium-basiert, Firefox geht nicht [geprüft: Commits 'Chromium based'; Firefox abgeleitet: Forum Darmstadt laut Notiz]
+- **Programm:** curl: `curl -H "Expect:" -F "firmware=@<image>;type=application/octet-stream" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt]; nur noch Notweg [geprüft: adorfer 15.11.2026]; im Browser nur Chromium-basiert [geprüft: Commits 'Chromium based']; Hochladen im Browser mit Chromium geht, schon immer [geprüft: adorfer 15.11.2026]; zu Firefox keine eigene Erfahrung
 - **Datei:** laut Commit factory.bin [geprüft]; laut Neanderfunk-Notiz (01.10.2026) dagegen OpenWrt-initramfs und danach Gluon-sysupgrade: Widerspruch offen
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
-- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
 - **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Recovery per Taste beim Einschalten, Hochladen im Browser, feste Adresse am Rechner; curl nur Notweg (adorfer 15.11.2026), daher L3 statt L4
 - **Werkzeug/Spezial:** -
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-dlink_dap-x1860-a1-initramfs-kernel.bin) (200)
 - **Factory-/Stock-Image-Link:** Gluon-factory (Community)
@@ -4068,8 +4072,9 @@ D-Link DIR-878 A1 · ramips-mt7621 · K0
 - **Datei:** Gluon-factory (`<gluon-factory>.bin`) [geprüft] [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
-- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
 - **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Recovery per Taste beim Einschalten, Hochladen im Browser, feste Adresse am Rechner; curl nur Notweg (adorfer 15.11.2026), daher L3 statt L4
 - **Werkzeug/Spezial:** curl (optional)
 - **Typenschild/Verwechslung:** DIR-878 und DIR-882 (mit USB) sind eng verwandt, DIR-867 ebenso; jeweils eigenes Image [abgeleitet: Commit 73e8f23 nennt DIR-867/882-Unterschiede]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-dlink_dir-878-a1-initramfs-kernel.bin) (200)
@@ -4101,8 +4106,9 @@ D-Link DIR-882 A1 · ramips-mt7621 · K0
 - **Datei:** Gluon-factory (`<gluon-factory>.bin`) [geprüft] [geprüft: Commit]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
-- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = nein; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
 - **Risiko (normal / bootloader / offen):** normal
+- **Level: Einzelentscheidung:** Recovery per Taste beim Einschalten, Hochladen im Browser, feste Adresse am Rechner; curl nur Notweg (adorfer 15.11.2026), daher L3 statt L4
 - **Werkzeug/Spezial:** curl (optional)
 - **Typenschild/Verwechslung:** DIR-882 (USB 2.0 + 3.0) vs. DIR-867 (ohne USB, nur 3x3-WLAN) und DIR-878: gleiche Plattform, eigene Images [geprüft: Commit 73e8f23]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-dlink_dir-882-a1-initramfs-kernel.bin) (200)
@@ -4436,7 +4442,7 @@ GL.iNet GL-E750 (broken) · ath79-nand · K2
 - **Gluon-RAMpe-Rezept:** devices/gl.inet-gl-e750.sh: `-factory.img` (Kernel + UBI), broken = false für diesen Bau; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** 68ac3f2cddab8422d7de0ce1a78d23edf29012e7 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/gl.inet-gl-e750.md
-- **Werte für die Anleitung:** weg = uboot; taste = Halte die Reset-Taste gedrückt und schalte den Router ein.; led_uboot = Auf dem Display steht erst „Booting“, dann „Reset Counting 1 to 4“, dann „Please Open Web 192.168.1.1“: Jetzt loslassen.; zwischen_datei = openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img; sicherheit = quelle; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-gl.inet-gl-e750-factory.img; rampe_datei = gluon-rampe-20261015-gl.inet-gl-e750-factory.img; rampe_weg = Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch.
+- **Werte für die Anleitung:** weg = uboot; taste = Halte die Reset-Taste gedrückt und schalte den Router ein.; led_uboot = Auf dem Display steht erst „Booting“, dann „Reset Counting 1 to 4“, dann „Please Open Web 192.168.1.1“: Jetzt loslassen.; zwischen_datei = openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-e750-squashfs-factory.img; sicherheit = quelle; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-gl.inet-gl-e750-factory.img; rampe_datei = gluon-rampe-20261114-gl.inet-gl-e750-factory.img; rampe_weg = Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch.
 
 #### gl.inet-gl-xe300
 
@@ -4474,7 +4480,7 @@ GL.iNet GL-XE300 · ath79-nand · K2
 - **Gluon-RAMpe-Rezept:** devices/gl.inet-gl-xe300.sh: `-factory.img` (Kernel + UBI); Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** af8a059bb41dd7afee49ce9a5d52e9a8e010bbd8 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/gl.inet-gl-xe300.md
-- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste und die Power-Taste gleichzeitig und halte beide, bis die LAN-LED 5-mal geblinkt hat. Dann beide loslassen.; led_uboot = Bleibt die WLAN-LED an, ist der Notfall-Modus erreicht.; zwischen_datei = openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img; sicherheit = quelle; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-gl.inet-gl-xe300-factory.img; rampe_datei = gluon-rampe-20261015-gl.inet-gl-xe300-factory.img; rampe_weg = Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch.
+- **Werte für die Anleitung:** weg = uboot; taste = Drück die Reset-Taste und die Power-Taste gleichzeitig und halte beide, bis die LAN-LED 5-mal geblinkt hat. Dann beide loslassen.; led_uboot = Bleibt die WLAN-LED an, ist der Notfall-Modus erreicht.; zwischen_datei = openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ath79/nand/openwrt-24.10.8-ath79-nand-glinet_gl-xe300-squashfs-factory.img; sicherheit = quelle; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-gl.inet-gl-xe300-factory.img; rampe_datei = gluon-rampe-20261114-gl.inet-gl-xe300-factory.img; rampe_weg = Lade in Schritt 5 im Notfall-Modus statt der OpenWrt-Datei die RAMpe hoch.
 
 #### gl.inet-gl-ap1300
 
@@ -8948,7 +8954,7 @@ NETGEAR WNDR3700 v5 (Gluon: broken, "untested") · ramips-mt7621 · K0+
 - **Gluon-RAMpe-Rezept:** devices/netgear-wndr3700-v5.sh: `-factory.img` (Sercomm), broken = false für diesen Bau; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** cb049e71cdc08e17f664403a0ef970c480ae5c4a + 2fdd02cc7c3516c2cce2ace2c7b539e0821ecbe8 (factory-Image)
 - **Detail-Anleitung:** anleitungen/de/netgear-wndr3700-v5.md
-- **Werte für die Anleitung:** zwischen_datei = openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img; sicherheit = quelle; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-netgear-wndr3700-v5-factory.img; rampe_datei = gluon-rampe-20261015-netgear-wndr3700-v5-factory.img; rampe_weg = Benenne die RAMpe in firmware.img um und schick sie in Schritt 4 mit nmrpflash statt der OpenWrt-Datei.
+- **Werte für die Anleitung:** zwischen_datei = openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img; zwischen_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-netgear_wndr3700-v5-squashfs-factory.img; sicherheit = quelle; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-netgear-wndr3700-v5-factory.img; rampe_datei = gluon-rampe-20261114-netgear-wndr3700-v5-factory.img; rampe_weg = Benenne die RAMpe in firmware.img um und schick sie in Schritt 4 mit nmrpflash statt der OpenWrt-Datei.
 
 #### netgear-r6020
 
@@ -10988,27 +10994,26 @@ devolo dLAN pro 1200+ WiFi ac (broken) · ath79-generic · K1d
 
 Genexis/Inteno Pulse EX400 · ramips-mt7621 · K1
 
-- **Weg ab Werk:** Stock-Web-UI oder U-Boot-Recovery (Reset beim Einschalten, Update-LED grün, Webserver 192.168.1.1) nimmt das OpenWrt-factory.bin; das enthält ein initramfs; danach sysupgrade [geprüft]
+- **Weg ab Werk:** U-Boot-Recovery (Reset beim Einschalten, Webserver 192.168.1.1) nimmt die RAMpe als factory.bin; nach dem Neustart blinkt der Router im 1-Hz-Takt, dann das Community-sysupgrade auf der RAMpe-Seite; ohne ssh [erprobt adorfer 11.11.2026, 10 Geräte]
 - **Schritte (Normalweg):**
-  1. OpenWrt-factory.bin bereitlegen, es enthält ein initramfs. [geprüft]
-  2. Rechner an LAN, feste IP im Netz 192.168.1.0/24 (nicht .1). [Wiki-Zusammenfassung: Darmstadt-Wiki]
-  3. Reset gedrückt halten und dabei einschalten (U-Boot-Recovery). [geprüft: Commit dd0c283]
-  4. Warten, bis Status-LED orange und WPS-LED grün sind (DNA-Variante: 'Update'-LED dauerhaft grün). [Wiki-Zusammenfassung: Freifunk-Darmstadt-Wiki Genexis-EX400; geprüft: Commit]
-  5. Im Browser http://192.168.1.1 öffnen und das factory.bin hochladen; eine Bestätigungsseite erscheint. [Wiki-Zusammenfassung: Darmstadt-Wiki]
-  6. Ca. 2 min warten, bis OpenWrt läuft, währenddessen nicht Strom ziehen. [Wiki-Zusammenfassung: Darmstadt-Wiki; 'nicht Strom ziehen' abgeleitet]
-  7. Gluon per sysupgrade installieren; die Meldung 'Command failed: ubus call system sysupgrade ... Connection failed' kann ignoriert werden. [geprüft; Wiki-Zusammenfassung: Darmstadt-Wiki]
+  1. RAMpe-factory.bin bereitlegen (gluon-rampe-<Datum>-genexis-pulse-ex400-factory.bin). [erprobt adorfer 11.11.2026]
+  2. Rechner an LAN, feste IP im Netz 192.168.1.0/24 (nicht .1). [erprobt adorfer 11.11.2026]
+  3. Reset gedrückt halten und dabei einschalten (U-Boot-Recovery). [geprüft: Commit dd0c283; erprobt adorfer 11.11.2026]
+  4. Im Browser http://192.168.1.1 öffnen und die RAMpe-factory.bin hochladen. [erprobt adorfer 11.11.2026]
+  5. Neustart abwarten, bis der Router im 1-Hz-Takt blinkt (RAMpe läuft). [erprobt adorfer 11.11.2026]
+  6. Auf der RAMpe-Seite das Community-sysupgrade hochladen. [erprobt adorfer 11.11.2026]
 - **Taste und Zeitpunkt:** U-Boot-Recovery: Reset beim Einschalten gedrückt halten [geprüft: Commit dd0c283]; warten, bis Status-LED orange und WPS-LED grün sind [Wiki-Zusammenfassung: Freifunk-Darmstadt-Wiki Genexis-EX400]
 - **Sichtbare Zeichen:** Recovery bereit: laut Commit 'Update'-LED dauerhaft grün (DNA-Variante), bei Genexis/Inteno Status orange + WPS grün [geprüft: Commit; Wiki-Zusammenfassung: Darmstadt-Wiki]. Nach dem Upload erscheint eine Bestätigungsseite [Wiki-Zusammenfassung: Darmstadt-Wiki]. Meldung 'Command failed: ubus call system sysupgrade ... Connection failed' beim sysupgrade kann ignoriert werden [Wiki-Zusammenfassung: Darmstadt-Wiki]
-- **Übertragung:** webui-upload; recovery-web: Gerät 192.168.1.1
+- **Übertragung:** webui-upload; recovery-web: Gerät 192.168.1.1, danach Upload auf der RAMpe-Seite
 - **Anschluss:** Rechner an LAN [Wiki-Zusammenfassung: Darmstadt-Wiki]
 - **Adressen:** Rechner feste IP im Netz 192.168.1.0/24 (nicht .1), Recovery-Webserver http://192.168.1.1 [Wiki-Zusammenfassung: Darmstadt-Wiki]
-- **Programm:** Browser [Wiki-Zusammenfassung: Darmstadt-Wiki]; alternativ das Skript install-ex400.sh: `curl -F fileID=@<factory> -F submit=upload http://192.168.1.1/firmware_upload`, ssh wiederholen, bis OpenWrt antwortet, dann `scp -O` und `sysupgrade -n` [geprüft: github herbetom/multiflash install-ex400.sh @4afd1dba, nutzt Gluon von Freifunk Darmstadt]
-- **Datei:** OpenWrt-factory.bin, enthält ein initramfs; danach Gluon-sysupgrade [geprüft]
+- **Programm:** Browser [erprobt adorfer 11.11.2026]
+- **Datei:** RAMpe-factory.bin (gluon-rampe-<Datum>-genexis-pulse-ex400-factory.bin), danach das Community-sysupgrade [erprobt adorfer 11.11.2026]
 - **seriell nötig:** nein
 - **Gehäuse öffnen:** nein
-- **Level-Merkmale (scripts/level.py):** werkzeug = netztools; image = -; zwischenfirmware = ja; dhcp = -; gehaeuse_oeffnen = -; l8 = nein
+- **Level-Merkmale (scripts/level.py):** werkzeug = taste-web; image = -; zwischenfirmware = nein; dhcp = nein; gehaeuse_oeffnen = -; l8 = nein
 - **Risiko (normal / bootloader / offen):** normal
-- **Level: Einzelentscheidung:** Recovery mit Taste, OpenWrt-factory, dann scp/ssh
+- **Level: Einzelentscheidung:** Recovery mit Taste und Browser, feste IP am Rechner; RAMpe statt Zwischenfirmware, kein ssh/scp
 - **Werkzeug/Spezial:** -
 - **Typenschild/Verwechslung:** Inteno Pulse EX400 und Genexis Pulse EX400 sind gleich (Umfirmierung); die DNA-Variante (DNA Valokuitu Plus EX400, LED 'software-update' statt WPS) hat ein eigenes Image [geprüft: Commit]
 - **initramfs-Link:** [initramfs-kernel.bin](https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-genexis_pulse-ex400-initramfs-kernel.bin) (200)
@@ -11018,11 +11023,12 @@ Genexis/Inteno Pulse EX400 · ramips-mt7621 · K1
 - **Dauer:** OpenWrt-Start nach dem factory ca. 2 min [Wiki-Zusammenfassung: Darmstadt-Wiki]; währenddessen nicht Strom ziehen [abgeleitet]
 - **Notweg:** [einfacher, schlechter belegt] Die Stock-Web-UI nimmt das OpenWrt-factory.bin ebenfalls [geprüft]. Für SSH im Stock muss SSH evtl. erst für LAN freigeschaltet werden (ab Werk nur WAN) [geprüft: Commit]
 - **Rückweg zur Herstellerfirmware:** Im OpenWrt-initramfs UBI-Volumes zurückbauen (rootfs_0/rootfs_1 neu anlegen), dann Hersteller-Firmware über die U-Boot-Recovery [geprüft: Commit]
-- **Gluon-RAMpe passt:** ja: factory.bin = Kette `append-image-stage initramfs-kernel.bin`, `inteno-bootfs`, `inteno-y3-header EX400` (mt7621.mk), die RAMpe-factory entsteht so direkt [abgeleitet aus mk]; statt scp/ssh dann das Community-sysupgrade auf der RAMpe-Seite; am Gerät ungetestet
-- **Gluon-RAMpe-Rezept:** devices/genexis-pulse-ex400.sh (gebaut 15.10.2026): `-factory.bin` (initramfs in UBIFS-bootfs, Inteno-Kopf), 9.143.328 Byte, unter der bootfs-Grenze von etwa 11.6 MiB; am Gerät ungetestet
+- **Gluon-RAMpe passt:** ja: factory.bin = Kette `append-image-stage initramfs-kernel.bin`, `inteno-bootfs`, `inteno-y3-header EX400` (mt7621.mk); Hauptweg, am Gerät erprobt (adorfer 11.11.2026, 10 Geräte)
+- **Gluon-RAMpe-Rezept:** devices/genexis-pulse-ex400.sh (gebaut 15.10.2026): `-factory.bin` (initramfs in UBIFS-bootfs, Inteno-Kopf), 9.143.328 Byte, unter der bootfs-Grenze von etwa 11.6 MiB; am Gerät erprobt 11.11.2026
 - **Quelle (OpenWrt-Commit):** dd0c2839a81bb3c5067be99b02ec5c0adff93ac6
 - **Detail-Anleitung:** anleitungen/de/genexis-pulse-ex400.md; https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-Genexis-EX400
-- **Werte für die Anleitung:** openwrt_datei = openwrt-24.10.8-ramips-mt7621-genexis_pulse-ex400-factory.bin; openwrt_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-genexis_pulse-ex400-factory.bin; openwrt_sha256 = 7b9debc8d1c8ed36e2632a2b20835f3d33c628e352e8eceaf555a5ffeaa8764e; sicherheit = quelle; sicherheit_hinweis = Freifunk Darmstadt beschreibt denselben Weg für ihre Freifunk-Firmware.; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-genexis-pulse-ex400-factory.bin; rampe_datei = gluon-rampe-20261015-genexis-pulse-ex400-factory.bin; rampe_weg = Lade in Schritt 5 statt der OpenWrt-Datei die RAMpe hoch.
+- **Am Gerät erprobt (für die Anleitung):** am = 2026-11-11; mit = gluon-rampe-20261015-genexis-pulse-ex400-factory.bin; weg = U-Boot-Recovery (Reset beim Einschalten), RAMpe-factory per Browser auf 192.168.1.1, nach Neustart Blinken 1 Hz, Community-sysupgrade auf der RAMpe-Seite; 10 Geräte; beleg = adorfer 11.11.2026
+- **Werte für die Anleitung:** rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-genexis-pulse-ex400-factory.bin; rampe_datei = gluon-rampe-20261114-genexis-pulse-ex400-factory.bin; rampe_sha256 = d50f3e886d82806b7c6480b395b07bc0770e48a0c40f8d7300ffd694903ebf0c
 
 ### Familie `sonderweg-google-wifi-gale`
 
@@ -11335,7 +11341,7 @@ Mercusys MR90X v1 · mediatek-filogic · K2
 - **Gluon-RAMpe-Rezept:** devices/mercusys-mr90x-v1.sh (gebaut 10.10.2026 lokal, initramfs etwa 8.1 MB, `91_installer_initramfs` geprüft, Hardware-Test offen): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell
 - **Quelle (OpenWrt-Commit):** OpenWrt e4fe3097ef6a961874b66932a0ac4be18070630a
 - **Detail-Anleitung:** anleitungen/de/mercusys-mr90x-v1.md
-- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin; rueckweg_url = https://www.mercusys.com/de/download/mr90x; zip_url = https://download.ffnef.de/other/dump/mr90x-v1-installdateien.zip
+- **Werte für die Anleitung:** initramfs_datei = openwrt-24.10.8-mediatek-filogic-mercusys_mr90x-v1-initramfs-kernel.bin; rueckweg_url = https://www.mercusys.com/de/download/mr90x; zip_url = https://firmware.neanderfunk.de/other/dump/mr90x-v1-installdateien.zip
 
 ### Familie `sonderweg-netgear-wax218`
 
@@ -11409,7 +11415,7 @@ TOTOLINK X5000R · ramips-mt7621 · K1d
 - **Quelle (OpenWrt-Commit):** 23be410b3d1267c752bf9f6e5c8f5a514dc562c4
 - **Detail-Anleitung:** anleitungen/de/totolink-x5000r.md
 - **Am Gerät erprobt (für die Anleitung):** am = 2026-10-16; mit = Gluon 2025.1 (26100702bro), vorher TOTOLINK-Firmware V9.1.0u.6118 über den Notfall-Modus; weg = Notfall-Modus des Bootloaders (Reset beim Einstecken, LAN1, Rechner 192.168.1.10), ältere Firmware 6118 aus unserem Dump (ZIP fehlerfrei entpackt), dann Gluon-sysupgrade über Advanced → Tools → Upgrade → Local Upgrade; beleg = Testplatz grw, router-werkstatt docs/validierung/totolink-x5000r-2026-10-16.md (cb40898)
-- **Werte für die Anleitung:** alt_url = https://download.ffnef.de/other/dump/X5000R_V9.1.0u.6118_B20201102.zip; alt_datei = X5000R_V9.1.0u.6118_B20201102.zip; alt_sha256 = 4fdb1bbf1773a3e7bb3d2f36953411e93a7da52277ee8e79e1dd54909e74daeb; alt_web = TOTOLINK_C8343R-1C_X5000R_IP04433_MT7621A_SPI_16M256M_V9.1.0u.6118_B20201102_ALL.web; alt_hinweis = TOTOLINK bietet sie nicht mehr an; wir stellen die Originaldatei bereit.; sicherheit = quelle; sicherheit_hinweis = Den Umweg über die ältere TOTOLINK-Firmware kennen wir nur aus Berichten im OpenWrt-Forum.
+- **Werte für die Anleitung:** alt_url = https://firmware.neanderfunk.de/other/dump/X5000R_V9.1.0u.6118_B20201102.zip; alt_datei = X5000R_V9.1.0u.6118_B20201102.zip; alt_sha256 = 4fdb1bbf1773a3e7bb3d2f36953411e93a7da52277ee8e79e1dd54909e74daeb; alt_web = TOTOLINK_C8343R-1C_X5000R_IP04433_MT7621A_SPI_16M256M_V9.1.0u.6118_B20201102_ALL.web; alt_hinweis = TOTOLINK bietet sie nicht mehr an; wir stellen die Originaldatei bereit.; sicherheit = quelle; sicherheit_hinweis = Den Umweg über die ältere TOTOLINK-Firmware kennen wir nur aus Berichten im OpenWrt-Forum.
 
 ### Familie `sonderweg-tp-link-archer-c60-v1`
 
@@ -11807,7 +11813,7 @@ ZyXEL WSM20 (Multy M1) · ramips-mt7621 · K1
 - **Quelle (OpenWrt-Commit):** 28df7f7ff251d8684caa60f07ed0ba0c4a8e71f4
 - **Detail-Anleitung:** anleitungen/de/zyxel-wsm20.md; https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/
 - **Am Gerät erprobt (für die Anleitung):** am = 2026-09-19; mit = Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs
-- **Werte für die Anleitung:** openwrt_datei = openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin; openwrt_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin; rampe_url = https://download.ffnef.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261015-zyxel-wsm20-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261015-zyxel-wsm20-initramfs-kernel.bin; rampe_weg = Lade in Schritt 4 statt der OpenWrt-Datei die RAMpe hoch; Teil 2 entfällt dann.; sicherheit = quelle; sicherheit_hinweis = Freifunk Aachen beschreibt den Weg so, und bei uns ist er an einem Gerät gelaufen; mit der RAMpe hat ihn noch niemand ausprobiert.
+- **Werte für die Anleitung:** openwrt_datei = openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin; openwrt_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-zyxel-wsm20-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261114-zyxel-wsm20-initramfs-kernel.bin; rampe_weg = Lade in Schritt 4 statt der OpenWrt-Datei die RAMpe hoch; Teil 2 entfällt dann.; sicherheit = quelle; sicherheit_hinweis = Freifunk Aachen beschreibt den Weg so, und bei uns ist er an einem Gerät gelaufen; mit der RAMpe hat ihn noch niemand ausprobiert.
 
 ### Familie `sophos-xg-awetool`
 
