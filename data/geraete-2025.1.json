@@ -14663,7 +14663,7 @@
    "uebertragung": "recovery-web: Gerät 192.168.200.1, Rechner 192.168.200.10/24, POST /upload.cgi (curl oder Chromium), kein Ping",
    "anschluss": "",
    "adressen": "Rechner fest 192.168.200.10, Netzmaske 255.255.255.0; Recovery http://192.168.200.1 [geprüft: Commit 29cca6c]; Erreichbarkeit per HTTP prüfen, nie per Ping (Recovery antwortet nicht auf ICMP) [geprüft: Neanderfunk-Notiz]; danach OpenWrt unter 192.168.1.1 [geprüft: Neanderfunk-Notiz]",
-   "programm": "curl: `curl -H \"Expect:\" -F \"firmware=@<image>;type=application/octet-stream\" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt; am M60 seit 15.11.2026 nur noch Notweg, Weg ist dort Chrome/Chromium]; im Browser nur Chromium-basiert [geprüft: Commits 'Chromium based']; Firefox geht nicht [abgeleitet: am M60 ging Firefox nicht, Chrome/Chromium schon (Test adorfer 15.11.2026)]",
+   "programm": "curl: `curl -H \"Expect:\" -F \"firmware=@<image>;type=application/octet-stream\" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt]; seit 15.11.2026 nur noch Notweg [geprüft: adorfer 15.11.2026]; im Browser nur Chromium-basiert [geprüft: Commits 'Chromium based']; Firefox geht nicht, Chrome/Chromium ist der Weg [geprüft: Test adorfer 15.11.2026 am M30]",
    "zugang": "",
    "datei": "OpenWrt-squashfs-recovery.bin (initramfs mit D-Link-Header DLK6E6110001; Gluon baut für den M30 bewusst kein Recovery-Image), danach Gluon-sysupgrade [geprüft] [geprüft: Neanderfunk-Notiz]",
    "seriell": "nein",
@@ -14695,10 +14695,10 @@
    "quelle": "OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f",
    "anleitung": "anleitungen/de/d-link-aquila-pro-ai-m30-a1.md; https://freifunk-aachen.de/2026/08/17/installationsanleitung-d-link-m30/",
    "erprobt": {
-    "am": "2026-10-16",
-    "mit": "gluon-rampe-20261015-d-link-aquila-pro-ai-m30-a1-recovery.bin",
-    "weg": "D-Link-Recovery (LED rot blinkend), curl-Upload nach Anleitung, RAMpe, dann sysupgrade auf Gluon 2025.1 26100702bro; MAC danach korrekt (Einzelgerät, Odm-Eintrag 0x81)",
-    "beleg": "Testplatz grw (M30 aus dem Dumbrack), router-werkstatt docs/validierung/d-link-m30-a1-rampe-20261015-2026-10-16.md (7cdf1aa)"
+    "am": "2026-11-15",
+    "mit": "gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin",
+    "weg": "D-Link-Recovery, Hochladen im Browser (Chrome/Chromium, lief langsam), RAMpe startete sauber, dann Gluon-sysupgrade; Firefox ging nicht",
+    "beleg": "Testplatz grw, adorfer 15.11.2026 (\"D30\" = M30 A1, von adorfer bestätigt); vorher erprobt 2026-10-16 mit gluon-rampe-20261015 (Testplatz grw (M30 aus dem Dumbrack), router-werkstatt docs/validierung/d-link-m30-a1-rampe-20261015-2026-10-16.md (7cdf1aa))"
    },
    "werte": {
     "recovery_ip": "192.168.200.1",
@@ -14723,7 +14723,9 @@
     "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin",
     "sicherheit": "quelle",
     "led_schreibt": "leuchtet die LED ruhig rot, etwas schwächer",
-    "led_start": "blinkt die LED schnell weiß"
+    "led_start": "blinkt die LED schnell weiß",
+    "browser_upload": "Chrome oder Chromium",
+    "browser_nicht": "Firefox"
    }
   },
   {

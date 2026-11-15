@@ -46,8 +46,8 @@ Fertige Images (alle Geräte mit Rezept, Liste und Prüfsummen):
 
 | Gerät | Target | Einspielen | Stand |
 |---|---|---|---|
-| D-Link AQUILA PRO AI M30 A1 | mediatek-filogic | `…-recovery.bin` über die D-Link-Recovery (192.168.200.1) | **am Gerät erprobt** (16.10.2026, router-werkstatt `docs/validierung/d-link-m30-a1-rampe-20261015-2026-10-16.md`) |
-| D-Link AQUILA PRO AI M60 A1 | mediatek-filogic | `…-recovery.bin` über die D-Link-Recovery (192.168.200.1), per `curl` | **am Gerät erprobt** (15.11.2026 mit RAMpe 20261114, adorfer; vorher 16.10. und 13.10.2026, `docs/NOTIZEN.md`, "Getestet") |
+| D-Link AQUILA PRO AI M30 A1 | mediatek-filogic | `…-recovery.bin` über die D-Link-Recovery (192.168.200.1) im Chrome/Chromium | **am Gerät erprobt** (15.11.2026 mit RAMpe 20261114, adorfer; vorher 16.10.2026, router-werkstatt `docs/validierung/d-link-m30-a1-rampe-20261015-2026-10-16.md`) |
+| D-Link AQUILA PRO AI M60 A1 | mediatek-filogic | `…-recovery.bin` über die D-Link-Recovery (192.168.200.1) im Chrome/Chromium, Notweg `curl` | **am Gerät erprobt** (15.11.2026 mit RAMpe 20261114, adorfer; vorher 16.10. und 13.10.2026, `docs/NOTIZEN.md`, "Getestet") |
 | Genexis/Inteno Pulse EX400 | ramips-mt7621 | `…-factory.bin` über die U-Boot-Recovery (Reset beim Einschalten, 192.168.1.1) im Browser | **am Gerät erprobt** (11.11.2026, adorfer, 10 Geräte) |
 | x86-64 | x86-64 | `…-initramfs-kernel.bin` per QEMU `-kernel` | Ende-zu-Ende getestet (`test/qemu-x86-64.sh`) |
 
