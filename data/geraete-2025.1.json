@@ -14685,7 +14685,7 @@
    "taste": "Reset-Taste mit Büroklammer gedrückt halten, Strom einstecken, halten bis die LED rot blinkt [geprüft: Commits 29cca6c, 7271ee5; Neanderfunk-Notiz]",
    "zeichen": "LED blinkt rot = Recovery erreicht; nach dem Flash: Status-LED blinkt weiß und bleibt weiß = OpenWrt läuft (erste Partition) [geprüft: Commit 29cca6c]; die Recovery-Seite meldet immer Erfolg, auch wenn es scheitert, und leitet auf 192.168.0.1 um [geprüft: Commit]; Erfolgsmeldung und Fortschrittsbalken der Recovery-Seite sind ein JavaScript-Timer (80 s) und sagen nichts; fertig ist es erst, wenn die neue Firmware bootet [geprüft: Neanderfunk-Notiz]; LED-Zeichen: Recovery rot blinkend etwa 2 Hz, RAMpe-Start erst schnelles weißes Flackern, dann weiß 1 Hz, Herstellerfirmware langsam orange auf- und abschwellend [geprüft: adorfer 15.11.2026]",
    "uebertragung": "recovery-web: Gerät 192.168.200.1, Rechner 192.168.200.10/24, POST /upload.cgi (curl oder Chromium), kein Ping",
-   "anschluss": "",
+   "anschluss": "eine beliebige LAN-Buchse, nicht WAN [geprüft: adorfer 17.11.2026, am Gerät]",
    "adressen": "Rechner fest 192.168.200.10, Netzmaske 255.255.255.0; Recovery http://192.168.200.1 [geprüft: Commit 29cca6c]; Erreichbarkeit per HTTP prüfen, nie per Ping (Recovery antwortet nicht auf ICMP) [geprüft: Neanderfunk-Notiz]; danach OpenWrt unter 192.168.1.1 [geprüft: Neanderfunk-Notiz]",
    "programm": "curl: `curl -H \"Expect:\" -F \"firmware=@<image>;type=application/octet-stream\" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt]; seit 15.11.2026 nur noch Notweg [geprüft: adorfer 15.11.2026]; im Browser nur Chromium-basiert [geprüft: Commits 'Chromium based']; Firefox geht nicht, Chrome/Chromium ist der Weg [geprüft: Test adorfer 15.11.2026 am M30]; Seitentexte der Recovery: Knopf \"Upgrade\", beim Hochladen \"Device is upgrading the firmware\" mit Prozentzahl, danach \"Upgrade successfully!\"; das Hochladen läuft langsam [geprüft: Screenshots und Aussage adorfer 15.11.2026]",
    "zugang": "",
@@ -14734,7 +14734,7 @@
     "led_rampe": "blinkt die LED weiß und gleichmäßig, etwa einmal pro Sekunde",
     "seitentitel": "",
     "herstellerseite_gleiche_ip": false,
-    "anschluss": "",
+    "anschluss": "einer der LAN-Buchsen, nicht mit WAN",
     "recovery_wartezeit": "",
     "rechner_ip": "192.168.200.10",
     "dauer_neustart": "einige Minuten",
@@ -14754,7 +14754,8 @@
     "meldung_laeuft": "Device is upgrading the firmware",
     "meldung_fertig": "Upgrade successfully!",
     "upload_langsam": true,
-    "led_herstellerfirmware": "die LED dimmt langsam orange auf und ab"
+    "led_herstellerfirmware": "die LED dimmt langsam orange auf und ab",
+    "anschluss_warnung": "An der WAN-Buchse funktioniert die Recovery nicht."
    }
   },
   {
@@ -14779,7 +14780,7 @@
    "taste": "Reset-Taste mit Büroklammer gedrückt halten, Strom einstecken, halten bis die LED rot blinkt [geprüft: Commits 29cca6c, 7271ee5; Neanderfunk-Notiz]; nur die Reset-Taste führt in die Recovery, keine andere Taste [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]",
    "zeichen": "LED blinkt rot = Recovery erreicht, blinkt auch während des Schreibens weiter rot [geprüft: Commit 7271ee5]; danach OpenWrt unter 192.168.1.1 [geprüft: Commit]; Erfolgsmeldung und Fortschrittsbalken der Recovery-Seite sind ein JavaScript-Timer (80 s) und sagen nichts; fertig ist es erst, wenn die neue Firmware bootet [geprüft: Neanderfunk-Notiz]; Recovery = LED blinkt klar rot, ein orangefarbenes Hell-Dunkel-Dimmen ist NICHT die Recovery; rotes Blinken auch während Upload und Schreiben, danach Neustart [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät] (passt zu Commit 7271ee5); welche Farbe die LED in den rund 30 s Neustart zeigt, ist nicht notiert; LED-Zeichen: Recovery rot blinkend etwa 2 Hz, RAMpe-Start erst schnelles weißes Flackern, dann weiß 1 Hz, Herstellerfirmware langsam orange auf- und abschwellend [geprüft: adorfer 15.11.2026]",
    "uebertragung": "recovery-web: Gerät 192.168.200.1, Rechner z. B. 192.168.200.66/24, POST /upload.cgi (Chrome/Chromium, Notweg curl), 10-11 min",
-   "anschluss": "eine beliebige LAN-Buchse, nicht WAN [geprüft: Neanderfunk-Notiz 15.10.2026, am Gerät]",
+   "anschluss": "eine beliebige LAN-Buchse, nicht WAN [geprüft: Neanderfunk-Notiz 15.10.2026, am Gerät; adorfer 17.11.2026: an WAN geht es nicht]",
    "adressen": "Rechner fest im Netz 192.168.200.0/24 (bewährt: 192.168.200.66/24), Recovery http://192.168.200.1 [geprüft: Commit 7271ee5, am Gerät]; Erreichbarkeit per HTTP prüfen, nie per Ping (Recovery antwortet nicht auf ICMP) [geprüft: Neanderfunk-Notiz]; danach OpenWrt unter 192.168.1.1 [geprüft: Neanderfunk-Notiz]; auch die Herstellerfirmware antwortet mit ihrem Admin-Login unter http://192.168.200.1 (aufwendigeres Layout mit Passwortabfrage statt der schlichten Recovery-Seite) [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]",
    "programm": "Browser: Chrome oder Chromium ist der Weg, das Hochladen der RAMpe 20261114 lief langsam, danach startete die RAMpe sauber; Firefox ging nicht [geprüft: Test adorfer 15.11.2026 am M60]; im Browser nur Chromium-basiert [geprüft: Commits 'Chromium based']; früher war der Browser-Upload in Chromium bei zwei Nutzern nach unter 1 s \"fertig\", ohne dass etwas übertragen war [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]; curl nur noch Notweg, falls es im Browser nicht geht [geprüft: adorfer 15.11.2026]: `curl -H \"Expect:\" -F \"firmware=@<image>;type=application/octet-stream\" http://<recovery-ip>/upload.cgi` [geprüft: Neanderfunk-Notiz, am M60 erprobt]; Eigenheiten des Rechners, gleich für jedes Image: unter Windows ist `curl.exe` eingebaut (in PowerShell `curl.exe` ausschreiben, `curl` allein ist dort Invoke-WebRequest; Pfadvariable in cmd `%USERPROFILE%`, in PowerShell `$env:USERPROFILE`); aus WSL2 im Mirrored-Modus kam keine Verbindung zu 192.168.200.1 zustande, aus Windows schon [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]; mit `-w \"HTTP %{http_code}, hochgeladen %{size_upload} Bytes, Dauer %{time_total} s\\n\"` zeigt curl am Ende, ob alles ankam [geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät]; Seitentexte der Recovery: Knopf \"Upgrade\", beim Hochladen \"Device is upgrading the firmware\" mit Prozentzahl, danach \"Upgrade successfully!\"; das Hochladen läuft langsam [geprüft: Screenshots und Aussage adorfer 15.11.2026]",
    "zugang": "nach der Recovery: ssh root@192.168.1.1 [geprüft: Neanderfunk-Notiz]",
@@ -14847,7 +14848,8 @@
     "meldung_laeuft": "Device is upgrading the firmware",
     "meldung_fertig": "Upgrade successfully!",
     "upload_langsam": true,
-    "led_herstellerfirmware": "die LED dimmt langsam orange auf und ab"
+    "led_herstellerfirmware": "die LED dimmt langsam orange auf und ab",
+    "anschluss_warnung": "An der WAN-Buchse funktioniert die Recovery nicht."
    }
   },
   {
