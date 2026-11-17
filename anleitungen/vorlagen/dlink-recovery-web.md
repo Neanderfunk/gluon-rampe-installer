@@ -35,6 +35,9 @@ Werte aus dem Block "werte" des Geräts (ohne Belegmarken):
                          "bis die LED …", z. B. "rot blinkt"; leer = nicht belegt
     anschluss            nach "und zwar mit …", z. B. "der Buchse LAN1" oder
                          "einer der LAN-Buchsen, nicht mit WAN"
+    anschluss_warnung    ganzer Satz hinter Schritt 3, z. B. "An der
+                         WAN-Buchse funktioniert die Recovery nicht."
+                         (adorfer 17.11.2026 für M30/M60)
     taste_hinweis        z. B. "Nur die Reset-Taste führt in die Recovery, keine andere."
     led_falsch           was NICHT die Recovery ist
     led_schreibt         LED, während die Recovery schreibt, nach "dabei …",
@@ -159,6 +162,7 @@ wirklich über das Kabel spricht.
 
 3. **Kabel stecken.** Verbinde den Rechner mit dem Router
    {%- if w.anschluss %}, und zwar mit {{ w.anschluss }}{% endif %}.
+   {%- if w.anschluss_warnung %} **{{ w.anschluss_warnung }}**{% endif %}
    Der Router hat noch keinen Strom.
 
 4. **Router in die Recovery bringen.** Drück mit der Büroklammer die
@@ -188,7 +192,9 @@ wirklich über das Kabel spricht.
    ist das die normale D-Link-Firmware, nicht die Recovery: zurück zu
    Schritt 4.
    {%- endif %}
-   Ein `ping` hilft hier nicht, die Recovery antwortet nicht darauf.
+   Kommt gar nichts, prüf die feste Adresse (Schritt 2) und das Kabel
+   (Schritt 3). Ein `ping` hilft hier nicht, die Recovery antwortet nicht
+   darauf.
    {%- if b.get("recovery-seite") %}
 
    ![Die Recovery-Seite im Browser: Überschrift, Feld für die Datei, Knopf {% if w.upload_knopf %}"{{ w.upload_knopf }}"{% else %}zum Hochladen{% endif %}]({{ b["recovery-seite"] }})
@@ -303,7 +309,7 @@ wirklich über das Kabel spricht.
   (unten). Im Notweg ist die häufigste Ursache ein Tippfehler im
   Dateinamen.
 - **Im Notweg: curl meldet "Failed to connect", HTTP 000 und 0 Bytes.** Die Recovery war
-  nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
+  nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel (Schritt 3), dann
   Router noch einmal in die Recovery bringen (Schritt 4).
 - **Im Notweg: curl steht bei 100 % und kommt nicht zurück, oder meldet nach langer
   Zeit "Recv failure: Connection timed out".** Das ist normal: Der Router hat
