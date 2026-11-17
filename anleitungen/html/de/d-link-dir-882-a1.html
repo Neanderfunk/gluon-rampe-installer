@@ -15,8 +15,8 @@
 <meta name="anleitung:risiko" content="normal">
 <meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-not-found, curl, feste-ip, router-antwortet-nicht">
-<meta name="anleitung:daten_stand" content="a5c52587d">
-<meta name="anleitung:vorlage_stand" content="90388c1ca">
+<meta name="anleitung:daten_stand" content="7ef99fa21">
+<meta name="anleitung:vorlage_stand" content="3dc0d6c03">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
@@ -71,7 +71,9 @@ Gemeint ist die Power-LED.</p>
 <li>
 <p><strong>Recovery-Seite öffnen.</strong>
 Öffne in Chrome oder Chromium <code>http://192.168.0.1</code>. Es erscheint die Recovery-Seite von D-Link.
-Ein <code>ping</code> hilft hier nicht, die Recovery antwortet nicht darauf.</p>
+Kommt gar nichts, prüf die feste Adresse (Schritt 2) und das Kabel
+(Schritt 3). Ein <code>ping</code> hilft hier nicht, die Recovery antwortet nicht
+darauf.</p>
 </li>
 <li>
 <p><strong>Datei im Browser hochladen.</strong> Klick auf &quot;Datei auswählen&quot;, wähl das factory-Image und klick den Knopf daneben.
@@ -116,7 +118,7 @@ Noch einmal ab Schritt 4 mit Chrome oder Chromium, sonst den Notweg mit curl
 (unten). Im Notweg ist die häufigste Ursache ein Tippfehler im
 Dateinamen.</li>
 <li><strong>Im Notweg: curl meldet &quot;Failed to connect&quot;, HTTP 000 und 0 Bytes.</strong> Die Recovery war
-nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
+nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel (Schritt 3), dann
 Router noch einmal in die Recovery bringen (Schritt 4).</li>
 <li><strong>Im Notweg: curl steht bei 100 % und kommt nicht zurück, oder meldet nach langer
 Zeit &quot;Recv failure: Connection timed out&quot;.</strong> Das ist normal: Der Router hat

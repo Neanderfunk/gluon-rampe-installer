@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-asus-tuf-ax6000-initramfs-kernel.bin
 grundlagen: [browser-https, browser-not-found, router-antwortet-nicht, ssh-scp]
-daten_stand: a5c52587d
+daten_stand: 7ef99fa21
 vorlage_stand: d134995cb
 ---
 

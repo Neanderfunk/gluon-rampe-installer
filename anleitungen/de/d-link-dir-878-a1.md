@@ -10,8 +10,8 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: a5c52587d
-vorlage_stand: 90388c1ca
+daten_stand: 7ef99fa21
+vorlage_stand: 3dc0d6c03
 ---
 
 # D-Link DIR-878 A1: Freifunk-Firmware installieren
@@ -63,7 +63,9 @@ wirklich über das Kabel spricht.
 
 5. **Recovery-Seite öffnen.** Warte etwa 30 Sekunden.
    Öffne in Chrome oder Chromium `http://192.168.0.1`. Es erscheint die Recovery-Seite von D-Link.
-   Ein `ping` hilft hier nicht, die Recovery antwortet nicht darauf.
+   Kommt gar nichts, prüf die feste Adresse (Schritt 2) und das Kabel
+   (Schritt 3). Ein `ping` hilft hier nicht, die Recovery antwortet nicht
+   darauf.
 
 6. **Datei im Browser hochladen.** Klick auf "Datei auswählen", wähl das factory-Image und klick den Knopf daneben.
    Die Seite zeigt jetzt den Fortschritt in Prozent. Lass die Seite in Ruhe, bis die Erfolgsmeldung erscheint.
@@ -104,7 +106,7 @@ wirklich über das Kabel spricht.
   (unten). Im Notweg ist die häufigste Ursache ein Tippfehler im
   Dateinamen.
 - **Im Notweg: curl meldet "Failed to connect", HTTP 000 und 0 Bytes.** Die Recovery war
-  nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
+  nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel (Schritt 3), dann
   Router noch einmal in die Recovery bringen (Schritt 4).
 - **Im Notweg: curl steht bei 100 % und kommt nicht zurück, oder meldet nach langer
   Zeit "Recv failure: Connection timed out".** Das ist normal: Der Router hat
@@ -126,7 +128,6 @@ Windows 10 und 11 heißt es `curl.exe` und ist eingebaut
 
 1. **Router wieder in die Recovery bringen** wie in Schritt 4 und 5, aber
    dort nichts hochladen.
-
 2. **Datei mit curl hochladen.** Öffne ein Terminal (unter Windows die
    **PowerShell**), wechsle in den Ordner mit der Datei und gib ein:
 

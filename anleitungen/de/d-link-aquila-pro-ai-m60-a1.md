@@ -13,8 +13,8 @@ erprobt_am: 2026-11-15
 erprobt_mit: gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m60-a1-recovery.bin
 grundlagen: [browser-https, browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: a5c52587d
-vorlage_stand: 90388c1ca
+daten_stand: 7ef99fa21
+vorlage_stand: 3dc0d6c03
 ---
 
 # D-Link AQUILA PRO AI M60 A1: Freifunk-Firmware installieren
@@ -56,7 +56,7 @@ wirklich über das Kabel spricht.
    `255.255.255.0`. Ein Gateway brauchst du nicht. Wie das geht, steht unter
    [Feste IP-Adresse einstellen](grundlagen/feste-ip.md).
 
-3. **Kabel stecken.** Verbinde den Rechner mit dem Router, und zwar mit einer der LAN-Buchsen, nicht mit WAN.
+3. **Kabel stecken.** Verbinde den Rechner mit dem Router, und zwar mit einer der LAN-Buchsen, nicht mit WAN. **An der WAN-Buchse funktioniert die Recovery nicht.**
    Der Router hat noch keinen Strom.
 
 4. **Router in die Recovery bringen.** Drück mit der Büroklammer die
@@ -71,7 +71,9 @@ wirklich über das Kabel spricht.
    Kommt stattdessen eine aufwendigere Seite, die nach einem Passwort fragt,
    ist das die normale D-Link-Firmware, nicht die Recovery: zurück zu
    Schritt 4.
-   Ein `ping` hilft hier nicht, die Recovery antwortet nicht darauf.
+   Kommt gar nichts, prüf die feste Adresse (Schritt 2) und das Kabel
+   (Schritt 3). Ein `ping` hilft hier nicht, die Recovery antwortet nicht
+   darauf.
 
    ![Die Recovery-Seite im Browser: Überschrift, Feld für die Datei, Knopf "Upgrade"](../bilder/d-link-aquila-pro-ai-m60-a1/recovery-seite.png)
 
@@ -150,7 +152,7 @@ wirklich über das Kabel spricht.
   (unten). Im Notweg ist die häufigste Ursache ein Tippfehler im
   Dateinamen.
 - **Im Notweg: curl meldet "Failed to connect", HTTP 000 und 0 Bytes.** Die Recovery war
-  nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel, dann
+  nicht erreichbar. Prüf die feste Adresse (Schritt 2) und das Kabel (Schritt 3), dann
   Router noch einmal in die Recovery bringen (Schritt 4).
 - **Im Notweg: curl steht bei 100 % und kommt nicht zurück, oder meldet nach langer
   Zeit "Recv failure: Connection timed out".** Das ist normal: Der Router hat
@@ -175,23 +177,22 @@ Windows 10 und 11 heißt es `curl.exe` und ist eingebaut
 
 1. **Router wieder in die Recovery bringen** wie in Schritt 4 und 5, aber
    dort nichts hochladen.
-
 2. **Datei mit curl hochladen.** Öffne ein Terminal (unter Windows die
    **PowerShell**), wechsle in den Ordner mit der Datei und gib ein:
 
    Linux und macOS:
 
    ```sh
-   curl -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o /dev/null -F "firmware=@gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin;type=application/octet-stream" http://192.168.200.1/upload.cgi
+   curl -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o /dev/null -F "firmware=@gluon-rampe-20261115-d-link-aquila-pro-ai-m60-a1-recovery.bin;type=application/octet-stream" http://192.168.200.1/upload.cgi
    ```
 
    Windows (PowerShell):
 
    ```
-   curl.exe -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o antwort.bin -F "firmware=@gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin;type=application/octet-stream" http://192.168.200.1/upload.cgi
+   curl.exe -H "Expect:" -w "HTTP %{http_code}, hochgeladen %{size_upload} Bytes\n" -o antwort.bin -F "firmware=@gluon-rampe-20261115-d-link-aquila-pro-ai-m60-a1-recovery.bin;type=application/octet-stream" http://192.168.200.1/upload.cgi
    ```
 
-   Den echten Dateinamen statt `gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin` einsetzen. Unter
+   Den echten Dateinamen statt `gluon-rampe-20261115-d-link-aquila-pro-ai-m60-a1-recovery.bin` einsetzen. Unter
    Windows `curl.exe` genau so ausschreiben; `antwort.bin` nimmt nur die
    Antwort des Routers auf und kann danach weg. Mehr unter
    [curl benutzen](grundlagen/curl.md).
@@ -238,7 +239,8 @@ Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
 - geprüft: Commits 29cca6c, 7271ee5; Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt)
 - geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Sichtbare Zeichen, Adressen, Zugang, Datei, Bedingung an die Herstellerfirmware, Dauer)
 - geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät (Taste und Zeitpunkt, Sichtbare Zeichen, Adressen, Programm, Dauer, Fehlerbild, Notweg, Hardware-Test, Gluon-RAMpe passt)
-- geprüft: Neanderfunk-Notiz 15.10.2026, am Gerät (Anschluss, Notweg)
+- geprüft: Neanderfunk-Notiz 15.10.2026, am Gerät (Notweg)
+- geprüft: Neanderfunk-Notiz 15.10.2026, am Gerät; adorfer 17.11.2026: an WAN geht es nicht (Anschluss)
 - geprüft: Neanderfunk-Notiz, am Gerät bestätigt (Typenschild/Verwechslung)
 - geprüft: Neanderfunk-Notiz, am M60 erprobt (Programm)
 - geprüft: Screenshots und Aussage adorfer 15.11.2026 (Programm)
