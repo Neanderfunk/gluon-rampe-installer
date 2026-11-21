@@ -23,10 +23,10 @@ Kommt gar keine Seite, und der Browser wartet nur, siehe
 
 ## Was nicht hilft
 
-Bei uns hat in einigen Fällen nichts von dem geholfen, was man sonst bei
-einer veralteten Seite macht: weder mehrfaches Drücken von Strg+F5 noch der
-Knopf "Neu laden", nicht einmal ein neues privates Fenster. Der Browser
-landete immer wieder auf `cgi-bin/luci`. Verlier damit keine Zeit.
+Oft hilft nichts von dem, was man sonst bei einer veralteten Seite macht:
+weder mehrfaches Drücken von Strg+F5 noch der Knopf "Neu laden", nicht
+einmal ein neues privates Fenster. Der Browser landet immer wieder auf
+`cgi-bin/luci`. Verlier damit keine Zeit.
 
 ## Was hilft
 
@@ -34,9 +34,9 @@ landete immer wieder auf `cgi-bin/luci`. Verlier damit keine Zeit.
   Adresse vollständig ein, mit `/cgi-bin/config` am Ende:
   `http://192.168.1.1/cgi-bin/config`.
 - **Notfall-Seite im Bootloader:** Versuch `http://192.168.1.1/index.html`.
-  Beim TOTOLINK X5000R hat das geklappt.
+  Beim TOTOLINK X5000R klappt das.
 - **Sonst: ein anderer Browser oder ein leeres Browserprofil.** Das ist
-  wirklich so gemeint, bei uns hat am Ende nur das geholfen. Nimm einen
+  wirklich so gemeint, oft hilft am Ende nur das. Nimm einen
   Browser, mit dem du die Router-Seite vorher noch nicht geöffnet hattest,
   zum Beispiel Edge unter Windows oder Safari am Mac, wenn du sonst Firefox
   oder Chrome benutzt. Wer nur Firefox hat, legt ein neues, leeres Profil

@@ -4,7 +4,7 @@ Läuft auf dem Router die TP-Link-Firmware **Build 151014** (die neueste),
 **nicht** direkt die Freifunk-Firmware hochladen. Der Router hängt danach in
 einer Startschleife und lässt sich nur noch über den TFTP-Notfall-Weg
 retten. Spiel zuerst die ältere TP-Link-Firmware **Build 140709** ein, erst
-dann die Freifunk-Firmware. Das wissen wir aus eigener Erfahrung.
+dann die Freifunk-Firmware.
 
 ## Vorher prüfen
 
