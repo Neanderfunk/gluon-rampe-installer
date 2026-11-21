@@ -21292,7 +21292,7 @@
     "alt_web": "TOTOLINK_C8343R-1C_X5000R_IP04433_MT7621A_SPI_16M256M_V9.1.0u.6118_B20201102_ALL.web",
     "alt_hinweis": "TOTOLINK bietet sie nicht mehr an; wir stellen die Originaldatei bereit.",
     "sicherheit": "quelle",
-    "sicherheit_hinweis": "Den Umweg über die ältere TOTOLINK-Firmware kennen wir nur aus Berichten im OpenWrt-Forum."
+    "sicherheit_hinweis": "Den Umweg über die ältere TOTOLINK-Firmware beschreiben Berichte im OpenWrt-Forum."
    }
   },
   {
