@@ -11,15 +11,14 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-aruba-ap-365-initramfs-uImage.itb
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 84f780274
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Aruba Instant On AP17: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -251,15 +250,3 @@ starten, halt den Bootloader an (Schritt 5) und gib ein:
 setenv bootcmd "boot"
 saveenv
 ```
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Weg ab Werk, Schritte (Normalweg), Gehäuse öffnen)
-- abgeleitet: Analogie AP11 (Bedingung an die Herstellerfirmware)
-- abgeleitet: Wiki toh/aruba/ap-365 'same platform' (Schritte (Normalweg), Adressen, Programm, Zugang, Datei)
-- abgeleitet: Wiki toh/aruba/ap-365 'same platform'; ob die USB-Buchse beim AP17 auch echtes USB ist, ist nicht belegt (Schritte (Normalweg), Anschluss)
-- abgeleitet: gleiche Plattform (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Gluon-Alias, Wiki toh:aruba:ap-365 (Typenschild/Verwechslung)
-- Geräteeintrag: OpenWrt 300b7fe85a743ab0e039457a5a551819b49450da

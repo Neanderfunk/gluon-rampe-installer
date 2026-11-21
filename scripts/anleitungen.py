@@ -255,6 +255,11 @@ def seiten_erzeugen(geraete, quelle, jinja2):
     return seiten, ohne
 
 
+# Kopffelder, die nur in Markdown-Kopf und index.json stehen, nicht als
+# <meta> in den HTML-Seiten (adorfer 21.11.2026: Erprobt-Stand ist intern)
+INTERN = {"status", "erprobt_am", "erprobt_mit"}
+
+
 CSS = """:root{--grund:#fbfaf7;--text:#1f2328;--leise:#59636e;--akzent:#1f6f5c;--rand:#d8d4cc;--hinweis:#fff4d6;--code:#f1efe9}
 @media (prefers-color-scheme:dark){:root{--grund:#16181a;--text:#e6e3dd;--leise:#a3a09a;--akzent:#7cc4ae;--rand:#3a3d40;--hinweis:#3a3220;--code:#23262a}}
 html{background:var(--grund);color:var(--text)}
@@ -333,8 +338,11 @@ def main():
         h = a.ausgabe / "html"
         dateien[h / "anleitung.css"] = CSS
         for name, (kopf, body) in seiten.items():
+            # Erprobt-Stand ist interne Notiz, nicht auf die Webseiten (adorfer
+            # 21.11.2026); er bleibt im Markdown-Kopf und in index.json.
+            meta = {k: v for k, v in kopf.items() if k not in INTERN}
             dateien[h / SPRACHE / f"{name}.html"] = html_seite(
-                f"{kopf['anzeige']}: Freifunk-Firmware installieren", body, kopf, md, 1, bild=name)
+                f"{kopf['anzeige']}: Freifunk-Firmware installieren", body, meta, md, 1, bild=name)
         for p in sorted((a.quelle / SPRACHE / "grundlagen").glob("*.md")):
             t = p.read_text(encoding="utf-8")
             titel = (re.search(r"^# (.+)$", t, re.M) or [None, p.stem])[1]
@@ -344,13 +352,12 @@ def main():
             if p.is_file():
                 dateien[h / "bilder" / p.relative_to(a.quelle / "bilder")] = p.read_bytes()
         liste = ["# Freifunk-Firmware installieren", "",
-                 "Anleitungen je Gerät. Ungeprüfte Anleitungen sind aus Quellen "
-                 "zusammengestellt und noch nicht am Gerät nachvollzogen.", "",
+                 "Anleitungen je Gerät.", "",
                  "## Level", "", "| Level | Bedeutung |", "|---|---|"]
         liste += [f"| {l} {level.KURZ[l]} | {level.LANG[l]} |" for l in level.LEVELS]
         liste += ["", "## Risiko", "", level.RISIKO_TEXT, "",
-                  "## Geräte", "", "| Gerät | Stand | Level |", "|---|---|---|"]
-        liste += [f"| [{k['anzeige'].replace('|', '/')}]({n}.md) | {k['status']} | {k['level']} "
+                  "## Geräte", "", "| Gerät | Level |", "|---|---|"]
+        liste += [f"| [{k['anzeige'].replace('|', '/')}]({n}.md) | {k['level']} "
                   f"{k['level_text']}"
                   + (", **Bootloader-Risiko**" if k["risiko"] == "bootloader" else "") + " |"
                   for n, (k, _) in seiten.items()]

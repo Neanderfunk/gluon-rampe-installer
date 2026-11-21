@@ -13,15 +13,12 @@ erprobt_am: 2026-11-11
 erprobt_mit: gluon-rampe-20261015-genexis-pulse-ex400-factory.bin
 rampe_image: gluon-rampe-20261115-genexis-pulse-ex400-factory.bin
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: e85eac1dd
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Genexis/Inteno Pulse EX400: Freifunk-Firmware installieren
 
-> **Am Gerät erprobt** am 11.11.2026 mit `gluon-rampe-20261015-genexis-pulse-ex400-factory.bin`. Das aktuelle Image ist neuer und in dieser Form
-> noch nicht am Gerät gelaufen.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -131,17 +128,3 @@ Ein Terminal brauchst du nicht. Rechne mit einer Viertelstunde.
   Seite neu laden. Startet der Router zwischendurch neu, die Seite einfach
   wieder aufrufen. Hilft das nicht: Der Notfall-Modus steckt im Bootloader
   und bleibt immer erhalten. Fang wieder bei Schritt 3 an.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- Wiki-Zusammenfassung: Darmstadt-Wiki (Sichtbare Zeichen, Anschluss, Adressen, Dauer)
-- Wiki-Zusammenfassung: Freifunk-Darmstadt-Wiki Genexis-EX400 (Taste und Zeitpunkt)
-- abgeleitet (Dauer)
-- geprüft (Notweg)
-- geprüft: Commit (Typenschild/Verwechslung, Notweg, Rückweg zur Herstellerfirmware)
-- geprüft: Commit dd0c283 (Taste und Zeitpunkt)
-- geprüft: Commit dd0c283; erprobt adorfer 11.11.2026 (Schritte (Normalweg))
-- geprüft: Commit; Wiki-Zusammenfassung: Darmstadt-Wiki (Sichtbare Zeichen)
-- Geräteeintrag: dd0c2839a81bb3c5067be99b02ec5c0adff93ac6

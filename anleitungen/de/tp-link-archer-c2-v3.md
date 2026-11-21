@@ -10,17 +10,14 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link Archer C2 v3: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
-> Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
-> getestet ("broken"); nicht jede Community bietet sie an.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -105,13 +102,3 @@ Anmeldung scheitert. OpenWrt empfiehlt einen alten Browser wie SeaMonkey.
   ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
   Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- Wiki-Zusammenfassung: toh/tp-link/archer_c2_v3 (Schritte (Normalweg), Programm)
-- abgeleitet (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Schritte (Normalweg), Datei, Quelle (OpenWrt-Commit))
-- geprüft: Commit 9c01273e; tplink-safeloader ARCHER-C2-V3; Gluon targets/ramips-mt7620 (Schritte (Normalweg), Typenschild/Verwechslung)
-- Geräteeintrag: 9c01273e5e7b3929ad46d974685ec29de207a8de [geprüft]

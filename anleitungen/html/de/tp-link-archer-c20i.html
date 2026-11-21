@@ -13,20 +13,17 @@
 <meta name="anleitung:level" content="L1">
 <meta name="anleitung:level_text" content="Zwei Schritte im Browser">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, router-antwortet-nicht, tftp-server">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="33a38da83">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>TP-Link Archer C20i: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/tp-link-archer-c20i.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-aussieht als hier beschrieben.
-Die Gefahr aus Build 151014 kennen wir aus eigener Erfahrung; den Weg aus Build 140709 haben wir nicht selbst nachvollzogen.</p>
+<p>Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+beschrieben.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -154,18 +151,6 @@ macOS im Ordner mit der TP-Link-Datei:</p>
 <p>Die fertige Datei war bei uns 8.126.464 Bytes groß. Danach läuft wieder die
 TP-Link-Firmware; dann wie oben erst Build 140709, dann die
 Freifunk-Firmware.</p>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet (Schritte (Normalweg))</li>
-<li>abgeleitet: Gluon baut factory; Wiki nennt nur TFTP-Recovery mit ArcherC20iV1_tp_recovery.bin von 192.168.0.66 (Weg ab Werk, Schritte (Normalweg), Programm, Datei)</li>
-<li>geprüft: Gluon targets/ramips-mt7620, Wiki toh:tp-link:archer_c20i (Schritte (Normalweg), Typenschild/Verwechslung)</li>
-<li>geprüft: Neanderfunk-Notiz, adorfer 15.10.2026, am Gerät 06.10.2026: TP-Link-Firmware ohne ersten 512-Byte-Sektor (dd), als ArcherC20iV1_tp_recovery.bin per Tftpd64, Gerät aus der Startschleife geholt (Notweg)</li>
-<li>geprüft: Neanderfunk-Notiz, adorfer 15.10.2026, am Gerät: aus Build 151014 geflasht -&gt; Startschleife, Rettung nur per TFTP (Warnung, Bedingung an die Herstellerfirmware)</li>
-<li>geprüft: Wiki toh:tp-link:archer_c20i (Schritte (Normalweg), Warnung, Bedingung an die Herstellerfirmware)</li>
-<li>geprüft: Wiki toh:tp-link:archer_c20i (Dateiname, Server-IP) (Notweg)</li>
-<li>Geräteeintrag: 48d8bc4f971ad7795e3162134759caa37900138f (ohne Installationstext)</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

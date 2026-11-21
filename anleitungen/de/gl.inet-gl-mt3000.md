@@ -10,15 +10,14 @@ level_text: Einfach hochladen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 9560ae8ed
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # GL.iNet GL-MT3000: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -87,16 +86,3 @@ mehr, hilft der eingebaute Notfall-Modus:
    "Update firmware". Der Ladekreis auf der Seite dreht sich danach endlos
    weiter, das ist normal.
 4. Etwa 3 Minuten warten, Strom nicht ziehen.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Übertragung)
-- abgeleitet: Commit ohne Installationsabschnitt, gluon-rampe-installer docs/GERAETE.md (Weg ab Werk, Schritte (Normalweg))
-- abgeleitet: Wiki (Taste und Zeitpunkt)
-- abgeleitet: Wiki toh/gl.inet/gl-mt3000 (Schritte (Normalweg), Adressen, Programm, Datei)
-- geprüft: GL-Doku (Notweg)
-- geprüft: GL-Doku 'GL-MT3000 (Beryl AX)' (Notweg)
-- geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026) (Notweg)
-- Geräteeintrag: OpenWrt 7cbe34170e3d8471c1ebacde33a2372c92433be4

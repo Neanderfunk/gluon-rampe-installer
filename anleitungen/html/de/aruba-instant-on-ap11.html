@@ -13,20 +13,17 @@
 <meta name="anleitung:level" content="L6">
 <meta name="anleitung:level_text" content="Serielles Kabel">
 <meta name="anleitung:risiko" content="bootloader">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:rampe_image" content="gluon-rampe-20261115-aruba-ap-303-initramfs-uImage.itb">
 <meta name="anleitung:grundlagen" content="browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="84f780274">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Aruba Instant On AP11: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/aruba-instant-on-ap11.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-Hersteller für dieses Gerät beschreiben.
-Den Schritt mit dem älteren Bootloader beschreibt Freifunk Darmstadt; die Datei dafür stellen wir bereit.</p>
+<p>Den Schritt mit dem älteren Bootloader beschreibt Freifunk Darmstadt; die Datei dafür stellen wir bereit.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -347,26 +344,6 @@ starten, halt den Bootloader an (Schritt 5) und gib ein:</p>
 <pre><code>setenv bootcmd &quot;boot&quot;
 saveenv
 </code></pre>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet (Typenschild/Verwechslung)</li>
-<li>abgeleitet: Alias, gleiche Platine (Gehäuse öffnen)</li>
-<li>geprüft: Datei und ZIP geladen 15.10.2026, SHA256 gleich der im Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9) für apboot-unlocked.bin (Werkzeug/Spezial)</li>
-<li>geprüft: Forum t/22653 #28 (adorfer, 03.04.2023, Abzüge) (Stock-Teile)</li>
-<li>geprüft: Forum t/22653 #29 (blocktrron, 14.06.2024) (Programm)</li>
-<li>geprüft: Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9); Adressen dort .6/.66, in der Anleitung .105/.75 (Programm)</li>
-<li>geprüft: Gluon-Alias, Wiki toh:aruba:ap-303 (Typenschild/Verwechslung)</li>
-<li>geprüft: Neanderfunk-Notiz zum AP11, 2024 (Weg ab Werk)</li>
-<li>geprüft: Neanderfunk-Notiz, adorfer 15.10.2026 (Abzüge 2021/2023); Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9); APBoot-Version in ap303-loader-2.5.0.2.bin per strings geprüft (Sichtbare Zeichen)</li>
-<li>geprüft: Neanderfunk-Notiz; Sc4ndium90-README (Bedingung an die Herstellerfirmware)</li>
-<li>geprüft: OpenWrt-Commit 102c8c5 (AP-303) (Programm)</li>
-<li>geprüft: Sc4ndium90-README (Programm)</li>
-<li>geprüft: Wiki toh:aruba:ap-303 (Sichtbare Zeichen)</li>
-<li>geprüft: Wiki toh:aruba:ap-303h, Rohtext 15.10.2026 (Programm)</li>
-<li>geprüft: github Sc4ndium90/aruba-ap11-openwrt, Wiki toh:aruba:ap-303 (Taste und Zeitpunkt)</li>
-<li>Geräteeintrag: Notiz ap11.md (2024); OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

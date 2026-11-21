@@ -12,14 +12,12 @@ status: erprobt
 erprobt_am: 2026-10-17
 erprobt_mit: Gluon 2025.1 (26100702bro), factory über die Mercusys-Oberfläche 1.0.11 (Hardware V1.20)
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Mercusys MR70X v1: Freifunk-Firmware installieren
 
-> **Am Gerät erprobt** am 17.10.2026 mit `Gluon 2025.1 (26100702bro), factory über die Mercusys-Oberfläche 1.0.11 (Hardware V1.20)`.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -130,17 +128,5 @@ Aufkleber genau mit "Mercusys MR70X v1", bevor du anfängst.
 
 Nach der Installation geht das nicht mehr über die Notfall-Seite (siehe
 "Achtung" oben). Zurück geht es dann nur noch mit einer seriellen Konsole
-bei geöffnetem Gehäuse. Das haben wir ausprobiert, es ist aber nichts für
-Endnutzer (Hintergrund im OpenWrt-Forum,
+bei geöffnetem Gehäuse. Das ist nichts für Endnutzer (Hintergrund im OpenWrt-Forum,
 [Thema 160069](https://forum.openwrt.org/t/160069)).
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg), Rückweg zur Herstellerfirmware)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Programm, Datei)
-- geprüft: Commit 47de2c68 (Rückweg zur Herstellerfirmware)
-- geprüft: Test Neanderfunk 17.10.2026 (Weg ab Werk, Typenschild/Verwechslung, Fehlerbild, Notweg, Rückweg zur Herstellerfirmware)
-- geprüft: tplink-safeloader MR70X (Schritte (Normalweg), Typenschild/Verwechslung)
-- Geräteeintrag: 47de2c686291e69afc9f443e27e1dfd11ed5fbe7

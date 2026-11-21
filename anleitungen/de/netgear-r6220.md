@@ -10,15 +10,14 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, nmrpflash, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 15ae34432
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # NETGEAR R6220: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -137,14 +136,3 @@ Wenn nmrpflash Fehler meldet:
   probieren.
 - **"Timeout while waiting for ACK(0)/OACK."** Meist die Firewall am Rechner.
 - Weitere Meldungen erklärt [nmrpflash benutzen](grundlagen/nmrpflash.md).
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: ToH "GUI OEM"; Commit beschreibt Telnet-Debug + USB + mtd_write, damals ohne factory (Weg ab Werk, Datei)
-- abgeleitet: Wiki (Programm)
-- abgeleitet: Wiki toh/netgear/r6220 (Dauer, Notweg)
-- geprüft: Commit 38bee61 (Rückweg zur Herstellerfirmware)
-- geprüft: nmrpflash-README (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Anschluss, Adressen, Programm, Datei, Dauer)
-- Geräteeintrag: 38bee61dab029a7608088f64da71c19cfc8cf267

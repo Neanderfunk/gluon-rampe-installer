@@ -11,16 +11,12 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-sophos-ap15-initramfs-kernel.bin
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 9a02820db
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Sophos AP15: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
-> Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
-> getestet ("broken"); nicht jede Community bietet sie an.
 > Laut OpenWrt an zwei Geräten ausprobiert.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
@@ -185,16 +181,3 @@ ssh root@192.168.1.1 "sysupgrade -n /tmp/gluon.bin"
 
 Ein Passwort gibt es nicht. Nach dem zweiten Befehl bricht die Verbindung
 ab, das ist harmlos.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Netz 192.168.1.0/24 (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Schritte (Normalweg), Anschluss, Quelle (OpenWrt-Commit))
-- geprüft: Commit (Schritte (Normalweg), Adressen, Programm, Datei, Typenschild/Verwechslung)
-- geprüft: Commit 0dc5821 (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Zugang)
-- geprüft: Commit; Wiki-Zusammenfassung: Pegel laut ToH (Schritte (Normalweg), Anschluss, Zugang)
-- geprüft: Gluon-Target ath79-generic (Typenschild/Verwechslung)
-- ungeprüft im Commit (Weg ab Werk, Notweg)
-- Geräteeintrag: 0dc58214896aacf67a3759495d70e2b4e9c160d8 (Einführung, Anleitung); fc31261c3307458e38c9a676211a25c99c044ece (DTS-Umbenennung) [geprüft]

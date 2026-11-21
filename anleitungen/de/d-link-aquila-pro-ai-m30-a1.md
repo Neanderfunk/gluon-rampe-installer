@@ -13,14 +13,12 @@ erprobt_am: 2026-11-15
 erprobt_mit: gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m30-a1-recovery.bin
 grundlagen: [browser-https, browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 3dc0d6c03
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # D-Link AQUILA PRO AI M30 A1: Freifunk-Firmware installieren
 
-> **Am Gerät erprobt** am 15.11.2026 mit `gluon-rampe-20261114-d-link-aquila-pro-ai-m30-a1-recovery.bin`.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -200,23 +198,3 @@ Windows 10 und 11 heißt es `curl.exe` und ist eingebaut
    Steht da 0, kam nichts an (siehe "Wenn etwas schiefgeht").
 
 Danach weiter mit Schritt 8 oben.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- geprüft (Weg ab Werk, Datei, Stock-Teile)
-- geprüft: Commit (Sichtbare Zeichen)
-- geprüft: Commit 29cca6c (Schritte (Normalweg), Sichtbare Zeichen, Adressen, Bedingung an die Herstellerfirmware, Fehlerbild, Rückweg zur Herstellerfirmware)
-- geprüft: Commits 'Chromium based' (Programm)
-- geprüft: Commits 29cca6c, 7271ee5; Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Sichtbare Zeichen, Adressen, Datei)
-- geprüft: Neanderfunk-Notiz, M60: 10-11 min gemessen (Schritte (Normalweg), Dauer)
-- geprüft: Neanderfunk-Notiz, am Gerät bestätigt (Typenschild/Verwechslung)
-- geprüft: Neanderfunk-Notiz, am M60 erprobt (Schritte (Normalweg), Programm)
-- geprüft: Screenshots und Aussage adorfer 15.11.2026 (Programm)
-- geprüft: Test adorfer 15.11.2026 am M30 (Programm)
-- geprüft: adorfer 15.11.2026 (Sichtbare Zeichen, Programm)
-- geprüft: adorfer 17.11.2026, am Gerät (Anschluss)
-- geprüft: gluon-rampe-installer docs/NOTIZEN.md (Gluon-RAMpe passt)
-- Geräteeintrag: OpenWrt 29cca6cfee4bc732f9bf7eca0cae9e56cd3c0f2f

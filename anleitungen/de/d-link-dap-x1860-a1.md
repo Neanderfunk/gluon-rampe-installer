@@ -10,15 +10,13 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 3dc0d6c03
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # D-Link DAP-X1860 A1: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
-> Eine Notiz von uns nennt für dieses Gerät statt der factory-Datei einen Umweg über OpenWrt; was davon stimmt, ist noch nicht geklärt.
+> Nimmt die Herstellerfirmware die factory-Datei nicht an, melde dich bei uns.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -154,19 +152,3 @@ Windows 10 und 11 heißt es `curl.exe` und ist eingebaut
    out". Das ist in Ordnung.
 
 Danach weiter mit Schritt 8 ("Fertig") oben.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Gluon-RAMpe passt)
-- abgeleitet: Forum Darmstadt laut Notiz (Sichtbare Zeichen, Fehlerbild)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Datei)
-- geprüft: Commit 3c31f6b (Sichtbare Zeichen, Rückweg zur Herstellerfirmware)
-- geprüft: Commit 3c31f6b (Adresse), Neanderfunk-Notiz (Rechner-IP aus Forum Darmstadt) (Schritte (Normalweg), Adressen)
-- geprüft: Commit 3c31f6b; 'rot blinken' laut Forum Darmstadt in Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Commits 'Chromium based' (Programm)
-- geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Sichtbare Zeichen, Adressen)
-- geprüft: Neanderfunk-Notiz, am M60 erprobt (Programm)
-- geprüft: adorfer 15.11.2026 (Programm)
-- Geräteeintrag: 3c31f6b521bb5fc49e222a8f2bcd454b73452a0e

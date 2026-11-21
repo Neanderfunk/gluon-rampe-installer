@@ -10,15 +10,12 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 9560ae8ed
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # GL.iNet GL-MT300N v2: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -89,16 +86,3 @@ sysupgrade-Image auch in ihrer Oberfläche an (Einstellungen nicht behalten).
   kurz ab ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md))
   und versuch Schritt 4 noch einmal, diesmal genau auf die LEDs achtend. Kommt "Not Found" oder "PAGE NOT
   FOUND", siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- geprüft (Weg ab Werk)
-- geprüft: Commit (Notweg)
-- geprüft: Commit 'Install sysupgrade image using web interface on 192.168.1.1' (Schritte (Normalweg), Datei)
-- geprüft: Commit abbfcc8 (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Commit, GL-Doku (Schritte (Normalweg), Sichtbare Zeichen)
-- geprüft: Commits abbfcc8, be53e5a (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026) (Schritte (Normalweg), Taste und Zeitpunkt, Anschluss, Adressen, Programm, Dauer)
-- Geräteeintrag: abbfcc85259a4f6658c61e99dd3d2d3567e3eb3a

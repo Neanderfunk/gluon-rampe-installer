@@ -12,14 +12,12 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.5.30
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 2f49bb085
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Cudy WR3000H v1: Freifunk-Firmware installieren
 
-> **Am Gerät erprobt** am 16.10.2026 mit `Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.5.30`.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -188,22 +186,3 @@ Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
    "Internet"). Danach den
    Rechner wieder auf "automatisch" stellen; die Cudy-Oberfläche ist unter
    `http://192.168.10.1` erreichbar.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Kommentar Cudy-FAQ 09.10.2026, unbestätigt (Typenschild/Verwechslung)
-- abgeleitet: Router ist in beiden Firmwares DHCP-Server (Schritte (Normalweg), Anschluss, Adressen, Programm)
-- abgeleitet: sysupgrade schreibt den Flash (Schritte (Normalweg), Dauer)
-- geprüft: Commit-Texte (Gluon-RAMpe passt)
-- geprüft: Commit/Neanderfunk-Notiz (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Cudy-FAQ "OpenWrt Software Download" (Bedingung an die Herstellerfirmware)
-- geprüft: Cudy-FAQ, Hinweis 24.11.2025 (Warnung)
-- geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer, Fehlerbild)
-- geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)
-- geprüft: OpenWrt-Pin (Typenschild/Verwechslung)
-- geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft (Datei)
-- geprüft: Test Neanderfunk 16.10.2026 (Gluon-RAMpe passt)
-- geprüft: Test Neanderfunk 16.10.2026 mit Cudy 2.5.30 (Rückweg zur Herstellerfirmware)
-- Geräteeintrag: OpenWrt fdbbb8415fd19ae0748a2bbe41b15257054e4077

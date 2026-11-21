@@ -10,15 +10,14 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, ssh-scp]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Ubiquiti EdgeRouter X: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -224,19 +223,3 @@ Notfall nur die serielle Konsole. Wie es geht, beschreibt Ubiquiti:
 
 Ubiquiti beschreibt, wie EdgeOS wieder aufgespielt wird:
 <https://help.ui.com/hc/en-us/articles/360019289113>.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- Wiki-Rohtext: toh:ubiquiti:edgerouter_x_er-x_ka, 15.10.2026 (Weg ab Werk)
-- abgeleitet (Gluon-RAMpe passt)
-- abgeleitet: Wiki (Schritte (Normalweg), Anschluss, Adressen, Zugang, Bedingung an die Herstellerfirmware, Rückweg zur Herstellerfirmware)
-- abgeleitet: Wiki toh/ubiquiti/edgerouter_x_er-x_ka (Schritte (Normalweg), Taste und Zeitpunkt, Anschluss, Adressen, Programm, Zugang)
-- abgeleitet: Wiki; vgl. Bestand werkzeug (Schritte (Normalweg), Programm, Datei)
-- geprüft: Commit 9715beb (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: Commit, mk, Wiki toh:ubiquiti:edgerouter_x_er-x_ka (Weg ab Werk, Schritte (Normalweg), Datei, Notweg)
-- geprüft: OpenWrt 24.10.8 sha256sums für das sysupgrade, am 15.10.2026 abgeglichen (Weg ab Werk)
-- geprüft: darkxst/erx-migration README und ubnt_erx_migrate.sh, Commit d29f71a: eine vorher abgelegte /tmp/sysupgrade.img überspringt den Download, Board edgerouter-x oder -x-sfp erlaubt (Weg ab Werk)
-- geprüft: stman OpenWrt-22.03-initramfs-factory.tar, Commit de2ade9, SHA256 gegen sha256sums (Weg ab Werk)
-- Geräteeintrag: 4e31b2e8697c21f9bd6493bb3d78a4a41c6a9a52

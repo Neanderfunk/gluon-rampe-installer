@@ -10,15 +10,14 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link Archer C5 v1: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -104,14 +103,3 @@ sind andere Geräte.
   ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
   Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- Rest abgeleitet; geprüft: Wiki toh:tp-link:archer-c5-c7-wdr7500 (Schritte (Normalweg), Typenschild/Verwechslung)
-- abgeleitet (Schritte (Normalweg), Quelle (OpenWrt-Commit))
-- abgeleitet: Commit ohne Anleitung (Weg ab Werk)
-- geprüft: Wiki toh:tp-link:archer-c5-c7-wdr7500 (Schritte (Normalweg), Adressen, Programm, Zugang, Datei)
-- geprüft: Wiki toh:tp-link:archer-c5-c7-wdr7500, Abschnitt TFTP Recovery (Schritte (Normalweg), Warnung, Dauer)
-- Geräteeintrag: 438605454980ee815a506a9a2a4a3532ab378922 (ohne Anleitung, Wiki-Verweis) [abgeleitet]

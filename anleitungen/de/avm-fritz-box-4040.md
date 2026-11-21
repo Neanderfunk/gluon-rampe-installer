@@ -10,15 +10,14 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [avm-eva, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # AVM FRITZ!Box 4040: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -107,24 +106,3 @@ die Original-Firmware zurückspielt. Es liegt auf dem Download-Server von AVM
 im Ordner des Geräts unter "recover". Geräte von Providern (zum Beispiel
 1&1) verweigern das eventuell; dann vorher per FTP
 `quote UNSETENV provider` ([Der Bootloader von AVM (EVA)](grundlagen/avm-eva.md)).
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: OpenWrt-Wiki "AVM recovery tool" (Rückweg zur Herstellerfirmware)
-- abgeleitet: Wiki 4020/3370 (Programm)
-- abgeleitet: Wiki 4020/4040 (Rückweg zur Herstellerfirmware)
-- abgeleitet: Wiki 4040 (Schritte (Normalweg), Sichtbare Zeichen, Programm, Bedingung an die Herstellerfirmware)
-- abgeleitet: Wiki 4040, upload-to-f4040.sh (Schritte (Normalweg), Sichtbare Zeichen)
-- abgeleitet: Wiki 4040; upload-to-f4040.sh "2 minutes+" (Dauer)
-- abgeleitet: dasselbe Wiki (Rückweg zur Herstellerfirmware)
-- geprüft: 70e6ea31 (Weg ab Werk)
-- geprüft: 70e6ea31; abgeleitet: Wiki 4040 (Schritte (Normalweg))
-- geprüft: 70e6ea31; geprüft: fritz-tools-Doku (Schritte (Normalweg))
-- geprüft: Commits, fritz-tools/fritzflash.py (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: fritz-tools-Doku (Schritte (Normalweg), Anschluss, Programm, Datei, Typenschild/Verwechslung)
-- geprüft: fritz-tools/fritzflash.py (Sichtbare Zeichen, Adressen, Dauer)
-- geprüft: fritz-tools/fritzflash.py, Wiki toh:avm:avm_fritz_wlan_repeater_1750e (Anschluss)
-- geprüft: fritz-tools/fritzflash.py; geprüft: fritz-tools-Doku (Schritte (Normalweg))
-- Geräteeintrag: OpenWrt 1cb406d019dc84497a8405c470f0b0394d5ff64a + 70e6ea319d3bfdfdb34be540dc7d89aa175b5587

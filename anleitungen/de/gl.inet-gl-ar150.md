@@ -10,15 +10,14 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 9560ae8ed
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # GL.iNet GL-AR150: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -82,16 +81,3 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
   kurz ab ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md))
   und versuch Schritt 4 noch einmal, diesmal genau auf die LEDs achtend. Kommt "Not Found" oder "PAGE NOT
   FOUND", siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Übertragung, Gluon-RAMpe passt, Quelle (OpenWrt-Commit))
-- abgeleitet: Commit 53c474a ohne Anleitung, Verfahren wie bei den anderen GL.iNet (Weg ab Werk, Schritte (Normalweg), Datei)
-- abgeleitet: Wiki (Dauer)
-- abgeleitet: Wiki toh/gl.inet/gl-ar150 (Schritte (Normalweg), Sichtbare Zeichen)
-- abgeleitet: Wiki, Stock ist GL.iNet-OpenWrt (Notweg)
-- geprüft: GL-Doku 5x; '6. Blinken' abgeleitet: Wiki toh/gl.inet/gl-ar150 (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026) (Schritte (Normalweg), Taste und Zeitpunkt, Anschluss, Adressen, Programm, Dauer)
-- Geräteeintrag: 53c474abbdfef8eb3499e2d10c9ad491788b8a72 (erstes ath79-Target, ohne Anleitung) [abgeleitet]

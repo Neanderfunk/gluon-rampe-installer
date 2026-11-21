@@ -10,15 +10,12 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 2f49bb085
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Cudy AP3000 Wall v1: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -188,23 +185,3 @@ Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
    "Internet"). Danach den
    Rechner wieder auf "automatisch" stellen; die Cudy-Oberfläche ist unter
    `http://192.168.10.1` erreichbar.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Router ist in beiden Firmwares DHCP-Server (Schritte (Normalweg), Anschluss, Adressen, Programm)
-- abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht (Rückweg zur Herstellerfirmware)
-- abgeleitet: sysupgrade schreibt den Flash (Schritte (Normalweg), Dauer)
-- geprüft: Commit (Rückweg zur Herstellerfirmware)
-- geprüft: Commit "PoE powered (standalone)" (Schritte (Normalweg), Anschluss)
-- geprüft: Commit-Texte (Gluon-RAMpe passt)
-- geprüft: Commit/Neanderfunk-Notiz (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Cudy-FAQ "OpenWrt Software Download" (Bedingung an die Herstellerfirmware)
-- geprüft: Cudy-FAQ, Hinweis 24.11.2025 (Warnung)
-- geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Typenschild/Verwechslung, Dauer, Fehlerbild)
-- geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)
-- geprüft: OpenWrt-Pin (Typenschild/Verwechslung)
-- geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft (Datei)
-- geprüft: Spiegel-Ordner (Typenschild/Verwechslung)
-- Geräteeintrag: OpenWrt afad4c71f8d558ca86b997781ca0236f321cf1e9 (25.12: 45788a48c7); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]

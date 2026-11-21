@@ -10,15 +10,14 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # NETGEAR WNDR3700 v1: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -117,14 +116,3 @@ womöglich nicht an; dafür gäbe es ein eigenes Image, das Gluon nicht baut.
   ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
   Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg), Übertragung, Quelle (OpenWrt-Commit))
-- abgeleitet: Commit ohne Anleitung (Weg ab Werk, Schritte (Normalweg), Programm, Datei)
-- geprüft: OpenWrt generic.mk IMAGE/factory-NA.img, Gluon targets/ath79-generic; Folge abgeleitet (Typenschild/Verwechslung)
-- geprüft: OpenWrt generic.mk/nand.mk (Typenschild/Verwechslung)
-- geprüft: Wiki toh:netgear:wndr3700 (Schritte (Normalweg), Sichtbare Zeichen, Typenschild/Verwechslung)
-- Geräteeintrag: 4dc7cb792a8e34b6ad97c7b8058c70311a06bd38 [abgeleitet]

@@ -10,15 +10,12 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 2f49bb085
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Cudy M3000 v2 mit Motorcomm YT8821: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -58,9 +55,7 @@ steckt, siehst du erst in der Cudy-Oberfläche, das kommt in Schritt 4. Die
 Zwischenfirmware ist für beide Sorten dieselbe Datei.
 
 Cudy gibt die Zwischenfirmware für den M3000 in Hardware-Version 1.0 und
-2.0 heraus, und OpenWrt nennt für diese Variante dieselbe Datei. Bei uns
-hat sie an einem M3000 mit YT8821 aber noch niemand ausprobiert. Wenn du es
-tust, sag uns bitte Bescheid, ob es geklappt hat.
+2.0 heraus, und OpenWrt nennt für diese Variante dieselbe Datei.
 
 ## Schritte
 
@@ -207,26 +202,3 @@ Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
    "Internet"). Danach den
    Rechner wieder auf "automatisch" stellen; die Cudy-Oberfläche ist unter
    `http://192.168.10.1` erreichbar.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Router ist in beiden Firmwares DHCP-Server (Schritte (Normalweg), Anschluss, Adressen, Programm)
-- abgeleitet: die Zwischenfirmware meldet sich als cudy,m3000-v1 (Device Tree und Metadaten der Datei), das Gluon-Image kennt nur cudy,m3000-v2-yt8821 und R37 (Schritte (Normalweg))
-- abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht (Rückweg zur Herstellerfirmware)
-- abgeleitet: sysupgrade schreibt den Flash (Schritte (Normalweg), Dauer)
-- geprüft (Weg ab Werk)
-- geprüft: Commit 45b51eba (Schritte (Normalweg), Anschluss, Typenschild/Verwechslung)
-- geprüft: Commit 45b51eba nennt für YT8821 dieselbe Cudy-Ablage (Schritte (Normalweg))
-- geprüft: Commit 45b51eba; geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg))
-- geprüft: Commit-Texte (Gluon-RAMpe passt)
-- geprüft: Commit/Neanderfunk-Notiz (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Cudy-FAQ "OpenWrt Software Download" (Bedingung an die Herstellerfirmware)
-- geprüft: Cudy-FAQ, Hinweis 24.11.2025 (Warnung)
-- geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer, Fehlerbild)
-- geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Sichtbare Zeichen, Zugang)
-- geprüft: OpenWrt-Pin (Typenschild/Verwechslung)
-- geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022 (Cudys Drive-Ordner, geholt 22.10.2026; MD5 geprüft) (Schritte (Normalweg))
-- geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft (Datei)
-- Geräteeintrag: OpenWrt 45b51ebaff51d2a49d149e9011717abb1b032683 (25.12: ca825537fb); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]

@@ -11,17 +11,12 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-netgear-wndr3700-v5-factory.img
 grundlagen: [browser-https, browser-not-found, nmrpflash, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 15ae34432
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # NETGEAR WNDR3700 v5: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
-> Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
-> getestet ("broken"); nicht jede Community bietet sie an.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -146,15 +141,3 @@ umbenennen. Nach dem Neustart läuft OpenWrt: Rechner auf "automatisch",
 `http://192.168.1.1` öffnen, anmelden (Passwort-Feld leer), **System →
 Backup / Flash Firmware**, "Flash image…", das Freifunk-sysupgrade-Image
 wählen, **den Haken bei "Keep settings" entfernen** und **Continue**.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Gluon-RAMpe passt)
-- abgeleitet: Commit cb049e7 nennt MT7621S für v5 (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Commit 2fdd02c 'factory image ... can be flashed using nmrpflash' (Datei)
-- geprüft: OpenWrt 24.10.8 ramips/mt7621, factory.img in sha256sums gelistet und per HEAD erreichbar, 15.10.2026 (Weg ab Werk)
-- geprüft: nmrpflash-README (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Anschluss, Adressen, Programm, Dauer)
-- Geräteeintrag: cb049e71cdc08e17f664403a0ef970c480ae5c4a + 2fdd02cc7c3516c2cce2ace2c7b539e0821ecbe8 (factory-Image)

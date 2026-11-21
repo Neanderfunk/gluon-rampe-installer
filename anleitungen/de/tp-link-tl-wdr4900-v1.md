@@ -10,15 +10,14 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link TL-WDR4900 v1: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -102,12 +101,3 @@ außen, nur in China verkauft).
   ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
   Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- abgeleitet: ToH "GUI OEM"; Commit ohne Text (Weg ab Werk, Schritte (Normalweg), Programm, Datei)
-- geprüft: Wiki toh:tp-link:tl-wdr4900 (Schritte (Normalweg), Typenschild/Verwechslung)
-- Geräteeintrag: 4305c6cda18051efad9952425a8ce2478adc64b9 (ohne Installationstext)

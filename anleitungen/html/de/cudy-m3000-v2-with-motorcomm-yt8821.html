@@ -13,18 +13,15 @@
 <meta name="anleitung:level" content="L1">
 <meta name="anleitung:level_text" content="Zwei Schritte im Browser">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, router-antwortet-nicht, tftp-server">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="2f49bb085">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Cudy M3000 v2 mit Motorcomm YT8821: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/cudy-m3000-v2-with-motorcomm-yt8821.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-Hersteller für dieses Gerät beschreiben.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -60,9 +57,7 @@ jede Sorte braucht ihre eigene Freifunk-Firmware. Welcher in deinem Gerät
 steckt, siehst du erst in der Cudy-Oberfläche, das kommt in Schritt 4. Die
 Zwischenfirmware ist für beide Sorten dieselbe Datei.</p>
 <p>Cudy gibt die Zwischenfirmware für den M3000 in Hardware-Version 1.0 und
-2.0 heraus, und OpenWrt nennt für diese Variante dieselbe Datei. Bei uns
-hat sie an einem M3000 mit YT8821 aber noch niemand ausprobiert. Wenn du es
-tust, sag uns bitte Bescheid, ob es geklappt hat.</p>
+2.0 heraus, und OpenWrt nennt für diese Variante dieselbe Datei.</p>
 <h2>Schritte</h2>
 <h3>Teil 1: Zwischenfirmware von Cudy</h3>
 <ol>
@@ -218,28 +213,6 @@ leuchtet</strong> (steckt ein Kabel in der WAN-Buchse, leuchtet zusätzlich
 Rechner wieder auf &quot;automatisch&quot; stellen; die Cudy-Oberfläche ist unter
 <code>http://192.168.10.1</code> erreichbar.</li>
 </ol>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet: Router ist in beiden Firmwares DHCP-Server (Schritte (Normalweg), Anschluss, Adressen, Programm)</li>
-<li>abgeleitet: die Zwischenfirmware meldet sich als cudy,m3000-v1 (Device Tree und Metadaten der Datei), das Gluon-Image kennt nur cudy,m3000-v2-yt8821 und R37 (Schritte (Normalweg))</li>
-<li>abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht (Rückweg zur Herstellerfirmware)</li>
-<li>abgeleitet: sysupgrade schreibt den Flash (Schritte (Normalweg), Dauer)</li>
-<li>geprüft (Weg ab Werk)</li>
-<li>geprüft: Commit 45b51eba (Schritte (Normalweg), Anschluss, Typenschild/Verwechslung)</li>
-<li>geprüft: Commit 45b51eba nennt für YT8821 dieselbe Cudy-Ablage (Schritte (Normalweg))</li>
-<li>geprüft: Commit 45b51eba; geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg))</li>
-<li>geprüft: Commit-Texte (Gluon-RAMpe passt)</li>
-<li>geprüft: Commit/Neanderfunk-Notiz (Weg ab Werk, Schritte (Normalweg))</li>
-<li>geprüft: Cudy-FAQ &quot;OpenWrt Software Download&quot; (Bedingung an die Herstellerfirmware)</li>
-<li>geprüft: Cudy-FAQ, Hinweis 24.11.2025 (Warnung)</li>
-<li>geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer, Fehlerbild)</li>
-<li>geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Sichtbare Zeichen, Zugang)</li>
-<li>geprüft: OpenWrt-Pin (Typenschild/Verwechslung)</li>
-<li>geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022 (Cudys Drive-Ordner, geholt 22.10.2026; MD5 geprüft) (Schritte (Normalweg))</li>
-<li>geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft (Datei)</li>
-<li>Geräteeintrag: OpenWrt 45b51ebaff51d2a49d149e9011717abb1b032683 (25.12: ca825537fb); gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

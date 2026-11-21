@@ -10,15 +10,12 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [ssh-scp]
-daten_stand: 3512b4651
-vorlage_stand: 99ea2014f
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # devolo WiFi pro 1750e: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -99,18 +96,3 @@ Stunde.
   steht und ob du die Datei für genau dein Modell genommen hast.
 - **Die rote LED leuchtet länger.** Das Gerät schreibt noch oder ist im
   Notfall-Modus. Warte zehn Minuten; tut sich dann nichts, schreib uns.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Adressen)
-- abgeleitet: Wiki toh/devolo/wifi_pro_1750e (Anschluss)
-- abgeleitet: Wiki toh/devolo/wifi_pro_1750e, Tabelle der Netzwerk-Grundeinstellung (Adressen)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Quelle (OpenWrt-Commit))
-- geprüft: Commits 'Make sure you set a password for the root user as prompted on first setup' (Bedingung an die Herstellerfirmware)
-- geprüft: Commits, Weg über die laufende Stock-Firmware (Taste und Zeitpunkt)
-- geprüft: Commits; Adresse abgeleitet: Wiki toh/devolo/wifi_pro_1750e (Schritte (Normalweg), Anschluss, Programm, Zugang, Datei)
-- geprüft: DTS qca9558_devolo_*.dts, led-running/led-upgrade (Schritte (Normalweg), Sichtbare Zeichen)
-- geprüft: Wiki toh/devolo/wifi_pro_1750e, "Connect to LAN 2 (poe)" (Anschluss)
-- Geräteeintrag: 1c2f7b511514d43d8a826b26e09817b2750a2bf4 [geprüft]

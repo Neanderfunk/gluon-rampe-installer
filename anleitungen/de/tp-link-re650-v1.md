@@ -10,15 +10,12 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link RE650 v1: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -103,13 +100,3 @@ Aufkleber steht "1.0" bzw. "2.0".
   ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
   Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- geprüft (Weg ab Werk, Schritte (Normalweg), Datei)
-- geprüft: Commit ba0f4f0c/8c51ddef (Schritte (Normalweg), Typenschild/Verwechslung, Rückweg zur Herstellerfirmware)
-- geprüft: Wiki toh:tp-link:re650_v1 (Schritte (Normalweg), Adressen, Programm, Dauer)
-- geprüft: Wiki toh:tp-link:re650_v1; "nicht unterstützt" abgeleitet, im Rohtext nicht gefunden (Typenschild/Verwechslung)
-- Geräteeintrag: 8c51ddeff0876b439ac35a3f492ab719085bfb9c

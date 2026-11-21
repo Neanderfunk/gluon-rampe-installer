@@ -10,15 +10,14 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # OpenWrt One: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -108,12 +107,3 @@ Der OpenWrt One hat zwei Notfall-Wege: per USB (FAT32-Stick, Reset-Taste
 hinten beim Einschalten halten) und über den zweiten Bootloader (Schalter
 auf NOR, vorderen Taster beim Einschalten halten). Einzelheiten stehen im
 OpenWrt-Wiki: <https://openwrt.org/toh/openwrt/one>.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- abgeleitet: Image-Rezept, Commit ohne Installationsabschnitt (Weg ab Werk, Schritte (Normalweg), Programm, Datei, Notweg)
-- geprüft: Wiki toh:openwrt:one (Schritte (Normalweg), Taste und Zeitpunkt, Bedingung an die Herstellerfirmware, Rückweg zur Herstellerfirmware)
-- Geräteeintrag: OpenWrt 797904b3cb4a5c575641c19e7f3989926e4c7902

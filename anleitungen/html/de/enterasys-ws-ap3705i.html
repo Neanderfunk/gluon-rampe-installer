@@ -13,19 +13,16 @@
 <meta name="anleitung:level" content="L6">
 <meta name="anleitung:level_text" content="Serielles Kabel">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:rampe_image" content="gluon-rampe-20261115-enterasys-ws-ap3705i-initramfs-kernel.bin">
 <meta name="anleitung:grundlagen" content="browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="9a02820db">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Enterasys WS-AP3705i: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/enterasys-ws-ap3705i.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-Hersteller für dieses Gerät beschreiben.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -192,16 +189,6 @@ ssh root@192.168.1.1 &quot;sysupgrade -n /tmp/gluon.bin&quot;
 </code></pre>
 <p>Ein Passwort gibt es nicht. Nach dem zweiten Befehl bricht die Verbindung
 ab, das ist harmlos.</p>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>geprüft (Weg ab Werk, Schritte (Normalweg), Anschluss, Datei, Quelle (OpenWrt-Commit))</li>
-<li>geprüft: Commit (Schritte (Normalweg), Anschluss, Programm, Zugang)</li>
-<li>geprüft: Commit ebddc5f (Schritte (Normalweg), Taste und Zeitpunkt, Zugang)</li>
-<li>geprüft: Commit; Hex-Deutung abgeleitet (Schritte (Normalweg), Adressen, Datei)</li>
-<li>geprüft: OpenWrt-Commit ebddc5f, am 15.10.2026 nachgelesen (Programm)</li>
-<li>Geräteeintrag: ebddc5f984a240980303aed68524eb615484eef8 [geprüft]</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

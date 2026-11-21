@@ -13,19 +13,16 @@
 <meta name="anleitung:level" content="L7">
 <meta name="anleitung:level_text" content="Gehäuse öffnen">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:rampe_image" content="gluon-rampe-20261115-extreme-networks-ws-ap3805i-initramfs-kernel.bin">
 <meta name="anleitung:grundlagen" content="browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="9a02820db">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Extreme Networks WS-AP3805i: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/extreme-networks-ws-ap3805i.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-Hersteller für dieses Gerät beschreiben.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -189,16 +186,6 @@ ssh root@192.168.1.1 &quot;sysupgrade -n /tmp/gluon.bin&quot;
 </code></pre>
 <p>Ein Passwort gibt es nicht. Nach dem zweiten Befehl bricht die Verbindung
 ab, das ist harmlos.</p>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet (Schritte (Normalweg), Anschluss)</li>
-<li>geprüft (Weg ab Werk, Schritte (Normalweg), Anschluss, Datei, Quelle (OpenWrt-Commit))</li>
-<li>geprüft: Commit (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang, Datei)</li>
-<li>geprüft: Commit f8c87aa (Schritte (Normalweg), Taste und Zeitpunkt, Zugang)</li>
-<li>geprüft: OpenWrt-Commit f8c87aa, am 15.10.2026 nachgelesen (Programm)</li>
-<li>Geräteeintrag: f8c87aa2d27ab405f284dd4357377ab5c893a345 [geprüft]</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

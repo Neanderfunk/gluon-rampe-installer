@@ -10,15 +10,12 @@ level_text: Einfach hochladen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 9560ae8ed
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # GL.iNet VIXMINI: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -94,14 +91,3 @@ mehr, hilft der eingebaute Notfall-Modus:
    "Update firmware". Der Ladekreis auf der Seite dreht sich danach endlos
    weiter, das ist normal.
 4. Etwa 3 Minuten warten, Strom nicht ziehen.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- geprüft (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Commit (Notweg)
-- geprüft: Commit 43e8c37 (Schritte (Normalweg), Taste und Zeitpunkt, Anschluss, Adressen, Programm, Datei, Notweg)
-- geprüft: Commit b30f228 (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026) (Notweg)
-- Geräteeintrag: 43e8c37cb4da64a12a3cb88a84b19db7f2fc640c

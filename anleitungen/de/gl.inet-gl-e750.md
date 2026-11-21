@@ -11,17 +11,12 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-gl.inet-gl-e750-factory.img
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 9560ae8ed
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # GL.iNet GL-E750: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
-> Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
-> getestet ("broken"); nicht jede Community bietet sie an.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -136,15 +131,3 @@ Nach dem Neustart läuft OpenWrt. Öffne `http://192.168.1.1`, melde dich an
 (Passwort-Feld leer), geh zu **System → Backup / Flash Firmware**, "Flash
 image…", wähl das Freifunk-sysupgrade-Image, **entfern den Haken bei "Keep
 settings"** und klick **Continue**.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg), Datei, Werkzeug/Spezial, Gluon-RAMpe passt)
-- abgeleitet: OpenWrt-factory.img als Zwischenschritt (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Quelle (OpenWrt-Commit))
-- geprüft: Commit 68ac3f2 (Warnung)
-- geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026) (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Anschluss, Adressen, Programm, Dauer)
-- geprüft: OpenWrt 24.10.8 ath79/nand, Datei in sha256sums gelistet und per HEAD erreichbar, 15.10.2026 (Weg ab Werk)
-- Geräteeintrag: 68ac3f2cddab8422d7de0ce1a78d23edf29012e7 [geprüft]

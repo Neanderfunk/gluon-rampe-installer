@@ -10,15 +10,12 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link TL-WR810N v1: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -104,15 +101,3 @@ Aufkleber genau mit "TP-Link TL-WR810N v1", bevor du anfängst.
   ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
   Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- Stand 24.10 abgeleitet: offen; geprüft: Wiki toh:tp-link:tl-wr810n, korrigiert (Warnung)
-- abgeleitet (Schritte (Normalweg))
-- geprüft (Quelle (OpenWrt-Commit))
-- geprüft über Verweis auf ar71xx-Commit b23b0fb2 (Weg ab Werk, Schritte (Normalweg), Datei, Notweg)
-- geprüft: Commit b23b0fb2 (Schritte (Normalweg), Adressen, Programm, Zugang)
-- geprüft: OpenWrt generic-tp-link.mk, Gluon targets/ath79-generic (Schritte (Normalweg), Typenschild/Verwechslung)
-- Geräteeintrag: cdbf2de77768dfde560b4ea663b4eac0d3a5a581 (Verweis); b23b0fb28b760ce66a8f93d4681c8bd300d75d30 (ar71xx, Anleitung) [geprüft]

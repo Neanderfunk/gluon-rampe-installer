@@ -13,15 +13,12 @@ erprobt_am: 2026-09-19
 erprobt_mit: Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs
 rampe_image: gluon-rampe-20261115-zyxel-wsm20-initramfs-kernel.bin
 grundlagen: [browser-https, browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: ae198bf8f
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # ZyXEL WSM20 (Multy M1): Freifunk-Firmware installieren
 
-> **Am Gerät erprobt** am 19.09.2026 mit `Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs`. Das aktuelle Image ist neuer und in dieser Form
-> noch nicht am Gerät gelaufen.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -140,22 +137,8 @@ Arbeitsspeicher:
 sysupgrade-Image wählen, "Upload", den Haken bei **"Keep settings and retain
 the current configuration" entfernen** und **"Continue"**.
 
-## Herkunft der Angaben
+## Quelle
 
 Diese Anleitung folgt in weiten Teilen der
 [Anleitung von Freifunk Aachen](https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/)
 (Stefan Limbach, 2024).
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Gluon-RAMpe passt)
-- abgeleitet: Freifunk Aachen 04.01.2024, FAQ: rote LED = eingerichtet und ohne Internet (Schritte (Normalweg))
-- abgeleitet: Freifunk Aachen, FAQ: rote LED = eingerichtet und ohne Internet (Anschluss)
-- geprüft: Commit (Bedingung an die Herstellerfirmware)
-- geprüft: Commit 28df7f7 (Programm)
-- geprüft: Commit 28df7f7, Wiki toh:zyxel:wsm20 (Adressen)
-- geprüft: Freifunk Aachen 04.01.2024 (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Anschluss, Adressen, Zugang, Datei, Dauer, Fehlerbild)
-- geprüft: Freifunk Aachen 04.01.2024 + Wiki toh:zyxel:wsm20; Neanderfunk-Notiz, adorfer 15.10.2026: nach dieser Anleitung installiert, läuft als Testknoten in 21_dias (dias-d41ad11183d0, Gluon 2023.2.6, Karte 15.10.2026) (Bedingung an die Herstellerfirmware)
-- geprüft: Freifunk Aachen 04.01.2024, Wiki toh:zyxel:wsm20; Neanderfunk-Notiz, adorfer 15.10.2026: nach dieser Anleitung installiert, läuft als Testknoten in 21_dias (dias-d41ad11183d0, Gluon 2023.2.6, Karte 15.10.2026) (Weg ab Werk)
-- geprüft: Freifunk Aachen 04.01.2024; Neanderfunk-Notiz, adorfer: Wartezeit auf der Upgrade-Seite am Gerät so erlebt (Schritte (Normalweg))
-- Geräteeintrag: 28df7f7ff251d8684caa60f07ed0ba0c4a8e71f4

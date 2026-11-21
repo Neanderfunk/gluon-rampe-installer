@@ -10,15 +10,14 @@ level_text: Einfach hochladen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 9560ae8ed
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # GL.iNet GL-MT6000: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -93,17 +92,3 @@ mehr, hilft der eingebaute Notfall-Modus:
    "Update firmware". Der Ladekreis auf der Seite dreht sich danach endlos
    weiter, das ist normal.
 4. Etwa 3 Minuten warten, Strom nicht ziehen.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Übertragung)
-- abgeleitet: Commit-Text Patch-Repo 8dbae18 (Weg ab Werk, Schritte (Normalweg))
-- abgeleitet: Wiki (Schritte (Normalweg), Taste und Zeitpunkt, Adressen, Programm, Datei)
-- abgeleitet: Wiki toh/gl.inet/gl-mt6000 (Notweg, Rückweg zur Herstellerfirmware)
-- abgeleitet: Wiki; OpenWrt-factory nur für OpenWrt-U-Boot geprüft: Commit fe10f97 (Schritte (Normalweg), Warnung, Datei)
-- geprüft (Weg ab Werk)
-- geprüft: GL-Doku (Notweg)
-- geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026) (Notweg)
-- Geräteeintrag: OpenWrt fe10f9743935d6986e80e7cb082469e6bc5a03f0; gluon-patches-hardware 8dbae18666543aa9b8b5e7faa1d267024d62071e (Gluon-Zeile)

@@ -10,15 +10,14 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link TL-WR902AC v4: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 > Der Commit von OpenWrt nennt einen anderen Dateinamen als bei allen Schwestergeräten; deshalb legst du die Datei unter beiden Namen ab.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
@@ -98,24 +97,3 @@ mit einer halben Stunde.
 Über denselben Notfall-Modus nimmt der Router auch eine TP-Link-Firmware an.
 Je nach Modell muss die Datei dafür vorher angepasst werden; das steht im
 OpenWrt-Wiki zu deinem Gerät.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg), Anschluss, Programm, Dauer, Rückweg zur Herstellerfirmware)
-- abgeleitet: Commit ffa40fcc vs. Schwestergeräte (Datei)
-- abgeleitet: Regel strengster Name (Datei)
-- abgeleitet: Wiki (Programm)
-- abgeleitet: Wiki C20 v4/MR6400 v5/WA801ND v5 (Dauer)
-- abgeleitet: Wiki C50/MR6400 v5 (Rückweg zur Herstellerfirmware)
-- abgeleitet: Wiki MR3020 v3 (Sichtbare Zeichen)
-- abgeleitet: Wiki; abgeleitet (Schritte (Normalweg))
-- geprüft (Weg ab Werk)
-- geprüft: Commit (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Adressen, Datei, Typenschild/Verwechslung)
-- geprüft: Commit "write it to flash and reboot" (Schritte (Normalweg), Sichtbare Zeichen)
-- geprüft: Gluon targets/ramips-mt76x8 extra_images (Datei)
-- geprüft: Gluon targets/ramips-mt76x8 extra_images; abgeleitet: Commit ffa40fcc vs. Schwestergeräte (Schritte (Normalweg))
-- geprüft: Gluon targets/ramips-mt76x8 v2025.1.3 (Datei)
-- geprüft: OpenWrt-Commit ffa40fc; Lösung abgeleitet (Datei)
-- Geräteeintrag: ffa40fcc7fe1aee041775e097bccecb9be83cd21

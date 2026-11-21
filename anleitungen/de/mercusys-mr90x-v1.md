@@ -11,15 +11,12 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-mercusys-mr90x-v1-initramfs-kernel.bin
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, ssh-scp]
-daten_stand: 3512b4651
-vorlage_stand: f20399f13
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Mercusys MR90X v1: Freifunk-Firmware installieren
 
-> Die Anleitung ist aus Quellen zusammengestellt. Wie gut jede Angabe belegt
-> ist, steht unten unter "Herkunft der Angaben".
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -274,13 +271,3 @@ Notfall-Modus also auch:
 Stimmen danach MAC-Adresse oder Funk nicht, schreibst du `tp_data` aus
 deiner Sicherung zurück. Wie das geht, beschreibt das OpenWrt-Wiki im
 Abschnitt "Return to stock".
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- geprüft: Code, fw_setenv im Image 20261114, Skript im Image 20261115 (8.472.100 Byte); am Gerät ungetestet (Gluon-RAMpe passt)
-- geprüft: Commit e4fe309 (Programm)
-- geprüft: Commit, Wiki toh:mercusys:mr90x_v1 (Weg ab Werk, Rückweg zur Herstellerfirmware)
-- geprüft: Wiki toh:mercusys:mr90x_v1 (Programm, Typenschild/Verwechslung, Bedingung an die Herstellerfirmware)
-- Geräteeintrag: OpenWrt e4fe3097ef6a961874b66932a0ac4be18070630a

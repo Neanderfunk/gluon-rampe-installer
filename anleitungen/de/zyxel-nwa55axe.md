@@ -10,18 +10,12 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # ZyXEL NWA55AXE: Freifunk-Firmware installieren
 
-> **Bei uns in der Praxis erprobt.** Wir haben Geräte dieses Typs schon so
-> umgestellt, nur noch nicht mit der aktuellen Version der
-> Freifunk-Firmware.
-> Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
-> getestet ("broken"); nicht jede Community bietet sie an.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -61,8 +55,7 @@ Werksreset innerhalb von etwa 30 Minuten wieder die Cloud-Einstellungen, und
 die Oberfläche verlangt das Nebula-Passwort ("This device is managed by
 Nebula"). Herauslösen lässt es sich, indem man es mit einem anderen
 Nebula-Konto übernimmt (force adopt, QR-Code in der Nebula-App) und dort
-wieder abmeldet. Das haben wir nicht selbst ausprobiert. In einem Forumsfall
-half stattdessen: Werksreset und sofort die Nebula-Erkennung mit dem
+wieder abmeldet. Oder: Werksreset und sofort die Nebula-Erkennung mit dem
 Zyxel-Werkzeug ZON abschalten.
 
 ## Schritte
@@ -120,17 +113,3 @@ Zyxel-Werkzeug ZON abschalten.
   ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
   Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- Forum-Zusammenfassung: community.zyxel.com/en/discussion/29636 (Bedingung an die Herstellerfirmware)
-- abgeleitet (Schritte (Normalweg))
-- abgeleitet: Rechner fest auf 192.168.1.10, wenn kein DHCP; die Quelle nennt nur das Gerät unter 192.168.1.2 (Adressen)
-- abgeleitet: adorfer, Hörensagen; Ablauf Unregister: mysupport.zyxel.com/hc/en-us/articles/360006459099, nicht gelesen (Bedingung an die Herstellerfirmware)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Datei, Notweg)
-- geprüft: Commit a0b7fef0 (Zugang, Typenschild/Verwechslung)
-- geprüft: Commit a0b7fef0/f0445746 (Schritte (Normalweg), Bedingung an die Herstellerfirmware, Fehlerbild)
-- geprüft: Wiki toh:zyxel:nwa55axe (Schritte (Normalweg), Adressen, Programm, Zugang)
-- Geräteeintrag: a0b7fef0ffe4cd9cca39a652a37e4f3ce8f0a681

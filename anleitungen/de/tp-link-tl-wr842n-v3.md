@@ -10,15 +10,12 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link TL-WR842N v3: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -98,13 +95,3 @@ Aufkleber genau mit "TP-Link TL-WR842N v3", bevor du anfängst.
   ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
   Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg), Datei)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Quelle (OpenWrt-Commit))
-- geprüft: Commit e0d98e12 (Datei)
-- geprüft: Wiki toh:tp-link:tl-wr842nd (Schritte (Normalweg), Adressen, Programm, Zugang, Datei)
-- Geräteeintrag: e0d98e120a94b75f63066d7abc6a392996ccb284 [geprüft]

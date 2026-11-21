@@ -13,20 +13,18 @@
 <meta name="anleitung:level" content="L4">
 <meta name="anleitung:level_text" content="Network-Tools">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:rampe_image" content="gluon-rampe-20261115-asus-tuf-ax4200-initramfs-kernel.bin">
 <meta name="anleitung:grundlagen" content="browser-https, browser-not-found, router-antwortet-nicht, ssh-scp">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="d134995cb">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>ASUS TUF-AX4200: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/asus-tuf-ax4200.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-aussieht als hier beschrieben.
+<p>Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+beschrieben.
 Freifunk Darmstadt beschreibt denselben Weg für ihre Freifunk-Firmware.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
@@ -220,30 +218,6 @@ ab, das ist harmlos.</p>
 <h2>Zurück zur ASUS-Firmware</h2>
 <p>Laut OpenWrt-Wiki hilft dafür das ASUS-Werkzeug &quot;Firmware Restoration&quot; mit
 dem Rettungsmodus des Routers. Ausprobiert haben wir es nicht.</p>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet (Sichtbare Zeichen, Datei)</li>
-<li>abgeleitet: Commit 237b1c2 zum TUF-AX4200Q (Anschluss, Adressen)</li>
-<li>abgeleitet: Herstellerfirmware ab Werk, SSH nur LAN (Anschluss)</li>
-<li>abgeleitet: OpenWrt-Standard (Zugang)</li>
-<li>abgeleitet: Release-Text herbetom filogic-v2 nennt keine (Taste und Zeitpunkt)</li>
-<li>abgeleitet: Release-Text herbetom filogic-v2, Commits (Warnung)</li>
-<li>abgeleitet: Wiki (Notweg)</li>
-<li>abgeleitet: Wiki toh/asus/tuf-ax4200 (Notweg)</li>
-<li>abgeleitet: Wiki toh/asus/tuf-ax4200, Abschnitt Debricking (Rückweg zur Herstellerfirmware)</li>
-<li>abgeleitet: Wiki toh/asus/tuf-ax4200; ToH: &quot;unofficial tested method with trx image&quot; (Notweg)</li>
-<li>abgeleitet: Wiki toh/asus/tuf-ax4200; geprüft: Commit 237b1c2, Image-Rezept am Pin (Typenschild/Verwechslung)</li>
-<li>abgeleitet: dropbear setzt SSH_CLIENT (Schritte (Normalweg))</li>
-<li>geprüft (Weg ab Werk, Datei)</li>
-<li>geprüft: Commit e7c399b (Notweg)</li>
-<li>geprüft: Commits e7c399b, d522cce (Warnung)</li>
-<li>geprüft: DTS am Pin, led-boot/running = led_system (Sichtbare Zeichen)</li>
-<li>geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext (Schritte (Normalweg), Adressen, Zugang, Datei)</li>
-<li>geprüft: Release-Text herbetom filogic-v2 (Weg ab Werk, Schritte (Normalweg), Sichtbare Zeichen, Adressen, Programm, Zugang, Datei)</li>
-<li>geprüft: gluon targets/mediatek-filogic (Typenschild/Verwechslung)</li>
-<li>Geräteeintrag: OpenWrt e7c399bee677e9bac66e1bea697aefb8d828edfe</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

@@ -11,15 +11,12 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-gl.inet-gl-xe300-factory.img
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 9560ae8ed
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # GL.iNet GL-XE300: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -130,16 +127,3 @@ settings"** und klick **Continue**.
 
 Die Firmware von GL.iNet herunterladen und auf demselben Weg über den
 Notfall-Modus aufspielen.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Weg ab Werk, Schritte (Normalweg), Datei, Werkzeug/Spezial, Gluon-RAMpe passt)
-- geprüft (Weg ab Werk, Quelle (OpenWrt-Commit))
-- geprüft: Commit (Schritte (Normalweg), Sichtbare Zeichen, Datei)
-- geprüft: Commit af8a059 (Schritte (Normalweg), Taste und Zeitpunkt, Rückweg zur Herstellerfirmware)
-- geprüft: Commit af8a059, GL-Doku (Schritte (Normalweg), Sichtbare Zeichen)
-- geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026) (Schritte (Normalweg), Anschluss, Adressen, Programm, Dauer)
-- geprüft: OpenWrt 24.10.8 ath79/nand, Datei in sha256sums gelistet und per HEAD erreichbar, 15.10.2026 (Weg ab Werk)
-- Geräteeintrag: af8a059bb41dd7afee49ce9a5d52e9a8e010bbd8 [geprüft]

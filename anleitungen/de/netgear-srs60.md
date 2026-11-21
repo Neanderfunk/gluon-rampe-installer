@@ -10,15 +10,12 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, nmrpflash, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 15ae34432
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # NETGEAR Orbi Pro SRS60: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -106,13 +103,3 @@ OpenWrt geht es trotzdem: Über `http://192.168.1.250/debug.htm`
 (Benutzer `admin`, Passwort `password`) Telnet einschalten, per Telnet
 `artmtd -w boot_part 02` setzen, neu starten, dann das factory-Image über die
 Oberfläche hochladen.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- geprüft (Weg ab Werk, Datei)
-- geprüft: Commit (Fehlerbild)
-- geprüft: Commit 2cb24b3 (Schritte (Normalweg), Sichtbare Zeichen, Anschluss, Datei, Typenschild/Verwechslung, Dauer, Fehlerbild, Notweg, Rückweg zur Herstellerfirmware)
-- geprüft: nmrpflash-README (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Anschluss, Adressen, Programm, Dauer)
-- Geräteeintrag: OpenWrt 2cb24b3f3cd89692f3c0bd137f3f560ada359bfa

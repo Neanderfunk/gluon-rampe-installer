@@ -10,15 +10,12 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [avm-eva, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # AVM FRITZ!Box 4020: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -103,24 +100,3 @@ die Original-Firmware zurückspielt. Es liegt auf dem Download-Server von AVM
 im Ordner des Geräts unter "recover". Geräte von Providern (zum Beispiel
 1&1) verweigern das eventuell; dann vorher per FTP
 `quote UNSETENV provider` ([Der Bootloader von AVM (EVA)](grundlagen/avm-eva.md)).
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Chip Winbond W971GG6KB laut Commit = 1 Gbit (RAM)
-- abgeleitet: OpenWrt-Wiki "AVM recovery tool" (Rückweg zur Herstellerfirmware)
-- abgeleitet: Wiki (Sichtbare Zeichen, Dauer)
-- abgeleitet: Wiki 4020 (Schritte (Normalweg), Sichtbare Zeichen, Fehlerbild)
-- abgeleitet: Wiki 4020/3370 (Programm)
-- abgeleitet: Wiki 4020/4040 (Rückweg zur Herstellerfirmware)
-- abgeleitet: dasselbe Wiki (Rückweg zur Herstellerfirmware)
-- abgeleitet: fritzflash.py-Quelltext (Adressen)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Quelle (OpenWrt-Commit))
-- geprüft: Commit (Schritte (Normalweg), Adressen, Dauer)
-- geprüft: Commits, fritz-tools/fritzflash.py (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: fritz-tools-Doku (Schritte (Normalweg), Anschluss, Programm, Typenschild/Verwechslung)
-- geprüft: fritz-tools/fritzflash.py (Sichtbare Zeichen, Adressen)
-- geprüft: fritz-tools/fritzflash.py, Wiki toh:avm:avm_fritz_wlan_repeater_1750e (Anschluss)
-- geprüft: fritz-tools/fritzflash.py; geprüft: fritz-tools-Doku (Schritte (Normalweg))
-- Geräteeintrag: 3f8c5d547677e7f4e450e88379c03448b8f53b1d [geprüft]

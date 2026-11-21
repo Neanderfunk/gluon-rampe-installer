@@ -10,16 +10,12 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Zyxel NWA50AX Pro: Freifunk-Firmware installieren
 
-> **Bei uns in der Praxis erprobt.** Wir haben Geräte dieses Typs schon so
-> umgestellt, nur noch nicht mit der aktuellen Version der
-> Freifunk-Firmware.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -59,8 +55,7 @@ Werksreset innerhalb von etwa 30 Minuten wieder die Cloud-Einstellungen, und
 die Oberfläche verlangt das Nebula-Passwort ("This device is managed by
 Nebula"). Herauslösen lässt es sich, indem man es mit einem anderen
 Nebula-Konto übernimmt (force adopt, QR-Code in der Nebula-App) und dort
-wieder abmeldet. Das haben wir nicht selbst ausprobiert. In einem Forumsfall
-half stattdessen: Werksreset und sofort die Nebula-Erkennung mit dem
+wieder abmeldet. Oder: Werksreset und sofort die Nebula-Erkennung mit dem
 Zyxel-Werkzeug ZON abschalten.
 
 ## Schritte
@@ -120,17 +115,3 @@ Zyxel-Werkzeug ZON abschalten.
   Einrichtungsseite.
 - **Fehler beim Hochladen.** Dateinamen kürzen, zum Beispiel in
   `factory.bin`.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- Forum-Zusammenfassung: community.zyxel.com/en/discussion/29636 (Bedingung an die Herstellerfirmware)
-- abgeleitet (Schritte (Normalweg))
-- abgeleitet: Rechner fest auf 192.168.1.10, wenn kein DHCP; die Quelle nennt nur das Gerät unter 192.168.1.2 (Adressen)
-- abgeleitet: adorfer, Hörensagen; Ablauf Unregister: mysupport.zyxel.com/hc/en-us/articles/360006459099, nicht gelesen (Bedingung an die Herstellerfirmware)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Programm, Datei)
-- geprüft: Commit a0b7fef0/f0445746 (Schritte (Normalweg), Bedingung an die Herstellerfirmware, Fehlerbild)
-- geprüft: Commit f0445746; Feld modell (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: Wiki toh:zyxel:nwa50ax_pro (Schritte (Normalweg), Adressen, Zugang, Bedingung an die Herstellerfirmware, Fehlerbild)
-- Geräteeintrag: OpenWrt f0445746f6fd96fc7c5394b238153bd2ff22bc5b

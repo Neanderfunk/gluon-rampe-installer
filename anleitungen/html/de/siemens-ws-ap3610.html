@@ -13,20 +13,18 @@
 <meta name="anleitung:level" content="L6">
 <meta name="anleitung:level_text" content="Serielles Kabel">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:rampe_image" content="gluon-rampe-20261115-siemens-ws-ap3610-initramfs-kernel.bin">
 <meta name="anleitung:grundlagen" content="browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="9a02820db">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Siemens WS-AP3610: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/siemens-ws-ap3610.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-aussieht als hier beschrieben.
+<p>Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+beschrieben.
 Im Weg von OpenWrt fehlt die Zeile, die den Start dauerhaft auf OpenWrt umstellt; wir haben sie nach dem Hinweis von Freifunk Darmstadt ergänzt.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
@@ -193,18 +191,6 @@ ssh root@192.168.1.1 &quot;sysupgrade -n /tmp/gluon.bin&quot;
 </code></pre>
 <p>Ein Passwort gibt es nicht. Nach dem zweiten Befehl bricht die Verbindung
 ab, das ist harmlos.</p>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet: Commits ebddc5f, f8c87aa (Programm)</li>
-<li>geprüft (Weg ab Werk, Schritte (Normalweg), Anschluss, Datei, Quelle (OpenWrt-Commit))</li>
-<li>geprüft: Commit (Schritte (Normalweg), Anschluss, Programm, Zugang)</li>
-<li>geprüft: Commit d2b8ccb (Schritte (Normalweg), Taste und Zeitpunkt, Zugang)</li>
-<li>geprüft: Commit; Hex-Deutung abgeleitet (Schritte (Normalweg), Adressen, Datei)</li>
-<li>geprüft: Freifunk-Darmstadt-Wiki Siemens-AP3610, 15.10.2026 (Programm)</li>
-<li>geprüft: Gluon-Target ath79-generic, Wiki toh:siemens:ws-ap3610_ws-ap3620, Titel (Typenschild/Verwechslung)</li>
-<li>Geräteeintrag: d2b8ccb1c04def81224da6f42f644c7d239b9986 [geprüft]</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

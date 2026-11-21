@@ -10,15 +10,12 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # NETGEAR WNDRMAC v2: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -103,13 +100,3 @@ Gerät mit eigenem Image.
   ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
   Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Schritte (Normalweg), Programm, Datei, Quelle (OpenWrt-Commit))
-- geprüft: Commit 7f297e74 (Schritte (Normalweg), Rückweg zur Herstellerfirmware)
-- geprüft: OpenWrt generic.mk/nand.mk (Schritte (Normalweg), Typenschild/Verwechslung)
-- Geräteeintrag: 7f297e740bc288d29fab1f7490ed0e2e49e9e6f9 [geprüft]

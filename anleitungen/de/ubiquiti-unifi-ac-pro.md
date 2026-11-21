@@ -10,16 +10,14 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, schreibschutz, ssh-scp, tftp-client]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Ubiquiti UniFi AC Pro: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
-> Bei uns ist dieser Weg 2025 schon an einem UniFi AC Pro gelaufen, und im Freifunk-Forum gibt es einen weiteren Erfolgsbericht.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -218,26 +216,3 @@ Nur, wenn auf dem Gerät noch eine Ubiquiti-Firmware **älter als 4.3** läuft.
    ```
 
    Danach startet die Freifunk-Firmware.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- Forum: forum.freifunk.net/t/13863 #134 (adorfer, 2018, AC Lite und AC Mesh, Downgrade 3.7.58 per syswrapper.sh upgrade2, dann mtd) (Notweg)
-- Forum: forum.freifunk.net/t/23422 #25/#26, AC Pro Gen2 6.5.62, nach Werksreset erfolgreich (Weg ab Werk)
-- Neanderfunk-Notiz: adorfer 2025, AC Pro, dd-Weg nach blocktrron, erfolgreich (Angabe adorfer 15.10.2026) (Weg ab Werk)
-- abgeleitet (Dauer, Quelle (OpenWrt-Commit))
-- abgeleitet: Ablauf aus UK-Ultra-Commit bf94e0a, gleiche ubnt_unifiac-Basis; Commit des Geräts ohne Anleitung (Weg ab Werk, Schritte (Normalweg))
-- abgeleitet: Commits nennen 'factory defaults' (Schritte (Normalweg), Bedingung an die Herstellerfirmware)
-- abgeleitet: Flags 0x800 -> 0xc00 nach dem Aufheben des Schreibschutzes wie beim AC Lite in forum.freifunk.net/t/23422 #10 (Weg ab Werk)
-- abgeleitet: Mesh Pro ist laut ar71xx-Commit Hardwarekopie des AC Pro (RAM)
-- abgeleitet: Partitionsbelegung mtd2/mtd3/mtd4 aus der AC-Lite-Ausgabe in 23422 #10 übertragen; die Prüfzeile fängt eine Abweichung ab (Weg ab Werk)
-- abgeleitet: Wiki (Bedingung an die Herstellerfirmware, Dauer)
-- abgeleitet: Wiki toh/ubiquiti/unifiac (Schritte (Normalweg), Sichtbare Zeichen, Bedingung an die Herstellerfirmware, Rückweg zur Herstellerfirmware)
-- geprüft: Commit bf94e0a (Schritte (Normalweg), Programm)
-- geprüft: Commit e420b7b (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: Commits (Datei)
-- geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24' (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang)
-- geprüft: dl.ui.com/unifi/firmware/U7PG2/3.7.58.6385/BZ.qca956x.v3.7.58.6385.170508.0957.bin (U7PG2-Ordner, gleiche Datei wie beim AC Lite), HTTP 200, 7.764.011 Bytes, SHA256 cfe2e639c430d1a849c2892effb84157e82ea9cb08d174547c1e001d4d4388a8, abgerufen 15.10.2026 (Notweg)
-- Geräteeintrag: 7dd3d7e1d3845160c2ef51e6148b452e666bd6f5 [abgeleitet]

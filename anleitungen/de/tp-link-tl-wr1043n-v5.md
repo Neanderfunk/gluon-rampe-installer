@@ -10,15 +10,12 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link TL-WR1043N v5: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -104,14 +101,3 @@ für EU und USA.
   Einrichtungsseite.
 - **Die Seite fragt immer wieder "Please choose a file to upgrade".** Der
   Dateiname ist zu lang. Benenne die Datei um, z. B. in `firmware.bin`.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Schritte (Normalweg), Datei, Notweg, Quelle (OpenWrt-Commit))
-- geprüft: Commit d4b89b71; tplink-safeloader TLWR1043NV5 (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: Wiki toh:tp-link:tl-wr1043nd (Schritte (Normalweg), Programm, Fehlerbild)
-- geprüft: Wiki toh:tp-link:tl-wr1043nd, korrigiert (Adressen)
-- Geräteeintrag: d4b89b7170ab82530cfaf21e5f00bee7088432e2 [geprüft]

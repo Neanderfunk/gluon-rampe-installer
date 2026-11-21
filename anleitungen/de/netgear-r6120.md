@@ -10,15 +10,12 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, nmrpflash, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 15ae34432
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # NETGEAR R6120: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -97,13 +94,3 @@ dann, wenn die Netgear-Oberfläche fremde Firmware nicht annimmt.
 
 Bei diesem Gerät nimmt die Netgear-Oberfläche die Freifunk-Firmware nicht
 an. nmrpflash ist der Weg.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- Commit 5543d63: 'To flash use nmrpflash with the provided factory.img', geprüft (Datei)
-- geprüft (Weg ab Werk, Notweg)
-- geprüft: nmrpflash-README (Schritte (Normalweg), Sichtbare Zeichen, Anschluss, Adressen, Programm, Dauer)
-- geprüft: nmrpflash-README; Commit 5543d63 nennt nur nmrpflash (Schritte (Normalweg), Taste und Zeitpunkt)
-- Geräteeintrag: 5543d63fc84e64be83afaa4241369a07797f041b

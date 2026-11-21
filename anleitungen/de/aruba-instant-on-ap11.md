@@ -11,14 +11,12 @@ risiko: bootloader
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-aruba-ap-303-initramfs-uImage.itb
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 84f780274
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Aruba Instant On AP11: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
 > Den Schritt mit dem älteren Bootloader beschreibt Freifunk Darmstadt; die Datei dafür stellen wir bereit.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
@@ -332,24 +330,3 @@ starten, halt den Bootloader an (Schritt 5) und gib ein:
 setenv bootcmd "boot"
 saveenv
 ```
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Typenschild/Verwechslung)
-- abgeleitet: Alias, gleiche Platine (Gehäuse öffnen)
-- geprüft: Datei und ZIP geladen 15.10.2026, SHA256 gleich der im Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9) für apboot-unlocked.bin (Werkzeug/Spezial)
-- geprüft: Forum t/22653 #28 (adorfer, 03.04.2023, Abzüge) (Stock-Teile)
-- geprüft: Forum t/22653 #29 (blocktrron, 14.06.2024) (Programm)
-- geprüft: Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9); Adressen dort .6/.66, in der Anleitung .105/.75 (Programm)
-- geprüft: Gluon-Alias, Wiki toh:aruba:ap-303 (Typenschild/Verwechslung)
-- geprüft: Neanderfunk-Notiz zum AP11, 2024 (Weg ab Werk)
-- geprüft: Neanderfunk-Notiz, adorfer 15.10.2026 (Abzüge 2021/2023); Freifunk-Darmstadt-Wiki Aruba AP11 (github freifunk-darmstadt/projects, getestet mit APBoot 2.6.2.9); APBoot-Version in ap303-loader-2.5.0.2.bin per strings geprüft (Sichtbare Zeichen)
-- geprüft: Neanderfunk-Notiz; Sc4ndium90-README (Bedingung an die Herstellerfirmware)
-- geprüft: OpenWrt-Commit 102c8c5 (AP-303) (Programm)
-- geprüft: Sc4ndium90-README (Programm)
-- geprüft: Wiki toh:aruba:ap-303 (Sichtbare Zeichen)
-- geprüft: Wiki toh:aruba:ap-303h, Rohtext 15.10.2026 (Programm)
-- geprüft: github Sc4ndium90/aruba-ap11-openwrt, Wiki toh:aruba:ap-303 (Taste und Zeitpunkt)
-- Geräteeintrag: Notiz ap11.md (2024); OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75

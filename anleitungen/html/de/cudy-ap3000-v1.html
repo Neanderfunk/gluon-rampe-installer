@@ -13,19 +13,15 @@
 <meta name="anleitung:level" content="L3">
 <meta name="anleitung:level_text" content="Feste Adresse am Rechner">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="erprobt">
-<meta name="anleitung:erprobt_am" content="2026-10-17">
-<meta name="anleitung:erprobt_mit" content="Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.4">
 <meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, router-antwortet-nicht, tftp-server">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="2f49bb085">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Cudy AP3000 v1: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/cudy-ap3000-v1.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p><strong>Am Gerät erprobt</strong> am 17.10.2026 mit <code>Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.4</code>.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -211,25 +207,6 @@ flackern, und die Netzwerkverbindung geht zwischendurch weg und wieder an.
 unter <code>http://192.168.10.254</code> erreichbar, nach dem Neustart braucht er dafür wieder
 etwa eine Minute.</li>
 </ol>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet: Gluon-Setup-Mode, wie Gluon 2025.1 die einzige Buchse im Setup-Mode belegt, ist am Gerät nicht gemessen (Warnung)</li>
-<li>abgeleitet: Router ist in beiden Firmwares DHCP-Server (Schritte (Normalweg), Programm)</li>
-<li>abgeleitet: ob die Zwischenfirmware DHCP vergibt, offen; am Testplatz war 192.168.1.88 fest eingestellt (Adressen)</li>
-<li>abgeleitet: sysupgrade schreibt den Flash (Schritte (Normalweg), Dauer)</li>
-<li>geprüft: Commit-Texte (Gluon-RAMpe passt)</li>
-<li>geprüft: Commit/Neanderfunk-Notiz (Weg ab Werk, Schritte (Normalweg))</li>
-<li>geprüft: Cudy-FAQ &quot;OpenWrt Software Download&quot; (Bedingung an die Herstellerfirmware)</li>
-<li>geprüft: Mitschnitt Test Neanderfunk 17.10.2026 (Adressen, Fehlerbild)</li>
-<li>geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer)</li>
-<li>geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)</li>
-<li>geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft (Datei)</li>
-<li>geprüft: Spiegel-Ordner (Typenschild/Verwechslung)</li>
-<li>geprüft: Test Neanderfunk 17.10.2026 (Sichtbare Zeichen, Anschluss, Rückweg zur Herstellerfirmware)</li>
-<li>geprüft: Wiki toh:cudy:ap3000_v1 (Rückweg zur Herstellerfirmware)</li>
-<li>Geräteeintrag: OpenWrt 6dacba30a75b0ac8a65115f78808a97abbb34939</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

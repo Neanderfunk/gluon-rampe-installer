@@ -10,15 +10,12 @@ level_text: Einfach hochladen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 9560ae8ed
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # GL.iNet GL-MT2500 (MaxLinear-PHY): Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -83,18 +80,3 @@ keine fremden Images an.
 
 - **Die Oberfläche lehnt die Datei ab.** Prüf, ob es das sysupgrade-Image für
   genau dieses Modell ist. Sonst hilft der Notfall-Modus (unten).
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Übertragung)
-- geprüft (Weg ab Werk, Schritte (Normalweg))
-- geprüft: 24.10.8-Liste (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Commit 1239668 (Taste und Zeitpunkt, Notweg)
-- geprüft: Commit 1239668; Adresse aus GL-Doku (Schritte (Normalweg), Adressen, Programm, Datei)
-- geprüft: GL-Doku (Typenschild/Verwechslung, Notweg)
-- geprüft: GL-Doku 'GL-MT2500/GL-MT2500A' (Notweg)
-- geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026) (Notweg)
-- geprüft: vorhandenes Feld weg, OpenWrt-24.10.8-Liste (Typenschild/Verwechslung)
-- Geräteeintrag: OpenWrt 12396686484a488dff1c4a1ee8b5197c552572fe

@@ -10,15 +10,14 @@ level_text: Network-Tools
 risiko: bootloader
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-client, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # HPE MSM460: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 > Dass der neue Bootloader die Freifunk-Firmware von selbst holt, haben wir aus seinem Quelltext abgeleitet.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
@@ -135,13 +134,3 @@ Stunde.
 - **`msm460-uboot.bin` wurde geholt, `msm460-factory.bin` aber nicht.** Nicht
   den Strom ziehen. Prüf den Namen der Freifunk-Datei; der neue Bootloader
   versucht es immer wieder, bis die Datei da ist.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Gluon-RAMpe passt)
-- geprüft (Weg ab Werk)
-- geprüft: Commit af329ec, README blocktrron/msm460-flashing (Taste und Zeitpunkt)
-- geprüft: Commit, README (Sichtbare Zeichen, Programm)
-- Geräteeintrag: af329ec38980e2f706411a11b9f344a62eb0dd8f

@@ -10,15 +10,14 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [avm-eva, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # AVM FRITZ!Box 7360 v1: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -106,25 +105,3 @@ die Original-Firmware zurückspielt. Es liegt auf dem Download-Server von AVM
 im Ordner des Geräts unter "recover". Geräte von Providern (zum Beispiel
 1&1) verweigern das eventuell; dann vorher per FTP
 `quote UNSETENV provider` ([Der Bootloader von AVM (EVA)](grundlagen/avm-eva.md)).
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Commit 7360 v2, Wiki 4020/7360 (Sichtbare Zeichen)
-- abgeleitet: OpenWrt-Wiki "AVM recovery tool" (Rückweg zur Herstellerfirmware)
-- abgeleitet: Wiki 4020/3370 (Programm)
-- abgeleitet: Wiki 4040 (Sichtbare Zeichen)
-- abgeleitet: Wiki 7360 (Schritte (Normalweg), Typenschild/Verwechslung, Fehlerbild)
-- abgeleitet: Wiki; Commit ohne Text (Weg ab Werk, Schritte (Normalweg))
-- abgeleitet: dasselbe Wiki (Rückweg zur Herstellerfirmware)
-- geprüft: Commit (Schritte (Normalweg), Dauer)
-- geprüft: Commits, fritz-tools/fritzflash.py (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Gluon targets/lantiq-xrx200 v2025.1.3, aliases (Quelle (OpenWrt-Commit))
-- geprüft: fritz-tools-Doku (Schritte (Normalweg), Anschluss, Programm)
-- geprüft: fritz-tools/fritzflash.py (Sichtbare Zeichen, Adressen, Dauer)
-- geprüft: fritz-tools/fritzflash.py, Wiki toh:avm:avm_fritz_wlan_repeater_1750e (Anschluss)
-- geprüft: fritz-tools/fritzflash.py; abgeleitet: Commit 7360 v2, Wiki 4020/7360 (Schritte (Normalweg))
-- geprüft: fritz-tools/fritzflash.py; abgeleitet: Wiki (Dauer)
-- geprüft: fritz-tools/fritzflash.py; geprüft: fritz-tools-Doku (Schritte (Normalweg))
-- Geräteeintrag: bf007a480a46a9fa843765a54fc2f8aa32b2683f (ohne Installationstext) + Wiki toh:avm:fritz.box.wlan.7360; Gluon-Alias von avm-fritz-box-7360-sl [geprüft: Gluon targets/lantiq-xrx200 v2025.1.3, aliases]

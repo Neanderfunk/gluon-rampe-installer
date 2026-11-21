@@ -13,18 +13,15 @@
 <meta name="anleitung:level" content="L7">
 <meta name="anleitung:level_text" content="Gehäuse öffnen">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, tftp-server">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="33a38da83">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Sophos AP15C: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/sophos-ap15c.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-Hersteller für dieses Gerät beschreiben.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -170,25 +167,6 @@ und dort eingeben:</p>
 <p>Danach startet der Access Point mit der Freifunk-Firmware neu.</p>
 </li>
 </ol>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>Forum-Zusammenfassung: Sophos-Community-Blog &quot;EOL Extension: AP Series&quot;, nur über Websuche gelesen (Bedingung an die Herstellerfirmware)</li>
-<li>Forum-Zusammenfassung: avanet.com End-of-Sale-Artikel (Bedingung an die Herstellerfirmware)</li>
-<li>Wiki-Zusammenfassung: ToH-Datensatz (Anschluss)</li>
-<li>abgeleitet (Anschluss, Adressen, Bedingung an die Herstellerfirmware, Dauer, Notweg)</li>
-<li>abgeleitet: Partitionstabelle im DTS am Pin, Flash ab 0x9f000000 (Warnung)</li>
-<li>abgeleitet: Sophos-EOL-Angaben, siehe stock_bedingung (Fehlerbild)</li>
-<li>abgeleitet: better safe than sorry (Notweg)</li>
-<li>geprüft (Weg ab Werk, Quelle (OpenWrt-Commit))</li>
-<li>geprüft: Commit 2d465fb (Schritte (Normalweg), Warnung, Taste und Zeitpunkt, Sichtbare Zeichen, Anschluss, Adressen, Programm, Zugang, Datei, Bedingung an die Herstellerfirmware, Dauer, Notweg)</li>
-<li>geprüft: Commit 2d465fb, Image-Rezepte am Pin (Typenschild/Verwechslung)</li>
-<li>geprüft: Commit 2d465fb; U-Boot offen (Notweg)</li>
-<li>geprüft: DTS-Aliase am Pin, qca9557_sophos_ap15c.dts (Sichtbare Zeichen)</li>
-<li>geprüft: Image-Rezept am Pin, Inventar (Datei)</li>
-<li>geprüft: OpenWrt-Commit 2d465fbf57, Cherry-Pick von a7abc7ec (Programm)</li>
-<li>Geräteeintrag: 2d465fbf570e1f3286210305a26580cd417fec7c [geprüft]</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

@@ -10,15 +10,12 @@ level_text: Gehäuse öffnen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Sophos AP100C: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -164,22 +161,3 @@ Entwickler von OpenWrt:
    ```
 
    Danach startet der Access Point mit der Freifunk-Firmware neu.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- Forum-Zusammenfassung: Sophos-Community-Blog "EOL Extension: AP Series", nur über Websuche gelesen (Bedingung an die Herstellerfirmware)
-- Forum-Zusammenfassung: avanet.com End-of-Sale-Artikel (Bedingung an die Herstellerfirmware)
-- abgeleitet (Anschluss, Adressen, Bedingung an die Herstellerfirmware, Dauer)
-- abgeleitet: Partitionstabelle im DTS am Pin, Flash ab 0x9f000000 (Warnung)
-- abgeleitet: Sophos-EOL-Angaben, siehe stock_bedingung (Fehlerbild)
-- abgeleitet: better safe than sorry (Notweg)
-- geprüft (Weg ab Werk, Quelle (OpenWrt-Commit))
-- geprüft: Commit 6f1efb2 (Schritte (Normalweg), Warnung, Taste und Zeitpunkt, Sichtbare Zeichen, Anschluss, Adressen, Programm, Zugang, Datei, Typenschild/Verwechslung, Bedingung an die Herstellerfirmware, Dauer, Notweg)
-- geprüft: Commit 6f1efb2, Image-Rezepte am Pin (Typenschild/Verwechslung)
-- geprüft: Commit 6f1efb2; 3.3V-Hinweis abgeleitet (Notweg)
-- geprüft: DTS-Aliase am Pin, qca9558_sophos_ap.dtsi (Sichtbare Zeichen)
-- geprüft: Image-Rezept am Pin, Inventar (Datei)
-- geprüft: OpenWrt-Commit 6f1efb2, Fußnote 4 (Programm)
-- Geräteeintrag: 6f1efb28983758116a8ecaf9c93e1d875bb70af7 [geprüft]

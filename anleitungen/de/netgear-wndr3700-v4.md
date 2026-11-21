@@ -10,15 +10,14 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # NETGEAR WNDR3700 v4: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -102,13 +101,3 @@ ganz andere Geräte.
   ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
   Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- für WNDR3700 v4 abgeleitet: gleiche Plattform; geprüft: Wiki toh:netgear:wndr4300 (Schritte (Normalweg), Adressen, Programm, Zugang)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Datei, Notweg, Quelle (OpenWrt-Commit))
-- geprüft: Commit 7e623c31/9b6f89c3; OpenWrt nand.mk (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: Wiki toh:netgear:wndr4300 (Schritte (Normalweg), Dauer)
-- Geräteeintrag: 7e623c312832386d5eb5aa970738288cf96d96c3 [geprüft]

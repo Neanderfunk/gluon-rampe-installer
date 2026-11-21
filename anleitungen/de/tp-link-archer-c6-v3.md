@@ -10,17 +10,12 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link Archer C6 v3: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
-> Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
-> getestet ("broken"); nicht jede Community bietet sie an.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -105,14 +100,3 @@ Version auf dem Aufkleber.
   ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
   Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Commit d22fb7f4 (Schritte (Normalweg), Programm, Datei)
-- geprüft: Commit d22fb7f4; tplink-safeloader ARCHER-C6-V3 (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: Wiki toh:tp-link:archer_c6_v3 (Schritte (Normalweg), Typenschild/Verwechslung)
-- Geräteeintrag: d22fb7f4fd833c420bc2ab34384862da0a6688b5

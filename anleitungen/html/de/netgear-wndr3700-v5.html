@@ -13,21 +13,16 @@
 <meta name="anleitung:level" content="L5">
 <meta name="anleitung:level_text" content="Besondere Programme">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:rampe_image" content="gluon-rampe-20261115-netgear-wndr3700-v5-factory.img">
 <meta name="anleitung:grundlagen" content="browser-https, browser-not-found, nmrpflash, router-antwortet-nicht">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="15ae34432">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>NETGEAR WNDR3700 v5: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/netgear-wndr3700-v5.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-Hersteller für dieses Gerät beschreiben.
-Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
-getestet (&quot;broken&quot;); nicht jede Community bietet sie an.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -148,17 +143,6 @@ umbenennen. Nach dem Neustart läuft OpenWrt: Rechner auf &quot;automatisch&quot
 <code>http://192.168.1.1</code> öffnen, anmelden (Passwort-Feld leer), <strong>System →
 Backup / Flash Firmware</strong>, &quot;Flash image…&quot;, das Freifunk-sysupgrade-Image
 wählen, <strong>den Haken bei &quot;Keep settings&quot; entfernen</strong> und <strong>Continue</strong>.</p>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet (Gluon-RAMpe passt)</li>
-<li>abgeleitet: Commit cb049e7 nennt MT7621S für v5 (Schritte (Normalweg), Typenschild/Verwechslung)</li>
-<li>geprüft (Weg ab Werk, Schritte (Normalweg))</li>
-<li>geprüft: Commit 2fdd02c 'factory image ... can be flashed using nmrpflash' (Datei)</li>
-<li>geprüft: OpenWrt 24.10.8 ramips/mt7621, factory.img in sha256sums gelistet und per HEAD erreichbar, 15.10.2026 (Weg ab Werk)</li>
-<li>geprüft: nmrpflash-README (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Anschluss, Adressen, Programm, Dauer)</li>
-<li>Geräteeintrag: cb049e71cdc08e17f664403a0ef970c480ae5c4a + 2fdd02cc7c3516c2cce2ace2c7b539e0821ecbe8 (factory-Image)</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

@@ -10,16 +10,14 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht, ssh-scp]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Linksys EA8300: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
-> Teil 1 und 2 beschreibt das OpenWrt-Wiki genau so. Dass sich die Freifunk-Firmware in Teil 3 wie OpenWrt mit „Force upgrade“ einspielen lässt, haben wir daraus abgeleitet.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -161,15 +159,3 @@ Nach Teil 1 liegt die Linksys-Firmware noch im anderen Speicher; Teil 3
 überschreibt sie. Wer zur Linksys-Firmware zurück will: Laut OpenWrt kann
 OpenWrt ab 22.03.3 ein Linksys-Image direkt einspielen (sysupgrade mit
 "Force").
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- Folge abgeleitet; geprüft: Wiki toh:linksys:ea8300 (Schritte (Normalweg), Warnung)
-- Folge abgeleitet; geprüft: Wiki toh:linksys:ea8300, korrigiert (Schritte (Normalweg), Datei)
-- abgeleitet (Schritte (Normalweg))
-- geprüft: Commit a9071d02 (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: Wiki toh:linksys:ea8300 (Weg ab Werk, Schritte (Normalweg), Adressen, Programm, Zugang, Rückweg zur Herstellerfirmware)
-- geprüft: Wiki toh:linksys:ea8300; Gluon-Teil abgeleitet (Weg ab Werk)
-- Geräteeintrag: OpenWrt 819e7946b0964725dab50c92797f49cf4053d955

@@ -11,15 +11,14 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-asus-tuf-ax4200-initramfs-kernel.bin
 grundlagen: [browser-https, browser-not-found, router-antwortet-nicht, ssh-scp]
-daten_stand: 3512b4651
-vorlage_stand: d134995cb
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # ASUS TUF-AX4200: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 > Freifunk Darmstadt beschreibt denselben Weg für ihre Freifunk-Firmware.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
@@ -230,28 +229,3 @@ ab, das ist harmlos.
 
 Laut OpenWrt-Wiki hilft dafür das ASUS-Werkzeug "Firmware Restoration" mit
 dem Rettungsmodus des Routers. Ausprobiert haben wir es nicht.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Sichtbare Zeichen, Datei)
-- abgeleitet: Commit 237b1c2 zum TUF-AX4200Q (Anschluss, Adressen)
-- abgeleitet: Herstellerfirmware ab Werk, SSH nur LAN (Anschluss)
-- abgeleitet: OpenWrt-Standard (Zugang)
-- abgeleitet: Release-Text herbetom filogic-v2 nennt keine (Taste und Zeitpunkt)
-- abgeleitet: Release-Text herbetom filogic-v2, Commits (Warnung)
-- abgeleitet: Wiki (Notweg)
-- abgeleitet: Wiki toh/asus/tuf-ax4200 (Notweg)
-- abgeleitet: Wiki toh/asus/tuf-ax4200, Abschnitt Debricking (Rückweg zur Herstellerfirmware)
-- abgeleitet: Wiki toh/asus/tuf-ax4200; ToH: "unofficial tested method with trx image" (Notweg)
-- abgeleitet: Wiki toh/asus/tuf-ax4200; geprüft: Commit 237b1c2, Image-Rezept am Pin (Typenschild/Verwechslung)
-- abgeleitet: dropbear setzt SSH_CLIENT (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Datei)
-- geprüft: Commit e7c399b (Notweg)
-- geprüft: Commits e7c399b, d522cce (Warnung)
-- geprüft: DTS am Pin, led-boot/running = led_system (Sichtbare Zeichen)
-- geprüft: Freifunk-Darmstadt-Wiki TUF-AX4200, Rohtext (Schritte (Normalweg), Adressen, Zugang, Datei)
-- geprüft: Release-Text herbetom filogic-v2 (Weg ab Werk, Schritte (Normalweg), Sichtbare Zeichen, Adressen, Programm, Zugang, Datei)
-- geprüft: gluon targets/mediatek-filogic (Typenschild/Verwechslung)
-- Geräteeintrag: OpenWrt e7c399bee677e9bac66e1bea697aefb8d828edfe

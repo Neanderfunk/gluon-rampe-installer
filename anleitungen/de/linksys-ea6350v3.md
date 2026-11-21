@@ -10,15 +10,12 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Linksys EA6350 v3: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -107,13 +104,3 @@ Der EA6350 hat zwei Firmware-Speicher; die Linksys-Firmware bleibt im
 zweiten erhalten. Gerät einschalten, 15 Sekunden warten, ausschalten,
 10 Sekunden warten; das dreimal hintereinander. Dann startet die vorherige
 Firmware.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Gluon kennt nur v3; Wiki-Seite nennt v4 nicht (Schritte (Normalweg), Typenschild/Verwechslung)
-- abgeleitet: gluon-setup-mode S96led (Sichtbare Zeichen)
-- geprüft (Weg ab Werk)
-- geprüft: Commit a873b292 (Schritte (Normalweg), Sichtbare Zeichen, Adressen, Programm, Datei, Rückweg zur Herstellerfirmware)
-- Geräteeintrag: OpenWrt a873b292840848b67addb5be0c762d292bde33a1

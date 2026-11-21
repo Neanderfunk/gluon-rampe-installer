@@ -10,15 +10,14 @@ level_text: Besondere Programme
 risiko: bootloader
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link Archer C20 v1: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 > Der Weg von OpenWrt nutzt ein Image, das es nicht mehr gibt; wir nehmen stattdessen wie beim Archer C2 v1 das sysupgrade.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
@@ -143,17 +142,3 @@ Konsole. Deshalb geht es hier nur über den Notfall-Modus.
 - **Er hat die Datei geholt, startet aber nicht.** Warte länger, das
   Schreiben kann lange dauern. Kommt auch nach einer halben Stunde nichts,
   schreib uns.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Programm)
-- abgeleitet: Wiki C20 v1 (Warnung, Taste und Zeitpunkt, Sichtbare Zeichen, Adressen, Dauer)
-- abgeleitet: Wiki C20 v1; geprüft: Commit (Schritte (Normalweg))
-- geprüft für den Weg, abgeleitet für die Image-Wahl (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Commit (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Programm, Datei)
-- geprüft: Commit 8375623, "WARNING: This method also overwrites the bootloader partition!" (Programm)
-- geprüft: Commits; abgeleitet: Wiki (Typenschild/Verwechslung)
-- geprüft: Test Neanderfunk 15.10.2026 (Programm)
-- Geräteeintrag: 161a3be5adb21135eb75da81247fa5e04b6ea676

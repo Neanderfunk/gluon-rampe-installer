@@ -10,15 +10,12 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 9560ae8ed
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # GL.iNet GL-AP1300: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -86,14 +83,3 @@ hoch, nicht das sysupgrade.
   kurz ab ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md))
   und versuch Schritt 4 noch einmal, diesmal genau auf die LEDs achtend. Kommt "Not Found" oder "PAGE NOT
   FOUND", siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- geprüft (Weg ab Werk)
-- geprüft: Commit (Notweg)
-- geprüft: Commit b938918 (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Commit, nand-factory.ubi (Schritte (Normalweg), Datei)
-- geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026) (Schritte (Normalweg), Sichtbare Zeichen, Anschluss, Adressen, Programm, Dauer)
-- Geräteeintrag: OpenWrt b9389186b012e5bd99ea6523b8220aaee6ca0085

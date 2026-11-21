@@ -13,19 +13,17 @@
 <meta name="anleitung:level" content="L3">
 <meta name="anleitung:level_text" content="Feste Adresse am Rechner">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, router-antwortet-nicht">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="33a38da83">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Zyxel NWA90AX Pro: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/zyxel-nwa90ax-pro.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-aussieht als hier beschrieben.</p>
+<p>Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+beschrieben.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -59,8 +57,7 @@ Werksreset innerhalb von etwa 30 Minuten wieder die Cloud-Einstellungen, und
 die Oberfläche verlangt das Nebula-Passwort (&quot;This device is managed by
 Nebula&quot;). Herauslösen lässt es sich, indem man es mit einem anderen
 Nebula-Konto übernimmt (force adopt, QR-Code in der Nebula-App) und dort
-wieder abmeldet. Das haben wir nicht selbst ausprobiert. In einem Forumsfall
-half stattdessen: Werksreset und sofort die Nebula-Erkennung mit dem
+wieder abmeldet. Oder: Werksreset und sofort die Nebula-Erkennung mit dem
 Zyxel-Werkzeug ZON abschalten.</p>
 <h2>Schritte</h2>
 <ol>
@@ -125,18 +122,6 @@ Rechner auf &quot;automatisch&quot; und zieh das Kabel kurz ab und wieder an
 (<a href="grundlagen/router-antwortet-nicht.html">Die Router-Seite antwortet nicht</a>).
 Je nach Community startet die Firmware auch gleich im Betrieb ohne
 Einrichtungsseite.</li>
-</ul>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>Forum-Zusammenfassung: community.zyxel.com/en/discussion/29636 (Bedingung an die Herstellerfirmware)</li>
-<li>abgeleitet (Schritte (Normalweg))</li>
-<li>abgeleitet: Rechner fest auf 192.168.1.10, wenn kein DHCP; die Quelle nennt nur das Gerät unter 192.168.1.2 (Adressen)</li>
-<li>abgeleitet: adorfer, Hörensagen; Ablauf Unregister: mysupport.zyxel.com/hc/en-us/articles/360006459099, nicht gelesen (Bedingung an die Herstellerfirmware)</li>
-<li>geprüft: Patch 0003 (Weg ab Werk, Schritte (Normalweg), Datei)</li>
-<li>geprüft: Wiki toh:zyxel:nwa50ax_pro (Schritte (Normalweg), Programm)</li>
-<li>geprüft: Wiki toh:zyxel:nwa50ax_pro; &quot;Slot B&quot; abgeleitet, Wiki nennt nur &quot;Current Image num&quot; 1 (Schritte (Normalweg), Bedingung an die Herstellerfirmware)</li>
-<li>Geräteeintrag: OpenWrt e34e874a11f0506ff17365819bc101a455dc503e + 2cc8d3e382c0b8b919cef2e9f1cfec9ec7954150; gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]</li>
 </ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>

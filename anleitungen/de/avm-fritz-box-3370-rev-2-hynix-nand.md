@@ -10,17 +10,14 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [avm-eva, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # AVM FRITZ!Box 3370 Rev. 2, Hynix-NAND: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
-> Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
-> getestet ("broken"); nicht jede Community bietet sie an.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -122,19 +119,3 @@ die Original-Firmware zurückspielt. Es liegt auf dem Download-Server von AVM
 im Ordner des Geräts unter "recover". Geräte von Providern (zum Beispiel
 1&1) verweigern das eventuell; dann vorher per FTP
 `quote UNSETENV provider` ([Der Bootloader von AVM (EVA)](grundlagen/avm-eva.md)).
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: OpenWrt-Wiki "AVM recovery tool" (Rückweg zur Herstellerfirmware)
-- abgeleitet: Wiki 3370 (Schritte (Normalweg), Sichtbare Zeichen, Adressen, Programm, Typenschild/Verwechslung, Dauer, Fehlerbild)
-- abgeleitet: Wiki 3370, mit 24.10.0 geprüft dort (Schritte (Normalweg), Programm)
-- abgeleitet: dasselbe Wiki (Rückweg zur Herstellerfirmware)
-- abgeleitet: fritz-tools-Doku, Gerät fehlt in der Liste (Programm)
-- geprüft (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Commit (Typenschild/Verwechslung, Dauer)
-- geprüft: Commit 0b62fe5e (Schritte (Normalweg), Typenschild/Verwechslung, Bedingung an die Herstellerfirmware)
-- geprüft: Commit, Feld factory (Schritte (Normalweg), Datei)
-- geprüft: Commits, fritz-tools/fritzflash.py (Schritte (Normalweg), Taste und Zeitpunkt)
-- Geräteeintrag: 0b62fe5ed87ecac52301096b15abb69f96117c8c

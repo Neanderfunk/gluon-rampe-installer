@@ -10,16 +10,14 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Zyxel NBG6716: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
-> OpenWrt beschreibt nicht, wie die Datei aus der Zyxel-Firmware heraus auf das Gerät kommt; den Weg über die Zyxel-Oberfläche haben wir angenommen.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -114,14 +112,3 @@ Per TFTP: Rechner fest auf `192.168.1.33`, die Zyxel-Firmware als `ras.bin`
 im TFTP-Server ([TFTP-Server einrichten](grundlagen/tftp-server.md)),
 WPS-Taste beim Einschalten halten. Das Schreiben dauert etwa 10 Sekunden,
 danach blinken Power- und Key-LED schnell.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg), Übertragung, Quelle (OpenWrt-Commit))
-- abgeleitet: Web-UI (Weg ab Werk, Schritte (Normalweg), Programm, Datei)
-- geprüft: Commit 99835e09 (Typenschild/Verwechslung)
-- geprüft: Wiki toh:zyxel:nbg6716 (Schritte (Normalweg), Rückweg zur Herstellerfirmware)
-- geprüft: Wiki toh:zyxel:nbg6716; "von außen nicht unterscheidbar" im Rohtext nicht gefunden (Typenschild/Verwechslung)
-- Geräteeintrag: 99835e09992bb411519fda1f8d16a6d07df7f598 [abgeleitet]

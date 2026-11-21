@@ -10,15 +10,14 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-client]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Ubiquiti Nanostation M XW: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -129,17 +128,3 @@ AirOS-Version.
 Derselbe Weg geht auch rückwärts: Gerät wie in Schritt 4 in den TFTP-Modus
 bringen und statt der Freifunk-Firmware die Original-Firmware von Ubiquiti
 schicken, möglichst genau die Version, die vorher drauf war.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Wiki docs/.../recovery_methods/ubiquiti_tftp (Schritte (Normalweg), Sichtbare Zeichen, Dauer, Rückweg zur Herstellerfirmware)
-- abgeleitet: Wiki toh/ubiquiti/common (Schritte (Normalweg), Typenschild/Verwechslung, Bedingung an die Herstellerfirmware)
-- abgeleitet: ap51-flash-Doku (Notweg)
-- abgeleitet: better safe than sorry (Datei)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Datei, Quelle (OpenWrt-Commit))
-- geprüft: Commit 40530c8 (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Commits 40530c8, 633c430 (Typenschild/Verwechslung)
-- geprüft: Commits 633c430, 40530c8 (Schritte (Normalweg), Sichtbare Zeichen, Anschluss, Adressen, Programm)
-- Geräteeintrag: 40530c8eb42aa4b98de10621b6c1c89030f00d0a [geprüft]

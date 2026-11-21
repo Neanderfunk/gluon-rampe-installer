@@ -12,14 +12,12 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2023.2.6 (26091920sta) über LuCI der GL-Firmware 4.3.25; für 2025.1 erwartet gleich (gleiche Metadaten)
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 9560ae8ed
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # GL.iNet GL-B1300: Freifunk-Firmware installieren
 
-> **Am Gerät erprobt** am 16.10.2026 mit `Gluon 2023.2.6 (26091920sta) über LuCI der GL-Firmware 4.3.25; für 2025.1 erwartet gleich (gleiche Metadaten)`.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -142,17 +140,3 @@ wieder unter `http://192.168.8.1` erreichbar.
 Liegt die Datei `lede-gl-b1300.bin` auf einem TFTP-Server mit der Adresse
 `192.168.1.2` ([TFTP-Server einrichten](grundlagen/tftp-server.md)), holt
 der Bootloader sie im Notfall-Modus selbst ab.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: offen (Datei)
-- geprüft: Commit (Notweg)
-- geprüft: Commit 04d3308 (Schritte (Normalweg), Sichtbare Zeichen)
-- geprüft: Commit 04d3308 'three leds constantly on' (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Commit von 2017, ob neuere U-Boots denselben Namen erwarten: offen (Schritte (Normalweg))
-- geprüft: Commit; Dateiname, DHCP und TFTP am Gerät nicht geprüft (Weg ab Werk)
-- geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026) (Schritte (Normalweg), Taste und Zeitpunkt, Anschluss, Adressen, Programm, Dauer)
-- geprüft: Test Neanderfunk 16.10.2026 (Weg ab Werk, Taste und Zeitpunkt, Rückweg zur Herstellerfirmware)
-- Geräteeintrag: OpenWrt 04d3308b6248ef21a6f0bc3378b342906c2d2865

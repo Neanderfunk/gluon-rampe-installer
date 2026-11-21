@@ -13,21 +13,18 @@
 <meta name="anleitung:level" content="L5">
 <meta name="anleitung:level_text" content="Besondere Programme">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:rampe_image" content="gluon-rampe-20261115-avm-fritz-box-7530-initramfs-uImage.itb">
 <meta name="anleitung:grundlagen" content="avm-eva, browser-not-found, feste-ip, router-antwortet-nicht, tftp-server">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="e85eac1dd">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>AVM FRITZ!Box 7520: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/avm-fritz-box-7520.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-aussieht als hier beschrieben.
-Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.</p>
+<p>Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+beschrieben.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -154,27 +151,6 @@ Bootloader fragt beim Start wieder per TFTP nach der RAMpe.</li>
 Wiederherstellungs-Programm von AVM (für Windows; auf dem Download-Server von
 AVM im Ordner des Geräts unter &quot;recover&quot;) lässt sich FRITZ!OS zurückspielen.
 Laut OpenWrt hilft im Notfall die Version FRITZ!OS 7.21.</p>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet (Weg ab Werk, Dauer)</li>
-<li>abgeleitet: OpenWrt-Wiki &quot;AVM recovery tool&quot; (Rückweg zur Herstellerfirmware)</li>
-<li>abgeleitet: Wiki (Typenschild/Verwechslung)</li>
-<li>abgeleitet: Wiki 7520/7530 (Schritte (Normalweg), Sichtbare Zeichen, Typenschild/Verwechslung)</li>
-<li>abgeleitet: Wiki 7520/7530, nur als Ausweg (Fehlerbild)</li>
-<li>abgeleitet: Wiki 7530 (Adressen)</li>
-<li>abgeleitet: dasselbe Wiki (Rückweg zur Herstellerfirmware)</li>
-<li>geprüft (Schritte (Normalweg))</li>
-<li>geprüft: Commit (Schritte (Normalweg), Sichtbare Zeichen, Anschluss, Adressen, Programm, Datei, Dauer)</li>
-<li>geprüft: Commit 95b0c07a (Schritte (Normalweg), Taste und Zeitpunkt)</li>
-<li>geprüft: Commit, U-Boot-Quelltext: serverip 192.168.1.70, bootfile FRITZ7520.bin (Schritte (Normalweg), Adressen, Programm, Datei)</li>
-<li>geprüft: Download-Liste 24.10.8 (Weg ab Werk)</li>
-<li>geprüft: U-Boot-Quelle chunkeey/FritzBox-4040-UBOOT, include/configs/fritz7520.h (Gluon-RAMpe-Rezept)</li>
-<li>geprüft: U-Boot-Quelltext chunkeey FritzBox-4040-UBOOT (Sichtbare Zeichen)</li>
-<li>geprüft: uboot-fritz4040/Makefile am Pin, U-Boot-Quelltext (Typenschild/Verwechslung)</li>
-<li>geprüft; abgeleitet (Schritte (Normalweg))</li>
-<li>Geräteeintrag: OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

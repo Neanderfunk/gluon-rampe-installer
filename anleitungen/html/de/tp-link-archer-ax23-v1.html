@@ -13,20 +13,15 @@
 <meta name="anleitung:level" content="L0.1">
 <meta name="anleitung:level_text" content="Hochladen, richtige Datei wählen">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-not-found, curl, router-antwortet-nicht">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="33a38da83">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>TP-Link Archer AX23 v1: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/tp-link-archer-ax23-v1.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-Hersteller für dieses Gerät beschreiben.
-Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
-getestet (&quot;broken&quot;); nicht jede Community bietet sie an.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -122,16 +117,6 @@ leuchtet. Dann mit fester Adresse im Netz 192.168.0.x die Seite
 geht der Upload auch mit curl (<a href="grundlagen/curl.html">curl benutzen</a>):</p>
 <pre><code>curl -F firmware=@factory.bin http://192.168.0.1/f2.htm
 </code></pre>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet (Schritte (Normalweg))</li>
-<li>geprüft (Weg ab Werk, Schritte (Normalweg), Notweg)</li>
-<li>geprüft: Commit 7dceef5e (Notweg)</li>
-<li>geprüft: Wiki toh:tp-link:archer_ax23_v1 (Schritte (Normalweg), Adressen, Programm, Datei, Typenschild/Verwechslung, Notweg)</li>
-<li>geprüft: tplink-safeloader ARCHER-AX23-V1 (Typenschild/Verwechslung)</li>
-<li>Geräteeintrag: 7dceef5ee554ec4ab5d2dd2ff999f4a60bf2e0f4</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

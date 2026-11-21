@@ -13,19 +13,16 @@
 <meta name="anleitung:level" content="L0.1">
 <meta name="anleitung:level_text" content="Hochladen, richtige Datei wählen">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-not-found, router-antwortet-nicht, ssh-scp">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="33a38da83">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Linksys MX5300: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/linksys-mx5300.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-Hersteller für dieses Gerät beschreiben.
-Laut OpenWrt zuletzt geprüft mit Linksys-Firmware 1.1.12.210066 (April 2022); spätere Linksys-Updates könnten den Weg verbauen.</p>
+<p>Laut OpenWrt zuletzt geprüft mit Linksys-Firmware 1.1.12.210066 (April 2022); spätere Linksys-Updates könnten den Weg verbauen.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -102,15 +99,6 @@ Das factory-Image nach <code>/tmp/factory.bin</code> kopieren, dann:</p>
 <li>Antwort <code>1</code>: <code>mtd -r -e alt_kernel -n write /tmp/factory.bin alt_kernel</code></li>
 </ul>
 <p>Damit ist allerdings auch die Linksys-Firmware weg.</p>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet (Schritte (Normalweg))</li>
-<li>geprüft (Weg ab Werk, Schritte (Normalweg), Notweg)</li>
-<li>geprüft: Commit 70fd815e (Schritte (Normalweg), Programm, Datei, Rückweg zur Herstellerfirmware)</li>
-<li>geprüft: Wiki toh:linksys:mx5300 (Sichtbare Zeichen, Adressen, Zugang, Typenschild/Verwechslung, Bedingung an die Herstellerfirmware)</li>
-<li>Geräteeintrag: OpenWrt 70fd815e57dc98cef88828faa5ce71717540e99e</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

@@ -11,15 +11,14 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-avm-fritz-box-7430-initramfs-kernel.bin
 grundlagen: [avm-eva, browser-https, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: e85eac1dd
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # AVM FRITZ!Box 7430: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -135,25 +134,3 @@ die Original-Firmware zurückspielt. Es liegt auf dem Download-Server von AVM
 im Ordner des Geräts unter "recover". Geräte von Providern (zum Beispiel
 1&1) verweigern das eventuell; dann vorher per FTP
 `quote UNSETENV provider` ([Der Bootloader von AVM (EVA)](grundlagen/avm-eva.md)).
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Dauer, Gluon-RAMpe passt)
-- abgeleitet: OpenWrt-Wiki "AVM recovery tool" (Rückweg zur Herstellerfirmware)
-- abgeleitet: Wiki 7362 SL (Anschluss)
-- abgeleitet: Wiki 7412 (Fehlerbild)
-- abgeleitet: Wiki 7430 (Typenschild/Verwechslung)
-- abgeleitet: dasselbe Wiki (Rückweg zur Herstellerfirmware)
-- geprüft (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Commit 6c85a449 (Schritte (Normalweg), Bedingung an die Herstellerfirmware, Dauer)
-- geprüft: Commit 7412/7430 (Adressen)
-- geprüft: Commit, Skript am Pin (Programm)
-- geprüft: Commit; config/Config-images.in am Pin (Datei)
-- geprüft: Commits 7412/7430 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)
-- geprüft: Commits 7412/7430/7362 SL (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Commits 7412/7430; abgeleitet: Wiki 7362 SL (Schritte (Normalweg), Adressen)
-- geprüft; abgeleitet (Schritte (Normalweg))
-- geprüft; geprüft: Commit; config/Config-images.in am Pin (Schritte (Normalweg))
-- Geräteeintrag: 6c85a449a988876fdfd4ce84d6aa5ffe4a2820c1

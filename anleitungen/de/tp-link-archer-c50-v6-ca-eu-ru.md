@@ -10,15 +10,12 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54): Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -169,21 +166,3 @@ Dann den Rechner fest auf `192.168.0.66` stellen, Netzmaske
 einschalten. Laut OpenWrt-Wiki etwa 8 Sekunden halten, bis alle LEDs
 aufhören zu blinken und die WPS-LED angeht. Der Router holt die Datei,
 schreibt sie und startet nach etwa einer Minute neu.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Dauer)
-- abgeleitet: Commit nutzt dd/cat (Programm)
-- abgeleitet: Wiki C50 (Warnung, Dauer, Notweg)
-- abgeleitet: Wiki C50; abgeleitet (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Notweg)
-- geprüft: Commit (Schritte (Normalweg), Taste und Zeitpunkt, Datei, Typenschild/Verwechslung, Notweg)
-- geprüft: Commit "vendor-firmware ... can be written" (Rückweg zur Herstellerfirmware)
-- geprüft: Commit e9ac1b19 (Typenschild/Verwechslung)
-- geprüft: Commit; abgeleitet: Wiki C20 v5 "regional match" (Schritte (Normalweg), Datei)
-- geprüft: Test Neanderfunk 15.10.2026, byte-gleich mit dd/cat aus Commit 01dcd574 (Programm)
-- geprüft; abgeleitet: Commit nutzt dd/cat (Schritte (Normalweg))
-- geprüft; geprüft: Commit (Schritte (Normalweg))
-- Geräteeintrag: e9ac1b19e0f3d383ab83373c261bfb5527a29521

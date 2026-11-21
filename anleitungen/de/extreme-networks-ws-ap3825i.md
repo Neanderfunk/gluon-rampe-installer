@@ -11,17 +11,12 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-extreme-networks-ws-ap3825i-initramfs-kernel.bin
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 9a02820db
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Extreme Networks WS-AP3825i: Freifunk-Firmware installieren
 
-> **Bei uns in der Praxis erprobt.** Wir haben Geräte dieses Typs schon so
-> umgestellt, nur noch nicht mit der aktuellen Version der
-> Freifunk-Firmware.
-> Wir haben rund ein Dutzend dieser Geräte auf diesem Weg umgestellt.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -211,27 +206,3 @@ ab, das ist harmlos.
 ## Zurück zur Herstellerfirmware
 
 Zurück zur Herstellerfirmware geht nur mit einer Sicherung der Partition "firmware", die du vor Schritt 7 aus OpenWrt heraus gemacht hast. Das beschreiben wir hier nicht.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- geprüft (Weg ab Werk, Schritte (Normalweg), Programm, Datei, Dauer)
-- geprüft, Wiki toh:extreme_networks:ws-ap3825i (Schritte (Normalweg))
-- geprüft: Code Gluon v2025.1.3 320-setup-ifname/020-interfaces, OpenWrt 5204715d 02_network (Gluon-RAMpe passt)
-- geprüft: Commit (Schritte (Normalweg), Anschluss, Zugang, Typenschild/Verwechslung, Rückweg zur Herstellerfirmware)
-- geprüft: Commit 7e61482 (Schritte (Normalweg), Taste und Zeitpunkt, Zugang)
-- geprüft: Commit, Wiki toh:extreme_networks:ws-ap3825i (Schritte (Normalweg), Adressen, Programm)
-- geprüft: GitHub (Gluon-RAMpe passt)
-- geprüft: Neanderfunk-Notiz (Dauer)
-- geprüft: OpenWrt-Issue 17152 (Gluon-RAMpe passt)
-- geprüft: OpenWrt-Issue 17152 (offen): adorfer 29.03.2025 "broken in 24.x and 23, tested with 4 devices … 22.03.0 works", jensgraef 15.05.2025 "sysupgrade of openwrt-24.10 without any problems", jbusuttil 03.09.2026 22.03.0, dann sysupgrade; Datei archive.openwrt.org 22.03.0, SHA256 fc9a27d9… laut sha256sums, 6.879.964 Byte (Bedingung an die Herstellerfirmware)
-- geprüft: OpenWrt-Issue 25302, Tabelle: WS-AP3825i-initramfs 24.10.8 ❌ (Gluon-RAMpe passt)
-- geprüft: Wiki toh:extreme_networks:ws-ap3825i (Schritte (Normalweg), Anschluss, Datei, Dauer, Fehlerbild)
-- geprüft: Wiki toh:extreme_networks:ws-ap3825i, Titel (Typenschild/Verwechslung)
-- geprüft: forum.darmstadt.freifunk.net t/923 #1 (TomH, 30.04.2022), am 15.10.2026 gelesen: 192.168.1.66/.22, ws-ap3825i-initramfs.bin, Prompt 'Boot (PRI)->', Anhalten bei 'Scanning JFFS2 FS:' (Weg ab Werk)
-- geprüft: forum.darmstadt.freifunk.net t/923 #4, #7 (Notweg)
-- geprüft: forum.darmstadt.freifunk.net t/923 #8 (Notweg)
-- geprüft: laut Commit sind die LEDs unter OpenWrt sonst ohne Funktion, Wiki toh:extreme_networks:ws-ap3825i (Sichtbare Zeichen)
-- geprüft: scripts/mpc85xx-ladeadresse.py am Image 20261115 (Gluon-RAMpe passt)
-- Geräteeintrag: 7e614820a89208c4e91a3a5f9de07a5402accdaa

@@ -10,15 +10,14 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link Archer C7 v5: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -125,15 +124,3 @@ feste Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md))
    etwa 15 Sekunden.
 4. Warten, etwa 150 Sekunden. Das Gerät
    schreibt die Datei und startet neu.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- abgeleitet: Wiki-Zusammenfassung, im Rohtext toh:tp-link:archer_c7 nicht gefunden; toh:tp-link:archer-c5-c7-wdr7500 nennt nur http://192.168.0.1 (Schritte (Normalweg), Adressen)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Notweg, Quelle (OpenWrt-Commit))
-- geprüft: Commit 8471944b (Typenschild/Verwechslung, Notweg)
-- geprüft: Wiki toh:tp-link:archer-c5-c7-wdr7500 (Quick Start Guide); im Rohtext toh:tp-link:archer_c7 nicht genannt (Schritte (Normalweg))
-- geprüft: Wiki toh:tp-link:archer_c7 (Schritte (Normalweg), Programm, Datei, Bedingung an die Herstellerfirmware)
-- Geräteeintrag: 8471944325db80ca37f7c756130070d0add58ff6 [geprüft]

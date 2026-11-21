@@ -10,15 +10,12 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Linksys WHW01 v1 (Velop): Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -103,13 +100,3 @@ Seite den Link "CA" anklicken.
   Einrichtungsseite.
 - **Nach drei Fehlstarts ist wieder die Linksys-Firmware da.** Der Velop hat
   zwei Firmware-Speicher, und nur einer wurde beschrieben.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Notweg)
-- geprüft: Abruf 10.10.2026, Wiki toh:linksys:whw01_v1 (Weg ab Werk, Schritte (Normalweg), Programm, Datei)
-- geprüft: Commit b4184c66 (Schritte (Normalweg), Fehlerbild)
-- Geräteeintrag: OpenWrt b4184c666c13fdf08ecd3abf340538d593e9084c

@@ -10,15 +10,12 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link CPE710 v1: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -128,17 +125,3 @@ eine ältere Version hat: **nicht** auf die neue Version aktualisieren.
 ## Notfall
 
 Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- für v2 abgeleitet; geprüft: Wiki toh:tp-link:cpe710_v1 (Schritte (Normalweg), Warnung, Bedingung an die Herstellerfirmware)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Programm, Quelle (OpenWrt-Commit))
-- geprüft: Commit ac03e246/0b4d8318 (Rückweg zur Herstellerfirmware)
-- geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg (Notweg, Rückweg zur Herstellerfirmware)
-- geprüft: cpe510, Wiki toh:tp-link:cpe210 (Schritte (Normalweg), Adressen, Programm, Zugang)
-- geprüft: cpe510, Wiki toh:tp-link:cpe510 (Schritte (Normalweg), Datei)
-- geprüft: tplink-safeloader CPE710V1; Commit 0b4d8318 (Schritte (Normalweg), Typenschild/Verwechslung)
-- Geräteeintrag: ac03e246351fbfa98e98f0319cce3a8663f836d3 [geprüft]

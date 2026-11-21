@@ -13,19 +13,17 @@
 <meta name="anleitung:level" content="L4">
 <meta name="anleitung:level_text" content="Network-Tools">
 <meta name="anleitung:risiko" content="bootloader">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, router-antwortet-nicht, tftp-client, tftp-server">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="33a38da83">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>HPE MSM460: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/hewlett-packard-msm460.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-aussieht als hier beschrieben.
+<p>Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+beschrieben.
 Dass der neue Bootloader die Freifunk-Firmware von selbst holt, haben wir aus seinem Quelltext abgeleitet.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
@@ -148,15 +146,6 @@ kommt vom Access Point) und die Dateinamen. Dann ab Schritt 3 noch einmal.</li>
 <li><strong><code>msm460-uboot.bin</code> wurde geholt, <code>msm460-factory.bin</code> aber nicht.</strong> Nicht
 den Strom ziehen. Prüf den Namen der Freifunk-Datei; der neue Bootloader
 versucht es immer wieder, bis die Datei da ist.</li>
-</ul>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet (Gluon-RAMpe passt)</li>
-<li>geprüft (Weg ab Werk)</li>
-<li>geprüft: Commit af329ec, README blocktrron/msm460-flashing (Taste und Zeitpunkt)</li>
-<li>geprüft: Commit, README (Sichtbare Zeichen, Programm)</li>
-<li>Geräteeintrag: af329ec38980e2f706411a11b9f344a62eb0dd8f</li>
 </ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>

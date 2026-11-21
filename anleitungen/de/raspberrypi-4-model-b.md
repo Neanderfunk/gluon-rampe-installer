@@ -10,15 +10,12 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, image-schreiben, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Raspberry Pi 4 Model B: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -80,17 +77,3 @@ zugegriffen wird. Gib ihm nach dem Einschalten ein, zwei Minuten.
   ausgepackt. Noch einmal nach
   [Image auf einen Datenträger schreiben](grundlagen/image-schreiben.md).
 - **Beim Auspacken kommt "trailing garbage ignored".** Das ist harmlos.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg), Anschluss)
-- abgeleitet: Imagegröße aus Config-images.in (Schritte (Normalweg), Dauer)
-- geprüft: Gluon targets/bcm27xx-bcm2711, OpenWrt Makefile, kein bcm2712-Target in Gluon (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi (Programm)
-- geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi (dd auf /dev/sdX) (Schritte (Normalweg))
-- geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi, toh:friendlyarm:nanopi_r2s (dd, gzip -d); Wiki-Zusammenfassung: FriendlyElec-Wiki (Win32DiskImager) (Programm)
-- geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts (Schritte (Normalweg), Programm)
-- geprüft: targets/bcm27xx.inc (Weg ab Werk, Schritte (Normalweg), Datei)
-- Geräteeintrag: Gluon targets/bcm27xx-bcm2711

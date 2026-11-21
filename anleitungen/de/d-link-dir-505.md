@@ -10,15 +10,14 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # D-Link DIR-505: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -134,17 +133,3 @@ Konfigurationsmodus; weiter ab Punkt 2 dieses Abschnitts.
 
 Einen verlässlichen Weg zurück kennen wir nicht. Die Notfall-Seite von D-Link
 hat bei uns auch die eigene Firmware von D-Link nicht geschrieben.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Wiki toh:d-link:dir-505; am Gerät nicht geprüft, es lief keine D-Link-Firmware (Weg ab Werk, Schritte (Normalweg))
-- abgeleitet: am Gerät nicht geprüft (Schritte (Normalweg))
-- geprüft: Commit (Weg ab Werk, Datei, Fehlerbild, Notweg, Quelle (OpenWrt-Commit))
-- geprüft: D-Link-FAQ DIR-505 Firmware-Upgrade (Schritte (Normalweg), Anschluss, Adressen, Zugang)
-- geprüft: LuCI-Quelltext lede-17.01 (Schritte (Normalweg))
-- geprüft: Test Neanderfunk 17.10.2026 (Weg ab Werk, Schritte (Normalweg), Warnung, Fehlerbild, Notweg)
-- geprüft: Wiki toh:d-link:dir-505 (Schritte (Normalweg), Typenschild/Verwechslung, Fehlerbild, Notweg, Rückweg zur Herstellerfirmware)
-- geprüft: archive.openwrt.org sha256sums (Schritte (Normalweg), Datei)
-- Geräteeintrag: c9ac7b17296ff29d9df39db8a68c449ef1514bbd [geprüft: Commit]

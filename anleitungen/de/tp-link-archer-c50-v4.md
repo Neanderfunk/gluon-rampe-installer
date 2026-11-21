@@ -12,14 +12,12 @@ status: erprobt
 erprobt_am: 2026-10-15
 erprobt_mit: Gluon 2023.2.6 (26091920sta), boot.bin über die TP-Link-Oberfläche, U-Boot-Teil aus Archer_C50v4_EU_0.9.1_0.2_up_boot.bin
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link Archer C50 v4: Freifunk-Firmware installieren
 
-> **Am Gerät erprobt** am 15.10.2026 mit `Gluon 2023.2.6 (26091920sta), boot.bin über die TP-Link-Oberfläche, U-Boot-Teil aus Archer_C50v4_EU_0.9.1_0.2_up_boot.bin`.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -45,8 +43,8 @@ mit einer halben Stunde.
 - den Router mit Netzteil, einen Rechner mit Netzwerkanschluss und ein
   Netzwerkkabel
 - die **TP-Link-Firmware** für genau dieses Modell und diese Version, von der
-  [Download-Seite bei TP-Link](https://www.tp-link.com/de/support/download/archer-c50/v4/). Bei uns hat es mit der TP-Link-Firmware
-  `Archer_C50v4_EU_0.9.1_0.2_up_boot.bin (TP-Link-Download vom Januar 2025)` geklappt.
+  [Download-Seite bei TP-Link](https://www.tp-link.com/de/support/download/archer-c50/v4/). Mit der TP-Link-Firmware
+  `Archer_C50v4_EU_0.9.1_0.2_up_boot.bin (TP-Link-Download vom Januar 2025)` klappt es.
 - die Freifunk-Firmware deiner Community für den TP-Link Archer C50 v4: im
   Firmware-Selector unter "Wähle Deine Installationsart" der Knopf
   **Upgrade** (die Datei endet auf `-sysupgrade.bin`). **Nicht allein
@@ -174,21 +172,3 @@ Dann den Rechner fest auf `192.168.0.66` stellen, Netzmaske
 einschalten. Laut OpenWrt-Wiki etwa 8 Sekunden halten, bis alle LEDs
 aufhören zu blinken und die WPS-LED angeht. Der Router holt die Datei,
 schreibt sie und startet nach etwa einer Minute neu.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Dauer)
-- abgeleitet: Commit nutzt dd/cat (Programm)
-- abgeleitet: Wiki C50 (Warnung, Typenschild/Verwechslung, Dauer, Notweg)
-- abgeleitet: Wiki C50, Forum (Typenschild/Verwechslung)
-- abgeleitet: Wiki C50; abgeleitet (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Notweg)
-- geprüft: Commit (Schritte (Normalweg), Taste und Zeitpunkt, Datei, Typenschild/Verwechslung, Notweg)
-- geprüft: Commit "vendor-firmware ... can be written" (Rückweg zur Herstellerfirmware)
-- geprüft: Commit; abgeleitet: Wiki C20 v5 "regional match" (Schritte (Normalweg), Datei)
-- geprüft: Test Neanderfunk 15.10.2026, byte-gleich mit dd/cat aus Commit 01dcd574 (Programm)
-- geprüft; abgeleitet: Commit nutzt dd/cat (Schritte (Normalweg))
-- geprüft; geprüft: Commit (Schritte (Normalweg))
-- Geräteeintrag: 01dcd574a24864c10a9c4df4304a3ce0da5c11a9

@@ -10,15 +10,14 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # NETGEAR WAX220: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -104,11 +103,3 @@ weil die Netgear-Oberfläche kleinere Dateien ablehnt. Nicht wundern.
   Einrichtungsseite.
 - **Danach blinkt die Power-LED, die LAN-LED ist aus und nichts antwortet.**
   Laut OpenWrt: Strom aus und wieder an.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Image-Rezept "Padding … required by OEM web interface"; Commit nennt nur UART (Weg ab Werk, Schritte (Normalweg), Programm, Datei)
-- geprüft: Wiki toh:netgear:wax220 (Schritte (Normalweg), Datei, Dauer, Fehlerbild)
-- Geräteeintrag: OpenWrt 984786a2f7ec622c99e8c9cdada65d0ea0cf4e0b

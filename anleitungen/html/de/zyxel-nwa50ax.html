@@ -13,18 +13,15 @@
 <meta name="anleitung:level" content="L0.1">
 <meta name="anleitung:level_text" content="Hochladen, richtige Datei wählen">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-not-found, router-antwortet-nicht">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="33a38da83">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>ZyXEL NWA50AX / NWA90AX: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/zyxel-nwa50ax.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-Hersteller für dieses Gerät beschreiben.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -58,8 +55,7 @@ Werksreset innerhalb von etwa 30 Minuten wieder die Cloud-Einstellungen, und
 die Oberfläche verlangt das Nebula-Passwort (&quot;This device is managed by
 Nebula&quot;). Herauslösen lässt es sich, indem man es mit einem anderen
 Nebula-Konto übernimmt (force adopt, QR-Code in der Nebula-App) und dort
-wieder abmeldet. Das haben wir nicht selbst ausprobiert. In einem Forumsfall
-half stattdessen: Werksreset und sofort die Nebula-Erkennung mit dem
+wieder abmeldet. Oder: Werksreset und sofort die Nebula-Erkennung mit dem
 Zyxel-Werkzeug ZON abschalten.</p>
 <h2>Schritte</h2>
 <ol>
@@ -125,16 +121,6 @@ Je nach Community startet die Firmware auch gleich im Betrieb ohne
 Einrichtungsseite.</li>
 <li><strong>&quot;ULCGI unable to parse CGI query&quot;.</strong> Der Dateiname ist zu lang. Benenne
 die Datei kurz um, zum Beispiel in <code>factory.bin</code>.</li>
-</ul>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>Forum-Zusammenfassung: community.zyxel.com/en/discussion/29636 (Bedingung an die Herstellerfirmware)</li>
-<li>abgeleitet: adorfer, Hörensagen; Ablauf Unregister: mysupport.zyxel.com/hc/en-us/articles/360006459099, nicht gelesen (Bedingung an die Herstellerfirmware)</li>
-<li>geprüft (Weg ab Werk, Schritte (Normalweg), Programm, Datei)</li>
-<li>geprüft: Commit a0b7fef0/f0445746 (Schritte (Normalweg), Typenschild/Verwechslung, Bedingung an die Herstellerfirmware, Fehlerbild)</li>
-<li>geprüft: Wiki toh:zyxel:nwa50ax (Schritte (Normalweg), Sichtbare Zeichen, Zugang, Fehlerbild)</li>
-<li>Geräteeintrag: a0b7fef0ffe4cd9cca39a652a37e4f3ce8f0a681</li>
 </ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>

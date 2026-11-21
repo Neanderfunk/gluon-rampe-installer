@@ -10,17 +10,14 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 3dc0d6c03
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # D-Link DAP-1620 B1: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
-> Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
-> getestet ("broken"); nicht jede Community bietet sie an.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -159,18 +156,3 @@ Windows 10 und 11 heißt es `curl.exe` und ist eingebaut
    out". Das ist in Ordnung.
 
 Danach weiter mit Schritt 8 ("Fertig") oben.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- Adresse geprüft: Commit e4c7703; Rechner-IP abgeleitet: Schwestergerät (Schritte (Normalweg), Adressen)
-- für dieses Gerät abgeleitet: gleiche D-Link-Recovery (Schritte (Normalweg), Sichtbare Zeichen)
-- geprüft (Weg ab Werk)
-- geprüft: Commit (Schritte (Normalweg), Programm, Datei)
-- geprüft: Commit e4c7703 (Schritte (Normalweg), Taste und Zeitpunkt, Rückweg zur Herstellerfirmware)
-- geprüft: Commits 'Chromium based' (Programm)
-- geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Sichtbare Zeichen, Adressen)
-- geprüft: Neanderfunk-Notiz, am M60 erprobt (Programm)
-- geprüft: adorfer 15.11.2026 (Programm)
-- Geräteeintrag: e4c7703d2a62b8914e4723adae3f67c68a57532c

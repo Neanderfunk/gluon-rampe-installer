@@ -10,15 +10,12 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link CPE210 v3: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -124,16 +121,3 @@ Dieses Image passt zum CPE210 mit Hardware 3.0, 3.1 und **3.20**. Die Hardware-V
 ## Notfall
 
 Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Schritte (Normalweg), Programm, Quelle (OpenWrt-Commit))
-- geprüft: OpenWrt-Commit (Rückweg zur Herstellerfirmware)
-- geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg (Notweg, Rückweg zur Herstellerfirmware)
-- geprüft: cpe510, Wiki toh:tp-link:cpe210 (Schritte (Normalweg), Adressen, Programm, Zugang)
-- geprüft: cpe510, Wiki toh:tp-link:cpe510 (Schritte (Normalweg), Datei)
-- geprüft: tplink-safeloader CPE210V3 (Schritte (Normalweg), Typenschild/Verwechslung)
-- Geräteeintrag: 5ec205d7ac00de89510a6e71055d45aa57b705e1 [geprüft]

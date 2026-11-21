@@ -10,15 +10,14 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link Archer C7 v2: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -113,17 +112,3 @@ Aufkleber genau mit "TP-Link Archer C7 v2", bevor du anfängst.
   ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
   Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- Makefile geprüft (Weg ab Werk, Schritte (Normalweg), Datei)
-- abgeleitet (Schritte (Normalweg), Quelle (OpenWrt-Commit))
-- abgeleitet: Commit ohne Anleitung (Weg ab Werk)
-- abgeleitet: getrennte Gluon-Geräte (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: Wiki toh:tp-link:archer-c5-c7-wdr7500, Wiki toh:tp-link:archer_c7 (Schritte (Normalweg))
-- geprüft: Wiki toh:tp-link:archer_c7 (Schritte (Normalweg), Adressen, Programm, Datei, Typenschild/Verwechslung)
-- geprüft: archer_c7, Wiki toh:tp-link:archer-c5-c7-wdr7500 (Schritte (Normalweg), Typenschild/Verwechslung, Bedingung an die Herstellerfirmware, Fehlerbild)
-- geprüft: templates/common/site.mk, Gluon targets/ath79-generic; Folge abgeleitet (Schritte (Normalweg), Datei, Typenschild/Verwechslung)
-- Geräteeintrag: ba74b45476ab1fe36f8449b18501ba5d2c01cf8c (ohne Anleitung) [abgeleitet]

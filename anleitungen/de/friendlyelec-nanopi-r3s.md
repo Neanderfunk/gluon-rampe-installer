@@ -10,15 +10,12 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, image-schreiben, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # FriendlyElec NanoPi R3S: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -88,23 +85,3 @@ andere Adresse und erscheint in der Freifunk-Karte als neuer Knoten.
 Laut OpenWrt: erst von der Karte starten, dann auf dem Gerät das ausgepackte
 Image in den eingebauten Speicher schreiben (`dd if=<Image>.img
 of=/dev/mmcblk0`, danach `sync`), Karte ziehen, neu starten.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- Wiki-Zusammenfassung: FriendlyElec-Wiki NanoPi_R3S (Taste und Zeitpunkt)
-- abgeleitet (Schritte (Normalweg), Anschluss)
-- abgeleitet: Commit 2902b0a6 lässt von SD starten, FriendlyElec beschreibt Start von SD (Bedingung an die Herstellerfirmware)
-- abgeleitet: Gluons Setup-Mode läuft an den LAN-Buchsen, nicht an WAN (Anschluss)
-- abgeleitet: Imagegröße aus Config-images.in (Schritte (Normalweg), Dauer)
-- abgeleitet: OpenWrt diag.sh (Sichtbare Zeichen)
-- abgeleitet: targets/rockchip-armv8 (Weg ab Werk, Schritte (Normalweg), Datei)
-- geprüft: OpenWrt rockchip/image/Makefile append-metadata; gzip-Verhalten abgeleitet (Fehlerbild)
-- geprüft: OpenWrt-Commit 2902b0a6 (Notweg)
-- geprüft: OpenWrt-Commit 2902b0a6; Wiki-Zusammenfassung: FriendlyElec-Wiki NanoPi_R3S (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: OpenWrt-Patch led-boot/running = sys_led, diag.sh, Gluon gluon-setup-mode S96led (Sichtbare Zeichen)
-- geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi (Schritte (Normalweg), Programm)
-- geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi, toh:friendlyarm:nanopi_r2s; Wiki-Zusammenfassung: FriendlyElec-Wiki (Programm)
-- geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts (Schritte (Normalweg), Programm)
-- Geräteeintrag: Gluon targets/rockchip-armv8

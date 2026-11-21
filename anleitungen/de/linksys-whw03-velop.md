@@ -10,15 +10,12 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Linksys WHW03 v1 (Velop): Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -104,13 +101,3 @@ dem Aufkleber.
 
 Dreimal hintereinander für ein paar Sekunden einschalten und wieder
 ausschalten. Dann startet die andere Kopie der Firmware.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Schritte (Normalweg), Adressen)
-- geprüft: Commit c9048755 (Schritte (Normalweg), Programm, Zugang, Datei, Rückweg zur Herstellerfirmware)
-- geprüft: Commit c9048755/9e4ede83 (Schritte (Normalweg), Typenschild/Verwechslung)
-- Geräteeintrag: OpenWrt c90487556229ae264dec33305e5c71c4ef7dd1c5

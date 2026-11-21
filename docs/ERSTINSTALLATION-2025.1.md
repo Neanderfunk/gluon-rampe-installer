@@ -2640,7 +2640,7 @@ AVM FRITZ!Box 7520 (Alias von avm-fritz-box-7530) · ipq40xx-generic · K2
 - **Gluon-RAMpe-Rezept:** Alias: Image aus devices/avm-fritz-box-7530.sh (dort auch `uboot-fritz7520.bin`); TFTP-Dateiname `FRITZ7520.bin` [geprüft: U-Boot-Quelle chunkeey/FritzBox-4040-UBOOT, include/configs/fritz7520.h]
 - **Quelle (OpenWrt-Commit):** OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-box-7520.md; https://openwrt.org/toh/avm/avm_fritz_box_7530#installation
-- **Werte für die Anleitung:** uboot_datei = uboot-fritz7520.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz7520.bin; tftp_name = FRITZ7520.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-box-7530-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261115-avm-fritz-box-7530-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
+- **Werte für die Anleitung:** uboot_datei = uboot-fritz7520.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz7520.bin; tftp_name = FRITZ7520.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-box-7530-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261115-avm-fritz-box-7530-initramfs-uImage.itb; sicherheit = abgeleitet
 
 #### avm-fritz-box-7530
 
@@ -2682,7 +2682,7 @@ AVM FRITZ!Box 7530 · ipq40xx-generic · K2
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-box-7530.sh (gebaut 15.10.2026): `-initramfs-uImage.itb` als `FRITZ7530.bin`, dazu `uboot-fritz7530.bin`/`uboot-fritz7520.bin` für `eva_ramboot.py`; Vorbereitung vor dem sysupgrade in der RAMpe (overlay/lib/gluon-rampe/prepare/avm_fritzbox-7530.sh, U-Boot aus package/gluon-rampe-uboot-fritz), U-Boot-Wahl nach HWRevision aus dem TFFS; im QEMU-Test geprüft, am Gerät ungetestet
 - **Quelle (OpenWrt-Commit):** OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-box-7530.md; https://openwrt.org/toh/avm/avm_fritz_box_7530#installation
-- **Werte für die Anleitung:** uboot_datei = uboot-fritz7530.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz7530.bin; tftp_name = FRITZ7530.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-box-7530-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261115-avm-fritz-box-7530-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
+- **Werte für die Anleitung:** uboot_datei = uboot-fritz7530.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz7530.bin; tftp_name = FRITZ7530.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-box-7530-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261115-avm-fritz-box-7530-initramfs-uImage.itb; sicherheit = abgeleitet
 
 #### avm-fritz-repeater-1200
 
@@ -2724,7 +2724,7 @@ AVM FRITZ!Repeater 1200 · ipq40xx-generic · K2
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-repeater-1200.sh (gebaut 15.10.2026): `-initramfs-uImage.itb` als `FRITZ1200.bin` + `uboot-fritz1200.bin`; Vorbereitung vor dem sysupgrade in der RAMpe (avm_fritzrepeater-1200.sh); am Gerät ungetestet
 - **Quelle (OpenWrt-Commit):** OpenWrt 7f187229a8e9b7966248b1e024217e07a9fc3e50
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-repeater-1200.md; https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=7f187229a8e9b7966248b1e024217e07a9fc3e50
-- **Werte für die Anleitung:** uboot_datei = uboot-fritz1200.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz1200.bin; tftp_name = FRITZ1200.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-repeater-1200-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261115-avm-fritz-repeater-1200-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
+- **Werte für die Anleitung:** uboot_datei = uboot-fritz1200.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz1200.bin; tftp_name = FRITZ1200.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-repeater-1200-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261115-avm-fritz-repeater-1200-initramfs-uImage.itb; sicherheit = abgeleitet
 
 #### avm-fritz-repeater-3000
 
@@ -2767,7 +2767,7 @@ AVM FRITZ!Repeater 3000 (Gluon: broken, drittes Radio ungetestet) · ipq40xx-gen
 - **Gluon-RAMpe-Rezept:** devices/avm-fritz-repeater-3000.sh (gebaut 15.10.2026): trägt das Gerät in Gluon ein; `FRITZ3000.bin` + `uboot-fritz3000.bin`; Vorbereitung vor dem sysupgrade in der RAMpe (avm_fritzrepeater-3000.sh); am Gerät ungetestet
 - **Quelle (OpenWrt-Commit):** OpenWrt 148d29d47b1d555d0058dcc5dda450b74c4628ec
 - **Detail-Anleitung:** anleitungen/de/avm-fritz-repeater-3000.md
-- **Werte für die Anleitung:** uboot_datei = uboot-fritz3000.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz3000.bin; tftp_name = FRITZ3000.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-repeater-3000-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261115-avm-fritz-repeater-3000-initramfs-uImage.itb; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
+- **Werte für die Anleitung:** uboot_datei = uboot-fritz3000.bin; uboot_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/uboot-fritz3000.bin; tftp_name = FRITZ3000.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-repeater-3000-initramfs-uImage.itb; rampe_datei = gluon-rampe-20261115-avm-fritz-repeater-3000-initramfs-uImage.itb; sicherheit = abgeleitet
 
 ### Familie `cudy-zwischenfirmware`
 
@@ -3461,7 +3461,7 @@ Cudy M1800 · ramips-mt7621 · K2
 - **Gluon-RAMpe passt:** nein: Stock und Recovery prüfen Cudys RSA-Signatur
 - **Quelle (OpenWrt-Commit):** f6d394e9f2fd41547236c092ac914322220eb77c
 - **Detail-Anleitung:** anleitungen/de/cudy-m1800.md
-- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-m1800.bin; zwischen_md5 = 0c19a13f261fc7b3b0fade2b263203d5; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-m1800.bin; zwischen_url_text = Zwischenfirmware für den Cudy M1800 aus unserem Spiegel; sicherheit = unsicher; sicherheit_hinweis = Cudy bietet dieselbe Zwischenfirmware unter „M1800 V2“ und „M1800+ V2“ an. Ob dein M1800 sie annimmt, wissen wir nicht.; rueckweg_url = https://www.cudy.com/pages/download-center/m1800-1-0
+- **Werte für die Anleitung:** cudy_ip = 192.168.10.1; zwischen_datei = cudy-m1800.bin; zwischen_md5 = 0c19a13f261fc7b3b0fade2b263203d5; zwischen_nur_cudy = False; neuer_flash = False; force_upgrade = False; zwischen_url = https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-m1800.bin; zwischen_url_text = Zwischenfirmware für den Cudy M1800 aus unserem Spiegel; sicherheit = unsicher; sicherheit_hinweis = Cudy bietet dieselbe Zwischenfirmware unter „M1800 V2“ und „M1800+ V2“ an. Nimmt dein M1800 sie nicht an, melde dich bei uns.; rueckweg_url = https://www.cudy.com/pages/download-center/m1800-1-0
 
 #### cudy-wr1300-v1
 
@@ -4050,7 +4050,7 @@ D-Link DAP-X1860 A1 · ramips-mt7621 · K0
 - **Gluon-RAMpe-Rezept:** devices/d-link-dap-x1860-a1.sh: `-initramfs-kernel.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet
 - **Quelle (OpenWrt-Commit):** 3c31f6b521bb5fc49e222a8f2bcd454b73452a0e
 - **Detail-Anleitung:** anleitungen/de/d-link-dap-x1860-a1.md; https://forum.darmstadt.freifunk.net/t/installation-d-link-dap-x1860/987
-- **Werte für die Anleitung:** datei_art = factory; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.50; rechner_ip = 192.168.0.65; led_recovery = rot blinkt; upload_pfad = /upload.cgi; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dap-x1860-a1-factory.bin; sicherheit = quelle; sicherheit_hinweis = Eine Notiz von uns nennt für dieses Gerät statt der factory-Datei einen Umweg über OpenWrt; was davon stimmt, ist noch nicht geklärt.
+- **Werte für die Anleitung:** datei_art = factory; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.50; rechner_ip = 192.168.0.65; led_recovery = rot blinkt; upload_pfad = /upload.cgi; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dap-x1860-a1-factory.bin; sicherheit = quelle; sicherheit_hinweis = Nimmt die Herstellerfirmware die factory-Datei nicht an, melde dich bei uns.
 
 #### d-link-dir-878-a1
 
@@ -4086,7 +4086,7 @@ D-Link DIR-878 A1 · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** d7233b0a6a9b8cb9207a74a8cb3d0525170cf504
 - **Detail-Anleitung:** anleitungen/de/d-link-dir-878-a1.md; https://openwrt.org/toh/d-link/dir-878_a1#installation
-- **Werte für die Anleitung:** datei_art = factory; anschluss = der Buchse LAN1; taste_hinweis = Die Reset-Taste sitzt auf der Rückseite; gemeint ist die Power-LED, das dauert etwa 10 Sekunden.; recovery_wartezeit = etwa 30 Sekunden; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.1; rechner_ip = 192.168.0.2; led_recovery = orange blinkt; upload_pfad = /; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dir-878-a1-factory.bin; sicherheit = quelle; sicherheit_hinweis = Eine Notiz von uns nennt für die DIR-Reihe statt der Recovery-Seite einen Weg per TFTP; was davon für dieses Gerät stimmt, ist noch nicht geklärt.
+- **Werte für die Anleitung:** datei_art = factory; anschluss = der Buchse LAN1; taste_hinweis = Die Reset-Taste sitzt auf der Rückseite; gemeint ist die Power-LED, das dauert etwa 10 Sekunden.; recovery_wartezeit = etwa 30 Sekunden; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.1; rechner_ip = 192.168.0.2; led_recovery = orange blinkt; upload_pfad = /; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dir-878-a1-factory.bin; sicherheit = quelle; sicherheit_hinweis = Klappt die Recovery-Seite nicht, melde dich bei uns.
 
 #### d-link-dir-882-a1
 
@@ -4119,7 +4119,7 @@ D-Link DIR-882 A1 · ramips-mt7621 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 73e8f23579bcb87764dae9ed0aefe28be3183d3e
 - **Detail-Anleitung:** anleitungen/de/d-link-dir-882-a1.md; https://openwrt.org/toh/d-link/dir-882_a1#installation
-- **Werte für die Anleitung:** datei_art = factory; taste_hinweis = Gemeint ist die Power-LED.; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.1; rechner_ip = 192.168.0.2; led_recovery = orange blinkt; upload_pfad = /; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dir-882-a1-factory.bin; sicherheit = quelle; sicherheit_hinweis = Eine Notiz von uns nennt für die DIR-Reihe statt der Recovery-Seite einen Weg per TFTP; was davon für dieses Gerät stimmt, ist noch nicht geklärt.
+- **Werte für die Anleitung:** datei_art = factory; taste_hinweis = Gemeint ist die Power-LED.; herstellerseite_gleiche_ip = False; recovery_ip = 192.168.0.1; rechner_ip = 192.168.0.2; led_recovery = orange blinkt; upload_pfad = /; dauer_neustart = einige Minuten; datei_beispiel = gluon-<community>-<release>-d-link-dir-882-a1-factory.bin; sicherheit = quelle; sicherheit_hinweis = Klappt die Recovery-Seite nicht, melde dich bei uns.
 
 ### Familie `glinet`
 
@@ -6012,7 +6012,7 @@ TP-Link Archer C6 v2 (EU/RU/JP) · ath79-generic · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** d03aae1a09fce5a5d5747855bc07ee1f54388e03 [geprüft]
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-c6-v2-eu-ru-jp.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; tftp_datei = ArcherC6v2_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = bis die WPS-LED leuchtet; tftp_dauer = etwa 150 Sekunden; sicherheit = abgeleitet; sicherheit_hinweis = Ob die TP-Link-Oberfläche die Datei annimmt, hängt von der Version der Herstellerfirmware ab; mit 1.3.3 oder 1.3.7 sollte es am ehesten gehen.
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; tftp_datei = ArcherC6v2_tp_recovery.bin; tftp_inhalt = das factory-Image; tftp_server_ip = 192.168.0.66; tftp_taste = bis die WPS-LED leuchtet; tftp_dauer = etwa 150 Sekunden; sicherheit = abgeleitet; sicherheit_hinweis = Am ehesten klappt es mit der TP-Link-Firmware 1.3.3 oder 1.3.7.
 
 #### tp-link-archer-c7-v2
 
@@ -7011,7 +7011,7 @@ Zyxel NBG6716 · ath79-nand · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** 99835e09992bb411519fda1f8d16a6d07df7f598 [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/zyxel-nbg6716.md
-- **Werte für die Anleitung:** sicherheit = abgeleitet; sicherheit_hinweis = OpenWrt beschreibt nicht, wie die Datei aus der Zyxel-Firmware heraus auf das Gerät kommt; den Weg über die Zyxel-Oberfläche haben wir angenommen.
+- **Werte für die Anleitung:** sicherheit = abgeleitet
 
 #### linksys-ea6350v3
 
@@ -7593,7 +7593,7 @@ TP-Link Archer C20i · ramips-mt7620 · K0
 - **Gluon-RAMpe passt:** nicht nötig
 - **Quelle (OpenWrt-Commit):** 48d8bc4f971ad7795e3162134759caa37900138f (ohne Installationstext)
 - **Detail-Anleitung:** anleitungen/de/tp-link-archer-c20i.md
-- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; tftp_datei = ArcherC20iV1_tp_recovery.bin; tftp_inhalt = die TP-Link-Firmware ohne ihren ersten 512-Byte-Block (siehe „Die Rettungsdatei vorbereiten“); tftp_server_ip = 192.168.0.66; sicherheit = abgeleitet; sicherheit_hinweis = Die Gefahr aus Build 151014 kennen wir aus eigener Erfahrung; den Weg aus Build 140709 haben wir nicht selbst nachvollzogen.
+- **Werte für die Anleitung:** zertifikat = False; tls_alt = False; tftp_datei = ArcherC20iV1_tp_recovery.bin; tftp_inhalt = die TP-Link-Firmware ohne ihren ersten 512-Byte-Block (siehe „Die Rettungsdatei vorbereiten“); tftp_server_ip = 192.168.0.66; sicherheit = abgeleitet
 
 #### tp-link-archer-c50-v1
 
@@ -10506,7 +10506,7 @@ Extreme Networks WS-AP3825i · mpc85xx-p1020 · K4
 - **Gluon-RAMpe-Rezept:** devices/extreme-networks-ws-ap3825i.sh (gebaut 15.10.2026): `initramfs-kernel.bin` (FIT) per U-Boot-TFTP; `bootcmd` bleibt seriell; bis 20261114 startete es nicht (Issue 17152), ab 20261115 mit Loader-Fix in der Anleitung
 - **Quelle (OpenWrt-Commit):** 7e614820a89208c4e91a3a5f9de07a5402accdaa
 - **Detail-Anleitung:** anleitungen/de/extreme-networks-ws-ap3825i.md; https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923
-- **Werte für die Anleitung:** initramfs_datei = openwrt-22.03.0-mpc85xx-p1020-extreme-networks_ws-ap3825i-initramfs-kernel.bin; initramfs_url = https://archive.openwrt.org/releases/22.03.0/targets/mpc85xx/p1020/openwrt-22.03.0-mpc85xx-p1020-extreme-networks_ws-ap3825i-initramfs-kernel.bin; initramfs_hinweis = Bewusst die alte Version 22.03.0: Mit neueren bleibt das Gerät beim Start mit der Meldung `ft_fixup_l2cache: FDT_ERR_NOTFOUND` hängen. Die Freifunk-Firmware, die du danach aufspielst, ist trotzdem aktuell.; tftp_name = ws-ap3825i-initramfs.bin; server_ip = 192.168.1.66; baud = 115200; anhalten = Sobald im Terminal `Scanning JFFS2 FS:` erscheint, drück einmal Enter und warte, bis der Bootloader nach den Zugangsdaten fragt.; login = admin / new2day; login_hinweis = Gehen sie nicht, lass das Gerät normal starten und halt dann die Reset-Taste mindestens 5 Sekunden gedrückt; das setzt die Herstellerfirmware auf Werkseinstellungen zurück.; prompt = Boot (PRI)->; konsole = rj45; konsole_ort = neben der Buchse für das 12-V-Netzteil; tftp_buchse = LAN2; ssh_buchse = LAN1; dauer = Das dauert bei diesem Gerät sehr lange, oft zehn Minuten und mehr, und die Konsole bleibt dabei lange stumm (siehe Achtung oben).; fertig_zeichen = Laut OpenWrt-Wiki blinkt die Power-LED, solange er beschäftigt ist, und leuchtet dauerhaft, wenn er fertig ist.; rueckweg = Zurück zur Herstellerfirmware geht nur mit einer Sicherung der Partition "firmware", die du vor Schritt 7 aus OpenWrt heraus gemacht hast. Das beschreiben wir hier nicht.; sicherheit = praxis; sicherheit_hinweis = Wir haben rund ein Dutzend dieser Geräte auf diesem Weg umgestellt.; befehle = setenv ramboot_openwrt "setenv ipaddr 192.168.1.22; setenv serverip 192.168.1.66; tftpboot 0x2000000 ws-ap3825i-initramfs.bin; interrupts off; bootm start 0x2000000; bootm loados; fdt resize; fdt boardsetup; fdt resize; fdt boardsetup; fdt chosen; fdt resize; fdt chosen; bootm prep; bootm go;"
+- **Werte für die Anleitung:** initramfs_datei = openwrt-22.03.0-mpc85xx-p1020-extreme-networks_ws-ap3825i-initramfs-kernel.bin; initramfs_url = https://archive.openwrt.org/releases/22.03.0/targets/mpc85xx/p1020/openwrt-22.03.0-mpc85xx-p1020-extreme-networks_ws-ap3825i-initramfs-kernel.bin; initramfs_hinweis = Bewusst die alte Version 22.03.0: Mit neueren bleibt das Gerät beim Start mit der Meldung `ft_fixup_l2cache: FDT_ERR_NOTFOUND` hängen. Die Freifunk-Firmware, die du danach aufspielst, ist trotzdem aktuell.; tftp_name = ws-ap3825i-initramfs.bin; server_ip = 192.168.1.66; baud = 115200; anhalten = Sobald im Terminal `Scanning JFFS2 FS:` erscheint, drück einmal Enter und warte, bis der Bootloader nach den Zugangsdaten fragt.; login = admin / new2day; login_hinweis = Gehen sie nicht, lass das Gerät normal starten und halt dann die Reset-Taste mindestens 5 Sekunden gedrückt; das setzt die Herstellerfirmware auf Werkseinstellungen zurück.; prompt = Boot (PRI)->; konsole = rj45; konsole_ort = neben der Buchse für das 12-V-Netzteil; tftp_buchse = LAN2; ssh_buchse = LAN1; dauer = Das dauert bei diesem Gerät sehr lange, oft zehn Minuten und mehr, und die Konsole bleibt dabei lange stumm (siehe Achtung oben).; fertig_zeichen = Laut OpenWrt-Wiki blinkt die Power-LED, solange er beschäftigt ist, und leuchtet dauerhaft, wenn er fertig ist.; rueckweg = Zurück zur Herstellerfirmware geht nur mit einer Sicherung der Partition "firmware", die du vor Schritt 7 aus OpenWrt heraus gemacht hast. Das beschreiben wir hier nicht.; sicherheit = praxis; befehle = setenv ramboot_openwrt "setenv ipaddr 192.168.1.22; setenv serverip 192.168.1.66; tftpboot 0x2000000 ws-ap3825i-initramfs.bin; interrupts off; bootm start 0x2000000; bootm loados; fdt resize; fdt boardsetup; fdt resize; fdt boardsetup; fdt chosen; fdt resize; fdt chosen; bootm prep; bootm go;"
 setenv boot_openwrt "cp.b 0xEC000000 0x2000000 0x2000000; interrupts off; bootm start 0x2000000; bootm loados; fdt resize; fdt boardsetup; fdt resize; fdt boardsetup; fdt chosen; fdt resize; fdt chosen; bootm prep; bootm go;"
 setenv bootcmd "run boot_openwrt";
 saveenv
@@ -11204,7 +11204,7 @@ Linksys EA8300 · ipq40xx-generic · K2
 - **Gluon-RAMpe passt:** nein, nicht nötig (factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 819e7946b0964725dab50c92797f49cf4053d955
 - **Detail-Anleitung:** anleitungen/de/linksys-ea8300-dallas.md
-- **Werte für die Anleitung:** sicherheit = abgeleitet; sicherheit_hinweis = Teil 1 und 2 beschreibt das OpenWrt-Wiki genau so. Dass sich die Freifunk-Firmware in Teil 3 wie OpenWrt mit „Force upgrade“ einspielen lässt, haben wir daraus abgeleitet.
+- **Werte für die Anleitung:** sicherheit = abgeleitet
 
 ### Familie `sonderweg-linksys-mr8300-dallas`
 
@@ -11814,7 +11814,7 @@ ZyXEL WSM20 (Multy M1) · ramips-mt7621 · K1
 - **Quelle (OpenWrt-Commit):** 28df7f7ff251d8684caa60f07ed0ba0c4a8e71f4
 - **Detail-Anleitung:** anleitungen/de/zyxel-wsm20.md; https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/
 - **Am Gerät erprobt (für die Anleitung):** am = 2026-09-19; mit = Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs; beleg = adorfer, Testknoten in 21_dias, installer docs/ANLEITUNGSFAMILIEN.md (0304fefc)
-- **Werte für die Anleitung:** openwrt_datei = openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin; openwrt_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-zyxel-wsm20-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-zyxel-wsm20-initramfs-kernel.bin; rampe_weg = Lade in Schritt 4 statt der OpenWrt-Datei die RAMpe hoch; Teil 2 entfällt dann.; sicherheit = quelle; sicherheit_hinweis = Freifunk Aachen beschreibt den Weg so, und bei uns ist er an einem Gerät gelaufen; mit der RAMpe hat ihn noch niemand ausprobiert.
+- **Werte für die Anleitung:** openwrt_datei = openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin; openwrt_url = https://downloads.openwrt.org/releases/24.10.8/targets/ramips/mt7621/openwrt-24.10.8-ramips-mt7621-zyxel_wsm20-initramfs-kernel.bin; rampe_url = https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-zyxel-wsm20-initramfs-kernel.bin; rampe_datei = gluon-rampe-20261115-zyxel-wsm20-initramfs-kernel.bin; rampe_weg = Lade in Schritt 4 statt der OpenWrt-Datei die RAMpe hoch; Teil 2 entfällt dann.; sicherheit = quelle
 
 ### Familie `sophos-xg-awetool`
 
@@ -13204,7 +13204,7 @@ Ubiquiti UniFi AC Lite · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben
 - **Quelle (OpenWrt-Commit):** cad843e1f57790a08dd4804011b6cd3a4796786b (ohne Anleitung); 56fddc2577baf194d1e9a7b37d454d12ff9fb469 (Umbenennung) [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-ac-lite.md; https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790
-- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt; sicherheit = abgeleitet; sicherheit_hinweis = Den Ablauf haben wir vom UniFi Swiss Army Knife Ultra übernommen, der dieselbe Technik hat. Im Freifunk-Forum gibt es Erfolgsberichte für den AC Lite.
+- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt; sicherheit = abgeleitet
 
 #### ubiquiti-unifi-ac-lr
 
@@ -13247,7 +13247,7 @@ Ubiquiti UniFi AC LR · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben
 - **Quelle (OpenWrt-Commit):** 07c1ddf522dbe6085af664cf03a41f636a70b99c [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-ac-lr.md; https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790
-- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt; sicherheit = abgeleitet; sicherheit_hinweis = Für den UniFi AC Lite und den AC Pro gibt es Erfolgsberichte mit diesem Weg, für dieses Modell liegt uns noch keiner vor.
+- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt; sicherheit = abgeleitet
 
 #### ubiquiti-unifi-ac-mesh
 
@@ -13290,7 +13290,7 @@ Ubiquiti UniFi AC Mesh · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben
 - **Quelle (OpenWrt-Commit):** 4456dd4660b4fa4e9c04d73029c72bf7b0f2ba84 [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-ac-mesh.md; https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790
-- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt; sicherheit = abgeleitet; sicherheit_hinweis = Für den UniFi AC Lite und den AC Pro gibt es Erfolgsberichte mit diesem Weg, für dieses Modell liegt uns noch keiner vor.
+- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt; sicherheit = abgeleitet
 
 #### ubiquiti-unifi-ac-mesh-pro
 
@@ -13333,7 +13333,7 @@ Ubiquiti UniFi AC Mesh Pro · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben
 - **Quelle (OpenWrt-Commit):** e420b7b5c517d03e1282b5889065e22143f9c4ef [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-ac-mesh-pro.md; https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790
-- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt; sicherheit = abgeleitet; sicherheit_hinweis = Für den UniFi AC Lite und den AC Pro gibt es Erfolgsberichte mit diesem Weg, für dieses Modell liegt uns noch keiner vor.
+- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt; sicherheit = abgeleitet
 
 #### ubiquiti-unifi-ac-pro
 
@@ -13376,7 +13376,7 @@ Ubiquiti UniFi AC Pro · ath79-generic · K1d
 - **Gluon-RAMpe passt:** nein: per dd lässt sich das Gluon-sysupgrade direkt schreiben
 - **Quelle (OpenWrt-Commit):** 7dd3d7e1d3845160c2ef51e6148b452e666bd6f5 [abgeleitet]
 - **Detail-Anleitung:** anleitungen/de/ubiquiti-unifi-ac-pro.md; https://forum.darmstadt.freifunk.net/t/unifi-ap-erstinstallation/790
-- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt; sicherheit = abgeleitet; sicherheit_hinweis = Bei uns ist dieser Weg 2025 schon an einem UniFi AC Pro gelaufen, und im Freifunk-Forum gibt es einen weiteren Erfolgsbericht.
+- **Werte für die Anleitung:** geraet_ip = 192.168.1.20; rechner_ip = 192.168.1.2; datei_art = sysupgrade; ziel = /tmp/firmware.bin; befehle = ['cat /proc/mtd', '# Weiter nur, wenn in der Ausgabe kernel0 bei mtd2, kernel1 bei mtd3 und bs bei mtd4 steht.', 'echo "5edfacbf" > /proc/ubnthal/.uf', 'cat /sys/class/mtd/mtd2/flags', 'cat /sys/class/mtd/mtd3/flags', '# Weiter nur, wenn jetzt beide Male 0xc00 ausgegeben wird (vor dem Aufheben stand dort 0x800).', 'dd if=/tmp/firmware.bin of=/dev/mtdblock2', 'dd if=/tmp/firmware.bin of=/dev/mtdblock3', 'dd if=/dev/zero bs=1 count=1 of=/dev/mtd4', 'reboot']; dauer = etwa 2 Minuten; ssh_alt = False; rueckweg_taste = etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt; sicherheit = abgeleitet
 
 #### ubiquiti-unifi-ap
 

@@ -13,21 +13,17 @@
 <meta name="anleitung:level" content="L5">
 <meta name="anleitung:level_text" content="Besondere Programme">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="avm-eva, browser-not-found, feste-ip, router-antwortet-nicht">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="33a38da83">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>AVM FRITZ!Box 3370 Rev. 2, Hynix-NAND: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/avm-fritz-box-3370-rev-2-hynix-nand.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-aussieht als hier beschrieben.
-Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
-getestet (&quot;broken&quot;); nicht jede Community bietet sie an.</p>
+<p>Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+beschrieben.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -126,21 +122,6 @@ die Original-Firmware zurückspielt. Es liegt auf dem Download-Server von AVM
 im Ordner des Geräts unter &quot;recover&quot;. Geräte von Providern (zum Beispiel
 1&amp;1) verweigern das eventuell; dann vorher per FTP
 <code>quote UNSETENV provider</code> (<a href="grundlagen/avm-eva.html">Der Bootloader von AVM (EVA)</a>).</p>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet: OpenWrt-Wiki &quot;AVM recovery tool&quot; (Rückweg zur Herstellerfirmware)</li>
-<li>abgeleitet: Wiki 3370 (Schritte (Normalweg), Sichtbare Zeichen, Adressen, Programm, Typenschild/Verwechslung, Dauer, Fehlerbild)</li>
-<li>abgeleitet: Wiki 3370, mit 24.10.0 geprüft dort (Schritte (Normalweg), Programm)</li>
-<li>abgeleitet: dasselbe Wiki (Rückweg zur Herstellerfirmware)</li>
-<li>abgeleitet: fritz-tools-Doku, Gerät fehlt in der Liste (Programm)</li>
-<li>geprüft (Weg ab Werk, Schritte (Normalweg))</li>
-<li>geprüft: Commit (Typenschild/Verwechslung, Dauer)</li>
-<li>geprüft: Commit 0b62fe5e (Schritte (Normalweg), Typenschild/Verwechslung, Bedingung an die Herstellerfirmware)</li>
-<li>geprüft: Commit, Feld factory (Schritte (Normalweg), Datei)</li>
-<li>geprüft: Commits, fritz-tools/fritzflash.py (Schritte (Normalweg), Taste und Zeitpunkt)</li>
-<li>Geräteeintrag: 0b62fe5ed87ecac52301096b15abb69f96117c8c</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

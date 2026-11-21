@@ -12,13 +12,13 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2025.1 (26100702bro), vorher TOTOLINK-Firmware V9.1.0u.6118 über den Notfall-Modus
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TOTOLINK X5000R: Freifunk-Firmware installieren
 
-> **Am Gerät erprobt** am 16.10.2026 mit `Gluon 2025.1 (26100702bro), vorher TOTOLINK-Firmware V9.1.0u.6118 über den Notfall-Modus`.
+> Den Umweg über die ältere TOTOLINK-Firmware kennen wir nur aus Berichten im OpenWrt-Forum.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -145,16 +145,3 @@ auch wieder die Freifunk-Firmware.
 
 Über den Notfall-Modus (Umweg, Schritte 2 bis 7) nimmt der Router jede
 TOTOLINK-Firmware an, auch eine neuere.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: sysupgrade startet neu (Schritte (Normalweg))
-- abgeleitet: webui-upload (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Schritte (Normalweg), Datei)
-- geprüft: Commit 23be410 (Schritte (Normalweg), Programm)
-- geprüft: Test Neanderfunk 16.10.2026 (Sichtbare Zeichen, Typenschild/Verwechslung, Notweg)
-- geprüft: forum.openwrt.org t/113153 #1, #3 (2021-11-28); t/124500 #1, #3 (2022-04-05) (Bedingung an die Herstellerfirmware)
-- geprüft: geladen und gehasht 15.10.2026 (Bedingung an die Herstellerfirmware)
-- Geräteeintrag: 23be410b3d1267c752bf9f6e5c8f5a514dc562c4

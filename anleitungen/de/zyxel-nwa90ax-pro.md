@@ -10,15 +10,14 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Zyxel NWA90AX Pro: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -59,8 +58,7 @@ Werksreset innerhalb von etwa 30 Minuten wieder die Cloud-Einstellungen, und
 die Oberfläche verlangt das Nebula-Passwort ("This device is managed by
 Nebula"). Herauslösen lässt es sich, indem man es mit einem anderen
 Nebula-Konto übernimmt (force adopt, QR-Code in der Nebula-App) und dort
-wieder abmeldet. Das haben wir nicht selbst ausprobiert. In einem Forumsfall
-half stattdessen: Werksreset und sofort die Nebula-Erkennung mit dem
+wieder abmeldet. Oder: Werksreset und sofort die Nebula-Erkennung mit dem
 Zyxel-Werkzeug ZON abschalten.
 
 ## Schritte
@@ -118,16 +116,3 @@ Zyxel-Werkzeug ZON abschalten.
   ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
   Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- Forum-Zusammenfassung: community.zyxel.com/en/discussion/29636 (Bedingung an die Herstellerfirmware)
-- abgeleitet (Schritte (Normalweg))
-- abgeleitet: Rechner fest auf 192.168.1.10, wenn kein DHCP; die Quelle nennt nur das Gerät unter 192.168.1.2 (Adressen)
-- abgeleitet: adorfer, Hörensagen; Ablauf Unregister: mysupport.zyxel.com/hc/en-us/articles/360006459099, nicht gelesen (Bedingung an die Herstellerfirmware)
-- geprüft: Patch 0003 (Weg ab Werk, Schritte (Normalweg), Datei)
-- geprüft: Wiki toh:zyxel:nwa50ax_pro (Schritte (Normalweg), Programm)
-- geprüft: Wiki toh:zyxel:nwa50ax_pro; "Slot B" abgeleitet, Wiki nennt nur "Current Image num" 1 (Schritte (Normalweg), Bedingung an die Herstellerfirmware)
-- Geräteeintrag: OpenWrt e34e874a11f0506ff17365819bc101a455dc503e + 2cc8d3e382c0b8b919cef2e9f1cfec9ec7954150; gluon-patches-hardware 9263f242b86a943e62671ec445f08dd9eb2dfbd2 [Backport]

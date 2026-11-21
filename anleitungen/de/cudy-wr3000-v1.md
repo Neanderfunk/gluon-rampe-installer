@@ -12,14 +12,12 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.19
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 2f49bb085
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Cudy WR3000 v1: Freifunk-Firmware installieren
 
-> **Am Gerät erprobt** am 16.10.2026 mit `Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.19`.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -192,20 +190,3 @@ an einem WR3000 v1 funktioniert, allerdings an einem Gerät, auf dem vorher
 eine fremde Freifunk-Firmware lief, aufgespielt über eine Zwischenfirmware,
 die wir nicht kennen. Ob er auch nach der Zwischenfirmware von oben noch
 funktioniert, ist nicht geklärt.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Ordnername (Warnung)
-- abgeleitet: Router ist in beiden Firmwares DHCP-Server (Schritte (Normalweg), Anschluss, Adressen, Programm)
-- abgeleitet: so am WR3000H 16.10.2026; die Cudy-FAQ (schnelles/langsames Blinken) stimmte dort nicht (Rückweg zur Herstellerfirmware)
-- abgeleitet: sysupgrade schreibt den Flash (Schritte (Normalweg), Dauer)
-- geprüft: Commit-Texte (Gluon-RAMpe passt)
-- geprüft: Commit/Neanderfunk-Notiz (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Cudy-FAQ "OpenWrt Software Download" (Bedingung an die Herstellerfirmware)
-- geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Typenschild/Verwechslung, Dauer, Fehlerbild)
-- geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)
-- geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft (Datei)
-- geprüft: Test Neanderfunk 16.10.2026 (Warnung, Rückweg zur Herstellerfirmware, Gluon-RAMpe passt)
-- Geräteeintrag: OpenWrt c9cb6411c1a70516d5922e88c45b338de041baba

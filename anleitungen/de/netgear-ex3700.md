@@ -10,15 +10,12 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, nmrpflash, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 15ae34432
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # NETGEAR EX3700/EX3800: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -135,14 +132,3 @@ Wenn nmrpflash Fehler meldet:
   probieren.
 - **"Timeout while waiting for ACK(0)/OACK."** Meist die Firewall am Rechner.
 - Weitere Meldungen erklärt [nmrpflash benutzen](grundlagen/nmrpflash.md).
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- geprüft (Weg ab Werk, Datei)
-- geprüft: Commit 0cbd2c7 (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: Commit de33a4c (Datei, Notweg)
-- geprüft: mt7620.mk 'EX3700/EX3800' (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: nmrpflash-README (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Anschluss, Adressen, Programm, Dauer)
-- Geräteeintrag: de33a4cef0411f13df397ada2dc3634c5748a457

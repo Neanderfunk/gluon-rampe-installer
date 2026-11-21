@@ -10,15 +10,12 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 9560ae8ed
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # GL.iNet GL-MT1300 (Beryl): Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -81,13 +78,3 @@ Du brauchst nur einen Browser und eine feste Adresse am Rechner.
   kurz ab ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md))
   und versuch Schritt 4 noch einmal, diesmal genau auf die LEDs achtend. Kommt "Not Found" oder "PAGE NOT
   FOUND", siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- geprüft (Weg ab Werk)
-- geprüft: Commit (Dauer)
-- geprüft: Commit d89a7f0 (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Adressen, Datei)
-- geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026) (Schritte (Normalweg), Taste und Zeitpunkt, Anschluss, Adressen, Programm, Dauer)
-- Geräteeintrag: d89a7f0120db42d4fae1656e1860ef49523acabb

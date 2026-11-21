@@ -11,15 +11,14 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-aruba-ap-303h-initramfs-uImage.itb
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 84f780274
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Aruba Instant On AP11D: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -277,15 +276,3 @@ starten, halt den Bootloader an (Schritt 5) und gib ein:
 setenv bootcmd "boot"
 saveenv
 ```
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Weg ab Werk, Schritte (Normalweg), Gehäuse öffnen, Typenschild/Verwechslung)
-- abgeleitet: Wiki toh/aruba/ap-303h 'same platform' (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang, Datei)
-- abgeleitet: Wiki-Bootlog AP11, Neanderfunk-Notiz (Schritte (Normalweg), Bedingung an die Herstellerfirmware)
-- abgeleitet: gleiche Plattform (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Gluon-Alias, Wiki toh:aruba:ap-303h (Typenschild/Verwechslung)
-- geprüft: HPE AP11D Installation Guide, Abb. 2/3 und Abschnitt Ethernet Ports, https://arubanetworking.hpe.com/techdocs/hardware/instantonaps/ap11d/Aruba_AP11D_Installation_Guide_EN.pdf (Anschluss)
-- Geräteeintrag: OpenWrt c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0

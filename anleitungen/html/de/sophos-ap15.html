@@ -13,22 +13,17 @@
 <meta name="anleitung:level" content="L7">
 <meta name="anleitung:level_text" content="Gehäuse öffnen">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:rampe_image" content="gluon-rampe-20261115-sophos-ap15-initramfs-kernel.bin">
 <meta name="anleitung:grundlagen" content="browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="9a02820db">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Sophos AP15: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/sophos-ap15.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-Hersteller für dieses Gerät beschreiben.
-Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
-getestet (&quot;broken&quot;); nicht jede Community bietet sie an.
-Laut OpenWrt an zwei Geräten ausprobiert.</p>
+<p>Laut OpenWrt an zwei Geräten ausprobiert.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -191,18 +186,6 @@ ssh root@192.168.1.1 &quot;sysupgrade -n /tmp/gluon.bin&quot;
 </code></pre>
 <p>Ein Passwort gibt es nicht. Nach dem zweiten Befehl bricht die Verbindung
 ab, das ist harmlos.</p>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet: Netz 192.168.1.0/24 (Schritte (Normalweg))</li>
-<li>geprüft (Weg ab Werk, Schritte (Normalweg), Anschluss, Quelle (OpenWrt-Commit))</li>
-<li>geprüft: Commit (Schritte (Normalweg), Adressen, Programm, Datei, Typenschild/Verwechslung)</li>
-<li>geprüft: Commit 0dc5821 (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Zugang)</li>
-<li>geprüft: Commit; Wiki-Zusammenfassung: Pegel laut ToH (Schritte (Normalweg), Anschluss, Zugang)</li>
-<li>geprüft: Gluon-Target ath79-generic (Typenschild/Verwechslung)</li>
-<li>ungeprüft im Commit (Weg ab Werk, Notweg)</li>
-<li>Geräteeintrag: 0dc58214896aacf67a3759495d70e2b4e9c160d8 (Einführung, Anleitung); fc31261c3307458e38c9a676211a25c99c044ece (DTS-Umbenennung) [geprüft]</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

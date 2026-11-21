@@ -10,15 +10,12 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # NETGEAR WNR2200 8M: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -112,15 +109,3 @@ womöglich nicht an; dafür gäbe es ein eigenes Image, das Gluon nicht baut.
   ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
   Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- abgeleitet: Commit nennt kein Merkmal (Typenschild/Verwechslung)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Datei, Notweg, Quelle (OpenWrt-Commit))
-- geprüft: Commit f85d56bb (Typenschild/Verwechslung)
-- geprüft: OpenWrt generic.mk IMAGE/factory-NA.img, Gluon targets/ath79-generic; Folge abgeleitet (Typenschild/Verwechslung)
-- geprüft: Wiki toh:netgear:wnr2200 (Schritte (Normalweg), Warnung, Programm, Typenschild/Verwechslung)
-- Geräteeintrag: f85d56bb034d8017bdb6b4bb493eb076a21d11b3 [geprüft]

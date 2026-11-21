@@ -10,15 +10,13 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 3dc0d6c03
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # D-Link DIR-882 A1: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
-> Eine Notiz von uns nennt für die DIR-Reihe statt der Recovery-Seite einen Weg per TFTP; was davon für dieses Gerät stimmt, ist noch nicht geklärt.
+> Klappt die Recovery-Seite nicht, melde dich bei uns.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -155,12 +153,3 @@ Windows 10 und 11 heißt es `curl.exe` und ist eingebaut
    out". Das ist in Ordnung.
 
 Danach weiter mit Schritt 8 ("Fertig") oben.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- geprüft (Weg ab Werk, Schritte (Normalweg), Datei)
-- geprüft: Commit (Programm, Datei)
-- geprüft: Commit 73e8f23 (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Adressen, Typenschild/Verwechslung)
-- Geräteeintrag: 73e8f23579bcb87764dae9ed0aefe28be3183d3e

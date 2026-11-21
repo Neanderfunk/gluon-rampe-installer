@@ -13,19 +13,17 @@
 <meta name="anleitung:level" content="L4">
 <meta name="anleitung:level_text" content="Network-Tools">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, router-antwortet-nicht, schreibschutz, ssh-scp, tftp-client">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="33a38da83">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Ubiquiti UniFi 6 LR v1: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/ubiquiti-unifi-6-lr-v1.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-aussieht als hier beschrieben.</p>
+<p>Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+beschrieben.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -161,23 +159,6 @@ und halten, Strom ein. Halte sie gedrückt:
 bis die LED weiß, blau und aus wechselt. Dann schickst du die Original-Firmware von Ubiquiti per
 TFTP an <code>192.168.1.20</code>, wie unter
 <a href="grundlagen/tftp-client.html">TFTP-Client benutzen</a> beschrieben.</p>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet: Commit a0f4ead (Warnung)</li>
-<li>abgeleitet: Commits nennen 'factory defaults' (Schritte (Normalweg), Bedingung an die Herstellerfirmware)</li>
-<li>abgeleitet: Wiki (Typenschild/Verwechslung, Dauer)</li>
-<li>abgeleitet: Wiki toh/ubiquiti/unifi_6_lr (Schritte (Normalweg), Sichtbare Zeichen, Adressen, Programm, Bedingung an die Herstellerfirmware, Rückweg zur Herstellerfirmware)</li>
-<li>geprüft: 634c13c1 (Weg ab Werk, Schritte (Normalweg))</li>
-<li>geprüft: Commit bf94e0a (Schritte (Normalweg), Programm)</li>
-<li>geprüft: Commit fb4d7a9 (Typenschild/Verwechslung)</li>
-<li>geprüft: Commits (Datei)</li>
-<li>geprüft: Commits 15a0247, 31d86a1, a0f4ead (Schritte (Normalweg), Typenschild/Verwechslung)</li>
-<li>geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24' (Schritte (Normalweg), Taste und Zeitpunkt)</li>
-<li>geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang)</li>
-<li>geprüft: Wiki toh:ubiquiti:unifi_6_lr, Rohtext 15.10.2026 (Typenschild/Verwechslung)</li>
-<li>Geräteeintrag: OpenWrt 634c13c186646aff2badb51a43b248825d0fe5a0 (v1-Profil: 15a02471bb854245f8f94398c1e1d9ce29c2c341)</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

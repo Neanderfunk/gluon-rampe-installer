@@ -10,15 +10,12 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link TL-MR6400 v5: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -94,21 +91,3 @@ mit einer halben Stunde.
 Über denselben Notfall-Modus nimmt der Router auch eine TP-Link-Firmware an.
 Je nach Modell muss die Datei dafür vorher angepasst werden; das steht im
 OpenWrt-Wiki zu deinem Gerät.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg), Anschluss, Programm)
-- abgeleitet: Commit nennt v5.0 EU (Typenschild/Verwechslung)
-- abgeleitet: Regel strengster Name (Datei)
-- abgeleitet: Wiki (Programm)
-- abgeleitet: Wiki MR6400 v5 (Schritte (Normalweg), Sichtbare Zeichen, Adressen, Dauer, Rückweg zur Herstellerfirmware)
-- abgeleitet: Wiki; abgeleitet (Schritte (Normalweg))
-- geprüft (Weg ab Werk)
-- geprüft: Commit (Schritte (Normalweg), Taste und Zeitpunkt, Adressen, Datei, Typenschild/Verwechslung)
-- geprüft: Commit "write it to flash and reboot" (Schritte (Normalweg))
-- geprüft: Gluon targets/ramips-mt76x8 extra_images (Datei)
-- geprüft: Gluon targets/ramips-mt76x8 extra_images; geprüft: Commit (Schritte (Normalweg))
-- geprüft: Gluon targets/ramips-mt76x8 v2025.1.3 (Datei)
-- Geräteeintrag: b641eb6ecfbfc2c6a488483332d4b5a6ee4c736c

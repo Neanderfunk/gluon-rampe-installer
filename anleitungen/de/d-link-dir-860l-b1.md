@@ -10,15 +10,14 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # D-Link DIR-860L B1: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -109,12 +108,3 @@ Reset-Taste gedrückt halten und Strom einstecken, halten, bis die Power-LED
 blinkt (etwa 10 Sekunden). Rechner fest auf `192.168.0.2`, Netzmaske
 `255.255.255.0`, dann `http://192.168.0.1` öffnen und das factory-Image
 hochladen.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- abgeleitet: ToH "D-Link Recovery GUI"; Commit ohne Text (Weg ab Werk, Schritte (Normalweg), Programm, Datei, Notweg)
-- geprüft: Wiki toh:d-link:dir-860l_b1 (Schritte (Normalweg), Typenschild/Verwechslung, Notweg)
-- Geräteeintrag: 40b740b23234574115225bf8bde7bc679f8034e1 (ohne Installationstext)

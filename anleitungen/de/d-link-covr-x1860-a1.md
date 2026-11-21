@@ -10,15 +10,12 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # D-Link COVR-X1860 A1: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -113,13 +110,3 @@ Gluon-**recovery**-Image (nicht das factory) hochladen. Im Firmware-Selector
 findest du es unter "Wähle Deine Installationsart" beim Knopf
 **Recovery-Image**, die Datei endet auf `-recovery.bin`. Die Notfall-Seite
 antwortet nicht auf `ping`.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- geprüft: Commit 0a18259e (Schritte (Normalweg), Adressen, Programm, Typenschild/Verwechslung, Notweg, Rückweg zur Herstellerfirmware)
-- geprüft: Neanderfunk-Notiz dlink-recovery (Notweg)
-- geprüft; Neanderfunk-Notiz (Weg ab Werk, Schritte (Normalweg), Datei, Notweg)
-- Geräteeintrag: 0a18259e4aa361cd9e5848c038be4b9f4e3bfcc6

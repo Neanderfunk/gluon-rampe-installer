@@ -10,15 +10,12 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [avm-eva, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # AVM FRITZ!WLAN Repeater 450E: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -92,24 +89,3 @@ die Original-Firmware zurückspielt. Es liegt auf dem Download-Server von AVM
 im Ordner des Geräts unter "recover". Geräte von Providern (zum Beispiel
 1&1) verweigern das eventuell; dann vorher per FTP
 `quote UNSETENV provider` ([Der Bootloader von AVM (EVA)](grundlagen/avm-eva.md)).
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Dauer)
-- abgeleitet: Commit 7360 v2, Wiki 4020/7360 (Sichtbare Zeichen)
-- abgeleitet: OpenWrt-Wiki "AVM recovery tool" (Rückweg zur Herstellerfirmware)
-- abgeleitet: Wiki 4020/3370 (Programm)
-- abgeleitet: Wiki 4040 (Sichtbare Zeichen)
-- abgeleitet: dasselbe Wiki (Rückweg zur Herstellerfirmware)
-- abgeleitet: fritzflash.py-Quelltext (Typenschild/Verwechslung)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Quelle (OpenWrt-Commit))
-- geprüft: Commit (Schritte (Normalweg), Dauer)
-- geprüft: Commits, fritz-tools/fritzflash.py (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: fritz-tools-Doku (Schritte (Normalweg), Anschluss, Programm)
-- geprüft: fritz-tools/fritzflash.py (Sichtbare Zeichen, Adressen)
-- geprüft: fritz-tools/fritzflash.py, Wiki toh:avm:avm_fritz_wlan_repeater_1750e (Anschluss)
-- geprüft: fritz-tools/fritzflash.py; abgeleitet: Commit 7360 v2, Wiki 4020/7360 (Schritte (Normalweg))
-- geprüft: fritz-tools/fritzflash.py; geprüft: fritz-tools-Doku (Schritte (Normalweg))
-- Geräteeintrag: 8d9c1087e4d07d625a9fef61d5dce71d850732ae [geprüft]

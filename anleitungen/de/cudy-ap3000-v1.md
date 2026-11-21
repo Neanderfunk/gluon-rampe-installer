@@ -12,14 +12,12 @@ status: erprobt
 erprobt_am: 2026-10-17
 erprobt_mit: Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.4
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 2f49bb085
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Cudy AP3000 v1: Freifunk-Firmware installieren
 
-> **Am Gerät erprobt** am 17.10.2026 mit `Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.4`.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -200,23 +198,3 @@ zurück.
    `192.168.10.100` stellen wie in Schritt 2; die Cudy-Oberfläche ist
    unter `http://192.168.10.254` erreichbar, nach dem Neustart braucht er dafür wieder
    etwa eine Minute.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Gluon-Setup-Mode, wie Gluon 2025.1 die einzige Buchse im Setup-Mode belegt, ist am Gerät nicht gemessen (Warnung)
-- abgeleitet: Router ist in beiden Firmwares DHCP-Server (Schritte (Normalweg), Programm)
-- abgeleitet: ob die Zwischenfirmware DHCP vergibt, offen; am Testplatz war 192.168.1.88 fest eingestellt (Adressen)
-- abgeleitet: sysupgrade schreibt den Flash (Schritte (Normalweg), Dauer)
-- geprüft: Commit-Texte (Gluon-RAMpe passt)
-- geprüft: Commit/Neanderfunk-Notiz (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Cudy-FAQ "OpenWrt Software Download" (Bedingung an die Herstellerfirmware)
-- geprüft: Mitschnitt Test Neanderfunk 17.10.2026 (Adressen, Fehlerbild)
-- geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Datei, Dauer)
-- geprüft: Neanderfunk-Notiz, Commit WR3000E/M3000 v2 (Schritte (Normalweg), Sichtbare Zeichen, Zugang)
-- geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261022, geholt 22.10.2026, MD5 geprüft (Datei)
-- geprüft: Spiegel-Ordner (Typenschild/Verwechslung)
-- geprüft: Test Neanderfunk 17.10.2026 (Sichtbare Zeichen, Anschluss, Rückweg zur Herstellerfirmware)
-- geprüft: Wiki toh:cudy:ap3000_v1 (Rückweg zur Herstellerfirmware)
-- Geräteeintrag: OpenWrt 6dacba30a75b0ac8a65115f78808a97abbb34939

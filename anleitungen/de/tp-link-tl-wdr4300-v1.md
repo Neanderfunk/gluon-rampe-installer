@@ -10,15 +10,14 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link TL-WDR4300 v1: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -112,18 +111,3 @@ Aufkleber genau mit "TP-Link TL-WDR4300 v1", bevor du anfängst.
   ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
   Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Quelle (OpenWrt-Commit))
-- abgeleitet: Commit ohne Anleitung (Weg ab Werk)
-- abgeleitet: Wiki-Zusammenfassung, im Rohtext toh:tp-link:tl-wdr4300_v1 nur für TFTP-Recovery gefunden (Schritte (Normalweg), Dauer)
-- abgeleitet: offen (Datei)
-- geprüft: OpenWrt generic-tp-link.mk (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: OpenWrt generic-tp-link.mk; Gluon targets/ath79-generic (Typenschild/Verwechslung)
-- geprüft: WDR3600-Seite verweist darauf, Wiki toh:tp-link:tl-wdr4300_v1 (Schritte (Normalweg), Adressen, Programm, Zugang)
-- geprüft: Wiki toh:tp-link:tl-wdr4300_v1 (Typenschild/Verwechslung)
-- geprüft: tl-wdr3600_v1, Wiki toh:tp-link:tl-wdr4300_v1 (Schritte (Normalweg), Datei, Bedingung an die Herstellerfirmware, Fehlerbild)
-- Geräteeintrag: a7e1e919afa9659f66dada5e69d1b162f447ced7 (ohne Anleitung) [abgeleitet]

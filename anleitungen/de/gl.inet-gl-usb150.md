@@ -10,15 +10,14 @@ level_text: Einfach hochladen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 9560ae8ed
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # GL.iNET GL-USB150: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -73,13 +72,3 @@ GL.iNet hoch, wie ein normales Update. Du brauchst nur einen Browser.
 
 - **Die Oberfläche lehnt die Datei ab.** Prüf, ob es das sysupgrade-Image für
   genau dieses Modell ist. Sonst hilft der Notfall-Modus (unten).
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: GL-Doku 'GL-USB150 (Microuter): The LED flashes 5 times', Handhabung beim USB-Stick abgeleitet (Notweg)
-- abgeleitet: Wiki toh/gl.inet/gl-usb150 (Schritte (Normalweg), Anschluss)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Quelle (OpenWrt-Commit))
-- geprüft: Commit a1b5a43 (Schritte (Normalweg), Taste und Zeitpunkt, Programm, Datei)
-- Geräteeintrag: a1b5a43fc4b0edda5bbbb4eb0130ba9160dc515b [geprüft]

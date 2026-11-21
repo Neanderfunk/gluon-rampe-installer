@@ -10,15 +10,12 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # D-Link DAP-2695 A1: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -110,13 +107,3 @@ Sekunden nach dem Einschalten `q` drücken. Rechner fest auf `192.168.0.90` an
 LAN1, dann `http://192.168.0.50`. Die Konsole meldet am Ende
 `write image into flash...OK`; danach Strom aus und wieder an. Meldungen
 "checksum bad" laut OpenWrt ignorieren.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- abgeleitet: webui-upload (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Schritte (Normalweg), Datei, Notweg, Quelle (OpenWrt-Commit))
-- geprüft: Commit cd09f266 (Schritte (Normalweg), Adressen, Programm, Notweg)
-- Geräteeintrag: cd09f26660b684db541a0f49fc23988df142892c [geprüft]

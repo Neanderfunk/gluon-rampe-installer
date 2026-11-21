@@ -13,21 +13,16 @@
 <meta name="anleitung:level" content="L6">
 <meta name="anleitung:level_text" content="Serielles Kabel">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:rampe_image" content="gluon-rampe-20261115-extreme-networks-ws-ap3825i-initramfs-kernel.bin">
 <meta name="anleitung:grundlagen" content="browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="9a02820db">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Extreme Networks WS-AP3825i: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/extreme-networks-ws-ap3825i.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p><strong>Bei uns in der Praxis erprobt.</strong> Wir haben Geräte dieses Typs schon so
-umgestellt, nur noch nicht mit der aktuellen Version der
-Freifunk-Firmware.
-Wir haben rund ein Dutzend dieser Geräte auf diesem Weg umgestellt.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -217,29 +212,6 @@ ssh root@192.168.1.1 &quot;sysupgrade -n /tmp/gluon.bin&quot;
 ab, das ist harmlos.</p>
 <h2>Zurück zur Herstellerfirmware</h2>
 <p>Zurück zur Herstellerfirmware geht nur mit einer Sicherung der Partition &quot;firmware&quot;, die du vor Schritt 7 aus OpenWrt heraus gemacht hast. Das beschreiben wir hier nicht.</p>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>geprüft (Weg ab Werk, Schritte (Normalweg), Programm, Datei, Dauer)</li>
-<li>geprüft, Wiki toh:extreme_networks:ws-ap3825i (Schritte (Normalweg))</li>
-<li>geprüft: Code Gluon v2025.1.3 320-setup-ifname/020-interfaces, OpenWrt 5204715d 02_network (Gluon-RAMpe passt)</li>
-<li>geprüft: Commit (Schritte (Normalweg), Anschluss, Zugang, Typenschild/Verwechslung, Rückweg zur Herstellerfirmware)</li>
-<li>geprüft: Commit 7e61482 (Schritte (Normalweg), Taste und Zeitpunkt, Zugang)</li>
-<li>geprüft: Commit, Wiki toh:extreme_networks:ws-ap3825i (Schritte (Normalweg), Adressen, Programm)</li>
-<li>geprüft: GitHub (Gluon-RAMpe passt)</li>
-<li>geprüft: Neanderfunk-Notiz (Dauer)</li>
-<li>geprüft: OpenWrt-Issue 17152 (Gluon-RAMpe passt)</li>
-<li>geprüft: OpenWrt-Issue 17152 (offen): adorfer 29.03.2025 &quot;broken in 24.x and 23, tested with 4 devices … 22.03.0 works&quot;, jensgraef 15.05.2025 &quot;sysupgrade of openwrt-24.10 without any problems&quot;, jbusuttil 03.09.2026 22.03.0, dann sysupgrade; Datei archive.openwrt.org 22.03.0, SHA256 fc9a27d9… laut sha256sums, 6.879.964 Byte (Bedingung an die Herstellerfirmware)</li>
-<li>geprüft: OpenWrt-Issue 25302, Tabelle: WS-AP3825i-initramfs 24.10.8 ❌ (Gluon-RAMpe passt)</li>
-<li>geprüft: Wiki toh:extreme_networks:ws-ap3825i (Schritte (Normalweg), Anschluss, Datei, Dauer, Fehlerbild)</li>
-<li>geprüft: Wiki toh:extreme_networks:ws-ap3825i, Titel (Typenschild/Verwechslung)</li>
-<li>geprüft: forum.darmstadt.freifunk.net t/923 #1 (TomH, 30.04.2022), am 15.10.2026 gelesen: 192.168.1.66/.22, ws-ap3825i-initramfs.bin, Prompt 'Boot (PRI)-&gt;', Anhalten bei 'Scanning JFFS2 FS:' (Weg ab Werk)</li>
-<li>geprüft: forum.darmstadt.freifunk.net t/923 #4, #7 (Notweg)</li>
-<li>geprüft: forum.darmstadt.freifunk.net t/923 #8 (Notweg)</li>
-<li>geprüft: laut Commit sind die LEDs unter OpenWrt sonst ohne Funktion, Wiki toh:extreme_networks:ws-ap3825i (Sichtbare Zeichen)</li>
-<li>geprüft: scripts/mpc85xx-ladeadresse.py am Image 20261115 (Gluon-RAMpe passt)</li>
-<li>Geräteeintrag: 7e614820a89208c4e91a3a5f9de07a5402accdaa</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

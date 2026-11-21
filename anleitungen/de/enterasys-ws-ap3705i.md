@@ -11,15 +11,12 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-enterasys-ws-ap3705i-initramfs-kernel.bin
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 9a02820db
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Enterasys WS-AP3705i: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -185,14 +182,3 @@ ssh root@192.168.1.1 "sysupgrade -n /tmp/gluon.bin"
 
 Ein Passwort gibt es nicht. Nach dem zweiten Befehl bricht die Verbindung
 ab, das ist harmlos.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- geprüft (Weg ab Werk, Schritte (Normalweg), Anschluss, Datei, Quelle (OpenWrt-Commit))
-- geprüft: Commit (Schritte (Normalweg), Anschluss, Programm, Zugang)
-- geprüft: Commit ebddc5f (Schritte (Normalweg), Taste und Zeitpunkt, Zugang)
-- geprüft: Commit; Hex-Deutung abgeleitet (Schritte (Normalweg), Adressen, Datei)
-- geprüft: OpenWrt-Commit ebddc5f, am 15.10.2026 nachgelesen (Programm)
-- Geräteeintrag: ebddc5f984a240980303aed68524eb615484eef8 [geprüft]

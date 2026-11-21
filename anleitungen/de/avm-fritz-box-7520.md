@@ -11,16 +11,14 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-avm-fritz-box-7530-initramfs-uImage.itb
 grundlagen: [avm-eva, browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: e85eac1dd
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # AVM FRITZ!Box 7520: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
-> Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -149,25 +147,3 @@ Der Bootloader von AVM selbst bleibt unberührt. Mit dem
 Wiederherstellungs-Programm von AVM (für Windows; auf dem Download-Server von
 AVM im Ordner des Geräts unter "recover") lässt sich FRITZ!OS zurückspielen.
 Laut OpenWrt hilft im Notfall die Version FRITZ!OS 7.21.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Weg ab Werk, Dauer)
-- abgeleitet: OpenWrt-Wiki "AVM recovery tool" (Rückweg zur Herstellerfirmware)
-- abgeleitet: Wiki (Typenschild/Verwechslung)
-- abgeleitet: Wiki 7520/7530 (Schritte (Normalweg), Sichtbare Zeichen, Typenschild/Verwechslung)
-- abgeleitet: Wiki 7520/7530, nur als Ausweg (Fehlerbild)
-- abgeleitet: Wiki 7530 (Adressen)
-- abgeleitet: dasselbe Wiki (Rückweg zur Herstellerfirmware)
-- geprüft (Schritte (Normalweg))
-- geprüft: Commit (Schritte (Normalweg), Sichtbare Zeichen, Anschluss, Adressen, Programm, Datei, Dauer)
-- geprüft: Commit 95b0c07a (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Commit, U-Boot-Quelltext: serverip 192.168.1.70, bootfile FRITZ7520.bin (Schritte (Normalweg), Adressen, Programm, Datei)
-- geprüft: Download-Liste 24.10.8 (Weg ab Werk)
-- geprüft: U-Boot-Quelle chunkeey/FritzBox-4040-UBOOT, include/configs/fritz7520.h (Gluon-RAMpe-Rezept)
-- geprüft: U-Boot-Quelltext chunkeey FritzBox-4040-UBOOT (Sichtbare Zeichen)
-- geprüft: uboot-fritz4040/Makefile am Pin, U-Boot-Quelltext (Typenschild/Verwechslung)
-- geprüft; abgeleitet (Schritte (Normalweg))
-- Geräteeintrag: OpenWrt 95b0c07a618fe5fd93a26931152ced483bba143b

@@ -11,15 +11,12 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-enterasys-ws-ap3710i-initramfs-kernel.bin
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 9a02820db
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Enterasys WS-AP3710i: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -188,16 +185,3 @@ ab, das ist harmlos.
 ## Zurück zur Herstellerfirmware
 
 Zurück zur Herstellerfirmware geht nur mit einer Sicherung der Partition "firmware", die du vor Schritt 7 aus OpenWrt heraus gemacht hast; der alte Startbefehl steht im Bootloader in der Variable boot_flash. Das beschreiben wir hier nicht.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: TFTP-Weg (Anschluss)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Datei)
-- geprüft: Commit (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang, Datei, Rückweg zur Herstellerfirmware)
-- geprüft: Commit 16b01fb (Schritte (Normalweg), Taste und Zeitpunkt, Zugang)
-- geprüft: OpenWrt-Commit 16b01fb, am 15.10.2026 nachgelesen (Programm)
-- geprüft: Wiki toh:enterasys:ws-ap3710i (Fehlerbild)
-- geprüft: github grische/extremeflash, Wiki toh:enterasys:ws-ap3710i (Notweg)
-- Geräteeintrag: 16b01fb1b9c99513c318109bef96a1a3545c57a0

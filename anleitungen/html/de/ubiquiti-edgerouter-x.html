@@ -13,19 +13,17 @@
 <meta name="anleitung:level" content="L4">
 <meta name="anleitung:level_text" content="Network-Tools">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-not-found, feste-ip, router-antwortet-nicht, ssh-scp">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="33a38da83">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Ubiquiti EdgeRouter X: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/ubiquiti-edgerouter-x.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-aussieht als hier beschrieben.</p>
+<p>Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+beschrieben.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -219,21 +217,6 @@ Notfall-Modus über die Reset-Taste, sonst nur die serielle Konsole
 <h2>Zurück zur Ubiquiti-Firmware</h2>
 <p>Ubiquiti beschreibt, wie EdgeOS wieder aufgespielt wird:
 <a href="https://help.ui.com/hc/en-us/articles/360019289113">https://help.ui.com/hc/en-us/articles/360019289113</a>.</p>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>Wiki-Rohtext: toh:ubiquiti:edgerouter_x_er-x_ka, 15.10.2026 (Weg ab Werk)</li>
-<li>abgeleitet (Gluon-RAMpe passt)</li>
-<li>abgeleitet: Wiki (Schritte (Normalweg), Anschluss, Adressen, Zugang, Bedingung an die Herstellerfirmware, Rückweg zur Herstellerfirmware)</li>
-<li>abgeleitet: Wiki toh/ubiquiti/edgerouter_x_er-x_ka (Schritte (Normalweg), Taste und Zeitpunkt, Anschluss, Adressen, Programm, Zugang)</li>
-<li>abgeleitet: Wiki; vgl. Bestand werkzeug (Schritte (Normalweg), Programm, Datei)</li>
-<li>geprüft: Commit 9715beb (Schritte (Normalweg), Typenschild/Verwechslung)</li>
-<li>geprüft: Commit, mk, Wiki toh:ubiquiti:edgerouter_x_er-x_ka (Weg ab Werk, Schritte (Normalweg), Datei, Notweg)</li>
-<li>geprüft: OpenWrt 24.10.8 sha256sums für das sysupgrade, am 15.10.2026 abgeglichen (Weg ab Werk)</li>
-<li>geprüft: darkxst/erx-migration README und ubnt_erx_migrate.sh, Commit d29f71a: eine vorher abgelegte /tmp/sysupgrade.img überspringt den Download, Board edgerouter-x oder -x-sfp erlaubt (Weg ab Werk)</li>
-<li>geprüft: stman OpenWrt-22.03-initramfs-factory.tar, Commit de2ade9, SHA256 gegen sha256sums (Weg ab Werk)</li>
-<li>Geräteeintrag: 4e31b2e8697c21f9bd6493bb3d78a4a41c6a9a52</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

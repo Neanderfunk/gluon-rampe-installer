@@ -10,15 +10,14 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 9560ae8ed
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # GL.iNet GL-AR300M16: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -94,16 +93,3 @@ heraus per SSH mit `sysupgrade --force`.
   kurz ab ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md))
   und versuch Schritt 4 noch einmal, diesmal genau auf die LEDs achtend. Kommt "Not Found" oder "PAGE NOT
   FOUND", siehe [Der Browser zeigt "Not Found"](grundlagen/browser-not-found.md).
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Übertragung)
-- abgeleitet: GL-Doku AR300M (Sichtbare Zeichen)
-- abgeleitet: GL-Doku-Eintrag 'GL-AR300M (Shadow)' (Schritte (Normalweg), Taste und Zeitpunkt)
-- abgeleitet: Wiki toh/gl.inet/gl-ar300m (Bedingung an die Herstellerfirmware)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Datei, Quelle (OpenWrt-Commit))
-- geprüft: Commit b591cab (Schritte (Normalweg), Typenschild/Verwechslung, Notweg)
-- geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026) (Schritte (Normalweg), Taste und Zeitpunkt, Anschluss, Adressen, Programm, Dauer)
-- Geräteeintrag: b591cabd3989b44cfaf15248af9e55a0300a9c0a [geprüft]

@@ -10,15 +10,12 @@ level_text: Gehäuse öffnen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Sophos AP15C: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -158,23 +155,3 @@ Entwickler von OpenWrt:
    ```
 
    Danach startet der Access Point mit der Freifunk-Firmware neu.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- Forum-Zusammenfassung: Sophos-Community-Blog "EOL Extension: AP Series", nur über Websuche gelesen (Bedingung an die Herstellerfirmware)
-- Forum-Zusammenfassung: avanet.com End-of-Sale-Artikel (Bedingung an die Herstellerfirmware)
-- Wiki-Zusammenfassung: ToH-Datensatz (Anschluss)
-- abgeleitet (Anschluss, Adressen, Bedingung an die Herstellerfirmware, Dauer, Notweg)
-- abgeleitet: Partitionstabelle im DTS am Pin, Flash ab 0x9f000000 (Warnung)
-- abgeleitet: Sophos-EOL-Angaben, siehe stock_bedingung (Fehlerbild)
-- abgeleitet: better safe than sorry (Notweg)
-- geprüft (Weg ab Werk, Quelle (OpenWrt-Commit))
-- geprüft: Commit 2d465fb (Schritte (Normalweg), Warnung, Taste und Zeitpunkt, Sichtbare Zeichen, Anschluss, Adressen, Programm, Zugang, Datei, Bedingung an die Herstellerfirmware, Dauer, Notweg)
-- geprüft: Commit 2d465fb, Image-Rezepte am Pin (Typenschild/Verwechslung)
-- geprüft: Commit 2d465fb; U-Boot offen (Notweg)
-- geprüft: DTS-Aliase am Pin, qca9557_sophos_ap15c.dts (Sichtbare Zeichen)
-- geprüft: Image-Rezept am Pin, Inventar (Datei)
-- geprüft: OpenWrt-Commit 2d465fbf57, Cherry-Pick von a7abc7ec (Programm)
-- Geräteeintrag: 2d465fbf570e1f3286210305a26580cd417fec7c [geprüft]

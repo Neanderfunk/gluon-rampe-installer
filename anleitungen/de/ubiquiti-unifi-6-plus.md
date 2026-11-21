@@ -10,15 +10,12 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, schreibschutz, ssh-scp, tftp-client]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Ubiquiti UniFi 6+ (U6+): Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -154,15 +151,3 @@ bis die LED ihr Muster
 wechselt. Dann schickst du die Original-Firmware von Ubiquiti per
 TFTP an `192.168.1.20`, wie unter
 [TFTP-Client benutzen](grundlagen/tftp-client.md) beschrieben.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Commits nennen 'factory defaults' (Schritte (Normalweg), Bedingung an die Herstellerfirmware)
-- abgeleitet: Wiki toh/ubiquiti/unifi_6_plus (Bedingung an die Herstellerfirmware, Rückweg zur Herstellerfirmware)
-- geprüft (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Commit (Schritte (Normalweg), Datei)
-- geprüft: Commit 75ee554 (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang)
-- geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24' (Taste und Zeitpunkt)
-- Geräteeintrag: OpenWrt 75ee5546e9b7cfa5bbfd6f844ab8c5fffd5bb594

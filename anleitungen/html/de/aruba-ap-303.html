@@ -13,19 +13,16 @@
 <meta name="anleitung:level" content="L6">
 <meta name="anleitung:level_text" content="Serielles Kabel">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:rampe_image" content="gluon-rampe-20261115-aruba-ap-303-initramfs-uImage.itb">
 <meta name="anleitung:grundlagen" content="browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="84f780274">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Aruba AP-303: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/aruba-ap-303.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-Hersteller für dieses Gerät beschreiben.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -277,23 +274,6 @@ starten, halt den Bootloader an (Schritt 5) und gib ein:</p>
 <pre><code>setenv bootcmd &quot;boot&quot;
 saveenv
 </code></pre>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet (Datei)</li>
-<li>geprüft (Weg ab Werk, Schritte (Normalweg), Gehäuse öffnen)</li>
-<li>geprüft, Wiki toh:aruba:ap-303 (Schritte (Normalweg))</li>
-<li>geprüft: Code, Skript, ubiformat und ubidetach im Image 20261115; am Gerät ungetestet (Gluon-RAMpe passt)</li>
-<li>geprüft: Commit (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang, Datei)</li>
-<li>geprüft: Commit 102c8c5 (Zugang)</li>
-<li>geprüft: Commit 102c8c5, Countdown: Wiki toh:aruba:ap-303 (Bootlog) (Schritte (Normalweg), Taste und Zeitpunkt)</li>
-<li>geprüft: Commit 102c8c55 (Gluon-RAMpe passt)</li>
-<li>geprüft: Commit c6e972c (Typenschild/Verwechslung)</li>
-<li>geprüft: Commit; aos0: abgeleitet aus nandboot_openwrt = aos1 (Rückweg zur Herstellerfirmware)</li>
-<li>geprüft: Sperre: Neanderfunk-Notiz, Wiki toh:aruba:ap-303 (Typenschild/Verwechslung)</li>
-<li>geprüft: Wiki toh:aruba:ap-303 (Sichtbare Zeichen, Anschluss)</li>
-<li>Geräteeintrag: OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

@@ -11,15 +11,12 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-aruba-ap-303-initramfs-uImage.itb
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 84f780274
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Aruba AP-303: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -260,21 +257,3 @@ starten, halt den Bootloader an (Schritt 5) und gib ein:
 setenv bootcmd "boot"
 saveenv
 ```
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Datei)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Gehäuse öffnen)
-- geprüft, Wiki toh:aruba:ap-303 (Schritte (Normalweg))
-- geprüft: Code, Skript, ubiformat und ubidetach im Image 20261115; am Gerät ungetestet (Gluon-RAMpe passt)
-- geprüft: Commit (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang, Datei)
-- geprüft: Commit 102c8c5 (Zugang)
-- geprüft: Commit 102c8c5, Countdown: Wiki toh:aruba:ap-303 (Bootlog) (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Commit 102c8c55 (Gluon-RAMpe passt)
-- geprüft: Commit c6e972c (Typenschild/Verwechslung)
-- geprüft: Commit; aos0: abgeleitet aus nandboot_openwrt = aos1 (Rückweg zur Herstellerfirmware)
-- geprüft: Sperre: Neanderfunk-Notiz, Wiki toh:aruba:ap-303 (Typenschild/Verwechslung)
-- geprüft: Wiki toh:aruba:ap-303 (Sichtbare Zeichen, Anschluss)
-- Geräteeintrag: OpenWrt 102c8c55f217606cdbdc9a449667e034676b3e75

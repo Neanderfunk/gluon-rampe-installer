@@ -10,15 +10,14 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, nmrpflash, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 15ae34432
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # NETGEAR R6260: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -138,14 +137,3 @@ Wenn nmrpflash Fehler meldet:
   probieren.
 - **"Timeout while waiting for ACK(0)/OACK."** Meist die Firewall am Rechner.
 - Weitere Meldungen erklärt [nmrpflash benutzen](grundlagen/nmrpflash.md).
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: ToH "GUI OEM"; Commit ohne Text (Weg ab Werk, Datei)
-- abgeleitet: Wiki (Fehlerbild, Notweg)
-- abgeleitet: Wiki toh/netgear/r6260 (Schritte (Normalweg), Anschluss, Rückweg zur Herstellerfirmware)
-- abgeleitet: Wiki toh/netgear/r6260, Commit 6cea968 'same image for R6260, R6350 & R6850' (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: nmrpflash-README (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Anschluss, Adressen, Programm, Datei, Dauer)
-- Geräteeintrag: 6cea9688af4a05f407266ed1de5a739e5c984b8c (ohne Installationstext)

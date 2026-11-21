@@ -13,14 +13,12 @@ erprobt_am: 2026-11-15
 erprobt_mit: gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m60-a1-recovery.bin
 grundlagen: [browser-https, browser-not-found, curl, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 3dc0d6c03
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # D-Link AQUILA PRO AI M60 A1: Freifunk-Firmware installieren
 
-> **Am Gerät erprobt** am 15.11.2026 mit `gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin`.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -225,25 +223,3 @@ Danach weiter mit Schritt 8 oben.
   ihre Firmware das auch tut.
 - **Über die normale D-Link-Oberfläche** lässt sich der M60 nicht auf
   Freifunk umstellen, nur über die Recovery.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Gluon-RAMpe passt, Gluon-RAMpe-Rezept)
-- geprüft, am Gerät 29./30.09.2026 erprobt (Weg ab Werk, Schritte (Normalweg), Datei)
-- geprüft: Commit (Schritte (Normalweg), Sichtbare Zeichen, Bedingung an die Herstellerfirmware, Fehlerbild)
-- geprüft: Commit 7271ee5 (Sichtbare Zeichen, Bedingung an die Herstellerfirmware, Rückweg zur Herstellerfirmware)
-- geprüft: Commit 7271ee5, am Gerät (Schritte (Normalweg), Adressen)
-- geprüft: Commits 'Chromium based' (Programm)
-- geprüft: Commits 29cca6c, 7271ee5; Neanderfunk-Notiz (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Neanderfunk-Notiz (Schritte (Normalweg), Sichtbare Zeichen, Adressen, Zugang, Datei, Bedingung an die Herstellerfirmware, Dauer)
-- geprüft: Neanderfunk-Notiz 13.10.2026, am Gerät (Taste und Zeitpunkt, Sichtbare Zeichen, Adressen, Programm, Dauer, Fehlerbild, Notweg, Hardware-Test, Gluon-RAMpe passt)
-- geprüft: Neanderfunk-Notiz 15.10.2026, am Gerät (Notweg)
-- geprüft: Neanderfunk-Notiz 15.10.2026, am Gerät; adorfer 17.11.2026: an WAN geht es nicht (Anschluss)
-- geprüft: Neanderfunk-Notiz, am Gerät bestätigt (Typenschild/Verwechslung)
-- geprüft: Neanderfunk-Notiz, am M60 erprobt (Programm)
-- geprüft: Screenshots und Aussage adorfer 15.11.2026 (Programm)
-- geprüft: Test adorfer 15.11.2026 am M60 (Programm)
-- geprüft: adorfer 15.11.2026 (Sichtbare Zeichen, Programm)
-- Geräteeintrag: OpenWrt 7271ee587cd104d30d6d46dd3c623c9d4602bd0c

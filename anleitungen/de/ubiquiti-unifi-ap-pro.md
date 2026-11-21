@@ -10,15 +10,14 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-client]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Ubiquiti UniFi AP Pro: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -114,14 +113,3 @@ feste Adresse am Rechner.
 Derselbe Weg geht auch rückwärts: Gerät wie in Schritt 4 in den TFTP-Modus
 bringen und statt der Freifunk-Firmware die Original-Firmware von Ubiquiti
 schicken, möglichst genau die Version, die vorher drauf war.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: ap51-flash-Doku (Notweg)
-- abgeleitet: better safe than sorry (Datei)
-- geprüft (Weg ab Werk, Datei, Quelle (OpenWrt-Commit))
-- geprüft: Commit b7da0d2 (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Dauer)
-- geprüft: Commit b7da0d2 für 'factory per TFTP an 192.168.1.20'; Einzelheiten aus XW-Commits abgeleitet (Schritte (Normalweg), Anschluss, Adressen, Programm)
-- Geräteeintrag: b7da0d294465d5ab8d923f3b8265ece0a5847ac3 [geprüft]

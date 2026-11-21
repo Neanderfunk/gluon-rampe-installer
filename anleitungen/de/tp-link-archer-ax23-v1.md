@@ -10,17 +10,12 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, curl, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link Archer AX23 v1: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
-> Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
-> getestet ("broken"); nicht jede Community bietet sie an.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -116,14 +111,3 @@ geht der Upload auch mit curl ([curl benutzen](grundlagen/curl.md)):
 ```
 curl -F firmware=@factory.bin http://192.168.0.1/f2.htm
 ```
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Schritte (Normalweg), Notweg)
-- geprüft: Commit 7dceef5e (Notweg)
-- geprüft: Wiki toh:tp-link:archer_ax23_v1 (Schritte (Normalweg), Adressen, Programm, Datei, Typenschild/Verwechslung, Notweg)
-- geprüft: tplink-safeloader ARCHER-AX23-V1 (Typenschild/Verwechslung)
-- Geräteeintrag: 7dceef5ee554ec4ab5d2dd2ff999f4a60bf2e0f4

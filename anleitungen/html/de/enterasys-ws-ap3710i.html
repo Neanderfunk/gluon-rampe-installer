@@ -13,19 +13,16 @@
 <meta name="anleitung:level" content="L6">
 <meta name="anleitung:level_text" content="Serielles Kabel">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:rampe_image" content="gluon-rampe-20261115-enterasys-ws-ap3710i-initramfs-kernel.bin">
 <meta name="anleitung:grundlagen" content="browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="9a02820db">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Enterasys WS-AP3710i: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/enterasys-ws-ap3710i.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-Hersteller für dieses Gerät beschreiben.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -193,18 +190,6 @@ ssh root@192.168.1.1 &quot;sysupgrade -n /tmp/gluon.bin&quot;
 ab, das ist harmlos.</p>
 <h2>Zurück zur Herstellerfirmware</h2>
 <p>Zurück zur Herstellerfirmware geht nur mit einer Sicherung der Partition &quot;firmware&quot;, die du vor Schritt 7 aus OpenWrt heraus gemacht hast; der alte Startbefehl steht im Bootloader in der Variable boot_flash. Das beschreiben wir hier nicht.</p>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet: TFTP-Weg (Anschluss)</li>
-<li>geprüft (Weg ab Werk, Schritte (Normalweg), Datei)</li>
-<li>geprüft: Commit (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang, Datei, Rückweg zur Herstellerfirmware)</li>
-<li>geprüft: Commit 16b01fb (Schritte (Normalweg), Taste und Zeitpunkt, Zugang)</li>
-<li>geprüft: OpenWrt-Commit 16b01fb, am 15.10.2026 nachgelesen (Programm)</li>
-<li>geprüft: Wiki toh:enterasys:ws-ap3710i (Fehlerbild)</li>
-<li>geprüft: github grische/extremeflash, Wiki toh:enterasys:ws-ap3710i (Notweg)</li>
-<li>Geräteeintrag: 16b01fb1b9c99513c318109bef96a1a3545c57a0</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

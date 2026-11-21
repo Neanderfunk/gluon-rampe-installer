@@ -11,15 +11,12 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-extreme-networks-ws-ap3805i-initramfs-kernel.bin
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 9a02820db
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Extreme Networks WS-AP3805i: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -182,14 +179,3 @@ ssh root@192.168.1.1 "sysupgrade -n /tmp/gluon.bin"
 
 Ein Passwort gibt es nicht. Nach dem zweiten Befehl bricht die Verbindung
 ab, das ist harmlos.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg), Anschluss)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Anschluss, Datei, Quelle (OpenWrt-Commit))
-- geprüft: Commit (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang, Datei)
-- geprüft: Commit f8c87aa (Schritte (Normalweg), Taste und Zeitpunkt, Zugang)
-- geprüft: OpenWrt-Commit f8c87aa, am 15.10.2026 nachgelesen (Programm)
-- Geräteeintrag: f8c87aa2d27ab405f284dd4357377ab5c893a345 [geprüft]

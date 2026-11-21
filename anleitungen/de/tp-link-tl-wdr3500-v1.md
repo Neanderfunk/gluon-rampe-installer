@@ -10,15 +10,12 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link TL-WDR3500 v1: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -122,13 +119,3 @@ feste Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md))
    etwa 15 Sekunden.
 4. Warten, etwa 30 Sekunden. Das Gerät
    schreibt die Datei und startet neu.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- abgeleitet: Wiki toh/tp-link/tl-wdr3600_v1, für WDR3500 nicht geprüft (Bedingung an die Herstellerfirmware)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Programm, Datei, Notweg, Quelle (OpenWrt-Commit))
-- geprüft: Commit fbbb4eb8 (Notweg)
-- Geräteeintrag: fbbb4eb8b41d59b38f41fe382c6e4108a36aa909 [geprüft]

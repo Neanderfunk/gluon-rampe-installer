@@ -11,15 +11,14 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-siemens-ws-ap3610-initramfs-kernel.bin
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 9a02820db
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Siemens WS-AP3610: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 > Im Weg von OpenWrt fehlt die Zeile, die den Start dauerhaft auf OpenWrt umstellt; wir haben sie nach dem Hinweis von Freifunk Darmstadt ergänzt.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
@@ -186,16 +185,3 @@ ssh root@192.168.1.1 "sysupgrade -n /tmp/gluon.bin"
 
 Ein Passwort gibt es nicht. Nach dem zweiten Befehl bricht die Verbindung
 ab, das ist harmlos.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Commits ebddc5f, f8c87aa (Programm)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Anschluss, Datei, Quelle (OpenWrt-Commit))
-- geprüft: Commit (Schritte (Normalweg), Anschluss, Programm, Zugang)
-- geprüft: Commit d2b8ccb (Schritte (Normalweg), Taste und Zeitpunkt, Zugang)
-- geprüft: Commit; Hex-Deutung abgeleitet (Schritte (Normalweg), Adressen, Datei)
-- geprüft: Freifunk-Darmstadt-Wiki Siemens-AP3610, 15.10.2026 (Programm)
-- geprüft: Gluon-Target ath79-generic, Wiki toh:siemens:ws-ap3610_ws-ap3620, Titel (Typenschild/Verwechslung)
-- Geräteeintrag: d2b8ccb1c04def81224da6f42f644c7d239b9986 [geprüft]

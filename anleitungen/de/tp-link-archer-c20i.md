@@ -10,16 +10,14 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link Archer C20i: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
-> Die Gefahr aus Build 151014 kennen wir aus eigener Erfahrung; den Weg aus Build 140709 haben wir nicht selbst nachvollzogen.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -150,16 +148,3 @@ dd if=<TP-Link-Firmware>.bin of=ArcherC20iV1_tp_recovery.bin bs=512 skip=1
 Die fertige Datei war bei uns 8.126.464 Bytes groß. Danach läuft wieder die
 TP-Link-Firmware; dann wie oben erst Build 140709, dann die
 Freifunk-Firmware.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- abgeleitet: Gluon baut factory; Wiki nennt nur TFTP-Recovery mit ArcherC20iV1_tp_recovery.bin von 192.168.0.66 (Weg ab Werk, Schritte (Normalweg), Programm, Datei)
-- geprüft: Gluon targets/ramips-mt7620, Wiki toh:tp-link:archer_c20i (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: Neanderfunk-Notiz, adorfer 15.10.2026, am Gerät 06.10.2026: TP-Link-Firmware ohne ersten 512-Byte-Sektor (dd), als ArcherC20iV1_tp_recovery.bin per Tftpd64, Gerät aus der Startschleife geholt (Notweg)
-- geprüft: Neanderfunk-Notiz, adorfer 15.10.2026, am Gerät: aus Build 151014 geflasht -> Startschleife, Rettung nur per TFTP (Warnung, Bedingung an die Herstellerfirmware)
-- geprüft: Wiki toh:tp-link:archer_c20i (Schritte (Normalweg), Warnung, Bedingung an die Herstellerfirmware)
-- geprüft: Wiki toh:tp-link:archer_c20i (Dateiname, Server-IP) (Notweg)
-- Geräteeintrag: 48d8bc4f971ad7795e3162134759caa37900138f (ohne Installationstext)

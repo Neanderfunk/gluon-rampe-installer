@@ -10,15 +10,14 @@ level_text: Einfach hochladen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 9560ae8ed
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # GL.iNet GL-MT300N (v1): Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -95,14 +94,3 @@ mehr, hilft der eingebaute Notfall-Modus:
    "Update firmware". Der Ladekreis auf der Seite dreht sich danach endlos
    weiter, das ist normal.
 4. Etwa 3 Minuten warten, Strom nicht ziehen.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Wiki, Commit ohne Installationstext (Weg ab Werk, Schritte (Normalweg), Taste und Zeitpunkt, Programm, Datei, Notweg)
-- geprüft: Commits be53e5a, abbfcc8; Typenschild-Aufdruck abgeleitet (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: GL-Doku (Notweg)
-- geprüft: GL-Doku 'GL-MT300N and GL-MT300A: The LED flashes 3 times' (Notweg)
-- geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026) (Notweg)
-- Geräteeintrag: be53e5a154931109dd76a8015583123201c4b602 (ohne Installationstext) + Wiki toh:gl.inet

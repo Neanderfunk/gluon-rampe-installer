@@ -10,15 +10,12 @@ level_text: Einfach hochladen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 9560ae8ed
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # GL.iNet microuter-N300: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -94,15 +91,3 @@ mehr, hilft der eingebaute Notfall-Modus:
    "Update firmware". Der Ladekreis auf der Seite dreht sich danach endlos
    weiter, das ist normal.
 4. Etwa 3 Minuten warten, Strom nicht ziehen.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- geprüft (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Commit (Notweg)
-- geprüft: Commit b30f228 (Schritte (Normalweg), Anschluss, Adressen, Programm, Datei, Typenschild/Verwechslung)
-- geprüft: Commit b30f228, GL-Doku 'microuter-N300: 5 times' (Taste und Zeitpunkt, Notweg)
-- geprüft: Commit, GL-Doku (Notweg)
-- geprüft: GL.iNet-Doku debrick (docs.gl-inet.com/router/en/4/faq/debrick, Stand 12.08.2026) (Notweg)
-- Geräteeintrag: b30f2281cce6649567e0194d203f06517d173115

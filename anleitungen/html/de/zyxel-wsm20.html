@@ -13,21 +13,16 @@
 <meta name="anleitung:level" content="L1">
 <meta name="anleitung:level_text" content="Zwei Schritte im Browser">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="erprobt">
-<meta name="anleitung:erprobt_am" content="2026-09-19">
-<meta name="anleitung:erprobt_mit" content="Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs">
 <meta name="anleitung:rampe_image" content="gluon-rampe-20261115-zyxel-wsm20-initramfs-kernel.bin">
 <meta name="anleitung:grundlagen" content="browser-https, browser-not-found, router-antwortet-nicht">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="ae198bf8f">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>ZyXEL WSM20 (Multy M1): Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/zyxel-wsm20.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p><strong>Am Gerät erprobt</strong> am 19.09.2026 mit <code>Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs</code>. Das aktuelle Image ist neuer und in dieser Form
-noch nicht am Gerät gelaufen.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -143,24 +138,10 @@ Arbeitsspeicher:
 <strong>System → Backup / Flash Firmware</strong>, ganz unten &quot;Flash image…&quot;, das
 sysupgrade-Image wählen, &quot;Upload&quot;, den Haken bei <strong>&quot;Keep settings and retain
 the current configuration&quot; entfernen</strong> und <strong>&quot;Continue&quot;</strong>.</p>
-<h2>Herkunft der Angaben</h2>
+<h2>Quelle</h2>
 <p>Diese Anleitung folgt in weiten Teilen der
 <a href="https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/">Anleitung von Freifunk Aachen</a>
 (Stefan Limbach, 2024).</p>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet (Gluon-RAMpe passt)</li>
-<li>abgeleitet: Freifunk Aachen 04.01.2024, FAQ: rote LED = eingerichtet und ohne Internet (Schritte (Normalweg))</li>
-<li>abgeleitet: Freifunk Aachen, FAQ: rote LED = eingerichtet und ohne Internet (Anschluss)</li>
-<li>geprüft: Commit (Bedingung an die Herstellerfirmware)</li>
-<li>geprüft: Commit 28df7f7 (Programm)</li>
-<li>geprüft: Commit 28df7f7, Wiki toh:zyxel:wsm20 (Adressen)</li>
-<li>geprüft: Freifunk Aachen 04.01.2024 (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Anschluss, Adressen, Zugang, Datei, Dauer, Fehlerbild)</li>
-<li>geprüft: Freifunk Aachen 04.01.2024 + Wiki toh:zyxel:wsm20; Neanderfunk-Notiz, adorfer 15.10.2026: nach dieser Anleitung installiert, läuft als Testknoten in 21_dias (dias-d41ad11183d0, Gluon 2023.2.6, Karte 15.10.2026) (Bedingung an die Herstellerfirmware)</li>
-<li>geprüft: Freifunk Aachen 04.01.2024, Wiki toh:zyxel:wsm20; Neanderfunk-Notiz, adorfer 15.10.2026: nach dieser Anleitung installiert, läuft als Testknoten in 21_dias (dias-d41ad11183d0, Gluon 2023.2.6, Karte 15.10.2026) (Weg ab Werk)</li>
-<li>geprüft: Freifunk Aachen 04.01.2024; Neanderfunk-Notiz, adorfer: Wartezeit auf der Upgrade-Seite am Gerät so erlebt (Schritte (Normalweg))</li>
-<li>Geräteeintrag: 28df7f7ff251d8684caa60f07ed0ba0c4a8e71f4</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

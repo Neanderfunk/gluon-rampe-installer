@@ -10,15 +10,12 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, ssh-scp]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link EAP615-Wall v1: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -113,14 +110,3 @@ Firmware hochladen. Rechne mit einer halben Stunde.
 
 Einen einfachen Weg zurück gibt es nicht. Laut OpenWrt geht es nur über die
 serielle Konsole, für die man im Gehäuse an Lötpunkte muss.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Forum/Suchergebnis, nicht in Commit (Schritte (Normalweg), Adressen, Programm, Zugang)
-- abgeleitet: Schwestergerät EAP613, gleiche Stock-Plattform (Schritte (Normalweg), Datei)
-- geprüft (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Commit a1b8a4d (Rückweg zur Herstellerfirmware)
-- geprüft: Commits (Schritte (Normalweg), Taste und Zeitpunkt, Anschluss, Zugang, Datei)
-- Geräteeintrag: a1b8a4d7b3ff3fa671623e2bccafd43a3c141e07

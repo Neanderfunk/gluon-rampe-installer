@@ -10,15 +10,14 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, schreibschutz, ssh-scp, tftp-client]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Ubiquiti UniFi 6 LR v2: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -175,23 +174,3 @@ und halten, Strom ein. Halte sie gedrückt:
 bis die LED weiß, blau und aus wechselt. Dann schickst du die Original-Firmware von Ubiquiti per
 TFTP an `192.168.1.20`, wie unter
 [TFTP-Client benutzen](grundlagen/tftp-client.md) beschrieben.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Commit a0f4ead (Warnung)
-- abgeleitet: Commits nennen 'factory defaults' (Schritte (Normalweg), Bedingung an die Herstellerfirmware)
-- abgeleitet: Wiki (Typenschild/Verwechslung, Dauer)
-- abgeleitet: Wiki toh/ubiquiti/unifi_6_lr (Schritte (Normalweg), Sichtbare Zeichen, Adressen, Programm, Bedingung an die Herstellerfirmware, Rückweg zur Herstellerfirmware)
-- für v2 abgeleitet, eigener Commit ohne Installationsabschnitt (Weg ab Werk, Schritte (Normalweg))
-- geprüft: 634c13c1 (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Commit 31d86a1 (Sichtbare Zeichen)
-- geprüft: Commit bf94e0a (Schritte (Normalweg), Programm)
-- geprüft: Commit fb4d7a9 (Typenschild/Verwechslung)
-- geprüft: Commits (Datei)
-- geprüft: Commits 15a0247, 31d86a1, a0f4ead (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24' (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang)
-- geprüft: Wiki toh:ubiquiti:unifi_6_lr, Rohtext 15.10.2026 (Typenschild/Verwechslung)
-- Geräteeintrag: OpenWrt 634c13c186646aff2badb51a43b248825d0fe5a0 (v2: 31d86a1a119265393db02aa66e6bc6518ee7b905)

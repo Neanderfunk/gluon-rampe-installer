@@ -13,20 +13,18 @@
 <meta name="anleitung:level" content="L6">
 <meta name="anleitung:level_text" content="Serielles Kabel">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:rampe_image" content="gluon-rampe-20261115-aruba-ap-365-initramfs-uImage.itb">
 <meta name="anleitung:grundlagen" content="browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="84f780274">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Aruba Instant On AP17: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/aruba-instant-on-ap17.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-aussieht als hier beschrieben.</p>
+<p>Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+beschrieben.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -247,17 +245,6 @@ starten, halt den Bootloader an (Schritt 5) und gib ein:</p>
 <pre><code>setenv bootcmd &quot;boot&quot;
 saveenv
 </code></pre>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet (Weg ab Werk, Schritte (Normalweg), Gehäuse öffnen)</li>
-<li>abgeleitet: Analogie AP11 (Bedingung an die Herstellerfirmware)</li>
-<li>abgeleitet: Wiki toh/aruba/ap-365 'same platform' (Schritte (Normalweg), Adressen, Programm, Zugang, Datei)</li>
-<li>abgeleitet: Wiki toh/aruba/ap-365 'same platform'; ob die USB-Buchse beim AP17 auch echtes USB ist, ist nicht belegt (Schritte (Normalweg), Anschluss)</li>
-<li>abgeleitet: gleiche Plattform (Schritte (Normalweg), Taste und Zeitpunkt)</li>
-<li>geprüft: Gluon-Alias, Wiki toh:aruba:ap-365 (Typenschild/Verwechslung)</li>
-<li>Geräteeintrag: OpenWrt 300b7fe85a743ab0e039457a5a551819b49450da</li>
-</ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>
 </body>

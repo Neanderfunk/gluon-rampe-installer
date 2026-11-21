@@ -10,16 +10,15 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link Archer C6 v2 (EU/RU/JP): Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
-> Ob die TP-Link-Oberfläche die Datei annimmt, hängt von der Version der Herstellerfirmware ab; mit 1.3.3 oder 1.3.7 sollte es am ehesten gehen.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
+> Am ehesten klappt es mit der TP-Link-Firmware 1.3.3 oder 1.3.7.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -127,14 +126,3 @@ feste Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md))
    bis die WPS-LED leuchtet.
 4. Warten, etwa 150 Sekunden. Das Gerät
    schreibt die Datei und startet neu.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg), Bedingung an die Herstellerfirmware)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Programm, Datei, Notweg, Quelle (OpenWrt-Commit))
-- geprüft: Commit d03aae1a (Notweg)
-- geprüft: Wiki toh:tp-link:archer_c6_v2 (Bedingung an die Herstellerfirmware)
-- geprüft: tplink-safeloader ARCHER-C6-V2 / -US, Commit d03aae1a; Gluon targets/ath79-generic (Schritte (Normalweg), Typenschild/Verwechslung)
-- Geräteeintrag: d03aae1a09fce5a5d5747855bc07ee1f54388e03 [geprüft]

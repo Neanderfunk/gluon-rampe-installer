@@ -10,15 +10,12 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 2f49bb085
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Cudy TR3000 v1 (128 MB Flash): Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -185,21 +182,3 @@ Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
    "Internet"). Danach den
    Rechner wieder auf "automatisch" stellen; die Cudy-Oberfläche ist unter
    `http://192.168.10.1` erreichbar.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- Zwang: abgeleitet; geprüft: Wiki toh:cudy:tr3000 (Datei)
-- abgeleitet: Wiki (Typenschild/Verwechslung)
-- abgeleitet: sysupgrade schreibt den Flash (Schritte (Normalweg))
-- geprüft (Notweg)
-- geprüft: Commit (Anschluss, Adressen, Programm, Zugang, Notweg)
-- geprüft: Commit 63b8d98, Wiki toh:cudy:tr3000 (Taste und Zeitpunkt, Sichtbare Zeichen, Zugang, Notweg)
-- geprüft: Commit; Zwang: abgeleitet (Notweg)
-- geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261015 (Cudys Drive-Ordner, geholt 15.10.2026; MD5 geprüft) (Schritte (Normalweg))
-- geprüft: Spiegel firmware.ffnef.de/other/cudy-mirror-20261015 (Cudys Drive-Ordner, geholt 15.10.2026; MD5 geprüft); Ablauf forum.darmstadt.freifunk.net t/1010 #1 (TomH, 09.04.2025, am 15.10.2026 gelesen) (Schritte (Normalweg))
-- geprüft: Wiki toh:cudy:tr3000 (Anschluss, Typenschild/Verwechslung, Dauer, Notweg, Rückweg zur Herstellerfirmware)
-- geprüft: forum.darmstadt.freifunk.net t/1010 #1 (TomH, 09.04.2025, am 15.10.2026 gelesen) (Schritte (Normalweg))
-- geprüft: forum.darmstadt.freifunk.net t/1010 #1 (TomH, 09.04.2025, am 15.10.2026 gelesen), mit älterer Fassung MD5 b8333d8e…; Spiegel firmware.ffnef.de/other/cudy-mirror-20261015 (Cudys Drive-Ordner, geholt 15.10.2026; MD5 geprüft) (Weg ab Werk)
-- Geräteeintrag: OpenWrt 63b8d98dd0d2f7797ea5b5f25978590982bbbb5d

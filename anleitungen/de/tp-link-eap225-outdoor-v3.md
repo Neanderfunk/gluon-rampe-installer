@@ -10,15 +10,12 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, ssh-scp]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link EAP225-Outdoor v3: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -126,15 +123,3 @@ auf dem Typenschild ("Ver: 3.0" o. ä.). Steht dort v1, nimm die
 
 Einen einfachen Weg zurück gibt es nicht. Laut OpenWrt geht es nur über die
 serielle Konsole, für die man im Gehäuse an Lötpunkte muss.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Forum openwrt 'EAP225-outdoor v3 firmware is incompatible', nicht gelesen (Fehlerbild)
-- abgeleitet: Forum/Suchergebnis, nicht in Commit (Schritte (Normalweg), Adressen, Programm, Zugang)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Quelle (OpenWrt-Commit))
-- geprüft: Commit 7e4de89 (Schritte (Normalweg), Bedingung an die Herstellerfirmware)
-- geprüft: Commits (Schritte (Normalweg), Taste und Zeitpunkt, Anschluss, Zugang, Datei, Rückweg zur Herstellerfirmware)
-- geprüft: Commits; Typenschild abgeleitet (Schritte (Normalweg), Typenschild/Verwechslung)
-- Geräteeintrag: 7e4de89e631aaf56be5375662b7d5ed0f27e26f6 [geprüft]

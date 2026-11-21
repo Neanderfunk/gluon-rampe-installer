@@ -10,15 +10,14 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link Archer C50 v1: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -108,14 +107,3 @@ Aufkleber genau mit "TP-Link Archer C50 v1", bevor du anfängst.
   ([Die Router-Seite antwortet nicht](grundlagen/router-antwortet-nicht.md)).
   Je nach Community startet die Firmware auch gleich im Betrieb ohne
   Einrichtungsseite.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- abgeleitet: Gluon baut factory; Wiki nennt TFTP-Recovery wie TL-WDR4300 (Weg ab Werk, Schritte (Normalweg), Notweg)
-- geprüft: Gluon targets/ramips-mt7620, ramips-mt76x8 (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: Wiki toh:tp-link:archer-c50 (Schritte (Normalweg), Warnung, Adressen, Programm, Bedingung an die Herstellerfirmware)
-- geprüft: templates/common/site.mk, Gluon targets/ramips-mt7620; Folge abgeleitet (Schritte (Normalweg), Datei, Typenschild/Verwechslung)
-- Geräteeintrag: 1c00c09eb6af88a0a96451f8da6108171c46a42d (ohne Installationstext)

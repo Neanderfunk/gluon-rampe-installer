@@ -10,16 +10,14 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, schreibschutz, ssh-scp, tftp-client]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Ubiquiti UniFi AC Lite: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
-> Den Ablauf haben wir vom UniFi Swiss Army Knife Ultra übernommen, der dieselbe Technik hat. Im Freifunk-Forum gibt es Erfolgsberichte für den AC Lite.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -217,24 +215,3 @@ Nur, wenn auf dem Gerät noch eine Ubiquiti-Firmware **älter als 4.3** läuft.
    ```
 
    Danach startet die Freifunk-Firmware.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- Forum: forum.freifunk.net/t/13863 #134 (adorfer, 2018, AC Lite und AC Mesh, Downgrade 3.7.58 per syswrapper.sh upgrade2, dann mtd) (Notweg)
-- Forum: forum.freifunk.net/t/23422 #10 (blocktrron, 2022, AC Lite 6.2.35, dd-Weg, am 15.10.2026 am Beitrag gegengelesen), #24 (2023: "funktioniert noch auf aktueller Firmware"), #26 (nach Werksreset ok); #8/#3: Downgrade unter 4.3.31 scheitert (Weg ab Werk)
-- abgeleitet (Dauer, Quelle (OpenWrt-Commit))
-- abgeleitet: Ablauf aus UK-Ultra-Commit bf94e0a, gleiche ubnt_unifiac-Basis; Commit des Geräts ohne Anleitung (Weg ab Werk, Schritte (Normalweg))
-- abgeleitet: Commits nennen 'factory defaults' (Schritte (Normalweg), Bedingung an die Herstellerfirmware)
-- abgeleitet: Wiki (Bedingung an die Herstellerfirmware, Dauer)
-- abgeleitet: Wiki toh/ubiquiti/unifiac (Schritte (Normalweg), Sichtbare Zeichen, Bedingung an die Herstellerfirmware, Rückweg zur Herstellerfirmware)
-- abgeleitet: ar71xx-Commit 43a7a1a nennt AC Mesh = Hardwarekopie AC Lite, 128 MiB (RAM)
-- geprüft: Commit bf94e0a (Schritte (Normalweg), Programm)
-- geprüft: Commits (Datei)
-- geprüft: Commits 07c1ddf, 4456dd4 (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24' (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang)
-- geprüft: dl.ui.com/unifi/firmware/U7PG2/3.7.58.6385/BZ.qca956x.v3.7.58.6385.170508.0957.bin, HTTP 200, 7.764.011 Bytes, SHA256 cfe2e639c430d1a849c2892effb84157e82ea9cb08d174547c1e001d4d4388a8, abgerufen 15.10.2026 (Notweg)
-- geprüft: forum.freifunk.net/t/23422 #10 zeigt für mtd2 und mtd3 die Flags 0x800 vor und 0xc00 nach dem Aufheben des Schreibschutzes (AC Lite 6.2.35) (Weg ab Werk)
-- Geräteeintrag: cad843e1f57790a08dd4804011b6cd3a4796786b (ohne Anleitung); 56fddc2577baf194d1e9a7b37d454d12ff9fb469 (Umbenennung) [abgeleitet]

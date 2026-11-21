@@ -10,15 +10,12 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # NETGEAR DGN3500B: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -110,13 +107,3 @@ grün blinkt. Dann das factory-Image mit dem Windows-Programm Upgrade_207_XP
 (ein Upgrade-Werkzeug für Sercomm-Geräte) schicken. Das Programm meldet laut
 OpenWrt immer "fehlgeschlagen", auch wenn es geklappt hat: dann Strom aus und
 wieder an.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Schritte (Normalweg), Programm, Datei, Notweg)
-- geprüft: Commit 575127fe (Fehlerbild, Notweg, Rückweg zur Herstellerfirmware)
-- geprüft: OpenWrt lantiq/image/ar9.mk; Commit 575127fe (Schritte (Normalweg), Typenschild/Verwechslung)
-- Geräteeintrag: 575127fe1c82e814da155a15be0a02b4153e1d00

@@ -10,15 +10,12 @@ level_text: Feste Adresse am Rechner
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link WBS510 v1: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -124,16 +121,3 @@ Dieses Image passt zum WBS510 mit Hardware 1.20. Die Hardware-Version steht auf 
 ## Notfall
 
 Die TFTP-Notfallfunktion dieser Geräte nimmt nur Firmware von TP-Link an, nicht die Freifunk-Firmware.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Schritte (Normalweg), Programm, Quelle (OpenWrt-Commit))
-- geprüft: OpenWrt-Commit (Rückweg zur Herstellerfirmware)
-- geprüft: OpenWrt-Commit; dass nur Originalfirmware genommen wird: Neanderfunk-Labortest laut Feld weg (Notweg, Rückweg zur Herstellerfirmware)
-- geprüft: cpe510, Wiki toh:tp-link:cpe210 (Schritte (Normalweg), Adressen, Programm, Zugang)
-- geprüft: cpe510; abgeleitet: Wiki-Zusammenfassung, im Rohtext toh:tp-link:cpe210 nicht gefunden, steht in toh:tp-link:cpe510 (Schritte (Normalweg), Datei)
-- geprüft: tplink-safeloader WBS510 (Schritte (Normalweg), Typenschild/Verwechslung)
-- Geräteeintrag: 20fdfe37d21f19901eec86ace8da0c083faa7ebc [geprüft]

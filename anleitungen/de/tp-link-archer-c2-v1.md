@@ -10,15 +10,12 @@ level_text: Besondere Programme
 risiko: bootloader
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link Archer C2 v1: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -136,19 +133,3 @@ steht unten am Gerät oder in der TP-Link-Oberfläche unter "Status".
 - **Er hat die Datei geholt, startet aber nicht.** Warte länger, das
   Schreiben kann lange dauern. Kommt auch nach einer halben Stunde nichts,
   schreib uns.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Warnung, Dauer)
-- abgeleitet: Commit (Programm)
-- abgeleitet: Wiki Archer C2 AC750 (Typenschild/Verwechslung)
-- abgeleitet: Wiki Archer C2 AC750; geprüft: Commit "overwrites the bootloader partition" (Warnung)
-- geprüft (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Commit (Schritte (Normalweg), Taste und Zeitpunkt, Sichtbare Zeichen, Anschluss, Datei, Dauer)
-- geprüft: Commit 8375623, "WARNING: This method also overwrites the bootloader partition!" (Programm)
-- geprüft: Commit; abgeleitet (Schritte (Normalweg))
-- geprüft: Commit; abgeleitet: Wiki C50 zur Schreibweise (Schritte (Normalweg), Adressen, Programm, Datei)
-- geprüft: Test Neanderfunk 15.10.2026 (Programm)
-- Geräteeintrag: 8375623a064037bbdd914bd9e7529eefa7172560

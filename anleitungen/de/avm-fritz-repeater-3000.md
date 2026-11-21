@@ -11,18 +11,14 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-avm-fritz-repeater-3000-initramfs-uImage.itb
 grundlagen: [avm-eva, browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: e85eac1dd
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # AVM FRITZ!Repeater 3000: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
-> Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
-> getestet ("broken"); nicht jede Community bietet sie an.
-> Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -146,24 +142,3 @@ Der Bootloader von AVM selbst bleibt unberührt. Mit dem
 Wiederherstellungs-Programm von AVM (für Windows; auf dem Download-Server von
 AVM im Ordner des Geräts unter "recover") lässt sich FRITZ!OS zurückspielen.
 Laut OpenWrt hilft im Notfall die Version FRITZ!OS 7.21.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Dauer)
-- abgeleitet: Device-Liste am Pin (Typenschild/Verwechslung)
-- abgeleitet: OpenWrt-Wiki "AVM recovery tool" (Rückweg zur Herstellerfirmware)
-- abgeleitet: Wiki 3000 (Anschluss)
-- abgeleitet: Wiki 7520/7530 (Schritte (Normalweg), Sichtbare Zeichen)
-- abgeleitet: Wiki 7520/7530, nur als Ausweg (Fehlerbild)
-- abgeleitet: Wiki 7530 (Adressen)
-- abgeleitet: dasselbe Wiki (Rückweg zur Herstellerfirmware)
-- geprüft (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Commit (Schritte (Normalweg), Sichtbare Zeichen, Anschluss, Adressen, Programm, Datei, Dauer)
-- geprüft: Commit 148d29d4 (Gluon-RAMpe passt)
-- geprüft: Commit 95b0c07a (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Commit, U-Boot-Quelltext: serverip 192.168.1.70, bootfile FRITZ3000.bin (Schritte (Normalweg), Adressen, Programm, Datei)
-- geprüft: U-Boot-Quelltext chunkeey FritzBox-4040-UBOOT (Sichtbare Zeichen)
-- geprüft; abgeleitet (Schritte (Normalweg))
-- Geräteeintrag: OpenWrt 148d29d47b1d555d0058dcc5dda450b74c4628ec

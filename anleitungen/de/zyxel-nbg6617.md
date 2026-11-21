@@ -10,15 +10,12 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Zyxel NBG6617: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -100,12 +97,3 @@ Per TFTP: Rechner fest auf `192.168.1.99` an LAN, die Zyxel-Firmware
 ([TFTP-Server einrichten](grundlagen/tftp-server.md)), WPS-Taste beim
 Einschalten 30 Sekunden halten, dann lange warten. Fertig, wenn die
 Power-LED langsam und USB- und WPS-LED schnell blinken; dann neu starten.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- geprüft (Weg ab Werk, Schritte (Normalweg), Datei, Notweg)
-- geprüft: Commit 82618062 (Schritte (Normalweg), Sichtbare Zeichen, Adressen, Programm, Zugang, Rückweg zur Herstellerfirmware)
-- geprüft: Wiki toh:zyxel:nbg6617 (Adressen)
-- Geräteeintrag: OpenWrt 82618062cf7ed6b40d2c52c6f6b96364888ffda6

@@ -13,18 +13,15 @@
 <meta name="anleitung:level" content="L4">
 <meta name="anleitung:level_text" content="Network-Tools">
 <meta name="anleitung:risiko" content="normal">
-<meta name="anleitung:status" content="ungeprüft">
 <meta name="anleitung:grundlagen" content="browser-not-found, image-schreiben, router-antwortet-nicht">
-<meta name="anleitung:daten_stand" content="3512b4651">
-<meta name="anleitung:vorlage_stand" content="33a38da83">
+<meta name="anleitung:daten_stand" content="8fb990a0c">
+<meta name="anleitung:vorlage_stand" content="ae4d4370f">
 <link rel="stylesheet" href="../anleitung.css">
 </head>
 <body>
 <h1>Raspberry Pi 1 Model B/B+: Freifunk-Firmware installieren</h1>
 <img class="geraetebild" src="../../pictures/raspberrypi-model-b.svg" alt="" width="320" onerror="this.remove()">
 <blockquote>
-<p>Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-Hersteller für dieses Gerät beschreiben.</p>
 <p>Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 wir helfen dir weiter. Jede Rückmeldung macht die
 Anleitung für alle nach dir besser:</p>
@@ -88,19 +85,6 @@ als Datei geschrieben statt auf den ganzen Datenträger, oder es wurde nicht
 ausgepackt. Noch einmal nach
 <a href="grundlagen/image-schreiben.html">Image auf einen Datenträger schreiben</a>.</li>
 <li><strong>Beim Auspacken kommt &quot;trailing garbage ignored&quot;.</strong> Das ist harmlos.</li>
-</ul>
-<h2>Herkunft der Angaben</h2>
-<p>Die Angaben stammen aus diesen Quellen (in Klammern, wofür):</p>
-<ul>
-<li>abgeleitet (Schritte (Normalweg), Anschluss)</li>
-<li>abgeleitet: Imagegröße aus Config-images.in (Schritte (Normalweg), Dauer)</li>
-<li>geprüft: Gluon targets/bcm27xx-bcm2708, OpenWrt bcm27xx/image/Makefile; Autoupdater-Folge abgeleitet (Schritte (Normalweg), Typenschild/Verwechslung)</li>
-<li>geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi (Programm)</li>
-<li>geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi (dd auf /dev/sdX) (Schritte (Normalweg))</li>
-<li>geprüft: Wiki toh:raspberry_pi_foundation:raspberry_pi, toh:friendlyarm:nanopi_r2s (dd, gzip -d); Wiki-Zusammenfassung: FriendlyElec-Wiki (Win32DiskImager) (Programm)</li>
-<li>geprüft: rpi-imager CommonStrings.qml, etcher supported-formats.ts (Schritte (Normalweg), Programm)</li>
-<li>geprüft: targets/bcm27xx.inc (Weg ab Werk, Schritte (Normalweg), Datei)</li>
-<li>Geräteeintrag: Gluon targets/bcm27xx-bcm2708</li>
 </ul>
 
 <p class="fuss">Freifunk-Installationsanleitung, erzeugt aus <a href="https://github.com/Neanderfunk/gluon-rampe-installer">gluon-rampe-installer</a>.</p>

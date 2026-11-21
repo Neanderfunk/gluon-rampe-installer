@@ -10,15 +10,12 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # D-Link DAP-2680 A1: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -101,13 +98,3 @@ Aufkleber genau mit "D-Link DAP-2680 A1", bevor du anfängst.
 Netzwerkkabel stecken, Reset-Taste beim Einschalten gedrückt halten, bis das
 Hochladen begonnen hat. Die Notfall-Seite liegt ebenfalls unter
 `http://192.168.0.50`.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- abgeleitet: webui-upload (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Quelle (OpenWrt-Commit))
-- geprüft: Commit 8ec997d0/5b58710f (Schritte (Normalweg), Adressen, Programm, Zugang, Datei, Notweg)
-- Geräteeintrag: 5b58710fad2137eedad874f0fe8fe22082d1edc6 [geprüft]

@@ -10,15 +10,14 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, ssh-scp, tftp-client]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Ubiquiti UniFi 6 Lite: Freifunk-Firmware installieren
 
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
@@ -148,18 +147,3 @@ bis die LED ihr Muster
 wechselt. Dann schickst du die Original-Firmware von Ubiquiti per
 TFTP an `192.168.1.20`, wie unter
 [TFTP-Client benutzen](grundlagen/tftp-client.md) beschrieben.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Commits nennen 'factory defaults' (Schritte (Normalweg), Bedingung an die Herstellerfirmware)
-- abgeleitet: Wiki toh/ubiquiti/unifi_6_lite (Schritte (Normalweg), Bedingung an die Herstellerfirmware, Rückweg zur Herstellerfirmware)
-- geprüft (Weg ab Werk, Schritte (Normalweg))
-- geprüft: Commit bf94e0a (Schritte (Normalweg), Programm)
-- geprüft: Commit fb4d7a9 (Programm)
-- geprüft: Commit fb4d7a9, FIT-Konfigurationen (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: Commits (Datei)
-- geprüft: Commits, z. B. 4c8446b 'On factory defaults, user and password is ubnt at 192.168.1.20/24' (Schritte (Normalweg), Taste und Zeitpunkt)
-- geprüft: Commits; IP-Beispiel .10 abgeleitet: Wiki toh/ubiquiti/unifiac (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang)
-- Geräteeintrag: fb4d7a9680117a00721936c98ce41eeb2dea95c9

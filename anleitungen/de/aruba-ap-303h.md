@@ -11,15 +11,12 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-aruba-ap-303h-initramfs-uImage.itb
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 84f780274
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Aruba AP-303H: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -269,16 +266,3 @@ starten, halt den Bootloader an (Schritt 5) und gib ein:
 setenv bootcmd "boot"
 saveenv
 ```
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet: Wiki toh/aruba/ap-303, gleiches apboot (Schritte (Normalweg), Sichtbare Zeichen)
-- geprüft (Weg ab Werk, Schritte (Normalweg), Datei, Gehäuse öffnen)
-- geprüft: Commit (Schritte (Normalweg), Anschluss, Adressen, Programm, Zugang, Typenschild/Verwechslung, Rückweg zur Herstellerfirmware)
-- geprüft: Commit c6e972c (Schritte (Normalweg), Taste und Zeitpunkt, Zugang)
-- geprüft: Commit; Name zwingend: abgeleitet (Schritte (Normalweg), Datei)
-- geprüft: HPE-Datenblatt AP-303H "Passive pass-through interface (two RJ-45, back and bottom)", https://web.archive.org/web/20241003121004/https://www.arubanetworks.com/assets/ds/DS_AP303H.pdf (Anschluss)
-- geprüft: Wiki toh:aruba:ap-303h (Typenschild/Verwechslung, Rückweg zur Herstellerfirmware)
-- Geräteeintrag: OpenWrt c6e972c8772a628a1a2f2e5590d7c6f4acef9ab0

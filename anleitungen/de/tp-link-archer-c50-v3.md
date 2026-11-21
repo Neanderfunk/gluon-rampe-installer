@@ -10,15 +10,12 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link Archer C50 v3: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -94,24 +91,3 @@ mit einer halben Stunde.
 Über denselben Notfall-Modus nimmt der Router auch eine TP-Link-Firmware an.
 Je nach Modell muss die Datei dafür vorher angepasst werden; das steht im
 OpenWrt-Wiki zu deinem Gerät.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg), Anschluss, Programm)
-- abgeleitet: Regel strengster Name (Datei)
-- abgeleitet: Wiki (Programm)
-- abgeleitet: Wiki C50 (Schritte (Normalweg), Warnung, Taste und Zeitpunkt, Sichtbare Zeichen, Dauer)
-- abgeleitet: Wiki C50 Debricking (Rückweg zur Herstellerfirmware)
-- abgeleitet: Wiki C50 v3 (Warnung)
-- abgeleitet: Wiki MR3020 v3 (Sichtbare Zeichen)
-- abgeleitet: Wiki; abgeleitet (Schritte (Normalweg))
-- geprüft (Weg ab Werk)
-- geprüft: Commit (Schritte (Normalweg), Taste und Zeitpunkt, Adressen, Datei)
-- geprüft: Commit "write it to flash and reboot" (Schritte (Normalweg), Sichtbare Zeichen)
-- geprüft: Commit v4; abgeleitet: Wiki C50 (Typenschild/Verwechslung)
-- geprüft: Gluon targets/ramips-mt76x8 extra_images (Datei)
-- geprüft: Gluon targets/ramips-mt76x8 extra_images; geprüft: Commit (Schritte (Normalweg))
-- geprüft: Gluon targets/ramips-mt76x8 v2025.1.3 (Datei)
-- Geräteeintrag: 14951e8f8e09ba6e2cff140769189a66155a5345

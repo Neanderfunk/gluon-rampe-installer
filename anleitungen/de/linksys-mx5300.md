@@ -10,14 +10,12 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht, ssh-scp]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # Linksys MX5300: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
 > Laut OpenWrt zuletzt geprüft mit Linksys-Firmware 1.1.12.210066 (April 2022); spätere Linksys-Updates könnten den Weg verbauen.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
@@ -98,13 +96,3 @@ fw_printenv -n boot_part
 - Antwort `1`: `mtd -r -e alt_kernel -n write /tmp/factory.bin alt_kernel`
 
 Damit ist allerdings auch die Linksys-Firmware weg.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Schritte (Normalweg), Notweg)
-- geprüft: Commit 70fd815e (Schritte (Normalweg), Programm, Datei, Rückweg zur Herstellerfirmware)
-- geprüft: Wiki toh:linksys:mx5300 (Sichtbare Zeichen, Adressen, Zugang, Typenschild/Verwechslung, Bedingung an die Herstellerfirmware)
-- Geräteeintrag: OpenWrt 70fd815e57dc98cef88828faa5ce71717540e99e

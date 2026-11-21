@@ -10,15 +10,12 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 3512b4651
-vorlage_stand: 33a38da83
+daten_stand: 8fb990a0c
+vorlage_stand: ae4d4370f
 ---
 
 # TP-Link Archer A7 v5: Freifunk-Firmware installieren
 
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
@@ -125,14 +122,3 @@ feste Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md))
    etwa 5 Sekunden.
 4. Warten, etwa 150 Sekunden. Das Gerät
    schreibt die Datei und startet neu.
-
-## Herkunft der Angaben
-
-Die Angaben stammen aus diesen Quellen (in Klammern, wofür):
-
-- abgeleitet (Schritte (Normalweg))
-- geprüft (Weg ab Werk, Notweg, Quelle (OpenWrt-Commit))
-- geprüft: Commit 1e4ee63c (Notweg)
-- geprüft: Commit 8471944b; tplink-safeloader ARCHER-A7-V5 (Schritte (Normalweg), Typenschild/Verwechslung)
-- geprüft: Wiki toh:tp-link:archer_a7_v5 (Schritte (Normalweg), Sichtbare Zeichen, Adressen, Programm, Datei, Bedingung an die Herstellerfirmware)
-- Geräteeintrag: 1e4ee63cc8d1889a78b539a5ed7be8d56e9b976f [geprüft]
