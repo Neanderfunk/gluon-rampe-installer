@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-10-17
 erprobt_mit: Gluon 2025.1 (26100702bro), factory über die Mercusys-Oberfläche 1.0.11 (Hardware V1.20)
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 7ef99fa21
+daten_stand: 3512b4651
 vorlage_stand: 33a38da83
 ---
 
@@ -20,8 +20,8 @@ vorlage_stand: 33a38da83
 
 > **Am Gerät erprobt** am 17.10.2026 mit `Gluon 2025.1 (26100702bro), factory über die Mercusys-Oberfläche 1.0.11 (Hardware V1.20)`.
 >
-> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
-> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
+> wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Mercusys%20MR70X%20v1)

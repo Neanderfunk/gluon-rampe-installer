@@ -11,20 +11,19 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-asus-tuf-ax4200-initramfs-kernel.bin
 grundlagen: [browser-https, browser-not-found, router-antwortet-nicht, ssh-scp]
-daten_stand: 7ef99fa21
+daten_stand: 3512b4651
 vorlage_stand: d134995cb
 ---
 
 # ASUS TUF-AX4200: Freifunk-Firmware installieren
 
-> **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
-> ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
-> aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
-> beschrieben.
+> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
+> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
+> aussieht als hier beschrieben.
 > Freifunk Darmstadt beschreibt denselben Weg für ihre Freifunk-Firmware.
 >
-> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
-> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
+> wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20ASUS%20TUF-AX4200)

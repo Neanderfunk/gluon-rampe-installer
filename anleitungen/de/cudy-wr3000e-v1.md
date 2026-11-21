@@ -10,19 +10,18 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 7ef99fa21
+daten_stand: 3512b4651
 vorlage_stand: 2f49bb085
 ---
 
 # Cudy WR3000E v1: Freifunk-Firmware installieren
 
-> **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
-> bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
-> ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
-> klappt.
+> **Bei uns in der Praxis erprobt.** Wir haben Geräte dieses Typs schon so
+> umgestellt, nur noch nicht mit der aktuellen Version der
+> Freifunk-Firmware.
 >
-> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
-> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
+> wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Cudy%20WR3000E%20v1)

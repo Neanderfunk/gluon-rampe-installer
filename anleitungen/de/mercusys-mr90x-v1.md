@@ -11,17 +11,17 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-mercusys-mr90x-v1-initramfs-kernel.bin
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, ssh-scp]
-daten_stand: 7ef99fa21
+daten_stand: 3512b4651
 vorlage_stand: f20399f13
 ---
 
 # Mercusys MR90X v1: Freifunk-Firmware installieren
 
-> **Noch nicht am Gerät erprobt.** Die Anleitung ist aus Quellen zusammengestellt. Wie gut jede
-> Angabe belegt ist, steht unten unter "Herkunft der Angaben".
+> Die Anleitung ist aus Quellen zusammengestellt. Wie gut jede Angabe belegt
+> ist, steht unten unter "Herkunft der Angaben".
 >
-> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
-> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
+> wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Mercusys%20MR90X%20v1)

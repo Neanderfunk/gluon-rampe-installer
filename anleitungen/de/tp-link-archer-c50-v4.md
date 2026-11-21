@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-10-15
 erprobt_mit: Gluon 2023.2.6 (26091920sta), boot.bin über die TP-Link-Oberfläche, U-Boot-Teil aus Archer_C50v4_EU_0.9.1_0.2_up_boot.bin
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 7ef99fa21
+daten_stand: 3512b4651
 vorlage_stand: 33a38da83
 ---
 
@@ -20,8 +20,8 @@ vorlage_stand: 33a38da83
 
 > **Am Gerät erprobt** am 15.10.2026 mit `Gluon 2023.2.6 (26091920sta), boot.bin über die TP-Link-Oberfläche, U-Boot-Teil aus Archer_C50v4_EU_0.9.1_0.2_up_boot.bin`.
 >
-> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
-> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
+> wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20Archer%20C50%20v4)

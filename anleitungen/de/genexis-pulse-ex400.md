@@ -13,7 +13,7 @@ erprobt_am: 2026-11-11
 erprobt_mit: gluon-rampe-20261015-genexis-pulse-ex400-factory.bin
 rampe_image: gluon-rampe-20261115-genexis-pulse-ex400-factory.bin
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 7ef99fa21
+daten_stand: 3512b4651
 vorlage_stand: e85eac1dd
 ---
 
@@ -22,8 +22,8 @@ vorlage_stand: e85eac1dd
 > **Am Gerät erprobt** am 11.11.2026 mit `gluon-rampe-20261015-genexis-pulse-ex400-factory.bin`. Das aktuelle Image ist neuer und in dieser Form
 > noch nicht am Gerät gelaufen.
 >
-> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
-> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
+> wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Genexis/Inteno%20Pulse%20EX400)

@@ -11,19 +11,17 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-enterasys-ws-ap3710i-initramfs-kernel.bin
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 7ef99fa21
+daten_stand: 3512b4651
 vorlage_stand: 9a02820db
 ---
 
 # Enterasys WS-AP3710i: Freifunk-Firmware installieren
 
-> **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
-> bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
-> ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
-> klappt.
+> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
+> Hersteller für dieses Gerät beschreiben.
 >
-> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
-> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
+> wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Enterasys%20WS-AP3710i)

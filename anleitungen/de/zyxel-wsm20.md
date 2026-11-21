@@ -13,7 +13,7 @@ erprobt_am: 2026-09-19
 erprobt_mit: Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs
 rampe_image: gluon-rampe-20261115-zyxel-wsm20-initramfs-kernel.bin
 grundlagen: [browser-https, browser-not-found, router-antwortet-nicht]
-daten_stand: 7ef99fa21
+daten_stand: 3512b4651
 vorlage_stand: ae198bf8f
 ---
 
@@ -22,8 +22,8 @@ vorlage_stand: ae198bf8f
 > **Am Gerät erprobt** am 19.09.2026 mit `Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs`. Das aktuelle Image ist neuer und in dieser Form
 > noch nicht am Gerät gelaufen.
 >
-> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
-> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
+> wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20ZyXEL%20WSM20%20%28Multy%20M1%29)

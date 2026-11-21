@@ -10,20 +10,19 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 7ef99fa21
+daten_stand: 3512b4651
 vorlage_stand: 33a38da83
 ---
 
 # TP-Link Archer C6 v2 (EU/RU/JP): Freifunk-Firmware installieren
 
-> **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
-> ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
-> aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
-> beschrieben.
+> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
+> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
+> aussieht als hier beschrieben.
 > Ob die TP-Link-Oberfläche die Datei annimmt, hängt von der Version der Herstellerfirmware ab; mit 1.3.3 oder 1.3.7 sollte es am ehesten gehen.
 >
-> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
-> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
+> wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20TP-Link%20Archer%20C6%20v2%20%28EU/RU/JP%29)

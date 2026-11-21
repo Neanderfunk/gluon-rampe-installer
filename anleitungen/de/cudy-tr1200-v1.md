@@ -10,19 +10,18 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 7ef99fa21
+daten_stand: 3512b4651
 vorlage_stand: 2f49bb085
 ---
 
 # Cudy TR1200 v1: Freifunk-Firmware installieren
 
-> **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
-> ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
-> aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
-> beschrieben.
+> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
+> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
+> aussieht als hier beschrieben.
 >
-> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
-> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
+> wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Cudy%20TR1200%20v1)

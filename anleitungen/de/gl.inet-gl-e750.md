@@ -11,21 +11,19 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-gl.inet-gl-e750-factory.img
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 7ef99fa21
+daten_stand: 3512b4651
 vorlage_stand: 9560ae8ed
 ---
 
 # GL.iNet GL-E750: Freifunk-Firmware installieren
 
-> **Noch nicht am Gerät erprobt.** So beschreiben die Entwickler von OpenWrt
-> bzw. der Hersteller den Weg für dieses Gerät. Mit der Freifunk-Firmware hat
-> ihn bei uns noch niemand nachvollzogen. Wir sind ziemlich sicher, dass es so
-> klappt.
+> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
+> Hersteller für dieses Gerät beschreiben.
 > Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
 > getestet ("broken"); nicht jede Community bietet sie an.
 >
-> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
-> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
+> wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20GL.iNet%20GL-E750)

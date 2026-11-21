@@ -10,21 +10,20 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [avm-eva, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 7ef99fa21
+daten_stand: 3512b4651
 vorlage_stand: 33a38da83
 ---
 
 # AVM FRITZ!Box 3370 Rev. 2, Hynix-NAND: Freifunk-Firmware installieren
 
-> **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
-> ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
-> aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
-> beschrieben.
+> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
+> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
+> aussieht als hier beschrieben.
 > Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
 > getestet ("broken"); nicht jede Community bietet sie an.
 >
-> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
-> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
+> wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20AVM%20FRITZ%21Box%203370%20Rev.%202%2C%20Hynix-NAND)

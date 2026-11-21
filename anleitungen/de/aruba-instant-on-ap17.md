@@ -11,19 +11,18 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-aruba-ap-365-initramfs-uImage.itb
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 7ef99fa21
+daten_stand: 3512b4651
 vorlage_stand: 84f780274
 ---
 
 # Aruba Instant On AP17: Freifunk-Firmware installieren
 
-> **Noch nicht am Gerät erprobt.** Wichtige Schritte haben wir von
-> ähnlichen Geräten oder aus dem OpenWrt-Wiki übernommen. Es sollte so klappen,
-> aber sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
-> beschrieben.
+> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
+> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
+> aussieht als hier beschrieben.
 >
-> Probier es aus und schreib uns, ob es geklappt hat. Und wenn es irgendwo
-> hakt: Melde dich, wir helfen dir weiter. Jede Rückmeldung macht die
+> Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
+> wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:
 >
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Aruba%20Instant%20On%20AP17)
