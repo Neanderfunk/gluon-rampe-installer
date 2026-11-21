@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2025.1 (26100702bro), Zwischenfirmware aus unserem Spiegel, vorher Cudy-Firmware 2.4.19
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 8fb990a0c
+daten_stand: 78bd472e9
 vorlage_stand: ae4d4370f
 ---
 
@@ -185,8 +185,5 @@ Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md)).
 ## Gut zu wissen
 
 Cudys Ordner mit der Zwischenfirmware für dieses Modell heißt
-"without_recovery_TFTP". Bei uns hat der Weg zurück zur Cudy-Firmware (unten)
-an einem WR3000 v1 funktioniert, allerdings an einem Gerät, auf dem vorher
-eine fremde Freifunk-Firmware lief, aufgespielt über eine Zwischenfirmware,
-die wir nicht kennen. Ob er auch nach der Zwischenfirmware von oben noch
-funktioniert, ist nicht geklärt.
+"without_recovery_TFTP". Ob danach der Weg zurück zur Cudy-Firmware (unten)
+noch klappt, ist nicht sicher.

@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-10-16
 erprobt_mit: Gluon 2023.2.6 (26091920sta) über LuCI der GL-Firmware 4.3.25; für 2025.1 erwartet gleich (gleiche Metadaten)
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 8fb990a0c
+daten_stand: 78bd472e9
 vorlage_stand: ae4d4370f
 ---
 
@@ -132,8 +132,8 @@ nicht geklärt; mit diesem Namen bist du auf der sicheren Seite.
 an. Lade sie unter
 [dl.gl-inet.com/router/b1300/stable](https://dl.gl-inet.com/router/b1300/stable)
 herunter und spiel sie über die Notfall-Seite auf, wie oben beschrieben.
-Bei uns hat das geklappt: Nach etwa 9 Minuten war die GL.iNet-Oberfläche
-wieder unter `http://192.168.8.1` erreichbar.
+Nach etwa 9 Minuten ist die GL.iNet-Oberfläche wieder unter
+`http://192.168.8.1` erreichbar.
 
 ## Notfall für Erfahrene: TFTP
 

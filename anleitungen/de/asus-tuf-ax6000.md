@@ -11,8 +11,8 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-asus-tuf-ax6000-initramfs-kernel.bin
 grundlagen: [browser-https, browser-not-found, router-antwortet-nicht, ssh-scp]
-daten_stand: 8fb990a0c
-vorlage_stand: ae4d4370f
+daten_stand: 78bd472e9
+vorlage_stand: 5e5ab6fb6
 ---
 
 # ASUS TUF-AX6000: Freifunk-Firmware installieren
@@ -222,4 +222,4 @@ ab, das ist harmlos.
 ## Zurück zur ASUS-Firmware
 
 Laut OpenWrt-Wiki hilft dafür das ASUS-Werkzeug "Firmware Restoration" mit
-dem Rettungsmodus des Routers. Ausprobiert haben wir es nicht.
+dem Rettungsmodus des Routers.

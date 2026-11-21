@@ -11,8 +11,8 @@ risiko: bootloader
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-aruba-ap-303-initramfs-uImage.itb
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 8fb990a0c
-vorlage_stand: ae4d4370f
+daten_stand: 78bd472e9
+vorlage_stand: 5e5ab6fb6
 ---
 
 # Aruba Instant On AP11: Freifunk-Firmware installieren
@@ -155,8 +155,7 @@ werden.
 Praktisch alle Geräte dieses Typs haben inzwischen einen neueren Bootloader
 (zum Beispiel `APBoot 2.6.2.9`), aus dem der Hersteller Befehle entfernt
 hat, die OpenWrt braucht. Du ersetzt ihn durch die ältere Fassung
-`APBoot 2.5.0.2` aus einem älteren Gerät desselben Typs. Freifunk Darmstadt
-hat diesen Weg ausprobiert. Überschrieben wird nur der Bereich des
+`APBoot 2.5.0.2` aus einem älteren Gerät desselben Typs. Überschrieben wird nur der Bereich des
 Bootloaders, nicht der Rest des Speichers.
 
 6. **Datei laden.** Gib im Terminal bei `apboot>` ein (eine Zeile):

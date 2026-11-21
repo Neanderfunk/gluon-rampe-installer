@@ -10,7 +10,7 @@ level_text: Zwei Schritte im Browser
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, feste-ip, router-antwortet-nicht, tftp-server]
-daten_stand: 8fb990a0c
+daten_stand: 78bd472e9
 vorlage_stand: ae4d4370f
 ---
 
@@ -29,7 +29,7 @@ vorlage_stand: ae4d4370f
 > **nicht** direkt die Freifunk-Firmware hochladen. Der Router hängt danach in
 > einer Startschleife und lässt sich nur noch über den TFTP-Notfall-Weg
 > retten. Spiel zuerst die ältere TP-Link-Firmware **Build 140709** ein, erst
-> dann die Freifunk-Firmware. Das wissen wir aus eigener Erfahrung.
+> dann die Freifunk-Firmware.
 
 Beim TP-Link Archer C20i geht die Installation über die normale Weboberfläche des
 Herstellers: Du lädst die Freifunk-Firmware dort hoch, wo sonst ein Update

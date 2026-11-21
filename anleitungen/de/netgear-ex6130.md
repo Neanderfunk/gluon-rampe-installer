@@ -10,7 +10,7 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, nmrpflash, router-antwortet-nicht]
-daten_stand: 8fb990a0c
+daten_stand: 78bd472e9
 vorlage_stand: ae4d4370f
 ---
 
