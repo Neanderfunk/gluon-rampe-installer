@@ -5038,7 +5038,7 @@
     "tftp_hinweis": "",
     "notweg_keiner": "",
     "sicherheit": "abgeleitet",
-    "sicherheit_hinweis": "Ob die TP-Link-Oberfläche die Datei annimmt, hängt von der Version der Herstellerfirmware ab; mit 1.3.3 oder 1.3.7 sollte es am ehesten gehen."
+    "sicherheit_hinweis": "Am ehesten klappt es mit der TP-Link-Firmware 1.3.3 oder 1.3.7."
    }
   },
   {
@@ -7796,7 +7796,7 @@
     "ssh_alt": false,
     "rueckweg_taste": "etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt",
     "sicherheit": "abgeleitet",
-    "sicherheit_hinweis": "Den Ablauf haben wir vom UniFi Swiss Army Knife Ultra übernommen, der dieselbe Technik hat. Im Freifunk-Forum gibt es Erfolgsberichte für den AC Lite."
+    "sicherheit_hinweis": ""
    }
   },
   {
@@ -7879,7 +7879,7 @@
     "ssh_alt": false,
     "rueckweg_taste": "etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt",
     "sicherheit": "abgeleitet",
-    "sicherheit_hinweis": "Für den UniFi AC Lite und den AC Pro gibt es Erfolgsberichte mit diesem Weg, für dieses Modell liegt uns noch keiner vor."
+    "sicherheit_hinweis": ""
    }
   },
   {
@@ -7962,7 +7962,7 @@
     "ssh_alt": false,
     "rueckweg_taste": "etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt",
     "sicherheit": "abgeleitet",
-    "sicherheit_hinweis": "Für den UniFi AC Lite und den AC Pro gibt es Erfolgsberichte mit diesem Weg, für dieses Modell liegt uns noch keiner vor."
+    "sicherheit_hinweis": ""
    }
   },
   {
@@ -8045,7 +8045,7 @@
     "ssh_alt": false,
     "rueckweg_taste": "etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt",
     "sicherheit": "abgeleitet",
-    "sicherheit_hinweis": "Für den UniFi AC Lite und den AC Pro gibt es Erfolgsberichte mit diesem Weg, für dieses Modell liegt uns noch keiner vor."
+    "sicherheit_hinweis": ""
    }
   },
   {
@@ -8128,7 +8128,7 @@
     "ssh_alt": false,
     "rueckweg_taste": "etwa 15 Sekunden, bis die LED weiß, blau und aus wechselt",
     "sicherheit": "abgeleitet",
-    "sicherheit_hinweis": "Bei uns ist dieser Weg 2025 schon an einem UniFi AC Pro gelaufen, und im Freifunk-Forum gibt es einen weiteren Erfolgsbericht."
+    "sicherheit_hinweis": ""
    }
   },
   {
@@ -9310,7 +9310,7 @@
    "werte": {
     "stock_url": "",
     "sicherheit": "abgeleitet",
-    "sicherheit_hinweis": "OpenWrt beschreibt nicht, wie die Datei aus der Zyxel-Firmware heraus auf das Gerät kommt; den Weg über die Zyxel-Oberfläche haben wir angenommen."
+    "sicherheit_hinweis": ""
    }
   },
   {
@@ -10269,7 +10269,7 @@
     "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-box-7530-initramfs-uImage.itb",
     "rampe_datei": "gluon-rampe-20261115-avm-fritz-box-7530-initramfs-uImage.itb",
     "sicherheit": "abgeleitet",
-    "sicherheit_hinweis": "Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht."
+    "sicherheit_hinweis": ""
    }
   },
   {
@@ -10338,7 +10338,7 @@
     "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-box-7530-initramfs-uImage.itb",
     "rampe_datei": "gluon-rampe-20261115-avm-fritz-box-7530-initramfs-uImage.itb",
     "sicherheit": "abgeleitet",
-    "sicherheit_hinweis": "Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht."
+    "sicherheit_hinweis": ""
    }
   },
   {
@@ -10407,7 +10407,7 @@
     "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-repeater-1200-initramfs-uImage.itb",
     "rampe_datei": "gluon-rampe-20261115-avm-fritz-repeater-1200-initramfs-uImage.itb",
     "sicherheit": "abgeleitet",
-    "sicherheit_hinweis": "Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht."
+    "sicherheit_hinweis": ""
    }
   },
   {
@@ -10476,7 +10476,7 @@
     "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-avm-fritz-repeater-3000-initramfs-uImage.itb",
     "rampe_datei": "gluon-rampe-20261115-avm-fritz-repeater-3000-initramfs-uImage.itb",
     "sicherheit": "abgeleitet",
-    "sicherheit_hinweis": "Den Ablauf beschreibt OpenWrt so; dass die RAMpe Bootloader und Speicher vorbereitet, ist im Testsystem geprüft, am Gerät noch nicht."
+    "sicherheit_hinweis": ""
    }
   },
   {
@@ -10793,7 +10793,7 @@
    "erprobt": {},
    "werte": {
     "sicherheit": "abgeleitet",
-    "sicherheit_hinweis": "Teil 1 und 2 beschreibt das OpenWrt-Wiki genau so. Dass sich die Freifunk-Firmware in Teil 3 wie OpenWrt mit „Force upgrade“ einspielen lässt, haben wir daraus abgeleitet."
+    "sicherheit_hinweis": ""
    }
   },
   {
@@ -18322,7 +18322,7 @@
     "fertig_zeichen": "Laut OpenWrt-Wiki blinkt die Power-LED, solange er beschäftigt ist, und leuchtet dauerhaft, wenn er fertig ist.",
     "rueckweg": "Zurück zur Herstellerfirmware geht nur mit einer Sicherung der Partition \"firmware\", die du vor Schritt 7 aus OpenWrt heraus gemacht hast. Das beschreiben wir hier nicht.",
     "sicherheit": "praxis",
-    "sicherheit_hinweis": "Wir haben rund ein Dutzend dieser Geräte auf diesem Weg umgestellt.",
+    "sicherheit_hinweis": "",
     "befehle": "setenv ramboot_openwrt \"setenv ipaddr 192.168.1.22; setenv serverip 192.168.1.66; tftpboot 0x2000000 ws-ap3825i-initramfs.bin; interrupts off; bootm start 0x2000000; bootm loados; fdt resize; fdt boardsetup; fdt resize; fdt boardsetup; fdt chosen; fdt resize; fdt chosen; bootm prep; bootm go;\"\nsetenv boot_openwrt \"cp.b 0xEC000000 0x2000000 0x2000000; interrupts off; bootm start 0x2000000; bootm loados; fdt resize; fdt boardsetup; fdt resize; fdt boardsetup; fdt chosen; fdt resize; fdt chosen; bootm prep; bootm go;\"\nsetenv bootcmd \"run boot_openwrt\";\nsaveenv\nrun ramboot_openwrt",
     "rampe_url": "https://firmware.neanderfunk.de/other/Gluon-Installer-RAMpe/gluon-rampe-20261115-extreme-networks-ws-ap3825i-initramfs-kernel.bin",
     "rampe_datei": "gluon-rampe-20261115-extreme-networks-ws-ap3825i-initramfs-kernel.bin",
@@ -19407,7 +19407,7 @@
     "tftp_hinweis": "",
     "notweg_keiner": "",
     "sicherheit": "abgeleitet",
-    "sicherheit_hinweis": "Die Gefahr aus Build 151014 kennen wir aus eigener Erfahrung; den Weg aus Build 140709 haben wir nicht selbst nachvollzogen."
+    "sicherheit_hinweis": ""
    }
   },
   {
@@ -19814,7 +19814,7 @@
     "zwischen_url": "https://firmware.ffnef.de/other/cudy-mirror-20261022/zwischenfirmware/cudy-m1800.bin",
     "zwischen_url_text": "Zwischenfirmware für den Cudy M1800 aus unserem Spiegel",
     "sicherheit": "unsicher",
-    "sicherheit_hinweis": "Cudy bietet dieselbe Zwischenfirmware unter „M1800 V2“ und „M1800+ V2“ an. Ob dein M1800 sie annimmt, wissen wir nicht.",
+    "sicherheit_hinweis": "Cudy bietet dieselbe Zwischenfirmware unter „M1800 V2“ und „M1800+ V2“ an. Nimmt dein M1800 sie nicht an, melde dich bei uns.",
     "rueckweg_url": "https://www.cudy.com/pages/download-center/m1800-1-0"
    }
   },
@@ -20324,7 +20324,7 @@
     "dauer_neustart": "einige Minuten",
     "datei_beispiel": "gluon-<community>-<release>-d-link-dap-x1860-a1-factory.bin",
     "sicherheit": "quelle",
-    "sicherheit_hinweis": "Eine Notiz von uns nennt für dieses Gerät statt der factory-Datei einen Umweg über OpenWrt; was davon stimmt, ist noch nicht geklärt."
+    "sicherheit_hinweis": "Nimmt die Herstellerfirmware die factory-Datei nicht an, melde dich bei uns."
    }
   },
   {
@@ -20457,7 +20457,7 @@
     "dauer_neustart": "einige Minuten",
     "datei_beispiel": "gluon-<community>-<release>-d-link-dir-878-a1-factory.bin",
     "sicherheit": "quelle",
-    "sicherheit_hinweis": "Eine Notiz von uns nennt für die DIR-Reihe statt der Recovery-Seite einen Weg per TFTP; was davon für dieses Gerät stimmt, ist noch nicht geklärt."
+    "sicherheit_hinweis": "Klappt die Recovery-Seite nicht, melde dich bei uns."
    }
   },
   {
@@ -20530,7 +20530,7 @@
     "dauer_neustart": "einige Minuten",
     "datei_beispiel": "gluon-<community>-<release>-d-link-dir-882-a1-factory.bin",
     "sicherheit": "quelle",
-    "sicherheit_hinweis": "Eine Notiz von uns nennt für die DIR-Reihe statt der Recovery-Seite einen Weg per TFTP; was davon für dieses Gerät stimmt, ist noch nicht geklärt."
+    "sicherheit_hinweis": "Klappt die Recovery-Seite nicht, melde dich bei uns."
    }
   },
   {
@@ -22674,7 +22674,7 @@
     "rampe_datei": "gluon-rampe-20261115-zyxel-wsm20-initramfs-kernel.bin",
     "rampe_weg": "Lade in Schritt 4 statt der OpenWrt-Datei die RAMpe hoch; Teil 2 entfällt dann.",
     "sicherheit": "quelle",
-    "sicherheit_hinweis": "Freifunk Aachen beschreibt den Weg so, und bei uns ist er an einem Gerät gelaufen; mit der RAMpe hat ihn noch niemand ausprobiert."
+    "sicherheit_hinweis": ""
    }
   },
   {
