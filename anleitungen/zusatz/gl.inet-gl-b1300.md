@@ -20,8 +20,8 @@ nicht geklärt; mit diesem Namen bist du auf der sicheren Seite.
 an. Lade sie unter
 [dl.gl-inet.com/router/b1300/stable](https://dl.gl-inet.com/router/b1300/stable)
 herunter und spiel sie über die Notfall-Seite auf, wie oben beschrieben.
-Bei uns hat das geklappt: Nach etwa 9 Minuten war die GL.iNet-Oberfläche
-wieder unter `http://192.168.8.1` erreichbar.
+Nach etwa 9 Minuten ist die GL.iNet-Oberfläche wieder unter
+`http://192.168.8.1` erreichbar.
 
 ## Notfall für Erfahrene: TFTP
 

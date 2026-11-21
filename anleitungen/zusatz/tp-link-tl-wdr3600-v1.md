@@ -1,7 +1,7 @@
 ## Vorher prüfen
 
-- **Herstellerfirmware:** Bei uns hat die TP-Link-Firmware 3.14.3
-  (Build 150518) das factory-Image direkt angenommen. Laut OpenWrt sperrt
+- **Herstellerfirmware:** Die TP-Link-Firmware 3.14.3 (Build 150518)
+  nimmt das factory-Image direkt an. Laut OpenWrt sperrt
   der spätere Build 151104 fremde Firmware. Lehnt die Oberfläche das Image
   ab, nimm den Weg per TFTP (unten unter "Notfall"): Der WDR3600 holt sich
   das factory-Image dann selbst, ganz ohne die TP-Link-Oberfläche. Den

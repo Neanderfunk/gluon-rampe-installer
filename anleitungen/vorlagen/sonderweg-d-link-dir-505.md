@@ -50,9 +50,8 @@ Das ist umständlich und lohnt sich für ein Gerät, das schon da ist. Zum
 Kaufen empfehlen wir den {{ modell }} nicht mehr.
 
 > **Nicht über die Notfall-Seite von D-Link.** Hält man beim Einstecken die
-> Reset-Taste, startet die "D-Link Router Recovery Mode"-Seite. Bei uns hat
-> sie jedes Mal "Upgrade successfully!" gemeldet, aber nichts geschrieben,
-> egal welche Datei. Nimm den Weg über die normale D-Link-Oberfläche unten.
+> Reset-Taste, startet die "D-Link Router Recovery Mode"-Seite. Sie meldet
+> "Upgrade successfully!", schreibt aber nichts, egal welche Datei. Nimm den Weg über die normale D-Link-Oberfläche unten.
 
 ## Was du brauchst
 
@@ -115,8 +114,8 @@ Kaufen empfehlen wir den {{ modell }} nicht mehr.
 ## Schon eine ältere Freifunk-Firmware drauf?
 
 Läuft auf dem {{ modell }} schon eine alte Freifunk-Firmware, geht es
-kürzer, ganz ohne Zwischenstufe. Bei uns ist ein Router so direkt von einer
-Freifunk-Firmware aus dem Jahr 2018 auf die aktuelle gewechselt.
+kürzer, ganz ohne Zwischenstufe. Das geht auch von einer Freifunk-Firmware
+aus dem Jahr 2018 direkt auf die aktuelle.
 
 1. Bring den Router in den Konfigurationsmodus: Drück im Betrieb die
    Reset-Taste etwa 10 Sekunden lang. Pass dabei auf, dass der

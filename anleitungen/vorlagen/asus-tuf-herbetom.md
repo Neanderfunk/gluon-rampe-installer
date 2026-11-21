@@ -281,7 +281,7 @@ ab, das ist harmlos.
 ## Zurück zur ASUS-Firmware
 
 Laut OpenWrt-Wiki hilft dafür das ASUS-Werkzeug "Firmware Restoration" mit
-dem Rettungsmodus des Routers. Ausprobiert haben wir es nicht.
+dem Rettungsmodus des Routers.
 
 {{ zusatz.text }}
 
