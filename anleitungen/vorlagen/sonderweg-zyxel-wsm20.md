@@ -164,10 +164,8 @@ the current configuration" entfernen** und **"Continue"**.
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
+## Quelle
 
 Diese Anleitung folgt in weiten Teilen der
 [Anleitung von Freifunk Aachen](https://freifunk-aachen.de/2024/01/04/installationsanleitung-zyxel-wsm20/)
 (Stefan Limbach, 2024).
-
-{{ herkunft }}

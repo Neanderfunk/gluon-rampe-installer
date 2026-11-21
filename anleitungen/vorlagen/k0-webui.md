@@ -230,6 +230,3 @@ feste Adresse am Rechner ([Feste IP-Adresse einstellen](grundlagen/feste-ip.md))
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

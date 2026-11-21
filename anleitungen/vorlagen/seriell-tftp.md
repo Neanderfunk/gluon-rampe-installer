@@ -326,6 +326,3 @@ ab, das ist harmlos.
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

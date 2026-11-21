@@ -6,9 +6,7 @@ steckt, siehst du erst in der Cudy-Oberfläche, das kommt in Schritt 4. Die
 Zwischenfirmware ist für beide Sorten dieselbe Datei.
 
 Cudy gibt die Zwischenfirmware für den M3000 in Hardware-Version 1.0 und
-2.0 heraus, und OpenWrt nennt für diese Variante dieselbe Datei. Bei uns
-hat sie an einem M3000 mit YT8821 aber noch niemand ausprobiert. Wenn du es
-tust, sag uns bitte Bescheid, ob es geklappt hat.
+2.0 heraus, und OpenWrt nennt für diese Variante dieselbe Datei.
 
 ## Nach dem Anmelden prüfen
 

@@ -285,6 +285,3 @@ dem Rettungsmodus des Routers. Ausprobiert haben wir es nicht.
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

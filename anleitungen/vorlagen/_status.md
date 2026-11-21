@@ -18,45 +18,24 @@ Warnkasten direkt unter dem Statusblock, für Dinge, die das Gerät unbrauchbar
 machen können.
 -#}
 {%- set ws = werte -%}
-{%- if status == "erprobt" %}
-> **Am Gerät erprobt** am {{ erprobt_am }} mit `{{ erprobt_mit }}`.
-{%- if erprobt_mit_aelter %} Das aktuelle Image ist neuer und in dieser Form
-> noch nicht am Gerät gelaufen.{% endif %}
-{%- elif ws.get("sicherheit") == "praxis" %}
-> **Bei uns in der Praxis erprobt.** Wir haben Geräte dieses Typs schon so
-> umgestellt, nur noch nicht mit der aktuellen Version der
-> Freifunk-Firmware.
-{%- if broken is defined and broken %}
-> Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
-> getestet ("broken"); nicht jede Community bietet sie an.
+{#- Ob und wie weit wir einen Weg selbst erprobt haben, ist eine interne Notiz
+    und steht nicht auf der Seite (adorfer 21.11.2026), ebenso Herkunft und
+    Gluon-"broken". status, erprobt_*, broken und herkunft bleiben im JSON.
+    Sichtbar bleiben nur Warnungen, die beim Installieren helfen. -#}
+{%- set praxis = status == "erprobt" or ws.get("sicherheit") == "praxis" %}
+{%- if not praxis and ws.get("sicherheit") == "abgeleitet" %}
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
+{%- elif not praxis and ws.get("sicherheit") == "unsicher" %}
+> **Vorsicht:** Einzelne Schritte sind bei diesem Gerät nicht sicher belegt.
+> Probier es nur, wenn du notfalls einen Weg zurück kennst.
 {%- endif %}
 {%- if ws.get("sicherheit_hinweis") %}
 > {{ ws.get("sicherheit_hinweis") }}
 {%- endif %}
-{%- else %}
-{%- if ws.get("sicherheit") == "quelle" %}
-> Diese Anleitung folgt dem Weg, den die Entwickler von OpenWrt bzw. der
-> Hersteller für dieses Gerät beschreiben.
-{%- elif ws.get("sicherheit") == "abgeleitet" %}
-> Wichtige Schritte haben wir von ähnlichen Geräten oder aus dem
-> OpenWrt-Wiki übernommen. Sei aufmerksam und hör auf, wenn etwas anders
-> aussieht als hier beschrieben.
-{%- elif ws.get("sicherheit") == "unsicher" %}
-> **Vorsicht:** Einzelne Schritte beruhen nur auf Vermutungen oder auf einem
-> einzelnen Bericht. Probier es nur, wenn du notfalls einen Weg zurück kennst.
-{%- else %}
-> Die Anleitung ist aus Quellen zusammengestellt. Wie gut jede Angabe belegt
-> ist, steht unten unter "Herkunft der Angaben".
-{%- endif %}
-{%- if broken is defined and broken %}
-> Die Freifunk-Firmware für dieses Gerät gilt bei Gluon als nicht ausreichend
-> getestet ("broken"); nicht jede Community bietet sie an.
-{%- endif %}
-{%- if ws.get("sicherheit_hinweis") %}
-> {{ ws.get("sicherheit_hinweis") }}
-{%- endif %}
-{%- endif %}
+{%- if (not praxis and ws.get("sicherheit") in ("abgeleitet", "unsicher")) or ws.get("sicherheit_hinweis") %}
 >
+{%- endif %}
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:

@@ -148,6 +148,3 @@ Laut OpenWrt hilft im Notfall die Version FRITZ!OS 7.21.
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

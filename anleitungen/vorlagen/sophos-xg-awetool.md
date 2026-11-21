@@ -179,6 +179,3 @@ Entwickler von OpenWrt:
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

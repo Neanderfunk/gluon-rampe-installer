@@ -358,6 +358,3 @@ zurück.
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

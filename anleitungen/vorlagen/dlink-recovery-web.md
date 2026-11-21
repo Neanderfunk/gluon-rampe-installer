@@ -338,6 +338,3 @@ Danach weiter mit Schritt {% if w.datei_art == "rampe" %}8{% else %}8 ("Fertig")
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

@@ -37,6 +37,5 @@ mehr an. Sie meldet trotzdem jedes Mal Erfolg.
 
 Nach der Installation geht das nicht mehr über die Notfall-Seite (siehe
 "Achtung" oben). Zurück geht es dann nur noch mit einer seriellen Konsole
-bei geöffnetem Gehäuse. Das haben wir ausprobiert, es ist aber nichts für
-Endnutzer (Hintergrund im OpenWrt-Forum,
+bei geöffnetem Gehäuse. Das ist nichts für Endnutzer (Hintergrund im OpenWrt-Forum,
 [Thema 160069](https://forum.openwrt.org/t/160069)).

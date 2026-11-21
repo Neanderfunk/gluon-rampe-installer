@@ -360,6 +360,3 @@ Abschnitt "Return to stock".
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

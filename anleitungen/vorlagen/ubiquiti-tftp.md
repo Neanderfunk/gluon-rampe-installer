@@ -134,6 +134,3 @@ schicken, möglichst genau die Version, die vorher drauf war.
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

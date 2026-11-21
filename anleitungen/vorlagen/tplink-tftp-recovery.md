@@ -127,6 +127,3 @@ OpenWrt-Wiki zu deinem Gerät.
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

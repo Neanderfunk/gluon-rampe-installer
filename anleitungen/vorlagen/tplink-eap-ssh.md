@@ -142,6 +142,3 @@ serielle Konsole, für die man im Gehäuse an Lötpunkte muss.
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

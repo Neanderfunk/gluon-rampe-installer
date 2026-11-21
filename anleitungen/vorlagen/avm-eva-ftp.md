@@ -162,6 +162,3 @@ im Ordner des Geräts unter "recover". Geräte von Providern (zum Beispiel
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

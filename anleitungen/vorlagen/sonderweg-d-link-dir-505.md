@@ -165,6 +165,3 @@ hat bei uns auch die eigene Firmware von D-Link nicht geschrieben.
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

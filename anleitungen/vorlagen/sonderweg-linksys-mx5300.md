@@ -95,6 +95,3 @@ Damit ist allerdings auch die Linksys-Firmware weg.
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

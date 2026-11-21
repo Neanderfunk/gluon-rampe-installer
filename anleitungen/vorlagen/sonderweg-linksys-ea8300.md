@@ -157,6 +157,3 @@ OpenWrt ab 22.03.3 ein Linksys-Image direkt einspielen (sysupgrade mit
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

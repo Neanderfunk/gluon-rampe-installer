@@ -180,6 +180,3 @@ TFTP an `{{ w.geraet_ip }}`, wie unter
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

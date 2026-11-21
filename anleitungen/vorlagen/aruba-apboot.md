@@ -551,6 +551,3 @@ saveenv
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

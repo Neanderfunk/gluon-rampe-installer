@@ -162,6 +162,3 @@ Ein Terminal brauchst du nicht. Rechne mit einer Viertelstunde.
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

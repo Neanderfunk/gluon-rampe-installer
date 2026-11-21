@@ -183,6 +183,3 @@ TOTOLINK-Firmware an, auch eine neuere.
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

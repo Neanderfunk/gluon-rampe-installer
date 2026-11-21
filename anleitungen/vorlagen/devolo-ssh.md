@@ -114,6 +114,3 @@ Stunde.
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

@@ -268,6 +268,3 @@ wählen, **den Haken bei "Keep settings" entfernen** und **Continue**.
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

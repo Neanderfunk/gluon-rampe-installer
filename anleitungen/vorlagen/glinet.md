@@ -336,6 +336,3 @@ settings"** und klick **Continue**.
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

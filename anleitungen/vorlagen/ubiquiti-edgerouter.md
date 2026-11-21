@@ -229,6 +229,3 @@ Ubiquiti beschreibt, wie EdgeOS wieder aufgespielt wird:
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}

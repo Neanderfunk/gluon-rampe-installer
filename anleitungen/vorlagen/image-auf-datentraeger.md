@@ -108,6 +108,3 @@ des Switches.
 
 {{ zusatz.text }}
 
-## Herkunft der Angaben
-
-{{ herkunft }}
