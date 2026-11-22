@@ -8,8 +8,8 @@ Für diese Geräte gibt es zwei Wege:
 - **Weg a (Schritte oben):** Die Freifunk-Firmware wird mit `dd` direkt in
   den Speicher geschrieben. Das geht laut Freifunk-Forum auch mit aktueller
   Ubiquiti-Firmware (gezeigt an einer AC Lite mit 6.2.35, bestätigt Ende
-  2023, auch an einem AC Pro Gen2 mit 6.5.62). Bei uns lief er 2025 an einem
-  AC Pro. Das ist der Weg für die meisten Geräte.
+  2023, auch an einem AC Pro Gen2 mit 6.5.62). Das ist der Weg für die
+  meisten Geräte.
 - **Weg b (unten):** Erst zurück auf die alte Ubiquiti-Firmware 3.7.58, dann
   mit `mtd` schreiben. Das ging früher überall, scheitert aber laut Forum,
   sobald Ubiquiti-Firmware 4.3 oder neuer drauf ist: Ubiquiti sperrt das

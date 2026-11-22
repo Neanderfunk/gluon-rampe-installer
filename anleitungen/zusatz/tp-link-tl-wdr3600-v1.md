@@ -6,13 +6,13 @@
   ab, nimm den Weg per TFTP (unten unter "Notfall"): Der WDR3600 holt sich
   das factory-Image dann selbst, ganz ohne die TP-Link-Oberfläche. Den
   TFTP-Weg hat aber nicht jeder WDR3600: Ein Gerät Ver 1.1 mit PCT-Zeichen
-  (russische Zulassung) und blauen LEDs holte sich bei uns keine Datei, eins
+  (russische Zulassung) und blauen LEDs holte sich keine Datei, eins
   mit grünen LEDs schon.
 - **Dateiname:** Nimm die Datei mit ihrem Originalnamen, umbenennen ist
   nicht nötig. Hast du sie mehrfach heruntergeladen und heißt sie jetzt
   `…(1).bin` oder `…[1].bin`, benenne sie zurück. Bei zu langem Namen meldet
-  die Oberfläche "Please choose a file to upgrade!". Bei uns ging ein Name
-  mit 54 Zeichen, einer mit 68 nicht.
+  die Oberfläche "Please choose a file to upgrade!". Ein Name mit 54
+  Zeichen geht, einer mit 68 nicht.
 - Der TL-WDR4300 sieht ähnlich aus, braucht aber ein eigenes Image.
 
 ## Wenn etwas schiefgeht
