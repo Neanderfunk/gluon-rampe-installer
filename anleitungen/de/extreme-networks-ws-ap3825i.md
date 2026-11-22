@@ -24,10 +24,9 @@ vorlage_stand: ae4d4370f
 > [projekt@neanderfunk.de](mailto:projekt@neanderfunk.de?subject=Anleitung%20Extreme%20Networks%20WS-AP3825i)
 
 > **Achtung:** Das Schreiben der Freifunk-Firmware und der erste Start danach dauern bei
-> diesem Gerät **sehr lange, länger, als es sich gut anfühlt**. Bei uns waren
-> es einmal etwa 11 Minuten, bis er wieder unter `192.168.1.1` antwortete, und
-> die Konsole blieb dabei lange stumm. So war es bei jedem der rund zwölf
-> Geräte, die wir umgestellt haben. **Nicht den Strom ziehen**, auch wenn
+> diesem Gerät **sehr lange, länger, als es sich gut anfühlt**. Es kann etwa
+> 11 Minuten dauern, bis er wieder unter `192.168.1.1` antwortet, und die
+> Konsole bleibt dabei lange stumm. **Nicht den Strom ziehen**, auch wenn
 > scheinbar nichts passiert.
 
 Dieses Gerät nimmt keine fremde Firmware über seine Weboberfläche an. Der

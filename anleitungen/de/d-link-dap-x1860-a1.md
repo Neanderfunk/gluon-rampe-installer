@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, curl, feste-ip, router-antwortet-nicht]
 daten_stand: 78bd472e9
-vorlage_stand: ae4d4370f
+vorlage_stand: 6eca9a4ce
 ---
 
 # D-Link DAP-X1860 A1: Freifunk-Firmware installieren
@@ -147,7 +147,7 @@ Windows 10 und 11 heißt es `curl.exe` und ist eingebaut
    Oft kommt curl danach nicht von selbst zurück, obwohl alles geklappt hat.
    Dann beende es mit **Strg+C** (am Mac ctrl+C), aber erst, wenn der Router
    neu startet.
-   Wartest du stattdessen, kommt curl nach einiger Zeit (bei uns gut 10
+   Wartest du stattdessen, kommt curl nach einiger Zeit (gut 10
    Minuten) von selbst zurück, meist mit "Recv failure: Connection timed
    out". Das ist in Ordnung.
 

@@ -14,7 +14,7 @@ erprobt_mit: gluon-rampe-20261114-d-link-aquila-pro-ai-m60-a1-recovery.bin
 rampe_image: gluon-rampe-*-d-link-aquila-pro-ai-m60-a1-recovery.bin
 grundlagen: [browser-https, browser-not-found, curl, feste-ip, router-antwortet-nicht]
 daten_stand: 78bd472e9
-vorlage_stand: ae4d4370f
+vorlage_stand: 6eca9a4ce
 ---
 
 # D-Link AQUILA PRO AI M60 A1: Freifunk-Firmware installieren
@@ -203,7 +203,7 @@ Windows 10 und 11 heißt es `curl.exe` und ist eingebaut
    Oft kommt curl danach nicht von selbst zurück, obwohl alles geklappt hat.
    Dann beende es mit **Strg+C** (am Mac ctrl+C), aber erst, wenn der Router
    neu startet (beim Neustart flackert die LED schnell weiß).
-   Wartest du stattdessen, kommt curl nach einiger Zeit (bei uns gut 10
+   Wartest du stattdessen, kommt curl nach einiger Zeit (gut 10
    Minuten) von selbst zurück, meist mit "Recv failure: Connection timed
    out". Das ist in Ordnung. Entscheidend ist die letzte Zeile, sie
    zeigt, wie viel ankam. Geklappt hat es bei **etwa 52,4 Millionen Bytes**.

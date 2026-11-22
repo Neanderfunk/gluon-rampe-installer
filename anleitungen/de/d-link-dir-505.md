@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
 daten_stand: 78bd472e9
-vorlage_stand: 5e5ab6fb6
+vorlage_stand: 6eca9a4ce
 ---
 
 # D-Link DIR-505: Freifunk-Firmware installieren
@@ -131,4 +131,4 @@ Konfigurationsmodus; weiter ab Punkt 2 dieses Abschnitts.
 ## Zurück zur D-Link-Firmware
 
 Einen verlässlichen Weg zurück kennen wir nicht. Die Notfall-Seite von D-Link
-hat bei uns auch die eigene Firmware von D-Link nicht geschrieben.
+schreibt nicht einmal die eigene Firmware von D-Link.
