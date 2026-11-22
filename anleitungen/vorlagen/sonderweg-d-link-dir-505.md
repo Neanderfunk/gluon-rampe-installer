@@ -160,7 +160,7 @@ Konfigurationsmodus; weiter ab Punkt 2 dieses Abschnitts.
 ## Zurück zur D-Link-Firmware
 
 Einen verlässlichen Weg zurück kennen wir nicht. Die Notfall-Seite von D-Link
-hat bei uns auch die eigene Firmware von D-Link nicht geschrieben.
+schreibt nicht einmal die eigene Firmware von D-Link.
 
 {{ zusatz.text }}
 

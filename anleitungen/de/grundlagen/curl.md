@@ -40,11 +40,11 @@ Worauf es in der PowerShell ankommt:
 - `-o antwort.bin` nimmt die Antwort des Routers auf; die Datei ist unwichtig
   und kann danach weg.
 
-In der alten Eingabeaufforderung "cmd" ist der Upload bei uns schon nach
-wenigen Sekunden abgebrochen; nimm deshalb die PowerShell.
+In der alten Eingabeaufforderung "cmd" kann der Upload schon nach wenigen
+Sekunden abbrechen; nimm deshalb die PowerShell.
 
-**Nicht aus der WSL** (Linux unter Windows): Von dort kam bei uns keine
-Verbindung zur Recovery zustande, aus Windows selbst schon.
+**Nicht aus der WSL** (Linux unter Windows): Von dort kann die Verbindung
+zur Recovery scheitern, aus Windows selbst klappt sie.
 
 ## Linux und macOS
 

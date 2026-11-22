@@ -28,6 +28,6 @@ macOS im Ordner mit der TP-Link-Datei:
 dd if=<TP-Link-Firmware>.bin of=ArcherC20iV1_tp_recovery.bin bs=512 skip=1
 ```
 
-Die fertige Datei war bei uns 8.126.464 Bytes groß. Danach läuft wieder die
+Die fertige Datei ist 8.126.464 Bytes groß. Danach läuft wieder die
 TP-Link-Firmware; dann wie oben erst Build 140709, dann die
 Freifunk-Firmware.

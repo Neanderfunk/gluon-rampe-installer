@@ -103,7 +103,7 @@ curl_schritte, gebraucht im Abschnitt "Notweg".
    Oft kommt curl danach nicht von selbst zurück, obwohl alles geklappt hat.
    Dann beende es mit **Strg+C** (am Mac ctrl+C), aber erst, wenn der Router
    neu startet{% if werte.get("led_start") %} (beim Neustart {{ werte.led_start }}){% endif %}.
-   Wartest du stattdessen, kommt curl nach einiger Zeit (bei uns gut 10
+   Wartest du stattdessen, kommt curl nach einiger Zeit (gut 10
    Minuten) von selbst zurück, meist mit "Recv failure: Connection timed
    out". Das ist in Ordnung.
    {%- if werte.datei_art == "rampe" %} Entscheidend ist die letzte Zeile, sie
