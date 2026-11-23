@@ -143,7 +143,7 @@ braucht einen eigenen Hardware-Test, bevor eine Anleitung es anbietet.
    RAMpe statt des sysupgrade als Eingabe).
 4. LISTE.txt bekommt eigene Arten, z. B. "TP-Link-Recovery (dauerhaft)".
 5. Vorbereitungsskripte (Gruppen C und D) nach dem Muster der vorhandenen
-   (`overlay/lib/gluon-rampe/`), mit Prüfung des Geräts vor jedem
+   (`overlay/lib/gluon-rampe/prepare`), mit Prüfung des Geräts vor jedem
    Schreibzugriff.
 6. Reihenfolge: A (TP-Link, EU) und B zuerst, dann D, dann C Gerät für
    Gerät mit Hardware-Test.
