@@ -54,7 +54,7 @@ legt das Image des Hauptnamens unter beiden Namen ab.
 | GL.iNet GL-E750 (broken) | `gl.inet-gl-e750` | ath79-nand | K2 | devices/gl.inet-gl-e750.sh: `-factory.img` (Kernel + UBI), broken = false für diesen Bau; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet |
 | GL.iNet GL-XE300 | `gl.inet-gl-xe300` | ath79-nand | K2 | devices/gl.inet-gl-xe300.sh: `-factory.img` (Kernel + UBI); Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet |
 | ZTE MF281 (broken) | `zte-mf281` | ath79-nand | K4 | devices/zte-mf281.sh (gebaut, RAMpe 20261115): baut das Gluon-"broken"-Gerät gezielt; `initramfs-kernel.bin` als `speedbox-2.bin` per U-Boot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubiformat`, nicht durch den Commit gedeckt) |
-| ZTE MF286R (broken) | `zte-mf286r` | ath79-nand | K1 | devices/zte-mf286r.sh (gebaut, RAMpe 20261115): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` per `nandwrite` nach dem Exploit (Weg nur für die MF286A belegt) |
+| ZTE MF286R (broken) | `zte-mf286r` | ath79-nand | K1 | devices/zte-mf286r.sh (gebaut, RAMpe 20261115): trägt das Gerät in Gluon ein; `initramfs-kernel.bin` per `nandwrite` nach dem Exploit (Weg nur für die MF286A belegt); dazu Nachbau nach dem Bau für den TFTP-Notweg: 8 MB Nullen + RAMpe-initramfs = `-tftp-root_uImage.bin` (umbenennen in root_uImage), Byte-Vergleich mit OpenWrt 7ac8da00: test/nachbau-tplink.sh (noch nicht gebaut) |
 | Aruba AP-303 | `aruba-ap-303` | ipq40xx-generic | K4 | devices/aruba-ap-303.sh: `-initramfs-uImage.itb` als `ipq40xx.ari` per APBoot-TFTP; Vorbereitung vor dem sysupgrade (`ubiformat`) im Overlay ab 20261115 |
 | Aruba AP-303H | `aruba-ap-303h` | ipq40xx-generic | K4 | devices/aruba-ap-303h.sh: wie AP-303; Vorbereitung vor dem sysupgrade (`ubiformat`) im Overlay ab 20261115 (overlay/lib/gluon-rampe/prepare/aruba_ap-303h.sh) |
 | Aruba AP-365 | `aruba-ap-365` | ipq40xx-generic | K4 | devices/aruba-ap-365.sh: wie AP-303; Vorbereitung vor dem sysupgrade (`ubiformat`) im Overlay ab 20261115 (overlay/lib/gluon-rampe/prepare/aruba_ap-365.sh) |
@@ -91,7 +91,7 @@ legt das Image des Hauptnamens unter beiden Namen ab.
 | ASUS TUF-AX4200 | `asus-tuf-ax4200` | mediatek-filogic | K2 | devices/asus-tuf-ax4200.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` mit eingebettetem initramfs (`TARGET_ROOTFS_INITRAMFS_SEPARATE` aus) für SSH `mtd-write` oder UART + TFTP; eigener Bau-Lauf |
 | ASUS TUF-AX6000 | `asus-tuf-ax6000` | mediatek-filogic | K2 | devices/asus-tuf-ax6000.sh (gebaut, RAMpe 20261115): wie TUF-AX4200; eigener Bau-Lauf |
 | Cudy TR3000 v1 (128 MB Flash) | `cudy-tr3000-v1` | mediatek-filogic | K2 | devices/cudy-tr3000-v1.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` per U-Boot-TFTP |
-| D-Link AQUILA PRO AI M30 A1 | `d-link-aquila-pro-ai-m30-a1` | mediatek-filogic | K1 | devices/d-link-aquila-pro-ai-m30-a1.sh: `-recovery.bin` (D-Link-Header DLK6E6110001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, Hardware-Test offen |
+| D-Link AQUILA PRO AI M30 A1 | `d-link-aquila-pro-ai-m30-a1` | mediatek-filogic | K1 | devices/d-link-aquila-pro-ai-m30-a1.sh: `-recovery.bin` (D-Link-Header DLK6E6110001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, Hardware-Test offen; Umschalt-Image für die zweite aktive Partition (Gruppe A) noch nicht umgesetzt: Format offen (23.11.2026) |
 | D-Link AQUILA PRO AI M60 A1 | `d-link-aquila-pro-ai-m60-a1` | mediatek-filogic | K1 | devices/d-link-aquila-pro-ai-m60-a1.sh: `-recovery.bin` (D-Link-Header DLK6E8202001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, am Gerät erprobt 13.10.2026 (Neanderfunk-sysupgrade geflasht). Gluons eigenes recovery.bin (z. B. Neanderfunk 26100702bro) startet vermutlich wie bei der M30 nicht im Config-Mode [abgeleitet] |
 | Mercusys MR80X v3 | `mercusys-mr80x-v3` | mediatek-filogic | K4 | devices/mercusys-mr80x-v3.sh (gebaut 10.10.2026 lokal, initramfs etwa 8.1 MB, `91_installer_initramfs` geprüft, Hardware-Test offen): trägt das Gerät in Gluon ein (`ensure_device`); `initramfs-kernel.bin` per UART + TFTP |
 | Mercusys MR90X v1 | `mercusys-mr90x-v1` | mediatek-filogic | K2 | devices/mercusys-mr90x-v1.sh (gebaut 10.10.2026 lokal, initramfs etwa 8.1 MB, `91_installer_initramfs` geprüft, Hardware-Test offen): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell |
@@ -110,6 +110,8 @@ legt das Image des Hauptnamens unter beiden Namen ab.
 | NETGEAR WAX218 | `netgear-wax218` | qualcommax-ipq807x | K1 | devices/netgear-wax218.sh (gebaut, RAMpe 20261115): trägt das Gerät in Gluon ein; `-web-ui-factory.fit` (OpenWrt-ARTIFACT) für die Web-UI |
 | TP-Link EAP620 HD v1 | `tp-link-eap620-hd-v1` | qualcommax-ipq807x | K4 | devices/tp-link-eap620-hd-v1.sh (gebaut, RAMpe 20261115): Backport aus gluon-patches-hardware (`RAMPE_HW_PATCHES`); `-initramfs-uImage.itb` per U-Boot-TFTP |
 | Xiaomi AX3600 | `xiaomi-ax3600` | qualcommax-ipq807x | K2 | devices/xiaomi-ax3600.sh (gebaut, RAMpe 20261115): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt |
+| TP-Link Archer C2 v1 | `tp-link-archer-c2-v1` | ramips-mt7620 | K3 | devices/tp-link-archer-c2-v1.sh (Rezept, noch nicht gebaut, ungetestet): Nachbau nach dem Bau, U-Boot aus TP-Link-Firmware EU 170207 + RAMpe-sysupgrade = `-tp-recovery.bin` (umbenennen in ArcherC2V1_tp_recovery.bin); Byte-Vergleich mit OpenWrt 8375623a: test/nachbau-tplink.sh |
+| TP-Link Archer C20 v1 | `tp-link-archer-c20-v1` | ramips-mt7620 | K3 | devices/tp-link-archer-c20-v1.sh (Rezept, noch nicht gebaut, ungetestet): Nachbau nach dem Bau, U-Boot aus TP-Link-Firmware EU 160427 (up_boot) + RAMpe-sysupgrade = `-tp-recovery.bin` (umbenennen in ArcherC20V1_tp_recovery.bin); Byte-Vergleich: test/nachbau-tplink.sh |
 | ASUS RT-AX53U (RT-AX1800U) | `asus-rt-ax53u` | ramips-mt7621 | K1 | devices/asus-rt-ax53u.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` per ASUS-Rescue (TFTP put) |
 | D-Link DAP-X1860 A1 | `d-link-dap-x1860-a1` | ramips-mt7621 | K0 | devices/d-link-dap-x1860-a1.sh: `-initramfs-kernel.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet |
 | Genexis/Inteno Pulse EX400 | `genexis-pulse-ex400` | ramips-mt7621 | K1 | devices/genexis-pulse-ex400.sh (gebaut 15.10.2026): `-factory.bin` (initramfs in UBIFS-bootfs, Inteno-Kopf), 9.143.328 Byte, unter der bootfs-Grenze von etwa 11.6 MiB; am Gerät erprobt 11.11.2026 |
@@ -119,6 +121,9 @@ legt das Image des Hauptnamens unter beiden Namen ab.
 | Xiaomi Mi Router AC2100 (R2100) | `xiaomi-mi-router-ac2100` | ramips-mt7621 | K2 | devices/xiaomi-mi-router-ac2100.sh: `-kernel1.bin` und `-rootfs0.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet |
 | Xiaomi Redmi Router AC2100 (RM2100) | `xiaomi-redmi-router-ac2100` | ramips-mt7621 | K2 | devices/xiaomi-redmi-router-ac2100.sh: `-kernel1.bin` und `-rootfs0.bin`; Trockenlauf gegen Gluon v2025.1.3 ok (14.10.2026), Bau in der zweiten Welle, ungetestet |
 | ZyXEL WSM20 (Multy M1) | `zyxel-wsm20` | ramips-mt7621 | K1 | devices/zyxel-wsm20.sh (gebaut 15.10.2026): `initramfs-kernel.bin` (znet-Header schon drin, 7.481.920 Bytes, unter den 8 MiB Kernel) für die versteckte Upgrade-Seite; am Gerät ungetestet |
+| TP-Link Archer C20 v5 | `tp-link-archer-c20-v5` | ramips-mt76x8 | K3 | devices/tp-link-archer-c20-v5.sh (Rezept, noch nicht gebaut, ungetestet): Nachbau nach dem Bau, erste 131584 Byte der TP-Link-Firmware EU (up_boot 241231) + RAMpe-sysupgrade = `-boot.bin` (Weboberfläche) und `-tp-recovery.bin` (TFTP); Byte-Vergleich mit OpenWrt 86e7353b: test/nachbau-tplink.sh |
+| TP-Link Archer C50 v4 | `tp-link-archer-c50-v4` | ramips-mt76x8 | K3 | devices/tp-link-archer-c50-v4.sh (Rezept, noch nicht gebaut, ungetestet): Nachbau nach dem Bau, erste 131584 Byte der TP-Link-Firmware (up_boot 250117, wie stock_getestet) + RAMpe-sysupgrade = `-boot.bin` und `-tp-recovery.bin`; Byte-Vergleich: test/nachbau-tplink.sh |
+| TP-Link Archer C50 v6 (CA/EU/RU; nicht ES = C54) | `tp-link-archer-c50-v6-ca-eu-ru` | ramips-mt76x8 | K3 | devices/tp-link-archer-c50-v6-ca-eu-ru.sh (Rezept, noch nicht gebaut, ungetestet): Nachbau nach dem Bau, erste 131584 Byte der TP-Link-Firmware EU (up_boot 250119) + RAMpe-sysupgrade = `-boot.bin` und `-tp-recovery.bin`; Byte-Vergleich: test/nachbau-tplink.sh |
 | x86 (x86-64) | `x86-64` | x86-64 | K0 | devices/x86-64.sh: Testgerät, in QEMU Ende-zu-Ende geprüft |
 
 <!-- END erzeugt:rezepte -->
@@ -148,12 +153,22 @@ contrib/docker/run.sh ./build.sh mpc85xx-p1020 ocedo-panda enterasys-ws-ap3710i 
 contrib/docker/run.sh ./build.sh mpc85xx-p1010 enterasys-ws-ap3715i sophos-red-15w-rev.1
 contrib/docker/run.sh ./build.sh mediatek-filogic acer-predator-connect-w6 acer-predator-connect-w6d acer-connect-vero-w6m adtran-sdg-8612 adtran-sdg-8614 adtran-sdg-8622 adtran-sdg-8632 tp-link-archer-ax80-v1 tp-link-re6000xd zyxel-ex5700-telenor
 RAMPE_HW_PATCHES=<pfad>/gluon-patches-hardware-next contrib/docker/run.sh ./build.sh mediatek-filogic tp-link-eap683-lr tp-link-eap683-ur
+contrib/docker/run.sh ./build.sh ramips-mt7620 tp-link-archer-c2-v1 tp-link-archer-c20-v1
+contrib/docker/run.sh ./build.sh ramips-mt76x8 tp-link-archer-c20-v5 tp-link-archer-c50-v4 tp-link-archer-c50-v6-ca-eu-ru
 ```
 
 Die beiden letzten Läufe sind Gruppe B aus `docs/PLAN-WEITERE-RAMPEN.md`
 (serieller Weg). Der EAP683 braucht den OpenWrt-Backport aus
 gluon-patches-hardware, Branch **v2025.1.x-next**; `scripts/alle-bauen.sh`
 nimmt dafür `RAMPE_HW_PATCHES_NEXT`.
+
+Die beiden ramips-Läufe sind Gruppe A (TP-Link): `build.sh` setzt nach dem
+Bau den U-Boot-Teil der TP-Link-Firmware vor das sysupgrade der RAMpe
+(`nach_dem_bau` in `devices/lib.sh`). Die Herstellerdateien holt der Lauf
+selbst nach `RAMPE_CACHE` (Default `~/.cache/gluon-rampe/hersteller`), mit
+fester SHA256; von Hand abgelegte Dateien unter ihrem Originalnamen werden
+genommen. `test/nachbau-tplink.sh` vergleicht das Ergebnis Byte für Byte mit
+den Befehlen aus den OpenWrt-Commits.
 
 Dazu seit 14.10.2026 Geräte, die ab Werk ein dauerhaftes OpenWrt im
 Hersteller-Format brauchen, weil Gluon dafür nur sysupgrade baut (die RAMpe

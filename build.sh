@@ -192,6 +192,7 @@ if ! make -C "$GLUON_DIR" GLUON_TARGET="$TARGET" GLUON_DEVICES="${DEVICES[*]}" \
 fi
 
 echo "== Einsammeln nach $IMAGES"
+nachbau_fehler=()
 for d in "${DEVICES[@]}"; do
 	found=0
 	# Aeltere Staende dieses Geraets nach archiv/: in images/ liegt je Geraet nur
@@ -200,7 +201,7 @@ for d in "${DEVICES[@]}"; do
 	for alt in "$IMAGES"/gluon-rampe-*; do
 		[ -f "$alt" ] || continue
 		b=${alt##*/}
-		[[ $b =~ ^gluon-rampe-([0-9]{8})-"$d"-(initramfs|recovery|factory|web-ui-factory|kernel1|rootfs0|fdt) ]] || continue
+		[[ $b =~ ^gluon-rampe-([0-9]{8})-"$d"-(initramfs|recovery|factory|web-ui-factory|kernel1|rootfs0|fdt|tp-recovery|boot|tftp) ]] || continue
 		[ "${BASH_REMATCH[1]}" = "$RELEASE" ] || mv -v "$alt" "$ARCHIV/"
 	done
 	# Hersteller-Images (recovery, factory ...), die Gluon unter other/ ablegt
@@ -225,6 +226,21 @@ for d in "${DEVICES[@]}"; do
 		size=$(stat -c %s "$k")
 		(( size < 0x2000000 )) || echo "WARNUNG: $d: initramfs $size Byte >= 32 MiB (TFTP/EVA-Grenze)" >&2
 	done
+	# Nachbau nach dem Bau (devices/lib.sh, nach_dem_bau): Hersteller-Teile oder
+	# Polsterung um die RAMpe. Scheitert er, fehlt nur dieses Geraet.
+	if [ -n "${RAMPE_NACHBAU[$d]:-}" ]; then
+		echo "  Nachbau $d: ${RAMPE_NACHBAU[$d]}"
+		ini="$IMAGES/gluon-rampe-$RELEASE-$d-initramfs-kernel.bin"
+		if ( RAMPE_GERAET="$d"
+		     RAMPE_SYSUPGRADE="$GLUON_DIR/output/images/sysupgrade/gluon-rampe-$RELEASE-$d-sysupgrade.bin"
+		     RAMPE_INITRAMFS="$ini"; RAMPE_ZIEL="$IMAGES"; RAMPE_PRAEFIX="gluon-rampe-$RELEASE-$d"
+		     eval "${RAMPE_NACHBAU[$d]}" ); then
+			found=1
+		else
+			echo "FEHLER: Nachbau fuer $d fehlgeschlagen" >&2
+			nachbau_fehler+=("$d")
+		fi
+	fi
 	(( found )) || echo "WARNUNG: fuer $d wurde nichts eingesammelt - Rezept pruefen (factory/extra_images, TARGET_ROOTFS_INITRAMFS)." >&2
 done
 # OpenWrt-U-Boot der AVM-ipq40xx-Geraete fuer eva_ramboot.py (Paket
@@ -236,3 +252,7 @@ done
 # SHA256SUMS, LISTE.md und LISTE.txt (Geraet, Datei, Art, Groesse, SHA256) fuer images/
 python3 "$ROOT/scripts/rampe-liste.py" "$IMAGES"
 ls -la "$IMAGES"
+if (( ${#nachbau_fehler[@]} )); then
+	echo "Nachbau fehlgeschlagen fuer: ${nachbau_fehler[*]} (die uebrigen Geraete sind eingesammelt)" >&2
+	exit 1
+fi

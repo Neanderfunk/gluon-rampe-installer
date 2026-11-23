@@ -46,3 +46,11 @@
 ensure_device ath79-nand zte-mf286r zte_mf286r
 ensure_target_config ath79-nand TARGET_ROOTFS_INITRAMFS
 ensure_target_config ath79-nand TARGET_INITRAMFS_COMPRESSION_LZMA
+#
+# Nachbau (Gruppe A aus docs/PLAN-WEITERE-RAMPEN.md): TFTP-Notweg aus dem
+# Commit ("Method 3", LAST RESORT): 8 MB Nullen vor dem initramfs, Datei
+# root_uImage, TFTP-Server 192.0.0.1/8, vorher die Partition "kernel"
+# loeschen [geprueft: OpenWrt 7ac8da00]. Ergebnis
+# <praefix>-tftp-root_uImage.bin, umbenennen in root_uImage. Keine
+# Herstellerdatei.
+nach_dem_bau zte-mf286r nachbau_nullen_davor 8388608 tftp-root_uImage.bin

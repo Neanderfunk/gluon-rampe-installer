@@ -189,3 +189,158 @@ open(path, 'w').write(s)
 print("  %s: %s = %s gesetzt" % (dev, key, val))
 PY
 }
+
+# ---------------------------------------------------------------------------
+# Nachbau nach dem Bau (Gruppe A aus docs/PLAN-WEITERE-RAMPEN.md)
+#
+# Manche Wege brauchen ein Image, das OpenWrt nicht baut: die RAMpe mit einem
+# Teil der Hersteller-Firmware davor (TP-Link-U-Boot) oder mit einer
+# Polsterung (ZTE-TFTP). Ein Rezept meldet dafuer mit nach_dem_bau einen
+# Befehl an; build.sh ruft ihn nach dem Einsammeln auf, mit
+#   RAMPE_GERAET      Gluon-Geraetename
+#   RAMPE_SYSUPGRADE  sysupgrade-Image der RAMpe (Gluon output/images)
+#   RAMPE_INITRAMFS   eingesammeltes initramfs der RAMpe (falls gebaut)
+#   RAMPE_ZIEL        Verzeichnis der veroeffentlichten Images
+#   RAMPE_PRAEFIX     gluon-rampe-<Release>-<Geraet>
+# Schlaegt der Befehl fehl, fehlt nur dieses Geraet; build.sh meldet es und
+# endet am Schluss mit Exit 1.
+#
+# Herstellerdateien holt hersteller_datei in einen Cache ausserhalb des Repos
+# (RAMPE_CACHE, Default ~/.cache/gluon-rampe/hersteller), mit festen
+# SHA256-Summen fuer den Download und die ausgepackte Datei. Wer den Download
+# von Hand erledigt, legt die Datei unter ihrem Originalnamen (wie in der URL,
+# ohne %-Kodierung) in dieses Verzeichnis; stimmt die Pruefsumme, wird sie
+# genommen und nichts geladen.
+# Die Funktionen pruefen jeden Schritt selbst und geben 1 zurueck: build.sh
+# ruft sie in einem "||"-Zusammenhang auf, dort wirkt set -e nicht.
+# ---------------------------------------------------------------------------
+
+declare -gA RAMPE_NACHBAU=()
+
+# nach_dem_bau <gluon-geraet> <funktion> [<argument> ...]
+nach_dem_bau () {
+	local g="$1"; shift
+	RAMPE_NACHBAU[$g]="$(printf '%q ' "$@")"
+	echo "  $g: nach dem Bau: $1"
+}
+
+# hersteller_datei <url> <sha256-download> <mitglied> <sha256-datei>
+#   gibt den Pfad der gepruefen Datei aus. <mitglied>: Dateiname im ZIP
+#   (genau, ohne Verzeichnis), "-" wenn der Download selbst die Datei ist.
+hersteller_datei () {
+	local url="$1" sum_dl="$2" mitglied="$3" sum_bin="$4"
+	local cache="${RAMPE_CACHE:-$HOME/.cache/gluon-rampe/hersteller}"
+	local dl="$cache/$sum_dl" bin="$cache/$sum_bin"
+	mkdir -p "$cache" || return 1
+	if [ ! -f "$bin" ] || [ "$(sha256sum < "$bin" | cut -c1-64)" != "$sum_bin" ]; then
+		local hand
+		hand="$cache/$(python3 -c 'import sys, urllib.parse; print(urllib.parse.unquote(sys.argv[1].rsplit("/", 1)[-1]))' "$url")"
+		if [ -f "$hand" ] && [ "$(sha256sum < "$hand" | cut -c1-64)" = "$sum_dl" ]; then
+			cp "$hand" "$dl" || return 1
+		fi
+		if [ ! -f "$dl" ] || [ "$(sha256sum < "$dl" | cut -c1-64)" != "$sum_dl" ]; then
+			echo "    Herstellerdatei holen: $url" >&2
+			curl -fsSL --retry 3 -o "$dl.part" "$url" || { echo "    Download fehlgeschlagen: $url" >&2; return 1; }
+			mv "$dl.part" "$dl"
+		fi
+		[ "$(sha256sum < "$dl" | cut -c1-64)" = "$sum_dl" ] \
+			|| { echo "    SHA256 des Downloads stimmt nicht: $url" >&2; return 1; }
+		if [ "$mitglied" = "-" ]; then
+			cp "$dl" "$bin.part" || return 1
+		else
+			python3 - "$dl" "$mitglied" "$bin.part" <<'PY' || { echo "    $mitglied nicht im ZIP" >&2; return 1; }
+import sys, zipfile
+z = zipfile.ZipFile(sys.argv[1])
+treffer = [n for n in z.namelist() if n.rsplit('/', 1)[-1] == sys.argv[2]]
+if len(treffer) != 1:
+    sys.exit(1)
+open(sys.argv[3], 'wb').write(z.read(treffer[0]))
+PY
+		fi
+		mv "$bin.part" "$bin"
+		[ "$(sha256sum < "$bin" | cut -c1-64)" = "$sum_bin" ] \
+			|| { echo "    SHA256 der Herstellerdatei stimmt nicht: $mitglied" >&2; return 1; }
+	fi
+	printf '%s\n' "$bin"
+}
+
+# groesse_hoechstens <datei> <bytes> <was>
+groesse_hoechstens () {
+	local n
+	n=$(stat -c %s "$1") || return 1
+	(( n <= $2 )) || { echo "    $3: $n Byte, erlaubt $2" >&2; return 1; }
+}
+
+# nachbau_tplink_uboot_tftp <url> <sha256-zip> <mitglied> <sha256-bin> <image-size-kb>
+#   Archer C2 v1, C20 v1 (OpenWrt 8375623a, 161a3be5): TFTP-Recovery-Image
+#   aus dem U-Boot der TP-Link-Firmware und der RAMpe (sysupgrade),
+#   woertlich wie dort:
+#     dd if=<stock> of=uboot.bin bs=1 skip=512 count=131072
+#     cat uboot.bin <sysupgrade> > <Name>_tp_recovery.bin
+#   Ergebnis: <praefix>-tp-recovery.bin (umbenennen in ArcherC2V1_tp_recovery.bin usw.)
+nachbau_tplink_uboot_tftp () {
+	local stock ziel="$RAMPE_ZIEL/$RAMPE_PRAEFIX-tp-recovery.bin" tmp
+	[ -f "${RAMPE_SYSUPGRADE:-}" ] || { echo "    sysupgrade der RAMpe fehlt" >&2; return 1; }
+	groesse_hoechstens "$RAMPE_SYSUPGRADE" $(( $5 * 1024 )) "sysupgrade (IMAGE_SIZE)" || return 1
+	stock=$(hersteller_datei "$1" "$2" "$3" "$4") || return 1
+	tmp=$(mktemp -d) || return 1
+	dd if="$stock" of="$tmp/uboot.bin" bs=1 skip=512 count=131072 status=none \
+		&& cat "$tmp/uboot.bin" "$RAMPE_SYSUPGRADE" > "$tmp/out.bin" \
+		&& groesse_hoechstens "$tmp/uboot.bin" 131072 "U-Boot-Teil" \
+		&& mv "$tmp/out.bin" "$ziel" \
+		|| { rm -rf "$tmp"; return 1; }
+	rm -rf "$tmp"
+	echo "    $(basename "$ziel")"
+}
+
+# nachbau_tplink_split_uboot <url> <sha256-zip> <mitglied> <sha256-bin> <image-size-kb>
+#   Archer C20 v5, C50 v4, C50 v6 (OpenWrt 86e7353b): boot.bin fuer
+#   Weboberflaeche und Web-Recovery, tp_recovery.bin fuer TFTP, woertlich:
+#     dd if=tpl.bin of=boot.bin bs=131584 count=1
+#     cat owrt.bin >> boot.bin
+#   und
+#     dd if=/dev/zero of=tp_recovery.bin bs=196608 count=1
+#     dd if=tpl.bin of=tmp.bin bs=131584 count=1
+#     dd if=tmp.bin of=boot.bin bs=512 skip=1
+#     cat boot.bin >> tp_recovery.bin
+#     cat owrt.bin >> tp_recovery.bin
+#   Ergebnis: <praefix>-boot.bin und <praefix>-tp-recovery.bin
+nachbau_tplink_split_uboot () {
+	local stock tmp
+	[ -f "${RAMPE_SYSUPGRADE:-}" ] || { echo "    sysupgrade der RAMpe fehlt" >&2; return 1; }
+	groesse_hoechstens "$RAMPE_SYSUPGRADE" $(( $5 * 1024 )) "sysupgrade (IMAGE_SIZE)" || return 1
+	stock=$(hersteller_datei "$1" "$2" "$3" "$4") || return 1
+	tmp=$(mktemp -d) || return 1
+	(
+		cd "$tmp" || exit 1
+		dd if="$stock" of=boot.bin bs=131584 count=1 status=none || exit 1
+		cat "$RAMPE_SYSUPGRADE" >> boot.bin || exit 1
+		dd if=/dev/zero of=tp_recovery.bin bs=196608 count=1 status=none || exit 1
+		dd if="$stock" of=tmp.bin bs=131584 count=1 status=none || exit 1
+		dd if=tmp.bin of=boot-ohne-kopf.bin bs=512 skip=1 status=none || exit 1
+		cat boot-ohne-kopf.bin >> tp_recovery.bin || exit 1
+		cat "$RAMPE_SYSUPGRADE" >> tp_recovery.bin || exit 1
+	) || { rm -rf "$tmp"; return 1; }
+	mv "$tmp/boot.bin" "$RAMPE_ZIEL/$RAMPE_PRAEFIX-boot.bin" \
+		&& mv "$tmp/tp_recovery.bin" "$RAMPE_ZIEL/$RAMPE_PRAEFIX-tp-recovery.bin" \
+		|| { rm -rf "$tmp"; return 1; }
+	rm -rf "$tmp"
+	echo "    $RAMPE_PRAEFIX-boot.bin, $RAMPE_PRAEFIX-tp-recovery.bin"
+}
+
+# nachbau_nullen_davor <bytes> <endung>
+#   initramfs der RAMpe mit <bytes> Nullbytes davor, z. B. ZTE MF286R
+#   (OpenWrt 7ac8da00, "Method 3"): dd if=/dev/zero of=padding.bin bs=8M count=1;
+#   cat padding.bin <initramfs> > root_uImage
+#   Ergebnis: <praefix>-<endung>
+nachbau_nullen_davor () {
+	local ziel="$RAMPE_ZIEL/$RAMPE_PRAEFIX-$2" tmp
+	[ -f "${RAMPE_INITRAMFS:-}" ] || { echo "    initramfs der RAMpe fehlt" >&2; return 1; }
+	tmp=$(mktemp -d) || return 1
+	head -c "$1" /dev/zero > "$tmp/padding.bin" \
+		&& cat "$tmp/padding.bin" "$RAMPE_INITRAMFS" > "$tmp/out.bin" \
+		&& mv "$tmp/out.bin" "$ziel" \
+		|| { rm -rf "$tmp"; return 1; }
+	rm -rf "$tmp"
+	echo "    $(basename "$ziel")"
+}

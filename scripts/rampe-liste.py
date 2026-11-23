@@ -27,6 +27,13 @@ BILD = re.compile(r"^gluon-rampe-(\d{8})-(.+)$")
 
 
 def art(rest):
+    # vor "-recovery.bin" (D-Link): die TP-Link-Datei endet ebenso
+    if rest.endswith("-tp-recovery.bin"):
+        return "TP-Link-TFTP-Recovery mit TP-Link-U-Boot (dauerhaft)"
+    if rest.endswith("-boot.bin"):
+        return "TP-Link-Weboberfläche mit TP-Link-U-Boot (dauerhaft)"
+    if rest.endswith("-tftp-root_uImage.bin"):
+        return "ZTE-TFTP-Recovery (root_uImage, initramfs mit 8 MB Nullen davor)"
     if rest.endswith("-recovery.bin"):
         return "D-Link-Recovery"
     if "-kernel1.bin" in rest or "-rootfs0.bin" in rest:
