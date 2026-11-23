@@ -79,6 +79,13 @@ legt das Image des Hauptnamens unter beiden Namen ab.
 | AVM FRITZ!Box 7362 SL | `avm-fritz-box-7362-sl` | lantiq-xrx200 | K1 | devices/avm-fritz-box-7362-sl.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py` |
 | AVM FRITZ!Box 7412 | `avm-fritz-box-7412` | lantiq-xrx200 | K1 | devices/avm-fritz-box-7412.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch |
 | AVM FRITZ!Box 7430 | `avm-fritz-box-7430` | lantiq-xrx200 | K1 | devices/avm-fritz-box-7430.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` (lzma) für `eva_ramboot.py`; Prüfung `linux_fs_start` vor dem sysupgrade fehlt der RAMpe noch |
+| Acer Connect Vero W6m | `acer-connect-vero-w6m` | mediatek-filogic | K4 | devices/acer-connect-vero-w6m.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin`, als `predator.bin` per U-Boot-TFTP |
+| Acer Predator Connect W6 | `acer-predator-connect-w6` | mediatek-filogic | K4 | devices/acer-predator-connect-w6.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin`, als `predator.bin` per U-Boot-TFTP |
+| Acer Predator Connect W6d | `acer-predator-connect-w6d` | mediatek-filogic | K4 | devices/acer-predator-connect-w6d.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin`, als `predator.bin` per U-Boot-TFTP |
+| Adtran SmartRG SDG-8612 | `adtran-sdg-8612` | mediatek-filogic | K4 | devices/adtran-sdg-8612.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin`, als `openwrt.612` per U-Boot-TFTP |
+| Adtran SmartRG SDG-8614 | `adtran-sdg-8614` | mediatek-filogic | K4 | devices/adtran-sdg-8614.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin`, als `openwrt.614` per U-Boot-TFTP |
+| Adtran SmartRG SDG-8622 | `adtran-sdg-8622` | mediatek-filogic | K4 | devices/adtran-sdg-8622.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin`, als `openwrt.622` per U-Boot-TFTP |
+| Adtran SmartRG SDG-8632 | `adtran-sdg-8632` | mediatek-filogic | K4 | devices/adtran-sdg-8632.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin`, als `openwrt.632` per U-Boot-TFTP |
 | ASUS RT-AX52 | `asus-rt-ax52` | mediatek-filogic | K1 | devices/asus-rt-ax52.sh (gebaut, RAMpe 20261115): `-initramfs.trx` (OpenWrt-ARTIFACT) für die ASUS-Web-UI |
 | ASUS RT-AX59U | `asus-rt-ax59u` | mediatek-filogic | K2 | devices/asus-rt-ax59u.sh (gebaut, RAMpe 20261115): trägt das Gerät in Gluon ein; nur `initramfs-kernel.bin` für den UART-Weg, für die Web-UI fehlt ein eigenes TRX |
 | ASUS TUF-AX4200 | `asus-tuf-ax4200` | mediatek-filogic | K2 | devices/asus-tuf-ax4200.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` mit eingebettetem initramfs (`TARGET_ROOTFS_INITRAMFS_SEPARATE` aus) für SSH `mtd-write` oder UART + TFTP; eigener Bau-Lauf |
@@ -88,7 +95,12 @@ legt das Image des Hauptnamens unter beiden Namen ab.
 | D-Link AQUILA PRO AI M60 A1 | `d-link-aquila-pro-ai-m60-a1` | mediatek-filogic | K1 | devices/d-link-aquila-pro-ai-m60-a1.sh: `-recovery.bin` (D-Link-Header DLK6E8202001) für die D-Link-Recovery; gebaut 10.10.2026 (lokal), Header und `91_installer_initramfs` geprüft, am Gerät erprobt 13.10.2026 (Neanderfunk-sysupgrade geflasht). Gluons eigenes recovery.bin (z. B. Neanderfunk 26100702bro) startet vermutlich wie bei der M30 nicht im Config-Mode [abgeleitet] |
 | Mercusys MR80X v3 | `mercusys-mr80x-v3` | mediatek-filogic | K4 | devices/mercusys-mr80x-v3.sh (gebaut 10.10.2026 lokal, initramfs etwa 8.1 MB, `91_installer_initramfs` geprüft, Hardware-Test offen): trägt das Gerät in Gluon ein (`ensure_device`); `initramfs-kernel.bin` per UART + TFTP |
 | Mercusys MR90X v1 | `mercusys-mr90x-v1` | mediatek-filogic | K2 | devices/mercusys-mr90x-v1.sh (gebaut 10.10.2026 lokal, initramfs etwa 8.1 MB, `91_installer_initramfs` geprüft, Hardware-Test offen): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell |
+| TP-Link Archer AX80 v1 (US/RU/CA) | `tp-link-archer-ax80-v1` | mediatek-filogic | K4 | devices/tp-link-archer-ax80-v1.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin` per U-Boot-TFTP, Vorbereitungsskript fw_setenv |
+| TP-Link EAP683-LR | `tp-link-eap683-lr` | mediatek-filogic | K4 | devices/tp-link-eap683-lr.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin` per U-Boot-TFTP; OpenWrt-Backport aus gluon-patches-hardware v2025.1.x-next (eigener Lauf, RAMPE_HW_PATCHES_NEXT) |
+| TP-Link EAP683-UR (Alias von tp-link-eap683-lr) | `tp-link-eap683-ur` | mediatek-filogic | K4 | devices/tp-link-eap683-ur.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin` per U-Boot-TFTP; OpenWrt-Backport wie EAP683 LR |
+| TP-Link RE6000XD | `tp-link-re6000xd` | mediatek-filogic | K4 | devices/tp-link-re6000xd.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin` per U-Boot-TFTP |
 | Xiaomi Mi Router AX3000T | `xiaomi-mi-router-ax3000t` | mediatek-filogic | K2 | devices/xiaomi-mi-router-ax3000t.sh (gebaut, RAMpe 20261115): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt |
+| Zyxel EX5700 (Telenor) | `zyxel-ex5700-telenor` | mediatek-filogic | K4 | devices/zyxel-ex5700-telenor.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin`, als `C0A80101.img` per U-Boot-TFTP |
 | Enterasys WS-AP3715i | `enterasys-ws-ap3715i` | mpc85xx-p1010 | K4 | devices/enterasys-ws-ap3715i.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` (lzma) als `ap3715.bin` per U-Boot-TFTP; entpackt über 11 MB droht Überlappung |
 | Sophos RED 15w Rev. 1 | `sophos-red-15w-rev.1` | mpc85xx-p1010 | K4 | devices/sophos-red-15w-rev.1.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` (FIT) als `kernel.bin` per U-Boot-TFTP; Vorbereitung vor dem sysupgrade fehlt der RAMpe noch (`ubiformat`) |
 | Aerohive HiveAP 330 | `aerohive-hiveap-330` | mpc85xx-p1020 | K4 | devices/aerohive-hiveap-330.sh (gebaut, RAMpe 20261115): `initramfs-kernel.bin` per U-Boot-TFTP; der U-Boot-Patch bleibt Handarbeit (Entwurf in docs/ENTWURF-VORBEREITUNG.md) |
@@ -134,7 +146,14 @@ contrib/docker/run.sh ./build.sh ath79-generic ocedo-koala ocedo-raccoon enteras
 contrib/docker/run.sh ./build.sh ath79-nand zte-mf286r zte-mf281 aerohive-hiveap-121
 contrib/docker/run.sh ./build.sh mpc85xx-p1020 ocedo-panda enterasys-ws-ap3710i extreme-networks-ws-ap3825i aerohive-hiveap-330
 contrib/docker/run.sh ./build.sh mpc85xx-p1010 enterasys-ws-ap3715i sophos-red-15w-rev.1
+contrib/docker/run.sh ./build.sh mediatek-filogic acer-predator-connect-w6 acer-predator-connect-w6d acer-connect-vero-w6m adtran-sdg-8612 adtran-sdg-8614 adtran-sdg-8622 adtran-sdg-8632 tp-link-archer-ax80-v1 tp-link-re6000xd zyxel-ex5700-telenor
+RAMPE_HW_PATCHES=<pfad>/gluon-patches-hardware-next contrib/docker/run.sh ./build.sh mediatek-filogic tp-link-eap683-lr tp-link-eap683-ur
 ```
+
+Die beiden letzten Läufe sind Gruppe B aus `docs/PLAN-WEITERE-RAMPEN.md`
+(serieller Weg). Der EAP683 braucht den OpenWrt-Backport aus
+gluon-patches-hardware, Branch **v2025.1.x-next**; `scripts/alle-bauen.sh`
+nimmt dafür `RAMPE_HW_PATCHES_NEXT`.
 
 Dazu seit 14.10.2026 Geräte, die ab Werk ein dauerhaftes OpenWrt im
 Hersteller-Format brauchen, weil Gluon dafür nur sysupgrade baut (die RAMpe

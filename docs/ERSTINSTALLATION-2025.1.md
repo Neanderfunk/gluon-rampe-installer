@@ -151,7 +151,7 @@ fehlen die Felder noch.
 | offen | 2 |
 | **gesamt** | **388** |
 
-Gluon-RAMpe passt: **ja 37**, teilweise 48, nein/unnötig 303.
+Gluon-RAMpe passt: **ja 37**, teilweise 51, nein/unnötig 300.
 
 Gluon-RAMpe passt "ja": `ocedo-koala`, `ocedo-raccoon`, `mikrotik-routerboard-951ui-2nd-hap`, `mikrotik-routerboard-mapl-2nd`, `mikrotik-routerboard-wap-g-5hact2hnd`, `mikrotik-routerboard-wapr-2nd`, `gl.inet-gl-e750`, `gl.inet-gl-xe300`, `zte-mf286r`, `asus-lyra-map-ac2200`, `avm-fritz-box-7520`, `avm-fritz-box-7530`, `avm-fritz-repeater-1200`, `avm-fritz-repeater-3000`, `linksys-mr8300-dallas`, `mikrotik-discg-5acd`, `mikrotik-hap-ac2`, `mikrotik-sxtsq-5-ac-rbsxtsqg-5acd`, `mikrotik-wap-ac`, `avm-fritz-box-3390`, `avm-fritz-box-7362-sl`, `avm-fritz-box-7412`, `avm-fritz-box-7430`, `asus-rt-ax52`, `asus-tuf-ax4200q`, `d-link-aquila-pro-ai-m30-a1`, `d-link-aquila-pro-ai-m60-a1`, `extreme-networks-ws-ap3825i`, `netgear-wax218`, `asus-rt-ax53u`, `genexis-pulse-ex400`, `mikrotik-routerboard-750gr3`, `netgear-wndr3700-v5`, `xiaomi-mi-router-3g`, `xiaomi-mi-router-ac2100`, `xiaomi-redmi-router-ac2100`, `zyxel-wsm20`.
 
@@ -420,13 +420,13 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [avm-fritz-box-7312](#avm-fritz-box-7312) | AVM FRITZ!Box 7312 | lantiq-xway | K1d | L5 | normal | [`avm-eva-ftp`](#familie-avm-eva-ftp) | ftp | nein | nein | nein |  | [Anleitung](../anleitungen/de/avm-fritz-box-7312.md); https://fritz-tools.readthedocs.io/ |
 | [netgear-dgn3500b](#netgear-dgn3500b) | NETGEAR DGN3500B | lantiq-xway | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-dgn3500b.md) |
 | [acelink-ew-7886cax](#acelink-ew-7886cax) | Acelink EW-7886CAX | mediatek-filogic | K1d | L4 | normal | [`ssh-stock`](#familie-ssh-stock) | ssh | nein | ? | nein |  |  |
-| [acer-connect-vero-w6m](#acer-connect-vero-w6m) | Acer Connect Vero W6m | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ? | teilweise |  |  |
-| [acer-predator-connect-w6](#acer-predator-connect-w6) | Acer Predator Connect W6 | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ? | teilweise |  |  |
-| [acer-predator-connect-w6d](#acer-predator-connect-w6d) | Acer Predator Connect W6d | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ? | teilweise |  |  |
-| [adtran-sdg-8612](#adtran-sdg-8612) | Adtran SmartRG SDG-8612 | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ? | teilweise |  |  |
-| [adtran-sdg-8614](#adtran-sdg-8614) | Adtran SmartRG SDG-8614 | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ? | teilweise |  |  |
-| [adtran-sdg-8622](#adtran-sdg-8622) | Adtran SmartRG SDG-8622 | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ? | teilweise |  |  |
-| [adtran-sdg-8632](#adtran-sdg-8632) | Adtran SmartRG SDG-8632 | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ? | teilweise |  |  |
+| [acer-connect-vero-w6m](#acer-connect-vero-w6m) | Acer Connect Vero W6m | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ? | teilweise | ja |  |
+| [acer-predator-connect-w6](#acer-predator-connect-w6) | Acer Predator Connect W6 | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ? | teilweise | ja |  |
+| [acer-predator-connect-w6d](#acer-predator-connect-w6d) | Acer Predator Connect W6d | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ? | teilweise | ja |  |
+| [adtran-sdg-8612](#adtran-sdg-8612) | Adtran SmartRG SDG-8612 | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ? | teilweise | ja |  |
+| [adtran-sdg-8614](#adtran-sdg-8614) | Adtran SmartRG SDG-8614 | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ? | teilweise | ja |  |
+| [adtran-sdg-8622](#adtran-sdg-8622) | Adtran SmartRG SDG-8622 | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ? | teilweise | ja |  |
+| [adtran-sdg-8632](#adtran-sdg-8632) | Adtran SmartRG SDG-8632 | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ? | teilweise | ja |  |
 | [asus-rt-ax52](#asus-rt-ax52) | ASUS RT-AX52 | mediatek-filogic | K1 | L4 | normal | [`sonderweg-asus-rt-ax52`](#familie-sonderweg-asus-rt-ax52) | webui-upload | nein | nein | ja | ja | https://openwrt.org/toh/asus/rt-ax52#installation |
 | [asus-rt-ax59u](#asus-rt-ax59u) | ASUS RT-AX59U | mediatek-filogic | K2 | offen | normal | [`sonderweg-asus-rt-ax59u`](#familie-sonderweg-asus-rt-ax59u) | webui-upload | nein | nein | teilweise | ja | - |
 | [asus-tuf-ax4200](#asus-tuf-ax4200) | ASUS TUF-AX4200 | mediatek-filogic | K2 | L4 | normal | [`asus-tuf-herbetom`](#familie-asus-tuf-herbetom) | ssh | nein | nein | teilweise | ja | [Anleitung](../anleitungen/de/asus-tuf-ax4200.md); https://github.com/freifunk-darmstadt/projects/wiki/90-%E2%80%90-Hardware-%E2%80%90-ASUS-TUF-AX4200 |
@@ -462,10 +462,10 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [netgear-wax220](#netgear-wax220) | NETGEAR WAX220 | mediatek-filogic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wax220.md); https://openwrt.org/toh/netgear/wax220#oem_easy_installation |
 | [openwrt-one](#openwrt-one) | OpenWrt One | mediatek-filogic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/openwrt-one.md) |
 | [ruijie-rg-x60-pro](#ruijie-rg-x60-pro) | Ruijie RG-X60 Pro | mediatek-filogic | K4 | L7 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | offen |  |  |
-| [tp-link-archer-ax80-v1](#tp-link-archer-ax80-v1) | TP-Link Archer AX80 v1 (US/RU/CA) | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ? | teilweise |  |  |
-| [tp-link-eap683-lr](#tp-link-eap683-lr) | TP-Link EAP683-LR | mediatek-filogic | K4 | L8 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein |  |  |
-| [tp-link-eap683-ur](#tp-link-eap683-ur) | TP-Link EAP683-UR (Alias von tp-link-eap683-lr) | mediatek-filogic | K4 | L8 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | nein |  |  |
-| [tp-link-re6000xd](#tp-link-re6000xd) | TP-Link RE6000XD | mediatek-filogic | K4 | L7 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise |  |  |
+| [tp-link-archer-ax80-v1](#tp-link-archer-ax80-v1) | TP-Link Archer AX80 v1 (US/RU/CA) | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ? | teilweise | ja |  |
+| [tp-link-eap683-lr](#tp-link-eap683-lr) | TP-Link EAP683-LR | mediatek-filogic | K4 | L8 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise | ja |  |
+| [tp-link-eap683-ur](#tp-link-eap683-ur) | TP-Link EAP683-UR (Alias von tp-link-eap683-lr) | mediatek-filogic | K4 | L8 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise | ja |  |
+| [tp-link-re6000xd](#tp-link-re6000xd) | TP-Link RE6000XD | mediatek-filogic | K4 | L7 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise | ja |  |
 | [tp-link-tl-xdr4288](#tp-link-tl-xdr4288) | TP-Link TL-XDR4288 | mediatek-filogic | K3 | L4 | bootloader |  | Shell | nein | nein | teilweise |  |  |
 | [tp-link-tl-xdr6086](#tp-link-tl-xdr6086) | TP-Link TL-XDR6086 | mediatek-filogic | K3 | L4 | bootloader |  | Shell | nein | nein | teilweise |  |  |
 | [tp-link-tl-xdr6088](#tp-link-tl-xdr6088) | TP-Link TL-XDR6088 | mediatek-filogic | K3 | L4 | bootloader |  | Shell | nein | nein | teilweise |  |  |
@@ -477,9 +477,9 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [xiaomi-mi-router-ax3000t-openwrt-u-boot-layout](#xiaomi-mi-router-ax3000t-openwrt-u-boot-layout) | Xiaomi Mi Router AX3000T (OpenWrt-U-Boot-Layout) | mediatek-filogic | K3 | L4 | bootloader | [`sonderweg-xiaomi-mi-router-ax3000t-openwrt-u-boot-layout`](#familie-sonderweg-xiaomi-mi-router-ax3000t-openwrt-u-boot-layout) | ssh | nein | nein | nein |  | - |
 | [xiaomi-redmi-router-ax6000](#xiaomi-redmi-router-ax6000) | Xiaomi Redmi Router AX6000 | mediatek-filogic | K2 | L4 | normal |  | ssh | nein | nein | teilweise |  |  |
 | [xiaomi-redmi-router-ax6000-openwrt-u-boot-layout](#xiaomi-redmi-router-ax6000-openwrt-u-boot-layout) | Xiaomi Redmi Router AX6000 (OpenWrt-U-Boot-Layout) | mediatek-filogic | K3 | L4 | bootloader |  | ssh | nein | nein | nein |  |  |
-| [zyxel-ex5601-t0](#zyxel-ex5601-t0) | Zyxel EX5601-T0 (auch EX5601-T1, T-56) | mediatek-filogic | K4 | offen | normal |  | seriell | ja | offen | nein |  |  |
+| [zyxel-ex5601-t0](#zyxel-ex5601-t0) | Zyxel EX5601-T0 (auch EX5601-T1, T-56) | mediatek-filogic | K4 | offen | normal |  | seriell | ja | offen | offen |  |  |
 | [zyxel-ex5601-t0-openwrt-u-boot-layout](#zyxel-ex5601-t0-openwrt-u-boot-layout) | Zyxel EX5601-T0 (OpenWrt U-Boot layout) | mediatek-filogic | K5 | offen | bootloader |  | seriell | ja | offen | nein |  |  |
-| [zyxel-ex5700-telenor](#zyxel-ex5700-telenor) | Zyxel EX5700 (Telenor) | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | offen | nein |  |  |
+| [zyxel-ex5700-telenor](#zyxel-ex5700-telenor) | Zyxel EX5700 (Telenor) | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | offen | teilweise | ja |  |
 | [zyxel-nwa50ax-pro](#zyxel-nwa50ax-pro) | Zyxel NWA50AX Pro | mediatek-filogic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa50ax-pro.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=f0445746f6fd96fc7c5394b238153bd2ff22bc5b |
 | [zyxel-nwa90ax-pro](#zyxel-nwa90ax-pro) | Zyxel NWA90AX Pro (Alias von zyxel-nwa50ax-pro) | mediatek-filogic | K0 | L3 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/zyxel-nwa90ax-pro.md) |
 | [zyxel-wx5600-t0-openwrt-u-boot-layout](#zyxel-wx5600-t0-openwrt-u-boot-layout) | Zyxel WX5600-T0 (OpenWrt U-Boot layout) | mediatek-filogic | K5 | offen | bootloader |  | seriell | ja | offen | nein |  |  |
@@ -9868,7 +9868,8 @@ Acer Connect Vero W6m · mediatek-filogic · K4
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** -
 - **RAM:** 1 GB [abgeleitet: Variante der W6, Commit 2898d1d]
-- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt OpenWrt-initramfs im TFTP-Schritt, seriell bleibt [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: wie W6 [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/acer-connect-vero-w6m.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin`, als `predator.bin` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 2898d1d1269a841e5bb8673801bd2a04ad120031; OpenWrt 7e7eb5312d7810084547bb54a4b6867c2da08182; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
 
 #### acer-predator-connect-w6
@@ -9903,7 +9904,8 @@ Acer Predator Connect W6 · mediatek-filogic · K4
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** -
 - **RAM:** 1 GB
-- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt OpenWrt-initramfs im TFTP-Schritt, seriell bleibt [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt OpenWrt-initramfs im TFTP-Schritt (als `predator.bin`), danach Community-sysupgrade im Browser statt scp; seriell bleibt [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/acer-predator-connect-w6.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin`, als `predator.bin` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 7e7eb5312d7810084547bb54a4b6867c2da08182; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
 
 #### acer-predator-connect-w6d
@@ -9938,7 +9940,8 @@ Acer Predator Connect W6d · mediatek-filogic · K4
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** -
 - **RAM:** 1 GB [abgeleitet: Variante der W6, Commit 2898d1d]
-- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt OpenWrt-initramfs im TFTP-Schritt, seriell bleibt [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: wie W6 [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/acer-predator-connect-w6d.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin`, als `predator.bin` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 2898d1d1269a841e5bb8673801bd2a04ad120031; OpenWrt 7e7eb5312d7810084547bb54a4b6867c2da08182; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
 
 #### adtran-sdg-8612
@@ -9970,7 +9973,8 @@ Adtran SmartRG SDG-8612 · mediatek-filogic · K4
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** -
 - **RAM:** 2 GB
-- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als `openwrt.412` statt OpenWrt-initramfs im TFTP-Schritt, seriell bleibt [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als `openwrt.612` statt OpenWrt-initramfs im TFTP-Schritt (`run boot1` schreibt sie, `run boot2` startet sie), danach Community-sysupgrade im Browser; seriell bleibt [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/adtran-sdg-8612.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin`, als `openwrt.612` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 3aa686f8d4d89ab28e749874c4b5e82d46685f3c; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
 
 #### adtran-sdg-8614
@@ -10002,7 +10006,8 @@ Adtran SmartRG SDG-8614 · mediatek-filogic · K4
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** -
 - **RAM:** 2 GB
-- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als `openwrt.414` statt OpenWrt-initramfs im TFTP-Schritt, seriell bleibt [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als `openwrt.614` statt OpenWrt-initramfs im TFTP-Schritt (`run boot1` schreibt sie, `run boot2` startet sie), danach Community-sysupgrade im Browser; seriell bleibt [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/adtran-sdg-8614.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin`, als `openwrt.614` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 3aa686f8d4d89ab28e749874c4b5e82d46685f3c; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
 
 #### adtran-sdg-8622
@@ -10034,7 +10039,8 @@ Adtran SmartRG SDG-8622 · mediatek-filogic · K4
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** -
 - **RAM:** 2 GB
-- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als `openwrt.422` statt OpenWrt-initramfs im TFTP-Schritt, seriell bleibt [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als `openwrt.622` statt OpenWrt-initramfs im TFTP-Schritt (`run boot1` schreibt sie, `run boot2` startet sie), danach Community-sysupgrade im Browser; seriell bleibt [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/adtran-sdg-8622.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin`, als `openwrt.622` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 3aa686f8d4d89ab28e749874c4b5e82d46685f3c; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
 
 #### adtran-sdg-8632
@@ -10066,7 +10072,8 @@ Adtran SmartRG SDG-8632 · mediatek-filogic · K4
 - **Factory-/Stock-Image-Link:** kein factory (weder Gluon noch OpenWrt 24.10.8)
 - **Stock-Teile:** -
 - **RAM:** 2 GB
-- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als `openwrt.432` statt OpenWrt-initramfs im TFTP-Schritt, seriell bleibt [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als `openwrt.632` statt OpenWrt-initramfs im TFTP-Schritt (`run boot1` schreibt sie, `run boot2` startet sie), danach Community-sysupgrade im Browser; seriell bleibt [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/adtran-sdg-8632.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin`, als `openwrt.632` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 3aa686f8d4d89ab28e749874c4b5e82d46685f3c; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
 
 #### mercusys-mr80x-v3
@@ -10169,7 +10176,8 @@ TP-Link Archer AX80 v1 (US/RU/CA) · mediatek-filogic · K4
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Rückweg zur Herstellerfirmware:** Reset beim Einschalten: U-Boot-Web-Recovery http://192.168.1.1, OEM-Firmware hochladen [geprüft: OpenWrt 8b24289]
-- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt OpenWrt-initramfs im TFTP-Schritt; die fw_setenv-Befehle müsste die RAMpe vor dem sysupgrade ausführen [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt OpenWrt-initramfs im TFTP-Schritt; die vier fw_setenv-Werte aus Commit 8b24289 setzt das Vorbereitungsskript der RAMpe vor dem Flashen (overlay/lib/gluon-rampe/prepare/tplink_archer-ax80-v1.sh, gegengelesen, sonst kein Flashen); seriell bleibt [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/tp-link-archer-ax80-v1.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin` per U-Boot-TFTP, Vorbereitungsskript fw_setenv
 - **Quelle (OpenWrt-Commit):** OpenWrt 8b24289a5267e486abd9ccbf4b4ad82f14d545ae; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
 
 #### tp-link-eap683-lr
@@ -10202,7 +10210,8 @@ TP-Link EAP683-LR · mediatek-filogic · K4
 - **Stock-Teile:** -
 - **RAM:** 1 GB [geprüft: OpenWrt f174914]
 - **Rückweg zur Herstellerfirmware:** U-Boot-Variable tp_boot_idx auf 1 setzen (Bootloader oder fw_setenv), dann startet die Herstellerfirmware aus ubi1; danach über deren Weboberfläche aktualisieren [geprüft: OpenWrt f174914]
-- **Gluon-RAMpe passt:** nein: Installation über die U-Boot-Konsole [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise (neu bewertet 23.11.2026 nach dem Grundsatz in docs/PLAN-WEITERE-RAMPEN.md): Gluon-RAMpe statt OpenWrt-initramfs im TFTP-Schritt, danach Community-sysupgrade im Browser; UART und U-Boot-Konsole bleiben [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/tp-link-eap683-lr.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin` per U-Boot-TFTP; OpenWrt-Backport aus gluon-patches-hardware v2025.1.x-next (eigener Lauf, RAMPE_HW_PATCHES_NEXT)
 - **Quelle (OpenWrt-Commit):** OpenWrt f1749142ca59c3877ce70b7c97475f4416cf74a8; gluon-patches-hardware Zweig v2025.1.x-next, Backport aus OpenWrt main
 
 #### tp-link-eap683-ur
@@ -10236,7 +10245,8 @@ TP-Link EAP683-UR (Alias von tp-link-eap683-lr) · mediatek-filogic · K4
 - **Stock-Teile:** -
 - **RAM:** 1 GB [geprüft: OpenWrt f174914]
 - **Rückweg zur Herstellerfirmware:** U-Boot-Variable tp_boot_idx auf 1 setzen (Bootloader oder fw_setenv), dann startet die Herstellerfirmware aus ubi1; danach über deren Weboberfläche aktualisieren [geprüft: OpenWrt f174914]
-- **Gluon-RAMpe passt:** nein: Installation über die U-Boot-Konsole [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise (neu bewertet 23.11.2026): wie EAP683 LR [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/tp-link-eap683-ur.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin` per U-Boot-TFTP; OpenWrt-Backport wie EAP683 LR
 - **Quelle (OpenWrt-Commit):** OpenWrt 708dcca80a0b19aacd32e2bd4530b88461f87581; gluon-patches-hardware Zweig v2025.1.x-next, Backport aus OpenWrt main
 
 #### tp-link-re6000xd
@@ -10271,7 +10281,8 @@ TP-Link RE6000XD · mediatek-filogic · K4
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Notweg:** SSH in der Stock-Firmware ließ sich aktivieren, das root-Passwort ist aber unbekannt [geprüft: OpenWrt 9e49593]
-- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt OpenWrt-initramfs im TFTP-Schritt, seriell bleibt [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe statt OpenWrt-initramfs im TFTP-Schritt, danach Community-sysupgrade im Browser; Gehäuse und UART bleiben [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/tp-link-re6000xd.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 9e49593ff7f9860fc7901c17977ce2ec976adb4c; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
 
 #### zyxel-ex5700-telenor
@@ -10303,7 +10314,8 @@ Zyxel EX5700 (Telenor) · mediatek-filogic · K4
 - **Factory-/Stock-Image-Link:** kein factory
 - **Stock-Teile:** -
 - **RAM:** 1 GB [geprüft: OpenWrt 6cc14bf]
-- **Gluon-RAMpe passt:** nein: der Weg braucht ohnehin die Konsole [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise (neu bewertet 23.11.2026 nach dem Grundsatz in docs/PLAN-WEITERE-RAMPEN.md): Gluon-RAMpe statt OpenWrt-initramfs im TFTP-Schritt (als `C0A80101.img`), danach Community-sysupgrade im Browser; seriell bleibt [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/zyxel-ex5700-telenor.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin`, als `C0A80101.img` per U-Boot-TFTP
 - **Quelle (OpenWrt-Commit):** OpenWrt 6cc14bf66aa924962b926ea9702b6153ae418a7d; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
 
 #### enterasys-ws-ap3715i
@@ -14399,7 +14411,7 @@ Zyxel EX5601-T0 (auch EX5601-T1, T-56) · mediatek-filogic · K4
 - **Stock-Teile:** -
 - **RAM:** 1 GB [geprüft: OpenWrt 1c05388]
 - **Rückweg zur Herstellerfirmware:** Startpartition auf ubi2 (Zyxel-Firmware) zurückschalten [geprüft: OpenWrt 1c05388]
-- **Gluon-RAMpe passt:** nein: der Weg braucht ohnehin die Konsole [abgeleitet]
+- **Gluon-RAMpe passt:** offen (neu bewertet 23.11.2026): kein TFTP-Schritt, für den die RAMpe ein initramfs ersetzen könnte. Der Weg lädt ein sysupgrade mit zusätzlicher zyfwinfo-Datei über die Zyxel-Web-UI hoch [geprüft: OpenWrt 1c05388]. Eine RAMpe brächte hier nur etwas als vorbereitetes sysupgrade mit zyfwinfo (Hook wie Gruppe A): dann entfiele das Basteln der tar-Datei, und das Community-sysupgrade käme im Browser der RAMpe. Nicht umgesetzt, Entscheidung offen
 - **Quelle (OpenWrt-Commit):** OpenWrt 1c05388ab04c934ec240e8362321908f91381a90; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
 
 #### zyxel-ex5601-t0-openwrt-u-boot-layout

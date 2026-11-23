@@ -10,6 +10,11 @@
 #   RAMPE_HW_PATCHES  Pflicht: Checkout von gluon-patches-hardware, Branch
 #                     v2025.1.x (Kernel-Fixes fuer alle Laeufe, siehe build.sh,
 #                     und Backports fuer AP-32x und EAP620 HD)
+#   RAMPE_HW_PATCHES_NEXT  Checkout desselben Repos, Branch v2025.1.x-next,
+#                     nur fuer die Laeufe, die mit "next " beginnen (Backports,
+#                     die es nur dort gibt, z. B. EAP683). Fehlt die Variable,
+#                     zaehlen diese Laeufe als fehlgeschlagen, die anderen
+#                     laufen normal.
 #   GLUON_RELEASE     Kennung im Dateinamen, Default: Datum beim Start.
 #                     Bleibt ueber alle Laeufe gleich, auch ueber Mitternacht.
 #   BUILD             Default "./build.sh"; im Container
@@ -48,6 +53,10 @@ LAEUFE=(
 	"mpc85xx-p1020 ocedo-panda enterasys-ws-ap3710i extreme-networks-ws-ap3825i aerohive-hiveap-330"
 	"mpc85xx-p1010 enterasys-ws-ap3715i sophos-red-15w-rev.1"
 	"ath79-nand gl.inet-gl-e750 gl.inet-gl-xe300"
+	# Gruppe B aus docs/PLAN-WEITERE-RAMPEN.md: serieller Weg, RAMpe statt
+	# OpenWrt-initramfs im TFTP-Schritt
+	"mediatek-filogic acer-predator-connect-w6 acer-predator-connect-w6d acer-connect-vero-w6m adtran-sdg-8612 adtran-sdg-8614 adtran-sdg-8622 adtran-sdg-8632 tp-link-archer-ax80-v1 tp-link-re6000xd zyxel-ex5700-telenor"
+	"next mediatek-filogic tp-link-eap683-lr tp-link-eap683-ur"
 	"ipq40xx-generic linksys-mr8300-dallas"
 	"ramips-mt7621 netgear-wndr3700-v5 xiaomi-mi-router-3g xiaomi-mi-router-ac2100 xiaomi-redmi-router-ac2100 d-link-dap-x1860-a1"
 	"ath79-generic tp-link-archer-c60-v1 d-link-dir825b1"
@@ -55,7 +64,7 @@ LAEUFE=(
 )
 
 # Jedes Rezept in devices/ muss in genau einem Lauf stehen.
-geplant=$(printf '%s\n' "${LAEUFE[@]}" | awk '{for (i = 2; i <= NF; i++) print $i}' | sort)
+geplant=$(printf '%s\n' "${LAEUFE[@]}" | sed 's/^next //' | awk '{for (i = 2; i <= NF; i++) print $i}' | sort)
 rezepte=$(find devices -name '*.sh' ! -name lib.sh -printf '%f\n' | sed 's/\.sh$//' | sort)
 if [ "$geplant" != "$rezepte" ]; then
 	echo "Laeufe und devices/ passen nicht zusammen:" >&2
@@ -70,6 +79,16 @@ for lauf in "${LAEUFE[@]}"; do
 	n=$((n + 1))
 	read -r -a a <<< "$lauf"
 	echo "== [$n/${#LAEUFE[@]}] $(date '+%F %T') ${a[*]}"
+	if [ "${a[0]}" = next ]; then
+		a=("${a[@]:1}")
+		if [ -z "${RAMPE_HW_PATCHES_NEXT:-}" ] || [ ! -d "${RAMPE_HW_PATCHES_NEXT}/devices" ]; then
+			echo "   RAMPE_HW_PATCHES_NEXT (gluon-patches-hardware, Branch v2025.1.x-next) fehlt - Lauf ausgelassen" >&2
+			fehler+=("$lauf")
+			continue
+		fi
+		RAMPE_HW_PATCHES="$RAMPE_HW_PATCHES_NEXT" "${BUILD[@]}" "${a[@]}" || fehler+=("$lauf")
+		continue
+	fi
 	"${BUILD[@]}" "${a[@]}" || fehler+=("$lauf")
 done
 
