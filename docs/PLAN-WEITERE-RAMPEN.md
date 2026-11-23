@@ -121,15 +121,37 @@ braucht einen eigenen Hardware-Test, bevor eine Anleitung es anbietet.
 - Aruba AP-32x: RAMpe (`.ari`) gibt es; der gepatchte APBoot bleibt ein
   serieller Schritt.
 
-## Bleibt ohne RAMpe
+## Bleibt vorerst ohne RAMpe
 
 - Ubiquiti EdgeRouter X / X-SFP: Kernel 6.6 passt nicht in den
-  3-MB-Kernel-Slot von EdgeOS.
+  3-MB-Kernel-Slot von EdgeOS. Eigenes Projekt, siehe unten.
 - Arcadyan VGV7510KW22: `board_config` ist je Gerät verschieden und der
   Bootloader-Tausch passiert vor jedem Linux [offen: ob ein Skript sie aus
   dem Gerät lesen kann].
 - Cudy mit Signaturprüfung: Cudys eigene Zwischenfirmware ist schon ein
   OpenWrt mit Upload.
+
+## Eigenes Projekt: EdgeRouter X / X-SFP
+
+Ziel: eine RAMpe, die sich unabhängig vom Ausgangszustand des Geräts
+installieren lässt (EdgeOS, altes OpenWrt-Layout mit 3-MB-Kernel, neues
+Layout ab OpenWrt 24.10 mit 6-MB-Kernel).
+
+Bekannt (Gerätedaten): EdgeOS nimmt per Web-UI oder `add system image` ein
+`initramfs-factory.tar` und schreibt in einen 3-MB-Kernel-Slot; der Kernel
+6.6 allein hat 3 173 556 Byte; OpenWrt baut das `initramfs-factory.tar`
+heute nicht mehr.
+
+Idee:
+
+- eine RAMpe mit stark verkleinertem Kernel (nur was das ERX und der Upload
+  brauchen), die in den alten 3-MB-Slot passt,
+- ein Vorbereitungsskript, das vor dem sysupgrade auf das neue Layout
+  umpartitioniert, sodass danach das normale Gluon-sysupgrade passt.
+
+Offen: wie weit sich der 6.6-Kernel verkleinern lässt; wie OpenWrt selbst
+vom alten auf das neue Layout umstellt; ob die RAMpe als initramfs in den
+Slot muss oder Kernel und Rootfs getrennt liegen dürfen.
 
 ## Umsetzung
 
@@ -145,8 +167,8 @@ braucht einen eigenen Hardware-Test, bevor eine Anleitung es anbietet.
 5. Vorbereitungsskripte (Gruppen C und D) nach dem Muster der vorhandenen
    (`overlay/lib/gluon-rampe/prepare`), mit Prüfung des Geräts vor jedem
    Schreibzugriff.
-6. Reihenfolge: A (TP-Link, EU) und B zuerst, dann D, dann C Gerät für
-   Gerät mit Hardware-Test.
+6. Reihenfolge (Freigabe 23.11.2026): A (TP-Link, EU), B und D umsetzen;
+   C später Gerät für Gerät mit Hardware-Test; ERX als eigenes Projekt.
 
 ## Zahlen
 
