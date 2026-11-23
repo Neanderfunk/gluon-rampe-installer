@@ -96,8 +96,8 @@ legt das Image des Hauptnamens unter beiden Namen ab.
 | Mercusys MR80X v3 | `mercusys-mr80x-v3` | mediatek-filogic | K4 | devices/mercusys-mr80x-v3.sh (gebaut 10.10.2026 lokal, initramfs etwa 8.1 MB, `91_installer_initramfs` geprüft, Hardware-Test offen): trägt das Gerät in Gluon ein (`ensure_device`); `initramfs-kernel.bin` per UART + TFTP |
 | Mercusys MR90X v1 | `mercusys-mr90x-v1` | mediatek-filogic | K2 | devices/mercusys-mr90x-v1.sh (gebaut 10.10.2026 lokal, initramfs etwa 8.1 MB, `91_installer_initramfs` geprüft, Hardware-Test offen): `initramfs-kernel.bin` per `ubiupdatevol` aus der Stock-Shell |
 | TP-Link Archer AX80 v1 (US/RU/CA) | `tp-link-archer-ax80-v1` | mediatek-filogic | K4 | devices/tp-link-archer-ax80-v1.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin` per U-Boot-TFTP, Vorbereitungsskript fw_setenv |
-| TP-Link EAP683-LR | `tp-link-eap683-lr` | mediatek-filogic | K4 | devices/tp-link-eap683-lr.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin` per U-Boot-TFTP; OpenWrt-Backport aus gluon-patches-hardware v2025.1.x-next (eigener Lauf, RAMPE_HW_PATCHES_NEXT) |
-| TP-Link EAP683-UR (Alias von tp-link-eap683-lr) | `tp-link-eap683-ur` | mediatek-filogic | K4 | devices/tp-link-eap683-ur.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin` per U-Boot-TFTP; OpenWrt-Backport wie EAP683 LR |
+| TP-Link EAP683-LR | `tp-link-eap683-lr` | mediatek-filogic | K4 | devices/tp-link-eap683-lr.sh, gilt auch für den UR (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin` per U-Boot-TFTP; OpenWrt-Backport aus gluon-patches-hardware v2025.1.x-next (eigener Lauf, RAMPE_HW_PATCHES_NEXT) |
+| TP-Link EAP683-UR (Alias von tp-link-eap683-lr) | `tp-link-eap683-ur` | mediatek-filogic | K4 | kein eigenes Rezept: OpenWrt führt den UR als zweiten Modellnamen des LR-Profils (gleiches DTS), die RAMpe des EAP683 LR gilt (devices/tp-link-eap683-lr.sh) |
 | TP-Link RE6000XD | `tp-link-re6000xd` | mediatek-filogic | K4 | devices/tp-link-re6000xd.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin` per U-Boot-TFTP |
 | Xiaomi Mi Router AX3000T | `xiaomi-mi-router-ax3000t` | mediatek-filogic | K2 | devices/xiaomi-mi-router-ax3000t.sh (gebaut, RAMpe 20261115): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT); Exploit bleibt |
 | Zyxel EX5700 (Telenor) | `zyxel-ex5700-telenor` | mediatek-filogic | K4 | devices/zyxel-ex5700-telenor.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin`, als `C0A80101.img` per U-Boot-TFTP |
@@ -152,7 +152,7 @@ contrib/docker/run.sh ./build.sh ath79-nand zte-mf286r zte-mf281 aerohive-hiveap
 contrib/docker/run.sh ./build.sh mpc85xx-p1020 ocedo-panda enterasys-ws-ap3710i extreme-networks-ws-ap3825i aerohive-hiveap-330
 contrib/docker/run.sh ./build.sh mpc85xx-p1010 enterasys-ws-ap3715i sophos-red-15w-rev.1
 contrib/docker/run.sh ./build.sh mediatek-filogic acer-predator-connect-w6 acer-predator-connect-w6d acer-connect-vero-w6m adtran-sdg-8612 adtran-sdg-8614 adtran-sdg-8622 adtran-sdg-8632 tp-link-archer-ax80-v1 tp-link-re6000xd zyxel-ex5700-telenor
-RAMPE_HW_PATCHES=<pfad>/gluon-patches-hardware-next contrib/docker/run.sh ./build.sh mediatek-filogic tp-link-eap683-lr tp-link-eap683-ur
+RAMPE_HW_PATCHES=<pfad>/gluon-patches-hardware-next contrib/docker/run.sh ./build.sh mediatek-filogic tp-link-eap683-lr
 contrib/docker/run.sh ./build.sh ramips-mt7620 tp-link-archer-c2-v1 tp-link-archer-c20-v1
 contrib/docker/run.sh ./build.sh ramips-mt76x8 tp-link-archer-c20-v5 tp-link-archer-c50-v4 tp-link-archer-c50-v6-ca-eu-ru
 ```

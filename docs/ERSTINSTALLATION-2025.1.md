@@ -464,7 +464,7 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [ruijie-rg-x60-pro](#ruijie-rg-x60-pro) | Ruijie RG-X60 Pro | mediatek-filogic | K4 | L7 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | offen |  |  |
 | [tp-link-archer-ax80-v1](#tp-link-archer-ax80-v1) | TP-Link Archer AX80 v1 (US/RU/CA) | mediatek-filogic | K4 | offen | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ? | teilweise | ja |  |
 | [tp-link-eap683-lr](#tp-link-eap683-lr) | TP-Link EAP683-LR | mediatek-filogic | K4 | L8 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise | ja |  |
-| [tp-link-eap683-ur](#tp-link-eap683-ur) | TP-Link EAP683-UR (Alias von tp-link-eap683-lr) | mediatek-filogic | K4 | L8 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise | ja |  |
+| [tp-link-eap683-ur](#tp-link-eap683-ur) | TP-Link EAP683-UR (Alias von tp-link-eap683-lr) | mediatek-filogic | K4 | L8 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise |  |  |
 | [tp-link-re6000xd](#tp-link-re6000xd) | TP-Link RE6000XD | mediatek-filogic | K4 | L7 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise | ja |  |
 | [tp-link-tl-xdr4288](#tp-link-tl-xdr4288) | TP-Link TL-XDR4288 | mediatek-filogic | K3 | L4 | bootloader |  | Shell | nein | nein | teilweise |  |  |
 | [tp-link-tl-xdr6086](#tp-link-tl-xdr6086) | TP-Link TL-XDR6086 | mediatek-filogic | K3 | L4 | bootloader |  | Shell | nein | nein | teilweise |  |  |
@@ -10211,7 +10211,7 @@ TP-Link EAP683-LR · mediatek-filogic · K4
 - **RAM:** 1 GB [geprüft: OpenWrt f174914]
 - **Rückweg zur Herstellerfirmware:** U-Boot-Variable tp_boot_idx auf 1 setzen (Bootloader oder fw_setenv), dann startet die Herstellerfirmware aus ubi1; danach über deren Weboberfläche aktualisieren [geprüft: OpenWrt f174914]
 - **Gluon-RAMpe passt:** teilweise (neu bewertet 23.11.2026 nach dem Grundsatz in docs/PLAN-WEITERE-RAMPEN.md): Gluon-RAMpe statt OpenWrt-initramfs im TFTP-Schritt, danach Community-sysupgrade im Browser; UART und U-Boot-Konsole bleiben [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/tp-link-eap683-lr.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin` per U-Boot-TFTP; OpenWrt-Backport aus gluon-patches-hardware v2025.1.x-next (eigener Lauf, RAMPE_HW_PATCHES_NEXT)
+- **Gluon-RAMpe-Rezept:** devices/tp-link-eap683-lr.sh, gilt auch für den UR (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin` per U-Boot-TFTP; OpenWrt-Backport aus gluon-patches-hardware v2025.1.x-next (eigener Lauf, RAMPE_HW_PATCHES_NEXT)
 - **Quelle (OpenWrt-Commit):** OpenWrt f1749142ca59c3877ce70b7c97475f4416cf74a8; gluon-patches-hardware Zweig v2025.1.x-next, Backport aus OpenWrt main
 
 #### tp-link-eap683-ur
@@ -10246,7 +10246,7 @@ TP-Link EAP683-UR (Alias von tp-link-eap683-lr) · mediatek-filogic · K4
 - **RAM:** 1 GB [geprüft: OpenWrt f174914]
 - **Rückweg zur Herstellerfirmware:** U-Boot-Variable tp_boot_idx auf 1 setzen (Bootloader oder fw_setenv), dann startet die Herstellerfirmware aus ubi1; danach über deren Weboberfläche aktualisieren [geprüft: OpenWrt f174914]
 - **Gluon-RAMpe passt:** teilweise (neu bewertet 23.11.2026): wie EAP683 LR [abgeleitet]
-- **Gluon-RAMpe-Rezept:** devices/tp-link-eap683-ur.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-kernel.bin` per U-Boot-TFTP; OpenWrt-Backport wie EAP683 LR
+- **Gluon-RAMpe-Rezept:** kein eigenes Rezept: OpenWrt führt den UR als zweiten Modellnamen des LR-Profils (gleiches DTS), die RAMpe des EAP683 LR gilt (devices/tp-link-eap683-lr.sh)
 - **Quelle (OpenWrt-Commit):** OpenWrt 708dcca80a0b19aacd32e2bd4530b88461f87581; gluon-patches-hardware Zweig v2025.1.x-next, Backport aus OpenWrt main
 
 #### tp-link-re6000xd

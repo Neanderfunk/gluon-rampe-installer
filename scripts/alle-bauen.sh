@@ -59,7 +59,7 @@ LAEUFE=(
 	# Gruppe B aus docs/PLAN-WEITERE-RAMPEN.md: serieller Weg, RAMpe statt
 	# OpenWrt-initramfs im TFTP-Schritt
 	"mediatek-filogic acer-predator-connect-w6 acer-predator-connect-w6d acer-connect-vero-w6m adtran-sdg-8612 adtran-sdg-8614 adtran-sdg-8622 adtran-sdg-8632 tp-link-archer-ax80-v1 tp-link-re6000xd zyxel-ex5700-telenor"
-	"next mediatek-filogic tp-link-eap683-lr tp-link-eap683-ur"
+	"next mediatek-filogic tp-link-eap683-lr"
 	# Gruppe A: TP-Link mit U-Boot-Teil aus der Hersteller-Firmware (Nachbau
 	# nach dem Bau, devices/lib.sh; Herstellerdateien im Cache RAMPE_CACHE)
 	"ramips-mt7620 tp-link-archer-c2-v1 tp-link-archer-c20-v1"

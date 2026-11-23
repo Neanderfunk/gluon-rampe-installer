@@ -1,4 +1,4 @@
-# TP-Link EAP683 LR (mediatek-filogic, MT7986), Gruppe B aus docs/PLAN-WEITERE-RAMPEN.md
+# TP-Link EAP683 LR und UR (mediatek-filogic, MT7986), Gruppe B aus docs/PLAN-WEITERE-RAMPEN.md
 #
 # Weg [geprueft: OpenWrt f1749142ca59c3877ce70b7c97475f4416cf74a8]:
 #   UART (Loetstellen J255 bzw. TP13-TP15): Boot mit Ctrl+b abbrechen, im
@@ -15,8 +15,12 @@
 # diesen Lauf auf einen Checkout dieses Zweigs zeigen, sonst bricht
 # ensure_openwrt_backport ab. Deshalb ein eigener Lauf in
 # scripts/alle-bauen.sh, damit ein Fehlschlag die anderen nicht trifft.
-# Im Neanderfunk-Bau steht der UR als Alias des LR; fuer die RAMpe getrennt,
-# weil OpenWrt zwei Profile mit eigenem DTS baut.
+# Der UR hat kein eigenes OpenWrt-Profil: 0002 traegt ihn nur als
+# DEVICE_ALT0_MODEL beim LR ein, gleiches DTS [geprueft: 0002-mediatek-TP-Link-
+# EAP683-UR-support.patch]. Diese RAMpe gilt also fuer beide; im
+# Neanderfunk-Bau steht der UR ebenso als Alias des LR. (Ein eigenes Rezept
+# fuer den UR scheiterte am 23.11.2026 mit "unable to enable device
+# 'tplink_eap683-ur'".)
 # Image: ...-initramfs-kernel.bin wie bei allen filogic-Geraeten.
 # Ungetestet.
 ensure_openwrt_backport tplink-eap683 5800-hw-tplink-eap683
