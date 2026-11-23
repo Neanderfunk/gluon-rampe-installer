@@ -4,7 +4,10 @@
 # docs/GERAETE.md ("Bau-Laeufe") plus x86-64, nacheinander, mit derselben
 # Release-Kennung fuer alle Laeufe.
 #
-#   RAMPE_HW_PATCHES=<pfad>/gluon-patches-hardware scripts/alle-bauen.sh
+#   RAMPE_HW_PATCHES=<pfad>/gluon-patches-hardware scripts/alle-bauen.sh [<geraet> ...]
+#
+# Mit Geraetenamen laufen nur die Laeufe, in denen mindestens eines davon
+# steht (ganze Laeufe, nicht einzelne Geraete), z. B. nach neuen Rezepten.
 #
 # Umgebung:
 #   RAMPE_HW_PATCHES  Pflicht: Checkout von gluon-patches-hardware, Branch
@@ -74,6 +77,19 @@ if [ "$geplant" != "$rezepte" ]; then
 	echo "Laeufe und devices/ passen nicht zusammen:" >&2
 	diff <(echo "$rezepte") <(echo "$geplant") >&2
 	exit 2
+fi
+
+if [ $# -gt 0 ]; then
+	for g in "$@"; do
+		grep -qxF "$g" <<< "$rezepte" || { echo "Kein Rezept: $g" >&2; exit 2; }
+	done
+	auswahl=()
+	for lauf in "${LAEUFE[@]}"; do
+		for g in "$@"; do
+			if [[ " ${lauf#next } " == *" $g "* ]]; then auswahl+=("$lauf"); break; fi
+		done
+	done
+	LAEUFE=("${auswahl[@]}")
 fi
 
 echo "== Gluon-RAMpe, GLUON_RELEASE=$GLUON_RELEASE, ${#LAEUFE[@]} Laeufe, $(echo "$rezepte" | wc -l) Geraete"
