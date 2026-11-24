@@ -60,6 +60,9 @@ LAEUFE=(
 	# OpenWrt-initramfs im TFTP-Schritt
 	"mediatek-filogic acer-predator-connect-w6 acer-predator-connect-w6d acer-connect-vero-w6m adtran-sdg-8612 adtran-sdg-8614 adtran-sdg-8622 adtran-sdg-8632 tp-link-archer-ax80-v1 tp-link-re6000xd zyxel-ex5700-telenor"
 	"next mediatek-filogic tp-link-eap683-lr"
+	# Gruppe C: RAMpe statt OpenWrt-initramfs nach dem Bootloader-Tausch
+	# (initramfs-recovery.itb) bzw. als initramfs-factory.ubi (AX6000 Stock)
+	"mediatek-filogic tp-link-tl-xdr4288 tp-link-tl-xdr6086 tp-link-tl-xdr6088 tp-link-tl-xtr8488 netcore-n60 jdcloud-re-cp-03 xiaomi-redmi-router-ax6000"
 	# Gruppe A: TP-Link mit U-Boot-Teil aus der Hersteller-Firmware (Nachbau
 	# nach dem Bau, devices/lib.sh; Herstellerdateien im Cache RAMPE_CACHE)
 	"ramips-mt7620 tp-link-archer-c2-v1 tp-link-archer-c20-v1"

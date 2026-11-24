@@ -38,6 +38,8 @@ def art(rest):
         return "D-Link-Recovery"
     if "-kernel1.bin" in rest or "-rootfs0.bin" in rest:
         return "Xiaomi kernel1/rootfs0 (dauerhaft)"
+    if rest.endswith("-initramfs-recovery.itb"):
+        return "TFTP-Recovery des OpenWrt-U-Boot (initramfs-recovery.itb)"
     if rest.endswith("-initramfs-factory.ubi"):
         return "UBI-Image für die Herstellerfirmware"
     if rest.endswith(".trx"):

@@ -454,11 +454,11 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [gl.inet-gl-mt3000](#gl.inet-gl-mt3000) | GL.iNet GL-MT3000 | mediatek-filogic | K1d | L0 | normal | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt3000.md) |
 | [gl.inet-gl-mt6000](#gl.inet-gl-mt6000) | GL.iNet GL-MT6000 | mediatek-filogic | K1d | L0 | normal | [`glinet`](#familie-glinet) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/gl.inet-gl-mt6000.md) |
 | [iptime-ax7800m-6e](#iptime-ax7800m-6e) | ipTIME AX7800M-6E | mediatek-filogic | K0+ | L5 | normal |  | programm | nein | nein | nein |  |  |
-| [jdcloud-re-cp-03](#jdcloud-re-cp-03) | JDCloud RE-CP-03 | mediatek-filogic | K3 | L4 | bootloader |  | webui-upload | nein | nein | teilweise |  |  |
+| [jdcloud-re-cp-03](#jdcloud-re-cp-03) | JDCloud RE-CP-03 | mediatek-filogic | K3 | L4 | bootloader |  | webui-upload | nein | nein | teilweise | ja |  |
 | [mercusys-mr80x-v3](#mercusys-mr80x-v3) | Mercusys MR80X v3 | mediatek-filogic | K4 | L7 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise | ja |  |
 | [mercusys-mr90x-v1](#mercusys-mr90x-v1) | Mercusys MR90X v1 | mediatek-filogic | K2 | L5 | normal | [`sonderweg-mercusys-mr90x-v1`](#familie-sonderweg-mercusys-mr90x-v1) | ssh | nein | nein | teilweise | ja | [Anleitung](../anleitungen/de/mercusys-mr90x-v1.md) |
 | [mercusys-mr90x-v1-ubi](#mercusys-mr90x-v1-ubi) | Mercusys MR90X v1 (OpenWrt-U-Boot-Layout) | mediatek-filogic | K3 | L5 | bootloader |  | wie | nein | nein | nein |  |  |
-| [netcore-n60](#netcore-n60) | Netcore N60 | mediatek-filogic | K3 | L4 | bootloader |  | ssh | nein | nein | teilweise |  |  |
+| [netcore-n60](#netcore-n60) | Netcore N60 | mediatek-filogic | K3 | L4 | bootloader |  | ssh | nein | nein | teilweise | ja |  |
 | [netgear-wax220](#netgear-wax220) | NETGEAR WAX220 | mediatek-filogic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/netgear-wax220.md); https://openwrt.org/toh/netgear/wax220#oem_easy_installation |
 | [openwrt-one](#openwrt-one) | OpenWrt One | mediatek-filogic | K0 | L0.1 | normal | [`k0-webui`](#familie-k0-webui) | webui-upload | nein | nein | nein |  | [Anleitung](../anleitungen/de/openwrt-one.md) |
 | [ruijie-rg-x60-pro](#ruijie-rg-x60-pro) | Ruijie RG-X60 Pro | mediatek-filogic | K4 | L7 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | offen |  |  |
@@ -466,16 +466,16 @@ Sortiert nach Target, dann Gluon-Name. Der Gluon-Name führt zu den Einzelheiten
 | [tp-link-eap683-lr](#tp-link-eap683-lr) | TP-Link EAP683-LR | mediatek-filogic | K4 | L8 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise | ja |  |
 | [tp-link-eap683-ur](#tp-link-eap683-ur) | TP-Link EAP683-UR (Alias von tp-link-eap683-lr) | mediatek-filogic | K4 | L8 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise |  |  |
 | [tp-link-re6000xd](#tp-link-re6000xd) | TP-Link RE6000XD | mediatek-filogic | K4 | L7 | normal | [`seriell-tftp`](#familie-seriell-tftp) | tftp-client-am-geraet | ja | ja | teilweise | ja |  |
-| [tp-link-tl-xdr4288](#tp-link-tl-xdr4288) | TP-Link TL-XDR4288 | mediatek-filogic | K3 | L4 | bootloader |  | Shell | nein | nein | teilweise |  |  |
-| [tp-link-tl-xdr6086](#tp-link-tl-xdr6086) | TP-Link TL-XDR6086 | mediatek-filogic | K3 | L4 | bootloader |  | Shell | nein | nein | teilweise |  |  |
-| [tp-link-tl-xdr6088](#tp-link-tl-xdr6088) | TP-Link TL-XDR6088 | mediatek-filogic | K3 | L4 | bootloader |  | Shell | nein | nein | teilweise |  |  |
-| [tp-link-tl-xtr8488](#tp-link-tl-xtr8488) | TP-Link TL-XTR8488 | mediatek-filogic | K3 | L4 | bootloader |  | Shell | nein | nein | teilweise |  |  |
+| [tp-link-tl-xdr4288](#tp-link-tl-xdr4288) | TP-Link TL-XDR4288 | mediatek-filogic | K3 | L4 | bootloader |  | Shell | nein | nein | teilweise | ja |  |
+| [tp-link-tl-xdr6086](#tp-link-tl-xdr6086) | TP-Link TL-XDR6086 | mediatek-filogic | K3 | L4 | bootloader |  | Shell | nein | nein | teilweise | ja |  |
+| [tp-link-tl-xdr6088](#tp-link-tl-xdr6088) | TP-Link TL-XDR6088 | mediatek-filogic | K3 | L4 | bootloader |  | Shell | nein | nein | teilweise | ja |  |
+| [tp-link-tl-xtr8488](#tp-link-tl-xtr8488) | TP-Link TL-XTR8488 | mediatek-filogic | K3 | L4 | bootloader |  | Shell | nein | nein | teilweise | ja |  |
 | [ubiquiti-unifi-6-plus](#ubiquiti-unifi-6-plus) | Ubiquiti UniFi 6+ (U6+) | mediatek-filogic | K1d | L4 | normal | [`ubiquiti-unifi-ssh`](#familie-ubiquiti-unifi-ssh) | ssh | nein | nein | nein |  | [Anleitung](../anleitungen/de/ubiquiti-unifi-6-plus.md); https://git.openwrt.org/?p=openwrt/openwrt.git;a=commit;h=75ee5546e9b7cfa5bbfd6f844ab8c5fffd5bb594 |
 | [wavlink-wl-wn536ax6-a](#wavlink-wl-wn536ax6-a) | WAVLINK WL-WN536AX6 Rev a | mediatek-filogic | K2 | offen | normal |  | webui-upload | nein | nein | nein |  |  |
 | [wavlink-wl-wn573hx3](#wavlink-wl-wn573hx3) | WAVLINK WL-WN573HX3 / 7Links WLR-1300 | mediatek-filogic | K1d | offen | normal | [`sonderweg-wavlink-wl-wn573hx3`](#familie-sonderweg-wavlink-wl-wn573hx3) | webui-upload | nein | nein | nein |  | - |
 | [xiaomi-mi-router-ax3000t](#xiaomi-mi-router-ax3000t) | Xiaomi Mi Router AX3000T | mediatek-filogic | K2 | L4 | normal | [`sonderweg-xiaomi-mi-router-ax3000t`](#familie-sonderweg-xiaomi-mi-router-ax3000t) | ssh | nein | nein | teilweise | ja | - |
 | [xiaomi-mi-router-ax3000t-openwrt-u-boot-layout](#xiaomi-mi-router-ax3000t-openwrt-u-boot-layout) | Xiaomi Mi Router AX3000T (OpenWrt-U-Boot-Layout) | mediatek-filogic | K3 | L4 | bootloader | [`sonderweg-xiaomi-mi-router-ax3000t-openwrt-u-boot-layout`](#familie-sonderweg-xiaomi-mi-router-ax3000t-openwrt-u-boot-layout) | ssh | nein | nein | nein |  | - |
-| [xiaomi-redmi-router-ax6000](#xiaomi-redmi-router-ax6000) | Xiaomi Redmi Router AX6000 | mediatek-filogic | K2 | L4 | normal |  | ssh | nein | nein | teilweise |  |  |
+| [xiaomi-redmi-router-ax6000](#xiaomi-redmi-router-ax6000) | Xiaomi Redmi Router AX6000 | mediatek-filogic | K2 | L4 | normal |  | ssh | nein | nein | teilweise | ja |  |
 | [xiaomi-redmi-router-ax6000-openwrt-u-boot-layout](#xiaomi-redmi-router-ax6000-openwrt-u-boot-layout) | Xiaomi Redmi Router AX6000 (OpenWrt-U-Boot-Layout) | mediatek-filogic | K3 | L4 | bootloader |  | ssh | nein | nein | nein |  |  |
 | [zyxel-ex5601-t0](#zyxel-ex5601-t0) | Zyxel EX5601-T0 (auch EX5601-T1, T-56) | mediatek-filogic | K4 | offen | normal |  | seriell | ja | offen | offen |  |  |
 | [zyxel-ex5601-t0-openwrt-u-boot-layout](#zyxel-ex5601-t0-openwrt-u-boot-layout) | Zyxel EX5601-T0 (OpenWrt U-Boot layout) | mediatek-filogic | K5 | offen | bootloader |  | seriell | ja | offen | nein |  |  |
@@ -14098,7 +14098,8 @@ JDCloud RE-CP-03 · mediatek-filogic · K3
 - **Stock-Teile:** - (Bootloader aus OpenWrt)
 - **RAM:** 1 GB
 - **Notweg:** TFTP-Recovery des OpenWrt-U-Boot bleibt immer verfügbar; optional initramfs-recovery.itb nach mmcblk0p4 für eMMC-Recovery [geprüft: OpenWrt c0c3234]
-- **Gluon-RAMpe passt:** teilweise: RAMpe als `initramfs-recovery.itb` im TFTP-Recovery-Schritt denkbar; Migrations-Firmware und dd bleiben Handarbeit [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise (Gruppe C in docs/PLAN-WEITERE-RAMPEN.md, Rezept 24.11.2026): Gluon-RAMpe als `initramfs-recovery.itb` statt des OpenWrt-initramfs in der TFTP-Recovery des OpenWrt-U-Boot, danach Community-sysupgrade im Browser; Migrations-Firmware und dd von GPT, BL2 und FIP bleibt Handarbeit [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/jdcloud-re-cp-03.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-recovery.itb`, für die TFTP-Recovery umbenennen in `openwrt-mediatek-filogic-jdcloud_re-cp-03-initramfs-recovery.itb`; preloader.bin und bl31-uboot.fip weiter von OpenWrt
 - **Quelle (OpenWrt-Commit):** OpenWrt c0c3234e17207a9287a08757fc1752490144a1cd; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
 
 #### mercusys-mr90x-v1-ubi
@@ -14167,7 +14168,8 @@ Netcore N60 · mediatek-filogic · K3
 - **Factory-/Stock-Image-Link:** [24.10.8: preloader.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-netcore_n60-preloader.bin)<br>[24.10.8: bl31-uboot.fip](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-netcore_n60-bl31-uboot.fip)
 - **Stock-Teile:** - (Bootloader aus OpenWrt; Backup aller mtd-Partitionen)
 - **RAM:** 256 MB
-- **Gluon-RAMpe passt:** teilweise: RAMpe als `initramfs-recovery.itb` im TFTP-Recovery-Schritt denkbar; Bootloader-Tausch bleibt Handarbeit [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise (Gruppe C in docs/PLAN-WEITERE-RAMPEN.md, Rezept 24.11.2026): Gluon-RAMpe als `initramfs-recovery.itb` statt des OpenWrt-initramfs in der TFTP-Recovery des OpenWrt-U-Boot, danach Community-sysupgrade im Browser; ssh/telnet, Sicherung und Bootloader-Tausch bleibt Handarbeit [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/netcore-n60.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-recovery.itb`, für die TFTP-Recovery umbenennen in `openwrt-mediatek-filogic-netcore_n60-initramfs-recovery.itb`; preloader.bin und bl31-uboot.fip weiter von OpenWrt
 - **Quelle (OpenWrt-Commit):** OpenWrt 4ae474afbd023a3386f4276ca8f948a44b49ff1b; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
 
 #### tp-link-tl-xdr4288
@@ -14200,7 +14202,8 @@ TP-Link TL-XDR4288 · mediatek-filogic · K3
 - **Factory-/Stock-Image-Link:** [24.10.8: preloader.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-tplink_tl-xdr4288-preloader.bin)<br>[24.10.8: bl31-uboot.fip](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-tplink_tl-xdr4288-bl31-uboot.fip)
 - **Stock-Teile:** - (Bootloader aus OpenWrt)
 - **RAM:** 512 MB
-- **Gluon-RAMpe passt:** teilweise: RAMpe als `initramfs-recovery.itb` im TFTP-Recovery-Schritt denkbar; Shell-Zugang und Bootloader-Tausch bleiben Handarbeit [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise (Gruppe C in docs/PLAN-WEITERE-RAMPEN.md, Rezept 24.11.2026): Gluon-RAMpe als `initramfs-recovery.itb` statt des OpenWrt-initramfs in der TFTP-Recovery des OpenWrt-U-Boot, danach Community-sysupgrade im Browser; Shell-Zugang und Bootloader-Tausch bleibt Handarbeit [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/tp-link-tl-xdr4288.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-recovery.itb`, für die TFTP-Recovery umbenennen in `openwrt-mediatek-filogic-tplink_tl-xdr4288-initramfs-recovery.itb`; preloader.bin und bl31-uboot.fip weiter von OpenWrt
 - **Quelle (OpenWrt-Commit):** OpenWrt 21be2c26d555b33e9faf85be3e980876810b29d3; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
 
 #### tp-link-tl-xdr6086
@@ -14233,7 +14236,8 @@ TP-Link TL-XDR6086 · mediatek-filogic · K3
 - **Factory-/Stock-Image-Link:** [24.10.8: preloader.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-tplink_tl-xdr6086-preloader.bin)<br>[24.10.8: bl31-uboot.fip](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-tplink_tl-xdr6086-bl31-uboot.fip)
 - **Stock-Teile:** - (Bootloader aus OpenWrt)
 - **RAM:** 512 MB
-- **Gluon-RAMpe passt:** teilweise: RAMpe als `initramfs-recovery.itb` im TFTP-Recovery-Schritt denkbar; Shell-Zugang und Bootloader-Tausch bleiben Handarbeit [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise (Gruppe C in docs/PLAN-WEITERE-RAMPEN.md, Rezept 24.11.2026): Gluon-RAMpe als `initramfs-recovery.itb` statt des OpenWrt-initramfs in der TFTP-Recovery des OpenWrt-U-Boot, danach Community-sysupgrade im Browser; Shell-Zugang und Bootloader-Tausch bleibt Handarbeit [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/tp-link-tl-xdr6086.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-recovery.itb`, für die TFTP-Recovery umbenennen in `openwrt-mediatek-filogic-tplink_tl-xdr6086-initramfs-recovery.itb`; preloader.bin und bl31-uboot.fip weiter von OpenWrt
 - **Quelle (OpenWrt-Commit):** OpenWrt 21be2c26d555b33e9faf85be3e980876810b29d3; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
 
 #### tp-link-tl-xdr6088
@@ -14266,7 +14270,8 @@ TP-Link TL-XDR6088 · mediatek-filogic · K3
 - **Factory-/Stock-Image-Link:** [24.10.8: preloader.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-tplink_tl-xdr6088-preloader.bin)<br>[24.10.8: bl31-uboot.fip](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-tplink_tl-xdr6088-bl31-uboot.fip)
 - **Stock-Teile:** - (Bootloader aus OpenWrt)
 - **RAM:** 512 MB
-- **Gluon-RAMpe passt:** teilweise: RAMpe als `initramfs-recovery.itb` im TFTP-Recovery-Schritt denkbar; Shell-Zugang und Bootloader-Tausch bleiben Handarbeit [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise (Gruppe C in docs/PLAN-WEITERE-RAMPEN.md, Rezept 24.11.2026): Gluon-RAMpe als `initramfs-recovery.itb` statt des OpenWrt-initramfs in der TFTP-Recovery des OpenWrt-U-Boot, danach Community-sysupgrade im Browser; Shell-Zugang und Bootloader-Tausch bleibt Handarbeit [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/tp-link-tl-xdr6088.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-recovery.itb`, für die TFTP-Recovery umbenennen in `openwrt-mediatek-filogic-tplink_tl-xdr6088-initramfs-recovery.itb`; preloader.bin und bl31-uboot.fip weiter von OpenWrt
 - **Quelle (OpenWrt-Commit):** OpenWrt 21be2c26d555b33e9faf85be3e980876810b29d3; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
 
 #### tp-link-tl-xtr8488
@@ -14299,7 +14304,8 @@ TP-Link TL-XTR8488 · mediatek-filogic · K3
 - **Factory-/Stock-Image-Link:** [24.10.8: preloader.bin](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-tplink_tl-xtr8488-preloader.bin)<br>[24.10.8: bl31-uboot.fip](https://downloads.openwrt.org/releases/24.10.8/targets/mediatek/filogic/openwrt-24.10.8-mediatek-filogic-tplink_tl-xtr8488-bl31-uboot.fip)
 - **Stock-Teile:** - (Bootloader aus OpenWrt)
 - **RAM:** 1 GB
-- **Gluon-RAMpe passt:** teilweise: RAMpe als `initramfs-recovery.itb` im TFTP-Recovery-Schritt denkbar; Shell-Zugang und Bootloader-Tausch bleiben Handarbeit [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise (Gruppe C in docs/PLAN-WEITERE-RAMPEN.md, Rezept 24.11.2026): Gluon-RAMpe als `initramfs-recovery.itb` statt des OpenWrt-initramfs in der TFTP-Recovery des OpenWrt-U-Boot, danach Community-sysupgrade im Browser; Shell-Zugang und Bootloader-Tausch bleibt Handarbeit [abgeleitet]
+- **Gluon-RAMpe-Rezept:** devices/tp-link-tl-xtr8488.sh (Rezept, noch nicht gebaut, ungetestet): `initramfs-recovery.itb`, für die TFTP-Recovery umbenennen in `openwrt-mediatek-filogic-tplink_tl-xtr8488-initramfs-recovery.itb`; preloader.bin und bl31-uboot.fip weiter von OpenWrt
 - **Quelle (OpenWrt-Commit):** OpenWrt 73832e1a489b30133113b511fd1643b69d66a18b; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
 
 #### wavlink-wl-wn536ax6-a
@@ -14360,7 +14366,8 @@ Xiaomi Redmi Router AX6000 · mediatek-filogic · K2
 - **Stock-Teile:** -
 - **RAM:** 512 MB
 - **Rückweg zur Herstellerfirmware:** Das Stock-Layout erlaubt die Rückkehr mit den Xiaomi-Firmware-Werkzeugen (Windows) [geprüft: OpenWrt 18bea17, 641e4f2]
-- **Gluon-RAMpe passt:** teilweise: Gluon-RAMpe als `initramfs-factory.ubi` statt des OpenWrt-Zwischenschritts; der Exploit bleibt [abgeleitet]
+- **Gluon-RAMpe passt:** teilweise (Gruppe C in docs/PLAN-WEITERE-RAMPEN.md, Rezept 24.11.2026): Gluon-RAMpe als `initramfs-factory.ubi` statt des OpenWrt-Zwischenschritts, danach Community-sysupgrade (Stock-Layout) im Browser; der Exploit bleibt. Layout am Gerät nicht belegt [offen]
+- **Gluon-RAMpe-Rezept:** devices/xiaomi-redmi-router-ax6000.sh (Rezept, noch nicht gebaut, ungetestet): `-initramfs-factory.ubi` (OpenWrt-ARTIFACT) per ubiformat in die inaktive ubi-Partition; Exploit bleibt
 - **Quelle (OpenWrt-Commit):** OpenWrt 641e4f2f0479997c71ff6c1f1b63fb9b5c67e687; OpenWrt 18bea173a646518a64ca05ea26f87eab0540feb9; gluon-patches-hardware Zweig v2025.1.x-next, targets/filogic-mt7986.sh (nur Gluon-Eintrag)
 
 #### xiaomi-redmi-router-ax6000-openwrt-u-boot-layout
