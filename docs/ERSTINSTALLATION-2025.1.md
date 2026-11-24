@@ -14496,7 +14496,7 @@ Mercusys MR3000X v2.0 (Alias von mercusys-mr80x-v2) · qualcommax-ipq50xx · K0
   3. Rechner per Netzwerkkabel an einen LAN-Port, im Browser http://192.168.1.1 öffnen; beim ersten Aufruf ein Administrator-Passwort setzen [geprüft: Test Neanderfunk 13.10.2026]
   4. Erweitert > System > Firmware-Upgrade > Lokales Upgrade, das factory-Image auswählen und hochladen [geprüft: OpenWrt 938f67a519]
   5. Warten, bis das Gerät mit Gluon neu gestartet ist [abgeleitet]
-- **Warnung:** Die U-Boot-Web-Recovery nimmt nur RSA-signierte Herstellerfirmware, kein OpenWrt- oder Gluon-Image [geprüft: OpenWrt 938f67a519]. Die automatische Firmware-Aktualisierung der Stock-Firmware ist ab Werk an [geprüft: Test Neanderfunk 13.10.2026].
+- **Warnung:** Die U-Boot-Web-Recovery nimmt nur RSA-signierte Herstellerfirmware, kein OpenWrt- oder Gluon-Image [geprüft: OpenWrt 938f67a519; Gluon-factory dort abgelehnt [abgeleitet: dasselbe Board]]. Die automatische Firmware-Aktualisierung der Stock-Firmware ist ab Werk an [geprüft: Test Neanderfunk 13.10.2026].
 - **Übertragung:** webui-upload (Stock-Web-UI)
 - **Adressen:** Router http://192.168.1.1 (mwlogin.net), DHCP .2 bis .253 [geprüft: Test Neanderfunk 13.10.2026]
 - **Programm:** Browser
@@ -14514,8 +14514,8 @@ Mercusys MR3000X v2.0 (Alias von mercusys-mr80x-v2) · qualcommax-ipq50xx · K0
 - **Stock-Teile:** -
 - **RAM:** 256 MB [geprüft: OpenWrt 938f67a519]
 - **Fehlerbild:** "Ungültiger Dateityp." bei einem factory ohne MR3000X-Eintrag in der SupportList [geprüft: Test Neanderfunk 13.10.2026]; Gluon braucht hier kmod-ath11k-smallbuffers; mit dem normalen ath11k-Modul OOM nach 96 s und Neustart [geprüft: Test Neanderfunk 17.10.2026]
-- **Notweg:** [Notfall] Nach mehreren Fehlstarts geht U-Boot in die Web-Recovery unter http://192.168.1.1 (nur signierte Herstellerfirmware) [geprüft: Test Neanderfunk 14.10.2026]; UART 115200 8N1 auf einer Stiftleiste der Platine, U-Boot mit Enter in der Startsekunde anhalten, initramfs per TFTP laden [geprüft: Test Neanderfunk 17.10.2026]
-- **Rückweg zur Herstellerfirmware:** Herstellerfirmware über die U-Boot-Web-Recovery [abgeleitet, nicht erprobt]
+- **Notweg:** [Notfall] Reset-Knopf beim Einschalten gedrückt halten oder mehrere Fehlstarts: U-Boot-Recovery „Firmware Upgrade“ unter http://192.168.1.1, nimmt nur Herstellerfirmware, Gluon-factory abgelehnt [abgeleitet: dasselbe Board wie MR80X v2, dort geprüft: adorfer 24.11.2026] (Fehlstarts: [geprüft: Test Neanderfunk 14.10.2026]); Haltedauer der Taste und ob der Rechner dort per DHCP eine Adresse bekommt [offen]; UART 115200 8N1 auf einer Stiftleiste der Platine, U-Boot mit Enter in der Startsekunde anhalten, initramfs per TFTP laden [geprüft: Test Neanderfunk 17.10.2026]
+- **Rückweg zur Herstellerfirmware:** Herstellerfirmware über die U-Boot-Recovery: Reset-Knopf beim Einschalten gedrückt halten, http://192.168.1.1 [abgeleitet: dasselbe Board wie MR80X v2, dort geprüft: adorfer 24.11.2026]
 - **Hardware-Test:** 17.10.2026 (Test Neanderfunk, MR3000X v2.0): Testbau 26101706bro-ipq50xx per sysupgrade aus OpenWrt; Start vom Flash, Ethernet (LAN, WAN per DHCP), WLAN 2.4/5 GHz, Mesh und VPN; Client 5 GHz 340/208 Mbit/s; Gluon-factory über die Stock-Oberfläche nicht erprobt
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 938f67a519de64dcec10759b2b7203aca086f97a; gluon-patches-hardware Zweig v2025.1.x-next, devices/mercusys-mr80x-v2
@@ -14531,7 +14531,7 @@ Mercusys MR80X v2 · qualcommax-ipq50xx · K0
   3. Rechner per Netzwerkkabel an einen LAN-Port, im Browser http://192.168.1.1 öffnen; beim ersten Aufruf ein Administrator-Passwort setzen [geprüft: Test Neanderfunk 13.10.2026]
   4. Erweitert > System > Firmware-Upgrade > Lokales Upgrade, das factory-Image auswählen und hochladen [geprüft: OpenWrt 938f67a519]
   5. Warten, bis das Gerät mit Gluon neu gestartet ist [abgeleitet]
-- **Warnung:** Die U-Boot-Web-Recovery nimmt nur RSA-signierte Herstellerfirmware, kein OpenWrt- oder Gluon-Image [geprüft: OpenWrt 938f67a519]. Die automatische Firmware-Aktualisierung der Stock-Firmware ist ab Werk an [geprüft: Test Neanderfunk 13.10.2026].
+- **Warnung:** Die U-Boot-Web-Recovery nimmt nur RSA-signierte Herstellerfirmware, kein OpenWrt- oder Gluon-Image [geprüft: OpenWrt 938f67a519; Gluon-factory dort abgelehnt [geprüft: adorfer 24.11.2026]]. Die automatische Firmware-Aktualisierung der Stock-Firmware ist ab Werk an [geprüft: Test Neanderfunk 13.10.2026].
 - **Übertragung:** webui-upload (Stock-Web-UI)
 - **Adressen:** Router http://192.168.1.1 (mwlogin.net), DHCP .2 bis .253 [geprüft: Test Neanderfunk 13.10.2026]
 - **Programm:** Browser
@@ -14549,8 +14549,8 @@ Mercusys MR80X v2 · qualcommax-ipq50xx · K0
 - **Stock-Teile:** -
 - **RAM:** 256 MB [geprüft: OpenWrt 938f67a519]
 - **Fehlerbild:** Gluon braucht hier kmod-ath11k-smallbuffers; mit dem normalen ath11k-Modul OOM nach 96 s und Neustart [geprüft: Test Neanderfunk 17.10.2026]
-- **Notweg:** [Notfall] Nach mehreren Fehlstarts geht U-Boot in die Web-Recovery unter http://192.168.1.1 (nur signierte Herstellerfirmware) [geprüft: Test Neanderfunk 14.10.2026]; UART 115200 8N1 auf einer Stiftleiste der Platine, U-Boot mit Enter in der Startsekunde anhalten, initramfs per TFTP laden [geprüft: Test Neanderfunk 17.10.2026]
-- **Rückweg zur Herstellerfirmware:** Herstellerfirmware über die U-Boot-Web-Recovery [abgeleitet, nicht erprobt]
+- **Notweg:** [Notfall] Reset-Knopf beim Einschalten gedrückt halten oder mehrere Fehlstarts: U-Boot-Recovery „Firmware Upgrade“ unter http://192.168.1.1, nimmt nur Herstellerfirmware, Gluon-factory abgelehnt [geprüft: adorfer 24.11.2026] (Fehlstarts: [geprüft: Test Neanderfunk 14.10.2026]); Haltedauer der Taste und ob der Rechner dort per DHCP eine Adresse bekommt [offen]; UART 115200 8N1 auf einer Stiftleiste der Platine, U-Boot mit Enter in der Startsekunde anhalten, initramfs per TFTP laden [geprüft: Test Neanderfunk 17.10.2026]
+- **Rückweg zur Herstellerfirmware:** Herstellerfirmware über die U-Boot-Recovery: Reset-Knopf beim Einschalten gedrückt halten, http://192.168.1.1 [geprüft: adorfer 24.11.2026, Firmware-Version nicht notiert]; auch nach mehreren Fehlstarts erreichbar [geprüft: Test Neanderfunk 14.10.2026]
 - **Hardware-Test:** 17.10.2026 (Test Neanderfunk, MR3000X v2.0): Testbau 26101706bro-ipq50xx per sysupgrade aus OpenWrt; Start vom Flash, Ethernet (LAN, WAN per DHCP), WLAN 2.4/5 GHz, Mesh und VPN; Client 5 GHz 340/208 Mbit/s; Gluon-factory über die Stock-Oberfläche nicht erprobt
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 938f67a519de64dcec10759b2b7203aca086f97a; gluon-patches-hardware Zweig v2025.1.x-next, devices/mercusys-mr80x-v2
