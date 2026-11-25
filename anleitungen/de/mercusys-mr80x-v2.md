@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-11-24
 erprobt_mit: Gluon 2025.1 (26112316bro), factory-Image über die Mercusys-Oberfläche (Lokales Upgrade)
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 2f0580ec4
+daten_stand: 17ca872ed
 vorlage_stand: ae4d4370f
 ---
 
@@ -59,7 +59,7 @@ Aufkleber genau mit "Mercusys MR80X v2", bevor du anfängst.
    bestätige die Rückfragen.
 
 6. **Warten.** Das Gerät schreibt die Firmware und startet neu. Das dauert
-   einige Minuten.
+   bis zu 10 Minuten. Die LED blinkt dabei mehrere Minuten lang schnell, das ist normal und keine Bootschleife.
    **Nicht ausschalten, Strom nicht ziehen und die Seite nicht neu laden.**
    Manche Geräte löschen zuerst den ganzen Speicher; ein Abbruch in dieser
    Zeit kann sie unbrauchbar machen.

@@ -7557,6 +7557,7 @@ Mercusys MR3000X v2.0 (Alias von mercusys-mr80x-v2) · qualcommax-ipq50xx · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory (fwup-Container mit SupportList MR80X und MR3000X) [geprüft: Patch 0039/0042]
 - **Stock-Teile:** -
 - **RAM:** 256 MB [geprüft: OpenWrt 938f67a519]
+- **Dauer:** bis zu 10 Minuten; sysupgrade Gluon auf Gluon (26112510bro) bis ssh wieder antwortet 257 s und 552 s, zum Vergleich D-Link M60 90/113 s, MR90X 114 s [geprüft: Neanderfunk 25.11.2026, Gluon→Gluon]; die LED blinkt dabei mindestens 3, manchmal 5 Minuten schnell, auch beim ersten Flashen von der Stock-Firmware, das ist keine Bootschleife, Ursache unbekannt, keine serielle Konsole [geprüft: adorfer 25.11.2026]; Dauer beim Erstflash von der Stock-Firmware [abgeleitet]; geraetedaten 8c02e0d5d3b35122b0c4f57821d6e8a492f87518 (flash_dauer)
 - **Fehlerbild:** "Ungültiger Dateityp." bei einem factory ohne MR3000X-Eintrag in der SupportList [geprüft: Test Neanderfunk 13.10.2026]; Gluon braucht hier kmod-ath11k-smallbuffers; mit dem normalen ath11k-Modul OOM nach 96 s und Neustart [geprüft: Test Neanderfunk 17.10.2026]
 - **Notweg:** [Notfall] Reset-Knopf beim Einschalten gedrückt halten oder mehrere Fehlstarts: U-Boot-Recovery „Firmware Upgrade“ unter http://192.168.1.1, nimmt nur Herstellerfirmware, Gluon-factory abgelehnt [abgeleitet: dasselbe Board wie MR80X v2, dort geprüft: adorfer 24.11.2026] (Fehlstarts: [geprüft: Test Neanderfunk 14.10.2026]); Haltedauer der Taste und ob der Rechner dort per DHCP eine Adresse bekommt [offen]; UART 115200 8N1 auf einer Stiftleiste der Platine, U-Boot mit Enter in der Startsekunde anhalten, initramfs per TFTP laden [geprüft: Test Neanderfunk 17.10.2026]
 - **Rückweg zur Herstellerfirmware:** Herstellerfirmware über die U-Boot-Recovery: Reset-Knopf beim Einschalten gedrückt halten, http://192.168.1.1 [abgeleitet: dasselbe Board wie MR80X v2, dort geprüft: adorfer 24.11.2026]
@@ -7565,7 +7566,7 @@ Mercusys MR3000X v2.0 (Alias von mercusys-mr80x-v2) · qualcommax-ipq50xx · K0
 - **Quelle (OpenWrt-Commit):** OpenWrt 938f67a519de64dcec10759b2b7203aca086f97a; gluon-patches-hardware Zweig v2025.1.x-next, devices/mercusys-mr80x-v2
 - **Detail-Anleitung:** anleitungen/de/mercusys-mr3000x-v2.md
 - **Am Gerät erprobt (für die Anleitung):** am = 2026-11-24; mit = Gluon 2025.1 (26112316bro), factory-Image über die Mercusys-Oberfläche (Lokales Upgrade); weg = Gerät mit MR3000X-Typenschild, Gluon-factory in der Stock-Firmware unter Erweitert > System > Firmware-Upgrade > Lokales Upgrade hochgeladen; Stock-Version nicht notiert; welcher der drei Knoten es ist [offen]; beleg = adorfer 25.11.2026; Knoten HVB-MR80X-756c, -968c, -6718 auf karte.neanderfunk.de (Release 26112316bro, firstseen 24.11.2026 23:07 bis 23:22); geraetedaten 30f6263ca1365ed07ce70a8da7cd37ce1f847b3b
-- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = beim ersten Aufruf legst du ein eigenes Passwort fest; menue = Erweitert → System → Firmware-Upgrade → Lokales Upgrade; sicherheit = quelle
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = beim ersten Aufruf legst du ein eigenes Passwort fest; menue = Erweitert → System → Firmware-Upgrade → Lokales Upgrade; dauer = bis zu 10 Minuten. Die LED blinkt dabei mehrere Minuten lang schnell, das ist normal und keine Bootschleife; sicherheit = quelle
 
 #### mercusys-mr80x-v2
 
@@ -7595,6 +7596,7 @@ Mercusys MR80X v2 · qualcommax-ipq50xx · K0
 - **Factory-/Stock-Image-Link:** Gluon-factory (fwup-Container mit SupportList MR80X und MR3000X) [geprüft: Patch 0039/0042]
 - **Stock-Teile:** -
 - **RAM:** 256 MB [geprüft: OpenWrt 938f67a519]
+- **Dauer:** bis zu 10 Minuten; sysupgrade Gluon auf Gluon (26112510bro) bis ssh wieder antwortet 257 s und 552 s, zum Vergleich D-Link M60 90/113 s, MR90X 114 s [geprüft: Neanderfunk 25.11.2026, Gluon→Gluon]; die LED blinkt dabei mindestens 3, manchmal 5 Minuten schnell, auch beim ersten Flashen von der Stock-Firmware, das ist keine Bootschleife, Ursache unbekannt, keine serielle Konsole [geprüft: adorfer 25.11.2026]; Dauer beim Erstflash von der Stock-Firmware [abgeleitet]; geraetedaten 8c02e0d5d3b35122b0c4f57821d6e8a492f87518 (flash_dauer)
 - **Fehlerbild:** Gluon braucht hier kmod-ath11k-smallbuffers; mit dem normalen ath11k-Modul OOM nach 96 s und Neustart [geprüft: Test Neanderfunk 17.10.2026]
 - **Notweg:** [Notfall] Reset-Knopf beim Einschalten gedrückt halten oder mehrere Fehlstarts: U-Boot-Recovery „Firmware Upgrade“ unter http://192.168.1.1, nimmt nur Herstellerfirmware, Gluon-factory abgelehnt [geprüft: adorfer 24.11.2026] (Fehlstarts: [geprüft: Test Neanderfunk 14.10.2026]); Haltedauer der Taste und ob der Rechner dort per DHCP eine Adresse bekommt [offen]; UART 115200 8N1 auf einer Stiftleiste der Platine, U-Boot mit Enter in der Startsekunde anhalten, initramfs per TFTP laden [geprüft: Test Neanderfunk 17.10.2026]
 - **Rückweg zur Herstellerfirmware:** Herstellerfirmware über die U-Boot-Recovery: Reset-Knopf beim Einschalten gedrückt halten, http://192.168.1.1 [geprüft: adorfer 24.11.2026, Firmware-Version nicht notiert]; auch nach mehreren Fehlstarts erreichbar [geprüft: Test Neanderfunk 14.10.2026]
@@ -7603,7 +7605,7 @@ Mercusys MR80X v2 · qualcommax-ipq50xx · K0
 - **Quelle (OpenWrt-Commit):** OpenWrt 938f67a519de64dcec10759b2b7203aca086f97a; gluon-patches-hardware Zweig v2025.1.x-next, devices/mercusys-mr80x-v2
 - **Detail-Anleitung:** anleitungen/de/mercusys-mr80x-v2.md
 - **Am Gerät erprobt (für die Anleitung):** am = 2026-11-24; mit = Gluon 2025.1 (26112316bro), factory-Image über die Mercusys-Oberfläche (Lokales Upgrade); weg = Gebrauchtgerät, Werksreset-Weg unbekannt: erst Mercusys-Firmware über die U-Boot-Recovery, dann in der Stock-Firmware unter Erweitert > System > Firmware-Upgrade > Lokales Upgrade das Gluon-factory hochgeladen; Stock-Version nicht notiert; beleg = adorfer 24.11.2026; Knoten dias-MR80Xv2-test2-ede0 (088af105ede0) auf karte.neanderfunk.de seit 24.11.2026 22:22; geraetedaten c62049a82a6e337cf9a3619526f92cd16f0c4fd5 (Quelle adorfer_2026_11_24)
-- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = beim ersten Aufruf legst du ein eigenes Passwort fest; menue = Erweitert → System → Firmware-Upgrade → Lokales Upgrade; sicherheit = quelle
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = beim ersten Aufruf legst du ein eigenes Passwort fest; menue = Erweitert → System → Firmware-Upgrade → Lokales Upgrade; dauer = bis zu 10 Minuten. Die LED blinkt dabei mehrere Minuten lang schnell, das ist normal und keine Bootschleife; sicherheit = quelle
 
 #### nexx-wt3020-8m
 
