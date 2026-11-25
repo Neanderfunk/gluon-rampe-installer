@@ -7551,7 +7551,7 @@ Mercusys MR3000X v2.0 (Alias von mercusys-mr80x-v2) · qualcommax-ipq50xx · K0
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
 - **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
-- **Typenschild/Verwechslung:** Dasselbe Board wie der Mercusys MR80X v2, Gluon-Alias, gleiches Image [geprüft: Test Neanderfunk 13.10.2026]
+- **Typenschild/Verwechslung:** Dasselbe Board wie der Mercusys MR80X v2, Gluon-Alias, gleiches Image [geprüft: Test Neanderfunk 13.10.2026]; Karton und Typenschild können abweichen (Karton MR3000X, Typenschild MR80X) [geprüft: adorfer 25.11.2026]; maßgeblich ist das Typenschild, das factory enthält beide Gerätekennungen
 - **Bedingung an die Herstellerfirmware:** Firmware 1.2.0 Build 20250904 nahm ein factory mit MR3000X-Eintrag in der SupportList an, ohne diesen Eintrag "Ungültiger Dateityp." [geprüft: Test Neanderfunk 13.10.2026]
 - **initramfs-Link:** kein OpenWrt-24.10-Image (Gerät erst in OpenWrt main) [geprüft]
 - **Factory-/Stock-Image-Link:** Gluon-factory (fwup-Container mit SupportList MR80X und MR3000X) [geprüft: Patch 0039/0042]
@@ -7588,7 +7588,7 @@ Mercusys MR80X v2 · qualcommax-ipq50xx · K0
 - **Level-Merkmale (scripts/level.py):** werkzeug = browser; image = factory; zwischenfirmware = nein; dhcp = ja; gehaeuse_oeffnen = -; l8 = nein
 - **Risiko (normal / bootloader / offen):** normal
 - **Werkzeug/Spezial:** -
-- **Typenschild/Verwechslung:** MR80X v3 ist ein anderes Gerät (MediaTek MT7981B, Target mediatek-filogic) [geprüft: OpenWrt 7921e48d43]; Mercusys MR3000X v2.0 ist dasselbe Board, eigener Eintrag mercusys-mr3000x-v2 [geprüft: Test Neanderfunk 13.10.2026]
+- **Typenschild/Verwechslung:** MR80X v3 ist ein anderes Gerät (MediaTek MT7981B, Target mediatek-filogic) [geprüft: OpenWrt 7921e48d43]; Mercusys MR3000X v2.0 ist dasselbe Board, eigener Eintrag mercusys-mr3000x-v2 [geprüft: Test Neanderfunk 13.10.2026]; Karton und Typenschild können abweichen (Karton MR3000X, Typenschild MR80X) [geprüft: adorfer 25.11.2026]; maßgeblich ist das Typenschild, das factory enthält beide Gerätekennungen
 - **Bedingung an die Herstellerfirmware:** Getestet von OpenWrt auf MR80X(EU)_V2.20_1.1.7 Build 20250415 [geprüft: OpenWrt 938f67a519]
 - **initramfs-Link:** kein OpenWrt-24.10-Image (Gerät erst in OpenWrt main) [geprüft]
 - **Factory-/Stock-Image-Link:** Gluon-factory (fwup-Container mit SupportList MR80X und MR3000X) [geprüft: Patch 0039/0042]
