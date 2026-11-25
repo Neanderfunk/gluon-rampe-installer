@@ -12,7 +12,7 @@ status: erprobt
 erprobt_am: 2026-11-24
 erprobt_mit: Gluon 2025.1 (26112316bro), factory-Image über die Mercusys-Oberfläche (Lokales Upgrade)
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 251e7c1f0
+daten_stand: 42729d2f8
 vorlage_stand: ae4d4370f
 ---
 

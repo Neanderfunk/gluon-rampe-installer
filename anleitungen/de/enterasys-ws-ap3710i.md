@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-enterasys-ws-ap3710i-initramfs-kernel.bin
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, serielle-konsole, ssh-scp, tftp-server]
-daten_stand: 251e7c1f0
+daten_stand: 42729d2f8
 vorlage_stand: ae4d4370f
 ---
 

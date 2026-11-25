@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-avm-fritz-box-7362-sl-initramfs-kernel.bin
 grundlagen: [avm-eva, browser-https, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 251e7c1f0
+daten_stand: 42729d2f8
 vorlage_stand: ae4d4370f
 ---
 

@@ -10,7 +10,7 @@ level_text: Network-Tools
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, image-schreiben, router-antwortet-nicht]
-daten_stand: 251e7c1f0
+daten_stand: 42729d2f8
 vorlage_stand: ae4d4370f
 ---
 

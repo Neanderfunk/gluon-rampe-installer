@@ -13,7 +13,7 @@ erprobt_am: 2026-09-19
 erprobt_mit: Gluon 2023.2.6 (26091920sta) über das OpenWrt-initramfs
 rampe_image: gluon-rampe-20261115-zyxel-wsm20-initramfs-kernel.bin
 grundlagen: [browser-https, browser-not-found, router-antwortet-nicht]
-daten_stand: 251e7c1f0
+daten_stand: 42729d2f8
 vorlage_stand: ae4d4370f
 ---
 
