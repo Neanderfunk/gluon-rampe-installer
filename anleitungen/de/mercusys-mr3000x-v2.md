@@ -10,7 +10,7 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: 3f0a80348
+daten_stand: cfa733f38
 vorlage_stand: ae4d4370f
 ---
 
@@ -51,7 +51,7 @@ Aufkleber genau mit "Mercusys MR3000X v2.0", bevor du anfängst.
    eingestellt ist.
 
 3. **Oberfläche öffnen.** Öffne im Browser `http://192.168.1.1`.
-   Melde dich an: beim ersten Aufruf ein eigenes Passwort festlegen.
+   Melde dich an: beim ersten Aufruf legst du ein eigenes Passwort fest.
 
 4. **Firmware-Update aufrufen.** Geh zu **Erweitert → System → Firmware-Upgrade → Lokales Upgrade**.
 

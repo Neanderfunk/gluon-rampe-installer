@@ -10,7 +10,7 @@ level_text: Besondere Programme
 risiko: normal
 status: ungeprüft
 grundlagen: [avm-eva, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: 3f0a80348
+daten_stand: cfa733f38
 vorlage_stand: ae4d4370f
 ---
 
