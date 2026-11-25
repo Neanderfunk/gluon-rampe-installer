@@ -896,9 +896,25 @@
   "sprache": "de"
  },
  {
+  "gluon_name": "mercusys-mr3000x-v2",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/mercusys-mr3000x-v2.html",
+  "status": "ungeprüft",
+  "level": "L0.1",
+  "risiko": "normal",
+  "sprache": "de"
+ },
+ {
   "gluon_name": "mercusys-mr70x-v1",
   "url": "https://routersoftware.neanderfunk.de/anleitungen/de/mercusys-mr70x-v1.html",
   "status": "erprobt",
+  "level": "L0.1",
+  "risiko": "normal",
+  "sprache": "de"
+ },
+ {
+  "gluon_name": "mercusys-mr80x-v2",
+  "url": "https://routersoftware.neanderfunk.de/anleitungen/de/mercusys-mr80x-v2.html",
+  "status": "ungeprüft",
   "level": "L0.1",
   "risiko": "normal",
   "sprache": "de"

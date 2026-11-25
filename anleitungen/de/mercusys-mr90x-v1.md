@@ -11,7 +11,7 @@ risiko: normal
 status: ungeprüft
 rampe_image: gluon-rampe-20261115-mercusys-mr90x-v1-initramfs-kernel.bin
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht, ssh-scp]
-daten_stand: 78bd472e9
+daten_stand: 3f0a80348
 vorlage_stand: ae4d4370f
 ---
 
