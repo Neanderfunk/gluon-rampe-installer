@@ -13,7 +13,7 @@ erprobt_am: 2026-11-11
 erprobt_mit: gluon-rampe-20261015-genexis-pulse-ex400-factory.bin
 rampe_image: gluon-rampe-20261115-genexis-pulse-ex400-factory.bin
 grundlagen: [browser-https, browser-not-found, feste-ip, router-antwortet-nicht]
-daten_stand: c85a93591
+daten_stand: 251e7c1f0
 vorlage_stand: ae4d4370f
 ---
 
