@@ -18725,7 +18725,7 @@
    "erprobt": {},
    "werte": {
     "stock_url": "http://192.168.1.1",
-    "zugang": "beim ersten Aufruf ein eigenes Passwort festlegen",
+    "zugang": "beim ersten Aufruf legst du ein eigenes Passwort fest",
     "menue": "Erweitert → System → Firmware-Upgrade → Lokales Upgrade",
     "sicherheit": "quelle",
     "sicherheit_hinweis": "Über die Herstelleroberfläche ist bisher nur das OpenWrt-factory-Image eingespielt worden, Gluon kam danach per Update. Das Gluon-factory nutzt denselben Container mit beiden Gerätekennungen (MR80X und MR3000X), ist über diese Oberfläche aber noch nicht ausprobiert."
@@ -18787,7 +18787,7 @@
    "erprobt": {},
    "werte": {
     "stock_url": "http://192.168.1.1",
-    "zugang": "beim ersten Aufruf ein eigenes Passwort festlegen",
+    "zugang": "beim ersten Aufruf legst du ein eigenes Passwort fest",
     "menue": "Erweitert → System → Firmware-Upgrade → Lokales Upgrade",
     "sicherheit": "quelle",
     "sicherheit_hinweis": "Über die Herstelleroberfläche ist bisher nur das OpenWrt-factory-Image eingespielt worden, Gluon kam danach per Update. Das Gluon-factory nutzt denselben Container mit beiden Gerätekennungen (MR80X und MR3000X), ist über diese Oberfläche aber noch nicht ausprobiert."

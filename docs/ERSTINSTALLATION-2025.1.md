@@ -7564,7 +7564,7 @@ Mercusys MR3000X v2.0 (Alias von mercusys-mr80x-v2) · qualcommax-ipq50xx · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 938f67a519de64dcec10759b2b7203aca086f97a; gluon-patches-hardware Zweig v2025.1.x-next, devices/mercusys-mr80x-v2
 - **Detail-Anleitung:** anleitungen/de/mercusys-mr3000x-v2.md
-- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = beim ersten Aufruf ein eigenes Passwort festlegen; menue = Erweitert → System → Firmware-Upgrade → Lokales Upgrade; sicherheit = quelle; sicherheit_hinweis = Über die Herstelleroberfläche ist bisher nur das OpenWrt-factory-Image eingespielt worden, Gluon kam danach per Update. Das Gluon-factory nutzt denselben Container mit beiden Gerätekennungen (MR80X und MR3000X), ist über diese Oberfläche aber noch nicht ausprobiert.
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = beim ersten Aufruf legst du ein eigenes Passwort fest; menue = Erweitert → System → Firmware-Upgrade → Lokales Upgrade; sicherheit = quelle; sicherheit_hinweis = Über die Herstelleroberfläche ist bisher nur das OpenWrt-factory-Image eingespielt worden, Gluon kam danach per Update. Das Gluon-factory nutzt denselben Container mit beiden Gerätekennungen (MR80X und MR3000X), ist über diese Oberfläche aber noch nicht ausprobiert.
 
 #### mercusys-mr80x-v2
 
@@ -7601,7 +7601,7 @@ Mercusys MR80X v2 · qualcommax-ipq50xx · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 938f67a519de64dcec10759b2b7203aca086f97a; gluon-patches-hardware Zweig v2025.1.x-next, devices/mercusys-mr80x-v2
 - **Detail-Anleitung:** anleitungen/de/mercusys-mr80x-v2.md
-- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = beim ersten Aufruf ein eigenes Passwort festlegen; menue = Erweitert → System → Firmware-Upgrade → Lokales Upgrade; sicherheit = quelle; sicherheit_hinweis = Über die Herstelleroberfläche ist bisher nur das OpenWrt-factory-Image eingespielt worden, Gluon kam danach per Update. Das Gluon-factory nutzt denselben Container mit beiden Gerätekennungen (MR80X und MR3000X), ist über diese Oberfläche aber noch nicht ausprobiert.
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = beim ersten Aufruf legst du ein eigenes Passwort fest; menue = Erweitert → System → Firmware-Upgrade → Lokales Upgrade; sicherheit = quelle; sicherheit_hinweis = Über die Herstelleroberfläche ist bisher nur das OpenWrt-factory-Image eingespielt worden, Gluon kam danach per Update. Das Gluon-factory nutzt denselben Container mit beiden Gerätekennungen (MR80X und MR3000X), ist über diese Oberfläche aber noch nicht ausprobiert.
 
 #### nexx-wt3020-8m
 
