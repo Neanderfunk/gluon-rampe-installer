@@ -18676,7 +18676,7 @@
    "target": "qualcommax-ipq50xx",
    "gluon_broken": false,
    "kat": "K0",
-   "familie": "",
+   "familie": "k0-webui",
    "weg": "factory über die Stock-Weboberfläche hochladen (Erweitert > System > Firmware-Upgrade > Lokales Upgrade) [geprüft: OpenWrt 938f67a519]; mit dem Gluon-factory selbst nicht erprobt [abgeleitet]",
    "schritte": [
     "Typenschild prüfen: MR80X, Ver 2.x (die Firmware nennt das Board MR80X v2) [geprüft: OpenWrt 938f67a519]; nicht mit dem MR80X v3 verwechseln (siehe verwechslung)",
@@ -18721,9 +18721,15 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 938f67a519de64dcec10759b2b7203aca086f97a; gluon-patches-hardware Zweig v2025.1.x-next, devices/mercusys-mr80x-v2",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/mercusys-mr80x-v2.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.1.1",
+    "zugang": "beim ersten Aufruf ein eigenes Passwort festlegen",
+    "menue": "Erweitert → System → Firmware-Upgrade → Lokales Upgrade",
+    "sicherheit": "quelle",
+    "sicherheit_hinweis": "Über die Herstelleroberfläche ist bisher nur das OpenWrt-factory-Image eingespielt worden, Gluon kam danach per Update. Das Gluon-factory nutzt denselben Container mit beiden Gerätekennungen (MR80X und MR3000X), ist über diese Oberfläche aber noch nicht ausprobiert."
+   }
   },
   {
    "gluon_name": "mercusys-mr3000x-v2",
@@ -18732,7 +18738,7 @@
    "target": "qualcommax-ipq50xx",
    "gluon_broken": false,
    "kat": "K0",
-   "familie": "",
+   "familie": "k0-webui",
    "weg": "factory über die Stock-Weboberfläche hochladen (Erweitert > System > Firmware-Upgrade > Lokales Upgrade) [geprüft: OpenWrt 938f67a519]; mit dem Gluon-factory selbst nicht erprobt [abgeleitet]",
    "schritte": [
     "Typenschild prüfen: MR3000X, EU/2.0 [geprüft: Test Neanderfunk 13.10.2026]",
@@ -18777,9 +18783,15 @@
    "rampe": "nicht nötig (Gluon-factory)",
    "rampe_rezept": "",
    "quelle": "OpenWrt 938f67a519de64dcec10759b2b7203aca086f97a; gluon-patches-hardware Zweig v2025.1.x-next, devices/mercusys-mr80x-v2",
-   "anleitung": "",
+   "anleitung": "anleitungen/de/mercusys-mr3000x-v2.md",
    "erprobt": {},
-   "werte": {}
+   "werte": {
+    "stock_url": "http://192.168.1.1",
+    "zugang": "beim ersten Aufruf ein eigenes Passwort festlegen",
+    "menue": "Erweitert → System → Firmware-Upgrade → Lokales Upgrade",
+    "sicherheit": "quelle",
+    "sicherheit_hinweis": "Über die Herstelleroberfläche ist bisher nur das OpenWrt-factory-Image eingespielt worden, Gluon kam danach per Update. Das Gluon-factory nutzt denselben Container mit beiden Gerätekennungen (MR80X und MR3000X), ist über diese Oberfläche aber noch nicht ausprobiert."
+   }
   },
   {
    "gluon_name": "asus-rt-ac51u",
