@@ -10,7 +10,7 @@ level_text: Einfach hochladen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: cfa733f38
+daten_stand: c85a93591
 vorlage_stand: ae4d4370f
 ---
 

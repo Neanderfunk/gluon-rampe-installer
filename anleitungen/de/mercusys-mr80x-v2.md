@@ -8,16 +8,16 @@ sprache: de
 level: L0.1
 level_text: Hochladen, richtige Datei wählen
 risiko: normal
-status: ungeprüft
+status: erprobt
+erprobt_am: 2026-11-24
+erprobt_mit: Gluon 2025.1 (26112316bro), factory-Image über die Mercusys-Oberfläche (Lokales Upgrade)
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: cfa733f38
+daten_stand: c85a93591
 vorlage_stand: ae4d4370f
 ---
 
 # Mercusys MR80X v2: Freifunk-Firmware installieren
 
-> Über die Herstelleroberfläche ist bisher nur das OpenWrt-factory-Image eingespielt worden, Gluon kam danach per Update. Das Gluon-factory nutzt denselben Container mit beiden Gerätekennungen (MR80X und MR3000X), ist über diese Oberfläche aber noch nicht ausprobiert.
->
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
 > Anleitung für alle nach dir besser:

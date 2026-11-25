@@ -10,13 +10,15 @@ level_text: Hochladen, richtige Datei wählen
 risiko: normal
 status: ungeprüft
 grundlagen: [browser-not-found, router-antwortet-nicht]
-daten_stand: cfa733f38
+daten_stand: c85a93591
 vorlage_stand: ae4d4370f
 ---
 
 # Mercusys MR3000X v2.0: Freifunk-Firmware installieren
 
-> Über die Herstelleroberfläche ist bisher nur das OpenWrt-factory-Image eingespielt worden, Gluon kam danach per Update. Das Gluon-factory nutzt denselben Container mit beiden Gerätekennungen (MR80X und MR3000X), ist über diese Oberfläche aber noch nicht ausprobiert.
+> Sei aufmerksam und hör auf, wenn etwas anders aussieht als hier
+> beschrieben.
+> Über die Herstelleroberfläche erprobt ist das Gluon-factory am MR80X v2, nicht an einem Gerät mit MR3000X-Typenschild. Es ist dasselbe Board, und das Image enthält beide Gerätekennungen.
 >
 > Schreib uns, ob es geklappt hat. Und wenn es irgendwo hakt: Melde dich,
 > wir helfen dir weiter. Jede Rückmeldung macht die
