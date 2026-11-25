@@ -7564,7 +7564,7 @@ Mercusys MR3000X v2.0 (Alias von mercusys-mr80x-v2) · qualcommax-ipq50xx · K0
 - **Gluon-RAMpe passt:** nicht nötig (Gluon-factory)
 - **Quelle (OpenWrt-Commit):** OpenWrt 938f67a519de64dcec10759b2b7203aca086f97a; gluon-patches-hardware Zweig v2025.1.x-next, devices/mercusys-mr80x-v2
 - **Detail-Anleitung:** anleitungen/de/mercusys-mr3000x-v2.md
-- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = beim ersten Aufruf legst du ein eigenes Passwort fest; menue = Erweitert → System → Firmware-Upgrade → Lokales Upgrade; sicherheit = abgeleitet; sicherheit_hinweis = Über die Herstelleroberfläche erprobt ist das Gluon-factory am MR80X v2, nicht an einem Gerät mit MR3000X-Typenschild. Es ist dasselbe Board, und das Image enthält beide Gerätekennungen.
+- **Werte für die Anleitung:** stock_url = http://192.168.1.1; zugang = beim ersten Aufruf legst du ein eigenes Passwort fest; menue = Erweitert → System → Firmware-Upgrade → Lokales Upgrade; sicherheit = quelle
 
 #### mercusys-mr80x-v2
 

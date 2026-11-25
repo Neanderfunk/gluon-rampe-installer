@@ -18793,8 +18793,7 @@
     "stock_url": "http://192.168.1.1",
     "zugang": "beim ersten Aufruf legst du ein eigenes Passwort fest",
     "menue": "Erweitert → System → Firmware-Upgrade → Lokales Upgrade",
-    "sicherheit": "abgeleitet",
-    "sicherheit_hinweis": "Über die Herstelleroberfläche erprobt ist das Gluon-factory am MR80X v2, nicht an einem Gerät mit MR3000X-Typenschild. Es ist dasselbe Board, und das Image enthält beide Gerätekennungen."
+    "sicherheit": "quelle"
    }
   },
   {
